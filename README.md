@@ -48,6 +48,7 @@ This repo is for technical assets only:
 - Smoke tests.
 - Deployment logs.
 - Codex/ChatGPT instructions.
+- Local repo hygiene tools.
 
 ## What Does Not Belong Here
 
@@ -94,9 +95,18 @@ src/
     README.md
     webhooks/
       returned-payment-fee/
-        package.json
-        src/index.js
         README.md
+        catalyst-config.json
+        package.json
+        package-lock.json
+        src/
+          index.js
+        docs/
+          changelog.md
+          environment-variables.md
+          file-manifest.md
+          operations-runbook.md
+          security-model.md
         install-checklist.md
         test-cases.md
 
@@ -124,8 +134,10 @@ docs/
     lease-automation-rules.md
   runbooks/
     deployment-log.md
+    rollback-checklist.md
     smoke-test-checklist.md
   security/
+    data-classification.md
     security-incidents.md
   setup/
     github-settings-checklist.md
@@ -135,6 +147,11 @@ samples/
     invoice.sample.json
   zoho-payments/
     returned-payment.sample.json
+
+tools/
+  README.md
+  safety/
+    pre-commit-safety-check.py
 ```
 
 ## Current Primary Systems
