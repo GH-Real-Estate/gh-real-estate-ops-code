@@ -1,0 +1,15 @@
+/*
+ * Late_Fee_Guard.deluge
+ *
+ * Placeholder only.
+ * Replace this file with the current final GH Real Estate Zoho Books Deluge script.
+ *
+ * Rules before committing production code:
+ * - No real tenant PII in comments/logs.
+ * - No OAuth tokens/API secrets.
+ * - Must match the final signed lease.
+ * - Must prevent duplicate fees.
+ * - Must document item/template/custom-field IDs in zoho-books/field-maps/books-automation-settings.md.
+ */
+
+info "Late Fee Guard placeholder. Replace with final approved Deluge code before deployment.";

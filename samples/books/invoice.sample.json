@@ -1,0 +1,15 @@
+{
+  "invoice_id": "INV_TEST_001",
+  "customer_id": "CUSTOMER_TEST_001",
+  "invoice_number": "INV-TEST-001",
+  "date": "2026-07-01",
+  "due_date": "2026-07-01",
+  "balance": "1125.00",
+  "status": "sent",
+  "custom_fields": [
+    {
+      "api_name": "cf_late_fee_events",
+      "value": "[]"
+    }
+  ]
+}

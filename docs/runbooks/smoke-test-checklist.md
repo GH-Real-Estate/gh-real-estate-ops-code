@@ -1,0 +1,36 @@
+# Smoke Test Checklist
+
+Use before and after any live automation change.
+
+## General
+
+- [ ] Code in GitHub matches code installed in Zoho/runtime.
+- [ ] Change is documented in deployment log.
+- [ ] No secrets committed.
+- [ ] No real tenant PII committed.
+- [ ] Dry-run completed or not applicable.
+- [ ] One controlled test completed.
+
+## Late Fee Guard
+
+- [ ] Test invoice below threshold does not create a fee.
+- [ ] Test invoice above threshold creates correct fee.
+- [ ] Running the function twice does not duplicate the fee.
+- [ ] Invoice template is correct.
+- [ ] Time-zone behavior is correct.
+- [ ] Logs contain no PII.
+
+## Returned Payment Webhook
+
+- [ ] Valid event accepted.
+- [ ] Invalid signature rejected.
+- [ ] Replayed event rejected or ignored.
+- [ ] Duplicate returned-payment fee not created.
+- [ ] Logs contain no bank data, PII, or secrets.
+
+## Field maps
+
+- [ ] Zoho Books item IDs verified.
+- [ ] Zoho Books custom-field API names verified.
+- [ ] Zoho CRM field names verified.
+- [ ] Zoho Contracts merge fields verified.
