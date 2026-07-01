@@ -1,0 +1,10 @@
+{
+  "deployment": {
+    "name": "gh_zpayments_returned_fee_webhook",
+    "stack": "node18",
+    "type": "advancedio"
+  },
+  "execution": {
+    "main": "src/index.js"
+  }
+}
