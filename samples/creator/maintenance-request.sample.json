@@ -1,8 +1,0 @@
-{
-  "request_id": "MAINT_TEST_001",
-  "unit_id": "UNIT_TEST_1",
-  "category": "Plumbing",
-  "priority": "Normal",
-  "description": "Sanitized test maintenance request. No tenant details.",
-  "status": "New"
-}

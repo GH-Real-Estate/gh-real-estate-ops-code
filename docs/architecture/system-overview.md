@@ -1,6 +1,6 @@
 # GH Real Estate System Overview
 
-## System roles
+## System Roles
 
 ```text
 Zillow / Zoho Forms
@@ -25,6 +25,20 @@ Codex / ChatGPT
   -> review, debugging, patching, documentation, test planning
 ```
 
-## Non-negotiable split
+## Repository Organization
+
+Code and technical docs are grouped under `src/` by owning system:
+
+```text
+src/zoho-books/      # Books-owned automations, field maps, and financial automation docs
+src/zoho-payments/   # Payments-originated webhooks and event handling
+src/zoho-crm/        # CRM field maps and CRM functions
+src/zoho-creator/    # Creator import/export notes and sanitized exports
+src/zoho-contracts/  # Contracts merge-field maps only
+```
+
+Cross-system docs remain under `docs/`. Sanitized sample payloads remain under `samples/`.
+
+## Non-Negotiable Split
 
 Zoho owns live business data. GitHub owns technical logic and sanitized documentation.

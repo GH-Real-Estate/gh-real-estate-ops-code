@@ -1,15 +1,15 @@
 # Late Fee Guard Install Checklist
 
-## Pre-install
+## Pre-Install
 
-- [ ] Final Deluge code committed to `automations/late-fee-guard/src/Late_Fee_Guard.deluge`.
+- [ ] Final Deluge code committed to `src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge`.
 - [ ] Code reviewed for duplicate prevention.
 - [ ] Code reviewed for Central Time handling.
 - [ ] Code reviewed for no PII/secrets logging.
 - [ ] Lease automation rules verified in `docs/business-rules/lease-automation-rules.md`.
-- [ ] Zoho Books item/template/custom field values documented in `zoho-books/field-maps/books-automation-settings.md`.
+- [ ] Zoho Books item/template/custom field values documented in `src/zoho-books/field-maps/books-automation-settings.md`.
 
-## Zoho Books setup
+## Zoho Books Setup
 
 - [ ] Confirm Zoho Books connection name.
 - [ ] Confirm late-fee item exists.

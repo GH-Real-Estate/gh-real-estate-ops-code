@@ -18,6 +18,20 @@ Codex/ChatGPT reviews and improves the code.
 
 This repository is not a tenant file cabinet, accounting ledger, lease vault, or CRM replacement.
 
+## Structure Rule
+
+This repo is organized by **source system / runtime**, not by generic workflow labels.
+
+That means:
+
+- Zoho Books automations live under `src/zoho-books/`.
+- Zoho Payments webhooks live under `src/zoho-payments/`.
+- Zoho CRM field maps and functions live under `src/zoho-crm/`.
+- Zoho Creator exports/docs live under `src/zoho-creator/`.
+- Zoho Contracts merge maps live under `src/zoho-contracts/`.
+
+This is more professional than a loose top-level `automations/` folder because each code asset lives beside the system that owns or runs it.
+
 ## What Belongs Here
 
 This repo is for technical assets only:
@@ -64,47 +78,72 @@ Do not store live business records here:
 ## Repository Map
 
 ```text
-automations/
-  late-fee-guard/                 # Zoho Books Deluge late-fee automation
-  returned-payment-webhook/       # Zoho Catalyst / Node webhook for returned payments
+src/
+  zoho-books/
+    README.md
+    automations/
+      late-fee-guard/
+        Late_Fee_Guard.deluge
+        README.md
+        install-checklist.md
+        test-cases.md
+    field-maps/
+      books-automation-settings.md
+
+  zoho-payments/
+    README.md
+    webhooks/
+      returned-payment-fee/
+        package.json
+        src/index.js
+        README.md
+        install-checklist.md
+        test-cases.md
+
+  zoho-crm/
+    README.md
+    field-maps/
+      zillow-to-crm-to-contracts.md
+
+  zoho-creator/
+    README.md
+    docs/
+      import-notes.md
+
+  zoho-contracts/
+    README.md
+    field-maps/
+      lease-merge-fields.md
 
 docs/
-  architecture/                   # How systems fit together
-  business-rules/                 # Sanitized automation-relevant lease rules
-  decision-log/                   # Why technical decisions were made
-  runbooks/                       # Deploy, smoke-test, rollback, troubleshooting logs
-  security/                       # PII/secrets/data classification rules
-  setup/                          # GitHub, Codex, and repo setup instructions
-
-zoho-books/
-  custom-functions/               # Zoho Books custom functions and snippets
-  field-maps/                     # Books item IDs, template IDs, custom fields, sanitized
-
-zoho-crm/
-  functions/                      # CRM Deluge functions and workflow snippets
-  field-maps/                     # Zillow -> CRM -> Contracts -> Books mapping
-
-zoho-creator/
-  exports/                        # Sanitized .ds exports only
-  docs/                           # Creator app setup/import notes
-
-zoho-contracts/
-  field-maps/                     # Contract merge-field maps only; no signed leases
+  architecture/
+    system-overview.md
+  adr/
+    0001-one-private-repo-for-gh-real-estate.md
+  business-rules/
+    lease-automation-rules.md
+  runbooks/
+    deployment-log.md
+    smoke-test-checklist.md
+  security/
+    security-incidents.md
+  setup/
+    github-settings-checklist.md
 
 samples/
-  books/                          # Sanitized Zoho Books examples
-  crm/                            # Sanitized Zoho CRM examples
-  creator/                        # Sanitized Creator examples
-  webhooks/                       # Sanitized webhook payloads
+  zoho-books/
+    invoice.sample.json
+  zoho-payments/
+    returned-payment.sample.json
 ```
 
 ## Current Primary Systems
 
 | System | Main File |
 |---|---|
-| Late Fee Guard | `automations/late-fee-guard/src/Late_Fee_Guard.deluge` |
-| Returned Payment Webhook | `automations/returned-payment-webhook/src/index.js` |
-| Zoho Books Automation Settings | `zoho-books/field-maps/books-automation-settings.md` |
+| Late Fee Guard | `src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge` |
+| Returned Payment Webhook | `src/zoho-payments/webhooks/returned-payment-fee/src/index.js` |
+| Zoho Books Automation Settings | `src/zoho-books/field-maps/books-automation-settings.md` |
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |
 | Deployment Log | `docs/runbooks/deployment-log.md` |
 | Codex/ChatGPT Instructions | `AGENTS.md` |
