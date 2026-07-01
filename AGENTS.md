@@ -2,7 +2,7 @@
 
 Codex/ChatGPT instructions for this repository.
 
-## Business context
+## Business Context
 
 GH Real Estate uses Zoho as the live business operating system.
 
@@ -12,11 +12,25 @@ GH Real Estate uses Zoho as the live business operating system.
 - Zoho Creator: tenant portal / maintenance workflows when deployed.
 - GitHub: technical source of truth for code, field maps, sanitized samples, runbooks, and tests.
 
-## Primary rule
+## Repository Layout Rule
+
+Organize code by source system / runtime:
+
+- `src/zoho-books/` contains code and field maps owned by Zoho Books.
+- `src/zoho-payments/` contains webhook handling for Zoho Payments events.
+- `src/zoho-crm/` contains CRM functions and CRM field maps.
+- `src/zoho-creator/` contains sanitized Creator exports and import notes.
+- `src/zoho-contracts/` contains Contracts merge-field maps only.
+- `docs/` contains cross-system architecture, business rules, runbooks, security notes, and ADRs.
+- `samples/` contains sanitized payload examples grouped by source system.
+
+Do not recreate a generic top-level `automations/` folder. Automations belong under the system that owns or runs them.
+
+## Primary Rule
 
 Do not turn this repository into a tenant file cabinet or accounting database. It is a technical code and documentation repository only.
 
-## Security rules
+## Security Rules
 
 Never add:
 
@@ -30,7 +44,7 @@ Always use:
 - Sanitized test records such as `TENANT_TEST_001`, `INV_TEST_001`, `PAYMENT_TEST_001`, and `UNIT_TEST_1`.
 - Minimal logging that avoids PII and secrets.
 
-## Automation rules
+## Automation Rules
 
 - Zoho Books is the financial source of truth.
 - Late-fee code must be idempotent. Running it twice must not create duplicate fees.
@@ -38,9 +52,9 @@ Always use:
 - Default to dry-run mode for automation that creates, updates, deletes, invoices, charges, emails, or texts.
 - Live mode must be explicit, documented, and smoke-tested.
 - Any fee amount, date threshold, interest rule, item ID, template ID, or custom-field API name must be documented in the relevant README and field map.
-- Any change to business logic must update `docs/business-rules/`, `docs/decision-log/`, and the relevant test cases.
+- Any change to business logic must update `docs/business-rules/`, `docs/adr/`, and the relevant test cases.
 
-## Review priorities
+## Review Priorities
 
 When reviewing code, prioritize:
 
@@ -55,7 +69,7 @@ When reviewing code, prioritize:
 9. Alignment with documented lease/business rules.
 10. Clear install/deploy/rollback instructions.
 
-## Coding conventions
+## Coding Conventions
 
 - Deluge files use `.deluge` extension.
 - JavaScript/Node code uses clear function names and defensive input checks.
@@ -64,7 +78,7 @@ When reviewing code, prioritize:
 - Add comments where business logic could be misunderstood.
 - Do not add dependencies without a reason.
 
-## Do not do
+## Do Not Do
 
 - Do not replace Zoho Books, Zoho CRM, or Zoho Contracts with this repo.
 - Do not introduce a custom tenant database unless explicitly requested.

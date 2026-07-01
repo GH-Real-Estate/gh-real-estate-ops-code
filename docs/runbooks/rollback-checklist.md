@@ -2,7 +2,7 @@
 
 Use when a code or Zoho automation deployment creates bad behavior.
 
-## Immediate control
+## Immediate Control
 
 - [ ] Disable schedule/webhook/workflow trigger.
 - [ ] Stop rerunning the automation.
@@ -20,5 +20,5 @@ Use when a code or Zoho automation deployment creates bad behavior.
 ## Prevention
 
 - [ ] Add a test case.
-- [ ] Update AGENTS.md/review checklist if needed.
+- [ ] Update `AGENTS.md`/review checklist if needed.
 - [ ] Update field maps/business rules if the issue was caused by stale documentation.

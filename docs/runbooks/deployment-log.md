@@ -44,3 +44,16 @@ Record every production-relevant deployment or Zoho change.
 - Result: merged into `main`
 - Rollback plan: revert PR #1 or revert individual cleanup commit if needed
 - Notes: this cleanup documents code-observed settings and removes one unnecessary placeholder folder. It does not deploy anything into Zoho/Catalyst.
+
+## 2026-07-01 — System-Based Repo Structure
+
+- System: GitHub
+- Repo branch / commit: `structure/system-based-layout-2026-07-01` / pending merge
+- Files changed: moved runtime-owned code and docs under `src/<system>/`, moved decision log to `docs/adr/`, moved samples under source-system folders, restored repo hygiene docs/tools, restored webhook package metadata/lockfile, added sanitized webhook operations/security docs
+- Business rule changed? no
+- Dry-run completed? not applicable
+- Smoke test completed? not applicable
+- Deployed by: ChatGPT / Codex-style repo structure cleanup
+- Result: pending review and merge
+- Rollback plan: close PR without merging, or revert the structure PR after merge
+- Notes: no production automation logic was changed. This is a repository organization change only. Returned-payment webhook operational docs were sanitized to avoid storing live endpoint/payment/invoice identifiers.

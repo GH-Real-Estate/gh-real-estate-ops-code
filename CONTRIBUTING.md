@@ -2,7 +2,7 @@
 
 This is currently a solo-operator repo. Still use a controlled workflow for material changes.
 
-## Simple workflow
+## Simple Workflow
 
 ```text
 main = stable/current reference
@@ -11,21 +11,21 @@ pull requests = review checkpoint
 manual deployment = controlled production change
 ```
 
-## Branch names
+## Branch Names
 
-Use short, descriptive names:
+Use short, descriptive names that include the affected system:
 
 ```text
-late-fee/fix-duplicate-prevention
-late-fee/update-install-checklist
-returned-payment/add-replay-check
-books/update-field-map
-creator/add-sanitized-export
-contracts/update-merge-map
+zoho-books/late-fee-duplicate-prevention
+zoho-books/update-field-map
+zoho-payments/returned-fee-replay-check
+zoho-crm/update-application-map
+zoho-creator/add-sanitized-export
+zoho-contracts/update-merge-map
 docs/update-github-settings
 ```
 
-## Commit messages
+## Commit Messages
 
 Good:
 
@@ -44,7 +44,7 @@ new code
 asdf
 ```
 
-## Pull request standard
+## Pull Request Standard
 
 Open a pull request for any change that affects:
 
@@ -57,7 +57,7 @@ Open a pull request for any change that affects:
 - Zoho field mappings.
 - Lease/business-rule logic.
 
-## Deployment rule
+## Deployment Rule
 
 Merging to `main` does not mean deployed. Production deployment happens only after manually installing/updating the code in Zoho/Catalyst and recording it in:
 

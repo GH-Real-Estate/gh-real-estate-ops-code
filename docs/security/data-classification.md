@@ -1,6 +1,6 @@
 # Data Classification
 
-## Green: allowed in GitHub
+## Green: Allowed In GitHub
 
 - Code.
 - Sanitized sample payloads.
@@ -10,7 +10,7 @@
 - Technical setup notes.
 - Deployment logs without PII.
 
-## Yellow: allowed only if sanitized
+## Yellow: Allowed Only If Sanitized
 
 - Zoho Creator `.ds` exports.
 - Webhook payloads.
@@ -20,7 +20,7 @@
 
 Sanitized means no real tenant, payment, bank, signature, ID, lease, phone, email, or private document data.
 
-## Red: never allowed in GitHub
+## Red: Never Allowed In GitHub
 
 - API keys, OAuth tokens, refresh tokens, passwords, private keys.
 - SSNs, IDs, bank details, pay stubs, immigration docs.
