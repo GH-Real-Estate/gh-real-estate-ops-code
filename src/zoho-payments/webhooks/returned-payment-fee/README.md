@@ -21,8 +21,15 @@ The trigger event originates from Zoho Payments. The webhook then writes to Zoho
 |---|---|
 | `src/index.js` | Webhook source code |
 | `package.json` | Node package/runtime manifest |
+| `package-lock.json` | Locked dependency versions |
+| `catalyst-config.json` | Catalyst deployment metadata |
 | `install-checklist.md` | Install and verification checklist |
 | `test-cases.md` | Sanitized test plan |
+| `docs/environment-variables.md` | Runtime configuration guide |
+| `docs/security-model.md` | Webhook security model |
+| `docs/operations-runbook.md` | Live/dry-run/recovery runbook |
+| `docs/file-manifest.md` | Function package contents |
+| `docs/changelog.md` | Function-level changelog |
 | `../../../zoho-books/field-maps/books-automation-settings.md` | Related Books item/custom-field settings |
 | `../../../../docs/business-rules/lease-automation-rules.md` | Lease fee rule verification |
 | `../../../../samples/zoho-payments/returned-payment.sample.json` | Sanitized sample event |
