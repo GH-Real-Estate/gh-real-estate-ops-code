@@ -1,15 +1,2135 @@
-/*
- * Late_Fee_Guard.deluge
- *
- * Placeholder only.
- * Replace this file with the current final GH Real Estate Zoho Books Deluge script.
- *
- * Rules before committing production code:
- * - No real tenant PII in comments/logs.
- * - No OAuth tokens/API secrets.
- * - Must match the final signed lease.
- * - Must prevent duplicate fees.
- * - Must document item/template/custom-field IDs in zoho-books/field-maps/books-automation-settings.md.
- */
 
-info "Late Fee Guard placeholder. Replace with final approved Deluge code before deployment.";
+// =================================================================================================
+// FILE: Late_Fee_Guard_ScheduleBody (Zoho Books Scheduled Function)
+// VERSION: v64_LEASE_ALIGNED_D5_D10_10APR_PATCHED
+// PATCHED: 2026-06-30
+//
+// LOGGING:
+//   - Default (debugMode=false): minimal output (SKIP, ERROR, WARN/ALERT only).
+//   - Set debugMode=true to enable verbose diagnostics (template IDs, API responses, paging, run summary).
+//
+// READ ME (Operational Summary)
+//   - Scans unpaid invoices, then enforces due_date <= today (treat as overdue in-code).
+//   - Only processes invoices explicitly marked as rent: cf_is_rent_invoice == true.
+//   - Creates late-fee invoices by lease-aligned stage: D5=5%, D10=5%, and recurring simple interest at 10% APR after 30+ days.
+//   - Suppresses late-fee creation while an ACH/online payment is still initiated, pending, or processing.
+//   - Sends late-fee invoice emails using INVOICE email templates (Invoice Notification scope).
+//   - Forces Zoho Payments/online payment options on fee invoices when configured.
+//
+// IMPORTANT
+//   - Returned-payment / returned-check fee creation has been intentionally removed from this script.
+//   - Returned-payment fees should be handled by a separate Zoho Payments webhook/schedule workflow.
+//   - Existing RF-/RFINV_/RFATTEMPT_ historical tokens are preserved if already present, but this job no longer creates RF invoices.
+// =================================================================================================
+apiBase = "https://www.zohoapis.com/books/v3";
+// NOTE: invokeurl 'connection' must be a Connection Link Name literal (NOT a variable).
+// If your Books connection link name is different, global-replace "zbooks" in this file.
+// -------------------- CONTEXT --------------------
+orgId = "";
+if(organization != null && organization.get("organization_id") != null)
+{
+	orgId = organization.get("organization_id").toString();
+}
+if(orgId == "")
+{
+	info "ERROR: Missing organization_id.";
+	return;
+}
+today = zoho.currentdate;
+nowStr = zoho.currenttime.toString("yyyy-MM-dd HH:mm");
+currentHour24 = 0;
+currentMinute = 0;
+try 
+{
+	currentHour24 = zoho.currenttime.toString("HH").toLong();
+	currentMinute = zoho.currenttime.toString("mm").toLong();
+}
+catch (eNowParts)
+{
+	currentHour24 = 0;
+	currentMinute = 0;
+}
+// -------------------- CONFIG --------------------
+// Manual invoice series
+feeInvoicePrefix = "LF-";
+feeInvoiceNumberDigits = 6;
+// Item IDs (stable)
+lateFeeItemId = "5858793000001596035";
+// Optional: create a separate Books item for "Delinquent Rent Interest" and paste its item_id here.
+// If blank, interest invoices will use lateFeeItemId as a fallback, but the description will still identify the charge as interest.
+interestItemId = "5858793000003568001";
+// Invoice custom fields
+stagesFieldApiName = "cf_late_fee_stages_applied";
+rentInvoiceFlagApiName = "cf_is_rent_invoice";
+invoiceDoNotAssessApiName = "cf_do_not_assess_fees";
+invoiceFeeExemptApiName = "cf_fee_exempt";
+invoiceFeeExemptUntilApiName = "cf_fee_exempt_until";
+// Contact custom fields (optional)
+customerFeeExemptApiName = "cf_fee_exempt";
+customerFeeExemptUntilApiName = "cf_fee_exempt_until";
+// Run lock (daily token stored in stage field)
+enableRunLock = true;
+runLockToken = "RUNLOCK_" + today.toString("yyyyMMdd");
+// Stage field format
+useMultilineTokensAndLog = true;
+maxLogLinesToKeep = 25;
+// Email (Invoice Notification templates by name; best effort)
+autoEmailFeeInvoices = true;
+enableFeeInvoiceEmailTemplates = true;
+lateFeeInvoiceEmailTemplateName = "Fee Invoice - Late Fee";
+// Email template IDs (preferred; pulled from the edit URL parameter `email_template_id`).
+// If blank, the script will attempt to resolve template IDs by name via /settings/emailtemplates.
+lateFeeInvoiceEmailTemplateId = "5858793000001838039";
+// Email delivery improvements
+// 1) Mark newly-created fee invoices as SENT before emailing (avoids draft-email edge cases).
+markFeeInvoicesAsSentBeforeEmail = true;
+// 2) If template-derived recipients are empty, fall back to customer/contact email(s) on file.
+enableRecipientFallbackToCustomerEmail = true;
+// PDF template inheritance (recommended)
+// When true, fee invoices will use the same PDF template_id as the source overdue invoice.
+inheritSourceInvoicePdfTemplate = true;
+// Online payment option inheritance (recommended when using invoice links / Pay Now)
+// When true, fee invoices will inherit payment options (payment gateways) from the source invoice.
+// This helps ensure the Pay Now link works consistently for fee invoices created via API.
+inheritSourceInvoicePaymentOptions = true;
+// Online Payments Enforcement (Fee Invoices)
+// By default we inherit payment_options from the SOURCE invoice. As a backstop, we can attempt to force
+// a specific gateway_name if the created fee invoice ends up with zero gateways.
+// NOTE: Zoho Books API documentation lists gateway_name values for common gateways; Zoho Payments may
+// appear as "zoho_payments" (or another internal value) in your account. If the fallback update logs an
+// INVALID_DATA error, set forcePaymentGatewayName to the gateway_name value found on a normal invoice's
+// payment_options.payment_gateways[] payload.
+enableOnlinePaymentsForFeeInvoices = true;
+allowPartialPaymentsOnFeeInvoices = false;
+forcePaymentGatewayName = "zoho_payments";
+// API resiliency
+retryMaxAttempts = 3;
+// Safety
+// NOTE: We intentionally query "Status.Unpaid" and then enforce due_date <= today in code.
+// This avoids edge cases where a test invoice isn't returned by Status.Overdue (e.g., not "sent" yet).
+invoiceListFilterBy = "Status.Unpaid";
+perPage = 200;
+maxPages = 10;
+maxFeeInvoicesPerRun = 30;
+// Lease timing controls
+// Lease Section 3.5 charges late fees only after 5:00 p.m. Central Time on the 5th and 10th day of the month.
+// The script enforces the 5:00 p.m. cutoff when it runs on the assessment date. Schedule this function after 5:00 p.m. CT.
+lateFeeCutoffHour = 17;
+// Lease Section 3.6 interest controls.
+enableInterestOnDelinquentRent = true;
+interestAprPct = 10.00;
+// "More than 30 days after the original due date" means the first automated interest run is eligible on day 31.
+interestFirstEligibleDaysAfterDue = 31;
+// After the first interest invoice, assess only once every 30 days to avoid tiny daily invoices.
+interestAssessmentFrequencyDays = 30;
+interestMinimumInvoiceAmount = 1.00;
+// Debug / Diagnostics
+// When true, logs "skip reasons" for a limited number of invoices to help troubleshoot configuration issues.
+debugMode = false;
+// Set to true for verbose runtime diagnostics (paging, template IDs, API responses, run summary).
+debugMaxInvoicesToExplain = 50;
+loggedSourcePaymentGateways = false;
+// Late fee stages aligned to current lease Section 3.5.
+// Assumption: monthly rent invoices have due_date on the 1st. Therefore:
+//   D5  = due_date + 4 days  => 5th day of the month, after 5:00 p.m. CT
+//   D10 = due_date + 9 days  => 10th day of the month, after 5:00 p.m. CT
+// Returned-payment fee creation remains intentionally excluded and should be handled separately.
+lateFeeStages = List();
+stg1 = Map();
+stg1.put("token","D5");
+stg1.put("days",4);
+stg1.put("type","pct");
+stg1.put("pct",5);
+stg1.put("requires_cutoff_hour",true);
+lateFeeStages.add(stg1);
+stg2 = Map();
+stg2.put("token","D10");
+stg2.put("days",9);
+stg2.put("type","pct");
+stg2.put("pct",5);
+stg2.put("requires_cutoff_hour",true);
+lateFeeStages.add(stg2);
+// Caps
+// Lease Section 3.5 caps late fees for a monthly rent charge at 10% of unpaid Rent for that month.
+// This cap applies only to late fees, not separately permitted simple interest under Section 3.6.
+enableStageCap = false;
+maxLateFeePerStage = 100.00;
+enableTotalCap = true;
+maxTotalLateFeesPctOfUnpaidRent = 10.00;
+// Payment status tokens (substring match)
+processingStatusTokens = List();
+processingStatusTokens.add("pending");
+processingStatusTokens.add("processing");
+processingStatusTokens.add("initiated");
+processingStatusTokens.add("in process");
+processingStatusTokens.add("in review");
+processingStatusTokens.add("review");
+processingStatusTokens.add("verification");
+processingStatusTokens.add("verifying");
+processingStatusTokens.add("authorized");
+processingStatusTokens.add("authorised");
+processingStatusTokens.add("hold");
+paidStatusTokens = List();
+paidStatusTokens.add("paid");
+paidStatusTokens.add("success");
+paidStatusTokens.add("succeeded");
+paidStatusTokens.add("completed");
+failStatusTokens = List();
+failStatusTokens.add("fail");
+failStatusTokens.add("failed");
+failStatusTokens.add("return");
+failStatusTokens.add("returned");
+failStatusTokens.add("reject");
+failStatusTokens.add("rejected");
+failStatusTokens.add("declin");
+failStatusTokens.add("declined");
+failStatusTokens.add("error");
+failStatusTokens.add("nsf");
+// Token prefixes
+lateFeeTotalTokenPrefix = "LFTOTAL=";
+lateFeeInvoiceIdTokenPrefix = "LFINV_";
+// LFINV_<StageToken>=<FeeInvoiceId>
+lastBalanceTokenPrefix = "LASTBAL=";
+// LASTBAL=<InvoiceBalanceAtRun>
+interestLastThroughTokenPrefix = "INTTHRU=";
+// INTTHRU=<yyyy-MM-dd> last date through which simple delinquent-rent interest was invoiced
+interestTotalTokenPrefix = "INTTOTAL=";
+// INTTOTAL=<TotalInterestInvoicesCreatedByThisGuard>
+// -------------------- STARTUP VALIDATION --------------------
+validationErrors = List();
+if(feeInvoicePrefix == "")
+{
+	validationErrors.add("Missing feeInvoicePrefix configuration (LF-).");
+}
+if(feeInvoiceNumberDigits <= 0)
+{
+	validationErrors.add("feeInvoiceNumberDigits must be > 0.");
+}
+if(lateFeeItemId == "")
+{
+	validationErrors.add("Missing lateFeeItemId (Late Fee item_id).");
+}
+if(stagesFieldApiName == "")
+{
+	validationErrors.add("Missing stagesFieldApiName (Invoice custom field to store tokens/log).");
+}
+if(rentInvoiceFlagApiName == "")
+{
+	validationErrors.add("Missing rentInvoiceFlagApiName (Invoice custom field that marks rent invoices).");
+}
+if(validationErrors.size() > 0)
+{
+	for each  ve in validationErrors
+	{
+		info "ERROR: " + ve;
+	}
+	return;
+}
+// -------------------- ITERATORS --------------------
+// Zoho Books Deluge does not support {1..N} range syntax in for-each loops.
+// Use prebuilt Lists instead.
+ITER_60 = List();
+ITER_50 = List();
+// 1..60
+ITER_60.add(1);
+ITER_60.add(2);
+ITER_60.add(3);
+ITER_60.add(4);
+ITER_60.add(5);
+ITER_60.add(6);
+ITER_60.add(7);
+ITER_60.add(8);
+ITER_60.add(9);
+ITER_60.add(10);
+ITER_60.add(11);
+ITER_60.add(12);
+ITER_60.add(13);
+ITER_60.add(14);
+ITER_60.add(15);
+ITER_60.add(16);
+ITER_60.add(17);
+ITER_60.add(18);
+ITER_60.add(19);
+ITER_60.add(20);
+ITER_60.add(21);
+ITER_60.add(22);
+ITER_60.add(23);
+ITER_60.add(24);
+ITER_60.add(25);
+ITER_60.add(26);
+ITER_60.add(27);
+ITER_60.add(28);
+ITER_60.add(29);
+ITER_60.add(30);
+ITER_60.add(31);
+ITER_60.add(32);
+ITER_60.add(33);
+ITER_60.add(34);
+ITER_60.add(35);
+ITER_60.add(36);
+ITER_60.add(37);
+ITER_60.add(38);
+ITER_60.add(39);
+ITER_60.add(40);
+ITER_60.add(41);
+ITER_60.add(42);
+ITER_60.add(43);
+ITER_60.add(44);
+ITER_60.add(45);
+ITER_60.add(46);
+ITER_60.add(47);
+ITER_60.add(48);
+ITER_60.add(49);
+ITER_60.add(50);
+ITER_60.add(51);
+ITER_60.add(52);
+ITER_60.add(53);
+ITER_60.add(54);
+ITER_60.add(55);
+ITER_60.add(56);
+ITER_60.add(57);
+ITER_60.add(58);
+ITER_60.add(59);
+ITER_60.add(60);
+// 1..50
+ITER_50.add(1);
+ITER_50.add(2);
+ITER_50.add(3);
+ITER_50.add(4);
+ITER_50.add(5);
+ITER_50.add(6);
+ITER_50.add(7);
+ITER_50.add(8);
+ITER_50.add(9);
+ITER_50.add(10);
+ITER_50.add(11);
+ITER_50.add(12);
+ITER_50.add(13);
+ITER_50.add(14);
+ITER_50.add(15);
+ITER_50.add(16);
+ITER_50.add(17);
+ITER_50.add(18);
+ITER_50.add(19);
+ITER_50.add(20);
+ITER_50.add(21);
+ITER_50.add(22);
+ITER_50.add(23);
+ITER_50.add(24);
+ITER_50.add(25);
+ITER_50.add(26);
+ITER_50.add(27);
+ITER_50.add(28);
+ITER_50.add(29);
+ITER_50.add(30);
+ITER_50.add(31);
+ITER_50.add(32);
+ITER_50.add(33);
+ITER_50.add(34);
+ITER_50.add(35);
+ITER_50.add(36);
+ITER_50.add(37);
+ITER_50.add(38);
+ITER_50.add(39);
+ITER_50.add(40);
+ITER_50.add(41);
+ITER_50.add(42);
+ITER_50.add(43);
+ITER_50.add(44);
+ITER_50.add(45);
+ITER_50.add(46);
+ITER_50.add(47);
+ITER_50.add(48);
+ITER_50.add(49);
+ITER_50.add(50);
+// -------------------- CACHES --------------------
+customerCache = Map();
+// customer_id -> {exempt, until}
+emailTemplateCache = Map();
+// lower(name) -> template_id
+// -------------------- EMAIL TEMPLATE ID RESOLUTION (best effort) --------------------
+// Strategy:
+//   1) Prefer explicit template IDs (most reliable).
+//   2) If any IDs are missing, attempt to resolve by name via /settings/emailtemplates.
+if(enableFeeInvoiceEmailTemplates)
+{
+	// Seed cache from explicit IDs (if provided)
+	if(lateFeeInvoiceEmailTemplateName != "" && lateFeeInvoiceEmailTemplateId != "")
+	{
+		emailTemplateCache.put(lateFeeInvoiceEmailTemplateName.toLowerCase(),lateFeeInvoiceEmailTemplateId);
+	}
+	// Fallback: resolve by name only if anything is missing
+	needLookup = false;
+	if(lateFeeInvoiceEmailTemplateName != "" && !emailTemplateCache.containsKey(lateFeeInvoiceEmailTemplateName.toLowerCase()))
+	{
+		needLookup = true;
+	}
+	if(needLookup)
+	{
+		for each  attTpl in ITER_60
+		{
+			if(attTpl > retryMaxAttempts)
+			{
+				break;
+			}
+			try 
+			{
+				tplParams = Map();
+				tplParams.put("organization_id",orgId);
+				tplResp = invokeurl
+				[
+					url :apiBase + "/settings/emailtemplates"
+					type :GET
+					parameters:tplParams
+					connection:"zbooks"
+				];
+				if(tplResp != null && tplResp.get("email_templates") != null)
+				{
+					for each  tpl in tplResp.get("email_templates")
+					{
+						nm = ifnull(tpl.get("name"),"").toString().trim();
+						id = ifnull(tpl.get("email_template_id"),"").toString().trim();
+						if(nm != "" && id != "")
+						{
+							emailTemplateCache.put(nm.toLowerCase(),id);
+						}
+					}
+				}
+				break;
+			}
+			catch (tplErr)
+			{
+				// If not supported or rate-limited, will send using the default invoice email template.
+			}
+		}
+	}
+}
+// -------------------- GET NEXT LF NUMBER + PDF TEMPLATE_ID --------------------
+feeSeq = 1;
+lateFeeInvoiceTemplateId = "";
+// Latest LF-
+seriesParams = Map();
+seriesParams.put("organization_id",orgId);
+seriesParams.put("invoice_number_startswith",feeInvoicePrefix);
+seriesParams.put("sort_column","invoice_number");
+seriesParams.put("sort_order","D");
+seriesParams.put("per_page",1);
+seriesParams.put("page",1);
+seriesResp = invokeurl
+[
+	url :apiBase + "/invoices"
+	type :GET
+	parameters:seriesParams
+	connection:"zbooks"
+];
+if(seriesResp != null && seriesResp.get("invoices") != null && seriesResp.get("invoices").size() > 0)
+{
+	lastInv = seriesResp.get("invoices").get(0);
+	lastNo = ifnull(lastInv.get("invoice_number"),"").toString();
+	lastId = ifnull(lastInv.get("invoice_id"),"").toString();
+	if(lastNo != "")
+	{
+		seqStr = lastNo.remove(feeInvoicePrefix).trim();
+		try 
+		{
+			feeSeq = seqStr.toLong() + 1;
+		}
+		catch (eSeq)
+		{
+			feeSeq = 1;
+		}
+	}
+	if(lastId != "")
+	{
+		dp = Map();
+		dp.put("organization_id",orgId);
+		detail = invokeurl
+		[
+			url :apiBase + "/invoices/" + lastId
+			type :GET
+			parameters:dp
+			connection:"zbooks"
+		];
+		if(detail != null && detail.get("invoice") != null)
+		{
+			lateFeeInvoiceTemplateId = ifnull(detail.get("invoice").get("template_id"),"").toString();
+		}
+	}
+}
+// Build next numbers with padding
+seqTxt = feeSeq.toString();
+pad = feeInvoiceNumberDigits - seqTxt.length();
+if(pad > 0)
+{
+	for each  i in ITER_60
+	{
+		if(i > pad)
+		{
+			break;
+		}
+		seqTxt = "0" + seqTxt;
+	}
+}
+nextFeeInvoiceNumber = feeInvoicePrefix + seqTxt;
+// -------------------- MAIN LOOP (Unpaid + due_date <= today) --------------------
+createdFeeInvoicesCount = 0;
+emailedFeeInvoicesCount = 0;
+scannedInvoicesCount = 0;
+eligibleOverdueRentCount = 0;
+debugExplainCount = 0;
+runWarnings = List();
+for each  page in ITER_50
+{
+	if(page > maxPages)
+	{
+		break;
+	}
+	listParams = Map();
+	listParams.put("organization_id",orgId);
+	listParams.put("filter_by",invoiceListFilterBy);
+	listParams.put("sort_column","due_date");
+	listParams.put("sort_order","A");
+	listParams.put("per_page",perPage);
+	listParams.put("page",page);
+	invoicesResp = invokeurl
+	[
+		url :apiBase + "/invoices"
+		type :GET
+		parameters:listParams
+		connection:"zbooks"
+	];
+	if(invoicesResp == null || invoicesResp.get("invoices") == null || invoicesResp.get("invoices").size() == 0)
+	{
+		if(page == 1 && debugMode)
+		{
+			info "DIAG: No invoices returned for filter_by=" + invoiceListFilterBy + ". If you are testing, ensure the invoice is SENT/UNPAID (not Draft) and Due Date is in the past.";
+		}
+		break;
+	}
+	for each  invRec in invoicesResp.get("invoices")
+	{
+		if(createdFeeInvoicesCount >= maxFeeInvoicesPerRun)
+		{
+			break;
+		}
+		invId = ifnull(invRec.get("invoice_id"),"").toString();
+		invNumber = ifnull(invRec.get("invoice_number"),"").toString();
+		customerId = ifnull(invRec.get("customer_id"),"").toString();
+		balanceDue = ifnull(invRec.get("balance"),0).toDecimal();
+		invoiceTotal = ifnull(invRec.get("total"),0).toDecimal();
+		dueDateStr = ifnull(invRec.get("due_date"),"").toString();
+		if(invId == "" || customerId == "" || dueDateStr == "")
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: invoice missing required fields (invoice_id/customer_id/due_date). invoice_number=" + invNumber;
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		scannedInvoicesCount = scannedInvoicesCount + 1;
+		if(balanceDue <= 0)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " balance<=0 (" + balanceDue.toString() + ").";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		invStatus = ifnull(invRec.get("status"),"").toString().trim();
+		// Skip fee invoices
+		if(invNumber != "" && (invNumber.indexOf(feeInvoicePrefix) == 0 || invNumber.indexOf("RF-") == 0))
+		{
+			continue;
+		}
+		dueDate = null;
+		try 
+		{
+			dueDate = dueDateStr.toDate("yyyy-MM-dd");
+		}
+		catch (eDue)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " due_date parse failed (" + dueDateStr + ").";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		if(dueDate > today)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " due_date is in the future (" + dueDateStr + ").";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		// Always load full invoice detail.
+		// Zoho Books list responses are not reliable enough for custom-field/idempotency reads;
+		// we need the source invoice detail on every candidate invoice to avoid silent duplicate fees.
+		customFields = invRec.get("custom_fields");
+		sourceInvoiceTemplateId = ifnull(invRec.get("template_id"),"").toString();
+		sourcePaymentOptions = invRec.get("payment_options");
+		invoiceAchPaymentInitiatedObj = invRec.get("ach_payment_initiated");
+		detailInvoice = null;
+		for each  attDet in ITER_60
+		{
+			if(attDet > retryMaxAttempts)
+			{
+				break;
+			}
+			try 
+			{
+				dpX = Map();
+				dpX.put("organization_id",orgId);
+				detailX = invokeurl
+				[
+					url :apiBase + "/invoices/" + invId
+					type :GET
+					parameters:dpX
+					connection:"zbooks"
+				];
+				if(detailX != null && detailX.get("invoice") != null)
+				{
+					detailInvoice = detailX.get("invoice");
+					customFields = detailInvoice.get("custom_fields");
+					sourceInvoiceTemplateId = ifnull(detailInvoice.get("template_id"),sourceInvoiceTemplateId).toString();
+					sourcePaymentOptions = detailInvoice.get("payment_options");
+					invoiceAchPaymentInitiatedObj = detailInvoice.get("ach_payment_initiated");
+					break;
+				}
+			}
+			catch (eDet)
+			{
+				// retry
+			}
+		}
+		// Debug: capture gateway_name(s) seen on the source invoice once per run (helps troubleshoot Pay Now issues).
+		if(debugMode && !loggedSourcePaymentGateways && sourcePaymentOptions != null && sourcePaymentOptions.get("payment_gateways") != null)
+		{
+			try 
+			{
+				gwNames = List();
+				for each  pg in sourcePaymentOptions.get("payment_gateways")
+				{
+					if(pg != null && pg.get("gateway_name") != null)
+					{
+						gwNames.add(pg.get("gateway_name").toString());
+					}
+				}
+				info "DEBUG: Source invoice payment gateways (gateway_name) => " + gwNames.toString();
+				loggedSourcePaymentGateways = true;
+			}
+			catch (eGwLog)
+			{
+				// no-op
+			}
+		}
+		// Normalize status (list API sometimes omits it in certain views)
+		if(invStatus == "" && detailInvoice != null)
+		{
+			invStatus = ifnull(detailInvoice.get("status"),"").toString().trim();
+		}
+		invStatusLow = invStatus.toLowerCase();
+		// Safety: never process Draft/Void invoices
+		if(invStatusLow == "draft" || invStatusLow == "void" || invStatusLow == "deleted")
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " status=" + invStatus + " (not eligible).";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		// -------------------- Invoice Custom Field Extraction --------------------
+		// Normalizes all invoice-level controls used by this job.
+		// NOTE: Zoho Books returns custom_fields as a list of maps with api_name + value.
+		invoiceAchPaymentInitiated = false;
+		if(invoiceAchPaymentInitiatedObj == true || ifnull(invoiceAchPaymentInitiatedObj,"").toString().toLowerCase() == "true")
+		{
+			invoiceAchPaymentInitiated = true;
+		}
+		isRentInvoice = false;
+		invDoNotAssess = false;
+		invFeeExempt = false;
+		invFeeExemptUntil = null;
+		stageFieldRaw = "";
+		stageFieldCustomFieldId = "";
+		if(customFields != null)
+		{
+			for each  cf in customFields
+			{
+				cfApi = ifnull(cf.get("api_name"),"").toString();
+				cfValObj = cf.get("value");
+				cfVal = ifnull(cfValObj,"").toString().trim();
+				cfValLow = cfVal.toLowerCase();
+				if(cfApi == stagesFieldApiName)
+				{
+					stageFieldRaw = cfVal;
+					if(cf.get("customfield_id") != null)
+					{
+						stageFieldCustomFieldId = cf.get("customfield_id").toString();
+					}
+					continue;
+				}
+				if(cfApi == rentInvoiceFlagApiName)
+				{
+					if(cfValObj == true || cfValLow == "true" || cfValLow == "yes" || cfValLow == "1")
+					{
+						isRentInvoice = true;
+					}
+					continue;
+				}
+				if(cfApi == invoiceDoNotAssessApiName)
+				{
+					if(cfValObj == true || cfValLow == "true" || cfValLow == "yes" || cfValLow == "1")
+					{
+						invDoNotAssess = true;
+					}
+					continue;
+				}
+				if(cfApi == invoiceFeeExemptApiName)
+				{
+					if(cfValObj == true || cfValLow == "true" || cfValLow == "yes" || cfValLow == "1")
+					{
+						invFeeExempt = true;
+					}
+					continue;
+				}
+				if(cfApi == invoiceFeeExemptUntilApiName && cfVal != "")
+				{
+					try 
+					{
+						// Books typically sends yyyy-MM-dd; some orgs may send datetime (YYYY-MM-ddTHH:mm:ss...).
+						datePart = cfVal;
+						if(cfVal.indexOf("T") > 0)
+						{
+							try 
+							{
+								datePart = cfVal.toList("T").get(0).toString();
+							}
+							catch (eSplit)
+							{
+								datePart = cfVal;
+							}
+						}
+						invFeeExemptUntil = datePart.toDate("yyyy-MM-dd");
+					}
+					catch (eDtInv)
+					{
+						invFeeExemptUntil = null;
+					}
+					continue;
+				}
+			}
+		}
+		// Gate: rent invoices only
+		if(!isRentInvoice)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " is not marked as rent (" + rentInvoiceFlagApiName + " is not TRUE).";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		eligibleOverdueRentCount = eligibleOverdueRentCount + 1;
+		// Invoice-level exemptions
+		if(invDoNotAssess || invFeeExempt)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " invoice-level exemption (DoNotAssess=" + invDoNotAssess.toString() + ", FeeExempt=" + invFeeExempt.toString() + ").";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		if(invFeeExemptUntil != null && today <= invFeeExemptUntil)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " invoice exempt until " + invFeeExemptUntil.toString("yyyy-MM-dd") + ".";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		// Customer-level exemptions
+		custExempt = false;
+		custUntil = null;
+		if(customerCache.containsKey(customerId))
+		{
+			cc = customerCache.get(customerId);
+			custExempt = ifnull(cc.get("exempt"),false);
+			custUntil = cc.get("until");
+		}
+		else
+		{
+			try 
+			{
+				cp = Map();
+				cp.put("organization_id",orgId);
+				cr = invokeurl
+				[
+					url :apiBase + "/contacts/" + customerId
+					type :GET
+					parameters:cp
+					connection:"zbooks"
+				];
+				if(cr != null && cr.get("contact") != null)
+				{
+					cfs = cr.get("contact").get("custom_fields");
+					if(cfs != null)
+					{
+						for each  ccf in cfs
+						{
+							cApi = ifnull(ccf.get("api_name"),"").toString();
+							cVal = ifnull(ccf.get("value"),"").toString().trim();
+							cLow = cVal.toLowerCase();
+							if(cApi == customerFeeExemptApiName)
+							{
+								if(cLow == "true" || cLow == "yes" || cLow == "1")
+								{
+									custExempt = true;
+								}
+								continue;
+							}
+							if(cApi == customerFeeExemptUntilApiName && cVal != "")
+							{
+								try 
+								{
+									custUntil = cVal.toDate("yyyy-MM-dd");
+								}
+								catch (eDt2)
+								{
+									custUntil = null;
+								}
+								continue;
+							}
+						}
+					}
+				}
+			}
+			catch (eC)
+			{
+				// default
+			}
+			cc = Map();
+			cc.put("exempt",custExempt);
+			cc.put("until",custUntil);
+			customerCache.put(customerId,cc);
+		}
+		if(custExempt)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " customer is fee-exempt.";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		if(custUntil != null && today <= custUntil)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " customer exempt until " + custUntil.toString("yyyy-MM-dd") + ".";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		// -------------------- Parse stage field (TOKENS= + LOG:) --------------------
+		tokenCsv = "";
+		logLines = List();
+		foundTokensLine = false;
+		if(stageFieldRaw != "" && (stageFieldRaw.indexOf("\n") >= 0 || stageFieldRaw.indexOf("TOKENS=") >= 0))
+		{
+			lines = stageFieldRaw.toList("\n");
+			for each  ln in lines
+			{
+				lineTxt = ln.toString().trim();
+				if(lineTxt == "")
+				{
+					continue;
+				}
+				if(lineTxt.indexOf("TOKENS=") == 0)
+				{
+					tokenCsv = lineTxt.remove("TOKENS=").trim();
+					foundTokensLine = true;
+					continue;
+				}
+				if(lineTxt.indexOf("LOG:") == 0)
+				{
+					logLines.add(lineTxt);
+					continue;
+				}
+			}
+		}
+		if(!foundTokensLine)
+		{
+			tokenCsv = stageFieldRaw;
+			if(tokenCsv.indexOf("\n") >= 0)
+			{
+				tokenCsv = tokenCsv.replaceAll("\n",",");
+			}
+		}
+		tokens = List();
+		if(tokenCsv != "")
+		{
+			tokens = tokenCsv.toList(",");
+		}
+		baseTokens = List();
+		appliedStageTokens = Map();
+		lateFeeTotalCharged = 0.0;
+		interestTotalCharged = 0.0;
+		interestLastThroughDate = null;
+		lastBalanceSnapshot = -1.0;
+		for each  t in tokens
+		{
+			tok = t.toString().trim();
+			if(tok == "")
+			{
+				continue;
+			}
+			// Running totals / telemetry
+			if(tok.indexOf(lateFeeTotalTokenPrefix) == 0)
+			{
+				v = tok.remove(lateFeeTotalTokenPrefix).trim();
+				try 
+				{
+					lateFeeTotalCharged = v.toDecimal();
+				}
+				catch (eLfTot)
+				{
+					lateFeeTotalCharged = 0.0;
+				}
+				continue;
+			}
+			if(tok.indexOf(lastBalanceTokenPrefix) == 0)
+			{
+				b = tok.remove(lastBalanceTokenPrefix).trim();
+				try 
+				{
+					lastBalanceSnapshot = b.toDecimal();
+				}
+				catch (eBal)
+				{
+					lastBalanceSnapshot = -1.0;
+				}
+				continue;
+			}
+			if(tok.indexOf(interestLastThroughTokenPrefix) == 0)
+			{
+				vIntThru = tok.remove(interestLastThroughTokenPrefix).trim();
+				try 
+				{
+					interestLastThroughDate = vIntThru.toDate("yyyy-MM-dd");
+				}
+				catch (eIntThru)
+				{
+					interestLastThroughDate = null;
+				}
+				continue;
+			}
+			if(tok.indexOf(interestTotalTokenPrefix) == 0)
+			{
+				vIntTot = tok.remove(interestTotalTokenPrefix).trim();
+				try 
+				{
+					interestTotalCharged = vIntTot.toDecimal();
+				}
+				catch (eIntTot)
+				{
+					interestTotalCharged = 0.0;
+				}
+				continue;
+			}
+			// Strong idempotency: Late fee invoice id token
+			if(tok.indexOf(lateFeeInvoiceIdTokenPrefix) == 0)
+			{
+				// LFINV_<StageToken>=<InvoiceId>
+				parts2 = tok.toList("=");
+				if(parts2 != null && parts2.size() >= 2)
+				{
+					keyPart2 = parts2.get(0).toString();
+					stageKey = keyPart2.remove(lateFeeInvoiceIdTokenPrefix).trim();
+					if(stageKey != "")
+					{
+						appliedStageTokens.put(stageKey,true);
+					}
+				}
+				baseTokens.add(tok);
+				continue;
+			}
+			// Default: keep token
+			baseTokens.add(tok);
+		}
+		for each  stx in lateFeeStages
+		{
+			sTok = stx.get("token").toString();
+			if(baseTokens.contains(sTok))
+			{
+				appliedStageTokens.put(sTok,true);
+			}
+		}
+		// Legacy compatibility: the prior version used D3 as a 10% first-stage late fee.
+		// If D3 exists, treat both current D5 and D10 lease stages as already satisfied to avoid duplicate late-fee billing.
+		if(appliedStageTokens.containsKey("D3"))
+		{
+			appliedStageTokens.put("D5",true);
+			appliedStageTokens.put("D10",true);
+		}
+		// Legacy compatibility: the prior version used a one-time INT30 token at 12% APR.
+		// Do not re-bill the first 30-day interest period if that token exists.
+		if(appliedStageTokens.containsKey("INT30") && interestLastThroughDate == null)
+		{
+			try 
+			{
+				interestLastThroughDate = dueDate.addDay(30);
+			}
+			catch (eLegacyInt)
+			{
+				interestLastThroughDate = null;
+			}
+		}
+		// Secondary duplicate defense: search existing LF invoices by source invoice number/reference.
+		// This prevents repeat D3/D5 creation even if the source-invoice stage field fails to persist.
+		try 
+		{
+			stageSearchParams = Map();
+			stageSearchParams.put("organization_id",orgId);
+			stageSearchParams.put("customer_id",customerId);
+			stageSearchParams.put("search_text",invNumber);
+			stageSearchParams.put("filter_by","Status.All");
+			stageSearchParams.put("per_page","200");
+			stageSearchResp = invokeurl
+			[
+				url :apiBase + "/invoices"
+				type :GET
+				parameters:stageSearchParams
+				connection:"zbooks"
+			];
+			if(stageSearchResp != null && stageSearchResp.get("invoices") != null)
+			{
+				for each  sfInv in stageSearchResp.get("invoices")
+				{
+					sfInvId = ifnull(sfInv.get("invoice_id"),"").toString();
+					sfInvNumber = ifnull(sfInv.get("invoice_number"),"").toString();
+					sfStatusLow = ifnull(sfInv.get("status"),"").toString().toLowerCase();
+					sfRef = ifnull(sfInv.get("reference_number"),"").toString();
+					if(sfInvId == "" || sfInvId == invId)
+					{
+						continue;
+					}
+					if(sfInvNumber == "" || sfInvNumber.indexOf(feeInvoicePrefix) != 0)
+					{
+						continue;
+					}
+					if(sfStatusLow == "void" || sfStatusLow == "deleted")
+					{
+						continue;
+					}
+					if(sfRef == "" || sfRef.indexOf(invNumber) < 0)
+					{
+						continue;
+					}
+					if(sfRef.indexOf("Late Fee (") != 0 && sfRef.indexOf("Interest (") != 0)
+					{
+						continue;
+					}
+					stageStart = sfRef.indexOf("(");
+					stageEnd = sfRef.indexOf(")");
+					if(stageStart >= 0 && stageEnd > stageStart)
+					{
+						discoveredStageToken = sfRef.subString(stageStart + 1,stageEnd).trim();
+						if(discoveredStageToken != "")
+						{
+							appliedStageTokens.put(discoveredStageToken,true);
+							// If an already-created interest invoice is discovered by reference number, use its INT_yyyyMMdd token as the interest-through date.
+							// This protects against duplicate interest invoices if the source custom field failed to persist.
+							if(discoveredStageToken.indexOf("INT_") == 0 && discoveredStageToken.length() == 12)
+							{
+								try 
+								{
+									intDateRaw = discoveredStageToken.remove("INT_").trim();
+									intDateFmt = intDateRaw.subString(0,4) + "-" + intDateRaw.subString(4,6) + "-" + intDateRaw.subString(6,8);
+									discoveredInterestThroughDate = intDateFmt.toDate("yyyy-MM-dd");
+									if(interestLastThroughDate == null || discoveredInterestThroughDate > interestLastThroughDate)
+									{
+										interestLastThroughDate = discoveredInterestThroughDate;
+									}
+								}
+								catch (eDiscIntDate)
+								{
+									// non-fatal
+								}
+							}
+							if(!baseTokens.contains(discoveredStageToken))
+							{
+								baseTokens.add(discoveredStageToken);
+							}
+							discoveredInvTok = lateFeeInvoiceIdTokenPrefix + discoveredStageToken + "=" + sfInvId;
+							if(!baseTokens.contains(discoveredInvTok))
+							{
+								baseTokens.add(discoveredInvTok);
+							}
+						}
+					}
+				}
+			}
+		}
+		catch (eLfSearch)
+		{
+			// Non-fatal. Source-field idempotency remains primary.
+		}
+		// Run lock skip
+		if(enableRunLock && baseTokens.contains(runLockToken))
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " already processed today (" + runLockToken + ").";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		// -------------------- Most Recent Payment Event --------------------
+		latestPayment = null;
+		latestPaymentDateKey = 0;
+		payParams = Map();
+		payParams.put("organization_id",orgId);
+		payResp = invokeurl
+		[
+			url :apiBase + "/invoices/" + invId + "/payments"
+			type :GET
+			parameters:payParams
+			connection:"zbooks"
+		];
+		if(payResp != null && payResp.get("payments") != null)
+		{
+			for each  pmt in payResp.get("payments")
+			{
+				// Zoho may not populate date/payment_date until settlement (common with ACH "in review"/processing).
+				// Use created_time/last_modified_time as a fallback sort key so we can still detect the latest attempt.
+				pDateStr = ifnull(pmt.get("date"),"").toString().trim();
+				if(pDateStr == "")
+				{
+					pDateStr = ifnull(pmt.get("payment_date"),"").toString().trim();
+				}
+				key = 0;
+				if(pDateStr != "")
+				{
+					keyStr = pDateStr.remove("-").trim() + "0000";
+					try 
+					{
+						key = keyStr.toLong();
+					}
+					catch (eKey)
+					{
+						key = 0;
+					}
+				}
+				else
+				{
+					ts = ifnull(pmt.get("created_time"),"").toString().trim();
+					if(ts == "")
+					{
+						ts = ifnull(pmt.get("last_modified_time"),"").toString().trim();
+					}
+					if(ts != "" && ts.length() >= 10)
+					{
+						// ts examples: 2026-01-10T14:22:33-0600 OR 2026-01-10T14:22:33+0000
+						dPart = ts.subString(0,10);
+						tPart = "";
+						if(ts.length() >= 16)
+						{
+							tPart = ts.subString(11,16);
+						}
+						keyStr2 = dPart.remove("-").trim() + tPart.remove(":").trim();
+						if(keyStr2.length() == 12)
+						{
+							try 
+							{
+								key = keyStr2.toLong();
+							}
+							catch (eKey2)
+							{
+								key = 0;
+							}
+						}
+						else
+						{
+							try 
+							{
+								key = (dPart.remove("-").trim() + "0000").toLong();
+							}
+							catch (eKey3)
+							{
+								key = 0;
+							}
+						}
+					}
+				}
+				if(key >= latestPaymentDateKey)
+				{
+					latestPaymentDateKey = key;
+					latestPayment = pmt;
+				}
+			}
+		}
+		isLatestProcessingOrPending = false;
+		isLatestPaid = false;
+		isLatestFailed = false;
+		latestPaymentDetail = null;
+		if(latestPayment != null && latestPayment.get("payment_id") != null)
+		{
+			for each  attPayDet in ITER_60
+			{
+				if(attPayDet > retryMaxAttempts)
+				{
+					break;
+				}
+				try 
+				{
+					pdParams = Map();
+					pdParams.put("organization_id",orgId);
+					pdResp = invokeurl
+					[
+						url :apiBase + "/customerpayments/" + latestPayment.get("payment_id").toString()
+						type :GET
+						parameters:pdParams
+						connection:"zbooks"
+					];
+					if(pdResp != null && pdResp.get("payment") != null)
+					{
+						latestPaymentDetail = pdResp.get("payment");
+						break;
+					}
+				}
+				catch (ePayDet)
+				{
+					latestPaymentDetail = null;
+				}
+			}
+		}
+		if(latestPayment != null)
+		{
+			stRaw = "";
+			if(latestPaymentDetail != null && latestPaymentDetail.get("status") != null)
+			{
+				stRaw = latestPaymentDetail.get("status").toString().trim();
+			}
+			if(stRaw == "")
+			{
+				stRaw = ifnull(latestPayment.get("status"),"").toString().trim();
+			}
+			st = stRaw.toLowerCase();
+			for each  a in processingStatusTokens
+			{
+				if(st.indexOf(a) >= 0)
+				{
+					isLatestProcessingOrPending = true;
+					break;
+				}
+			}
+			for each  b in paidStatusTokens
+			{
+				if(st.indexOf(b) >= 0)
+				{
+					isLatestPaid = true;
+					break;
+				}
+			}
+			for each  c in failStatusTokens
+			{
+				if(st.indexOf(c) >= 0)
+				{
+					isLatestFailed = true;
+					break;
+				}
+			}
+			// Conservative unresolved-payment fallback:
+			// If a payment record exists for the invoice but its detail does not expose a final success/failure
+			// state, treat it as an in-flight ACH/online attempt and suppress late fees. This prevents false
+			// late fees during the processor settlement window.
+			if(!isLatestPaid && !isLatestFailed && !isLatestProcessingOrPending)
+			{
+				hasOnlineTxnId = false;
+				if(ifnull(latestPayment.get("online_transaction_id"),"").toString().trim() != "")
+				{
+					hasOnlineTxnId = true;
+				}
+				paymentModeTxt = ifnull(latestPayment.get("payment_mode"),"").toString().toLowerCase().trim();
+				if(latestPaymentDetail != null && ifnull(latestPaymentDetail.get("payment_mode"),"").toString().trim() != "")
+				{
+					paymentModeTxt = ifnull(latestPaymentDetail.get("payment_mode"),"").toString().toLowerCase().trim();
+				}
+				if(stRaw == "" && (hasOnlineTxnId || paymentModeTxt == "autotransaction" || paymentModeTxt == "banktransfer" || paymentModeTxt == "bankremittance"))
+				{
+					isLatestProcessingOrPending = true;
+				}
+			}
+		}
+		// If the latest payment is definitively failed/returned, do not let any broad "review"/"return" wording suppress fees.
+		if(isLatestFailed)
+		{
+			isLatestProcessingOrPending = false;
+		}
+		// ACH-initiation guard (invoice-level) ---------------------------------
+		// Zoho Books exposes `ach_payment_initiated` on the invoice object. When true,
+		// the tenant has already initiated an ACH pull; late fees should not be assessed
+		// until the payment definitively settles or fails.
+		skipLateFeeStagesDueToPendingPayment = false;
+		if(invoiceAchPaymentInitiated)
+		{
+			skipLateFeeStagesDueToPendingPayment = true;
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " ACH payment is initiated on the invoice (ach_payment_initiated=true).";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		// If the most recent payment is still processing/pending, suppress late-fee stages for this invoice run.
+		if(isLatestProcessingOrPending)
+		{
+			skipLateFeeStagesDueToPendingPayment = true;
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " latest payment is still processing/pending (status=" + ifnull(latestPayment.get("status"),"").toString() + ").";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		// -------------------- Determine actions BEFORE creating any fee invoices --------------------
+		eligibleStageFees = List();
+		// [{token, amount}]
+		lateFeeTotalWorking = lateFeeTotalCharged;
+		if(!skipLateFeeStagesDueToPendingPayment)
+		{
+			for each  stg in lateFeeStages
+			{
+				stageToken = stg.get("token").toString();
+				stageDays = stg.get("days").toLong();
+				if(appliedStageTokens.containsKey(stageToken))
+				{
+					continue;
+				}
+				stageAssessDate = dueDate.addDay(stageDays);
+				if(stageAssessDate > today)
+				{
+					continue;
+				}
+				if(stg.get("requires_cutoff_hour") == true && stageAssessDate == today && currentHour24 < lateFeeCutoffHour)
+				{
+					continue;
+				}
+				feeAmount = 0.0;
+				tp = stg.get("type").toString();
+				if(tp == "pct")
+				{
+					pct = stg.get("pct").toDecimal();
+					feeAmount = (balanceDue * pct / 100.0).round(2);
+				}
+				else if(tp == "interest")
+				{
+					apr = stg.get("apr").toDecimal();
+					pdays = stg.get("period_days").toDecimal();
+					feeAmount = (balanceDue * apr / 100.0 * pdays / 365.0).round(2);
+				}
+				if(feeAmount <= 0)
+				{
+					continue;
+				}
+				if(enableStageCap && feeAmount > maxLateFeePerStage)
+				{
+					feeAmount = maxLateFeePerStage;
+				}
+				if(enableTotalCap && balanceDue > 0 && maxTotalLateFeesPctOfUnpaidRent > 0)
+				{
+					totalCap = (balanceDue * maxTotalLateFeesPctOfUnpaidRent / 100.0).round(2);
+					if(lateFeeTotalWorking >= totalCap)
+					{
+						continue;
+					}
+					if(lateFeeTotalWorking + feeAmount > totalCap)
+					{
+						feeAmount = (totalCap - lateFeeTotalWorking).round(2);
+					}
+				}
+				if(feeAmount <= 0)
+				{
+					continue;
+				}
+				feeRow = Map();
+				feeRow.put("token",stageToken);
+				feeRow.put("amount",feeAmount);
+				feeRow.put("charge_type","late_fee");
+				feeRow.put("assess_date",stageAssessDate.toString("yyyy-MM-dd"));
+				eligibleStageFees.add(feeRow);
+				lateFeeTotalWorking = (lateFeeTotalWorking + feeAmount).round(2);
+				if(createdFeeInvoicesCount + eligibleStageFees.size() >= maxFeeInvoicesPerRun)
+				{
+					break;
+				}
+			}
+		}
+		// -------------------- Determine simple interest action under Lease Section 3.6 --------------------
+		// Interest is separate from late fees: 10% APR, simple interest, on unpaid Rent only, no compounding.
+		// This uses the unpaid balance on the source rent invoice as the rent principal and never charges interest on LF invoices.
+		if(enableInterestOnDelinquentRent && balanceDue > 0)
+		{
+			interestFirstEligibleDate = dueDate.addDay(interestFirstEligibleDaysAfterDue);
+			interestEligibleNow = false;
+			if(today >= interestFirstEligibleDate)
+			{
+				interestEligibleNow = true;
+			}
+			if(interestEligibleNow)
+			{
+				interestStartDate = dueDate;
+				if(interestLastThroughDate != null)
+				{
+					interestStartDate = interestLastThroughDate;
+					if(interestStartDate.addDay(interestAssessmentFrequencyDays) > today)
+					{
+						interestEligibleNow = false;
+					}
+				}
+				if(interestEligibleNow)
+				{
+					interestDays = 0;
+					try 
+					{
+						interestDays = interestStartDate.daysBetween(today);
+					}
+					catch (eIntDays)
+					{
+						interestDays = 0;
+					}
+					if(interestDays > 0)
+					{
+						interestAmount = (balanceDue * interestAprPct / 100.0 * interestDays / 365.0).round(2);
+						if(interestAmount >= interestMinimumInvoiceAmount)
+						{
+							interestStageToken = "INT_" + today.toString("yyyyMMdd");
+							if(!appliedStageTokens.containsKey(interestStageToken))
+							{
+								feeRowInt = Map();
+								feeRowInt.put("token",interestStageToken);
+								feeRowInt.put("amount",interestAmount);
+								feeRowInt.put("charge_type","interest");
+								feeRowInt.put("assess_date",today.toString("yyyy-MM-dd"));
+								feeRowInt.put("interest_from",interestStartDate.toString("yyyy-MM-dd"));
+								feeRowInt.put("interest_through",today.toString("yyyy-MM-dd"));
+								feeRowInt.put("interest_days",interestDays);
+								eligibleStageFees.add(feeRowInt);
+							}
+						}
+					}
+				}
+			}
+		}
+		willCreateAnyFee = eligibleStageFees.size() > 0;
+		if(!willCreateAnyFee && debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+		{
+			info "NO-ACTION: " + invNumber + " qualifies but no fee/interest stages available (tokens already applied, timing not reached, minimum interest not reached, or caps reached).";
+			debugExplainCount = debugExplainCount + 1;
+		}
+		// Arm run lock token (prevents duplicates if runs overlap)
+		if(enableRunLock && willCreateAnyFee && !baseTokens.contains(runLockToken))
+		{
+			baseTokens.add(runLockToken);
+			logLines.add("LOG:" + nowStr + " Run Lock Set " + runLockToken + ".");
+		}
+		// -------------------- Create Late Fee / Interest invoices --------------------
+		successfulLateFeeAmountThisInvoice = 0.0;
+		successfulInterestAmountThisInvoice = 0.0;
+		if(eligibleStageFees.size() > 0)
+		{
+			for each  ef in eligibleStageFees
+			{
+				if(createdFeeInvoicesCount >= maxFeeInvoicesPerRun)
+				{
+					break;
+				}
+				stageToken = ef.get("token").toString();
+				feeAmount = ef.get("amount").toDecimal();
+				chargeType = ifnull(ef.get("charge_type"),"late_fee").toString();
+				try 
+				{
+					lfInv = Map();
+					lfInv.put("customer_id",customerId);
+					lfAssessDateStr = ifnull(ef.get("assess_date"),"").toString();
+					if(lfAssessDateStr == "")
+					{
+						lfAssessDateStr = today.toString("yyyy-MM-dd");
+					}
+					lfInv.put("date",lfAssessDateStr);
+					lfInv.put("due_date",lfAssessDateStr);
+					lfInv.put("invoice_number",nextFeeInvoiceNumber);
+					if(chargeType == "interest")
+					{
+						lfInv.put("reference_number","Interest (" + stageToken + ") for " + invNumber);
+					}
+					else
+					{
+						lfInv.put("reference_number","Late Fee (" + stageToken + ") for " + invNumber);
+					}
+					lfTemplateToUse = lateFeeInvoiceTemplateId;
+					if(inheritSourceInvoicePdfTemplate && sourceInvoiceTemplateId != "")
+					{
+						lfTemplateToUse = sourceInvoiceTemplateId;
+					}
+					if(lfTemplateToUse != "")
+					{
+						lfInv.put("template_id",lfTemplateToUse);
+					}
+					if(inheritSourceInvoicePaymentOptions && sourcePaymentOptions != null)
+					{
+						lfInv.put("payment_options",sourcePaymentOptions);
+					}
+					lfLines = List();
+					lfLi = Map();
+					itemToUse = lateFeeItemId;
+					if(chargeType == "interest" && interestItemId != "")
+					{
+						itemToUse = interestItemId;
+					}
+					lfLi.put("item_id",itemToUse);
+					lfLi.put("quantity",1);
+					lfLi.put("rate",feeAmount);
+					if(chargeType == "interest")
+					{
+						interestFromDesc = ifnull(ef.get("interest_from"),"").toString();
+						interestThroughDesc = ifnull(ef.get("interest_through"),"").toString();
+						interestDaysDesc = ifnull(ef.get("interest_days"),"").toString();
+						lfLi.put("description","Simple delinquent-rent interest for overdue rent invoice " + invNumber + " at 10% APR, from " + interestFromDesc + " through " + interestThroughDesc + " (" + interestDaysDesc + " days). No compounding; not charged on late fees.");
+					}
+					else
+					{
+						lfLi.put("description","Lease late fee for overdue rent invoice " + invNumber + " (" + stageToken + "): 5% of unpaid Rent, subject to the 10% total late-fee cap for that monthly Rent charge.");
+					}
+					lfLines.add(lfLi);
+					lfInv.put("line_items",lfLines);
+					createRespLF = null;
+					for each  attCreateLF in ITER_60
+					{
+						if(attCreateLF > retryMaxAttempts)
+						{
+							break;
+						}
+						try 
+						{
+							createRespLF = invokeurl
+							[
+								url :apiBase + "/invoices?organization_id=" + orgId + "&ignore_auto_number_generation=true"
+								type :POST
+								parameters:{"JSONString":lfInv.toString()}
+								connection:"zbooks"
+							];
+							// If manual invoice_number collides (overlapping runs), bump sequence and retry.
+							if(createRespLF != null && createRespLF.get("invoice") == null)
+							{
+								msgLF = ifnull(createRespLF.get("message"),"").toString().toLowerCase();
+								if(msgLF.contains("invoice") && msgLF.contains("number") && (msgLF.contains("exist") || msgLF.contains("duplicate") || msgLF.contains("already")))
+								{
+									feeSeq = feeSeq + 1;
+									seqTmpLF = feeSeq.toString();
+									padTmpLF = feeInvoiceNumberDigits - seqTmpLF.length();
+									if(padTmpLF > 0)
+									{
+										for each  zLF in ITER_60
+										{
+											if(zLF > padTmpLF)
+											{
+												break;
+											}
+											seqTmpLF = "0" + seqTmpLF;
+										}
+									}
+									nextFeeInvoiceNumber = feeInvoicePrefix + seqTmpLF;
+									lfInv.put("invoice_number",nextFeeInvoiceNumber);
+									continue;
+								}
+							}
+							if(createRespLF != null && createRespLF.get("invoice") != null)
+							{
+								break;
+							}
+						}
+						catch (eCreateLF)
+						{
+							createRespLF = null;
+						}
+					}
+					if(createRespLF != null && createRespLF.get("invoice") != null)
+					{
+						newLfInvId = ifnull(createRespLF.get("invoice").get("invoice_id"),"").toString();
+						createdFeeInvoicesCount = createdFeeInvoicesCount + 1;
+						if(chargeType == "interest")
+						{
+							successfulInterestAmountThisInvoice = (successfulInterestAmountThisInvoice + feeAmount).round(2);
+							interestThroughVal = ifnull(ef.get("interest_through"),"").toString();
+							if(interestThroughVal != "")
+							{
+								try 
+								{
+									interestThroughDateCandidate = interestThroughVal.toDate("yyyy-MM-dd");
+									if(interestLastThroughDate == null || interestThroughDateCandidate > interestLastThroughDate)
+									{
+										interestLastThroughDate = interestThroughDateCandidate;
+									}
+								}
+								catch (eIntThruSet)
+								{
+									// non-fatal
+								}
+							}
+						}
+						else
+						{
+							successfulLateFeeAmountThisInvoice = (successfulLateFeeAmountThisInvoice + feeAmount).round(2);
+						}
+						baseTokens.add(stageToken);
+						if(newLfInvId != "")
+						{
+							baseTokens.add(lateFeeInvoiceIdTokenPrefix + stageToken + "=" + newLfInvId);
+						}
+						appliedStageTokens.put(stageToken,true);
+						if(chargeType == "interest")
+						{
+							logLines.add("LOG:" + nowStr + " Created interest invoice " + nextFeeInvoiceNumber + " for " + invNumber + " (" + stageToken + ").");
+						}
+						else
+						{
+							logLines.add("LOG:" + nowStr + " Created LF invoice " + nextFeeInvoiceNumber + " for " + invNumber + " (" + stageToken + ").");
+						}
+						// Ensure online payments are enabled for this fee invoice (required for "Pay Now").
+						if(enableOnlinePaymentsForFeeInvoices && newLfInvId != "")
+						{
+							try 
+							{
+								existingGatewayCount = 0;
+								invGetRespPayLF = invokeurl
+								[
+									url :apiBase + "/invoices/" + newLfInvId + "?organization_id=" + orgId
+									type :GET
+									connection:"zbooks"
+								];
+								if(invGetRespPayLF != null && invGetRespPayLF.get("invoice") != null && invGetRespPayLF.get("invoice").get("payment_options") != null)
+								{
+									existingPayOptLF = invGetRespPayLF.get("invoice").get("payment_options");
+									if(existingPayOptLF.get("payment_gateways") != null)
+									{
+										existingGatewayCount = existingPayOptLF.get("payment_gateways").size();
+									}
+								}
+								desiredPayOptLF = null;
+								// Preferred: inherit from source invoice (safest, preserves your gateway config).
+								if(sourcePaymentOptions != null && sourcePaymentOptions.get("payment_gateways") != null && sourcePaymentOptions.get("payment_gateways").size() > 0)
+								{
+									desiredPayOptLF = sourcePaymentOptions;
+								}
+								// Fallback: force a specific gateway_name (only used if no gateways exist).
+								else if(forcePaymentGatewayName != "")
+								{
+									desiredPayOptLF = Map();
+									desiredPayOptLF.put("allow_partial_payments",allowPartialPaymentsOnFeeInvoices);
+									pgListLF = List();
+									pgLF = Map();
+									pgLF.put("configured",true);
+									pgLF.put("gateway_name",forcePaymentGatewayName);
+									pgListLF.add(pgLF);
+									desiredPayOptLF.put("payment_gateways",pgListLF);
+								}
+								if(existingGatewayCount == 0 && desiredPayOptLF != null)
+								{
+									updPayLF = Map();
+									updPayLF.put("payment_options",desiredPayOptLF);
+									updRespPayLF = invokeurl
+									[
+										url :apiBase + "/invoices/" + newLfInvId + "?organization_id=" + orgId
+										type :PUT
+										parameters:{"JSONString":updPayLF.toString()}
+										connection:"zbooks"
+									];
+									if(debugMode)
+									{
+										logLines.add("LOG:" + nowStr + " Payment options updated for " + newLfInvId + " (LF).");
+									}
+								}
+							}
+							catch (ePayOptLF)
+							{
+								warnPayOpt = "WARN: " + nowStr + " Payment options update failed for " + newLfInvId + " (LF/Interest): " + ePayOptLF.toString();
+								logLines.add(warnPayOpt);
+								runWarnings.add(warnPayOpt);
+							}
+						}
+						// Email (template by name if resolved)
+						if(autoEmailFeeInvoices && newLfInvId != "")
+						{
+							try 
+							{
+								tplIdUse2 = "";
+								if(enableFeeInvoiceEmailTemplates)
+								{
+									key2 = lateFeeInvoiceEmailTemplateName.toLowerCase();
+									if(emailTemplateCache.containsKey(key2))
+									{
+										tplIdUse2 = emailTemplateCache.get(key2);
+									}
+								}
+								emailGetUrl2 = apiBase + "/invoices/" + newLfInvId + "/email?organization_id=" + orgId;
+								if(tplIdUse2 != "")
+								{
+									emailGetUrl2 = emailGetUrl2 + "&email_template_id=" + tplIdUse2;
+									if(debugMode)
+									{
+										info "LF-FEE: EMAIL TEMPLATE ID USED => " + tplIdUse2;
+									}
+								}
+								emailGetResp2 = invokeurl
+								[
+									url :emailGetUrl2
+									type :GET
+									connection:"zbooks"
+								];
+								toMail2 = List();
+								subj2 = "";
+								body2 = "";
+								if(emailGetResp2 != null && emailGetResp2.get("data") != null)
+								{
+									if(emailGetResp2.get("data").get("to_mail_ids") != null)
+									{
+										toMail2 = emailGetResp2.get("data").get("to_mail_ids");
+									}
+									subj2 = ifnull(emailGetResp2.get("data").get("subject"),"").toString();
+									body2 = ifnull(emailGetResp2.get("data").get("body"),"").toString();
+								}
+								// Optional: Replace custom placeholders that Zoho Books may not natively populate.
+								overdueDaysStr = "0";
+								try 
+								{
+									overdueDaysStr = dueDate.daysBetween(today).toString();
+								}
+								catch (eOD)
+								{
+									overdueDaysStr = "0";
+								}
+								feeAmtStr = feeAmount.toString();
+								if(subj2 != "")
+								{
+									subj2 = subj2.replaceAll("%ReferenceLateFeeInvoiceNumber%",invNumber);
+									subj2 = subj2.replaceAll("%ReferenceInvoiceNumber%",invNumber);
+									subj2 = subj2.replaceAll("%ReferenceRentInvoiceNumber%",invNumber);
+									subj2 = subj2.replaceAll("%OverdueInvoiceDays%",overdueDaysStr);
+									subj2 = subj2.replaceAll("%LateFeeStageToken%",stageToken);
+									subj2 = subj2.replaceAll("%LateFeeAmount%",feeAmtStr);
+								}
+								if(body2 != "")
+								{
+									body2 = body2.replaceAll("%ReferenceLateFeeInvoiceNumber%",invNumber);
+									body2 = body2.replaceAll("%ReferenceInvoiceNumber%",invNumber);
+									body2 = body2.replaceAll("%ReferenceRentInvoiceNumber%",invNumber);
+									body2 = body2.replaceAll("%OverdueInvoiceDays%",overdueDaysStr);
+									body2 = body2.replaceAll("%LateFeeStageToken%",stageToken);
+									body2 = body2.replaceAll("%LateFeeAmount%",feeAmtStr);
+								}
+								// Recipient fallback: use customer/contact email(s) when the template returns none.
+								if((toMail2 == null || toMail2.size() == 0) && enableRecipientFallbackToCustomerEmail)
+								{
+									try 
+									{
+										ctRespLF = invokeurl
+										[
+											url :apiBase + "/contacts/" + customerId + "?organization_id=" + orgId
+											type :GET
+											connection:"zbooks"
+										];
+										fbLF = List();
+										seenLF = Map();
+										if(ctRespLF != null && ctRespLF.get("contact") != null)
+										{
+											ctLF = ctRespLF.get("contact");
+											ctEmailLF = ifnull(ctLF.get("email"),"").toString().trim();
+											if(ctEmailLF != "" && !seenLF.containsKey(ctEmailLF))
+											{
+												fbLF.add(ctEmailLF);
+												seenLF.put(ctEmailLF,true);
+											}
+											if(ctLF.get("contact_persons") != null)
+											{
+												for each  cpLF in ctLF.get("contact_persons")
+												{
+													cpEmailLF = ifnull(cpLF.get("email"),"").toString().trim();
+													if(cpEmailLF != "" && !seenLF.containsKey(cpEmailLF))
+													{
+														fbLF.add(cpEmailLF);
+														seenLF.put(cpEmailLF,true);
+													}
+												}
+											}
+										}
+										if(fbLF.size() > 0)
+										{
+											toMail2 = fbLF;
+										}
+									}
+									catch (eToLF)
+									{
+									}
+								}
+								if((toMail2 == null || toMail2.size() == 0) && debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+								{
+									info "EMAIL-SKIP: " + newLfInvId + " has no to_mail_ids (no invoice recipients configured). Fee invoice was created but not emailed.";
+									debugExplainCount = debugExplainCount + 1;
+								}
+								if(toMail2 != null && toMail2.size() > 0)
+								{
+									// Ensure the invoice is in "Sent" state before emailing (avoids draft-email edge cases).
+									if(markFeeInvoicesAsSentBeforeEmail)
+									{
+										try 
+										{
+											markSentRespLF = invokeurl
+											[
+												url :apiBase + "/invoices/" + newLfInvId + "/status/sent?organization_id=" + orgId
+												type :POST
+												connection:"zbooks"
+											];
+											if(debugMode)
+											{
+												info "LF-FEE: MARK AS SENT => " + markSentRespLF;
+											}
+										}
+										catch (eSentLF)
+										{
+											info "LF-FEE: MARK AS SENT FAILED => " + eSentLF.toString();
+										}
+									}
+									pl2 = Map();
+									pl2.put("send_from_org_email_id",true);
+									pl2.put("to_mail_ids",toMail2);
+									if(subj2 != "")
+									{
+										pl2.put("subject",subj2);
+									}
+									if(body2 != "")
+									{
+										pl2.put("body",body2);
+									}
+									mailSendRespLF = invokeurl
+									[
+										url :apiBase + "/invoices/" + newLfInvId + "/email?organization_id=" + orgId
+										type :POST
+										parameters:{"JSONString":pl2.toString()}
+										connection:"zbooks"
+									];
+									if(mailSendRespLF != null && mailSendRespLF.get("code") != null && mailSendRespLF.get("code").toString() == "0")
+									{
+										emailedFeeInvoicesCount = emailedFeeInvoicesCount + 1;
+									}
+								}
+							}
+							catch (eMailLF)
+							{
+								warnEmail = "WARN: " + nowStr + " Email failed for fee/interest invoice " + newLfInvId + ": " + eMailLF.toString();
+								logLines.add(warnEmail);
+								runWarnings.add(warnEmail);
+							}
+						}
+						// Increment LF number
+						feeSeq = feeSeq + 1;
+						s2 = feeSeq.toString();
+						p2 = feeInvoiceNumberDigits - s2.length();
+						if(p2 > 0)
+						{
+							for each  j2 in ITER_60
+							{
+								if(j2 > p2)
+								{
+									break;
+								}
+								s2 = "0" + s2;
+							}
+						}
+						nextFeeInvoiceNumber = feeInvoicePrefix + s2;
+					}
+				}
+				catch (eLFCreate)
+				{
+					warnCreate = "WARN: " + nowStr + " Fee/interest invoice create block failed for source invoice " + invNumber + " (" + stageToken + "): " + eLFCreate.toString();
+					logLines.add(warnCreate);
+					runWarnings.add(warnCreate);
+				}
+			}
+		}
+		// Update running total tokens only for invoices that were actually created successfully.
+		lateFeeTotalCharged = (lateFeeTotalCharged + successfulLateFeeAmountThisInvoice).round(2);
+		interestTotalCharged = (interestTotalCharged + successfulInterestAmountThisInvoice).round(2);
+		// -------------------- Persist stage field --------------------
+		allTokens = List();
+		seen = Map();
+		for each  bt in baseTokens
+		{
+			tok = bt.toString().trim();
+			if(tok != "" && !seen.containsKey(tok))
+			{
+				allTokens.add(tok);
+				seen.put(tok,true);
+			}
+		}
+		lfTotTok = lateFeeTotalTokenPrefix + lateFeeTotalCharged.toString();
+		if(!seen.containsKey(lfTotTok))
+		{
+			allTokens.add(lfTotTok);
+			seen.put(lfTotTok,true);
+		}
+		if(enableInterestOnDelinquentRent && interestLastThroughDate != null)
+		{
+			intThruTok = interestLastThroughTokenPrefix + interestLastThroughDate.toString("yyyy-MM-dd");
+			if(!seen.containsKey(intThruTok))
+			{
+				allTokens.add(intThruTok);
+				seen.put(intThruTok,true);
+			}
+		}
+		if(enableInterestOnDelinquentRent && interestTotalCharged > 0)
+		{
+			intTotalTok = interestTotalTokenPrefix + interestTotalCharged.toString();
+			if(!seen.containsKey(intTotalTok))
+			{
+				allTokens.add(intTotalTok);
+				seen.put(intTotalTok,true);
+			}
+		}
+		lastBalTok = lastBalanceTokenPrefix + balanceDue.toString();
+		if(!seen.containsKey(lastBalTok))
+		{
+			allTokens.add(lastBalTok);
+			seen.put(lastBalTok,true);
+		}
+		tokCsvOut = "";
+		for each  tk in allTokens
+		{
+			if(tokCsvOut != "")
+			{
+				tokCsvOut = tokCsvOut + ",";
+			}
+			tokCsvOut = tokCsvOut + tk;
+		}
+		stageWrite = "";
+		if(useMultilineTokensAndLog)
+		{
+			stageWrite = "TOKENS=" + tokCsvOut;
+			if(logLines != null && logLines.size() > 0)
+			{
+				startIdx = 0;
+				if(logLines.size() > maxLogLinesToKeep)
+				{
+					startIdx = logLines.size() - maxLogLinesToKeep;
+				}
+				// Append log lines (max 101) starting from startIdx
+				lineIdx = 0;
+				linesAdded = 0;
+				for each  ln in logLines
+				{
+					if(lineIdx < startIdx)
+					{
+						lineIdx = lineIdx + 1;
+						continue;
+					}
+					stageWrite = stageWrite + "\n" + ln;
+					linesAdded = linesAdded + 1;
+					lineIdx = lineIdx + 1;
+					if(linesAdded >= 101)
+					{
+						break;
+					}
+				}
+			}
+		}
+		else
+		{
+			stageWrite = tokCsvOut;
+		}
+		try 
+		{
+			persistedStageField = false;
+			// Preferred path: dedicated Books custom-field update endpoint using customfield_id.
+			if(stageFieldCustomFieldId != "")
+			{
+				cfPayload = List();
+				cfEntry = Map();
+				cfEntry.put("customfield_id",stageFieldCustomFieldId);
+				cfEntry.put("value",stageWrite);
+				cfPayload.add(cfEntry);
+				for each  attCfPut in ITER_60
+				{
+					if(attCfPut > retryMaxAttempts)
+					{
+						break;
+					}
+					try 
+					{
+						upCfResp = invokeurl
+						[
+							url :apiBase + "/invoice/" + invId + "/customfields?organization_id=" + orgId
+							type :PUT
+							parameters:{"JSONString":cfPayload.toString()}
+							connection:"zbooks"
+						];
+						if(upCfResp != null && upCfResp.get("code") == 0)
+						{
+							persistedStageField = true;
+							break;
+						}
+					}
+					catch (eCfPut)
+					{
+						upCfResp = null;
+					}
+				}
+			}
+			// Fallback: generic invoice update.
+			if(!persistedStageField)
+			{
+				cfList = List();
+				cfMap = Map();
+				if(stageFieldCustomFieldId != "")
+				{
+					cfMap.put("customfield_id",stageFieldCustomFieldId);
+				}
+				else
+				{
+					cfMap.put("api_name",stagesFieldApiName);
+				}
+				cfMap.put("value",stageWrite);
+				cfList.add(cfMap);
+				up = Map();
+				up.put("custom_fields",cfList);
+				for each  attPut in ITER_60
+				{
+					if(attPut > retryMaxAttempts)
+					{
+						break;
+					}
+					try 
+					{
+						upResp = invokeurl
+						[
+							url :apiBase + "/invoices/" + invId + "?organization_id=" + orgId
+							type :PUT
+							parameters:{"JSONString":up.toString()}
+							connection:"zbooks"
+						];
+						if(upResp != null && upResp.get("code") == 0)
+						{
+							persistedStageField = true;
+							break;
+						}
+					}
+					catch (ePut)
+					{
+						upResp = null;
+					}
+				}
+			}
+			if(persistedStageField)
+			{
+				persistVerifyOk = false;
+				for each  attVerify in ITER_60
+				{
+					if(attVerify > retryMaxAttempts)
+					{
+						break;
+					}
+					try 
+					{
+						verifyResp = invokeurl
+						[
+							url :apiBase + "/invoices/" + invId + "?organization_id=" + orgId
+							type :GET
+							connection:"zbooks"
+						];
+						if(verifyResp != null && verifyResp.get("invoice") != null && verifyResp.get("invoice").get("custom_fields") != null)
+						{
+							verifyCustomFields = verifyResp.get("invoice").get("custom_fields");
+							for each  vcf in verifyCustomFields
+							{
+								verifyMatch = false;
+								if(stageFieldCustomFieldId != "" && vcf.get("customfield_id") != null && vcf.get("customfield_id").toString() == stageFieldCustomFieldId)
+								{
+									verifyMatch = true;
+								}
+								else if(ifnull(vcf.get("api_name"),"").toString() == stagesFieldApiName)
+								{
+									verifyMatch = true;
+								}
+								if(verifyMatch)
+								{
+									verifyVal = ifnull(vcf.get("value"),"").toString().trim();
+									if(verifyVal == stageWrite)
+									{
+										persistVerifyOk = true;
+										break;
+									}
+								}
+							}
+							if(persistVerifyOk)
+							{
+								break;
+							}
+						}
+					}
+					catch (eVerify)
+					{
+						persistVerifyOk = false;
+					}
+				}
+				if(!persistVerifyOk)
+				{
+					persistedStageField = false;
+				}
+			}
+			if(!persistedStageField)
+			{
+				warnPersist = "WARN/ALERT: Failed to persist " + stagesFieldApiName + " on source invoice " + invNumber + ". Idempotency may be lost for this invoice until the field is updated.";
+				info warnPersist;
+				runWarnings.add(warnPersist);
+			}
+		}
+		catch (eUp)
+		{
+			warnPersistEx = "WARN/ALERT: Exception while persisting " + stagesFieldApiName + " on source invoice " + invNumber + ": " + eUp.toString();
+			info warnPersistEx;
+			runWarnings.add(warnPersistEx);
+		}
+	}
+	if(createdFeeInvoicesCount >= maxFeeInvoicesPerRun)
+	{
+		break;
+	}
+}
+// =========================
+// Minimal Runtime Logging
+// =========================
+// - Always shows: ERROR and WARN/ALERT lines captured in runWarnings.
+// - Set debugMode=true (above) to also show verbose diagnostics (paging, template IDs, API responses, run summary).
+if(runWarnings != null && runWarnings.size() > 0)
+{
+	seenWarnings = Map();
+	for each  rw in runWarnings
+	{
+		if(rw != null && !seenWarnings.containsKey(rw.toString()))
+		{
+			info rw;
+			seenWarnings.put(rw.toString(),true);
+		}
+	}
+}
+if(debugMode)
+{
+	info "Late Fee Guard completed. Scanned=" + scannedInvoicesCount + ", EligibleRent=" + eligibleOverdueRentCount + ", FeeOrInterestInvoicesCreated=" + createdFeeInvoicesCount + ", EmailsSent=" + emailedFeeInvoicesCount;
+}
