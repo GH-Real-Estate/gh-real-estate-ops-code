@@ -145,6 +145,10 @@ docs/
 samples/
   zoho-books/
     invoice.sample.json
+  zoho-crm/
+    applicant.sample.json
+  zoho-creator/
+    maintenance-request.sample.json
   zoho-payments/
     returned-payment.sample.json
 
