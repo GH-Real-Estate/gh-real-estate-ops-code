@@ -2,29 +2,23 @@
 
 Private technical source of truth for GH Real Estate automation code, Zoho setup notes, field maps, sanitized test payloads, deployment runbooks, and Codex/ChatGPT review context.
 
-## Current recommended GitHub location
-
-Use this final repository location:
+Final repository location:
 
 ```text
 GH-Real-Estate/gh-real-estate-ops-code
 ```
 
-Your screenshot appears to show an existing org-owned repo named:
+## Operating Rule
 
 ```text
-GH-Real-Estate/gh-real-estate
+Zoho runs the business.
+GitHub stores the code and technical map.
+Codex/ChatGPT reviews and improves the code.
 ```
 
-If that repo is the one you already created, rename it to:
+This repository is not a tenant file cabinet, accounting ledger, lease vault, or CRM replacement.
 
-```text
-gh-real-estate-ops-code
-```
-
-Do not create multiple GH Real Estate code repos right now. One private repo gives Codex/ChatGPT enough context to understand how the automations, field maps, lease rules, and deployment notes work together.
-
-## What belongs here
+## What Belongs Here
 
 This repo is for technical assets only:
 
@@ -41,7 +35,7 @@ This repo is for technical assets only:
 - Deployment logs.
 - Codex/ChatGPT instructions.
 
-## What does not belong here
+## What Does Not Belong Here
 
 Do not store live business records here:
 
@@ -56,9 +50,9 @@ Do not store live business records here:
 - Raw webhook logs.
 - OAuth tokens, API keys, refresh tokens, passwords, or private keys.
 
-## Source-of-truth split
+## Source-Of-Truth Split
 
-| Area | Source of truth |
+| Area | Source Of Truth |
 |---|---|
 | Tenants / applicants / leasing pipeline | Zoho CRM |
 | Rent invoices, payments, deposits, fees | Zoho Books |
@@ -67,7 +61,7 @@ Do not store live business records here:
 | Tenant portal / maintenance workflows | Zoho Creator, when ready |
 | Code, automations, field maps, test cases | This private GitHub repo |
 
-## Repository map
+## Repository Map
 
 ```text
 automations/
@@ -95,27 +89,27 @@ zoho-creator/
   docs/                           # Creator app setup/import notes
 
 zoho-contracts/
-  field-maps/                     # Contract merge-field maps
-  templates/                      # Template notes only; no signed leases
+  field-maps/                     # Contract merge-field maps only; no signed leases
 
 samples/
   books/                          # Sanitized Zoho Books examples
   crm/                            # Sanitized Zoho CRM examples
   creator/                        # Sanitized Creator examples
   webhooks/                       # Sanitized webhook payloads
-
-scripts/                          # Local helper scripts; no secrets
 ```
 
-## Operating rule
+## Current Primary Systems
 
-```text
-Zoho runs the business.
-GitHub stores the code and technical map.
-Codex/ChatGPT reviews and improves the code.
-```
+| System | Main File |
+|---|---|
+| Late Fee Guard | `automations/late-fee-guard/src/Late_Fee_Guard.deluge` |
+| Returned Payment Webhook | `automations/returned-payment-webhook/src/index.js` |
+| Zoho Books Automation Settings | `zoho-books/field-maps/books-automation-settings.md` |
+| Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |
+| Deployment Log | `docs/runbooks/deployment-log.md` |
+| Codex/ChatGPT Instructions | `AGENTS.md` |
 
-## Change workflow
+## Change Workflow
 
 Use this workflow for material changes:
 
@@ -131,18 +125,9 @@ Use this workflow for material changes:
 9. Run the smoke test checklist.
 ```
 
-## First files to replace
+For emergency fixes, still record the final deployed commit and what was changed.
 
-After the repo is created, replace these placeholders with your real sanitized code/docs:
-
-| Current file | Replace with |
-|---|---|
-| `automations/late-fee-guard/src/Late_Fee_Guard.deluge` | Your current final Late Fee Guard Deluge code |
-| `automations/returned-payment-webhook/src/index.js` | Your current returned-payment webhook code, if used |
-| `zoho-books/field-maps/books-automation-settings.md` | Actual non-secret item IDs, template IDs, and API field names |
-| `docs/business-rules/lease-automation-rules.md` | Automation-relevant lease rules only, verified against final signed lease |
-
-## Safety standard
+## Safety Standard
 
 Any code that creates, updates, deletes, invoices, charges, emails, or texts must have:
 

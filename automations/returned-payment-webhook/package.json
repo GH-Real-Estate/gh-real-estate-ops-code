@@ -1,0 +1,16 @@
+{
+  "name": "gh-returned-payment-webhook",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zoho Catalyst Advanced I/O webhook for GH Real Estate returned payment fee handling.",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "zcatalyst-sdk-node": "latest"
+  },
+  "scripts": {
+    "check": "node --check src/index.js"
+  }
+}
