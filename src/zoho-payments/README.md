@@ -9,9 +9,17 @@ Zoho Payments is not the accounting source of truth. Zoho Books remains the acco
 ```text
 webhooks/
   returned-payment-fee/
-    package.json
-    src/index.js
     README.md
+    catalyst-config.json
+    package.json
+    package-lock.json
+    src/index.js
+    docs/
+      changelog.md
+      environment-variables.md
+      file-manifest.md
+      operations-runbook.md
+      security-model.md
     install-checklist.md
     test-cases.md
 ```
