@@ -4,41 +4,41 @@ Use after the repository exists under the organization.
 
 ## Organization
 
-- [ ] Personal login remains active and secured with 2FA.
-- [ ] Organization owns the repo.
-- [ ] Organization base permissions: `No permission` or lowest available.
-- [ ] Do not invite vendors, tenants, bookkeepers, attorneys, or property managers.
-- [ ] Require 2FA for anyone added later.
+- [X] Personal login remains active and secured with 2FA.
+- [X] Organization owns the repo.
+- [X] Organization base permissions: `No permission` or lowest available.
+- [X] Do not invite vendors, tenants, bookkeepers, attorneys, or property managers.
+- [X] Require 2FA for anyone added later.
 
 ## Repository basics
 
-- [ ] Owner: `GH-Real-Estate` organization.
-- [ ] Repository name: `gh-real-estate-ops-code`.
-- [ ] Visibility: Private.
-- [ ] Description: `Private technical source of truth for GH Real Estate Zoho automations, field maps, sanitized samples, and runbooks.`
-- [ ] Default branch: `main`.
+- [X] Owner: `GH-Real-Estate` organization.
+- [X] Repository name: `gh-real-estate-ops-code`.
+- [X] Visibility: Private.
+- [X] Description: `Private technical source of truth for GH Real Estate Zoho automations, field maps, sanitized samples, and runbooks.`
+- [X] Default branch: `main`.
 - [ ] Topics: `zoho`, `deluge`, `catalyst`, `real-estate`, `automation`, `private`.
 
 ## General repository settings
 
 Settings → General:
 
-- [ ] Issues: ON.
-- [ ] Projects: OFF for now.
-- [ ] Wiki: OFF.
-- [ ] Discussions: OFF.
-- [ ] Pages: OFF.
-- [ ] Pull Requests: Allow squash merging ON.
-- [ ] Pull Requests: Allow merge commits OFF.
-- [ ] Pull Requests: Allow rebase merging OFF.
-- [ ] Pull Requests: Automatically delete head branches ON.
-- [ ] Auto-merge: OFF for now.
+- [X] Issues: ON.
+- [X] Projects: OFF for now.
+- [X] Wiki: OFF.
+- [X] Discussions: OFF.
+- [X] Pages: OFF.
+- [X] Pull Requests: Allow squash merging ON.
+- [X] Pull Requests: Allow merge commits OFF.
+- [X] Pull Requests: Allow rebase merging OFF.
+- [X] Pull Requests: Automatically delete head branches ON.
+- [X] Auto-merge: OFF for now.
 
 ## Branch protection
 
 Settings → Branches → Add branch protection rule:
 
-- [ ] Branch name pattern: `main`.
+- [X] Branch name pattern: `main`.
 - [ ] Require a pull request before merging: ON.
 - [ ] Require approvals: OFF or 0 while solo.
 - [ ] Require conversation resolution before merging: ON.
@@ -46,13 +46,13 @@ Settings → Branches → Add branch protection rule:
 - [ ] Required status check: `Safety scan`.
 - [ ] Required status check: `Returned fee webhook checks`.
 - [ ] Require linear history: ON if available.
-- [ ] Allow force pushes: OFF.
+- [X] Allow force pushes: OFF.
 - [ ] Allow deletions: OFF.
 
 Later, when you add a trusted technical person:
 
-- [ ] Required approvals: 1.
-- [ ] Include administrators: ON if practical.
+- [X] Required approvals: 1.
+- [X] Include administrators: ON if practical.
 
 ## Code security
 
@@ -75,10 +75,10 @@ Settings → Actions → General:
 
 ## Codex / ChatGPT
 
-- [ ] Connect only this repo.
-- [ ] Keep `AGENTS.md` at repo root.
-- [ ] Use manual reviews first.
-- [ ] Use this review prompt on PRs:
+- [X] Connect only this repo.
+- [X] Keep `AGENTS.md` at repo root.
+- [X] Use manual reviews first.
+- [X] Use this review prompt on PRs:
 
 ```text
 @codex review for duplicate-prevention, dry-run safety, Central Time date handling, Zoho API edge cases, and PII/secrets logging.
