@@ -2,7 +2,7 @@
   "name": "gh-zillow-lead-intake",
   "version": "1.0.0",
   "private": true,
-  "description": "Secure Zillow rental lead intake webhook that upserts applicants and rental applications into Zoho CRM.",
+  "description": "Secure Zillow rental lead intake webhook that upserts raw Zillow inquiries into Zoho CRM Leads.",
   "main": "src/index.js",
   "engines": {
     "node": ">=18"

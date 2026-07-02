@@ -1,11 +1,8 @@
 # Zillow Lead Intake
 
-Secure intake service for Zillow rental leads. It receives Zillow's URL-encoded lead POST, validates it, builds a stable duplicate-prevention key, then upserts:
+Secure intake service for Zillow rental leads. It receives Zillow's URL-encoded lead POST, validates it, builds a stable duplicate-prevention key, then upserts a Zoho CRM `Leads` record.
 
-- a Zoho CRM `Contacts` record for the person
-- a Zoho CRM `Deals` record renamed as `Rental Applications`
-
-This is the first automation slice. It does not create leases, Books invoices, tenant portal records, or WorkDrive folders.
+This is the first automation slice. It does not create Contacts, Rental Applications/Deals, leases, Books invoices, tenant portal records, or WorkDrive folders. Those belong after qualification or approval.
 
 ## Runtime
 
@@ -49,25 +46,19 @@ This double switch prevents accidental live CRM writes during setup.
 
 ## Required Zoho CRM Setup
 
-Before live mode, create or confirm these CRM fields.
+Before live mode, create or confirm these CRM fields in the Leads module.
 
-Contacts:
-
-| Business field | Default API name | Notes |
-|---|---|---|
-| Contact Type | `Contact_Type` | Picklist. Include `Applicant`. |
-| Related Property | `Related_Property` | Optional lookup to Properties. |
-| Related Unit | `Related_Unit` | Optional lookup to Units. |
-| Portal Access Status | `Portal_Access_Status` | Optional picklist. |
-
-Deals / Rental Applications:
+Leads:
 
 | Business field | Default API name | Notes |
 |---|---|---|
-| Application Name | `Deal_Name` | Standard Deals field. |
-| Stage | `Stage` | Standard Deals field. |
-| Closing Date | `Closing_Date` | Standard Deals field, required by Zoho Deals. |
-| Applicant Contact | `Contact_Name` | Standard Deals contact lookup. |
+| First Name | `First_Name` | Standard Leads field. |
+| Last Name | `Last_Name` | Required by Zoho Leads. Uses `Zillow Prospect` only if name is missing. |
+| Company | `Company` | Required by Zoho Leads. Uses mapped property, address, listing ID, or GH default. |
+| Email | `Email` | Used for human follow-up and optional duplicate views. |
+| Phone / Mobile | `Phone`, `Mobile` | Normalized to `+1XXXXXXXXXX` for US 10-digit numbers. |
+| Lead Source | `Lead_Source` | Defaults to `Zillow`. |
+| Lead Status | `Lead_Status` | Defaults to `Not Contacted`; override if your picklist uses `New Inquiry`. |
 | Property | `Property` | Lookup to Properties. |
 | Unit | `Unit` | Lookup to Units. |
 | Zillow Lead Key | `Zillow_Lead_Key` | Mark unique. Used for idempotency. |
@@ -76,13 +67,14 @@ Deals / Rental Applications:
 | Zillow Listing URL | `Zillow_Listing_URL` | Link field or URL. |
 | Zillow Message | `Zillow_Message` | Multi-line text. |
 | Zillow Raw Field Keys | `Zillow_Raw_Field_Keys` | Stores keys received, not raw private payload. |
-| Application Received Date | `Application_Received_Date` | Date. |
+| Lead Received Date | `Lead_Received_Date` | Date. |
 | Desired Move-In Date | `Desired_Move_In_Date` | Date. |
-| Screening Status | `Screening_Status` | Defaults to `Not Started`. |
-| Owner Decision | `Owner_Decision` | Defaults to `New Inquiry`. |
+| Desired Rent | `Desired_Rent` | Informational only. Books remains financial truth. |
+| Desired Deposit | `Desired_Deposit` | Informational only. Books remains financial truth. |
 | Manual Review Required | `Manual_Review_Required` | Checkbox. |
 | Manual Review Reason | `Manual_Review_Reason` | Multi-line text. |
-| WorkDrive Folder URL | `WorkDrive_Folder_URL` | Blank until WorkDrive automation exists. |
+
+When the prospect becomes qualified, use a CRM conversion/owner-review workflow to create the Contact and Rental Application/Deal.
 
 ## Local Verification
 
@@ -110,8 +102,8 @@ Expected result:
 - `ok=true`
 - `mode=dry_run`
 - response includes a non-PII `lead_reference`
-- response includes planned `contact` and `application` actions
+- response includes planned `lead` action
 
 ## Source-of-Truth Rule
 
-Zillow remains the listing/application source for now. Zoho CRM becomes the operational pipeline after intake. This service only moves inquiry/application metadata into CRM so GH Real Estate can stop manually retyping lead data.
+Zillow remains the listing/application source for now. Zoho CRM Leads becomes the raw inquiry pipeline after intake. Contacts and Rental Applications should be created only after qualification, application review, or owner approval.

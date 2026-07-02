@@ -29,7 +29,7 @@ Recommended order:
 
 ## Data Minimization
 
-The service stores only CRM fields needed for lead follow-up and application pipeline tracking. It does not store raw Zillow payloads, screening reports, IDs, pay stubs, lease documents, or payment data.
+The service stores only CRM Lead fields needed for inquiry follow-up. It does not store raw Zillow payloads, screening reports, IDs, pay stubs, lease documents, or payment data.
 
 ## Live-Mode Guard
 

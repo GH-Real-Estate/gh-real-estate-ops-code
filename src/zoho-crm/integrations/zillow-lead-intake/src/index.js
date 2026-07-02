@@ -9,13 +9,11 @@
  * - Accept Zillow's URL-encoded payload format.
  * - Validate minimum usable lead data before CRM mutation.
  * - Build a stable external key so repeated callbacks update instead of duplicate.
- * - Upsert Contact and Rental Application records in Zoho CRM.
+ * - Upsert raw Zillow inquiries into Zoho CRM Leads.
  *
- * Important integration assumption:
- * Zillow's public lead API docs state that lead callbacks are URL-encoded and that
- * Zillow cannot customize the API fields/form. This service therefore normalizes
- * multiple likely field aliases and stores received field names for manual review
- * without logging or persisting raw sensitive payloads.
+ * Business rule:
+ * Raw Zillow inquiries are not Contacts yet. Contact and Rental Application records
+ * should be created only after qualification, application review, or owner approval.
  */
 
 const crypto = require('crypto');
@@ -23,26 +21,15 @@ const https = require('https');
 const { URL, URLSearchParams } = require('url');
 
 const DEFAULT_FIELD_MAP = {
-  contact: {
+  lead: {
     firstName: 'First_Name',
     lastName: 'Last_Name',
+    company: 'Company',
     email: 'Email',
     phone: 'Phone',
     mobile: 'Mobile',
     leadSource: 'Lead_Source',
-    contactType: 'Contact_Type',
-    relatedProperty: 'Related_Property',
-    relatedUnit: 'Related_Unit',
-    portalAccessStatus: 'Portal_Access_Status',
-    description: 'Description'
-  },
-  application: {
-    name: 'Deal_Name',
-    stage: 'Stage',
-    pipeline: 'Pipeline',
-    closingDate: 'Closing_Date',
-    amount: 'Amount',
-    applicantContact: 'Contact_Name',
+    leadStatus: 'Lead_Status',
     property: 'Property',
     unit: 'Unit',
     zillowLeadKey: 'Zillow_Lead_Key',
@@ -52,16 +39,13 @@ const DEFAULT_FIELD_MAP = {
     zillowMessage: 'Zillow_Message',
     zillowSource: 'Zillow_Source',
     zillowRawFieldKeys: 'Zillow_Raw_Field_Keys',
-    applicationReceivedDate: 'Application_Received_Date',
+    leadReceivedDate: 'Lead_Received_Date',
     desiredMoveInDate: 'Desired_Move_In_Date',
-    screeningStatus: 'Screening_Status',
-    ownerDecision: 'Owner_Decision',
-    approvedRent: 'Approved_Rent',
-    approvedDeposit: 'Approved_Deposit',
-    workDriveFolderUrl: 'WorkDrive_Folder_URL',
+    desiredRent: 'Desired_Rent',
+    desiredDeposit: 'Desired_Deposit',
     manualReviewRequired: 'Manual_Review_Required',
     manualReviewReason: 'Manual_Review_Reason',
-    notes: 'Description'
+    description: 'Description'
   },
   intakeEvent: {
     name: 'Name',
@@ -70,8 +54,7 @@ const DEFAULT_FIELD_MAP = {
     source: 'Source',
     receivedAt: 'Received_At',
     status: 'Status',
-    contactId: 'CRM_Contact_ID',
-    applicationId: 'CRM_Application_ID',
+    crmLeadId: 'CRM_Lead_ID',
     rawFieldKeys: 'Raw_Field_Keys',
     manualReviewRequired: 'Manual_Review_Required',
     manualReviewReason: 'Manual_Review_Reason'
@@ -137,7 +120,7 @@ async function handler(req, res) {
 
     const propertyUnit = resolvePropertyUnit(normalizedLead, CONFIG.propertyUnitMap);
     const manualReviewReasons = buildManualReviewReasons(normalizedLead, propertyUnit);
-    const plan = buildCrmPlan(normalizedLead, propertyUnit, manualReviewReasons);
+    const plan = buildCrmLeadPlan(normalizedLead, propertyUnit, manualReviewReasons);
 
     if (CONFIG.dryRun) {
       return sendJson(res, 200, {
@@ -153,29 +136,16 @@ async function handler(req, res) {
 
     assertLiveModeAllowed();
 
-    const contactResult = await upsertCrmRecord({
-      moduleApiName: CONFIG.contactsModule,
-      duplicateCheckFields: CONFIG.contactDuplicateCheckFields,
-      record: plan.contactRecord
+    const leadResult = await upsertCrmRecord({
+      moduleApiName: CONFIG.leadsModule,
+      duplicateCheckFields: CONFIG.leadDuplicateCheckFields,
+      record: plan.leadRecord
     });
-    const contactId = extractZohoRecordId(contactResult, 'contact');
-
-    const applicationRecord = {
-      ...plan.applicationRecord,
-      [CONFIG.fieldMap.application.applicantContact]: { id: contactId }
-    };
-
-    const applicationResult = await upsertCrmRecord({
-      moduleApiName: CONFIG.applicationsModule,
-      duplicateCheckFields: CONFIG.applicationDuplicateCheckFields,
-      record: applicationRecord
-    });
-    const applicationId = extractZohoRecordId(applicationResult, 'application');
+    const crmLeadId = extractZohoRecordId(leadResult, 'lead');
 
     if (CONFIG.enableCrmIntakeEventLog) {
       const intakeEventRecord = buildIntakeEventRecord(normalizedLead, {
-        contactId,
-        applicationId,
+        crmLeadId,
         manualReviewReasons
       });
       await upsertCrmRecord({
@@ -190,8 +160,7 @@ async function handler(req, res) {
       mode: 'live',
       request_id: requestId,
       lead_reference: normalizedLead.leadReference,
-      contact: summarizeZohoResult(contactResult),
-      application: summarizeZohoResult(applicationResult),
+      lead: summarizeZohoResult(leadResult),
       manual_review_required: manualReviewReasons.length > 0,
       manual_review_reasons: manualReviewReasons
     });
@@ -212,7 +181,7 @@ async function handler(req, res) {
 function buildConfig() {
   const fieldMapOverride = envJson('ZOHO_CRM_FIELD_MAP_JSON', {});
   return {
-    version: env('GATEWAY_VERSION', '2026-07-02.v1'),
+    version: env('GATEWAY_VERSION', '2026-07-02.v2'),
     allowedPaths: envList('ALLOWED_PATHS', ['/zillow/leads']),
     maxBodyBytes: envNumber('MAX_BODY_BYTES', 65536),
 
@@ -238,13 +207,11 @@ function buildConfig() {
     zohoClientSecret: env('ZOHO_CLIENT_SECRET', '').trim(),
     zohoRefreshToken: env('ZOHO_REFRESH_TOKEN', '').trim(),
 
-    contactsModule: env('ZOHO_CRM_CONTACTS_MODULE', 'Contacts').trim(),
-    applicationsModule: env('ZOHO_CRM_APPLICATIONS_MODULE', 'Deals').trim(),
+    leadsModule: env('ZOHO_CRM_LEADS_MODULE', 'Leads').trim(),
     intakeEventsModule: env('ZOHO_CRM_INTAKE_EVENTS_MODULE', 'Zillow_Intake_Events').trim(),
     enableCrmIntakeEventLog: envBool('ENABLE_CRM_INTAKE_EVENT_LOG', false),
 
-    contactDuplicateCheckFields: envList('CONTACT_DUPLICATE_CHECK_FIELDS', ['Email', 'Mobile', 'Phone']),
-    applicationDuplicateCheckFields: envList('APPLICATION_DUPLICATE_CHECK_FIELDS', ['Zillow_Lead_Key']),
+    leadDuplicateCheckFields: envList('LEAD_DUPLICATE_CHECK_FIELDS', ['Zillow_Lead_Key']),
     intakeEventDuplicateCheckFields: envList('INTAKE_EVENT_DUPLICATE_CHECK_FIELDS', ['External_Event_Key']),
 
     triggerWorkflows: envBool('CRM_TRIGGER_WORKFLOWS', false),
@@ -253,14 +220,8 @@ function buildConfig() {
     skipCadencesOnInsert: envBool('SKIP_CADENCES_ON_INSERT', true),
     skipCadencesOnUpdate: envBool('SKIP_CADENCES_ON_UPDATE', false),
 
-    defaultApplicationStage: env('DEFAULT_APPLICATION_STAGE', 'New Inquiry').trim(),
-    defaultApplicationPipeline: env('DEFAULT_APPLICATION_PIPELINE', '').trim(),
     defaultLeadSource: env('DEFAULT_LEAD_SOURCE', 'Zillow').trim(),
-    defaultContactType: env('DEFAULT_CONTACT_TYPE', 'Applicant').trim(),
-    defaultScreeningStatus: env('DEFAULT_SCREENING_STATUS', 'Not Started').trim(),
-    defaultOwnerDecision: env('DEFAULT_OWNER_DECISION', 'New Inquiry').trim(),
-    defaultPortalAccessStatus: env('DEFAULT_PORTAL_ACCESS_STATUS', 'Not Invited').trim(),
-    applicationCloseDaysFromIntake: envNumber('APPLICATION_CLOSE_DAYS_FROM_INTAKE', 14),
+    defaultLeadStatus: env('DEFAULT_LEAD_STATUS', 'Not Contacted').trim(),
 
     propertyUnitMap: envJson('PROPERTY_UNIT_MAP_JSON', {}),
     fieldMap: deepMerge(DEFAULT_FIELD_MAP, fieldMapOverride),
@@ -282,7 +243,8 @@ function handleHealth(req, res) {
     ok: true,
     service: 'gh-zillow-lead-intake',
     version: CONFIG.version,
-    mode: CONFIG.dryRun ? 'dry_run' : 'live'
+    mode: CONFIG.dryRun ? 'dry_run' : 'live',
+    crm_target_module: CONFIG.leadsModule
   });
 }
 
@@ -504,83 +466,69 @@ function resolvePropertyUnit(lead, propertyUnitMap) {
 
 function buildManualReviewReasons(lead, propertyUnit) {
   const reasons = [];
-  if (!lead.firstName || !lead.lastName) reasons.push('Missing full applicant name.');
-  if (!lead.email) reasons.push('Missing applicant email.');
-  if (!lead.phone) reasons.push('Missing applicant phone.');
+  if (!lead.firstName || !lead.lastName) reasons.push('Missing full prospect name.');
+  if (!lead.email) reasons.push('Missing prospect email.');
+  if (!lead.phone) reasons.push('Missing prospect phone.');
   if (!lead.propertyAddress && !lead.listingId) reasons.push('Missing listing ID and property address.');
   if (!propertyUnit) reasons.push('No CRM property/unit mapping matched the Zillow lead.');
   if (!lead.desiredMoveInDate) reasons.push('Desired move-in date was not provided.');
   return reasons;
 }
 
-function buildCrmPlan(lead, propertyUnit, manualReviewReasons) {
+function buildCrmLeadPlan(lead, propertyUnit, manualReviewReasons) {
   const manualReviewRequired = manualReviewReasons.length > 0;
-  const fieldMap = CONFIG.fieldMap;
-  const contactLastName = lead.lastName || lead.firstName || 'Zillow Prospect';
-  const contactDescription = [
+  const fieldMap = CONFIG.fieldMap.lead;
+  const lastName = lead.lastName || lead.firstName || 'Zillow Prospect';
+  const company = buildLeadCompany(lead, propertyUnit);
+  const leadDescription = [
     'Imported from Zillow lead intake.',
+    'Raw inquiry only. Convert to Contact and Rental Application after qualification.',
     `Lead reference: ${lead.leadReference}`,
     lead.listingId ? `Listing ID: ${lead.listingId}` : '',
     lead.propertyAddress ? `Property: ${lead.propertyAddress}` : '',
     lead.unit ? `Unit: ${lead.unit}` : '',
+    lead.bedrooms ? `Bedrooms from source: ${lead.bedrooms}` : '',
+    lead.bathrooms ? `Bathrooms from source: ${lead.bathrooms}` : '',
+    lead.pets ? `Pets from source: ${lead.pets}` : '',
     lead.message ? `Message: ${truncate(lead.message, 1500)}` : '',
     manualReviewRequired ? `Manual review: ${manualReviewReasons.join(' ')}` : ''
   ].filter(Boolean).join('\n');
 
-  const contactRecord = compactRecord({
-    [fieldMap.contact.firstName]: lead.firstName || undefined,
-    [fieldMap.contact.lastName]: contactLastName,
-    [fieldMap.contact.email]: lead.email || undefined,
-    [fieldMap.contact.phone]: lead.phone || undefined,
-    [fieldMap.contact.mobile]: lead.phone || undefined,
-    [fieldMap.contact.leadSource]: CONFIG.defaultLeadSource,
-    [fieldMap.contact.contactType]: CONFIG.defaultContactType,
-    [fieldMap.contact.portalAccessStatus]: CONFIG.defaultPortalAccessStatus,
-    [fieldMap.contact.relatedProperty]: propertyUnit && propertyUnit.propertyId ? { id: String(propertyUnit.propertyId) } : undefined,
-    [fieldMap.contact.relatedUnit]: propertyUnit && propertyUnit.unitId ? { id: String(propertyUnit.unitId) } : undefined,
-    [fieldMap.contact.description]: contactDescription
+  const leadRecord = compactRecord({
+    [fieldMap.firstName]: lead.firstName || undefined,
+    [fieldMap.lastName]: lastName,
+    [fieldMap.company]: company,
+    [fieldMap.email]: lead.email || undefined,
+    [fieldMap.phone]: lead.phone || undefined,
+    [fieldMap.mobile]: lead.phone || undefined,
+    [fieldMap.leadSource]: CONFIG.defaultLeadSource,
+    [fieldMap.leadStatus]: CONFIG.defaultLeadStatus || undefined,
+    [fieldMap.property]: propertyUnit && propertyUnit.propertyId ? { id: String(propertyUnit.propertyId) } : undefined,
+    [fieldMap.unit]: propertyUnit && propertyUnit.unitId ? { id: String(propertyUnit.unitId) } : undefined,
+    [fieldMap.zillowLeadKey]: lead.leadKey,
+    [fieldMap.zillowLeadId]: lead.leadId || undefined,
+    [fieldMap.zillowListingId]: lead.listingId || undefined,
+    [fieldMap.zillowListingUrl]: lead.listingUrl || undefined,
+    [fieldMap.zillowMessage]: lead.message || undefined,
+    [fieldMap.zillowSource]: lead.source || CONFIG.defaultLeadSource,
+    [fieldMap.zillowRawFieldKeys]: lead.rawFieldKeys.join(', '),
+    [fieldMap.leadReceivedDate]: lead.receivedAtDate,
+    [fieldMap.desiredMoveInDate]: lead.desiredMoveInDate || undefined,
+    [fieldMap.desiredRent]: lead.rent || (propertyUnit && propertyUnit.approvedRent) || undefined,
+    [fieldMap.desiredDeposit]: lead.deposit || (propertyUnit && propertyUnit.approvedDeposit) || undefined,
+    [fieldMap.manualReviewRequired]: manualReviewRequired,
+    [fieldMap.manualReviewReason]: manualReviewReasons.join('\n') || undefined,
+    [fieldMap.description]: leadDescription
   });
 
-  const applicationName = buildApplicationName(lead, propertyUnit);
-  const closeDate = addDays(lead.receivedAtDate, CONFIG.applicationCloseDaysFromIntake);
-  const applicationNotes = [
-    'Zillow lead intake created this Rental Application record.',
-    'Do not generate lease, Books customer, recurring invoice, or tenant portal access until owner approval.',
-    `Lead reference: ${lead.leadReference}`,
-    propertyUnit && propertyUnit.matchedKey ? `Property/unit mapping: ${propertyUnit.matchedKey}` : '',
-    lead.bedrooms ? `Bedrooms from source: ${lead.bedrooms}` : '',
-    lead.bathrooms ? `Bathrooms from source: ${lead.bathrooms}` : '',
-    lead.pets ? `Pets from source: ${lead.pets}` : '',
-    manualReviewRequired ? `Manual review: ${manualReviewReasons.join(' ')}` : ''
-  ].filter(Boolean).join('\n');
+  return { leadRecord };
+}
 
-  const applicationRecord = compactRecord({
-    [fieldMap.application.name]: applicationName,
-    [fieldMap.application.stage]: CONFIG.defaultApplicationStage,
-    [fieldMap.application.pipeline]: CONFIG.defaultApplicationPipeline || undefined,
-    [fieldMap.application.closingDate]: closeDate,
-    [fieldMap.application.amount]: lead.rent || (propertyUnit && propertyUnit.approvedRent) || undefined,
-    [fieldMap.application.property]: propertyUnit && propertyUnit.propertyId ? { id: String(propertyUnit.propertyId) } : undefined,
-    [fieldMap.application.unit]: propertyUnit && propertyUnit.unitId ? { id: String(propertyUnit.unitId) } : undefined,
-    [fieldMap.application.zillowLeadKey]: lead.leadKey,
-    [fieldMap.application.zillowLeadId]: lead.leadId || undefined,
-    [fieldMap.application.zillowListingId]: lead.listingId || undefined,
-    [fieldMap.application.zillowListingUrl]: lead.listingUrl || undefined,
-    [fieldMap.application.zillowMessage]: lead.message || undefined,
-    [fieldMap.application.zillowSource]: lead.source || CONFIG.defaultLeadSource,
-    [fieldMap.application.zillowRawFieldKeys]: lead.rawFieldKeys.join(', '),
-    [fieldMap.application.applicationReceivedDate]: lead.receivedAtDate,
-    [fieldMap.application.desiredMoveInDate]: lead.desiredMoveInDate || undefined,
-    [fieldMap.application.screeningStatus]: CONFIG.defaultScreeningStatus,
-    [fieldMap.application.ownerDecision]: CONFIG.defaultOwnerDecision,
-    [fieldMap.application.approvedRent]: (propertyUnit && propertyUnit.approvedRent) || undefined,
-    [fieldMap.application.approvedDeposit]: (propertyUnit && propertyUnit.approvedDeposit) || undefined,
-    [fieldMap.application.manualReviewRequired]: manualReviewRequired,
-    [fieldMap.application.manualReviewReason]: manualReviewReasons.join('\n') || undefined,
-    [fieldMap.application.notes]: applicationNotes
-  });
-
-  return { contactRecord, applicationRecord };
+function buildLeadCompany(lead, propertyUnit) {
+  if (propertyUnit && propertyUnit.propertyName) return propertyUnit.propertyName;
+  if (lead.propertyAddress) return lead.propertyAddress;
+  if (lead.listingId) return `Zillow Listing ${lead.listingId}`;
+  return 'GH Real Estate Zillow Lead';
 }
 
 function buildIntakeEventRecord(lead, result) {
@@ -592,8 +540,7 @@ function buildIntakeEventRecord(lead, result) {
     [fieldMap.source]: lead.source || CONFIG.defaultLeadSource,
     [fieldMap.receivedAt]: lead.receivedAtIso,
     [fieldMap.status]: 'Processed',
-    [fieldMap.contactId]: result.contactId,
-    [fieldMap.applicationId]: result.applicationId,
+    [fieldMap.crmLeadId]: result.crmLeadId,
     [fieldMap.rawFieldKeys]: lead.rawFieldKeys.join(', '),
     [fieldMap.manualReviewRequired]: result.manualReviewReasons.length > 0,
     [fieldMap.manualReviewReason]: result.manualReviewReasons.join('\n') || undefined
@@ -760,21 +707,12 @@ function publicLeadReference(leadKey) {
   return `zlw_${sha256(leadKey).slice(0, 16)}`;
 }
 
-function buildApplicationName(lead, propertyUnit) {
-  const applicant = [lead.firstName, lead.lastName].filter(Boolean).join(' ') || 'Zillow Prospect';
-  const unitLabel = (propertyUnit && propertyUnit.unitName) || lead.unit || lead.propertyAddress || lead.listingId || 'Unmapped Unit';
-  return truncate(`Zillow - ${applicant} - ${unitLabel} - ${lead.receivedAtDate}`, 120);
-}
-
 function sanitizePlanForResponse(plan) {
   return {
-    contact_module: CONFIG.contactsModule,
-    application_module: CONFIG.applicationsModule,
-    contact_fields: Object.keys(plan.contactRecord).sort(),
-    application_fields: Object.keys(plan.applicationRecord).sort(),
+    lead_module: CONFIG.leadsModule,
+    lead_fields: Object.keys(plan.leadRecord).sort(),
     duplicate_check_fields: {
-      contact: CONFIG.contactDuplicateCheckFields,
-      application: CONFIG.applicationDuplicateCheckFields
+      lead: CONFIG.leadDuplicateCheckFields
     }
   };
 }
@@ -907,12 +845,6 @@ function deepMerge(base, override) {
     }
   }
   return output;
-}
-
-function addDays(yyyyMmDd, days) {
-  const base = new Date(`${yyyyMmDd}T00:00:00Z`);
-  base.setUTCDate(base.getUTCDate() + Number(days || 0));
-  return isoDateOnly(base.toISOString());
 }
 
 function isoDateOnly(iso) {
@@ -1083,7 +1015,7 @@ module.exports._test = {
   validateNormalizedLead,
   resolvePropertyUnit,
   buildManualReviewReasons,
-  buildCrmPlan,
+  buildCrmLeadPlan,
   buildLeadKey,
   parseInboundPayload,
   normalizePhone,

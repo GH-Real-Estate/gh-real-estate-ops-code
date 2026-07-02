@@ -11,7 +11,7 @@ const {
   validateNormalizedLead,
   resolvePropertyUnit,
   buildManualReviewReasons,
-  buildCrmPlan,
+  buildCrmLeadPlan,
   buildLeadKey,
   parseInboundPayload,
   normalizePhone,
@@ -109,7 +109,7 @@ test('resolves property and unit from listing map', () => {
   assert.equal(propertyUnit.approvedRent, 1125);
 });
 
-test('builds CRM plan with duplicate prevention fields', () => {
+test('builds CRM Lead plan with duplicate prevention fields', () => {
   const lead = normalizeZillowLeadPayload({
     lead_id: 'lead_test_123',
     name: 'Test Tenant',
@@ -131,14 +131,16 @@ test('builds CRM plan with duplicate prevention fields', () => {
   };
 
   const reasons = buildManualReviewReasons(lead, propertyUnit);
-  const plan = buildCrmPlan(lead, propertyUnit, reasons);
+  const plan = buildCrmLeadPlan(lead, propertyUnit, reasons);
 
-  assert.equal(plan.contactRecord.Last_Name, 'Tenant');
-  assert.equal(plan.contactRecord.Email, 'test.tenant@example.com');
-  assert.equal(plan.applicationRecord.Zillow_Lead_Key, 'zillow:lead_test_123');
-  assert.equal(plan.applicationRecord.Stage, 'New Inquiry');
-  assert.equal(plan.applicationRecord.Amount, 1125);
-  assert.equal(plan.applicationRecord.Manual_Review_Required, false);
+  assert.equal(plan.leadRecord.Last_Name, 'Tenant');
+  assert.equal(plan.leadRecord.Company, '9401 Nieman Rd');
+  assert.equal(plan.leadRecord.Email, 'test.tenant@example.com');
+  assert.equal(plan.leadRecord.Zillow_Lead_Key, 'zillow:lead_test_123');
+  assert.equal(plan.leadRecord.Lead_Source, 'Zillow');
+  assert.equal(plan.leadRecord.Lead_Status, 'Not Contacted');
+  assert.equal(plan.leadRecord.Desired_Rent, 1125);
+  assert.equal(plan.leadRecord.Manual_Review_Required, false);
 });
 
 test('normalizes utility values', () => {
