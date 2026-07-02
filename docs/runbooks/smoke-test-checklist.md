@@ -11,6 +11,16 @@ Use before and after any live automation change.
 - [ ] Dry-run completed or not applicable.
 - [ ] One controlled test completed.
 
+## Apply Unused Credits
+
+- [ ] New invoice with no unused credits does not apply anything.
+- [ ] New invoice with matching-branch customer-payment credit applies the correct amount.
+- [ ] New invoice with matching-branch credit note applies the correct amount.
+- [ ] New invoice with matching-branch retainer payment applies the correct amount.
+- [ ] Non-matching-branch credit is skipped.
+- [ ] Running the function twice does not over-apply credits.
+- [ ] Logs contain no PII, bank data, raw payloads, or secrets.
+
 ## Late Fee Guard
 
 - [ ] Test invoice below threshold does not create a fee.
