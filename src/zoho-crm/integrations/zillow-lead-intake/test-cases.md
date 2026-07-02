@@ -15,13 +15,13 @@ Coverage:
 - email/phone validation.
 - stable idempotency key generation.
 - property/unit map resolution.
-- CRM payload construction.
+- CRM Lead payload construction.
 
 ## Manual Dry-Run Cases
 
 | Case | Expected |
 |---|---|
-| Complete fake lead | `ok=true`, `mode=dry_run`, planned Contact and Application fields. |
+| Complete fake lead | `ok=true`, `mode=dry_run`, planned Lead fields. |
 | Missing email but phone present | Accepted, manual review required. |
 | Missing phone but email present | Accepted, manual review required. |
 | Missing email and phone | Rejected with `invalid_lead_payload`. |
@@ -33,8 +33,7 @@ Coverage:
 Only run after dry-run passes.
 
 1. Send complete fake lead.
-2. Confirm one Contact exists.
-3. Confirm one Rental Application exists.
-4. Send the exact same payload again.
-5. Confirm the Rental Application was updated, not duplicated.
-6. Confirm no lease, Books invoice, or tenant portal record was created.
+2. Confirm one CRM Lead exists.
+3. Send the exact same payload again.
+4. Confirm the Lead was updated, not duplicated.
+5. Confirm no Contact, Rental Application/Deal, lease, Books invoice, or tenant portal record was created.
