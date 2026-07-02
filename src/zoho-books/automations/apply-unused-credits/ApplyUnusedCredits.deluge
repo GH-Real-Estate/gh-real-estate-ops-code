@@ -1,6 +1,6 @@
 // =================================================================================================
 // FILE: ApplyUnusedCredits (Zoho Books Invoice Workflow Custom Function)
-// VERSION: v1_REPO_CONTROLLED
+// VERSION: v2_HARDENED
 // UPDATED: 2026-07-02
 //
 // PURPOSE:
@@ -17,13 +17,33 @@
 //   - Only applies credits when the invoice has an open balance.
 //   - Uses Zoho Books unused credits as the source of truth.
 //   - Applies only credits whose branch_id matches the invoice branch_id.
-//   - Applies customer payments and retainer payments as invoice_payments.
-//   - Applies credit notes as apply_creditnotes.
+//   - Fails closed on blank branch IDs by default; adjust allowEmptyBranchMatch only after verification.
+//   - Applies credit notes first, then customer payments, then retainer payments.
+//   - Re-checks the invoice balance immediately before applying credits to reduce duplicate-run risk.
 //
 // IMPORTANT:
 //   This automation belongs under src/zoho-books because Zoho Books owns the trigger,
 //   invoice lookup, unused-credit lookup, and invoice credit application endpoint.
 // =================================================================================================
+
+// -------------------- CONFIG --------------------
+// Keep this true unless the workflow is intentionally filtered in Zoho Books.
+// This prevents auto-applying credits to fees, deposits, or miscellaneous invoices by accident.
+requireRentInvoiceFlag = true;
+rentInvoiceFlagApiName = "cf_is_rent_invoice";
+
+// Financial workflows should fail closed until branch behavior is verified in the live Books account.
+// If the organization is truly single-branch and Zoho returns blank branch IDs, set allowEmptyBranchMatch=true after testing.
+requireBranchMatch = true;
+allowEmptyBranchMatch = false;
+
+// Explicit application order keeps accounting behavior predictable. Zoho's returned order is preserved within each type.
+creditApplicationOrder = List();
+creditApplicationOrder.add("creditnote");
+creditApplicationOrder.add("customer_payment");
+creditApplicationOrder.add("retainer_payment");
+
+// -------------------- CONTEXT --------------------
 if(invoice == null || organization == null)
 {
 	info "ERROR: Missing workflow invoice or organization context.";
@@ -34,7 +54,6 @@ invoiceID = ifnull(invoice.get("invoice_id"),"").toString();
 organizationID = ifnull(organization.get("organization_id"),"").toString();
 customerID = ifnull(invoice.get("customer_id"),"").toString();
 apiUrl = ifnull(organization.get("api_root_endpoint"),"").toString();
-balanceRaw = ifnull(invoice.get("balance"),0);
 
 if(invoiceID == "" || organizationID == "" || customerID == "" || apiUrl == "")
 {
@@ -42,12 +61,81 @@ if(invoiceID == "" || organizationID == "" || customerID == "" || apiUrl == "")
 	return;
 }
 
+// -------------------- INVOICE LOOKUP AND SCOPE CHECKS --------------------
+invoiceDetailsResponse = Map();
+try 
+{
+	invoiceDetailsResponse = invokeurl
+	[
+		url :apiUrl + "/invoices/" + invoiceID + "?organization_id=" + organizationID
+		type :GET
+		connection:"zbooks"
+	];
+}
+catch (eInvoiceLookup)
+{
+	info "ERROR: Zoho Books invoice lookup request failed.";
+	return;
+}
+
+if(invoiceDetailsResponse == null)
+{
+	info "ERROR: Zoho Books invoice lookup returned no response.";
+	return;
+}
+invoiceLookupCode = ifnull(invoiceDetailsResponse.get("code"),0).toString();
+if(invoiceLookupCode != "0")
+{
+	info "ERROR: Zoho Books invoice lookup failed. code=" + invoiceLookupCode + " message=" + ifnull(invoiceDetailsResponse.get("message"),"").toString();
+	return;
+}
+
+invoiceDetails = invoiceDetailsResponse.get("invoice");
+if(invoiceDetails == null)
+{
+	info "ERROR: Zoho Books invoice lookup returned no invoice object.";
+	return;
+}
+
+if(requireRentInvoiceFlag)
+{
+	isEligibleInvoice = false;
+	invoiceCustomFields = invoiceDetails.get("custom_fields");
+	if(invoiceCustomFields != null)
+	{
+		for each  customField in invoiceCustomFields
+		{
+			customFieldApiName = ifnull(customField.get("api_name"),"").toString();
+			if(customFieldApiName == rentInvoiceFlagApiName)
+			{
+				customFieldValue = ifnull(customField.get("value"),"").toString();
+				if(customFieldValue == "true" || customFieldValue == "True" || customFieldValue == "yes" || customFieldValue == "Yes" || customFieldValue == "1")
+				{
+					isEligibleInvoice = true;
+				}
+			}
+		}
+	}
+	if(isEligibleInvoice == false)
+	{
+		info "Invoice is not marked eligible for automatic unused-credit application.";
+		return;
+	}
+}
+
+branchID = ifnull(invoiceDetails.get("branch_id"),"").toString();
+if(requireBranchMatch && branchID == "" && allowEmptyBranchMatch == false)
+{
+	info "ERROR: Invoice branch_id is blank; stopping because branch matching is configured to fail closed.";
+	return;
+}
+
 invoiceTotal = 0.0;
 try 
 {
-	invoiceTotal = balanceRaw.toDecimal();
+	invoiceTotal = ifnull(invoiceDetails.get("balance"),0).toDecimal();
 }
-catch (eBalance)
+catch (eInvoiceBalance)
 {
 	info "ERROR: Invoice balance could not be parsed.";
 	return;
@@ -59,26 +147,34 @@ if(invoiceTotal <= 0)
 	return;
 }
 
-invoiceDetailsResponse = invokeurl
-[
-	url :apiUrl + "/invoices/" + invoiceID + "?organization_id=" + organizationID
-	type :GET
-	connection:"zbooks"
-];
-invoiceDetails = invoiceDetailsResponse.get("invoice");
-if(invoiceDetails == null)
+// -------------------- UNUSED CREDIT LOOKUP --------------------
+unusedCreditsResponse = Map();
+try 
 {
-	info "ERROR: Could not load invoice details from Zoho Books.";
+	unusedCreditsResponse = invokeurl
+	[
+		url :apiUrl + "/contacts/" + customerID + "/receivables/unusedcredits?include_unused_retainer_payments=true&organization_id=" + organizationID
+		type :GET
+		connection:"zbooks"
+	];
+}
+catch (eUnusedCreditsLookup)
+{
+	info "ERROR: Zoho Books unused-credit lookup request failed.";
 	return;
 }
 
-branchID = ifnull(invoiceDetails.get("branch_id"),"").toString();
-unusedCreditsResponse = invokeurl
-[
-	url :apiUrl + "/contacts/" + customerID + "/receivables/unusedcredits?include_unused_retainer_payments=true&organization_id=" + organizationID
-	type :GET
-	connection:"zbooks"
-];
+if(unusedCreditsResponse == null)
+{
+	info "ERROR: Zoho Books unused-credit lookup returned no response.";
+	return;
+}
+unusedCreditsCode = ifnull(unusedCreditsResponse.get("code"),0).toString();
+if(unusedCreditsCode != "0")
+{
+	info "ERROR: Zoho Books unused-credit lookup failed. code=" + unusedCreditsCode + " message=" + ifnull(unusedCreditsResponse.get("message"),"").toString();
+	return;
+}
 
 unusedCredits = unusedCreditsResponse.get("unused_credits_receivable");
 if(unusedCredits == null)
@@ -88,32 +184,80 @@ if(unusedCredits == null)
 }
 
 credits = unusedCredits.get("unapplied_amounts");
-excessCreditsList = List();
-creditNotesList = List();
-
 if(credits == null || credits.size() == 0)
 {
 	info "There are no credits available.";
 	return;
 }
 
-for each  credit in credits
-{
-	creditBalance = ifnull(credit.get("balance"),0).toDecimal();
-	creditType = ifnull(credit.get("entity_name"),"").toString();
-	creditEntityID = ifnull(credit.get("entity_id"),"").toString();
-	creditBranchID = ifnull(credit.get("branch_id"),"").toString();
+// -------------------- BUILD APPLICATION PAYLOAD --------------------
+excessCreditsList = List();
+creditNotesList = List();
+skippedBranchCredits = 0;
+skippedMalformedCredits = 0;
+skippedUnsupportedCredits = 0;
+selectedCreditAmount = 0.0;
 
-	if(creditBalance <= 0 || creditEntityID == "")
+for each  creditTypeToApply in creditApplicationOrder
+{
+	if(invoiceTotal == 0)
 	{
-		continue;
+		break;
 	}
-	if(creditBranchID != branchID)
+	for each  credit in credits
 	{
-		continue;
-	}
-	if(creditType == "customer_payment" || creditType == "retainer_payment" || creditType == "creditnote")
-	{
+		if(invoiceTotal == 0)
+		{
+			break;
+		}
+
+		creditType = ifnull(credit.get("entity_name"),"").toString();
+		if(creditType != creditTypeToApply)
+		{
+			continue;
+		}
+
+		creditEntityID = ifnull(credit.get("entity_id"),"").toString();
+		creditBranchID = ifnull(credit.get("branch_id"),"").toString();
+		creditBalance = 0.0;
+		try 
+		{
+			creditBalance = ifnull(credit.get("balance"),0).toDecimal();
+		}
+		catch (eCreditBalance)
+		{
+			skippedMalformedCredits = skippedMalformedCredits + 1;
+			continue;
+		}
+
+		if(creditBalance <= 0 || creditEntityID == "")
+		{
+			skippedMalformedCredits = skippedMalformedCredits + 1;
+			continue;
+		}
+
+		if(requireBranchMatch)
+		{
+			if(branchID == "" || creditBranchID == "")
+			{
+				if(allowEmptyBranchMatch == false)
+				{
+					skippedBranchCredits = skippedBranchCredits + 1;
+					continue;
+				}
+				if(creditBranchID != branchID)
+				{
+					skippedBranchCredits = skippedBranchCredits + 1;
+					continue;
+				}
+			}
+			else if(creditBranchID != branchID)
+			{
+				skippedBranchCredits = skippedBranchCredits + 1;
+				continue;
+			}
+		}
+
 		if(invoiceTotal <= creditBalance)
 		{
 			amountApplied = invoiceTotal;
@@ -127,21 +271,21 @@ for each  credit in credits
 
 		creditMap = Map();
 		creditMap.put("amount_applied",amountApplied);
+		selectedCreditAmount = selectedCreditAmount + amountApplied;
 
 		if(creditType == "creditnote")
 		{
 			creditMap.put("creditnote_id",creditEntityID);
 			creditNotesList.add(creditMap);
 		}
-		else
+		else if(creditType == "customer_payment" || creditType == "retainer_payment")
 		{
 			creditMap.put("payment_id",creditEntityID);
 			excessCreditsList.add(creditMap);
 		}
-
-		if(invoiceTotal == 0)
+		else
 		{
-			break;
+			skippedUnsupportedCredits = skippedUnsupportedCredits + 1;
 		}
 	}
 }
@@ -159,10 +303,83 @@ if(excessCreditsList.size() > 0)
 	canApplyCredits = true;
 }
 
-if(canApplyCredits)
+if(canApplyCredits == false)
 {
-	params = Map();
-	params.put("JSONString",payload);
+	info "There are no eligible credits available. skipped_branch=" + skippedBranchCredits + " skipped_malformed=" + skippedMalformedCredits + " skipped_unsupported=" + skippedUnsupportedCredits;
+	return;
+}
+
+// -------------------- PRE-APPLY CONCURRENCY GUARD --------------------
+preApplyInvoiceResponse = Map();
+try 
+{
+	preApplyInvoiceResponse = invokeurl
+	[
+		url :apiUrl + "/invoices/" + invoiceID + "?organization_id=" + organizationID
+		type :GET
+		connection:"zbooks"
+	];
+}
+catch (ePreApplyInvoiceLookup)
+{
+	info "ERROR: Pre-apply invoice lookup request failed.";
+	return;
+}
+
+if(preApplyInvoiceResponse == null)
+{
+	info "ERROR: Pre-apply invoice lookup returned no response.";
+	return;
+}
+preApplyInvoiceCode = ifnull(preApplyInvoiceResponse.get("code"),0).toString();
+if(preApplyInvoiceCode != "0")
+{
+	info "ERROR: Pre-apply invoice lookup failed. code=" + preApplyInvoiceCode + " message=" + ifnull(preApplyInvoiceResponse.get("message"),"").toString();
+	return;
+}
+
+preApplyInvoice = preApplyInvoiceResponse.get("invoice");
+if(preApplyInvoice == null)
+{
+	info "ERROR: Pre-apply invoice lookup returned no invoice object.";
+	return;
+}
+
+preApplyBranchID = ifnull(preApplyInvoice.get("branch_id"),"").toString();
+if(requireBranchMatch && preApplyBranchID != branchID)
+{
+	info "ERROR: Invoice branch changed before credit application; stopping to avoid cross-branch application.";
+	return;
+}
+
+preApplyBalance = 0.0;
+try 
+{
+	preApplyBalance = ifnull(preApplyInvoice.get("balance"),0).toDecimal();
+}
+catch (ePreApplyBalance)
+{
+	info "ERROR: Pre-apply invoice balance could not be parsed.";
+	return;
+}
+
+if(preApplyBalance <= 0)
+{
+	info "Invoice balance was paid before credits were applied; no credits applied.";
+	return;
+}
+if(preApplyBalance < selectedCreditAmount)
+{
+	info "Invoice balance changed before credit application; stopping so the next run can recalculate.";
+	return;
+}
+
+// -------------------- APPLY CREDITS --------------------
+params = Map();
+params.put("JSONString",payload);
+applyCredits = Map();
+try 
+{
 	applyCredits = invokeurl
 	[
 		url :apiUrl + "/invoices/" + invoiceID + "/credits?organization_id=" + organizationID
@@ -170,16 +387,30 @@ if(canApplyCredits)
 		parameters:params
 		connection:"zbooks"
 	];
-	if(applyCredits != null && applyCredits.get("message") != null)
-	{
-		info applyCredits.get("message");
-	}
-	else
-	{
-		info "Unused credits apply request completed; verify the invoice balance in Zoho Books.";
-	}
+}
+catch (eApplyCredits)
+{
+	info "ERROR: Zoho Books credit-application request failed.";
+	return;
+}
+
+if(applyCredits == null)
+{
+	info "ERROR: Zoho Books credit-application request returned no response.";
+	return;
+}
+applyCreditsCode = ifnull(applyCredits.get("code"),0).toString();
+if(applyCreditsCode != "0")
+{
+	info "ERROR: Zoho Books did not apply unused credits. code=" + applyCreditsCode + " message=" + ifnull(applyCredits.get("message"),"").toString();
+	return;
+}
+
+if(applyCredits.get("message") != null)
+{
+	info applyCredits.get("message");
 }
 else
 {
-	info "There are no matching branch credits available.";
+	info "Unused credits applied successfully; verify the invoice balance in Zoho Books.";
 }
