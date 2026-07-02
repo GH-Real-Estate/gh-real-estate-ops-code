@@ -7,13 +7,16 @@ Node.js webhook gateway for Zoho Payments returned/failed payment events. The we
 ```text
 Event source: Zoho Payments
 Execution runtime: Zoho Catalyst Advanced I/O / Node.js 18
+Accounting write target: Zoho Books
 Main file: src/index.js
 Package file: package.json
 ```
 
 ## Why This Lives Under `src/zoho-payments/`
 
-The trigger event originates from Zoho Payments. The webhook then writes to Zoho Books. That makes this a Zoho Payments integration with a Zoho Books dependency, not a generic top-level automation.
+The trigger event originates from Zoho Payments. The webhook then runs in Zoho Catalyst and writes to Zoho Books. That makes this a Zoho Payments integration with a Catalyst runtime and a Zoho Books dependency, not a generic top-level automation and not a Zoho Books scheduled function.
+
+Use `returned-payment-fee` for the folder name even when the business phrase is "returned check fee." The code reacts to payment failure events from Zoho Payments, which can cover ACH/check-style returns and other failed payment methods.
 
 ## Related Files
 
@@ -24,15 +27,25 @@ The trigger event originates from Zoho Payments. The webhook then writes to Zoho
 | `package-lock.json` | Locked dependency versions |
 | `catalyst-config.json` | Catalyst deployment metadata |
 | `install-checklist.md` | Install and verification checklist |
-| `test-cases.md` | Sanitized test plan |
+| `test-cases.md` | Sanitized manual/runtime test plan |
+| `test/source-contract.test.js` | Automated source-contract checks for safe defaults and ownership rules |
 | `docs/environment-variables.md` | Runtime configuration guide |
 | `docs/security-model.md` | Webhook security model |
 | `docs/operations-runbook.md` | Live/dry-run/recovery runbook |
 | `docs/file-manifest.md` | Function package contents |
+| `docs/structure-and-ownership.md` | Why this package lives under Zoho Payments even though it runs in Catalyst and writes to Books |
 | `docs/changelog.md` | Function-level changelog |
 | `../../../zoho-books/field-maps/books-automation-settings.md` | Related Books item/custom-field settings |
 | `../../../../docs/business-rules/lease-automation-rules.md` | Lease fee rule verification |
 | `../../../../samples/zoho-payments/returned-payment.sample.json` | Sanitized sample event |
+
+## Local / CI Checks
+
+```text
+npm run ci
+```
+
+This runs the syntax check and the automated source-contract tests. GitHub Actions also runs this package check and the repository safety scanner on pull requests.
 
 ## Safety Requirements
 
