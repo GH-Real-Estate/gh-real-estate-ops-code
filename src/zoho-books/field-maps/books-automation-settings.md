@@ -6,7 +6,13 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 
 | Setting | Current Value | Status / Notes |
 |---|---:|---|
-| Zoho Books connection name | `zbooks` | Observed in Late Fee Guard comments. Verify in Zoho before live deployment. |
+| Zoho Books connection name | `zbooks` | Observed in Deluge automation code. Verify in Zoho before live deployment. |
+| Apply-unused-credits workflow module | `Invoice` | Must be an Invoice workflow, not an Estimate workflow. |
+| Apply-unused-credits trigger | Event Based / Created | Runs when a new invoice is created. Do not enable during bulk historical imports unless intentional. |
+| Apply-unused-credits unused-credit source | `/contacts/{customer_id}/receivables/unusedcredits` | Reads unused customer credits from Zoho Books contact receivables. |
+| Apply-unused-credits retainer option | `include_unused_retainer_payments=true` | Includes unused retainer payments in the credit list. |
+| Apply-unused-credits branch rule | Invoice `branch_id` must match credit `branch_id` | Prevents cross-branch credit application. Empty branch on both records is treated as a match. |
+| Apply-unused-credits write endpoint | `/invoices/{invoice_id}/credits` | Applies selected credits back to the invoice. |
 | Late-fee item ID | `5858793000001596035` | Observed in Late Fee Guard. Non-secret, but verify in Zoho Books. |
 | Interest item ID | `5858793000003568001` | Observed in Late Fee Guard. Verify item exists and label is correct. |
 | Late-fee invoice template name | `Fee Invoice - Late Fee` | Observed in Late Fee Guard. Verify template exists. |
@@ -31,6 +37,10 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 - [ ] Verify returned-payment fee amount against the final lease.
 - [ ] Confirm the source of truth for rent invoice identification: `cf_is_rent_invoice`.
 - [ ] Confirm test invoices cannot trigger fees unless intentionally marked as rent.
+- [ ] Confirm the `zbooks` connection can read invoices, read contact unused credits, and apply credits to invoices.
+- [ ] Confirm Apply Unused Credits is configured as an Invoice Created workflow, not an Estimate workflow.
+- [ ] Confirm Apply Unused Credits should run for every new invoice or add a Zoho Books workflow filter.
+- [ ] Confirm multi-branch credit behavior before enabling Apply Unused Credits in production.
 
 ## Field Naming Convention
 
@@ -40,5 +50,6 @@ Use Zoho API names, not display labels, whenever possible.
 
 | Date | Change | Verified By |
 |---|---|---|
+| 2026-07-02 | Added Apply Unused Credits workflow settings observed in committed Deluge code | Pending verification in Zoho |
 | 2026-07-01 | Starter placeholder created | Gabriel |
 | 2026-07-01 | Updated with non-secret values observed in committed automation code | Pending verification in Zoho |

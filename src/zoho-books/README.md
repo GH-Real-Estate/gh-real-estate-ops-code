@@ -8,6 +8,11 @@ Use this area for code and technical documentation that is owned by, installed i
 
 ```text
 automations/
+  apply-unused-credits/
+    ApplyUnusedCredits.deluge
+    README.md
+    install-checklist.md
+    test-cases.md
   late-fee-guard/
     Late_Fee_Guard.deluge
     README.md
@@ -17,6 +22,13 @@ automations/
 field-maps/
   books-automation-settings.md
 ```
+
+## Automations
+
+| Automation | Runtime | Purpose |
+|---|---|---|
+| Apply Unused Credits | Zoho Books Invoice Created workflow custom function | Applies available matching-branch customer credits to a newly-created invoice |
+| Late Fee Guard | Zoho Books scheduled function | Creates lease-aligned late-fee and delinquent-rent interest invoices |
 
 ## Rules
 

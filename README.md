@@ -83,6 +83,11 @@ src/
   zoho-books/
     README.md
     automations/
+      apply-unused-credits/
+        ApplyUnusedCredits.deluge
+        README.md
+        install-checklist.md
+        test-cases.md
       late-fee-guard/
         Late_Fee_Guard.deluge
         README.md
@@ -162,6 +167,7 @@ tools/
 
 | System | Main File |
 |---|---|
+| Apply Unused Credits | `src/zoho-books/automations/apply-unused-credits/ApplyUnusedCredits.deluge` |
 | Late Fee Guard | `src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge` |
 | Returned Payment Webhook | `src/zoho-payments/webhooks/returned-payment-fee/src/index.js` |
 | Zoho Books Automation Settings | `src/zoho-books/field-maps/books-automation-settings.md` |
