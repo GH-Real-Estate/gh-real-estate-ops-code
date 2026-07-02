@@ -8,7 +8,7 @@
 - [ ] Create CRM view: Zillow Leads - Manual Review.
 - [ ] Create CRM view: Zillow Leads - New Inquiry.
 - [ ] Create Zoho OAuth client and refresh token.
-- [ ] Add Catalyst environment variables from `.env.example`.
+- [ ] Add Catalyst environment variables from `docs/runtime-environment-template.md`.
 - [ ] Keep `DRY_RUN=true` for first deployment.
 - [ ] Send fake dry-run payload.
 - [ ] Configure property/unit map with real CRM record IDs.
