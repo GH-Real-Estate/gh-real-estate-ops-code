@@ -13,12 +13,16 @@ Use before and after any live automation change.
 
 ## Apply Unused Credits
 
+- [ ] New invoice not marked eligible by `cf_is_rent_invoice` does not apply anything.
 - [ ] New invoice with no unused credits does not apply anything.
 - [ ] New invoice with matching-branch customer-payment credit applies the correct amount.
-- [ ] New invoice with matching-branch credit note applies the correct amount.
-- [ ] New invoice with matching-branch retainer payment applies the correct amount.
+- [ ] New invoice with matching-branch credit note applies the correct amount before payment/retainer credits.
+- [ ] New invoice with matching-branch retainer payment applies the correct amount after credit notes/customer payments.
 - [ ] Non-matching-branch credit is skipped.
+- [ ] Blank branch IDs fail closed unless `allowEmptyBranchMatch=true` was intentionally verified.
 - [ ] Running the function twice does not over-apply credits.
+- [ ] Balance change before POST stops the function instead of over-applying.
+- [ ] Simulated Zoho API failure logs an error and does not report success.
 - [ ] Logs contain no PII, bank data, raw payloads, or secrets.
 
 ## Late Fee Guard
