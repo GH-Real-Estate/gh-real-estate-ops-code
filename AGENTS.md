@@ -34,6 +34,29 @@ This repo contains GH Real Estate operational systems, Zoho automation code, scr
 - Do not make cosmetic-only changes unless requested.
 - Do not introduce unnecessary frameworks, services, or abstractions.
 
+## Default GitHub Code-Change Workflow
+
+When Codex/ChatGPT changes code, scripts, workflow files, configuration, tests, or production-relevant operational docs in this GitHub repo, the default is end-to-end completion:
+
+1. Inspect the current repo state and relevant files before editing.
+2. Make focused changes on a short-lived branch.
+3. Open a pull request into `main`.
+4. Run or wait for all relevant local and GitHub checks.
+5. Inspect failures, fix code or documentation issues, and rerun checks until they pass or a real external blocker is found.
+6. Merge the pull request into `main` after checks pass and no blocking review, security, merge-conflict, or production-risk issue remains.
+7. Verify `main` contains the final merged commit.
+8. Ensure the short-lived branch is gone after merge when GitHub automatic branch deletion or the available tooling supports it.
+
+Do not leave an unmerged branch or open PR at the end of a normal code-editing task unless one of these blockers applies:
+
+- The user explicitly asks to stop before merge.
+- GitHub permissions, branch protection, missing checks, or connector/tool limits prevent merge or branch cleanup.
+- Checks fail for an external reason that cannot be fixed from the repo.
+- The change exposes a security, PII, financial, payment, lease, tenant, or destructive-production risk that requires human approval.
+- A live Zoho/Catalyst deployment step is required before claiming production completion.
+
+Never merge when required checks are failing, unresolved requested changes remain, secrets or PII are suspected, or the diff includes unrelated work.
+
 ## Folder Structure Guidance
 
 Prefer organizing by business system and integration, for example:
@@ -75,3 +98,4 @@ After changes, provide:
 6. Risks
 7. Rollback steps if relevant
 8. Comments or documentation added, and why
+9. GitHub checks run and final merge status

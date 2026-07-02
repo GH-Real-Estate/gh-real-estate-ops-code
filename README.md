@@ -177,19 +177,24 @@ tools/
 
 ## Change Workflow
 
-Use this workflow for material changes:
+Default Codex/ChatGPT workflow for code, scripts, workflow files, configuration, tests, and production-relevant operational docs:
 
 ```text
-1. Create a GitHub issue.
-2. Create a branch.
-3. Make the code/doc change.
-4. Open a pull request.
-5. Ask Codex/ChatGPT to review.
-6. Merge after review.
-7. Deploy manually into Zoho/Catalyst.
-8. Record the deployment in docs/runbooks/deployment-log.md.
-9. Run the smoke test checklist.
+1. Inspect the relevant repo files and current GitHub state.
+2. Create a short-lived branch.
+3. Make a focused, reviewable change.
+4. Open a pull request into main.
+5. Run or wait for all relevant local and GitHub checks.
+6. Fix any code, documentation, formatting, test, or GitHub-check issues until checks pass.
+7. Merge the pull request into main after checks pass and no blocker remains.
+8. Verify main contains the final merged commit.
+9. Confirm the merged head branch was deleted automatically, or delete it if tooling supports that.
+10. Deploy manually into Zoho/Catalyst only when the change requires runtime deployment.
+11. Record production-relevant deployments in docs/runbooks/deployment-log.md.
+12. Run the smoke test checklist for live automation changes.
 ```
+
+Do not merge if required checks are failing, unresolved requested changes remain, secrets/PII are suspected, the diff includes unrelated work, or a payment/tenant/lease/security risk requires human approval.
 
 For emergency fixes, still record the final deployed commit and what was changed.
 
