@@ -1,86 +1,77 @@
-# AGENTS.md — GH Real Estate Ops Code
+# AGENTS.md
 
-Codex/ChatGPT instructions for this repository.
+## Purpose
 
-## Business Context
+This repo contains GH Real Estate operational systems, Zoho automation code, scripts, configuration, documentation, and related business workflows.
 
-GH Real Estate uses Zoho as the live business operating system.
+## Business Priorities
 
-- Zoho CRM: applicants, tenant relationship records, leasing pipeline.
-- Zoho Books: invoices, rent, payments, deposits, fees, financial source of truth.
-- Zoho Contracts / Zoho Sign / Zoho WorkDrive: leases and signed/legal documents.
-- Zoho Creator: tenant portal / maintenance workflows when deployed.
-- GitHub: technical source of truth for code, field maps, sanitized samples, runbooks, and tests.
+1. Reliability
+2. Auditability
+3. Payment accuracy
+4. Tenant-operation clarity
+5. Compliance awareness
+6. Minimal manual admin
+7. Low support burden
 
-## Repository Layout Rule
+## Working Rules
 
-Organize code by source system / runtime:
+- Write professional, production-quality, industry-grade code.
+- Keep the codebase understandable for future maintainers.
+- Use professional comments where they improve clarity.
+- Comment non-obvious business rules, edge cases, payment logic, tenant logic, lease logic, and integration assumptions.
+- Avoid comments that merely repeat the code.
+- Do not create duplicate automation paths.
+- Do not double-charge, double-send, double-update, or duplicate records.
+- Keep Zoho Books, Zoho CRM, Zoho Creator, Zoho Forms, Zoho Contracts, and Zoho Sign logic separated unless integration code requires otherwise.
+- Use clear folder structure by business domain and integration.
+- Keep payment, invoice, lease, tenant, notice, and deposit workflows especially clear and auditable.
+- Do not store secrets, tenant PII, banking data, or private documents in source code.
+- Use environment variables or secure configuration patterns.
+- Prefer small, testable scripts and functions.
+- Prefer idempotent automations where possible.
+- Add guardrails for missing fields, bad dates, failed API responses, duplicate tenants, duplicate invoices, partial payments, and stale records.
+- Do not make cosmetic-only changes unless requested.
+- Do not introduce unnecessary frameworks, services, or abstractions.
 
-- `src/zoho-books/` contains code and field maps owned by Zoho Books.
-- `src/zoho-payments/` contains webhook handling for Zoho Payments events.
-- `src/zoho-crm/` contains CRM functions and CRM field maps.
-- `src/zoho-creator/` contains sanitized Creator exports and import notes.
-- `src/zoho-contracts/` contains Contracts merge-field maps only.
-- `docs/` contains cross-system architecture, business rules, runbooks, security notes, and ADRs.
-- `samples/` contains sanitized payload examples grouped by source system.
+## Folder Structure Guidance
 
-Do not recreate a generic top-level `automations/` folder. Automations belong under the system that owns or runs them.
+Prefer organizing by business system and integration, for example:
 
-## Primary Rule
+- `zoho-books/`
+- `zoho-crm/`
+- `zoho-creator/`
+- `zoho-forms/`
+- `zoho-contracts/`
+- `zoho-sign/`
+- `automations/`
+- `scripts/`
+- `docs/`
+- `tests/`
 
-Do not turn this repository into a tenant file cabinet or accounting database. It is a technical code and documentation repository only.
+Use `automations/` only for workflows that span multiple systems or do not naturally belong to a single Zoho product. If a workflow is primarily owned by Zoho Books, Zoho CRM, or Zoho Creator, place it under that system’s folder.
 
-## Security Rules
+## High-Risk Workflow Rules
 
-Never add:
+For anything involving rent, deposits, invoices, payments, late fees, notices, leases, or tenant records:
 
-- Real tenant names, phone numbers, emails, IDs, SSNs, bank details, pay stubs, immigration records, signed leases, actual payment IDs, raw production logs, or unredacted webhook payloads.
-- OAuth tokens, API keys, refresh tokens, client secrets, private keys, passwords, webhook secrets, or live credentials.
-- Raw Zoho exports that include real customers, invoices, payment data, leases, or uploaded documents.
+- Add validation.
+- Avoid destructive changes.
+- Prefer dry-run or smoke-test modes where practical.
+- Include rollback notes when relevant.
+- Make duplicate prevention explicit.
+- Do not assume balances or payment status unless the source data supports it.
+- Do not claim a financial workflow is fixed unless it was tested or carefully verified.
 
-Always use:
+## Verification
 
-- Environment variable names and `.env.example` only.
-- Sanitized test records such as `TENANT_TEST_001`, `INV_TEST_001`, `PAYMENT_TEST_001`, and `UNIT_TEST_1`.
-- Minimal logging that avoids PII and secrets.
+After changes, provide:
 
-## Automation Rules
-
-- Zoho Books is the financial source of truth.
-- Late-fee code must be idempotent. Running it twice must not create duplicate fees.
-- Returned-payment handling must be separate from late-fee handling unless explicitly changed.
-- Default to dry-run mode for automation that creates, updates, deletes, invoices, charges, emails, or texts.
-- Live mode must be explicit, documented, and smoke-tested.
-- Any fee amount, date threshold, interest rule, item ID, template ID, or custom-field API name must be documented in the relevant README and field map.
-- Any change to business logic must update `docs/business-rules/`, `docs/adr/`, and the relevant test cases.
-
-## Review Priorities
-
-When reviewing code, prioritize:
-
-1. Duplicate fee prevention / idempotency.
-2. Date/time-zone handling, especially Central Time and 5:00 p.m. deadlines.
-3. Dry-run safety.
-4. Authentication and webhook signature verification.
-5. Replay protection for webhook endpoints.
-6. Error handling and retry behavior.
-7. No PII/secrets in logs.
-8. Zoho API pagination, rate limits, and response handling.
-9. Alignment with documented lease/business rules.
-10. Clear install/deploy/rollback instructions.
-
-## Coding Conventions
-
-- Deluge files use `.deluge` extension.
-- JavaScript/Node code uses clear function names and defensive input checks.
-- Keep config in environment variables or documented Zoho connection names, not hardcoded secrets.
-- Prefer small functions over large unstructured scripts.
-- Add comments where business logic could be misunderstood.
-- Do not add dependencies without a reason.
-
-## Do Not Do
-
-- Do not replace Zoho Books, Zoho CRM, or Zoho Contracts with this repo.
-- Do not introduce a custom tenant database unless explicitly requested.
-- Do not store real business records here.
-- Do not deploy automatically unless a deploy workflow has been reviewed and approved.
+1. What changed
+2. Why it changed
+3. Files touched
+4. Business behavior changed
+5. How to test or smoke-test
+6. Risks
+7. Rollback steps if relevant
+8. Comments or documentation added, and why
