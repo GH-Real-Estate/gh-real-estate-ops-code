@@ -21,10 +21,8 @@ Use placeholders only in Git. Configure real values in Zoho Catalyst.
 | `ZOHO_ACCOUNTS_BASE_URL` | Yes | `https://accounts.zoho.com` | Zoho Accounts base URL. |
 | `ZOHO_CRM_BASE_URL` | Yes | `https://www.zohoapis.com` | Zoho CRM API base URL. |
 | `ZOHO_CRM_API_VERSION` | Yes | `v8` | CRM API version. |
-| `ZOHO_CRM_CONTACTS_MODULE` | Yes | `Contacts` | CRM Contacts module API name. |
-| `ZOHO_CRM_APPLICATIONS_MODULE` | Yes | `Deals` | Deals module renamed to Rental Applications. |
-| `CONTACT_DUPLICATE_CHECK_FIELDS` | Yes | `Email,Mobile,Phone` | Zoho duplicate check fields for contacts. |
-| `APPLICATION_DUPLICATE_CHECK_FIELDS` | Yes | `Zillow_Lead_Key` | Unique application key. Create and mark this field unique. |
+| `ZOHO_CRM_LEADS_MODULE` | Yes | `Leads` | CRM Leads module API name. |
+| `LEAD_DUPLICATE_CHECK_FIELDS` | Yes | `Zillow_Lead_Key` | Unique lead key. Create and mark this field unique. |
 | `PROPERTY_UNIT_MAP_JSON` | No | `{}` | Maps Zillow listing/address to CRM Property and Unit record IDs. |
 | `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. |
 | `ENABLE_CRM_INTAKE_EVENT_LOG` | No | `false` | Writes optional audit events to a custom CRM module. |
@@ -52,13 +50,10 @@ Use this only if your Zoho CRM API names differ.
 
 ```json
 {
-  "application": {
+  "lead": {
     "zillowLeadKey": "GHRE_Zillow_Lead_Key",
     "property": "GHRE_Property",
     "unit": "GHRE_Unit"
-  },
-  "contact": {
-    "contactType": "GHRE_Contact_Type"
   }
 }
 ```
