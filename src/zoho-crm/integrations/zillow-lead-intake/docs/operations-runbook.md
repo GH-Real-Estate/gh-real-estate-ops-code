@@ -2,8 +2,8 @@
 
 ## Setup Sequence
 
-1. Create/confirm CRM custom fields listed in `README.md`.
-2. Mark `Zillow_Lead_Key` unique in the Rental Applications/Deals module.
+1. Create/confirm CRM Leads custom fields listed in `README.md`.
+2. Mark `Zillow_Lead_Key` unique in the Leads module.
 3. Create a Zoho OAuth client with CRM module create/write scopes.
 4. Generate a refresh token and store it only in Catalyst environment variables.
 5. Deploy the service with `DRY_RUN=true`.
@@ -24,10 +24,10 @@ test.tenant@example.com
 
 Expected CRM outcome:
 
-- One Contact with Contact Type `Applicant`.
-- One Rental Application/Deal in stage `New Inquiry`.
-- Rental Application has `Zillow_Lead_Key`.
-- Re-sending the same payload updates the same Rental Application, not a duplicate.
+- One CRM Lead with Lead Source `Zillow`.
+- Lead has `Zillow_Lead_Key`.
+- Re-sending the same payload updates the same Lead, not a duplicate.
+- No Contact or Rental Application/Deal is created by this webhook.
 
 ## Manual Review Queue
 
@@ -40,7 +40,7 @@ The service marks `Manual_Review_Required=true` when:
 - no property/unit mapping matched
 - desired move-in date is missing
 
-Create a CRM view for Rental Applications where `Manual_Review_Required` is true.
+Create a CRM Leads view where `Manual_Review_Required` is true.
 
 ## Failure Handling
 
@@ -50,7 +50,7 @@ Create a CRM view for Rental Applications where `Manual_Review_Required` is true
 | `invalid_lead_payload` | Zillow sent a lead without usable email/phone. Review source payload in Zillow. |
 | `zoho_oauth_not_configured` | Add OAuth environment variables in Catalyst. |
 | `zoho_upsert_failed` | Check CRM field API names and required field rules. |
-| Duplicate applications | Confirm `Zillow_Lead_Key` exists and is marked unique. |
+| Duplicate leads | Confirm Leads field `Zillow_Lead_Key` exists and is marked unique. |
 
 ## Rollback
 
