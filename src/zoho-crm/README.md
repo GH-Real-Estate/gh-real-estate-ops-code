@@ -9,6 +9,8 @@ Zoho CRM owns applicant, tenant relationship, property/unit, and leasing pipelin
 ```text
 field-maps/
   zillow-to-crm-to-contracts.md
+integrations/
+  zillow-lead-intake/
 ```
 
 ## Rules
@@ -16,3 +18,4 @@ field-maps/
 - Use fake examples only.
 - Do not store actual applications, IDs, pay stubs, employment verification records, or landlord references here.
 - Keep live records in Zoho CRM, Zoho Forms, Zoho Creator, or WorkDrive as appropriate.
+- Zillow lead intake writes applicant/contact and rental application metadata only. It must not create leases, Books records, or tenant portal access.
