@@ -32,7 +32,7 @@ Settings → General:
 - [X] Pull Requests: Allow merge commits OFF.
 - [X] Pull Requests: Allow rebase merging OFF.
 - [X] Pull Requests: Automatically delete head branches ON.
-- [X] Auto-merge: OFF for now.
+- [X] Auto-merge: OFF; Codex/ChatGPT should merge intentionally after checks pass instead of relying on unattended GitHub auto-merge.
 
 ## Branch protection
 
@@ -77,8 +77,10 @@ Settings → Actions → General:
 
 - [X] Connect only this repo.
 - [X] Keep `AGENTS.md` at repo root.
-- [X] Use manual reviews first.
-- [X] Use this review prompt on PRs:
+- [X] Default code-editing workflow: create a short-lived branch, open a PR, resolve code/issues/check failures, merge to `main` after checks pass, and verify final `main` state.
+- [X] Default branch cleanup: rely on GitHub automatic head-branch deletion after merge; delete the branch manually only when available tooling supports it.
+- [X] Do not leave open PRs or short-lived branches after normal code-editing tasks unless blocked by checks, permissions, tooling, security/PII concerns, live deployment risk, or explicit user instruction.
+- [X] Use this review prompt on PRs when an additional review is useful:
 
 ```text
 @codex review for duplicate-prevention, dry-run safety, Central Time date handling, Zoho API edge cases, and PII/secrets logging.
