@@ -1,6 +1,6 @@
 # Install Checklist
 
-- [ ] Create/confirm CRM fields in Leads.
+- [X] Create/confirm CRM fields in Leads.
 - [ ] Mark Leads field `Zillow_Lead_Key` unique.
 - [ ] Confirm Leads mandatory fields: `Last_Name`, `Company`.
 - [ ] Confirm Lead Status picklist supports the configured `DEFAULT_LEAD_STATUS`.
