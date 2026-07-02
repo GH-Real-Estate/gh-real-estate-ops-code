@@ -2,8 +2,8 @@
 """Repository safety scan for GH Real Estate technical assets.
 
 This is not a replacement for judgment or GitHub secret scanning. It catches
-risky filenames, obvious secret assignments, and common PII patterns before a
-change is merged or copied into a runtime package.
+risky filenames, obvious literal secret assignments, and common PII patterns
+before a change is merged or copied into a runtime package.
 """
 
 from __future__ import annotations
@@ -68,22 +68,42 @@ RISKY_FILE_PATTERNS = [
     ("ledger export", re.compile(r"ledger.*export", re.IGNORECASE)),
 ]
 
-SECRET_PATTERNS = [
-    (
-        "private key block",
-        re.compile(r"-----BEGIN (RSA |DSA |EC |OPENSSH )?PRIVATE KEY-----", re.IGNORECASE),
-    ),
-    (
-        "secret assignment",
-        re.compile(
-            r"\b(client[_-]?secret|zoho_client_secret|refresh[_-]?token|zoho_refresh_token|"
-            r"api[_-]?key|private[_-]?key|password|webhook[_-]?(secret|signing[_-]?key))\b"
-            r"\s*[:=]\s*['\"]?(?!<|\{|\[|example|sample|changeme|replace_me|redacted|runtime|$)"
-            r"[A-Za-z0-9_./+=@:-]{8,}",
-            re.IGNORECASE,
-        ),
-    ),
-]
+PRIVATE_KEY_RE = re.compile(r"-----BEGIN (RSA |DSA |EC |OPENSSH )?PRIVATE KEY-----", re.IGNORECASE)
+SECRET_ASSIGNMENT_RE = re.compile(
+    r"\b(?P<name>client[_-]?secret|zoho_client_secret|refresh[_-]?token|zoho_refresh_token|"
+    r"api[_-]?key|private[_-]?key|password|webhook[_-]?(secret|signing[_-]?key))\b"
+    r"\s*[:=]\s*['\"]?(?P<value>[^'\"\s,})\]]+)",
+    re.IGNORECASE,
+)
+
+SAFE_SECRET_VALUE_PREFIXES = (
+    "<",
+    "${",
+    "{{",
+    "[",
+    "config.",
+    "process.env",
+    "env(",
+    "os.environ",
+    "settings.",
+    "secrets.",
+)
+
+SAFE_SECRET_VALUE_WORDS = {
+    "example",
+    "sample",
+    "changeme",
+    "change_me",
+    "replace_me",
+    "redacted",
+    "runtime",
+    "placeholder",
+    "none",
+    "null",
+    "undefined",
+    "''",
+    '""',
+}
 
 PII_PATTERNS = [
     ("SSN-like value", re.compile(r"\b\d{3}-\d{2}-\d{4}\b")),
@@ -116,6 +136,14 @@ def is_text_candidate(path: Path) -> bool:
     return path.name.startswith(".env")
 
 
+def is_safe_secret_reference(value: str) -> bool:
+    raw = value.strip().strip("'\"")
+    lowered = raw.lower()
+    if lowered in SAFE_SECRET_VALUE_WORDS:
+        return True
+    return any(lowered.startswith(prefix) for prefix in SAFE_SECRET_VALUE_PREFIXES)
+
+
 def scan_filename(rel: str) -> list[str]:
     if rel in ALLOWLISTED_FILES:
         return []
@@ -133,11 +161,18 @@ def scan_text(rel: str, text: str) -> list[str]:
         return []
 
     problems: list[str] = []
-    checks = SECRET_PATTERNS + PII_PATTERNS
     for line_no, line in enumerate(text.splitlines(), start=1):
-        for label, pattern in checks:
+        if PRIVATE_KEY_RE.search(line):
+            problems.append(f"private key block in {rel}:{line_no}")
+
+        for match in SECRET_ASSIGNMENT_RE.finditer(line):
+            if not is_safe_secret_reference(match.group("value")):
+                problems.append(f"secret assignment in {rel}:{line_no}")
+
+        for label, pattern in PII_PATTERNS:
             if pattern.search(line):
                 problems.append(f"{label} in {rel}:{line_no}")
+
     return problems
 
 
