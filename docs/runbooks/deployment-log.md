@@ -19,10 +19,23 @@ Record every production-relevant deployment or Zoho change.
 - Notes:
 ```
 
+## 2026-07-02 — Apply Unused Credits Hardening Source Updated
+
+- System: GitHub / Zoho Books
+- Repo branch / commit: `codex/harden-apply-unused-credits` / pending merge
+- Files changed: `src/zoho-books/automations/apply-unused-credits/`, `src/zoho-books/field-maps/books-automation-settings.md`, `docs/runbooks/smoke-test-checklist.md`, `docs/runbooks/deployment-log.md`
+- Business rule changed? source-control default behavior changed to require invoice eligibility and fail closed on blank branch IDs
+- Dry-run completed? not applicable for source-control update
+- Smoke test completed? not yet; required before Zoho Books deployment
+- Deployed by: ChatGPT / Codex-style repo update
+- Result: hardened source copy and operational documentation added to GitHub
+- Rollback plan: revert the merge commit or disable/remove the Zoho Books workflow custom function if installed later
+- Notes: this entry does not prove the hardened function is installed in Zoho Books. After live installation, add a second entry with the deployed commit and smoke-test result.
+
 ## 2026-07-02 — Apply Unused Credits Source Added
 
 - System: GitHub / Zoho Books
-- Repo branch / commit: `codex/add-apply-unused-credits` / pending merge
+- Repo branch / commit: `main` / PR #6 merged as `2dbe4ba23110ef6c9dc5f473e4ae7af64cf461bb`
 - Files changed: `src/zoho-books/automations/apply-unused-credits/`, `src/zoho-books/README.md`, `src/zoho-books/field-maps/books-automation-settings.md`, `docs/runbooks/smoke-test-checklist.md`, `README.md`
 - Business rule changed? no live rule changed by this repo update
 - Dry-run completed? not applicable for source-control import
