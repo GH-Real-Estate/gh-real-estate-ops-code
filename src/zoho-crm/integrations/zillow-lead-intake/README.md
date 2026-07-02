@@ -13,6 +13,8 @@ Designed for Zoho Catalyst Advanced I/O on Node.js 18+.
 
 No runtime npm dependencies are required. The service uses only Node built-ins so it is easy to audit and deploy.
 
+Runtime variables are documented in `docs/runtime-environment-template.md`. Do not commit a real `.env` file.
+
 ## Endpoint
 
 ```text
