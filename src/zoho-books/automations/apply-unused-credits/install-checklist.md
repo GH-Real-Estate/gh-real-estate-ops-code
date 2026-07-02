@@ -4,11 +4,15 @@
 
 - [ ] Final Deluge code committed to `src/zoho-books/automations/apply-unused-credits/ApplyUnusedCredits.deluge`.
 - [ ] Code reviewed for null/empty-credit behavior.
+- [ ] Code reviewed for Zoho API response-code handling.
+- [ ] Code reviewed for pre-apply balance recheck behavior.
 - [ ] Code reviewed for branch-matching behavior.
 - [ ] Code reviewed for no PII/secrets logging.
 - [ ] Zoho Books connection name documented as `zbooks` or the code updated to match the actual connection link name.
 - [ ] Confirm this automation should run for newly-created invoices only.
 - [ ] Confirm it should not run during bulk historical invoice imports.
+- [ ] Confirm whether `requireRentInvoiceFlag` should stay enabled.
+- [ ] Confirm whether `allowEmptyBranchMatch` should stay disabled or be enabled for a verified single-branch setup.
 
 ## Zoho Books Setup
 
@@ -16,6 +20,7 @@
 - [ ] Confirm the connection can read invoices.
 - [ ] Confirm the connection can read contact unused credits / receivables.
 - [ ] Confirm the connection can apply credits to invoices.
+- [ ] Create or verify the invoice custom field API name `cf_is_rent_invoice` if `requireRentInvoiceFlag=true`.
 - [ ] Create a Workflow Rule in Zoho Books.
 - [ ] Set Module to `Invoice`.
 - [ ] Set Workflow Type to `Event Based`.
@@ -25,13 +30,16 @@
 
 ## Test
 
+- [ ] Create a controlled invoice that is not marked eligible; no credits applied.
 - [ ] Create a controlled invoice for a customer with no unused credits; no credits applied.
 - [ ] Create a controlled invoice for a customer with unused customer-payment credit; correct amount applied.
-- [ ] Create a controlled invoice for a customer with a credit note; correct amount applied.
-- [ ] Create a controlled invoice for a customer with unused retainer payment; correct amount applied.
+- [ ] Create a controlled invoice for a customer with a credit note; correct amount applied before payment/retainer credits.
+- [ ] Create a controlled invoice for a customer with unused retainer payment; correct amount applied after credit notes and customer payments.
 - [ ] Confirm matching-branch credits apply.
 - [ ] Confirm non-matching-branch credits do not apply.
+- [ ] Confirm blank branch IDs stop the function when `allowEmptyBranchMatch=false`.
 - [ ] Re-run manually against the same controlled invoice; no over-application occurs.
+- [ ] Simulate or inspect a failed Zoho response; the function logs an error and does not continue.
 - [ ] Confirm logs contain no PII, bank data, raw payloads, or secrets.
 
 ## Deployment
