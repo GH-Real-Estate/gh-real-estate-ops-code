@@ -42,7 +42,9 @@ Settings → Branches → Add branch protection rule:
 - [ ] Require a pull request before merging: ON.
 - [ ] Require approvals: OFF or 0 while solo.
 - [ ] Require conversation resolution before merging: ON.
-- [ ] Require status checks before merging: OFF until checks exist.
+- [ ] Require status checks before merging: ON after `.github/workflows/repo-checks.yml` is merged.
+- [ ] Required status check: `Safety scan`.
+- [ ] Required status check: `Returned fee webhook checks`.
 - [ ] Require linear history: ON if available.
 - [ ] Allow force pushes: OFF.
 - [ ] Allow deletions: OFF.
