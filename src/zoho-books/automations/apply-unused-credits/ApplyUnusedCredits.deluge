@@ -1,0 +1,185 @@
+// =================================================================================================
+// FILE: ApplyUnusedCredits (Zoho Books Invoice Workflow Custom Function)
+// VERSION: v1_REPO_CONTROLLED
+// UPDATED: 2026-07-02
+//
+// PURPOSE:
+//   Applies available unused customer credits to a newly-created Zoho Books invoice.
+//
+// RUNTIME:
+//   System: Zoho Books
+//   Module: Invoice
+//   Workflow type: Event Based
+//   Trigger: Invoice Created
+//   Connection link name: zbooks
+//
+// BUSINESS RULES:
+//   - Only applies credits when the invoice has an open balance.
+//   - Uses Zoho Books unused credits as the source of truth.
+//   - Applies only credits whose branch_id matches the invoice branch_id.
+//   - Applies customer payments and retainer payments as invoice_payments.
+//   - Applies credit notes as apply_creditnotes.
+//
+// IMPORTANT:
+//   This automation belongs under src/zoho-books because Zoho Books owns the trigger,
+//   invoice lookup, unused-credit lookup, and invoice credit application endpoint.
+// =================================================================================================
+if(invoice == null || organization == null)
+{
+	info "ERROR: Missing workflow invoice or organization context.";
+	return;
+}
+
+invoiceID = ifnull(invoice.get("invoice_id"),"").toString();
+organizationID = ifnull(organization.get("organization_id"),"").toString();
+customerID = ifnull(invoice.get("customer_id"),"").toString();
+apiUrl = ifnull(organization.get("api_root_endpoint"),"").toString();
+balanceRaw = ifnull(invoice.get("balance"),0);
+
+if(invoiceID == "" || organizationID == "" || customerID == "" || apiUrl == "")
+{
+	info "ERROR: Missing invoice_id, organization_id, customer_id, or api_root_endpoint.";
+	return;
+}
+
+invoiceTotal = 0.0;
+try 
+{
+	invoiceTotal = balanceRaw.toDecimal();
+}
+catch (eBalance)
+{
+	info "ERROR: Invoice balance could not be parsed.";
+	return;
+}
+
+if(invoiceTotal <= 0)
+{
+	info "Invoice has no open balance; no credits applied.";
+	return;
+}
+
+invoiceDetailsResponse = invokeurl
+[
+	url :apiUrl + "/invoices/" + invoiceID + "?organization_id=" + organizationID
+	type :GET
+	connection:"zbooks"
+];
+invoiceDetails = invoiceDetailsResponse.get("invoice");
+if(invoiceDetails == null)
+{
+	info "ERROR: Could not load invoice details from Zoho Books.";
+	return;
+}
+
+branchID = ifnull(invoiceDetails.get("branch_id"),"").toString();
+unusedCreditsResponse = invokeurl
+[
+	url :apiUrl + "/contacts/" + customerID + "/receivables/unusedcredits?include_unused_retainer_payments=true&organization_id=" + organizationID
+	type :GET
+	connection:"zbooks"
+];
+
+unusedCredits = unusedCreditsResponse.get("unused_credits_receivable");
+if(unusedCredits == null)
+{
+	info "No unused credits payload returned by Zoho Books.";
+	return;
+}
+
+credits = unusedCredits.get("unapplied_amounts");
+excessCreditsList = List();
+creditNotesList = List();
+
+if(credits == null || credits.size() == 0)
+{
+	info "There are no credits available.";
+	return;
+}
+
+for each  credit in credits
+{
+	creditBalance = ifnull(credit.get("balance"),0).toDecimal();
+	creditType = ifnull(credit.get("entity_name"),"").toString();
+	creditEntityID = ifnull(credit.get("entity_id"),"").toString();
+	creditBranchID = ifnull(credit.get("branch_id"),"").toString();
+
+	if(creditBalance <= 0 || creditEntityID == "")
+	{
+		continue;
+	}
+	if(creditBranchID != branchID)
+	{
+		continue;
+	}
+	if(creditType == "customer_payment" || creditType == "retainer_payment" || creditType == "creditnote")
+	{
+		if(invoiceTotal <= creditBalance)
+		{
+			amountApplied = invoiceTotal;
+			invoiceTotal = 0;
+		}
+		else
+		{
+			invoiceTotal = invoiceTotal - creditBalance;
+			amountApplied = creditBalance;
+		}
+
+		creditMap = Map();
+		creditMap.put("amount_applied",amountApplied);
+
+		if(creditType == "creditnote")
+		{
+			creditMap.put("creditnote_id",creditEntityID);
+			creditNotesList.add(creditMap);
+		}
+		else
+		{
+			creditMap.put("payment_id",creditEntityID);
+			excessCreditsList.add(creditMap);
+		}
+
+		if(invoiceTotal == 0)
+		{
+			break;
+		}
+	}
+}
+
+payload = Map();
+canApplyCredits = false;
+if(creditNotesList.size() > 0)
+{
+	payload.put("apply_creditnotes",creditNotesList);
+	canApplyCredits = true;
+}
+if(excessCreditsList.size() > 0)
+{
+	payload.put("invoice_payments",excessCreditsList);
+	canApplyCredits = true;
+}
+
+if(canApplyCredits)
+{
+	params = Map();
+	params.put("JSONString",payload);
+	applyCredits = invokeurl
+	[
+		url :apiUrl + "/invoices/" + invoiceID + "/credits?organization_id=" + organizationID
+		type :POST
+		parameters:params
+		connection:"zbooks"
+	];
+	if(applyCredits != null && applyCredits.get("message") != null)
+	{
+		info applyCredits.get("message");
+	}
+	else
+	{
+		info "Unused credits apply request completed; verify the invoice balance in Zoho Books.";
+	}
+}
+else
+{
+	info "There are no matching branch credits available.";
+}
