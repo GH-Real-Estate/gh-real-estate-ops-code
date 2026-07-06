@@ -6,6 +6,8 @@
 - [ ] Confirm webhook authentication method.
 - [ ] Confirm replay-prevention method.
 - [ ] Confirm returned-payment fee rule against final signed lease.
+- [ ] Confirm current lease/template rule: `$30.00 or the maximum amount allowed by law, whichever is less`.
+- [ ] Confirm Catalyst runtime env has `RETURNED_FEE_AMOUNT=30.00`.
 - [ ] Confirm Zoho Books item/custom field IDs.
 - [ ] Confirm no tenant PII is logged.
 
@@ -15,6 +17,7 @@
 - [ ] Invalid signature rejected.
 - [ ] Duplicate event ignored.
 - [ ] Returned-payment fee created only once.
+- [ ] Returned-payment fee amount is `$30.00` unless law requires a lower amount.
 - [ ] Related invoice/customer matched correctly.
 - [ ] Logs do not contain bank data or tenant PII.
 

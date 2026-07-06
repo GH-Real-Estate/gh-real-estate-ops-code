@@ -9,6 +9,7 @@ const packageRoot = path.join(__dirname, '..');
 const source = fs.readFileSync(path.join(packageRoot, 'src', 'index.js'), 'utf8');
 const readme = fs.readFileSync(path.join(packageRoot, 'README.md'), 'utf8');
 const securityModel = fs.readFileSync(path.join(packageRoot, 'docs', 'security-model.md'), 'utf8');
+const envDocs = fs.readFileSync(path.join(packageRoot, 'docs', 'environment-variables.md'), 'utf8');
 
 test('webhook source keeps safe production defaults', () => {
   assert.match(source, /requireJson:\s*envBool\('REQUIRE_JSON',\s*true\)/);
@@ -50,4 +51,9 @@ test('returned-fee ownership stays under Zoho Payments with Catalyst runtime doc
   assert.match(readme, /The trigger event originates from Zoho Payments/);
   assert.match(securityModel, /Zoho Payments webhook/);
   assert.match(securityModel, /Catalyst function/);
+});
+
+test('returned-payment fee amount defaults to the current lease-template amount', () => {
+  assert.match(source, /returnedFeeAmount:\s*envNumber\('RETURNED_FEE_AMOUNT',\s*30\.00\)/);
+  assert.match(envDocs, /RETURNED_FEE_AMOUNT=30\.00/);
 });

@@ -72,11 +72,13 @@ PAYMENTS_ALLOWED_HOST_SUFFIXES=payments.zoho.com
 
 ## Business Configuration
 
+The current GHRE lease template states a returned-payment fee of **$30.00 or the maximum amount allowed by law, whichever is less**. Therefore the runtime value should be explicit rather than relying on a default.
+
 ```text
 ZOHO_BOOKS_ORG_ID=<runtime value>
 ZOHO_PAYMENTS_ACCOUNT_ID=<runtime value>
 RETURNED_FEE_ITEM_ID=<Zoho Books item ID for returned-payment fee>
-RETURNED_FEE_AMOUNT=<verify against final lease>
+RETURNED_FEE_AMOUNT=30.00
 RETURNED_FEE_INVOICE_PREFIX=RF
 RETURNED_FEE_LEDGER_FIELD_API_NAME=cf_returned_payment_fee_events
 OPTIONAL_LATEST_RF_INVOICE_FIELD_API_NAME=cf_returned_fee_invoice_number

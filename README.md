@@ -30,7 +30,7 @@ That means:
 - Zoho Creator exports/docs live under `src/zoho-creator/`.
 - Zoho Contracts merge maps live under `src/zoho-contracts/`.
 
-This is more professional than a loose top-level `automations/` folder because each code asset lives beside the system that owns or runs it.
+Within each source system, each production automation gets its own folder unless it is truly the same runtime responsibility. Late fees, monthly delinquent-rent interest, and returned-payment fees are separate responsibilities and are stored separately.
 
 ## What Belongs Here
 
@@ -90,6 +90,10 @@ src/
         test-cases.md
       late-fee-guard/
         Late_Fee_Guard.deluge
+        README.md
+        install-checklist.md
+        test-cases.md
+      monthly-interest-billing/
         Monthly_Interest_Billing.deluge
         README.md
         install-checklist.md
@@ -107,6 +111,8 @@ src/
         package-lock.json
         src/
           index.js
+        test/
+          source-contract.test.js
         docs/
           changelog.md
           environment-variables.md
@@ -170,7 +176,7 @@ tools/
 |---|---|
 | Apply Unused Credits | `src/zoho-books/automations/apply-unused-credits/ApplyUnusedCredits.deluge` |
 | Late Fee Guard | `src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge` |
-| Monthly Interest Billing | `src/zoho-books/automations/late-fee-guard/Monthly_Interest_Billing.deluge` |
+| Monthly Interest Billing | `src/zoho-books/automations/monthly-interest-billing/Monthly_Interest_Billing.deluge` |
 | Returned Payment Webhook | `src/zoho-payments/webhooks/returned-payment-fee/src/index.js` |
 | Zoho Books Automation Settings | `src/zoho-books/field-maps/books-automation-settings.md` |
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |

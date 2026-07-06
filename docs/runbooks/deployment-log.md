@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-06 - Lease-Aligned RF Fee And Monthly Interest Repo Structure
+
+- System: GitHub / Zoho Books / Zoho Payments / Zoho Catalyst
+- Repo branch / commit: `chatgpt-rf-lease-and-interest-structure` / pending merge
+- Files changed: `src/zoho-books/automations/monthly-interest-billing/`, `src/zoho-books/automations/late-fee-guard/`, `src/zoho-payments/webhooks/returned-payment-fee/`, `src/zoho-books/README.md`, `README.md`, `docs/business-rules/lease-automation-rules.md`, `src/zoho-books/field-maps/books-automation-settings.md`, `docs/runbooks/deployment-log.md`
+- Business rule changed? no live lease rule changed; repo documentation now verifies the uploaded lease template says returned-payment fee is `$30.00 or the maximum amount allowed by law, whichever is less`
+- Dry-run completed? not yet; required in Zoho Books/Catalyst before live posting
+- Smoke test completed? GitHub checks required; live Zoho/Catalyst smoke tests still required
+- Deployed by: ChatGPT / GitHub update
+- Result: monthly interest source moved to its own Zoho Books automation folder; RF webhook docs/tests aligned to the $30.00 lease value
+- Rollback plan: revert the merge commit; if already deployed in Zoho/Catalyst, restore prior runtime source/config and rerun smoke tests
+- Notes: returned-payment / NSF RF invoices remain owned by the Zoho Payments returned-payment webhook. Do not add a separate Books RF schedule unless a later reconciliation gap is proven.
+
 ## 2026-07-06 - Split Late Fee Guard And Monthly Interest Source
 
 - System: GitHub / Zoho Books

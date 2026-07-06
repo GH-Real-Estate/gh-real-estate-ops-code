@@ -1,5 +1,12 @@
 # Returned Payment Webhook Changelog
 
+## 2026-07-06 — Lease-Aligned RF Fee Documentation
+
+- Verified current lease-template language for returned payments states `$30.00 or the maximum amount allowed by law, whichever is less`.
+- Kept source default at `RETURNED_FEE_AMOUNT=30.00`.
+- Updated runtime docs, install checklist, test cases, and source-contract test coverage to make the $30.00 setting explicit.
+- No live Catalyst environment value is stored in GitHub.
+
 ## 2026-07-01 — Repo Structure Cleanup
 
 - Moved webhook package under `src/zoho-payments/webhooks/returned-payment-fee/`.

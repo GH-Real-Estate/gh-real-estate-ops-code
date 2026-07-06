@@ -10,7 +10,7 @@ The package-level automated checks live under `test/` and run with:
 npm run ci
 ```
 
-They verify the webhook keeps safe defaults, replay/lock controls, live-mode circuit breaker requirements, and the documented Zoho Payments -> Catalyst -> Zoho Books ownership model.
+They verify the webhook keeps safe defaults, replay/lock controls, live-mode circuit breaker requirements, the documented Zoho Payments -> Catalyst -> Zoho Books ownership model, and the lease-aligned default returned-fee amount.
 
 ## Manual / Runtime Cases
 
@@ -28,5 +28,6 @@ They verify the webhook keeps safe defaults, replay/lock controls, live-mode cir
 | Duplicate fee invoice exists | RF invoice exists but source ledger was not updated | Existing RF invoice is detected and ledger is repaired |
 | Dry run | `DRY_RUN=true` | Returns would-create result; no invoice created or emailed |
 | Live circuit breaker | `DRY_RUN=false` without live confirmation | Startup/config validation fails safely |
+| Lease fee amount | `RETURNED_FEE_AMOUNT=30.00` | Created/would-create RF invoice uses `$30.00`, unless law requires lower amount |
 | Email disabled | `SEND_INVOICE_ON_CREATE=false` | Fee invoice may be created; email send is skipped intentionally |
 | Logs check | Event processed with diagnostics off | No bank data, tenant PII, tokens, or secrets in logs |
