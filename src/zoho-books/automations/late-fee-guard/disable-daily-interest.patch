@@ -1,0 +1,18 @@
+diff --git a/src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge b/src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge
+--- a/src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge
++++ b/src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge
+@@
+-// Lease Section 3.6 interest controls.
+-enableInterestOnDelinquentRent = true;
++// Lease Section 3.6 interest controls.
++// Interest billing moved to Monthly_Interest_Billing.deluge. Keep this disabled to prevent
++// daily per-invoice micro-interest invoices such as $1.49 or $2.92.
++enableInterestOnDelinquentRent = false;
+ interestAprPct = 10.00;
+@@
+-// After the first interest invoice, assess only once every 30 days to avoid tiny daily invoices.
+-interestAssessmentFrequencyDays = 30;
+-interestMinimumInvoiceAmount = 1.00;
++// Daily/per-source interest assessment is disabled. Monthly_Interest_Billing.deluge owns interest.
++interestAssessmentFrequencyDays = 30;
++interestMinimumInvoiceAmount = 10.00;
