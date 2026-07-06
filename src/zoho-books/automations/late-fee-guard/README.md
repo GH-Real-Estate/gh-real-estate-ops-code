@@ -1,15 +1,14 @@
 # Late Fee Guard
 
-Zoho Books scheduled Deluge automations for GH Real Estate rent late-fee and delinquent-rent interest handling.
+Zoho Books scheduled Deluge automation for GH Real Estate rent late-fee and delinquent-rent interest handling.
 
 ## Runtime
 
 ```text
 System: Zoho Books
 Language: Deluge
-Function type: Scheduled functions
-Late-fee file: Late_Fee_Guard.deluge
-Monthly interest file: Monthly_Interest_Billing.deluge
+Function type: Scheduled function
+Deployable file: Late_Fee_Guard.deluge
 ```
 
 ## Why This Lives Under `src/zoho-books/`
@@ -20,8 +19,7 @@ These automations belong here because they are installed in Zoho Books and creat
 
 | File | Purpose |
 |---|---|
-| `Late_Fee_Guard.deluge` | Production Deluge script source copy for D5/D10 late-fee milestones |
-| `Monthly_Interest_Billing.deluge` | Monthly consolidated simple-interest billing script |
+| `Late_Fee_Guard.deluge` | Production Deluge script source copy for D5/D10 late-fee milestones and monthly consolidated interest |
 | `install-checklist.md` | Install and verification checklist |
 | `test-cases.md` | Sanitized test plan |
 | `../../field-maps/books-automation-settings.md` | Zoho Books item/template/custom-field settings |
@@ -60,13 +58,13 @@ Do not charge interest on:
 - fee-only invoices
 - voided, disputed, written-off, draft, deleted, or zero-balance invoices
 
-`Monthly_Interest_Billing.deluge` defaults to excluding mixed fee/non-fee invoices because Zoho Books invoice-level balances do not reliably identify whether a partial payment left rent principal or a fee balance outstanding.
+The monthly interest section defaults to excluding mixed fee/non-fee invoices because Zoho Books invoice-level balances do not reliably identify whether a partial payment left rent principal or a fee balance outstanding.
 
 ## Required Interest Config
 
 | Variable | Default | Purpose |
 |---|---:|---|
-| `DRY_RUN` | `true` | Prints the report without creating/updating invoices |
+| `DRY_RUN` | `true` | Interest-only dry run; prints the monthly interest report without creating/updating interest invoices. Does not disable D5/D10 late-fee processing. |
 | `POST_INTEREST_INVOICES` | `false` | Must be `true` with `DRY_RUN=false` before any invoice is posted |
 | `SEND_INTEREST_INVOICES` | `false` | Sends interest invoices only after creation; otherwise invoices remain Draft |
 | `MANUAL_INTEREST_RUN_OVERRIDE` | `false` | Allows a controlled mid-month run; keep off for normal schedule |
@@ -76,12 +74,12 @@ Do not charge interest on:
 
 ## Schedule
 
-Run `Monthly_Interest_Billing.deluge` only:
+The monthly interest section inside `Late_Fee_Guard.deluge` only posts or dry-runs interest:
 
 - on the last day of the month after close of business, or
 - on the first day of the following month for the prior month.
 
-Normal rollout should run with `DRY_RUN=true` first. Invoice creation requires both `DRY_RUN=false` and `POST_INTEREST_INVOICES=true`. Created invoices remain Draft unless `SEND_INTEREST_INVOICES=true`.
+Normal rollout should run the combined function with monthly interest `DRY_RUN=true` first. Interest invoice creation requires both `DRY_RUN=false` and `POST_INTEREST_INVOICES=true`. Created interest invoices remain Draft unless `SEND_INTEREST_INVOICES=true`.
 
 ## Safety Requirements
 
