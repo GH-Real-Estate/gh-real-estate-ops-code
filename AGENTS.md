@@ -1,8 +1,10 @@
 # AGENTS.md
 
-## Purpose
+## Repository Purpose
 
-This repo contains GH Real Estate operational systems, Zoho automation code, scripts, configuration, documentation, and related business workflows.
+This repository supports GH Real Estate operational systems, Zoho automations, Deluge scripts, documentation, validation scripts, and related implementation notes.
+
+This is a business-operations repo. Treat rent, invoice, payment, lease, tenant, security deposit, and accounting logic as high-risk.
 
 ## Business Priorities
 
@@ -16,7 +18,17 @@ This repo contains GH Real Estate operational systems, Zoho automation code, scr
 
 ## Working Rules
 
-- Write professional, production-quality, industry-grade code.
+- Make small, focused, reversible changes.
+- Inspect the current repo state and relevant files before editing.
+- Do not broadly reorganize folders unless explicitly requested.
+- Do not add production dependencies without explaining why they are necessary.
+- Do not hardcode secrets, tokens, credentials, tenant PII, banking data, EIN/SSN data, live customer data, or private documents.
+- Use environment variables or secure configuration patterns.
+- Prefer examples, fixtures, and sanitized sample data.
+- Keep documentation practical and operator-friendly.
+- Preserve existing naming conventions unless a rename is specifically requested.
+- Before changing automation behavior, identify what system it affects and what could break.
+- Write professional, production-quality, maintainable code.
 - Keep the codebase understandable for future maintainers.
 - Use professional comments where they improve clarity.
 - Comment non-obvious business rules, edge cases, payment logic, tenant logic, lease logic, and integration assumptions.
@@ -26,8 +38,6 @@ This repo contains GH Real Estate operational systems, Zoho automation code, scr
 - Keep Zoho Books, Zoho CRM, Zoho Creator, Zoho Forms, Zoho Contracts, and Zoho Sign logic separated unless integration code requires otherwise.
 - Use clear folder structure by business domain and integration.
 - Keep payment, invoice, lease, tenant, notice, and deposit workflows especially clear and auditable.
-- Do not store secrets, tenant PII, banking data, or private documents in source code.
-- Use environment variables or secure configuration patterns.
 - Prefer small, testable scripts and functions.
 - Prefer idempotent automations where possible.
 - Add guardrails for missing fields, bad dates, failed API responses, duplicate tenants, duplicate invoices, partial payments, and stale records.
@@ -72,21 +82,59 @@ Prefer organizing by business system and integration, for example:
 - `docs/`
 - `tests/`
 
-Use `automations/` only for workflows that span multiple systems or do not naturally belong to a single Zoho product. If a workflow is primarily owned by Zoho Books, Zoho CRM, or Zoho Creator, place it under that system’s folder.
+Use `automations/` only for workflows that span multiple systems or do not naturally belong to a single Zoho product. If a workflow is primarily owned by Zoho Books, Zoho CRM, or Zoho Creator, place it under that system's folder.
 
-## High-Risk Workflow Rules
+## Zoho / Deluge Rules
 
-For anything involving rent, deposits, invoices, payments, late fees, notices, leases, or tenant records:
+- Use valid Deluge syntax.
+- Statements end with semicolons.
+- Use `ifNull()` and `isNull()` guards where records or API responses may be missing.
+- Use `try/catch` for integration and record-update workflows.
+- Use pagination and small batches for record loops.
+- Do not use while-loop patterns; Deluge work should use supported loops, pagination, or bounded batches.
+- Use Zoho Connections for external API calls. Never hardcode secrets in `invokeurl`.
+- Do not assume field link names, module API names, organization IDs, or connection names. Inspect repo docs/schema files first or ask.
 
+## Automation Safety
+
+For automations involving money, rent, invoices, fees, deposits, leases, notices, or tenant records:
+
+- Make the process idempotent where practical.
+- Prevent duplicate charges, duplicate invoices, duplicate customer records, and duplicate emails.
+- Include a dry-run mode or clear manual verification step when practical.
+- Log counts and outcomes without exposing sensitive tenant data.
+- Fail safely if required fields are missing.
 - Add validation.
 - Avoid destructive changes.
-- Prefer dry-run or smoke-test modes where practical.
 - Include rollback notes when relevant.
 - Make duplicate prevention explicit.
 - Do not assume balances or payment status unless the source data supports it.
 - Do not claim a financial workflow is fixed unless it was tested or carefully verified.
 
-## Verification
+## Review Guidelines
+
+Flag issues involving:
+
+- Duplicate rent charges or duplicate tenant/customer records
+- Incorrect proration, late fee, payment, or invoice logic
+- Missing null checks
+- Missing pagination
+- Hardcoded secrets or live tenant data
+- Unclear deployment steps
+- Broad refactors unrelated to the task
+- Code that cannot be validated manually or automatically
+
+Also follow `code_review.md` when reviewing pull requests.
+
+## Done When
+
+A task is complete only when:
+
+- The diff is focused.
+- The changed files are summarized.
+- Relevant checks were run, or the reason they could not be run is stated.
+- Remaining manual steps are listed.
+- Deployment risk is called out when production Zoho behavior could be affected.
 
 After changes, provide:
 
