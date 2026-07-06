@@ -25,16 +25,16 @@ These are code-observed values, not legal verification.
 | Per-stage fixed cap | Disabled in current code | Confirm intended |
 | Total late-fee cap | `10%` of unpaid rent for that month | Verify against final lease |
 | Interest start | Day `31` after due date | Verify against final lease |
-| Interest rate | `10.00%` APR in current Late Fee Guard | Verify against final lease and applicable law before live use |
-| Interest frequency | Every `30` days after first eligible run | Verify intended billing behavior |
-| Interest minimum invoice amount | `$1.00` | Verify intended billing behavior |
+| Interest rate | `10.00%` APR in `Monthly_Interest_Billing.deluge` | Verify against final lease and applicable law before live use |
+| Interest frequency | At most once per tenant per calendar month | Verify intended billing behavior |
+| Interest minimum invoice amount | `$10.00` | Verify intended billing behavior |
 | Returned-payment fee | Webhook code default is `$30.00` unless environment variable overrides it | Verify against final lease before live use |
 | Non-approved payment method admin fee | Not automated in current code | Leave out of automation unless explicitly added |
 
 ## Automation Constraints
 
 - Fees must be idempotent.
-- No duplicate late-fee or returned-payment fee invoices.
+- No duplicate late-fee, monthly-interest, or returned-payment fee invoices.
 - Zoho Books remains the accounting source of truth.
 - All production changes must be documented in `docs/runbooks/deployment-log.md`.
 - Do not use this file as legal advice. Use it only as an automation checklist against the final lease.

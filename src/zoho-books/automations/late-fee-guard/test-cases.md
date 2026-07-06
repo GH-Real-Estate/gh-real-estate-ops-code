@@ -1,6 +1,6 @@
 # Late Fee Guard And Monthly Interest Test Cases
 
-Use sanitized records only. These cases are for the combined Zoho Books scheduled Deluge function and should be run before any live late-fee or delinquent-rent interest deployment.
+Use sanitized records only. These cases are for the separate Zoho Books scheduled Deluge functions and should be run before any live late-fee or delinquent-rent interest deployment.
 
 ## Late Fee Guard
 
@@ -54,9 +54,10 @@ Use sanitized records only. These cases are for the combined Zoho Books schedule
 
 ## Manual Smoke Steps
 
-1. Run `Late_Fee_Guard.deluge` with monthly interest `DRY_RUN=true` against sanitized test data.
-2. Confirm report includes tenants checked, invoices checked, exclusions and reasons, eligible principal, eligible days, calculated interest, threshold skips, and would-create decisions.
-3. Re-run the dry run and confirm the report is stable.
-4. For one sanitized tenant above threshold, create a Draft using `DRY_RUN=false` and `POST_INTEREST_INVOICES=true` with `SEND_INTEREST_INVOICES=false`.
-5. Re-run posting for the same billing month and confirm the existing `GHRE_INT_{customer_id}_{YYYYMM}` invoice is found and no duplicate is created.
-6. Inspect the Draft invoice line item: it must be named `Monthly Interest Charge` and the description must include billing period, source invoice numbers, source due dates, outstanding principal, eligible days, annual rate, and formula.
+1. Run `Late_Fee_Guard.deluge` against sanitized late-fee test data.
+2. Run `Monthly_Interest_Billing.deluge` with `DRY_RUN=true` against sanitized monthly-interest test data.
+3. Confirm the monthly-interest report includes tenants checked, invoices checked, exclusions and reasons, eligible principal, eligible days, calculated interest, threshold skips, and would-create decisions.
+4. Re-run the monthly dry run and confirm the report is stable.
+5. For one sanitized tenant above threshold, create a Draft using `DRY_RUN=false` and `POST_INTEREST_INVOICES=true` with `SEND_INTEREST_INVOICES=false`.
+6. Re-run posting for the same billing month and confirm the existing `GHRE_INT_{customer_id}_{YYYYMM}` invoice is found and no duplicate is created.
+7. Inspect the Draft invoice line item: it must be named `Monthly Interest Charge` and the description must include billing period, source invoice numbers, source due dates, outstanding principal, eligible days, annual rate, and formula.

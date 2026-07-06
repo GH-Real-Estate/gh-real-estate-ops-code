@@ -90,6 +90,7 @@ src/
         test-cases.md
       late-fee-guard/
         Late_Fee_Guard.deluge
+        Monthly_Interest_Billing.deluge
         README.md
         install-checklist.md
         test-cases.md
@@ -169,6 +170,7 @@ tools/
 |---|---|
 | Apply Unused Credits | `src/zoho-books/automations/apply-unused-credits/ApplyUnusedCredits.deluge` |
 | Late Fee Guard | `src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge` |
+| Monthly Interest Billing | `src/zoho-books/automations/late-fee-guard/Monthly_Interest_Billing.deluge` |
 | Returned Payment Webhook | `src/zoho-payments/webhooks/returned-payment-fee/src/index.js` |
 | Zoho Books Automation Settings | `src/zoho-books/field-maps/books-automation-settings.md` |
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |

@@ -15,6 +15,7 @@ automations/
     test-cases.md
   late-fee-guard/
     Late_Fee_Guard.deluge
+    Monthly_Interest_Billing.deluge
     README.md
     install-checklist.md
     test-cases.md
@@ -28,7 +29,8 @@ field-maps/
 | Automation | Runtime | Purpose |
 |---|---|---|
 | Apply Unused Credits | Zoho Books Invoice Created workflow custom function | Applies available matching-branch customer credits to a newly-created invoice |
-| Late Fee Guard | Zoho Books scheduled function | Creates lease-aligned late-fee and delinquent-rent interest invoices |
+| Late Fee Guard | Zoho Books scheduled function | Creates lease-aligned D5/D10 late-fee invoices |
+| Monthly Interest Billing | Zoho Books scheduled function | Creates at most one consolidated monthly simple-interest invoice per tenant |
 
 ## Rules
 

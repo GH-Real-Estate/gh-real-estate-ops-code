@@ -3,10 +3,10 @@
 ## Pre-Install
 
 - [ ] Final late-fee Deluge code committed to `src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge`.
-- [ ] Monthly consolidated interest section is present inside `Late_Fee_Guard.deluge`.
+- [ ] Final monthly interest Deluge code committed to `src/zoho-books/automations/late-fee-guard/Monthly_Interest_Billing.deluge`.
 - [ ] Verify `enableInterestOnDelinquentRent = false` in the installed late-fee guard.
 - [ ] Code reviewed for duplicate prevention.
-- [ ] Code reviewed for Central Time handling and monthly interest schedule window.
+- [ ] Monthly interest code reviewed for Central Time handling and monthly interest schedule window.
 - [ ] Code reviewed for no PII/secrets logging.
 - [ ] Lease automation rules verified in `docs/business-rules/lease-automation-rules.md`.
 - [ ] Zoho Books item/template/custom field values documented in `src/zoho-books/field-maps/books-automation-settings.md`.
@@ -21,11 +21,12 @@
 - [ ] Confirm rent invoice flag field `cf_is_rent_invoice` exists and is populated only on eligible rent/source invoices.
 - [ ] Confirm interest invoices are not marked as rent.
 - [ ] Confirm schedule/trigger time for the late-fee guard.
-- [ ] Confirm monthly interest schedule runs only on the last day after close of business or on the first day of the following month.
+- [ ] Confirm the separate monthly interest schedule runs only on the last day after close of business or on the first day of the following month.
+- [ ] Confirm returned-payment / NSF fee handling remains under the Zoho Payments returned-payment webhook unless a separate reconciliation-only schedule is later approved.
 
 ## Monthly Interest Config
 
-- [ ] `DRY_RUN = true` for first monthly interest deployment run. This does not disable D5/D10 late-fee processing.
+- [ ] `DRY_RUN = true` for first monthly interest deployment run.
 - [ ] `POST_INTEREST_INVOICES = false` for first deployment run.
 - [ ] `SEND_INTEREST_INVOICES = false` unless live sending is explicitly approved.
 - [ ] `INTEREST_ANNUAL_RATE = 10.00` unless a reviewed lease/legal change requires another rate.
@@ -47,9 +48,10 @@
 
 ## Deployment
 
-- [ ] Install the combined `Late_Fee_Guard.deluge` code in Zoho Books / target runtime.
+- [ ] Install `Late_Fee_Guard.deluge` as the daily Zoho Books late-fee scheduled function.
+- [ ] Install `Monthly_Interest_Billing.deluge` as the separate Zoho Books monthly interest scheduled function.
 - [ ] Record deployment in `docs/runbooks/deployment-log.md`.
-- [ ] Run monthly interest dry-run smoke test from the combined function and review output before enabling posting.
+- [ ] Run monthly interest dry-run smoke test from `Monthly_Interest_Billing.deluge` and review output before enabling posting.
 - [ ] Enable posting only by setting `DRY_RUN=false` and `POST_INTEREST_INVOICES=true`.
 - [ ] Keep `SEND_INTEREST_INVOICES=false` until Draft invoice output is reviewed.
 - [ ] Keep rollback copy/reference.

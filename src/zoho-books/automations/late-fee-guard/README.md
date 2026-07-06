@@ -1,6 +1,6 @@
 # Late Fee Guard
 
-Zoho Books scheduled Deluge automation for GH Real Estate rent late-fee and delinquent-rent interest handling.
+Zoho Books scheduled Deluge automations for GH Real Estate rent late fees and monthly delinquent-rent interest.
 
 ## Runtime
 
@@ -8,7 +8,9 @@ Zoho Books scheduled Deluge automation for GH Real Estate rent late-fee and deli
 System: Zoho Books
 Language: Deluge
 Function type: Scheduled function
-Deployable file: Late_Fee_Guard.deluge
+Deployable files:
+- Late_Fee_Guard.deluge
+- Monthly_Interest_Billing.deluge
 ```
 
 ## Why This Lives Under `src/zoho-books/`
@@ -19,7 +21,8 @@ These automations belong here because they are installed in Zoho Books and creat
 
 | File | Purpose |
 |---|---|
-| `Late_Fee_Guard.deluge` | Production Deluge script source copy for D5/D10 late-fee milestones and monthly consolidated interest |
+| `Late_Fee_Guard.deluge` | Production Deluge script source copy for D5/D10 late-fee milestones only |
+| `Monthly_Interest_Billing.deluge` | Separate monthly scheduled function for consolidated simple-interest invoices |
 | `install-checklist.md` | Install and verification checklist |
 | `test-cases.md` | Sanitized test plan |
 | `../../field-maps/books-automation-settings.md` | Zoho Books item/template/custom-field settings |
@@ -32,9 +35,11 @@ These automations belong here because they are installed in Zoho Books and creat
 - Do not apply late fees to prior late-fee invoices, returned-fee invoices, or interest invoices.
 - Source invoices must be intentionally marked as rent with `cf_is_rent_invoice` unless a future approved non-fee charge configuration is added and reviewed.
 - Pending ACH/online payment suppression remains part of the late-fee guard.
+- Keep `enableInterestOnDelinquentRent = false`; `Monthly_Interest_Billing.deluge` owns interest.
 
 ## Monthly Interest Policy
 
+- Monthly interest is installed as its own Zoho Books scheduled function from `Monthly_Interest_Billing.deluge`.
 - Interest is simple annual interest calculated by day, not a flat monthly fee.
 - Default rate is `INTEREST_ANNUAL_RATE = 10.00`.
 - Interest eligibility starts only when an eligible source invoice is more than 30 days past due, using `daysPastDue > 30`.
@@ -58,13 +63,13 @@ Do not charge interest on:
 - fee-only invoices
 - voided, disputed, written-off, draft, deleted, or zero-balance invoices
 
-The monthly interest section defaults to excluding mixed fee/non-fee invoices because Zoho Books invoice-level balances do not reliably identify whether a partial payment left rent principal or a fee balance outstanding.
+The monthly interest function defaults to excluding mixed fee/non-fee invoices because Zoho Books invoice-level balances do not reliably identify whether a partial payment left rent principal or a fee balance outstanding.
 
 ## Required Interest Config
 
 | Variable | Default | Purpose |
 |---|---:|---|
-| `DRY_RUN` | `true` | Interest-only dry run; prints the monthly interest report without creating/updating interest invoices. Does not disable D5/D10 late-fee processing. |
+| `DRY_RUN` | `true` | Monthly-interest dry run; prints the monthly interest report without creating/updating interest invoices. |
 | `POST_INTEREST_INVOICES` | `false` | Must be `true` with `DRY_RUN=false` before any invoice is posted |
 | `SEND_INTEREST_INVOICES` | `false` | Sends interest invoices only after creation; otherwise invoices remain Draft |
 | `MANUAL_INTEREST_RUN_OVERRIDE` | `false` | Allows a controlled mid-month run; keep off for normal schedule |
@@ -74,12 +79,21 @@ The monthly interest section defaults to excluding mixed fee/non-fee invoices be
 
 ## Schedule
 
-The monthly interest section inside `Late_Fee_Guard.deluge` only posts or dry-runs interest:
+Use two separate Zoho Books schedules:
+
+- `Late_Fee_Guard.deluge`: daily late-fee guard.
+- `Monthly_Interest_Billing.deluge`: monthly consolidated interest billing.
+
+`Monthly_Interest_Billing.deluge` only posts or dry-runs interest:
 
 - on the last day of the month after close of business, or
 - on the first day of the following month for the prior month.
 
-Normal rollout should run the combined function with monthly interest `DRY_RUN=true` first. Interest invoice creation requires both `DRY_RUN=false` and `POST_INTEREST_INVOICES=true`. Created interest invoices remain Draft unless `SEND_INTEREST_INVOICES=true`.
+Normal rollout should run monthly interest with `DRY_RUN=true` first. Interest invoice creation requires both `DRY_RUN=false` and `POST_INTEREST_INVOICES=true`. Created interest invoices remain Draft unless `SEND_INTEREST_INVOICES=true`.
+
+## Returned-Payment / NSF Fees
+
+Returned-payment and NSF fees should not live inside the late-fee guard or monthly-interest schedule. The existing Zoho Payments returned-payment webhook under `src/zoho-payments/webhooks/returned-payment-fee/` owns event-driven ACH/card/payment-return fee handling. Add a separate Zoho Books reconciliation schedule only if manual paper checks or missed payment events need coverage after the source-of-truth fields are verified.
 
 ## Safety Requirements
 
