@@ -34,6 +34,16 @@ Use before and after any live automation change.
 - [ ] Time-zone behavior is correct.
 - [ ] Logs contain no PII.
 
+## Monthly Interest Billing
+
+- [ ] Mid-month run exits unless `MANUAL_INTEREST_RUN_OVERRIDE=true`.
+- [ ] Dry run reports tenants checked, invoices checked, exclusions, eligible principal, eligible days, and calculated interest.
+- [ ] Interest below `$10.00` is skipped and logged.
+- [ ] One tenant with multiple eligible rent invoices produces at most one monthly interest invoice.
+- [ ] Existing `GHRE_INT_{customer_id}_{YYYYMM}` invoice prevents duplicates.
+- [ ] Late-fee, interest, processing-fee, NSF, security-deposit, application-fee, voided, written-off, and zero-balance invoices are excluded.
+- [ ] Logs contain no PII.
+
 ## Returned Payment Webhook
 
 - [ ] Valid event accepted.

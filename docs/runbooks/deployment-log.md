@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-06 - Split Late Fee Guard And Monthly Interest Source
+
+- System: GitHub / Zoho Books
+- Repo branch / commit: `codex/split-late-fee-monthly-interest` / pending merge
+- Files changed: `src/zoho-books/automations/late-fee-guard/`, `src/zoho-books/field-maps/books-automation-settings.md`, `src/zoho-books/README.md`, `README.md`, `docs/runbooks/deployment-log.md`
+- Business rule changed? source-control deployment model changed from combined late-fee/interest function back to separate daily late-fee and monthly interest scheduled functions
+- Dry-run completed? not yet; required in Zoho Books before live posting
+- Smoke test completed? not yet; required in Zoho Books after installing both scheduled functions
+- Deployed by: ChatGPT / Codex-style repo update
+- Result: source copy and operator docs updated; this entry does not prove the functions are installed in Zoho Books
+- Rollback plan: revert the merge commit or reinstall the prior source copy if Zoho deployment has not yet been updated
+- Notes: returned-payment / NSF fees remain owned by the Zoho Payments returned-payment webhook. Add a separate Books reconciliation schedule only if manual paper checks or missed webhook events need coverage after source fields are verified.
+
 ## Template
 
 ```md

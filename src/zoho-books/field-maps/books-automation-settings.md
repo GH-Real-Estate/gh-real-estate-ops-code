@@ -28,7 +28,7 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 | Invoice fee-exempt-until field | `cf_fee_exempt_until` | Optional temporary exclusion field. |
 | Customer fee-exempt field | `cf_fee_exempt` | Optional customer-level exclusion flag. |
 | Customer fee-exempt-until field | `cf_fee_exempt_until` | Optional customer-level temporary exclusion field. |
-| Monthly interest default dry run | `DRY_RUN=true` | No interest invoice creation unless explicitly changed. This does not disable D5/D10 late-fee processing in the combined function. |
+| Monthly interest default dry run | `DRY_RUN=true` | No interest invoice creation unless explicitly changed in `Monthly_Interest_Billing.deluge`. |
 | Monthly interest posting flag | `POST_INTEREST_INVOICES=false` | Must be true with `DRY_RUN=false` before invoices can be created. |
 | Monthly interest send flag | `SEND_INTEREST_INVOICES=false` | Draft-first rollout. Set true only after Draft output is reviewed. |
 | Monthly interest manual override | `MANUAL_INTEREST_RUN_OVERRIDE=false` | Allows controlled non-window dry runs/posting; keep false for normal schedule. |
@@ -47,7 +47,8 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 - [ ] Verify every item ID exists in Zoho Books.
 - [ ] Verify invoice template ID opens the correct Zoho Books template.
 - [ ] Verify all custom fields exist on the correct object: invoice vs customer/contact.
-- [ ] Verify `Late_Fee_Guard.deluge` has daily interest disabled with `enableInterestOnDelinquentRent=false` and contains the combined monthly interest section.
+- [ ] Verify `Late_Fee_Guard.deluge` has daily interest disabled with `enableInterestOnDelinquentRent=false`.
+- [ ] Verify `Monthly_Interest_Billing.deluge` is installed as a separate Zoho Books scheduled function.
 - [ ] Verify monthly interest invoices will not be marked as rent.
 - [ ] Verify `GHRE_INT_{customer_id}_{YYYYMM}` can be found through invoice reference-number search.
 - [ ] Verify returned-payment fee amount against the final lease.
@@ -70,6 +71,7 @@ Use Zoho API names, not display labels, whenever possible.
 
 | Date | Change | Verified By |
 |---|---|---|
+| 2026-07-06 | Split daily late-fee guard and monthly interest billing into separate Zoho Books scheduled functions | Pending verification in Zoho |
 | 2026-07-06 | Documented monthly consolidated simple-interest settings, idempotency key, threshold, schedule, and dry-run/posting defaults | Pending verification in Zoho |
 | 2026-07-02 | Documented hardened Apply Unused Credits settings for invoice eligibility, branch fail-closed behavior, credit order, response-code handling, and pre-apply balance recheck | Pending verification in Zoho |
 | 2026-07-02 | Added Apply Unused Credits workflow settings observed in committed Deluge code | Pending verification in Zoho |
