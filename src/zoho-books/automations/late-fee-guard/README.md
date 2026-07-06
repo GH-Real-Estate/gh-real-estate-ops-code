@@ -22,7 +22,6 @@ These automations belong here because they are installed in Zoho Books and creat
 |---|---|
 | `Late_Fee_Guard.deluge` | Production Deluge script source copy for D5/D10 late-fee milestones |
 | `Monthly_Interest_Billing.deluge` | Monthly consolidated simple-interest billing script |
-| `disable-daily-interest.patch` | Targeted patch to disable the old daily/source-invoice interest path in `Late_Fee_Guard.deluge` |
 | `install-checklist.md` | Install and verification checklist |
 | `test-cases.md` | Sanitized test plan |
 | `../../field-maps/books-automation-settings.md` | Zoho Books item/template/custom-field settings |

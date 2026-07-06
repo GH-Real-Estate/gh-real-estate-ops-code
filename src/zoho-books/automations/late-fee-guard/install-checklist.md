@@ -4,7 +4,7 @@
 
 - [ ] Final late-fee Deluge code committed to `src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge`.
 - [ ] Final monthly interest Deluge code committed to `src/zoho-books/automations/late-fee-guard/Monthly_Interest_Billing.deluge`.
-- [ ] Apply `disable-daily-interest.patch` or otherwise verify `enableInterestOnDelinquentRent = false` in the installed late-fee guard.
+- [ ] Verify `enableInterestOnDelinquentRent = false` in the installed late-fee guard.
 - [ ] Code reviewed for duplicate prevention.
 - [ ] Code reviewed for Central Time handling and monthly interest schedule window.
 - [ ] Code reviewed for no PII/secrets logging.
