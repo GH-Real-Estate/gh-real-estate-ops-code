@@ -2322,29 +2322,8 @@ if(!DRY_RUN && POST_INTEREST_INVOICES)
 }
 info "INTEREST-RUN: Billing period " + billingPeriodLabel + ", annualRate=" + INTEREST_ANNUAL_RATE.toString() + "%, DRY_RUN=" + DRY_RUN.toString() + ", POST_INTEREST_INVOICES=" + POST_INTEREST_INVOICES.toString() + ", SEND_INTEREST_INVOICES=" + SEND_INTEREST_INVOICES.toString() + ".";
 // -------------------- ITERATORS --------------------
-// Keep the monthly source scan bounded without using a loop-level max-page break.
-// Zoho Books save validation is sensitive to that pattern in the combined function.
-INTEREST_SCAN_PAGES = List();
-INTEREST_SCAN_PAGES.add(1);
-INTEREST_SCAN_PAGES.add(2);
-INTEREST_SCAN_PAGES.add(3);
-INTEREST_SCAN_PAGES.add(4);
-INTEREST_SCAN_PAGES.add(5);
-INTEREST_SCAN_PAGES.add(6);
-INTEREST_SCAN_PAGES.add(7);
-INTEREST_SCAN_PAGES.add(8);
-INTEREST_SCAN_PAGES.add(9);
-INTEREST_SCAN_PAGES.add(10);
-INTEREST_SCAN_PAGES.add(11);
-INTEREST_SCAN_PAGES.add(12);
-INTEREST_SCAN_PAGES.add(13);
-INTEREST_SCAN_PAGES.add(14);
-INTEREST_SCAN_PAGES.add(15);
-INTEREST_SCAN_PAGES.add(16);
-INTEREST_SCAN_PAGES.add(17);
-INTEREST_SCAN_PAGES.add(18);
-INTEREST_SCAN_PAGES.add(19);
-INTEREST_SCAN_PAGES.add(20);
+// Reuse the top-level ITER_50 loop shape already accepted by Zoho Books above.
+// The wrapper preserves the monthly interest 20-page cap without a loop-level break.
 // -------------------- AGGREGATION STATE --------------------
 customerCache = Map();
 customersSeen = Map();
@@ -2362,30 +2341,32 @@ existingInvoicesSkippedCount = 0;
 reportRowsPrinted = 0;
 runWarnings = List();
 // -------------------- SOURCE INVOICE SCAN --------------------
-for each  interestPage in INTEREST_SCAN_PAGES
+for each  page in ITER_50
 {
-	listParams = Map();
-	listParams.put("organization_id",orgId);
-	listParams.put("filter_by",invoiceListFilterBy);
-	listParams.put("sort_column","due_date");
-	listParams.put("sort_order","A");
-	listParams.put("per_page",perPage);
-	listParams.put("page",interestPage);
-	invoicesResp = invokeurl
-	[
-		url :apiBase + "/invoices"
-		type :GET
-		parameters:listParams
-		connection:"zbooks"
-	];
-	interestPageInvoices = List();
-	if(invoicesResp != null && invoicesResp.get("invoices") != null)
+	if(page <= 20)
 	{
-		interestPageInvoices = invoicesResp.get("invoices");
-	}
-	for each  invRec in interestPageInvoices
-	{
-		invId = ifnull(invRec.get("invoice_id"),"").toString();
+		listParams = Map();
+		listParams.put("organization_id",orgId);
+		listParams.put("filter_by",invoiceListFilterBy);
+		listParams.put("sort_column","due_date");
+		listParams.put("sort_order","A");
+		listParams.put("per_page",perPage);
+		listParams.put("page",page);
+		invoicesResp = invokeurl
+		[
+			url :apiBase + "/invoices"
+			type :GET
+			parameters:listParams
+			connection:"zbooks"
+		];
+		interestPageInvoices = List();
+		if(invoicesResp != null && invoicesResp.get("invoices") != null)
+		{
+			interestPageInvoices = invoicesResp.get("invoices");
+		}
+		for each  invRec in interestPageInvoices
+		{
+			invId = ifnull(invRec.get("invoice_id"),"").toString();
 		invNumber = ifnull(invRec.get("invoice_number"),"").toString();
 		customerId = ifnull(invRec.get("customer_id"),"").toString();
 		balanceDue = ifnull(invRec.get("balance"),0).toDecimal();
@@ -2874,6 +2855,7 @@ for each  interestPage in INTEREST_SCAN_PAGES
 			reportRowsPrinted = reportRowsPrinted + 1;
 		}
 	}
+}
 }
 // -------------------- MONTHLY CONSOLIDATED POSTING --------------------
 for each customerIdPost in customerIdsWithInterest
