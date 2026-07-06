@@ -2195,7 +2195,7 @@ if(debugMode)
 // =================================================================================================
 // -------------------- CONFIG --------------------
 // Interest-only safety controls. These do not disable late-fee processing above.
-DRY_RUN = false;
+DRY_RUN = true;
 POST_INTEREST_INVOICES = false;
 SEND_INTEREST_INVOICES = false;
 MANUAL_INTEREST_RUN_OVERRIDE = false;
@@ -2322,19 +2322,8 @@ if(!DRY_RUN && POST_INTEREST_INVOICES)
 }
 info "INTEREST-RUN: Billing period " + billingPeriodLabel + ", annualRate=" + INTEREST_ANNUAL_RATE.toString() + "%, DRY_RUN=" + DRY_RUN.toString() + ", POST_INTEREST_INVOICES=" + POST_INTEREST_INVOICES.toString() + ", SEND_INTEREST_INVOICES=" + SEND_INTEREST_INVOICES.toString() + ".";
 // -------------------- ITERATORS --------------------
-ITER_60 = List();
-ITER_50 = List();
-ITER_60.add(1);ITER_60.add(2);ITER_60.add(3);ITER_60.add(4);ITER_60.add(5);ITER_60.add(6);ITER_60.add(7);ITER_60.add(8);ITER_60.add(9);ITER_60.add(10);
-ITER_60.add(11);ITER_60.add(12);ITER_60.add(13);ITER_60.add(14);ITER_60.add(15);ITER_60.add(16);ITER_60.add(17);ITER_60.add(18);ITER_60.add(19);ITER_60.add(20);
-ITER_60.add(21);ITER_60.add(22);ITER_60.add(23);ITER_60.add(24);ITER_60.add(25);ITER_60.add(26);ITER_60.add(27);ITER_60.add(28);ITER_60.add(29);ITER_60.add(30);
-ITER_60.add(31);ITER_60.add(32);ITER_60.add(33);ITER_60.add(34);ITER_60.add(35);ITER_60.add(36);ITER_60.add(37);ITER_60.add(38);ITER_60.add(39);ITER_60.add(40);
-ITER_60.add(41);ITER_60.add(42);ITER_60.add(43);ITER_60.add(44);ITER_60.add(45);ITER_60.add(46);ITER_60.add(47);ITER_60.add(48);ITER_60.add(49);ITER_60.add(50);
-ITER_60.add(51);ITER_60.add(52);ITER_60.add(53);ITER_60.add(54);ITER_60.add(55);ITER_60.add(56);ITER_60.add(57);ITER_60.add(58);ITER_60.add(59);ITER_60.add(60);
-ITER_50.add(1);ITER_50.add(2);ITER_50.add(3);ITER_50.add(4);ITER_50.add(5);ITER_50.add(6);ITER_50.add(7);ITER_50.add(8);ITER_50.add(9);ITER_50.add(10);
-ITER_50.add(11);ITER_50.add(12);ITER_50.add(13);ITER_50.add(14);ITER_50.add(15);ITER_50.add(16);ITER_50.add(17);ITER_50.add(18);ITER_50.add(19);ITER_50.add(20);
-ITER_50.add(21);ITER_50.add(22);ITER_50.add(23);ITER_50.add(24);ITER_50.add(25);ITER_50.add(26);ITER_50.add(27);ITER_50.add(28);ITER_50.add(29);ITER_50.add(30);
-ITER_50.add(31);ITER_50.add(32);ITER_50.add(33);ITER_50.add(34);ITER_50.add(35);ITER_50.add(36);ITER_50.add(37);ITER_50.add(38);ITER_50.add(39);ITER_50.add(40);
-ITER_50.add(41);ITER_50.add(42);ITER_50.add(43);ITER_50.add(44);ITER_50.add(45);ITER_50.add(46);ITER_50.add(47);ITER_50.add(48);ITER_50.add(49);ITER_50.add(50);
+// Reuse the top-level ITER_50 / ITER_60 lists already built above. Reinitializing
+// them inside the combined function can trigger Zoho Books save-time parser errors.
 // -------------------- AGGREGATION STATE --------------------
 customerCache = Map();
 customersSeen = Map();
@@ -2352,9 +2341,9 @@ existingInvoicesSkippedCount = 0;
 reportRowsPrinted = 0;
 runWarnings = List();
 // -------------------- SOURCE INVOICE SCAN --------------------
-for each page in ITER_50
+for each interestPage in ITER_50
 {
-	if(page > maxPages)
+	if(interestPage > maxPages)
 	{
 		break;
 	}
@@ -2364,7 +2353,7 @@ for each page in ITER_50
 	listParams.put("sort_column","due_date");
 	listParams.put("sort_order","A");
 	listParams.put("per_page",perPage);
-	listParams.put("page",page);
+	listParams.put("page",interestPage);
 	invoicesResp = invokeurl
 	[
 		url :apiBase + "/invoices"
