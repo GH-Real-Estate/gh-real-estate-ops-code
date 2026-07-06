@@ -2322,8 +2322,29 @@ if(!DRY_RUN && POST_INTEREST_INVOICES)
 }
 info "INTEREST-RUN: Billing period " + billingPeriodLabel + ", annualRate=" + INTEREST_ANNUAL_RATE.toString() + "%, DRY_RUN=" + DRY_RUN.toString() + ", POST_INTEREST_INVOICES=" + POST_INTEREST_INVOICES.toString() + ", SEND_INTEREST_INVOICES=" + SEND_INTEREST_INVOICES.toString() + ".";
 // -------------------- ITERATORS --------------------
-// Reuse the top-level ITER_50 / ITER_60 lists already built above. Reinitializing
-// them inside the combined function can trigger Zoho Books save-time parser errors.
+// Keep the monthly source scan bounded without using a loop-level max-page break.
+// Zoho Books save validation is sensitive to that pattern in the combined function.
+INTEREST_SCAN_PAGES = List();
+INTEREST_SCAN_PAGES.add(1);
+INTEREST_SCAN_PAGES.add(2);
+INTEREST_SCAN_PAGES.add(3);
+INTEREST_SCAN_PAGES.add(4);
+INTEREST_SCAN_PAGES.add(5);
+INTEREST_SCAN_PAGES.add(6);
+INTEREST_SCAN_PAGES.add(7);
+INTEREST_SCAN_PAGES.add(8);
+INTEREST_SCAN_PAGES.add(9);
+INTEREST_SCAN_PAGES.add(10);
+INTEREST_SCAN_PAGES.add(11);
+INTEREST_SCAN_PAGES.add(12);
+INTEREST_SCAN_PAGES.add(13);
+INTEREST_SCAN_PAGES.add(14);
+INTEREST_SCAN_PAGES.add(15);
+INTEREST_SCAN_PAGES.add(16);
+INTEREST_SCAN_PAGES.add(17);
+INTEREST_SCAN_PAGES.add(18);
+INTEREST_SCAN_PAGES.add(19);
+INTEREST_SCAN_PAGES.add(20);
 // -------------------- AGGREGATION STATE --------------------
 customerCache = Map();
 customersSeen = Map();
@@ -2341,12 +2362,8 @@ existingInvoicesSkippedCount = 0;
 reportRowsPrinted = 0;
 runWarnings = List();
 // -------------------- SOURCE INVOICE SCAN --------------------
-for each interestPage in ITER_50
+for each  interestPage in INTEREST_SCAN_PAGES
 {
-	if(interestPage > maxPages)
-	{
-		break;
-	}
 	listParams = Map();
 	listParams.put("organization_id",orgId);
 	listParams.put("filter_by",invoiceListFilterBy);
@@ -2361,11 +2378,12 @@ for each interestPage in ITER_50
 		parameters:listParams
 		connection:"zbooks"
 	];
-	if(invoicesResp == null || invoicesResp.get("invoices") == null || invoicesResp.get("invoices").size() == 0)
+	interestPageInvoices = List();
+	if(invoicesResp != null && invoicesResp.get("invoices") != null)
 	{
-		break;
+		interestPageInvoices = invoicesResp.get("invoices");
 	}
-	for each invRec in invoicesResp.get("invoices")
+	for each  invRec in interestPageInvoices
 	{
 		invId = ifnull(invRec.get("invoice_id"),"").toString();
 		invNumber = ifnull(invRec.get("invoice_number"),"").toString();
