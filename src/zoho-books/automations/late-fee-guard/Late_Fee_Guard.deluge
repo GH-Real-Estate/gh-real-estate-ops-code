@@ -10,7 +10,8 @@
 // READ ME (Operational Summary)
 //   - Scans unpaid invoices, then enforces due_date <= today (treat as overdue in-code).
 //   - Only processes invoices explicitly marked as rent: cf_is_rent_invoice == true.
-//   - Creates late-fee invoices by lease-aligned stage: D5=5%, D10=5%, and recurring simple interest at 10% APR after 30+ days.
+//   - Creates late-fee invoices by lease-aligned stage: D5=5% and D10=5%.
+//   - Does not create interest invoices; monthly interest is owned by Monthly_Interest_Billing.deluge.
 //   - Suppresses late-fee creation while an ACH/online payment is still initiated, pending, or processing.
 //   - Sends late-fee invoice emails using INVOICE email templates (Invoice Notification scope).
 //   - Forces Zoho Payments/online payment options on fee invoices when configured.
@@ -115,13 +116,15 @@ maxFeeInvoicesPerRun = 30;
 // The script enforces the 5:00 p.m. cutoff when it runs on the assessment date. Schedule this function after 5:00 p.m. CT.
 lateFeeCutoffHour = 17;
 // Lease Section 3.6 interest controls.
-enableInterestOnDelinquentRent = true;
+// Interest billing moved to Monthly_Interest_Billing.deluge. Keep this disabled to prevent
+// daily per-invoice micro-interest invoices such as $1.49 or $2.92.
+enableInterestOnDelinquentRent = false;
 interestAprPct = 10.00;
 // "More than 30 days after the original due date" means the first automated interest run is eligible on day 31.
 interestFirstEligibleDaysAfterDue = 31;
-// After the first interest invoice, assess only once every 30 days to avoid tiny daily invoices.
+// Daily/per-source interest assessment is disabled. Monthly_Interest_Billing.deluge owns interest.
 interestAssessmentFrequencyDays = 30;
-interestMinimumInvoiceAmount = 1.00;
+interestMinimumInvoiceAmount = 10.00;
 // Debug / Diagnostics
 // When true, logs "skip reasons" for a limited number of invoices to help troubleshoot configuration issues.
 debugMode = false;
@@ -513,6 +516,7 @@ for each  page in ITER_50
 		}
 		invId = ifnull(invRec.get("invoice_id"),"").toString();
 		invNumber = ifnull(invRec.get("invoice_number"),"").toString();
+		invReferenceNumber = ifnull(invRec.get("reference_number"),"").toString().trim();
 		customerId = ifnull(invRec.get("customer_id"),"").toString();
 		balanceDue = ifnull(invRec.get("balance"),0).toDecimal();
 		invoiceTotal = ifnull(invRec.get("total"),0).toDecimal();
@@ -537,7 +541,7 @@ for each  page in ITER_50
 			continue;
 		}
 		invStatus = ifnull(invRec.get("status"),"").toString().trim();
-		// Skip fee invoices
+		// Skip known fee invoice number series before loading details.
 		if(invNumber != "" && (invNumber.indexOf(feeInvoicePrefix) == 0 || invNumber.indexOf("RF-") == 0))
 		{
 			continue;
@@ -631,6 +635,10 @@ for each  page in ITER_50
 		{
 			invStatus = ifnull(detailInvoice.get("status"),"").toString().trim();
 		}
+		if(detailInvoice != null)
+		{
+			invReferenceNumber = ifnull(detailInvoice.get("reference_number"),invReferenceNumber).toString().trim();
+		}
 		invStatusLow = invStatus.toLowerCase();
 		// Safety: never process Draft/Void invoices
 		if(invStatusLow == "draft" || invStatusLow == "void" || invStatusLow == "deleted")
@@ -638,6 +646,37 @@ for each  page in ITER_50
 			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
 			{
 				info "SKIP: " + invNumber + " status=" + invStatus + " (not eligible).";
+				debugExplainCount = debugExplainCount + 1;
+			}
+			continue;
+		}
+		// Safety: never apply late fees to interest, late-fee, returned-fee, processing-fee,
+		// application-fee, security-deposit, or other fee-only invoices, even if a custom field is mis-set.
+		feeOnlyInvoiceDetected = false;
+		invoiceIdentityLow = (invNumber + " " + invReferenceNumber).toLowerCase();
+		if(invoiceIdentityLow.contains("ghre_int_") || invoiceIdentityLow.contains("interest (int_") || invoiceIdentityLow.contains("monthly interest charge") || invoiceIdentityLow.contains("late fee") || invoiceIdentityLow.contains("processing fee") || invoiceIdentityLow.contains("online payment fee") || invoiceIdentityLow.contains("nsf") || invoiceIdentityLow.contains("returned payment") || invoiceIdentityLow.contains("returned check") || invoiceIdentityLow.contains("application fee") || invoiceIdentityLow.contains("security deposit"))
+		{
+			feeOnlyInvoiceDetected = true;
+		}
+		if(!feeOnlyInvoiceDetected && detailInvoice != null && detailInvoice.get("line_items") != null)
+		{
+			for each  feeLine in detailInvoice.get("line_items")
+			{
+				lineNameLow = ifnull(feeLine.get("name"),"").toString().toLowerCase();
+				lineDescLow = ifnull(feeLine.get("description"),"").toString().toLowerCase();
+				lineItemTextLow = lineNameLow + " " + lineDescLow;
+				if(lineItemTextLow.contains("monthly interest charge") || lineItemTextLow.contains("delinquent rent interest") || lineItemTextLow.contains("late fee") || lineItemTextLow.contains("processing fee") || lineItemTextLow.contains("online payment fee") || lineItemTextLow.contains("nsf") || lineItemTextLow.contains("returned payment") || lineItemTextLow.contains("returned check") || lineItemTextLow.contains("application fee") || lineItemTextLow.contains("security deposit"))
+				{
+					feeOnlyInvoiceDetected = true;
+					break;
+				}
+			}
+		}
+		if(feeOnlyInvoiceDetected)
+		{
+			if(debugMode && debugExplainCount < debugMaxInvoicesToExplain)
+			{
+				info "SKIP: " + invNumber + " appears to be an interest/fee/deposit invoice and is not eligible for late fees.";
 				debugExplainCount = debugExplainCount + 1;
 			}
 			continue;
@@ -1372,9 +1411,9 @@ for each  page in ITER_50
 				}
 			}
 		}
-		// -------------------- Determine simple interest action under Lease Section 3.6 --------------------
-		// Interest is separate from late fees: 10% APR, simple interest, on unpaid Rent only, no compounding.
-		// This uses the unpaid balance on the source rent invoice as the rent principal and never charges interest on LF invoices.
+		// -------------------- Legacy simple interest path --------------------
+		// Disabled by enableInterestOnDelinquentRent=false. Monthly_Interest_Billing.deluge owns
+		// consolidated monthly interest so this guard cannot create daily per-source interest invoices.
 		if(enableInterestOnDelinquentRent && balanceDue > 0)
 		{
 			interestFirstEligibleDate = dueDate.addDay(interestFirstEligibleDaysAfterDue);
@@ -2130,5 +2169,5 @@ if(runWarnings != null && runWarnings.size() > 0)
 }
 if(debugMode)
 {
-	info "Late Fee Guard completed. Scanned=" + scannedInvoicesCount + ", EligibleRent=" + eligibleOverdueRentCount + ", FeeOrInterestInvoicesCreated=" + createdFeeInvoicesCount + ", EmailsSent=" + emailedFeeInvoicesCount;
+	info "Late Fee Guard completed. Scanned=" + scannedInvoicesCount + ", EligibleRent=" + eligibleOverdueRentCount + ", FeeInvoicesCreated=" + createdFeeInvoicesCount + ", EmailsSent=" + emailedFeeInvoicesCount;
 }
