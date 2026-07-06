@@ -2195,7 +2195,7 @@ if(debugMode)
 // =================================================================================================
 // -------------------- CONFIG --------------------
 // Interest-only safety controls. These do not disable late-fee processing above.
-DRY_RUN = true;
+DRY_RUN = false;
 POST_INTEREST_INVOICES = false;
 SEND_INTEREST_INVOICES = false;
 MANUAL_INTEREST_RUN_OVERRIDE = false;
