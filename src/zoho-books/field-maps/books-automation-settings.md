@@ -28,7 +28,7 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 | Invoice fee-exempt-until field | `cf_fee_exempt_until` | Optional temporary exclusion field. |
 | Customer fee-exempt field | `cf_fee_exempt` | Optional customer-level exclusion flag. |
 | Customer fee-exempt-until field | `cf_fee_exempt_until` | Optional customer-level temporary exclusion field. |
-| Monthly interest default dry run | `DRY_RUN=true` | No invoice creation unless explicitly changed. |
+| Monthly interest default dry run | `DRY_RUN=true` | No interest invoice creation unless explicitly changed. This does not disable D5/D10 late-fee processing in the combined function. |
 | Monthly interest posting flag | `POST_INTEREST_INVOICES=false` | Must be true with `DRY_RUN=false` before invoices can be created. |
 | Monthly interest send flag | `SEND_INTEREST_INVOICES=false` | Draft-first rollout. Set true only after Draft output is reviewed. |
 | Monthly interest manual override | `MANUAL_INTEREST_RUN_OVERRIDE=false` | Allows controlled non-window dry runs/posting; keep false for normal schedule. |
@@ -47,7 +47,7 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 - [ ] Verify every item ID exists in Zoho Books.
 - [ ] Verify invoice template ID opens the correct Zoho Books template.
 - [ ] Verify all custom fields exist on the correct object: invoice vs customer/contact.
-- [ ] Verify `Late_Fee_Guard.deluge` has daily interest disabled with `enableInterestOnDelinquentRent=false` before installing monthly interest.
+- [ ] Verify `Late_Fee_Guard.deluge` has daily interest disabled with `enableInterestOnDelinquentRent=false` and contains the combined monthly interest section.
 - [ ] Verify monthly interest invoices will not be marked as rent.
 - [ ] Verify `GHRE_INT_{customer_id}_{YYYYMM}` can be found through invoice reference-number search.
 - [ ] Verify returned-payment fee amount against the final lease.

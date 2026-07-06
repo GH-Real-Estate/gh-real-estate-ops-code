@@ -1,6 +1,6 @@
 # Late Fee Guard And Monthly Interest Test Cases
 
-Use sanitized records only. These cases are for the Zoho Books scheduled Deluge functions and should be run before any live late-fee or delinquent-rent interest deployment.
+Use sanitized records only. These cases are for the combined Zoho Books scheduled Deluge function and should be run before any live late-fee or delinquent-rent interest deployment.
 
 ## Late Fee Guard
 
@@ -54,7 +54,7 @@ Use sanitized records only. These cases are for the Zoho Books scheduled Deluge 
 
 ## Manual Smoke Steps
 
-1. Run `Monthly_Interest_Billing.deluge` with `DRY_RUN=true` against sanitized test data.
+1. Run `Late_Fee_Guard.deluge` with monthly interest `DRY_RUN=true` against sanitized test data.
 2. Confirm report includes tenants checked, invoices checked, exclusions and reasons, eligible principal, eligible days, calculated interest, threshold skips, and would-create decisions.
 3. Re-run the dry run and confirm the report is stable.
 4. For one sanitized tenant above threshold, create a Draft using `DRY_RUN=false` and `POST_INTEREST_INVOICES=true` with `SEND_INTEREST_INVOICES=false`.

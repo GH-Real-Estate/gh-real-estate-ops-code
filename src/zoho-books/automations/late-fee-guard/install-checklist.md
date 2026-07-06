@@ -3,7 +3,7 @@
 ## Pre-Install
 
 - [ ] Final late-fee Deluge code committed to `src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge`.
-- [ ] Final monthly interest Deluge code committed to `src/zoho-books/automations/late-fee-guard/Monthly_Interest_Billing.deluge`.
+- [ ] Monthly consolidated interest section is present inside `Late_Fee_Guard.deluge`.
 - [ ] Verify `enableInterestOnDelinquentRent = false` in the installed late-fee guard.
 - [ ] Code reviewed for duplicate prevention.
 - [ ] Code reviewed for Central Time handling and monthly interest schedule window.
@@ -13,7 +13,7 @@
 
 ## Zoho Books Setup
 
-- [ ] Confirm Zoho Books connection name is `zbooks` or update both scripts before install.
+- [ ] Confirm Zoho Books connection name is `zbooks` or update the script before install.
 - [ ] Confirm late-fee item exists.
 - [ ] Confirm interest item exists and is appropriate for a line named `Monthly Interest Charge`.
 - [ ] Confirm late-fee invoice template exists.
@@ -25,7 +25,7 @@
 
 ## Monthly Interest Config
 
-- [ ] `DRY_RUN = true` for first deployment run.
+- [ ] `DRY_RUN = true` for first monthly interest deployment run. This does not disable D5/D10 late-fee processing.
 - [ ] `POST_INTEREST_INVOICES = false` for first deployment run.
 - [ ] `SEND_INTEREST_INVOICES = false` unless live sending is explicitly approved.
 - [ ] `INTEREST_ANNUAL_RATE = 10.00` unless a reviewed lease/legal change requires another rate.
@@ -47,10 +47,9 @@
 
 ## Deployment
 
-- [ ] Install late-fee guard code in Zoho Books / target runtime.
-- [ ] Install monthly interest code as a separate Zoho Books scheduled function.
+- [ ] Install the combined `Late_Fee_Guard.deluge` code in Zoho Books / target runtime.
 - [ ] Record deployment in `docs/runbooks/deployment-log.md`.
-- [ ] Run dry-run smoke test and review output before enabling posting.
+- [ ] Run monthly interest dry-run smoke test from the combined function and review output before enabling posting.
 - [ ] Enable posting only by setting `DRY_RUN=false` and `POST_INTEREST_INVOICES=true`.
 - [ ] Keep `SEND_INTEREST_INVOICES=false` until Draft invoice output is reviewed.
 - [ ] Keep rollback copy/reference.
