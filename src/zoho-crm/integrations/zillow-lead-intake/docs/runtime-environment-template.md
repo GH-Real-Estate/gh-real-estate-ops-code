@@ -5,7 +5,7 @@ Configure these values in Zoho Catalyst or another approved runtime secret/confi
 ## Inbound Route And Safety
 
 ```text
-GATEWAY_VERSION=2026-07-02.v2
+GATEWAY_VERSION=2026-07-07.v3
 ALLOWED_PATHS=/zillow/leads
 MAX_BODY_BYTES=65536
 REQUIRE_INBOUND_SECRET=true
@@ -55,6 +55,13 @@ SKIP_CADENCES_ON_UPDATE=false
 ```text
 DEFAULT_LEAD_SOURCE=Zillow
 DEFAULT_LEAD_STATUS=Not Contacted
+DEFAULT_ZILLOW_INTAKE_STATUS=Received
+```
+
+After the CRM Lead Status picklist includes `New Zillow Inquiry`, you can change:
+
+```text
+DEFAULT_LEAD_STATUS=New Zillow Inquiry
 ```
 
 ## Duplicate Prevention And Field Mapping
@@ -66,3 +73,5 @@ PROPERTY_UNIT_MAP_JSON={}
 ZOHO_CRM_FIELD_MAP_JSON={}
 ENABLE_CRM_INTAKE_EVENT_LOG=false
 ```
+
+Use `ZOHO_CRM_FIELD_MAP_JSON` only when actual Zoho CRM API names differ from the defaults documented in `README.md`.
