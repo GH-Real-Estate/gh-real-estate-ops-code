@@ -1,18 +1,25 @@
 # Install Checklist
 
-- [ ] Create/confirm CRM fields in Leads.
+- [ ] Create/confirm CRM fields in Leads from `docs/crm-leads-layout.md`.
 - [ ] Mark Leads field `Zillow_Lead_Key` unique.
 - [ ] Confirm Leads mandatory fields: `Last_Name`, `Company`.
-- [ ] Confirm Lead Status picklist supports the configured `DEFAULT_LEAD_STATUS`.
-- [ ] Confirm Zillow Intake Status picklist supports `Received`.
-- [ ] Create CRM view: Zillow Leads - New Inquiry / Not Contacted.
+- [ ] Confirm Lead Status picklist includes `New Zillow Inquiry`.
+- [ ] Confirm Zillow Lead Type picklist includes `question`, `tourRequest`, `applicationRequest`.
+- [ ] Confirm Zillow Intake Status picklist includes `Received`, `Parsed`, `Upserted`, `Updated`, `Failed`, `Ignored`.
+- [ ] Keep system/unneeded fields in unused items if Zoho does not allow permanent deletion.
+- [ ] Do not create/map `Manual_Review_Required`, `Manual_Review_Reason`, `Desired_Rent`, or `Desired_Deposit`.
+- [ ] Create CRM view: Zillow Leads - New Inquiry.
 - [ ] Create CRM view: Zillow Leads - Unmapped / Routing Review if desired.
-- [ ] Create Zoho OAuth client and refresh token.
+- [ ] Create Zoho OAuth client and refresh token for CRM v8.
 - [ ] Add Catalyst environment variables from `docs/runtime-environment-template.md`.
-- [ ] Keep `DRY_RUN=true` for first deployment.
-- [ ] Send fake dry-run payload.
-- [ ] Configure property/unit map with real CRM record IDs.
-- [ ] Ask Zillow to send a test callback.
+- [ ] Keep `ZILLOW_WEBHOOK_DRY_RUN=true` for first deployment.
+- [ ] Deploy the Catalyst function.
+- [ ] Send fake dry-run payload using `samples/zillow-lead.sample.urlencoded`.
+- [ ] Configure `PROPERTY_UNIT_MAP_JSON` with real CRM record IDs for 9401 Nieman Road / Unit 3 when available.
+- [ ] Send Zillow the endpoint URL and header name.
+- [ ] Send Zillow the header value separately through a secure one-time link.
+- [ ] Ask Zillow to send a test callback in their test environment.
 - [ ] Turn live mode on only after dry-run output matches expected CRM fields.
 - [ ] Re-send same fake live payload and confirm no duplicate Lead is created.
+- [ ] Confirm no Contact, Rental Application/Deal, lease, Books invoice, tenant portal record, or WorkDrive folder is created by this intake.
 - [ ] Record deployment in `docs/runbooks/deployment-log.md`.
