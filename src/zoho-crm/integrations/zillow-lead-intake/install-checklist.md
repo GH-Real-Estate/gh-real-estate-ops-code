@@ -1,18 +1,23 @@
 # Install Checklist
 
-- [ ] Create/confirm CRM fields in Leads.
+- [ ] Create/confirm the CRM Leads fields listed in `README.md`.
 - [ ] Mark Leads field `Zillow_Lead_Key` unique.
 - [ ] Confirm Leads mandatory fields: `Last_Name`, `Company`.
-- [ ] Confirm Lead Status picklist supports the configured `DEFAULT_LEAD_STATUS`.
+- [ ] Keep `Company` available for API writes even if hidden from the visible GH Real Estate layout.
+- [ ] Confirm Lead Status picklist includes `New Zillow Inquiry`.
 - [ ] Confirm Lead Source picklist includes `Zillow`.
-- [ ] Confirm Zillow Intake Status picklist supports `Received`.
+- [ ] Confirm Zillow Intake Status picklist includes `Received`, `Updated`, `Routing Matched`, `Routing Unmatched`, `Test Callback`, and `Failed`.
+- [ ] Confirm Zillow Lead Type picklist includes `question`, `tourRequest`, and `applicationRequest`.
+- [ ] Confirm Zillow Move-In Timeframe picklist includes `asap`, `flexible`, `week`, `month`, `twoWeeks`, and `twoMonths`.
+- [ ] Confirm `Inquiry_Message`, `Zillow_Renter_Profile_Summary`, and `Zillow_Raw_Field_Keys` are multi-line fields.
+- [ ] Confirm `Zillow_Listing_Postal_Code` is Single Line, not Number.
+- [ ] Confirm unused standard fields are removed from the GH Real Estate Lead layout.
 - [ ] Do not create or use `Manual_Review_Required`, `Manual_Review_Reason`, `Desired_Rent`, or `Desired_Deposit` for Zillow intake.
-- [ ] Create CRM view: Zillow Leads - New Inquiry / Not Contacted.
-- [ ] Create CRM view: Zillow Leads - Unmapped / Routing Warning if desired.
-- [ ] Create Zoho OAuth client and refresh token.
-- [ ] Generate a 32+ byte random `ZILLOW_WEBHOOK_KEY`.
-- [ ] Add Catalyst environment variables from `docs/runtime-environment-template.md`.
-- [ ] Keep `ZILLOW_WEBHOOK_DRY_RUN=true`, `DRY_RUN=true`, and `LIVE_MODE_ENABLED=false` for first deployment.
+- [ ] Create CRM view: Zillow Leads - New Inquiry.
+- [ ] Create CRM view: Zillow Leads - Routing Unmatched.
+- [ ] Create CRM view: Zillow Leads - Recently Synced.
+- [ ] Add runtime environment values from `docs/runtime-environment-template.md`.
+- [ ] Keep dry-run enabled for first deployment.
 - [ ] Send fake dry-run payload from `samples/zillow-lead.sample.urlencoded`.
 - [ ] Configure `PROPERTY_UNIT_MAP_JSON` with real CRM record IDs.
 - [ ] Ask Zillow to configure the endpoint in test mode and send a test callback.

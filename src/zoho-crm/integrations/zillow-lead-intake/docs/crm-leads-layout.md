@@ -6,13 +6,15 @@ Use this layout for Zillow Rentals Lead Delivery API intake.
 
 ```text
 1. Lead Information
-2. Zillow
-3. Reference
-4. System Notes
-5. Visit Summary
+2. Inquiry Details
+3. Zillow Routing
+4. Zillow Listing Address
+5. Zillow Audit
+6. System Reference
+7. Visit Summary hidden/unused
 ```
 
-Hide `Title`, `Middle Name`, and `Visit Summary` unless those standard fields are actively used.
+Hide `Title`, `Middle Name`, standard address fields, and `Visit Summary` unless those standard fields are actively used outside Zillow intake.
 
 ## Lead Information
 
@@ -21,56 +23,80 @@ Use two columns.
 | Row | Left | Type | Right | Type |
 |---|---|---|---|---|
 | 1 | First Name | Standard name | Lead Status | Picklist |
-| 2 | Last Name | Standard text, required | Requested Property | Lookup |
-| 3 | Company | Standard text, required | Requested Unit | Lookup |
-| 4 | Email | Email | Requested Move-In Date | Date |
-| 5 | Phone | Phone | Inquiry Message | Multi-line text |
-| 6 | Mobile | Phone |  |  |
+| 2 | Last Name | Standard text, required | Lead Source | Picklist |
+| 3 | Email | Email | Requested Property | Lookup |
+| 4 | Mobile | Phone | Requested Unit | Lookup |
+| 5 | Zillow Lead Type | Picklist | Requested Move-In Date | Date |
 
-`Inquiry Message` should be multi-line text. It stores Zillow `message` plus optional `introduction`.
+`Company` may stay in unused items visually, but it must remain available for API writes because Zoho Leads may require it.
+
+## Inquiry Details
+
+Use one column.
+
+| Row | Field | Type |
+|---|---|---|
+| 1 | Inquiry Message | Multi-line text |
+| 2 | Zillow Renter Profile Summary | Multi-line text |
+| 3 | Description | Standard long text |
+
+`Inquiry Message` stores Zillow `message` plus optional `introduction`. `Zillow Renter Profile Summary` stores optional renter profile fields without creating too many raw Lead fields.
 
 Do not add `Desired Rent`, `Desired Deposit`, `Manual Review Required`, or `Manual Review Reason` to this layout.
 
-## Zillow
+## Zillow Routing
 
 Use two columns.
 
 | Row | Left | Type | Right | Type |
 |---|---|---|---|---|
 | 1 | Zillow Lead Key | Single line, unique | Zillow Intake Status | Picklist |
-| 2 | Zillow Lead ID | Single line | Zillow Property Address | Single line |
-| 3 | Zillow Listing ID | Single line | Zillow Source Payload Hash | Single line |
-| 4 | Zillow Listing URL | URL | Zillow Received At | Date-time |
-| 5 | Zillow Raw Payload | Checkbox | Last Zillow Sync At | Date-time |
-
-`Zillow Property Address` should stay single line because it stores the raw/composed Zillow listing address. The clean operating address remains on the Property and Unit records.
-
-`Zillow Raw Payload` should be left as a checkbox indicator. The service sets it to `false` because raw payload values are not stored in CRM.
+| 2 | Zillow Listing ID | Single line | Zillow Received At | Date-time |
+| 3 | Zillow Provider Model ID | Single line | Last Zillow Sync At | Date-time |
+| 4 | Zillow Listing Contact Email | Email | Zillow Source Payload Hash | Single line |
+| 5 | Zillow Move-In Timeframe | Picklist |  |  |
 
 Recommended `Zillow Intake Status` values:
 
 ```text
 Received
-Duplicate Updated
+Updated
+Routing Matched
+Routing Unmatched
+Test Callback
 Failed
-Ignored
 ```
 
-## Reference
+## Zillow Listing Address
 
 Use two columns.
 
 | Row | Left | Type | Right | Type |
 |---|---|---|---|---|
-| 1 | Lead Source | Picklist | Lead Owner | User lookup |
-| 2 | Created By | System | Modified By | System |
+| 1 | Zillow Property Address Raw | Single line | Zillow Listing Unit | Single line |
+| 2 | Zillow Listing Street | Single line | Zillow Listing State | Single line |
+| 3 | Zillow Listing City | Single line | Zillow Listing URL | URL |
+| 4 | Zillow Listing Postal Code | Single line |  |  |
 
-## System Notes
+`Zillow Property Address Raw` should stay single line because it stores the raw/composed Zillow listing address. The clean operating address remains on the Property and Unit records.
+
+## Zillow Audit
 
 Use one column.
 
 | Row | Field | Type |
 |---|---|---|
-| 1 | Description | Standard long text |
+| 1 | Zillow Raw Field Keys | Multi-line text |
+| 2 | Zillow Raw Payload Stored | Checkbox |
+| 3 | Zillow Lead ID | Single line |
 
-`Description` stores sanitized Zillow summary data and routing warnings. It is not the approved application record or lease source of truth.
+`Zillow Raw Payload Stored` should be left as a checkbox indicator. The service sets it to `false` because raw payload values are not stored in CRM by default.
+
+## System Reference
+
+Use two columns.
+
+| Row | Left | Type | Right | Type |
+|---|---|---|---|---|
+| 1 | Created By | System | Lead Owner | User lookup |
+| 2 | Modified By | System |  |  |
