@@ -11,22 +11,26 @@ npm run ci
 Coverage:
 
 - URL-encoded payload parsing.
-- Zillow field alias normalization.
+- Official Zillow camelCase field normalization.
 - email/phone validation.
 - stable idempotency key generation.
 - property/unit map resolution.
 - CRM Lead payload construction.
+- exclusion of removed fields: `Desired_Rent`, `Desired_Deposit`, `Manual_Review_Required`, `Manual_Review_Reason`.
+- URL-encoded content type default.
 
 ## Manual Dry-Run Cases
 
 | Case | Expected |
 |---|---|
 | Complete fake lead | `ok=true`, `mode=dry_run`, planned Lead fields. |
-| Missing email but phone present | Accepted, manual review required. |
-| Missing phone but email present | Accepted, manual review required. |
+| Missing email but phone present | Accepted with routing warning in response/Description. |
+| Missing phone but email present | Accepted with routing warning in response/Description. |
 | Missing email and phone | Rejected with `invalid_lead_payload`. |
-| Unknown listing ID | Accepted, manual review required. |
+| Unknown listing ID | Accepted with routing warning; no Contact/Application/Lease created. |
 | Duplicate payload sent twice | Same `lead_reference` and same `Zillow_Lead_Key`. |
+| JSON payload while `ALLOW_JSON_PAYLOADS=false` | Rejected with `unsupported_content_type`. |
+| Missing shared-secret header | Rejected with `inbound_secret_invalid`. |
 
 ## Manual Live Cases
 
@@ -36,4 +40,4 @@ Only run after dry-run passes.
 2. Confirm one CRM Lead exists.
 3. Send the exact same payload again.
 4. Confirm the Lead was updated, not duplicated.
-5. Confirm no Contact, Rental Application/Deal, lease, Books invoice, or tenant portal record was created.
+5. Confirm no Contact, Rental Application/Deal, lease, Books invoice, tenant portal record, or WorkDrive folder was created.
