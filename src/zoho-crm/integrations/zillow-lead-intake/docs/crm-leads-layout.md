@@ -1,6 +1,6 @@
 # Zoho CRM Leads Layout for Zillow Intake
 
-Use this layout for Phase 2 Zillow Rentals lead delivery.
+Use this layout for Zillow Rentals Lead Delivery API intake.
 
 ## Section Order
 
@@ -27,7 +27,9 @@ Use two columns.
 | 5 | Phone | Phone | Inquiry Message | Multi-line text |
 | 6 | Mobile | Phone |  |  |
 
-`Inquiry Message` should be multi-line text.
+`Inquiry Message` should be multi-line text. It stores Zillow `message` plus optional `introduction`.
+
+Do not add `Desired Rent`, `Desired Deposit`, `Manual Review Required`, or `Manual Review Reason` to this layout.
 
 ## Zillow
 
@@ -42,6 +44,8 @@ Use two columns.
 | 5 | Zillow Raw Payload | Checkbox | Last Zillow Sync At | Date-time |
 
 `Zillow Property Address` should stay single line because it stores the raw/composed Zillow listing address. The clean operating address remains on the Property and Unit records.
+
+`Zillow Raw Payload` should be left as a checkbox indicator. The service sets it to `false` because raw payload values are not stored in CRM.
 
 Recommended `Zillow Intake Status` values:
 
@@ -68,3 +72,5 @@ Use one column.
 | Row | Field | Type |
 |---|---|---|
 | 1 | Description | Standard long text |
+
+`Description` stores sanitized Zillow summary data and routing warnings. It is not the approved application record or lease source of truth.
