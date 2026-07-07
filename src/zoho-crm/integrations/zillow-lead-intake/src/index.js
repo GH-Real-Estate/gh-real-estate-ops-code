@@ -2,19 +2,11 @@
 
 /**
  * GH Real Estate - Zillow Lead Intake
- * Platform: Zoho Catalyst Advanced I/O, Node.js 18+
+ * Runtime target: Zoho Catalyst Advanced I/O, Node.js 18+.
  *
- * Purpose:
- * - Receive Zillow Rentals Lead Delivery API callbacks.
- * - Accept Zillow's application/x-www-form-urlencoded payload format.
- * - Validate the static Zillow header before parsing or CRM mutation.
- * - Normalize Zillow's official camelCase fields into a stable CRM payload.
- * - Create or update only a Zoho CRM Leads record for the raw inquiry.
- *
- * Business rule:
- * Raw Zillow inquiries are not Contacts, Rental Applications/Deals, leases,
- * Books invoices, tenant portal users, or WorkDrive folders. Those records are
- * created only after qualification, application review, and owner approval.
+ * This endpoint receives Zillow Rentals lead callbacks and creates or updates
+ * one Zoho CRM Leads record. It never creates Contacts, Rental Applications,
+ * Leases, Books records, Creator portal records, or WorkDrive folders.
  */
 
 const crypto = require('crypto');
@@ -28,7 +20,7 @@ const DEFAULT_FIELD_MAP = {
     lastName: 'Last_Name',
     company: 'Company',
     email: 'Email',
-    phone: 'Phone',
+    phone: '',
     mobile: 'Mobile',
     leadSource: 'Lead_Source',
     leadStatus: 'Lead_Status',
@@ -36,16 +28,28 @@ const DEFAULT_FIELD_MAP = {
     unit: 'Requested_Unit',
     requestedMoveInDate: 'Requested_Move_In_Date',
     inquiryMessage: 'Inquiry_Message',
+    zillowRenterProfileSummary: 'Zillow_Renter_Profile_Summary',
     zillowLeadKey: 'Zillow_Lead_Key',
     zillowLeadId: 'Zillow_Lead_ID',
     zillowListingId: 'Zillow_Listing_ID',
     zillowListingUrl: 'Zillow_Listing_URL',
-    zillowPropertyAddress: 'Zillow_Property_Address',
-    zillowSourcePayloadHash: 'Zillow_Source_Payload_Hash',
+    zillowLeadType: 'Zillow_Lead_Type',
+    zillowProviderModelId: 'Zillow_Provider_Model_ID',
+    zillowMoveInTimeframe: 'Zillow_Move_In_Timeframe',
+    // Field label is "Zillow Property Address Raw"; verified API name is below.
+    zillowPropertyAddressRaw: 'Zillow_Property_Address',
+    zillowListingStreet: 'Zillow_Listing_Street',
+    zillowListingUnit: 'Zillow_Listing_Unit',
+    zillowListingCity: 'Zillow_Listing_City',
+    zillowListingState: 'Zillow_Listing_State',
+    zillowListingPostalCode: 'Zillow_Listing_Postal_Code',
+    zillowListingContactEmail: 'Zillow_Listing_Contact_Email',
     zillowReceivedAt: 'Zillow_Received_At',
     lastZillowSyncAt: 'Last_Zillow_Sync_At',
     zillowIntakeStatus: 'Zillow_Intake_Status',
-    zillowRawPayload: 'Zillow_Raw_Payload',
+    zillowSourcePayloadHash: 'Zillow_Source_Payload_Hash',
+    zillowRawFieldKeys: 'Zillow_Raw_Field_Keys',
+    zillowRawPayloadStored: 'Zillow_Raw_Payload_Stored',
     description: 'Description'
   },
   intakeEvent: {
@@ -79,42 +83,24 @@ async function handler(req, res) {
     if (method === 'GET' && path === '/health') {
       return handleHealth(req, res, requestId);
     }
-
-    if (method !== 'POST') {
-      return fail(res, requestId, 405, 'method_not_allowed');
-    }
-
-    const pathCheck = validateAllowedPath(path);
-    if (!pathCheck.ok) {
-      return fail(res, requestId, 404, 'path_not_allowed');
-    }
+    if (method !== 'POST') return fail(res, requestId, 405, 'method_not_allowed');
+    if (!validateAllowedPath(path).ok) return fail(res, requestId, 404, 'path_not_allowed');
 
     if (CONFIG.enforceIpAllowlist) {
       const clientIp = getClientIp(req);
-      if (!CONFIG.allowedIps.includes(clientIp)) {
-        return fail(res, requestId, 403, 'source_ip_not_allowed');
-      }
+      if (!CONFIG.allowedIps.includes(clientIp)) return fail(res, requestId, 403, 'source_ip_not_allowed');
     }
 
     const contentEncoding = String(getHeader(req.headers, 'content-encoding') || '').trim().toLowerCase();
-    if (contentEncoding && contentEncoding !== 'identity') {
-      return fail(res, requestId, 415, 'unsupported_content_encoding');
-    }
+    if (contentEncoding && contentEncoding !== 'identity') return fail(res, requestId, 415, 'unsupported_content_encoding');
 
     const declaredLength = getDeclaredContentLength(req);
-    if (declaredLength !== null && declaredLength > CONFIG.maxBodyBytes) {
-      return fail(res, requestId, 413, 'payload_too_large');
-    }
+    if (declaredLength !== null && declaredLength > CONFIG.maxBodyBytes) return fail(res, requestId, 413, 'payload_too_large');
 
-    const secretCheck = validateInboundSecret(req);
-    if (!secretCheck.ok) {
-      return fail(res, requestId, 401, 'inbound_secret_invalid');
-    }
+    if (!validateInboundKey(req).ok) return fail(res, requestId, 401, 'inbound_header_invalid');
 
     const contentType = String(getHeader(req.headers, 'content-type') || '').toLowerCase();
-    if (!isAllowedContentType(contentType)) {
-      return fail(res, requestId, 415, 'unsupported_content_type');
-    }
+    if (!isAllowedContentType(contentType)) return fail(res, requestId, 415, 'unsupported_content_type');
 
     const rawBody = await readRequestBody(req, CONFIG.maxBodyBytes, CONFIG.inboundBodyTimeoutMs);
     const rawBodyText = decodeUtf8Strict(rawBody);
@@ -151,15 +137,14 @@ async function handler(req, res) {
 
     if (CONFIG.dryRun) {
       if (CONFIG.enableCrmIntakeEventLog && CONFIG.enableDryRunCrmAuditLog) {
-        const dryRunEventRecord = buildIntakeEventRecord(normalizedLead, {
-          crmLeadId: '',
-          status: 'Dry Run Accepted',
-          routingWarnings
-        });
         await upsertCrmRecord({
           moduleApiName: CONFIG.intakeEventsModule,
           duplicateCheckFields: CONFIG.intakeEventDuplicateCheckFields,
-          record: dryRunEventRecord
+          record: buildIntakeEventRecord(normalizedLead, {
+            crmLeadId: '',
+            status: 'Dry Run Accepted',
+            routingWarnings
+          })
         });
       }
 
@@ -184,15 +169,14 @@ async function handler(req, res) {
     const crmLeadId = extractZohoRecordId(leadResult, 'lead');
 
     if (CONFIG.enableCrmIntakeEventLog) {
-      const intakeEventRecord = buildIntakeEventRecord(normalizedLead, {
-        crmLeadId,
-        status: 'Processed',
-        routingWarnings
-      });
       await upsertCrmRecord({
         moduleApiName: CONFIG.intakeEventsModule,
         duplicateCheckFields: CONFIG.intakeEventDuplicateCheckFields,
-        record: intakeEventRecord
+        record: buildIntakeEventRecord(normalizedLead, {
+          crmLeadId,
+          status: 'Processed',
+          routingWarnings
+        })
       });
     }
 
@@ -226,16 +210,16 @@ async function handler(req, res) {
 function buildConfig() {
   const fieldMapOverride = envJson('ZOHO_CRM_FIELD_MAP_JSON', {});
   return {
-    version: env('GATEWAY_VERSION', '2026-07-07.v4'),
+    version: env('GATEWAY_VERSION', '2026-07-07.v5'),
     allowedPaths: envList('ALLOWED_PATHS', ['/zillow/leads']),
     maxBodyBytes: envNumber('MAX_BODY_BYTES', 65536),
     inboundBodyTimeoutMs: envNumber('INBOUND_BODY_TIMEOUT_MS', 8000),
 
-    requireInboundSecret: envBool('REQUIRE_INBOUND_SECRET', true),
-    inboundSecretHeaderName: env('INBOUND_SECRET_HEADER_NAME', 'x-gh-zillow-webhook-key').toLowerCase().trim(),
-    inboundSecretValue: firstNonEmpty(env('ZILLOW_WEBHOOK_KEY', ''), env('INBOUND_SECRET_VALUE', '')).trim(),
-    allowSecretQueryParam: envBool('ALLOW_SECRET_QUERY_PARAM', false),
-    inboundSecretQueryParam: env('INBOUND_SECRET_QUERY_PARAM', 'key').trim(),
+    requireInboundKey: envBool('REQUIRE_INBOUND_SECRET', true),
+    inboundHeaderName: env('INBOUND_SECRET_HEADER_NAME', 'x-gh-zillow-webhook-key').toLowerCase().trim(),
+    inboundHeaderValue: firstNonEmpty(env('ZILLOW_WEBHOOK_KEY', ''), env('INBOUND_SECRET_VALUE', '')).trim(),
+    allowQueryKey: envBool('ALLOW_SECRET_QUERY_PARAM', false),
+    queryKeyName: env('INBOUND_SECRET_QUERY_PARAM', 'key').trim(),
 
     enforceIpAllowlist: envBool('ENFORCE_IP_ALLOWLIST', false),
     allowedIps: envList('ALLOWED_IPS', []),
@@ -283,8 +267,7 @@ function buildConfig() {
     skipCadencesOnUpdate: envBool('SKIP_CADENCES_ON_UPDATE', false),
 
     defaultLeadSource: env('DEFAULT_LEAD_SOURCE', 'Zillow').trim(),
-    defaultLeadStatus: env('DEFAULT_LEAD_STATUS', 'Not Contacted').trim(),
-    defaultZillowIntakeStatus: env('DEFAULT_ZILLOW_INTAKE_STATUS', 'Received').trim(),
+    defaultLeadStatus: env('DEFAULT_LEAD_STATUS', 'New Zillow Inquiry').trim(),
 
     propertyUnitMap: envJson('PROPERTY_UNIT_MAP_JSON', {}),
     fieldMap: deepMerge(DEFAULT_FIELD_MAP, fieldMapOverride),
@@ -293,15 +276,9 @@ function buildConfig() {
 }
 
 function handleHealth(req, res, requestId) {
-  if (!CONFIG.enableHealth) return fail(res, requestId, 404, 'health_disabled');
-
-  if (!CONFIG.healthToken) return fail(res, requestId, 404, 'not_found');
-
+  if (!CONFIG.enableHealth || !CONFIG.healthToken) return fail(res, requestId, 404, 'not_found');
   const got = getHeader(req.headers, CONFIG.healthHeaderName);
-  if (!safeTimingEqualText(got, CONFIG.healthToken)) {
-    return fail(res, requestId, 404, 'not_found');
-  }
-
+  if (!safeTimingEqualText(got, CONFIG.healthToken)) return fail(res, requestId, 404, 'not_found');
   return sendJson(res, 200, {
     ok: true,
     service: 'gh-zillow-lead-intake',
@@ -311,43 +288,35 @@ function handleHealth(req, res, requestId) {
   });
 }
 
-function validateInboundSecret(req) {
-  if (!CONFIG.requireInboundSecret) return { ok: true };
-  if (!CONFIG.inboundSecretValue) return { ok: false, reason: 'secret_not_configured' };
-
-  const headerValue = getHeader(req.headers, CONFIG.inboundSecretHeaderName);
-  if (safeTimingEqualText(headerValue, CONFIG.inboundSecretValue)) return { ok: true };
-
-  if (CONFIG.allowSecretQueryParam) {
+function validateInboundKey(req) {
+  if (!CONFIG.requireInboundKey) return { ok: true };
+  if (!CONFIG.inboundHeaderValue) return { ok: false, reason: 'header_not_configured' };
+  const headerValue = getHeader(req.headers, CONFIG.inboundHeaderName);
+  if (safeTimingEqualText(headerValue, CONFIG.inboundHeaderValue)) return { ok: true };
+  if (CONFIG.allowQueryKey) {
     const parsed = safeParseRequestUrl(req);
-    const queryValue = parsed.searchParams.get(CONFIG.inboundSecretQueryParam);
-    if (safeTimingEqualText(queryValue, CONFIG.inboundSecretValue)) return { ok: true };
+    const queryValue = parsed.searchParams.get(CONFIG.queryKeyName);
+    if (safeTimingEqualText(queryValue, CONFIG.inboundHeaderValue)) return { ok: true };
   }
-
-  return { ok: false, reason: 'secret_mismatch' };
+  return { ok: false, reason: 'header_mismatch' };
 }
 
 function parseInboundPayload(rawBody, contentType) {
   const bodyText = rawBody.toString('utf8');
   const normalizedContentType = String(contentType || '').toLowerCase();
 
-  if (normalizedContentType.includes('application/json')) {
-    try {
-      return JSON.parse(bodyText || '{}');
-    } catch (error) {
-      throw publicError(400, 'invalid_json_body');
-    }
+  if (CONFIG.allowJsonPayloads && normalizedContentType.includes('application/json')) {
+    try { return JSON.parse(bodyText || '{}'); }
+    catch (_) { throw publicError(400, 'invalid_json_body'); }
   }
 
   if (normalizedContentType.includes('application/x-www-form-urlencoded') || !normalizedContentType) {
     const params = new URLSearchParams(bodyText);
     const output = {};
     for (const [key, value] of params.entries()) {
-      if (Object.prototype.hasOwnProperty.call(output, key)) {
-        output[key] = Array.isArray(output[key]) ? [...output[key], value] : [output[key], value];
-      } else {
-        output[key] = value;
-      }
+      output[key] = Object.prototype.hasOwnProperty.call(output, key)
+        ? (Array.isArray(output[key]) ? [...output[key], value] : [output[key], value])
+        : value;
     }
     return output;
   }
@@ -356,77 +325,28 @@ function parseInboundPayload(rawBody, contentType) {
 }
 
 function normalizeZillowLeadPayload(payload, receivedAtIso = new Date().toISOString(), sourcePayloadHash = '') {
-  const normalizedInput = normalizeInputObject(payload);
+  const input = normalizeInputObject(payload);
   const rawFieldKeys = Object.keys(payload || {}).sort();
 
-  const fullName = firstValue(normalizedInput, [
-    'name',
-    'full_name',
-    'contact_name',
-    'prospect_name',
-    'applicant_name',
-    'lead_name'
-  ]);
-
+  const fullName = firstValue(input, ['name', 'full_name', 'contact_name', 'prospect_name', 'applicant_name', 'lead_name']);
   const parsedName = splitPersonName(fullName);
-  const firstName = firstValue(normalizedInput, ['first_name', 'firstname', 'first']) || parsedName.firstName;
-  const lastName = firstValue(normalizedInput, ['last_name', 'lastname', 'last']) || parsedName.lastName;
-  const email = normalizeEmail(firstValue(normalizedInput, ['email', 'email_address', 'contact_email', 'applicant_email']));
-  const phone = normalizePhone(firstValue(normalizedInput, [
-    'phone',
-    'phone_number',
-    'mobile',
-    'cell',
-    'contact_phone',
-    'applicant_phone'
-  ]));
+  const firstName = firstValue(input, ['first_name', 'firstname', 'first']) || parsedName.firstName;
+  const lastName = firstValue(input, ['last_name', 'lastname', 'last']) || parsedName.lastName;
+  const email = normalizeEmail(firstValue(input, ['email', 'email_address', 'contact_email', 'applicant_email']));
+  const phone = normalizePhone(firstValue(input, ['phone', 'phone_number', 'mobile', 'cell', 'contact_phone', 'applicant_phone']));
 
-  const leadId = cleanText(firstValue(normalizedInput, [
-    'lead_id',
-    'zillow_lead_id',
-    'zillowleadid',
-    'contact_id',
-    'id'
-  ]));
+  const leadId = cleanText(firstValue(input, ['lead_id', 'zillow_lead_id', 'zillowleadid', 'contact_id', 'id']));
+  const listingId = cleanText(firstValue(input, ['listing_id', 'zillow_listing_id', 'listingid', 'zpid', 'property_id', 'rental_id']));
+  const listingUrl = cleanUrl(firstValue(input, ['listing_url', 'url', 'property_url', 'zillow_url']));
+  const leadType = normalizeEnum(firstValue(input, ['lead_type', 'leadtype']));
+  const providerModelId = cleanText(firstValue(input, ['provider_model_id', 'provider_modelid', 'providermodelid']));
 
-  const listingId = cleanText(firstValue(normalizedInput, [
-    'listing_id',
-    'zillow_listing_id',
-    'listingid',
-    'zpid',
-    'property_id',
-    'rental_id'
-  ]));
-
-  const listingStreet = cleanText(firstValue(normalizedInput, [
-    'listing_street',
-    'property_address',
-    'listing_address',
-    'address',
-    'street_address',
-    'property'
-  ]));
-
-  const listingUnit = cleanText(firstValue(normalizedInput, [
-    'listing_unit',
-    'unit',
-    'unit_number',
-    'apartment',
-    'apt',
-    'unit_name'
-  ]));
-
-  const listingCity = cleanText(firstValue(normalizedInput, ['listing_city', 'city', 'property_city']));
-  const listingState = cleanText(firstValue(normalizedInput, ['listing_state', 'state', 'property_state'])).toUpperCase();
-  const listingPostalCode = cleanText(firstValue(normalizedInput, [
-    'listing_postal_code',
-    'listing_zip',
-    'postal_code',
-    'zip',
-    'zipcode',
-    'property_zip'
-  ]));
-
+  const listingStreet = cleanText(firstValue(input, ['listing_street', 'listingstreet', 'street_address', 'property_address', 'listing_address', 'address', 'property']));
+  const listingUnit = cleanText(firstValue(input, ['listing_unit', 'listingunit', 'unit', 'unit_number', 'apartment', 'apt', 'unit_name']));
+  const listingCity = cleanText(firstValue(input, ['listing_city', 'listingcity', 'city', 'property_city']));
+  const listingState = cleanText(firstValue(input, ['listing_state', 'listingstate', 'state', 'property_state'])).toUpperCase();
+  const listingPostalCode = cleanText(firstValue(input, ['listing_postal_code', 'listingpostalcode', 'listing_zip', 'postal_code', 'zip', 'zipcode', 'property_zip']));
+  const listingContactEmail = normalizeEmail(firstValue(input, ['listing_contact_email', 'listingcontactemail']));
   const propertyAddress = composeListingAddress({
     street: listingStreet,
     unit: listingUnit,
@@ -435,56 +355,32 @@ function normalizeZillowLeadPayload(payload, receivedAtIso = new Date().toISOStr
     postalCode: listingPostalCode
   });
 
-  const movingDate = normalizeDate(firstValue(normalizedInput, [
-    'moving_date',
-    'desired_move_in_date',
-    'move_in_date',
-    'moveindate',
-    'preferred_move_in_date'
-  ]));
+  const desiredMoveInDate = normalizeDate(firstValue(input, ['moving_date', 'movingdate', 'desired_move_in_date', 'move_in_date', 'moveindate', 'preferred_move_in_date']));
+  const message = cleanText(firstValue(input, ['message', 'comments', 'comment', 'lead_message', 'description', 'note']));
+  const introduction = cleanText(firstValue(input, ['introduction', 'intro', 'renter_introduction']));
+  const moveInTimeframe = normalizeEnum(firstValue(input, ['move_in_timeframe', 'moveintimeframe']));
 
-  const receivedAtDate = isoDateOnly(receivedAtIso);
-  const source = cleanText(firstValue(normalizedInput, ['source', 'lead_source', 'provider'])) || 'Zillow';
-  const message = cleanText(firstValue(normalizedInput, [
-    'message',
-    'comments',
-    'comment',
-    'lead_message',
-    'description',
-    'note'
-  ]));
-  const introduction = cleanText(firstValue(normalizedInput, ['introduction', 'intro', 'renter_introduction']));
-
-  const listingUrl = cleanUrl(firstValue(normalizedInput, [
-    'listing_url',
-    'url',
-    'property_url',
-    'zillow_url'
-  ]));
-
-  const leadType = normalizeEnum(firstValue(normalizedInput, ['lead_type', 'leadtype']));
-  const providerModelId = cleanText(firstValue(normalizedInput, ['provider_model_id', 'provider_modelid', 'providerModelId']));
-  const listingContactEmail = normalizeEmail(firstValue(normalizedInput, ['listing_contact_email']));
-
-  const numBedroomsSought = cleanText(firstValue(normalizedInput, ['num_bedrooms_sought', 'beds', 'bedrooms']));
-  const numBathroomsSought = cleanText(firstValue(normalizedInput, ['num_bathrooms_sought', 'baths', 'bathrooms']));
-  const neighborhoods = cleanText(firstValue(normalizedInput, ['neighborhoods']));
-  const propertyTypesDesired = cleanText(firstValue(normalizedInput, ['property_types_desired']));
-  const leaseLengthMonths = cleanText(firstValue(normalizedInput, ['lease_length_months']));
-  const smoker = normalizeBooleanText(firstValue(normalizedInput, ['smoker']));
-  const parkingTypeDesired = normalizeEnum(firstValue(normalizedInput, ['parking_type_desired']));
-  const incomeYearly = normalizeMoney(firstValue(normalizedInput, ['income_yearly']));
-  const creditScoreRangeJson = cleanText(firstValue(normalizedInput, ['credit_score_range_json']));
-  const movingFromCity = cleanText(firstValue(normalizedInput, ['moving_from_city']));
-  const movingFromState = cleanText(firstValue(normalizedInput, ['moving_from_state'])).toUpperCase();
-  const moveInTimeframe = normalizeEnum(firstValue(normalizedInput, ['move_in_timeframe']));
-  const reasonForMoving = cleanText(firstValue(normalizedInput, ['reason_for_moving']));
-  const employmentStatus = normalizeEnum(firstValue(normalizedInput, ['employment_status']));
-  const jobTitle = cleanText(firstValue(normalizedInput, ['job_title']));
-  const employer = cleanText(firstValue(normalizedInput, ['employer']));
-  const employmentStartDate = normalizeDate(firstValue(normalizedInput, ['employment_start_date']));
-  const employmentDetailsJson = cleanText(firstValue(normalizedInput, ['employment_details_json']));
-  const petDetailsJson = cleanText(firstValue(normalizedInput, ['pet_details_json']));
+  const profile = {
+    numBedroomsSought: cleanText(firstValue(input, ['num_bedrooms_sought', 'numbedroomssought', 'beds', 'bedrooms'])),
+    numBathroomsSought: cleanText(firstValue(input, ['num_bathrooms_sought', 'numbathroomssought', 'baths', 'bathrooms'])),
+    neighborhoods: cleanText(firstValue(input, ['neighborhoods'])),
+    propertyTypesDesired: cleanText(firstValue(input, ['property_types_desired', 'propertytypesdesired'])),
+    leaseLengthMonths: cleanText(firstValue(input, ['lease_length_months', 'leaselengthmonths'])),
+    smoker: normalizeBooleanText(firstValue(input, ['smoker'])),
+    parkingTypeDesired: normalizeEnum(firstValue(input, ['parking_type_desired', 'parkingtypedesired'])),
+    incomeYearly: normalizeMoney(firstValue(input, ['income_yearly', 'incomeyearly'])),
+    creditScoreRangeJson: cleanText(firstValue(input, ['credit_score_range_json', 'creditscorerangejson'])),
+    movingFromCity: cleanText(firstValue(input, ['moving_from_city', 'movingfromcity'])),
+    movingFromState: cleanText(firstValue(input, ['moving_from_state', 'movingfromstate'])).toUpperCase(),
+    moveInTimeframe,
+    reasonForMoving: cleanText(firstValue(input, ['reason_for_moving', 'reasonformoving'])),
+    employmentStatus: normalizeEnum(firstValue(input, ['employment_status', 'employmentstatus'])),
+    jobTitle: cleanText(firstValue(input, ['job_title', 'jobtitle'])),
+    employer: cleanText(firstValue(input, ['employer'])),
+    employmentStartDate: normalizeDate(firstValue(input, ['employment_start_date', 'employmentstartdate'])),
+    employmentDetailsJson: cleanText(firstValue(input, ['employment_details_json', 'employmentdetailsjson'])),
+    petDetailsJson: cleanText(firstValue(input, ['pet_details_json', 'petdetailsjson']))
+  };
 
   const leadKey = buildLeadKey({
     leadId,
@@ -504,7 +400,7 @@ function normalizeZillowLeadPayload(payload, receivedAtIso = new Date().toISOStr
     leadId,
     listingId,
     listingUrl,
-    source,
+    source: 'Zillow',
     firstName: cleanText(firstName),
     lastName: cleanText(lastName),
     fullName: cleanText(fullName),
@@ -520,62 +416,29 @@ function normalizeZillowLeadPayload(payload, receivedAtIso = new Date().toISOStr
     listingState,
     listingPostalCode,
     listingContactEmail,
-    desiredMoveInDate: movingDate,
-    receivedAtDate,
+    desiredMoveInDate,
     receivedAtIso,
     sourcePayloadHash,
     leadType,
     providerModelId,
-    numBedroomsSought,
-    numBathroomsSought,
-    neighborhoods,
-    propertyTypesDesired,
-    leaseLengthMonths,
-    smoker,
-    parkingTypeDesired,
-    incomeYearly,
-    creditScoreRangeJson,
-    movingFromCity,
-    movingFromState,
     moveInTimeframe,
-    reasonForMoving,
-    employmentStatus,
-    jobTitle,
-    employer,
-    employmentStartDate,
-    employmentDetailsJson,
-    petDetailsJson,
+    renterProfileSummary: buildRenterProfileSummary(profile),
     rawFieldKeys
   };
 }
 
 function validateNormalizedLead(lead) {
   const publicErrors = [];
-
-  if (!lead.email && !lead.phone) {
-    publicErrors.push('Lead must include at least one contact method: email or phone.');
-  }
-
-  if (lead.email && !isLikelyEmail(lead.email)) {
-    publicErrors.push('Lead email is not valid.');
-  }
-
-  if (lead.phone && lead.phone.replace(/\D/g, '').length < 10) {
-    publicErrors.push('Lead phone is too short.');
-  }
-
-  return {
-    ok: publicErrors.length === 0,
-    publicErrors
-  };
+  if (!lead.email && !lead.phone) publicErrors.push('Lead must include at least one contact method: email or phone.');
+  if (lead.email && !isLikelyEmail(lead.email)) publicErrors.push('Lead email is not valid.');
+  if (lead.phone && lead.phone.replace(/\D/g, '').length < 10) publicErrors.push('Lead phone is too short.');
+  return { ok: publicErrors.length === 0, publicErrors };
 }
 
 function resolvePropertyUnit(lead, propertyUnitMap) {
   const keys = [];
   if (lead.listingId) keys.push(`listing:${normalizeMapKey(lead.listingId)}`);
-  if (lead.providerModelId && lead.providerModelId !== '0') {
-    keys.push(`provider_model:${normalizeMapKey(lead.providerModelId)}`);
-  }
+  if (lead.providerModelId && lead.providerModelId !== '0') keys.push(`provider_model:${normalizeMapKey(lead.providerModelId)}`);
   if (lead.listingContactEmail) {
     keys.push(`listing_contact_email:${normalizeMapKey(lead.listingContactEmail)}`);
     const prefix = lead.listingContactEmail.split('@')[0];
@@ -584,20 +447,12 @@ function resolvePropertyUnit(lead, propertyUnitMap) {
   if (lead.listingStreet || lead.unit || lead.listingCity || lead.listingState || lead.listingPostalCode) {
     keys.push(`address:${normalizeMapKey(lead.listingStreet)}|${normalizeMapKey(lead.unit)}|${normalizeMapKey(lead.listingCity)}|${normalizeMapKey(lead.listingState)}|${normalizeMapKey(lead.listingPostalCode)}`);
   }
-  if (lead.propertyAddress || lead.unit) {
-    keys.push(`address:${normalizeMapKey(lead.propertyAddress)}|${normalizeMapKey(lead.unit)}`);
-  }
+  if (lead.propertyAddress || lead.unit) keys.push(`address:${normalizeMapKey(lead.propertyAddress)}|${normalizeMapKey(lead.unit)}`);
   keys.push('default');
 
   for (const key of uniqueNonEmpty(keys)) {
-    if (propertyUnitMap && propertyUnitMap[key]) {
-      return {
-        matchedKey: key,
-        ...propertyUnitMap[key]
-      };
-    }
+    if (propertyUnitMap && propertyUnitMap[key]) return { matchedKey: key, ...propertyUnitMap[key] };
   }
-
   return null;
 }
 
@@ -618,6 +473,7 @@ function buildCrmLeadPlan(lead, propertyUnit, routingWarnings) {
   const lastName = lead.lastName || lead.firstName || 'Zillow Prospect';
   const company = buildLeadCompany(lead, propertyUnit);
   const leadDescription = buildLeadDescription(lead, propertyUnit, routingWarnings);
+  const intakeStatus = propertyUnit ? 'Routing Matched' : 'Routing Unmatched';
 
   const leadRecord = compactRecord({
     [fieldMap.firstName]: lead.firstName || undefined,
@@ -632,16 +488,27 @@ function buildCrmLeadPlan(lead, propertyUnit, routingWarnings) {
     [fieldMap.unit]: propertyUnit && propertyUnit.unitId ? { id: String(propertyUnit.unitId) } : undefined,
     [fieldMap.requestedMoveInDate]: lead.desiredMoveInDate || undefined,
     [fieldMap.inquiryMessage]: lead.inquiryMessage || undefined,
+    [fieldMap.zillowRenterProfileSummary]: lead.renterProfileSummary || undefined,
     [fieldMap.zillowLeadKey]: lead.leadKey,
     [fieldMap.zillowLeadId]: lead.leadId || undefined,
     [fieldMap.zillowListingId]: lead.listingId || undefined,
     [fieldMap.zillowListingUrl]: lead.listingUrl || undefined,
-    [fieldMap.zillowPropertyAddress]: lead.propertyAddress || undefined,
+    [fieldMap.zillowLeadType]: lead.leadType || undefined,
+    [fieldMap.zillowProviderModelId]: lead.providerModelId || undefined,
+    [fieldMap.zillowMoveInTimeframe]: lead.moveInTimeframe || undefined,
+    [fieldMap.zillowPropertyAddressRaw]: lead.propertyAddress || undefined,
+    [fieldMap.zillowListingStreet]: lead.listingStreet || undefined,
+    [fieldMap.zillowListingUnit]: lead.unit || undefined,
+    [fieldMap.zillowListingCity]: lead.listingCity || undefined,
+    [fieldMap.zillowListingState]: lead.listingState || undefined,
+    [fieldMap.zillowListingPostalCode]: lead.listingPostalCode || undefined,
+    [fieldMap.zillowListingContactEmail]: lead.listingContactEmail || undefined,
     [fieldMap.zillowSourcePayloadHash]: lead.sourcePayloadHash || undefined,
     [fieldMap.zillowReceivedAt]: lead.receivedAtIso,
     [fieldMap.lastZillowSyncAt]: lead.receivedAtIso,
-    [fieldMap.zillowIntakeStatus]: CONFIG.defaultZillowIntakeStatus || undefined,
-    [fieldMap.zillowRawPayload]: false,
+    [fieldMap.zillowIntakeStatus]: intakeStatus,
+    [fieldMap.zillowRawFieldKeys]: lead.rawFieldKeys.join(', '),
+    [fieldMap.zillowRawPayloadStored]: false,
     [fieldMap.description]: leadDescription
   });
 
@@ -667,26 +534,9 @@ function buildLeadDescription(lead, propertyUnit, routingWarnings) {
     propertyUnit && propertyUnit.matchedKey ? `Matched CRM route: ${propertyUnit.matchedKey}` : '',
     lead.desiredMoveInDate ? `Requested move-in date: ${lead.desiredMoveInDate}` : '',
     lead.moveInTimeframe ? `Move-in timeframe: ${lead.moveInTimeframe}` : '',
-    lead.numBedroomsSought ? `Bedrooms sought: ${lead.numBedroomsSought}` : '',
-    lead.numBathroomsSought ? `Bathrooms sought: ${lead.numBathroomsSought}` : '',
-    lead.leaseLengthMonths ? `Lease length requested: ${lead.leaseLengthMonths} months` : '',
-    lead.parkingTypeDesired ? `Parking preference: ${lead.parkingTypeDesired}` : '',
-    lead.smoker ? `Smoker: ${lead.smoker}` : '',
-    lead.neighborhoods ? `Neighborhoods: ${truncate(formatPossiblyJson(lead.neighborhoods), 500)}` : '',
-    lead.propertyTypesDesired ? `Property types desired: ${truncate(formatPossiblyJson(lead.propertyTypesDesired), 500)}` : '',
-    lead.petDetailsJson ? `Pets: ${truncate(formatPossiblyJson(lead.petDetailsJson), 700)}` : '',
-    lead.incomeYearly !== undefined ? `Self-reported yearly income: ${lead.incomeYearly}` : '',
-    lead.creditScoreRangeJson ? `Self-reported credit score range: ${truncate(formatPossiblyJson(lead.creditScoreRangeJson), 300)}` : '',
-    lead.employmentStatus ? `Employment status: ${lead.employmentStatus}` : '',
-    lead.jobTitle ? `Job title: ${lead.jobTitle}` : '',
-    lead.employer ? `Employer: ${lead.employer}` : '',
-    lead.employmentStartDate ? `Employment start date: ${lead.employmentStartDate}` : '',
-    lead.employmentDetailsJson ? `Employment details: ${truncate(formatPossiblyJson(lead.employmentDetailsJson), 700)}` : '',
-    lead.movingFromCity || lead.movingFromState ? `Moving from: ${[lead.movingFromCity, lead.movingFromState].filter(Boolean).join(', ')}` : '',
-    lead.reasonForMoving ? `Reason for moving: ${truncate(lead.reasonForMoving, 500)}` : '',
     lead.inquiryMessage ? `Inquiry message: ${truncate(lead.inquiryMessage, 1500)}` : '',
+    lead.renterProfileSummary ? `Renter profile summary:\n${truncate(lead.renterProfileSummary, 2500)}` : '',
     routingWarnings && routingWarnings.length ? `Routing warnings: ${routingWarnings.join(' ')}` : '',
-    lead.rawFieldKeys.length ? `Zillow raw field keys: ${lead.rawFieldKeys.join(', ')}` : '',
     lead.sourcePayloadHash ? `Source payload hash: ${lead.sourcePayloadHash}` : ''
   ].filter(Boolean).join('\n');
 }
@@ -712,63 +562,34 @@ async function upsertCrmRecord({ moduleApiName, duplicateCheckFields, record }) 
   const url = new URL(`${CONFIG.crmBaseUrl.replace(/\/$/, '')}/crm/${CONFIG.crmApiVersion}/${encodeURIComponent(moduleApiName)}/upsert`);
   assertAllowedHost(url, CONFIG.crmAllowedHostSuffixes, 'crm_host_not_allowed');
 
-  const body = {
-    data: [record],
-    duplicate_check_fields: duplicateCheckFields,
-    trigger: buildZohoTriggers()
-  };
-
+  const body = { data: [record], duplicate_check_fields: duplicateCheckFields, trigger: buildZohoTriggers() };
   const skipFeatureExecution = buildSkipFeatureExecution();
   if (skipFeatureExecution.length > 0) body.skip_feature_execution = skipFeatureExecution;
 
-  const response = await zohoRequest({
-    method: 'POST',
-    url,
-    accessToken,
-    body
-  });
-
+  const response = await zohoRequest({ method: 'POST', url, accessToken, body });
   const first = response && Array.isArray(response.data) ? response.data[0] : null;
   if (!first || first.status !== 'success') {
     const err = publicError(502, 'zoho_upsert_failed');
     err.zoho = sanitizeZohoError(first || response);
     throw err;
   }
-
   return response;
 }
 
 async function getZohoAccessToken() {
   const now = Date.now();
-  if (tokenCache.accessToken && tokenCache.expiresAtMs > now + 60000) {
-    return tokenCache.accessToken;
-  }
-
-  if (!CONFIG.zohoClientId || !CONFIG.zohoClientSecret || !CONFIG.zohoRefreshToken) {
-    throw publicError(500, 'zoho_oauth_not_configured');
-  }
+  if (tokenCache.accessToken && tokenCache.expiresAtMs > now + 60000) return tokenCache.accessToken;
+  if (!CONFIG.zohoClientId || !CONFIG.zohoClientSecret || !CONFIG.zohoRefreshToken) throw publicError(500, 'zoho_oauth_not_configured');
 
   const url = new URL(`${CONFIG.accountsBaseUrl.replace(/\/$/, '')}/oauth/v2/token`);
   assertAllowedHost(url, CONFIG.accountsAllowedHostSuffixes, 'accounts_host_not_allowed');
-
   url.searchParams.set('refresh_token', CONFIG.zohoRefreshToken);
   url.searchParams.set('client_id', CONFIG.zohoClientId);
   url.searchParams.set('client_secret', CONFIG.zohoClientSecret);
   url.searchParams.set('grant_type', 'refresh_token');
 
-  const response = await requestJson({
-    method: 'POST',
-    url,
-    headers: {
-      accept: 'application/json'
-    },
-    timeoutMs: CONFIG.outboundTimeoutMs
-  });
-
-  if (!response.access_token) {
-    throw publicError(502, 'zoho_oauth_failed');
-  }
-
+  const response = await requestJson({ method: 'POST', url, headers: { accept: 'application/json' }, timeoutMs: CONFIG.outboundTimeoutMs });
+  if (!response.access_token) throw publicError(502, 'zoho_oauth_failed');
   const expiresInSeconds = Number(response.expires_in || 3600);
   tokenCache.accessToken = response.access_token;
   tokenCache.expiresAtMs = now + Math.max(300, expiresInSeconds - 120) * 1000;
@@ -780,11 +601,7 @@ async function zohoRequest({ method, url, accessToken, body }) {
   return requestJson({
     method,
     url,
-    headers: {
-      authorization: `Zoho-oauthtoken ${accessToken}`,
-      'content-type': 'application/json',
-      accept: 'application/json'
-    },
+    headers: { authorization: `Zoho-oauthtoken ${accessToken}`, 'content-type': 'application/json', accept: 'application/json' },
     body: JSON.stringify(body),
     timeoutMs: CONFIG.outboundTimeoutMs
   });
@@ -799,15 +616,9 @@ function requestJson({ method, url, headers = {}, body, timeoutMs = 15000 }) {
         const text = Buffer.concat(chunks).toString('utf8');
         let parsed = {};
         if (text) {
-          try {
-            parsed = JSON.parse(text);
-          } catch (error) {
-            const err = publicError(502, 'invalid_zoho_response');
-            err.statusCode = 502;
-            return reject(err);
-          }
+          try { parsed = JSON.parse(text); }
+          catch (_) { return reject(publicError(502, 'invalid_zoho_response')); }
         }
-
         if (res.statusCode < 200 || res.statusCode >= 300) {
           const err = publicError(502, 'zoho_request_failed');
           err.statusCode = 502;
@@ -815,14 +626,10 @@ function requestJson({ method, url, headers = {}, body, timeoutMs = 15000 }) {
           err.zoho = sanitizeZohoError(parsed);
           return reject(err);
         }
-
         resolve(parsed);
       });
     });
-
-    req.on('timeout', () => {
-      req.destroy(publicError(504, 'zoho_request_timeout'));
-    });
+    req.on('timeout', () => req.destroy(publicError(504, 'zoho_request_timeout')));
     req.on('error', reject);
     if (body) req.write(body);
     req.end();
@@ -845,18 +652,12 @@ function buildSkipFeatureExecution() {
 }
 
 function assertLiveModeAllowed() {
-  if (!CONFIG.liveModeEnabled) {
-    throw publicError(500, 'live_mode_disabled');
-  }
-
-  if (!safeTimingEqualText(CONFIG.liveModeConfirmation, CONFIG.expectedLiveModeConfirmation)) {
-    throw publicError(500, 'live_mode_confirmation_missing');
-  }
+  if (!CONFIG.liveModeEnabled) throw publicError(500, 'live_mode_disabled');
+  if (!safeTimingEqualText(CONFIG.liveModeConfirmation, CONFIG.expectedLiveModeConfirmation)) throw publicError(500, 'live_mode_confirmation_missing');
 }
 
 function buildLeadKey(parts) {
   if (parts.leadId) return `zillow:${parts.leadId}`;
-
   const stableText = [
     normalizeEmail(parts.email || ''),
     normalizePhone(parts.phone || ''),
@@ -867,7 +668,6 @@ function buildLeadKey(parts) {
     normalizeMapKey(parts.message || ''),
     normalizeMapKey(parts.introduction || '')
   ].join('|');
-
   return `zillow:hash:${sha256(stableText).slice(0, 40)}`;
 }
 
@@ -876,23 +676,12 @@ function publicLeadReference(leadKey) {
 }
 
 function sanitizePlanForResponse(plan) {
-  return {
-    lead_module: CONFIG.leadsModule,
-    lead_fields: Object.keys(plan.leadRecord).sort(),
-    duplicate_check_fields: {
-      lead: CONFIG.leadDuplicateCheckFields
-    }
-  };
+  return { lead_module: CONFIG.leadsModule, lead_fields: Object.keys(plan.leadRecord).sort(), duplicate_check_fields: { lead: CONFIG.leadDuplicateCheckFields } };
 }
 
 function summarizeZohoResult(result) {
   const first = result && Array.isArray(result.data) ? result.data[0] : null;
-  return {
-    status: first ? first.status : 'unknown',
-    code: first ? first.code : undefined,
-    action: first && first.action ? first.action : undefined,
-    id: first && first.details ? first.details.id : undefined
-  };
+  return { status: first ? first.status : 'unknown', code: first ? first.code : undefined, action: first && first.action ? first.action : undefined, id: first && first.details ? first.details.id : undefined };
 }
 
 function extractZohoRecordId(result, label) {
@@ -929,12 +718,7 @@ function firstNonEmpty(...values) {
 }
 
 function normalizeFieldKey(key) {
-  return String(key || '')
-    .trim()
-    .replace(/([a-z])([A-Z])/g, '$1_$2')
-    .replace(/[^a-zA-Z0-9]+/g, '_')
-    .replace(/^_+|_+$/g, '')
-    .toLowerCase();
+  return String(key || '').trim().replace(/([a-z])([A-Z])/g, '$1_$2').replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_+|_+$/g, '').toLowerCase();
 }
 
 function cleanText(value) {
@@ -945,13 +729,10 @@ function cleanText(value) {
 function cleanUrl(value) {
   const text = cleanText(value);
   if (!text) return '';
-  if (/^https?:\/\//i.test(text)) return text;
-  return '';
+  return /^https?:\/\//i.test(text) ? text : '';
 }
 
-function normalizeEmail(value) {
-  return cleanText(value).toLowerCase();
-}
+function normalizeEmail(value) { return cleanText(value).toLowerCase(); }
 
 function normalizePhone(value) {
   const text = cleanText(value);
@@ -965,21 +746,14 @@ function normalizePhone(value) {
 function normalizeDate(value) {
   const text = cleanText(value);
   if (!text) return '';
-
   const yyyymmdd = text.match(/^(\d{4})(\d{2})(\d{2})$/);
   if (yyyymmdd) return `${yyyymmdd[1]}-${yyyymmdd[2]}-${yyyymmdd[3]}`;
-
   const isoMatch = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (isoMatch) return `${isoMatch[1]}-${isoMatch[2]}-${isoMatch[3]}`;
-
   const usMatch = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-  if (usMatch) {
-    return `${usMatch[3]}-${String(usMatch[1]).padStart(2, '0')}-${String(usMatch[2]).padStart(2, '0')}`;
-  }
-
+  if (usMatch) return `${usMatch[3]}-${String(usMatch[1]).padStart(2, '0')}-${String(usMatch[2]).padStart(2, '0')}`;
   const parsed = new Date(text);
-  if (!Number.isNaN(parsed.getTime())) return isoDateOnly(parsed.toISOString());
-  return '';
+  return Number.isNaN(parsed.getTime()) ? '' : isoDateOnly(parsed.toISOString());
 }
 
 function normalizeMoney(value) {
@@ -989,9 +763,7 @@ function normalizeMoney(value) {
   return Number.isFinite(number) ? number : undefined;
 }
 
-function normalizeEnum(value) {
-  return cleanText(value);
-}
+function normalizeEnum(value) { return cleanText(value); }
 
 function normalizeBooleanText(value) {
   const text = cleanText(value).toLowerCase();
@@ -1006,10 +778,7 @@ function splitPersonName(fullName) {
   if (!text) return { firstName: '', lastName: '' };
   const parts = text.split(' ').filter(Boolean);
   if (parts.length === 1) return { firstName: '', lastName: parts[0] };
-  return {
-    firstName: parts.slice(0, -1).join(' '),
-    lastName: parts[parts.length - 1]
-  };
+  return { firstName: parts.slice(0, -1).join(' '), lastName: parts[parts.length - 1] };
 }
 
 function composeListingAddress({ street, unit, city, state, postalCode }) {
@@ -1019,26 +788,42 @@ function composeListingAddress({ street, unit, city, state, postalCode }) {
 }
 
 function buildInquiryMessage(message, introduction) {
-  return [
-    introduction ? `Introduction: ${introduction}` : '',
-    message ? `Message: ${message}` : ''
-  ].filter(Boolean).join('\n\n');
+  return [introduction ? `Introduction: ${introduction}` : '', message ? `Message: ${message}` : ''].filter(Boolean).join('\n\n');
+}
+
+function buildRenterProfileSummary(profile) {
+  const rows = [
+    ['Bedrooms sought', profile.numBedroomsSought],
+    ['Bathrooms sought', profile.numBathroomsSought],
+    ['Neighborhoods', formatPossiblyJson(profile.neighborhoods)],
+    ['Property types desired', formatPossiblyJson(profile.propertyTypesDesired)],
+    ['Lease length months', profile.leaseLengthMonths],
+    ['Smoker', profile.smoker],
+    ['Parking desired', profile.parkingTypeDesired],
+    ['Income yearly', profile.incomeYearly === undefined ? '' : String(profile.incomeYearly)],
+    ['Credit score range', formatPossiblyJson(profile.creditScoreRangeJson)],
+    ['Moving from city', profile.movingFromCity],
+    ['Moving from state', profile.movingFromState],
+    ['Move-in timeframe', profile.moveInTimeframe],
+    ['Reason for moving', profile.reasonForMoving],
+    ['Employment status', profile.employmentStatus],
+    ['Job title', profile.jobTitle],
+    ['Employer', profile.employer],
+    ['Employment start date', profile.employmentStartDate],
+    ['Employment details', formatPossiblyJson(profile.employmentDetailsJson)],
+    ['Pet details', formatPossiblyJson(profile.petDetailsJson)]
+  ];
+  return rows.filter(([, value]) => cleanText(value)).map(([label, value]) => `${label}: ${truncate(value, 700)}`).join('\n');
 }
 
 function formatPossiblyJson(value) {
   const text = cleanText(value);
   if (!text) return '';
-  try {
-    const parsed = JSON.parse(text);
-    return JSON.stringify(parsed);
-  } catch (_) {
-    return text;
-  }
+  try { return JSON.stringify(JSON.parse(text)); }
+  catch (_) { return text; }
 }
 
-function normalizeMapKey(value) {
-  return cleanText(value).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-}
+function normalizeMapKey(value) { return cleanText(value).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
 
 function compactRecord(record) {
   const output = {};
@@ -1053,22 +838,16 @@ function compactRecord(record) {
 function deepMerge(base, override) {
   const output = { ...base };
   for (const [key, value] of Object.entries(override || {})) {
-    if (value && typeof value === 'object' && !Array.isArray(value) && base[key]) {
-      output[key] = deepMerge(base[key], value);
-    } else {
-      output[key] = value;
-    }
+    output[key] = value && typeof value === 'object' && !Array.isArray(value) && base[key]
+      ? deepMerge(base[key], value)
+      : value;
   }
   return output;
 }
 
-function isoDateOnly(iso) {
-  return String(iso || '').slice(0, 10);
-}
-
-function isLikelyEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+function uniqueNonEmpty(values) { return [...new Set(values.filter(Boolean))]; }
+function isoDateOnly(iso) { return String(iso || '').slice(0, 10); }
+function isLikelyEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
 
 function isAllowedContentType(contentType) {
   const value = String(contentType || '').toLowerCase();
@@ -1118,7 +897,6 @@ function readRequestBody(req, maxBytes, timeoutMs) {
       }
       chunks.push(chunk);
     });
-
     req.on('end', () => {
       if (done) return;
       done = true;
@@ -1135,12 +913,8 @@ function readRequestBody(req, maxBytes, timeoutMs) {
 }
 
 function decodeUtf8Strict(rawBody) {
-  try {
-    const decoder = new UtilTextDecoder('utf-8', { fatal: true });
-    return decoder.decode(rawBody);
-  } catch (_) {
-    throw publicError(400, 'invalid_utf8_body');
-  }
+  try { return new UtilTextDecoder('utf-8', { fatal: true }).decode(rawBody); }
+  catch (_) { throw publicError(400, 'invalid_utf8_body'); }
 }
 
 function getRequestPath(req) {
@@ -1148,11 +922,7 @@ function getRequestPath(req) {
   catch (_) { return '/'; }
 }
 
-function safeParseRequestUrl(req) {
-  const raw = req.url || '/';
-  return new URL(raw, 'https://gh-real-estate.local');
-}
-
+function safeParseRequestUrl(req) { return new URL(req.url || '/', 'https://gh-real-estate.local'); }
 function normalizePath(path) {
   let p = String(path || '').trim();
   if (!p) p = '/';
@@ -1178,9 +948,7 @@ function getDeclaredContentLength(req) {
 function getHeader(headers, name) {
   const target = String(name || '').toLowerCase();
   for (const [key, value] of Object.entries(headers || {})) {
-    if (String(key).toLowerCase() === target) {
-      return Array.isArray(value) ? value[0] : String(value || '');
-    }
+    if (String(key).toLowerCase() === target) return Array.isArray(value) ? value[0] : String(value || '');
   }
   return '';
 }
@@ -1207,13 +975,7 @@ function sendJson(res, statusCode, body) {
 }
 
 function fail(res, requestId, statusCode, code, extra = {}) {
-  const body = {
-    ok: false,
-    request_id: requestId,
-    error: code,
-    ...extra
-  };
-  return sendJson(res, statusCode, body);
+  return sendJson(res, statusCode, { ok: false, request_id: requestId, error: code, ...extra });
 }
 
 function publicError(statusCode, publicCode) {
@@ -1223,9 +985,7 @@ function publicError(statusCode, publicCode) {
   return error;
 }
 
-function safeErrorMessage(error) {
-  return String(error && error.message ? error.message : error).slice(0, 500);
-}
+function safeErrorMessage(error) { return String(error && error.message ? error.message : error).slice(0, 500); }
 
 function sanitizeZohoError(value) {
   if (!value || typeof value !== 'object') return value;
@@ -1233,9 +993,7 @@ function sanitizeZohoError(value) {
   return JSON.parse(text.replace(/1000\.[A-Za-z0-9._-]+/g, '[redacted-token]'));
 }
 
-function sha256(value) {
-  return crypto.createHash('sha256').update(value).digest('hex');
-}
+function sha256(value) { return crypto.createHash('sha256').update(value).digest('hex'); }
 
 function safeTimingEqualText(a, b) {
   const left = Buffer.from(String(a || ''), 'utf8');
@@ -1244,110 +1002,60 @@ function safeTimingEqualText(a, b) {
   return crypto.timingSafeEqual(left, right);
 }
 
-function makeRequestId() {
-  return crypto.randomBytes(8).toString('hex');
-}
-
+function makeRequestId() { return crypto.randomBytes(8).toString('hex'); }
 function truncate(text, maxLength) {
   const value = cleanText(text);
-  if (value.length <= maxLength) return value;
-  return `${value.slice(0, Math.max(0, maxLength - 3))}...`;
+  return value.length <= maxLength ? value : `${value.slice(0, Math.max(0, maxLength - 3))}...`;
 }
 
-function env(name, fallback = '') {
-  return process.env[name] === undefined ? fallback : process.env[name];
-}
-
+function env(name, fallback = '') { return process.env[name] === undefined ? fallback : process.env[name]; }
 function envBool(name, fallback = false) {
   const value = env(name, String(fallback)).trim().toLowerCase();
   return ['1', 'true', 'yes', 'y', 'on'].includes(value);
 }
-
 function envBoolAny(names, fallback = false) {
-  for (const name of names) {
-    if (process.env[name] !== undefined) return envBool(name, fallback);
-  }
+  for (const name of names) if (process.env[name] !== undefined) return envBool(name, fallback);
   return fallback;
 }
-
 function envNumber(name, fallback) {
   const value = Number(env(name, String(fallback)));
   return Number.isFinite(value) ? value : fallback;
 }
-
 function envList(name, fallback = []) {
   const value = env(name, '');
   if (!value.trim()) return fallback;
   return value.split(',').map((item) => item.trim()).filter(Boolean);
 }
-
 function envJson(name, fallback = {}) {
   const value = env(name, '').trim();
   if (!value) return fallback;
-  try {
-    return JSON.parse(value);
-  } catch (error) {
-    throw new Error(`${name} must be valid JSON`);
-  }
-}
-
-function uniqueNonEmpty(values) {
-  const out = [];
-  const seen = new Set();
-  for (const value of values || []) {
-    const s = String(value || '').trim();
-    if (!s) continue;
-    const key = s.toLowerCase();
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(s);
-  }
-  return out;
+  try { return JSON.parse(value); }
+  catch (_) { throw new Error(`${name} must be valid JSON`); }
 }
 
 function assertAllowedHost(url, allowedSuffixes, code) {
   const host = String(url.hostname || '').toLowerCase();
-  const ok = (allowedSuffixes || []).some((suffix) => {
-    const normalized = String(suffix || '').toLowerCase().replace(/^\./, '');
-    return host === normalized || host.endsWith(`.${normalized}`);
-  });
-  if (!ok) throw publicError(500, code || 'host_not_allowed');
+  const allowed = (allowedSuffixes || []).map((item) => String(item).toLowerCase());
+  if (!allowed.some((suffix) => host === suffix || host.endsWith(`.${suffix}`))) throw publicError(500, code);
 }
 
 async function replaySeenAndMarkBestEffort(req, key, ttlSeconds) {
   try {
-    const catalystSdk = require('zcatalyst-sdk-node');
-    const app = catalystSdk.initialize(req);
-    const segment = getCacheSegment(app);
-    const now = Date.now();
-    const existing = await segment.getValue(key).catch(() => null);
-    if (existing) return { seen: true, key };
-    await segment.put(key, String(now), secondsToCacheHoursInteger(ttlSeconds));
-    return { seen: false, key, marked: true };
-  } catch (err) {
-    console.error(JSON.stringify({ level: 'warn', service: 'gh-zillow-lead-intake', event: 'cache_replay_defense_error', key, error: safeErrorMessage(err) }));
-    if (CONFIG.strictReplayFailure) throw publicError(503, 'replay_defense_unavailable');
-    return { seen: false, key, cacheError: true };
+    const catalyst = req.catalyst || global.catalyst;
+    if (!catalyst || typeof catalyst.cache !== 'function') return { seen: false, skipped: true };
+    const segment = catalyst.cache().segment(CONFIG.replayCacheSegmentId || 'default');
+    const existing = await segment.get(key);
+    if (existing && existing.cache_value) return { seen: true };
+    await segment.put(key, '1', Number(ttlSeconds || 300));
+    return { seen: false };
+  } catch (error) {
+    if (CONFIG.strictReplayFailure) throw publicError(503, 'replay_cache_failed');
+    return { seen: false, skipped: true };
   }
 }
 
-function getCacheSegment(app) {
-  const cache = app.cache();
-  if (CONFIG.replayCacheSegmentId) return cache.segment(CONFIG.replayCacheSegmentId);
-  return cache.segment();
-}
-
-function makeCacheKey(prefix, material) {
-  const digest = crypto.createHash('sha256').update(String(material || '')).digest('base64url');
-  let key = `${prefix}${digest}`;
-  if (key.length <= CACHE_KEY_MAX_LEN) return key;
-  const p = String(prefix || '').slice(0, 5);
-  return `${p}${digest}`.slice(0, CACHE_KEY_MAX_LEN);
-}
-
-function secondsToCacheHoursInteger(seconds) {
-  const h = Math.ceil(Math.max(1, Number(seconds || 1)) / 3600);
-  return Math.max(1, Math.min(48, h));
+function makeCacheKey(prefix, value) {
+  return `${prefix}${sha256(String(value || '')).slice(0, CACHE_KEY_MAX_LEN - prefix.length)}`;
 }
 
 module.exports = handler;
@@ -1359,12 +1067,12 @@ module.exports._test = {
   buildRoutingWarnings,
   buildCrmLeadPlan,
   buildLeadKey,
+  buildInquiryMessage,
+  buildRenterProfileSummary,
   parseInboundPayload,
   normalizePhone,
   normalizeDate,
   normalizeFieldKey,
-  publicLeadReference,
   isAllowedContentType,
-  composeListingAddress,
-  buildInquiryMessage
+  publicLeadReference
 };
