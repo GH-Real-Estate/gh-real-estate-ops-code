@@ -18,24 +18,25 @@
 - [ ] Confirm source invoice token field `cf_late_fee_stages_applied` exists.
 - [ ] Confirm interest invoices are not marked as rent.
 - [ ] Confirm monthly interest schedule runs monthly after close of business.
-- [ ] Confirm returned-payment / NSF fee handling remains under the Zoho Payments returned-payment webhook.
+- [ ] Confirm returned-payment fee handling remains under the Zoho Payments returned-payment webhook.
 
 ## Config
 
 - [ ] `interestAprPct = 10.00` matches the current lease template.
 - [ ] `interestMinimumInvoiceAmount = 10.00` is intentional.
-- [ ] `interestStartsDaysAfterDue = 30` is intentional.
-- [ ] `interestFirstEligibleDaysAfterDue = 31` is intentional.
+- [ ] `interestFirstEligibleDaysAfterDue = 31` is intentional: no assessment until unpaid Rent is more than 30 days delinquent.
+- [ ] `interestStartsDaysAfterDue = 0` is intentional: once eligible, interest accrues from the original rent due date.
 - [ ] `autoEmailInterestInvoices = true` is approved before production email sending.
 
 ## Test
 
 - [ ] Run against an invoice fewer than 31 days overdue; no interest invoice created.
 - [ ] Run against one eligible rent invoice; one interest row is prepared.
+- [ ] Confirm the first eligible interest period starts on the original due date, not day 31.
 - [ ] Run against one customer with multiple eligible rent invoices; one consolidated monthly interest invoice is created.
 - [ ] Run again for the same customer and period; no duplicate invoice is created.
 - [ ] Confirm source rent invoice tokens include `INTPERIOD_YYYYMM`, `INTINV_YYYYMM=...`, `INTTHRU=...`, and `INTTOTAL=...`.
-- [ ] Confirm late-fee, RF, NSF, processing-fee, application-fee, security-deposit, voided, deleted, and zero-balance invoices are excluded.
+- [ ] Confirm late-fee, returned-payment, processing-fee, application-fee, security-deposit, voided, deleted, and zero-balance invoices are excluded.
 - [ ] Confirm logs contain no PII.
 
 ## Deployment
