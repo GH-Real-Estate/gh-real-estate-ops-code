@@ -1,18 +1,17 @@
 'use strict';
 
 /**
- * Catalyst Advanced I/O blank-template entry point.
+ * Catalyst Advanced I/O entry point.
  *
- * Zoho Catalyst's blank Advanced I/O Node.js runtime expects a native HTTP
- * server export. The business logic remains in `index.js` so tests can import
- * and exercise the handler directly.
+ * Catalyst's Node.js Advanced I/O runtime invokes the exported value as a
+ * request handler function with native Node `req` and `res` objects. Keep the
+ * business logic in `index.js`; export a plain function here for Catalyst.
  */
 
-const http = require('http');
 const handler = require('./index');
 
-const server = http.createServer((req, res) => {
-  Promise.resolve(handler(req, res)).catch((error) => {
+module.exports = function catalystAdvancedIoHandler(req, res) {
+  return Promise.resolve(handler(req, res)).catch((error) => {
     console.error(JSON.stringify({
       level: 'error',
       service: 'gh-zillow-lead-intake',
@@ -30,6 +29,4 @@ const server = http.createServer((req, res) => {
 
     res.end(JSON.stringify({ ok: false, error: 'internal_error' }));
   });
-});
-
-module.exports = server;
+};
