@@ -5,6 +5,6 @@
     "type": "advancedio"
   },
   "execution": {
-    "main": "src/server.js"
+    "main": "index.js"
   }
 }
