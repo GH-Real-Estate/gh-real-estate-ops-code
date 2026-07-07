@@ -1,117 +1,158 @@
 # Zillow Lead Intake
 
-Secure intake service for Zillow rental leads. It receives Zillow's URL-encoded lead POST, validates it, builds a stable duplicate-prevention key, then upserts a Zoho CRM `Leads` record.
+Secure intake service for Zillow Rentals lead callbacks. It receives Zillow's URL-encoded lead POST, validates it, builds a stable duplicate-prevention key, then upserts a Zoho CRM `Leads` record.
 
-This is the first automation slice. It does not create Contacts, Rental Applications/Deals, leases, Books invoices, tenant portal records, or WorkDrive folders. Those belong after qualification or approval.
+This first automation slice creates or updates CRM Leads only. It does not create Contacts, Rental Applications/Deals, leases, Books invoices, Creator tenant portal records, or WorkDrive folders. Those belong after qualification or approval.
 
-## Runtime
+## CRM Lead Layout
 
-Designed for Zoho Catalyst Advanced I/O on Node.js 18+.
+Use the GH Real Estate Leads layout as the Phase 2 intake target.
 
-No runtime npm dependencies are required. The service uses only Node built-ins so it is easy to audit and deploy.
+### Lead Information
 
-Runtime variables are documented in `docs/runtime-environment-template.md`. Do not commit a real `.env` file.
+Two-column section.
 
-## Endpoint
+| Left | Right |
+|---|---|
+| First Name | Lead Status |
+| Last Name | Lead Source |
+| Email | Requested Property |
+| Mobile | Requested Unit |
+| Zillow Lead Type | Requested Move-In Date |
 
-```text
-POST /zillow/leads
-Content-Type: application/x-www-form-urlencoded
-```
+`Company` may remain unused/hidden in the layout, but the intake service still populates it because Zoho Leads may require it at the API level.
 
-Keep `REQUIRE_INBOUND_SECRET=true`. Prefer a secret header if Zillow supports it. If Zillow only supports a plain webhook URL, use an unguessable URL/route at the Catalyst layer or temporarily enable `ALLOW_SECRET_QUERY_PARAM=true` with a long random value.
+### Inquiry Details
 
-## First Deployment Mode
+Single-column section.
 
-Start in dry-run:
+1. Inquiry Message
+2. Zillow Renter Profile Summary
+3. Description
 
-```text
-DRY_RUN=true
-LIVE_MODE_ENABLED=false
-```
+### Zillow Routing
 
-Dry-run validates the payload and returns the planned Zoho mutations without writing to Zoho CRM.
+Two-column section.
 
-## Live Mode
+| Left | Right |
+|---|---|
+| Zillow Lead Key | Zillow Intake Status |
+| Zillow Listing ID | Zillow Received At |
+| Zillow Provider Model ID | Last Zillow Sync At |
+| Zillow Listing Contact Email | Zillow Source Payload Hash |
+| Zillow Move-In Timeframe | |
 
-Only after dry-run tests pass:
+### Zillow Listing Address
 
-```text
-DRY_RUN=false
-LIVE_MODE_ENABLED=true
-LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
-```
+Two-column section.
 
-This double switch prevents accidental live CRM writes during setup.
+| Left | Right |
+|---|---|
+| Zillow Property Address Raw | Zillow Listing Unit |
+| Zillow Listing Street | Zillow Listing State |
+| Zillow Listing City | Zillow Listing URL |
+| Zillow Listing Postal Code | |
 
-## Required Zoho CRM Setup
+### Zillow Audit
 
-Before live mode, create or confirm these CRM fields in the Leads module.
+Single-column section.
 
-Leads:
+1. Zillow Raw Field Keys
+2. Zillow Raw Payload Stored
+3. Zillow Lead ID
+
+### System Reference
+
+Two-column section.
+
+| Left | Right |
+|---|---|
+| Created By | Lead Owner |
+| Modified By | |
+
+Keep the standard Visit Summary and unused system lead fields out of this GH Real Estate layout.
+
+## Required Zoho CRM Fields
 
 | Business field | Default API name | Type | Notes |
 |---|---|---|---|
-| First Name | `First_Name` | Standard | Standard Leads field. |
-| Last Name | `Last_Name` | Standard | Required by Zoho Leads. Uses `Zillow Prospect` only if name is missing. |
-| Company | `Company` | Standard / Single Line | Required by Zoho Leads. Uses mapped property, address, listing ID, or GH default. |
-| Email | `Email` | Email | Used for human follow-up. |
-| Phone / Mobile | `Phone`, `Mobile` | Phone | Normalized to `+1XXXXXXXXXX` for US 10-digit numbers. |
-| Lead Source | `Lead_Source` | Picklist | Defaults to `Zillow`. |
-| Lead Status | `Lead_Status` | Picklist | Defaults to `New Zillow Inquiry`. |
-| Requested Property | `Requested_Property` | Lookup to Properties | Optional lookup resolved from `PROPERTY_UNIT_MAP_JSON`. |
-| Requested Unit | `Requested_Unit` | Lookup to Units | Optional lookup resolved from `PROPERTY_UNIT_MAP_JSON`. |
-| Requested Move-In Date | `Requested_Move_In_Date` | Date | From Zillow `movingDate` when supplied. |
-| Inquiry Message | `Inquiry_Message` | Multi-Line | Main Zillow message text. |
-| Zillow Lead Key | `Zillow_Lead_Key` | Single Line / Unique | Mark unique. Used for idempotent upsert. |
-| Zillow Lead ID | `Zillow_Lead_ID` | Single Line | Stored if Zillow sends a source lead ID. |
-| Zillow Listing ID | `Zillow_Listing_ID` | Single Line | Best field for listing/unit mapping. |
-| Zillow Listing URL | `Zillow_Listing_URL` | URL | Optional link back to source listing when supplied. |
-| Zillow Lead Type | `Zillow_Lead_Type` | Picklist | Values: `question`, `tourRequest`, `applicationRequest`. |
-| Zillow Provider Model ID | `Zillow_Provider_Model_ID` | Single Line | Useful for multi-family/floorplan routing. |
-| Zillow Property Address | `Zillow_Property_Address` | Single Line | Combined address from Zillow's listing address components. |
-| Zillow Listing Contact Email | `Zillow_Listing_Contact_Email` | Email | Useful if Zillow routes by contact email/domain. |
-| Zillow Move-In Timeframe | `Zillow_Move_In_Timeframe` | Picklist or Single Line | Zillow values include `asap`, `flexible`, `week`, `twoWeeks`, `month`, `twoMonths`. |
-| Zillow Raw Field Keys | `Zillow_Raw_Field_Keys` | Multi-Line | Stores received field names only, not raw private payload values. |
-| Zillow Source Payload Hash | `Zillow_Source_Payload_Hash` | Single Line | SHA-256 hash of the received payload for audit/dedupe troubleshooting. |
-| Zillow Raw Payload Stored | `Zillow_Raw_Payload` | Checkbox | Leave false unless raw payloads are stored in an approved secure system. |
-| Zillow Received At | `Zillow_Received_At` | Date-Time | Server receipt timestamp. |
+| First Name | `First_Name` | Standard | Parsed from Zillow `name`. |
+| Last Name | `Last_Name` | Standard | Required by Zoho Leads. Uses `Zillow Prospect` if no name is supplied. |
+| Company | `Company` | Standard / Single Line | Hidden is fine, but the API write still populates it. |
+| Email | `Email` | Email | Maps to Zillow `email`. |
+| Mobile | `Mobile` | Phone | Maps to Zillow `phone`. |
+| Lead Source | `Lead_Source` | Picklist | Use `Zillow`. |
+| Lead Status | `Lead_Status` | Picklist | Default for new intake should be `New Zillow Inquiry`. |
+| Requested Property | `Requested_Property` | Lookup to Properties | Optional lookup resolved from property/unit map. |
+| Requested Unit | `Requested_Unit` | Lookup to Units | Optional lookup resolved from property/unit map. |
+| Requested Move-In Date | `Requested_Move_In_Date` | Date | Maps to Zillow `movingDate`. |
+| Inquiry Message | `Inquiry_Message` | Multi-Line | Maps to Zillow `message`. |
+| Zillow Renter Profile Summary | `Zillow_Renter_Profile_Summary` | Multi-Line | Summary of optional renter profile fields. |
+| Zillow Lead Key | `Zillow_Lead_Key` | Single Line / Unique | Main idempotent upsert key. Mark unique. |
+| Zillow Lead ID | `Zillow_Lead_ID` | Single Line | Optional compatibility field. Zillow's guide does not require this. |
+| Zillow Listing ID | `Zillow_Listing_ID` | Single Line | Maps to Zillow `listingId`; strongest routing key. |
+| Zillow Listing URL | `Zillow_Listing_URL` | URL | Optional if supplied. |
+| Zillow Lead Type | `Zillow_Lead_Type` | Picklist | `question`, `tourRequest`, `applicationRequest`. |
+| Zillow Provider Model ID | `Zillow_Provider_Model_ID` | Single Line | Maps to Zillow `providerModelId`. |
+| Zillow Move-In Timeframe | `Zillow_Move_In_Timeframe` | Picklist | `asap`, `flexible`, `week`, `month`, `twoWeeks`, `twoMonths`. |
+| Zillow Property Address Raw | `Zillow_Property_Address_Raw` | Single Line | Combined readable listing address. |
+| Zillow Listing Street | `Zillow_Listing_Street` | Single Line | Maps to Zillow `listingStreet`. |
+| Zillow Listing Unit | `Zillow_Listing_Unit` | Single Line | Maps to Zillow `listingUnit`. |
+| Zillow Listing City | `Zillow_Listing_City` | Single Line | Maps to Zillow `listingCity`. |
+| Zillow Listing State | `Zillow_Listing_State` | Single Line | Maps to Zillow `listingState`. |
+| Zillow Listing Postal Code | `Zillow_Listing_Postal_Code` | Single Line | Maps to Zillow `listingPostalCode`; keep as text, not number. |
+| Zillow Listing Contact Email | `Zillow_Listing_Contact_Email` | Email | Maps to Zillow `listingContactEmail`. |
+| Zillow Received At | `Zillow_Received_At` | Date-Time | Endpoint receipt timestamp. |
 | Last Zillow Sync At | `Last_Zillow_Sync_At` | Date-Time | Last processed timestamp. |
-| Zillow Intake Status | `Zillow_Intake_Status` | Picklist | Defaults to `Received`. |
-| Description | `Description` | Standard Multi-Line | Sanitized operational summary for CRM users. |
+| Zillow Intake Status | `Zillow_Intake_Status` | Picklist | Technical intake/routing status. |
+| Zillow Source Payload Hash | `Zillow_Source_Payload_Hash` | Single Line | Hash for audit/debugging. |
+| Zillow Raw Field Keys | `Zillow_Raw_Field_Keys` | Multi-Line | Field names received, not raw private values. |
+| Zillow Raw Payload Stored | `Zillow_Raw_Payload_Stored` | Checkbox | Leave false unless raw payloads are stored in an approved secure system. |
+| Description | `Description` | Standard Multi-Line | Sanitized internal summary. |
 
-Do not create `Desired_Rent`, `Desired_Deposit`, `Manual_Review_Required`, or `Manual_Review_Reason` for this intake. GH Real Estate manually reviews every lead, and rent/deposit must come from approved property/unit/lease records, not a prospect's preference.
+Do not use `Desired_Rent`, `Desired_Deposit`, `Manual_Review_Required`, or `Manual_Review_Reason` for this intake. GH Real Estate manually reviews every Zillow Lead through Lead Status and saved views. Rent and deposit must come from approved property/unit/lease records, not a prospect preference.
 
-When the prospect becomes qualified, use a CRM conversion/owner-review workflow to create the Contact and Rental Application/Deal.
+## Picklists
 
-## Local Verification
+### Lead Status
 
-```powershell
-cd "C:\Users\Admin\Documents\GH Real Estate Tenant App\src\zoho-crm\integrations\zillow-lead-intake"
-npm run ci
-```
+- New Zillow Inquiry
+- Contact Attempted
+- Contacted
+- Showing Scheduled
+- Showing Completed
+- Application Invited
+- Application Received
+- Not Qualified
+- No Response
+- Converted to Applicant
+- Closed - Duplicate
+- Closed - Not Interested
 
-## Manual Smoke Test
+### Zillow Intake Status
 
-In dry-run mode, post the fake sample:
+- Received
+- Updated
+- Routing Matched
+- Routing Unmatched
+- Test Callback
+- Failed
 
-```powershell
-$body = Get-Content -Raw ".\samples\zillow-lead.sample.urlencoded"
-Invoke-WebRequest `
-  -Uri "https://your-catalyst-domain/zillow/leads" `
-  -Method POST `
-  -ContentType "application/x-www-form-urlencoded" `
-  -Headers @{ "x-gh-zillow-webhook-key" = "replace-with-long-random-secret" } `
-  -Body $body
-```
+### Zillow Lead Type
 
-Expected result:
+- question
+- tourRequest
+- applicationRequest
 
-- `ok=true`
-- `mode=dry_run`
-- response includes a non-PII `lead_reference`
-- response includes planned `lead` action
+### Zillow Move-In Timeframe
+
+- asap
+- flexible
+- week
+- month
+- twoWeeks
+- twoMonths
 
 ## Source-of-Truth Rule
 
-Zillow remains the listing/application source for now. Zoho CRM Leads becomes the raw inquiry pipeline after intake. Contacts and Rental Applications should be created only after qualification, application review, or owner approval.
+Zillow remains the listing inquiry source for now. Zoho CRM Leads becomes the raw inquiry pipeline after intake. Contacts and Rental Applications should be created only after qualification, application review, or owner approval.
