@@ -9,7 +9,6 @@ This automation slice creates or updates CRM Leads only. It does not create Cont
 ```text
 POST /zillow/leads
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8
-x-gh-zillow-webhook-key: <runtime key>
 ```
 
 Zillow Support confirmed they can send lead callbacks to an endpoint, configure a custom header, and test callbacks before production. Use one endpoint for the portfolio and keep it in dry-run first.
