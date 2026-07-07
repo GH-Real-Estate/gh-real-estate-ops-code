@@ -26,7 +26,8 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 | Customer fee-exempt field | `cf_fee_exempt` | Optional customer-level exclusion flag. |
 | Customer fee-exempt-until field | `cf_fee_exempt_until` | Optional customer-level temporary exclusion field. |
 | Monthly interest APR | `interestAprPct = 10.00` | Matches uploaded lease template Section 3.6. |
-| Monthly interest starts | `interestStartsDaysAfterDue = 30`; `interestFirstEligibleDaysAfterDue = 31` | More than 30 days after original due date. |
+| Monthly interest eligibility | `interestFirstEligibleDaysAfterDue = 31` | No assessment until unpaid Rent is more than 30 days delinquent. |
+| Monthly interest accrual start | `interestStartsDaysAfterDue = 0` | Once eligible, interest accrues from the original rent due date. |
 | Monthly interest minimum invoice amount | `$10.00` | Operational threshold; not a lease value. |
 | Monthly interest invoice prefix | `INT-` | Manual invoice-number series. |
 | Monthly interest period token | `INTPERIOD_YYYYMM` | Written to source rent invoice ledger field. |
@@ -62,6 +63,7 @@ Use Zoho API names, not display labels, whenever possible.
 
 | Date | Change | Verified By |
 |---|---|---|
+| 2026-07-06 | Updated Monthly Interest Billing to accrue from the original due date once eligible after 30 days | ChatGPT / GitHub update |
 | 2026-07-06 | Moved Monthly Interest Billing into its own Zoho Books automation folder and aligned settings with saved v1.5 code | ChatGPT / GitHub update |
 | 2026-07-06 | Verified RF fee amount should be `$30.00` under the uploaded lease template | ChatGPT review of lease template |
 | 2026-07-06 | Split daily late-fee guard and monthly interest billing into separate Zoho Books scheduled functions | Pending verification in Zoho |
