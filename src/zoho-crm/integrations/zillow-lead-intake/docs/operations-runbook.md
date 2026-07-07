@@ -3,15 +3,16 @@
 ## Setup Sequence
 
 1. Create/confirm CRM Leads custom fields listed in `README.md`.
-2. Mark `Zillow_Lead_Key` unique in the Leads module.
-3. Create a Zoho OAuth client with CRM module create/write scopes.
-4. Generate a refresh token and store it only in Catalyst environment variables.
-5. Deploy the service with `DRY_RUN=true`.
-6. Send the fake sample payload.
-7. Send a Zillow test payload if Zillow supports test delivery.
-8. Confirm dry-run planned fields match Zoho field API names.
-9. Configure `PROPERTY_UNIT_MAP_JSON` with real CRM Property/Unit IDs.
-10. Switch to live mode only after a dry-run sample has no field errors.
+2. Arrange the Leads layout using `docs/crm-leads-layout.md`.
+3. Mark `Zillow_Lead_Key` unique in the Leads module.
+4. Create a Zoho OAuth client with CRM module create/write scopes.
+5. Generate a refresh token and store it only in Catalyst environment variables.
+6. Deploy the service with `DRY_RUN=true`.
+7. Send the fake sample payload.
+8. Send a Zillow test payload if Zillow supports test delivery.
+9. Confirm dry-run planned fields match Zoho field API names.
+10. Configure `PROPERTY_UNIT_MAP_JSON` with real CRM Property/Unit IDs.
+11. Switch to live mode only after a dry-run sample has no field errors.
 
 ## Live Smoke Test
 
@@ -26,21 +27,24 @@ Expected CRM outcome:
 
 - One CRM Lead with Lead Source `Zillow`.
 - Lead has `Zillow_Lead_Key`.
+- Lead has `Zillow_Intake_Status=Received`.
+- Lead has `Zillow_Received_At` and `Last_Zillow_Sync_At`.
 - Re-sending the same payload updates the same Lead, not a duplicate.
 - No Contact or Rental Application/Deal is created by this webhook.
 
-## Manual Review Queue
+## Routing Review Queue
 
-The service marks `Manual_Review_Required=true` when:
+GH manually reviews every lead, so the service should not write `Manual_Review_Required` or `Manual_Review_Reason`.
 
-- name is missing
-- email is missing
-- phone is missing
-- Zillow listing ID/address is missing
-- no property/unit mapping matched
-- desired move-in date is missing
+Create a CRM Leads view for routing review if desired:
 
-Create a CRM Leads view where `Manual_Review_Required` is true.
+```text
+Lead Source = Zillow
+AND
+(Requested Property is empty OR Requested Unit is empty)
+```
+
+Routing warnings belong in `Description`, not separate manual review fields.
 
 ## Failure Handling
 
@@ -49,7 +53,7 @@ Create a CRM Leads view where `Manual_Review_Required` is true.
 | `inbound_secret_invalid` | Confirm Zillow endpoint URL/header secret. Rotate if exposed. |
 | `invalid_lead_payload` | Zillow sent a lead without usable email/phone. Review source payload in Zillow. |
 | `zoho_oauth_not_configured` | Add OAuth environment variables in Catalyst. |
-| `zoho_upsert_failed` | Check CRM field API names and required field rules. |
+| `zoho_upsert_failed` | Check CRM field API names, required field rules, and picklist values. |
 | Duplicate leads | Confirm Leads field `Zillow_Lead_Key` exists and is marked unique. |
 
 ## Rollback
