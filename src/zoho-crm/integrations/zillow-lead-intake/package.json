@@ -7,6 +7,9 @@
   "engines": {
     "node": ">=18"
   },
+  "dependencies": {
+    "zcatalyst-sdk-node": "3.4.0"
+  },
   "scripts": {
     "check": "node --check src/index.js",
     "test": "node --test test/*.test.js",
