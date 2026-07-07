@@ -1,21 +1,27 @@
-
 // =================================================================================================
 // FILE: Monthly_Interest_Billing.deluge
 // TARGET: Zoho Books > Automation > Schedules > Custom Function
-// VERSION: v1.5_FOR_EACH_COLLECTION_SAVE_FIX
+// VERSION: v1.6_LEASE_ALIGNED_ORIGINAL_DUE_DATE_INTEREST
+// PATCHED: 2026-07-06
 //
 // PURPOSE
 //   Creates monthly simple-interest invoices for delinquent rent balances only.
 //
+// LEASE ALIGNMENT
+//   Lease Section 3.6 has two separate rules:
+//   1) Eligibility: interest may be assessed only after unpaid Rent remains unpaid more than 30 days
+//      after the original due date.
+//   2) Accrual: once eligible, simple interest is calculated from the original due date until paid.
+//
 // WHY THIS FUNCTION IS SEPARATE
 //   Late fees are stage-based and belong in the Late Fee Guard.
-//   Returned-payment / NSF fees are payment-event based and belong in a returned-payment workflow/guard.
-//   Monthly interest is period-based and should run separately so accounting review stays clean.
+//   Returned-payment / NSF fees are payment-event based and belong in the Zoho Payments/Catalyst RF webhook.
+//   Monthly interest is period-based and runs separately so accounting review stays clean.
 //
 // SAVE-FIX NOTE
-//   This version keeps the single-page scan and also avoids `for each` loops directly over
-//   response.get(...) expressions. Some Zoho Books schedule editors reject those inline
-//   expressions during save. Lists are assigned to named variables before iteration.
+//   This version avoids `for each` loops directly over response.get(...) expressions because some
+//   Zoho Books schedule editors reject those inline expressions during save. API response lists are
+//   assigned to named List variables before iteration.
 //
 // ACCOUNTING SAFETY
 //   - Only invoices marked as rent with cf_is_rent_invoice == true are eligible.
@@ -44,14 +50,12 @@ interestThroughDateString = interestThroughDate.toString("yyyy-MM-dd");
 // -------------------- CONFIG --------------------
 interestInvoicePrefix = "INT-";
 interestInvoiceNumberDigits = 6;
-// Known item ID from the current GHRE Late Fee Guard configuration.
 interestItemId = "5858793000003568001";
-// Current deployed Late Fee Guard is configured at 10% APR.
-// Change to 12.00 only if the final signed lease/legal policy requires 12% annualized interest.
 interestAprPct = 10.00;
-// Interest starts after the configured delinquency window.
-interestStartsDaysAfterDue = 30;
+// Eligibility: do not assess until unpaid Rent is more than 30 days delinquent.
 interestFirstEligibleDaysAfterDue = 31;
+// Accrual: once eligible, calculate from the original rent due date under Lease Section 3.6.
+interestStartsDaysAfterDue = 0;
 interestMinimumInvoiceAmount = 10.00;
 // Invoice custom fields.
 stagesFieldApiName = "cf_late_fee_stages_applied";
@@ -62,7 +66,7 @@ invoiceFeeExemptUntilApiName = "cf_fee_exempt_until";
 // Contact custom fields.
 customerFeeExemptApiName = "cf_fee_exempt";
 customerFeeExemptUntilApiName = "cf_fee_exempt_until";
-// Tokens stored in cf_late_fee_stages_applied.
+// Tokens stored in cf_late_fee_stages_applied on the source rent invoice.
 lastBalanceTokenPrefix = "LASTBAL=";
 interestLastThroughTokenPrefix = "INTTHRU=";
 interestTotalTokenPrefix = "INTTOTAL=";
@@ -73,7 +77,7 @@ markInvoicesAsSentBeforeEmail = true;
 enableRecipientFallbackToCustomerEmail = true;
 interestInvoiceEmailTemplateName = "Fee Invoice - Monthly Interest";
 interestInvoiceEmailTemplateId = "";
-// Payment options. First preference is to inherit from the rent invoice.
+// Payment options. First preference is to inherit from the source rent invoice.
 inheritSourceInvoicePdfTemplate = true;
 inheritSourceInvoicePaymentOptions = true;
 enableOnlinePaymentsForInterestInvoices = true;
@@ -112,6 +116,14 @@ if(rentInvoiceFlagApiName == "")
 if(interestAprPct <= 0)
 {
 	validationErrors.add("interestAprPct must be greater than zero.");
+}
+if(interestFirstEligibleDaysAfterDue <= 30)
+{
+	validationErrors.add("interestFirstEligibleDaysAfterDue must be greater than 30 to match Lease Section 3.6 eligibility.");
+}
+if(interestStartsDaysAfterDue < 0)
+{
+	validationErrors.add("interestStartsDaysAfterDue cannot be negative.");
 }
 if(validationErrors.size() > 0)
 {
@@ -193,7 +205,7 @@ if(interestInvoiceEmailTemplateName != "" && interestInvoiceEmailTemplateId == "
 		}
 		catch (templateError)
 		{
-			// Non-fatal.
+			// Non-fatal. Email can still use the default Books invoice template.
 		}
 	}
 }
@@ -270,7 +282,7 @@ if(padCount > 0)
 }
 nextInterestInvoiceNumber = interestInvoicePrefix + seqText;
 // -------------------- FETCH CANDIDATE INVOICES --------------------
-// This is intentionally one page only. per_page=200 is enough for GHRE and avoids the rejected page-loop.
+// One page is intentional for GHRE scale and avoids a Zoho Books schedule parser issue with paging loops.
 listParams = Map();
 listParams.put("organization_id",orgId);
 listParams.put("filter_by",invoiceListFilterBy);
@@ -378,7 +390,7 @@ for each  invoiceSummary in candidateInvoices
 		}
 		catch (periodSearchError)
 		{
-			// Source-invoice tokens still provide a second duplicate guard.
+			// Source-invoice tokens remain the second duplicate guard if search has a transient failure.
 		}
 		customerPeriodDuplicateCache.put(customerPeriodReference,customerAlreadyBilledThisPeriod);
 	}
@@ -609,7 +621,7 @@ for each  invoiceSummary in candidateInvoices
 		customerControlNew.put("until",customerExemptUntil);
 		customerCache.put(customerId,customerControlNew);
 	}
-	if(customerExempt || customerExemptUntil != null && today <= customerExemptUntil)
+	if(customerExempt || (customerExemptUntil != null && today <= customerExemptUntil))
 	{
 		continue;
 	}
@@ -855,6 +867,7 @@ for each  customerIdKey in customerIdsWithInterestRows
 		lineDescription = "Simple delinquent-rent interest for rent invoice ";
 		lineDescription = lineDescription + interestRow.get("source_invoice_number").toString();
 		lineDescription = lineDescription + " at " + interestAprPct.toString() + "% APR. ";
+		lineDescription = lineDescription + "Lease Section 3.6 eligibility begins after more than 30 days delinquent; once eligible, interest accrues from the original due date. ";
 		lineDescription = lineDescription + "Interest period: " + interestRow.get("interest_start").toString();
 		lineDescription = lineDescription + " through " + interestRow.get("interest_through").toString();
 		lineDescription = lineDescription + " (" + interestRow.get("interest_days").toString() + " days). ";
@@ -890,7 +903,7 @@ for each  customerIdKey in customerIdsWithInterestRows
 		invoicePayload.put("payment_options",paymentOptionsToUse);
 	}
 	invoicePayload.put("line_items",invoiceLines);
-	invoicePayload.put("notes","Monthly delinquent-rent interest. This invoice is generated only for unpaid rent balances older than the configured grace period.");
+	invoicePayload.put("notes","Monthly delinquent-rent interest. This invoice is generated only for unpaid rent balances older than the configured delinquency period. Interest is simple, not compounded, and is not charged on fees.");
 	createResponse = null;
 	for each  createAttempt in ITER_3
 	{

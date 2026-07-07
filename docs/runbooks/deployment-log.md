@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-06 - Monthly Interest Lease Accrual Alignment
+
+- System: GitHub / Zoho Books
+- Repo branch / commit: `lease-final-alignment` / pending merge
+- Files changed: `src/zoho-books/automations/monthly-interest-billing/Monthly_Interest_Billing.deluge`, monthly interest docs/tests, `docs/business-rules/lease-automation-rules.md`, `src/zoho-books/field-maps/books-automation-settings.md`, `docs/runbooks/deployment-log.md`
+- Business rule changed? yes; monthly interest eligibility remains day 31, but once eligible, accrual now starts from the original rent due date to match Lease Section 3.6
+- Dry-run completed? not yet; required in Zoho Books before live posting
+- Smoke test completed? GitHub checks required; live Zoho Books smoke test still required
+- Deployed by: ChatGPT / GitHub update
+- Result: source copy and docs aligned to the final lease-template rule
+- Rollback plan: revert the merge commit; if already deployed in Zoho Books, reinstall the prior saved schedule body and rerun smoke tests
+- Notes: this entry does not prove the revised function has been pasted into Zoho Books or saved in the Zoho editor.
+
 ## 2026-07-06 - Lease-Aligned RF Fee And Monthly Interest Repo Structure
 
 - System: GitHub / Zoho Books / Zoho Payments / Zoho Catalyst
