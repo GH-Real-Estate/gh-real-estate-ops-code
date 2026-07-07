@@ -7,12 +7,42 @@
 3. Mark `Zillow_Lead_Key` unique in the Leads module.
 4. Create a Zoho OAuth client with CRM module create/write scopes.
 5. Generate a refresh token and store it only in Catalyst environment variables.
-6. Deploy the service with `DRY_RUN=true`.
-7. Send the fake sample payload.
-8. Send a Zillow test payload if Zillow supports test delivery.
+6. Generate a long random `ZILLOW_WEBHOOK_KEY`.
+7. Deploy the service with `ZILLOW_WEBHOOK_DRY_RUN=true`, `DRY_RUN=true`, and `LIVE_MODE_ENABLED=false`.
+8. Send the fake sample payload from `samples/zillow-lead.sample.urlencoded`.
 9. Confirm dry-run planned fields match Zoho field API names.
 10. Configure `PROPERTY_UNIT_MAP_JSON` with real CRM Property/Unit IDs.
-11. Switch to live mode only after a dry-run sample has no field errors.
+11. Send Zillow the test endpoint URL and provide the shared header value through a secured channel.
+12. Ask Zillow to send a test callback from their test environment.
+13. Switch to live mode only after a Zillow dry-run sample has no field errors and routing is understood.
+
+## Zillow Configuration To Request
+
+```text
+Endpoint: <Catalyst HTTPS URL>/zillow/leads
+Method: POST
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Mode: Zillow test environment only until GH confirms production approval
+```
+
+Do not send runtime secrets in plain email or commit them to GitHub.
+
+## Local Dry-Run Test
+
+```bash
+curl -i \
+  -X POST "https://<your-catalyst-domain>/zillow/leads" \
+  -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" \
+  -H "x-gh-zillow-webhook-key: <runtime secret>" \
+  --data-binary @samples/zillow-lead.sample.urlencoded
+```
+
+Expected response:
+
+```text
+HTTP 202
+mode=dry_run
+```
 
 ## Live Smoke Test
 
@@ -30,7 +60,7 @@ Expected CRM outcome:
 - Lead has `Zillow_Intake_Status=Received`.
 - Lead has `Zillow_Received_At` and `Last_Zillow_Sync_At`.
 - Re-sending the same payload updates the same Lead, not a duplicate.
-- No Contact or Rental Application/Deal is created by this webhook.
+- No Contact, Rental Application/Deal, lease, Books invoice, tenant portal record, or WorkDrive folder is created by this webhook.
 
 ## Routing Review Queue
 
@@ -50,15 +80,16 @@ Routing warnings belong in `Description`, not separate manual review fields.
 
 | Failure | Action |
 |---|---|
-| `inbound_secret_invalid` | Confirm Zillow endpoint URL/header secret. Rotate if exposed. |
-| `invalid_lead_payload` | Zillow sent a lead without usable email/phone. Review source payload in Zillow. |
+| `inbound_secret_invalid` | Confirm Zillow endpoint URL and shared header. Rotate if exposed. |
+| `unsupported_content_type` | Confirm Zillow is sending URL-encoded form data, not JSON. |
+| `invalid_lead_payload` | Zillow sent a lead without usable email/phone. Review with Zillow Support. |
 | `zoho_oauth_not_configured` | Add OAuth environment variables in Catalyst. |
 | `zoho_upsert_failed` | Check CRM field API names, required field rules, and picklist values. |
 | Duplicate leads | Confirm Leads field `Zillow_Lead_Key` exists and is marked unique. |
 
 ## Rollback
 
-1. Set `DRY_RUN=true`.
+1. Set `ZILLOW_WEBHOOK_DRY_RUN=true` and `DRY_RUN=true`.
 2. Redeploy or restart Catalyst function.
 3. Disable Zillow delivery to the webhook if bad records continue.
 4. Use CRM list view filtered by source `Zillow` and created time to inspect records.
