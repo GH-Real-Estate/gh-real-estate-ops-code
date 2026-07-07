@@ -99,8 +99,8 @@ Before live mode, create or confirm these CRM fields in the Leads module.
 | Requested Property | `Requested_Property` | Lookup to Properties/Accounts | Optional lookup from `PROPERTY_UNIT_MAP_JSON`. |
 | Requested Unit | `Requested_Unit` | Lookup to Units | Optional lookup from `PROPERTY_UNIT_MAP_JSON`. |
 | Requested Move-In Date | `Requested_Move_In_Date` | Date | Zillow `movingDate`. |
-| Inquiry Message | `Inquiry_Message` | Rich Text or Multi Line Large | Zillow `message` plus optional `introduction`. Multi Line Large is preferred. |
-| Zillow Renter Profile Summary | `Zillow_Renter_Profile_Summary` | Rich Text or Multi Line Large | Summary of optional renter profile fields. Multi Line Large is preferred. |
+| Inquiry Message | `Inquiry_Message` | Multi Line Large | Zillow `message` plus optional `introduction`. |
+| Zillow Renter Profile Summary | `Zillow_Renter_Profile_Summary` | Multi Line Large | Summary of optional renter profile fields. |
 | Zillow Lead Key | `Zillow_Lead_Key` | Single line, unique | Required for idempotent upsert. |
 | Zillow Lead ID | `Zillow_Lead_ID` | Single line | Optional. Zillow may not send a separate lead ID. |
 | Zillow Listing ID | `Zillow_Listing_ID` | Single line | Zillow `listingId`; best routing key. |
@@ -108,7 +108,7 @@ Before live mode, create or confirm these CRM fields in the Leads module.
 | Zillow Lead Type | `Zillow_Lead_Type` | Picklist | `question`, `tourRequest`, `applicationRequest`. |
 | Zillow Provider Model ID | `Zillow_Provider_Model_ID` | Single line | Zillow `providerModelId`. |
 | Zillow Move-In Timeframe | `Zillow_Move_In_Timeframe` | Picklist | `asap`, `flexible`, `week`, `month`, `twoWeeks`, `twoMonths`. |
-| Zillow Property Address Raw | `Zillow_Property_Address` | Single line | Verified API name does not include `_Raw`. |
+| Zillow Property Address Raw | `Zillow_Property_Address_Raw` | Single line | Composed from Zillow listing address components. |
 | Zillow Listing Street | `Zillow_Listing_Street` | Single line | Zillow `listingStreet`. |
 | Zillow Listing Unit | `Zillow_Listing_Unit` | Single line | Zillow `listingUnit`. |
 | Zillow Listing City | `Zillow_Listing_City` | Single line | Zillow `listingCity`. |
@@ -140,7 +140,7 @@ If actual CRM API names differ from the verified names above, set `ZOHO_CRM_FIEL
 - Application Received
 - Not Qualified
 - No Response
-- Converted to Applicant
+- Converted To Applicant
 - Closed - Duplicate
 - Closed - Not Interested
 
