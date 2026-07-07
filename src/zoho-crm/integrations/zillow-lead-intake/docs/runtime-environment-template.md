@@ -5,7 +5,7 @@ Configure these values in Zoho Catalyst or another approved runtime configuratio
 ## Inbound Route And Safety
 
 ```text
-GATEWAY_VERSION=2026-07-07.v5
+GATEWAY_VERSION=2026-07-07.v6
 ALLOWED_PATHS=/zillow/leads
 MAX_BODY_BYTES=65536
 INBOUND_BODY_TIMEOUT_MS=8000
