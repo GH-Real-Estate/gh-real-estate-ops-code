@@ -26,9 +26,10 @@ Use two columns.
 | 2 | Last Name | Standard text, required | Lead Source | Picklist |
 | 3 | Email | Email | Requested Property | Lookup |
 | 4 | Mobile | Phone | Requested Unit | Lookup |
-| 5 | Zillow Lead Type | Picklist | Requested Move-In Date | Date |
+| 5 | Phone | Phone | Requested Move-In Date | Date |
+| 6 | Zillow Lead Type | Picklist |  |  |
 
-`Company` may stay in unused items visually, but it must remain available for API writes because Zoho Leads may require it.
+`Mobile` is the primary Zillow `phone` field. `Phone` is populated only when Zillow or another future source provides a separate secondary/alternate phone value. `Company` may stay in unused items visually, but it must remain available for API writes because Zoho Leads may require it.
 
 ## Inquiry Details
 
