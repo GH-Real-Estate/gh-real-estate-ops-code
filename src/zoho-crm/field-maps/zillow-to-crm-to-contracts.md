@@ -37,7 +37,7 @@ A Zillow inquiry is a prospect, not a tenant and not yet an applicant record wit
 | `leadType` | Leads | `Zillow_Lead_Type` | None | Values: `question`, `tourRequest`, `applicationRequest`. |
 | `providerModelId` | Leads | `Zillow_Provider_Model_ID` | None | Useful for multi-family/floorplan routing. |
 | `moveInTimeframe` | Leads | `Zillow_Move_In_Timeframe` | None | Values: `asap`, `flexible`, `week`, `month`, `twoWeeks`, `twoMonths`. |
-| Combined listing address | Leads | `Zillow_Property_Address` | None | Label is Zillow Property Address Raw; verified API name is `Zillow_Property_Address`. |
+| Combined listing address | Leads | `Zillow_Property_Address_Raw` | None | Raw/composed listing address. |
 | `listingStreet` | Leads | `Zillow_Listing_Street` | None | Listing street address. |
 | `listingUnit` | Leads | `Zillow_Listing_Unit` | None | Listing unit number. |
 | `listingCity` | Leads | `Zillow_Listing_City` | None | Listing city. |
