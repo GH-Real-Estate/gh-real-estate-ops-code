@@ -1,3 +1,0 @@
-# Test
-
-Safe content.
