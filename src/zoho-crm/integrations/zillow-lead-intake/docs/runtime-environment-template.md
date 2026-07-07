@@ -5,19 +5,33 @@ Configure these values in Zoho Catalyst or another approved runtime secret/confi
 ## Inbound Route And Safety
 
 ```text
-GATEWAY_VERSION=2026-07-07.v3
+GATEWAY_VERSION=2026-07-07.v4
 ALLOWED_PATHS=/zillow/leads
 MAX_BODY_BYTES=65536
+INBOUND_BODY_TIMEOUT_MS=8000
+SUCCESS_STATUS_CODE=202
 REQUIRE_INBOUND_SECRET=true
-INBOUND_SECRET_HEADER_NAME=x-gh-zillow-webhook-key
-INBOUND_SECRET_VALUE=<long random runtime secret>
+ZILLOW_WEBHOOK_HEADER_NAME=x-gh-zillow-webhook-key
+ZILLOW_WEBHOOK_KEY=<long random runtime secret>
 ALLOW_SECRET_QUERY_PARAM=false
 INBOUND_SECRET_QUERY_PARAM=key
-DRY_RUN=true
-LIVE_MODE_ENABLED=false
-LIVE_MODE_CONFIRMATION=
+REQUIRE_URLENCODED=true
+ALLOW_JSON_TEST_PAYLOADS=false
+ZILLOW_WEBHOOK_DRY_RUN=true
+ZILLOW_WEBHOOK_LIVE_MODE_ENABLED=false
+ZILLOW_WEBHOOK_LIVE_CONFIRMATION=
 EXPECTED_LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
+REQUIRE_ROUTE_MATCH_FOR_SUCCESS=false
 ```
+
+## Optional Source Restrictions
+
+```text
+ENFORCE_IP_ALLOWLIST=false
+ALLOWED_IPS=
+```
+
+Only enable the IP allowlist after confirming what Zillow's source IP looks like in Zoho Catalyst logs.
 
 ## Health Check
 
@@ -36,6 +50,9 @@ ZOHO_REFRESH_TOKEN=<runtime OAuth refresh token>
 ZOHO_ACCOUNTS_BASE_URL=https://accounts.zoho.com
 ZOHO_CRM_BASE_URL=https://www.zohoapis.com
 ZOHO_CRM_API_VERSION=v8
+ZOHO_ACCOUNTS_ALLOWED_HOST_SUFFIXES=accounts.zoho.com
+ZOHO_CRM_ALLOWED_HOST_SUFFIXES=zohoapis.com
+OUTBOUND_TIMEOUT_MS=15000
 ```
 
 ## CRM Modules And Triggers
@@ -43,6 +60,9 @@ ZOHO_CRM_API_VERSION=v8
 ```text
 ZOHO_CRM_LEADS_MODULE=Leads
 ZOHO_CRM_INTAKE_EVENTS_MODULE=Zillow_Intake_Events
+ENABLE_CRM_INTAKE_EVENT_LOG=false
+LEAD_DUPLICATE_CHECK_FIELDS=Zillow_Lead_Key
+INTAKE_EVENT_DUPLICATE_CHECK_FIELDS=External_Event_Key
 CRM_TRIGGER_WORKFLOWS=false
 CRM_TRIGGER_APPROVALS=false
 CRM_TRIGGER_BLUEPRINTS=false
@@ -54,24 +74,16 @@ SKIP_CADENCES_ON_UPDATE=false
 
 ```text
 DEFAULT_LEAD_SOURCE=Zillow
-DEFAULT_LEAD_STATUS=Not Contacted
-DEFAULT_ZILLOW_INTAKE_STATUS=Received
-```
-
-After the CRM Lead Status picklist includes `New Zillow Inquiry`, you can change:
-
-```text
 DEFAULT_LEAD_STATUS=New Zillow Inquiry
+DEFAULT_ZILLOW_INTAKE_STATUS=Received
+ZILLOW_LISTING_URL_TEMPLATE=
 ```
 
-## Duplicate Prevention And Field Mapping
+## Mapping
 
 ```text
-LEAD_DUPLICATE_CHECK_FIELDS=Zillow_Lead_Key
-INTAKE_EVENT_DUPLICATE_CHECK_FIELDS=External_Event_Key
 PROPERTY_UNIT_MAP_JSON={}
 ZOHO_CRM_FIELD_MAP_JSON={}
-ENABLE_CRM_INTAKE_EVENT_LOG=false
 ```
 
 Use `ZOHO_CRM_FIELD_MAP_JSON` only when actual Zoho CRM API names differ from the defaults documented in `README.md`.
