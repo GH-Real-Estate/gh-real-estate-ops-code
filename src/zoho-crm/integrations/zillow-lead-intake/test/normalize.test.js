@@ -71,6 +71,7 @@ test('normalizes official Zillow camelCase fields', () => {
   assert.equal(lead.lastName, 'Lee');
   assert.equal(lead.email, 'rachel@example.com');
   assert.equal(lead.phone, '+15555558378');
+  assert.equal(lead.secondaryPhone, '');
   assert.equal(lead.desiredMoveInDate, '2016-09-26');
   assert.equal(lead.propertyAddress, '246 Tennessee Avenue, C102, Sunnyvale, CA 94086');
   assert.equal(lead.leadType, 'tourRequest');
@@ -133,7 +134,7 @@ test('resolves property and unit from listing map', () => {
   assert.equal(propertyUnit.propertyName, '9401 Nieman Rd');
 });
 
-test('builds CRM Lead plan with verified field API names', () => {
+test('builds CRM Lead plan with primary Zillow phone mapped to Mobile only', () => {
   const lead = normalizeZillowLeadPayload({
     leadId: 'lead_test_123',
     name: 'Test Tenant',
@@ -159,13 +160,13 @@ test('builds CRM Lead plan with verified field API names', () => {
     unitName: 'Unit 3'
   };
 
-  const warnings = buildRoutingWarnings(lead, propertyUnit);
-  const plan = buildCrmLeadPlan(lead, propertyUnit, warnings);
+  const plan = buildCrmLeadPlan(lead, propertyUnit, buildRoutingWarnings(lead, propertyUnit));
 
   assert.equal(plan.leadRecord.Last_Name, 'Tenant');
   assert.equal(plan.leadRecord.Company, '9401 Nieman Rd');
   assert.equal(plan.leadRecord.Email, 'test.tenant@example.com');
   assert.equal(plan.leadRecord.Mobile, '+19135550100');
+  assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Phone'), false);
   assert.equal(plan.leadRecord.Zillow_Lead_Key, 'zillow:lead_test_123');
   assert.equal(plan.leadRecord.Lead_Source, 'Zillow');
   assert.equal(plan.leadRecord.Lead_Status, 'New Zillow Inquiry');
@@ -186,6 +187,20 @@ test('builds CRM Lead plan with verified field API names', () => {
   assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Desired_Deposit'), false);
   assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Manual_Review_Required'), false);
   assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Manual_Review_Reason'), false);
+});
+
+test('maps secondary phone aliases to standard Phone when present', () => {
+  const lead = normalizeZillowLeadPayload({
+    name: 'Test Tenant',
+    email: 'test.tenant@example.com',
+    phone: '913-555-0100',
+    secondaryPhone: '913-555-0101',
+    listingId: 'zpid_test_9401_1'
+  }, '2026-07-01T12:00:00.000Z');
+
+  const plan = buildCrmLeadPlan(lead, null, buildRoutingWarnings(lead, null));
+  assert.equal(plan.leadRecord.Mobile, '+19135550100');
+  assert.equal(plan.leadRecord.Phone, '+19135550101');
 });
 
 test('uses URL-encoded body as the default accepted content type', () => {

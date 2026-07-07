@@ -22,7 +22,8 @@ A Zillow inquiry is a prospect, not a tenant and not yet an applicant record wit
 | Parsed last name from `name` | Leads | `Last_Name` | None | Required by Zoho Leads. Uses `Zillow Prospect` only if name is missing. |
 | System company value | Leads | `Company` | None | Hidden from layout is fine. API still populates because Zoho may require it. |
 | `email` | Leads | `Email` | None | Used for follow-up, not as primary duplicate key. |
-| `phone` | Leads | `Mobile` | None | Zillow sends one phone value; GH layout uses Mobile. |
+| `phone` | Leads | `Mobile` | None | Zillow sends one phone value; GH layout uses Mobile as the primary phone field. |
+| Secondary/alternate phone if supplied | Leads | `Phone` | None | Zillow's current guide does not list this, but the runtime supports common alternate phone aliases for future compatibility. |
 | Fixed value `Zillow` | Leads | `Lead_Source` | None | Set to `Zillow`. |
 | Intake default | Leads | `Lead_Status` | None | Use `New Zillow Inquiry`. |
 | Property lookup from routing map | Leads | `Requested_Property` | None | Optional lookup resolved from property/unit map. |

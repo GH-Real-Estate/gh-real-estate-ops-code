@@ -27,9 +27,10 @@ Two-column section.
 | Last Name | Lead Source |
 | Email | Requested Property |
 | Mobile | Requested Unit |
-| Zillow Lead Type | Requested Move-In Date |
+| Phone | Requested Move-In Date |
+| Zillow Lead Type |  |
 
-`Company` may remain unused/hidden in the layout, but the intake service still populates it because Zoho Leads may require it at the API level.
+`Mobile` is the primary Zillow phone field. `Phone` is populated only if Zillow or a future source sends a separate secondary/alternate phone value. `Company` may remain unused/hidden in the layout, but the intake service still populates it because Zoho Leads may require it at the API level.
 
 ### Inquiry Details
 
@@ -94,6 +95,7 @@ Before live mode, create or confirm these CRM fields in the Leads module.
 | Company | `Company` | Standard single line | Hidden is fine, but the API write still populates it. |
 | Email | `Email` | Standard email | Zillow `email`. |
 | Mobile | `Mobile` | Standard phone | Zillow `phone`; normalized for US 10-digit numbers. |
+| Phone | `Phone` | Standard phone | Only populated when a separate secondary/alternate phone value is present. |
 | Lead Source | `Lead_Source` | Standard picklist | Use `Zillow`. |
 | Lead Status | `Lead_Status` | Standard picklist | Use `New Zillow Inquiry` for new intake. |
 | Requested Property | `Requested_Property` | Lookup to Properties/Accounts | Optional lookup from `PROPERTY_UNIT_MAP_JSON`. |
