@@ -16,7 +16,7 @@ A Zillow inquiry is a prospect, not a tenant and not yet an applicant record wit
 
 ## CRM Lead Field Map
 
-| Zillow source field | CRM module | Default CRM API field | Contracts merge field | Notes |
+| Zillow source field | CRM module | Verified CRM API field | Contracts merge field | Notes |
 |---|---|---|---|---|
 | Parsed first name from `name` | Leads | `First_Name` | None | Parsed from Zillow renter name. |
 | Parsed last name from `name` | Leads | `Last_Name` | None | Required by Zoho Leads. Uses `Zillow Prospect` only if name is missing. |
@@ -24,12 +24,12 @@ A Zillow inquiry is a prospect, not a tenant and not yet an applicant record wit
 | `email` | Leads | `Email` | None | Used for follow-up, not as primary duplicate key. |
 | `phone` | Leads | `Mobile` | None | Zillow sends one phone value; GH layout uses Mobile. |
 | Fixed value `Zillow` | Leads | `Lead_Source` | None | Set to `Zillow`. |
-| Intake default | Leads | `Lead_Status` | None | Use `New Zillow Inquiry` after picklist setup. |
+| Intake default | Leads | `Lead_Status` | None | Use `New Zillow Inquiry`. |
 | Property lookup from routing map | Leads | `Requested_Property` | None | Optional lookup resolved from property/unit map. |
 | Unit lookup from routing map | Leads | `Requested_Unit` | None | Optional lookup resolved from property/unit map. |
 | `movingDate` | Leads | `Requested_Move_In_Date` | None | Zillow format is `YYYYMMDD`; CRM stores Date. |
 | `message` plus `introduction` | Leads | `Inquiry_Message` | None | Text blob from Zillow lead form. |
-| Optional renter profile fields | Leads | `Zillow_Renter_Profile_Summary` | None | Multi-line summary; do not overbuild raw lead fields. |
+| Optional renter profile fields | Leads | `Zillow_Renter_Profile_Summary` | None | Multi-line/rich-text summary; do not overbuild raw lead fields. |
 | Generated key | Leads | `Zillow_Lead_Key` | None | Mark unique. Used for idempotent upsert. |
 | Source lead ID if supplied | Leads | `Zillow_Lead_ID` | None | Optional compatibility field. |
 | `listingId` | Leads | `Zillow_Listing_ID` | None | Strongest Zillow routing key. |
@@ -37,7 +37,7 @@ A Zillow inquiry is a prospect, not a tenant and not yet an applicant record wit
 | `leadType` | Leads | `Zillow_Lead_Type` | None | Values: `question`, `tourRequest`, `applicationRequest`. |
 | `providerModelId` | Leads | `Zillow_Provider_Model_ID` | None | Useful for multi-family/floorplan routing. |
 | `moveInTimeframe` | Leads | `Zillow_Move_In_Timeframe` | None | Values: `asap`, `flexible`, `week`, `month`, `twoWeeks`, `twoMonths`. |
-| Combined listing address | Leads | `Zillow_Property_Address_Raw` | None | Built from raw address or address components. |
+| Combined listing address | Leads | `Zillow_Property_Address` | None | Label is Zillow Property Address Raw; verified API name is `Zillow_Property_Address`. |
 | `listingStreet` | Leads | `Zillow_Listing_Street` | None | Listing street address. |
 | `listingUnit` | Leads | `Zillow_Listing_Unit` | None | Listing unit number. |
 | `listingCity` | Leads | `Zillow_Listing_City` | None | Listing city. |
