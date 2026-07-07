@@ -1,17 +1,17 @@
 # Runtime Environment Template
 
-Configure these values in Zoho Catalyst or another approved runtime secret/config manager. Do not commit a real `.env` file.
+Configure these values in Zoho Catalyst or another approved runtime configuration manager. Do not commit a real `.env` file.
 
 ## Inbound Route And Safety
 
 ```text
-GATEWAY_VERSION=2026-07-07.v4
+GATEWAY_VERSION=2026-07-07.v5
 ALLOWED_PATHS=/zillow/leads
 MAX_BODY_BYTES=65536
 INBOUND_BODY_TIMEOUT_MS=8000
 REQUIRE_INBOUND_SECRET=true
 INBOUND_SECRET_HEADER_NAME=x-gh-zillow-webhook-key
-ZILLOW_WEBHOOK_KEY=<long random runtime secret>
+ZILLOW_WEBHOOK_KEY=<long random runtime value>
 INBOUND_SECRET_VALUE=
 ALLOW_SECRET_QUERY_PARAM=false
 INBOUND_SECRET_QUERY_PARAM=key
@@ -47,10 +47,12 @@ REPLAY_WINDOW_SECONDS=300
 
 ## Zoho OAuth And API Roots
 
+Add the Zoho OAuth client ID, client credential, and CRM refresh value only in the runtime configuration manager. Do not commit real values.
+
 ```text
-ZOHO_CLIENT_ID=<runtime OAuth client ID>
-ZOHO_CLIENT_SECRET=<runtime OAuth client secret>
-ZOHO_REFRESH_TOKEN=<runtime OAuth refresh token>
+ZOHO_CLIENT_ID=<runtime value>
+ZOHO_CLIENT_SECRET=<runtime value>
+ZOHO_REFRESH_TOKEN=<runtime value>
 ZOHO_ACCOUNTS_BASE_URL=https://accounts.zoho.com
 ZOHO_CRM_BASE_URL=https://www.zohoapis.com
 ZOHO_CRM_API_VERSION=v8
@@ -77,15 +79,10 @@ SKIP_CADENCES_ON_UPDATE=false
 
 ```text
 DEFAULT_LEAD_SOURCE=Zillow
-DEFAULT_LEAD_STATUS=Not Contacted
-DEFAULT_ZILLOW_INTAKE_STATUS=Received
-```
-
-After the CRM Lead Status picklist includes `New Zillow Inquiry`, you can change:
-
-```text
 DEFAULT_LEAD_STATUS=New Zillow Inquiry
 ```
+
+The intake service sets `Zillow_Intake_Status` to `Routing Matched` or `Routing Unmatched` after property/unit routing is evaluated.
 
 ## Duplicate Prevention And Field Mapping
 
@@ -96,4 +93,4 @@ PROPERTY_UNIT_MAP_JSON={}
 ZOHO_CRM_FIELD_MAP_JSON={}
 ```
 
-Use `ZOHO_CRM_FIELD_MAP_JSON` only when actual Zoho CRM API names differ from the defaults documented in `README.md`.
+Use `ZOHO_CRM_FIELD_MAP_JSON` only when actual Zoho CRM API names differ from the verified names documented in `README.md`.
