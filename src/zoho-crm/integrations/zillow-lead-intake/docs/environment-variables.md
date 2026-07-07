@@ -1,25 +1,27 @@
 # Environment Variables
 
-Use placeholders only in Git. Configure real values in Zoho Catalyst or another approved runtime secret/config manager.
+Use placeholders only in Git. Configure real values in Zoho Catalyst or another approved runtime configuration manager.
+
+Do not store a Zoho `access_token` as an environment variable. Access tokens are short-lived. Store the refresh token only; the function exchanges it for fresh access tokens at runtime.
 
 | Variable | Required | Default | Purpose |
 |---|---:|---|---|
-| `GATEWAY_VERSION` | Yes | `2026-07-07.v4` | Runtime version label surfaced in health checks. |
+| `GATEWAY_VERSION` | Yes | `2026-07-07.v6` | Runtime version label surfaced in health checks. |
 | `ALLOWED_PATHS` | Yes | `/zillow/leads` | Comma-separated POST paths accepted by the service. |
 | `MAX_BODY_BYTES` | Yes | `65536` | Rejects oversized webhook bodies. |
 | `INBOUND_BODY_TIMEOUT_MS` | Yes | `8000` | Rejects slow/incomplete request bodies. |
-| `REQUIRE_INBOUND_SECRET` | Yes | `true` | Requires a shared secret before processing. |
-| `INBOUND_SECRET_HEADER_NAME` | Yes | `x-gh-zillow-webhook-key` | Header checked for the inbound secret. |
-| `ZILLOW_WEBHOOK_KEY` | Yes | blank | Preferred runtime variable for the long random shared secret. |
+| `REQUIRE_INBOUND_SECRET` | Yes | `true` | Requires a shared header value before processing. |
+| `INBOUND_SECRET_HEADER_NAME` | Yes | `x-gh-zillow-webhook-key` | Header checked for the inbound Zillow shared value. |
+| `ZILLOW_WEBHOOK_KEY` | Yes | blank | Preferred runtime variable for the long random Zillow shared header value. |
 | `INBOUND_SECRET_VALUE` | Alias | blank | Backward-compatible alias for `ZILLOW_WEBHOOK_KEY`. |
-| `ALLOW_SECRET_QUERY_PARAM` | No | `false` | Allows secret in query string only if Zillow cannot send headers. Keep disabled. |
-| `INBOUND_SECRET_QUERY_PARAM` | No | `key` | Query parameter name for fallback shared secret. |
+| `ALLOW_SECRET_QUERY_PARAM` | No | `false` | Allows key in query string only if Zillow cannot send headers. Keep disabled. |
+| `INBOUND_SECRET_QUERY_PARAM` | No | `key` | Query parameter name for fallback shared key. |
 | `ENFORCE_IP_ALLOWLIST` | No | `false` | Optional source IP gate. Enable only after confirming Zillow's observed source IPs in Catalyst logs. |
 | `ALLOWED_IPS` | No | blank | Comma-separated IPs when `ENFORCE_IP_ALLOWLIST=true`. |
 | `ZILLOW_WEBHOOK_DRY_RUN` | Yes | `true` | Preferred dry-run switch. |
 | `DRY_RUN` | Yes | `true` | General dry-run switch retained for consistency with other Catalyst deployments. |
 | `LIVE_MODE_ENABLED` | Yes | `false` | First live-mode circuit breaker. |
-| `LIVE_MODE_CONFIRMATION` | Yes for live | blank | Must match expected value before CRM writes. |
+| `LIVE_MODE_CONFIRMATION` | Yes for live | blank | Must match expected value before CRM writes. Leave blank during dry-run. |
 | `EXPECTED_LIVE_MODE_CONFIRMATION` | Yes | `GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED` | Second live-mode circuit breaker value. |
 | `ALLOW_JSON_PAYLOADS` | No | `false` | Allows JSON only for internal testing. Zillow production should remain URL-encoded. |
 | `GENERIC_PUBLIC_ERRORS` | No | `true` | Redacts 5xx details from public responses. 4xx errors still return useful codes. |
@@ -31,8 +33,8 @@ Use placeholders only in Git. Configure real values in Zoho Catalyst or another 
 | `REPLAY_CACHE_SEGMENT_ID` | No | blank | Optional Catalyst Cache segment ID. |
 | `REPLAY_WINDOW_SECONDS` | No | `300` | Recent duplicate cache window. |
 | `ZOHO_CLIENT_ID` | Yes for live | blank | Zoho OAuth client ID. |
-| `ZOHO_CLIENT_SECRET` | Yes for live | blank | Zoho OAuth client secret. |
-| `ZOHO_REFRESH_TOKEN` | Yes for live | blank | Zoho OAuth refresh token. |
+| `ZOHO_CLIENT_SECRET` | Yes for live | blank | Zoho OAuth client credential. |
+| `ZOHO_REFRESH_TOKEN` | Yes for live | blank | Zoho OAuth refresh token for CRM Leads. |
 | `ZOHO_ACCOUNTS_BASE_URL` | Yes | `https://accounts.zoho.com` | Zoho Accounts base URL. |
 | `ZOHO_CRM_BASE_URL` | Yes | `https://www.zohoapis.com` | Zoho CRM API base URL. |
 | `ZOHO_CRM_API_VERSION` | Yes | `v8` | CRM API version. |
@@ -42,7 +44,7 @@ Use placeholders only in Git. Configure real values in Zoho Catalyst or another 
 | `ZOHO_CRM_LEADS_MODULE` | Yes | `Leads` | CRM Leads module API name. |
 | `LEAD_DUPLICATE_CHECK_FIELDS` | Yes | `Zillow_Lead_Key` | Unique lead key. Create and mark this field unique. |
 | `PROPERTY_UNIT_MAP_JSON` | No | `{}` | Maps Zillow listing/address/contact-email routing keys to CRM Property and Unit record IDs. |
-| `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. |
+| `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. Leave `{}` if the verified CRM API names match the README. |
 | `ENABLE_CRM_INTAKE_EVENT_LOG` | No | `false` | Writes optional audit events to a custom CRM module. |
 | `ENABLE_DRY_RUN_CRM_AUDIT_LOG` | No | `false` | Allows dry-run audit-event writes without creating Leads. |
 | `ZOHO_CRM_INTAKE_EVENTS_MODULE` | No | `Zillow_Intake_Events` | Optional audit module API name. |
@@ -53,8 +55,7 @@ Use placeholders only in Git. Configure real values in Zoho Catalyst or another 
 | `SKIP_CADENCES_ON_INSERT` | No | `true` | Skips CRM cadences on insert. |
 | `SKIP_CADENCES_ON_UPDATE` | No | `false` | Skips CRM cadences on update. |
 | `DEFAULT_LEAD_SOURCE` | Yes | `Zillow` | Default Lead Source. |
-| `DEFAULT_LEAD_STATUS` | Yes | `Not Contacted` | Default Lead Status. |
-| `DEFAULT_ZILLOW_INTAKE_STATUS` | Yes | `Received` | Default Zillow Intake Status. |
+| `DEFAULT_LEAD_STATUS` | Yes | `New Zillow Inquiry` | Default Lead Status. |
 | `DEBUG_ERRORS` | No | `false` | Adds sanitized error detail to server logs only. |
 
 ## Property/Unit Map Example
