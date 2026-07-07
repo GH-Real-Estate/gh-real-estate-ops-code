@@ -4,15 +4,20 @@
 - [ ] Mark Leads field `Zillow_Lead_Key` unique.
 - [ ] Confirm Leads mandatory fields: `Last_Name`, `Company`.
 - [ ] Confirm Lead Status picklist supports the configured `DEFAULT_LEAD_STATUS`.
+- [ ] Confirm Lead Source picklist includes `Zillow`.
 - [ ] Confirm Zillow Intake Status picklist supports `Received`.
+- [ ] Do not create or use `Manual_Review_Required`, `Manual_Review_Reason`, `Desired_Rent`, or `Desired_Deposit` for Zillow intake.
 - [ ] Create CRM view: Zillow Leads - New Inquiry / Not Contacted.
-- [ ] Create CRM view: Zillow Leads - Unmapped / Routing Review if desired.
+- [ ] Create CRM view: Zillow Leads - Unmapped / Routing Warning if desired.
 - [ ] Create Zoho OAuth client and refresh token.
+- [ ] Generate a 32+ byte random `ZILLOW_WEBHOOK_KEY`.
 - [ ] Add Catalyst environment variables from `docs/runtime-environment-template.md`.
-- [ ] Keep `DRY_RUN=true` for first deployment.
-- [ ] Send fake dry-run payload.
-- [ ] Configure property/unit map with real CRM record IDs.
-- [ ] Ask Zillow to send a test callback.
+- [ ] Keep `ZILLOW_WEBHOOK_DRY_RUN=true`, `DRY_RUN=true`, and `LIVE_MODE_ENABLED=false` for first deployment.
+- [ ] Send fake dry-run payload from `samples/zillow-lead.sample.urlencoded`.
+- [ ] Configure `PROPERTY_UNIT_MAP_JSON` with real CRM record IDs.
+- [ ] Ask Zillow to configure the endpoint in test mode and send a test callback.
+- [ ] Confirm dry-run output maps only to Leads and uses no removed fields.
 - [ ] Turn live mode on only after dry-run output matches expected CRM fields.
 - [ ] Re-send same fake live payload and confirm no duplicate Lead is created.
-- [ ] Record deployment in `docs/runbooks/deployment-log.md`.
+- [ ] Confirm no Contact, Rental Application/Deal, lease, Books invoice, tenant portal record, or WorkDrive folder is created.
+- [ ] Record deployment in `docs/runbooks/deployment-log.md` if/when that log exists.
