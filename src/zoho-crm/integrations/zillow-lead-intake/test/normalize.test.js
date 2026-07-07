@@ -26,7 +26,7 @@ test('parses official URL-encoded Zillow payload format', () => {
   const body = Buffer.from([
     'listingId=p01023',
     'name=Rachel%20Lee',
-    'email=rachel%40gmail.com',
+    'email=rachel%40example.com',
     'phone=555-555-8378',
     'movingDate=20160926',
     'numBedroomsSought=3',
@@ -41,7 +41,7 @@ test('parses official URL-encoded Zillow payload format', () => {
   ].join('&'));
 
   const parsed = parseInboundPayload(body, 'application/x-www-form-urlencoded; charset=UTF-8');
-  assert.equal(parsed.email, 'rachel@gmail.com');
+  assert.equal(parsed.email, 'rachel@example.com');
   assert.equal(parsed.listingUnit, 'C102');
   assert.equal(parsed.leadType, 'tourRequest');
 });
@@ -50,7 +50,7 @@ test('normalizes official Zillow camelCase fields', () => {
   const lead = normalizeZillowLeadPayload({
     listingId: 'p01023',
     name: 'Rachel Lee',
-    email: 'RACHEL@GMAIL.COM',
+    email: 'RACHEL@EXAMPLE.COM',
     phone: '555-555-8378',
     movingDate: '20160926',
     numBedroomsSought: '3',
@@ -68,7 +68,7 @@ test('normalizes official Zillow camelCase fields', () => {
 
   assert.equal(lead.firstName, 'Rachel');
   assert.equal(lead.lastName, 'Lee');
-  assert.equal(lead.email, 'rachel@gmail.com');
+  assert.equal(lead.email, 'rachel@example.com');
   assert.equal(lead.phone, '+15555558378');
   assert.equal(lead.desiredMoveInDate, '2016-09-26');
   assert.equal(lead.propertyAddress, '246 Tennessee Avenue, C102, Sunnyvale, CA 94086');
