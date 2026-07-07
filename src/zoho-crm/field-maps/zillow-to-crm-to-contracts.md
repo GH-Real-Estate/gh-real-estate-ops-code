@@ -1,6 +1,6 @@
 # Zillow to Zoho CRM to Zoho Contracts Field Map
 
-Use sanitized examples only. Do not store real applications, screening reports, IDs, pay stubs, or tenant documents in GitHub.
+Use sanitized examples only. Do not store real applications, screening reports, IDs, pay stubs, tenant documents, webhook header values, or raw Zillow payloads in GitHub.
 
 ## Intake Rule
 
@@ -16,31 +16,71 @@ This is intentional. A Zillow inquiry is a prospect, not a tenant and not yet an
 
 ## CRM Lead Field Map
 
-| Source field | CRM module | Default CRM API field | Contracts merge field | Notes |
+| Zillow/source field | CRM module | Default CRM API field | Contracts merge field | Notes |
 |---|---|---|---|---|
-| Prospect first name | Leads | `First_Name` | None | Parsed from Zillow name if needed. |
-| Prospect last name | Leads | `Last_Name` | None | Required by Zoho Leads. Uses `Zillow Prospect` only if name is missing. |
-| Prospect display/company name | Leads | `Company` | None | Required by Zoho Leads in many layouts. Defaults to `Zillow Prospect`. |
-| Prospect email | Leads | `Email` | None | Used for follow-up, not as the primary duplicate key. |
-| Prospect phone | Leads | `Phone`, `Mobile` | None | Normalized to `+1XXXXXXXXXX` for US 10-digit numbers. |
+| Renter first name | Leads | `First_Name` | None | Parsed from Zillow `name` if needed. |
+| Renter last name | Leads | `Last_Name` | None | Required by Zoho Leads. Uses `Zillow Prospect` only if name is missing. |
+| Prospect display/company name | Leads | `Company` | None | Required by Zoho Leads. Defaults from mapped property or listing address. |
+| `email` | Leads | `Email` | None | Used for follow-up, not as the only duplicate key. |
+| `phone` | Leads | `Phone`, `Mobile` | None | Normalized to `+1XXXXXXXXXX` for US 10-digit numbers. |
 | Lead source | Leads | `Lead_Source` | None | Set to `Zillow`. |
-| Lead status | Leads | `Lead_Status` | None | Defaults to `Not Contacted`. |
-| Related property | Leads | `Property` | None | Optional lookup resolved from `PROPERTY_UNIT_MAP_JSON`. |
-| Related unit | Leads | `Unit` | None | Optional lookup resolved from `PROPERTY_UNIT_MAP_JSON`. |
-| Zillow lead key | Leads | `Zillow_Lead_Key` | None | Mark unique. Used for idempotent upsert. |
-| Zillow lead ID | Leads | `Zillow_Lead_ID` | None | Stored if Zillow sends one. |
-| Zillow listing ID | Leads | `Zillow_Listing_ID` | None | Best key for unit mapping. |
-| Zillow listing URL | Leads | `Zillow_Listing_URL` | None | Link back to source listing. |
-| Zillow message | Leads | `Zillow_Message` | None | Inquiry message only. Do not store screening documents here. |
-| Zillow source | Leads | `Zillow_Source` | None | Defaults to `Zillow`. |
-| Raw field keys | Leads | `Zillow_Raw_Field_Keys` | None | Stores field names received, not raw payload values. |
-| Lead received date | Leads | `Lead_Received_Date` | None | Date only. |
-| Desired move-in date | Leads | `Desired_Move_In_Date` | None | Candidate only until qualified. |
-| Desired rent | Leads | `Desired_Rent` | None | Inquiry value only. Do not invoice from this. |
-| Desired deposit | Leads | `Desired_Deposit` | None | Inquiry value only. Do not invoice from this. |
-| Manual review required | Leads | `Manual_Review_Required` | None | True when key data or mapping is missing. |
-| Manual review reason | Leads | `Manual_Review_Reason` | None | Human-readable reasons. |
-| Intake summary | Leads | `Description` | None | Sanitized operational summary for CRM users. |
+| Lead status | Leads | `Lead_Status` | None | Defaults to `New Zillow Inquiry`. |
+| Mapped property | Leads | `Requested_Property` | None | Optional lookup resolved from `PROPERTY_UNIT_MAP_JSON`. |
+| Mapped unit | Leads | `Requested_Unit` | None | Optional lookup resolved from `PROPERTY_UNIT_MAP_JSON`. |
+| `movingDate` | Leads | `Requested_Move_In_Date` | None | Candidate move-in request only. Owner-approved dates belong later on application/lease records. |
+| `message` + `introduction` | Leads | `Inquiry_Message` | None | Inquiry text only. Do not store screening documents here. |
+| Generated duplicate key | Leads | `Zillow_Lead_Key` | None | Mark unique. Used for idempotent upsert. |
+| Optional Zillow lead ID | Leads | `Zillow_Lead_ID` | None | Stored if Zillow sends one. |
+| `listingId` | Leads | `Zillow_Listing_ID` | None | Best key for property/unit routing. |
+| Optional listing URL | Leads | `Zillow_Listing_URL` | None | Link back to source listing if available. |
+| Listing address fields | Leads | `Zillow_Property_Address` | None | Composed from `listingStreet`, `listingUnit`, `listingCity`, `listingState`, `listingPostalCode`. |
+| `leadType` | Leads | `Zillow_Lead_Type` | None | Picklist: `question`, `tourRequest`, `applicationRequest`. |
+| `providerModelId` | Leads | `Zillow_Provider_Model_ID` | None | Supports multifamily/floorplan routing where provided. |
+| Raw callback body hash | Leads | `Zillow_Source_Payload_Hash` | None | Stores SHA-256 hash for troubleshooting without storing raw PII values. |
+| Raw field names | Leads | `Zillow_Raw_Field_Keys` | None | Stores received field names only. |
+| Endpoint receive time | Leads | `Zillow_Received_At` | None | Date-time. |
+| Last successful sync | Leads | `Last_Zillow_Sync_At` | None | Date-time. |
+| Intake status | Leads | `Zillow_Intake_Status` | None | Defaults to `Received`. |
+| Intake summary | Leads | `Description` | None | Sanitized operational summary and routing warnings. |
+
+## Zillow Fields Preserved In Summary
+
+The service does not create a CRM custom field for every renter preference value. Instead, less operationally critical fields are summarized in `Description` to keep the Leads module usable:
+
+```text
+numBedroomsSought
+numBathroomsSought
+neighborhoods
+propertyTypesDesired
+leaseLengthMonths
+smoker
+parkingTypeDesired
+incomeYearly
+creditScoreRangeJson
+movingFromCity
+movingFromState
+moveInTimeframe
+reasonForMoving
+employmentStatus
+jobTitle
+employer
+employmentStartDate
+employmentDetailsJson
+petDetailsJson
+```
+
+This keeps intake useful without making CRM Leads the system of record for underwriting or leasing decisions.
+
+## Fields Intentionally Not Used
+
+Do not use these fields in the Zillow intake:
+
+| Removed field | Reason |
+|---|---|
+| `Manual_Review_Required` | Manual review is always done by the owner/operator. |
+| `Manual_Review_Reason` | Routing warnings already appear in `Description`; no workflow should bypass owner review. |
+| `Desired_Rent` | Renter inquiry data must not control rent. Use GH Real Estate property/unit/application records. |
+| `Desired_Deposit` | Renter inquiry data must not control deposits. Use approved lease/application records and Zoho Books. |
 
 ## Promotion to Application and Lease
 
@@ -67,5 +107,5 @@ Only after owner approval should CRM/Contracts use approved application or lease
 | Lease start/end | Application candidate fields | Lease record | Owner-approved dates only. |
 | Monthly rent | Application approved rent | Lease record and Books setup | Books owns invoicing. |
 | Security deposit | Application approved deposit | Lease record and Books setup | Books owns deposits. |
-| Pets/ESA | Manual review / application docs | Lease/addenda fields | Do not store sensitive docs in GitHub. |
+| Pets/ESA | Manual owner review / application docs | Lease/addenda fields | Do not store sensitive docs in GitHub. |
 | Signature routing | Contact/application record | Contracts/Sign | Legal text stays in Zoho Contracts templates. |
