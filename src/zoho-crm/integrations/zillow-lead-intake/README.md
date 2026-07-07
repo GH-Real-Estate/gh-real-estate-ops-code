@@ -39,6 +39,8 @@ Single-column section.
 2. Zillow Renter Profile Summary
 3. Description
 
+Prefer Multi Line Large for `Inquiry Message`, `Zillow Renter Profile Summary`, and `Zillow Raw Field Keys`. Rich Text can work for plain text, but it is unnecessary for this integration and can create formatting friction later.
+
 ### Zillow Routing
 
 Two-column section.
@@ -85,7 +87,7 @@ Keep the standard Visit Summary and unused system lead fields out of this GH Rea
 
 Before live mode, create or confirm these CRM fields in the Leads module.
 
-| Business field | Default API name | Type | Notes |
+| Business field | Verified API name | Type | Notes |
 |---|---|---|---|
 | First Name | `First_Name` | Standard name field | Parsed from Zillow `name`. |
 | Last Name | `Last_Name` | Standard single line | Required by Zoho Leads. |
@@ -97,8 +99,8 @@ Before live mode, create or confirm these CRM fields in the Leads module.
 | Requested Property | `Requested_Property` | Lookup to Properties/Accounts | Optional lookup from `PROPERTY_UNIT_MAP_JSON`. |
 | Requested Unit | `Requested_Unit` | Lookup to Units | Optional lookup from `PROPERTY_UNIT_MAP_JSON`. |
 | Requested Move-In Date | `Requested_Move_In_Date` | Date | Zillow `movingDate`. |
-| Inquiry Message | `Inquiry_Message` | Multi-line text | Zillow `message` plus optional `introduction`. |
-| Zillow Renter Profile Summary | `Zillow_Renter_Profile_Summary` | Multi-line text | Summary of optional renter profile fields. |
+| Inquiry Message | `Inquiry_Message` | Rich Text or Multi Line Large | Zillow `message` plus optional `introduction`. Multi Line Large is preferred. |
+| Zillow Renter Profile Summary | `Zillow_Renter_Profile_Summary` | Rich Text or Multi Line Large | Summary of optional renter profile fields. Multi Line Large is preferred. |
 | Zillow Lead Key | `Zillow_Lead_Key` | Single line, unique | Required for idempotent upsert. |
 | Zillow Lead ID | `Zillow_Lead_ID` | Single line | Optional. Zillow may not send a separate lead ID. |
 | Zillow Listing ID | `Zillow_Listing_ID` | Single line | Zillow `listingId`; best routing key. |
@@ -106,7 +108,7 @@ Before live mode, create or confirm these CRM fields in the Leads module.
 | Zillow Lead Type | `Zillow_Lead_Type` | Picklist | `question`, `tourRequest`, `applicationRequest`. |
 | Zillow Provider Model ID | `Zillow_Provider_Model_ID` | Single line | Zillow `providerModelId`. |
 | Zillow Move-In Timeframe | `Zillow_Move_In_Timeframe` | Picklist | `asap`, `flexible`, `week`, `month`, `twoWeeks`, `twoMonths`. |
-| Zillow Property Address Raw | `Zillow_Property_Address_Raw` | Single line | Composed from Zillow listing address components. |
+| Zillow Property Address Raw | `Zillow_Property_Address` | Single line | Verified API name does not include `_Raw`. |
 | Zillow Listing Street | `Zillow_Listing_Street` | Single line | Zillow `listingStreet`. |
 | Zillow Listing Unit | `Zillow_Listing_Unit` | Single line | Zillow `listingUnit`. |
 | Zillow Listing City | `Zillow_Listing_City` | Single line | Zillow `listingCity`. |
@@ -117,13 +119,13 @@ Before live mode, create or confirm these CRM fields in the Leads module.
 | Zillow Received At | `Zillow_Received_At` | Date-time | Endpoint receive time. |
 | Last Zillow Sync At | `Last_Zillow_Sync_At` | Date-time | Updated on every successful callback/upsert. |
 | Zillow Intake Status | `Zillow_Intake_Status` | Picklist | Technical intake/routing status. |
-| Zillow Raw Field Keys | `Zillow_Raw_Field_Keys` | Multi-line text | Field names received, not raw private values. |
+| Zillow Raw Field Keys | `Zillow_Raw_Field_Keys` | Multi Line Large | Field names received, not raw private values. |
 | Zillow Raw Payload Stored | `Zillow_Raw_Payload_Stored` | Checkbox | Set to false unless raw payloads are stored in an approved secure system. |
 | Description | `Description` | Standard long text | Sanitized summary, Zillow profile details, and routing warnings. |
 
 Do **not** create Phase 2 fields for `Manual_Review_Required`, `Manual_Review_Reason`, `Desired_Rent`, or `Desired_Deposit`. Manual review is a business action, not a Zillow-intake field, and rent/deposit must come from GH Real Estate's approved property/unit/lease records.
 
-If actual CRM API names differ from the defaults above, set `ZOHO_CRM_FIELD_MAP_JSON` in the runtime config.
+If actual CRM API names differ from the verified names above, set `ZOHO_CRM_FIELD_MAP_JSON` in the runtime config.
 
 ## Picklists
 
