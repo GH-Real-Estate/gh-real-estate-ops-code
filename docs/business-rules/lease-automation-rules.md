@@ -22,7 +22,8 @@ This file summarizes only the lease rules needed by code. It is not the lease. T
 | Late threshold #2 | `D10` = `due_date + 9 days`, after 5:00 p.m. CT | Matches lease template Section 3.5 |
 | Late fee #2 | Additional `5%` of unpaid rent balance | Matches lease template Section 3.5 |
 | Total late-fee cap | `10%` of unpaid rent for that monthly rent charge | Matches lease template Section 3.5 |
-| Interest start | More than 30 days after original due date; first eligible day is day 31 | Matches lease template Section 3.6 |
+| Interest eligibility | First eligible day is day 31 after original due date | Matches lease template Section 3.6: unpaid Rent must remain unpaid more than 30 days |
+| Interest accrual start | `interestStartsDaysAfterDue = 0`; once eligible, interest accrues from the original due date | Matches lease template Section 3.6 |
 | Interest rate | `10.00%` APR in `Monthly_Interest_Billing.deluge` | Matches lease template Section 3.6 |
 | Interest frequency | Separate monthly scheduled billing; simple interest only | Operational design; lease allows simple interest until paid |
 | Interest minimum invoice amount | `$10.00` | Operational threshold, not a lease value |
@@ -36,7 +37,7 @@ This file summarizes only the lease rules needed by code. It is not the lease. T
 - Zoho Books remains the accounting source of truth.
 - Late Fee Guard owns only late fees.
 - Monthly Interest Billing owns only delinquent-rent interest.
-- Returned-payment / NSF RF invoices are owned by the Zoho Payments webhook running in Zoho Catalyst.
+- Returned-payment fee invoices are owned by the Zoho Payments webhook running in Zoho Catalyst.
 - All production changes must be documented in `docs/runbooks/deployment-log.md`.
 - Do not use this file as legal advice. Use it only as an automation checklist against the final lease.
 
@@ -44,6 +45,7 @@ This file summarizes only the lease rules needed by code. It is not the lease. T
 
 | Date | Change | Verified By |
 |---|---|---|
+| 2026-07-06 | Aligned monthly interest accrual start with Lease Section 3.6: eligible after day 30, accrues from original due date once eligible | ChatGPT / GitHub update |
 | 2026-07-06 | Verified late-fee, interest, and returned-payment fee values against the uploaded 2026-06-30 lease template; confirmed RF fee is $30.00, not $35.00 | ChatGPT review of lease template |
 | 2026-07-01 | Starter placeholder created | Gabriel |
 | 2026-07-01 | Updated with values observed in committed Late Fee Guard and Returned Payment Webhook code | Pending verification against final lease |
