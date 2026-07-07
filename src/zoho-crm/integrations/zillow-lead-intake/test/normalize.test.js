@@ -170,7 +170,7 @@ test('builds CRM Lead plan with verified field API names', () => {
   assert.equal(plan.leadRecord.Lead_Source, 'Zillow');
   assert.equal(plan.leadRecord.Lead_Status, 'New Zillow Inquiry');
   assert.equal(plan.leadRecord.Requested_Move_In_Date, '2026-07-07');
-  assert.equal(plan.leadRecord.Zillow_Property_Address, '9401 Nieman Road, Unit 3, Overland Park, KS 66214');
+  assert.equal(plan.leadRecord.Zillow_Property_Address_Raw, '9401 Nieman Road, Unit 3, Overland Park, KS 66214');
   assert.equal(plan.leadRecord.Zillow_Lead_Type, 'question');
   assert.equal(plan.leadRecord.Zillow_Move_In_Timeframe, 'month');
   assert.equal(plan.leadRecord.Zillow_Listing_Street, '9401 Nieman Road');
