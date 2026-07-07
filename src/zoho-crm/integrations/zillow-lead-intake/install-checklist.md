@@ -4,8 +4,9 @@
 - [ ] Mark Leads field `Zillow_Lead_Key` unique.
 - [ ] Confirm Leads mandatory fields: `Last_Name`, `Company`.
 - [ ] Confirm Lead Status picklist supports the configured `DEFAULT_LEAD_STATUS`.
-- [ ] Create CRM view: Zillow Leads - Manual Review.
+- [ ] Confirm Zillow Intake Status picklist supports `Received`.
 - [ ] Create CRM view: Zillow Leads - New Inquiry / Not Contacted.
+- [ ] Create CRM view: Zillow Leads - Unmapped / Routing Review if desired.
 - [ ] Create Zoho OAuth client and refresh token.
 - [ ] Add Catalyst environment variables from `docs/runtime-environment-template.md`.
 - [ ] Keep `DRY_RUN=true` for first deployment.
