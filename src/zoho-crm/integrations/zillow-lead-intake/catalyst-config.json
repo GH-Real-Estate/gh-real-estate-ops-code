@@ -1,0 +1,10 @@
+{
+  "deployment": {
+    "name": "Zillow-Lead-Intake",
+    "stack": "node18",
+    "type": "advancedio"
+  },
+  "execution": {
+    "main": "src/server.js"
+  }
+}
