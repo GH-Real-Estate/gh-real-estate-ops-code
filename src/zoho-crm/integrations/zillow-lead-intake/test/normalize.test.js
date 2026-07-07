@@ -19,7 +19,8 @@ const {
   normalizeDate,
   normalizeFieldKey,
   isAllowedContentType,
-  buildInquiryMessage
+  buildInquiryMessage,
+  buildRenterProfileSummary
 } = gateway._test;
 
 test('parses official URL-encoded Zillow payload format', () => {
@@ -132,7 +133,7 @@ test('resolves property and unit from listing map', () => {
   assert.equal(propertyUnit.propertyName, '9401 Nieman Rd');
 });
 
-test('builds CRM Lead plan without removed manual-review or rent/deposit fields', () => {
+test('builds CRM Lead plan with verified field API names', () => {
   const lead = normalizeZillowLeadPayload({
     leadId: 'lead_test_123',
     name: 'Test Tenant',
@@ -146,7 +147,9 @@ test('builds CRM Lead plan without removed manual-review or rent/deposit fields'
     listingPostalCode: '66214',
     movingDate: '20260707',
     leadType: 'question',
-    message: 'I would like to tour this unit.'
+    moveInTimeframe: 'month',
+    message: 'I would like to tour this unit.',
+    numBedroomsSought: '2'
   }, '2026-07-01T12:00:00.000Z', 'payloadhash123');
 
   const propertyUnit = {
@@ -162,12 +165,23 @@ test('builds CRM Lead plan without removed manual-review or rent/deposit fields'
   assert.equal(plan.leadRecord.Last_Name, 'Tenant');
   assert.equal(plan.leadRecord.Company, '9401 Nieman Rd');
   assert.equal(plan.leadRecord.Email, 'test.tenant@example.com');
+  assert.equal(plan.leadRecord.Mobile, '+19135550100');
   assert.equal(plan.leadRecord.Zillow_Lead_Key, 'zillow:lead_test_123');
   assert.equal(plan.leadRecord.Lead_Source, 'Zillow');
-  assert.equal(plan.leadRecord.Lead_Status, 'Not Contacted');
+  assert.equal(plan.leadRecord.Lead_Status, 'New Zillow Inquiry');
   assert.equal(plan.leadRecord.Requested_Move_In_Date, '2026-07-07');
   assert.equal(plan.leadRecord.Zillow_Property_Address, '9401 Nieman Road, Unit 3, Overland Park, KS 66214');
+  assert.equal(plan.leadRecord.Zillow_Lead_Type, 'question');
+  assert.equal(plan.leadRecord.Zillow_Move_In_Timeframe, 'month');
+  assert.equal(plan.leadRecord.Zillow_Listing_Street, '9401 Nieman Road');
+  assert.equal(plan.leadRecord.Zillow_Listing_Unit, 'Unit 3');
+  assert.equal(plan.leadRecord.Zillow_Listing_City, 'Overland Park');
+  assert.equal(plan.leadRecord.Zillow_Listing_State, 'KS');
+  assert.equal(plan.leadRecord.Zillow_Listing_Postal_Code, '66214');
   assert.equal(plan.leadRecord.Zillow_Source_Payload_Hash, 'payloadhash123');
+  assert.equal(plan.leadRecord.Zillow_Intake_Status, 'Routing Matched');
+  assert.equal(plan.leadRecord.Zillow_Raw_Payload_Stored, false);
+  assert.match(plan.leadRecord.Zillow_Renter_Profile_Summary, /Bedrooms sought: 2/);
   assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Desired_Rent'), false);
   assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Desired_Deposit'), false);
   assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Manual_Review_Required'), false);
@@ -185,4 +199,5 @@ test('normalizes utility values', () => {
   assert.equal(normalizeDate('20260707'), '2026-07-07');
   assert.equal(normalizeFieldKey('listingContactEmail'), 'listing_contact_email');
   assert.equal(buildInquiryMessage('Hello', 'Intro'), 'Introduction: Intro\n\nMessage: Hello');
+  assert.match(buildRenterProfileSummary({ numBedroomsSought: '2' }), /Bedrooms sought: 2/);
 });
