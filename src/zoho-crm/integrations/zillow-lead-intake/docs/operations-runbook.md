@@ -4,14 +4,15 @@
 
 1. Create/confirm CRM Leads custom fields listed in `README.md`.
 2. Mark `Zillow_Lead_Key` unique in the Leads module.
-3. Create a Zoho OAuth client with CRM module create/write scopes.
-4. Generate a refresh token and store it only in Catalyst environment variables.
-5. Deploy the service with `DRY_RUN=true`.
-6. Send the fake sample payload.
-7. Send a Zillow test payload if Zillow supports test delivery.
-8. Confirm dry-run planned fields match Zoho field API names.
-9. Configure `PROPERTY_UNIT_MAP_JSON` with real CRM Property/Unit IDs.
-10. Switch to live mode only after a dry-run sample has no field errors.
+3. Confirm hidden standard/system fields remain available for API writes when required.
+4. Create the Zoho CRM API credentials needed by the runtime.
+5. Store runtime values only in the approved runtime environment manager.
+6. Deploy the service with dry-run enabled.
+7. Send the fake sample payload.
+8. Send a Zillow test payload if Zillow supports test delivery.
+9. Confirm dry-run planned fields match Zoho field API names.
+10. Configure `PROPERTY_UNIT_MAP_JSON` with real CRM Property/Unit IDs.
+11. Switch to live mode only after a dry-run sample has no field errors.
 
 ## Live Smoke Test
 
@@ -26,36 +27,37 @@ Expected CRM outcome:
 
 - One CRM Lead with Lead Source `Zillow`.
 - Lead has `Zillow_Lead_Key`.
+- Lead Status is `New Zillow Inquiry`.
 - Re-sending the same payload updates the same Lead, not a duplicate.
 - No Contact or Rental Application/Deal is created by this webhook.
 
-## Manual Review Queue
+## Review Queues
 
-The service marks `Manual_Review_Required=true` when:
+GH Real Estate manually reviews every Zillow Lead. Use saved views instead of separate manual-review fields.
 
-- name is missing
-- email is missing
-- phone is missing
-- Zillow listing ID/address is missing
-- no property/unit mapping matched
-- desired move-in date is missing
+Create these CRM Leads views:
 
-Create a CRM Leads view where `Manual_Review_Required` is true.
+| View | Filter |
+|---|---|
+| Zillow Leads - New Inquiry | `Lead Source = Zillow` and `Lead Status = New Zillow Inquiry` |
+| Zillow Leads - Routing Unmatched | `Lead Source = Zillow` and `Zillow Intake Status = Routing Unmatched` |
+| Zillow Leads - Recently Synced | `Lead Source = Zillow` and `Last Zillow Sync At` is recent |
 
 ## Failure Handling
 
 | Failure | Action |
 |---|---|
-| `inbound_secret_invalid` | Confirm Zillow endpoint URL/header secret. Rotate if exposed. |
-| `invalid_lead_payload` | Zillow sent a lead without usable email/phone. Review source payload in Zillow. |
-| `zoho_oauth_not_configured` | Add OAuth environment variables in Catalyst. |
+| `inbound_secret_invalid` | Confirm Zillow endpoint URL/header configuration. Rotate if exposed. |
+| `invalid_lead_payload` | Zillow sent a lead without usable email/phone. Review source payload with Zillow. |
+| `zoho_oauth_not_configured` | Add the missing CRM API runtime values. |
 | `zoho_upsert_failed` | Check CRM field API names and required field rules. |
 | Duplicate leads | Confirm Leads field `Zillow_Lead_Key` exists and is marked unique. |
+| Routing unmatched | Update `PROPERTY_UNIT_MAP_JSON` or review the listing address/contact email. |
 
 ## Rollback
 
-1. Set `DRY_RUN=true`.
-2. Redeploy or restart Catalyst function.
-3. Disable Zillow delivery to the webhook if bad records continue.
+1. Re-enable dry-run mode.
+2. Redeploy or restart the runtime.
+3. Ask Zillow to pause delivery to the endpoint if bad records continue.
 4. Use CRM list view filtered by source `Zillow` and created time to inspect records.
 5. Do not bulk delete live records until duplicates are understood and exported.
