@@ -1,14 +1,23 @@
 # Install Checklist
 
-- [ ] Create/confirm CRM fields in Leads.
+- [ ] Create/confirm the CRM Leads fields listed in `README.md`.
 - [ ] Mark Leads field `Zillow_Lead_Key` unique.
 - [ ] Confirm Leads mandatory fields: `Last_Name`, `Company`.
-- [ ] Confirm Lead Status picklist supports the configured `DEFAULT_LEAD_STATUS`.
-- [ ] Create CRM view: Zillow Leads - Manual Review.
-- [ ] Create CRM view: Zillow Leads - New Inquiry / Not Contacted.
-- [ ] Create Zoho OAuth client and refresh token.
-- [ ] Add Catalyst environment variables from `docs/runtime-environment-template.md`.
-- [ ] Keep `DRY_RUN=true` for first deployment.
+- [ ] Keep `Company` available for API writes even if hidden from the visible GH Real Estate layout.
+- [ ] Confirm Lead Status picklist includes `New Zillow Inquiry`.
+- [ ] Confirm Lead Source picklist includes `Zillow`.
+- [ ] Confirm Zillow Intake Status picklist includes `Received`, `Updated`, `Routing Matched`, `Routing Unmatched`, `Test Callback`, and `Failed`.
+- [ ] Confirm Zillow Lead Type picklist includes `question`, `tourRequest`, and `applicationRequest`.
+- [ ] Confirm Zillow Move-In Timeframe picklist includes `asap`, `flexible`, `week`, `month`, `twoWeeks`, and `twoMonths`.
+- [ ] Confirm `Inquiry_Message`, `Zillow_Renter_Profile_Summary`, and `Zillow_Raw_Field_Keys` are multi-line fields.
+- [ ] Confirm `Zillow_Listing_Postal_Code` is Single Line, not Number.
+- [ ] Confirm unused standard fields are removed from the GH Real Estate Lead layout.
+- [ ] Create CRM view: Zillow Leads - New Inquiry.
+- [ ] Create CRM view: Zillow Leads - Routing Unmatched.
+- [ ] Create CRM view: Zillow Leads - Recently Synced.
+- [ ] Create the Zoho CRM API credentials needed by the runtime.
+- [ ] Add runtime environment values from `docs/runtime-environment-template.md`.
+- [ ] Keep dry-run enabled for first deployment.
 - [ ] Send fake dry-run payload.
 - [ ] Configure property/unit map with real CRM record IDs.
 - [ ] Ask Zillow to send a test callback.
