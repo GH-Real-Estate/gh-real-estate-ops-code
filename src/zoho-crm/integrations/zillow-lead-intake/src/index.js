@@ -36,8 +36,7 @@ const DEFAULT_FIELD_MAP = {
     zillowLeadType: 'Zillow_Lead_Type',
     zillowProviderModelId: 'Zillow_Provider_Model_ID',
     zillowMoveInTimeframe: 'Zillow_Move_In_Timeframe',
-    // Field label is "Zillow Property Address Raw"; verified API name is below.
-    zillowPropertyAddressRaw: 'Zillow_Property_Address',
+    zillowPropertyAddressRaw: 'Zillow_Property_Address_Raw',
     zillowListingStreet: 'Zillow_Listing_Street',
     zillowListingUnit: 'Zillow_Listing_Unit',
     zillowListingCity: 'Zillow_Listing_City',
