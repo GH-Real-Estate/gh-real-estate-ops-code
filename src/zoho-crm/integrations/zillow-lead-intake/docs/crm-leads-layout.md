@@ -36,11 +36,11 @@ Use one column.
 
 | Row | Field | Type |
 |---|---|---|
-| 1 | Inquiry Message | Multi-line text |
-| 2 | Zillow Renter Profile Summary | Multi-line text |
+| 1 | Inquiry Message | Multi Line Large preferred; Rich Text acceptable if already created |
+| 2 | Zillow Renter Profile Summary | Multi Line Large preferred; Rich Text acceptable if already created |
 | 3 | Description | Standard long text |
 
-`Inquiry Message` stores Zillow `message` plus optional `introduction`. `Zillow Renter Profile Summary` stores optional renter profile fields without creating too many raw Lead fields.
+`Inquiry Message` stores Zillow `message` plus optional `introduction`. `Zillow Renter Profile Summary` stores optional renter profile fields without creating too many raw Lead fields. The service writes plain text to both fields.
 
 Do not add `Desired Rent`, `Desired Deposit`, `Manual Review Required`, or `Manual Review Reason` to this layout.
 
@@ -78,7 +78,7 @@ Use two columns.
 | 3 | Zillow Listing City | Single line | Zillow Listing URL | URL |
 | 4 | Zillow Listing Postal Code | Single line |  |  |
 
-`Zillow Property Address Raw` should stay single line because it stores the raw/composed Zillow listing address. The clean operating address remains on the Property and Unit records.
+`Zillow Property Address Raw` should stay single line because it stores the raw/composed Zillow listing address. The verified API name is `Zillow_Property_Address`. The clean operating address remains on the Property and Unit records.
 
 ## Zillow Audit
 
@@ -86,7 +86,7 @@ Use one column.
 
 | Row | Field | Type |
 |---|---|---|
-| 1 | Zillow Raw Field Keys | Multi-line text |
+| 1 | Zillow Raw Field Keys | Multi Line Large |
 | 2 | Zillow Raw Payload Stored | Checkbox |
 | 3 | Zillow Lead ID | Single line |
 
