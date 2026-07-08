@@ -11,6 +11,7 @@ const {
   normalizeZillowLeadPayload,
   validateNormalizedLead,
   resolvePropertyUnit,
+  buildRoutingUnitKey,
   buildRoutingWarnings,
   buildCrmLeadPlan,
   buildLeadKey,
@@ -74,6 +75,7 @@ test('normalizes official Zillow camelCase fields', () => {
   assert.equal(lead.secondaryPhone, '');
   assert.equal(lead.desiredMoveInDate, '2016-09-26');
   assert.equal(lead.propertyAddress, '246 Tennessee Avenue, C102, Sunnyvale, CA 94086');
+  assert.equal(lead.routingUnitKey, '246 tennessee avenue|c102|sunnyvale|ca|94086');
   assert.equal(lead.leadType, 'tourRequest');
   assert.equal(lead.sourcePayloadHash, 'abc123hash');
 });
@@ -114,14 +116,14 @@ test('builds stable hash key when Zillow lead ID is absent', () => {
   assert.match(keyA, /^zillow:hash:[a-f0-9]{40}$/);
 });
 
-test('resolves property and unit from listing map', () => {
+test('resolves property and unit from static map before CRM Unit lookup', async () => {
   const lead = normalizeZillowLeadPayload({
     listingId: 'zpid_test_9401_1',
     name: 'Test Tenant',
     email: 'test.tenant@example.com'
   }, '2026-07-01T12:00:00.000Z');
 
-  const propertyUnit = resolvePropertyUnit(lead, {
+  const propertyUnit = await resolvePropertyUnit(lead, {
     'listing:zpid test 9401 1': {
       propertyId: '1111111111111111111',
       unitId: '2222222222222222222',
@@ -132,6 +134,20 @@ test('resolves property and unit from listing map', () => {
 
   assert.equal(propertyUnit.unitName, 'Unit 1');
   assert.equal(propertyUnit.propertyName, '9401 Nieman Rd');
+  assert.equal(propertyUnit.matchedBy, 'runtime_map');
+});
+
+test('builds routing unit key from Zillow listing address components', () => {
+  assert.equal(
+    buildRoutingUnitKey({
+      listingStreet: '9401 Nieman Road',
+      listingUnit: 'Unit 3',
+      listingCity: 'Overland Park',
+      listingState: 'KS',
+      listingPostalCode: '66214'
+    }),
+    '9401 nieman road|unit 3|overland park|ks|66214'
+  );
 });
 
 test('builds CRM Lead plan with primary Zillow phone mapped to Mobile only', () => {
