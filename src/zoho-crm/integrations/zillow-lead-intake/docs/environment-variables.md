@@ -10,8 +10,8 @@ Configure variables in the same Catalyst environment that is serving the endpoin
 
 - Development should stay dry-run by default.
 - Production should be live only after dry-run and routing tests pass.
-- A code deploy should not be used as the source of truth for secrets or live/dry-run mode; runtime variables in Catalyst are the source of truth.
-- After editing variables, redeploy or restart the function in that same target environment before testing again.
+- Runtime variables in Catalyst are the source of truth for secrets and mode switches.
+- After editing variables, redeploy or otherwise force the function runtime to reload before testing again.
 
 ## Complete Development Variable Block
 
@@ -67,7 +67,7 @@ INTAKE_EVENT_DUPLICATE_CHECK_FIELDS=External_Event_Key
 CRM_TRIGGER_WORKFLOWS=false
 CRM_TRIGGER_APPROVALS=false
 CRM_TRIGGER_BLUEPRINTS=false
-SKIP_CADENCES_ON_INSERT=true
+SKIP_CADENCES_ON_INSERT=false
 SKIP_CADENCES_ON_UPDATE=false
 DEFAULT_LEAD_SOURCE=Zillow
 DEFAULT_LEAD_STATUS=New Zillow Inquiry
@@ -80,7 +80,7 @@ DEBUG_ERRORS=true
 Use this for Catalyst **Production**.
 
 ```text
-GATEWAY_VERSION=prod-2026-07-08
+GATEWAY_VERSION=prod-token-refresh-2026-07-08-01
 ALLOWED_PATHS=/zillow/leads
 MAX_BODY_BYTES=65536
 INBOUND_BODY_TIMEOUT_MS=8000
@@ -98,7 +98,7 @@ LIVE_MODE_ENABLED=true
 LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
 EXPECTED_LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
 ALLOW_JSON_PAYLOADS=false
-GENERIC_PUBLIC_ERRORS=true
+GENERIC_PUBLIC_ERRORS=false
 ENABLE_HEALTH=true
 HEALTH_HEADER_NAME=x-gh-health-token
 HEALTH_CHECK_TOKEN=<set in Catalyst, do not commit>
@@ -129,7 +129,7 @@ INTAKE_EVENT_DUPLICATE_CHECK_FIELDS=External_Event_Key
 CRM_TRIGGER_WORKFLOWS=false
 CRM_TRIGGER_APPROVALS=false
 CRM_TRIGGER_BLUEPRINTS=false
-SKIP_CADENCES_ON_INSERT=true
+SKIP_CADENCES_ON_INSERT=false
 SKIP_CADENCES_ON_UPDATE=false
 DEFAULT_LEAD_SOURCE=Zillow
 DEFAULT_LEAD_STATUS=New Zillow Inquiry
@@ -137,7 +137,18 @@ LEAD_DUPLICATE_CHECK_FIELDS=Zillow_Lead_Key
 DEBUG_ERRORS=true
 ```
 
-`ENABLE_HEALTH`, `HEALTH_HEADER_NAME`, and `HEALTH_CHECK_TOKEN` are temporary diagnostic variables. Keep them enabled while verifying live mode. After the live smoke test passes, either disable health with `ENABLE_HEALTH=false` or rotate the health token and keep it protected.
+`ENABLE_HEALTH`, `HEALTH_HEADER_NAME`, `HEALTH_CHECK_TOKEN`, `GENERIC_PUBLIC_ERRORS=false`, and `DEBUG_ERRORS=true` are temporary diagnostics. After the live smoke test passes, either set `ENABLE_HEALTH=false` or rotate the health token, and return `GENERIC_PUBLIC_ERRORS=true`.
+
+## Important Cadence Skip Note
+
+Keep both cadence skip variables off for this Zillow intake function:
+
+```text
+SKIP_CADENCES_ON_INSERT=false
+SKIP_CADENCES_ON_UPDATE=false
+```
+
+Manual Zoho CRM upsert diagnostics pass without the `skip_feature_execution` payload. A live webhook failure after token, Units search, full upsert, and lookup upsert all pass is strongly consistent with Zoho rejecting `skip_feature_execution`. The root entrypoint also forces both variables to `false` before loading the implementation as a hard safety guard.
 
 ## Live/Dry-Run Mode Matrix
 
@@ -169,7 +180,7 @@ DEBUG_ERRORS=true
 | `EXPECTED_LIVE_MODE_CONFIRMATION` | Yes | `GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED` | Second live-mode circuit breaker value. |
 | `ALLOW_JSON_PAYLOADS` | No | `false` | Allows JSON only for internal testing. Zillow production should remain URL-encoded. |
 | `GENERIC_PUBLIC_ERRORS` | No | `true` | Redacts 5xx details from public responses. 4xx errors still return useful codes. |
-| `ENABLE_HEALTH` | Diagnostic | `false` | Enables protected `GET /health`. |
+| `ENABLE_HEALTH` | Diagnostic | `false` | Enables protected `/health`. |
 | `HEALTH_HEADER_NAME` | Diagnostic | `x-gh-health-token` | Header checked on health route. |
 | `HEALTH_CHECK_TOKEN` | Diagnostic if health enabled | blank | Required token for health route. |
 | `ENABLE_CACHE_REPLAY_DEFENSE` | No | `false` | Optional Catalyst Cache duplicate/replay guard. CRM upsert remains the main duplicate control. |
@@ -189,10 +200,10 @@ DEBUG_ERRORS=true
 | `ZOHO_CRM_UNITS_MODULE` | Yes | `Units` | CRM Units module API name. GH Real Estate verified `Units`. |
 | `ENABLE_DYNAMIC_UNIT_ROUTING` | Yes | `true` | Searches CRM Units using the Zillow routing fields on each Unit record. |
 | `DYNAMIC_UNIT_ROUTING_REQUIRED` | No | `false` | If true, a CRM Unit search failure rejects the callback instead of accepting the lead as unmatched. |
-| `UNIT_PROPERTY_LOOKUP_FIELD` | No | `Property` | API name of the lookup from Units back to Properties/Accounts. GH Real Estate verified `Property` unless Developer Hub shows otherwise. |
+| `UNIT_PROPERTY_LOOKUP_FIELD` | No | `Property` | API name of the lookup from Units back to Properties/Accounts. |
 | `LEAD_DUPLICATE_CHECK_FIELDS` | Yes | `Zillow_Lead_Key` | Unique lead key. Create and mark this field unique. |
 | `PROPERTY_UNIT_MAP_JSON` | No | `{}` | Legacy/fallback static routing map. Leave `{}` when using Unit-based routing. |
-| `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. Leave `{}` if the verified CRM API names match the README. |
+| `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. Leave `{}` if verified CRM API names match the README. |
 | `ENABLE_CRM_INTAKE_EVENT_LOG` | No | `false` | Writes optional audit events to a custom CRM module. |
 | `ENABLE_DRY_RUN_CRM_AUDIT_LOG` | No | `false` | Allows dry-run audit-event writes without creating Leads. |
 | `ZOHO_CRM_INTAKE_EVENTS_MODULE` | No | `Zillow_Intake_Events` | Optional audit module API name. |
@@ -200,8 +211,8 @@ DEBUG_ERRORS=true
 | `CRM_TRIGGER_WORKFLOWS` | No | `false` | Enables Zoho CRM workflow triggers on upsert. |
 | `CRM_TRIGGER_APPROVALS` | No | `false` | Enables Zoho CRM approval triggers on upsert. |
 | `CRM_TRIGGER_BLUEPRINTS` | No | `false` | Enables Zoho CRM blueprint triggers on upsert. |
-| `SKIP_CADENCES_ON_INSERT` | No | `true` | Skips CRM cadences on insert. |
-| `SKIP_CADENCES_ON_UPDATE` | No | `false` | Skips CRM cadences on update. |
+| `SKIP_CADENCES_ON_INSERT` | No | `false` | Keep off. Avoids sending `skip_feature_execution` until verified for this org/API version. |
+| `SKIP_CADENCES_ON_UPDATE` | No | `false` | Keep off. Avoids sending `skip_feature_execution` until verified for this org/API version. |
 | `DEFAULT_LEAD_SOURCE` | Yes | `Zillow` | Default Lead Source. |
 | `DEFAULT_LEAD_STATUS` | Yes | `New Zillow Inquiry` | Default Lead Status. |
 | `DEBUG_ERRORS` | No | `false` | Adds sanitized error detail to server logs only. |
