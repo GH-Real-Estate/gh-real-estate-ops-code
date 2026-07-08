@@ -9,6 +9,11 @@
  * `catalyst-config.json`.
  */
 
+// GH Real Estate verified the Zoho CRM Units module API name as `Units`.
+// Set the safe runtime default before loading src/index.js because that module
+// builds its CONFIG object at require-time.
+process.env.ZOHO_CRM_UNITS_MODULE = process.env.ZOHO_CRM_UNITS_MODULE || 'Units';
+
 const handler = require('./src/index');
 
 module.exports = function zillowLeadIntakeRootHandler(req, res) {
