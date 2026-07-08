@@ -18,6 +18,7 @@ const handler = require('./src/index');
 
 module.exports = function zillowLeadIntakeRootHandler(req, res) {
   normalizeCatalystFunctionUrl(req);
+  normalizeCatalystHealthMethod(req);
 
   return Promise.resolve(handler(req, res)).catch((error) => {
     console.error(JSON.stringify({
@@ -52,5 +53,16 @@ function normalizeCatalystFunctionUrl(req) {
 
   if (req.url.startsWith(`${basePath}/`)) {
     req.url = req.url.slice(basePath.length) || '/';
+  }
+}
+
+function normalizeCatalystHealthMethod(req) {
+  if (!req || typeof req.url !== 'string') return;
+
+  // Some Catalyst function invocation URLs reject GET before the Advanced I/O
+  // handler is reached. Accept a POST health probe from PowerShell and map it
+  // back to the implementation's protected GET /health route.
+  if (String(req.method || '').toUpperCase() === 'POST' && req.url === '/health') {
+    req.method = 'GET';
   }
 }
