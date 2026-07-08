@@ -5,7 +5,7 @@ Configure these values in Zoho Catalyst or another approved runtime configuratio
 ## Inbound Route And Safety
 
 ```text
-GATEWAY_VERSION=2026-07-07.v6
+GATEWAY_VERSION=2026-07-07.v7
 ALLOWED_PATHS=/zillow/leads
 MAX_BODY_BYTES=65536
 INBOUND_BODY_TIMEOUT_MS=8000
@@ -61,10 +61,25 @@ CRM_ALLOWED_HOST_SUFFIXES=zohoapis.com
 OUTBOUND_TIMEOUT_MS=15000
 ```
 
-## CRM Modules And Triggers
+## CRM Modules And Routing
 
 ```text
 ZOHO_CRM_LEADS_MODULE=Leads
+ZOHO_CRM_UNITS_MODULE=CustomModule4
+ENABLE_DYNAMIC_UNIT_ROUTING=true
+DYNAMIC_UNIT_ROUTING_REQUIRED=false
+UNIT_PROPERTY_LOOKUP_FIELD=
+PROPERTY_UNIT_MAP_JSON={}
+ZOHO_CRM_FIELD_MAP_JSON={}
+```
+
+`PROPERTY_UNIT_MAP_JSON` is now only a fallback. The preferred long-term routing source is the CRM Units module using `Zillow_Listing_ID`, `Zillow_Provider_Model_ID`, `Zillow_Listing_Contact_Prefix`, and `Zillow_Routing_Unit_Key` on each Unit record.
+
+If the Units module has a lookup field back to the Properties/Accounts module, put that field's API name in `UNIT_PROPERTY_LOOKUP_FIELD`. If left blank, the function can still populate `Requested Unit`, but `Requested Property` will only populate when the matched Unit record exposes a supported Property lookup.
+
+## Optional Intake Event Log And CRM Triggers
+
+```text
 ZOHO_CRM_INTAKE_EVENTS_MODULE=Zillow_Intake_Events
 ENABLE_CRM_INTAKE_EVENT_LOG=false
 ENABLE_DRY_RUN_CRM_AUDIT_LOG=false
@@ -89,8 +104,6 @@ The intake service sets `Zillow_Intake_Status` to `Routing Matched` or `Routing 
 ```text
 LEAD_DUPLICATE_CHECK_FIELDS=Zillow_Lead_Key
 INTAKE_EVENT_DUPLICATE_CHECK_FIELDS=External_Event_Key
-PROPERTY_UNIT_MAP_JSON={}
-ZOHO_CRM_FIELD_MAP_JSON={}
 ```
 
 Use `ZOHO_CRM_FIELD_MAP_JSON` only when actual Zoho CRM API names differ from the verified names documented in `README.md`.
