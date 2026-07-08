@@ -12,6 +12,7 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Updated PowerShell guidance to use direct variable assignment instead of `Read-Host` when pasting multi-line test blocks.
 - Added complete Development and Production Catalyst variable blocks, including the temporary protected health-check variables.
 - Added a desktop-first deployment policy that distinguishes GitHub/local code updates, Catalyst ZIP uploads, Catalyst variable restarts, and optional Catalyst CLI deployment.
+- Clarified that Catalyst CLI/code uploads are development-first and that Production still requires a successful Catalyst production migration/deploy step.
 
 ## 2026-07-07
 
