@@ -160,7 +160,9 @@ Development: GATEWAY_VERSION=dev-2026-07-08
 Production: GATEWAY_VERSION=prod-2026-07-08
 ```
 
-Then restart or redeploy that same environment and run this using the Catalyst **Invocation URL** copied from the function Overview screen:
+Catalyst may reject `GET` at the serverless gateway before the Advanced I/O handler is reached. Use a `POST` health probe from PowerShell; the root handler maps `POST /health` to the protected internal health route.
+
+After deploying the latest code and target environment variables, run this using the Catalyst **Invocation URL** copied from the function Overview screen:
 
 ```powershell
 $functionBaseUrl = "https://<actual-catalyst-domain>/server/Zillow-Lead-Intake/"
@@ -175,9 +177,10 @@ Write-Host "Testing health endpoint:"
 Write-Host $healthEndpoint
 
 Invoke-RestMethod `
-  -Method Get `
+  -Method Post `
   -Uri $healthEndpoint `
-  -Headers @{ "x-gh-health-token" = $healthToken }
+  -Headers @{ "x-gh-health-token" = $healthToken } `
+  -Body ""
 ```
 
 Expected Production response includes:
@@ -261,6 +264,7 @@ Routing warnings belong in `Description`, not separate manual review fields.
 |---|---|
 | `Cannot convert value "https://<your-catalyst-domain>/health" to type System.Uri` | Replace the placeholder with the actual Catalyst endpoint URL from the target environment. |
 | Health URL contains `: $healthToken = Read-Host` or another command | Stop using `Read-Host` in pasted blocks. Clear the variables and use direct assignment. |
+| Health `GET` returns `INVALID_REQUEST_METHOD` | Use the documented `POST` health probe and deploy the latest root handler. |
 | Catalyst website migration fails | Open the failed migration details and capture the exact error. Do not restart the whole project. |
 | Catalyst file list looks flat, with `docs\...` and `src\...` paths | This is usually just the UI showing paths in a flat list. Confirm `index.js`, `package.json`, and `src\index.js` exist. |
 | `mode=dry_run` after Production is supposed to be live | Confirm you are testing the Production URL, then confirm Production runtime variables and restart/redeploy Production. |
