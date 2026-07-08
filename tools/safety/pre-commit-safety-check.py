@@ -82,6 +82,8 @@ SAFE_SECRET_VALUE_PREFIXES = (
     "$",
     "{{",
     "[",
+    "paste_",
+    "replace_",
     "config.",
     "process.env",
     "env(",
