@@ -98,8 +98,8 @@ Before live mode, create or confirm these CRM fields in the Leads module.
 | Phone | `Phone` | Standard phone | Only populated when a separate secondary/alternate phone value is present. |
 | Lead Source | `Lead_Source` | Standard picklist | Use `Zillow`. |
 | Lead Status | `Lead_Status` | Standard picklist | Use `New Zillow Inquiry` for new intake. |
-| Requested Property | `Requested_Property` | Lookup to Properties/Accounts | Optional lookup from `PROPERTY_UNIT_MAP_JSON`. |
-| Requested Unit | `Requested_Unit` | Lookup to Units | Optional lookup from `PROPERTY_UNIT_MAP_JSON`. |
+| Requested Property | `Requested_Property` | Lookup to Properties/Accounts | Optional lookup from `PROPERTY_UNIT_MAP_JSON` or the matched CRM Unit. |
+| Requested Unit | `Requested_Unit` | Lookup to Units | Optional lookup from `PROPERTY_UNIT_MAP_JSON` or the matched CRM Unit. |
 | Requested Move-In Date | `Requested_Move_In_Date` | Date | Zillow `movingDate`. |
 | Inquiry Message | `Inquiry_Message` | Multi Line Large | Zillow `message` plus optional `introduction`. |
 | Zillow Renter Profile Summary | `Zillow_Renter_Profile_Summary` | Multi Line Large | Summary of optional renter profile fields. |
@@ -118,12 +118,18 @@ Before live mode, create or confirm these CRM fields in the Leads module.
 | Zillow Listing Postal Code | `Zillow_Listing_Postal_Code` | Single line | Zillow `listingPostalCode`; keep as text, not number. |
 | Zillow Listing Contact Email | `Zillow_Listing_Contact_Email` | Email | Zillow `listingContactEmail`. |
 | Zillow Source Payload Hash | `Zillow_Source_Payload_Hash` | Single line | SHA-256 hash of the raw callback body for troubleshooting. |
-| Zillow Received At | `Zillow_Received_At` | Date-time | Endpoint receive time. |
-| Last Zillow Sync At | `Last_Zillow_Sync_At` | Date-time | Updated on every successful callback/upsert. |
+| Zillow Received At | `Zillow_Received_At` | Date-time | Endpoint receive time. Formatted for Zoho CRM as `YYYY-MM-DDTHH:mm:ss+00:00` by the root Catalyst entrypoint. |
+| Last Zillow Sync At | `Last_Zillow_Sync_At` | Date-time | Updated on every successful callback/upsert. Formatted for Zoho CRM as `YYYY-MM-DDTHH:mm:ss+00:00` by the root Catalyst entrypoint. |
 | Zillow Intake Status | `Zillow_Intake_Status` | Picklist | Technical intake/routing status. |
 | Zillow Raw Field Keys | `Zillow_Raw_Field_Keys` | Multi Line Large | Field names received, not raw private values. |
 | Zillow Raw Payload Stored | `Zillow_Raw_Payload_Stored` | Checkbox | Set to false unless raw payloads are stored in an approved secure system. |
 | Description | `Description` | Standard long text | Sanitized summary, Zillow profile details, and routing warnings. |
+
+### Timestamp Formatting Note
+
+`Zillow_Received_At` and `Last_Zillow_Sync_At` are GH Real Estate audit fields, not Zillow payload fields. Manual diagnostics showed that Zoho CRM rejected JavaScript's default millisecond UTC timestamp shape, such as `2026-07-08T19:09:13.826Z`, while accepting offset timestamps. The root Catalyst entrypoint (`index.js`) formats the runtime timestamps to `YYYY-MM-DDTHH:mm:ss+00:00` before `src/index.js` builds the Zoho CRM upsert payload.
+
+Do **not** remove these fields from the CRM layout. They should remain visible under Zillow Routing for auditability.
 
 Do **not** create Phase 2 fields for `Manual_Review_Required`, `Manual_Review_Reason`, `Desired_Rent`, or `Desired_Deposit`. Manual review is a business action, not a Zillow-intake field, and rent/deposit must come from GH Real Estate's approved property/unit/lease records.
 
