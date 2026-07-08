@@ -18,6 +18,7 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Recorded that Catalyst migration succeeded after reconstructing the uploaded bundle as real `docs/`, `src/`, `samples/`, and `test/` folders in the web editor instead of flat path-name files.
 - Expanded live upsert troubleshooting to distinguish Zoho Accounts refresh-token failures, CRM Units search failures, and CRM Leads upsert failures after logs showed `zoho_request_failed`.
 - Allowed PowerShell variable references such as `$refreshToken` and `$clientSecret` in the repository safety scan so diagnostic docs do not fail CI as false-positive literal secret assignments.
+- Disabled Zoho cadence-skip payloads for Zillow intake by setting `SKIP_CADENCES_ON_INSERT=false` and `SKIP_CADENCES_ON_UPDATE=false` in docs and forcing both values off in the root Catalyst entrypoint.
 
 ## 2026-07-07
 
