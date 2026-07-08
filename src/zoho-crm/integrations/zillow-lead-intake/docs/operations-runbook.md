@@ -21,16 +21,20 @@
 Use this source order:
 
 ```text
-GitHub main branch -> local Windows folder -> Zoho Catalyst Production function
+GitHub main branch -> local Windows folder -> Zoho Catalyst Development -> Zoho Catalyst Production
 ```
 
 Do not edit source code manually inside the Catalyst browser editor. Browser edits cause GitHub and Catalyst to drift apart.
 
-For non-developer operation, the preferred deployment path is:
+For non-developer operation, the practical deployment path is:
 
 ```text
-PowerShell: git pull + npm run ci + create ZIP -> Catalyst website: upload ZIP to Production -> health test
+PowerShell: git pull + npm run ci + create ZIP -> Catalyst website: upload ZIP to Development -> Catalyst migration to Production -> health test
 ```
+
+Important: Catalyst CLI and most code-upload workflows update the Development environment first. The Production environment is updated only after the project is successfully deployed/migrated to Production.
+
+If the Production migration fails, do not restart the whole project. Open the failed migration details, capture the specific error, fix that one deployment blocker, and run the Production migration again.
 
 A Catalyst website migration/redeploy without uploading the latest ZIP may only redeploy whatever code Catalyst already has. It does not automatically pull from GitHub.
 
@@ -56,9 +60,9 @@ Compress-Archive `
 Get-Item ".\zillow-lead-intake-deploy.zip"
 ```
 
-Then upload `zillow-lead-intake-deploy.zip` in the Catalyst website while the top-right environment selector is set to **Production**.
+Then upload `zillow-lead-intake-deploy.zip` in the Catalyst website while the top-right environment selector is set to **Development**. After the Development upload succeeds, use Catalyst's migration/deploy-to-production flow to promote the change to **Production**.
 
-If the Catalyst website migration fails in Development, do not keep trying Development while production troubleshooting is active. Production and Development are separate environments. Fix Production first using the Production function URL and Production runtime variables.
+If the Catalyst website migration fails, open the failed migration details instead of guessing. The next action depends on the exact error text.
 
 ## Optional Catalyst CLI Deployment
 
@@ -73,9 +77,9 @@ catalyst --help
 
 If the CLI is not installed or the command is not recognized, install and authenticate the Zoho Catalyst CLI according to Zoho's current official documentation, then run `catalyst --help` again.
 
-Do not run a CLI deploy until the CLI clearly shows the target project and target environment. If the CLI asks to initialize or select a project, select the `Zillow-Lead-Intake` Catalyst project and confirm the target environment before continuing.
+Do not run a CLI deploy until the CLI clearly shows the target project. If the CLI asks to initialize or select a project, select the `Zillow-Lead-Intake` Catalyst project.
 
-When CLI deployment is configured, the intended flow is:
+When CLI deployment is configured, the intended development deploy flow is:
 
 ```powershell
 cd "C:\Users\Admin\Documents\gh-real-estate-ops-code\src\zoho-crm\integrations\zillow-lead-intake"
@@ -83,6 +87,8 @@ git pull origin main
 npm run ci
 catalyst deploy
 ```
+
+After a CLI deploy, still use Catalyst's production deployment/migration flow to push the tested Development code into Production. CLI deploy alone should not be treated as proof that Production changed.
 
 If `catalyst deploy` reports that no project is linked, the folder is not ready for CLI deployment. Use the Desktop ZIP deployment steps instead, or initialize/link the folder deliberately before deploying.
 
@@ -255,7 +261,7 @@ Routing warnings belong in `Description`, not separate manual review fields.
 |---|---|
 | `Cannot convert value "https://<your-catalyst-domain>/health" to type System.Uri` | Replace the placeholder with the actual Catalyst endpoint URL from the target environment. |
 | Health URL contains `: $healthToken = Read-Host` or another command | Stop using `Read-Host` in pasted blocks. Clear the variables and use direct assignment. |
-| Catalyst website migration fails in Development | Stop testing Development for now. Upload/redeploy Production and test the Production health URL. |
+| Catalyst website migration fails | Open the failed migration details and capture the exact error. Do not restart the whole project. |
 | Catalyst file list looks flat, with `docs\...` and `src\...` paths | This is usually just the UI showing paths in a flat list. Confirm `index.js`, `package.json`, and `src\index.js` exist. |
 | `mode=dry_run` after Production is supposed to be live | Confirm you are testing the Production URL, then confirm Production runtime variables and restart/redeploy Production. |
 | `live_mode_disabled` | Set `LIVE_MODE_ENABLED=true` in the target Catalyst environment. |
