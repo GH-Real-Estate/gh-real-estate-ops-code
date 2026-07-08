@@ -20,6 +20,7 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Allowed PowerShell variable references such as `$refreshToken` and `$clientSecret` in the repository safety scan so diagnostic docs do not fail CI as false-positive literal secret assignments.
 - Disabled Zoho cadence-skip payloads for Zillow intake by setting `SKIP_CADENCES_ON_INSERT=false` and `SKIP_CADENCES_ON_UPDATE=false` in docs and forcing both values off in the root Catalyst entrypoint.
 - Replaced the temporary omission of `Zillow_Received_At` and `Last_Zillow_Sync_At` with a root Date formatting patch that converts JavaScript millisecond UTC timestamps to Zoho-friendly offset timestamps before loading the implementation.
+- Documented the timestamp formatting behavior in the Zillow intake README so the audit-field handling is visible outside the root Catalyst entrypoint.
 
 ## 2026-07-07
 
