@@ -7,6 +7,7 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Updated Zillow lead intake runtime docs to separate Catalyst Development dry-run settings from Production live settings.
 - Set the Catalyst root entrypoint to default the verified GH Real Estate CRM Units module API name to `Units` before loading the intake implementation.
 - Updated environment variable documentation to use `ZOHO_CRM_UNITS_MODULE=Units` and `UNIT_PROPERTY_LOOKUP_FIELD=Property`.
+- Added health-check runbook guidance that explicitly says to replace angle-bracket placeholders with real Catalyst endpoint and token values before running PowerShell tests.
 
 ## 2026-07-07
 
