@@ -14,6 +14,12 @@
 // builds its CONFIG object at require-time.
 process.env.ZOHO_CRM_UNITS_MODULE = process.env.ZOHO_CRM_UNITS_MODULE || 'Units';
 
+// Current manual Zoho CRM upsert diagnostics pass without `skip_feature_execution`.
+// Keep cadence-skip payloads disabled for Zillow intake unless we later verify
+// Zoho accepts them for this org/API version.
+process.env.SKIP_CADENCES_ON_INSERT = 'false';
+process.env.SKIP_CADENCES_ON_UPDATE = 'false';
+
 let cachedHandler;
 
 module.exports = function zillowLeadIntakeRootHandler(req, res) {
