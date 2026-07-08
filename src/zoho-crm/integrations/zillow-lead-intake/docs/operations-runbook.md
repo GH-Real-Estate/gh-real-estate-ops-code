@@ -27,6 +27,69 @@ Production: live only after explicit approval and smoke testing
 
 Do not set both environments to live as a normal operating mode. If Development is temporarily made live for an internal smoke test, revert it immediately after the test.
 
+## Placeholder Rule
+
+Commands in this runbook use angle-bracket placeholders such as `<your-catalyst-domain>`, `<runtime secret>`, and `<your-health-token>`.
+
+Do not paste those placeholders literally into PowerShell. Replace them with real values from the target Catalyst environment before running the command.
+
+Bad:
+
+```powershell
+$healthEndpoint = "https://<your-catalyst-domain>/health"
+```
+
+Good:
+
+```powershell
+$healthEndpoint = "https://<actual-production-catalyst-domain>/health"
+```
+
+The same rule applies to every token, key, client ID, client secret, refresh token, and endpoint URL.
+
+## Health Check Test
+
+Temporarily enable the protected health route in the target Catalyst environment:
+
+```text
+ENABLE_HEALTH=true
+HEALTH_HEADER_NAME=x-gh-health-token
+HEALTH_CHECK_TOKEN=<runtime health token>
+```
+
+Use distinct gateway versions so the response proves which environment is being hit:
+
+```text
+Development: GATEWAY_VERSION=dev-2026-07-08
+Production: GATEWAY_VERSION=prod-2026-07-08
+```
+
+Then restart or redeploy that same environment and run:
+
+```powershell
+$healthEndpoint = "https://<actual-catalyst-domain>/health"
+$healthToken = "<actual-health-token>"
+
+Invoke-RestMethod `
+  -Method Get `
+  -Uri $healthEndpoint `
+  -Headers @{ "x-gh-health-token" = $healthToken }
+```
+
+Expected Production response includes:
+
+```json
+{
+  "ok": true,
+  "service": "gh-zillow-lead-intake",
+  "version": "prod-2026-07-08",
+  "mode": "live",
+  "crm_target_module": "Leads"
+}
+```
+
+If the response says `dev-...` or `mode=dry_run`, the request is not hitting the intended live Production runtime.
+
 ## Zillow Configuration To Request
 
 ```text
@@ -92,6 +155,7 @@ Routing warnings belong in `Description`, not separate manual review fields.
 
 | Failure | Action |
 |---|---|
+| `Cannot convert value "https://<your-catalyst-domain>/health" to type System.Uri` | Replace the placeholder with the actual Catalyst endpoint URL from the target environment. |
 | `mode=dry_run` after Production is supposed to be live | Confirm you are testing the Production URL, then confirm Production runtime variables and restart/redeploy Production. |
 | `live_mode_disabled` | Set `LIVE_MODE_ENABLED=true` in the target Catalyst environment. |
 | `live_mode_confirmation_missing` | Set exact `LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED` in the target Catalyst environment. |
