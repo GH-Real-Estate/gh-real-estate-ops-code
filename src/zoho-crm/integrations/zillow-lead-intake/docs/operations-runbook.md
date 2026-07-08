@@ -16,6 +16,76 @@
 12. Ask Zillow to configure the endpoint in test mode and send a test callback.
 13. Switch Catalyst Production to live mode only after a Zillow dry-run sample has no field errors and routing is understood.
 
+## Deployment Policy
+
+Use this source order:
+
+```text
+GitHub main branch -> local Windows folder -> Zoho Catalyst Production function
+```
+
+Do not edit source code manually inside the Catalyst browser editor. Browser edits cause GitHub and Catalyst to drift apart.
+
+For non-developer operation, the preferred deployment path is:
+
+```text
+PowerShell: git pull + npm run ci + create ZIP -> Catalyst website: upload ZIP to Production -> health test
+```
+
+A Catalyst website migration/redeploy without uploading the latest ZIP may only redeploy whatever code Catalyst already has. It does not automatically pull from GitHub.
+
+Catalyst may display files as `docs\file.md` or `src\index.js` in a flat list. That does not by itself mean the ZIP is broken. The important check is that `index.js`, `package.json`, `catalyst-config.json`, and `src\index.js` are visible in the uploaded function.
+
+## Desktop ZIP Deployment Steps
+
+Run these commands from the local function folder:
+
+```powershell
+cd "C:\Users\Admin\Documents\gh-real-estate-ops-code\src\zoho-crm\integrations\zillow-lead-intake"
+
+git pull origin main
+npm run ci
+
+Remove-Item ".\zillow-lead-intake-deploy.zip" -Force -ErrorAction SilentlyContinue
+
+Compress-Archive `
+  -Path ".\package.json", ".\index.js", ".\catalyst-config.json", ".\src", ".\docs", ".\samples", ".\test", ".\README.md", ".\install-checklist.md", ".\test-cases.md" `
+  -DestinationPath ".\zillow-lead-intake-deploy.zip" `
+  -Force
+
+Get-Item ".\zillow-lead-intake-deploy.zip"
+```
+
+Then upload `zillow-lead-intake-deploy.zip` in the Catalyst website while the top-right environment selector is set to **Production**.
+
+If the Catalyst website migration fails in Development, do not keep trying Development while production troubleshooting is active. Production and Development are separate environments. Fix Production first using the Production function URL and Production runtime variables.
+
+## Optional Catalyst CLI Deployment
+
+CLI deployment is acceptable only after the local folder has been linked to the correct Catalyst project and the command is verified on the machine.
+
+Use this preflight before any CLI deploy:
+
+```powershell
+catalyst --version
+catalyst --help
+```
+
+If the CLI is not installed or the command is not recognized, install and authenticate the Zoho Catalyst CLI according to Zoho's current official documentation, then run `catalyst --help` again.
+
+Do not run a CLI deploy until the CLI clearly shows the target project and target environment. If the CLI asks to initialize or select a project, select the `Zillow-Lead-Intake` Catalyst project and confirm the target environment before continuing.
+
+When CLI deployment is configured, the intended flow is:
+
+```powershell
+cd "C:\Users\Admin\Documents\gh-real-estate-ops-code\src\zoho-crm\integrations\zillow-lead-intake"
+git pull origin main
+npm run ci
+catalyst deploy
+```
+
+If `catalyst deploy` reports that no project is linked, the folder is not ready for CLI deployment. Use the Desktop ZIP deployment steps instead, or initialize/link the folder deliberately before deploying.
+
 ## Catalyst Environment Rule
 
 Development and Production must be treated as separate runtime environments.
@@ -185,6 +255,8 @@ Routing warnings belong in `Description`, not separate manual review fields.
 |---|---|
 | `Cannot convert value "https://<your-catalyst-domain>/health" to type System.Uri` | Replace the placeholder with the actual Catalyst endpoint URL from the target environment. |
 | Health URL contains `: $healthToken = Read-Host` or another command | Stop using `Read-Host` in pasted blocks. Clear the variables and use direct assignment. |
+| Catalyst website migration fails in Development | Stop testing Development for now. Upload/redeploy Production and test the Production health URL. |
+| Catalyst file list looks flat, with `docs\...` and `src\...` paths | This is usually just the UI showing paths in a flat list. Confirm `index.js`, `package.json`, and `src\index.js` exist. |
 | `mode=dry_run` after Production is supposed to be live | Confirm you are testing the Production URL, then confirm Production runtime variables and restart/redeploy Production. |
 | `live_mode_disabled` | Set `LIVE_MODE_ENABLED=true` in the target Catalyst environment. |
 | `live_mode_confirmation_missing` | Set exact `LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED` in the target Catalyst environment. |
