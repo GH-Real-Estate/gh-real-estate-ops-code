@@ -17,6 +17,7 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Added root-entrypoint startup diagnostics so module-load failures return JSON instead of an empty Catalyst 500 when the latest code is deployed.
 - Recorded that Catalyst migration succeeded after reconstructing the uploaded bundle as real `docs/`, `src/`, `samples/`, and `test/` folders in the web editor instead of flat path-name files.
 - Expanded live upsert troubleshooting to distinguish Zoho Accounts refresh-token failures, CRM Units search failures, and CRM Leads upsert failures after logs showed `zoho_request_failed`.
+- Allowed PowerShell variable references such as `$refreshToken` and `$clientSecret` in the repository safety scan so diagnostic docs do not fail CI as false-positive literal secret assignments.
 
 ## 2026-07-07
 
