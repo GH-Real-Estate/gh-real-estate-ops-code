@@ -14,31 +14,35 @@
 // builds its CONFIG object at require-time.
 process.env.ZOHO_CRM_UNITS_MODULE = process.env.ZOHO_CRM_UNITS_MODULE || 'Units';
 
-const handler = require('./src/index');
+let cachedHandler;
 
 module.exports = function zillowLeadIntakeRootHandler(req, res) {
   normalizeCatalystFunctionUrl(req);
   normalizeCatalystHealthMethod(req);
+
+  let handler;
+  try {
+    handler = getHandler();
+  } catch (error) {
+    return writeStartupError(res, error);
+  }
 
   return Promise.resolve(handler(req, res)).catch((error) => {
     console.error(JSON.stringify({
       level: 'error',
       service: 'gh-zillow-lead-intake',
       error: 'unhandled_root_error',
-      detail: String(error && error.message ? error.message : error).slice(0, 500)
+      detail: safeErrorDetail(error)
     }));
 
-    if (!res.headersSent) {
-      res.writeHead(500, {
-        'content-type': 'application/json; charset=utf-8',
-        'x-content-type-options': 'nosniff',
-        'cache-control': 'no-store'
-      });
-    }
-
-    res.end(JSON.stringify({ ok: false, error: 'internal_error' }));
+    return writeJson(res, 500, { ok: false, error: 'internal_error' });
   });
 };
+
+function getHandler() {
+  if (!cachedHandler) cachedHandler = require('./src/index');
+  return cachedHandler;
+}
 
 function normalizeCatalystFunctionUrl(req) {
   if (!req || typeof req.url !== 'string') return;
@@ -65,4 +69,42 @@ function normalizeCatalystHealthMethod(req) {
   if (String(req.method || '').toUpperCase() === 'POST' && req.url === '/health') {
     req.method = 'GET';
   }
+}
+
+function writeStartupError(res, error) {
+  console.error(JSON.stringify({
+    level: 'error',
+    service: 'gh-zillow-lead-intake',
+    error: 'startup_error',
+    detail: safeErrorDetail(error)
+  }));
+
+  return writeJson(res, 500, {
+    ok: false,
+    error: 'startup_error',
+    detail: safeErrorDetail(error)
+  });
+}
+
+function writeJson(res, statusCode, body) {
+  const payload = JSON.stringify(body);
+
+  if (res && typeof res.setHeader === 'function') {
+    res.setHeader('content-type', 'application/json; charset=utf-8');
+    res.setHeader('x-content-type-options', 'nosniff');
+    res.setHeader('cache-control', 'no-store');
+  }
+
+  if (res && typeof res.writeHead === 'function' && !res.headersSent) {
+    res.writeHead(statusCode);
+  } else if (res) {
+    res.statusCode = statusCode;
+  }
+
+  if (res && typeof res.end === 'function') return res.end(payload);
+  return payload;
+}
+
+function safeErrorDetail(error) {
+  return String(error && error.message ? error.message : error).slice(0, 500);
 }
