@@ -29,7 +29,7 @@ Do not set both environments to live as a normal operating mode. If Development 
 
 ## Placeholder Rule
 
-Commands in this runbook use angle-bracket placeholders such as `<your-catalyst-domain>`, `<runtime secret>`, and `<your-health-token>`.
+Commands in this runbook use angle-bracket placeholders such as `<your-catalyst-invocation-url>`, `<runtime secret>`, and `<your-health-token>`.
 
 Do not paste those placeholders literally into PowerShell. Replace them with real values from the target Catalyst environment before running the command.
 
@@ -42,10 +42,30 @@ $healthEndpoint = "https://<your-catalyst-domain>/health"
 Good:
 
 ```powershell
-$healthEndpoint = "https://<actual-production-catalyst-domain>/health"
+$healthEndpoint = "https://zillow-lead-intake-000000000.catalystserverless.com/server/Zillow-Lead-Intake/health"
 ```
 
 The same rule applies to every token, key, client ID, client secret, refresh token, and endpoint URL.
+
+## PowerShell Paste Rule
+
+When pasting a multi-line block, prefer direct variable assignment over `Read-Host`.
+
+Bad for pasted blocks:
+
+```powershell
+$leadEndpoint = Read-Host "https://actual-catalyst-url/server/Zillow-Lead-Intake/"
+$healthToken = Read-Host "actual-token"
+```
+
+`Read-Host` treats the quoted text as the prompt and then waits for input. If several lines are pasted at once, PowerShell may accidentally store the next command as the value.
+
+Good for pasted blocks:
+
+```powershell
+$functionBaseUrl = "https://actual-catalyst-url/server/Zillow-Lead-Intake/"
+$healthToken = "actual-token"
+```
 
 ## Health Check Test
 
@@ -64,11 +84,19 @@ Development: GATEWAY_VERSION=dev-2026-07-08
 Production: GATEWAY_VERSION=prod-2026-07-08
 ```
 
-Then restart or redeploy that same environment and run:
+Then restart or redeploy that same environment and run this using the Catalyst **Invocation URL** copied from the function Overview screen:
 
 ```powershell
-$healthEndpoint = "https://<actual-catalyst-domain>/health"
+$functionBaseUrl = "https://<actual-catalyst-domain>/server/Zillow-Lead-Intake/"
 $healthToken = "<actual-health-token>"
+
+$functionBaseUrl = $functionBaseUrl.Trim()
+if (-not $functionBaseUrl.EndsWith("/")) { $functionBaseUrl += "/" }
+
+$healthEndpoint = $functionBaseUrl + "health"
+
+Write-Host "Testing health endpoint:"
+Write-Host $healthEndpoint
 
 Invoke-RestMethod `
   -Method Get `
@@ -93,7 +121,7 @@ If the response says `dev-...` or `mode=dry_run`, the request is not hitting the
 ## Zillow Configuration To Request
 
 ```text
-Endpoint: <Catalyst Production HTTPS URL>/zillow/leads
+Endpoint: <Catalyst Production Invocation URL>zillow/leads
 Method: POST
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 Security: static header x-gh-zillow-webhook-key
@@ -106,7 +134,7 @@ Do not send runtime secrets in plain email or commit them to GitHub.
 
 ```bash
 curl -i \
-  -X POST "https://<your-catalyst-domain>/zillow/leads" \
+  -X POST "https://<actual-catalyst-domain>/server/Zillow-Lead-Intake/zillow/leads" \
   -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" \
   -H "x-gh-zillow-webhook-key: <runtime secret>" \
   --data-binary @samples/zillow-lead.sample.urlencoded
@@ -156,6 +184,7 @@ Routing warnings belong in `Description`, not separate manual review fields.
 | Failure | Action |
 |---|---|
 | `Cannot convert value "https://<your-catalyst-domain>/health" to type System.Uri` | Replace the placeholder with the actual Catalyst endpoint URL from the target environment. |
+| Health URL contains `: $healthToken = Read-Host` or another command | Stop using `Read-Host` in pasted blocks. Clear the variables and use direct assignment. |
 | `mode=dry_run` after Production is supposed to be live | Confirm you are testing the Production URL, then confirm Production runtime variables and restart/redeploy Production. |
 | `live_mode_disabled` | Set `LIVE_MODE_ENABLED=true` in the target Catalyst environment. |
 | `live_mode_confirmation_missing` | Set exact `LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED` in the target Catalyst environment. |
