@@ -15,6 +15,8 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Clarified that Catalyst CLI/code uploads are development-first and that Production still requires a successful Catalyst production migration/deploy step.
 - Added support and runbook instructions for a `POST /health` probe because some Catalyst function invocation URLs reject `GET` before the Advanced I/O handler runs.
 - Added root-entrypoint startup diagnostics so module-load failures return JSON instead of an empty Catalyst 500 when the latest code is deployed.
+- Recorded that Catalyst migration succeeded after reconstructing the uploaded bundle as real `docs/`, `src/`, `samples/`, and `test/` folders in the web editor instead of flat path-name files.
+- Expanded live upsert troubleshooting to distinguish Zoho Accounts refresh-token failures, CRM Units search failures, and CRM Leads upsert failures after logs showed `zoho_request_failed`.
 
 ## 2026-07-07
 
