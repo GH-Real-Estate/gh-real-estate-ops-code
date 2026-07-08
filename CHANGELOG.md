@@ -2,6 +2,12 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-08
+
+- Updated Zillow lead intake runtime docs to separate Catalyst Development dry-run settings from Production live settings.
+- Set the Catalyst root entrypoint to default the verified GH Real Estate CRM Units module API name to `Units` before loading the intake implementation.
+- Updated environment variable documentation to use `ZOHO_CRM_UNITS_MODULE=Units` and `UNIT_PROPERTY_LOOKUP_FIELD=Property`.
+
 ## 2026-07-07
 
 - Hardened Zillow Rentals lead intake for Zoho Catalyst Advanced I/O.
