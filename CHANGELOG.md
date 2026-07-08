@@ -14,6 +14,7 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Added a desktop-first deployment policy that distinguishes GitHub/local code updates, Catalyst ZIP uploads, Catalyst variable restarts, and optional Catalyst CLI deployment.
 - Clarified that Catalyst CLI/code uploads are development-first and that Production still requires a successful Catalyst production migration/deploy step.
 - Added support and runbook instructions for a `POST /health` probe because some Catalyst function invocation URLs reject `GET` before the Advanced I/O handler runs.
+- Added root-entrypoint startup diagnostics so module-load failures return JSON instead of an empty Catalyst 500 when the latest code is deployed.
 
 ## 2026-07-07
 
