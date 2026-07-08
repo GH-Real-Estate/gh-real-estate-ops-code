@@ -20,6 +20,16 @@ process.env.ZOHO_CRM_UNITS_MODULE = process.env.ZOHO_CRM_UNITS_MODULE || 'Units'
 process.env.SKIP_CADENCES_ON_INSERT = 'false';
 process.env.SKIP_CADENCES_ON_UPDATE = 'false';
 
+// Manual diagnostics show Zoho rejects the function-shaped DateTime values.
+// Temporarily omit these non-critical audit DateTime fields from live upserts
+// until the implementation formats them with a Zoho-accepted offset timestamp.
+mergeJsonEnv('ZOHO_CRM_FIELD_MAP_JSON', {
+  lead: {
+    zillowReceivedAt: '',
+    lastZillowSyncAt: ''
+  }
+});
+
 let cachedHandler;
 
 module.exports = function zillowLeadIntakeRootHandler(req, res) {
@@ -48,6 +58,33 @@ module.exports = function zillowLeadIntakeRootHandler(req, res) {
 function getHandler() {
   if (!cachedHandler) cachedHandler = require('./src/index');
   return cachedHandler;
+}
+
+function mergeJsonEnv(name, override) {
+  let current = {};
+  const raw = String(process.env[name] || '').trim();
+
+  if (raw) {
+    try {
+      current = JSON.parse(raw);
+    } catch (_) {
+      current = {};
+    }
+  }
+
+  process.env[name] = JSON.stringify(deepMerge(current, override));
+}
+
+function deepMerge(base, override) {
+  const output = { ...(base || {}) };
+
+  for (const [key, value] of Object.entries(override || {})) {
+    output[key] = value && typeof value === 'object' && !Array.isArray(value)
+      ? deepMerge(output[key] || {}, value)
+      : value;
+  }
+
+  return output;
 }
 
 function normalizeCatalystFunctionUrl(req) {
