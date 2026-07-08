@@ -17,6 +17,8 @@ process.env.ZOHO_CRM_UNITS_MODULE = process.env.ZOHO_CRM_UNITS_MODULE || 'Units'
 const handler = require('./src/index');
 
 module.exports = function zillowLeadIntakeRootHandler(req, res) {
+  normalizeCatalystFunctionUrl(req);
+
   return Promise.resolve(handler(req, res)).catch((error) => {
     console.error(JSON.stringify({
       level: 'error',
@@ -36,3 +38,19 @@ module.exports = function zillowLeadIntakeRootHandler(req, res) {
     res.end(JSON.stringify({ ok: false, error: 'internal_error' }));
   });
 };
+
+function normalizeCatalystFunctionUrl(req) {
+  if (!req || typeof req.url !== 'string') return;
+
+  const functionName = String(process.env.CATALYST_FUNCTION_NAME || 'Zillow-Lead-Intake').trim();
+  const basePath = `/server/${functionName}`;
+
+  if (req.url === basePath || req.url === `${basePath}/`) {
+    req.url = '/';
+    return;
+  }
+
+  if (req.url.startsWith(`${basePath}/`)) {
+    req.url = req.url.slice(basePath.length) || '/';
+  }
+}
