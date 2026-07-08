@@ -10,6 +10,8 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Added health-check runbook guidance that explicitly says to replace angle-bracket placeholders with real Catalyst endpoint and token values before running PowerShell tests.
 - Normalized the Catalyst `/server/Zillow-Lead-Intake/...` invocation URL prefix before routing requests, so `/server/Zillow-Lead-Intake/health` and `/server/Zillow-Lead-Intake/zillow/leads` reach the intended internal routes.
 - Updated PowerShell guidance to use direct variable assignment instead of `Read-Host` when pasting multi-line test blocks.
+- Added complete Development and Production Catalyst variable blocks, including the temporary protected health-check variables.
+- Added a desktop-first deployment policy that distinguishes GitHub/local code updates, Catalyst ZIP uploads, Catalyst variable restarts, and optional Catalyst CLI deployment.
 
 ## 2026-07-07
 
