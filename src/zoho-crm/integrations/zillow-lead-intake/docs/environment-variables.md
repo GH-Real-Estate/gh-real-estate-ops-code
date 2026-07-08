@@ -6,7 +6,7 @@ Do not store a Zoho `access_token` as an environment variable. Access tokens are
 
 | Variable | Required | Default | Purpose |
 |---|---:|---|---|
-| `GATEWAY_VERSION` | Yes | `2026-07-07.v6` | Runtime version label surfaced in health checks. |
+| `GATEWAY_VERSION` | Yes | `2026-07-07.v7` | Runtime version label surfaced in health checks. |
 | `ALLOWED_PATHS` | Yes | `/zillow/leads` | Comma-separated POST paths accepted by the service. |
 | `MAX_BODY_BYTES` | Yes | `65536` | Rejects oversized webhook bodies. |
 | `INBOUND_BODY_TIMEOUT_MS` | Yes | `8000` | Rejects slow/incomplete request bodies. |
@@ -32,9 +32,9 @@ Do not store a Zoho `access_token` as an environment variable. Access tokens are
 | `STRICT_REPLAY_FAILURE` | No | `false` | If true, cache failure rejects webhook with 503. |
 | `REPLAY_CACHE_SEGMENT_ID` | No | blank | Optional Catalyst Cache segment ID. |
 | `REPLAY_WINDOW_SECONDS` | No | `300` | Recent duplicate cache window. |
-| `ZOHO_CLIENT_ID` | Yes for live | blank | Zoho OAuth client ID. |
-| `ZOHO_CLIENT_SECRET` | Yes for live | blank | Zoho OAuth client credential. |
-| `ZOHO_REFRESH_TOKEN` | Yes for live | blank | Zoho OAuth refresh token for CRM Leads. |
+| `ZOHO_CLIENT_ID` | Yes for live and dynamic routing | blank | Zoho OAuth client ID. |
+| `ZOHO_CLIENT_SECRET` | Yes for live and dynamic routing | blank | Zoho OAuth client credential. |
+| `ZOHO_REFRESH_TOKEN` | Yes for live and dynamic routing | blank | Zoho OAuth refresh token for CRM Leads and Units lookup. |
 | `ZOHO_ACCOUNTS_BASE_URL` | Yes | `https://accounts.zoho.com` | Zoho Accounts base URL. |
 | `ZOHO_CRM_BASE_URL` | Yes | `https://www.zohoapis.com` | Zoho CRM API base URL. |
 | `ZOHO_CRM_API_VERSION` | Yes | `v8` | CRM API version. |
@@ -42,8 +42,12 @@ Do not store a Zoho `access_token` as an environment variable. Access tokens are
 | `CRM_ALLOWED_HOST_SUFFIXES` | Yes | `zohoapis.com` | Outbound host allowlist for Zoho CRM. |
 | `OUTBOUND_TIMEOUT_MS` | Yes | `15000` | Zoho API request timeout. |
 | `ZOHO_CRM_LEADS_MODULE` | Yes | `Leads` | CRM Leads module API name. |
+| `ZOHO_CRM_UNITS_MODULE` | Yes | `CustomModule4` | CRM Units module API name. |
+| `ENABLE_DYNAMIC_UNIT_ROUTING` | Yes | `true` | Searches CRM Units using the Zillow routing fields on each Unit record. |
+| `DYNAMIC_UNIT_ROUTING_REQUIRED` | No | `false` | If true, a CRM Unit search failure rejects the callback instead of accepting the lead as unmatched. |
+| `UNIT_PROPERTY_LOOKUP_FIELD` | No | blank | API name of the lookup from Units back to Properties/Accounts, if present. |
 | `LEAD_DUPLICATE_CHECK_FIELDS` | Yes | `Zillow_Lead_Key` | Unique lead key. Create and mark this field unique. |
-| `PROPERTY_UNIT_MAP_JSON` | No | `{}` | Maps Zillow listing/address/contact-email routing keys to CRM Property and Unit record IDs. |
+| `PROPERTY_UNIT_MAP_JSON` | No | `{}` | Legacy/fallback static routing map. Leave `{}` when using Unit-based routing. |
 | `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. Leave `{}` if the verified CRM API names match the README. |
 | `ENABLE_CRM_INTAKE_EVENT_LOG` | No | `false` | Writes optional audit events to a custom CRM module. |
 | `ENABLE_DRY_RUN_CRM_AUDIT_LOG` | No | `false` | Allows dry-run audit-event writes without creating Leads. |
@@ -58,7 +62,26 @@ Do not store a Zoho `access_token` as an environment variable. Access tokens are
 | `DEFAULT_LEAD_STATUS` | Yes | `New Zillow Inquiry` | Default Lead Status. |
 | `DEBUG_ERRORS` | No | `false` | Adds sanitized error detail to server logs only. |
 
-## Property/Unit Map Example
+## Preferred Unit-Based Routing
+
+The long-term routing source is the CRM Units module. Populate these Unit fields as Zillow data becomes available:
+
+| Unit field | API name | Use |
+|---|---|---|
+| Zillow Listing ID | `Zillow_Listing_ID` | Strongest key when Zillow provides the real listing ID. |
+| Zillow Provider Model ID | `Zillow_Provider_Model_ID` | Useful for multifamily model/floorplan routing when meaningful. |
+| Zillow Listing Contact Prefix | `Zillow_Listing_Contact_Prefix` | Prefix before `@` in the listing contact email. Useful if Zillow triggers by email domain. |
+| Zillow Routing Unit Key | `Zillow_Routing_Unit_Key` | Fallback key built from `listingStreet|listingUnit|listingCity|listingState|listingPostalCode`. |
+
+Example `Zillow_Routing_Unit_Key`:
+
+```text
+9401 nieman road|unit 3|overland park|ks|66214
+```
+
+## Legacy Static Map Fallback
+
+Use this only for temporary testing or one-off exceptions:
 
 ```json
 {
@@ -67,19 +90,11 @@ Do not store a Zoho `access_token` as an environment variable. Access tokens are
     "unitId": "2222222222222222222",
     "propertyName": "9401 Nieman Rd",
     "unitName": "Unit 3"
-  },
-  "address:9401 nieman road|unit 3|overland park|ks|66214": {
-    "propertyId": "1111111111111111111",
-    "unitId": "2222222222222222222",
-    "propertyName": "9401 Nieman Rd",
-    "unitName": "Unit 3"
   }
 }
 ```
 
-Keys are normalized to lowercase letters/numbers/spaces. Listing IDs are safer than address matching when Zillow provides them.
-
-Do not put approved rent or deposit in this Zillow routing map. Rent and deposit belong to GH Real Estate property/unit/lease records and Zoho Books setup, not Zillow prospect intake.
+Do not put approved rent or deposit in routing configuration. Rent and deposit belong to GH Real Estate property/unit/lease records and Zoho Books setup, not Zillow prospect intake.
 
 ## Field Map Override Example
 
@@ -87,10 +102,11 @@ Use this only if your Zoho CRM API names differ.
 
 ```json
 {
+  "unit": {
+    "zillowRoutingUnitKey": "Custom_Zillow_Routing_Key"
+  },
   "lead": {
-    "zillowLeadKey": "GHRE_Zillow_Lead_Key",
-    "property": "GHRE_Requested_Property",
-    "unit": "GHRE_Requested_Unit"
+    "zillowLeadKey": "GHRE_Zillow_Lead_Key"
   }
 }
 ```
