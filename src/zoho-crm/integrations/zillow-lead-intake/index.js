@@ -20,15 +20,11 @@ process.env.ZOHO_CRM_UNITS_MODULE = process.env.ZOHO_CRM_UNITS_MODULE || 'Units'
 process.env.SKIP_CADENCES_ON_INSERT = 'false';
 process.env.SKIP_CADENCES_ON_UPDATE = 'false';
 
-// Manual diagnostics show Zoho rejects the function-shaped DateTime values.
-// Temporarily omit these non-critical audit DateTime fields from live upserts
-// until the implementation formats them with a Zoho-accepted offset timestamp.
-mergeJsonEnv('ZOHO_CRM_FIELD_MAP_JSON', {
-  lead: {
-    zillowReceivedAt: '',
-    lastZillowSyncAt: ''
-  }
-});
+// Manual diagnostics showed Zoho CRM rejecting JavaScript DateTime strings with
+// millisecond UTC suffixes (`YYYY-MM-DDTHH:mm:ss.sssZ`). Keep the audit fields,
+// but make the existing implementation produce Zoho-friendly offset timestamps
+// (`YYYY-MM-DDTHH:mm:ss+00:00`) before `src/index.js` is loaded.
+installZohoDateClass();
 
 let cachedHandler;
 
@@ -60,31 +56,32 @@ function getHandler() {
   return cachedHandler;
 }
 
-function mergeJsonEnv(name, override) {
-  let current = {};
-  const raw = String(process.env[name] || '').trim();
+function installZohoDateClass() {
+  if (global.__ghZohoDateClassInstalled) return;
 
-  if (raw) {
-    try {
-      current = JSON.parse(raw);
-    } catch (_) {
-      current = {};
+  const NativeDate = Date;
+
+  class GhZohoDate extends NativeDate {
+    toISOString() {
+      const raw = NativeDate.prototype.toISOString.call(this);
+      return raw.replace(/\.\d{3}Z$/, '+00:00');
+    }
+
+    static now() {
+      return NativeDate.now();
+    }
+
+    static parse(value) {
+      return NativeDate.parse(value);
+    }
+
+    static UTC(...args) {
+      return NativeDate.UTC(...args);
     }
   }
 
-  process.env[name] = JSON.stringify(deepMerge(current, override));
-}
-
-function deepMerge(base, override) {
-  const output = { ...(base || {}) };
-
-  for (const [key, value] of Object.entries(override || {})) {
-    output[key] = value && typeof value === 'object' && !Array.isArray(value)
-      ? deepMerge(output[key] || {}, value)
-      : value;
-  }
-
-  return output;
+  global.Date = GhZohoDate;
+  global.__ghZohoDateClassInstalled = true;
 }
 
 function normalizeCatalystFunctionUrl(req) {
