@@ -13,6 +13,132 @@ Configure variables in the same Catalyst environment that is serving the endpoin
 - A code deploy should not be used as the source of truth for secrets or live/dry-run mode; runtime variables in Catalyst are the source of truth.
 - After editing variables, redeploy or restart the function in that same target environment before testing again.
 
+## Complete Development Variable Block
+
+Use this for Catalyst **Development**.
+
+```text
+GATEWAY_VERSION=dev-2026-07-08
+ALLOWED_PATHS=/zillow/leads
+MAX_BODY_BYTES=65536
+INBOUND_BODY_TIMEOUT_MS=8000
+REQUIRE_INBOUND_SECRET=true
+INBOUND_SECRET_HEADER_NAME=x-gh-zillow-webhook-key
+ZILLOW_WEBHOOK_KEY=<set in Catalyst, do not commit>
+INBOUND_SECRET_VALUE=
+ALLOW_SECRET_QUERY_PARAM=false
+INBOUND_SECRET_QUERY_PARAM=key
+ENFORCE_IP_ALLOWLIST=false
+ALLOWED_IPS=
+ZILLOW_WEBHOOK_DRY_RUN=true
+DRY_RUN=true
+LIVE_MODE_ENABLED=false
+LIVE_MODE_CONFIRMATION=
+EXPECTED_LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
+ALLOW_JSON_PAYLOADS=false
+GENERIC_PUBLIC_ERRORS=true
+ENABLE_HEALTH=true
+HEALTH_HEADER_NAME=x-gh-health-token
+HEALTH_CHECK_TOKEN=<set in Catalyst, do not commit>
+ENABLE_CACHE_REPLAY_DEFENSE=false
+STRICT_REPLAY_FAILURE=false
+REPLAY_CACHE_SEGMENT_ID=
+REPLAY_WINDOW_SECONDS=300
+ZOHO_CLIENT_ID=<set in Catalyst, do not commit>
+ZOHO_CLIENT_SECRET=<set in Catalyst, do not commit>
+ZOHO_REFRESH_TOKEN=<set in Catalyst, do not commit>
+ZOHO_ACCOUNTS_BASE_URL=https://accounts.zoho.com
+ZOHO_CRM_BASE_URL=https://www.zohoapis.com
+ZOHO_CRM_API_VERSION=v8
+ACCOUNTS_ALLOWED_HOST_SUFFIXES=accounts.zoho.com
+CRM_ALLOWED_HOST_SUFFIXES=zohoapis.com
+OUTBOUND_TIMEOUT_MS=15000
+ZOHO_CRM_LEADS_MODULE=Leads
+ZOHO_CRM_UNITS_MODULE=Units
+ENABLE_DYNAMIC_UNIT_ROUTING=true
+DYNAMIC_UNIT_ROUTING_REQUIRED=false
+UNIT_PROPERTY_LOOKUP_FIELD=Property
+PROPERTY_UNIT_MAP_JSON={}
+ZOHO_CRM_FIELD_MAP_JSON={}
+ZOHO_CRM_INTAKE_EVENTS_MODULE=Zillow_Intake_Events
+ENABLE_CRM_INTAKE_EVENT_LOG=false
+ENABLE_DRY_RUN_CRM_AUDIT_LOG=false
+INTAKE_EVENT_DUPLICATE_CHECK_FIELDS=External_Event_Key
+CRM_TRIGGER_WORKFLOWS=false
+CRM_TRIGGER_APPROVALS=false
+CRM_TRIGGER_BLUEPRINTS=false
+SKIP_CADENCES_ON_INSERT=true
+SKIP_CADENCES_ON_UPDATE=false
+DEFAULT_LEAD_SOURCE=Zillow
+DEFAULT_LEAD_STATUS=New Zillow Inquiry
+LEAD_DUPLICATE_CHECK_FIELDS=Zillow_Lead_Key
+DEBUG_ERRORS=true
+```
+
+## Complete Production Variable Block
+
+Use this for Catalyst **Production**.
+
+```text
+GATEWAY_VERSION=prod-2026-07-08
+ALLOWED_PATHS=/zillow/leads
+MAX_BODY_BYTES=65536
+INBOUND_BODY_TIMEOUT_MS=8000
+REQUIRE_INBOUND_SECRET=true
+INBOUND_SECRET_HEADER_NAME=x-gh-zillow-webhook-key
+ZILLOW_WEBHOOK_KEY=<set in Catalyst, do not commit>
+INBOUND_SECRET_VALUE=
+ALLOW_SECRET_QUERY_PARAM=false
+INBOUND_SECRET_QUERY_PARAM=key
+ENFORCE_IP_ALLOWLIST=false
+ALLOWED_IPS=
+ZILLOW_WEBHOOK_DRY_RUN=false
+DRY_RUN=false
+LIVE_MODE_ENABLED=true
+LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
+EXPECTED_LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
+ALLOW_JSON_PAYLOADS=false
+GENERIC_PUBLIC_ERRORS=true
+ENABLE_HEALTH=true
+HEALTH_HEADER_NAME=x-gh-health-token
+HEALTH_CHECK_TOKEN=<set in Catalyst, do not commit>
+ENABLE_CACHE_REPLAY_DEFENSE=false
+STRICT_REPLAY_FAILURE=false
+REPLAY_CACHE_SEGMENT_ID=
+REPLAY_WINDOW_SECONDS=300
+ZOHO_CLIENT_ID=<set in Catalyst, do not commit>
+ZOHO_CLIENT_SECRET=<set in Catalyst, do not commit>
+ZOHO_REFRESH_TOKEN=<set in Catalyst, do not commit>
+ZOHO_ACCOUNTS_BASE_URL=https://accounts.zoho.com
+ZOHO_CRM_BASE_URL=https://www.zohoapis.com
+ZOHO_CRM_API_VERSION=v8
+ACCOUNTS_ALLOWED_HOST_SUFFIXES=accounts.zoho.com
+CRM_ALLOWED_HOST_SUFFIXES=zohoapis.com
+OUTBOUND_TIMEOUT_MS=15000
+ZOHO_CRM_LEADS_MODULE=Leads
+ZOHO_CRM_UNITS_MODULE=Units
+ENABLE_DYNAMIC_UNIT_ROUTING=true
+DYNAMIC_UNIT_ROUTING_REQUIRED=false
+UNIT_PROPERTY_LOOKUP_FIELD=Property
+PROPERTY_UNIT_MAP_JSON={}
+ZOHO_CRM_FIELD_MAP_JSON={}
+ZOHO_CRM_INTAKE_EVENTS_MODULE=Zillow_Intake_Events
+ENABLE_CRM_INTAKE_EVENT_LOG=false
+ENABLE_DRY_RUN_CRM_AUDIT_LOG=false
+INTAKE_EVENT_DUPLICATE_CHECK_FIELDS=External_Event_Key
+CRM_TRIGGER_WORKFLOWS=false
+CRM_TRIGGER_APPROVALS=false
+CRM_TRIGGER_BLUEPRINTS=false
+SKIP_CADENCES_ON_INSERT=true
+SKIP_CADENCES_ON_UPDATE=false
+DEFAULT_LEAD_SOURCE=Zillow
+DEFAULT_LEAD_STATUS=New Zillow Inquiry
+LEAD_DUPLICATE_CHECK_FIELDS=Zillow_Lead_Key
+DEBUG_ERRORS=true
+```
+
+`ENABLE_HEALTH`, `HEALTH_HEADER_NAME`, and `HEALTH_CHECK_TOKEN` are temporary diagnostic variables. Keep them enabled while verifying live mode. After the live smoke test passes, either disable health with `ENABLE_HEALTH=false` or rotate the health token and keep it protected.
+
 ## Live/Dry-Run Mode Matrix
 
 | Catalyst environment | `ZILLOW_WEBHOOK_DRY_RUN` | `DRY_RUN` | `LIVE_MODE_ENABLED` | `LIVE_MODE_CONFIRMATION` | Use |
@@ -43,9 +169,9 @@ Configure variables in the same Catalyst environment that is serving the endpoin
 | `EXPECTED_LIVE_MODE_CONFIRMATION` | Yes | `GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED` | Second live-mode circuit breaker value. |
 | `ALLOW_JSON_PAYLOADS` | No | `false` | Allows JSON only for internal testing. Zillow production should remain URL-encoded. |
 | `GENERIC_PUBLIC_ERRORS` | No | `true` | Redacts 5xx details from public responses. 4xx errors still return useful codes. |
-| `ENABLE_HEALTH` | No | `false` | Enables protected `GET /health`. |
-| `HEALTH_HEADER_NAME` | No | `x-gh-health-token` | Header checked on health route. |
-| `HEALTH_CHECK_TOKEN` | Required if health enabled | blank | Required token for health route. |
+| `ENABLE_HEALTH` | Diagnostic | `false` | Enables protected `GET /health`. |
+| `HEALTH_HEADER_NAME` | Diagnostic | `x-gh-health-token` | Header checked on health route. |
+| `HEALTH_CHECK_TOKEN` | Diagnostic if health enabled | blank | Required token for health route. |
 | `ENABLE_CACHE_REPLAY_DEFENSE` | No | `false` | Optional Catalyst Cache duplicate/replay guard. CRM upsert remains the main duplicate control. |
 | `STRICT_REPLAY_FAILURE` | No | `false` | If true, cache failure rejects webhook with 503. |
 | `REPLAY_CACHE_SEGMENT_ID` | No | blank | Optional Catalyst Cache segment ID. |
