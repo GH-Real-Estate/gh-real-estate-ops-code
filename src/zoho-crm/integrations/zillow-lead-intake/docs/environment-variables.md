@@ -4,6 +4,24 @@ Use placeholders only in Git. Configure real values in Zoho Catalyst or another 
 
 Do not store a Zoho `access_token` as an environment variable. Access tokens are short-lived. Store the refresh token only; the function exchanges it for fresh access tokens at runtime.
 
+## Catalyst Environment Rule
+
+Configure variables in the same Catalyst environment that is serving the endpoint you are testing.
+
+- Development should stay dry-run by default.
+- Production should be live only after dry-run and routing tests pass.
+- A code deploy should not be used as the source of truth for secrets or live/dry-run mode; runtime variables in Catalyst are the source of truth.
+- After editing variables, redeploy or restart the function in that same target environment before testing again.
+
+## Live/Dry-Run Mode Matrix
+
+| Catalyst environment | `ZILLOW_WEBHOOK_DRY_RUN` | `DRY_RUN` | `LIVE_MODE_ENABLED` | `LIVE_MODE_CONFIRMATION` | Use |
+|---|---:|---:|---:|---|---|
+| Development | `true` | `true` | `false` | blank | Safe testing with no CRM Lead writes. |
+| Production | `false` | `false` | `true` | `GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED` | Live CRM Lead upsert after approval. |
+
+## Variable Reference
+
 | Variable | Required | Default | Purpose |
 |---|---:|---|---|
 | `GATEWAY_VERSION` | Yes | `2026-07-07.v7` | Runtime version label surfaced in health checks. |
@@ -42,10 +60,10 @@ Do not store a Zoho `access_token` as an environment variable. Access tokens are
 | `CRM_ALLOWED_HOST_SUFFIXES` | Yes | `zohoapis.com` | Outbound host allowlist for Zoho CRM. |
 | `OUTBOUND_TIMEOUT_MS` | Yes | `15000` | Zoho API request timeout. |
 | `ZOHO_CRM_LEADS_MODULE` | Yes | `Leads` | CRM Leads module API name. |
-| `ZOHO_CRM_UNITS_MODULE` | Yes | `CustomModule4` | CRM Units module API name. |
+| `ZOHO_CRM_UNITS_MODULE` | Yes | `Units` | CRM Units module API name. GH Real Estate verified `Units`. |
 | `ENABLE_DYNAMIC_UNIT_ROUTING` | Yes | `true` | Searches CRM Units using the Zillow routing fields on each Unit record. |
 | `DYNAMIC_UNIT_ROUTING_REQUIRED` | No | `false` | If true, a CRM Unit search failure rejects the callback instead of accepting the lead as unmatched. |
-| `UNIT_PROPERTY_LOOKUP_FIELD` | No | blank | API name of the lookup from Units back to Properties/Accounts, if present. |
+| `UNIT_PROPERTY_LOOKUP_FIELD` | No | `Property` | API name of the lookup from Units back to Properties/Accounts. GH Real Estate verified `Property` unless Developer Hub shows otherwise. |
 | `LEAD_DUPLICATE_CHECK_FIELDS` | Yes | `Zillow_Lead_Key` | Unique lead key. Create and mark this field unique. |
 | `PROPERTY_UNIT_MAP_JSON` | No | `{}` | Legacy/fallback static routing map. Leave `{}` when using Unit-based routing. |
 | `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. Leave `{}` if the verified CRM API names match the README. |
