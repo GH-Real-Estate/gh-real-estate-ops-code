@@ -2,6 +2,40 @@
 
 Configure these values in Zoho Catalyst or another approved runtime configuration manager. Do not commit a real `.env` file.
 
+## Environment Safety Rule
+
+Keep Catalyst **Development** safe by default and use Catalyst **Production** for the live Zillow endpoint.
+
+- Development should normally remain dry-run unless you are intentionally running an internal live smoke test against non-production data.
+- Production is the only environment Zillow should use after the API is approved for production delivery.
+- Do not depend on code deploys to change secrets or runtime mode. Set environment variables in the target Catalyst environment, then redeploy/restart that same target environment.
+
+## Development Dry-Run Values
+
+```text
+ZILLOW_WEBHOOK_DRY_RUN=true
+DRY_RUN=true
+LIVE_MODE_ENABLED=false
+LIVE_MODE_CONFIRMATION=
+EXPECTED_LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
+DEBUG_ERRORS=true
+```
+
+## Production Live Values
+
+Use these only after dry-run payload mapping and routing have been verified.
+
+```text
+ZILLOW_WEBHOOK_DRY_RUN=false
+DRY_RUN=false
+LIVE_MODE_ENABLED=true
+LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
+EXPECTED_LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
+DEBUG_ERRORS=true
+```
+
+Turn `DEBUG_ERRORS` back to `false` after live smoke testing is complete.
+
 ## Inbound Route And Safety
 
 ```text
@@ -17,11 +51,6 @@ ALLOW_SECRET_QUERY_PARAM=false
 INBOUND_SECRET_QUERY_PARAM=key
 ENFORCE_IP_ALLOWLIST=false
 ALLOWED_IPS=
-ZILLOW_WEBHOOK_DRY_RUN=true
-DRY_RUN=true
-LIVE_MODE_ENABLED=false
-LIVE_MODE_CONFIRMATION=
-EXPECTED_LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
 ALLOW_JSON_PAYLOADS=false
 GENERIC_PUBLIC_ERRORS=true
 ```
@@ -65,17 +94,17 @@ OUTBOUND_TIMEOUT_MS=15000
 
 ```text
 ZOHO_CRM_LEADS_MODULE=Leads
-ZOHO_CRM_UNITS_MODULE=CustomModule4
+ZOHO_CRM_UNITS_MODULE=Units
 ENABLE_DYNAMIC_UNIT_ROUTING=true
 DYNAMIC_UNIT_ROUTING_REQUIRED=false
-UNIT_PROPERTY_LOOKUP_FIELD=
+UNIT_PROPERTY_LOOKUP_FIELD=Property
 PROPERTY_UNIT_MAP_JSON={}
 ZOHO_CRM_FIELD_MAP_JSON={}
 ```
 
 `PROPERTY_UNIT_MAP_JSON` is now only a fallback. The preferred long-term routing source is the CRM Units module using `Zillow_Listing_ID`, `Zillow_Provider_Model_ID`, `Zillow_Listing_Contact_Prefix`, and `Zillow_Routing_Unit_Key` on each Unit record.
 
-If the Units module has a lookup field back to the Properties/Accounts module, put that field's API name in `UNIT_PROPERTY_LOOKUP_FIELD`. If left blank, the function can still populate `Requested Unit`, but `Requested Property` will only populate when the matched Unit record exposes a supported Property lookup.
+If the Units module has a lookup field back to the Properties/Accounts module, put that field's API name in `UNIT_PROPERTY_LOOKUP_FIELD`. For GH Real Estate, use `UNIT_PROPERTY_LOOKUP_FIELD=Property` unless Zoho CRM Developer Hub shows a different API name.
 
 ## Optional Intake Event Log And CRM Triggers
 
