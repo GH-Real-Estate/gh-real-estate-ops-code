@@ -79,6 +79,7 @@ SECRET_ASSIGNMENT_RE = re.compile(
 SAFE_SECRET_VALUE_PREFIXES = (
     "<",
     "${",
+    "$",
     "{{",
     "[",
     "config.",
