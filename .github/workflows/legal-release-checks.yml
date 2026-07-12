@@ -1,0 +1,32 @@
+name: Legal Release Checks
+
+on:
+  pull_request:
+    paths:
+      - 'legal/**'
+      - '.github/workflows/legal-*.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'legal/**'
+      - '.github/workflows/legal-*.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-legal-release:
+    name: Validate legal source release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate manifests, hashes, PDFs, and searchable text
+        run: python legal/scripts/validate_release.py

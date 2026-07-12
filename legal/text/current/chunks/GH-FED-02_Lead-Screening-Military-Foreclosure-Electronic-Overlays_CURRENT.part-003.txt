@@ -1,0 +1,1887 @@
+GH Real Estate approved legal-source text chunk — GH-FED-02_Lead-Screening-Military-Foreclosure-Electronic-Overlays_CURRENT.part-003.txt — verified through 2026-07-12. Official source text controls.
+
+‘‘the Bureau’’ for ‘‘the Commission’’.                            notify the furnisher of information identified by
+                                                                  the consumer under subsection (a)—
+       Statutory Notes and Related Subsidiaries                        (1) that the information may be a result of
+                                                                    identity theft;
+          EFFECTIVE DATE OF 2018 AMENDMENT                             (2) that an identity theft report has been
+  Pub. L. 115–174, title III, § 301(c), May 24, 2018, 132           filed;
+Stat. 1332, provided that: ‘‘The amendments made by                    (3) that a block has been requested under
+this section [amending this section and section 1681t of            this section; and
+this title] shall take effect on the date that is 120 days             (4) of the effective dates of the block.
+after the date of enactment of this Act [May 24, 2018].’’
+  Amendment by section 302(d)(1) of Pub. L. 115–174 ef-           (c) Authority to decline or rescind
+fective 1 year after May 24, 2018, see section 302(e) of            (1) In general
+Pub. L. 115–174, set out as a note under section 1681a of              A consumer reporting agency may decline to
+this title.
+                                                                    block, or may rescind any block, of informa-
+          EFFECTIVE DATE OF 2010 AMENDMENT                          tion relating to a consumer under this section,
+  Amendment by Pub. L. 111–203 effective on the des-
+                                                                    if the consumer reporting agency reasonably
+ignated transfer date, see section 1100H of Pub. L.                 determines that—
+111–203, set out as a note under section 552a of Title 5,                (A) the information was blocked in error
+Government Organization and Employees.                                 or a block was requested by the consumer in
+                                                                       error;
+                      EFFECTIVE DATE                                     (B) the information was blocked, or a
+  Section subject to joint regulations establishing ef-                block was requested by the consumer, on the
+fective dates as prescribed by Federal Reserve Board                   basis of a material misrepresentation of fact
+and Federal Trade Commission, except as otherwise                      by the consumer relevant to the request to
+provided, see section 3 of Pub. L. 108–159, set out as an              block; or
+Effective Date of 2003 Amendment note under section
+1681 of this title.
+                                                                         (C) the consumer obtained possession of
+                                                                       goods, services, or money as a result of the
+                        REGULATIONS                                    blocked transaction or transactions.
+  Pub. L. 108–159, title I, § 112(b), Dec. 4, 2003, 117 Stat.       (2) Notification to consumer
+1959, as amended by Pub. L. 111–203, title X, § 1088(b)(1),            If a block of information is declined or re-
+July 21, 2010, 124 Stat. 2092, provided that: ‘‘The Bureau
+shall prescribe regulations to define what constitutes
+                                                                    scinded under this subsection, the affected
+appropriate proof of identity for purposes of sections              consumer shall be notified promptly, in the
+605A , 605B, and 609(a)(1) of the Fair Credit Reporting             same manner as consumers are notified of the
+Act [15 U.S.C. 1681c–1, 1681c–2, 1681g(a)(1)], as amended           reinsertion of information under section
+by this Act.’’                                                      1681i(a)(5)(B) of this title.
+Page 1579                        TITLE 15—COMMERCE AND TRADE                                         § 1681c–3
+
+  (3) Significance of block                            could otherwise obtain access under this sub-
+     For purposes of this subsection, if a con-        chapter.
+   sumer reporting agency rescinds a block, the        (Pub. L. 90–321, title VI, § 605B, as added Pub. L.
+   presence of information in the file of a con-       108–159, title I, § 152(a), Dec. 4, 2003, 117 Stat. 1964;
+   sumer prior to the blocking of such informa-        amended Pub. L. 111–203, title X, § 1088(a)(2)(C),
+   tion is not evidence of whether the consumer        July 21, 2010, 124 Stat. 2087.)
+   knew or should have known that the consumer
+   obtained possession of any goods, services, or                           Editorial Notes
+   money as a result of the block.
+                                                                             AMENDMENTS
+(d) Exception for resellers
+   (1) No reseller file                                   2010—Subsec. (d)(1)(C). Pub. L. 111–203 substituted
+                                                       ‘‘the Bureau’’ for ‘‘the Commission’’.
+     This section shall not apply to a consumer
+   reporting agency, if the consumer reporting               Statutory Notes and Related Subsidiaries
+   agency—
+       (A) is a reseller;                                       EFFECTIVE DATE OF 2010 AMENDMENT
+       (B) is not, at the time of the request of the     Amendment by Pub. L. 111–203 effective on the des-
+     consumer under subsection (a), otherwise          ignated transfer date, see section 1100H of Pub. L.
+     furnishing or reselling a consumer report         111–203, set out as a note under section 552a of Title 5,
+     concerning the information identified by the      Government Organization and Employees.
+     consumer; and
+                                                                            EFFECTIVE DATE
+       (C) informs the consumer, by any means,
+     that the consumer may report the identity           Section subject to joint regulations establishing ef-
+     theft to the Bureau to obtain consumer in-        fective dates as prescribed by Federal Reserve Board
+                                                       and Federal Trade Commission, except as otherwise
+     formation regarding identity theft.
+                                                       provided, see section 3 of Pub. L. 108–159, set out as an
+   (2) Reseller with file                              Effective Date of 2003 Amendment note under section
+     The sole obligation of the consumer report-       1681 of this title.
+   ing agency under this section, with regard to
+                                                       § 1681c–3. Adverse information in cases of traf-
+   any request of a consumer under this section,
+                                                           ficking
+   shall be to block the consumer report main-
+   tained by the consumer reporting agency from        (a) Definitions
+   any subsequent use, if—
+                                                         In this section:
+       (A) the consumer, in accordance with the
+     provisions of subsection (a), identifies, to a      (1) Trafficking documentation
+     consumer reporting agency, information in             The term ‘‘trafficking documentation’’
+     the file of the consumer that resulted from         means—
+     identity theft; and                                     (A) documentation of—
+       (B) the consumer reporting agency is a re-              (i) a determination that a consumer is a
+     seller of the identified information.                   victim of trafficking made by a Federal,
+   (3) Notice                                                State, or Tribal governmental entity; or
+     In carrying out its obligation under para-                (ii) by a court of competent jurisdiction;
+   graph (2), the reseller shall promptly provide a          and
+   notice to the consumer of the decision to                 (B) documentation that identifies items of
+   block the file. Such notice shall contain the           adverse information that should not be fur-
+   name, address, and telephone number of each             nished by a consumer reporting agency be-
+   consumer reporting agency from which the                cause the items resulted from a severe form
+   consumer information was obtained for resale.           of trafficking in persons or sex trafficking of
+(e) Exception for verification companies                   which the consumer is a victim.
+   The provisions of this section do not apply to        (2) Trafficking Victims Protection Act of 2000
+a check services company, acting as such, which              definitions
+issues authorizations for the purpose of approv-           The terms ‘‘severe forms of trafficking in
+ing or processing negotiable instruments, elec-          persons’’ and ‘‘sex trafficking’’ have the mean-
+tronic fund transfers, or similar methods of pay-        ings given, respectively, in section 103 of the
+ments, except that, beginning 4 business days            Trafficking Victims Protection Act of 2000 (22
+after receipt of information described in para-          U.S.C. 7102).
+graphs (1) through (3) of subsection (a), a check
+                                                         (3) Victim of trafficking
+services company shall not report to a national
+consumer reporting agency described in section             The term ‘‘victim of trafficking’’ means a
+1681a(p) of this title, any information identified       person who is a victim of a severe form of traf-
+in the subject identity theft report as resulting        ficking in persons or sex trafficking.
+from identity theft.                                   (b) Adverse information
+(f) Access to blocked information by law enforce-        A consumer reporting agency may not furnish
+     ment agencies                                     a consumer report containing any adverse item
+   No provision of this section shall be construed     of information about a consumer that resulted
+as requiring a consumer reporting agency to            from a severe form of trafficking in persons or
+prevent a Federal, State, or local law enforce-        sex trafficking if the consumer has provided
+ment agency from accessing blocked informa-            trafficking documentation to the consumer re-
+tion in a consumer file to which the agency            porting agency.
+§ 1681d                                TITLE 15—COMMERCE AND TRADE                                            Page 1580
+
+(c) Rulemaking                                                   the investigation requested. This disclosure
+  (1) In general                                                 shall be made in a writing mailed, or otherwise
+                                                                 delivered, to the consumer not later than five
+    Not later than 180 days after December 27,
+                                                                 days after the date on which the request for
+  2021, the Director shall issue rules to imple-
+                                                                 such disclosure was received from the consumer
+  ment subsection (a).
+                                                                 or such report was first requested, whichever is
+  (2) Contents                                                   the later.
+    The rules issued pursuant to paragraph (1)                   (c) Limitation on liability upon showing of rea-
+  shall establish a method by which consumers                        sonable procedures for compliance with pro-
+  shall submit trafficking documentation to                          visions
+  consumer reporting agencies.
+                                                                   No person may be held liable for any violation
+(Pub. L. 90–321, title VI, § 605C, as added Pub. L.              of subsection (a) or (b) of this section if he shows
+117–81, div. F, title LXI, § 6102(a), Dec. 27, 2021,             by a preponderance of the evidence that at the
+135 Stat. 2383.)                                                 time of the violation he maintained reasonable
+                                                                 procedures to assure compliance with subsection
+       Statutory Notes and Related Subsidiaries                  (a) or (b).
+                     EFFECTIVE DATE                              (d) Prohibitions
+  Pub. L. 117–81, div. F, title LXI, § 6102(c), Dec. 27, 2021,     (1) Certification
+135 Stat. 2384, provided that: ‘‘The amendments made                 A consumer reporting agency shall not pre-
+by this section [enacting this section] shall apply on
+the date that is 30 days after the date on which the Di-
+                                                                   pare or furnish an investigative consumer re-
+rector of the Bureau of Consumer Financial Protection              port unless the agency has received a certifi-
+issues a rule pursuant to section 605C(c) of the Fair              cation under subsection (a)(2) from the person
+Credit Reporting Act [15 U.S.C. 1681c–3(c)], as added by           who requested the report.
+subsection (a) of this section. Any rule issued by the             (2) Inquiries
+Director to implement such section 605C [15 U.S.C.
+1681c–3] shall be limited to preventing a consumer re-               A consumer reporting agency shall not make
+porting agency from furnishing a consumer report con-              an inquiry for the purpose of preparing an in-
+taining any adverse item of information about a con-               vestigative consumer report on a consumer for
+sumer (as such terms are defined, respectively, in sec-            employment purposes if the making of the in-
+tion 603 the Fair Credit Reporting Act (15 U.S.C. 1681a))          quiry by an employer or prospective employer
+that resulted from trafficking.’’                                  of the consumer would violate any applicable
+§ 1681d. Disclosure of investigative consumer re-                  Federal or State equal employment oppor-
+    ports                                                          tunity law or regulation.
+                                                                   (3) Certain public record information
+(a) Disclosure of fact of preparation
+                                                                     Except as otherwise provided in section
+  A person may not procure or cause to be pre-
+                                                                   1681k of this title, a consumer reporting agen-
+pared an investigative consumer report on any
+                                                                   cy shall not furnish an investigative consumer
+consumer unless—
+                                                                   report that includes information that is a
+    (1) it is clearly and accurately disclosed to
+                                                                   matter of public record and that relates to an
+  the consumer that an investigative consumer
+                                                                   arrest, indictment, conviction, civil judicial
+  report including information as to his char-
+                                                                   action, tax lien, or outstanding judgment, un-
+  acter, general reputation, personal character-
+                                                                   less the agency has verified the accuracy of
+  istics, and mode of living, whichever are appli-
+                                                                   the information during the 30-day period end-
+  cable, may be made, and such disclosure (A) is
+                                                                   ing on the date on which the report is fur-
+  made in a writing mailed, or otherwise deliv-
+                                                                   nished.
+  ered, to the consumer, not later than three
+  days after the date on which the report was                      (4) Certain adverse information
+  first requested, and (B) includes a statement                      A consumer reporting agency shall not pre-
+  informing the consumer of his right to request                   pare or furnish an investigative consumer re-
+  the additional disclosures provided for under                    port on a consumer that contains information
+  subsection (b) of this section and the written                   that is adverse to the interest of the consumer
+  summary of the rights of the consumer pre-                       and that is obtained through a personal inter-
+  pared pursuant to section 1681g(c) of this title;                view with a neighbor, friend, or associate of
+  and                                                              the consumer or with another person with
+    (2) the person certifies or has certified to the               whom the consumer is acquainted or who has
+  consumer reporting agency that—                                  knowledge of such item of information, un-
+      (A) the person has made the disclosures to                   less—
+    the consumer required by paragraph (1); and                         (A) the agency has followed reasonable
+      (B) the person will comply with subsection                     procedures to obtain confirmation of the in-
+    (b).                                                             formation, from an additional source that
+(b) Disclosure on request of nature and scope of                     has independent and direct knowledge of the
+    investigation                                                    information; or
+  Any person who procures or causes to be pre-                          (B) the person interviewed is the best pos-
+pared an investigative consumer report on any                        sible source of the information.
+consumer shall, upon written request made by                     (Pub. L. 90–321, title VI, § 606, as added Pub. L.
+the consumer within a reasonable period of time                  91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1130;
+after the receipt by him of the disclosure re-                   amended Pub. L. 104–208, div. A, title II,
+quired by subsection (a)(1), make a complete and                 §§ 2408(d)(2), 2414, Sept. 30, 1996, 110 Stat. 3009–438,
+accurate disclosure of the nature and scope of                   3009–449.)
+Page 1581                              TITLE 15—COMMERCE AND TRADE                                             § 1681e
+
+                      Editorial Notes                                  (A) who regularly and in the ordinary
+                       AMENDMENTS
+                                                                     course of business furnishes information to
+                                                                     the agency with respect to any consumer; or
+   1996—Subsec. (a)(1)(B). Pub. L. 104–208, §§ 2408(d)(2),             (B) to whom a consumer report is provided
+2414(1), inserted ‘‘and the written summary of the                   by the agency;
+rights of the consumer prepared pursuant to section
+1681g(c) of this title’’ before the semicolon and sub-             a notice of such person’s responsibilities under
+stituted ‘‘and’’ for ‘‘or’’ at end.                                this subchapter.
+   Subsec. (a)(2). Pub. L. 104–208, § 2414(2), added par. (2)      (2) Content of notice
+and struck out former par. (2) which read as follows:
+‘‘the report is to be used for employment purposes for               The Bureau shall prescribe the content of
+which the consumer has not specifically applied.’’                 notices under paragraph (1), and a consumer
+   Subsec. (b). Pub. L. 104–208, § 2414(3), substituted            reporting agency shall be in compliance with
+‘‘, make a complete’’ for ‘‘, shall make a complete’’.             this subsection if it provides a notice under
+   Subsec. (d). Pub. L. 104–208, § 2414(4), added subsec. (d).     paragraph (1) that is substantially similar to
+                                                                   the Bureau prescription under this paragraph.
+       Statutory Notes and Related Subsidiaries
+                                                                 (e) Procurement of consumer report for resale
+          EFFECTIVE DATE OF 1996 AMENDMENT                         (1) Disclosure
+  Amendment by Pub. L. 104–208 effective 365 days after              A person may not procure a consumer report
+Sept. 30, 1996, with special rule for early compliance,            for purposes of reselling the report (or any in-
+see section 2420 of Pub. L. 104–208, set out as a note             formation in the report) unless the person dis-
+under section 1681a of this title.                                 closes to the consumer reporting agency that
+                     EFFECTIVE DATE                                originally furnishes the report—
+                                                                       (A) the identity of the end-user of the re-
+  Section effective upon the expiration of one hundred
+                                                                     port (or information); and
+and eighty days following Oct. 26, 1970, see section
+504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set
+                                                                       (B) each permissible purpose under section
+out as a note under section 1681 of this title.                      1681b of this title for which the report is fur-
+                                                                     nished to the end-user of the report (or infor-
+§ 1681e. Compliance procedures                                       mation).
+                                                                   (2) Responsibilities of procurers for resale
+(a) Identity and purposes of credit users
+                                                                     A person who procures a consumer report for
+  Every consumer reporting agency shall main-
+                                                                   purposes of reselling the report (or any infor-
+tain reasonable procedures designed to avoid
+                                                                   mation in the report) shall—
+violations of section 1681c of this title and to
+                                                                       (A) establish and comply with reasonable
+limit the furnishing of consumer reports to the
+                                                                     procedures designed to ensure that the re-
+purposes listed under section 1681b of this title.
+                                                                     port (or information) is resold by the person
+These procedures shall require that prospective
+                                                                     only for a purpose for which the report may
+users of the information identify themselves,
+                                                                     be furnished under section 1681b of this title,
+certify the purposes for which the information is
+                                                                     including by requiring that each person to
+sought, and certify that the information will be
+                                                                     which the report (or information) is resold
+used for no other purpose. Every consumer re-
+                                                                     and that resells or provides the report (or in-
+porting agency shall make a reasonable effort to
+                                                                     formation) to any other person—
+verify the identity of a new prospective user and                        (i) identifies each end user of the resold
+the uses certified by such prospective user prior                      report (or information);
+to furnishing such user a consumer report. No                            (ii) certifies each purpose for which the
+consumer reporting agency may furnish a con-                           report (or information) will be used; and
+sumer report to any person if it has reasonable                          (iii) certifies that the report (or informa-
+grounds for believing that the consumer report                         tion) will be used for no other purpose; and
+will not be used for a purpose listed in section
+1681b of this title.                                                   (B) before reselling the report, make rea-
+                                                                     sonable efforts to verify the identifications
+(b) Accuracy of report                                               and certifications made under subparagraph
+  Whenever a consumer reporting agency pre-                          (A).
+pares a consumer report it shall follow reason-                    (3) Resale of consumer report to a Federal
+able procedures to assure maximum possible ac-                         agency or department
+curacy of the information concerning the indi-
+                                                                     Notwithstanding paragraph (1) or (2), a per-
+vidual about whom the report relates.
+                                                                   son who procures a consumer report for pur-
+(c) Disclosure of consumer reports by users al-                    poses of reselling the report (or any informa-
+     lowed                                                         tion in the report) shall not disclose the iden-
+  A consumer reporting agency may not pro-                         tity of the end-user of the report under para-
+hibit a user of a consumer report furnished by                     graph (1) or (2) if—
+the agency on a consumer from disclosing the                           (A) the end user is an agency or depart-
+contents of the report to the consumer, if ad-                       ment of the United States Government
+verse action against the consumer has been                           which procures the report from the person
+taken by the user based in whole or in part on                       for purposes of determining the eligibility of
+the report.                                                          the consumer concerned to receive access or
+                                                                     continued access to classified information
+(d) Notice to users and furnishers of information
+                                                                     (as defined in section 1681b(b)(4)(E)(i) 1 of this
+  (1) Notice requirement                                             title); and
+    A consumer reporting agency shall provide
+  to any person—                                                  1 See References in Text note below.
+§ 1681f                               TITLE 15—COMMERCE AND TRADE                                           Page 1582
+
+      (B) the agency or department certifies in                504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set
+    writing to the person reselling the report                 out as a note under section 1681 of this title.
+    that nondisclosure is necessary to protect                 § 1681g. Disclosures to consumers
+    classified information or the safety of per-
+    sons employed by or contracting with, or un-               (a) Information on file; sources; report recipients
+    dergoing investigation for work or con-                      Every consumer reporting agency shall, upon
+    tracting with the agency or department.                    request, and subject to section 1681h(a)(1) of this
+                                                               title, clearly and accurately disclose to the con-
+(Pub. L. 90–321, title VI, § 607, as added Pub. L.
+                                                               sumer:
+91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1130;
+                                                                 (1) All information in the consumer’s file at
+amended Pub. L. 104–208, div. A, title II, § 2407,             the time of the request, except that—
+Sept. 30, 1996, 110 Stat. 3009–435; Pub. L. 105–107,                (A) if the consumer to whom the file relates
+title III, § 311(b), Nov. 20, 1997, 111 Stat. 2256; Pub.         requests that the first 5 digits of the social se-
+L. 111–203, title X, § 1088(a)(2)(A), July 21, 2010,             curity number (or similar identification num-
+124 Stat. 2087.)                                                 ber) of the consumer not be included in the
+                                                                 disclosure and the consumer reporting agency
+                     Editorial Notes
+                                                                 has received appropriate proof of the identity
+                  REFERENCES IN TEXT                             of the requester, the consumer reporting agen-
+  Section 1681b(b)(4) of this title, referred to in subsec.      cy shall so truncate such number in such dis-
+(e)(3)(A), was subsequently amended, and section                 closure; and
+1681b(b)(4)(E) no longer defines the term ‘‘classified in-          (B) nothing in this paragraph shall be con-
+formation’’. However, such term is defined elsewhere in          strued to require a consumer reporting agency
+that section.                                                    to disclose to a consumer any information
+                      AMENDMENTS                                 concerning credit scores or any other risk
+                                                                 scores or predictors relating to the consumer.
+  2010—Subsec. (d)(2). Pub. L. 111–203 substituted ‘‘Bu-
+reau’’ for ‘‘Federal Trade Commission’’ in two places.           (2) The sources of the information; except that
+  1997—Subsec. (e)(3). Pub. L. 105–107 added par. (3).         the sources of information acquired solely for
+  1996—Subsecs. (c) to (e). Pub. L. 104–208 added subsecs.     use in preparing an investigative consumer re-
+(c) to (e).
+                                                               port and actually used for no other purpose need
+       Statutory Notes and Related Subsidiaries
+                                                               not be disclosed: Provided, That in the event an
+                                                               action is brought under this subchapter, such
+          EFFECTIVE DATE OF 2010 AMENDMENT                     sources shall be available to the plaintiff under
+  Amendment by Pub. L. 111–203 effective on the des-           appropriate discovery procedures in the court in
+ignated transfer date, see section 1100H of Pub. L.            which the action is brought.
+111–203, set out as a note under section 552a of Title 5,        (3)(A) Identification of each person (including
+Government Organization and Employees.                         each end-user identified under section 1681e(e)(1)
+          EFFECTIVE DATE OF 1997 AMENDMENT                     of this title) that procured a consumer report—
+                                                                   (i) for employment purposes, during the 2-
+  Amendment by Pub. L. 105–107 effective as if included          year period preceding the date on which the
+in chapter 1 of subtitle D of the Economic Growth and
+Regulatory Paperwork Reduction Act of 1996, Pub. L.
+                                                                 request is made; or
+104–208, as of Sept. 30, 1996, see section 311(c) of Pub. L.       (ii) for any other purpose, during the 1-year
+105–107, set out as a note under section 1681b of this           period preceding the date on which the request
+title.                                                           is made.
+          EFFECTIVE DATE OF 1996 AMENDMENT                       (B) An identification of a person under sub-
+                                                               paragraph (A) shall include—
+  Amendment by Pub. L. 104–208 effective 365 days after
+                                                                   (i) the name of the person or, if applicable,
+Sept. 30, 1996, with special rule for early compliance,
+see section 2420 of Pub. L. 104–208, set out as a note           the trade name (written in full) under which
+under section 1681a of this title.                               such person conducts business; and
+                                                                   (ii) upon request of the consumer, the ad-
+                     EFFECTIVE DATE                              dress and telephone number of the person.
+  Section effective upon the expiration of one hundred           (C) Subparagraph (A) does not apply if—
+and eighty days following Oct. 26, 1970, see section               (i) the end user is an agency or department
+504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set
+out as a note under section 1681 of this title.
+                                                                 of the United States Government that pro-
+                                                                 cures the report from the person for purposes
+§ 1681f. Disclosures to governmental agencies                    of determining the eligibility of the consumer
+                                                                 to whom the report relates to receive access or
+  Notwithstanding the provisions of section
+                                                                 continued access to classified information (as
+1681b of this title, a consumer reporting agency
+                                                                 defined in section 1681b(b)(4)(E)(i) 1 of this
+may furnish identifying information respecting
+                                                                 title); and
+any consumer, limited to his name, address,                        (ii) the head of the agency or department
+former addresses, places of employment, or                       makes a written finding as prescribed under
+former places of employment, to a governmental                   section 1681b(b)(4)(A) of this title.
+agency.
+                                                                 (4) The dates, original payees, and amounts of
+(Pub. L. 90–321, title VI, § 608, as added Pub. L.             any checks upon which is based any adverse
+91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1131.)        characterization of the consumer, included in
+                                                               the file at the time of the disclosure.
+       Statutory Notes and Related Subsidiaries
+                                                                 (5) A record of all inquiries received by the
+                     EFFECTIVE DATE                            agency during the 1-year period preceding the
+  Section effective upon the expiration of one hundred
+and eighty days following Oct. 26, 1970, see section            1 See References in Text note below.
+Page 1583                                 TITLE 15—COMMERCE AND TRADE                               § 1681g
+
+request that identified the consumer in connec-           (2) Summary of rights required to be included
+tion with a credit or insurance transaction that               with agency disclosures
+was not initiated by the consumer.                           A consumer reporting agency shall provide
+  (6) If the consumer requests the credit file and        to a consumer, with each written disclosure by
+not the credit score, a statement that the con-           the agency to the consumer under this sec-
+sumer may request and obtain a credit score.              tion—
+(b) Exempt information                                         (A) the summary of rights prepared by the
+  The requirements of subsection (a) respecting              Bureau under paragraph (1);
+the disclosure of sources of information and the               (B) in the case of a consumer reporting
+recipients of consumer reports do not apply to               agency described in section 1681a(p) of this
+information received or consumer reports fur-                title, a toll-free telephone number estab-
+nished prior to the effective date of this sub-              lished by the agency, at which personnel are
+chapter except to the extent that the matter in-             accessible to consumers during normal busi-
+volved is contained in the files of the consumer             ness hours;
+reporting agency on that date.                                 (C) a list of all Federal agencies respon-
+(c) Summary of rights to obtain and dispute in-              sible for enforcing any provision of this sub-
+    formation in consumer reports and to obtain              chapter, and the address and any appropriate
+    credit scores                                            phone number of each such agency, in a form
+                                                             that will assist the consumer in selecting
+  (1) Commission 2 summary of rights required
+                                                             the appropriate agency;
+    (A) In general                                             (D) a statement that the consumer may
+      The Commission 2 shall prepare a model                 have additional rights under State law, and
+    summary of the rights of consumers under                 that the consumer may wish to contact a
+    this subchapter.                                         State or local consumer protection agency
+    (B) Content of summary                                   or a State attorney general (or the equiva-
+                                                             lent thereof) to learn of those rights; and
+      The summary of rights prepared under
+                                                               (E) a statement that a consumer reporting
+    subparagraph (A) shall include a description
+                                                             agency is not required to remove accurate
+    of—
+                                                             derogatory information from the file of a
+        (i) the right of a consumer to obtain a
+                                                             consumer, unless the information is out-
+      copy of a consumer report under sub-
+                                                             dated under section 1681c of this title or can-
+      section (a) from each consumer reporting
+                                                             not be verified.
+      agency;
+        (ii) the frequency and circumstances            (d) Summary of rights of identity theft victims
+      under which a consumer is entitled to re-           (1) In general
+      ceive a consumer report without charge                 The Commission,2 in consultation with the
+      under section 1681j of this title;                  Federal banking agencies and the National
+        (iii) the right of a consumer to dispute          Credit Union Administration, shall prepare a
+      information in the file of the consumer             model summary of the rights of consumers
+      under section 1681i of this title;                  under this subchapter with respect to the pro-
+        (iv) the right of a consumer to obtain a          cedures for remedying the effects of fraud or
+      credit score from a consumer reporting              identity theft involving credit, an electronic
+      agency, and a description of how to obtain          fund transfer, or an account or transaction at
+      a credit score;                                     or with a financial institution or other cred-
+        (v) the method by which a consumer can            itor.
+      contact, and obtain a consumer report
+                                                          (2) Summary of rights and contact information
+      from, a consumer reporting agency with-
+      out charge, as provided in the regulations             Beginning 60 days after the date on which
+      of the Bureau prescribed under section              the model summary of rights is prescribed in
+      211(c) 1 of the Fair and Accurate Credit            final form by the Bureau pursuant to para-
+      Transactions Act of 2003; and                       graph (1), if any consumer contacts a con-
+        (vi) the method by which a consumer can           sumer reporting agency and expresses a belief
+      contact, and obtain a consumer report               that the consumer is a victim of fraud or iden-
+      from, a consumer reporting agency de-               tity theft involving credit, an electronic fund
+      scribed in section 1681a(w) 1 of this title, as     transfer, or an account or transaction at or
+      provided in the regulations of the Bureau           with a financial institution or other creditor,
+      prescribed under section 1681j(a)(1)(C) of          the consumer reporting agency shall, in addi-
+      this title.                                         tion to any other action that the agency may
+    (C) Availability of summary of rights                 take, provide the consumer with a summary of
+                                                          rights that contains all of the information re-
+      The Commission 2 shall—                             quired by the Bureau under paragraph (1), and
+        (i) actively publicize the availability of        information on how to contact the Bureau to
+      the summary of rights prepared under this           obtain more detailed information.
+      paragraph;
+        (ii) conspicuously post on its Internet         (e) Information available to victims
+      website the availability of such summary            (1) In general
+      of rights; and                                         For the purpose of documenting fraudulent
+        (iii) promptly make such summary of               transactions resulting from identity theft, not
+      rights available to consumers, on request.          later than 30 days after the date of receipt of
+                                                          a request from a victim in accordance with
+ 2 So in original. Probably should be ‘‘Bureau’’.         paragraph (3), and subject to verification of
+§ 1681g                                  TITLE 15—COMMERCE AND TRADE                                   Page 1584
+
+ the identity of the victim and the claim of                            (i) if known by the victim (or if readily
+ identity theft in accordance with paragraph                          obtainable by the victim), the date of the
+ (2), a business entity that has provided credit                      application or transaction; and
+ to, provided for consideration products, goods,                        (ii) if known by the victim (or if readily
+ or services to, accepted payment from, or oth-                       obtainable by the victim), any other iden-
+ erwise entered into a commercial transaction                         tifying information such as an account or
+ for consideration with, a person who has alleg-                      transaction number.
+ edly made unauthorized use of the means of                      (4) No charge to victim
+ identification of the victim, shall provide a                     Information required to be provided under
+ copy of application and business transaction                    paragraph (1) shall be so provided without
+ records in the control of the business entity,                  charge.
+ whether maintained by the business entity or
+ by another person on behalf of the business en-                 (5) Authority to decline to provide information
+ tity, evidencing any transaction alleged to be                    A business entity may decline to provide in-
+ a result of identity theft to—                                  formation under paragraph (1) if, in the exer-
+      (A) the victim;                                            cise of good faith, the business entity deter-
+      (B) any Federal, State, or local govern-                   mines that—
+   ment law enforcement agency or officer                             (A) this subsection does not require disclo-
+   specified by the victim in such a request; or                   sure of the information;
+      (C) any law enforcement agency inves-                           (B) after reviewing the information pro-
+   tigating the identity theft and authorized by                   vided pursuant to paragraph (2), the business
+   the victim to take receipt of records pro-                      entity does not have a high degree of con-
+   vided under this subsection.                                    fidence in knowing the true identity of the
+ (2) Verification of identity and claim                            individual requesting the information;
+                                                                      (C) the request for the information is
+   Before a business entity provides any infor-
+                                                                   based on a misrepresentation of fact by the
+ mation under paragraph (1), unless the busi-
+                                                                   individual requesting the information rel-
+ ness entity, at its discretion, otherwise has a
+                                                                   evant to the request for information; or
+ high degree of confidence that it knows the
+                                                                      (D) the information requested is Internet
+ identity of the victim making a request under
+                                                                   navigational data or similar information
+ paragraph (1), the victim shall provide to the
+                                                                   about a person’s visit to a website or online
+ business entity—
+                                                                   service.
+      (A) as proof of positive identification of
+   the victim, at the election of the business                   (6) Limitation on liability
+   entity—                                                         Except as provided in section 1681s of this
+        (i) the presentation of a government-                    title, sections 1681n and 1681o of this title do
+      issued identification card;                                not apply to any violation of this subsection.
+        (ii) personally identifying information of               (7) Limitation on civil liability
+      the same type as was provided to the busi-
+      ness entity by the unauthorized person; or                   No business entity may be held civilly liable
+        (iii) personally identifying information                 under any provision of Federal, State, or other
+      that the business entity typically requests                law for disclosure, made in good faith pursu-
+      from new applicants or for new trans-                      ant to this subsection.
+      actions, at the time of the victim’s request               (8) No new recordkeeping obligation
+      for information, including any documenta-                    Nothing in this subsection creates an obliga-
+      tion described in clauses (i) and (ii); and                tion on the part of a business entity to obtain,
+     (B) as proof of a claim of identity theft, at               retain, or maintain information or records
+   the election of the business entity—                          that are not otherwise required to be obtained,
+       (i) a copy of a police report evidencing                  retained, or maintained in the ordinary course
+     the claim of the victim of identity theft;                  of its business or under other applicable law.
+     and                                                         (9) Rule of construction
+       (ii) a properly completed—                                  (A) In general
+          (I) copy of a standardized affidavit of
+                                                                      No provision of subtitle A of title V of
+       identity theft developed and made avail-
+                                                                   Public Law 106–102 [15 U.S.C. 6801 et seq.],
+       able by the Bureau; or
+                                                                   prohibiting the disclosure of financial infor-
+          (II) an 3 affidavit of fact that is accept-
+                                                                   mation by a business entity to third parties
+       able to the business entity for that pur-
+                                                                   shall be used to deny disclosure of informa-
+       pose.
+                                                                   tion to the victim under this subsection.
+ (3) Procedures
+                                                                   (B) Limitation
+   The request of a victim under paragraph (1)
+                                                                      Except as provided in subparagraph (A),
+ shall—
+     (A) be in writing;                                            nothing in this subsection permits a busi-
+     (B) be mailed to an address specified by                      ness entity to disclose information, includ-
+   the business entity, if any; and                                ing information to law enforcement under
+     (C) if asked by the business entity, include                  subparagraphs (B) and (C) of paragraph (1),
+   relevant information about any transaction                      that the business entity is otherwise prohib-
+   alleged to be a result of identity theft to fa-                 ited from disclosing under any other applica-
+   cilitate compliance with this section includ-                   ble provision of Federal or State law.
+   ing—                                                          (10) Affirmative defense
+                                                                   In any civil action brought to enforce this
+ 3 So in original. The word ‘‘an’’ probably should not appear.   subsection, it is an affirmative defense (which
+Page 1585                        TITLE 15—COMMERCE AND TRADE                                      § 1681g
+
+   the defendant must establish by a preponder-               considers one or more factors in addition
+   ance of the evidence) for a business entity to             to credit information, including the loan
+   file an affidavit or answer stating that—                  to value ratio, the amount of down pay-
+        (A) the business entity has made a reason-            ment, or the financial assets of a con-
+      ably diligent search of its available business          sumer; or
+      records; and                                              (II) any other elements of the under-
+        (B) the records requested under this sub-             writing process or underwriting decision.
+      section do not exist or are not reasonably          (B) Key factors
+      available.
+                                                            The term ‘‘key factors’’ means all relevant
+   (11) Definition of victim
+                                                          elements or reasons adversely affecting the
+      For purposes of this subsection, the term           credit score for the particular individual,
+   ‘‘victim’’ means a consumer whose means of             listed in the order of their importance based
+   identification or financial information has            on their effect on the credit score.
+   been used or transferred (or has been alleged
+                                                        (3) Timeframe and manner of disclosure
+   to have been used or transferred) without the
+   authority of that consumer, with the intent to         The information required by this subsection
+   commit, or to aid or abet, an identity theft or      shall be provided in the same timeframe and
+   a similar crime.                                     manner as the information described in sub-
+   (12) Effective date                                  section (a).
+      This subsection shall become effective 180        (4) Applicability to certain uses
+   days after December 4, 2003.                           This subsection shall not be construed so as
+   (13) Effectiveness study                             to compel a consumer reporting agency to de-
+                                                        velop or disclose a score if the agency does
+      Not later than 18 months after December 4,
+                                                        not—
+   2003, the Comptroller General of the United
+                                                            (A) distribute scores that are used in con-
+   States shall submit a report to Congress as-
+                                                          nection with residential real property loans;
+   sessing the effectiveness of this provision.
+                                                          or
+(f) Disclosure of credit scores                             (B) develop scores that assist credit pro-
+   (1) In general                                         viders in understanding the general credit
+      Upon the request of a consumer for a credit         behavior of a consumer and predicting the
+   score, a consumer reporting agency shall sup-          future credit behavior of the consumer.
+   ply to the consumer a statement indicating           (5) Applicability to credit scores developed by
+   that the information and credit scoring model            another person
+   may be different than the credit score that
+                                                          (A) In general
+   may be used by the lender, and a notice which
+   shall include—                                           This subsection shall not be construed to
+        (A) the current credit score of the con-          require a consumer reporting agency that
+      sumer or the most recent credit score of the        distributes credit scores developed by an-
+      consumer that was previously calculated by          other person or entity to provide a further
+      the credit reporting agency for a purpose re-       explanation of them, or to process a dispute
+      lated to the extension of credit;                   arising pursuant to section 1681i of this title,
+        (B) the range of possible credit scores           except that the consumer reporting agency
+      under the model used;                               shall provide the consumer with the name
+        (C) all of the key factors that adversely af-     and address and website for contacting the
+      fected the credit score of the consumer in          person or entity who developed the score or
+      the model used, the total number of which           developed the methodology of the score.
+      shall not exceed 4, subject to paragraph (9);       (B) Exception
+        (D) the date on which the credit score was
+      created; and                                          This paragraph shall not apply to a con-
+        (E) the name of the person or entity that         sumer reporting agency that develops or
+      provided the credit score or credit file upon       modifies scores that are developed by an-
+      which the credit score was created.                 other person or entity.
+   (2) Definitions                                      (6) Maintenance of credit scores not required
+      For purposes of this subsection, the fol-           This subsection shall not be construed to re-
+   lowing definitions shall apply:                      quire a consumer reporting agency to main-
+      (A) Credit score                                  tain credit scores in its files.
+        The term ‘‘credit score’’—                      (7) Compliance in certain cases
+          (i) means a numerical value or a cat-           In complying with this subsection, a con-
+        egorization derived from a statistical tool     sumer reporting agency shall—
+        or modeling system used by a person who             (A) supply the consumer with a credit
+        makes or arranges a loan to predict the           score that is derived from a credit scoring
+        likelihood of certain credit behaviors, in-       model that is widely distributed to users by
+        cluding default (and the numerical value          that consumer reporting agency in connec-
+        or the categorization derived from such           tion with residential real property loans or
+        analysis may also be referred to as a ‘‘risk      with a credit score that assists the consumer
+        predictor’’ or ‘‘risk score’’); and               in understanding the credit scoring assess-
+          (ii) does not include—                          ment of the credit behavior of the consumer
+             (I) any mortgage score or rating of an       and predictions about the future credit be-
+          automated underwriting system that              havior of the consumer; and
+§ 1681g                        TITLE 15—COMMERCE AND TRADE                                   Page 1586
+
+     (B) a statement indicating that the infor-         (C) Disclosures of credit scores not obtained
+   mation and credit scoring model may be dif-              from a consumer reporting agency
+   ferent than that used by the lender.                   A person that is subject to the provisions
+ (8) Fair and reasonable fee                            of this subsection and that uses a credit
+    A consumer reporting agency may charge a            score, other than a credit score provided by
+  fair and reasonable fee, as determined by the         a consumer reporting agency, may satisfy
+  Bureau, for providing the information required        the obligation to provide a credit score by
+  under this subsection.                                disclosing a credit score and associated key
+  (9) Use of enquiries as a key factor                  factors supplied by a consumer reporting
+                                                        agency.
+    If a key factor that adversely affects the
+                                                        (D) Notice to home loan applicants
+  credit score of a consumer consists of the
+  number of enquiries made with respect to a              A copy of the following notice, which shall
+  consumer report, that factor shall be included        include the name, address, and telephone
+  in the disclosure pursuant to paragraph (1)(C)        number of each consumer reporting agency
+  without regard to the numerical limitation in         providing a credit score that was used:
+  such paragraph.
+                                                          ‘‘NOTICE TO THE HOME LOAN APPLICANT
+(g) Disclosure of credit scores by certain mort-
+    gage lenders                                       ‘‘In connection with your application for a
+  (1) In general                                     home loan, the lender must disclose to you the
+                                                     score that a consumer reporting agency distrib-
+   Any person who makes or arranges loans and        uted to users and the lender used in connection
+ who uses a consumer credit score, as defined        with your home loan, and the key factors affect-
+ in subsection (f), in connection with an appli-     ing your credit scores.
+ cation initiated or sought by a consumer for a        ‘‘The credit score is a computer generated
+ closed end loan or the establishment of an          summary calculated at the time of the request
+ open end loan for a consumer purpose that is        and based on information that a consumer re-
+ secured by 1 to 4 units of residential real prop-   porting agency or lender has on file. The scores
+ erty (hereafter in this subsection referred to      are based on data about your credit history and
+ as the ‘‘lender’’) shall provide the following to   payment patterns. Credit scores are important
+ the consumer as soon as reasonably prac-            because they are used to assist the lender in de-
+ ticable:                                            termining whether you will obtain a loan. They
+   (A) Information required under subsection         may also be used to determine what interest
+        (f)                                          rate you may be offered on the mortgage. Credit
+     (i) In general                                  scores can change over time, depending on your
+        A copy of the information identified in      conduct, how your credit history and payment
+     subsection (f) that was obtained from a         patterns change, and how credit scoring tech-
+     consumer reporting agency or was devel-         nologies change.
+     oped and used by the user of the informa-         ‘‘Because the score is based on information in
+     tion.                                           your credit history, it is very important that
+                                                     you review the credit-related information that
+     (ii) Notice under subparagraph (D)
+                                                     is being furnished to make sure it is accurate.
+        In addition to the information provided      Credit records may vary from one company to
+     to it by a third party that provided the        another.
+     credit score or scores, a lender is only re-      ‘‘If you have questions about your credit score
+     quired to provide the notice contained in       or the credit information that is furnished to
+     subparagraph (D).                               you, contact the consumer reporting agency at
+   (B) Disclosures in case of automated under-       the address and telephone number provided with
+        writing system                               this notice, or contact the lender, if the lender
+     (i) In general                                  developed or generated the credit score. The
+                                                     consumer reporting agency plays no part in the
+        If a person that is subject to this sub-
+                                                     decision to take any action on the loan applica-
+     section uses an automated underwriting
+                                                     tion and is unable to provide you with specific
+     system to underwrite a loan, that person
+                                                     reasons for the decision on a loan application.
+     may satisfy the obligation to provide a
+                                                       ‘‘If you have questions concerning the terms
+     credit score by disclosing a credit score
+                                                     of the loan, contact the lender.’’.
+     and associated key factors supplied by a
+     consumer reporting agency.                           (E) Actions not required under this sub-
+                                                              section
+     (ii) Numerical credit score
+                                                            This subsection shall not require any per-
+        However, if a numerical credit score is
+                                                          son to—
+     generated by an automated underwriting
+                                                              (i) explain the information provided pur-
+     system used by an enterprise, and that
+                                                            suant to subsection (f);
+     score is disclosed to the person, the score
+                                                              (ii) disclose any information other than
+     shall be disclosed to the consumer con-
+                                                            a credit score or key factors, as defined in
+     sistent with subparagraph (C).
+                                                            subsection (f);
+     (iii) Enterprise defined                                 (iii) disclose any credit score or related
+        For purposes of this subparagraph, the              information obtained by the user after a
+     term ‘‘enterprise’’ has the same meaning               loan has closed;
+     as in paragraph (6) of section 4502 of title             (iv) provide more than 1 disclosure per
+     12.                                                    loan transaction; or
+Page 1587                               TITLE 15—COMMERCE AND TRADE                                                     § 1681g
+
+         (v) provide the disclosure required by                   the Gramm-Leach-Bliley Act. Subtitle A of title V of
+      this subsection when another person has                     the Act is classified principally to subchapter I (§ 6801
+      made the disclosure to the consumer for                     et seq.) of chapter 94 of this title. For complete classi-
+                                                                  fication of this Act to the Code, see Short Title of 1999
+      that loan transaction.                                      Amendment note set out under section 1811 of Title 12,
+    (F) No obligation for content                                 Banks and Banking, and Tables.
+      (i) In general                                                                      AMENDMENTS
+         The obligation of any person pursuant to                    2010—Pub. L. 111–203 substituted ‘‘the Bureau’’ for
+      this subsection shall be limited solely to                  ‘‘the Commission’’ wherever appearing.
+      providing a copy of the information that                       2003—Subsec. (a)(1). Pub. L. 108–159, § 115, substituted
+      was received from the consumer reporting                    ‘‘except that—
+                                                                       ‘‘(A) if the consumer to whom the file relates re-
+      agency.
+                                                                     quests that the first 5 digits of the social security
+      (ii) Limit on liability                                        number (or similar identification number) of the con-
+         No person has liability under this sub-                     sumer not be included in the disclosure and the con-
+      section for the content of that information                    sumer reporting agency has received appropriate
+                                                                     proof of the identity of the requester, the consumer
+      or for the omission of any information                         reporting agency shall so truncate such number in
+      within the report provided by the con-                         such disclosure; and
+      sumer reporting agency.                                          ‘‘(B) nothing’’
+    (G) Person defined as excluding enterprise                    for ‘‘except that nothing’’.
+                                                                     Subsec. (a)(2), (3)(C). Pub. L. 108–159, § 811(d), realigned
+      As used in this subsection, the term ‘‘per-                 margins.
+    son’’ does not include an enterprise (as de-                     Subsec. (a)(6). Pub. L. 108–159, § 212(a), added par. (6).
+    fined in paragraph (6) of section 4502 of title                  Subsec. (c). Pub. L. 108–159, § 211(c), amended subsec.
+                                                                  (c) generally. Prior to amendment, subsec. (c) related
+    12).                                                          to the summary of rights required to be included with
+  (2) Prohibition on disclosure clauses null and                  disclosure to consumers by consumer reporting agen-
+      void                                                        cies.
+    (A) In general                                                   Subsecs. (d), (e). Pub. L. 108–159, § 151(a)(1), added sub-
+                                                                  secs. (d) and (e).
+      Any provision in a contract that prohibits                     Subsec. (f). Pub. L. 108–159, § 212(b), added subsec. (f).
+    the disclosure of a credit score by a person                     Subsec. (g). Pub. L. 108–159, § 212(c), added subsec. (g).
+                                                                     1998—Subsec. (a)(3)(C). Pub. L. 105–347 added subpar.
+    who makes or arranges loans or a consumer
+                                                                  (C).
+    reporting agency is void.                                        1996—Subsec. (a). Pub. L. 104–208, § 2408(e)(5)(A), in in-
+    (B) No liability for disclosure under this sub-               troductory provisions substituted ‘‘, and subject to sec-
+         section                                                  tion 1681h(a)(1) of this title’’ for ‘‘and proper identifica-
+                                                                  tion of any consumer’’.
+      A lender shall not have liability under any                    Subsec. (a)(1). Pub. L. 104–208, § 2408(a), amended par.
+    contractual provision for disclosure of a                     (1) generally. Prior to amendment, par. (1) read as fol-
+    credit score pursuant to this subsection.                     lows: ‘‘The nature and substance of all information (ex-
+                                                                  cept medical information) in its files on the consumer
+(Pub. L. 90–321, title VI, § 609, as added Pub. L.                at the time of the request.’’
+91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1131;               Subsec. (a)(3). Pub. L. 104–208, § 2408(b), amended par.
+amended Pub. L. 103–325, title III, § 339, Sept. 23,              (3) generally. Prior to amendment, par. (3) read as fol-
+1994, 108 Stat. 2237; Pub. L. 104–208, div. A, title              lows: ‘‘The recipients of any consumer report on the
+II, § 2408(a)–(d)(1), (e)(5)(A), Sept. 30, 1996, 110              consumer which it has furnished—
+                                                                       ‘‘(A) for employment purposes within the two-year
+Stat. 3009–436, 3009–437, 3009–439; Pub. L. 105–347,                 period preceding the request, and
+§ 4(a), Nov. 2, 1998, 112 Stat. 3210; Pub. L. 108–159,                 ‘‘(B) for any other purpose within the six-month pe-
+title I, §§ 115, 151(a)(1), title II, §§ 211(c), 212(a)–(c),         riod preceding the request.’’
+title VIII, § 811(d), Dec. 4, 2003, 117 Stat. 1961,                  Subsec. (a)(5). Pub. L. 104–208, § 2408(c), added par. (5).
+1970, 1973–1975, 2011; Pub. L. 111–203, title X,                     Subsec. (c). Pub. L. 104–208, § 2408(d)(1), added subsec.
+                                                                  (c).
+§ 1088(a)(2)(C), July 21, 2010, 124 Stat. 2087.)                     1994—Subsec. (a)(4). Pub. L. 103–325 added par. (4).
+                      Editorial Notes                                    Statutory Notes and Related Subsidiaries
+                   REFERENCES IN TEXT                                       EFFECTIVE DATE OF 2010 AMENDMENT
+  Section 1681b(b)(4) of this title, referred to in subsec.         Amendment by Pub. L. 111–203 effective on the des-
+(a)(3)(C)(i), was subsequently amended, and section               ignated transfer date, see section 1100H of Pub. L.
+1681b(b)(4)(E) no longer defines the term ‘‘classified in-        111–203, set out as a note under section 552a of Title 5,
+formation’’. However, such term is defined elsewhere in           Government Organization and Employees.
+that section.
+  For the effective date of this subchapter, referred to                    EFFECTIVE DATE OF 2003 AMENDMENT
+in subsec. (b), see section 504(d) of Pub. L. 90–321, set           Amendment by Pub. L. 108–159 subject to joint regu-
+out as an Effective Date note under section 1681 of this          lations establishing effective dates as prescribed by
+title.                                                            Federal Reserve Board and Federal Trade Commission,
+  Section 211(c) of the Fair and Accurate Credit Trans-           except as otherwise provided, see section 3 of Pub. L.
+actions Act of 2003, referred to in subsec. (c)(1)(B)(v),         108–159, set out as a note under section 1681 of this title.
+probably means section 211(d) of Pub. L. 108–159, which
+is set out as a note under section 1681j of this title and                  EFFECTIVE DATE OF 1998 AMENDMENT
+relates to the promulgation of regulations. Section                 Amendment by Pub. L. 105–347 deemed to have same
+211(c) of Pub. L. 108–159 amended this section.                   effective date as amendments made by section 2403 of
+  Section 1681a(w) of this title, referred to in subsec.          Pub. L. 104–208, see section 7 of Pub. L. 105–347, set out
+(c)(1)(B)(vi), was redesignated section 1681a(x) of this          as a note under section 1681a of this title.
+title by Pub. L. 111–203, title X, § 1088(a)(1), July 21, 2010,
+124 Stat. 2086.                                                             EFFECTIVE DATE OF 1996 AMENDMENT
+  Public Law 106–102, referred to in subsec. (e)(9)(A), is         Amendment by Pub. L. 104–208 effective 365 days after
+Pub. L. 106–102, Nov. 12, 1999, 113 Stat. 1338, known as          Sept. 30, 1996, with special rule for early compliance,
+§ 1681h                                   TITLE 15—COMMERCE AND TRADE                                               Page 1588
+
+see section 2420 of Pub. L. 104–208, set out as a note           any information furnished to him pursuant to
+under section 1681a of this title.                               section 1681g of this title.
+                       EFFECTIVE DATE                            (d) Persons accompanying consumer
+  Section effective upon the expiration of one hundred             The consumer shall be permitted to be accom-
+and eighty days following Oct. 26, 1970, see section             panied by one other person of his choosing, who
+504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set        shall furnish reasonable identification. A con-
+out as a note under section 1681 of this title.                  sumer reporting agency may require the con-
+         SIMPLIFIED DISCLOSURE TO MAXIMIZE                       sumer to furnish a written statement granting
+       COMPREHENSIBILITY AND STANDARDIZATION                     permission to the consumer reporting agency to
+                                                                 discuss the consumer’s file in such person’s pres-
+  Pub. L. 104–208, div. A, title II, § 2408(e)(2), (3), Sept.    ence.
+30, 1996, 110 Stat. 3009–438, 3009–439, provided that:
+  ‘‘(2) SIMPLIFIED DISCLOSURE.—Not later than 90 days            (e) Limitation of liability
+after the date of enactment of this Act [Sept. 30, 1996],          Except as provided in sections 1681n and 1681o
+each consumer reporting agency shall develop a form              of this title, no consumer may bring any action
+on which such consumer reporting agency shall make               or proceeding in the nature of defamation, inva-
+the disclosures required under section 609(a) of the Fair        sion of privacy, or negligence with respect to
+Credit Reporting Act [15 U.S.C. 1681g(a)], for the pur-
+pose of maximizing the comprehensibility and stand-
+                                                                 the reporting of information against any con-
+ardization of such disclosures.                                  sumer reporting agency, any user of informa-
+  ‘‘(3) GOALS.—The Federal Trade Commission shall                tion, or any person who furnishes information to
+take appropriate action to assure that the goals of              a consumer reporting agency, based on informa-
+comprehensibility and standardization are achieved in            tion disclosed pursuant to section 1681g, 1681h,
+accordance with paragraph (2).’’                                 or 1681m of this title, or based on information
+                                                                 disclosed by a user of a consumer report to or
+§ 1681h. Conditions and form of disclosure to                    for a consumer against whom the user has taken
+    consumers                                                    adverse action, based in whole or in part on the
+(a) In general                                                   report 2 except as to false information furnished
+  (1) Proper identification                                      with malice or willful intent to injure such con-
+                                                                 sumer.
+     A consumer reporting agency shall require,
+  as a condition of making the disclosures re-                   (Pub. L. 90–321, title VI, § 610, as added Pub. L.
+  quired under section 1681g of this title, that                 91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1131;
+  the consumer furnish proper identification.                    amended Pub. L. 104–208, div. A, title II,
+                                                                 § 2408(e)(1), (4), (5)(B), Sept. 30, 1996, 110 Stat.
+  (2) Disclosure in writing                                      3009–438, 3009–439.)
+     Except as provided in subsection (b), the dis-
+  closures required to be made under section                                           Editorial Notes
+  1681g of this title shall be provided under that                                      AMENDMENTS
+  section in writing.
+                                                                   1996—Pub. L. 104–208, § 2408(e)(5)(B), inserted ‘‘and
+(b) Other forms of disclosure                                    form’’ after ‘‘Conditions’’ in section catchline.
+  (1) In general                                                   Subsec. (a). Pub. L. 104–208, § 2408(e)(1), inserted head-
+                                                                 ing and amended text of subsec. (a) generally. Prior to
+     If authorized by a consumer, a consumer re-                 amendment, text read as follows: ‘‘A consumer report-
+  porting agency may make the disclosures re-                    ing agency shall make the disclosures required under
+  quired under 1 1681g of this title—                            section 1681g of this title during normal business hours
+       (A) other than in writing; and                            and on reasonable notice.’’
+                                                                   Subsec. (b). Pub. L. 104–208, § 2408(e)(1), inserted head-
+       (B) in such form as may be—
+                                                                 ing and amended text of subsec. (b) generally. Prior to
+         (i) specified by the consumer in accord-                amendment, text read as follows: ‘‘The disclosures re-
+       ance with paragraph (2); and                              quired under section 1681g of this title shall be made to
+         (ii) available from the agency.                         the consumer—
+  (2) Form                                                           ‘‘(1) in person if he appears in person and furnishes
+                                                                   proper identification; or
+     A consumer may specify pursuant to para-                        ‘‘(2) by telephone if he has made a written request,
+  graph (1) that disclosures under section 1681g                   with proper identification, for telephone disclosure
+  of this title shall be made—                                     and the toll charge, if any, for the telephone call is
+       (A) in person, upon the appearance of the                   prepaid by or charged directly to the consumer.’’
+                                                                   Subsec. (e). Pub. L. 104–208, § 2408(e)(4), inserted ‘‘or
+     consumer at the place of business of the con-               based on information disclosed by a user of a consumer
+     sumer reporting agency where disclosures                    report to or for a consumer against whom the user has
+     are regularly provided, during normal busi-                 taken adverse action, based in whole or in part on the
+     ness hours, and on reasonable notice;                       report’’ before ‘‘except’’.
+       (B) by telephone, if the consumer has made
+     a written request for disclosure by tele-                          Statutory Notes and Related Subsidiaries
+     phone;                                                               EFFECTIVE DATE OF 1996 AMENDMENT
+       (C) by electronic means, if available from                  Amendment by Pub. L. 104–208 effective 365 days after
+     the agency; or                                              Sept. 30, 1996, with special rule for early compliance,
+       (D) by any other reasonable means that is                 see section 2420 of Pub. L. 104–208, set out as a note
+     available from the agency.                                  under section 1681a of this title.
+(c) Trained personnel                                                                 EFFECTIVE DATE
+  Any consumer reporting agency shall provide                      Section effective upon the expiration of one hundred
+trained personnel to explain to the consumer                     and eighty days following Oct. 26, 1970, see section
+
+ 1 So in original. Probably should be followed by ‘‘section’’.    2 So in original. Probably should be followed by a comma.
+Page 1589                           TITLE 15—COMMERCE AND TRADE                                       § 1681i
+
+504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set   (3) Determination that dispute is frivolous or
+out as a note under section 1681 of this title.                 irrelevant
+§ 1681i. Procedure in case of disputed accuracy               (A) In general
+                                                                Notwithstanding paragraph (1), a con-
+(a) Reinvestigations of disputed information                  sumer reporting agency may terminate a re-
+  (1) Reinvestigation required                                investigation of information disputed by a
+    (A) In general                                            consumer under that paragraph if the agen-
+                                                              cy reasonably determines that the dispute
+      Subject to subsection (f) and except as pro-            by the consumer is frivolous or irrelevant,
+    vided in subsection (g), if the completeness              including by reason of a failure by a con-
+    or accuracy of any item of information con-               sumer to provide sufficient information to
+    tained in a consumer’s file at a consumer re-             investigate the disputed information.
+    porting agency is disputed by the consumer
+    and the consumer notifies the agency di-                  (B) Notice of determination
+    rectly, or indirectly through a reseller, of                Upon making any determination in ac-
+    such dispute, the agency shall, free of                   cordance with subparagraph (A) that a dis-
+    charge, conduct a reasonable reinvestigation              pute is frivolous or irrelevant, a consumer
+    to determine whether the disputed informa-                reporting agency shall notify the consumer
+    tion is inaccurate and record the current                 of such determination not later than 5 busi-
+    status of the disputed information, or delete             ness days after making such determination,
+    the item from the file in accordance with                 by mail or, if authorized by the consumer for
+    paragraph (5), before the end of the 30-day               that purpose, by any other means available
+    period beginning on the date on which the                 to the agency.
+    agency receives the notice of the dispute                 (C) Contents of notice
+    from the consumer or reseller.
+                                                                A notice under subparagraph (B) shall in-
+    (B) Extension of period to reinvestigate                  clude—
+      Except as provided in subparagraph (C),                      (i) the reasons for the determination
+    the 30-day period described in subparagraph                 under subparagraph (A); and
+    (A) may be extended for not more than 15 ad-                   (ii) identification of any information re-
+    ditional days if the consumer reporting                     quired to investigate the disputed informa-
+    agency receives information from the con-                   tion, which may consist of a standardized
+    sumer during that 30-day period that is rel-                form describing the general nature of such
+    evant to the reinvestigation.                               information.
+    (C) Limitations on extension of period to re-           (4) Consideration of consumer information
+        investigate                                           In conducting any reinvestigation under
+      Subparagraph (B) shall not apply to any               paragraph (1) with respect to disputed infor-
+    reinvestigation in which, during the 30-day             mation in the file of any consumer, the con-
+    period described in subparagraph (A), the in-           sumer reporting agency shall review and con-
+    formation that is the subject of the reinves-           sider all relevant information submitted by
+    tigation is found to be inaccurate or incom-            the consumer in the period described in para-
+    plete or the consumer reporting agency de-              graph (1)(A) with respect to such disputed in-
+    termines that the information cannot be                 formation.
+    verified.                                               (5) Treatment of inaccurate or unverifiable in-
+  (2) Prompt notice of dispute to furnisher of in-              formation
+      formation                                               (A) In general
+    (A) In general                                              If, after any reinvestigation under para-
+      Before the expiration of the 5-business-day             graph (1) of any information disputed by a
+    period beginning on the date on which a con-              consumer, an item of the information is
+    sumer reporting agency receives notice of a               found to be inaccurate or incomplete or can-
+    dispute from any consumer or a reseller in                not be verified, the consumer reporting
+    accordance with paragraph (1), the agency                 agency shall—
+    shall provide notification of the dispute to                   (i) promptly delete that item of informa-
+    any person who provided any item of infor-                  tion from the file of the consumer, or mod-
+    mation in dispute, at the address and in the                ify that item of information, as appro-
+    manner established with the person. The no-                 priate, based on the results of the reinves-
+    tice shall include all relevant information                 tigation; and
+    regarding the dispute that the agency has                      (ii) promptly notify the furnisher of that
+    received from the consumer or reseller.                     information that the information has been
+                                                                modified or deleted from the file of the
+    (B) Provision of other information                          consumer.
+      The consumer reporting agency shall                     (B) Requirements relating to reinsertion of
+    promptly provide to the person who provided                    previously deleted material
+    the information in dispute all relevant infor-
+    mation regarding the dispute that is re-                    (i) Certification of accuracy of information
+    ceived by the agency from the consumer or                    If any information is deleted from a con-
+    the reseller after the period referred to in               sumer’s file pursuant to subparagraph (A),
+    subparagraph (A) and before the end of the                 the information may not be reinserted in
+    period referred to in paragraph (1)(A).                    the file by the consumer reporting agency
+§ 1681i                         TITLE 15—COMMERCE AND TRADE                                    Page 1590
+
+      unless the person who furnishes the infor-          writing before the expiration of the 5-day pe-
+      mation certifies that the information is            riod referred to in subparagraph (A)—
+      complete and accurate.                                   (i) a statement that the reinvestigation
+      (ii) Notice to consumer                               is completed;
+                                                               (ii) a consumer report that is based upon
+         If any information that has been deleted           the consumer’s file as that file is revised
+      from a consumer’s file pursuant to sub-               as a result of the reinvestigation;
+      paragraph (A) is reinserted in the file, the             (iii) a notice that, if requested by the
+      consumer reporting agency shall notify                consumer, a description of the procedure
+      the consumer of the reinsertion in writing            used to determine the accuracy and com-
+      not later than 5 business days after the re-          pleteness of the information shall be pro-
+      insertion or, if authorized by the consumer           vided to the consumer by the agency, in-
+      for that purpose, by any other means                  cluding the business name and address of
+      available to the agency.                              any furnisher of information contacted in
+      (iii) Additional information                          connection with such information and the
+                                                            telephone number of such furnisher, if rea-
+         As part of, or in addition to, the notice
+                                                            sonably available;
+      under clause (ii), a consumer reporting                  (iv) a notice that the consumer has the
+      agency shall provide to a consumer in                 right to add a statement to the consumer’s
+      writing not later than 5 business days                file disputing the accuracy or complete-
+      after the date of the reinsertion—                    ness of the information; and
+           (I) a statement that the disputed infor-            (v) a notice that the consumer has the
+         mation has been reinserted;                        right to request under subsection (d) that
+           (II) the business name and address of            the consumer reporting agency furnish no-
+         any furnisher of information contacted             tifications under that subsection.
+         and the telephone number of such fur-          (7) Description of reinvestigation procedure
+         nisher, if reasonably available, or of any
+         furnisher of information that contacted          A consumer reporting agency shall provide
+         the consumer reporting agency, in con-         to a consumer a description referred to in
+         nection with the reinsertion of such in-       paragraph (6)(B)(iii) by not later than 15 days
+         formation; and                                 after receiving a request from the consumer
+           (III) a notice that the consumer has         for that description.
+         the right to add a statement to the con-       (8) Expedited dispute resolution
+         sumer’s file disputing the accuracy or           If a dispute regarding an item of information
+         completeness of the disputed informa-          in a consumer’s file at a consumer reporting
+         tion.                                          agency is resolved in accordance with para-
+    (C) Procedures to prevent reappearance              graph (5)(A) by the deletion of the disputed in-
+                                                        formation by not later than 3 business days
+      A consumer reporting agency shall main-           after the date on which the agency receives
+    tain reasonable procedures designed to pre-         notice of the dispute from the consumer in ac-
+    vent the reappearance in a consumer’s file,         cordance with paragraph (1)(A), then the agen-
+    and in consumer reports on the consumer, of         cy shall not be required to comply with para-
+    information that is deleted pursuant to this        graphs (2), (6), and (7) with respect to that dis-
+    paragraph (other than information that is           pute if the agency—
+    reinserted in accordance with subparagraph              (A) provides prompt notice of the deletion
+    (B)(i)).                                              to the consumer by telephone;
+    (D) Automated reinvestigation system                    (B) includes in that notice, or in a written
+      Any consumer reporting agency that com-             notice that accompanies a confirmation and
+    piles and maintains files on consumers on a           consumer report provided in accordance
+    nationwide basis shall implement an auto-             with subparagraph (C), a statement of the
+    mated system through which furnishers of              consumer’s right to request under subsection
+    information to that consumer reporting                (d) that the agency furnish notifications
+    agency may report the results of a reinves-           under that subsection; and
+                                                            (C) provides written confirmation of the
+    tigation that finds incomplete or inaccurate
+                                                          deletion and a copy of a consumer report on
+    information in a consumer’s file to other
+                                                          the consumer that is based on the con-
+    such consumer reporting agencies.
+                                                          sumer’s file after the deletion, not later
+  (6) Notice of results of reinvestigation                than 5 business days after making the dele-
+    (A) In general                                        tion.
+      A consumer reporting agency shall provide       (b) Statement of dispute
+    written notice to a consumer of the results         If the reinvestigation does not resolve the dis-
+    of a reinvestigation under this subsection        pute, the consumer may file a brief statement
+    not later than 5 business days after the com-     setting forth the nature of the dispute. The con-
+    pletion of the reinvestigation, by mail or, if    sumer reporting agency may limit such state-
+    authorized by the consumer for that pur-          ments to not more than one hundred words if it
+    pose, by other means available to the agen-       provides the consumer with assistance in writ-
+    cy.                                               ing a clear summary of the dispute.
+    (B) Contents                                      (c) Notification of consumer dispute in subse-
+      As part of, or in addition to, the notice           quent consumer reports
+    under subparagraph (A), a consumer report-          Whenever a statement of a dispute is filed, un-
+    ing agency shall provide to a consumer in         less there is reasonable grounds to believe that
+Page 1591                                 TITLE 15—COMMERCE AND TRADE                                § 1681i
+
+it is frivolous or irrelevant, the consumer re-            (4) Rulemaking authority
+porting agency shall, in any subsequent con-                 The Commission 1 may prescribe regulations,
+sumer report containing the information in                 as appropriate to implement this subsection.
+question, clearly note that it is disputed by the
+consumer and provide either the consumer’s                 (5) Annual report
+statement or a clear and accurate codification               The Commission 1 shall submit to the Com-
+or summary thereof.                                        mittee on Banking, Housing, and Urban Af-
+                                                           fairs of the Senate and the Committee on Fi-
+(d) Notification of deletion of disputed informa-
+                                                           nancial Services of the House of Representa-
+     tion
+                                                           tives an annual report regarding information
+  Following any deletion of information which              gathered by the Bureau under this subsection.
+is found to be inaccurate or whose accuracy can
+                                                        (f) Reinvestigation requirement applicable to re-
+no longer be verified or any notation as to dis-
+                                                             sellers
+puted information, the consumer reporting
+agency shall, at the request of the consumer,              (1) Exemption from general reinvestigation re-
+furnish notification that the item has been de-                quirement
+leted or the statement, codification or summary              Except as provided in paragraph (2), a re-
+pursuant to subsection (b) or (c) to any person            seller shall be exempt from the requirements
+specifically designated by the consumer who has            of this section.
+within two years prior thereto received a con-             (2) Action required upon receiving notice of a
+sumer report for employment purposes, or with-                 dispute
+in six months prior thereto received a consumer
+report for any other purpose, which contained                If a reseller receives a notice from a con-
+the deleted or disputed information.                       sumer of a dispute concerning the complete-
+                                                           ness or accuracy of any item of information
+(e) Treatment of complaints and report to Con-             contained in a consumer report on such con-
+    gress                                                  sumer produced by the reseller, the reseller
+ (1) In general                                            shall, within 5 business days of receiving the
+                                                           notice, and free of charge—
+   The Commission 1 shall—
+      (A) compile all complaints that it receives              (A) determine whether the item of infor-
+   that a file of a consumer that is maintained              mation is incomplete or inaccurate as a re-
+   by a consumer reporting agency described in               sult of an act or omission of the reseller; and
+   section 1681a(p) of this title contains incom-              (B) if—
+   plete or inaccurate information, with re-                      (i) the reseller determines that the item
+   spect to which, the consumer appears to                     of information is incomplete or inaccurate
+   have disputed the completeness or accuracy                  as a result of an act or omission of the re-
+   with the consumer reporting agency or oth-                  seller, not later than 20 days after receiv-
+   erwise utilized the procedures provided by                  ing the notice, correct the information in
+   subsection (a); and                                         the consumer report or delete it; or
+      (B) transmit each such complaint to each                    (ii) if the reseller determines that the
+   consumer reporting agency involved.                         item of information is not incomplete or
+                                                               inaccurate as a result of an act or omis-
+ (2) Exclusion                                                 sion of the reseller, convey the notice of
+   Complaints received or obtained by the Bu-                  the dispute, together with all relevant in-
+ reau pursuant to its investigative authority                  formation provided by the consumer, to
+ under the Consumer Financial Protection Act                   each consumer reporting agency that pro-
+ of 2010 shall not be subject to paragraph (1).                vided the reseller with the information
+                                                               that is the subject of the dispute, using an
+ (3) Agency responsibilities
+                                                               address or a notification mechanism speci-
+   Each consumer reporting agency described                    fied by the consumer reporting agency for
+ in section 1681a(p) of this title that receives a             such notices.
+ complaint transmitted by the Bureau pursu-                (3) Responsibility of consumer reporting agen-
+ ant to paragraph (1) shall—                                   cy to notify consumer through reseller
+     (A) review each such complaint to deter-
+   mine whether all legal obligations imposed                Upon the completion of a reinvestigation
+   on the consumer reporting agency under this             under this section of a dispute concerning the
+   subchapter (including any obligation im-                completeness or accuracy of any information
+   posed by an applicable court or administra-             in the file of a consumer by a consumer re-
+   tive order) have been met with respect to               porting agency that received notice of the dis-
+   the subject matter of the complaint;                    pute from a reseller under paragraph (2)—
+     (B) provide reports on a regular basis to                 (A) the notice by the consumer reporting
+   the Bureau regarding the determinations of                agency under paragraph (6), (7), or (8) of sub-
+   and actions taken by the consumer reporting               section (a) shall be provided to the reseller
+   agency, if any, in connection with its review             in lieu of the consumer; and
+   of such complaints; and                                     (B) the reseller shall immediately re-
+     (C) maintain, for a reasonable time period,             convey such notice to the consumer, includ-
+   records regarding the disposition of each                 ing any notice of a deletion by telephone in
+   such complaint that is sufficient to dem-                 the manner required under paragraph (8)(A).
+   onstrate compliance with this subsection.               (4) Reseller reinvestigations
+                                                             No provision of this subsection shall be con-
+ 1 So in original. Probably should be ‘‘Bureau’’.          strued as prohibiting a reseller from con-
+§ 1681i                               TITLE 15—COMMERCE AND TRADE                                                Page 1592
+
+  ducting a reinvestigation of a consumer dis-                     Pub. L. 108–159, § 316(a)(1), substituted ‘‘Subject to
+  pute directly.                                                subsection (f), if the completeness’’ for ‘‘If the com-
+                                                                pleteness’’ and inserted ‘‘, or indirectly through a re-
+(g) Dispute process for veteran’s medical debt                  seller,’’ after ‘‘notifies the agency directly’’ and ‘‘or re-
+  (1) In general                                                seller’’ before period at end.
+                                                                   Subsec. (a)(2)(A). Pub. L. 108–159, § 316(a)(2), inserted
+    With respect to a veteran’s medical debt, the               ‘‘or a reseller’’ after ‘‘dispute from any consumer’’ and
+  veteran may submit a notice described in                      ‘‘or reseller’’ before period at end.
+  paragraph (2), proof of liability of the Depart-                 Subsec. (a)(2)(B). Pub. L. 108–159, § 316(c), struck out
+  ment of Veterans Affairs for payment of that                  ‘‘from consumer’’ after ‘‘information’’ in heading.
+  debt, or documentation that the Department                       Pub. L. 108–159, § 316(a)(3), inserted ‘‘or the reseller’’
+  of Veterans Affairs is in the process of making               after ‘‘from the consumer’’.
+  payment for authorized hospital care, medical                    Subsec. (a)(5)(A). Pub. L. 108–159, § 314(a), substituted
+                                                                ‘‘shall—’’ and cls. (i) and (ii) for ‘‘shall promptly delete
+  services, or extended care services rendered to               that item of information from the consumer’s file or
+  a consumer reporting agency or a reseller to                  modify that item of information, as appropriate, based
+  dispute the inclusion of that debt on a con-                  on the results of the reinvestigation.’’
+  sumer report of the veteran.                                     Subsec. (e). Pub. L. 108–159, § 313(a), added subsec. (e).
+  (2) Notification to veteran                                      Subsec. (f). Pub. L. 108–159, § 316(b), added subsec. (f).
+                                                                   1998—Subsec. (a)(7). Pub. L. 105–347 substituted
+    The Department of Veterans Affairs shall                    ‘‘(6)(B)(iii)’’ for ‘‘(6)(B)(iv)’’.
+  submit to a veteran a notice that the Depart-                    1996—Subsec. (a). Pub. L. 104–208, § 2409(a), inserted
+  ment of Veterans Affairs has assumed liability                heading and amended text of subsec. (a) generally.
+  for part or all of a veteran’s medical debt.                  Prior to amendment, text read as follows: ‘‘If the com-
+                                                                pleteness or accuracy of any item of information con-
+  (3) Deletion of information from file                         tained in his file is disputed by a consumer, and such
+    If a consumer reporting agency receives no-                 dispute is directly conveyed to the consumer reporting
+  tice, proof of liability, or documentation                    agency by the consumer, the consumer reporting agen-
+                                                                cy shall within a reasonable period of time reinves-
+  under paragraph (1), the consumer reporting
+                                                                tigate and record the current status of that informa-
+  agency shall delete all information relating to               tion unless it has reasonable grounds to believe that
+  the veteran’s medical debt from the file of the               the dispute by the consumer is frivolous or irrelevant.
+  veteran and notify the furnisher and the vet-                 If after such reinvestigation such information is found
+  eran of that deletion.                                        to be inaccurate or can no longer be verified, the con-
+                                                                sumer reporting agency shall promptly delete such in-
+(Pub. L. 90–321, title VI, § 611, as added Pub. L.              formation. The presence of contradictory information
+91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1132;          in the consumer’s file does not in and of itself con-
+amended Pub. L. 104–208, div. A, title II, § 2409,              stitute reasonable grounds for believing the dispute is
+Sept. 30, 1996, 110 Stat. 3009–439; Pub. L. 105–347,            frivolous or irrelevant.’’
+§ 6(5), Nov. 2, 1998, 112 Stat. 3211; Pub. L. 108–159,             Subsec. (d). Pub. L. 104–208, § 2409(b), struck out at end
+title III, §§ 313(a), 314(a), 316, 317, Dec. 4, 2003, 117       ‘‘The consumer reporting agency shall clearly and con-
+Stat. 1994–1996, 1998; Pub. L. 111–203, title X,                spicuously disclose to the consumer his rights to make
+                                                                such a request. Such disclosure shall be made at or
+§ 1088(a)(2)(C), (6), July 21, 2010, 124 Stat. 2087;
+                                                                prior to the time the information is deleted or the con-
+Pub. L. 115–174, title III, § 302(b)(3), May 24, 2018,          sumer’s statement regarding the disputed information
+132 Stat. 1333.)                                                is received.’’
+
+                      Editorial Notes                                  Statutory Notes and Related Subsidiaries
+                  REFERENCES IN TEXT                                      EFFECTIVE DATE OF 2018 AMENDMENT
+   The Consumer Financial Protection Act of 2010, re-             Amendment by Pub. L. 115–174 effective 1 year after
+ferred to in subsec. (e)(2), is title X of Pub. L. 111–203,     May 24, 2018, see section 302(e) of Pub. L. 115–174, set out
+July 21, 2010, 124 Stat. 1955, which enacted subchapter V       as a note under section 1681a of this title.
+(§ 5481 et seq.) of chapter 53 of Title 12, Banks and Bank-
+ing, and enacted and amended numerous other sections                      EFFECTIVE DATE OF 2010 AMENDMENT
+and notes in the Code. For complete classification of
+                                                                  Amendment by Pub. L. 111–203 effective on the des-
+this Act to the Code, see Short Title note set out under
+                                                                ignated transfer date, see section 1100H of Pub. L.
+section 5301 of Title 12 and Tables.
+                                                                111–203, set out as a note under section 552a of Title 5,
+                       AMENDMENTS                               Government Organization and Employees.
+  2018—Subsec. (a)(1)(A). Pub. L. 115–174, § 302(b)(3)(A),                EFFECTIVE DATE OF 2003 AMENDMENT
+inserted ‘‘and except as provided in subsection (g)’’
+                                                                  Amendment by Pub. L. 108–159 subject to joint regu-
+after ‘‘subsection (f)’’.
+                                                                lations establishing effective dates as prescribed by
+  Subsec. (g). Pub. L. 115–174, § 302(b)(3)(B), added sub-
+                                                                Federal Reserve Board and Federal Trade Commission,
+sec. (g).
+                                                                except as otherwise provided, see section 3 of Pub. L.
+  2010—Subsec. (e)(2). Pub. L. 111–203, § 1088(a)(6), added
+                                                                108–159, set out as a note under section 1681 of this title.
+par. (2) and struck out former par. (2) which read as fol-
+lows: ‘‘Complaints received or obtained by the Commis-                    EFFECTIVE DATE OF 1998 AMENDMENT
+sion pursuant to its investigative authority under the
+Federal Trade Commission Act shall not be subject to              Amendment by Pub. L. 105–347 deemed to have same
+paragraph (1).’’                                                effective date as amendments made by section 2403 of
+  Subsec. (e)(3), (5). Pub. L. 111–203, § 1088(a)(2)(C), sub-   Pub. L. 104–208, see section 7 of Pub. L. 105–347, set out
+stituted ‘‘the Bureau’’ for ‘‘the Commission’’ wherever         as a note under section 1681a of this title.
+appearing.
+                                                                          EFFECTIVE DATE OF 1996 AMENDMENT
+  2003—Subsec. (a)(1)(A). Pub. L. 108–159, § 317, sub-
+stituted ‘‘shall, free of charge, conduct a reasonable re-        Amendment by Pub. L. 104–208 effective 365 days after
+investigation to determine whether the disputed infor-          Sept. 30, 1996, with special rule for early compliance,
+mation is inaccurate’’ for ‘‘shall reinvestigate free of        see section 2420 of Pub. L. 104–208, set out as a note
+charge’’.                                                       under section 1681a of this title.
+Page 1593                               TITLE 15—COMMERCE AND TRADE                                                  § 1681j
+
+                      EFFECTIVE DATE                                12-month period upon request of the con-
+  Section effective upon the expiration of one hundred              sumer and without charge to the consumer.
+and eighty days following Oct. 26, 1970, see section                (B) Centralized source
+504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set
+out as a note under section 1681 of this title.                       Subparagraph (A) shall apply with respect
+                                                                    to a consumer reporting agency described in
+    PROMPT INVESTIGATION OF DISPUTED CONSUMER                       section 1681a(p) of this title only if the re-
+                   INFORMATION                                      quest from the consumer is made using the
+  Pub. L. 108–159, title III, § 313(b), Dec. 4, 2003, 117 Stat.     centralized source established for such pur-
+1994, provided that:                                                pose in accordance with section 211(c) 1 of
+  ‘‘(1) STUDY REQUIRED.—The Board and the Commis-                   the Fair and Accurate Credit Transactions
+sion shall jointly study the extent to which, and the               Act of 2003.
+manner in which, consumer reporting agencies and fur-
+nishers of consumer information to consumer reporting               (C) Nationwide specialty consumer reporting
+agencies are complying with the procedures, time lines,                  agency
+and requirements under the Fair Credit Reporting Act                  (i) In general
+[this subchapter] for the prompt investigation of the
+disputed accuracy of any consumer information, the                       The Commission 2 shall prescribe regula-
+completeness of the information provided to consumer                  tions applicable to each consumer report-
+reporting agencies, and the prompt correction or dele-                ing agency described in section 1681a(w) 1
+tion, in accordance with such Act, of any inaccurate or               of this title to require the establishment
+incomplete information or information that cannot be                  of a streamlined process for consumers to
+verified.                                                             request consumer reports under subpara-
+  ‘‘(2) REPORT REQUIRED.—Before the end of the 12-                    graph (A), which shall include, at a min-
+month period beginning on the date of enactment of
+this Act [Dec. 4, 2003], the Board and the Commission
+                                                                      imum, the establishment by each such
+shall jointly submit a progress report to the Congress                agency of a toll-free telephone number for
+on the results of the study required under paragraph                  such requests.
+(1).                                                                  (ii) Considerations
+  ‘‘(3) CONSIDERATIONS.—In preparing the report re-
+quired under paragraph (2), the Board and the Commis-                    In prescribing regulations under clause
+sion shall consider information relating to complaints                (i), the Bureau shall consider—
+compiled by the Commission under section 611(e) of the                     (I) the significant demands that may
+Fair Credit Reporting Act [15 U.S.C. 1681i(e)], as added                 be placed on consumer reporting agen-
+by this section.                                                         cies in providing such consumer reports;
+  ‘‘(4) RECOMMENDATIONS.—The report required under                         (II) appropriate means to ensure that
+paragraph (2) shall include such recommendations as                      consumer reporting agencies can satis-
+the Board and the Commission jointly determine to be
+                                                                         factorily meet those demands, including
+appropriate for legislative or administrative action, to
+ensure that—                                                             the efficacy of a system of staggering
+     ‘‘(A) consumer disputes with consumer reporting                     the availability to consumers of such
+  agencies over the accuracy or completeness of infor-                   consumer reports; and
+  mation in a consumer’s file are promptly and fully in-                   (III) the ease by which consumers
+  vestigated and any incorrect, incomplete, or unverifi-                 should be able to contact consumer re-
+  able information is corrected or deleted immediately                   porting agencies with respect to access
+  thereafter;                                                            to such consumer reports.
+     ‘‘(B) furnishers of information to consumer report-
+  ing agencies maintain full and prompt compliance                    (iii) Date of issuance
+  with the duties and responsibilities established under                 The Commission 2 shall issue the regula-
+  section 623 of the Fair Credit Reporting Act [15 U.S.C.             tions required by this subparagraph in
+  1681s–2]; and
+                                                                      final form not later than 6 months after
+     ‘‘(C) consumer reporting agencies establish and
+  maintain appropriate internal controls and manage-                  December 4, 2003.
+  ment review procedures for maintaining full and con-                (iv) Consideration of ability to comply
+  tinuous compliance with the procedures, time lines,                    The regulations of the Bureau under this
+  and requirements under the Fair Credit Reporting
+  Act [this subchapter] for the prompt investigation of
+                                                                      subparagraph shall establish an effective
+  the disputed accuracy of any consumer information                   date by which each nationwide specialty
+  and the prompt correction or deletion, in accordance                consumer reporting agency (as defined in
+  with such Act, of any inaccurate or incomplete infor-               section 1681a(w) 1 of this title) shall be re-
+  mation or information that cannot be verified.’’                    quired to comply with subsection (a),
+  [For definitions of terms used in section 313(b) of Pub.            which effective date—
+L. 108–159, set out above, see section 2 of Pub. L. 108–159,               (I) shall be established after consider-
+set out as a Definitions note under section 1681 of this                 ation of the ability of each nationwide
+title.]
+                                                                         specialty consumer reporting agency to
+§ 1681j. Charges for certain disclosures                                 comply with subsection (a); and
+                                                                           (II) shall be not later than 6 months
+(a) Free annual disclosure                                               after the date on which such regulations
+  (1) Nationwide consumer reporting agencies                             are issued in final form (or such addi-
+    (A) In general                                                       tional period not to exceed 3 months, as
+                                                                         the Bureau determines appropriate).
+      All consumer reporting agencies described
+    in subsections (p) and (w) 1 of section 1681a of              (2) Timing
+    this title shall make all disclosures pursuant                  A consumer reporting agency shall provide a
+    to section 1681g of this title once during any                consumer report under paragraph (1) not later
+
+ 1 See References in Text note below.                             2 So in original. Probably should be ‘‘Bureau’’.
+§ 1681j                          TITLE 15—COMMERCE AND TRADE                                                    Page 1594
+
+  than 15 days after the date on which the re-            subsections (a) through (d), a consumer report-
+  quest is received under paragraph (1).                  ing agency may impose a reasonable charge on
+  (3) Reinvestigations                                    a consumer—
+                                                              (A) for making a disclosure to the con-
+    Notwithstanding the time periods specified
+                                                            sumer pursuant to section 1681g of this title,
+  in section 1681i(a)(1) of this title, a reinves-
+                                                            which charge—
+  tigation under that section by a consumer re-
+                                                                (i) shall not exceed $8; and
+  porting agency upon a request of a consumer
+                                                                (ii) shall be indicated to the consumer
+  that is made after receiving a consumer report
+                                                              before making the disclosure; and
+  under this subsection shall be completed not
+  later than 45 days after the date on which the               (B) for furnishing, pursuant to section
+  request is received.                                      1681i(d) of this title, following a reinvestiga-
+  (4) Exception for first 12 months of operation            tion under section 1681i(a) of this title, a
+                                                            statement, codification, or summary to a
+    This subsection shall not apply to a con-
+                                                            person designated by the consumer under
+  sumer reporting agency that has not been fur-
+                                                            that section after the 30-day period begin-
+  nishing consumer reports to third parties on a
+                                                            ning on the date of notification of the con-
+  continuing basis during the 12-month period
+                                                            sumer under paragraph (6) or (8) of section
+  preceding a request under paragraph (1), with
+                                                            1681i(a) of this title with respect to the re-
+  respect to consumers residing nationwide.
+                                                            investigation, which charge—
+(b) Free disclosure after adverse notice to con-                 (i) shall not exceed the charge that the
+    sumer                                                      agency would impose on each designated
+   Each consumer reporting agency that main-                   recipient for a consumer report; and
+tains a file on a consumer shall make all disclo-                (ii) shall be indicated to the consumer
+sures pursuant to section 1681g of this title with-            before furnishing such information.
+out charge to the consumer if, not later than 60          (2) Modification of amount
+days after receipt by such consumer of a notifi-
+cation pursuant to section 1681m of this title, or          The Bureau shall increase the amount re-
+of a notification from a debt collection agency           ferred to in paragraph (1)(A)(i) on January 1 of
+affiliated with that consumer reporting agency            each year, based proportionally on changes in
+stating that the consumer’s credit rating may             the Consumer Price Index, with fractional
+be or has been adversely affected, the consumer           changes rounded to the nearest fifty cents.
+makes a request under section 1681g of this title.      (g) Prevention of deceptive marketing of credit
+(c) Free disclosure under certain other cir-                reports
+     cumstances                                           (1) In general
+   Upon the request of the consumer, a consumer             Subject to rulemaking pursuant to section
+reporting agency shall make all disclosures pur-          205(b) of the Credit CARD Act of 2009, any ad-
+suant to section 1681g of this title once during          vertisement for a free credit report in any me-
+any 12-month period without charge to that con-           dium shall prominently disclose in such adver-
+sumer if the consumer certifies in writing that           tisement that free credit reports are available
+the consumer—                                             under            Federal          law          at:
+     (1) is unemployed and intends to apply for           ‘‘AnnualCreditReport.com’’ (or such other
+   employment in the 60-day period beginning on           source as may be authorized under Federal
+   the date on which the certification is made;           law).
+     (2) is a recipient of public welfare assistance;     (2) Television and radio advertisement
+   or                                                       In the case of an advertisement broadcast by
+     (3) has reason to believe that the file on the       television, the disclosures required under
+   consumer at the agency contains inaccurate             paragraph (1) shall be included in the audio
+   information due to fraud.                              and visual part of such advertisement. In the
+(d) Free disclosures in connection with fraud             case of an advertisement broadcast by
+     alerts                                               televison 3 or radio, the disclosure required
+   Upon the request of a consumer, a consumer             under paragraph (1) shall consist only of the
+reporting agency described in section 1681a(p) of         following: ‘‘This is not the free credit report
+this title shall make all disclosures pursuant to         provided for by Federal law’’.
+section 1681g of this title without charge to the       (Pub. L. 90–321, title VI, § 612, as added Pub. L.
+consumer, as provided in subsections (a)(2) and         91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1132;
+(b)(2) of section 1681c–1 of this title, as applica-    amended Pub. L. 104–208, div. A, title II, § 2410,
+ble.                                                    Sept. 30, 1996, 110 Stat. 3009–442; Pub. L. 108–159,
+(e) Other charges prohibited                            title II, § 211(a), Dec. 4, 2003, 117 Stat. 1968; Pub.
+   A consumer reporting agency shall not impose         L. 111–24, title II, § 205(a), May 22, 2009, 123 Stat.
+any charge on a consumer for providing any no-          1747; Pub. L. 111–203, title X, § 1088(a)(2)(A), (C),
+tification required by this subchapter or making        July 21, 2010, 124 Stat. 2087.)
+any disclosure required by this subchapter, ex-
+cept as authorized by subsection (f).                                           Editorial Notes
+(f) Reasonable charges allowed for certain dis-                             REFERENCES IN TEXT
+     closures                                             Section 1681a(w) of this title, referred to in subsec.
+   (1) In general                                       (a)(1)(A), (C)(i), (iv), was redesignated section 1681a(x)
+     In the case of a request from a consumer
+   other than a request that is covered by any of        3 So in original. Probably should be ‘‘television’’.
+Page 1595                             TITLE 15—COMMERCE AND TRADE                                                    § 1681j
+
+of this title by Pub. L. 111–203, title X, § 1088(a)(1), July             EFFECTIVE DATE OF 1996 AMENDMENT
+21, 2010, 124 Stat. 2086.
+  Section 211(c) of the Fair and Accurate Credit Trans-           Amendment by Pub. L. 104–208 effective 365 days after
+actions Act of 2003, referred to in subsec. (a)(1)(B), prob-    Sept. 30, 1996, with special rule for early compliance,
+ably means section 211(d) of Pub. L. 108–159, which is set      see section 2420 of Pub. L. 104–208, set out as a note
+out as a note below and relates to the establishment of         under section 1681a of this title.
+a centralized source. Section 211(c) of Pub. L. 108–159                              EFFECTIVE DATE
+amended section 1681g of this title.
+  Section 205(b) of the Credit CARD Act of 2009, re-              Section effective upon the expiration of one hundred
+ferred to in subsec. (g), is section 205(b) of Pub. L.          and eighty days following Oct. 26, 1970, see section
+111–24, which is set out as a note below.                       504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set
+                                                                out as a note under section 1681 of this title.
+                       AMENDMENTS
+                                                                                       REGULATIONS
+  2010—Subsec. (a)(1)(C). Pub. L. 111–203, § 1088(a)(2)(C),
+substituted ‘‘the Bureau’’ for ‘‘the Commission’’ wher-           Pub. L. 111–24, title II, § 205(b), May 22, 2009, 123 Stat.
+ever appearing.                                                 1747, provided that:
+  Subsec. (f)(2). Pub. L. 111–203, § 1088(a)(2)(A), sub-          ‘‘(1) IN GENERAL.—Not later than 9 months after the
+stituted ‘‘Bureau’’ for ‘‘Federal Trade Commission’’.           date of enactment of this Act [May 22, 2009], the Fed-
+  2009—Subsec. (g). Pub. L. 111–24 added subsec. (g).           eral Trade Commission shall issue a final rule to carry
+  2003—Subsec. (a). Pub. L. 108–159, § 211(a)(2), added         out this section.
+subsec. (a). Former subsec. (a) redesignated (f).                 ‘‘(2) CONTENT.—The rule required by this subsection—
+  Subsec. (d). Pub. L. 108–159, § 211(a)(4), added subsec.           ‘‘(A) shall include specific wording to be used in ad-
+(d). Former subsec. (d) redesignated (e).                         vertisements in accordance with this section; and
+  Subsec. (e). Pub. L. 108–159, § 211(a)(3), (5), redesig-           ‘‘(B) for advertisements on the Internet, shall in-
+nated subsec. (d) as (e) and substituted ‘‘subsection (f)’’       clude whether the disclosure required under section
+for ‘‘subsection (a)’’.                                           612(g)(1) of the Fair Credit Reporting Act [15 U.S.C.
+  Subsec. (f). Pub. L. 108–159, § 211(a)(1), (6), redesig-        1681j(g)(1)] (as added by this section) shall appear on
+nated subsec. (a) as (f) and substituted ‘‘In the case of         the advertisement or the website on which the free
+a request from a consumer other than a request that is            credit report is made available.
+covered by any of subsections (a) through (d), a’’ for            ‘‘(3) INTERIM DISCLOSURES.—If an advertisement sub-
+‘‘Except as provided in subsections (b), (c), and (d), a’’      ject to section 612(g) of the Fair Credit Reporting Act
+in par. (1).                                                    [15 U.S.C. 1681j(g)], as added by this section, is made
+  1996—Pub. L. 104–208 amended section generally. Prior         public after the 9-month deadline specified in para-
+to amendment, section read as follows: ‘‘A consumer             graph (1), but before the rule required by paragraph (1)
+reporting agency shall make all disclosures pursuant to         is finalized, such advertisement shall include the dis-
+section 1681g of this title and furnish all consumer re-        closure: ‘Free credit reports are available under Fed-
+ports pursuant to section 1681i(d) of this title without        eral law at: ‘‘AnnualCreditReport.com’’.’ ’’
+charge to the consumer if, within thirty days after re-           Pub. L. 108–159, title II, § 211(d), Dec. 4, 2003, 117 Stat.
+ceipt by such consumer of a notification pursuant to            1972, as amended by Pub. L. 111–203, § 1088(b)(2), July 21,
+section 1681m of this title or notification from a debt         2010, 124 Stat. 2092, provided that:
+collection agency affiliated with such consumer report-           ‘‘(1) IN GENERAL.—The Bureau [probably means the
+ing agency stating that the consumer’s credit rating            Bureau of Consumer Financial Protection] shall pre-
+may be or has been adversely affected, the consumer             scribe regulations applicable to consumer reporting
+makes a request under section 1681g or 1681i(d) of this         agencies described in section 603(p) of the Fair Credit
+title. Otherwise, the consumer reporting agency may             Reporting Act [15 U.S.C. 1681a(p)], to require the estab-
+impose a reasonable charge on the consumer for mak-             lishment of—
+ing disclosure to such consumer pursuant to section                  ‘‘(A) a centralized source through which consumers
+1681g of this title, the charge for which shall be indi-          may obtain a consumer report from each such con-
+cated to the consumer prior to making disclosure; and             sumer reporting agency, using a single request, and
+for furnishing notifications, statements, summaries, or           without charge to the consumer, as provided in sec-
+codifications to person designated by the consumer                tion 612(a) of the Fair Credit Reporting Act [15 U.S.C.
+pursuant to section 1681i(d) of this title, the charge for        1681j(a)] (as amended by this section); and
+which shall be indicated to the consumer prior to fur-               ‘‘(B) a standardized form for a consumer to make
+nishing such information and shall not exceed the                 such a request for a consumer report by mail or
+charge that the consumer reporting agency would im-               through an Internet website.
+pose on each designated recipient for a consumer report           ‘‘(2) CONSIDERATIONS.—In prescribing regulations
+except that no charge may be made for notifying such            under paragraph (1), the Bureau shall consider—
+persons of the deletion of information which is found to             ‘‘(A) the significant demands that may be placed on
+be inaccurate or which can no longer be verified.’’               consumer reporting agencies in providing such con-
+                                                                  sumer reports;
+       Statutory Notes and Related Subsidiaries                      ‘‘(B) appropriate means to ensure that consumer re-
+                                                                  porting agencies can satisfactorily meet those de-
+          EFFECTIVE DATE OF 2010 AMENDMENT
+                                                                  mands, including the efficacy of a system of stag-
+  Amendment by Pub. L. 111–203 effective on the des-              gering the availability to consumers of such con-
+ignated transfer date, see section 1100H of Pub. L.               sumer reports; and
+111–203, set out as a note under section 552a of Title 5,            ‘‘(C) the ease by which consumers should be able to
+Government Organization and Employees.                            contact consumer reporting agencies with respect to
+                                                                  access to such consumer reports.
+          EFFECTIVE DATE OF 2009 AMENDMENT
+                                                                  ‘‘(3) CENTRALIZED SOURCE.—The centralized source for
+  Amendment by Pub. L. 111–24 effective 9 months after          a request for a consumer report from a consumer re-
+May 22, 2009, except as otherwise specifically provided,        quired by this subsection shall provide for—
+see section 3 of Pub. L. 111–24, set out as a note under             ‘‘(A) a toll-free telephone number for such purpose;
+section 1602 of this title.                                          ‘‘(B) use of an Internet website for such purpose;
+                                                                  and
+          EFFECTIVE DATE OF 2003 AMENDMENT
+                                                                     ‘‘(C) a process for requests by mail for such purpose.
+  Amendment by Pub. L. 108–159 subject to joint regu-             ‘‘(4) TRANSITION.—The regulations of the Bureau
+lations establishing effective dates as prescribed by           under paragraph (1) shall provide for an orderly transi-
+Federal Reserve Board and Federal Trade Commission,             tion by consumer reporting agencies described in sec-
+except as otherwise provided, see section 3 of Pub. L.          tion 603(p) of the Fair Credit Reporting Act [15 U.S.C.
+108–159, set out as a note under section 1681 of this title.    1681a(p)] to the centralized source for consumer report
+§ 1681k                               TITLE 15—COMMERCE AND TRADE                                            Page 1596
+
+distribution required by section 612(a)(1)(B) [15 U.S.C.         on a consumer’s ability to obtain employment
+1681j(a)(1)(B)], as amended by this section, in a manner         is reported it is complete and up to date. For
+that—                                                            purposes of this paragraph, items of public
+     ‘‘(A) does not temporarily overwhelm such con-              record relating to arrests, indictments, con-
+  sumer reporting agencies with requests for disclo-
+  sures of consumer reports beyond their capacity to
+                                                                 victions, suits, tax liens, and outstanding
+  deliver; and                                                   judgments shall be considered up to date if the
+     ‘‘(B) does not deny creditors, other users, and con-        current public record status of the item at the
+  sumers access to consumer reports on a time-sen-               time of the report is reported.
+  sitive basis for specific purposes, such as home pur-        (b) Exemption for national security investiga-
+  chases or suspicions of identity theft, during the               tions
+  transition period.
+  ‘‘(5) TIMING.—Regulations required by this subsection          Subsection (a) does not apply in the case of an
+shall—                                                         agency or department of the United States Gov-
+     ‘‘(A) be issued in final form not later than 6 months     ernment that seeks to obtain and use a con-
+  after the date of enactment of this Act [Dec. 4, 2003];      sumer report for employment purposes, if the
+  and                                                          head of the agency or department makes a writ-
+     ‘‘(B) become effective not later than 6 months after      ten finding as prescribed under section
+  the date on which they are issued in final form.             1681b(b)(4)(A) of this title.
+  ‘‘(6) SCOPE OF REGULATIONS.—
+     ‘‘(A) IN GENERAL.—The Bureau shall, by rule, deter-       (Pub. L. 90–321, title VI, § 613, as added Pub. L.
+  mine whether to require a consumer reporting agency          91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1133;
+  that compiles and maintains files on consumers on            amended Pub. L. 105–347, § 4(b), Nov. 2, 1998, 112
+  substantially a nationwide basis, other than one de-         Stat. 3210.)
+  scribed in section 603(p) of the Fair Credit Reporting
+  Act [15 U.S.C. 1681a(p)], to make free consumer re-                               Editorial Notes
+  ports available upon consumer request, and if so,
+  whether such consumer reporting agencies should                                    AMENDMENTS
+  make such free reports available through the central-          1998—Pub. L. 105–347 designated existing provisions as
+  ized source described in paragraph (1)(A).                   subsec. (a), inserted heading, and added subsec. (b).
+     ‘‘(B) CONSIDERATIONS.—Before making any deter-
+  mination under subparagraph (A), the Bureau shall                   Statutory Notes and Related Subsidiaries
+  consider—
+        ‘‘(i) the number of requests for consumer reports               EFFECTIVE DATE OF 1998 AMENDMENT
+     to, and the number of consumer reports generated            Amendment by Pub. L. 105–347 deemed to have same
+     by, the consumer reporting agency, in comparison          effective date as amendments made by section 2403 of
+     with consumer reporting agencies described in sub-        Pub. L. 104–208, see section 7 of Pub. L. 105–347, set out
+     sections (p) and (w) [now (x)] of section 603 of the      as a note under section 1681a of this title.
+     Fair Credit Reporting Act [15 U.S.C. 1681a(p), (w)
+                                                                                   EFFECTIVE DATE
+     [x]];
+        ‘‘(ii) the overall scope of the operations of the        Section effective upon the expiration of one hundred
+     consumer reporting agency;                                and eighty days following Oct. 26, 1970, see section
+        ‘‘(iii) the needs of consumers for access to con-      504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set
+     sumer reports provided by consumer reporting              out as a note under section 1681 of this title.
+     agencies free of charge;
+        ‘‘(iv) the costs of providing access to consumer re-   § 1681l. Restrictions on investigative consumer
+     ports by consumer reporting agencies free of                  reports
+     charge; and
+                                                                 Whenever a consumer reporting agency pre-
+        ‘‘(v) the effects on the ongoing competitive viabil-
+     ity of such consumer reporting agencies if such free      pares an investigative consumer report, no ad-
+     access is required.’’                                     verse information in the consumer report (other
+  [For definitions of terms used in section 211(d) of Pub.     than information which is a matter of public
+L. 108–159, set out above, see section 2 of Pub. L. 108–159,   record) may be included in a subsequent con-
+set out as a Definitions note under section 1681 of this       sumer report unless such adverse information
+title.]                                                        has been verified in the process of making such
+                                                               subsequent consumer report, or the adverse in-
+§ 1681k. Public record information for employ-                 formation was received within the three-month
+    ment purposes                                              period preceding the date the subsequent report
+(a) In general                                                 is furnished.
+  A consumer reporting agency which furnishes                  (Pub. L. 90–321, title VI, § 614, as added Pub. L.
+a consumer report for employment purposes and                  91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1133.)
+which for that purpose compiles and reports
+                                                                      Statutory Notes and Related Subsidiaries
+items of information on consumers which are
+matters of public record and are likely to have                                    EFFECTIVE DATE
+an adverse effect upon a consumer’s ability to                   Section effective upon the expiration of one hundred
+obtain employment shall—                                       and eighty days following Oct. 26, 1970, see section
+     (1) at the time such public record informa-               504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set
+  tion is reported to the user of such consumer                out as a note under section 1681 of this title.
+  report, notify the consumer of the fact that                 § 1681m. Requirements on users of consumer re-
+  public record information is being reported by                   ports
+  the consumer reporting agency, together with
+  the name and address of the person to whom                   (a) Duties of users taking adverse actions on
+  such information is being reported; or                           basis of information contained in consumer
+     (2) maintain strict procedures designed to                    reports
+  insure that whenever public record informa-                    If any person takes any adverse action with
+  tion which is likely to have an adverse effect               respect to any consumer that is based in whole
+Page 1597                       TITLE 15—COMMERCE AND TRADE                                      § 1681m
+
+or in part on any information contained in a           (2) Duties of person taking certain actions
+consumer report, the person shall—                         based on information provided by affiliate
+    (1) provide oral, written, or electronic notice      (A) Duties, generally
+  of the adverse action to the consumer;
+                                                           If a person takes an action described in
+    (2) provide to the consumer written or elec-         subparagraph (B) with respect to a con-
+  tronic disclosure—                                     sumer, based in whole or in part on informa-
+      (A) of a numerical credit score as defined         tion described in subparagraph (C), the per-
+    in section 1681g(f)(2)(A) of this title used by      son shall—
+    such person in taking any adverse action                 (i) notify the consumer of the action, in-
+    based in whole or in part on any information           cluding a statement that the consumer
+    in a consumer report; and                              may obtain the information in accordance
+      (B) of the information set forth in subpara-         with clause (ii); and
+    graphs (B) through (E) of section 1681g(f)(1)            (ii) upon a written request from the con-
+    of this title;                                         sumer received within 60 days after trans-
+                                                           mittal of the notice required by clause (i),
+   (3) provide to the consumer orally, in writ-
+                                                           disclose to the consumer the nature of the
+ ing, or electronically—
+                                                           information upon which the action is
+     (A) the name, address, and telephone num-             based by not later than 30 days after re-
+   ber of the consumer reporting agency (in-               ceipt of the request.
+   cluding a toll-free telephone number estab-
+   lished by the agency if the agency compiles           (B) Action described
+   and maintains files on consumers on a na-               An action referred to in subparagraph (A)
+   tionwide basis) that furnished the report to          is an adverse action described in section
+   the person; and                                       1681a(k)(1)(A) of this title, taken in connec-
+     (B) a statement that the consumer report-           tion with a transaction initiated by the con-
+   ing agency did not make the decision to               sumer, or any adverse action described in
+   take the adverse action and is unable to pro-         clause (i) or (ii) of section 1681a(k)(1)(B) of
+   vide the consumer the specific reasons why            this title.
+   the adverse action was taken; and                     (C) Information described
+   (4) provide to the consumer an oral, written,           Information referred to in subparagraph
+ or electronic notice of the consumer’s right—           (A)—
+     (A) to obtain, under section 1681j of this              (i) except as provided in clause (ii), is in-
+   title, a free copy of a consumer report on the          formation that—
+   consumer from the consumer reporting                         (I) is furnished to the person taking
+   agency referred to in paragraph (3), which                the action by a person related by com-
+   notice shall include an indication of the 60-             mon ownership or affiliated by common
+   day period under that section for obtaining               corporate control to the person taking
+   such a copy; and                                          the action; and
+     (B) to dispute, under section 1681i of this                (II) bears on the credit worthiness,
+   title, with a consumer reporting agency the               credit standing, credit capacity, char-
+   accuracy or completeness of any informa-                  acter, general reputation, personal char-
+   tion in a consumer report furnished by the                acteristics, or mode of living of the con-
+   agency.                                                   sumer; and
+                                                               (ii) does not include—
+(b) Adverse action based on information ob-                       (I) information solely as to trans-
+    tained from third parties other than con-                  actions or experiences between the con-
+    sumer reporting agencies                                   sumer and the person furnishing the in-
+                                                               formation; or
+ (1) In general                                                   (II) information in a consumer report.
+   Whenever credit for personal, family, or           (c) Reasonable procedures to assure compliance
+ household purposes involving a consumer is             No person shall be held liable for any violation
+ denied or the charge for such credit is in-          of this section if he shows by a preponderance of
+ creased either wholly or partly because of in-       the evidence that at the time of the alleged vio-
+ formation obtained from a person other than a        lation he maintained reasonable procedures to
+ consumer reporting agency bearing upon the           assure compliance with the provisions of this
+ consumer’s credit worthiness, credit standing,       section.
+ credit capacity, character, general reputation,      (d) Duties of users making written credit or in-
+ personal characteristics, or mode of living, the         surance solicitations on basis of information
+ user of such information shall, within a rea-            contained in consumer files
+ sonable period of time, upon the consumer’s
+ written request for the reasons for such ad-           (1) In general
+ verse action received within sixty days after            Any person who uses a consumer report on
+ learning of such adverse action, disclose the          any consumer in connection with any credit or
+ nature of the information to the consumer.             insurance transaction that is not initiated by
+ The user of such information shall clearly and         the consumer, that is provided to that person
+ accurately disclose to the consumer his right          under section 1681b(c)(1)(B) of this title, shall
+ to make such written request at the time such          provide with each written solicitation made to
+ adverse action is communicated to the con-             the consumer regarding the transaction a
+ sumer.                                                 clear and conspicuous statement that—
+§ 1681m                          TITLE 15—COMMERCE AND TRADE                                 Page 1598
+
+      (A) information contained in the con-            Trade Commission, the Commodity Futures
+    sumer’s consumer report was used in connec-        Trading Commission, and the Securities and
+    tion with the transaction;                         Exchange Commission shall jointly, with re-
+      (B) the consumer received the offer of           spect to the entities that are subject to their
+    credit or insurance because the consumer           respective enforcement authority under sec-
+    satisfied the criteria for credit worthiness or    tion 1681s of this title—
+    insurability under which the consumer was              (A) establish and maintain guidelines for
+    selected for the offer;                              use by each financial institution and each
+      (C) if applicable, the credit or insurance         creditor regarding identity theft with re-
+    may not be extended if, after the consumer           spect to account holders at, or customers of,
+    responds to the offer, the consumer does not         such entities, and update such guidelines as
+    meet the criteria used to select the con-            often as necessary;
+    sumer for the offer or any applicable criteria         (B) prescribe regulations requiring each fi-
+    bearing on credit worthiness or insurability         nancial institution and each creditor to es-
+    or does not furnish any required collateral;         tablish reasonable policies and procedures
+      (D) the consumer has a right to prohibit           for implementing the guidelines established
+    information contained in the consumer’s file         pursuant to subparagraph (A), to identify
+    with any consumer reporting agency from              possible risks to account holders or cus-
+    being used in connection with any credit or          tomers or to the safety and soundness of the
+    insurance transaction that is not initiated          institution or customers; and
+                                                           (C) prescribe regulations applicable to card
+    by the consumer; and
+                                                         issuers to ensure that, if a card issuer re-
+      (E) the consumer may exercise the right
+                                                         ceives notification of a change of address for
+    referred to in subparagraph (D) by notifying
+                                                         an existing account, and within a short pe-
+    a notification system established under sec-
+                                                         riod of time (during at least the first 30 days
+    tion 1681b(e) of this title.
+                                                         after such notification is received) receives a
+  (2) Disclosure of address and telephone num-           request for an additional or replacement
+      ber; format                                        card for the same account, the card issuer
+    A statement under paragraph (1) shall—               may not issue the additional or replacement
+      (A) include the address and toll-free tele-        card, unless the card issuer, in accordance
+    phone number of the appropriate notifica-            with reasonable policies and procedures—
+    tion system established under section                    (i) notifies the cardholder of the request
+    1681b(e) of this title; and                            at the former address of the cardholder
+      (B) be presented in such format and in               and provides to the cardholder a means of
+    such type size and manner as to be simple              promptly reporting incorrect address
+    and easy to understand, as established by              changes;
+    the Bureau, by rule, in consultation with the            (ii) notifies the cardholder of the request
+    Federal Trade Commission, the Federal                  by such other means of communication as
+    banking agencies, and the National Credit              the cardholder and the card issuer pre-
+    Union Administration.                                  viously agreed to; or
+                                                             (iii) uses other means of assessing the
+  (3) Maintaining criteria on file                         validity of the change of address, in ac-
+    A person who makes an offer of credit or in-           cordance with reasonable policies and pro-
+  surance to a consumer under a credit or insur-           cedures established by the card issuer in
+  ance transaction described in paragraph (1)              accordance with the regulations prescribed
+  shall maintain on file the criteria used to se-          under subparagraph (B).
+  lect the consumer to receive the offer, all cri-     (2) Criteria
+  teria bearing on credit worthiness or insur-           (A) In general
+  ability, as applicable, that are the basis for de-
+  termining whether or not to extend credit or             In developing the guidelines required by
+  insurance pursuant to the offer, and any re-           paragraph (1)(A), the agencies described in
+  quirement for the furnishing of collateral as a        paragraph (1) shall identify patterns, prac-
+  condition of the extension of credit or insur-         tices, and specific forms of activity that in-
+  ance, until the expiration of the 3-year period        dicate the possible existence of identity
+  beginning on the date on which the offer is            theft.
+  made to the consumer.                                  (B) Inactive accounts
+  (4) Authority of Federal agencies regarding un-          In developing the guidelines required by
+      fair or deceptive acts or practices not af-        paragraph (1)(A), the agencies described in
+      fected                                             paragraph (1) shall consider including rea-
+                                                         sonable guidelines providing that when a
+    This section is not intended to affect the au-       transaction occurs with respect to a credit
+  thority of any Federal or State agency to en-          or deposit account that has been inactive for
+  force a prohibition against unfair or deceptive        more than 2 years, the creditor or financial
+  acts or practices, including the making of             institution shall follow reasonable policies
+  false or misleading statements in connection           and procedures that provide for notice to be
+  with a credit or insurance transaction that is         given to a consumer in a manner reasonably
+  not initiated by the consumer.                         designed to reduce the likelihood of identity
+(e) Red flag guidelines and regulations required         theft with respect to such account.
+  (1) Guidelines                                       (3) Consistency with verification requirements
+    The Federal banking agencies, the National           Guidelines established pursuant to para-
+  Credit Union Administration, the Federal             graph (1) shall not be inconsistent with the
+Page 1599                        TITLE 15—COMMERCE AND TRADE                                     § 1681m
+
+  policies and procedures required under section       tempting to collect may be fraudulent or may be
+  5318(l) of title 31.                                 the result of identity theft, that person shall—
+  (4) Definitions                                          (1) notify the third party that the informa-
+                                                         tion may be fraudulent or may be the result of
+    As used in this subsection, the term ‘‘cred-         identity theft; and
+  itor’’—                                                  (2) upon request of the consumer to whom
+      (A) means a creditor, as defined in section        the debt purportedly relates, provide to the
+    1691a of this title, that regularly and in the       consumer all information to which the con-
+    ordinary course of business—                         sumer would otherwise be entitled if the con-
+         (i) obtains or uses consumer reports, di-       sumer were not a victim of identity theft, but
+      rectly or indirectly, in connection with a         wished to dispute the debt under provisions of
+      credit transaction;                                law applicable to that person.
+         (ii) furnishes information to consumer
+      reporting agencies, as described in section      (h) Duties of users in certain credit transactions
+      1681s–2 of this title, in connection with a        (1) In general
+      credit transaction; or                               Subject to rules prescribed as provided in
+         (iii) advances funds to or on behalf of a       paragraph (6), if any person uses a consumer
+      person, based on an obligation of the per-         report in connection with an application for,
+      son to repay the funds or repayable from           or a grant, extension, or other provision of,
+      specific property pledged by or on behalf of       credit on material terms that are materially
+      the person;                                        less favorable than the most favorable terms
+        (B) does not include a creditor described in     available to a substantial proportion of con-
+     subparagraph (A)(iii) that advances funds on        sumers from or through that person, based in
+     behalf of a person for expenses incidental to       whole or in part on a consumer report, the per-
+     a service provided by the creditor to that          son shall provide an oral, written, or elec-
+     person; and                                         tronic notice to the consumer in the form and
+        (C) includes any other type of creditor, as      manner required by regulations prescribed in
+     defined in that section 1691a of this title, as     accordance with this subsection.
+     the agency described in paragraph (1) having        (2) Timing
+     authority over that creditor may determine            The notice required under paragraph (1) may
+     appropriate by rule promulgated by that             be provided at the time of an application for,
+     agency, based on a determination that such          or a grant, extension, or other provision of,
+     creditor offers or maintains accounts that          credit or the time of communication of an ap-
+     are subject to a reasonably foreseeable risk        proval of an application for, or grant, exten-
+     of identity theft.                                  sion, or other provision of, credit, except as
+(f) Prohibition on sale or transfer of debt caused       provided in the regulations prescribed under
+     by identity theft                                   paragraph (6).
+   (1) In general                                        (3) Exceptions
+     No person shall sell, transfer for consider-          No notice shall be required from a person
+   ation, or place for collection a debt that such       under this subsection if—
+   person has been notified under section 1681c–2             (A) the consumer applied for specific mate-
+   of this title has resulted from identity theft.         rial terms and was granted those terms, un-
+                                                           less those terms were initially specified by
+   (2) Applicability
+                                                           the person after the transaction was initi-
+     The prohibitions of this subsection shall             ated by the consumer and after the person
+   apply to all persons collecting a debt described        obtained a consumer report; or
+   in paragraph (1) after the date of a notifica-             (B) the person has provided or will provide
+   tion under paragraph (1).                               a notice to the consumer under subsection
+   (3) Rule of construction                                (a) in connection with the transaction.
+     Nothing in this subsection shall be con-            (4) Other notice not sufficient
+   strued to prohibit—                                     A person that is required to provide a notice
+        (A) the repurchase of a debt in any case in      under subsection (a) cannot meet that require-
+     which the assignee of the debt requires such        ment by providing a notice under this sub-
+     repurchase because the debt has resulted            section.
+     from identity theft;                                (5) Content and delivery of notice
+        (B) the securitization of a debt or the
+     pledging of a portfolio of debt as collateral       A notice under this subsection shall, at a
+     in connection with a borrowing; or                 minimum—
+        (C) the transfer of debt as a result of a          (A) include a statement informing the con-
+     merger, acquisition, purchase and assump-           sumer that the terms offered to the con-
+     tion transaction, or transfer of substantially      sumer are set based on information from a
+     all of the assets of an entity.                     consumer report;
+                                                           (B) identify the consumer reporting agen-
+(g) Debt collector communications concerning             cy furnishing the report;
+     identity theft                                        (C) include a statement informing the con-
+   If a person acting as a debt collector (as that       sumer that the consumer may obtain a copy
+term is defined in subchapter V) on behalf of a          of a consumer report from that consumer re-
+third party that is a creditor or other user of a        porting agency without charge;
+consumer report is notified that any informa-              (D) include the contact information speci-
+tion relating to a debt that the person is at-           fied by that consumer reporting agency for
+§ 1681m                               TITLE 15—COMMERCE AND TRADE                                               Page 1600
+
+    obtaining such consumer reports (including                 Stat. 2087, 2088, 2112; Pub. L. 111–319, § 2(a), Dec.
+    a toll-free telephone number established by                18, 2010, 124 Stat. 3457.)
+    the agency in the case of a consumer report-
+    ing agency described in section 1681a(p) of                                      Editorial Notes
+    this title); and                                                                  AMENDMENTS
+      (E) include a statement informing the con-
+                                                                  2010—Subsec. (a)(2) to (4). Pub. L. 111–203, § 1100F(1),
+    sumer of—                                                  added par. (2), redesignated former pars. (2) and (3) as
+        (i) a numerical credit score as defined in             (3) and (4), respectively, and substituted ‘‘paragraph
+      section 1681g(f)(2)(A) of this title, used by            (3)’’ for ‘‘paragraph (2)’’ in par. (4).
+      such person in making the credit decision                   Subsec. (d)(2)(B). Pub. L. 111–203, § 1088(a)(7), sub-
+      described in paragraph (1) based in whole                stituted ‘‘the Federal Trade Commission, the Federal
+      or in part on any information in a con-                  banking agencies,’’ for ‘‘the Federal banking agencies’’.
+      sumer report; and                                           Pub. L. 111–203, § 1088(a)(2)(C), substituted ‘‘the Bu-
+                                                               reau’’ for ‘‘the Commission’’.
+        (ii) the information set forth in subpara-
+                                                                  Subsec. (e)(1). Pub. L. 111–203, § 1088(a)(8), substituted
+      graphs (B) through (E) of section 1681g(f)(1)            ‘‘the Federal Trade Commission, the Commodity Fu-
+      of this title.                                           tures Trading Commission, and the Securities and Ex-
+  (6) Rulemaking                                               change Commission’’ for ‘‘and the Commission’’ in in-
+    (A) Rules required                                         troductory provisions.
+                                                                  Subsec. (e)(4). Pub. L. 111–319 added par. (4).
+      The Bureau shall prescribe rules to carry                   Subsec. (h)(5)(E). Pub. L. 111–203, § 1100F(2), added sub-
+    out this subsection.                                       par. (E).
+    (B) Content                                                   Subsec. (h)(6)(A). Pub. L. 111–203, § 1088(a)(9), added
+                                                               subpar. (A) and struck out former subpar. (A). Prior to
+      Rules required by subparagraph (A) shall                 amendment, text read as follows: ‘‘The Commission and
+    address, but are not limited to—                           the Board shall jointly prescribe rules.’’
+        (i) the form, content, time, and manner                   2003—Subsec. (d)(2). Pub. L. 108–159, § 213(a), amended
+      of delivery of any notice under this sub-                heading and text of par. (2) generally. Prior to amend-
+      section;                                                 ment, text read as follows: ‘‘A statement under para-
+                                                               graph (1) shall include the address and toll-free tele-
+        (ii) clarification of the meaning of terms             phone number of the appropriate notification system
+      used in this subsection, including what                  established under section 1681b(e) of this title.’’
+      credit terms are material, and when credit                  Subsec. (e). Pub. L. 108–159, § 811(h), repealed Pub. L.
+      terms are materially less favorable;                     104–208, § 2411(c). See 1996 Amendment note below.
+        (iii) exceptions to the notice require-                   Pub. L. 108–159, § 114, added subsec. (e) and struck out
+      ment under this subsection for classes of                former subsec. (e) designation that had been added with
+      persons or transactions regarding which                  no heading or text by Pub. L. 104–208, § 2411(c). See note
+                                                               above and 1996 Amendment note below.
+      the agencies determine that notice would
+                                                                  Subsec. (f). Pub. L. 108–159, § 154(b), added subsec. (f).
+      not significantly benefit consumers;                        Subsec. (g). Pub. L. 108–159, § 155, added subsec. (g).
+        (iv) a model notice that may be used to                   Subsec. (h). Pub. L. 108–159, § 311(a), added subsec. (h).
+      comply with this subsection; and                            1996—Subsec. (a). Pub. L. 104–208, § 2411(a), inserted
+        (v) the timing of the notice required                  heading and amended text of subsec. (a) generally.
+      under paragraph (1), including the cir-                  Prior to amendment, text read as follows: ‘‘Whenever
+      cumstances under which the notice must                   credit or insurance for personal, family, or household
+      be provided after the terms offered to the               purposes, or employment involving a consumer is de-
+                                                               nied or the charge for such credit or insurance is in-
+      consumer were set based on information
+                                                               creased either wholly or partly because of information
+      from a consumer report.                                  contained in a consumer report from a consumer re-
+  (7) Compliance                                               porting agency, the user of the consumer report shall
+                                                               so advise the consumer against whom such adverse ac-
+    A person shall not be liable for failure to
+                                                               tion has been taken and supply the name and address
+  perform the duties required by this section if,              of the consumer reporting agency making the report.’’
+  at the time of the failure, the person main-                    Subsec. (b). Pub. L. 104–208, § 2411(e), inserted subsec.
+  tained reasonable policies and procedures to                 heading, designated existing provisions as par. (1) and
+  comply with this section.                                    inserted heading, and added par. (2).
+  (8) Enforcement                                                 Subsec. (c). Pub. L. 104–208, § 2411(d), substituted ‘‘this
+                                                               section’’ for ‘‘subsections (a) and (b) of this section’’.
+    (A) No civil actions                                          Subsec. (d). Pub. L. 104–208, § 2411(b), added subsec. (d).
+      Sections 1681n and 1681o of this title shall                Subsec. (e). Pub. L. 104–208, § 2411(c), which added sub-
+    not apply to any failure by any person to                  sec. (e) containing subsec. designation, but no heading
+    comply with this section.                                  or text, was repealed by Pub. L. 108–159, § 811(h).
+
+    (B) Administrative enforcement                                    Statutory Notes and Related Subsidiaries
+      This section shall be enforced exclusively                         EFFECTIVE DATE OF 2010 AMENDMENT
+    under section 1681s of this title by the Fed-
+    eral agencies and officials identified in that               Pub. L. 111–319, § 2(b), Dec. 18, 2010, 124 Stat. 3458, pro-
+                                                               vided that: ‘‘The amendment made by this section
+    section.                                                   [amending this section] shall become effective on the
+(Pub. L. 90–321, title VI, § 615, as added Pub. L.             date of enactment of this Act [Dec. 18, 2010].’’
+91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1133;           Amendment by Pub. L. 111–203 effective on the des-
+amended Pub. L. 104–208, div. A, title II, § 2411,             ignated transfer date, see section 1100H of Pub. L.
+                                                               111–203, set out as a note under section 552a of Title 5,
+Sept. 30, 1996, 110 Stat. 3009–443; Pub. L. 108–159,           Government Organization and Employees.
+title I, §§ 114, 154(b), 155, title II, § 213(a), title III,
+§ 311(a), title VIII, § 811(h), Dec. 4, 2003, 117 Stat.                  EFFECTIVE DATE OF 2003 AMENDMENT
+1960, 1967, 1978, 1988, 2012; Pub. L. 111–203, title X,          Amendment by Pub. L. 108–159 subject to joint regu-
+§§ 1088(a)(2)(C), (7)–(9), 1100F, July 21, 2010, 124           lations establishing effective dates as prescribed by
+Page 1601                              TITLE 15—COMMERCE AND TRADE                                                     § 1681n
+
+Federal Reserve Board and Federal Trade Commission,              for such receipt shall not be in willful non-
+except as otherwise provided, see section 3 of Pub. L.           compliance with section 1681c(g) of this title by
+108–159, set out as a note under section 1681 of this title.     reason of printing such expiration date on the
+          EFFECTIVE DATE OF 1996 AMENDMENT                       receipt.
+  Amendment by Pub. L. 104–208 effective 365 days after          (Pub. L. 90–321, title VI, § 616, as added Pub. L.
+Sept. 30, 1996, with special rule for early compliance,          91–508, title VI, § 601, Oct. 26, 1970, 84 Stat. 1134;
+see section 2420 of Pub. L. 104–208, set out as a note           amended Pub. L. 104–208, div. A, title II,
+under section 1681a of this title.                               § 2412(a)–(c), (e)(1), Sept. 30, 1996, 110 Stat.
+                     EFFECTIVE DATE                              3009–446; Pub. L. 110–241, § 3(a), June 3, 2008, 122
+                                                                 Stat. 1566.)
+  Section effective upon the expiration of one hundred
+and eighty days following Oct. 26, 1970, see section
+                                                                                       Editorial Notes
+504(d) of Pub. L. 90–321, as added by Pub. L. 91–508, set
+out as a note under section 1681 of this title.                                          AMENDMENTS
+                       REGULATIONS                                 2008—Subsec. (d). Pub. L. 110–241 added subsec. (d).
+  Pub. L. 108–159, title II, § 213(b), Dec. 4, 2003, 117 Stat.     1996—Subsec. (a). Pub. L. 104–208, § 2412(a), designated
+                                                                 existing provisions as subsec. (a), inserted heading, and
+1979, provided that: ‘‘Regulations required by section
+                                                                 in introductory provisions substituted ‘‘Any person
+615(d)(2) of the Fair Credit Reporting Act [15 U.S.C.
+1681m(d)(2)], as amended by this section, shall be issued        who’’ for ‘‘Any consumer reporting agency or user of
+                                                                 information which’’.
+in final form not later than 1 year after the date of en-
+                                                                   Subsec. (a)(1). Pub. L. 104–208, § 2412(b), amended par.
+actment of this Act [Dec. 4, 2003].’’
+                                                                 (1) generally. Prior to amendment, par. (1) read as fol-
+§ 1681n. Civil liability for willful noncompliance               lows: ‘‘any actual damages sustained by the consumer
+                                                                 as a result of the failure;’’.
+(a) In general                                                     Subsec. (b). Pub. L. 104–208, § 2412(c), added subsec. (b).
+                                                                   Subsec. (c). Pub. L. 104–208, § 2412(e)(1), added subsec.
+   Any person who willfully fails to comply with                 (c).
+any requirement imposed under this subchapter
+with respect to any consumer is liable to that                          Statutory Notes and Related Subsidiaries

@@ -1,0 +1,1472 @@
+GH Real Estate approved legal-source text chunk — GH-FED-01_Federal-Fair-Housing-HUD-Regulations_CURRENT.part-004.txt — verified through 2026-07-12. Official source text controls.
+
+pursuing an action for disability discrimination under the Americans with Disabilities Act may
+state a claim that “with a reasonable accommodation” she could perform the essential functions
+of the job).
+                                                  5
+        Example 2: A deaf tenant asks his housing provider to allow him to install extra
+electrical lines and a cable line so the tenant can use computer equipment that helps him
+communicate with others. If the tenant’s disability is known, the housing provider may not
+require him to document his disability; however, since the need for the electrical and cable lines
+may not be apparent, the housing provider may request information that is necessary to support
+the disability-related need for the requested modification.
+
+8.     Who must comply with the Fair Housing Act’s reasonable modification
+requirements?
+
+        Any person or entity engaging in prohibited conduct – i.e., refusing to allow an
+individual to make reasonable modifications when such modifications may be necessary to
+afford a person with a disability full enjoyment of the premises – may be held liable unless they
+fall within an exception to the Act’s coverage. Courts have applied the Act to individuals,
+corporations, associations and others involved in the provision of housing and residential
+lending, including property owners, housing managers, homeowners and condominium
+associations, lenders, real estate agents, and brokerage services. Courts have also applied the
+Act to state and local governments, most often in the context of exclusionary zoning or other
+land-use decisions. See, e.g., City of Edmonds v. Oxford House, Inc., 514 U.S. 725, 729 (1995);
+Project Life v. Glendening, 139 F. Supp. 2d 703, 710 (D. Md. 2001), aff’d, 2002 WL 2012545
+(4th Cir. 2002).
+
+9.     What is the difference between a reasonable accommodation and a reasonable
+modification under the Fair Housing Act?9
+
+        Under the Fair Housing Act, a reasonable modification is a structural change made to the
+premises whereas a reasonable accommodation is a change, exception, or adjustment to a rule,
+policy, practice, or service. A person with a disability may need either a reasonable
+accommodation or a reasonable modification, or both, in order to have an equal opportunity to
+use and enjoy a dwelling, including public and common use spaces. Generally, under the Fair
+Housing Act, the housing provider is responsible for the costs associated with a reasonable
+accommodation unless it is an undue financial and administrative burden, while the tenant or
+someone acting on the tenant’s behalf, is responsible for costs associated with a reasonable
+modification. See Reasonable Accommodation Statement, Questions 7 and 8.
+
+       Example 1: Because of a mobility disability, a tenant wants to install grab bars in the
+bathroom. This is a reasonable modification and must be permitted at the tenant’s expense.
+
+
+9
+  Housing providers that receive federal financial assistance are also subject to the requirements
+of Section 504 of the Rehabilitation Act of l973. 29 U.S.C. § 794. Section 504, and its
+implementing regulations at 24 C.F.R. Part 8, prohibit discrimination based on disability, and
+obligate housing providers to make and pay for structural changes to facilities, if needed as a
+reasonable accommodation for applicants and tenants with disabilities, unless doing so poses an
+undue financial and administrative burden. See Question 31.
+                                                 6
+       Example 2: Because of a hearing disability, a tenant wishes to install a peephole in her
+door so she can see who is at the door before she opens it. This is a reasonable modification and
+must be permitted at the tenant’s expense.
+
+        Example 3: Because of a mobility disability, a tenant wants to install a ramp outside the
+building in a common area. This is a reasonable modification and must be permitted at the
+tenant’s expense. See also Questions 19, 20 and 21.
+
+       Example 4: Because of a vision disability, a tenant requests permission to have a guide
+dog reside with her in her apartment. The housing provider has a “no-pets” policy. This is a
+request for a reasonable accommodation, and the housing provider must grant the
+accommodation.
+
+10.    Are reasonable modifications restricted to the interior of a dwelling?
+
+        No. Reasonable modifications are not limited to the interior of a dwelling. Reasonable
+modifications may also be made to public and common use areas such as widening entrances to
+fitness centers or laundry rooms, or for changes to exteriors of dwelling units such as installing a
+ramp at the entrance to a dwelling.
+
+11.  Is a request for a parking space because of a physical disability a reasonable
+accommodation or a reasonable modification?
+
+        Courts have treated requests for parking spaces as requests for a reasonable
+accommodation and have placed the responsibility for providing the parking space on the
+housing provider, even if provision of an accessible or assigned parking space results in some
+cost to the provider. For example, courts have required a housing provider to provide an
+assigned space even though the housing provider had a policy of not assigning parking spaces or
+had a waiting list for available parking. However, housing providers may not require persons
+with disabilities to pay extra fees as a condition of receiving accessible parking spaces.
+
+        Providing a parking accommodation could include creating signage, repainting markings,
+redistributing spaces, or creating curb cuts. This list is not exhaustive.
+
+
+
+
+12.    What if the structural changes being requested by the tenant or applicant are in a
+building that is subject to the design and construction requirements of the Fair Housing
+Act and the requested structural changes are a feature of accessible design that should
+have already existed in the unit or common area, e.g., doorways wide enough to
+accommodate a wheelchair, or an accessible entryway to a unit.
+
+
+                                                 7
+        The Fair Housing Act provides that covered multifamily dwellings built for first
+occupancy after March 13, 1991, shall be designed and constructed to meet certain minimum
+accessibility and adaptability standards. If any of the structural changes needed by the tenant are
+ones that should have been included in the unit or public and common use area when constructed
+then the housing provider may be responsible for providing and paying for those requested
+structural changes. However, if the requested structural changes are not a feature of accessible
+design that should have already existed in the building pursuant to the design and construction
+requirements under the Act, then the tenant is responsible for paying for the cost of the structural
+changes as a reasonable modification.
+
+       Although the design and construction provisions only apply to certain multifamily
+dwellings built for first occupancy since 1991, a tenant may request reasonable modifications to
+housing built prior to that date. In such cases, the housing provider must allow the
+modifications, and the tenant is responsible for paying for the costs under the Fair Housing Act.
+
+       For a discussion of the design and construction requirements of the Act, and their
+applicability, see HUD’s website at: www.hud.gov/offices/fheo/disabilities/index.cfm and the
+Fair Housing Accessibility FIRST website at: http://www.fairhousingfirst.org.
+
+        Example 1: A tenant with a disability who uses a wheelchair resides in a ground floor
+apartment in a non-elevator building that was built in 1995. Buildings built for first occupancy
+after March 13, 1991 are covered by the design and construction requirements of the Fair
+Housing Act. Because the building is a non-elevator building, all ground floor units must meet
+the minimum accessibility requirements of the Act. The doors in the apartment are not wide
+enough for passage using a wheelchair in violation of the design and construction requirements
+but can be made so through retrofitting. Under these circumstances, one federal court has held
+that the tenant may have a potential claim against the housing provider.
+
+       Example 2: A tenant with a disability resides in an apartment in a building that was built
+in 1987. The doors in the unit are not wide enough for passage using a wheelchair but can be
+made so through retrofitting. If the tenant meets the other requirements for obtaining a
+modification, the tenant may widen the doorways, at her own expense.
+
+        Example 3: A tenant with a disability resides in an apartment in a building that was built
+in 1993 in compliance with the design and construction requirements of the Fair Housing Act.
+The tenant wants to install grab bars in the bathroom because of her disability. Provided that the
+tenant meets the other requirements for obtaining a modification, the tenant may install the grab
+bars at her own expense.
+13.     Who is responsible for expenses associated with a reasonable modification, e.g., for
+upkeep or maintenance?
+
+       The tenant is responsible for upkeep and maintenance of a modification that is used
+exclusively by her. If a modification is made to a common area that is normally maintained by
+the housing provider, then the housing provider is responsible for the upkeep and maintenance of
+the modification. If a modification is made to a common area that is not normally maintained by
+                                                 8
+the housing provider, then the housing provider has no responsibility under the Fair Housing Act
+to maintain the modification.
+
+        Example 1: Because of a mobility disability, a tenant, at her own expense, installs a lift
+inside her unit to allow her access to a second story. She is required to maintain the lift at her
+expense because it is not in a common area.
+
+        Example 2: Because of a mobility disability, a tenant installs a ramp in the lobby of a
+multifamily building at her own expense. The ramp is used by other tenants and the public as
+well as the tenant with the disability. The housing provider is responsible for maintaining the
+ramp.
+
+        Example 3: A tenant leases a detached, single-family home. Because of a mobility
+disability, the tenant installs a ramp at the outside entrance to the home. The housing provider
+provides no snow removal services, and the lease agreement specifically states that snow
+removal is the responsibility of the individual tenant. Under these circumstances, the housing
+provider has no responsibility under the Fair Housing Act to remove snow on the tenant’s ramp.
+However, if the housing provider normally provides snow removal for the outside of the building
+and the common areas, the housing provider is responsible for removing the snow from the ramp
+as well.
+
+14.    In addition to current residents, are prospective tenants and buyers of housing
+protected by the reasonable modification provisions of the Fair Housing Act?
+
+        Yes. A person may make a request for a reasonable modification at any time. An
+individual may request a reasonable modification of the dwelling at the time that the potential
+tenancy or purchase is discussed. Under the Act, a housing provider cannot deny or restrict
+access to housing because a request for a reasonable modification is made. Such conduct would
+constitute discrimination. The modification does not have to be made, however, unless it is
+reasonable. See Questions 2, 16, 21 and 23.
+
+15.    When and how should an individual request permission to make a modification?
+
+        Under the Act, a resident or an applicant for housing makes a reasonable modification
+request whenever she makes clear to the housing provider that she is requesting permission to
+make a structural change to the premises because of her disability. She should explain that she
+has a disability, if not readily apparent or not known to the housing provider, the type of
+modification she is requesting, and the relationship between the requested modification and her
+disability.
+
+        An applicant or resident is not entitled to receive a reasonable modification unless she
+requests one. However, the Fair Housing Act does not require that a request be made in a
+particular manner or at a particular time. A person with a disability need not personally make
+the reasonable modification request; the request can be made by a family member or someone
+else who is acting on her behalf. An individual making a reasonable modification request does
+                                                 9
+not need to mention the Act or use the words “reasonable modification.” However, the requester
+must make the request in a manner that a reasonable person would understand to be a request for
+permission to make a structural change because of a disability.
+
+        Although a reasonable modification request can be made orally or in writing, it is usually
+helpful for both the resident and the housing provider if the request is made in writing. This will
+help prevent misunderstandings regarding what is being requested, or whether the request was
+made. To facilitate the processing and consideration of the request, residents or prospective
+residents may wish to check with a housing provider in advance to determine if the provider has
+a preference regarding the manner in which the request is made. However, housing providers
+must give appropriate consideration to reasonable modification requests even if the requester
+makes the request orally or does not use the provider's preferred forms or procedures for making
+such requests.
+
+16.   Does a person with a disability have to have the housing provider’s approval before
+making a reasonable modification to the dwelling?
+
+       Yes. A person with a disability must have the housing provider’s approval before
+making the modification. However, if the person with a disability meets the requirements under
+the Act for a reasonable modification and provides the relevant documents and assurances, the
+housing provider cannot deny the request.
+
+17.   What if the housing provider fails to act promptly on a reasonable modification
+request?
+
+        A provider has an obligation to provide prompt responses to a reasonable modification
+request. An undue delay in responding to a reasonable modification request may be deemed a
+failure to permit a reasonable modification.
+
+18.     What if the housing provider proposes that the tenant move to a different unit in
+lieu of making a proposed modification?
+
+       The housing provider cannot insist that a tenant move to a different unit in lieu of
+allowing the tenant to make a modification that complies with the requirements for reasonable
+modifications. See Questions 2, 21 and 23. Housing providers should be aware that persons
+with disabilities typically have the most accurate knowledge regarding the functional limitations
+posed by their disability.
+
+        Example: As a result of a mobility disability, a tenant requests that he be permitted, at
+his expense, to install a ramp so that he can access his apartment using his motorized wheelchair.
+The existing entrance to his dwelling is not wheelchair accessible because the route to the front
+door requires going up a step. The housing provider proposes that in lieu of installing the ramp,
+the tenant move to a different unit in the building. The tenant is not obligated to accept the
+alternative proposed by the housing provider, as his request to modify his unit is reasonable and
+must be approved.
+                                                10
+19.    What if the housing provider wants an alternative modification or alternative
+design for the proposed modification that does not cost more but that the housing provider
+considers more aesthetically pleasing?
+
+         In general, the housing provider cannot insist on an alternative modification or an
+alternative design if the tenant complies with the requirements for reasonable modifications. See
+Questions 2, 21 and 23. If the modification is to the interior of the unit and must be restored to
+its original condition when the tenant moves out, then the housing provider cannot require that
+its design be used instead of the tenant’s design. However, if the modification is to a common
+area or an aspect of the interior of the unit that would not have to be restored because it would
+not be reasonable to do so, and if the housing provider’s proposed design imposes no additional
+costs and still meets the tenant’s needs, then the modification should be done in accordance with
+the housing provider’s design. See Question 24 for a discussion of the restoration requirements.
+
+        Example 1: As a result of a mobility disability, a tenant requests that he be permitted, at
+his expense, to install a ramp so that he can access his apartment using his motorized wheelchair.
+The existing entrance to his dwelling is not wheelchair accessible because the route to the front
+door requires going up a step. The housing provider proposes an alternative design for a ramp
+but the alternative design costs more and does not meet the tenant’s needs. The tenant is not
+obligated to accept the alternative modification, as his request to modify his unit is reasonable
+and must be approved.
+
+        Example 2: As a result of a mobility disability, a tenant requests permission to widen a
+doorway to allow passage with her wheelchair. All of the doorways in the unit are trimmed with
+a decorative trim molding that does not cost any more than the standard trim molding. Because
+in usual circumstances it would not be reasonable to require that the doorway be restored at the
+end of the tenancy, the tenant should use the decorative trim when he widens the doorway.
+
+20.   What if the housing provider wants a more costly design for the requested
+modification?
+
+        If the housing provider wishes a modification to be made with more costly materials, in
+order to satisfy the landlord’s aesthetic standards, the tenant must agree only if the housing
+provider pays those additional costs. Further, as discussed in Questions 21 and 23 below,
+housing providers may require that the tenant obtain all necessary building permits and may
+require that the work be performed in a workmanlike manner. If the housing provider requires
+more costly materials be used to satisfy her workmanship preferences beyond the requirements
+of the applicable local codes, the tenant must agree only if the housing provider pays for those
+additional costs as well. In such a case, however, the housing provider’s design must still meet
+the tenant’s needs.
+
+21.   What types of documents and assurances may a housing provider require regarding
+the modification before granting the reasonable modification?
+
+                                                11
+        A housing provider may require that a request for a reasonable modification include a
+description of the proposed modification both before changes are made to the dwelling and
+before granting the modification. A description of the modification to be made may be provided
+to a housing provider either orally or in writing depending on the extent and nature of the
+proposed modification. A housing provider may also require that the tenant obtain any building
+permits needed to make the modifications, and that the work be performed in a workmanlike
+manner.
+
+        The regulations implementing the Fair Housing Act state that housing providers
+generally cannot impose conditions on a proposed reasonable modification. For example, a
+housing provider cannot require that the tenant obtain additional insurance or increase the
+security deposit as a condition that must be met before the modification will be allowed.
+However, the Preamble to the Final Regulations also indicates that there are some conditions that
+can be placed on a tenant requesting a reasonable modification. For example, in certain limited
+and narrow circumstances, a housing provider may require that the tenant deposit money into an
+interest bearing account to ensure that funds are available to restore the interior of a dwelling to
+its previous state, ordinary wear and tear excepted. Imposing conditions not contemplated by the
+Fair Housing Act and its implementing regulations may be the same as an illegal refusal to
+permit the modification.
+
+22.   May a housing provider or homeowner’s association condition approval of the
+requested modification on the requester obtaining special liability insurance?
+
+       No. Imposition of such a requirement would constitute a violation of the Fair Housing
+Act.
+
+        Example: Because of a mobility disability, a tenant wants to install a ramp outside his
+unit. The housing provider informs the tenant that the ramp may be installed, but only after the
+tenant obtains separate liability insurance for the ramp out of concern for the housing provider’s
+potential liability. The housing provider may not impose a requirement of liability insurance as a
+condition of approval of the ramp.
+
+23.    Once the housing provider has agreed to a reasonable modification, may she insist
+that a particular contractor be used to perform the work?
+
+       No. The housing provider cannot insist that a particular contractor do the work. The
+housing provider may only require that whoever does the work is reasonably able to complete
+the work in a workmanlike manner and obtain all necessary building permits.
+
+24.    If a person with a disability has made reasonable modifications to the interior of the
+dwelling, must she restore all of them when she moves out?
+
+       The tenant is obligated to restore those portions of the interior of the dwelling to their
+previous condition only where “it is reasonable to do so” and where the housing provider has
+requested the restoration. The tenant is not responsible for expenses associated with reasonable
+                                                12
+wear and tear. In general, if the modifications do not affect the housing provider’s or subsequent
+tenant’s use or enjoyment of the premises, the tenant cannot be required to restore the
+modifications to their prior state. A housing provider may choose to keep the modifications in
+place at the end of the tenancy. See also Question 28.
+
+        Example 1: Because the tenant uses a wheelchair, she obtained permission from her
+housing provider to remove the base cabinets and lower the kitchen sink to provide for greater
+accessibility. It is reasonable for the housing provider to ask the tenant to replace the cabinets
+and raise the sink back to its original height.
+
+        Example 2: Because of a mobility disability, a tenant obtained approval from the
+housing provider to install grab bars in the bathroom. As part of the installation, the contractor
+had to construct reinforcements on the underside of the wall. These reinforcements are not
+visible and do not detract from the use of the apartment. It is reasonable for the housing provider
+to require the tenant to remove the grab bars, but it is not reasonable for the housing provider to
+require the tenant to remove the reinforcements.
+
+       Example 3: Because of a mobility disability, a tenant obtained approval from the
+housing provider to widen doorways to allow him to maneuver in his wheelchair. In usual
+circumstances, it is not reasonable for the housing provider to require him to restore the
+doorways to their prior width.
+
+25.    Of the reasonable modifications made to the interior of a dwelling that must be
+restored, must the person with a disability pay to make those restorations when she moves
+out?
+
+        Yes. Reasonable restorations of the dwelling required as a result of modifications made
+to the interior of the dwelling must be paid for by the tenant unless the next occupant of the
+dwelling wants to retain the reasonable modifications and where it is reasonable to do so, the
+next occupant is willing to establish a new interest bearing escrow account. The subsequent
+tenant would have to restore the modifications to the prior condition at the end of his tenancy if it
+is reasonable to do so and if requested by the housing provider. See also Question 24.
+
+26.   If a person with a disability has made a reasonable modification to the exterior of
+the dwelling, or a common area, must she restore it to its original condition when she
+moves out?
+
+        No. The Fair Housing Act expressly provides that housing providers may only require
+restoration of modifications made to interiors of the dwelling at the end of the tenancy.
+Reasonable modifications such as ramps to the front door of the dwelling or modifications made
+to laundry rooms or building entrances are not required to be restored.
+
+27.    May a housing provider increase or require a person with a disability to pay a
+security deposit if she requests a reasonable modification?
+
+                                                 13
+        No. The housing provider may not require an increased security deposit as the result of a
+request for a reasonable modification, nor may a housing provider require a tenant to pay a
+security deposit when one is not customarily required. However, a housing provider may be able
+to take other steps to ensure that money will be available to pay for restoration of the interior of
+the premises at the end of the tenancy. See Questions 21 and 28.
+
+28.    May a housing provider take other steps to ensure that money will be available to
+pay for restoration of the interior of the premises at the end of the tenancy?
+
+        Where it is necessary in order to ensure with reasonable certainty that funds will be
+available to pay for the restorations at the end of the tenancy, the housing provider may negotiate
+with the tenant as part of a restoration agreement a provision that requires the tenant to make
+payments into an interest-bearing escrow account. A housing provider may not routinely require
+that tenants place money in escrow accounts when a modification is sought. Both the amount
+and the terms of the escrow payment are subject to negotiation between the housing provider and
+the tenant.
+
+        Simply because an individual has a disability does not mean that she is less creditworthy
+than an individual without a disability. The decision to require that money be placed in an
+escrow account should be based on the following factors: 1) the extent and nature of the
+proposed modifications; 2) the expected duration of the lease; 3) the credit and tenancy history
+of the individual tenant; and 4) other information that may bear on the risk to the housing
+provider that the premises will not be restored.
+
+        If the housing provider decides to require payment into an escrow account, the amount of
+money to be placed in the account cannot exceed the cost of restoring the modifications, and the
+period of time during which the tenant makes payment into the escrow account must be
+reasonable. Although a housing provider may require that funds be placed in escrow, it does not
+automatically mean that the full amount of money needed to make the future restorations can be
+required to be paid at the time that the modifications are sought. In addition, it is important to
+note that interest from the account accrues to the benefit of the tenant. If an escrow account is
+established, and the housing provider later decides not to have the unit restored, then all funds in
+the account, including the interest, must be promptly returned to the tenant.
+
+       Example 1: Because of a mobility disability, a tenant requests a reasonable
+modification. The modification includes installation of grab bars in the bathroom. The tenant
+has an excellent credit history and has lived in the apartment for five years before becoming
+disabled. Under these circumstances, it may not be reasonable to require payment into an
+escrow account.
+
+       Example 2: Because of a mobility disability, a new tenant with a poor credit history
+wants to lower the kitchen cabinets to a more accessible height. It may be reasonable for the
+housing provider to require payment into an interest bearing escrow account to ensure that funds
+are available for restoration.
+
+                                                 14
+        Example 3: A housing provider requires all tenants with disabilities to pay a set sum
+into an interest bearing escrow account before approving any request for a reasonable
+modification. The amount required by the housing provider has no relationship to the actual cost
+of the restoration. This type of requirement violates the Fair Housing Act.
+
+29.    What if a person with a disability moves into a rental unit and wants the carpet
+taken up because her wheelchair does not move easily across carpeting? Is that a
+reasonable accommodation or modification?
+
+      Depending on the circumstances, removal of carpeting may be either a reasonable
+accommodation or a reasonable modification.
+
+        Example 1: If the housing provider has a practice of not permitting a tenant to change
+flooring in a unit and there is a smooth, finished floor underneath the carpeting, generally,
+allowing the tenant to remove the carpet would be a reasonable accommodation.
+
+        Example 2: If there is no finished flooring underneath the carpeting, generally,
+removing the carpeting and installing a finished floor would be a reasonable modification that
+would have to be done at the tenant’s expense. If the finished floor installed by the tenant does
+not affect the housing provider’s or subsequent tenant’s use or enjoyment of the premises, the
+tenant would not have to restore the carpeting at the conclusion of the tenancy. See Questions 24
+and 25.
+
+       Example 3: If the housing provider has a practice of replacing the carpeting before a
+new tenant moves in, and there is an existing smooth, finished floor underneath, then it would be
+a reasonable accommodation of his normal practice of installing new carpeting for the housing
+provider to just take up the old carpeting and wait until the tenant with a mobility disability
+moves out to put new carpeting down.
+
+30.    Who is responsible for paying for the costs of structural changes to a dwelling unit
+that has not yet been constructed if a purchaser with a disability needs different or
+additional features to make the unit meet her disability-related needs?
+
+        If the dwelling unit is not subject to the design and construction requirements (i.e., a
+detached single family home or a multi-story townhouse without an elevator), then the purchaser
+is responsible for the additional costs associated with the structural changes. The purchaser is
+responsible for any additional cost that the structural changes might create over and above what
+the original design would have cost.
+
+       If the unit being purchased is subject to the design and construction requirements of the
+Fair Housing Act, then all costs associated with incorporating the features required by the Act
+are borne by the builder. If a purchaser with a disability needs different or additional features
+added to a unit under construction or about to be constructed beyond those already required by
+the Act, and it would cost the builder more to provide the requested features, the structural
+changes would be considered a reasonable modification and the additional costs would have to
+                                                15
+be borne by the purchaser. The purchaser is responsible for any additional cost that the
+structural changes might create over and above what the original design would have cost.
+
+        Example 1: A buyer with a mobility disability is purchasing a single family dwelling
+under construction and asks for a bathroom sink with a floorless base cabinet with retractable
+doors that allows the buyer to position his wheelchair under the sink. If the cabinet costs more
+than the standard vanity cabinet provided by the builder, the buyer is responsible for the
+additional cost, not the full cost of the requested cabinet. If, however, the alternative cabinet
+requested by the buyer costs less than or the same as the one normally provided by the builder,
+and the installation costs are also the same or less, then the builder should install the requested
+cabinet without any additional cost to the buyer.
+
+        Example 2: A buyer with a mobility disability is purchasing a ground floor unit in a
+detached townhouse that is designed with a concrete step at the front door. The buyer requests
+that the builder grade the entrance to eliminate the need for the step. If the cost of providing the
+at-grade entrance is no greater than the cost of building the concrete step, then the builder would
+have to provide the at-grade entrance without additional charge to the purchaser.
+
+        Example 3: A buyer with a mobility disability is purchasing a unit that is subject to the
+design and construction requirements of the Fair Housing Act. The buyer wishes to have grab
+bars installed in the unit as a reasonable modification to the bathroom. The builder is
+responsible for installing and paying for the wall reinforcements for the grab bars because these
+reinforcements are required under the design and construction provisions of the Act. The buyer
+is responsible for the costs of installing and paying for the grab bars.
+
+
+
+31.    Are the rules the same if a person with a disability lives in housing that receives
+federal financial assistance and the needed structural changes to the unit or common area
+are the result of the tenant having a disability?
+
+        Housing that receives federal financial assistance is covered by both the Fair Housing
+Act and Section 504 of the Rehabilitation Act of 1973. Under regulations implementing Section
+504, structural changes needed by an applicant or resident with a disability in housing receiving
+federal financial assistance are considered reasonable accommodations. They must be paid for
+by the housing provider unless providing them would be an undue financial and administrative
+burden or a fundamental alteration of the program or unless the housing provider can
+accommodate the individual’s needs through other means. Housing that receives federal
+financial assistance and that is provided by state or local entities may also be covered by Title II
+of the Americans with Disabilities Act.
+
+        Example 1: A tenant who uses a wheelchair and who lives in privately owned housing
+needs a roll-in shower in order to bathe independently. Under the Fair Housing Act the tenant
+would be responsible for the costs of installing the roll-in shower as a reasonable modification to
+his unit.
+                                                 16
+        Example 2: A tenant who uses a wheelchair and who lives in housing that receives
+federal financial assistance needs a roll-in shower in order to bathe independently. Under
+Section 504 of the Rehabilitation Act of 1973, the housing provider would be obligated to pay
+for and install the roll-in shower as a reasonable accommodation to the tenant unless doing so
+was an undue financial and administrative burden or unless the housing provider could meet the
+tenant’s disability-related needs by transferring the tenant to another appropriate unit that
+contains a roll-in shower.
+
+     HUD has provided more detailed information about Section 504’s requirements. See
+www.hud.gov/offices/fheo/disabilities/sect504.cfm.
+
+32.   If a person believes that she has been unlawfully denied a reasonable modification,
+what should that person do if she wants to challenge that denial under the Act?
+
+         When a person with a disability believes that she has been subjected to a discriminatory
+housing practice, including a provider’s wrongful denial of a request for a reasonable
+modification, she may file a complaint with HUD within one year after the alleged denial or may
+file a lawsuit in federal district court within two years of the alleged denial. If a complaint is
+filed, HUD will investigate the complaint at no cost to the person with a disability.
+
+       There are several ways that a person may file a complaint with HUD:
+
+               •   By placing a toll-free call to 1-800-669-9777 or TTY 1-800-927-9275;
+
+               •   By completing the “on-line” complaint form available on the HUD internet
+                   site: http://www.hud.gov; or
+
+               •   By mailing a completed complaint form or letter to:
+
+                      Office of Fair Housing and Equal Opportunity
+                      Department of Housing & Urban Development
+                      451 Seventh Street, S.W., Room 5204
+                      Washington, DC 20410-2000
+
+        Upon request, HUD will provide printed materials in alternate formats (large print, audio
+tapes, or Braille) and provide complainants with assistance in reading and completing forms.
+
+        The Civil Rights Division of the Justice Department brings lawsuits in federal courts
+across the country to end discriminatory practices and to seek monetary and other relief for
+individuals whose rights under the Fair Housing Act have been violated. The Civil Rights
+Division initiates lawsuits when it has reason to believe that a person or entity is involved in a
+“pattern or practice” of discrimination or when there has been a denial of rights to a group of
+persons that raises an issue of general public importance. The Division also participates as
+amicus curiae in federal court cases that raise important legal questions involving the application
+                                                17
+and/or interpretation of the Act. To alert the Justice Department to matters involving a pattern or
+practice of discrimination, matters involving the denial of rights to groups of persons, or lawsuits
+raising issues that may be appropriate for amicus participation, contact:
+
+                       U.S. Department of Justice
+                       Civil Rights Division
+                       Housing and Civil Enforcement Section – G St.
+                       950 Pennsylvania Avenue, N.W.
+                       Washington, DC 20530
+
+        For more information on the types of housing discrimination cases handled by the Civil
+Rights Division, please refer to the Housing and Civil Enforcement Section’s website at
+http://www.usdoj.gov/crt/housing/hcehome.html.
+
+         A HUD or Department of Justice decision not to proceed with a Fair Housing Act matter
+does not foreclose private plaintiffs from pursuing a private lawsuit. However, litigation can be
+an expensive, time-consuming, and uncertain process for all parties. HUD and the Department
+of Justice encourage parties to Fair Housing Act disputes to explore all reasonable alternatives to
+litigation, including alternative dispute resolution procedures, such as mediation. HUD attempts
+to conciliate all Fair Housing Act complaints. In addition, it is the Department of Justice’s
+policy to offer prospective defendants the opportunity to engage in pre-suit settlement
+negotiations, except in the most unusual circumstances.
+
+
+
+
+                                                 18
+    Consolidated HUD Fair Housing Act Administrative
+                     Proceedings
+ Citation: 24 C.F.R. part 180
+
+ Authority: Tier 1 — binding federal regulation
+
+ Applicability / trigger: Triggered by administrative adjudication of a Fair Housing Act charge; useful for litigation procedure
+ and sanctions.
+
+ Source: https://www.ecfr.gov/api/versioner/v1/full/2026-07-09/title-24.xml?part=180
+
+ Currentness: Official eCFR versioned XML as of 2026-07-09; retrieved 2026-07-12.
+
+ Retrieved: 2026-07-12
+
+
+
+ This is a searchable rendering of an official source. It is not legal advice. The official source controls, and current law must be
+ rechecked before action.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                             Page 1
+ PART 180—CONSOLIDATED HUD HEARING PROCEDURES FOR CIVIL
+ RIGHTS MATTERS
+ Authority: 28 U.S.C. 1 note; 29 U.S.C. 794; 42 U.S.C. 2000d-1, 3535(d), 3601-3619, 5301-5320, and 6103.
+ Source: 61 FR 52218, Oct. 4, 1996, unless otherwise noted.
+
+ Subpart A—General Information
+ § 180.100 Definitions.
+ As used in this part:
+ (a) The terms ALJ, Department, Fair Housing Act, General Counsel, and HUD are defined in 24 CFR part 5, subpart A.
+ (b) The terms Aggrieved Person, Assistant Secretary, Attorney General, Discriminatory Housing Practice, Person, and State are defined in 24
+ CFR part 103, subpart A.
+ (c) Other terms used in this part are defined as follows:
+ Agency has the same meaning as HUD.
+ Applicant and Application have the meanings provided in 24 CFR 1.2 or 24 CFR 8.3, as applicable.
+ Charge means the statement of facts issued under 24 CFR 103.405 upon which HUD has found reasonable cause to believe that a discriminatory
+ housing practice has occurred or is about to occur.
+ Complaint means a complaint filed under the statutes covered by this part.
+ Complainant means the person (including the Assistant Secretary) who filed a complaint under the statutes covered by this part.
+ Docket Clerk is the docket clerk for HUD's Office of Hearings and Appeals, 451 7th Street, SW., Room B-133, Washington, DC 20410. The
+ telephone number is 202-254-0000 and the facsimile number is 202-619-7304.
+ Fair Housing Act matters refers to proceedings under this part pursuant to the Fair Housing Act and the implementing regulations at 24 CFR parts
+ 100 and 103.
+ Federal financial assistance has the meaning provided in 24 CFR 1.2, 6.3, 8.3, or 146.7, as applicable.
+ Hearing means a trial-type proceeding that involves the submission of evidence, either by oral presentation or written submission, and briefs and
+ oral arguments on the evidence and applicable law.
+ Intervenor is a person entitled by law or permitted by the ALJ to participate as a party.
+ Non-Fair Housing Act matters refers to proceedings under this part pursuant to:
+ (1) Title VI of the Civil Rights Act of 1964, as amended, (42 U.S.C. 2000d-1) and the implementing regulations at 24 CFR part 1;
+ (2) Section 504 of the Rehabilitation Act of 1973, as amended, (29 U.S.C. 794) and the implementing regulations at 24 CFR part 8;
+ (3) The Age Discrimination Act of 1975, as amended, (42 U.S.C. 6103) and the implementing regulations at 24 CFR part 146; or
+ (4) Section 109 of Title I of the Housing and Community Development Act of 1974, as amended, (42 U.S.C. 5301-5321) and the implementing
+ regulations at 24 CFR part 6.
+ Notice of Proposed Adverse Action is the statement of facts issued pursuant to a non-Fair Housing Act matter upon which HUD has found reason
+ to terminate or refuse to grant or continue Federal financial assistance.
+ Party is a person who has full participation rights in a proceeding under this part.
+ Prevailing party has the same meaning as the term has in section 722 of the Revised Statutes of the United States (42 U.S.C. 1988).
+ Recipient has the meaning provided in 24 CFR 1.2, 6.3, 8.3, or 146.7, as applicable.
+ Respondent means the person accused of violating one of the statutes covered by this part, including a recipient.
+ Secretary means the Secretary of HUD, or to the extent of any delegation of authority by the Secretary to act under any of the statutory authorities
+ listed in § 180.105(a), any other HUD official to whom the Secretary may hereafter delegate such authority.
+ [61 FR 52218, Oct. 4, 1996, as amended at 64 FR 3801, Jan. 25, 1999; 72 FR 53879, Sept. 20, 2007; 74 FR 4635, Jan. 26, 2009]
+
+ § 180.105 Scope of rules.
+ (a) This part contains the rules of practice and procedure applicable to administrative proceedings before an ALJ under the following authorities:
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                           Page 2
+ (1) The Fair Housing Act (42 U.S.C. 3601-3619) and the implementing regulations at 24 CFR parts 100 and 103, where no election to proceed in
+ federal district court has been made;
+ (2) Title VI of the Civil Rights Act of 1964 (42 U.S.C. 2000d-1), and the implementing regulations at 24 CFR part 1;
+ (3) Section 504 of the Rehabilitation Act of 1973, as amended (29 U.S.C. 794), and the implementing regulations at 24 CFR part 8;
+ (4) The Age Discrimination Act of 1975 (42 U.S.C. 6103), and the implementing regulations at 24 CFR part 146; and
+ (5) Section 109 of title I of the Housing and Community Development Act of 1974 (42 U.S.C. 5301-5321) and implementing regulations at 24
+ CFR part 6.
+ (b) In the absence of a specific provision, the Federal Rules of Civil Procedure shall serve as a general guide.
+ (c) Hearings under this part shall be conducted as expeditiously and inexpensively as possible, consistent with the needs and rights of the parties
+ to obtain a fair hearing and a complete record.
+ (d) Except to the extent that a waiver would otherwise be contrary to law, the ALJ may, after adequate notice to all interested persons, modify or
+ waive any of the rules in this part upon a determination that no person will be prejudiced and that the ends of justice will be served.
+ (e) All pleadings, correspondence, exhibits, transcripts of testimony, exceptions, briefs, decisions, and other documents filed in any proceeding
+ may be inspected in the Docket Clerk's office during regular business hours.
+ [61 FR 52218, Oct. 4, 1996, as amended at 64 FR 3801, Jan. 25, 1999; 74 FR 4636, Jan. 26, 2009]
+
+ Subpart B—Administrative Law Judge
+ § 180.200 Designation.
+ Proceedings under this part shall be presided over by an ALJ appointed under 5 U.S.C. 3105.
+ [61 FR 52218, Oct. 4, 1996, as amended at 73 FR 13723, Mar. 13, 2008]
+
+ § 180.205 Authority.
+ The ALJ shall have all powers necessary to conduct fair, expeditious and impartial hearings, including the power to:
+ (a) Administer oaths and affirmations and examine witnesses;
+ (b) Rule on offers of proof and receive evidence;
+ (c) Take depositions or have depositions taken when the ends of justice would be served;
+ (d) Regulate the course of the hearing and the conduct of persons at the hearing;
+ (e) Hold conferences for the settlement or simplification of the issues by consent of the parties;
+ (f) Rule on motions, procedural requests, and similar matters;
+ (g) Make and issue initial decisions;
+ (h) Impose appropriate sanctions against any person failing to obey an order, refusing to adhere to reasonable standards of orderly and ethical
+ conduct, or refusing to act in good faith;
+ (i) Issue subpoenas if authorized by law; and
+ (j) Exercise any other powers necessary and appropriate for the purpose and conduct of the proceeding as authorized by the rules in this part or in
+ conformance with statute, including 5 U.S.C. 551-59.
+
+ § 180.210 Withdrawal or disqualification of ALJ.
+ (a) Disqualification. If an ALJ finds that there is a basis for his/her disqualification in a proceeding, the ALJ shall withdraw from the proceeding.
+ Withdrawal is accomplished by entering a notice in the record and providing a copy of the notice to the Chief Administrative Law Judge.
+ (b) Motion for recusal. If a party believes that the presiding ALJ should be disqualified for any reason, the party may file a motion to recuse with
+ the ALJ. The motion shall be supported by an affidavit setting forth the alleged grounds for disqualification. The ALJ shall rule on the motion,
+ stating the grounds therefor.
+ (c) Redesignation of ALJ. If an ALJ is disqualified, another ALJ shall be designated to preside over further proceedings.
+ [61 FR 52218, Oct. 4, 1996, as amended at 73 FR 13723, Mar. 13, 2008; 87 FR 8197, Feb. 14, 2022]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 3
+ § 180.215 Ex parte communications.
+ (a) An ex parte communication is any direct or indirect communication concerning the merits of a pending proceeding, made by a party in the
+ absence of any other party, to the presiding ALJ, and which was neither on the record nor on reasonable prior notice to all parties. Ex parte
+ communications do not include communications made for the sole purpose of scheduling hearings, requesting extensions of time, or requesting
+ information on the status of cases.
+ (b) Ex parte communications are prohibited.
+ (c) If the ALJ receives an ex parte communication that the ALJ knows or has reason to believe is prohibited, the ALJ shall promptly place the
+ communication, or a written statement of the substance of the communication, in the record and shall furnish copies to all parties. Unauthorized
+ communications shall not be taken into consideration in deciding any matter in issue. Any party making a prohibited ex parte communication
+ may be subject to sanctions including, but not limited to, exclusion from the proceeding and an adverse ruling on the issue that is the subject of
+ the prohibited communication.
+
+ § 180.220 Separation of functions.
+ No officer, employee, or agent of the Federal Government engaged in the performance of investigative, conciliatory, or prosecutorial functions in
+ connection with the proceeding shall, in that proceeding or any factually related proceeding under this part, participate or advise in the decision of
+ the ALJ, except as a witness or counsel during the proceedings or in its appellate review.
+
+ Subpart C—Parties
+ § 180.300 Rights of parties.
+ Each party may appear in person, be represented by counsel, examine or cross-examine witnesses, introduce documentary or other relevant
+ evidence into the record and, in Fair Housing Act matters, request the issuance of subpoenas.
+
+ § 180.305 Representation.
+ (a) HUD is represented by the General Counsel.
+ (b) Any party may appear on his/her/its own behalf or by an attorney. Each party or attorney shall file a notice of appearance. The notice must
+ identify the matter before the ALJ, the party on whose behalf the appearance is made, and the mailing address and telephone number of the
+ person appearing. Similar notice shall also be given for any withdrawal of appearance.
+ (c) An attorney must be admitted to practice before a Federal Court or the highest court in any State. The attorney's representation that he/she is in
+ good standing before any of these courts is sufficient evidence of the attorney's qualifications under this section, unless otherwise ordered by the
+ ALJ.
+
+ § 180.310 Parties.
+ (a) Parties to proceedings under this part are HUD, the respondent(s), and any intervenors. Respondents include persons named as such in a
+ charge issued under 24 CFR part 103 and Recipients/applicants named as respondents in hearing notices issued under 24 CFR parts 1, 6, 8 or 146
+ and notices of proposed adverse action under this part.
+ (b) An aggrieved person is not a party but may file a motion to intervene. Requests for intervention shall be filed within 50 days after the filing of
+ the charge; however, the ALJ may allow intervention beyond that time. An intervenor's right to participate as a party may be restricted by order of
+ the ALJ pursuant to statute, the rules in this part or other applicable law. Intervention shall be permitted if the person requesting intervention is
+ (1) The aggrieved person on whose behalf the charge is issued; or
+ (2) An aggrieved person who claims an interest in the property or transaction that is the subject of the charge and the disposition of the charge
+ may, as a practical matter, impair or impede this person's ability to protect that interest, unless the aggrieved person is adequately represented by
+ the existing parties.
+ (c) A complainant in a non-Fair Housing Act matter is not a party but may file a motion to become an amicus curiae.
+ (d) Any person may file a petition to participate in a proceeding under this part as an amicus curiae. An amicus curiae is not a party to the
+ proceeding and may not introduce evidence at the hearing.
+ (1) A petition to participate as amicus curiae shall be filed before the commencement of the hearing, unless the petitioner shows good cause for
+ filing the petition later. The petition may be granted if the ALJ finds that the petitioner has a legitimate interest in the proceedings, and that such
+ participation will not unduly delay the outcome and may contribute materially to the proper disposition thereof.
+ (2) The amicus curiae may submit briefs within time limits set by the ALJ or by the Secretary in the event of an appeal to the Secretary.
+ (3) When all parties have completed their initial examination of a witness, the amicus curiae may request the ALJ to propound specific questions
+ to the witness. Any such request may be granted if the ALJ believes the proposed additional testimony may assist materially in elucidating factual
+ matters at issue between the parties and will not expand the issues.
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                                Page 4
+ [61 FR 52218, Oct. 4, 1996, as amended at 64 FR 3801, Jan. 25, 1999]
+
+ § 180.315 Standards of conduct.
+ (a) All persons appearing in proceedings under this part shall act with integrity and in an ethical manner.
+ (b) The ALJ may exclude parties or their representatives for refusal to comply with directions, continued use of dilatory tactics, refusal to adhere
+ to reasonable standards of orderly and ethical conduct, failure to act in good faith, or violations of the prohibitions against ex parte
+ communications. An attorney who is suspended or barred from participation may appeal to another ALJ designated by the Chief Administrative
+ Law Judge. The proceeding will not be delayed or suspended pending disposition on the appeal, except that the ALJ shall suspend the proceeding
+ for a reasonable time to enable the party to obtain another attorney.
+ [61 FR 52218, Oct. 4, 1996, as amended at 73 FR 13723, Mar. 13, 2008; 87 FR 8197, Feb. 14, 2022]
+
+ Subpart D—Proceedings Prior to Hearing
+ § 180.400 Service and filing.
+ (a) Service —(1) Service by the Office of Hearings and Appeals. The Office of Hearings and Appeals shall serve all notices, orders, decisions and
+ other such documents by mail to each party and amicus curiae at the last known address.
+ (2) Service by others. A copy of each filed document shall be served on each party and each amicus curiae. Service shall be made upon counsel if
+ a party is represented by counsel. Service on counsel shall constitute service on the party. Service may be made to the last known address by
+ first-class mail or other more expeditious means, such as:
+ (i) Hand delivery to the person to be served or a person of suitable age and discretion at the place of business, residence, or usual place of abode
+ of the person to be served;
+ (ii) Overnight delivery; or
+ (iii) Facsimile transmission or electronic means. The ALJ may place appropriate limits on service by facsimile transmission or electronic means.
+ (3) Certificate of service. Every document served shall be accompanied by a certificate of service containing a statement as to the date of service,
+ the method of service, the parties served and the address at which they were served, which is signed and dated by the person making service.
+ (b) Filing —(1) Method. All documents shall be filed with the Docket Clerk. Filing may be by first class mail, delivery, facsimile transmission, or
+ electronic means; however, the ALJ may place appropriate limits on filing by facsimile transmission or electronic means.
+ (2) Form. Every pleading, motion, brief, or other document shall contain a caption setting forth the title of the proceeding, the docket number
+ assigned by the Office of Hearings and Appeals, and the designation of the type of document (e.g., charge, motion).
+ (3) Signature. Every document filed by a party shall be signed by the party or the party's attorney and must include the signer's address and
+ telephone number. The signature constitutes a certification that: the signer has read the document; to the best of the signer's knowledge,
+ information and belief, the statements made therein are true; and the document is not interposed for delay.
+ [61 FR 52218, Oct. 4, 1996, as amended at 74 FR 4636, Jan. 26, 2009; 87 FR 8197, Feb. 14, 2022]
+
+ § 180.405 Time computations.
+ (a) In computing time under this part, the time period begins the day following the act, event, or default and includes the last day of the period,
+ unless the last day is a Saturday, Sunday, or legal holiday observed by the Federal Government, in which case the time period includes the next
+ business day.
+ (b) Modification of time periods. Except for time periods required by statute, the ALJ may enlarge or reduce any time period required under this
+ part where necessary to avoid prejudicing the public interest or the rights of the parties. Requests for extension of time should set forth the
+ reasons for the request.
+ (c) Entry of orders. In computing any time period involving the date of the ALJ's issuance of an order or decision, the date of issuance is the date
+ of service by the Docket Clerk.
+ (d) Computation of time for delivery by mail. When documents are filed by mail, three days shall be added to the prescribed time period for filing
+ any responsive pleading. Documents are not filed until received by the Docket Clerk.
+ (e) Untimely filing. The ALJ may refuse to consider any motion or other document that is not filed in a timely fashion.
+ [61 FR 52218, Oct. 4, 1996, as amended at 74 FR 4636, Jan. 26, 2009]
+
+ § 180.410 Charges under the Fair Housing Act.
+ (a) Filing and service. Within 3 days after the issuance of a charge, the General Counsel shall file the charge with the Docket Clerk and serve
+ copies (with the additional information required under paragraph (b) of this section) on all respondents and aggrieved persons.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 5
+ (b) Contents. The charge shall consist of a short and plain written statement of the facts upon which reasonable cause has been found to believe
+ that a discriminatory housing practice has occurred or is about to occur. A notification shall be served with the charge containing the following
+ information:
+ (1) Any complainant, respondent, or aggrieved person may elect to have the claims asserted in the charge decided in a civil action under 42
+ U.S.C. 3612(o), in lieu of an administrative proceeding under this part.
+ (2) Such election must be made not later than 20 days after receipt of service of the charge by serving written notice of such on the Docket Clerk,
+ each respondent, each aggrieved person on whose behalf the charge was issued, the Assistant Secretary, and the General Counsel.
+ (3) If no person timely elects to have the claims asserted in the charge decided in a civil action under 42 U.S.C. 3612(o), an administrative
+ proceeding will be conducted under this part.
+ (4) If an administrative hearing is conducted:
+ (i) The hearing will be held at a date and place specified.
+ (ii) The respondent will have an opportunity to file an answer to the charge within 30 days after service of the charge.
+ (iii) The aggrieved person may participate as a party to the administrative proceeding by filing a request for intervention within 50 days after
+ service of the charge.
+ (iv) All discovery must be concluded 15 days before the date set for hearing.
+ (v) The rules in this part will govern the proceeding.
+ (5) If, at any time following service of the charge on the respondent, the respondent intends to enter into a contract, sale, encumbrance, or lease
+ with any person regarding the property that is the subject of the charge, the respondent must provide a copy of the charge to such person before
+ the respondent and the person enter into the contract, sale, encumbrance or lease.
+ (c) Election of judicial determination. If the complainant, the respondent, or the aggrieved person on whose behalf a complaint was filed makes a
+ timely election to have the claims asserted in the charge decided in a civil action under 42 U.S.C. 3612(o), the administrative proceeding shall be
+ dismissed.
+ (d) Effect of a civil action on administrative proceeding. An ALJ may not continue an administrative proceeding under the Fair Housing Act after
+ the beginning of the trial of a civil action commenced by the aggrieved person under an act of Congress or a State law seeking relief with respect
+ to that discriminatory housing practice. If such a trial is commenced, the ALJ shall dismiss the administrative proceeding. The commencement
+ and maintenance of a civil action for appropriate temporary or preliminary relief under 42 U.S.C. 3610(e) or 42 U.S.C. 3613 does not affect
+ administrative proceedings under this part.
+ [61 FR 52218, Oct. 4, 1996, as amended at 73 FR 13723, Mar. 13, 2008; 74 FR 4636, Jan. 26, 2009]
+
+ § 180.415 Notice of proposed adverse action regarding Federal financial assistance in non-Fair Housing Act
+ matters.
+ (a) Filing and service. Within 10 days after a recipient/applicant has requested a hearing, as provided for in 24 CFR parts 1, 6, 8, or 146, the
+ General Counsel shall file a notice of proposed adverse action with the Docket Clerk and serve copies (with the additional information required
+ under paragraph (b) of this section) on all respondents and complainants.
+ (b) Contents. The notice of proposed adverse action shall consist of a short and plain written statement of the facts and legal authority upon which
+ the proposed action is based. A notification shall be served with the notice containing the following information:
+ (1) That an administrative hearing will be held at a date and place specified.
+ (2) That the respondent will have an opportunity to file an answer to the notice of adverse action within 30 days after its service.
+ (3) That the complainant may participate as an amicus curiae by filing a timely request to do so.
+ (4) That discovery must be concluded by a date specified.
+ (5) That the rules specified in this part shall govern the proceeding.
+ (c) Consolidation. The ALJ may provide for non-Fair Housing Act proceedings at HUD to be joined or consolidated for hearing with proceedings
+ in other Federal departments or agencies, by agreement with such other departments or agencies. All parties to any proceeding consolidated
+ subsequent to service of the notice of proposed adverse action shall be promptly served with notice of such consolidation.
+ [61 FR 52218, Oct. 4, 1996, as amended at 64 FR 3802, Jan. 25, 1999; 74 FR 4636, Jan. 26, 2009]
+
+ § 180.420 Answer.
+ (a) Within 30 days after service of the charge or notice of proposed adverse action, a respondent may file an answer. The answer shall include:
+ (1) A statement that the respondent admits, denies, or does not have and is unable to obtain sufficient information to admit or deny, each
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 6
+ allegation made. A statement of lack of information shall have the effect of a denial. Any allegation that is not denied shall be deemed to be
+ admitted.
+ (2) A statement of each affirmative defense and a statement of facts supporting each affirmative defense.
+ (b) Failure to file an answer within the 30-day period following service of the charge or notice of proposed adverse action shall be deemed an
+ admission of all matters of fact recited therein and may result in the entry of a default decision.
+
+ § 180.425 Amendments to pleadings.
+ (a) By right. HUD may amend the charge or notice of proposed adverse action once as a matter of right prior to the filing of the answer.
+ (b) By leave. Upon such conditions as are necessary to avoid prejudicing the public interest and the rights of the parties, the ALJ may allow
+ amendments to pleadings upon a motion of a party.
+ (c) Conformance to the evidence. When issues not raised by the pleadings are reasonably within the scope of the original charge or notice of
+ proposed adverse action and have been tried by the express or implied consent of the parties, the issues shall be treated in all respects as if they
+ had been raised in the pleadings, and amendments may be made as necessary to make the pleading conform to evidence.
+ (d) Supplemental pleadings. The ALJ may, upon reasonable notice, permit supplemental pleadings concerning transactions, occurrences or events
+ that have happened or been discovered since the date of the pleadings and which are relevant to any of the issues involved.
+
+ § 180.430 Motions.
+ (a) Motions. Any application for an order or other request shall be made by a motion which, unless made during an appearance before the ALJ,
+ shall be in writing and shall state the specific relief requested and the basis therefor. Motions made during an appearance before the ALJ shall be
+ stated orally and made a part of the transcript. All parties shall be given a reasonable opportunity to respond to written or oral motions or requests.
+ (b) Responses to written motions. Within seven calendar days after a written motion is served, any party to the proceeding may file a response in
+ support of, or in opposition to, the motion. Unless otherwise ordered by the ALJ, no further responsive documents may be filed. Failure to file a
+ response within the response period constitutes a waiver of any objection to the granting of the motion.
+ (c) Oral argument. The ALJ may order oral argument on any motion.
+
+ § 180.435 Prehearing statements.
+ (a) Before the commencement of the hearing, the ALJ may direct the parties to file prehearing statements.
+ (b) The prehearing statement must state the name of the party presenting the statement and, unless otherwise directed by the ALJ, briefly set forth
+ the following:
+ (1) The issues involved in the proceeding;
+ (2) The facts stipulated by the parties and a statement that the parties have made a good faith effort to stipulate to the greatest extent possible;
+ (3) The facts in dispute;
+ (4) The witnesses (together with a summary of the testimony expected) and exhibits to be presented at the hearing;
+ (5) A brief statement of applicable law;
+ (6) Conclusions to be drawn;
+ (7) Estimated time required for presentation of the party's case; and
+ (8) Such other information as may assist in the disposition of the proceeding.
+
+ § 180.440 Prehearing conferences.
+ (a) Before the commencement of or during the course of the hearing, the ALJ may direct the parties to participate in a conference to expedite the
+ hearing. Failure to attend a conference may constitute a waiver of all objections to the agreements reached at the conference and to any order with
+ respect thereto.
+ (b) During the conference, the ALJ may dispose of any procedural matters on which he/she is authorized to rule. At the conference, the following
+ matters may be considered:
+ (1) Pre-trial motions;
+ (2) Identification, simplification and clarification of the issues;
+ (3) Necessary amendments to the pleadings;
+ (4) Stipulations of fact and of the authenticity, accuracy, and admissibility of documents;
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                               Page 7
+ (5) Limitations on the number of witnesses;
+ (6) Negotiation, compromise, or settlement of issues;
+ (7) The exchange of proposed exhibits and witness lists;
+ (8) Matters of which official notice will be requested;
+ (9) Scheduling actions discussed at the conference; and
+ (10) Such other matters as may assist in the disposition of the proceeding.
+ (c) Conferences may be conducted by telephone or in person, but generally shall be conducted by telephone, unless the ALJ determines that this
+ method is inappropriate. The ALJ shall give reasonable notice of the time, place and manner of the conference.
+ (d) Record of conference. Unless otherwise directed by the ALJ, the conference will not be stenographically recorded. The ALJ will reduce the
+ actions taken at the conference to a written order or, if the conference takes place less than seven days before the beginning of the hearing, may
+ make a statement at the hearing and on the record summarizing the actions taken at the conference.
+
+ § 180.445 Settlement negotiations before a settlement judge.
+ (a) Appointment of settlement judge. The ALJ, upon the motion of a party or upon his or her own motion, may request the Chief Administrative
+ Law Judge to appoint another ALJ to conduct settlement negotiations. The order shall direct the settlement judge to report to the presiding ALJ
+ within specified time periods.
+ (b) Duties of settlement judge. (1) The settlement judge shall convene and preside over conferences and settlement negotiations between the
+ parties and assess the practicalities of a potential settlement.
+ (2) The settlement judge shall report to the presiding ALJ describing the status of the settlement negotiations, evaluating settlement prospects,
+ and recommending the termination or continuation of the settlement negotiations.
+ (c) Termination of settlement negotiations. Settlement negotiations shall terminate upon the order of the presiding ALJ issued after consultation
+ with the settlement judge. The conduct of settlement negotiations shall not unduly delay the commencement of the hearing.
+ [61 FR 52218, Oct. 4, 1996, as amended at 73 FR 13723, Mar. 13, 2008; 87 FR 8197, Feb. 14, 2022]
+
+ § 180.450 Resolution of charge or notice of proposed adverse action.
+ At any time before a final decision is issued, the parties may submit to the ALJ an agreement resolving the charge or notice of proposed adverse
+ action. A charge under the Fair Housing Act can only be resolved with the agreement of the aggrieved person on whose behalf the charge was
+ issued. If the agreement is in the public interest, the ALJ shall accept it by issuing an initial decision and consent order based on the agreement.
+
+ Subpart E—Discovery
+ § 180.500 Discovery.
+ (a) In general. This subpart governs discovery in aid of administrative proceedings under this part. Discovery in Fair Housing Act matters shall be
+ completed 15 days before the date scheduled for hearing or at such time as the ALJ shall direct. Discovery in non-Fair Housing Act matters shall
+ be completed as the ALJ directs.
+ (b) Scope. The parties are encouraged to engage in voluntary discovery procedures. Discovery shall be conducted as expeditiously and
+ inexpensively as possible, consistent with the needs of all parties to obtain relevant evidence. Unless otherwise ordered by the ALJ, the parties
+ may obtain discovery regarding any matter, not privileged, that is relevant to the subject matter involved in the proceeding, including the
+ existence, description, nature, custody, condition, and location of documents or persons having knowledge of any discoverable matter. It is not
+ grounds for objection that information sought will be inadmissible if the information appears reasonably calculated to lead to the discovery of
+ admissible evidence.
+ (c) Methods. Parties may obtain discovery by one or more of the following methods:
+ (1) Deposition upon oral examination or written questions.
+ (2) Written interrogatories.
+ (3) Requests for the production of documents or other evidence for inspection and other purposes.
+ (4) Requests for admissions.
+ (5) Upon motion of a party, the presiding ALJ may issue an order requiring a physical or mental examination of a party or of a person in the
+ custody or under the legal control of a party.
+ (d) Frequency and sequence. Unless otherwise ordered by the ALJ or restricted by this subpart, the frequency or sequence of these methods is not
+ limited.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 8
+ (e) Non-intervening aggrieved person. For purposes of obtaining discovery from a non-intervening aggrieved person, the term party as used in
+ this subpart includes the aggrieved person.
+
+ § 180.505 Supplementation of responses.
+ A party is under a duty, in a timely fashion, to:
+ (a) Supplement a response with respect to any question directly addressed to:
+ (1) The identity and location of persons having knowledge of discoverable matters; and
+ (2) The identity of each person expected to be called as an expert witness, the subject matter on which the expert witness is expected to testify,
+ and the substance of the testimony.
+ (b) Amend a response if the party later obtains information upon the basis of which:
+ (1) The party knows the response was incorrect when made, or
+ (2) The party knows the response, though correct when made, is no longer true, and the circumstances are such that a failure to amend the
+ response is, in substance, a knowing concealment.
+ (c) Supplement other responses, as imposed by order of the ALJ or by agreement of the parties.
+
+ § 180.510 Interrogatories.
+ (a) Any party may serve on any other party written interrogatories to be answered by the party served. If the party served is a public or private
+ corporation, a partnership, an association, or a governmental agency, the interrogatories may be answered by any authorized officer or agent who
+ shall furnish such information as may be available to the party. A party may serve not more than 30 written interrogatories on another party
+ without an order of the ALJ.
+ (b) Each interrogatory shall be answered separately and fully in writing under oath or affirmation, unless it is objected to, in which event, the
+ reasons for the objection shall be stated in lieu of an answer. The answers shall be signed by the person making them, and the objections may be
+ signed by the attorney or other representative making them. The answers and objections shall be served within 15 days after service of the
+ interrogatories.
+ (c) It is a sufficient answer to an interrogatory to specify the records from which the answer may be derived or ascertained if:
+ (1) The answer to the interrogatory may be derived or ascertained from the records of the party on whom the interrogatory has been served or
+ from an examination, audit or inspection of such records, or from a compilation, abstract or summary based thereon, and
+ (2) The burden of deriving or ascertaining the answer is substantially the same for the party serving the interrogatory as the party served. The
+ party serving the interrogatory shall be afforded reasonable opportunity to examine, audit or inspect such records and to make copies,
+ compilations, abstracts or summaries. The specification shall include sufficient detail to permit the interrogating party to locate and identify the
+ individual records from which the answer may be ascertained.
+ (d) Objections to the form of written interrogatories are waived unless served in writing upon the party propounding the interrogatories.
+
+ § 180.515 Depositions.
+ (a) Notice. Upon written notice to the witness and to all other parties, a party may take the testimony of a witness by deposition and may request
+ the production of specified documents or materials by the witness at the deposition. Notice of the taking of a deposition shall be given not less
+ than five days before the deposition is scheduled. The notice shall state:
+ (1) The purpose and general scope of the deposition;
+ (2) The time and place of the deposition;
+ (3) The name and address of the person before whom the deposition is to be taken;
+ (4) The name and address of the witness; and
+ (5) A specification of the documents and materials that the witness is requested to produce.
+ (b) Deposition of an organization. If the deposition of a public or private corporation, partnership, association, or governmental agency is sought,
+ the organization so named shall designate one or more officers, directors or agents to testify on its behalf, and may set forth, for each person
+ designated, the matters on which he/she will testify.
+ (c) Procedure at deposition. Depositions may be taken before any disinterested person having power to administer oaths in the location where the
+ deposition is to be taken. Each deponent shall be placed under oath or affirmation, and the other parties will have the right to cross-examine. The
+ deponent may have counsel present during the deposition. The questions propounded and all answers and objections thereto shall be reduced to
+ writing, read by or to and subscribed by the witness, and certified by the person before whom the deposition was taken. Non-intervening
+ aggrieved persons may be present at depositions in which they are not the deponent.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 9
+ (d) Motion to terminate or limit examination. During the taking of a deposition, a party or the witness may request suspension of the deposition
+ on the grounds of bad faith in the conduct of the examination, oppression of the witness or party, or improper questioning or conduct. Upon
+ request for suspension, the deposition will be adjourned. The objecting party or witness must immediately move the ALJ for a ruling on the
+ objection. The ALJ may then limit the scope or manner of taking the deposition.
+ (e) Waiver of deposing officer's disqualification. Objection to taking a deposition because of the disqualification of the officer before whom it is
+ taken is waived unless made before the taking of the deposition begins or as soon thereafter as the disqualification becomes known or could have
+ been discovered with reasonable diligence.
+ (f) Payment of costs of deposition. The party requesting the deposition shall bear all costs of the deposition.
+
+ § 180.520 Use of deposition at hearings.
+ (a) In general. At the hearing, any part or all of a deposition, so far as admissible under the Federal Rules of Evidence, may be used against any
+ party who was present or represented at the taking of the deposition or who had due notice of the taking of the deposition, in accordance with the
+ following provisions:
+ (1) Any deposition may be used by any party for the purpose of contradicting or impeaching the testimony of the deponent as a witness.
+ (2) The deposition of an expert witness may be used by any party for any purpose, unless the ALJ rules that such use is unfair or in violation of
+ due process.
+ (3) The deposition of a party, or of anyone who at the time of the taking of the deposition was an officer, director, or duly authorized agent of a
+ public or private corporation, partnership, or association that is a party, may be used by any other party for any purpose.
+ (4) The deposition of a witness, whether or not a party, may be used by any party for any purpose if the ALJ finds:
+ (i) That the witness is dead;
+ (ii) That the witness is out of the United States or more than 100 miles from the place of hearing, unless it appears that the absence of the witness
+ was procured by the party offering the deposition;
+ (iii) That the witness is unable to attend to testify because of age, sickness, infirmity, or imprisonment;
+ (iv) That the party offering the deposition has been unable to procure the attendance of the witness by subpoena; or
+ (v) Whenever exceptional circumstances exist as to make it desirable, in the interest of justice and with due regard to the importance of presenting
+ the testimony of witnesses orally in open hearing, to allow the deposition to be used.
+ (5) If a part of a deposition is offered in evidence by a party, any other party may require the party to introduce all of the deposition that is
+ relevant to the part introduced. Any party may introduce any other part of the deposition.
+ (6) Substitution of parties does not affect the right to use depositions previously taken. If a proceeding has been dismissed and another proceeding
+ involving the same subject matter is later brought between the same parties or their representatives or successors in interest, all depositions
+ lawfully taken in the former proceeding may be used in the latter proceeding.
+ (b) Objections to admissibility. Except as provided in this paragraph, objection may be made at the hearing to receiving in evidence any
+ deposition or part of a deposition for any reason that would require the exclusion of the evidence if the witness were present and testifying.
+ (1) Objections to the competency of a witness or to the competency, relevancy, or materiality of testimony are not waived by failure to make
+ them before or during the taking of the deposition, unless the basis of the objection is one which might have been obviated or removed if
+ presented at that time.
+ (2) Errors and irregularities occurring at the oral examination in the manner of taking the deposition, in the form of the questions or answers, in
+ the oath or affirmation, or in the conduct of parties, and errors of any kind which might be obviated, removed or cured if promptly presented, are
+ waived unless reasonable objection is made at the taking of the deposition.
+
+ § 180.525 Requests for production of documents or things for inspection or other purposes, including physical
+ and mental examinations.
+ (a) Any party may serve on any other party a request to:
+ (1) Produce and/or permit the party, or a person acting on the party's behalf, to inspect and copy any designated documents, or to inspect and
+ copy, test, or sample any tangible things that contain or may lead to relevant information and that are in the possession, custody, or control of the
+ party upon whom the request is served.
+ (2) Permit entry upon designated land or other property in the possession or control of the party upon whom the request is served for the purpose
+ of inspection and measuring, photographing, testing, or other purposes stated in paragraph (a)(1) of this section.
+ (b) Each request shall set forth with reasonable particularity the items or categories to be inspected and shall specify a reasonable time, place and
+ manner for making the inspection and performing the related acts.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                                 Page 10
+ (c) Within 15 days after service of the request, the party upon whom the request is served shall serve a written response on the party submitting
+ the request. The response shall state, with regard to each item or category, that inspection and related activities will be permitted as requested,
+ unless there are objections, in which case the reasons for the objection shall be stated.
+ (d) Upon motion of any party, when the mental or physical condition (including the blood group) of a party or of a person in the custody or under
+ the legal control of a party, is in controversy, the presiding ALJ may order the party to submit to a physical or mental examination by a suitably
+ licensed or certified examiner or to produce for examination the person in the party's custody or legal control. The order may be made only on
+ motion for good cause shown and upon notice to the person to be examined and to all parties and shall specify the time, place, manner,
+ conditions, and scope of the examination and the person or persons by whom it is to be made. A report of the examiner shall be made in
+ accordance with Rule 35(b) of the Federal Rules of Civil Procedure.
+
+ § 180.530 Requests for admissions.
+ (a) Any party may serve on any other party a written request for the admission of the truth of any matters relevant to the adjudication set forth in
+ the request that relate to statements or opinions of fact or of application of law to fact, including the genuineness and authenticity of any
+ documents described in or attached to the request.
+ (b) Each matter for which an admission is requested is admitted unless, within 15 days after service of the request, or within such time as the ALJ
+ allows, the party to whom the request is directed serves on the requesting party a sworn written answer which:
+ (1) Specifically denies, in whole or in part, the matter for which an admission is requested;
+ (2) Sets forth in detail why the party cannot truthfully admit or deny the matter; or
+ (3) States an objection that the matter is privileged, irrelevant or otherwise improper in whole or in part.
+ (c) An answering party may not give lack of information or knowledge as a reason for failure to admit or deny, unless he/she/it states that
+ he/she/it has made a reasonable inquiry and that the information known to, or readily obtainable by, him/her/it is insufficient to enable the party
+ to admit or deny.
+ (d) The party requesting admissions may move for a determination of the sufficiency of the answers or objections. Unless the ALJ determines
+ that an objection is justified, the ALJ shall order that an answer be served. If the ALJ determines that an answer does not comply with the
+ requirements of this section, the ALJ may order either that the matter is admitted or that an amended answer be served.
+ (e) Any matter admitted under this section is conclusively established unless, upon the motion of a party, the ALJ permits the withdrawal or
+ amendment of the admission. Any admission made under this section is made for the purposes of the pending proceeding only, is not an
+ admission by the party for any other purpose, and may not be used against the party in any other proceeding.
+
+ § 180.535 Protective orders.
+ (a) Upon motion of a party or a person from whom discovery is sought or in accordance with § 180.540(c), and for good cause shown, the ALJ
+ may make appropriate orders to protect a party or person from annoyance, embarrassment, oppression, or undue burden or expense as a result of
+ the requested discovery request. The order may direct that:
+ (1) The discovery may not be had;
+ (2) The discovery may be had only on specified terms and conditions, including at a designated time and place;
+ (3) The discovery may be had by a method of discovery other than that selected by the party seeking discovery;
+ (4) Certain matters may not be the subject of discovery, or the scope of discovery may be limited to certain matters;
+ (5) Discovery may be conducted with no one present other than persons designated by the ALJ;
+ (6) A trade secret or other confidential research, development or commercial information may not be disclosed, or may be disclosed only in a
+ designated way; or
+ (7) The party or other person from whom discovery is sought may file specified documents or information under seal to be opened as directed by
+ the ALJ.
+ (b) The ALJ may permit a party or other person from whom discovery is sought, who is seeking a protective order, to make all or part of the
+ showing of good cause in camera. If such a showing is made, upon motion of the party or other person from whom discovery is sought, an in
+ camera record of the proceedings may be made. If the ALJ enters a protective order, any in camera record of such showing shall be sealed and
+ preserved and made available to the ALJ or, in the event of appeal, to the Secretary or a court.
+
+ § 180.540 Motion to compel discovery.
+ (a) If a deponent fails to answer a question propounded, or a party upon whom a discovery request has been made fails to respond adequately,
+ objects to a request, or fails to produce documents or other inspection as requested, the discovering party may move the ALJ for an order
+ compelling discovery in accordance with the request. The motion shall:
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                           Page 11
+ (1) State the nature of the request;
+ (2) Set forth the response or objection of the deponent or party upon whom the request was served;
+ (3) Present arguments supporting the motion; and
+ (4) Attach copies of all relevant discovery requests and responses.
+ (b) For the purposes of this section, an evasive or incomplete answer or response will be treated as a failure to answer or respond.
+ (c) In ruling on a motion under this section, the ALJ may enter an order compelling a response in accordance with the request, may issue
+ sanctions under paragraph (d) of this section, or may enter a protective order under § 180.535.
+ (d) Sanctions. If a party fails to provide or permit discovery, the ALJ may take such action as is just, including but not limited to the following:
+ (1) Inferring that the admission, testimony, document, or other evidence would have been adverse to the party;
+ (2) Ordering that, for purposes of the adjudication, the matters regarding which the order was made or any other designated facts shall be taken to
+ be established in accordance with the claim of the party obtaining the order;
+ (3) Prohibiting the party failing to comply with the order from introducing evidence concerning, or otherwise relying upon, documents or other
+ evidence withheld;
+ (4) Ordering that the party withholding discovery not introduce into evidence, or otherwise use in the hearing, information obtained in discovery;
+ (5) Permitting the requesting party to introduce secondary evidence concerning the information sought;
+ (6) Striking any appropriate part of the pleadings or other submissions of the party failing to comply with such order; or
+ (7) Taking such other action as may be appropriate.
+
+ § 180.545 Subpoenas.
+ (a) This section governs the issuance of subpoenas in administrative proceedings under the Fair Housing Act. Except for time periods stated in
+ the rules in this section, to the extent that this section conflicts with procedures for the issuance of subpoenas in civil actions in the United States
+ District Court for the District in which the investigation of the discriminatory housing practice took place, the rules of the United States District
+ Court apply.
+ (b) Issuance of subpoena. Upon the written request of a party, the presiding ALJ or other designated ALJ may issue a subpoena requiring the
+ attendance of a witness for the purpose of giving testimony at a deposition or hearing and requiring the production of relevant books, papers,
+ documents or tangible things.
+ (c) Time of request. Requests for subpoenas in aid of discovery must be submitted in time to permit the conclusion of discovery 15 days before
+ the date scheduled for the hearing. If a request for subpoenas of a witness for testimony at a hearing is submitted three days or less before the
+ hearing, the subpoena shall be issued at the discretion of the presiding ALJ, or other designated ALJ as appropriate.
+ (d) Service. A subpoena may be served by any person who is not a party and is not less than 18 years of age. Service on a person shall be made by
+ delivering a copy of the subpoena to the person and by tendering witness fees and mileage to that person. When the subpoena is issued on behalf
+ of HUD, witness fees and mileage need not be tendered with the subpoena.
+ (e) Amount of witness fees and mileage. A witness summoned by a subpoena issued under this part is entitled to the same witness and mileage
+ fees as a witness in proceedings in United States District Courts. Fees payable to a witness summoned by a subpoena shall be paid by the party
+ requesting the issuance of the subpoena, or where the ALJ determines that a party is unable to pay the fees, the fees shall be paid by HUD.
+ (f) Motion to quash or limit subpoena. Upon a motion by the person served with a subpoena or by a party, made within five days after service of
+ the subpoena (but in any event not less than the time specified in the subpoena for compliance), the ALJ may:
+ (1) Quash or modify the subpoena if it is unreasonable and oppressive or for other good cause shown; or
+ (2) Condition denial of the motion upon the advancement, by the party on whose behalf the subpoena was issued, of the reasonable cost of
+ producing subpoenaed books, papers or documents. Where circumstances require, the ALJ may act upon such a motion at any time after a copy
+ of the motion has been served upon the party on whose behalf the subpoena was issued.
+ (g) Failure to comply with subpoena. If a person fails to comply with a subpoena issued under this section, the party requesting the subpoena may
+ refer the matter to the Attorney General for enforcement in appropriate proceedings under 42 U.S.C. 3614(c).
+ [61 FR 52218, Oct. 4, 1996, as amended at 73 FR 13723, Mar. 13, 2008]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                               Page 12
+ Subpart F—Procedures at Hearing
+ § 180.600 Date and place of hearing.
+ (a) For Fair Housing Act Cases —(1) Time. The hearing shall commence not later than 120 days after the issuance of the charge, unless it is
+ impracticable to do so. If the hearing cannot be commenced within this time period, the ALJ shall notify in writing all parties, aggrieved persons,
+ amici, and the Assistant Secretary of the reasons for the delay.
+ (2) Place. The hearing will be conducted at a place in the vicinity in which the discriminatory housing practice is alleged to have occurred or to be
+ about to occur.
+ (b) For Non-Fair Housing Matters. Hearings shall be held in Washington, DC, unless the ALJ determines that the convenience of the respondent
+ or HUD requires that another place be selected.
+ (c) The ALJ may change the time, date or place of the hearing, or may temporarily adjourn or continue a hearing for good cause shown.
+
+ § 180.605 Conduct of hearings.
+ The hearing shall be conducted in accordance with the Administrative Procedure Act (5 U.S.C. 551-559).
+
+ § 180.610 Waiver of right to appear.
+ If all parties waive their right to appear before the ALJ, the ALJ need not conduct an oral hearing. Such waivers shall be in writing and filed with
+ the ALJ. The ALJ shall make a record of the pleadings and relevant written evidence submitted by the parties. These documents may constitute
+ the evidence in the proceeding, and the decision may be based upon this evidence.
+
+ § 180.615 Failure of party to appear.
+ A default decision may be entered against a party failing to appear at a hearing unless such party shows good cause for such failure.
+
+ § 180.620 Evidence.
+ The Federal Rules of Evidence apply to the presentation of evidence in hearings under this part.
+
+ § 180.625 Record of hearing.
+ (a) All oral hearings shall be recorded and transcribed by a reporter designated and supervised by the ALJ. The original transcript shall be a part
+ of the record and shall constitute the sole official transcript. All exhibits introduced as evidence shall be incorporated into the record. The parties
+ and the public may obtain transcripts from the official reporter at rates not to exceed the applicable rates fixed by the contract with the reporter.
+ (b) Corrections to the official transcript will be permitted upon motion of a party. Motions for correction must be submitted within five days after
+ receipt of the transcript. Corrections of the official transcript will be permitted only where errors of substance are involved and upon the ALJ's
+ approval.
+
+ § 180.630 Stipulations.
+ The parties may stipulate to any pertinent facts by oral agreement at the hearing or by written agreement at any time. Stipulations may be
+ submitted into evidence at any time before the end of the hearing. Once received into evidence, a stipulation is binding on the parties.
+
+ § 180.635 Written testimony.
+ The ALJ may accept and enter into the record direct testimony of witnesses made by verified written statement rather than by oral presentation at
+ the hearing. Unless the ALJ fixes other time periods, affidavits shall be filed and served on the parties not later than 14 days prior to the hearing.
+ Witnesses whose testimony is presented by affidavit shall be available for cross-examination as may be required.
+
+ § 180.640 In camera and protective orders.
+ The ALJ may limit discovery or the introduction of evidence, or may issue such protective or other orders necessary to protect privileged
+ communications. If the ALJ determines that information in documents containing privileged matters should be made available to a party, the ALJ
+ may order the preparation of a summary or extract of the nonprivileged matter contained in the original.
+
+ § 180.645 Exhibits.
+ (a) Identification. All exhibits offered into evidence shall be numbered sequentially and marked with a designation identifying the sponsor. The
+ original of each exhibit offered in evidence or marked for identification shall be filed and retained in the docket of the proceeding, unless the ALJ
+ permits the substitution of a copy for the original.
+ (b) Exchange of exhibits. One copy of each exhibit offered into evidence must be furnished to each of the parties and to the ALJ. If the ALJ does
+ not fix a time for the exchange of exhibits, the parties shall exchange copies of proposed exhibits at the earliest practicable time before the
+ commencement of the hearing. Exhibits submitted as rebuttal evidence are not required to be exchanged before the commencement of the hearing
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 13
+ if the submission of such evidence could not reasonably be anticipated at that time.
+ (c) Authenticity. The authenticity of all documents submitted or exchanged as proposed exhibits prior to the hearing shall be admitted unless
+ written objection is filed before the commencement of the hearing, or unless good cause is shown for failing to file such a written objection.
+ (d) The parties are encouraged to stipulate as to the admissibility of exhibits.
+
+ § 180.650 Public document items.
+ Whenever a public document, such as an official report, decision, opinion, or published scientific or economic statistical data issued by any of the
+ executive departments (or their subdivisions), legislative agencies or committees, or administrative agencies of the Federal Government
+ (including Government-owned corporations), or a similar document issued by a State or its agencies is offered (in whole or in part), and such
+ document (or part thereof) has been shown by the offeror to be reasonably available to the public, such document need not be produced or
+ marked for identification, but may be offered for official notice, as a public document item by specifying the document or relevant part thereof.
+
+ § 180.655 Witnesses.
+ (a) Witnesses shall testify under oath or affirmation.
+ (b) If a witness fails or refuses to testify, the failure or refusal to answer any question found by the ALJ to be proper may be grounds for striking
+ all or part of the testimony that may have been given by the witness, or for any other action deemed appropriate by the ALJ.
+
+ § 180.660 Closing of record.
+ (a) Oral hearings. Where there is an oral hearing, the hearing ends on the day of the adjournment of the oral hearing or, where written briefs are
+ permitted, on the date that the written briefs are due.
+ (b) Hearing on written record. Where the parties have waived an oral hearing, the hearing ends on the date set by the ALJ as the final date for the
+ receipt of submissions by the parties.
+ (c) Receipt of evidence following hearing. Following the end of the hearing, no additional evidence may be accepted into the record, except with
+ the permission of the ALJ. The ALJ may receive additional evidence upon a determination that new and material evidence was not readily
+ available before the end of the hearing, the evidence has been timely submitted, and its acceptance will not unduly prejudice the rights of the
+ parties.
+
+ § 180.665 Arguments and briefs.
+ (a) Following the submission of evidence at an oral hearing, the parties may file a brief, proposed findings of fact and conclusions of law, or both,
+ or, in the ALJ's discretion, make oral arguments.
+ (b) Unless otherwise ordered by the ALJ, briefs and proposed findings of fact and conclusions of law shall be filed simultaneously by all parties.
+ In Fair Housing Act cases, such filings shall be due not later than 45 days after the adjournment of the oral hearing. In other cases, they shall be
+ due as the ALJ orders.
+
+ § 180.670 Initial decision of ALJ.
+ (a) The ALJ shall issue an initial decision including findings of fact and conclusions of law upon each material issue of fact or law presented on
+ the record. The initial decision of the ALJ shall be based on the whole record of the proceeding. A copy of the initial decision shall be served
+ upon all parties, aggrieved persons, the Assistant Secretary, the Secretary, and amici, if any.
+ (b) Initial decision in Fair Housing Act cases. (1) The ALJ shall issue an initial decision within 60 days after the end of the hearing, unless it is
+ impracticable to do so. If the ALJ is unable to issue the initial decision within this time period (or within any succeeding 60-day period following
+ the initial 60-day period), the ALJ shall notify in writing all parties, the aggrieved person on whose behalf the charge was filed, and the Assistant
+ Secretary, of the reasons for the delay.
+ (2) The initial decision shall state that it will become the final agency decision 30 days after the date of issuance of the initial decision.
+ (3) Findings against respondents. If the ALJ finds that a respondent has engaged, or is about to engage, in a discriminatory housing practice, the
+ ALJ shall issue an initial decision against the respondent and order such relief as may be appropriate. Relief may include, but is not limited to:
+ (i) Ordering the respondent to pay damages to the aggrieved person (including damages caused by humiliation and embarrassment).
+ (ii) Ordering injunctive or such other equitable relief as may be appropriate. No such order may affect any contract, sale, encumbrance or lease
+ consummated before the issuance of the initial decision that involved a bona fide purchaser, encumbrancer or tenant without actual knowledge of
+ the charge.
+ (iii) Assessing a civil penalty against any respondent to vindicate the public interest in accordance with § 180.671.
+ (4) Findings in favor of respondents. If the ALJ finds that the charging party has not established that a respondent has engaged in a discriminatory
+ housing practice, the ALJ shall make an initial decision dismissing the charge as against that respondent.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 14
+ (c) Initial Decision in Non-Fair Housing Act matters. The ALJ shall issue the initial decision as soon as possible after the end of the hearing.
+ (1) Findings against Respondents. If the ALJ finds that a respondent has failed to comply substantially with the statutory and regulatory
+ requirements that gave rise to the notice of proposed adverse action, the ALJ shall issue an initial decision against the respondent.
+ (i) The initial decision shall provide for suspension or termination of, or refusal to grant or continue, Federal financial assistance, in whole or in
+ part, to the involved program or activity.
+ (ii) The initial decision may contain such terms, conditions, and other provisions as are consistent with and will effectuate the purposes of the
+ applicable statute and regulations, including provisions designed to assure that no Federal financial assistance will be extended for the program or
+ activity unless and until the respondent corrects its noncompliance and satisfies the Secretary that it will fully comply with the relevant statute
+ and regulations.
+ (iii) The initial decision shall state that it will become final only upon the Secretary's approval.
+ (2) Findings in favor of respondents. If the ALJ finds that a respondent has not failed to comply substantially with the statutory and regulatory
+ requirements that gave rise to the notice of proposed adverse action, the ALJ shall make an initial decision dismissing the notice of proposed
+ adverse action. The initial decision shall state that it will become the final agency decision 30 days after the date of issuance.
+ [61 FR 52218, Oct. 4, 1996, as amended at 64 FR 6754, Feb. 10, 1999; 68 FR 12788, Mar. 17, 2003; 72 FR 5588, Feb. 6, 2007]
+
+ § 180.671 Assessing civil penalties for Fair Housing Act cases.
+ (a) Amounts. The ALJ may assess a civil penalty against any respondent under § 180.670(b)(3) for each separate and distinct discriminatory
+ housing practice (as defined in paragraph (b) of this section) that the respondent committed, each civil penalty in an amount not to exceed:
+ (1) $26,262, if the respondent has not been adjudged in any administrative hearing or civil action permitted under the Fair Housing Act or any
+ State or local fair housing law, or in any licensing or regulatory proceeding conducted by a Federal, State, or local governmental agency, to have
+ committed any prior discriminatory housing practice.
+ (2) $65,653, if the respondent has been adjudged in any administrative hearing or civil action permitted under the Fair Housing Act, or under any
+ State or local fair housing law, or in any licensing or regulatory proceeding conducted by a Federal, State, or local government agency, to have
+ committed one other discriminatory housing practice and the adjudication was made during the 5-year period preceding the date of filing of the
+ charge.
+ (3) $131,308, if the respondent has been adjudged in any administrative hearings or civil actions permitted under the Fair Housing Act, or under
+ any State or local fair housing law, or in any licensing or regulatory proceeding conducted by a Federal, State, or local government agency, to
+ have committed two or more discriminatory housing practices and the adjudications were made during the 7-year period preceding the date of
+ filing of the charge.
+ (b) Definition of separate and distinct discriminatory housing practice. A separate and distinct discriminatory housing practice is a single,
+ continuous uninterrupted transaction or occurrence that violates section 804, 805, 806 or 818 of the Fair Housing Act. Even if such a transaction
+ or occurrence violates more than one provision of the Fair Housing Act, violates a provision more than once, or violates the fair housing rights of
+ more than one person, it constitutes only one separate and distinct discriminatory housing practice.
+ (c) Factors for consideration by ALJ. (1) In determining the amount of the civil penalty to be assessed against any respondent for each separate
+ and distinct discriminatory housing practice the respondent committed, the ALJ shall consider the following six (6) factors:
+ (i) Whether that respondent has previously been adjudged to have committed unlawful housing discrimination;
+ (ii) That respondent's financial resources;
+ (iii) The nature and circumstances of the violation;
+ (iv) The degree of that respondent's culpability;
+ (v) The goal of deterrence; and
+ (vi) Other matters as justice may require.
+ (2)(i) Where the ALJ finds any respondent to have committed a housing-related hate act, the ALJ shall take this fact into account in favor of
+ imposing a maximum civil penalty under the factors listed in paragraphs (c)(1)(iii), (iv), (v), and (vi) of this section.
+ (ii) For purposes of this section, the term housing-related hate act means any act that constitutes a discriminatory housing practice under section
+ 818 of the Fair Housing Act and which constitutes or is accompanied or characterized by actual violence, assault, bodily harm, and/or harm to
+ property; intimidation or coercion that has such elements; or the threat or commission of any action intended to assist or be a part of any such act.
+ (iii) Nothing in this paragraph shall be construed to require an ALJ to assess any amount less than a maximum civil penalty in a non-hate act case,
+ where the ALJ finds that the factors listed in paragraphs (c)(1)(i) through (vi) of this section warrant the assessment of a maximum civil penalty.
+ (d) Persons previously adjudged to have committed a discriminatory housing practice. If the acts constituting the discriminatory housing practice
+ that is the subject of the charge were committed by the same natural person who has previously been adjudged, in any administrative proceeding
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 15
+ or civil action, to have committed acts constituting a discriminatory housing practice, the time periods in paragraphs (a) (2) and (3) of this section
+ do not apply.
+ (e) Multiple discriminatory housing practices committed by the same respondent; multiple respondents. (1) In a proceeding where a respondent
+ has been determined to have engaged in, or is about to engage in, more than one separate and distinct discriminatory housing practice, a separate
+ civil penalty may be assessed against the respondent for each separate and distinct discriminatory housing practice.
+ (2) In a proceeding involving two or more respondents who have been determined to have engaged in, or are about to engage in, one or more
+ discriminatory housing practices, one or more civil penalties, as provided under this section, may be assessed against each respondent.
+ [64 FR 6754, Feb. 10, 1999, as amended at 68 FR 12788, Mar. 17, 2003; 72 FR 5588, Feb. 6, 2007; 78 FR 4060, Jan. 18, 2013; 82 FR 24525,
+ May 30, 2017; 83 FR 32793, July 16, 2018; 84 FR 9454, Mar. 15, 2019; 85 FR 13044, Mar. 6, 2020; 86 FR 14373, Mar. 16, 2021; 87 FR 24421,
+ Apr. 26, 2022; 88 FR 9748, Feb. 15, 2023; 89 FR 13617, Feb. 23, 2024; 90 FR 24748, June 12, 2025]
+
+ § 180.675 Petitions for review.
+ (a) The Secretary may affirm, modify or set aside, in whole or in part, the initial decision, or remand the initial decision for further proceedings.
+ (b) Any party adversely affected by the ALJ's initial decision may file a motion with the Secretary explaining how and why the initial decision
+ should be modified, set aside, in whole or in part, or remanded for further proceedings. Such petition shall be based only on the following
+ grounds:
+ (1) A finding of material fact is not supported by substantial evidence;
+ (2) A necessary legal conclusion is erroneous;
+ (3) The decision is contrary to law, duly promulgated rules of HUD, or legal precedent; or
+ (4) A prejudicial error of procedure was committed.
+ (c) Each issue shall be plainly and concisely stated and shall be supported by citations to the record when assignments of error are based on the
+ record, statutes, regulations, cases, or other authorities relied upon. Except for good cause shown, no assignment of error by any party shall rely
+ on any question of fact or law not presented to the ALJ.
+ (d) Such petitions must be received by the Secretary within 15 days after issuance of the initial decision.
+ (e) A statement in opposition to the petition for review may be filed. Such opposition must be received by the Secretary within 22 days after
+ issuance of the initial decision.
+ (f) A petition not granted within 30 days after the issuance of the initial decision is deemed denied.
+ (g) If the Secretary remands the decision for further proceedings, the ALJ shall issue an initial decision on remand within 60 days after the date of
+ issuance of the Secretary's decision, unless it is impracticable to do so. If the ALJ is unable to issue the initial decision within this time period (or
+ within any succeeding 60-day period following the initial 60-day period), the ALJ shall notify in writing the parties, the aggrieved person on
+ whose behalf the charge was filed, any amicus curiae and the Assistant Secretary, of the reasons for the delay.
+
+ § 180.680 Final decisions.
+ (a) Public disclosure. HUD shall make public disclosure of each final decision.
+ (b) Where initial decision does not provide for suspension or termination of, or refusal to grant or continue, Federal financial assistance—(1)
+ Issuance of final decision by Secretary. The Secretary may review any finding of fact, conclusion of law, or order contained in the initial decision
+ of the ALJ and issue a final decision in the proceeding. The Secretary shall serve the final decision on all parties no later than 30 days after the
+ date of issuance of the initial decision.
+ (2) No final decision by Secretary. If the Secretary does not serve a final decision within the time period described in paragraph (b)(1) of this
+ section, the initial decision of the ALJ will become the final agency decision. For the purposes of this part, such a final decision will be
+ considered to have been issued 30 days after the date of issuance of the initial decision.
+ (c) Where initial decision provides for suspension or termination of, or refusal to grant or continue, Federal financial assistance. When the initial
+ decision provides for the suspension or termination of, or the refusal to grant or continue, Federal financial assistance, or the imposition of any
+ other sanction, such decision shall not constitute an order or final agency action until approved by the Secretary. Further, in the case of
+ proceedings under title VI of the Civil Rights Act of 1964, no order suspending, terminating, or refusing to grant or continue Federal financial
+ assistance shall become effective until the requirements of 24 CFR 1.8(c) have been met.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                               Page 16
+ Subpart G—Post-Final Decision in Fair Housing Cases
+ § 180.700 Action upon issuance of a final decision in Fair Housing Act cases.
+ (a) Licensed or regulated businesses. (1) If a final decision includes a finding that a respondent has engaged or is about to engage in a
+ discriminatory housing practice in the course of a business that is subject to licensing or regulation by a Federal, State or local governmental
+ agency, the Assistant Secretary will notify the governmental agency of the decision by:
+ (i) Sending copies of the findings of fact, conclusions of law and final decision to the governmental agency by certified mail; and
+ (ii) Recommending appropriate disciplinary action to the governmental agency, including, where appropriate, the suspension or revocation of the
+ respondent's license.
+ (2) The Assistant Secretary will notify the appropriate governmental agencies within 30 days after the date of issuance of the final decision,
+ unless a petition for judicial review of the final decision as described in § 180.710 of this part has been filed before the issuance of the notification
+ of the agency. If such a petition has been filed, the Assistant Secretary will provide the notification to the governmental agency within 30 days
+ after the date that the final decision is affirmed upon review. If a petition for judicial review is timely filed following the notification of the
+ governmental agency, the Assistant Secretary will promptly notify the governmental agency of the petition and withdraw his or her
+ recommendation.
+ (b) Notification to the Attorney General. If a final decision includes a finding that a respondent has engaged or is about to engage in a
+ discriminatory housing practice and another final decision including such a finding was issued under this part within the five years preceding the
+ date of issuance of the final decision, the General Counsel will notify the Attorney General of the decisions by sending a copy of each final
+ decision.
+
+ § 180.705 Attorney's fees and costs.
+ Following the issuance of the final decision, any prevailing party, except HUD, may apply for attorney's fees and costs. The ALJ will issue an
+ initial decision awarding or denying such fees and costs. The initial decision will become HUD's final decision unless the Secretary reviews the
+ initial decision and issues a final decision on fees and costs within 30 days. The recovery of reasonable attorney's fees and costs will be permitted
+ as follows:
+ (a) If the respondent is the prevailing party, HUD will be liable for reasonable attorney's fees and costs to the extent provided under the Equal
+ Access to Justice Act (5 U.S.C. 504) and HUD's regulations at 24 CFR part 14, and an intervenor will be liable for reasonable attorney's fees and
+ costs only to the extent that the intervenor's participation in the administrative proceeding was frivolous or vexatious, or was for the purpose of
+ harassment.
+ (b) To the extent that an intervenor is a prevailing party, the respondent will be liable for reasonable attorney's fees unless special circumstances
+ make the recovery of such fees and costs unjust.
+
+ § 180.710 Judicial review of final decision.
+ (a) Any party adversely affected by a final decision may file a petition in the appropriate United States Court of Appeals for review of the
+ decision under 42 U.S.C. 3612(i). The petition must be filed within 30 days after the date of issuance of the final decision.
+ (b) If no petition for review is filed under paragraph (a) of this section within 45 days after the date of issuance of the final decision, the findings
+ of facts and final decision shall be conclusive in connection with any petition for enforcement.
+
+ § 180.715 Enforcement of final decision.
+ (a) Enforcement by HUD. Following the issuance of a final decision, the General Counsel may petition the appropriate United States Court of
+ Appeals for the enforcement of the final decision and for appropriate temporary relief or restraining order in accordance with 42 U.S.C. 3612(j).
+ (b) Enforcement by others. If no petition for review has been filed within 60 days after the date of issuance, and the General Counsel has not
+ sought enforcement of the final decision as described in paragraph (a) of this section, any person entitled to relief under the final decision may
+ petition the appropriate United States Court of Appeals for the enforcement of the final decision in accordance with 42 U.S.C. 3612(m).
+
+ Subpart H—Post-Final Decision in Non-Fair Housing Act Matters
+ § 180.800 Post-termination proceedings.
+ (a) A respondent adversely affected by the order terminating, discontinuing, or refusing Federal financial assistance in consequence of
+ proceedings pursuant to this title may request the Secretary for an order authorizing payment, or permitting resumption, of Federal financial
+ assistance. Such request shall:
+ (1) Be in writing;
+ (2) Affirmatively show that, since entry of the order, the respondent has brought its program or activity into compliance with statutory and
+ regulatory requirements; and
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                               Page 17
+ (3) Set forth specifically, and in detail, the steps taken to achieve such compliance.
+ (b) If the Secretary denies such request, the respondent may request an expeditious hearing. The request for such a hearing shall be addressed to
+ the Secretary within 30 days after the respondent is informed that the Secretary has refused to authorize payment or permit resumption of Federal
+ financial assistance and shall specify why the Secretary erred in denying the request.
+ (c) The procedures established by this part shall be applicable to any hearing.
+
+ § 180.805 Judicial review of final decision.
+ A termination of or refusal to grant or to continue Federal financial assistance is subject to judicial review as provided in the applicable statute.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 18
+

@@ -1,0 +1,1904 @@
+GH Real Estate approved legal-source text chunk — GH-FED-03_CONDITIONAL-HUD-HCV-VAWA-Section504-Programs.part-002.txt — verified through 2026-07-12. Official source text controls.
+
+ identified in § 982.54(d)(21)(iii).
+ (c) Eligible inspection methods. (1) A PHA may rely upon inspections of housing assisted under the HOME Investment Partnerships (HOME)
+ program or housing financed using Low-Income Housing Tax Credits (LIHTCs), or inspections performed by HUD.
+ (2) If a PHA wishes to rely on an inspection method other than a method listed in paragraph (c)(1) of this section, then, prior to amending its
+ Administrative Plan, the PHA must submit to the Real Estate Assessment Center (REAC) a copy of the inspection method it wishes to use, along
+ with its analysis of the inspection method that shows that the method “provides the same or greater protection to occupants of dwelling units” as
+ would HQS.
+ (i) A PHA may rely upon such alternative inspection method only upon receiving approval from REAC to do so.
+ (ii) A PHA that uses an alternative inspection method approved under this paragraph must monitor changes to the standards and requirements
+ applicable to such method. If any change is made to the alternative inspection method, then the PHA must submit to REAC a copy of the revised
+ standards and requirements, along with a revised comparison to HQS. If the PHA or REAC determines that the revision would cause the
+ alternative inspection to no longer meet or exceed HQS, then the PHA may no longer rely upon the alternative inspection method to comply with
+ the inspection requirement at § 982.405(a) and (b).
+ (d) Use of alternative inspection. (1) If an alternative inspection method employs sampling, then a PHA may rely on such alternative inspection
+ method for purposes of an initial or periodic inspection only if units occupied by voucher program participants are included in the population of
+ units forming the basis of the sample.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 38
+ (2) In order for a PHA to rely upon the results of an alternative inspection for purposes of an initial or periodic inspection, a property inspected
+ pursuant to such method must meet the standards or requirements regarding housing quality or safety applicable to properties assisted under the
+ program using the alternative inspection method. To make the determination of whether such standards or requirements are met, the PHA must
+ adhere to the following procedures:
+ (i) If a property is inspected under an alternative inspection method, and the property receives a “pass” score, then the PHA may rely on that
+ inspection.
+ (ii) If a property is inspected under an alternative inspection method, and the property receives a “fail” score, then the PHA may not rely on that
+ inspection.
+ (iii) If a property is inspected under an alternative inspection method that does not employ a pass/fail determination—for example, in the case of a
+ program where deficiencies are simply identified—then the PHA must review the list of deficiencies to determine whether any cited deficiency
+ would have resulted in a “fail” score under HQS. If no such deficiency exists, then the PHA may rely on the inspection. If such a deficiency does
+ exist, then the PHA may not rely on the inspection.
+ (3) Under any circumstance described in paragraph (d)(2) of this section in which a PHA is prohibited from relying on an alternative inspection
+ method for a property, the PHA must, within a reasonable period of time, conduct an HQS inspection of any units in the property occupied by
+ voucher program participants and follow HQS procedures to remedy any identified deficiencies.
+ (e) Initial inspections using the alternative inspection option. (1) The PHA may approve the tenancy, allow the family to enter into the lease
+ agreement, and execute the HAP contract for a unit that has been inspected in the previous 24 months where the alternative inspection meets the
+ requirements of this section. If the PHA has established and the unit is covered by both the NLT option under § 982.405(j) and the alternative
+ inspections option for the initial HQS inspection, see paragraph (f) of this section.
+ (2) The PHA notifies the owner and the family that the unit selected by the family is eligible for the alternative inspection option. The PHA must
+ provide the family with the PHA list of HQS deficiencies that are considered life-threatening as part of this notification. If the owner and family
+ agree to the use of this option, the PHA approves the assisted tenancy, allows the family to enter into the lease agreement with the owner, and
+ executes the HAP contract on the basis of the alternative inspection.
+ (3) The PHA must conduct an HQS inspection within 30 days of receiving the Request for Tenancy Approval. If the family reports a deficiency
+ to the PHA prior to the PHA's HQS inspection, the PHA must inspect the unit within the time period required under § 982.405(d) or within 30
+ days of the effective date of the HAP contract, whichever time period ends first.
+ (4) The PHA must enter into the HAP contract with the owner before conducting the HQS inspection. The PHA may not make housing assistance
+ payments to the owner until the PHA has inspected the unit.
+ (5) The PHA may commence housing assistance payments to the owner and make housing assistance payments retroactive to the effective date of
+ the HAP contract only after the unit passes the PHA's HQS inspection. If the unit does not pass the HQS inspection, the PHA may not make
+ housing assistance payments to the owner until all the deficiencies have been corrected. If a deficiency is life-threatening, the owner must correct
+ the deficiency within 24 hours of notification from the PHA. For other deficiencies, the owner must correct the deficiency within no more than 30
+ calendar days (or any PHA-approved extension) of notification from the PHA. If the owner corrects the deficiencies within the required cure
+ period, the PHA makes the housing assistance payments retroactive to the effective date of the HAP contract.
+ (6) The PHA establishes in the Administrative Plan:
+ (i) The maximum amount of time it will withhold payments if the owner does not correct the deficiencies within the required cure period before
+ abating payments; and
+ (ii) The number of days after which the PHA will terminate the HAP contract for the owner's failure to correct the deficiencies, which may not
+ exceed 180 days from the effective date of the HAP contract.
+ (7) The owner may not terminate the tenancy of the family due to the withholding or abatement of assistance under this paragraph (e). During the
+ period that assistance is abated, the family may terminate the tenancy by notifying the owner and the PHA. If the family chooses to terminate the
+ tenancy, the HAP contract will automatically terminate on the effective date of the tenancy termination or the date the family vacates the unit,
+ whichever is earlier. The PHA must promptly issue the family its voucher to move.
+ (f) Initial inspection: using the alternative inspection option in combination with the non-life-threatening deficiencies option. (1) The PHA
+ notifies the owner and the family that both the alternative inspection option and the NLT option are available for the unit selected by the family.
+ The PHA must provide the family the list of HQS deficiencies that are considered life-threatening as part of this notification. If the owner and
+ family agree to the use of both options, the PHA approves the assisted tenancy, allows the family to enter into the lease agreement with the
+ owner, and executes the HAP contract on the basis of the alternative inspection.
+ (2) The PHA must conduct an HQS inspection within 30 days after the family and owner submit a complete Request for Tenancy Approval. If the
+ family reports a deficiency to the PHA prior to the PHA's HQS inspection, the PHA must inspect the unit within the time period required under §
+ 982.405(d) or within 30 days of the effective date of the HAP contract, whichever time period ends first.
+ (3) The PHA must enter into the HAP contract with the owner before conducting the HQS inspection. The PHA may not make housing assistance
+ payments to the owner until the PHA has inspected the unit. If the unit passes the HQS inspection, the PHA commences making housing
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                            Page 39
+ assistance payments to the owner and makes payments retroactive to the effective date of the HAP contract.
+ (4) If the unit fails the PHA's HQS inspection but has no life-threatening deficiencies, the PHA commences making housing assistance payments,
+ which are made retroactive to the effective date of the HAP contract. The owner must correct the deficiencies within 30 days from the effective
+ date of the HAP contract. If the owner fails to correct the deficiencies within the 30-day cure period, the PHA must withhold the housing
+ assistance payments until the owner makes the repairs and the PHA verifies the correction. Once the unit is in compliance with HQS, the PHA
+ may use the withheld housing assistance payments to make payments for the period that payments were withheld.
+ (5) If the unit does not pass the HQS inspection and has life-threatening deficiencies, the PHA may not commence making housing assistance
+ payments to the owner until all the deficiencies have been corrected. The owner must correct all life-threatening deficiencies within 24 hours of
+ notification from the PHA. For other deficiencies, the owner must correct the deficiency within 30 days (or any PHA-approved extension) of
+ notification from the PHA. If the owner corrects the deficiencies within the required cure period, the PHA makes the housing assistance payments
+ retroactive to the effective date of the HAP contract.
+ (6) The PHA establishes in the Administrative Plan:
+ (i) The maximum amount of time it will withhold payments if the owner fails to correct the deficiencies within the required cure period before
+ abating payments; and
+ (ii) The number of days after which the PHA will terminate the HAP contract for the owner's failure to correct the deficiencies, which may not
+ exceed 180 days from the effective date of the HAP contract.
+ (7) The owner may not terminate the tenancy of the family due to the withholding or abatement of assistance under this paragraph (f). During the
+ period that assistance is abated, the family may terminate the tenancy by notifying the owner and the PHA. If the family chooses to terminate the
+ tenancy, the HAP contract will automatically terminate on the effective date of the tenancy termination or the date the family vacates the unit,
+ whichever is earlier. The PHA must promptly issue the family its voucher to move.
+ (g) Records retention. As with all other inspection reports, and as required by § 982.158(f)(4), reports for inspections conducted pursuant to an
+ alternative inspection method must be obtained by the PHA. Such reports must be available for HUD inspection for at least three years from the
+ date of the latest inspection.
+ [60 FR 34695, July 3, 1995, as amended at 64 FR 26647, May 14, 1999; 64 FR 56914, Oct. 21, 1999; 81 FR 12375, Mar. 8, 2016; 88 FR 30503,
+ May 11, 2023; 89 FR 38298, May 7, 2024; 90 FR 56687, Dec. 8, 2025]
+
+ § 982.407 Enforcement of HQS.
+ Part 982 does not create any right of the family, or any party other than HUD or the PHA, to require enforcement of the HQS requirements by
+ HUD or the PHA, or to assert any claim against HUD or the PHA, for damages, injunction or other relief, for alleged failure to enforce the HQS.
+
+ (Approved by the Office of Management and Budget under control number 2577-0169)
+ [60 FR 34695, July 3, 1995, as amended at 60 FR 45661, Sept. 1, 1995; 80 FR 8246, Feb. 17, 2015. Redesignated at 81 FR 12375, Mar. 8, 2016]
+
+ Subpart J—Housing Assistance Payments Contract and Owner Responsibility
+ Source: 60 FR 34695, July 3, 1995, unless otherwise noted.
+
+ § 982.451 Housing assistance payments contract.
+ (a) Form and term. (1) The HAP contract must be in the form required by HUD.
+ (2) The term of the HAP contract is the same as the term of the lease.
+ (b) Housing assistance payment amount. (1) The amount of the monthly housing assistance payment by the PHA to the owner is determined by
+ the PHA in accordance with HUD regulations and other requirements. The amount of the housing assistance payment is subject to change during
+ the HAP contract term.
+ (2) The monthly housing assistance payment by the PHA is credited toward the monthly rent to owner under the family's lease.
+ (3) The total of rent paid by the tenant plus the PHA housing assistance payment to the owner may not be more than the rent to owner. The owner
+ must immediately return any excess payment to the PHA.
+ (4)(i) The part of the rent to owner that is paid by the tenant may not be more than:
+ (A) The rent to owner; minus
+ (B) The PHA housing assistance payment to the owner.
+ (ii) The owner may not demand or accept any rent payment from the tenant in excess of this maximum, and must immediately return any excess
+ rent payment to the tenant.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                         Page 40
+ (iii) The family is not responsible for payment of the portion of rent to owner covered by the housing assistance payment under the HAP contract
+ between the owner and the PHA. See § 982.310(b).
+ (5)(i) The PHA must pay the housing assistance payment promptly when due to the owner in accordance with the HAP contract.
+ (ii)(A) The HAP contract shall provide for penalties against the PHA for late payment of housing assistance payments due to the owner if all the
+ following circumstances apply:
+ ( 1 ) Such penalties are in accordance with generally accepted practices and law, as applicable in the local housing market, governing penalties
+ for late payment of rent by a tenant;
+ ( 2 ) It is the owner's practice to charge such penalties for assisted and unassisted tenants; and
+ ( 3 ) The owner also charges such penalties against the tenant for late payment of family rent to owner.
+ (B) The PHA is not obligated to pay any late payment penalty if HUD determines that late payment by the PHA is due to factors beyond the
+ PHA's control. The PHA may add HAP contract provisions which define when the housing assistance payment by the PHA is deemed received
+ by the owner ( e.g., upon mailing by the PHA or actual receipt by the owner).
+ (iii) The PHA may only use the following sources to pay a late payment penalty from program receipts under the consolidated ACC:
+ administrative fee income for the program, or the administrative fee reserve for the program. The PHA may not use other program receipts for
+ this purpose.
+ [60 FR 34695, July 3, 1995, as amended at 61 FR 27163, May 30, 1996; 63 FR 23861, Apr. 30, 1998; 64 FR 26647, May 14, 1999; 64 FR 56914,
+ Oct. 21, 1999; 89 FR 38300, May 7, 2024]
+
+ § 982.452 Owner responsibilities.
+ (a) The owner is responsible for performing all of the owner's obligations under the HAP contract and the lease.
+ (b) The owner is responsible for:
+ (1) Performing all management and rental functions for the assisted unit, including selecting a voucher-holder to lease the unit, and deciding if
+ the family is suitable for tenancy of the unit. The fact that an applicant is or has been a victim of domestic violence, dating violence, sexual
+ assault, or stalking is not an appropriate basis for denial of tenancy if the applicant otherwise qualifies for tenancy.
+ (2) Maintaining the unit in accordance with HQS, including performance of ordinary and extraordinary maintenance. For provisions on family
+ maintenance responsibilities, see § 982.404(a)(4).
+ (3) Complying with equal opportunity requirements.
+ (4) Preparing and furnishing to the PHA information required under the HAP contract.
+ (5) Collecting from the family:
+ (i) Any security deposit.
+ (ii) The tenant contribution (the part of rent to owner not covered by the housing assistance payment).
+ (iii) Any charges for unit damage by the family.
+ (6) Enforcing tenant obligations under the lease.
+ (7) Paying for utilities and services (unless paid by the family under the lease).
+ (c) For provisions on modifications to a dwelling unit occupied or to be occupied by a disabled person, see 24 CFR 100.203.
+
+ (Approved by the Office of Management and Budget under control number 2577-0169)
+ [60 FR 34695, July 3, 1995, as amended at 60 FR 45661, Sept. 1, 1995; 63 FR 23861, Apr. 30, 1998; 64 FR 26647, May 14, 1999; 73 FR 72345,
+ Nov. 28, 2008; 75 FR 66264, Oct. 27, 2010; 80 FR 8246, Feb. 17, 2015; 81 FR 80817, Nov. 16, 2016]
+
+ § 982.453 Owner breach of contract.
+ (a) Any of the following actions by the owner (including a principal or other interested party) is a breach of the HAP contract by the owner:
+ (1) If the owner has violated any obligation under the HAP contract for the dwelling unit, including the owner's obligation to maintain the unit in
+ accordance with the HQS.
+ (2) If the owner has violated any obligation under any other HAP contract under Section 8 of the 1937 Act (42 U.S.C. 1437f).
+ (3) If the owner has committed fraud, bribery or any other corrupt or criminal act in connection with any federal housing program.
+ (4) For projects with mortgages insured by HUD or loans made by HUD, if the owner has failed to comply with the regulations for the applicable
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                          Page 41
+ mortgage insurance or loan program, with the mortgage or mortgage note, or with the regulatory agreement; or if the owner has committed fraud,
+ bribery or any other corrupt or criminal act in connection with the mortgage or loan.
+ (5) If the owner has engaged in drug-related criminal activity.
+ (6) If the owner has committed any violent criminal activity.
+ (b) The PHA rights and remedies against the owner under the HAP contract include recovery of overpayments, abatement or other reduction of
+ housing assistance payments, termination of housing assistance payments, and termination of the HAP contract.
+ [60 FR 34695, July 3, 1995, as amended at 64 FR 26647, May 14, 1999; 64 FR 56914, Oct. 21, 1999; 65 FR 16821, Mar. 30, 2000]
+
+ § 982.454 Termination of HAP contract: Insufficient funding.
+ The PHA may terminate the HAP contract if the PHA determines, in accordance with HUD requirements, that funding under the consolidated
+ ACC is insufficient to support continued assistance for families in the program.
+ [60 FR 34695, July 3, 1995, as amended at 64 FR 26647, May 14, 1999]
+
+ § 982.455 Automatic termination of HAP contract.
+ The HAP contract terminates automatically 180 calendar days after the last housing assistance payment to the owner.
+ [64 FR 26647, May 14, 1999]
+
+ § 982.456 Third parties.
+ (a) Even if the family continues to occupy the unit, the PHA may exercise any rights and remedies against the owner under the HAP contract.
+ (b)(1) The family is not a party to or third party beneficiary of the HAP contract. Except as provided in paragraph (b)(2) of this section, the family
+ may not exercise any right or remedy against the owner under the HAP contract.
+ (2) The tenant may exercise any right or remedy against the owner under the lease between the tenant and the owner, including enforcement of
+ the owner's obligations under the tenancy addendum (which is included both in the HAP contract between the PHA and the owner; and in the
+ lease between the tenant and the owner.)
+ (c) The HAP contract shall not be construed as creating any right of the family or other third party (other than HUD) to enforce any provision of
+ the HAP contract, or to assert any claim against HUD, the PHA or the owner under the HAP contract.
+ [60 FR 34695, July 3, 1995, as amended at 64 FR 26647, May 14, 1999]
+
+ Subpart K—Rent and Housing Assistance Payment
+ Source: 63 FR 23861, Apr. 30, 1998, unless otherwise noted.
+
+ § 982.501 Overview.
+ This subpart describes program requirements concerning the housing assistance payment and rent to owner under the HCV program.
+ [80 FR 8246, Feb. 17, 2015]
+
+ § 982.503 Payment standard areas, schedule, and amounts.
+ (a) Payment standard areas. (1) Annually, HUD publishes fair market rents (FMRs) for U.S. Postal Service ZIP code areas, metropolitan areas,
+ and nonmetropolitan counties (see 24 CFR 888.113). Within each of these FMR areas, the applicable FMR is:
+ (i) The HUD-published Small Area FMR for:
+ (A) Any metropolitan area designated as a Small Area FMR area by HUD in accordance with 24 CFR 888.113(c)(1).
+ (B) Any area where a PHA has notified HUD that the PHA will voluntarily use SAFMRs in accordance with 24 CFR 888.113(c)(3).
+ (ii) The HUD-published metropolitan FMR for any other metropolitan area.
+ (iii) The HUD-published FMR for any other non-metropolitan county.
+ (2) The PHA must adopt a payment standard schedule that establishes voucher payment standard amounts for each FMR area in the PHA
+ jurisdiction. These payment standard amounts are used to calculate the monthly housing assistance payment for a family (§ 982.505).
+ (3) The PHA may designate payment standard areas within each FMR area. The PHA may establish different payment standard amounts for such
+ designated areas. If the PHA designates payment standard areas, then it must include in its Administrative Plan the criteria used to determine the
+ designated areas and the payment standard amounts for those areas.
+ (i) The PHA may designate payment standard areas within which payment standards will be established according to paragraph (c) (basic range)
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                            Page 42
+ or paragraph (d) (exception payment standard), of this section.
+ (ii) A PHA-designated payment standard area may be no smaller than a census tract block group.
+ (b) Payment standard schedule. For each payment standard area, the PHA must establish a payment standard amount for each unit size, measured
+ by number of bedrooms (zero-bedroom, one-bedroom, and so on). These payment standard amounts comprise the PHA's payment standard
+ schedule.
+ (c) Basic range payment standard amounts. A basic range payment standard amount is any dollar amount that is in the range from 90 percent up
+ to 110 percent of the published FMR for a unit size.
+ (1) The PHA may establish a payment standard amount within the basic range without HUD approval or prior notification to HUD.
+ (2) The PHA's basic range payment standard amount for each unit size may be based on the same percentage of the published FMR ( i.e., all
+ payment standard amounts may be set at 100 percent of the FMR), or the PHA may establish different payment standard amounts for different
+ unit sizes (for example, 90 percent for efficiencies, 100 percent for 1-bedroom units, 110 percent for larger units).
+ (3) The PHA must revise its payment standard amounts and schedule no later than 3 months following the effective date of the published FMR if
+ revisions are necessary to stay within the basic range.
+ (d) Exception payment standard amounts. An exception payment standard amount is a dollar amount that exceeds 110 percent of the published
+ FMR.
+ (1) The PHA may establish exception payment standard amounts for all units, or for units of a particular size. The exception payment standard
+ may be established for a designated part of the FMR area (called an “exception area”) or for the entire FMR area. The exception area must meet
+ the minimum area requirement at § 982.503(a)(3)(ii).
+ (2) A PHA that is not in a designated Small Area FMR area or has not opted voluntarily to implement Small Area FMRs under 24 CFR
+ 888.113(c)(3) may establish exception payment standards for a ZIP code area that exceed the basic range for the metropolitan area or county
+ FMR as long as the amounts established by the PHA do not exceed 110 percent of the HUD published SAFMR for the applicable ZIP code. The
+ exception payment standard must apply to the entire ZIP code area. If an exception area crosses one or more FMR boundaries, then the maximum
+ exception payment standard amount that a PHA may adopt for the exception area without HUD approval is 110 percent of the ZIP code area with
+ the lowest SAFMR amount. If the PHA qualifies for an exception payment standard above 110 percent of the applicable FMR under paragraph
+ (d)(3) or (4) of this section, it may establish exception payment standards up to the same percentage of the SAFMR for the applicable ZIP code.
+ (3) A PHA may establish exception payment standard amounts between 110 percent and 120 percent of the applicable FMR for such duration as
+ HUD specifies by notice upon notification to HUD that the PHA meets at least one of the following criteria:
+ (i) Fewer than 75 percent of the families to whom the PHA issued tenant-based rental vouchers during the most recent 12-month period for which
+ there is success rate data available have become participants in the voucher program;
+ (ii) More than 40 percent of families with tenant-based rental assistance administered by the agency pay more than 30 percent of adjusted income
+ as the family share; or
+ (iii) Such other criteria as the Secretary establishes by notice.
+ (4) Except as provided in paragraphs (d)(2), (3), and (5) of this section, the PHA must request approval from HUD to establish an exception
+ payment standard amount that exceeds 110 percent of the applicable FMR. In its request to HUD, the PHA must provide rental market data
+ demonstrating that the requested exception payment standard amount is needed for families to access rental units. The rental market data must
+ include a rent estimate for the entire FMR area compared with a rent estimate for the proposed exception area. To apply the exception payment
+ standard to the entire FMR area, the rental market data provided by the PHA must also provide data that demonstrates that the annual percentage
+ of rent inflation in the FMR area is greater than the rental inflation adjustment factor in the calculation of the published FMR. Once HUD has
+ approved the exception payment standard for the requesting PHA, any other PHA with jurisdiction in the HUD approved exception payment
+ standard area may also use the exception payment standard amount.
+ (5) If required as a reasonable accommodation in accordance with 24 CFR part 8 for a person with a disability, the PHA may establish, without
+ HUD approval or prior notification to HUD, an exception payment standard amount for an individual family that does not exceed 120 percent of
+ the applicable FMR. A PHA may establish a payment standard greater than 120 percent of the applicable FMR as a reasonable accommodation
+ for a person with a disability in accordance with 24 CFR part 8, after requesting and receiving HUD approval.
+ (e) Payment standard amount below 90 percent of the applicable FMR. HUD may consider a PHA request for approval to establish a payment
+ standard amount that is lower than the basic range. At HUD's sole discretion, HUD may approve PHA establishment of a payment standard lower
+ than the basic range. In determining whether to approve the PHA request, HUD will consider appropriate factors, including rent burden of
+ families assisted under the program. Unless it is necessary to prevent termination of program participants, HUD will not approve a lower payment
+ standard if the proposed payment standard would, if it were used to calculate the housing assistance payments for current participants in the
+ PHA's voucher program using currently available data, cause the family share for more than 40 percent of participants with tenant-based rental
+ assistance to exceed 30 percent of adjusted monthly income.
+ (f) Phaseout of success rate payment standard amounts. HUD will no longer approve success rate payment standards. However, a PHA that was
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                      Page 43
+ approved to establish a success rate payment standard amount under this paragraph as in effect prior to June 6, 2024 shall not be required to
+ reduce such payment standard amount as a result of the discontinuance of success rate payment standards.
+ (g) Payment standard protection for PHAs that meet deconcentration objectives. This paragraph applies only to a PHA with jurisdiction in an
+ FMR area where the FMR had previously been set at the 50th percentile rent to provide a broad range of housing opportunities throughout a
+ metropolitan area, pursuant to 24 CFR 888.113(i)(3), but is now set at the 40th percentile rent.
+ (1) Such a PHA may obtain HUD Field Office approval of a payment standard amount based on the 50th percentile rent if the PHA scored the
+ maximum number of points on the deconcentration bonus indicator in 24 CFR 985.3(h) in the prior year, or in two of the last three years.
+ (2) HUD approval of payment standard amounts based on the 50th percentile rent shall be for all unit sizes in the FMR area that had previously
+ been set at the 50th percentile rent pursuant to 24 CFR 888.113(i)(3). A PHA may opt to establish a payment standard amount based on the 50th
+ percentile rent for one or more unit sizes in all or a designated part of the PHA jurisdiction within the FMR area.
+ (h) HUD review of PHA payment standard schedules. (1) HUD will monitor rent burdens of families assisted with tenant-based rental assistance
+ in a PHA's voucher program. HUD will review the PHA's payment standard for a particular unit size if HUD finds that 40 percent or more of
+ such families occupying units of that unit size currently pay more than 30 percent of adjusted monthly income as the family share. Such
+ determination may be based on the most recent examinations of family income.
+ (2) After such review, HUD may, at its discretion, require the PHA to modify payment standard amounts for any unit size on the PHA payment
+ standard schedule. HUD may require the PHA to establish an increased payment standard amount within the basic range.
+ [89 FR 38300, May 7, 2024]
+
+ § 982.504 Payment standard for family in restructured subsidized multifamily project.
+ (a) This section applies to HCV assistance if all the following conditions are applicable:
+ (1) Such HCV assistance is provided to a family pursuant to 24 CFR 401.421 when HUD has approved a restructuring plan, and the participating
+ administrative entity has approved the use of tenant-based assistance to provide continued assistance for such families. Such tenant-based
+ voucher assistance is provided for a family previously receiving project-based assistance in an eligible project (as defined in § 401.2 of this title)
+ at the time when the project-based assistance terminates.
+ (2) The family chooses to remain in the restructured project with HCV assistance under the program and leases a unit that does not exceed the
+ family unit size;
+ (3) The lease for such assisted tenancy commences during the first year after the project-based assistance terminates.
+ (b) The initial payment standard for the family under such initial lease is the sum of the reasonable rent to owner for the unit plus the utility
+ allowance for tenant-paid utilities. (Determination of such initial payment standard for the family is not subject to paragraphs (c)(1) and (c)(2) of
+ § 982.505. Except for determination of the initial payment standard as specifically provided in paragraph (b) of this section, the payment standard
+ and housing assistance payment for the family during the HAP contract term shall be determined in accordance with § 982.505.)
+ [64 FR 26649, May 14, 1999, as amended at 80 FR 8247, Feb. 17, 2015]
+
+ § 982.505 How to calculate housing assistance payment.
+ (a) Use of payment standard. A payment standard is used to calculate the monthly housing assistance payment for a family. The “payment
+ standard” is the maximum monthly subsidy payment.
+ (b) Amount of monthly housing assistance payment. The PHA shall pay a monthly housing assistance payment on behalf of the family that is
+ equal to the lower of:
+ (1) The payment standard for the family minus the total tenant payment; or
+ (2) The gross rent minus the total tenant payment.
+ (c) Payment standard for family—(1) Applying the payment standard. The payment standard for the family is the lower of:
+ (i) The payment standard amount for the family unit size; or
+ (ii) The payment standard amount for the size of the dwelling unit rented by the family.
+ (2) Separate payment standards. If the PHA has established a separate payment standard amount for a designated part of an FMR area in
+ accordance with § 982.503 (including an exception payment standard amount as determined in accordance with § 982.503(d)), and the dwelling
+ unit is located in such designated part, the PHA must use the appropriate payment standard amount for such designated part to calculate the
+ payment standard for the family.
+ (3) Decrease in the payment standard amount during the HAP contract term. The PHA may choose not to reduce the payment standard amount
+ used to calculate the subsidy for a family for as long as the family continues to reside in the unit for which the family is receiving assistance.
+ (i) If the PHA chooses to reduce the payment standard amount used to calculate such a family's subsidy in accordance with its Administrative
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                            Page 44
+ Plan, then the initial reduction to the family's payment standard amount may not be applied any earlier than two years following the effective date
+ of the decrease in the payment standard, and then only if the family has received the notice required under paragraph (c)(3)(iii) of this section.
+ (ii) The PHA may choose to reduce the payment standard amount for the family to the current payment standard amount in effect on the PHA
+ voucher payment standard schedule, or it may reduce the payment standard amount to an amount that is higher than the normally applicable
+ payment standard amount on the PHA voucher payment standard schedule. After an initial reduction, the PHA may further reduce the payment
+ standard amount for the family during the time the family resides in the unit, provided any subsequent reductions continue to result in a payment
+ standard amount that meets or exceeds the normally applicable payment standard amount on the PHA voucher payment standard schedule.
+ (iii) The PHA must provide the family with at least 12 months' written notice of any reduction in the payment standard amount that will affect the
+ family if the family remains in place. In the written notice, the PHA must state the new payment standard amount, explain that the family's new
+ payment standard amount will be the greater of the amount listed in the current written notice or the new amount (if any) on the PHA's payment
+ standard schedule at the end of the 12-month period, and make clear where the family will find the PHA's payment standard schedule.
+ (iv) The PHA must administer decreases in the payment standard amount for the family in accordance with the PHA policy as described in the
+ PHA Administrative Plan.
+ (4) Increase in the payment standard amount during the HAP contract term. If the payment standard amount is increased during the term of the
+ HAP contract, the PHA must use the increased payment standard amount to calculate the monthly housing assistance payment for the family
+ beginning no later than the earliest of:
+ (i) The effective date of an increase in the gross rent that would result in an increase in the family share;
+ (ii) The family's first regular or interim reexamination; or
+ (iii) One year following the effective date of the increase in the payment standard amount.
+ (5) PHA policy on payment standard increases. The PHA may adopt a policy to apply a payment standard increase at any time earlier than the
+ date calculated according to paragraph (c)(4).
+ (6) Changes in family unit size during the HAP contract term. Irrespective of any increase or decrease in the payment standard amount, if the
+ family unit size either increases or decreases during the HAP contract term, the new family unit size may be used to determine the payment
+ standard amount for the family immediately but no later than the family's first regular reexamination following the change in family unit size.
+ [64 FR 26649, May 14, 1999, as amended at 64 FR 56914, Oct. 21, 1999; 65 FR 16822, Mar. 30, 2000; 65 FR 42509, July 10, 2000; 66 FR
+ 30568, June 6, 2001; 67 FR 56689, Sept. 4, 2002; 80 FR 8247, Feb. 17, 2014; 81 FR 12376, Mar. 8, 2016; 81 FR 80582, Nov. 16, 2016; 89 FR
+ 38302, May 7, 2024]
+
+ § 982.506 Negotiating rent to owner.
+ The owner and the family negotiate the rent to owner. At the family's request, the PHA must help the family negotiate the rent to owner.
+ [63 FR 23861, Apr. 30, 1998. Redesignated at 64 FR 26648, May 14, 1999]
+
+ § 982.507 Rent to owner: Reasonable rent.
+ (a) PHA determination. (1) Except as provided in paragraph (c) of this section, the PHA may not approve a lease until the PHA determines that
+ the initial rent to owner is a reasonable rent.
+ (2) The PHA must redetermine the reasonable rent:
+ (i) Before any increase in the rent to owner;
+ (ii) If there is a 10 percent decrease in the published FMR in effect 60 days before the contract anniversary (for the unit size rented by the family)
+ as compared with the FMR in effect 1 year before the contract anniversary.
+ (iii) If directed by HUD.
+ (3) The PHA may also redetermine the reasonable rent at any other time.
+ (4) At all times during the assisted tenancy, the rent to owner may not exceed the reasonable rent as most recently determined or redetermined by
+ the PHA.
+ (b) Comparability. The PHA must determine whether the rent to owner is a reasonable rent in comparison to rent for other comparable unassisted
+ units. To make this determination, the PHA must consider:
+ (1) The location, quality, size, unit type, and age of the contract unit; and
+ (2) Any amenities, housing services, maintenance and utilities to be provided by the owner in accordance with the lease.
+ (c) Units assisted by low-income housing tax credits or assistance under HUD's HOME Investment Partnerships (HOME) program. (1) General.
+ For a unit receiving low-income housing tax credits (LIHTCs) pursuant to section 42 of the Internal Revenue Code of 1986 or receiving
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                            Page 45
+ assistance under HUD's HOME Program (for which the regulations are found in 24 CFR part 92), a rent comparison with unassisted units is not
+ required if the voucher rent does not exceed the rent for other LIHTC- or HOME-assisted units in the project that are not occupied by families
+ with tenant-based assistance.
+ (2) LIHTC. If the rent requested by the owner exceeds the LIHTC rents for non-voucher families, the PHA must determine the rent to owner is a
+ reasonable rent in accordance with paragraph (b) of this section and the rent shall not exceed the lesser of the:
+ (i) Reasonable rent; and
+ (ii) The payment standard established by the PHA for the unit size involved.
+ (3) HOME program. If the rent requested by the owner exceeds the HOME rents for non-voucher families, the PHA must determine the rent to
+ owner is a reasonable rent in accordance with paragraph (b) of this section and the rent shall not exceed the lesser of the:
+ (i) Reasonable rent; and
+ (ii) The payment standard established by the PHA for the unit size involved.
+ (d) Owner certification of rents charged for other units. By accepting each monthly housing assistance payment from the PHA, the owner certifies
+ that the rent to owner is not more than rent charged by the owner for comparable unassisted units in the premises. The owner must give the PHA
+ information requested by the PHA on rents charged by the owner for other units in the premises or elsewhere.
+ [63 FR 23861, Apr. 30, 1998. Redesignated at 64 FR 26648, May 14, 1999; 79 FR 36164, June 25, 2014; 81 FR 80583, Nov. 16, 2016; 90 FR
+ 894, Jan. 6, 2025; 90 FR 8780, Feb. 3, 2025]
+
+ § 982.508 Maximum family share at initial occupancy.
+ At the time the PHA approves a tenancy for initial occupancy of a dwelling unit by a family with tenant-based assistance under the program, and
+ where the gross rent of the unit exceeds the applicable payment standard for the family, the family share must not exceed 40 percent of the
+ family's adjusted monthly income. The determination of adjusted monthly income must be based on verification information received by the
+ PHA no earlier than 60 days before the PHA issues a voucher to the family.
+ [64 FR 59622, Nov. 3, 1999]
+
+ § 982.509 Rent to owner: Effect of rent control.
+ In addition to the rent reasonableness limit under this subpart, the amount of rent to owner also may be subject to rent control limits under State or
+ local law.
+ [63 FR 23861, Apr. 30, 1998. Redesignated and amended at 64 FR 26648, May 14, 1999]
+
+ § 982.510 Other fees and charges.
+ (a) The cost of meals or supportive services may not be included in the rent to owner, and the value of meals or supportive services may not be
+ included in the calculation of reasonable rent.
+ (b) The lease may not require the tenant or family members to pay charges for meals or supportive services. Non-payment of such charges is not
+ grounds for termination of tenancy.
+ (c) The owner may not charge the tenant extra amounts for items customarily included in rent in the locality, or provided at no additional cost to
+ unsubsidized tenants in the premises.
+ [63 FR 23861, Apr. 30, 1998. Redesignated at 64 FR 26648, May 14, 1999]
+
+ § 982.514 Distribution of housing assistance payment.
+ The monthly housing assistance payment is distributed as follows:
+ (a) The PHA pays the owner the lesser of the housing assistance payment or the rent to owner.
+ (b) If the housing assistance payment exceeds the rent to owner, the PHA may pay the balance of the housing assistance payment (“utility
+ reimbursement”) either to the family or directly to the utility supplier to pay the utility bill on behalf of the family. If the PHA elects to pay the
+ utility supplier directly, the PHA must notify the family of the amount paid to the utility supplier.
+ (c) The PHA may elect to establish policies regarding the frequency of utility reimbursement payments for payments made to the family.
+ (1) The PHA will have the option of making utility reimbursement payments not less than once per calendar-year quarter, for reimbursements
+ totaling $45 or less per quarter. In the event a family leaves the program in advance of its next quarterly reimbursement, the PHA would be
+ required to reimburse the family for a prorated share of the applicable reimbursement. PHAs exercising this option must have a hardship policy in
+ place for tenants.
+ (2) If the PHA elects to pay the utility supplier directly, the PHA must notify the family of the amount paid to the utility supplier.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                               Page 46
+ [63 FR 23861, Apr. 30, 1998, as amended at 64 FR 56914, Oct. 21, 1999; 65 FR 16822, Mar. 30, 2000; 81 FR 12376, Mar. 8, 2016]
+
+ § 982.515 Family share: Family responsibility.
+ (a) The family share is calculated by subtracting the amount of the housing assistance payment from the gross rent.
+ (b) The family rent to owner is calculated by subtracting the amount of the housing assistance payment to the owner from the rent to owner.
+ (c) The PHA may not use housing assistance payments or other program funds (including any administrative fee reserve) to pay any part of the
+ family share, including the family rent to owner. Payment of the whole family share is the responsibility of the family.
+ [63 FR 23861, Apr. 30, 1998, as amended at 64 FR 56915, Oct. 21, 1999]
+
+ § 982.516 Family income and composition: Annual and interim examinations.
+ (a) PHA responsibility for reexamination and verification. (1) The PHA must conduct a reexamination of family income and composition at least
+ annually.
+ (2) Except as provided in paragraph (a)(3) of this section, the PHA must obtain and document in the tenant file third-party verification of the
+ following factors, or must document in the tenant file why third-party verification was not available:
+ (i) Reported family annual income;
+ (ii) The value of assets;
+ (iii) Expenses related to deductions from annual income; and
+ (iv) Other factors that affect the determination of adjusted income.
+ (3) For a family with net family assets (as the term is defined in § 5.603 of this title) equal to or less than $50,000, which amount will be adjusted
+ annually by HUD in accordance with the Consumer Price Index for Urban Wage Earners and Clerical Workers, a PHA may accept, for purposes
+ of recertification of income, a family's declaration under § 5.618(b) of this title, except that the PHA must obtain third-party verification of all
+ family assets every 3 years.
+ (b) Streamlined income determination —(1) General. A PHA may elect to apply a streamlined income determination to families receiving fixed
+ income as described in paragraph (b)(3) of this section.
+ (2) Definition of “fixed income”. For purposes of this section, “fixed income” means periodic payments at reasonably predictable levels from one
+ or more of the following sources:
+ (i) Social Security, Supplemental Security Income, Supplemental Disability Insurance.
+ (ii) Federal, state, local, or private pension plans.
+ (iii) Annuities or other retirement benefit programs, insurance policies, disability or death benefits, or other similar types of periodic receipts.
+ (iv) Any other source of income subject to adjustment by a verifiable COLA or current rate of interest.
+ (3) Method of streamlined income determination. A PHA using the streamlined income determination must adjust a family's income according to
+ the percentage of a family's unadjusted income that is from fixed income.
+ (i) When 90 percent or more of a family's unadjusted income consists of fixed income, PHAs using streamlined income determinations must
+ apply a COLA or COLAs to the family's fixed-income sources, provided that the family certifies both that 90 percent or more of their unadjusted
+ income is fixed income and that their sources of fixed income have not changed from the previous year. For non-fixed income, the PHA is not
+ required to make adjustments pursuant to paragraph (a) of this section.
+ (ii) When less than 90 percent of a family's unadjusted income consists of fixed income, PHAs using streamlined income determinations must
+ apply a COLA to each of the family's sources of fixed income individually. The PHA must determine all other income pursuant to paragraph (a)
+ of this section.
+ (4) COLA rate applied by PHAs. PHAs using streamlined income determinations must adjust a family's fixed income using a COLA or current
+ interest rate that applies to each specific source of fixed income and is available from a public source or through tenant-provided,
+ third-party-generated documentation. If no public verification or tenant-provided documentation is available, then the owner must obtain
+ third-party verification of the income amounts in order to calculate the change in income for the source.
+ (5) Triennial verification. For any income determined pursuant to a streamlined income determination, a PHA must obtain third-party verification
+ of all income amounts every 3 years.
+ (c) Interim reexaminations. (1) A family may request an interim determination of family income or composition because of any changes since the
+ last determination. The PHA must conduct any interim reexamination within a reasonable period of time after the family request or when the
+ PHA becomes aware of an increase in family adjusted income under paragraph (c)(3) of this section. What qualifies as a “reasonable time” may
+ vary based on the amount of time it takes to verify information, but generally should not be longer than 30 days after changes in income are
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 47
+ reported.
+ (2) The PHA may decline to conduct an interim reexamination of family income if the PHA estimates the family's adjusted income will decrease
+ by an amount that is less than ten percent of the family's annual adjusted income (or a lower amount established by HUD through notice), or a
+ lower threshold established by the PHA.
+ (3) The PHA must conduct an interim reexamination of family income when the PHA becomes aware that the family's adjusted income (as
+ defined in § 5.611 of this title) has changed by an amount that the PHA estimates will result in an increase of ten percent or more in annual
+ adjusted income or such other amount established by HUD through notice, except:
+ (i) The PHA may not consider any increase in the earned income of the family when estimating or calculating whether the family's adjusted
+ income has increased, unless the family has previously received an interim reduction under paragraph (c)(1) of this section during the
+ certification period; and
+ (ii) The PHA may choose not to conduct an interim reexamination in the last three months of a certification period.
+ (4) Effective date of rent changes. (i) If the family has reported a change in family income or composition in a timely manner according to the
+ PHA's policies, the PHA must provide the family with 30 days advance notice of any family share and family rent to owner increases, and such
+ increases will be effective the first day of the month beginning after the end of that 30-day period. Family share and family rent to owner
+ decreases will be effective on the first day of the first month after the date of the reported change leading to the interim reexamination of family
+ income.
+ (ii) If the family has failed to report a change in family income or composition in a timely manner according to the PHA's policies, PHAs must
+ implement any resulting family share and family rent to owner increases retroactively to the first of the month following the date of the change
+ leading to the interim reexamination of family income. Any resulting family share and family rent to owner decrease must be implemented no
+ later than the first rent period following completion of the reexamination. However, a PHA may apply a family share and family rent to owner
+ decrease retroactively at the discretion of the PHA, in accordance with the conditions established by the PHA in the Administrative Plan and
+ subject to paragraph (c)(4)(iii) of this section.
+ (iii) A retroactive family share and family rent to owner decrease may not be applied prior to the later of the first of the month following:
+ (A) The date of the change leading to the interim reexamination of family income; or
+ (B) The effective date of the family's most recent previous interim or annual reexamination (or initial examination if that was the family's last
+ examination).
+ (d) Family reporting of change. The PHA must adopt policies consistent with this section prescribing when and under what conditions the family
+ must report a change in family income or composition.
+ (e) Effective date of reexamination. (1) The PHA must adopt policies consistent with this section prescribing how to determine the effective date
+ of a change in the housing assistance payment resulting from an interim redetermination.
+ (2) At the effective date of a regular or interim reexamination, the PHA must make appropriate adjustments in the housing assistance payment in
+ accordance with § 982.505.
+ (f) Accuracy of family income data. The PHA must establish procedures that are appropriate and necessary to assure that income data provided
+ by applicant or participant families is complete and accurate. The PHA will not be considered out of compliance with the requirements in this
+ section solely due to de minimis errors in calculating family income but is still obligated to correct errors once the PHA becomes aware of the
+ errors. A de minimis error is an error where the PHA determination of family income deviates from the correct income determination by no more
+ than $30 per month in monthly adjusted income ($360 in annual adjusted income).
+ (1) The PHA must take any corrective action necessary to credit or repay a family if the family has been overcharged for their rent or family share
+ as a result of an error (including a de minimis error) in the income determination. Families will not be required to repay the PHA in instances
+ where the PHA has miscalculated income resulting in a family being undercharged for rent or family share.
+ (2) HUD may revise the amount of de minimis error in this paragraph (f) through a rulemaking published in the Federal Register for public
+ comment.
+ (g) Execution of release and consent. (1) As a condition of admission to or continued assistance under the program, the PHA shall require the
+ family head, and such other family members as the PHA designates, to execute a HUD-approved release and consent form (including any release
+ and consent as required under § 5.230 of this title) authorizing any depository or private source of income, or any Federal, State or local agency,
+ to furnish or release to the PHA or HUD such information as the PHA or HUD determines to be necessary.
+ (2) The PHA and HUD must limit the use or disclosure of information obtained from a family or from another source pursuant to this release and
+ consent to purposes directly in connection with administration of the program.
+ (h) Reviews of family income under this section are subject to the provisions in section 904 of the Stewart B. McKinney Homeless Assistance
+ Amendments Act of 1988, as amended (42 U.S.C. 3544).
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 48
+ (Information collection requirements contained in this section have been approved by the Office of Management
+ and Budget under control number 2577-0169.)
+ [63 FR 23861, Apr. 30, 1998, as amended at 64 FR 13057, Mar. 16, 1999; 64 FR 26649, May 14, 1999; 64 FR 56915, Oct. 21, 1999; 65 FR
+ 16822, Mar. 30, 2000; 80 FR 8247, Feb. 17, 2015; 81 FR 12376, Mar. 8, 2016; 82 FR 58341, Dec. 12, 2017; 85 FR 27139, May 7, 2020; 88 FR
+ 9675, Feb. 14, 2023; 90 FR 56687, Dec. 8, 2025]
+
+ § 982.517 Utility allowance schedule.
+ (a) Maintaining schedule. (1) The PHA must maintain a utility allowance schedule for all tenant-paid utilities (except telephone), for cost of
+ tenant-supplied refrigerators and ranges, and for other tenant-paid housing services (e.g., trash collection (disposal of waste and refuse)).
+ (2) The PHA must provide a copy of the utility allowance schedule to HUD. At HUD's request, the PHA also must provide any information or
+ procedures used in preparation of the schedule.
+ (b) How allowances are determined. (1)(i) A PHA's utility allowance schedule, and the utility allowance for an individual family, must include
+ the utilities and services that are necessary in the locality to provide housing that complies with HQS. The PHA's utility allowance schedule and
+ utility allowance for families must also include any utilities and services required by HUD after publication in the Federal Register for public
+ comment.
+ (ii) In the utility allowance schedule, the PHA must classify utilities and other housing services according to the following general categories:
+ space heating; air conditioning; cooking; water heating; water; sewer; trash collection (disposal of waste and refuse); other electric; refrigerator
+ (cost of tenant-supplied refrigerator); range (cost of tenant-supplied range); applicable surcharges; and other specified housing services.
+ (iii) The PHA must provide a utility allowance for tenant-paid air-conditioning costs if the majority of housing units in the market provide
+ centrally air-conditioned units or there is appropriate wiring for tenant-installed air conditioners.
+ (iv) The PHA may not provide any allowance for non-essential utility costs, such as costs of cable or satellite television.
+ (2)(i) The PHA must maintain an area-wide utility allowance schedule. The area-wide utility allowance schedule must be determined based on
+ the typical cost of utilities and services paid by energy-conservative households that occupy housing of similar size and type in the same locality.
+ In developing the schedule, the PHA must use normal patterns of consumption for the community as a whole and current utility rates.
+ (ii) The PHA may maintain an area-wide, energy-efficient utility allowance schedule to be used for units that are in a building that meets
+ Leadership in Energy and Environmental Design (LEED) or Energy Star standards. HUD may subsequently identify additional Energy Savings
+ Design standards or criteria for applying the allowance to retrofitted units in a building that does not meet the standard, which will be modified or
+ added through a document published in the Federal Register for 30 days of public comment, followed by a final document announcing the
+ modified standards and the date on which the modifications take effect. The energy-efficient utility allowance (EEUA) schedule is to be
+ maintained in addition to, not in place of, the area-wide utility allowance schedule described in paragraph (b)(2)(i) of this section, unless all units
+ within a PHA's jurisdiction meet one or more of the required standards.
+ (iii) The PHA may base its utility allowance payments on actual flat fees charged by an owner for utilities that are billed directly by the owner,
+ but only if the flat fee charged by the owner is no greater than the PHA's applicable utility allowance for the utilities covered by the fee. If an
+ owner charges a flat fee for only some of the utilities, then the PHA must pay a separate allowance for any tenant-paid utilities that are not
+ covered in the flat fee.
+ (iv) For tenant-based participants residing in units within a project that has an approved project-specific utility allowance under § 983.301(f)(4),
+ the PHA must use the project-specific utility allowance schedule (see 24 CFR 983.301(f)(4)).
+ (v) The PHA must state its policy for utility allowance payments in its Administrative Plan and apply it consistently to all similarly situated
+ households.
+ (c) Revisions of utility allowance schedule. (1) A PHA must review its schedule of utility allowances each year, and must revise its allowance for
+ a utility category if there has been a change of 10 percent or more in the utility rate since the last time the utility allowance schedule was revised.
+ The PHA must maintain information supporting its annual review of utility allowances and any revisions made in its utility allowance schedule.
+ (2) At HUD's direction, the PHA must revise the utility allowance schedule to correct any errors, or as necessary to update the schedule.
+ (d) Use of utility allowance schedule. The PHA must use the appropriate utility allowance for the lesser of the size of dwelling unit actually
+ leased by the family or the family unit size as determined under the PHA subsidy standards. In cases where the unit size leased exceeds the family
+ unit size as determined under the PHA subsidy standards as a result of a reasonable accommodation, the PHA must use the appropriate utility
+ allowance for the size of the dwelling unit actually leased by the family.
+ (e) Higher utility allowance as reasonable accommodation for a person with disabilities. On request from a household that includes a person with
+ disabilities, the PHA must approve a utility allowance which is higher than the applicable amount on the utility allowance schedule if a higher
+ utility allowance is needed as a reasonable accommodation under 24 CFR part 8, the Fair Housing Act and 24 CFR part 100, or Titles II or III of
+ the Americans with Disabilities Act and 28 CFR parts 35 and 36, to make the program accessible to and usable by the household member with a
+ disability.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 49
+ (Information collection requirements contained in this section have been approved by the Office of Management
+ and Budget under control number 2577-0169.)
+ [63 FR 23861, Apr. 30, 1998, as amended at 80 FR 8247, Feb. 17, 2015; 81 FR 12377, Mar. 8, 2016; 89 FR 38302, May 7, 2024]
+
+ § 982.521 Rent to owner in subsidized project.
+ (a) Applicability to subsidized project. This section applies to a program tenancy in any of the following types of federally subsidized project:
+ (1) An insured or non-insured Section 236 project;
+ (2) A Section 202 project;
+ (3) A Section 221(d)(3) below market interest rate (BMIR) project; or
+ (4) A Section 515 project of the Rural Development Administration.
+ (b) How rent to owner is determined. The rent to owner is the subsidized rent as determined in accordance with requirements for the applicable
+ federal program listed in paragraph (a) of this section. This determination is not subject to the prohibition against increasing the rent to owner
+ during the initial lease term (see § 982.309).
+ [65 FR 16822, Mar. 30, 2000, as amended at 80 FR 8247, Feb. 17, 2015]
+
+ Subpart L—Family Obligations; Denial and Termination of Assistance
+ Source: 60 FR 34695, July 3, 1995, unless otherwise noted.
+
+ § 982.551 Obligations of participant.
+ (a) Purpose. This section states the obligations of a participant family under the program.
+ (b) Supplying required information —(1) The family must supply any information that the PHA or HUD determines is necessary in the
+ administration of the program, including submission of required evidence of citizenship or eligible immigration status (as provided by 24 CFR
+ part 5). “Information” includes any requested certification, release or other documentation.
+ (2) The family must supply any information requested by the PHA or HUD for use in a regularly scheduled reexamination or interim
+ reexamination of family income and composition in accordance with HUD requirements.
+ (3) The family must disclose and verify social security numbers (as provided by part 5, subpart B, of this title) and must sign and submit consent
+ forms for obtaining information in accordance with part 5, subpart B, of this title.
+ (4) Any information supplied by the family must be true and complete.
+ (c) HQS breach caused by family. The family is responsible for an HQS breach caused by the family as described in § 982.404(b).
+ (d) Allowing PHA inspection. The family must allow the PHA to inspect the unit at reasonable times and after reasonable notice.
+ (e) Violation of lease. The family may not commit any serious or repeated violation of the lease. Under 24 CFR 5.2005(c), an incident or
+ incidents of actual or threatened domestic violence, dating violence, sexual assault, or stalking will not be construed as a serious or repeated lease
+ violation by the victim, or threatened victim, of the domestic violence, dating violence, sexual assault, or stalking, or as good cause to terminate
+ the tenancy, occupancy rights, or assistance of the victim.
+ (f) Family notice of move or lease termination. The family must notify the PHA and the owner before the family moves out of the unit, or
+ terminates the lease on notice to the owner. See § 982.354(d).
+ (g) Owner eviction notice. The family must promptly give the PHA a copy of any owner eviction notice.
+ (h) Use and occupancy of unit —(1) The family must use the assisted unit for residence by the family. The unit must be the family's only
+ residence.
+ (2) The composition of the assisted family residing in the unit must be approved by the PHA. The family must promptly inform the PHA of the
+ birth, adoption or court-awarded custody of a child. The family must request PHA approval to add any other family member as an occupant of the
+ unit. No other person [i.e., nobody but members of the assisted family] may reside in the unit (except for a foster child or live-in aide as provided
+ in paragraph (h)(4) of this section).
+ (3) The family must promptly notify the PHA if any family member no longer resides in the unit.
+ (4) If the PHA has given approval, a foster child or a live-in-aide may reside in the unit. The PHA has the discretion to adopt reasonable policies
+ concerning residence by a foster child or a live-in-aide, and defining when PHA consent may be given or denied.
+ (5) Members of the household may engage in legal profitmaking activities in the unit, but only if such activities are incidental to primary use of
+ the unit for residence by members of the family.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                            Page 50
+ (6) The family must not sublease or let the unit.
+ (7) The family must not assign the lease or transfer the unit.
+ (i) Absence from unit. The family must supply any information or certification requested by the PHA to verify that the family is living in the unit,
+ or relating to family absence from the unit, including any PHA-requested information or certification on the purposes of family absences. The
+ family must cooperate with the PHA for this purpose. The family must promptly notify the PHA of absence from the unit.
+ (j) Interest in unit. The family must not own or have any interest in the unit.
+ (k) Fraud and other program violation. The members of the family must not commit fraud, bribery or any other corrupt or criminal act in
+ connection with the programs.
+ (l) Crime by household members. The members of the household may not engage in drug-related criminal activity or violent criminal activity or
+ other criminal activity that threatens the health, safety, or right to peaceful enjoyment of other residents and persons residing in the immediate
+ vicinity of the premises (see § 982.553). Under 24 CFR 5.2005(b)(2), criminal activity directly related to domestic violence, dating violence,
+ sexual assault, or stalking, engaged in by a member of a tenant's household, or any guest or other person under the tenant's control, shall not be
+ cause for termination of tenancy, occupancy rights, or assistance of the victim, if the tenant or an affiliated individual of the tenant, as defined in
+ 24 CFR 5.2003, is the victim.
+ (m) Alcohol abuse by household members. The members of the household must not abuse alcohol in a way that threatens the health, safety or
+ right to peaceful enjoyment of other residents and persons residing in the immediate vicinity of the premises.
+ (n) Other housing assistance. An assisted family, or members of the family, may not receive Section 8 tenant-based assistance while receiving
+ another housing subsidy, for the same unit or for a different unit, under any duplicative (as determined by HUD or in accordance with HUD
+ requirements) federal, State or local housing assistance program.
+
+ (Approved by the Office of Management and Budget under control number 2577-0169)
+ [60 FR 34695, July 3, 1995, as amended at 60 FR 45661, Sept. 1, 1995; 61 FR 11119, Mar. 18, 1996; 61 FR 13627, Mar. 27, 1996; 61 FR
+ 27163, May 30, 1996; 64 FR 26650, May 14, 1999; 66 FR 28805, May 24, 2001; 73 FR 72345, Nov. 28, 2008; 75 FR 66264, Oct. 27, 2010; 80
+ FR 50575, Aug. 20, 2015; 81 FR 80817, Nov. 16, 2016]
+
+ § 982.552 PHA denial or termination of assistance for family.
+ (a) Action or inaction by family. (1) A PHA may deny assistance for an applicant or terminate assistance for a participant under the programs
+ because of the family's action or failure to act as described in this section or § 982.553. The provisions of this section do not affect denial or
+ termination of assistance for grounds other than action or failure to act by the family.
+ (2) Denial of assistance for an applicant may include any or all of the following: denying listing on the PHA waiting list, denying or withdrawing
+ a voucher, refusing to enter into a HAP contract or approve a lease, and refusing to process or provide assistance under portability procedures.
+ (3) Termination of assistance for a participant may include any or all of the following: refusing to enter into a HAP contract or approve a lease,
+ terminating housing assistance payments under an outstanding HAP contract, and refusing to process or provide assistance under portability
+ procedures.
+ (4) This section does not limit or affect exercise of the PHA rights and remedies against the owner under the HAP contract, including termination,
+ suspension or reduction of housing assistance payments, or termination of the HAP contract.
+ (b) Requirement to deny admission or terminate assistance. (1) For provisions on denial of admission and termination of assistance for illegal
+ drug use, other criminal activity, and alcohol abuse that would threaten other residents, see § 982.553.
+ (2) The PHA must terminate program assistance for a family evicted from housing assisted under the program for serious violation of the lease.
+ (3) The PHA must deny admission to the program for an applicant, or terminate program assistance for a participant, if any member of the family
+ fails to sign and submit consent forms for obtaining information in accordance with part 5, subparts B and F of this title.
+ (4) The family must submit required evidence of citizenship or eligible immigration status. See part 5 of this title for a statement of circumstances
+ in which the PHA must deny admission or terminate program assistance because a family member does not establish citizenship or eligible
+ immigration status, and the applicable informal hearing procedures.
+ (5) The PHA must deny or terminate assistance if any family member fails to meet the eligibility requirements concerning individuals enrolled at
+ an institution of higher education as specified in 24 CFR 5.612.
+ (6) The PHA must deny or terminate assistance based on the restrictions on net assets and property ownership when required by § 5.618 of this
+ title.
+ (c) Authority to deny admission or terminate assistance —(1) Grounds for denial or termination of assistance. The PHA may at any time deny
+ program assistance for an applicant, or terminate program assistance for a participant, for any of the following grounds:
+ (i) If the family violates any family obligations under the program (see § 982.551). See § 982.553 concerning denial or termination of assistance
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 51
+ for crime by family members.
+ (ii) If any member of the family has been evicted from federally assisted housing in the last five years;
+ (iii) If a PHA has ever terminated assistance under the program for any member of the family.
+ (iv) If any member of the family has committed fraud, bribery, or any other corrupt or criminal act in connection with any Federal housing
+ program (see also § 982.553(a)(1));
+ (v) If the family currently owes rent or other amounts to the PHA or to another PHA in connection with Section 8 or public housing assistance
+ under the 1937 Act.
+ (vi) If the family has not reimbursed any PHA for amounts paid to an owner under a HAP contract for rent, damages to the unit, or other amounts
+ owed by the family under the lease.
+ (vii) If the family breaches an agreement with the PHA to pay amounts owed to a PHA, or amounts paid to an owner by a PHA. (The PHA, at its
+ discretion, may offer a family the opportunity to enter an agreement to pay amounts owed to a PHA or amounts paid to an owner by a PHA. The
+ PHA may prescribe the terms of the agreement.)
+ (viii) If the family has engaged in or threatened abusive or violent behavior toward PHA personnel.
+ (ix) If a welfare-to-work (WTW) family fails, willfully and persistently, to fulfill its obligations under the welfare-to-work voucher program.
+ (x) If the family has been engaged in criminal activity or alcohol abuse as described in § 982.553.
+ (2) Consideration of circumstances. In determining whether to deny or terminate assistance because of action or failure to act by members of the
+ family:
+ (i) The PHA may consider all relevant circumstances such as the seriousness of the case, the extent of participation or culpability of individual
+ family members, mitigating circumstances related to the disability of a family member, and the effects of denial or termination of assistance on
+ other family members who were not involved in the action or failure.
+ (ii) The PHA may impose, as a condition of continued assistance for other family members, a requirement that other family members who
+ participated in or were culpable for the action or failure will not reside in the unit. The PHA may permit the other members of a participant family
+ to continue receiving assistance.
+ (iii) In determining whether to deny admission or terminate assistance for illegal use of drugs or alcohol abuse by a household member who is no
+ longer engaged in such behavior, the PHA may consider whether such household member is participating in or has successfully completed a
+ supervised drug or alcohol rehabilitation program, or has otherwise been rehabilitated successfully (42 U.S.C. 13661). For this purpose, the PHA
+ may require the applicant or tenant to submit evidence of the household member's current participation in, or successful completion of, a
+ supervised drug or alcohol rehabilitation program or evidence of otherwise having been rehabilitated successfully.
+ (iv) If the family includes a person with disabilities, the PHA decision concerning such action is subject to consideration of reasonable
+ accommodation in accordance with part 8 of this title.
+ (v) Nondiscrimination limitation and protection for victims of domestic violence, dating violence, sexual assault, or stalking. The PHA's
+ admission and termination actions must be consistent with fair housing and equal opportunity provisions of 24 CFR 5.105, and with the
+ requirements of 24 CFR part 5, subpart L (Protection for Victims of Domestic Violence, Dating Violence, Sexual Assault, or Stalking).
+ (d) Information for family. The PHA must give the family a written description of:
+ (1) Family obligations under the program.
+ (2) The grounds on which the PHA may deny or terminate assistance because of family action or failure to act.
+ (3) The PHA informal hearing procedures.
+ (e) Applicant screening. The PHA may at any time deny program assistance for an applicant in accordance with the PHA policy, as stated in the
+ PHA Administrative Plan, on screening of applicants for family behavior or suitability for tenancy.
+
+ (Approved by the Office of Management and Budget under control number 2577-0169)
+ [60 FR 34695, July 3, 1995]
+
+ Editorial Note:
+ For Federal Register citations affecting § 982.552, see the List of CFR Sections Affected, which appears in the Finding Aids section of the
+ printed volume and at www.govinfo.gov.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                           Page 52
+ § 982.553 Denial of admission and termination of assistance for criminals and alcohol abusers.
+ (a) Denial of admission —(1) Prohibiting admission of drug criminals. (i) The PHA must prohibit admission to the program of an applicant for
+ three years from the date of eviction if a household member has been evicted from federally assisted housing for drug-related criminal activity.
+ However, the PHA may admit the household if the PHA determines:
+ (A) That the evicted household member who engaged in drug-related criminal activity has successfully completed a supervised drug
+ rehabilitation program approved by the PHA; or
+ (B) That the circumstances leading to eviction no longer exist (for example, the criminal household member has died or is imprisoned).
+ (ii) The PHA must establish standards that prohibit admission if:
+ (A) The PHA determines that any household member is currently engaging in illegal use of a drug;
+ (B) The PHA determines that it has reasonable cause to believe that a household member's illegal drug use or a pattern of illegal drug use may
+ threaten the health, safety, or right to peaceful enjoyment of the premises by other residents; or
+ (C) Any household member has ever been convicted of drug-related criminal activity for manufacture or production of methamphetamine on the
+ premises of federally assisted housing.
+ (2) Prohibiting admission of other criminals—(i) Mandatory prohibition. The PHA must establish standards that prohibit admission to the
+ program if any member of the household is subject to a lifetime registration requirement under a State sex offender registration program. In this
+ screening of applicants, the PHA must perform criminal history background checks necessary to determine whether any household member is
+ subject to a lifetime sex offender registration requirement in the State where the housing is located and in other States where the household
+ members are known to have resided.
+ (ii) Permissive prohibitions. (A) The PHA may prohibit admission of a household to the program if the PHA determines that any household
+ member is currently engaged in, or has engaged in during a reasonable time before the admission:
+ (1) Drug-related criminal activity;
+ (2) Violent criminal activity;
+ (3) Other criminal activity which may threaten the health, safety, or right to peaceful enjoyment of the premises by other residents or persons
+ residing in the immediate vicinity; or
+ (4) Other criminal activity which may threaten the health or safety of the owner, property management staff, or persons performing a contract
+ administration function or responsibility on behalf of the PHA (including a PHA employee or a PHA contractor, subcontractor or agent).
+ (B) The PHA may establish a period before the admission decision during which an applicant must not have engaged in the activities specified in
+ paragraph (a)(2)(i) of this section (“reasonable time”).
+ (C) If the PHA previously denied admission to an applicant because a member of the household engaged in criminal activity, the PHA may
+ reconsider the applicant if the PHA has sufficient evidence that the members of the household are not currently engaged in, and have not engaged
+ in, such criminal activity during a reasonable period, as determined by the PHA, before the admission decision.
+ (1) The PHA would have “sufficient evidence” if the household member submitted a certification that she or he is not currently engaged in and
+ has not engaged in such criminal activity during the specified period and provided supporting information from such sources as a probation
+ officer, a landlord, neighbors, social service agency workers and criminal records, which the PHA verified.
+ (2) For purposes of this section, a household member is “currently engaged in” criminal activity if the person has engaged in the behavior
+ recently enough to justify a reasonable belief that the behavior is current.
+ (3) Prohibiting admission of alcohol abusers. The PHA must establish standards that prohibit admission to the program if the PHA determines
+ that it has reasonable cause to believe that a household member's abuse or pattern of abuse of alcohol may threaten the health, safety, or right to
+ peaceful enjoyment of the premises by other residents.
+ (b) Terminating assistance —(1) Terminating assistance for drug criminals. (i) The PHA must establish standards that allow the PHA to terminate
+ assistance for a family under the program if the PHA determines that:
+ (A) Any household member is currently engaged in any illegal use of a drug; or
+ (B) A pattern of illegal use of a drug by any household member interferes with the health, safety, or right to peaceful enjoyment of the premises
+ by other residents.
+ (ii) The PHA must immediately terminate assistance for a family under the program if the PHA determines that any member of the household has
+ ever been convicted of drug-related criminal activity for manufacture or production of methamphetamine on the premises of federally assisted
+ housing.
+ (iii) The PHA must establish standards that allow the PHA to terminate assistance under the program for a family if the PHA determines that any
+ family member has violated the family's obligation under § 982.551 not to engage in any drug-related criminal activity.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                           Page 53
+ (2) Terminating assistance for other criminals. The PHA must establish standards that allow the PHA to terminate assistance under the program
+ for a family if the PHA determines that any household member has violated the family's obligation under § 982.551 not to engage in violent
+ criminal activity.
+ (3) Terminating assistance for alcohol abusers. The PHA must establish standards that allow termination of assistance for a family if the PHA
+ determines that a household member's abuse or pattern of abuse of alcohol may threaten the health, safety, or right to peaceful enjoyment of the
+ premises by other residents.
+ (c) Evidence of criminal activity. The PHA may terminate assistance for criminal activity by a household member as authorized in this section if
+ the PHA determines, based on a preponderance of the evidence, that the household member has engaged in the activity, regardless of whether the
+ household member has been arrested or convicted for such activity.
+ (d) Use of criminal record —(1) Denial. If a PHA proposes to deny admission for criminal activity as shown by a criminal record, the PHA must
+ provide the subject of the record and the applicant with a copy of the criminal record. The PHA must give the family an opportunity to dispute the
+ accuracy and relevance of that record, in the informal review process in accordance with § 982.554. (See part 5, subpart J for provision
+ concerning access to criminal records.)
+ (2) Termination of assistance. If a PHA proposes to terminate assistance for criminal activity as shown by a criminal record, the PHA must notify
+ the household of the proposed action to be based on the information and must provide the subject of the record and the tenant with a copy of the
+ criminal record. The PHA must give the family an opportunity to dispute the accuracy and relevance of that record in accordance with § 982.555.
+ (3) Cost of obtaining criminal record. The PHA may not pass along to the tenant the costs of a criminal records check.
+ (e) The requirements in 24 CFR part 5, subpart L (Protection for Victims of Domestic Violence, Dating Violence, Sexual Assault, or Stalking)
+ apply to this section.
+ [66 FR 28805, May 24, 2001, as amended at 73 FR 72345, Nov. 28, 2008; 75 FR 66264, Oct. 27, 2010; 80 FR 8247, Feb. 17, 2015; 81 FR
+ 80817, Nov. 16, 2016]
+
+ § 982.554 Informal review for applicant.
+ (a) Notice to applicant. The PHA must give an applicant for participation prompt notice of a decision denying assistance to the applicant. The
+ notice must contain a brief statement of the reasons for the PHA decision. The notice must also state that the applicant may request an informal
+ review of the decision and must describe how to obtain the informal review.
+ (b) Informal review process. The PHA must give an applicant an opportunity for an informal review of the PHA decision denying assistance to
+ the applicant. The Administrative Plan must state the PHA procedures for conducting an informal review. The PHA review procedures must
+ comply with the following:
+ (1) The review may be conducted by any person or persons designated by the PHA, other than a person who made or approved the decision under
+ review or a subordinate of this person.
+ (2) The applicant must be given an opportunity to present written or oral objections to the PHA decision.
+ (3) The PHA must notify the applicant of the PHA final decision after the informal review, including a brief statement of the reasons for the final
+ decision.
+ (c) When informal review is not required. The PHA is not required to provide the applicant an opportunity for an informal review for any of the
+ following:
+ (1) Discretionary administrative determinations by the PHA.
+ (2) General policy issues or class grievances.
+ (3) A determination of the family unit size under the PHA subsidy standards.
+ (4) A PHA determination not to approve an extension of the voucher term.
+ (5) A PHA determination not to grant approval of the tenancy.
+ (6) An PHA determination that a unit selected by the applicant is not in compliance with HQS.
+ (7) An PHA determination that the unit is not in accordance with HQS because of the family size or composition.
+ (d) Restrictions on assistance for noncitizens. The informal hearing provisions for the denial of assistance on the basis of ineligible immigration
+ status are contained in 24 CFR part 5.
+
+ (Approved by the Office of Management and Budget under control number 2577-0169)
+ [60 FR 34695, July 3, 1995, as amended at 60 FR 45661, Sept. 1, 1995; 61 FR 13627, Mar. 27, 1996; 64 FR 26650, May 14, 1999; 80 FR 50575,
+ Aug. 20, 2015]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                           Page 54
+ § 982.555 Informal hearing for participant.
+ (a) When hearing is required. (1) A PHA must give a participant family an opportunity for an informal hearing to consider whether the following
+ PHA decisions relating to the individual circumstances of a participant family are in accordance with the law, HUD regulations and PHA
+ policies:
+ (i) A determination of the family's annual or adjusted income, and the use of such income to compute the housing assistance payment.
+ (ii) A determination of the appropriate utility allowance (if any) for tenant-paid utilities from the PHA utility allowance schedule.
+ (iii) A determination of the family unit size under the PHA subsidy standards.
+ (iv) A determination to terminate assistance for a participant family because of the family's action or failure to act (see § 982.552).
+ (v) A determination to terminate assistance because the participant family has been absent from the assisted unit for longer than the maximum
+ period permitted under PHA policy and HUD rules.
+ (2) In the cases described in paragraphs (a)(1) (iv), (v) and (vi) of this section, the PHA must give the opportunity for an informal hearing before
+ the PHA terminates housing assistance payments for the family under an outstanding HAP contract.
+ (b) When hearing is not required. The PHA is not required to provide a participant family an opportunity for an informal hearing for any of the
+ following:
+ (1) Discretionary administrative determinations by the PHA.
+ (2) General policy issues or class grievances.
+ (3) Establishment of the PHA schedule of utility allowances for families in the program.
+ (4) A PHA determination not to approve an extension of the voucher term.
+ (5) A PHA determination not to approve a unit or tenancy.
+ (6) A PHA determination that an assisted unit is not in compliance with HQS. (However, the PHA must provide the opportunity for an informal
+ hearing for a decision to terminate assistance for a breach of the HQS caused by the family as described in § 982.551(c).)
+ (7) A PHA determination that the unit is not in accordance with HQS because of the family size.
+ (8) A determination by the PHA to exercise or not to exercise any right or remedy against the owner under a HAP contract.
+ (c) Notice to family. (1) In the cases described in paragraphs (a)(1) (i), (ii) and (iii) of this section, the PHA must notify the family that the family
+ may ask for an explanation of the basis of the PHA determination, and that if the family does not agree with the determination, the family may
+ request an informal hearing on the decision.
+ (2) In the cases described in paragraphs (a)(1) (iv), (v) and (vi) of this section, the PHA must give the family prompt written notice that the family
+ may request a hearing. The notice must:
+ (i) Contain a brief statement of reasons for the decision,
+ (ii) State that if the family does not agree with the decision, the family may request an informal hearing on the decision, and
+ (iii) State the deadline for the family to request an informal hearing.
+ (d) Expeditious hearing process. Where a hearing for a participant family is required under this section, the PHA must proceed with the hearing in
+ a reasonably expeditious manner upon the request of the family.
+ (e) Hearing procedures —(1) Administrative Plan. The Administrative Plan must state the PHA procedures for conducting informal hearings for
+ participants.
+ (2) Discovery —(i) By family. The family must be given the opportunity to examine before the PHA hearing any PHA documents that are
+ directly relevant to the hearing. The family must be allowed to copy any such document at the family's expense. If the PHA does not make the
+ document available for examination on request of the family, the PHA may not rely on the document at the hearing.
+ (ii) By PHA. The PHA hearing procedures may provide that the PHA must be given the opportunity to examine at PHA offices before the PHA
+ hearing any family documents that are directly relevant to the hearing. The PHA must be allowed to copy any such document at the PHA's
+ expense. If the family does not make the document available for examination on request of the PHA, the family may not rely on the document at
+ the hearing.
+ (iii) Documents. The term “documents” includes records and regulations.
+ (3) Representation of family. At its own expense, the family may be represented by a lawyer or other representative.
+ (4) Hearing officer: Appointment and authority. (i) The hearing may be conducted by any person or persons designated by the PHA, other than a
+ person who made or approved the decision under review or a subordinate of this person.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                               Page 55
+ (ii) The person who conducts the hearing may regulate the conduct of the hearing in accordance with the PHA hearing procedures.
+ (5) Evidence. The PHA and the family must be given the opportunity to present evidence, and may question any witnesses. Evidence may be
+ considered without regard to admissibility under the rules of evidence applicable to judicial proceedings.
+ (6) Issuance of decision. The person who conducts the hearing must issue a written decision, stating briefly the reasons for the decision. Factual
+ determinations relating to the individual circumstances of the family shall be based on a preponderance of the evidence presented at the hearing.
+ A copy of the hearing decision shall be furnished promptly to the family.
+ (f) Effect of decision. The PHA is not bound by a hearing decision:
+ (1) Concerning a matter for which the PHA is not required to provide an opportunity for an informal hearing under this section, or that otherwise
+ exceeds the authority of the person conducting the hearing under the PHA hearing procedures.
+ (2) Contrary to HUD regulations or requirements, or otherwise contrary to federal, State, or local law.
+ (3) If the PHA determines that it is not bound by a hearing decision, the PHA must promptly notify the family of the determination, and of the
+ reasons for the determination.
+ (g) Restrictions on assistance to noncitizens. The informal hearing provisions for the denial of assistance on the basis of ineligible immigration
+ status are contained in 24 CFR part 5.
+
+ (Approved by the Office of Management and Budget under control number 2577-0169)
+ [60 FR 34695, July 3, 1995, as amended at 60 FR 45661, Sept. 1, 1995; 61 FR 13627, Mar. 27, 1996; 64 FR 26650, May 14, 1999; 65 FR 16823,
+ Mar. 30, 2000; 80 FR 8247, Feb. 17, 2015; 80 FR 50575, Aug. 20, 2015]
+
+ Subpart M—Special Housing Types
+ Source: 63 FR 23865, Apr. 30, 1998, unless otherwise noted.
+
+ § 982.601 Overview.
+ (a) Special housing types. This subpart describes program requirements for special housing types. The following are the special housing types:
+ (1) Single room occupancy (SRO) housing;
+ (2) Congregate housing;
+ (3) Group home;
+ (4) Shared housing;
+ (5) Manufactured home;
+ (6) Cooperative housing (excluding families that are not cooperative members); and
+ (7) Homeownership option.
+ (b) PHA choice to offer special housing type. (1) The PHA may permit a family to use any of the following special housing types in accordance
+ with requirements of the program: single room occupancy (SRO) housing, congregate housing, group home, shared housing, manufactured home
+ when the family owns the home and leases the manufactured home space, cooperative housing or homeownership option.
+ (2) In general, the PHA is not required to permit families (including families that move into the PHA program under portability procedures) to
+ use any of these special housing types, and may limit the number of families using special housing types.
+ (3) The PHA must permit use of any special housing type if needed as a reasonable accommodation so that the program is readily accessible to
+ and usable by persons with disabilities in accordance with 24 CFR part 8.
+ (4) For occupancy of a manufactured home, see § 982.620(a).
+ (c) Program funding for special housing types. (1) HUD does not provide any additional or designated funding for special housing types, or for a
+ specific special housing type (e.g., the homeownership option). Assistance for special housing types is paid from program funding available for
+ the PHA's tenant-based program under the consolidated annual contributions contract.
+ (2) The PHA may not set aside program funding or program slots for special housing types or for a specific special housing type.
+ (d) Family choice of housing and housing type. The family chooses whether to use housing that qualifies as a special housing type under this
+ subpart, or as any specific special housing type, or to use other eligible housing in accordance with requirements of the program. The PHA may
+ not restrict the family's freedom to choose among available units in accordance with § 982.353.
+ (e) Applicability of requirements. (1) Except as modified by this subpart, the requirements of other subparts of this part apply to the special
+ housing types.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                           Page 56
+ (2) Provisions in this subpart only apply to a specific special housing type. The housing type is noted in the title of each section.
+ (3) Housing must meet the requirements of this subpart for a single special housing type specified by the family. Such housing is not subject to
+ requirements for other special housing types. A single unit cannot be designated as more than one special housing type.
+ [63 FR 23865, Apr. 30, 1998, as amended at 65 FR 55162, Sept. 12, 2000; 67 FR 64493, Oct. 18, 2002; 80 FR 8247, Feb. 17, 2015]
+
+ Single Room Occupancy (SRO)
+
+ § 982.602 SRO: Who may reside in an SRO?
+ A single person may reside in an SRO housing unit.
+ [64 FR 26650, May 14, 1999]
+
+ § 982.603 SRO: Lease and HAP contract.
+ For SRO housing, there is a separate lease and HAP contract for each assisted person.
+
+ § 982.604 SRO: Voucher housing assistance payment.
+ (a) For a person residing in SRO housing, the payment standard is 75 percent of the zero-bedroom payment standard amount on the PHA
+ payment standard schedule. For a person residing in SRO housing in an exception area, the payment standard is 75 percent of the HUD-approved
+ zero-bedroom exception payment standard amount.
+ (b) The utility allowance for an assisted person residing in SRO housing is 75 percent of the zero bedroom utility allowance.
+ [64 FR 26650, May 14, 1999]
+
+ § 982.605 SRO: Housing quality standards.
+ (a) HQS standards for SRO. As defined in § 982.4, HQS refers to the minimum quality standards developed by HUD in accordance with 24 CFR
+ 5.703 for housing assisted under the HCV program, including any variations approved by HUD for the PHA under 24 CFR 5.705(a)(3).
+ However, the standards in this section apply in place of standards related to sanitary facilities, food preparation and refuse disposal, and space and
+ security. Since the SRO units will not house children, the standards at 24 CFR part 35, subparts A, B, H, and R, applying to the PBC program,
+ concerning lead-based paint, do not apply to SRO housing.
+ (b) Performance requirements. (1) SRO housing is subject to the additional performance requirements in this paragraph (b).
+ (2) Sanitary facilities, and space and security characteristics must meet local code standards for SRO housing. In the absence of applicable local
+ code standards for SRO housing, the following standards apply:
+ (i) Sanitary facilities. (A) At least one flush toilet that can be used in privacy, lavatory basin, and bathtub or shower, in proper operating
+ condition, must be supplied for each six persons or fewer residing in the SRO housing.
+ (B) If SRO units are leased only to males, flush urinals may be substituted for not more than one-half the required number of flush toilets.
+ However, there must be at least one flush toilet in the building.
+ (C) Every lavatory basin and bathtub or shower must be supplied at all times with an adequate quantity of hot and cold running water.
+ (D) All of these facilities must be in proper operating condition, and must be adequate for personal cleanliness and the disposal of human waste.
+ The facilities must utilize an approvable public or private disposal system.
+ (E) Sanitary facilities must be reasonably accessible from a common hall or passageway to all persons sharing them. These facilities may not be
+ located more than one floor above or below the SRO unit. Sanitary facilities may not be located below grade unless the SRO units are located on
+ that level.
+ (ii) Space and security. (A) No more than one person may reside in an SRO unit.
+ (B) An SRO unit must contain at least one hundred ten square feet of floor space.
+ (C) An SRO unit must contain at least four square feet of closet space for each resident (with an unobstructed height of at least five feet). If there
+ is less closet space, space equal to the amount of the deficiency must be subtracted from the area of the habitable room space when determining
+ the amount of floor space in the SRO unit. The SRO unit must contain at least one hundred ten square feet of remaining floor space after
+ subtracting the amount of the deficiency in minimum closet space.
+ (D) Exterior doors and windows accessible from outside an SRO unit must be lockable.
+ (3) Access. (i) Access doors to an SRO unit must have locks for privacy in proper operating condition.
+ (ii) An SRO unit must have immediate access to two or more approved means of exit, appropriately marked, leading to safe and open space at
+ ground level, and any means of exit required by State and local law.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 57
+ (iii) The resident must be able to access an SRO unit without passing through any other unit.
+ (4) Sprinkler system. A sprinkler system that protects all major spaces, hard wired smoke detectors, and such other fire and safety improvements
+ as State or local law may require must be installed in each building. The term “major spaces” means hallways, large common areas, and other
+ areas specified in local fire, building, or safety codes.
+ [63 FR 23865, Apr. 30, 1998, as amended at 88 FR 30503, May 11, 2023; 89 FR 38303, May 7, 2024]
+
+ Congregate Housing
+
+ § 982.606 Congregate housing: Who may reside in congregate housing.
+ (a) An elderly person or a person with disabilities may reside in a congregate housing unit.
+ (b)(1) If approved by the PHA, a family member or live-in aide may reside with the elderly person or person with disabilities.
+ (2) The PHA must approve a live-in aide if needed as a reasonable accommodation so that the program is readily accessible to and usable by
+ persons with disabilities in accordance with 24 CFR part 8. See § 982.316 concerning occupancy by a live-in aide.
+
+ § 982.607 Congregate housing: Lease and HAP contract.
+ For congregate housing, there is a separate lease and HAP contract for each assisted family.
+
+ § 982.608 Congregate housing: Voucher housing assistance payment.
+ (a) Unless there is a live-in aide:
+ (1) For a family residing in congregate housing, the payment standard is the zero-bedroom payment standard amount on the PHA payment
+ standard schedule. For a family residing in congregate housing in an exception area, the payment standard is the HUD-approved zero-bedroom
+ exception payment standard amount.
+ (2) However, if there are two or more rooms in the unit (not including kitchen or sanitary facilities), the payment standard for a family residing in
+ congregate housing is the one-bedroom payment standard amount.
+ (b) If there is a live-in aide, the live-in aide must be counted in determining the family unit size.
+ [63 FR 23865, Apr. 30, 1998, as amended at 64 FR 26650, May 14, 1999]
+
+ § 982.609 Congregate housing: Housing quality standards.
+ (a) HQS standards for congregate housing. As defined in § 982.4, HQS refers to the minimum quality standards developed by HUD in
+ accordance with 24 CFR 5.703 for housing assisted under the HCV program, including any variations approved by HUD for the PHA under 24
+ CFR 5.705(a)(3). However, the standards in this section apply in place of standards related to food preparation and refuse disposal. Congregate
+ housing is not subject to the requirement that the dwelling unit must have a kitchen area.
+ (b) Food preparation and refuse disposal: Additional performance requirements. The following additional performance requirements apply to
+ congregate housing:
+ (1) The unit must contain a refrigerator of appropriate size.
+ (2) There must be central kitchen and dining facilities on the premises. These facilities:
+ (i) Must be located within the premises, and accessible to the residents;
+ (ii) Must contain suitable space and equipment to store, prepare, and serve food in a sanitary manner;
+ (iii) Must be used to provide a food service that is provided for the residents, and that is not provided by the residents; and
+ (iv) Must be for the primary use of residents of the congregate units and be sufficient in size to accommodate the residents.
+ (3) There must be adequate facilities and services for the sanitary disposal of food waste and refuse, including facilities for temporary storage
+ where necessary.
+ [63 FR 23865, Apr. 30, 1998, as amended at 88 FR 30504, May 11, 2023; 89 FR 38303, May 7, 2024]
+
+ Group Home
+
+ § 982.610 Group home: Who may reside in a group home.
+ (a) An elderly person or a person with disabilities may reside in a State-approved group home.
+ (b)(1) If approved by the PHA, a live-in aide may reside with a person with disabilities.
+ (2) The PHA must approve a live-in aide if needed as a reasonable accommodation so that the program is readily accessible to and usable by
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                           Page 58
+ persons with disabilities in accordance with 24 CFR part 8. See § 982.316 concerning occupancy by a live-in aide.
+ (c) Except for a live-in aide, all residents of a group home, whether assisted or unassisted, must be elderly persons or persons with disabilities.
+ (d) Persons residing in a group home must not require continual medical or nursing care.
+ (e) Persons who are not assisted under the tenant-based program may reside in a group home.
+ (f) No more than 12 persons may reside in a group home. This limit covers all persons who reside in the unit, including assisted and unassisted
+ residents and any live-in aide.
+
+ § 982.611 Group home: Lease and HAP contract.
+ For assistance in a group home, there is a separate HAP contract and lease for each assisted person.
+
+ § 982.612 Group home: State approval of group home.
+ A group home must be licensed, certified, or otherwise approved in writing by the State (e.g., Department of Human Resources, Mental Health,
+ Retardation, or Social Services) as a group home for elderly persons or persons with disabilities.
+
+ § 982.613 Group home: Rent and voucher housing assistance payment.
+ (a) Meaning of pro-rata portion. For a group home, the term “pro-rata portion” means the ratio derived by dividing the number of persons in the
+ assisted household by the total number of residents (assisted and unassisted) residing in the group home. The number of persons in the assisted
+ household equals one assisted person plus any PHA-approved live-in aide.
+ (b) Rent to owner: Reasonable rent limit. (1) The rent to owner for an assisted person may not exceed the pro-rata portion of the reasonable rent
+ for the group home.
+ (2) The reasonable rent for a group home is determined in accordance with § 982.507. In determining reasonable rent for the group home, the
+ PHA must consider whether sanitary facilities, and facilities for food preparation and service, are common facilities or private facilities.
+ (c) Payment standard —(1) Family unit size. (i) Unless there is a live-in aide, the family unit size is zero or one bedroom.
+ (ii) If there is a live-in aide, the live-in aide must be counted in determining the family unit size.
+ (2) The payment standard for a person who resides in a group home is the lower of:
+ (i) The payment standard amount on the PHA payment standard schedule for the family unit size; or (ii) The pro-rata portion of the payment
+ standard amount on the PHA payment standard schedule for the group home size.
+ (iii) If there is a live-in aide, the live-in aide must be counted in determining the family unit size.
+ (d) Utility allowance. The utility allowance for each assisted person residing in a group home is the pro-rata portion of the utility allowance for
+ the group home unit size.
+ [63 FR 23865, Apr. 30, 1998, as amended at 64 FR 26651, May 14, 1999]
+
+ § 982.614 Group home: Housing quality standards.
+ (a) Compliance with HQS. The PHA may not give approval to reside in a group home unless the unit, including the portion of the unit available
+ for use by the assisted person under the lease, meets HQS. As defined in § 982.4, HQS refers to the minimum quality standards developed by
+ HUD in accordance with 24 CFR 5.703 for housing assisted under the HCV program, including any variations approved by HUD for the PHA
+ under 24 CFR 5.705(a)(3).
+ (b) Applicable HQS standards. (1) The standards in this section apply in place of standards in 24 CFR 5.703 that relate to sanitary facilities, food
+ preparation and refuse disposal, space and security, structure and materials, and site and neighborhood.
+ (2) The entire unit must comply with the HQS.
+ (c) Additional performance requirements. The following additional performance requirements apply to a group home:
+ (1) Sanitary facilities. (i) There must be a bathroom in the unit. The unit must contain, and an assisted resident must have ready access to:
+ (A) A flush toilet that can be used in privacy;
+ (B) A fixed basin with hot and cold running water; and
+ (C) A shower or bathtub with hot and cold running water.
+ (ii) All of these facilities must be in proper operating condition, and must be adequate for personal cleanliness and the disposal of human waste.
+ The facilities must utilize an approvable public or private disposal system.
+ (iii) The unit may contain private or common sanitary facilities. However, the facilities must be sufficient in number so that they need not be
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 59
+ shared by more than four residents of the group home.
+ (iv) Sanitary facilities in the group home must be readily accessible to and usable by residents, including persons with disabilities.
+ (2) Food preparation and service. (i) The unit must contain a kitchen and a dining area. There must be adequate space to store, prepare, and serve
+ foods in a sanitary manner.
+ (ii) Food preparation and service equipment must be in proper operating condition. The equipment must be adequate for the number of residents
+ in the group home. The unit must contain the following equipment:
+ (A) A stove or range, and oven;
+ (B) A refrigerator; and
+ (C) A kitchen sink with hot and cold running water. The sink must drain into an approvable public or private disposal system.
+ (iii) There must be adequate facilities and services for the sanitary disposal of food waste and refuse, including facilities for temporary storage
+ where necessary.
+ (iv) The unit may contain private or common facilities for food preparation and service.
+ (3) Space and security. (i) The unit must provide adequate space and security for the assisted person.
+ (ii) The unit must contain a living room, kitchen, dining area, bathroom, and other appropriate social, recreational or community space. The unit
+ must contain at least one bedroom of appropriate size for each two persons.
+ (iii) Doors and windows that are accessible from outside the unit must be lockable.
+ (4) Structure and material. (i) The unit must be structurally sound to avoid any threat to the health and safety of the residents, and to protect the
+ residents from the environment.
+ (ii) Ceilings, walls, and floors must not have any serious defects such as severe bulging or leaning, loose surface materials, severe buckling or
+ noticeable movement under walking stress, missing parts or other significant damage. The roof structure must be firm, and the roof must be
+ weathertight. The exterior or wall structure and exterior wall surface may not have any serious defects such as serious leaning, buckling, sagging,
+ cracks or large holes, loose siding, or other serious damage. The condition and equipment of interior and exterior stairways, halls, porches,
+ walkways, etc., must not present a danger of tripping or falling. Elevators must be maintained in safe operating condition.
+ (iii) The group home must be accessible to and usable by a resident with disabilities.
+ (5) Site and neighborhood. The site and neighborhood must be reasonably free from disturbing noises and reverberations and other hazards to the
+ health, safety, and general welfare of the residents. The site and neighborhood may not be subject to serious adverse environmental conditions,
+ natural or manmade, such as dangerous walks or steps, instability, flooding, poor drainage, septic tank back-ups, sewage hazards or mud slides,
+ abnormal air pollution, smoke or dust, excessive noise, vibrations or vehicular traffic, excessive accumulations of trash, vermin or rodent
+ infestation, or fire hazards. The unit must be located in a residential setting.
+ [63 FR 23865, Apr. 30, 1998, as amended at 88 FR 30504, May 11, 2023; 89 FR 38303, May 7, 2024]
+
+ Shared Housing
+
+ § 982.615 Shared housing: Occupancy.
+ (a) Sharing a unit. An assisted family may reside in shared housing. In shared housing, an assisted family shares a unit with the other resident or
+ residents of the unit. The unit may be a house or an apartment.
+ (b) Who may share a dwelling unit with assisted family? (1) If approved by the PHA, a live-in aide may reside with the family to care for a
+ person with disabilities. The PHA must approve a live-in aide if needed as a reasonable accommodation so that the program is readily accessible
+ to and usable by persons with disabilities in accordance with 24 CFR part 8. See § 982.316 concerning occupancy by a live-in aide.
+ (2) Other persons who are assisted under the tenant-based program, or other persons who are not assisted under the tenant-based program, may
+ reside in a shared housing unit.
+ (3) The owner of a shared housing unit may reside in the unit. A resident owner may enter into a HAP contract with the PHA. However, housing
+ assistance may not be paid on behalf of an owner. An assisted person may not be related by blood or marriage to a resident owner.
+ [63 FR 23865, Apr. 30, 1998, as amended at 80 FR 8247, Feb. 17, 2015]
+
+ § 982.616 Shared housing: Lease and HAP contract.
+ For assistance in a shared housing unit, there is a separate HAP contract and lease for each assisted family.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 60
+ § 982.617 Shared housing: Rent and voucher housing assistance payment.
+ (a) Meaning of pro-rata portion. For shared housing, the term “pro-rata portion” means the ratio derived by dividing the number of bedrooms in
+ the private space available for occupancy by a family by the total number of bedrooms in the unit. For example, for a family entitled to occupy
+ three bedrooms in a five bedroom unit, the ratio would be 3/5.
+ (b) Rent to owner: Reasonable rent. (1) The rent to owner for the family may not exceed the pro-rata portion of the reasonable rent for the shared
+ housing dwelling unit.
+ (2) The reasonable rent is determined in accordance with § 982.507.
+ (c) Payment standard. The payment standard for a family that resides in a shared housing is the lower of:
+ (1) The payment standard amount on the PHA payment standard schedule for the family unit size; or
+ (2) The pro-rata portion of the payment standard amount on the PHA payment standard schedule for the size of the shared housing unit.
+ (d) Utility allowance. The utility allowance for an assisted family residing in shared housing is the pro-rata portion of the utility allowance for the
+ shared housing unit.
+ [63 FR 23865, Apr. 30, 1998, as amended at 64 FR 26651, May 14, 1999]
+
+ § 982.618 Shared housing: Housing quality standards.
+ (a) Compliance with HQS. The PHA may not give approval to reside in shared housing unless the entire unit, including the portion of the unit
+ available for use by the assisted family under its lease, meets HQS.
+ (b) Applicable HQS standards. As defined in § 982.4, HQS refers to the minimum quality standards developed by HUD in accordance with 24
+ CFR 5.703 for housing assisted under the HCV program, including any variations approved by HUD for the PHA under 24 CFR 5.705(a)(3).
+ However, the HQS standards in this section apply in place of standards related to space and security in 24 CFR 5.703.
+ (c) Facilities available for family. The facilities available for the use of an assisted family in shared housing under the family's lease must include
+ (whether in the family's private space or in the common space) a living room, sanitary facilities in accordance with the standards set in 24 CFR
+ 5.703, and food preparation and refuse disposal facilities in accordance with 24 CFR 5.703.
+ (d) Space and security: Performance requirements. (1) The entire unit must provide adequate space and security for all its residents (whether
+ assisted or unassisted).
+ (2)(i) Each unit must contain private space for each assisted family, plus common space for shared use by the residents of the unit. Common
+ space must be appropriate for shared use by the residents.
+ (ii) The private space for each assisted family must contain at least one bedroom for each two persons in the family. The number of bedrooms in
+ the private space of an assisted family may not be less than the family unit size.
+ (iii) A zero or one bedroom unit may not be used for shared housing.
+ [63 FR 23865, Apr. 30, 1998, as amended at 88 FR 30504, May 11, 2023; 89 FR 38303, May 7, 2024]
+
+ Cooperative
+
+ § 982.619 Cooperative housing.
+ (a) Assistance in cooperative housing. This section applies to rental assistance for a cooperative member residing in cooperative housing.
+ However, this section does not apply to:
+ (1) Assistance for a cooperative member under the homeownership option pursuant to §§ 982.625 through 982.641; or
+ (2) Rental assistance for a family that leases a cooperative housing unit from a cooperative member (such rental assistance is not a special
+ housing type, and is subject to requirements in other subparts of this part 982).
+ (b) Rent to owner. (1) The reasonable rent for a cooperative unit is determined in accordance with § 982.507. For cooperative housing, the rent to
+ owner is the monthly carrying charge under the occupancy agreement/lease between the member and the cooperative.
+ (2) The carrying charge consists of the amount assessed to the member by the cooperative for occupancy of the housing. The carrying charge
+ includes the member's share of the cooperative debt service, operating expenses, and necessary payments to cooperative reserve funds. However,
+ the carrying charge does not include down-payments or other payments to purchase the cooperative unit, or to amortize a loan to the family for
+ this purpose.
+ (3) Gross rent is the carrying charge plus any utility allowance.
+ (4) Adjustments are applied to the carrying charge as determined in accordance with this section.
+ (5) The occupancy agreement/lease and other appropriate documents must provide that the monthly carrying charge is subject to Section 8
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 61
+ limitations on rent to owner.
+ (c) Housing assistance payment. The amount of the housing assistance payment is determined in accordance with subpart K of this part.
+ (d) Maintenance. (1) During the term of the HAP contract between the PHA and the cooperative, the dwelling unit and premises must be
+ maintained in accordance with the HQS. If the dwelling unit and premises are not maintained in accordance with the HQS, the PHA may exercise
+ all available remedies, regardless of whether the family or the cooperative is responsible for such breach of the HQS. PHA remedies for breach of
+ the HQS include recovery of overpayments, abatement or other reduction of housing assistance payments, termination of housing assistance
+ payments and termination of the HAP contract.
+ (2) The PHA may not make any housing assistance payments if the contract unit does not meet the HQS, unless any defect is corrected within the
+ period specified by the PHA and the PHA verifies the correction. If a defect is life-threatening, the defect must be corrected within no more than
+ 24 hours. For other defects, the defect must be corrected within the period specified by the PHA.
+ (3) The family is responsible for a breach of the HQS that is caused by any of the following:
+ (i) The family fails to perform any maintenance for which the family is responsible in accordance with the terms of the cooperative occupancy
+ agreement between the cooperative member and the cooperative;
+ (ii) The family fails to pay for any utilities that the cooperative is not required to pay for, but which are to be paid by the cooperative member;
+ (iii) The family fails to provide and maintain any appliances that the cooperative is not required to provide, but which are to be provided by the
+ cooperative member; or
+ (iv) Any member of the household or guest damages the dwelling unit or premises (damages beyond ordinary wear and tear).
+ (4) If the family has caused a breach of the HQS for which the family is responsible, the PHA must take prompt and vigorous action to enforce
+ such family obligations. The PHA may terminate assistance for violation of family obligations in accordance with § 982.552.
+ (5) Section 982.404 does not apply to assistance for cooperative housing under this section.
+ (e) Live-in aide. (1) If approved by the PHA, a live-in aide may reside with the family to care for a person with disabilities. The PHA must
+ approve a live-in aide if needed as a reasonable accommodation so that the program is readily accessible to and usable by persons with
+ disabilities in accordance with 24 CFR part 8. See § 982.316 concerning occupancy by a live-in aide.
+ (2) If there is a live-in aide, the live-in aide must be counted in determining the family unit size.
+ [63 FR 23865, Apr. 30, 1998, as amended at 64 FR 26651, May 14, 1999; 65 FR 55162, Sept. 12, 2000; 80 FR 8247, Feb. 17, 2015]
+
+ Manufactured Home
+
+ § 982.620 Manufactured home: Applicability of requirements.
+ (a) Assistance for resident of manufactured home. (1) A family may reside in a manufactured home with assistance under the program.
+ (2) The PHA must permit a family to lease a manufactured home and space with assistance under the program.
+ (3) The PHA may provide assistance for a family that owns the manufactured home and leases only the space. The PHA is not required to provide
+ such assistance under the program.
+ (b) Applicability. (1) The HQS in § 982.621 always apply when assistance is provided to a family occupying a manufactured home (under
+ paragraph (a)(2) or (a)(3) of this section).
+ (2) Sections 982.622 to 982.624 only apply when assistance is provided to a manufactured home owner to lease a manufactured home space.
+ (c) Live-in aide. (1) If approved by the PHA, a live-in aide may reside with the family to care for a person with disabilities. The PHA must
+ approve a live-in aide if needed as a reasonable accommodation so that the program is readily accessible to and usable by persons with
+ disabilities in accordance with 24 CFR part 8. See § 982.316 concerning occupancy by a live-in aide.
+ (2) If there is a live-in aide, the live-in aide must be counted in determining the family unit size.
+
+ § 982.621 Manufactured home space rental: Housing quality standards.
+ As defined in § 982.4, HQS refers to the minimum quality standards developed by HUD in accordance with 24 CFR 5.703 for housing assisted
+ under the HCV program, including any variations approved by HUD for the PHA under 24 CFR 5.705(a)(3). A manufactured home also must
+ meet the following requirements:
+ (a) Performance requirement. A manufactured home must be placed on the site in a stable manner, and must be free from hazards such as sliding
+ or wind damage.
+ (b) Acceptability criteria. A manufactured home must be securely anchored by a tie-down device that distributes and transfers the loads imposed
+ by the unit to appropriate ground anchors to resist wind overturning and sliding.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 62
+ [63 FR 23865, Apr. 30, 1998, as amended at 88 FR 30504, May 11, 2023; 89 FR 38303, May 7, 2024]
+
+ Manufactured Home Space Rental
+
+ § 982.622 Manufactured home space rental: Rent to owner.
+ (a) What is included. (1) Rent to owner for rental of a manufactured home space includes payment for maintenance and services that the owner
+ must provide to the tenant under the lease for the space.
+ (2) Rent to owner does not include the costs of utilities and trash collection for the manufactured home. However, the owner may charge the
+ family a separate fee for the cost of utilities or trash collection provided by the owner.
+ (b) Reasonable rent. (1) During the assisted tenancy, the rent to owner for the manufactured home space may not exceed a reasonable rent as
+ determined in accordance with this section. Section 982.503 is not applicable.
+ (2) The PHA may not approve a lease for a manufactured home space until the PHA determines that the initial rent to owner for the space is a
+ reasonable rent. At least annually during the assisted tenancy, the PHA must redetermine that the current rent to owner is a reasonable rent.
+ (3) The PHA must determine whether the rent to owner for the manufactured home space is a reasonable rent in comparison to rent for other
+ comparable manufactured home spaces. To make this determination, the PHA must consider the location and size of the space, and any services
+ and maintenance to be provided by the owner in accordance with the lease (without a fee in addition to the rent).
+ (4) By accepting each monthly housing assistance payment from the PHA, the owner of the manufactured home space certifies that the rent to
+ owner for the space is not more than rent charged by the owner for unassisted rental of comparable spaces in the same manufactured home park
+ or elsewhere. The owner must give the PHA information, as requested by the PHA, on rents charged by the owner for other manufactured home
+ spaces.
+
+ § 982.623 Manufactured home space rental: Housing assistance payment.
+ (a) Amount of monthly housing assistance payment. The monthly housing assistance payment is calculated as the lower of:
+ (1) The PHA payment standard, determined in accordance with § 982.503 minus the total tenant payment; or
+ (2) The family's eligible housing expenses minus the total tenant payment.
+ (b) Eligible housing expenses. The family's eligible housing expenses are the total of:
+ (1) The rent charged by the owner for the manufactured home space.
+ (2) Charges for the maintenance and management the space owner must provide under the lease.
+ (3) The monthly payments made by the family to amortize the cost of purchasing the manufactured home established at the time of application to
+ a lender for financing the purchase of the manufactured home if monthly payments are still being made, including any required insurance and
+ property taxes included in the loan payment to the lender.
+ (i) Any increase in debt service or term due to refinancing after purchase of the home may not be included in the amortization cost.
+ (ii) Debt service for installation charges incurred by a family may be included in the monthly amortization payments. Installation charges
+ incurred before the family became an assisted family may be included in the amortization cost if monthly payments are still being made to
+ amortize the charges.
+ (4) The applicable allowances for tenant-paid utilities, as determined under §§ 982.517 and 982.624.
+ (c) Distribution of housing assistance payment. In general, the monthly housing assistance payment is distributed as follows:
+ (1) The PHA pays the owner of the space the lesser of the housing assistance payment or the portion of the monthly rent due to the owner. The
+ portion of the monthly rent due to the owner is the total of:
+ (i) The actual rent charged by the owner for the manufactured home space; and
+ (ii) Charges for the maintenance and management the space owner must provide under the lease.
+ (2) If the housing assistance payment exceeds the portion of the monthly rent due to the owner, the PHA may pay the balance of the housing
+ assistance payment to the family. Alternatively, the PHA may pay the balance to the lender or utility company, in an amount no greater than the
+ amount due for the month to each, respectively, subject to the lender's or utility company's willingness to accept the PHA's payment on behalf of
+ the family. If the PHA elects to pay the lender or the utility company directly, the PHA must notify the family of the amount paid to the lender or
+ the utility company and must pay any remaining balance directly to the family.
+ (d) PHA option: Single housing assistance payment to the family. (1) If the owner of the manufactured home space agrees, the PHA may make
+ the entire housing assistance payment to the family, and the family shall be responsible for paying the owner directly for the full amount of rent
+ of the manufactured home space due to the owner, including owner maintenance and management charges. If the PHA exercises this option, the
+ PHA may not make any payments directly to the lender or utility company.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                          Page 63
+ (2) The PHA and owner of the manufactured home space must still execute the HAP contract, and the owner is still responsible for fulfilling all
+ of the owner obligations under the HAP contract, including but not limited to complying with HQS and rent reasonableness requirements. The
+ owner's acceptance of the family's monthly rent payment during the term of the HAP contract serves as the owner's certification to the
+ reasonableness of the rent charged for the space in accordance with § 982.622(b)(4).
+ (3) If the family and owner agree to the single housing assistance payment, the owner is responsible for collecting the full amount of the rent and
+ other charges under the lease directly from the family. The PHA is not responsible for any amounts owed by the family to the owner and may not
+ pay any claim by the owner against the family.
+ [89 FR 38303, May 7, 2024]
+
+ § 982.624 Manufactured home space rental: Utility allowance schedule.
+ The PHA must establish utility allowances for manufactured home space rental. For the first twelve months of the initial lease term only, the
+ allowances must include a reasonable amount for utility hook-up charges payable by the family if the family actually incurs the expenses because
+ of a move. Allowances for utility hook-up charges do not apply to a family that leases a manufactured home space in place. Utility allowances for
+ manufactured home space must not cover costs payable by a family to cover the digging of a well or installation of a septic system.
+
+ Homeownership Option
+ Source: 65 FR 55163, Sept. 12, 2000, unless otherwise noted.
+
+ § 982.625 Homeownership option: General.
+ (a) Applicability. The homeownership option is used to assist a family residing in a home purchased and owned by one or more members of the
+ family.
+ (b) Family status. A family assisted under the homeownership option may be a newly admitted or existing participant in the program.
+ (c) Forms of homeownership assistance. (1) Allowable forms of homeownership assistance. A PHA may provide one of two forms of
+ homeownership assistance for a family:
+ (i) Monthly homeownership assistance payments; or
+ (ii) A single downpayment assistance grant.
+ (2) Prohibition against combining forms of homeownership assistance. A family may only receive one form of homeownership assistance.
+ Accordingly, a family that includes a person who was an adult member of a family that previously received either of the two forms of
+ homeownership assistance may not receive the other form of homeownership assistance from any PHA.
+ (d) PHA choice to offer homeownership options. (1) The PHA may choose to offer either or both forms of homeownership assistance under this
+ subpart, or choose not to offer either form of assistance. However, the PHA must offer either form of homeownership assistance if necessary as a
+ reasonable accommodation for a person with disabilities in accordance with § 982.601(b)(3).
+ (2) It is the sole responsibility of the PHA to determine whether it is reasonable to implement a homeownership program as a reasonable
+ accommodation. The PHA will determine what is reasonable based on the specific circumstances and individual needs of the person with a
+ disability. The PHA may determine that it is not reasonable to offer homeownership assistance as a reasonable accommodation in cases where the
+ PHA has otherwise opted not to implement a homeownership program.
+ (e) Family choice. (1) The family chooses whether to participate in the homeownership option if offered by the PHA.
+ (2) If the PHA offers both forms of homeownership assistance, the family chooses which form of homeownership assistance to receive.
+ (f) Live-in aide. The PHA must approve a live-in aide if needed as a reasonable accommodation so that the program is readily accessible to and
+ useable by persons with disabilities in accordance with part 8 of this title. (See § 982.316 concerning occupancy by a live-in aide.)
+ (g) PHA capacity. The PHA must have the capacity to operate a successful Section 8 homeownership program. The PHA has the required
+ capacity if it satisfies either paragraph (g)(1), (g)(2), or (g)(3) of this section.
+ (1) The PHA establishes a minimum homeowner downpayment requirement of at least 3 percent of the purchase price for participation in its
+ Section 8 homeownership program, and requires that at least one percent of the purchase price come from the family's personal resources;
+ (2) The PHA requires that financing for purchase of a home under its Section 8 homeownership program:
+ (i) Be provided, insured, or guaranteed by the state or Federal government;
+ (ii) Comply with secondary mortgage market underwriting requirements; or
+ (iii) Comply with generally accepted private sector underwriting standards; or
+ (3) The PHA otherwise demonstrates in its Annual Plan that it has the capacity, or will acquire the capacity, to successfully operate a Section 8
+ homeownership program.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                          Page 64
+ (h) Recapture of homeownership assistance. A PHA shall not impose or enforce any requirement for the recapture of voucher homeownership
+ assistance on the sale or refinancing of a home purchased with assistance under the homeownership option.
+ (i) Applicable requirements. The following specify what regulatory provisions (under the heading “homeownership option”) are applicable to
+ either or both forms of homeownership assistance (except as otherwise specifically provided):
+ (1) Common provisions. The following provisions apply to both forms of homeownership assistance:
+ (i) Section 982.625 (General);
+ (ii) Section 982.626 (Initial requirements);
+ (iii) Section 982.627 (Eligibility requirements for families);
+ (iv) Section 982.628 (Eligible units);
+ (v) Section 982.629 (Additional PHA requirements for family search and purchase);
+ (vi) Section 982.630 (Homeownership counseling);
+ (vii) Section 982.631 (Home inspections, contract of sale, and PHA disapproval of seller);
+ (viii) Section 982.632 (Financing purchase of home; affordability of purchase);
+ (ix) Section 982.636 (Portability);
+ (x) Section 982.638 (Denial or termination of assistance for family); and
+ (xi) Section 982.641 (Applicability of other requirements).
+ (2) Monthly homeownership assistance payments. The following provisions only apply to homeownership assistance in the form of monthly
+ homeownership assistance payments:
+ (i) Section 982.633 (Continued assistance requirements; family obligations);
+ (ii) Section 982.634 (Maximum term of homeownership assistance);
+ (iii) Section 982.635 (Amount and distribution of monthly homeownership assistance payment);
+ (iv) Section 982.637 (Move with continued tenant-based assistance); and
+ (v) Section 982.639 (Administrative fees).
+ (3) Downpayment assistance grant. The following provision only applies to homeownership assistance in the form of a downpayment assistance
+ grant: Section 982.643 (Downpayment assistance grants).
+ [65 FR 55163, Sept. 12, 2000, as amended at 67 FR 64493, Oct. 18, 2002; 80 FR 8247, Feb. 17, 2015; 89 FR 38304, May 7, 2024]
+
+ § 982.626 Homeownership option: Initial requirements.
+ (a) List of initial requirements. Before commencing homeownership assistance for a family, the PHA must determine that all of the following
+ initial requirements have been satisfied:
+ (1) The family is qualified to receive homeownership assistance (see § 982.627);
+ (2) The unit is eligible (see § 982.628); and
+ (3) The family has satisfactorily completed the PHA program of required pre-assistance homeownership counseling (see § 982.630).
+ (b) Additional PHA requirements. Unless otherwise provided in this part, the PHA may limit homeownership assistance to families or purposes
+ defined by the PHA, and may prescribe additional requirements for commencement of homeownership assistance for a family. Any such limits or
+ additional requirements must be described in the PHA Administrative Plan.
+ (c) Environmental requirements. The PHA is responsible for complying with the authorities listed in § 58.6 of this title requiring the purchaser to
+ obtain and maintain flood insurance for units in special flood hazard areas, prohibiting assistance for acquiring units in the coastal barrier
+ resources system, and requiring notification to the purchaser of units in airport runway clear zones and airfield clear zones. In the case of units not
+ yet under construction at the time the family enters into the contract for sale, the additional environmental review requirements referenced in §
+ 982.628(e) of this part also apply, and the PHA shall submit all relevant environmental information to the responsible entity or to HUD to assist
+ in completion of those requirements.
+ [63 FR 23865, Apr. 30, 1998, as amended at 72 FR 59938, Oct. 22, 2007]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 65
+ § 982.627 Homeownership option: Eligibility requirements for families.
+ (a) Determination whether family is qualified. The PHA may not provide homeownership assistance for a family unless the PHA determines that
+ the family satisfies all of the following initial requirements at commencement of homeownership assistance for the family:
+ (1) The family has been admitted to the Section 8 Housing Choice Voucher program, in accordance with subpart E of this part.
+ (2) The family satisfies any first-time homeowner requirements (described in paragraph (b) of this section).
+ (3) The family satisfies the minimum income requirement (described in paragraph (c) of this section).
+ (4) The family satisfies the employment requirements (described in paragraph (d) of this section).
+ (5) The family has not defaulted on a mortgage securing debt to purchase a home under the homeownership option (see paragraph (e) of this
+ section).
+ (6) Except for cooperative members who have acquired cooperative membership shares prior to commencement of homeownership assistance, no
+ family member has a present ownership interest in a residence at the commencement of homeownership assistance for the purchase of any home.
+ (7) Except for cooperative members who have acquired cooperative membership shares prior to the commencement of homeownership
+ assistance, the family has entered a contract of sale in accordance with § 982.631(c).
+ (8) The family also satisfies any other initial requirements established by the PHA (see § 982.626(b)). Any such additional requirements must be
+ described in the PHA Administrative Plan.
+ (b) First-time homeowner requirements. At commencement of homeownership assistance for the family, the family must be any of the following:
+ (1) A first-time homeowner (defined at § 982.4);
+ (2) A cooperative member (defined at § 982.4); or
+ (3) A family of which a family member is a person with disabilities, and use of the homeownership option is needed as a reasonable
+ accommodation so that the program is readily accessible to and usable by such person, in accordance with part 8 of this title.
+ (c) Minimum income requirements. (1) At commencement of monthly homeownership assistance payments for the family, or at the time of a
+ downpayment assistance grant for the family, the family must demonstrate that the annual income, as determined by the PHA in accordance with
+ § 5.609 of this title, of the adult family members who will own the home at commencement of homeownership assistance is not less than:
+ (i) In the case of a disabled family (as defined in § 5.403(b) of this title), the monthly Federal Supplemental Security Income (SSI) benefit for an
+ individual living alone (or paying his or her share of food and housing costs) multiplied by twelve; or
+ (ii) In the case of other families, the Federal minimum wage multiplied by 2,000 hours.
+ (2)(i) Except in the case of an elderly family or a disabled family (see the definitions of these terms at § 5.403(b) of this title), the PHA shall not
+ count any welfare assistance received by the family in determining annual income under this section.
+ (ii) The disregard of welfare assistance income under paragraph (c)(2)(i) of this section only affects the determination of minimum annual income
+ used to determine if a family initially qualifies for commencement of homeownership assistance in accordance with this section, but does not
+ affect:
+ (A) The determination of income-eligibility for admission to the voucher program;
+ (B) Calculation of the amount of the family's total tenant payment (gross family contribution); or
+ (C) Calculation of the amount of homeownership assistance payments on behalf of the family.
+ (iii) In the case of an elderly or disabled family, the PHA shall include welfare assistance for the adult family members who will own the home in
+ determining if the family meets the minimum income requirement.
+ (3) A PHA may establish a minimum income standard that is higher than those described in paragraph (c)(1) of this section for either or both
+ types of families. However, a family that meets the applicable HUD minimum income requirement described in paragraph (c)(1) of this section,
+ but not the higher standard established by the PHA shall be considered to satisfy the minimum income requirement if:
+ (i) The family demonstrates that it has been pre-qualified or pre-approved for financing;
+ (ii) The pre-qualified or pre-approved financing meets any PHA established requirements under § 982.632 for financing the purchase of the home
+ (including qualifications of lenders and terms of financing); and
+ (iii) The pre-qualified or pre-approved financing amount is sufficient to purchase housing that meets HQS in the PHA's jurisdiction.
+ (d) Employment requirements. (1) Except as provided in paragraph (d)(2) of this section, the family must demonstrate that one or more adult
+ members of the family who will own the home at commencement of homeownership assistance:
+ (i) Is currently employed on a full-time basis (the term “full-time employment” means not less than an average of 30 hours per week); and
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 66
+ (ii) Has been continuously so employed during the year before commencement of homeownership assistance for the family.
+ (2) The PHA shall have discretion to determine whether and to what extent interruptions are considered to break continuity of employment during
+ the year. The PHA may count successive employment during the year. The PHA may count self-employment in a business.
+ (3) The employment requirement does not apply to an elderly family or a disabled family (see the definitions of these terms at § 5.403(b) of this
+ title). Furthermore, if a family, other than an elderly family or a disabled family, includes a person with disabilities, the PHA shall grant an
+ exemption from the employment requirement if the PHA determines that an exemption is needed as a reasonable accommodation so that the
+ program is readily accessible to and usable by persons with disabilities in accordance with part 8 of this title.
+ (4) A PHA may not establish an employment requirement in addition to the employment standard established by this paragraph.
+ (e) Prohibition against assistance to family that has defaulted. The PHA shall not commence homeownership assistance for a family that includes
+ an individual who was an adult member of a family at the time when such family received homeownership assistance and defaulted on a
+ mortgage securing debt incurred to purchase the home.
+ [65 FR 55163, Sept. 12, 2000, as amended at 67 FR 64493, Oct. 18, 2002; 80 FR 8247, Feb. 17, 2015]
+
+ § 982.628 Homeownership option: Eligible units.
+ (a) Initial requirements applicable to the unit. The PHA must determine that the unit satisfies all of the following requirements:
+ (1) The unit is eligible. (See § 982.352. Paragraphs (a)(6) and (b) of § 982.352 do not apply.)
+ (2) The unit is either a one-unit property (including a manufactured home) or a single dwelling unit in a cooperative or condominium.
+ (3) The unit has been inspected by a PHA inspector and by an independent inspector designated by the family (see § 982.631).
+ (4) The unit satisfies the HQS ( see 24 CFR 5.703 and § 982.631).
+ (b) Purchase of home where family will not own fee title to the real property. Homeownership assistance may be provided for the purchase of a
+ home where the family will not own fee title to the real property on which the home is located, but only if:
+ (1) The home is located on a permanent foundation; and
+ (2) The family has the right to occupy the home site for at least forty years.
+ (c) PHA disapproval of seller. The PHA may not commence homeownership assistance for occupancy of a home if the PHA has been informed
+ (by HUD or otherwise) that the seller of the home is debarred, suspended, or subject to a limited denial of participation under 2 CFR part 2424.
+ (d) PHA-owned units. A family may purchase a PHA-owned unit, as defined in § 982.4, with homeownership assistance only if the following
+ conditions are satisfied:
+ (1) The PHA must inform the family, both orally and in writing, that the family has the right to purchase any eligible unit and a PHA-owned unit
+ is freely selected by the family without PHA pressure or steering;
+ (2) The unit is not ineligible housing;
+ (3) The PHA must obtain the services of an independent entity, as defined in § 982.4 and in accordance with § 982.352(b)(1)(v)(B), to perform
+ the following PHA functions:
+ (i) Inspection of the unit for compliance with the HQS, in accordance with § 982.631(a);
+ (ii) Review of the independent inspection report, in accordance with § 982.631(b)(4);
+ (iii) Review of the contract of sale, in accordance with § 982.631(c); and
+ (iv) Determination of the reasonableness of the sales price and any PHA provided financing, in accordance with § 982.632 and other
+ supplementary guidance established by HUD.
+ (e) Units not yet under construction. Families may enter into contracts of sale for units not yet under construction at the time the family enters
+ into the contract for sale. However, the PHA shall not commence homeownership assistance for the family for that unit, unless and until:
+ (1) Either:
+ (i) The responsible entity completed the environmental review procedures required by 24 CFR part 58, and HUD approved the environmental
+ certification and request for release of funds prior to commencement of construction; or
+ (ii) HUD performed an environmental review under 24 CFR part 50 and notified the PHA in writing of environmental approval of the site prior to
+ commencement of construction;
+ (2) Construction of the unit has been completed; and
+ (3) The unit has passed the required HQS inspection (see § 982.631(a)) and independent inspection (see § 982.631(b)).
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                            Page 67
+ [65 FR 55163, Sept. 12, 2000, as amended at 67 FR 64494, Oct. 18, 2002; 67 FR 65865, Oct. 28, 2002; 67 FR 67522, Nov. 6, 2002; 72 FR
+ 59938, Oct. 22, 2007; 72 FR 73496, Dec. 27, 2007; 88 FR 30504, May 11, 2023; 89 FR 38304, May 7, 2024]
+
+ § 982.629 Homeownership option: Additional PHA requirements for family search and purchase.
+ (a) The PHA may establish the maximum time for a family to locate a home, and to purchase the home.
+ (b) The PHA may require periodic family reports on the family's progress in finding and purchasing a home.
+ (c) If the family is unable to purchase a home within the maximum time established by the PHA, the PHA may issue the family a voucher to lease
+ a unit or place the family's name on the waiting list for a voucher.
+
+ § 982.630 Homeownership option: Homeownership counseling.
+ (a) Pre-assistance counseling. Before commencement of homeownership assistance for a family, the family must attend and satisfactorily
+ complete the pre-assistance homeownership and housing counseling program required by the PHA (pre-assistance counseling).
+ (b) Counseling topics. Suggested topics for the PHA-required pre-assistance counseling program include:
+ (1) Home maintenance (including care of the grounds);
+ (2) Budgeting and money management;
+ (3) Credit counseling;
+ (4) How to negotiate the purchase price of a home;
+ (5) How to obtain homeownership financing and loan preapprovals, including a description of types of financing that may be available, and the
+ pros and cons of different types of financing;
+ (6) How to find a home, including information about homeownership opportunities, schools, and transportation in the PHA jurisdiction;
+ (7) Advantages of purchasing a home in an area that does not have a high concentration of low-income families and how to locate homes in such
+ areas;
+ (8) Information on fair housing, including fair housing lending and local fair housing enforcement agencies; and
+ (9) Information about the Real Estate Settlement Procedures Act (12 U.S.C. 2601 et seq. ) (RESPA), state and Federal truth-in-lending laws, and
+ how to identify and avoid loans with oppressive terms and conditions.
+ (c) Local circumstances. The PHA may adapt the subjects covered in pre-assistance counseling (as listed in paragraph (b) of this section) to local
+ circumstances and the needs of individual families.
+ (d) Additional counseling. The PHA may also offer additional counseling after commencement of homeownership assistance (ongoing
+ counseling). If the PHA offers a program of ongoing counseling for participants in the homeownership option, the PHA shall have discretion to
+ determine whether the family is required to participate in the ongoing counseling.
+ (e) HUD-certified housing counselor. Any homeownership counseling provided to families in connection with this section must be conducted by
+ a HUD certified housing counselor working for an agency approved to participate in HUD's Housing Counseling Program.
+ [65 FR 55163, Sept. 12, 2000, as amended at 89 FR 38304, May 7, 2024]
+
+ § 982.631 Homeownership option: Home inspections, contract of sale, and PHA disapproval of seller.
+ (a) HQS inspection by PHA. The PHA may not commence monthly homeownership assistance payments or provide a downpayment assistance
+ grant for the family until the PHA has inspected the unit and has determined that the unit passes HQS.
+ (b) Independent inspection. (1) The unit must also be inspected by an independent professional inspector selected by and paid by the family.
+ (2) The independent inspection must cover major building systems and components, including foundation and structure, housing interior and
+ exterior, and the roofing, plumbing, electrical, and heating systems. The independent inspector must be qualified to report on property conditions,
+ including major building systems and components.
+ (3) The PHA may not require the family to use an independent inspector selected by the PHA. The independent inspector may not be a PHA
+ employee or contractor, or other person under control of the PHA. However, the PHA may establish standards for qualification of inspectors
+ selected by families under the homeownership option.
+ (4) The independent inspector must provide a copy of the inspection report both to the family and to the PHA. The PHA may not commence
+ monthly homeownership assistance payments, or provide a downpayment assistance grant for the family, until the PHA has reviewed the
+ inspection report of the independent inspector. Even if the unit otherwise complies with the HQS (and may qualify for assistance under the PHA's
+ tenant-based rental voucher program), the PHA shall have discretion to disapprove the unit for assistance under the homeownership option
+ because of information in the inspection report.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                         Page 68
+ (c) Contract of sale. (1) Before commencement of monthly homeownership assistance payments or receipt of a downpayment assistance grant, a
+ member or members of the family must enter into a contract of sale with the seller of the unit to be acquired by the family. The family must give
+ the PHA a copy of the contract of sale (see also § 982.627(a)(7)).
+ (2) The contract of sale must:
+ (i) Specify the price and other terms of sale by the seller to the purchaser.
+ (ii) Provide that the purchaser will arrange for a pre-purchase inspection of the dwelling unit by an independent inspector selected by the
+ purchaser.
+ (iii) Provide that the purchaser is not obligated to purchase the unit unless the inspection is satisfactory to the purchaser.
+ (iv) Provide that the purchaser is not obligated to pay for any necessary repairs.
+ (3) In addition to the requirements contained in paragraph (c)(2) of this section, a contract for the sale of units not yet under construction at the
+ time the family is to enter into the contract for sale must also provide that:
+ (i) The purchaser is not obligated to purchase the unit unless an environmental review has been performed and the site has received
+ environmental approval prior to commencement of construction in accordance with 24 CFR 982.628.
+ (ii) The construction will not commence until the environmental review has been completed and the seller has received written notice from the
+ PHA that environmental approval has been obtained. Conduct of the environmental review may not necessarily result in environmental approval,
+ and environmental approval may be conditioned on the contracting parties' agreement to modifications to the unit design or to mitigation actions.
+ (iii) Commencement of construction in violation of paragraph (c)(3)(ii) of this section voids the purchase contract and renders homeownership
+ assistance under 24 CFR part 982 unavailable for purchase of the unit.
+ (d) PHA disapproval of seller. In its administrative discretion, the PHA may deny approval of a seller for any reason provided for disapproval of
+ an owner in § 982.306(c).
+ [65 FR 55163, Sept. 12, 2000, as amended at 67 FR 64494, Oct. 18, 2002; 72 FR 59938, Oct. 22, 2007; 72 FR 73497, Dec. 27, 2007; 80 FR
+ 8247, Feb. 17, 2015]
+
+ § 982.632 Homeownership option: Financing purchase of home; affordability of purchase.
+ (a) The PHA may establish requirements for financing purchase of a home to be assisted under the homeownership option. Such PHA
+ requirements may include requirements concerning qualification of lenders (for example, prohibition of seller financing or case-by-case approval
+ of seller financing), or concerning terms of financing (for example, a prohibition of balloon payment mortgages, establishment of a minimum
+ homeowner equity requirement from personal resources, or provisions required to protect borrowers against high cost loans or predatory loans).
+ A PHA may not require that families acquire financing from one or more specified lenders, thereby restricting the family's ability to secure
+ favorable financing terms.
+ (b) If the purchase of the home is financed with FHA mortgage insurance, such financing is subject to FHA mortgage insurance requirements.
+ (c) The PHA may establish requirements or other restrictions concerning debt secured by the home.
+ (d) The PHA may review lender qualifications and the loan terms before authorizing homeownership assistance. The PHA may disapprove
+ proposed financing, refinancing or other debt if the PHA determines that the debt is unaffordable, or if the PHA determines that the lender or the
+ loan terms do not meet PHA qualifications. In making this determination, the PHA may take into account other family expenses, such as child
+ care, unreimbursed medical expenses, homeownership expenses, and other family expenses as determined by the PHA.
+ (e) All PHA financing or affordability requirements must be described in the PHA Administrative Plan.
+ [65 FR 55163, Sept. 12, 2000, as amended at 66 FR 33613, June 22, 2001]
+
+ § 982.633 Homeownership option: Continued assistance requirements; Family obligations.
+ (a) Occupancy of home. Homeownership assistance may only be paid while the family is residing in the home. If the family moves out of the
+ home, the PHA may not continue homeownership assistance after the month when the family moves out. The family or lender is not required to
+ refund to the PHA the homeownership assistance for the month when the family moves out.
+ (b) Family obligations. The family must comply with the following obligations.
+ (1) Ongoing counseling. To the extent required by the PHA, the family must attend and complete ongoing homeownership and housing
+ counseling.
+ (2) Compliance with mortgage. The family must comply with the terms of any mortgage securing debt incurred to purchase the home (or any
+ refinancing of such debt).
+ (3) Prohibition against conveyance or transfer of home. (i) So long as the family is receiving homeownership assistance, use and occupancy of
+ the home is subject to § 982.551(h) and (i).
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 69
+ (ii) The family may grant a mortgage on the home for debt incurred to finance purchase of the home or any refinancing of such debt.
+ (iii) Upon death of a family member who holds, in whole or in part, title to the home or ownership of cooperative membership shares for the
+ home, homeownership assistance may continue pending settlement of the decedent's estate, notwithstanding transfer of title by operation of law
+ to the decedent's executor or legal representative, so long as the home is solely occupied by remaining family members in accordance with §
+ 982.551(h).
+ (4) Supplying required information. (i) The family must supply required information to the PHA in accordance with § 982.551(b).
+ (ii) In addition to other required information, the family must supply any information as required by the PHA or HUD concerning:
+ (A) Any mortgage or other debt incurred to purchase the home, and any refinancing of such debt (including information needed to determine
+ whether the family has defaulted on the debt, and the nature of any such default), and information on any satisfaction or payment of the mortgage
+ debt;
+ (B) Any sale or other transfer of any interest in the home; or
+ (C) The family's homeownership expenses.
+ (5) Notice of move-out. The family must notify the PHA before the family moves out of the home.
+ (6) Notice of mortgage default. The family must notify the PHA if the family defaults on a mortgage securing any debt incurred to purchase the
+ home.
+ (7) Prohibition on ownership interest on second residence. During the time the family receives homeownership assistance under this subpart, no
+ family member may have any ownership interest in any other residential property.
+ (8) Additional PHA requirements. The PHA may establish additional requirements for continuation of homeownership assistance for the family
+ (for example, a requirement for post-purchase homeownership counseling or for periodic unit inspections while the family is receiving
+ homeownership assistance). The family must comply with any such requirements.
+ (9) Other family obligations. The family must comply with the obligations of a participant family described in § 982.551. However, the following
+ provisions do not apply to assistance under the homeownership option: § 982.551(c), (d), (e), (f), (g) and (j).
+ (c) Statement of homeowner obligations. Before commencement of homeownership assistance, the family must execute a statement of family
+ obligations in the form prescribed by HUD. In the statement, the family agrees to comply with all family obligations under the homeownership
+ option.
+
+ § 982.634 Homeownership option: Maximum term of homeownership assistance.
+ (a) Maximum term of assistance. Except in the case of a family that qualifies as an elderly or disabled family (see paragraph (c) of this section),
+ the family members described in paragraph (b) of this section shall not receive homeownership assistance for more than:
+ (1) Fifteen years, if the initial mortgage incurred to finance purchase of the home has a term of 20 years or longer; or
+ (2) Ten years, in all other cases.
+ (b) Applicability of maximum term. The maximum term described in paragraph (a) of this section applies to any member of the family who:
+ (1) Has an ownership interest in the unit during the time that homeownership payments are made; or
+ (2) Is the spouse of any member of the household who has an ownership interest in the unit during the time homeownership payments are made.
+ (c) Exception for elderly and disabled families. (1) As noted in paragraph (a) of this section, the maximum term of assistance does not apply to
+ elderly and disabled families.
+ (2) In the case of an elderly family, the exception only applies if the family qualifies as an elderly family at the start of homeownership assistance.
+ In the case of a disabled family, the exception applies if at any time during receipt of homeownership assistance the family qualifies as a disabled
+ family.
+ (3) If, during the course of homeownership assistance, the family ceases to qualify as a disabled or elderly family, the maximum term becomes
+ applicable from the date homeownership assistance commenced. However, such a family must be provided at least 6 months of homeownership
+ assistance after the maximum term becomes applicable (provided the family is otherwise eligible to receive homeownership assistance in
+ accordance with this part).
+ (d) Assistance for different homes or PHAs. If the family has received such assistance for different homes, or from different PHAs, the total of
+ such assistance terms is subject to the maximum term described in paragraph (a) of this section.
+
+ § 982.635 Homeownership option: Amount and distribution of monthly homeownership assistance payment.
+ (a) Amount of monthly homeownership assistance payment. While the family is residing in the home, the PHA shall pay a monthly
+ homeownership assistance payment on behalf of the family that is equal to the lower of:
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                             Page 70
+ (1) The payment standard minus the total tenant payment; or
+ (2) The family's monthly homeownership expenses minus the total tenant payment.
+ (b) Payment standard for family. (1) The payment standard for a family is the lower of:
+ (i) The payment standard for the family unit size; or
+ (ii) The payment standard for the size of the home.
+ (2) If the home is located in an exception payment standard area, the PHA must use the appropriate payment standard for the exception payment
+ standard area.
+ (3) The payment standard amount may not be lower than what the payment standard amount was at commencement of homeownership
+ assistance.
+ (4) The PHA must use the same payment standard schedule, payment standard amounts, and subsidy standards pursuant to §§ 982.402 and
+ 982.503 for the homeownership option as for the rental voucher program.
+ (c) Determination of homeownership expenses. (1) The PHA shall adopt policies for determining the amount of homeownership expenses to be
+ allowed by the PHA in accordance with HUD requirements.
+ (2) Homeownership expenses for a homeowner (other than a cooperative member) may only include amounts allowed by the PHA to cover:
+ (i) Principal and interest on initial mortgage debt, any refinancing of such debt, and any mortgage insurance premium incurred to finance
+ purchase of the home;
+ (ii) Real estate taxes and public assessments on the home;
+ (iii) Home insurance;
+ (iv) The PHA allowance for maintenance expenses;
+ (v) The PHA allowance for costs of major repairs and replacements;
+ (vi) The PHA utility allowance for the home;
+ (vii) Principal and interest on mortgage debt incurred to finance costs for major repairs, replacements or improvements for the home. If a member
+ of the family is a person with disabilities, such debt may include debt incurred by the family to finance costs needed to make the home accessible
+ for such person, if the PHA determines that allowance of such costs as homeownership expenses is needed as a reasonable accommodation so
+ that the homeownership option is readily accessible to and usable by such person, in accordance with parts 8 and 100 of this title; and
+ (viii) Land lease payments (where a family does not own fee title to the real property on which the home is located; see § 982.628(b)).
+ (3) Homeownership expenses for a cooperative member may only include amounts allowed by the PHA to cover:
+ (i) The cooperative charge under the cooperative occupancy agreement including payment for real estate taxes and public assessments on the
+ home;
+ (ii) Principal and interest on initial debt incurred to finance purchase of cooperative membership shares and any refinancing of such debt;
+ (iii) Home insurance;
+ (iv) The PHA allowance for maintenance expenses;
+ (v) The PHA allowance for costs of major repairs and replacements;
+ (vi) The PHA utility allowance for the home; and
+ (vii) Principal and interest on debt incurred to finance major repairs, replacements or improvements for the home. If a member of the family is a
+ person with disabilities, such debt may include debt incurred by the family to finance costs needed to make the home accessible for such person,
+ if the PHA determines that allowance of such costs as homeownership expenses is needed as a reasonable accommodation so that the
+ homeownership option is readily accessible to and usable by such person, in accordance with parts 8 and 100 of this title.
+ (4) If the home is a cooperative or condominium unit, homeownership expenses may also include cooperative or condominium operating charges
+ or maintenance fees assessed by the condominium or cooperative homeowner association.
+ (d) Payment to lender or family. The PHA must pay homeownership assistance payments either:
+ (1) Directly to the family or;
+ (2) At the discretion of the PHA, to a lender on behalf of the family. If the assistance payment exceeds the amount due to the lender, the PHA
+ must pay the excess directly to the family.
+ (e) Automatic termination of homeownership assistance. Homeownership assistance for a family terminates automatically 180 calendar days after
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                           Page 71
+ the last homeownership assistance payment on behalf of the family. However, a PHA has the discretion to grant relief from this requirement in
+ those cases where automatic termination would result in extreme hardship for the family.
+ [65 FR 55163, Sept. 12, 2000, as amended at 67 FR 64494, Oct. 18, 2002; 89 FR 38304, May 7, 2024]
+
+ § 982.636 Homeownership option: Portability.
+ (a) General. A family may qualify to move outside the initial PHA jurisdiction with continued homeownership assistance under the voucher
+ program in accordance with this section.
+ (b) Portability of homeownership assistance. Subject to § 982.353(b) and (c), § 982.552, and § 982.553, a family determined eligible for
+ homeownership assistance by the initial PHA may purchase a unit outside of the initial PHA's jurisdiction, if the receiving PHA is administering
+ a voucher homeownership program and is accepting new homeownership families.
+ (c) Applicability of Housing Choice Voucher program portability procedures. In general, the portability procedures described in §§ 982.353 and
+ 982.355 apply to the homeownership option and the administrative responsibilities of the initial and receiving PHA are not altered except that
+ some administrative functions (e.g., issuance of a voucher or execution of a tenancy addendum) do not apply to the homeownership option.
+ (d) Family and PHA responsibilities. The family must attend the briefing and counseling sessions required by the receiving PHA. The receiving
+ PHA will determine whether the financing for, and the physical condition of the unit, are acceptable. The receiving PHA must promptly notify
+ the initial PHA if the family has purchased an eligible unit under the program, or if the family is unable to purchase a home within the maximum
+ time established by the PHA.
+ (e) Continued assistance under § 982.637. Such continued assistance under portability procedures is subject to § 982.637.
+ [65 FR 55163, Sept. 12, 2000, as amended at 80 FR 8247, Feb. 17, 2015]
+
+ § 982.637 Homeownership option: Move with continued tenant-based assistance.
+ (a) Move to new unit. (1) A family receiving homeownership assistance may move to a new unit with continued tenant-based assistance in
+ accordance with this section. The family may move either with voucher rental assistance (in accordance with rental assistance program
+ requirements) or with voucher homeownership assistance (in accordance with homeownership option program requirements).
+ (2) The PHA may not commence continued tenant-based assistance for occupancy of the new unit so long as any family member owns any title
+ or other interest in the prior home. However, when the family or a member of the family is or has been the victim of domestic violence, dating
+ violence, sexual assault, or stalking, as provided in 24 CFR part 5, subpart L (Protection for Victims of Domestic Violence, Dating Violence,
+ Sexual Assault, or Stalking), and the move is needed to protect the health or safety of the family or family member (or any family member has
+ been the victim of a sexual assault that occurred on the premises during the 90-calendar-day period preceding the family's request to move), such
+ family or family member may be assisted with continued tenant-based assistance even if such family or family member owns any title or other
+ interest in the prior home.
+ (3) The PHA may establish policies that prohibit more than one move by the family during any one-year period. However, these policies do not
+ apply when the family or a member of the family is or has been the victim of domestic violence, dating violence, sexual assault, or stalking, as
+ provided in 24 CFR part 5, subpart L, and the move is needed to protect the health or safety of the family or family member, or any family
+ member has been the victim of a sexual assault that occurred on the premises during the 90-calendar-day period preceding the family's request to
+ move.
+ (b) Requirements for continuation of homeownership assistance. The PHA must determine that all initial requirements listed in § 982.626
+ (including the environmental requirements with respect to a unit not yet under construction) have been satisfied if a family that has received
+ homeownership assistance wants to move to such a unit with continued homeownership assistance. However, the following requirements do not
+ apply:
+ (1) The requirement for pre-assistance counseling (§ 982.630) is not applicable. However, the PHA may require that the family complete
+ additional counseling (before or after moving to a new unit with continued assistance under the homeownership option).
+ (2) The requirement that a family must be a first-time homeowner (§ 982.627) is not applicable.
+ (c) When PHA may deny permission to move with continued assistance. The PHA may deny permission to move to a new unit with continued
+ voucher assistance as follows:
+ (1) Lack of funding to provide continued assistance. The PHA may deny permission to move with continued rental or homeownership assistance
+ if the PHA determines that it does not have sufficient funding to provide continued assistance. The PHA must provide written notification to the
+ local HUD Office within 10 business days of determining it is necessary to deny moves based on insufficient funding.
+ (2) Termination or denial of assistance under § 982.638. At any time, the PHA may deny permission to move with continued rental or
+ homeownership assistance in accordance with § 982.638.
+ [63 FR 23865, Apr. 30, 1998, as amended at 72 FR 59938, Oct. 22, 2007; 80 FR 50575, Aug. 20, 2015; 81 FR 80817, Nov. 16, 2016]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                        Page 72
+ § 982.638 Homeownership option: Denial or termination of assistance for family.
+ (a) General. The PHA shall terminate homeownership assistance for the family, and shall deny voucher rental assistance for the family, in
+ accordance with this section.
+ (b) Denial or termination of assistance under basic voucher program. At any time, the PHA may deny or terminate homeownership assistance in
+ accordance with § 982.552 (Grounds for denial or termination of assistance) or § 982.553 (Crime by family members).
+ (c) Failure to comply with family obligations. The PHA may deny or terminate assistance for violation of participant obligations described in §
+ 982.551 or § 982.633.
+ (d) Mortgage default. The PHA must terminate voucher homeownership assistance for any member of family receiving homeownership
+ assistance that is dispossessed from the home pursuant to a judgment or order of foreclosure on any mortgage (whether FHA-insured or
+ non-FHA) securing debt incurred to purchase the home, or any refinancing of such debt. The PHA, in its discretion, may permit the family to
+ move to a new unit with continued voucher rental assistance. However, the PHA must deny such permission, if:
+ (1) The family defaulted on an FHA-insured mortgage; and
+ (2) The family fails to demonstrate that:
+ (i) The family has conveyed, or will convey, title to the home, as required by HUD, to HUD or HUD's designee; and
+ (ii) The family has moved, or will move, from the home within the period established or approved by HUD.
+ [65 FR 55163, Sept. 12, 2000, as amended at 66 FR 33613, June 22, 2001]
+
+ § 982.639 Homeownership option: Administrative fees.
+ The ongoing administrative fee described in § 982.152(b) is paid to the PHA for each month that homeownership assistance is paid by the PHA
+ on behalf of the family.
+
+ § 982.641 Homeownership option: Applicability of other requirements.
+ (a) General. The following types of provisions (located in other subparts of this part) do not apply to assistance under the homeownership option:
+ (1) Any provisions concerning the Section 8 owner or the HAP contract between the PHA and owner;
+ (2) Any provisions concerning the assisted tenancy or the lease between the family and the owner;
+ (3) Any provisions concerning PHA approval of the assisted tenancy;
+ (4) Any provisions concerning rent to owner or reasonable rent; and
+ (5) Any provisions concerning the issuance or term of voucher.
+ (b) Subpart G requirements. The following provisions of subpart G of this part do not apply to assistance under the homeownership option:
+ (1) Section 982.302 (Issuance of voucher; Requesting PHA approval of assisted tenancy);
+ (2) Section 982.303 (Term of voucher);
+ (3) Section 982.305 (PHA approval of assisted tenancy);
+ (4) Section 982.306 (PHA disapproval of owner) (except that a PHA may disapprove a seller for any reason described in paragraph (c), see §
+ 982.631(d)).
+ (5) Section 982.307 (Tenant screening);
+ (6) Section 982.308 (Lease and tenancy);
+ (7) Section 982.309 (Term of assisted tenancy);
+ (8) Section 982.310 (Owner termination of tenancy);
+ (9) Section 982.311 (When assistance is paid) (except that § 982.311(c)(3) is applicable to assistance under the homeownership option);
+ (10) Section 982.313 (Security deposit: Amounts owed by tenant); and
+ (11) Section 982.354 (Move with continued tenant-based assistance).
+ (c) Subpart H requirements. The following provisions of subpart H of this part do not apply to assistance under the homeownership option:
+ (1) Section 982.352(a)(6) (Prohibition of owner-occupied assisted unit);
+ (2) Section 982.352(b) (PHA-owned housing); and
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                         Page 73
+ (3) Those provisions of § 982.353 (Where family can lease a unit with tenant-based assistance) and § 982.355 (Portability: Administration by
+ receiving PHA) that are inapplicable per § 982.636;
+ (d) Subpart I requirements. The following provisions of subpart I of this part do not apply to assistance under the homeownership option:
+ (1) Section 982.403 (Terminating HAP contract when unit is too small);
+ (2) Section 982.404 (Maintenance: Owner and family responsibility; PHA remedies);
+ (3) Section 982.405 (PHA unit inspection); and
+ (4) Section 982.406 (Use of alternative inspections).
+ (e) Subpart J requirements. The requirements of subpart J of this part (Housing Assistance Payments Contract and Owner Responsibility) (§§
+ 982.451-456) do not apply to assistance under the homeownership option.
+ (f) Subpart K requirements. Except for those sections listed below, the requirements of subpart K of this part (Rent and Housing Assistance
+ Payment) (§§ 982.501-521) do not apply to assistance under the homeownership option:
+ (1) Section 982.503 (Voucher tenancy: Payment standard amount and schedule);
+ (2) Section 982.516 (Family income and composition: Regular and interim reexaminations); and
+ (3) Section 982.517 (Utility allowance schedule), except that § 982.517(d) does not apply because the utility allowance is always based on the
+ size of the home bought by the family with homeownership assistance.
+ (g) Subpart L requirements. The following provisions of subpart L of this part do not apply to assistance under the homeownership option:
+ (1) Section 982.551(c) (HQS breach caused by family);
+ (2) Section 982.551(d) (Allowing PHA inspection);
+ (3) Section 982.551(e) (Violation of lease);
+ (4) Section 982.551(g) (Owner eviction notice); and
+ (5) Section 982.551(j) (Interest in unit).
+ (h) Subpart M requirements. The following provisions of subpart M of this part do not apply to assistance under the homeownership option:
+ (1) Sections 982.602-982.619; and
+ (2) Sections 982.622-982.624.
+ [65 FR 55163, Sept. 12, 2000, as amended at 67 FR 64494, Oct. 18, 2002; 80 FR 8247, Feb. 17, 2015; 80 FR 50575, Aug. 20, 2015; 89 FR
+ 38304, May 7, 2024]
+
+ § 982.642 Homeownership option: Pilot program for homeownership assistance for disabled families.
+ (a) General. This section implements the pilot program authorized by section 302 of the American Homeownership and Economic Opportunity
+ Act of 2000. Under the pilot program, a PHA may provide homeownership assistance to a disabled family residing in a home purchased and
+ owned by one or more members of the family. A PHA that administers tenant-based assistance has the choice whether to offer homeownership

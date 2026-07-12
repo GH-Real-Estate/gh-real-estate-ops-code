@@ -1,0 +1,27 @@
+[
+  {
+    "group": "licensing_conditional",
+    "citation": "K.S.A. 58-3037",
+    "title": "Exemptions.",
+    "authority": "Binding statute (official consolidated text)",
+    "applicability": "See master applicability index",
+    "official_url": "https://www.kslegislature.gov/media/statute/058_000_0000_chapter/058_030_0000_article/058_030_0037_section/058_030_0037_k.pdf",
+    "retrieved": "2026-07-12",
+    "sha256": "332884aa816c9b08bf4da1d0aee5a3303988d8afb5834a2d65e67ce169bdafd6",
+    "pages": 1,
+    "bytes": 18866,
+    "bundle_start_page": 418,
+    "bundle_end_page": 418,
+    "build_source_path": "tmp/pdfs/source_downloads/kansas/licensing_conditional/58-3037.pdf",
+    "build_source_archive_path": null,
+    "bundle_filename": "GH-KS-02_Kansas-Eviction-Fair-Housing-Screening-Safety-Addenda_CURRENT.pdf",
+    "bundle_path": "legal/generated/project-sources/current/GH-KS-02_Kansas-Eviction-Fair-Housing-Screening-Safety-Addenda_CURRENT.pdf",
+    "text_full_path": "legal/text/current/full/GH-KS-02_Kansas-Eviction-Fair-Housing-Screening-Safety-Addenda_CURRENT.txt",
+    "bundle_sha256": "5ba9fdc9b4d75a9a2f2ce626029bf05b07fb53e83576a46cf43bfbee82487e43",
+    "bundle_pages": 471,
+    "jurisdiction": "Kansas",
+    "legal_status": "binding",
+    "release_as_of": "2026-07-12",
+    "release_status": "included-in-approved-release"
+  }
+]

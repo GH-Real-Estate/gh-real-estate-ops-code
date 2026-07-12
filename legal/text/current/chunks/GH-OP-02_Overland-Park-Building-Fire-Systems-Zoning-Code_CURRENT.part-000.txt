@@ -1,0 +1,5092 @@
+GH Real Estate approved legal-source text chunk — GH-OP-02_Overland-Park-Building-Fire-Systems-Zoning-Code_CURRENT.part-000.txt — verified through 2026-07-12. Official source text controls.
+
+                                         GH REAL ESTATE • LEGAL SOURCE PACK
+
+
+
+
+       OVERLAND PARK BUILDING, FIRE
+             & ZONING CODE
+
+
+                      2024 code amendments adopted in 2026 • zoning excerpts • parking
+
+
+
+
+  PROPERTY                    9401 Nieman Road, Overland Park, Kansas 66214
+
+  CURRENT THROUGH             July 12, 2026
+
+  ACTIVE-SET STATUS           Current-law set; enacted addenda included; withdrawn sources excluded
+
+  SCOPE                       Official local amendments and selected development-code chapters relevant to a fourplex
+
+
+
+
+    Use rule: Retrieve the controlling text, confirm the trigger and currentness, then obtain Kansas counsel review before
+    enforcement, filing, denial, accommodation decisions, or material lease changes.
+
+ This compilation is a research and retrieval aid, not legal advice, a title opinion, or a substitute for official current law. Summaries and
+ applicability labels are navigation aids; the appended official text controls.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                             Front matter page 1
+ How this bundle should be used
+  LABEL                  HOW TO USE IT
+
+  BINDING                Statute, regulation, ordinance, or controlling court decision. Confirm effective date and later history.
+
+  CONDITIONAL            Binding only when a stated trigger exists—such as HUD assistance, a federally backed mortgage, or third-party
+                         management.
+
+  GUIDANCE               Agency or court-administration material. Useful operationally but not itself controlling law unless incorporated.
+
+  PROPOSED               Monitoring only. Do not apply as current law.
+
+  WITHDRAWN              Excluded from this active set. Keep only in a separately labeled historical archive.
+
+
+ • These city PDFs contain local amendments. The incorporated copyrighted ICC base codes are not reproduced;
+ consult the officially adopted base text when an amendment depends on it.
+
+ • R-3 zoning appears plausible but is not verified to the parcel. Confirm official zoning and lawful nonconforming
+ status before applying district excerpts.
+
+ • Fire/open-flame, building, electrical, mechanical, plumbing, fuel-gas and energy rules can depend on occupancy
+ classification and the scope/date of work.
+
+    Text-integrity rule: appended official PDFs are preserved as retrieved. The front matter adds navigation only and does
+    not alter statutory, regulatory, judicial, or municipal wording.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                           Front matter page 2
+ Source inventory and page map
+ 13 official source documents are included. Page numbers below refer to the finished merged PDF. Use the PDF
+ bookmarks or search the exact citation.
+
+  #     CITATION / SOURCE                 TITLE                                                                                   PAGES
+
+  1     OPMC toc 016.004                  OPMC 16.300 Building Code Amendments                                                    4–38
+
+  2     OPMC toc 016.005                  OPMC 16.305 Existing Building Code Amendments                                           39–41
+
+  3     OPMC toc 016.007                  OPMC 16.320 Fire Code Amendments                                                        42–65
+
+  4     OPMC toc 016.008                  OPMC 16.330 Plumbing Code Amendments                                                    66–71
+
+  5     OPMC toc 016.009                  OPMC 16.340 Mechanical Code Amendments                                                  72–73
+
+  6     OPMC toc 016.010                  OPMC 16.350 Fuel Gas Code Amendments                                                    74–75
+
+  7     OPMC toc 016.011                  OPMC 16.360 Electrical Code Amendments                                                  76–77
+
+  8     OPMC toc 016.012                  OPMC 16.370 Energy Code Amendments                                                      78–99
+
+  9     OPMC toc 018.002                  OPMC 18.110 Definitions                                                                 100–126
+
+  10    OPMC toc 018.015                  OPMC 18.210 R3 Garden Apartment District                                                127–129
+
+  11    OPMC toc 018.034                  OPMC 18.390 Accessory Uses and Structures                                               130–145
+
+  12    OPMC toc 018.037                  OPMC 18.410 Nonconforming Situations                                                    146–154
+
+  13    OPMC toc 018.039                  OPMC 18.430 Parking and Loading                                                         155–166
+
+
+ Source URLs, retrieval date, authority/applicability labels, and SHA-256 fingerprints are recorded in the companion Markdown manifest.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                      Front matter page 3
+TITLE 16 - BUILDINGS AND CONSTRUCTION
+
+16.300.100 BUILDING CODE - INCORPORATION
+Contents:
+ 16.300.100 Building Code - Adoption
+ 16.300.101.1
+ 16.300.101.4
+ 16.300.103.1
+ 16.300.103.2 (Deleted)
+ 16.300.104.10
+ 16.300.105.1
+ 16.300.105.2
+ 16.300.105.3
+ 16.300.107.1
+ 16.300.109.2
+ 16.300.113.1
+ 16.300.113.3
+ 16.300.114.2
+ 16.300.114.3
+ 16.300.114.4
+ 16.300.114.5
+ 16.300.308.2.4
+ 16.300.308.3.2
+ 16.300.310.4.1
+ 16.300.503.1.4
+ 16.300.706.1.1
+ 16.300.903.3.5.3
+ 16.300.903.3.9
+ 16.300.903.4
+ 16.300.905.4
+ 16.300.907.6.6
+ 16.300.912.3
+ 16.300.913.4
+
+
+
+                                           Page 1
+  16.300.1010.6
+  16.300.1705.5.4
+  16.33.2900 (Deleted)
+  16.300.313.1
+  16.300.3303.8
+
+16.300.100 BUILDING CODE - ADOPTION
+The 2024 International Building Code, as published by the International Code Council, Inc., is
+hereby adopted by reference as the Building Code of the City of Overland Park, save and except such
+parts or portions thereof as are specifically deleted, added or changed in the City Code. At least one
+copy shall be marked “Official Copy as Incorporated by Ordinance No. BC-3499” and filed with the
+City Clerk for inspection by the public during reasonable business hours, with all sections or
+portions thereof intended to be deleted, added or changed clearly marked to show any deletions,
+additions or changes.
+
+
+(History: Ord. No. BC-3499, §2, 2026; Ord. No. BC-3286 §1, 2020; Ord. No. BC-2936 §1, 2012; Ord.
+No. BC-2635 §1, 2007; Ord. No. BC-2459 §1, 2004; Ord. No. BC-2237 §1, 2001; Source or prior
+law: 16.04.300; Ord. No. BC-2013 §1, 97; Ord. No. BC-1824 §1, 94)
+
+16.300.101.1
+Section 101.1 of the International Building Code is hereby amended to read as follows:
+
+101.1 Title. These regulations and the deletions, additions and changes contained in the OPMC Chapter 16.300
+through 16.380, shall be known as the Building Code of the City of Overland Park, hereinafter referred to as “this
+code” or “the Building Code.”
+
+(History: Ord. No. BC-3499 §3, 2026; Ord. BC-3286 §2 , 2020; Ord. BC-2936 §2, 2012; BC-2635 §2,
+2007; BC-2459 §2, 2004; BC-2237 §1, 2001; Source or prior law: 16.04.320; BC-2013 §2, 97; BC-
+1824 §2, 94)
+
+16.300.101.4
+Section 101.4 of the International Building Code is hereby amended to read as follows:
+
+101.4 Referenced codes. The other codes specified in Sections 101.4.1 through 101.4.7 and referenced elsewhere
+in this code shall be considered to be part of the requirements of this code to the prescribed extent of each such
+reference.
+
+
+
+
+                                                                                              Page 2
+101.4.1 Gas. The provisions of the International Fuel Gas Code shall apply to the installation of gas piping
+from the point of delivery, gas appliances and related accessories as covered in this code. These
+requirements apply to gas piping systems extending from the point of delivery to the inlet connections of
+appliances and the installation and operation of residential and commercial gas appliances and related
+accessories.
+
+
+                                                    1
+                                                    0
+                                                    1
+                                                    .
+                                                    4
+                                                    .
+                                                    2
+ 1
+ 0                                                  M
+ 1                                                  e
+ .                                                  c
+ 4                                                  h
+ .                                                  a
+ 3                                                  n
+                                                    i
+ P                                                  c
+ l                                                  a
+ u
+ 1                                                  l
+ m
+ 0                                                  .
+ b
+ 1
+ .i                                                 T
+  n
+  4                                                 h
+  g
+  .                                                 e
+  .1
+   4
+   0                                                p
+   T
+   1
+   S                                                r
+   h
+   .w                                               o
+    ei
+     4                                              v
+     .m                                             i
+      p
+      5
+      m                                             s
+      ir                                            i
+       o
+       F
+       n                                            o
+       v
+       ig
+        1                                           n
+        i0
+         r                                          s
+         s
+         e
+         P
+         1
+         i.
+          o                                         o
+          o
+          P
+          4                                         f
+          n
+          .rl
+            e
+            s
+            6                                       t
+            v
+            .                                       h
+            o
+            e
+            E                                       e
+            fn
+             T
+             th
+              e                                     I                                    Page 3
+              riet                                  n
+                 h
+                 o
+                 g                                  t
+                 ey
+                  n
+                  p                                 e
+        1
+        0
+        1
+        .
+        4
+        .
+        1
+        7
+        0
+        1
+        E
+        .x
+         4
+         i
+         .s
+          1
+          8
+          t
+          0
+          i
+          1
+          E
+          n
+          .lg
+(History:   e Ord. No. BC-3499 §4, 2026; Ord. No. BC-3466 §1, 2024; Ord. No. BC-3286 §3, 2020; Ord.
+            4
+No. BC-2936 .cB                                 §3, 2012; Ord. No. BC-2635 §3 & 4, 2007; Ord. No. BC-2459 §4, 2004; Ord. No. BC-2237
+§1, 2001)     9
+              tu
+               ri
+16.300.103.1    G
+                il
+                 rcd
+Sectione           i103.1 of the International Building Code is hereby amended to read as follows:
+                   a
+                   e
+                   ln
+ 1                  n
+                    .g
+ 0                   s
+ 3                   C
+                     T
+                     .
+ .                   o
+                     h
+ 1                   n
+                     eT
+                      sh
+ C                     tp
+                        e
+(History:
+ r                      r Ord. No. BC-3499 §5, 2026; Ord. No. BC-3286 §4, 2020; Ord. No. BC-2936 §4, 2012; Ord.
+No.
+ e   BC-2635            u
+                        o
+                        p                        §6, 2007; Ord. No. BC-2459 §5, 2004; Ord. No. BC-2237 §1, 2001; Source or prior
+law:
+ a   16.04.335;         cv
+                         r                         Ord. No. BC-2013 §3, 97; Ord. No. BC-1824 §3, 94)
+ t                       tio
+16.300.103.2
+ i                         isv                      (Deleted)
+ o                           o
+                             i
+Sectionn                     o             103.2 of the International Building Code is hereby intentionally deleted and omitted.
+ n                           s
+                             .n
+                              i
+ o                            so
+(History:                      P             Ord. No. BC-3499 §6, 2026; Ord. No. BC-3286 §5, 2020; Ord. No. BC-2936 §5, 2012; Ord.
+ f                             n
+No. BC-2635                    ro               §7, 2007; Ord. No. BC-2459 §6, 2004; Ord. No. BC-2237 §1, 2001)
+                                s
+ E                              o
+                                f
+16.300.104.10
+ n                              jo
+ f                               etf
+Section                                    104.10 of the International Building Code is hereby added to read as follows:
+ o                                 ch
+ r                                  te
+ c                                   sh
+ e                                    N
+                                      e
+ m                                    ta
+                                                                                                                                 Page 4
+ e                                     h
+                                       tI
+ n                                      ain
+ t                                        to
+ 1
+ 0
+ 4
+ .
+ 1
+ 0
+(History: Ord. No. BC-3499 §7, 2026)
+A
+16.300.105.1
+ c
+ c
+Section 105.1 of the International Building Code is hereby amended to read as follows:
+ e
+ p
+ 1
+ t
+ 0
+ a
+ 5
+ b
+ .l
+  1
+  e
+
+R
+m
+e
+e
+q
+t
+u
+h         1
+io        0
+ rd       5
+  e
+  s       .
+  d       1
+  .o      .
+   f      1
+   A
+   n
+   c      A
+          1
+   y
+   o      n
+          0
+   m      n
+          5
+   o
+   p      .u
+   w
+   l       a
+           1
+   n
+   i       .l
+   ea       2
+    rn      p
+     c      e
+            A
+     o
+     e      r
+            n
+     r.     m
+            n
+            iu
+o
+T            t
+             a
+w
+h            l.
+n
+e
+e         I
+          p
+rb        n
+          e
+ ’u       rs
+  si       t
+           m
+   l       ie
+   ad       at
+                                                                                         Page 5
+    u
+    i        d
+    tn       r
+     h
+     g       o
+             e
+       1
+       0
+       5
+       .
+       1
+       .
+       3
+
+       C
+       o
+       u
+       n
+       t
+       y
+
+       l
+       i
+       c
+(History: Ord. No. BC-3499 §8, 2026; Ord. No. BC-3286 §6, 2020; Ord. No. BC-2936 §6, 2012; Ord.
+       e
+No. BC-2635 §8 & 9, 2007; Ord. No. BC-2459 §7, 2004; Ord. No. BC-2338 §1, 2001)
+       n
+       s
+16.300.105.2
+       e
+Section 105.2 of the International Building Code is hereby amended to read as follows:
+       r
+       e
+ 1     q
+ 0     u
+ 5     i
+ .     r
+ 2     e
+       d
+ W     .
+ o
+ r     A
+ k     l
+       l
+e
+x      p
+e      e
+m      r
+p      s
+t      o
+       n
+f      s
+r
+o      u
+m      n
+       d
+p      e
+e      r
+r                                                                                         Page 6
+       t
+m      a
+i      k
+B
+u
+i
+l
+d
+i
+n
+g
+:
+    1. O
+       n
+       e
+       -
+       s
+       t
+       o
+       r
+       y
+
+      d
+      e
+      t
+      a
+      c
+      h
+      e
+      d
+
+      a
+      c
+      c
+      e
+      s
+      s
+      o
+      r
+      y
+
+      s
+      t
+      r
+      u
+      c
+      t
+      u
+      r
+      e
+      s
+
+      u    Page 7
+      s
+      e
+      d
+E
+l
+e
+c
+t
+r
+i
+c
+a
+l
+:
+         1. R
+            e
+            p
+            a
+            i
+            r
+            s
+
+              a
+G             n
+a             d
+s
+:     m
+  1. a            P
+      i
+      o
+      rn
+       t
+       e
+       a
+M      n
+       b
+e      la
+c       n
+        e
+h       c
+a       e
+        h
+n       e:
+i        a
+c        M
+         t
+a        i
+l        n
+:        go
+          r
+  1. aP
+          o
+          r
+          p
+          rp
+           e
+           tlp
+             aai
+               b
+               ai
+                ln
+                 r
+                 ec
+                  w
+                  e   Page 8
+                  h
+                  o
+                  .
+                  e
+  2. raR
+                  k
+ P
+ l
+ u
+ m
+ b
+ i
+ n
+ g
+ :
+     1. T
+        h
+        e1
+           0
+        s5
+        t.
+        o  2
+        p  .
+        p  1
+        i0
+        n  5
+           E
+        g.m
+           2
+           e
+        o  .r
+        f2  g
+            e
+        lR  n
+        ec
+        ap  y
+        k   a
+            1
+        s0  ir
+             re
+              5
+        isp   .
+        n     .2
+               a
+(History:      .i Ord. No. BC-3499, §9, 2026; Ord. No. BC-3286 §7, 2020; Ord. No. BC-2936 §7, 2012; Ord.
+        d
+No. BC-2635     A
+                r3        §10, 2007; Ord. No. BC-2459 §8, 2004; Ord. No. BC-2237 §1, 2001; Source or prior
+        r
+law: 16.04.345   p
+                 s         (part); Ord. No. BC-1824 §5, 94)
+        ap       .P
+        ilu
+16.300.105.3
+        n         iW
+                   b
+Sectionsch         l105.3 of the International Building Code is hereby amended to read as follows:
+        ,aei
+                   tcr
+        w            ie
+        ao            s
+        tn            ee
+        eq             r
+        ro             u
+                       v
+        ,rii
+                       p
+                       c
+        sn             m
+                       e                                                                           Page 9
+        o              e
+        ia             tn
+        lit
+1
+0
+5
+.
+3
+
+A
+p
+p
+l
+i
+c
+a
+t
+i
+o   1
+n   0
+    5
+f   .
+o   3
+r   .
+    1
+P
+e   A
+r   c1
+m    t
+     0
+i    i
+     5
+t    .o
+.     n
+      3
+      .
+T     o
+      2
+o     n
+      T
+o     a
+      i
+b     p
+      m
+t     p
+      e
+a     l
+i     il
+n      ci
+        a
+        m
+a       it
+         it
+p         o
+          a
+e         tn
+r          i.
+m           o
+i           T
+            n
+t           h
+,           e
+            o
+            f
+                Page 10
+t           b
+h           u
+            a
+e           i
+            p
+1
+0
+5
+.
+3
+.
+3
+
+P
+o
+t
+a
+b
+l
+e
+
+w
+a
+t
+e
+1
+r0
+5
+s.
+ u
+ 3
+ p
+ .
+ p
+ 4
+ l
+ y
+ F
+i
+cr
+ o
+ e
+ n
+ fp
+  ir
+   ro
+    m
+    t
+    a
+    e
+    tc
+     it
+      o
+      i
+      n
+      o
+      .n
+
+A
+w
+a
+p
+t
+ee
+ rr
+  m
+  is       Page 11
+   tu
+p
+sp
+1
+0
+5
+.
+3
+.
+5
+
+C
+o
+n
+n
+e
+c
+t
+i
+o
+n
+
+t
+o
+
+p
+u
+b
+l
+i
+c
+
+s
+e
+w
+e
+r
+.
+
+N
+o
+
+b
+u
+i
+l
+d
+i
+n
+g
+
+p
+e   Page 12
+r
+m
+i
+1
+0
+5
+.
+3
+.
+6
+
+D
+e
+1
+n
+0
+i5
+ a
+ .
+ l
+ 3
+ .
+ o
+ 7
+ f
+ A
+ p
+ e
+ p
+ rl
+  m
+  i
+  ci
+   t
+   a
+   t.
+    i
+    T
+    o
+    h
+    n
+    e
+    f
+    b
+    o
+    ru
+     i
+     l
+     p
+     d
+     e
+     ri
+      n
+      m
+      ig
+       t
+       o
+       tf
+        f
+        o
+        i
+        cm
+         i
+         o
+         a
+         v
+         l
+         e
+
+ia
+ s           Page 13
+ b
+ au
+  u
+  i
+1
+0
+5
+.
+3
+.
+7
+.
+1
+
+M
+o
+v
+i
+n
+g
+
+b
+u
+i
+l
+d
+i
+n
+g
+s
+
+o
+r
+
+s
+t
+r
+u
+c
+t
+u
+r
+e
+s
+
+w
+i
+t
+h
+i
+n
+
+o
+r   Page 14
+
+i
+n
+1
+0
+5
+.
+3
+.
+7
+.
+2
+
+B
+u
+i
+l
+d
+i
+n
+g
+s
+
+o
+r
+
+s
+t
+r
+u
+c
+t
+u
+r
+e
+s
+
+b
+e
+i
+n
+g
+
+m
+o
+v
+e
+d
+
+o
+u
+t
+    Page 15
+o
+f
+             1
+             0
+             5
+             .
+             3
+             .
+             7
+             .
+             3
+
+             C
+             o
+             n
+             d
+             i
+             t
+             i
+             o
+             n
+             s
+
+             o
+             f
+
+             t
+             h
+             e
+
+              p
+(History: Ord.eNo. BC-3499 §10, 2026; Ord. BC-3466 §2, 2024; Ord. BC-3286 §8, 2020; Ord. BC-2936
+§8, 2012; BC-2635
+              r      §§11, 12, 13, 14,15 & 16, 2007; §BC-2578 §§1 & 2, 2005; BC-2459 §§9, 10, 11,
+12, 13, 14m & 187, 2004; BC-2237 §1, 2001; Source or prior law: 16.04.046
+(part), 16.04.350,
+              i    16.04.351, 16.04.365, 16.04.370 (part), 16.04.375, 16.04.380 (part), 16.04.185 (p
+art) & 16.04.415;
+              t    16.24.020, 16.24.030, 16.24.040, 16.24.050 & 16.24.060 (part); BC-2171 §1, 99;
+BC-2013 §§4 & . 6, 97; BC-2002 §1, 96; BC-2001 §1, 96; BC-1940 §1, 95; BC-1824 §§6, 7, 10, 11, 12,
+13, 14, 21, 94; 7.52.032 (part); SS-1701 §1, 91; SM-1553 §1, 88; SM-1364§1, 86; SM-557 §§2, 3, 4, 5
+& 6, 69)      I
+              n
+16.300.107.1
+              a
+Section 107.1 dof the International Building Code is hereby amended to read as follows:
+             d
+             i
+             t
+             i
+             o
+             n
+
+             t
+             o                                                                             Page 16
+
+             o
+             t
+1
+0
+7
+.
+1
+
+G
+e
+n
+e
+r
+a
+l
+.
+
+ S
+ u
+ b
+ m
+ i
+ t
+(History:
+ t        BC-3499 §11, 2026; Ord. BC-3286 §11, 2020; Ord. BC-3234 §1, 2019; Ord. BC-2936 §11,
+2012;
+ a    BC-2635  §20, 23 & 24, 2007; BC-2459 §19 & 20, 2004; BC-2237 §1, 2001; Source or prior
+law:
+ l   16.04.418 & 16.04.430; BC-1824 §§22 & 26, 94)
+
+16.300.109.2
+ d
+ o
+Section
+ c      109.2 of the International Building Code is hereby amended to read as follows:
+ u
+ m
+ 1
+ e0
+  n
+  9
+  .t
+   s
+   2
+History:
+ c
+ S       Ord. No. BC-3499 §12, 2026; Ord. CM-3433 §3, 2023; Ord. BC-3286 §10, 2020; Ord. BC-
+2936
+ co   §10, 2012; BC-2635 §19, 2007; BC-2459 §16, 2004; BC-2237 §1, 2001; Source or prior
+law:
+  n
+  h  16.04.380 (part); BC-1824 §13, 94; 16.04.385 (part); BC-1824 §14, 94)
+s
+e
+16.300.113.1
+ id
+ s
+ u
+Section 113.1 of the International Building Code is hereby amended to read as follows:
+ lt
+  i
+  e
+  n
+  g
+  o
+  f
+  o
+  f
+  p
+  e
+  rc                                                                                     Page 17
+   o
+   m
+   in
+    st
+1
+1
+3
+.
+1
+
+G
+e
+n
+e
+r
+a
+l
+.
+
+I
+n
+
+ o
+ r
+ d
+(History:
+ e         Ord. No. BC-3499 §13, 2026; Ord. BC-3286 §11, 2020; Ord. BC-3234 §1, 2019; Ord. BC-
+2936
+ r    §11, 2012; BC-2635 §20, 23 & 24, 2007; BC-2459 §19 & 20, 2004; BC-2237 §1, 2001; Source
+or prior law: 16.04.418 & 16.04.430; BC-1824 §§22 & 26, 94)
+ t
+16.300.113.3
+ o
+
+Section
+ h      113.3 of the International Building Code is hereby amended to read as follows:
+ e
+ a
+ r
+
+a
+n
+d
+
+d
+e
+c
+i
+d
+e
+
+a
+p
+p
+e
+a
+l
+s                                                                                        Page 18
+
+o
+f
+1
+1
+3
+.
+3
+
+M
+e
+m
+b
+e
+r
+
+ q
+ u
+ a
+ l
+ i
+ f
+ i
+(History:
+ c        Ord. No. BC-3499 §14, 2026; Ord. BC-3286 §12 , 2020; Ord. BC-3234 §2, 2019)
+ a
+16.300.114.2
+ t
+ i
+Section
+ o      114.2 of the International Building Code is hereby amended to read as follows:
+ n
+ s
+ .
+
+T
+h
+e
+
+C
+o
+d
+e
+
+B
+o
+a
+r
+d
+
+o
+f
+
+A
+p
+p                                                                                        Page 19
+e
+a
+l
+1
+1
+4
+.
+2
+
+N
+o
+t
+i
+c
+e
+
+o
+f
+
+ v
+ i
+ o
+ l
+ a
+ t
+ i
+ o
+ n
+ .
+(History: Ord. No. BC-3499 §15, 2026)
+ T
+16.300.114.3
+ h
+ e
+Section 114.3 of the International Building Code is hereby amended to read as follows:
+ b
+ u
+ 1
+ i
+ 1
+ l
+ 4
+ .d
+  i
+  3
+  n
+  g
+  P
+  r
+(History:
+  o         Ord. No. BC-3499 §16, 2026; Ord. BC-3286 §13, 2020; Ord. BC-2936 §13, 2012; BC-2635
+§26,
+  sf    2007; BC-2459 §22, 2004; BC-2237 §1, 2001)
+   f
+   e
+16.300.114.4
+   ci
+    c
+    u
+Section
+    ti    114.4 of the International Building Code is hereby amended to read as follows:
+     ia
+      l
+      o
+      n
+      i                                                                                  Page 20
+      s
+      o
+      f
+      a
+1
+1
+4
+.
+4
+
+V
+i
+o
+l
+a
+t
+i
+o
+n
+
+ p
+ e
+ n
+ a
+ l
+(History:
+ t        Ord. No. BC-3499 §17, 2026; Ord. BC-3286 §14, 2020; Ord. BC-2936 §14, 2012; BC-2635
+§27,
+ i 2007; BC-2459 §23, 2004; BC-2237 §1, 2001; Source or prior law: 7.52.040; SS-1701 §1, 91;
+SS-878
+ e     §2, 76; SS-183 §4, 63; 16.02.050; BC-838 §6, 75; 16.04.346 (part); BC-2002 §1, 96; BC-1940
+§1,
+ s 95; BC-1824 §6, 94; 16.04.405; BC-1824 §17, 94)
+ .
+16.300.114.5
+ A
+Section
+ n      114.5 of the International Building Code is hereby added to read as follows:
+ y
+
+p
+e
+r
+s
+o
+n
+
+w
+h
+o
+
+v
+i
+o
+l
+a
+t
+e
+s                                                                                        Page 21
+
+a
+1
+1
+4
+.
+5
+
+A
+b
+a
+t
+e
+m
+e
+n
+t
+
+o
+f
+
+V
+i
+o
+l
+a
+t
+i
+o
+n
+s
+.
+History: BC-3499 §18, 2026; BC-3286 §15, 2020; Ord. BC-2936 §15, 2012; BC-2635 §28, 2007; BC-
+ I
+2459 §24, 2004; BC-2237 §1, 2001)
+ f
+16.300.308.2.4
+ t
+ h
+Section 308.2.4 of the International Building Code is hereby amended to read as follows:
+ e
+ 3
+ o
+ 0
+ w
+ 8
+ n
+ .
+ e
+ 2
+ r
+(History: Ord. No. BC-3499 §19, 2026; Ord. No. BC-3286 §16, 2020)
+ .
+ 4
+16.300.308.3.2
+ o
+ r
+ F
+ i
+ a
+ v
+ n
+ e
+ y                                                                                         Page 22
+o
+o
+r
+t
+Section 308.3.2 of the International Building Code is hereby amended to read as follows:
+
+ 3
+ 0
+ 8
+ .
+ 3
+(History: Ord. No. BC-3499 §20, 2026; Ord. BC-3286 §17, 2020)
+ .
+ 2
+16.300.310.4.1
+ F
+Section              310.4.1 of the International Building Code is hereby amended to read as follows:
+ i
+ v
+ 3
+ e
+ 1
+ 0
+ o
+ .r
+  4
+(History: Ord. No. BC-3499 §21, 2026; Ord. BC-3286 §18 , 2020)
+  .f
+   1
+   e
+16.300.503.1.4
+   w
+   C
+Section
+   e                 503.1.4 of the International Building Code is hereby amended to read as follows:
+   a
+   r
+   r
+   5
+   e
+   p
+   0
+   e
+   3
+   fr
+    .
+    a
+    s1
+     co
+      .
+      in
+       4
+       ls
+        i
+        O
+        tr
+         c
+         ie
+          c
+          e
+          c
+          u
+          se
+           p
+           ii
+            w
+            v
+            a
+            ii
+             b
+             tn
+              l
+              h
+              g
+              e
+              i
+              n
+              m
+(History:     r       Ord. No. BC-3499 §22, 2026; Ord. BC-3286 §20, 2020)
+              e
+              o
+              a
+              d
+              o
+16.300.706.1.1if
+               d
+               cs
+                w
+                .a
+                 e
+                 l
+                 l
+                 A
+                 lc                                                                                     Page 23
+                  ia
+                   r
+                   n
+                   r
+                   o
+                   g
+                   e
+Section 706.1.1 of the International Building Code is hereby amended to read as follows:
+
+ 7
+ 0
+ 6
+ .
+ 1
+ .
+ 1
+(History: Ord. No. BC-3499 §23, 2026; Ord. BC-3286 §21, 2020)
+ P
+ a
+16.300.903.3.5.3
+ r
+Section
+ t                   903.3.5.3 of the International Building Code is hereby added to read as follows:
+ y
+ 9
+ w
+ 0
+ a
+ 3
+ .l
+  l3
+   s.
+    .
+    5
+    .
+    A
+    3
+    n
+(History:             Ord. No. BC-3499 §24, 2026; Ord. BC-3286 §22, 2020; Ord. BC-2936 §168, 2012; BC-2635
+§29,y 2007)
+    M
+    a
+    w
+    i
+16.300.903.3.9
+    an
+     l
+Section              903.3.9 of the International Building Code is hereby amended to read as follows:
+     cl
+      o
+      9
+      ln
+       0
+       o
+       t
+       3
+       rc
+        .a
+         o
+         3
+         tl
+(History: .e          Ord. No. BC-3499 §25, 2026)
+           9
+           d
+           v
+16.300.903.4
+           a
+           F
+Section    lo        903.4 of the International Building Code is hereby amended to read as follows:
+            ln
+             v
+             o
+             e
+             o
+             sa
+              r
+              .
+              l
+              co
+               W
+               o
+               at
+                n
+                t
+                tl
+                 e
+                 ri                                                                                   Page 24
+                  r
+                  o
+                  n
+                  le
+                   s
+                   u
+9
+0
+3
+.
+4
+
+S
+p
+r
+i
+n
+k
+l
+e
+r
+
+s
+y
+s
+t
+e
+m
+
+s
+u
+p
+e
+r
+v
+i
+s
+i
+o
+n
+
+a
+n
+d
+
+ a
+ l
+ a
+ r
+ m
+(History: Ord. No. BC-3499 §26, 2026; Ord. BC-3286 §23, 2020; Ord. BC-2936 §17, 2012; BC-2635
+ s 2007)
+§30,
+ .
+
+A
+u
+t                                                                                    Page 25
+o
+m
+a
+16.300.905.4
+Section 905.4 of the International Building Code is hereby amended to read as follows:
+
+
+
+
+                                                                                         Page 26
+9
+0
+5
+.
+4
+
+L
+o
+c
+a
+t
+i
+o
+n
+
+o
+f
+
+C
+l
+a
+s
+s
+
+I
+
+s
+t
+a
+n
+d
+p
+i
+p
+e
+
+h
+o
+s
+e
+
+ c
+ o
+ n
+ n
+(History:
+ e        Ord. No. BC-3499 §27, 2026; Ord. BC-3286 §24, 2020)
+ c
+ t
+ i
+ o                                                              Page 27
+ n
+ s
+ .
+16.300.907.6.6
+Section 907.6.6 of the International Building Code is hereby amended to read as follows:
+
+9
+0
+7
+.
+6
+.
+6
+
+M
+o
+n
+i
+t
+o
+r
+i
+n
+g
+.
+
+ F
+ i
+ r
+ e
+(History: Ord. No. BC-3499 §28, 2026; Ord. No. BC-3286 §27, 2020)
+ a
+16.300.912.3
+ l
+ a
+Section
+ r      912.3 of the International Building Code is hereby amended to read as follows:
+ m
+ 9
+ s
+ 1
+ y
+ 2
+ s.
+  t3
+   e
+   m
+   F
+(History: Ord. No. BC-3499 §29, 2026)
+   si
+16.300.913.4
+    r
+    re
+     e
+Section 913.4 of the International Building Code is hereby amended to read as follows:
+     q
+     h
+     u
+     o
+     is
+      r
+      e
+      e
+      d
+      t                                                                                    Page 28
+      h
+      b
+      r
+      y
+      e
+9
+1
+3
+.
+4
+
+ V
+ a
+ l
+ v
+(History:
+ e            Ord. No. BC-3499 §30, 2026; Ord. No. BC-3286 §28, 2020; Ord. No. BC-2936 §22, 2012;
+Ord. No. BC-2635 §36, 2007 part)
+ s
+16.300.1010.6
+ u
+ p
+Section
+ e           1010.6 of the International Building Code is hereby added to read as follows:
+ r
+ v
+ 1
+ i
+ 0
+ s
+ 1
+ i0
+  o
+  .
+  n
+  6
+  .
+  P
+  W
+  h
+  h
+  y
+  se
+   ir
+    ec
+     a
+     lp
+      r
+      o
+      s
+      v
+      e
+      ci
+       d
+       u
+       re
+        d
+        i
+        ,t
+         y
+         .t
+          h
+          e 1
+            0
+          f 1
+          i 0
+          r .
+          e 6
+            .
+            1                                                                              Page 29
+          p
+u
+m      P
+       u
+1
+0
+1
+0
+.
+6
+.
+2
+
+D
+o
+o
+r
+s
+.
+
+E
+x
+c
+e
+p
+t
+
+f
+o
+r
+
+v
+e
+h
+i
+c
+u
+l
+a
+r
+
+a
+c
+c
+e
+s
+s
+
+d
+o
+o
+r
+s
+,   Page 30
+
+a
+l
+1
+0
+1
+0
+.
+6
+.
+3
+
+D
+o
+o
+r
+
+f
+r
+a
+m
+e
+s
+.
+
+T
+h
+e
+
+e
+x
+t
+e
+r
+i
+o
+r
+
+d
+o
+o
+r
+
+f
+r
+a
+m
+e
+s
+
+s
+h
+a   Page 31
+l
+l
+1
+0
+1
+0
+.
+6
+.
+4
+
+D
+o
+o
+r
+
+h
+a
+r
+d
+w
+a
+r
+e
+.
+
+E
+x
+t
+e
+r
+i
+o
+r
+
+d
+o
+o
+r
+
+h
+a
+r
+d
+w
+a
+r
+e
+
+s
+h
+a   Page 32
+l
+l
+                            1
+                            0
+                            1
+                            0
+       1.
+       06
+       1.
+       05
+       .
+       6S
+       .t
+       6r
+                            e
+       Ee
+       xt
+       t
+       en
+       r1u
+        i0m
+         o
+         1b
+         r0e
+          .r
+          l6s
+           i. .
+            g
+            7
+            hS
+            tAt
+             il r
+              n
+              t eOrd. No. BC-3499 §31, 2026; Ord. No. BC-3286 §30, 2020)
+(History:     g
+              ee
+              r. t
+16.300.1705.5.4n
+               En
+Sectiona1705.5.4                   of the International Building Code is hereby added.
+               xt u
+                tm
+                e
+ 1              eb
+ 7              rme
+ 0               iar
+ 5                o
+                  t sOrd. No. BC-3499 §32, 2026)
+(History:
+ .                re
+ 5                 rs
+16.33.2900
+ .                 li h
+                                 (Deleted)
+ 4
+Chapter             ia29    a of the International Building Code is hereby intentionally deleted and omitted. (See the
+International        lg l       Plumbing Code.)
+ W                    h
+                      sl
+ e                    t
+ a                    iac
+ t                     n
+                       no
+ h                     gdm
+ e                          p
+ r                                                                                                            Page 33
+                        sml
+                         h
+                         ey
+ r                       ta
+ e
+(History: Ord. No. BC-3499 §33, 2026; Ord. No. BC-3286 §34, 2020; Ord. No. BC-2936 §25, 2012)
+
+16.300.313.1
+Section 3103.1 of the International Building Code is hereby amended to read as follows:
+
+3
+1
+0
+3
+.
+1
+
+G
+e
+n
+e
+r
+a
+l
+.
+
+T
+h
+e
+
+p
+r
+o
+v
+i
+s
+i
+o
+n
+s
+
+o
+f
+
+ S
+ e
+ c
+ t
+(History: Ord. No. BC-3499 §34, 2026; Ord. No. BC-3286 §36, 2020; Ord. No. BC-2936 §26, 2012;
+ i
+Ord. No. BC-2635 §42, 2007; Ord. No. BC-2459 §31, 2004; Ord. No. BC-2237 §1, 2001; Source or
+ o law: 16.04.630 (part); Ord. No. BC-2013 §17, 97)
+prior
+ n
+ s
+
+3
+1                                                                                         Page 34
+0
+3
+.
+16.300.3303.8
+Section 3303.8 of the International Building Code is hereby added to read as follows:
+
+3
+3
+0
+3
+.
+8
+
+ F
+ e
+(History: Ord. No. BC-3499 §35, 2026; Ord. No. BC-3286 §37, 2020; Ord. No. BC-2936 §27, 2012;
+ n No. BC-2635 §43, 2007)
+Ord.
+ c
+ e
+ s
+ .
+
+E
+v
+e
+r
+y
+
+c
+o
+n
+s
+t
+r
+u
+c
+t
+i
+o
+n
+
+s
+i
+t
+e
+
+w
+h
+e
+r
+e
+u
+p
+o                                                                                       Page 35
+n
+
+a
+TITLE 16 - BUILDINGS AND CONSTRUCTION
+
+16.305 EXISTING BUILDING CODE
+Contents:
+  16.305.100 International Existing Building Code – Adoption.
+  16.305.101.1
+  16.305.101.7
+  16.304.103 (Deleted)
+  16.305.201.5
+  16.305.303
+
+16.305.100 International Existing Building Code – Adoption.
+The 2024 International Existing Building Code, as published by the International Code Council,
+Inc., is hereby adopted by reference as the Existing Building Code of the City of Overland Park, save
+and except such parts or portions thereof as are specifically deleted, added or changed in the City
+Code. At least one copy shall be marked “Official Copy as Incorporated by Ordinance No. BC-3499”
+and filed with the City Clerk for inspection by the public during reasonable business hours, with all
+sections or portions thereof intended to be deleted, added or changed clearly marked to show any
+deletions, additions or changes.
+
+
+(History: Ord. No. BC- 3499, §37, 2026; Ord. No. BC-3286 §38, 2020; Ord. No. BC-2936 §168, 2012;
+Ord. No. BC-2635 §46, 2007)
+
+16.305.101.1
+Section 101.1 of the International Existing Building Code is hereby amended to read as follows:
+
+101.1 Title These regulations shall be known as the Existing Building Code of the City of Overland Park,
+hereinafter referred to as “this code.”
+
+(History: Ord. No. BC-3499, §38, 2026; Ord. No. BC-3286 §39, 2020; Ord. No. BC-2936 §168, 2012;
+Ord. No. BC-2635 §46, 2007)
+
+16.305.101.7
+Section 101.7 of the International Existing Building Code is hereby added to read as follows:
+
+
+
+
+                                                                                                Page 1
+101.7 Administration and enforcement. The administration and enforcement provisions for this code shall be
+those provisions contained in Sections 103 through 116 of the International Building Code in OPMC 16.300 et seq.
+
+(History: Ord. No. BC-3499, §39, 2026; Ord. No. BC-3286 §40, 2020)
+
+16.304.103 (Deleted)
+Sections 103 through 117 of the International Existing Building Code are hereby intentionally
+deleted and omitted. (See Violations, Notices and Orders, Unsafe Structures and Equipment, Emergency
+Measures, and Demolition provisions set forth in OPMC Chapter 7.25.)
+
+
+(History: Ord. No. BC-3499, §40, 2026; Ord. No. BC-3286 §41, 2020; Ord. No. BC-2936 §168, 2012;
+Ord. No. BC-2635 §48, 2007)
+
+16.305.201.5
+Section 201.5 of the International Existing Building Code is hereby added to read as follows:
+
+16.305.201.5 Interpretations of definitions. For purposes of interpretation of the definitions of Existing
+Building and Existing Structure in Section 202, the phrase “a legal building permit” shall be interpreted to mean
+one for which a final certificate of occupancy has been issued.
+
+(History: Ord. No. BC-3499, §55, 2026; Ord. No. BC-3286 §42, 2020)
+
+16.305.303
+Section 303 of the International Existing Building Code is hereby amended to read as follows:
+
+303.1 General This section applies to the design and construction of storm shelters for the purpose of providing
+protection during tornadoes, hurricanes and other severe windstorms.
+      303.1.1 Construction. Storm shelters shall be constructed in accordance with Section 423 of the
+      International Building Code and ICC 500 and shall be designated as hurricane shelters, tornado shelters or
+      combined hurricane and tornado shelters.
+            Exception: Storm shelters added to critical emergency operations facilities or Group E occupancies
+            are not required to comply with the travel distance in Section 423.4.2 or 423.5.2 of the International
+            Building Code.
+
+
+
+
+                                                                                                Page 2
+303.2 Addition to a Group E occupancy. Where an addition is added to an existing Group E occupancy, and the
+addition includes a gymnasium, located in an area where the shelter design wind speed for tornadoes is 250 mph
+(402.3 km/h) in accordance with Figure 304.2(1) of ICC 500 and the occupant load in the addition is 50 or more,
+the addition shall have a storm shelter constructed in accordance with ICC 500.
+      Exceptions:
+       1. Group E day care facilities.
+       2. Group E occupancies accessory to places of religious worship.
+       3. Additions meeting the requirements for shelter design in ICC 500.
+      303.2.1 Design occupant capacity. The required design occupant capacity of the storm shelter shall
+      include all buildings on the site, and shall be the total occupant load of the classrooms, vocational rooms and
+      offices in the Group E occupancy. The code official may accept the student and staff projections that the
+      school district has tabulated and presented to the School Board.
+            Exception: Where approved by the code official, the required design occupant capacity of the shelter
+            shall be permitted to be reduced by the design occupant capacity of any existing storm shelters on the
+            site.
+      303.2.2 Water closets and lavatories. Water closets and lavatories provided for additions to a Group E
+      occupancy and required by ICC 500 shall be provided within the shelter or within the building served by the
+      shelter.
+
+
+
+
+303.3 Occupancy classification. The occupancy classification for storm shelters shall be determined in
+accordance with Section 423.3 of the International Building Code.
+
+
+(History: Ord. No. BC-3499, §56, 2026; Ord. No. BC-3286 §43, 2020)
+
+
+
+
+                                                                                               Page 3
+TITLE 16 - BUILDINGS AND CONSTRUCTION
+
+16.320 FIRE CODE
+Contents:
+ 16.320.100 Fire Code - Adoption.
+ 16.320.101.1
+ 16.320.101.2
+ 16.320.103.1
+ 16.320.104.3
+ 16.320.105.1
+ 16.320.105.5.1 (Deleted)
+ 16.320.105.5.22
+ 16.320.105.5.36
+ 16.320.105.5.51
+ 16.320.105.6 (Deleted)
+ 16.320.112.1
+ 16.320.112.2 (Deleted)
+ 16.320.113.4
+ 16.320.114.4 (Deleted)
+ 16.320.307.1.1
+ 16.320.310.7
+ 16.320.315.6 (Deleted)
+ 16.320.320.4.2.1
+ 16.320.403.11.3
+ 16.320.404.4
+ 16.320.503.3
+ 16.320.503.6
+ 16.320.505.1
+ 16.320.505.2
+ 16.320.506.2
+ 16.320.507.1
+ 16.320.507.5
+ 16.320.509.1
+
+
+
+                                        Page 1
+  16.320.903.4
+  16.320.905.4
+  16.320.907.6.6
+  16.320.912.3
+  16.320.913.4
+  16.320.1103.2 (Deleted)
+  16.320.4104.2
+  16.320.5601.1
+  16.320.5604.1
+  16.320.5704.2.13
+  16.320.D103.1 (Deleted)
+  16.320.D107.1
+
+16.320.100 Fire Code - Adoption.
+The 2024 International Fire Code, as published by the International Code Council, Inc., is hereby
+adopted by reference as the Fire Code of the City of Overland Park, save and except such parts or
+portions thereof as are specifically deleted, added or changed in the City Code. At least one copy
+shall be marked “Official Copy as Incorporated by Ordinance No. BC-3499” and filed with the City
+Clerk for inspection by the public during reasonable business hours, with all sections or portions
+thereof intended to be deleted, added or changed clearly marked to show any deletions, additions
+or changes.
+
+
+(History: Ord. No. BC-3499, §58, 2026; Ord. No. BC-3286 §91, 2020; Ord. No. BC-2936 §62, 2012;
+Ord. No. BC-2635 §75, 2007; Ord. No. BC-2459 §60, 2004; Ord. No. BC-2237 §3, 2001)
+
+16.320.101.1
+Section 101.1 of the International Fire Code is hereby amended to read as follows:
+
+101.1 Title. These regulations shall be known as the Fire Code of the City of Overland Park, Kansas, hereinafter
+referred to as “this code.”
+
+(History: Ord. No. BC-3499, §59, 2026; Ord. No. BC-3286 §92, 2020; Ord. No. BC-2936 §63, 2012)
+
+16.320.101.2
+Section 101.2 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                           Page 2
+101.2 Scope. This code establishes regulations affecting or relating to structures, processes, premises and
+safeguards regarding all of the following:
+       1. The hazard of fire and explosion arising from the storage, handling or use of structures, materials or
+          devices.
+       2. Conditions hazardous to life, property or public welfare in the occupancy of structures or premises.
+       3. Fire hazards in the structure or on the premises from occupancy or operation.
+       4. Matters related to the construction, extension, repair, alteration or removal of fire protection systems.
+       5. Conditions affecting the safety of fire fighters and emergency responders during emergency operations.
+
+
+
+
+      101.2.1 Appendices. Provisions in the appendices shall not apply unless specifically adopted.
+
+
+            101.2.1.1 Appendices adopted. The following appendices are adopted as part of this code:
+                   Appendix B Fire-Flow Requirements for Buildings
+                   Appendix C Fire Hydrant Locations and Distribution
+                   Appendix D Fire Apparatus Access Roads
+                   Appendix I Fire Protection Systems-Noncompliant Conditions
+                   Appendix N Indoor Trade Shows and Exhibitions
+                   Appendix O Valet Trash and Recycling Collection in Group R-2 Occupancies
+
+
+(History: Ord. No. BC-3499, §60, 2026; Ord. No. BC-3286 §93, 2020; Ord. No. BC-2936 §64, 2012;
+Ord. No. BC-2635 §76, 2007; Ord. No. BC-2459 §61, 2004; Ord. No. BC-2237 §3, 2001)
+
+16.320.103.1
+Section 103.1 of the International Fire Code is hereby amended to read as follows:
+
+103.1 Creation of agency. The department of fire prevention is hereby created and the official in charge thereof
+shall be known as the fire code official. The function of the agency shall be the implementation, administration and
+enforcement of the provisions of this code.
+
+(History: Ord. No. BC-3499, §61, 2026)
+
+16.320.104.3
+Section 104.3 of the International Fire Code is hereby amended to read as follows:
+
+
+
+                                                                                              Page 3
+104.3 Applications and permits. The fire code official is authorized to receive applications, review construction
+documents and , issue permits for operations regulated by this code, inspect the premises for which such permits
+have been issued and enforce compliance with the provisions of this code.
+
+(History: Ord. No. BC-3499, §62, 2026; Ord. No. BC-3286 §95, 2020; Ord. No. BC-2936 §66, 2012;
+Ord. No. BC-2635 §79, 2006)
+
+16.320.105.1
+Section 105.1 of the International Fire Code is hereby amended to read as follows:
+
+105.1 General Permits shall be in accordance with Sections 105.1.1 through 105.6.25.
+
+
+
+      105.1.1 Permits required. Permits required by this code shall be obtained from the Overland Park Fire
+      Department. Permit fees, if any, shall be paid prior to issuance of the permit. Issued permits shall be kept on
+      the premises designated therein at all times and shall be readily available for inspection by the Fire
+      Department.
+            Exception: Permit applications for fireworks permits shall be submitted to the City Clerk as required
+            by O.P.M.C. 5.40.
+
+
+
+      105.1.2 Types of permits. Operational permit. An operational permit allows the applicant to conduct an
+      operation or a business for which a permit is required by Section 105.5 for either:
+            1.1. A prescribed period
+            1.2. Until renewed or revoked
+
+
+(History: Ord. No. BC-3499, §63, 2026; Ord. No. BC-3286 §96, 2020; Ord. No. BC-2936 §67, 2012;
+Ord. No. BC-2635 §81, 2007; Ord. No. BC-2459 §64, 2004; Ord. No. BC-2237 §3, 2001; Source or
+prior law: 16.14.220 (part); Ord. No. BC-2013 §80, 97; Ord. No. BC-1824 §117, 94)
+
+16.320.105.5.1 (Deleted)
+The following Sections of the International Fire Code are hereby deleted: Sections 105.5.1 through
+105.5.15, Sections 105.5.17 through 105.5.21, Sections 105.5.23 through 105.5.35, Sections
+105.5.37 through 105.5.43 Sections 105.5.45 through 105.5.50, Sections 105.5.52 through 105.5.57.
+
+
+(History: Ord. No. BC-3499, §64, 2026; Ord. No. BC-3286 §98, 2020; Ord. No. BC-2936 §69, 2012;
+Ord. No. BC-2635 §84, 2007)
+
+
+
+
+                                                                                               Page 4
+16.320.105.5.22
+Section 105.5.22 of the International Fire Code is hereby amended to read as follows:
+
+105.5.22 Hazardous Materials. Where required by the Fire Code Official an operational permit is required to
+store, transport on site, dispense, use or handle extremely hazardous substances. “Extremely Hazardous
+Substances (EHS) Facilities” are defined as facilities subject to the provisions of Superfund Amendments and
+Reauthorization Act of 1986 (SARA TITLE III), Section 302, for storing, transporting, dispensing, using, or handling
+of listed chemicals in excess of their threshold planning quantities (TPQ).
+
+
+(History: Ord. No. BC-3499, §65, 2026; Ord. No. BC-3286 §99, 2020; Ord. No. BC-2936 §70, 2012;
+Ord. No. BC-2635 §85, 2007)
+
+16.320.105.5.36
+Section 105.5.36 of the International Fire Code is hereby amended to read as follows:
+
+105.5.36 Open burning. An operational permit is required for the kindling or maintaining of an open fire or a fire
+on any public street, alley, road, or other public or private ground. Instructions and stipulations of the permit shall
+be adhered to. Applications for open burning shall be submitted in writing to the Overland Park Fire Department,
+before the fire is set and shall be in such form and contain such information as required by the Fire Department.
+Such applications shall contain information regarding the purpose of the proposed burning, the nature and
+quantities of material to be burned, the time and date when such burning will take place, the location of the
+burning site, and the name and phone number of the person responsible for supervision of the burning.
+      Exception: Recreational fires.
+
+
+(History: Ord. No. BC-3499, §66, 226; Ord. No. BC-3286 §100, 2020)
+
+16.320.105.5.51
+Section 105.5.51 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                                Page 5
+105.5.51 Temporary membrane structures, special event structures, tents and canopies. An operational
+permit is required to operate an air-supported temporary membrane structure, a temporary special event
+structure or a tent having an area in excess of 900 square feet (83.7 m2), or a canopy in excess of 900 square feet
+(83.7 m2).
+      Exceptions:
+       1. Tents used exclusively for recreational camping purposes.
+       2. Tents, curtains and extensions attached thereto, when used for funeral services.
+       3. Fabric canopies open on all sides, which comply with all of the following:
+       4. Individual canopies having a maximum size of 900 square feet (83.7 m2).
+       5. The aggregate area of multiple canopies placed side by side without a fire break clearance of not less than
+          12 feet (3658 mm) shall not exceed 900 square feet (83.7 m2) total.
+       6. A minimum clearance of 12 feet (3658 mm) to structures and other tents shall be provided.
+
+(History: Ord. No. BC-3499, §67, 2026; Ord. No. BC-3286 §101, 2020)
+
+16.320.105.6 (Deleted)
+Section 105.6 of the International Fire Code is hereby intentionally deleted and omitted.
+
+
+(History: Ord. No. BC-3499, §68, 2026; Ord. No. BC-3286 §102, 2020; Ord. No. BC-2936 §73, 2012;
+Ord. No. BC-2635 §88, 2007)
+
+16.320.112.1
+Section 112.1 of the International Fire Code is hereby amended to read as follows:
+
+112.1 Board of appeals. An application for appeal of orders, decisions or determinations made by the fire code
+official shall be made to the Code Board of Appeals as established in OPMC Section 16.300.113.1. The appeal shall
+be based on a claim that the intent of this code or the rules legally adopted hereunder has been incorrectly
+interpreted, the provisions of this code do not fully apply, or an equivalent method of protection or safety is
+proposed. The Code Board of Appeals shall not have authority to waive requirements of this code.
+
+
+(History: Ord. No. BC-3499, §69, 2026; Ord. No. BC-3286 §104, 2020)
+
+16.320.112.2 (Deleted)
+Sections 112.2 through 112.4 of the International Fire Code are hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §70, 2026; Ord. No. BC-3286 §105, 2020; Ord. No. BC-2936 §168, 2012;
+Ord. No. BC-2635 §90, 2007; Ord. No. BC-2459 §70, 2004; Ord. No. BC-2237 §3, 2001; Source or
+prior law: 16.14.230 (part); Ord. No. BC-1824 §118, 94)
+
+
+
+                                                                                               Page 6
+16.320.113.4
+Section 113.4 of the International Fire Code is amended to read as follows:
+
+113.4 Violation penalties. Persons who shall violate a provision of this code, or OPMC Chapters 16.300 through
+16.380, or shall fail to comply with any of the requirements thereof or who shall erect, install, alter, repair or do
+work in violation of the approved construction documents or directive of the Fire Code Official, or of a permit or
+certificate used under provisions of this code, shall be subject to penalties as prescribed by law, or other references
+incorporated, is guilty of a public offense as provided in OPMC Section 1.12.010.
+
+
+
+      113.4.1 Abatement of violation. In addition to the imposition of the penalties herein described, the Fire
+      Code Official is authorized to institute appropriate action to prevent unlawful construction or to restrain,
+      correct or abate a violation; or to prevent illegal occupancy of a structure or premises; or to stop an illegal
+      act, conduct of business or occupancy of a structure on or about any premises.
+
+
+(History: Ord. No. BC-3499, §73, 2026; Ord. No. BC-3286 §106, 2020)
+
+16.320.114.4 (Deleted)
+Section 114.4 of the International Fire Code is hereby intentionally deleted and omitted.
+
+
+(History: Ord. No. BC-3499, §74, 2026; Ord. No. BC-3286 §107, 2020)
+
+16.320.307.1.1
+Section 307.1.1 of the International Fire Code is hereby amended to read as follows:
+
+307.1.1 Prohibited open burning. Open burning, bonfires, recreational fires or portable outdoor fireplaces, shall
+be prohibited when atmospheric conditions or local circumstances make such fires hazardous (determined using
+information from the National Weather Service or the National Oceanic and Atmospheric Administration (NOAA).
+      Exception: Prescribed burning for the purpose of reducing the impact of wildland fire when authorized by
+      the fire code official.
+
+
+(History: Ord. No. BC-3499, 75, §2026; Ord. No. BC-3286 §108, 2020; Ord. No. BC-3130 §1, 2016)
+
+16.320.310.7
+Section 310.7 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                                 Page 7
+310.7 Burning objects. Lighted matches, cigarettes, cigars or other burning objects shall not be discarded in such
+a manner that could cause ignition of other combustible material.
+
+
+
+      310.7.1 Smoking receptacles required. Owners of commercial and multi-family properties, where
+      smoking is permitted, shall be responsible for providing and maintaining non-combustible receptacles
+      specifically designed for the collection of discarded smoking material.
+
+
+(History: Ord. No. BC-3499, §76, 2026)
+
+16.320.315.6 (Deleted)
+Section 315.6 of the International Fire Code is hereby intentionally deleted and omitted.
+
+
+(History: Ord. No. BC-3499, §77, 2026)
+
+16.320.320.4.2.1
+Section 320.4.2.1 of the International Fire Code is hereby amended to read as follows:
+
+320.4.2.1 Technical opinion and report. A technical opinion and report complying with Section 104.2.2 shall be
+prepared to evaluate the fire and explosion risks associated with the indoor storage area and to make
+recommendations for fire and explosion protection. The report shall be submitted to the fire code official and
+building code official and shall require the fire code and building code official’s approval prior to issuance of a
+permit. In addition to the requirements of Section 104.2.2, the technical opinion and report shall specifically
+evaluate the following:
+       1. The potential for deflagration of flammable gases released during a thermal runaway event.
+       2. The basis of design for an automatic sprinkler system or other approved fire suppression system. Such
+          design basis shall reference relevant full-scale fire testing or another approved method of demonstrating
+          sufficiency of the recommended design such as NFPA 855 or an equivalent.
+
+
+(History: Ord. No. BC-3499, §78, 2026)
+
+16.320.403.11.3
+Section 403.11.3 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                             Page 8
+403.11.3 Crowd Managers. Trained crowd managers shall be provided for facilities or events where more than
+1,000 persons congregate. Not fewer than four trained crowd managers, and not fewer than one trained crowd
+manager for each 250 persons or portion thereof, shall be provided for the gathering. Where approved by the fire
+code official, the ratio of crowd managers shall be permitted to be reduced where the facility is equipped
+throughout with an approved automatic sprinkler system or based upon the nature of the event.
+
+
+(History: Ord. No. BC-3499, §79, 2026)
+
+16.320.404.4
+Section 404.4 of the International Fire Code is hereby amended to read as follows:
+
+404.4 Availability. Fire safety, evacuation and lockdown plans shall be available in the workplace for reference
+and review by employees, and copies shall be furnished to the fire code official for review on request.
+
+
+
+      404.4.1 Distribution. The fire safety, evacuation and lockdown plans shall be distributed to the tenants and
+      building service employees by the owner or owner’s agent. Tenants shall distribute to their employees
+      applicable parts of the fire safety plan and lockdown plan affecting the employees’ actions in the event of a
+      fire or other emergency
+
+
+             404.4.1.1 Building information card and floor plans. In buildings or occupancies required to
+             prepare a fire safety and evacuation plan and in special uses in Section 403.10 required to prepare a
+             fire safety and evacuation plan, a building information card complying with feature 13 of Section
+             508.1.6 shall be maintained on the premises and submitted or otherwise made available to the fire
+             department. When required by the fire code official, building floor plans shall be submitted to the fire
+             department in an approved manner.
+
+
+
+(History: Ord. No. BC-3499, §80, 2026)
+
+16.320.503.3
+Section 503.3 of the International Fire Code is amended to read as follows:
+
+503.3 Marking. Where required by the Fire Department, approved signs or other approved notices shall be
+provided for fire apparatus access roads to identify such roads or prohibit the obstruction thereof. Signs or notices
+shall be maintained in a clean and legible condition at all times and be replaced or repaired when necessary to
+provide adequate visibility.
+
+
+
+
+                                                                                               Page 9
+      503.3.1 Marking requirements. Each separate fire lane signage, which may consist of one sign or a
+      combination of signs, shall have a cumulative minimum size of 96 square inches and contain the “No
+      Parking” words or symbol with the words “Fire Lane” located directly beneath the “No Parking” words or
+      symbol. Each sign or combination of signs are required to be uniformly mounted between 2 feet 8 inches to
+      7 feet 0 inches above grade to the bottom of the sign, and so located not to obstruct pedestrian traffic. The
+      sign or combination of signs shall be mounted within 6 feet of the curb or striped pavement and are required
+      to face or run parallel with oncoming vehicular traffic. The sign or combination of signs may be mounted on
+      the building, pole base, or any other structure provided the signage meets the setback and minimum and
+      maximum height requirements indicated above. The sign, or combination of signs, are required to be spaced
+      no more than 200 feet apart. In addition, the curb, or pavement if a curb is absent, is required to be marked
+      with a yellow or red stripe that shall run not less than 6 feet of each 30-foot length of fire lane. Each separate
+      yellow or red striped area shall contain 3 inch black lettering indicating “Fire Lane”; provided, however, that
+      the presence of such lettering is not a prerequisite to the enforcement of fire lane parking violations.
+      Furthermore, the exceeding of any standards intended to inform the public of the location of a fire lane shall
+      not affect the enforcement of this section.
+
+
+
+(History: Ord. No. BC-3499, §81, 2026; Ord. No. BC-3286 §112, 2020; Ord. No. BC-2936 §81, 2012;
+Ord. No. BC-2635 §98, 2007; Ord. No. BC-2459 §77, 2004; Ord. No. BC-2237 §3, 2001; Source or
+prior law: 16.14.270; Ord. No. BC-2013 §82, 97; Ord. No. BC-1824 §122, 94)
+
+16.320.503.6
+Section 503.6 of the International Fire Code is hereby amended to read as follows:
+
+503.6 Security gates. Where security gates are installed, they shall have an approved means of emergency
+operation. The security gates and the emergency operation shall be maintained operational at all times and shall
+comply with the following:
+       1. All gates shall be of the sliding, hinged, or counter-balanced type, and where electrically controlled, shall
+          be capable of being operated to the full open position by emergency responders during a loss of power to
+          the gates’ operating mechanism.
+       2. Electrical or mechanical operated gates shall be capable of being unlocked or opened with an approved
+          fire department county keyed cylinder installed at an accessible location on the entry side of the gate.
+          The key-operated switch shall bypass the release mechanism to allow the gate to be operated by
+          emergency response personnel.
+       3. In addition to an approved key cylinder operation device, gates shall be equipped with audible release,
+          set to operate with an emergency response yelp tone.
+       4. Keypads and other entry devices installed on gates shall not interfere with the operation of either the
+          approved key access cylinder or emergency response audible release.
+
+
+(History: Ord. No. BC-3499, §82, 2026; Ord. No. BC-3286 §113, 2020; Ord. No. BC-2936 §82, 2012;
+Ord. No. BC-2635 §100, 2007)
+
+
+
+
+                                                                                                Page 10
+16.320.505.1
+Section 505.1 of the International Fire Code is hereby amended to read as follows:
+
+505.1 Address numbers. New and existing buildings shall have approved address numbers, building numbers, or
+approved building identification placed in a position that is on the building or on any structure, mail box, sign or
+monument on the property that is securely fixed to the ground to be plainly legible and visible from the street or
+road fronting the property. These numbers shall contrast with their background. Address numbers shall be
+provided in additional approved locations to facilitate emergency response. Address numbers shall be Arabic
+numerals or alphabet letters. Numbers shall be a minimum of 4 inches high with a minimum stroke width of 0.5
+inch. Numbers shall be a minimum height of: 4 inches in Use Groups R-3 and R-4; and 8 inches in all other Use
+Groups. When required by the building official, the identifying numbers shall be lighted by an approved light
+source.
+
+
+
+
+      505.1.1 Secondary address numbers. Multi-tenant retail shopping centers in which tenant spaces have
+      secondary entry doors from an exterior facade of the building and have paved vehicle access adjacent to
+      such doors shall have approved numbers or addresses placed on or adjacent to each door. Secondary
+      address numbers shall be a minimum of 4 inches in height.
+            Exceptions:
+       1. If more than one entry door is installed on a facade, only one door needs to be marked (entry doors
+          defined as overhead or cargo doors and normal passage doors).
+       2. Further exceptions shall be permitted by the building official after consultation with the Crime
+          Prevention Unit of Overland Park Police Department if it can be shown that marking the doors would
+          create a security risk.
+
+
+
+      505.1.2 Additional identification. Where identification of additional exits would be of benefit to
+      emergency response personnel, a sequential numbering system can be required by the fire code official
+      whereby the interior and exterior surfaces of each exit is marked in an approved manner.
+
+
+(History: Ord. No. BC-3499, §83, 2026; Ord. No. BC-3286 §114, 2020; Ord. No. BC-2936 §83, 2012;
+Ord. No. BC-2731 §1, 2008; Ord. No. BC-2635 §101, 2007; Ord. No. BC-2459 §78, 2004; Ord. No. BC-
+2237 §3, 2001; Source or prior law: 16.07.304.3; Ord. No. BC-2114 §9, 98; 16.14.320 (part); Ord.
+No. BC-2013 §83, 97; Ord. No. BC-1824 §129, 94)
+
+16.320.505.2
+Section 505.2 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                             Page 11
+505.2 Street or road signs. Streets and roads shall be identified with approved signs. The signage shall consist of
+Arabic numerals or alphabet letters which are reflective and contrast with their background. The numbers and
+letters shall be a minimum of 6 inches high with a minimum stroke width of 0.5 inches. Temporary signs shall be
+installed at each street intersection when construction of new roadways allows passage by vehicles. Signs shall be
+of an approved size, weather resistant and be maintained until replaced by permanent signs.
+
+
+(History: Ord. No. BC-3499, §84, 2026; Ord. No. BC-3286 §115, 2020; Ord. No. BC-2936 §84, 2012;
+Ord. No. BC-2635 §102, 2007)
+
+16.320.506.2
+Section 506.2 of the International Fire Code is hereby amended to read as follows:
+
+506.2 Key box maintenance. The operator of the building shall immediately notify the Overland Park Fire
+Department and provide the new key where a lock is changed or rekeyed. The key to such lock shall be secured in
+the key box. The key box shall be maintained in working order by the operator, owner or occupant of the building.
+
+(History: Ord. No. BC-3499, §85, 2026; Ord. No. BC-3286 §116, 2020; Ord. No. BC-2936 §85, 2012;
+Ord. No. BC-2635 §103, 2007; Ord. No. BC-2459 §79, 2004; Ord. No. BC-2237 §3, 2001; Source or
+prior law: 16.14.310 (part); Ord. No. BC-1824 §128, 94)
+
+16.320.507.1
+Section 507.1 of the International Fire Code is amended to read as follows:
+
+507.1 Required water supply. An approved water supply capable of supplying the required fire flow for fire
+protection shall be provided to premises upon which facilities, buildings or portions of buildings are hereafter
+constructed or moved into or within the jurisdiction.
+
+
+
+      507.1.1 Water distribution system failures. Water districts serving areas within Overland Park shall
+      notify the Emergency Communications Center of any failure in their water distribution system; hydrant
+      repair, main breaks, pump failures or other interruptions of water supply that may affect water supply for
+      fire control purposes.
+
+
+(History: Ord. No. BC-3499, §86, 2026; Ord. No. BC-3286 §117, 2020; Ord. No. BC-2936 §86, 2012;
+Ord. No. BC-2635 §104, 2007; Ord. No. BC-2459 §80, 2004; Ord. No. BC-2237 §3, 2001; Source or
+prior law: 16.05.170 (part); Ord. No. BC-2013 §25, 97)
+
+16.320.507.5
+Section 507.5 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                            Page 12
+507.5 Fire hydrant systems. Fire hydrant systems shall comply with Sections 507.5.1 through 507.5.6.
+
+
+
+      507.5.1 Where required. Where a portion of the facility or building hereafter constructed or moved into or
+      within the jurisdiction is more than 400 feet (122 m) from a hydrant on a fire apparatus access road, as
+      measured by an approved route around the exterior of the facility or building, on-site fire hydrants and
+      mains shall be provided where required by the fire code official.
+            Exceptions:
+       1. For Group R-3 occupancies, the distance shall be 600 feet (183 m).
+       2. For agricultural structures classified as Group U occupancies, the distance shall be 600 feet (183 m) or as
+          approved by the fire code official.
+
+
+            507.5.1.1 Hydrant for standpipe systems. Buildings equipped with a standpipe system installed in
+            accordance with Section 905 shall have a fire hydrant within 100 feet (30 480 mm) of the fire
+            department connections.
+                   Exception: The distance shall be permitted to exceed 100 feet (30 480 mm) where approved by
+                   the fire code official.
+
+
+
+
+      507.5.2 Inspection, testing and maintenance. Fire hydrant systems shall be subject to periodic tests as
+      required by the fire code official. Fire hydrant systems shall be maintained in an operative condition at all
+      times and shall be repaired where defective. Additions, repairs, alterations and servicing shall comply with
+      approved standards.
+
+
+
+      507.5.3 Private fire service mains and water tanks. Private hydrants shall be painted red in color. Private
+      fire service mains and water tanks shall be periodically inspected, tested and maintained in accordance with
+      NFPA 25 at the following intervals:
+       1. Private fire hydrants of all types: Inspection annually and after each operation; flow test and
+          maintenance annually.
+       2. Fire service main piping: Inspection of exposed, annually; flow test every 5 years.
+       3. Fire service main piping strainers: Inspection and maintenance after each use.
+
+
+
+
+                                                                                              Page 13
+      507.5.4 Obstruction. Unobstructed access to fire hydrants shall be maintained at all times. The fire
+      department shall not be deterred or hindered from gaining immediate access to fire protection equipment
+      or fire hydrants. All hydrants shall be painted and highly visible.
+
+
+
+      507.5.5 Clear space around hydrants. A 3-foot (914 mm) clear space shall be maintained around the
+      circumference of fire hydrants, except as otherwise required or approved.
+
+
+
+      507.5.6 Physical protection. Where fire hydrants are subject to impact by a motor vehicle, guard posts or
+      other approved means shall comply with Section 312.
+
+
+(History: Ord. No. BC-3499, §87, 2026; Ord. No. BC-3286 §118, 2020; Ord. No. BC-2936 §87, 2012)
+
+16.320.509.1
+Section 509.1 of the International Fire Code is hereby amended to read as follows:
+
+509.1 Identification. Fire protection equipment shall be identified in an approved manner. Rooms containing
+controls for air-conditioning systems, sprinkler risers and valves, or other fire detection, suppression or control
+elements shall be identified for the use of the fire department. Approved signs required to identify fire protection
+system equipment and equipment location shall be constructed of durable materials, permanently installed and
+readily visible.
+
+
+
+      509.1.1 Identification standard. Rooms containing the equipment identified in Section 509.1 shall be
+      identified by minimum 4 inch letters with a minimum 0.5-inch stroke on contrasting background.
+
+
+
+      509.1.2 Utility identification. Where required by the fire code official, gas shutoff valves, electric meters,
+      service switches and other utility equipment shall be clearly and legibly marked to identify the unit or space
+      that it serves. Identification shall be made in an approved manner, readily visible and shall be maintained.
+
+
+(History: Ord. No. BC-3499, §88, 2026; Ord. No. BC-3286 §119, 2020; Ord. No. BC-2936 §88, 2012;
+Ord. No. BC-2635 §107, 2007; Ord. No. BC-2459 §83, 2004; Ord. No. BC-2237 §3, 2001; Source or
+prior law: 16.04.515 (part); Ord. No. BC-2013 §11, 97)
+
+16.320.903.4
+Section 903.4 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                             Page 14
+903.4 Sprinkler system supervision and alarms. Automatic sprinkler system supervision and alarms shall
+comply with Sections 903.4.1 through 903.4.3.
+
+
+
+     903.4.1 Electronic supervision. Valves controlling the water supply for automatic sprinkler systems,
+     pumps, tanks, water levels and temperatures, critical air pressure and waterflow switches on all sprinkler
+     systems shall be electrically supervised by a listed fire alarm control unit.
+           Exceptions:
+      1. Automatic sprinkler systems protecting one- and two-family dwellings.
+      2. Limited area sprinkler systems in accordance with Section 903.3.8, provided that backflow prevention
+         device test valves located in limited area sprinkler system supply piping shall be locked in the open
+         position unless supplying an occupancy required to be equipped with a fire alarm system, in which case
+         the backflow preventer valves shall be electrically supervised by a tamper switch installed in accordance
+         with NFPA 72 and separately annunciated.
+      3. Automatic sprinkler systems installed in accordance with NFPA 13R where a common supply main is
+         used to supply both domestic water and the automatic sprinkler system, and a separate shutoff valve for
+         the automatic sprinkler system is not provided.
+      4. Jockey pump control valves that are sealed or locked in the open position.
+      5. Control valves to commercial kitchen hoods, paint spray booths or dip tanks that are sealed or locked in
+         the open position.
+      6. Valves controlling the fuel supply to fire pump engines that are sealed or locked in the open position.
+      7. Trim valves to pressure switches in dry, preaction and deluge sprinkler systems that are sealed or locked
+         in the open position.
+      8. Underground key or hub gate valves in roadway boxes.
+      9. On new and existing installations, isolation valves for the backflow prevention devices remotely located
+         in pits which are locked or chained in the open position.
+
+
+
+
+     903.4.2 Monitoring. Alarm, supervisory and trouble signals shall be distinctly different and shall be
+     automatically transmitted to an approved supervising station or, where approved by the fire code official,
+     shall sound an audible signal at a constantly attended location.
+
+
+
+
+                                                                                           Page 15
+     903.4.3 Alarms. An approved audible and visual sprinkler waterflow alarm device shall be connected to
+     each automatic sprinkler system. Such sprinkler waterflow alarm devices shall be activated by water flow
+     equivalent to the flow of a single sprinkler of the smallest orifice size installed in the system. Alarm devices
+     shall be provided on the exterior of the building directly above the fire department connection or in an
+     approved location. Where a waterflow switch is required by Section 903.4.1 to be electrically supervised,
+     such sprinkler waterflow alarm devices shall be powered by a fire alarm control unit or, where provided, a
+     fire alarm system. Where a fire alarm system is provided, actuation of the automatic sprinkler system shall
+     actuate the building fire alarm system.
+            Exception: Automatic sprinkler systems protecting one- and two-family dwellings.
+
+
+(History: Ord. No. BC-3499, §89, 2026; Ord. No. BC-3286 §122, 2020; Ord. No. BC-2936 §91, 2012;
+Ord. No. BC-2635 §113, 2007)
+
+16.320.905.4
+Section 905.4 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                               Page 16
+905.4 Location of Class I standpipe hose connections. Class I standpipe hose connections shall be provided in
+all of the following locations:
+       1. In every required interior exit stairway or exterior exit stairway, a hose connection shall be provided for
+          each story above and below grade plane. Hose connections shall be located at the intermediate floor
+          landing unless otherwise approved by the fire code official.
+          Exception: A single hose connection shall be permitted to be installed in the open corridor or open
+          breezeway between open stairs that are not greater than 75 feet (22 860 mm) apart.
+       2. On each side of the wall adjacent to the exit opening of a horizontal exit.
+          Exception: Where floor areas adjacent to a horizontal exit are reachable from an interior exit stairway or
+          exterior exit stairway hose connection by a 30-foot (9144 mm) hose stream from a nozzle attached to
+          100 feet (30 480 mm) of hose, a hose connection shall not be required at the horizontal exit.
+       3. In every exit passageway, at the entrance from the exit passageway to other areas of a building.
+          Exception: Where floor areas adjacent to an exit passageway are reachable from an interior exit stairway
+          or exterior exit stairway hose connection by a 30-foot (9144 mm) hose stream from a nozzle attached to
+          100 feet (30 480 mm) of hose, a hose connection shall not be required at the entrance from the exit
+          passageway to other areas of the building.
+       4. In covered mall buildings, adjacent to each exterior public entrance to the mall and adjacent to each
+          entrance from an exit passageway or exit corridor to the mall. In open mall buildings, adjacent to each
+          public entrance to the mall at the perimeter line and adjacent to each entrance from an exit passageway
+          or exit corridor to the mall.
+       5. Where the roof has a slope less than 4 units vertical in 12 units horizontal (33.3-percent slope), a hose
+          connection shall be located to serve the roof or at the highest landing of an interior stairway with access
+          to the roof provided in accordance with Section 1011.12.
+       6. Where the most remote portion of a nonsprinklered floor or story is more than 150 feet (45 720 mm)
+          from a hose connection or the most remote portion of a sprinklered floor or story is more than 200 feet
+          (60 960 mm) from a hose connection, the fire code official is authorized to require that additional hose
+          connections be provided in approved locations.
+
+
+
+
+      905.4.1 Protection. Risers and laterals of Class I standpipe systems not located within an interior exit
+      stairway shall be protected by a degree of fire resistance equal to that required for vertical enclosures in the
+      building in which they are located.
+            Exception: In buildings equipped throughout with an approved automatic sprinkler system, laterals
+            that are not located within an interior exit stairway are not required to be enclosed within fire-
+            resistance-rated construction.
+
+
+
+
+                                                                                               Page 17
+      905.4.2 Interconnection. In buildings where more than one standpipe is provided, the standpipes shall be
+      interconnected in accordance with NFPA 14.
+
+
+(History: Ord. No. BC-3499, §90, 2026; Ord. No. BC-3286 §123, 2020)
+
+16.320.907.6.6
+Section 907.6.6 of the International Fire Code is hereby amended to read as follows:
+
+907.6.6 Monitoring. Fire alarm systems required by this chapter or by the International Building Code shall be
+monitored by an approved supervisory station in accordance with NFPA 72. The fire alarm system shall be
+monitored by an approved entity that has been listed by a nationally recognized agency to perform such service.
+
+
+Fire alarm systems that require two or more zones, or have addressable fire alarm panels, shall report a signal to
+the monitoring company wherein the fire alarm initiating device and its location can be determined. The
+monitoring company shall then report this information to the emergency communication center dispatch.
+      Exception: Monitoring by a supervising station is not required for:
+       1. Single- and multiple-station smoke alarms required by Section 907.2.11.
+       2. Smoke detectors in Group I-3 occupancies.
+       3. Automatic sprinkler systems in one- and two-family dwellings.
+       4. Proprietary systems as approved by the Fire Department.
+
+
+
+
+      907.6.6.1 Transmission of alarm signals. Transmission of alarm signals to a supervising station shall be in
+      accordance with NFPA 72.
+
+
+
+      907.6.6.2 MIY monitoring. Direct transmission of alarms associated with monitor it yourself (MIY)
+      transmitters to a public safety answering point (PSAP) shall not be permitted unless approved by the fire
+      code official.
+
+
+
+      907.6.6.3 Termination of monitoring service. Termination of fire alarm monitoring services shall be in
+      accordance with Section 901.9.
+
+
+(History: Ord. No. BC-3499, §91, 2026; Ord. No. BC-3286 §126, 2020)
+
+16.320.912.3
+
+
+
+                                                                                            Page 18
+Section 912.3 of the International Fire Code is hereby amended to read as follows:
+
+912.3 Fire hose threads. Fire hose threads used in connection with standpipe systems shall be approved and
+shall be compatible with fire department hose threads.
+
+
+
+      912.3.1 Fire department supply connection. All connections to supply fire sprinkler systems or standpipe
+      systems shall be fitted with an approved 4 inch Storz quick coupling connector.
+
+
+(History: Ord. No. BC-3499, §92, 2026)
+
+16.320.913.4
+Section 913.4 of the International Fire Code is hereby amended to read as follows:
+
+913.4 Valve Supervision. Where provided, the fire pump suction, discharge and bypass valves, and the isolation
+valves on the backflow prevention device or assembly shall be supervised open by one of the following methods.
+       1. Central-station, proprietary or remote-station signaling service.
+       2. Local signaling service that will cause the sounding of an audible signal at a constantly attended location.
+
+
+
+
+      913.4.1 Test outlet valve supervision. Fire pump test outlet valves shall be supervised in the closed
+      position.
+
+
+(History: Ord. No. BC-3499, §93, 2026; Ord. No. BC-3286 §127, 2020; Ord. No. BC-2936 §95, 2012;
+Ord. No. BC-2635 §118, 2007; Ord. No. BC-2459 §88, 2004; Ord. No. BC-2237 §3, 2001; Source or
+prior law: 16.04.525 (part); Ord. No. BC-2013 §14, 97)
+
+16.320.1103.2 (Deleted)
+Sections 1103.2 through 1104.25 of the International Fire Code are hereby intentionally deleted
+and omitted.
+
+
+(History: Ord. No. BC-3499, §94, 2026; Ord. No. BC-3286 §130, 2020; Ord. No. BC-2936 §97, 2012)
+
+16.320.4104.2
+Section 4104.2 of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                               Page 19
+4104.2 Open-flame cooking devices. Charcoal burners and other open-flame cooking devices shall not be located
+or operated on combustible balconies or within 10 feet 3048 mm) of combustible construction.
+      Exceptions:
+       1. One- and two-family dwellings
+       2. Where buildings, balconies and decks are protected by an automatic sprinkler system.
+
+(History: Ord. No. BC-3499, 98, 2026)
+
+16.320.5601.1
+Section 5601.1 of the International Fire Code is hereby amended to read as follows:
+
+5601.1 Scope. The provisions of this chapter shall govern the possession, manufacture, storage, handling, sale and
+use of explosives, explosive materials, fireworks and small arms ammunition.
+Exceptions:
+       1. The Armed Forces of the United States, Coast Guard or National Guard.
+       2. Explosives in forms prescribed by the official United States Pharmacopoeia.
+       3. The possession, storage and use of small arms ammunition when packaged in accordance with DOTn
+          packaging requirements.
+       4. The possession, storage and use of not more than 1 pound (0.454 kg) of commercially manufactured
+          sporting black powder, 20 pounds (9 kg) of smokeless powder and 10,000 small arms primers for hand
+          loading of small arms ammunition for personal consumption.
+       5. The use of explosive materials by federal, state and local regulatory, law enforcement and fire agencies
+          acting in their official capacities.
+       6. Special industrial explosive devices that in the aggregate contain less than 50 pounds (23 kg) of explosive
+          materials.
+       7. The possession, storage and use of blank industrial-power load cartridges when packaged in accordance
+          with DOTn packaging regulations.
+       8. Transportation in accordance with DOTn 49 CFR Parts 100-185.
+       9. Items preempted by federal regulations.
+
+
+
+
+      5601.1.1 Explosive material standard. In addition to the requirements of this chapter, NFPA 495 shall
+      govern the manufacture, transportation, storage, sale, handling and use of explosive materials.
+
+
+
+
+                                                                                             Page 20
+      5601.1.2 Explosive material terminals. In addition to the requirements of this chapter, the operation of
+      explosive material terminals shall conform to the provisions of NFPA 498.
+
+
+
+      5601.1.3 Fireworks. The possession, manufacture, storage, sale, handling and use of fireworks are
+      prohibited.
+            Exceptions:
+       1. Storage and handling of fireworks as allowed in Section 5604 and OPMC Sections 5.40.020 and 5.40.120.
+       2. Activities complying with OPMC Section 5.40.120.
+       3. The use of fireworks for display as permitted in Section 5608.
+       4. The possession, storage, sale, handling and use of specific types of Division 1.4G fireworks where allowed
+          by applicable local or state laws, ordinances and regulations, provided that such fireworks comply with
+          CPSC 16 CFR, Parts 1500 and 1507, and DOTn 49 CFR, Parts 100-185, as applicable for consumer
+          fireworks.
+
+
+
+
+      5601.1.4 Rocketry. The storage, handling and use of model and high-power rockets shall comply with the
+      requirements of NFPA 1122, NFPA 1125 and NFPA 1127.
+
+
+
+      5601.1.5 Ammonium nitrate. The storage and handling of ammonium nitrate shall comply with the
+      requirements of NFPA 400 and Chapter 63.
+            Exception: Storage of ammonium nitrate in magazines with blasting agents shall comply with the
+            requirements of NFPA 495.
+
+
+(History: Ord. No. BC-3499, §99, 2026; Ord. No. BC-3286 §135, 2020; Ord. No. BC-2936 §101, 2012)
+
+16.320.5604.1
+Section 5604.1 of the International Fire Code is hereby amended to read as follows:
+
+5604.1 General. Storage of explosives and explosive materials, small arms ammunition, small arms primers,
+propellant-actuated cartridges and smokeless propellants in magazines shall conform with the provisions of this
+section and OPMC Chapters 5.36 and 5.38.
+
+(History: Ord. No. BC-3499, §100, 2026; Ord. No. BC-3286 §136, 2020; Ord. No. BC-2936 §102,
+2012)
+
+
+
+
+                                                                                             Page 21
+16.320.5704.2.13
+Section 5704.2.13 of the International Fire Code is hereby amended to read as follows:
+
+5704.2.13 Abandonment and status of tanks. Tanks taken out of service shall be removed in accordance with
+Section 5704.2.14, or safeguarded in accordance with Section 5704.2.13.1 through 5704.2.13.2.3 and API 1604.
+
+
+
+      5704.2.13.1 Underground tanks. Underground tanks taken out of service shall comply with Section
+      5704.2.13.1.1 through 5704.2.13.1.4.
+
+
+            5704.2.13.1.1 Temporarily out of service. Underground tanks temporarily out of service shall have
+            the fill line, gauge opening vapor return and pump connection secure against tampering. Vent lines
+            shall remain open and be maintained in accordance with Section 5704.2.7.3 and 5704.2.7.4.
+
+
+            5704.2.13.1.2 Out of service for 90 days. Underground tanks not used for a period of 90 days shall
+            be safeguarded in accordance with all the following or be removed in accordance with Section
+            5704.2.14.
+      1. Flammable or combustible liquids shall be removed from the tank.
+      2. All piping, including fill line, gauge opening, vapor return and pump connection, shall be capped or
+         plugged and secured from tampering.
+      3. Vent lines shall remain open and be maintained in accordance with Section 5704.2.7.3 and 5704.2.7.4.
+
+
+            5704.2.13.1.3 Out of service for one year. Underground tanks that have been out of service for a
+            period of one year shall be removed from the ground in accordance with Section 5704.2.14.
+
+
+            5704.2.13.1.4 Reinstallation of underground tanks. Tanks that are to be reinstalled for flammable
+            or combustible liquid service shall be in accordance with this chapter, ASME Boiler and Pressure
+            Vessel Code (Section VIII) API 12-P, API 1615, UL 58 and UL 1316.
+
+
+
+
+                                                                                         Page 22
+     5704.2.13.2 Above-ground tanks. Above-ground tanks taken out of service shall comply with Sections
+     5704.2.13.2.1 through 5704.2.13.2.3.
+
+
+           5704.2.13.2.1 Temporarily out of service. Above-ground tanks temporarily out of service shall
+           have all connecting lines isolated from the tank and be secured against tampering.
+                  Exception: In-place fire protection (foam) system lines.
+
+
+           5704.2.13.2.2 Out of service for 90 days. Above-ground tanks not used for a period of 90 days shall
+           be safeguarded in accordance with Section 5704.2.13.1.2 or removed in accordance with Section
+           5704.2.14.
+                  Exceptions:
+            1. Tanks and containers connected to oil burners that are not in use during the warm season of the
+               year or are used as a backup heating system to gas.
+            2. In-place, active fire protection (foam) system lines.
+
+
+           5704.2.13.2.3 Out of service for one year. Above-ground tanks that have been out of service for a
+           period of 1 year shall be removed in accordance with Section 5704.2.14.
+                  Exception: Tanks within operating facilities.
+
+
+
+(History: Ord. No. BC-3499, §101, 2026; Ord. No. BC-3286 §137, 2020; Ord. No. BC-2936 §103,
+2012)
+
+16.320.D103.1 (Deleted)
+Section D103.1 of Appendix D of the International Fire Code is hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §102, 2026; Ord. No. BC-3286 §138, 2020; Ord. No. BC-2936 §104,
+2012; Ord. No. BC-2635 §131, 2007; Ord. No. BC-2459 §99, 2004 )
+
+16.320.D107.1
+Section D107.1 of Appendix D of the International Fire Code is hereby amended to read as follows:
+
+
+
+
+                                                                                           Page 23
+D107.1 One- or two-family dwelling residential developments. Developments of one- or two-family dwellings
+where the number of dwelling units exceeds 50 shall be provided with two separate and approved fire apparatus
+access roads, and shall meet the requirements of Section D104.3.
+      Exceptions:
+       1. Where there are more than 50 dwelling units accessed from a single public or private fire apparatus
+          access road and all dwelling units are equipped throughout with an approved automatic sprinkler system
+          in accordance with Sections 903.3.1.1, 903.3.1.2 or 903.3.1.3, access from two directions shall not be
+          required.
+       2. The number of dwelling units accessed from a single fire apparatus access road shall not be increased
+          unless fire apparatus access roads will connect with future development, as determined by the Fire
+          Department.
+
+
+(History: Ord. No. BC-3499, §103, 2026; Ord. No. BC-3286 §139, 2020; Ord. No. BC-2936 §105,
+2012; Ord. No. BC-2635 §133, 2007; Ord. No. BC-2459 §101, 2004)
+
+
+
+
+                                                                                         Page 24
+TITLE 16 - BUILDINGS AND CONSTRUCTION
+
+16.330 PLUMBING CODE
+Contents:
+ 16.330.100 Plumbing Code - Adoption.
+ 16.330.101.1
+ 16.330.101.5
+ 16.330.103 (Deleted)
+ 16.330.111.4
+ 16.330.112 (Deleted)
+ 16.330.305.4
+ 16.330.312.7 (Deleted)
+ 16.330.403.1
+ 16.330.410.4
+ 16.330.701.2
+ 16.330.1101.1
+
+16.330.100 Plumbing Code - Adoption.
+The 2024 International Plumbing Code, as published by the International Code Council, Inc., is
+hereby adopted by reference as the Plumbing Code of the City of Overland Park, save and except
+such parts or portions thereof as are specifically deleted, added or changed in the City Code. At least
+one copy shall be marked “Official Copy as Incorporated by Ordinance No. BC-3499” and filed with
+the City Clerk for inspection by the public during reasonable business hours, with all sections or
+portions thereof intended to be deleted, added or changed clearly marked to show any deletions,
+additions or changes.
+
+
+(History: Ord. No. BC-3499, §105, 2026; Ord. No. BC-3286 §140, 2020; Ord. No. BC-2936 §106,
+2012; Ord. No. BC-2635 §134, 2007; Ord. No. BC-2459 §102, 2004; Ord. No. BC-2237 §4, 2001)
+
+16.330.101.1
+Section 101.1 of the International Plumbing Code is hereby amended to read as follows:
+
+
+
+
+                                                                                               Page 1
+101.1 Title. These regulations shall be known as the Plumbing Code of the City of Overland Park, hereinafter
+referred to as “this code.”
+
+(History: Ord. No. BC-3499, §106, 2026; Ord. No. BC-3286 §141, 2020; Ord. No. BC-2936 §107,
+2012)
+
+16.330.101.5
+Section 101.5 of the International Plumbing Code is hereby added to read as follows:
+
+16.330.101.5 Administration and enforcement. The administration and enforcement provisions for this code
+shall be those provisions contained in Sections 103 through 116 of the International Building Code in OPMC 16.300
+et seq.
+(History: BC-3499, §107, 2026; Ord. No. BC-3286 §142, 2020; Ord. No. BC-2936 §108, 2012)
+
+16.330.103 (Deleted)
+Sections 103 through 108 of the International Plumbing Code are hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §108, 2026; Ord. No. BC-3286 §143, 2020; Ord. No. BC-2936 §109,
+2012; Ord. No. BC-2635 §136, 2007; Ord. No. BC-2459 §104, 2004; Ord. No. BC-2237 §4, 2001;
+Source or prior law: 16.08.120; Ord. No. BC-2013 §36, 97)
+
+16.330.111.4
+Section 111.4 of the International Plumbing Code is hereby amended to read as follows:
+
+16.330.111.4 Testing. Plumbing work and systems shall be tested as required in Section 312 and in accordance
+with Sections 111.4.1 through 111.4.3. Tests shall be made by the permit holder and observed by the code official
+as deemed necessary.
+
+
+
+      111.4.1 New, altered, extended or repaired systems. New plumbing systems and parts of existing
+      systems that have been altered, extended or repaired shall be tested as prescribed herein to disclose leaks
+      and defects, except that testing is not required in the following cases:
+       1. In any case that does not include addition to, replacement, alteration or relocation of any water supply,
+          drainage or vent piping.
+       2. In any case where plumbing equipment is set up temporarily for exhibition purposes.
+
+
+
+
+                                                                                             Page 2
+      111.4.2 Equipment, material and labor for tests. Equipment, material and labor required for testing a
+      plumbing system or part thereof shall be furnished by the permit holder.
+
+
+
+      111.4.3 Reinspection and testing. Where any work or installation does not pass any initial test or
+      inspection, the necessary corrections shall be made to comply with this code. The work or installation shall
+      then be resubmitted to the code official for inspection and testing.
+
+
+(History: Ord. No. BC-3499, §114, 2026; Ord. No. BC-3286 §144, 2020; Ord. No. BC-2936 §110,
+2012)
+
+16.330.112 (Deleted)
+Sections 112 through 115 of the International Plumbing Code are hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §115-118, 2026)
+
+16.330.305.4
+Section 305.4 of the International Plumbing Code is hereby amended to read as follows:
+
+305.4 Freezing. Water, soil and waste pipes shall not be installed outside of a building, in attics or crawl spaces,
+concealed in outside walls, or in any other place subjected to freezing temperatures unless adequate provision is
+made to protect such pipes from freezing by insulation or heat or both. Exterior water supply system piping shall
+be installed not less than 6 inches (152 mm) below the frost line. The frost line depth for Overland Park is 36
+inches.
+
+
+
+      305.4.1 Sewer depth. The building sewer shall be installed in a trench deep enough to provide the pipe
+      with at least 30 inches of earth cover.
+
+
+(History: Ord. No. BC-3499, §119, 2026; Ord. No. BC-3286 §145, 2020; Ord. No. BC-2936 §111,
+2012; Ord. No. BC-2635 §137, 2007; Ord. No. BC-2459 §106, 2004; Ord. No. BC-2237 §4, 2001;
+Source or prior law: 16.08.165; Ord. No. BC-2013 §40, 97)
+
+16.330.312.7 (Deleted)
+Sections 312.7 through 312.8 of the International Plumbing Code are hereby intentionally deleted
+and omitted.
+
+
+
+
+                                                                                              Page 3
+(History: Ord. No. BC-3499, §120, 2026; Ord. No. BC-3286 §146, 2020; Ord. No. BC-2936 §112,
+2012; Ord. No. BC-2635 §140, 2007; Ord. No. BC-2459 §109, 2004; Ord. No. BC-2237 §4, 2001;
+Source or prior law: 16.08.180; Ord. No. BC-2013 §42, 97)
+
+16.330.403.1
+Section 403.1 of the International Plumbing Code is hereby amended to read as follows1:
+
+403.1 Minimum number of fixtures. Plumbing fixtures shall be provided in the minimum number as shown in
+Table 403.1, based on the actual use of the building or space. Uses not shown in Table 403.1 shall be considered
+individually by the code official. The number of occupants shall be determined by the International Building Code.
+
+
+
+      Exception to Table 403.1: A service sink is not required in business or mercantile occupancies with a total
+      of 2500 square feet or less of gross floor area and where the nature of the business does not include services
+      or processes requiring frequent mopping of floor surfaces. Food service or merchants, beauty parlors,
+      barber shops and veterinary clinics are examples of businesses that require a service sink.
+
+
+
+      403.1.1 Fixture calculations. To determine the occupant load of each sex, the total occupant load shall be
+      divided in half. To determine the required number of fixtures, the fixture ratio or ratios for each fixture type
+      shall be applied to the occupant load of each sex in accordance with Table 403.1. Fractional numbers
+      resulting from applying the fixture ratios of table 403.1 shall be rounded up to the next whole number. For
+      calculations involving multiple occupancies, such fractional numbers for each occupancy shall first be
+      summed and then rounded up to the next whole number.
+            Exceptions:
+       1. The total occupant load shall not be required to be divided in half where approved statistical data
+          indicates a distribution of the sexes of other than 50 percent of each sex.
+       2. Where multiple-user facilities are designed to serve all genders, the minimum fixture count shall be
+          calculated 100 percent, based on total occupant load. In such multiple-user facilities, each fixture type
+          shall be in accordance with ICC A117.1.
+
+
+
+
+      403.1.2 Fixtures in single-user toilet facilities and bathing rooms. The plumbing fixtures located in
+      single-user toilet facilities and single-user bathing rooms, including family or assisted-use toilet facilities and
+      bathing rooms, shall contribute toward the total number of required plumbing fixtures for a building or
+      tenant space. The number of fixtures in single-user toilet facilities, single-user bathing rooms and family or
+      assisted-use toilet facilities shall be deducted proportionally from the required gender ratios of Table 403.1.
+      Single-user toilet facilities and bathing rooms, and family or assisted-use toilet facilities and bathing rooms
+      shall be identified as being available for use by all persons regardless of their sex.
+
+
+
+
+                                                                                                  Page 4
+      403.1.3 Lavatory distribution. Where two or more toilet facilities are provided for each sex, the required
+      number of lavatories shall be distributed proportionately to the required number of male and female
+      designated water closets.
+
+
+1Note: Only text is being amended. Table 403.1 shall remain as published in the International
+Plumbing Code.
+(History: Ord. No. BC-3499, §122, 2026; Ord. No. BC-3286 §147, 2020; Ord. No. BC-3286 §147,
+2020; Ord. No. BC-2936 §113, 2012; Ord. No. BC-2635 §142, 2007)
+
+16.330.410.4
+Section 410.4 of the International Plumbing Code is hereby amended to read as follows:
+
+410.4 Drinking Fountain Substitutions. The following substitutions shall be permissible: A break room sink, or
+water dispenser, or bottled water dispenser complying with the reach ranges in ICC A117.1 for the following
+occupancies.
+       1. Mercantile and business occupancies (excluding medical offices and concentrated business areas) with
+          less than 2,500 square feet of gross floor area.
+       2. Warehouse occupancies with less than 7500 square feet of gross floor area.
+       3. Where restaurants provide drinking water in a container free of charge, drinking fountains shall not be
+          required in those restaurants.
+       4. In occupancies other than restaurants where drinking fountains are required, water dispensers shall be
+          permitted to be substituted for not more than 50 percent of the required number of drinking fountains.
+       5. In veterinary clinics, kennel’s, barber and beauty shops where hair cutting services are provided, dental
+          offices and similar occupancies where it creates a health hazard to install a drinking fountain.
+
+
+
+
+(History: Ord. No. BC-3499, §123, 2026; Ord. No. BC-3286 §149, 2020)
+
+16.330.701.2
+Section 701.2 of the International Plumbing Code is hereby amended to read as follows:
+
+
+
+
+                                                                                             Page 5
+16.330.701.2 Connection to sewer required. Sanitary drainage piping from plumbing fixtures in buildings and
+sanitary drainage piping systems from premises shall be connected to a public sewer. Where a public sewer is not
+available, the sanitary drainage piping and systems shall be connected to a private sewage disposal system in
+compliance with state or local requirements. (See Johnson County Environmental Sanitary Code 2025 Edition, and
+amendments thereto.) Where state or local requirements do not exist for private sewage disposal systems, the
+sanitary drainage piping and systems shall be connected to an approved private sewage disposal system that is in
+accordance with the Johnson County Environmental Sanitary Code 2025 Edition, and amendments thereto.
+      Exception: Sanitary drainage piping and systems that convey only the discharge from bathtubs, showers,
+      lavatories, clothes washers and laundry trays shall not be required to connect to a public sewer or to a
+      private sewage disposal system provided that the piping or systems are connected to a system in accordance
+      with Chapter 13 or 14.
+
+
+
+
+      701.2.1 Public systems available. A public sewer system shall be considered available when the lot or
+      tract is located within the distance indicated in Johnson County Environmental Sanitary Code 2025 Edition
+      (and amendments thereto.)
+
+
+(History: Ord. No. BC-3499, §124, 2026; Ord. No. BC-3466 §3, 2024; Ord. No. BC-3286 §150,
+2020; Ord. No. BC-2936 §114, 2012; Ord. No. BC-2832 §1, 2009)
+
+16.330.1101.1
+Section 1101.1 of the International Plumbing Code is hereby amended to read as follows:
+
+1101.1 Scope. The provisions of this chapter shall govern the materials, design, construction and installation of
+storm drainage starting at the building roof and terminating at the connection to the site storm drainage system as
+covered in Title 15 of the Overland Park Municipal Code. Nothing in this chapter shall be construed to take
+precedence over the requirements set forth in Title 15 of the Overland Park Municipal Code or the requirements
+set forth by the Johnson County Wastewater District.
+
+
+(History: Ord. No. BC-3499, §125, 2026; Ord. No. BC-3286 §152, 2020; Ord. No. BC-2936 §116,
+2012; Ord. No. BC-2635 §146, 2007; Ord. No. BC-2459 §115, 2004; Ord. No. BC-2237 §4, 2001;
+Source or prior law: 16.08.200; Ord. No. BC-2013 §45, 97)
+
+
+
+
+                                                                                             Page 6
+TITLE 16 - BUILDINGS AND CONSTRUCTION
+
+16.340 MECHANICAL CODE
+Contents:
+  16.340.100 Mechanical Code – Adoption.
+  16.340.101.1
+  16.340.101.5
+  16.340.102.12
+  16.340.103 (Deleted)
+
+16.340.100 Mechanical Code – Adoption.
+The 2024 International Mechanical Code, as published by the International Code Council, Inc., is
+hereby adopted by reference as the Mechanical Code of the City of Overland Park, save and except
+such parts or portions thereof as are specifically deleted, added or changed in the City Code. At least
+one copy shall be marked “Official Copy as Incorporated by Ordinance No. BC-3499” and filed with
+the City Clerk for inspection by the public during reasonable business hours, with all sections or
+portions thereof intended to be deleted, added or changed clearly marked to show any deletions,
+additions or changes.
+
+
+(History: Ord. No. BC-3499, §127, 2026)
+
+16.340.101.1
+Section 101.1 of the International Mechanical Code is hereby amended to read as follows:
+
+101.1 Title. These regulations shall be known as the Mechanical Code of the City of Overland Park, hereinafter
+referred to as “this code.”
+
+(History: Ord. No. BC- 3499, §128, 2026; Ord. No. BC-3286 §154, 2020; Ord. No. BC-2936 §118,
+2012)
+
+16.340.101.5
+
+Section 101.5 of the International Mechanical Code is hereby added to read as follows:
+
+
+
+
+                                                                                               Page 1
+ 101.5 Administration and Enforcement. The administration and enforcement provisions for this code shall be
+those provisions contained in Sections 103 through 116 of the International Building Code in OPMC 16.300 et seq.
+
+(History: Ord. No. BC-3499, §129, 2026; Ord. No. BC-3286 §155, 2020; Ord. No. BC-2936 §119,
+2012; Ord. No. BC-2635 §148, 2007 (part); Ord. No. BC-2459 §119 & 187, 2004; Ord. No. BC-2237
+§5, 2001)
+
+16.340.102.12
+Section 102.12 of the International Mechanical Code is hereby added to read as follows:
+
+102.12 State boiler inspector. Where permits are issued and portions of the work require inspection and
+approval of boilers and pressure vessels by the state of Kansas, those portions of the work will comply with the
+state requirements in lieu of compliance with the technical provisions of this code. Contact the Office of the State
+Fire Marshal Boiler Safety Unit for complete information regarding state requirements. State approval is generally
+required for all boilers that require permits.
+Exceptions:
+       1. Boilers serving individual dwelling units and their accessory structures.
+       2. Boilers serving apartment houses with less than 5 families.
+       3. Pressure vessels that do not exceed 15 cubic feet and 250 psi.
+
+
+(History: Ord. No. BC-3499, §130, 2026; Ord. No. BC-3286 §156, 2020; Ord. No. BC-2936 §120,
+2012; Ord. No. BC-2635 §149, 2007; Ord. No. BC-2459 §120, 2004; Ord. No. BC-2237 §5, 2001)
+
+16.340.103 (Deleted)
+Sections 103 through 115 of the International Mechanical Code are hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §131, 2026; Ord. No. BC-3286 §157, 2020; Ord. No. BC-2936 §121,
+2012; Ord. No. BC-2635 §150, 2007; Ord. No. BC-2459 §121, 2004; Ord. No. BC-2237 §5, 2001;
+Source or prior law: 16.12.031; Ord. No. BC-2013 §92, 97; Ord. No. BC-1824 §97, 94; 16.12.120;
+Ord. No. BC-2013 §72, 97)
+
+
+
+
+                                                                                              Page 2
+TITLE 16 - BUILDINGS AND CONSTRUCTION
+
+16.350 FUEL GAS CODE
+Contents:
+  16.350.100 Fuel Gas Code – Adoption.
+  16.350.101.1
+  16.350.101.5
+  16.350.103 (Deleted)
+  16.350.301.16
+
+16.350.100 Fuel Gas Code – Adoption.
+The 2024 International Fuel Gas Code, as published by the International Code Council, Inc., is
+hereby adopted by reference as the Fuel Gas Code of the City of Overland Park, save and except such
+parts or portions thereof as are specifically deleted, added or changed in the City Code. At least one
+copy shall be marked “Official Copy as Incorporated by Ordinance No. BC-3499” and filed with the
+City Clerk for inspection by the public during reasonable business hours, with all sections or
+portions thereof intended to be deleted, added or changed clearly marked to show any deletions,
+additions or changes.
+
+
+(History: Ord. No. BC-3499, §143, 2026; Ord. No. BC-3286 §158, 2020; Ord. No. BC-2936 §122,
+2012; Ord. No. BC-2635 §151, 2007; Ord. No. BC-2459 §124, 2004; Ord. No. BC-2237 §6, 2001)
+
+16.350.101.1
+Section 101.1 of the International Fuel Gas Code is hereby amended to read as follows:
+
+101.1 Title. These regulations shall be known as the Fuel Gas Code of the City of Overland Park, hereinafter
+referred to as “this code.”
+
+(History: Ord. No. BC-3499, 144, 2026; Ord. No. BC-3286 §159, 2020; Ord. No. BC-2936 §123, 2012;
+Ord. No. BC-2635 §152, 2007)
+
+16.350.101.5
+Section 101.5 of the International Fuel Gas Code is hereby added to read as follows:
+
+
+
+
+                                                                                              Page 1
+101.5 Administration and enforcement. The administration and enforcement provisions for this code shall be
+those provisions contained in Sections 103 through 116 of the International Building Code in OPMC 16.300 et seq.
+
+(History: Ord. No. BC-3499, §145, 2026; Ord. No. BC-3286 §160, 2020; Ord. No. BC-2459 §187,
+2004; Ord. No. BC-2237 §6, 2001)
+
+16.350.103 (Deleted)
+Sections 103 through 114 of the International Fuel Gas Code are hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §146, 2026; Ord. No. BC-3286 §161, 2020; Ord. No. BC-2936 §125,
+2012; Ord. No. BC-2635 §154, 2007; Ord. No. BC-2459 §126, 2004; Ord. No. BC-2237 §6, 2001)
+
+16.350.301.16
+Section 301.16 of the International Fuel Gas Code is hereby added to read as follows:
+
+16.350.301.16 Protection from physical damage. Where meters supplying fuel gas are located adjacent to
+parking spaces or vehicular driveways they shall be protected from physical damage per Section 312 of the
+International Fire Code.
+
+(History: Ord. No. BC-3499, §155, 2026; Ord. No. BC-3286 §162, 2020; Ord. No. BC-2936 §126,
+2012; Ord. No. BC-2635 §155, 2007)
+
+
+
+
+                                                                                           Page 2
+TITLE 16 - BUILDINGS AND CONSTRUCTION
+
+16.360 ELECTRICAL CODE
+Contents:
+  16.360.100 Electrical Code - Adoption.
+  16.360.90.10
+  16.360.210.52(C)(3)
+
+
+16.360.100 Electrical Code - Adoption.
+The NFPA 70 National Electrical Code, 2023 Edition - second printing (the “National Electrical
+Code”), approved as an American National Standard and published by the National Fire Protection
+Association, Inc., is hereby adopted by reference as the Electrical Code of the City of Overland Park,
+save and except such parts or portions thereof as are specifically deleted, added or changed in the
+City Code. At least one copy shall be marked “Official Copy as Incorporated by Ordinance No. BC-
+3499” and filed with the City Clerk for inspection by the public during reasonable business hours,
+with all sections or portions thereof intended to be deleted, added or changed clearly marked to
+show any deletions, additions or changes.
+
+
+(History: Ord. No. BC-3499, §157, 2026; Ord. No. BC-3286 §163, 2020; Ord. No. BC-2936 §127,
+2012; Ord. No. BC-2635 §156, 2007; Ord. No. BC-2459 §129, 2004; Ord. No. BC-2237 §7, 2001)
+
+16.360.90.10
+Article 90, Section 90.10 of the National Electrical Code is hereby added to read as follows:
+
+90.10 Administration and Enforcement. The administrative provisions for this code shall be those provisions
+contained in Sections 103 through 116 of the Building Code in OPMC 16.300 et seq.
+
+(History: Ord. No. BC-3499, §158, 2026; Ord. No. BC-3286 §164, 2020; Ord. No. BC-2936 §128,
+2012; Ord. No. BC-2635 §158, 2007)
+
+16.360.210.52(C)(3)
+Article 210, Section 210.52(C)(3) of the National Electrical Code is hereby amended to read as
+follows:
+
+
+
+
+                                                                                                Page 1
+210.52(C)(3) Receptacle Outlet Location. Receptacle outlets shall be located in one or more of the following:
+       1. On or above, but not more than 20 inches above, the countertop or work surface.
+       2. In countertop or work surfaces: Receptacle outlet assemblies listed for use in the countertops or work
+          surfaces shall be permitted to be installed in countertops or work surfaces.
+       3. Below countertop or work surfaces: Not more than 12 inches below the countertop or work surface.
+          Receptacles installed below a countertop or work surface shall not be located where the countertop or
+          work surface extends more than 6 inches beyond its support base.
+
+(History: Ord. No. BC-3499, 1§59, 2026)
+
+
+
+
+                                                                                            Page 2
+TITLE 16 - BUILDINGS AND CONSTRUCTION
+
+16.370 ENGERGY CONSERVATION CODE
+Contents:
+ 16.370.100 Energy Conservation Code - Adoption
+ 16.370.C101.1
+ 16.370.C101.5
+ 16.370.C103 (Deleted)
+ 16.370.C105.2
+ 16.370.C106 (Deleted)
+ 16.370.C107
+ 16.370.C108 (Deleted)
+ 16.370.C402.6.2
+ 16.370.C403.7.1
+ 16.370.C403.7.8 (Deleted)
+ 16.370.C405.2.4
+ 16.370.C405.2.10 (Deleted)
+ 16.370.C405.13
+ 16.370.C405.15 (Deleted)
+ 16.370.C406.2.5.5
+ 16.370.C502.3.8 (Deleted)
+ 16.370.R101.1
+ 16.370.R101.2
+ 16.370.R101.5
+ 16.370.R103 (Deleted)
+ 16.370.R105.2
+ 16.370.R106 (Deleted)
+ 16.370.R107
+ 16.370.R108 (Deleted)
+ 16.370.R405.2
+
+16.370.100 Energy Conservation Code - Adoption
+
+
+
+
+                                                  Page 1
+The 2024 International Building Code, as published by the International Code Council, Inc., is
+hereby adopted by reference as the Energy Conservation Code of the City of Overland Park, save
+and except such parts or portions thereof as are specifically deleted, added or changed in the City
+Code. At least one copy shall be marked “Official Copy as Incorporated by Ordinance No. BC-3499”
+and filed with the City Clerk for inspection by the public during reasonable business hours, with all
+sections or portions thereof intended to be deleted, added or changed clearly marked to show any
+deletions, additions or changes.
+
+
+(History: Ord. No. BC-3499, §161, 2026; Ord. No. BC-3286 §166, 2020; Ord. No. BC-2936 §132,
+2012; Ord. No. BC-2635 §160, 2007; Ord. No. BC-2459 §134, 2004; Ord. No. BC-2237 §8, 2001)
+
+16.370.C101.1
+Section C101.1 of the International Energy Conservation Code is hereby amended to read as follows:
+
+C101.1 Title. This code shall be known as the Energy Conservation Code of the City of Overland Park, hereafter
+referred to as “this code.”
+
+(History: Ord. No. BC-3499, §162, 2026; Ord. No. BC-3286 §167, 2020; Ord. No. BC-2936 §133,
+2012; Ord. No. BC-2635 §161, 2007)
+
+16.370.C101.5
+Section C101.5 of the International Energy Conservation Code is hereby added to read as follows:
+
+C101.5 Administration and Enforcement. The administration and enforcement provisions for this code shall be
+those provisions contained in Sections 103 through 116 of the International Building Code in OPMC 16.300 et seq.
+
+(History: Ord. No. BC-3499, §163, 2026; Ord. No. BC-3286 §168, 2020)
+
+16.370.C103 (Deleted)
+Section C103 of the International Energy Conservation Code is hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §164, 2026)
+
+16.370.C105.2
+Section C105.2 of the International Energy Conservation Code is hereby amended to read as follows:
+
+
+
+
+                                                                                             Page 2
+C105.2 Information on construction documents. Construction documents shall be drawn to scale on suitable
+material. Electronic media documents are permitted to be submitted where approved by the code official.
+Construction documents shall be of sufficient clarity to indicate the location, nature and extent of the work
+proposed, and show in sufficient detail pertinent data and features of the building, systems and equipment as
+herein governed. Details shall include, but are not limited to, the following as applicable:
+   1. Energy compliance path.
+   2. Insulation materials and their R-values.
+   3. Fenestration U-factors and solar heat gain coefficients (SHGC).
+   4. Area-weighted U-factor and solar heat gain coefficient (SHGC) calculations.
+   5. Air barrier and air sealing details, including the location of the air barrier.
+   6. Thermal bridges as identified in Section C402.7.
+   7. Mechanical system design criteria.
+   8. Mechanical and service water-heating systems and equipment types, sizes and efficiencies.
+   9. Economizer description.
+  10. Equipment and system controls.
+  11. Fan motor horsepower (hp) and controls.
+  12. Duct sealing, duct and pipe insulation and location.
+  13. Lighting fixture schedule with wattage and control narrative.
+  14. Location of daylight zones on floor plans.
+  15. Location of pathways for routing of raceways or cable from the on-site renewable energy system to the
+      electrical distribution equipment.
+  16. Location reserved for inverters, metering equipment and energy storage systems (ESS), and a pathway
+      reserved for routing of raceways or conduit from the renewable energy system to the point of
+      interconnection with the electrical service and the ESS.
+  17. Location and layout of a designated area for ESS.
+  18. Rated energy capacity and rated power capacity of the installed or planned ESS.
+  19. The additional energy requirements chosen from Section C406.
+
+
+      C105.2.1 Building thermal envelope depiction. The building thermal envelope shall be represented on
+      the construction drawings.
+
+
+
+
+(History: Ord. No. BC-3499, §165, 2026)
+
+16.370.C106 (Deleted)
+Section C106 of the International Energy Conservation Code is hereby intentionally deleted and
+omitted.
+
+
+
+
+                                                                                        Page 3
+(History: Ord. No. BC-3499, §166, 2026)
+
+16.370.C107
+Section C107 of the International Energy Conservation Code is hereby amended to read as follows:
+
+C107 SPECIAL INSPECTIONS AND TESTS
+Where application is made to the building official for construction as specified in section 105 of the International
+Building Code, the owner or owner’s authorized agent, other than the contractor, shall employ one or more
+approved agencies to provide special inspections and tests during construction on the types of work specified in
+this section. An approved agency shall be one that meets the requirements as specified in Section 1703 of the
+International Building Code.
+
+
+The following shall be provided prior to issuance of a permit:
+       1. The design professional in responsible charge shall provide a statement of intent listing the required
+          special inspections and tests in accordance with Section C107.1 through C107.4.
+       2. A letter of confirmation from the approved agency or agencies shall be provided to the building official
+          that confirms the agency has been hired to perform the required inspections.
+
+
+
+
+      C107.1 Air barrier. An approved third party agency shall inspect the air barrier in accordance with the
+      approved plans and Section C402.6.
+
+
+
+      C107.2 Insulation and thermal envelope. An approved third party agency shall inspect the installation of
+      the insulation and other thermal envelope components in accordance with the approved plans and Section
+      C402.6.
+
+
+
+      C107.3 Air tightness. An approved third party agency shall test the air tightness of the building in
+      accordance with Section C402.6.
+
+
+
+      C107.4 Duct sealing and leakage. An approved third party agency shall inspect the duct sealing and test
+      the duct leakage for compliance with Section C403.13 or Section C503.3.3.
+
+
+(History: Ord. No. BC-3499, §167, 2026)
+
+16.370.C108 (Deleted)
+
+
+
+                                                                                              Page 4
+Sections C108 through C110 of the International Energy Conservation Code are hereby intentionally
+deleted and omitted.
+
+
+(History: Ord. No. BC-3499, §168, 2026)
+
+
+
+16.370.C402.6.2
+Section C402.6.2 of the International Energy Conservation Code is hereby amended to read as
+follows:
+
+C402.6.2.1 Whole building test method and reporting. The building thermal envelope shall be tested by an
+approved third party in accordance with ASTM E3158 or an equivalent approved method. A report that includes
+the tested surface area, floor area, air by volume, stories above grade, and air leakage rates shall be submitted to
+the code official and the building owner.
+      Exceptions:
+          1. For buildings less than 10,000 square feet (929 m2), the entire building thermal envelope shall be
+             permitted to be tested in accordance with ASTM E779, ASTM E3158, ASTM E1827 or an equivalent
+             approved method.
+          2. For buildings greater than 50,000 square feet (4645 m2), portions of the building shall be permitted
+             to be tested and the measured air leakage shall be area weighted by the surface areas of the building
+             thermal envelope in each portion. The weighted-average tested air leakage shall not be greater than
+             the whole building air leakage limit. The following portions of the building shall be tested:
+                         2.1 The entire building thermal envelope area of stories that have any conditioned spaces
+                         directly under a roof.
+                         2.2 The entire building thermal envelope area of stories that have a building entrance,
+                         have a floor over unconditioned space, have a loading dock or that are below grade.
+                         2.3 Representative above-grade portions of the building totaling not less than 25 percent
+                         of the wall area enclosing the remaining conditioned space.
+
+
+
+
+                                                                                              Page 5
+C402.6.2.2 Dwelling and sleeping unit enclosure method and reporting. The building thermal envelope shall
+be tested for air leakage in accordance with ASTM E779, ANSI/RESNET/ICC 380, ASTM E1827 or an equivalent
+approved method. Where multiple dwelling units or sleeping units or other spaces are contained within one
+building thermal envelope, each shall be considered an individual testing unit, and the building air leakage shall be
+the weighted average of all tested unit results, weighted by each testing unit enclosure area. Units shall be tested
+without simultaneously testing adjacent units and shall be separately tested as follows:
+       1. Where buildings have less than eight total dwelling or sleeping units, each testing unit shall be tested.
+       2. Where buildings have eight or more dwelling or sleeping units, the greater of seven units or 20 percent of
+          the units in the building shall be tested, including a top floor unit, a middle floor unit, a ground floor unit
+          and a unit with the largest testing unit enclosure area. For each tested unit that exceeds the maximum air
+          leakage rate, an additional three units shall be tested, including a mixture of testing unit types and
+          locations.
+       3. Enclosed spaces with not less than one exterior wall in the building thermal envelope shall be tested in
+          accordance with Section C402.6.2.1.
+
+
+             Exception: Corridors, stairwells, and enclosed spaces having a conditioned floor area not greater than
+             1,500 square feet (139 m2) shall be permitted to comply with Section C402.6.2.3 and either Section
+             C402.6.2.3.1 or Section C402.6.2.3.2.
+
+
+
+
+C402.6.2.3 Building thermal envelope design and construction verification criteria. Where Section
+C402.6.2.1 and C402.6.2.2 are not applicable the installation of the continuous air barrier shall be verified by the
+code official, a registered design professional or approved agency in accordance with the following:
+       1. A review of the construction documents and other supporting data shall be conducted to assess
+          compliance with the requirements in Section C402.6.1.
+       2. Inspection of continuous air barrier components and assemblies shall be conducted during construction
+          to verify compliance with the requirements of Sections C402.6.2.3.1 and C402.6.2.3.2. The air barrier
+          shall be provided with access for inspection and repair.
+       3. A final inspection report shall be provided for inspections completed by the registered design
+          professional or approved agency. The inspection report shall be provided to the building owner or
+          owner’s authorized agent and the code official. The report shall identify deficiencies found during
+          inspection and details of corrective measures taken.
+
+
+
+
+                                                                                                  Page 6
+C402.6.2.3.1 Materials. Materials with an air permeability not greater than 0.004 cfm/ft2 (0.02 L/s × m2)
+under a pressure differential of 0.3 inch water gauge (75 Pa) when tested in accordance with ASTM E2178
+shall comply with this section. Materials in Items 1 through 16 shall be deemed to comply with this section,
+provided that joints are sealed and materials are installed as air barriers in accordance with the
+manufacturer’s instructions.
+ 1. Plywood with a thickness of not less than 3/8 inch (10 mm).
+ 2. Oriented strand board having a thickness of not less than 3/8 inch (10 mm).
+ 3. Extruded polystyrene insulation board having a thickness of not less than 1/2 inch (12.7 mm).
+ 4. Foil-back polyisocyanurate insulation board having a thickness of not less than 1/2 inch (12.7 mm).
+
+    Closed-cell spray foam having a minimum density of 1.5 pcf (2.4 kg/m3) and having a thickness of not
+    less than 1 1⁄2 inches (38 mm).
+ 5. Open-cell spray foam with a density between 0.4 and 1.5 pcf (0.6 and 2.4 kg/m3) and having a thickness
+    of not less than 4.5 inches (113 mm).
+ 6. Exterior or interior gypsum board having a thickness of not less than 1/2 inch (12.7 mm).
+ 7. Cement board having a thickness of not less than 1/2 inch (12.7 mm).
+ 8. Built-up roofing membrane.
+ 9. Modified bituminous roof membrane.
+10. Single-ply roof membrane.
+11. A Portland cement/sand parge, or gypsum plaster having a thickness of not less than 5/8 inch (15.9 mm).
+12. Cast-in-place and precast concrete.
+13. Fully grouted concrete block masonry.
+14. Sheet steel or aluminum.
+15. Solid or hollow masonry constructed of clay or shale masonry units.
+16. A final inspection report shall be provided for inspections completed by the registered design
+    professional or approved agency. The inspection report shall be provided to the building owner or
+    owner’s authorized agent and the code official. The report shall identify deficiencies found during
+    inspection and details of corrective measures taken.
+
+
+
+
+                                                                                      Page 7
+     C402.6.2.3.2 Assemblies. Assemblies of materials and components with an average air leakage not greater
+     than 0.04 cfm/ft2 (0.2 L/s × m2) under a pressure differential of 0.3 inch of water gauge (75 Pa) where
+     tested in accordance with ASTM E2357, ASTM E1677, ASTM D8052 or ASTM E283 shall comply with this
+     section. Assemblies listed in Items 1 through 3 below shall be deemed to comply, provided that joints are
+     sealed and the requirements of Section C402.6.1.2 are met.
+      1. Concrete masonry walls coated with either one application of block filler or two applications of a paint or
+         sealer coating.
+      2. Masonry walls constructed of clay or shale masonry units with a nominal width greater than or equal to 4
+         inches (102 mm).
+      3. A Portland cement/sand parge, stucco or plaster not less than 1/2 inch (12.7 mm) in thickness.
+
+
+(History: Ord. No. BC-3499, §171, 2026)
+
+
+
+16.370.C403.7.1
+Section C403.7.1 of the International Energy Conservation Code is hereby amended to read as
+follows:
+
+
+
+
+                                                                                              Page 8
+C403.7.1 Demand control ventilation. Demand control ventilation (DCV) shall be provided for the following:
+       1. Spaces larger than 250 square feet (23 m2) in Climate Zones 5A, 6, 7, and 8 and spaces larger than 500
+          square feet (46.5 m2) in other climate zones that have a design occupant load of 15 people or greater per
+          1,000 square feet (93 m2) of floor area, as established in Table 403.3.1.1 of the International Mechanical
+          Code, and are served by systems with one or more of the following:
+                    1.1. An air-side economizer.
+                    1.2. Automatic modulating control of the outdoor air damper.
+                    1.3. A design outdoor airflow greater than 3,000 cfm (1416 L/s).
+      Exceptions:
+       1. Spaces served by systems with energy recovery in accordance with Section C403.7.4.2 and that have a
+          floor area less than:
+            1.1. 6,000 square feet (557 m2) in Climate Zone 3C.
+            1.2. 2,000 square feet (186 m2) in Climate Zones 1A, 3B and 4B.
+            1.3. 1,000 square feet (93 m2) in Climate Zones 2A, 2B, 3A, 4A, 4C, 5 and 6.
+            1.4. 400 square feet (37 m2) in Climate Zones 7 and 8.
+       2. Multiple-zone systems without direct digital control of individual zones communicating with a central
+          control panel.
+       3. Spaces served by multiple-zone systems with a design outdoor airflow less than 750 cfm (354 L/s).
+       4. Spaces where more than 75 percent of the space design outdoor airflow is required for makeup air that is
+          exhausted from the space or transfer air that is required for makeup air that is exhausted from other
+          spaces.
+       5. Spaces with one of the following occupancy classifications as defined in Table 403.3.1.1 of the
+          International Mechanical Code: correctional cells, education laboratories, barber, beauty and nail salons,
+          and bowling alley seating areas.
+       6. Spaces where the registered design professional demonstrates an engineered ventilation system design
+          that:
+            6.1. Prevents the maximum concentration of contaminants from being more than that obtainable by
+            the required rate of outdoor air ventilation.
+            6.2. Allows the required minimum design rate of outdoor air to be reduced by not less than 15
+            percent.
+
+
+
+(History: Ord. No. BC-3499, §172, 2026)
+
+16.370.C403.7.8 (Deleted)
+Section C403.7.8 of the International Energy Conservation Code is hereby intentionally deleted and
+omitted.
+
+
+
+
+                                                                                              Page 9
+(History: Ord. No. BC-3499, §173, 2026)
+
+16.370.C405.2.4
+Section C405.2.4 of the International Energy Conservation Code is hereby amended to read as
+follows; provided however, Figures C405.2.4.2(1), C405.2.4.2(2), C405.2.4.2(3), C405.2.4.3 and
+C405.2.4.4 shall continue to read as originally published in the 2024 International Energy
+Conservation Code and accordingly said figures are not reprinted but are incorporated by reference:
+
+C405.2.4 Daylight responsive controls. Daylight responsive controls complying with Section C405.2.4.1 shall be
+provided to control the general lighting within daylight zones in the following spaces:
+       1. Spaces with a total of more than 150 watts of general lighting within primary sidelit daylight zones
+          complying with Section C405.2.4.2.
+       2. Spaces with a total of more than 300 watts of general lighting within sidelit daylight zones complying
+          with Section C405.2.4.2.
+       3. Spaces with a total of more than 150 watts of general lighting within toplit daylight zones complying with
+          Section C405.2.4.3.
+      Exceptions:
+             1. Daylight responsive controls are not required for the following:
+             2. Spaces in health care facilities where patient care is directly provided.
+             3. Sidelit daylight zones on the first floor above grade in Group A-2 and Group M occupancies.
+             4. Enclosed office spaces less than 250 square feet (23.2 m2).
+
+
+
+
+                                                                                             Page 10
+C405.2.4.1 Daylight responsive control function. Where required, daylight responsive controls shall be
+provided within each space for control of lights in that space and shall comply with all of the following:
+1. Lights in toplit daylight zones in accordance with Section C405.2.4.3 shall be controlled independently of
+   lights in sidelit daylight zones in accordance with Section C405.2.4.2.
+2. Lights in the primary sidelit daylight zone shall be controlled independently of lights in the secondary
+   sidelit daylight zone.
+3. Daylight responsive controls within each space shall be configured so that they can be calibrated from
+   within that space by authorized personnel.
+4. Calibration mechanisms shall be in a location with ready access.
+5. Daylight responsive controls shall dim lights continuously from full light output to 15 percent of full light
+   output or lower.
+6. Daylight responsive controls shall be configured to completely shut off all controlled lights.
+7. When occupant sensor controls have reduced the lighting power to an unoccupied setpoint in accordance
+   with Sections C405.2.1.2 through C405.2.1.4, daylight responsive controls shall continue to adjust electric
+   light levels in response to available daylight, but shall be configured to not increase the lighting power
+   above the specified unoccupied setpoint.
+8. Lights in sidelit daylight zones in accordance with Section C405.2.4.2 facing different cardinal
+   orientations [within 45 degrees (0.79 rad) of due north, east, south, west] shall be controlled
+   independently of each other.
+      Exceptions:
+1. Within each space, up to 150 watts of lighting within the primary sidelit daylight zone is permitted to be
+   controlled together with lighting in a primary sidelit daylight zone facing a different cardinal orientation.
+2. Within each space, up to 150 watts of lighting within the secondary sidelit daylight zone is permitted to
+   be controlled together with lighting in a secondary sidelit daylight zone facing a different cardinal
+   orientation.
+
+
+
+
+                                                                                        Page 11
+      C405.2.4.2 Sidelit daylight zone. The sidelit daylight zone is the floor area adjacent to vertical fenestration
+      that complies with all of the following:
+       1. Where the fenestration is located in a wall, the primary sidelit daylight zone shall extend laterally to the
+          nearest full-height wall, or up to 1.0 times the height from the floor to the top of the fenestration, and
+          longitudinally from the edge of the fenestration to the nearest full-height wall, or up to 0.5 times the
+          height from the floor to the top of the fenestration, whichever is less, as indicated in Figure C405.2.4.2(1).
+       2. Where the fenestration is located in a rooftop monitor, the primary sidelit daylight zone shall extend
+          laterally to the nearest obstruction that is taller than 0.7 times the ceiling height, or up to 1.0 times the
+          height from the floor to the bottom of the fenestration, whichever is less, and longitudinally from the
+          edge of the fenestration to the nearest obstruction that is taller than 0.7 times the ceiling height, or up to
+          0.25 times the height from the floor to the bottom of the fenestration, whichever is less, as indicated in
+          Figures C405.2.4.2(2) and C405.2.4.2(3).
+       3. Where the fenestration is located in a wall, the secondary sidelit daylight zone is directly adjacent to the
+          primary sidelit daylight zone and shall extend laterally to 2.0 times the height from the floor to the top of
+          the fenestration or to the nearest full-height wall, whichever is less, and longitudinally from the edge of
+          the fenestration to the nearest full-height wall, or up to 0.5 times the height from the floor to the top of
+          the fenestration, whichever is less, as indicated in Figure C405.2.4.2(1).
+       4. The area of the fenestration is not less than 24 square feet (2.23 m).
+       5. The distance from the fenestration to any building or geological formation that would block access to
+          daylight is greater than one-half of the height from the bottom of the fenestration to the top of the
+          building or geologic formation.
+       6. The visible transmittance of the fenestration is not less than 0.20.
+       7. The projection factor (determined in accordance with Equation 4-4) for any overhanging projection that
+          is shading the fenestration is not greater than 1.0 for fenestration oriented 45 degrees or less from true
+          north and not greater than 1.5 for all other orientations.
+
+
+
+
+FIGURE C405.2.4.2(1)—PRIMARY AND SECONDARY SIDELIT DAYLIGHT ZONES - see figure as originally
+published in the 2024 International Energy Conservation Code, which is incorporated herein by reference.
+
+
+
+
+FIGURE C405.2.4.2(2)—DAYLIGHT ZONE UNDER A ROOFTOP MONITOR - see figure as originally published in
+the 2024 International Energy Conservation Code, which is incorporated herein by reference.
+
+
+
+
+                                                                                                Page 12
+FIGURE C405.2.4.2(3)—DAYLIGHT ZONE UNDER A SLOPED ROOFTOP MONITOR - see figure as originally
+published in the 2024 International Energy Conservation Code, which is incorporated herein by reference.
+
+
+
+
+      C405.2.4.3 Toplit daylight zone. The toplit daylight zone is the floor area underneath a roof fenestration
+      assembly that complies with all of the following:
+   1. The toplit daylight zone shall extend laterally and longitudinally beyond the edge of the roof fenestration
+      assembly to the nearest obstruction that is taller than 0.7 times the ceiling height, or up to 0.7 times the
+      ceiling height, whichever is less, as indicated in Figure C405.2.4.3.
+   2. Direct sunlight is not blocked from hitting the roof fenestration assembly at the peak solar angle on the
+      summer solstice by buildings or geological formations.
+   3. The product of the visible transmittance of the roof fenestration assembly and the area of the rough opening
+      of the roof fenestration assembly divided by the area of the toplit zone is not less than 0.008.
+
+
+
+
+FIGURE C405.2.4.3—TOPLIT DAYLIGHT ZONE - see figure as originally published in the 2024 International
+Energy Conservation Code, which is incorporated herein by reference.
+
+
+
+
+      C405.2.4.4 Atriums. Daylight zones at atrium spaces shall be established at the top floor surrounding the
+      atrium and at the floor of the atrium space, and not on intermediate floors, as indicated in Figure C405.2.4.4.
+
+
+
+
+FIGURE C405.2.4.4—DAYLIGHT ZONES AT A MULTISTORY ATRIUM - see figure as originally published in the
+2024 International Energy Conservation Code, which is incorporated herein by reference.
+
+(History: Ord. No. BC-3499, §174, 2026)
+
+
+
+16.370.C405.2.10 (Deleted)
+Section C405.2.10 of the International Energy Conservation Code is hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §175, 2026)
+
+
+
+
+                                                                                              Page 13
+16.370.C405.13
+Section C405.13 of the International Energy Conservation Code is hereby amended to read as set
+forth hereafter; provided however, Tables C405.13.2 and C405.13.8 shall continue to read as
+originally published in the 2024 International Energy Conservation Code and accordingly said tables
+are not reprinted but are incorporated by reference:
+
+C405.13 Energy monitoring. New buildings with a gross conditioned floor area of not less than 25,000 square
+feet (2,322.58 m2) shall be equipped to measure, monitor, record and report energy consumption in accordance
+with Sections C405.13.1 through C405.13.6 for load categories indicated in Table C405.13.2 and Sections
+C405.13.7 through C405.13.11 for end-use categories indicated in Table C405.13.8.
+
+
+      Exceptions:
+      1. Dwelling units in R-2 occupancies.
+      2. Individual tenant spaces are not required to comply with this section provided that the space has its own
+         utility services and meters and has less than 5,000 square feet (464.5 m2) of conditioned floor area.
+
+
+
+
+      C405.13.1 Electrical energy metering. For electrical energy supplied to the building and its associated site,
+      including but not limited to site lighting, parking, recreational facilities and other areas that serve the
+      building and its occupants, meters or other measurement devices shall be provided to collect energy
+      consumption data for each end-use category required by Section C405.13.2.
+
+
+
+      C405.13.2 End-use electric metering categories. Meters or other approved measurement devices shall be
+      provided to collect energy use data for each end-use category indicated in Table C405.13.2. Where multiple
+      meters are used to measure any end-use category, the data acquisition system shall total all of the energy
+      used by that category. Not more than 5 percent of the design load for each of the end-use categories
+      indicated in Table C405.13.2 shall be permitted to be from a load that is not within that category.
+            Exceptions:
+      1. HVAC and water heating equipment serving only an individual dwelling unit shall not require end-use
+         metering.
+      2. End-use metering shall not be required for fire pumps, stairwell pressurization fans or any system that
+         operates only during testing or emergency.
+      3. End-use metering shall not be required for an individual tenant space having a floor area not greater than
+         2,500 square feet (232 m2) where a dedicated source meter complying with Section C405.13.3 is
+         provided.
+
+
+
+
+                                                                                            Page 14
+TABLE C405.13.2 - see table as originally published in the 2024 International Energy Conservation Code, which is
+                                      incorporated herein by reference.
+
+
+
+
+     C405.13.3 Electrical meters. Meters or other measurement devices required by this section shall be
+     configured to automatically communicate energy consumption data to the data acquisition system required
+     by Section C405.13.4. Source meters shall be allowed to be any digital-type meter. Lighting, HVAC or other
+     building systems that can self-monitor their energy consumption shall be permitted instead of meters.
+     Current sensors shall be permitted, provided that they have a tested accuracy of ±2 percent. Required
+     metering systems and equipment shall have the capability to provide at least hourly data that is fully
+     integrated into the data acquisition system and graphical energy report in accordance with Sections
+     C405.13.4 and C405.13.5. Nonintrusive load monitoring (NILM) packages that extract energy consumption
+     data from detailed electric waveform analysis shall be permitted to substitute for individual meters if the
+     equivalent data is available for collection in Section C405.13.4 and reporting in Section C405.13.5.
+
+
+
+
+     C405.13.4 Electrical energy data acquisition system. A data acquisition system shall have the capability to
+     store the data from the required meters and other sensing devices for a minimum of 36 months. The data
+     acquisition system shall have the capability to store real-time energy consumption data and provide hourly,
+     daily, monthly and yearly logged data for each end-use category required by Section C405.13.2. The data
+     acquisition system shall have the capability of providing building total peak electric demand and the time(s)
+     of day and time(s) per month at which the peak occurs. Peak demand shall be integrated over the same time
+     period as the underlying whole-building meter reading rate.
+
+
+
+     C405.13.5 Graphical energy report. A permanent and readily available reporting mechanism shall be
+     provided in the building for access by building operation and management personnel. The reporting
+     mechanism shall have the capability to graphically provide the energy consumption for each end-use
+     category required by Section C405.13.2 not less than every hour, day, month and year for the previous 36
+     months.
+
+
+
+     C405.13.6 Renewable energy. On-site renewable energy sources shall be metered with no less frequency
+     than nonrenewable energy systems in accordance with Section C405.13.3.
+
+
+
+
+                                                                                            Page 15
+     C405.13.7 Nonelectrical energy submetering. For all nonelectrical energy supplied to the building and its
+     associated site that serves the building and its occupants, submeters or other measurement devices shall be
+     provided to collect energy consumption data for each end-use category required by Section C405.13.8.
+           Exceptions:
+      1. HVAC and water heating equipment serving only an individual dwelling unit shall not require end-use
+         submetering.
+      2. End-use submetering shall not be required for fire pumps, stairwell pressurization fans or any system
+         that operates only during testing or emergency.
+      3. End-use submetering shall not be required for an individual tenant space having a floor area not greater
+         than 2,500 square feet (232 m2) where a dedicated source meter complying with Section C405.13.9 is
+         provided.
+      4. Equipment powered primarily by solid fuels serving loads other than building heating and service water
+         heating loads.
+
+
+
+
+     C405.13.8 End-use nonelectrical submetering categories. Submeters or other approved measurement
+     devices shall be provided to collect energy use data for each end-use category indicated in Table C405.13.8.
+     Where multiple submeters are used to measure any end-use category, the data acquisition system shall total
+     all of the energy used by that category. Not more than 5 percent of the design load for each of the end-use
+     categories indicated in Table C405.13.8 shall be permitted to be from a load that is not within that category.
+
+
+
+
+TABLE C405.13.8 - see table as originally published in the 2024 International Energy Conservation Code, which is
+                                      incorporated herein by reference.
+
+
+
+
+     C405.13.9 Nonelectrical submeters. Submeters or other measurement devices required by this section shall
+     be configured to automatically communicate energy consumption data to the data acquisition system
+     required by Section C405.13.10. Source submeters shall be allowed to be any digital-type meter that can
+     provide a digital output to the data acquisition system. Required submetering systems and equipment shall
+     be fully integrated into the data acquisition system and graphical energy report that updates at least hourly
+     in accordance with Sections C405.13.10 and C405.13.11.
+
+
+
+
+                                                                                            Page 16
+     C405.13.10 Nonelectrical energy data acquisition system. A data acquisition system shall have the
+     capability to store the data from the required submeters and other sensing devices for not less than 36
+     months. The data acquisition system shall have the capability to store real-time energy consumption data
+     and provide hourly, daily, monthly and yearly logged data for each end-use category required by Section
+     C405.13.8. The data acquisition system shall have the capability of providing building total nonelectrical
+     peak demand and the time(s) of day and time(s) per month at which the peak occurs. Where applicable as
+     determined by the authority having jurisdiction (AHJ), peak demand shall be integrated over the same time
+     period as the underlying whole-building meter reading rate.
+
+
+
+
+     C405.13.11 Graphical energy report. A permanent and readily accessible reporting mechanism shall be
+     provided in the building that is accessible by building operation and management personnel. The reporting
+     mechanism shall have the capability to graphically provide the nonelectrical energy consumption for each
+     end-use category required by Section C405.13.8 not less than every hour, day, month and year for the
+     previous 36 months. The graphical report shall incorporate natural gas interval data from the submeter or
+     the ability to enter gas utility bills into the report.
+
+
+(History: Ord. No. BC-3499, §176, 2026)
+
+16.370.C405.15 (Deleted)
+Section C405.15 through C406.2.2.4 of the International Energy Conservation Code is hereby
+intentionally deleted and omitted.
+
+
+(History: Ord. No. BC-3499, §177, 2026)
+
+16.370.C406.2.5.5
+Section C406.2.5.5 of the International Energy Conservation Code is hereby amended to read as
+follows:
+
+
+
+
+                                                                                          Page 17
+C406.2.5.5 L05 Residential light control. In buildings with Group R-2 occupancy spaces, interior lighting
+systems shall comply with the following:
+       1. In common areas, the following space types shall have occupant sensor controls that comply with the
+          requirements of Section C405.2.1.1:
+            1.1. Laundry/washing areas.
+            1.2. Dining areas.
+            1.3. Food preparation areas.
+            1.4. Seating areas.
+            1.5. Exercise areas.
+            1.6. Massage spaces.
+       2. In dwelling units, not less than one receptacle in each living room and each sleeping room shall be
+         controlled by a switch in that room.
+
+
+(History: Ord. No. BC-3499, §179, 2026)
+
+16.370.C502.3.8 (Deleted)
+Section C502.3.8 of the International Energy Conservation Code is hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §180, 2026)
+
+16.370.R101.1
+Section R101.1 of the International Energy Conservation Code is hereby amended to read as follows:
+
+R101.1 Title. This code shall be known as the Energy Conservation Code of the City of Overland Park, hereinafter
+referred to as “this code.”
+
+(History: Ord. No. BC-3499, §181, 2026)
+
+16.370.R101.2
+Section R101.2 of the International Energy Conservation Code is hereby amended to read as follows:
+
+R101.2 Scope. This code applies to the design and construction of Group R-2, R-3 and R-4 buildings three stories
+or less in height above grade plane.
+
+(History: Ord. No. BC-3499, §182, 2026)
+
+
+
+
+                                                                                          Page 18
+16.370.R101.5
+Section R101.5 of the International Energy Conservation Code is hereby added to read as follows:
+
+R101.5 Administration and Enforcement. The administration and enforcement provisions for this code shall be
+those provisions contained in Sections 103 through 116 of the International Building Code in OPMC 16.300 et seq.
+
+(History: Ord. No. BC-3499, §183, 2026; Ord. No. BC-3286 §168, 2020)
+
+16.370.R103 (Deleted)
+Section R103 of the International Energy Conservation Code is hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §184, 2026; Ord. No. BC-3286 §169, 2020; Ord. No. BC-2635 §211,
+2007; Ord. No. BC-2459 §137, 2004; Ord. No. BC-2237 §8, 2001)
+
+16.370.R105.2
+Section R105.2 of the International Energy Conservation Code is hereby added to read as follows:
+
+R105.2 Information on construction documents. Construction documents shall be drawn to scale on suitable
+material. Electronic media documents are permitted to be submitted where approved by the code official.
+Construction documents shall be of sufficient clarity to indicate the location, nature and extent of the work
+proposed, and show in sufficient detail pertinent data and features of the building, systems and equipment as
+herein governed. Details shall include the following as applicable:
+      1. Energy compliance path.
+      2. Insulation materials and their R-values.
+      3. Fenestration U-factors and solar heat gain coefficients (SHGC).
+      4. Area-weighted U-factor and solar heat gain coefficients (SHGC) calculations.
+      5. Mechanical system design criteria.
+      6. Mechanical and service water-heating systems and equipment types, sizes and efficiencies.
+      7. Equipment and system controls.
+      8. Duct sealing, duct and pipe insulation and location.
+      9. Air sealing details.
+     10. The additional energy requirements chosen from Section R408.
+
+
+
+
+                                                                                           Page 19
+      R105.2.1 Building thermal envelope depiction. The building thermal envelope shall be represented on the
+      construction documents.
+
+
+
+      R105.2.2 Solar-ready system. Where a solar-ready zone is provided, the construction documents shall
+      indicate details for a dedicated roof area for the solar-ready zone, roof dead load, roof live load, ground snow
+      load and the routing of conduit or prewiring from the solar-ready zone to an electrical service panel or
+      plumbing from the solar-ready zone to a service water heating system.
+
+
+(History: Ord. No. BC-3499, §185, 2026)
+
+16.370.R106 (Deleted)
+Section R106 of the International Energy Conservation Code is hereby intentionally deleted and
+omitted.
+
+
+(History: Ord. No. BC-3499, §186, 2026)
+
+16.370.R107
+Section R107 of the International Energy Conservation Code is hereby amended to read as follows:
+
+R107 SPECIAL INSPECTIONS AND TESTS
+Where application is made to the building official for construction as specified in Section 105 of the International
+Building Code, the owner or owner’s authorized agent, other than the contractor, shall employ one or more
+approved agencies to provide special inspections and tests during construction on the types of work specified in
+this section. An approved agency shall be one that meets the requirements as specified in Section 1703 of the
+International Building Code.
+The following shall be provided prior to issuance of a permit:
+       1. The design professional in responsible charge shall provide a statement of intent listing the required
+          special inspections and tests in accordance with Section R107.1 through R107.4.
+       2. A letter of confirmation from the approved agency or agencies shall be provided to the building official
+          that confirms the agency has been hired to perform the required inspections.
+
+
+
+      R107.1 Air barrier. An approved third party agency shall inspect the air barrier in accordance with the
+      approved plans and Section R402.5.
+
+
+
+
+                                                                                              Page 20
+     R107.2 Insulation and thermal envelope. An approved third party agency shall inspect the installation of
+     the insulation and other thermal envelope components in accordance with the approved plans and Section
+     R402.5.
+
+
+
+     R107.3 Air tightness. An approved third party agency shall test the air tightness of the building in
+     accordance with Section R402.5.
+
+
+
+     R107.4 Duct sealing and leakage. An approved third party agency shall inspect the duct sealing and test
+     the duct leakage for compliance with Section R403.3 or Section R503.1.
+
+
+(History: Ord. No. BC-3499, §187, 2026)
+
+16.370.R108 (Deleted)
+Sections R108 through R110 of the International Energy Conservation Code are hereby intentionally
+deleted and omitted.
+
+
+(History: Ord. No. BC-3499, §188, 2026)
+
+16.370.R405.2
+Section R405.2 of the International Energy Conservation Code is hereby amended to read as set forth
+hereafter; provided however, Table R405.2 shall continue to read as originally published in the 2024
+International Energy Conservation Code and accordingly said table is not reprinted but is
+incorporated by reference:
+
+
+
+
+                                                                                            Page 21
+R405.2 Simulated building performance compliance. Compliance based on simulated building performance
+requires that a building comply with the following:
+       1. The requirements of the sections indicated within Table R405.2.
+       2. The proposed total building thermal envelope thermal conductance (TC) shall be less than or equal to the
+          required total building thermal envelope TC using the prescriptive U-factors and F-factors from Table
+          R402.1.2 multiplied by 1.08 in Climate Zones 0, 1 and 2, and 1.15 in Climate Zones 3 through 8, in
+          accordance with Equation 4-2 and Section R402.1.5. The area-weighted maximum fenestration SHGC
+          permitted in Climate Zones 0 through 3 shall be 0.30.
+            Equation 4-2 For Climate Zones 0–2: TCProposed design 1.08 × TCPrescriptive reference design
+                             For Climate Zones 3–8: TCProposed design 1.15 × TCPrescriptive reference design
+       3. For all dwelling units, the annual energy cost of the proposed design shall be less than or equal to 85
+          percent of the annual energy cost of the standard reference design. For each dwelling unit with greater
+          than 5,000 square feet (465 m2) of living space located above grade plane, the annual energy cost of the
+          dwelling unit shall be reduced by an additional 5 percent of annual energy cost of the standard reference
+          design. Energy prices shall be taken from an approved source, such as the US Energy Information
+          Administration’s State Energy Data System prices and expenditures reports. Code officials shall be
+          permitted to require time-of-use pricing in energy cost calculations.
+
+
+      Exceptions:
+             1. The energy use based on source energy expressed in Btu or Btu per square foot of conditioned
+                floor area shall be permitted to be substituted for the energy cost. The source energy multiplier for
+                electricity shall be 2.51. The source energy multipliers shall be 1.09 for natural gas, 1.15 for
+                propane, 1.19 for fuel oil, and 1.30 for imported liquified natural gas.
+             2. The energy use based on site energy expressed in Btu or Btu per square foot of conditioned floor
+                area shall be permitted to be substituted for the energy cost.
+
+
+
+
+TABLE R405.2 - see table as originally published in the 2024 International Energy Conservation Code, which is
+incorporated herein by reference.
+
+(History: Ord. No. BC-3499, §191, 2026)
+
+
+
+
+                                                                                                               Page 22
+TITLE 18 - UNIFIED DEVELOPMENT ORDINANCE
+
+
+18.110 RULES OF INTERPRETATION AND DEFINITIONS
+Contents:
+ 18.110.010 Rules of Interpretation
+ 18.110.020 Definitions
+
+18.110.010 Rules of Interpretation
+For purposes of interpreting this ordinance, the following rules shall apply.
+    A. Unless the context clearly indicates to the contrary, words used in the present tense include
+       the future tense, words used in the singular include the plural, words used in the plural
+       include the singular, words importing the masculine gender include the feminine and neuter,
+       the word ”shall” is mandatory, the word “building” includes the word “structure”, and the
+       term “used for” includes “designed for” or “intended for.”
+    B. Unless specifically provided, in computing any period of time prescribed or allowed by this
+       ordinance, the day of the act, event, or default from which the designated period of time
+       begins to run shall not be included. The last day of the period so computed is to be included,
+       unless it is a Saturday, Sunday or a legal holiday, in which event the period runs until the end
+       of the next day which is not a Saturday, Sunday or a legal holiday. When the period of time
+       proscribed or allowed is less than seven (7) days, intermediate Saturdays, Sundays and legal
+       holidays shall be excluded in the computation. A half-holiday shall be considered as other
+       days and not as a holiday. “Legal holiday” includes any day designated as a holiday by the
+       Congress of the United States or by the Kansas legislature. Whenever a notice, petition or
+       other document is required to be filed within a specified time period, the notice, petition or
+       document must be filed with the appropriate city official or in the appropriate City office not
+       later than 5:00 p.m. on the last day of the period as computed above.
+    C. Where this ordinance permits or requires an act on the part of an “owner” or “landowner,”
+       and a particular lot or tract of land is owned by several persons, whether in joint tenancy,
+       tenancy in common, partnership, joint venture or other form of joint ownership, the act shall
+       be taken on behalf of, and with the express consent of, all such persons.
+(History: Ord. ZRR-1725; ZRR-1637)
+
+18.110.020 Definitions
+    A. Where a word or term is not defined in this Chapter but is defined elsewhere in this
+       ordinance or in the Code, such definition shall be applicable unless the context indicates that
+       a standard dictionary definition is more appropriate.
+
+
+
+
+                                                                                               Page 1
+    B. Where a word or term is defined in this Chapter and also defined elsewhere in this ordinance,
+       the definition contained in this Chapter shall be generally applicable except in the Chapter or
+       Section to which the other definition applies.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.030 Accessory Building
+Accessory building means a subordinate building having a use customarily incident to and
+located on the lot occupied by the main building. A building housing an accessory use is considered
+to be an integral part of the main building when it has any part of a wall in common with the main
+building, or is under an extension of the main roof and designed as an integral part of the main
+building.
+(History: Ord. ZRR-1725; ZRR-1637; ZRR-889 §18.02)
+
+18.110.035 Accessory Use
+Accessory use means a use of a building or land which serves an incidental function to and is
+customarily associated with, and located on the same lot or premises as, the main use of the
+premises.
+(History: Ord. ZRR-1725; ZRR-1637; ZRR-889 §18.02)
+
+18.110.040 Agricultural Use
+Agricultural use refers to the use of land where such land is devoted to the production of plants,
+animals or horticultural products, including but not limited to: forages; grains and feed crops; dairy
+animals and dairy products; poultry and poultry products; beef cattle, sheep, swine and horses;
+bees and apiary products; trees and forest products; fruits, nuts and berries; vegetables; or nursery,
+floral, ornamental and greenhouse products. Agricultural use shall not include use of land for
+recreational purposes, suburban residential acreages, rural home sites or farm home sites and yard
+plots whose primary function is for residential or recreational purposes even though such
+properties may produce or maintain some of those plants or animals listed in the foregoing
+definition.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.045 Alley
+Alley means a minor way, dedicated for public use, which is used primarily for vehicular access to
+the sides or rear of lots.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.050 Alteration
+Alteration means any addition, removal, extension or change in location of any exterior wall of the
+main building or accessory building.
+
+
+
+
+                                                                                              Page 2
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.052 Antenna - Satellite Dish
+Satellite Dish Antenna shall mean a dish-shaped antenna used to receive signals transmitted
+from satellites. Large Satellite Dish Antennas are those where the maximum diameter of the dish is
+greater than 36 inches. Small Satellite Dish Antennas are those where the maximum diameter of the
+dish is 36 inches or less in diameter.
+(History: Ord. ZRR-3134 §13, 2016; ZRR-2004 § 1, 96)
+
+18.110.055 Apartment
+Apartment means a room or a suite of rooms within an apartment house arranged, intended or
+designed for a place of residence of a single family or group of individuals living together as a single
+housekeeping unit.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.060 Apartment House
+Apartment house means a building arranged, intended or designed for residence by more than
+two families.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.065 Arcade
+Arcade shall mean any establishment housing 5 or more video games, pinball games, air hockey, or
+similar coin-operated amusement apparatus.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-1197; ZRR-889 §18.02)
+Base flood elevation– see 18.110.505.
+Base flood protection elevation– see 18.110.510.
+
+18.110.070 Block
+Block means a tract or parcel of land entirely surrounded by public highways or streets, other than
+alleys. In cases where the platting is incomplete or disconnected, the Director of Planning and
+Development Services shall determine the outline of the block.
+(History: Ord. ZRR-2343 §2, 2002; ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.071 Best Management Practice (BMP)
+Best Management Practice or BMP mean physical facilities, schedules of activities,
+prohibitions of practices, maintenance procedures, and other management practices which, when
+properly designed, installed and maintained, will be effective to prevent or reduce the discharge of
+water or air pollution associated with land disturbance activities regulated by this Ordinance.
+
+
+
+                                                                                                Page 3
+(History: Ord. ZRR-2420 §1, 2003)
+
+18.110.072 Build-to Line
+Build-to line means a line, parallel to the respective lot line, and internal to the lot, which defines
+the required maximum and minimum setback for the entire building façade as specified in the
+district regulations.
+(History: Ord. ZRR-2343 §3, 2002)
+
+18.110.074 Building Permit
+Building permit means an official document or certificate issued by the Director of Planning and
+Development Services which authorizes any owner or authorized agent to construct, enlarge, alter,
+repair, move, demolish, or change the occupancy of a building or structure, or to install, enlarge,
+alter, remove, replace any electrical, gas, mechanical, or plumbing system, the installation of which
+is regulated by Title 16 of the Overland Park Municipal Code, or to cause any such work to be done.
+A building permit may also specifically authorize land disturbance and installation of site
+improvements in lieu of separate site development and land disturbance permits.
+(History: Ord. ZRR-2420 §2, 2003)
+
+18.110.075 Church
+Church means a building for public religious worship, and includes synagogues and temples.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.080 City
+City means the City of Overland Park, Kansas.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.085 City Attorney
+City Attorney means the duly appointed City Attorney of the City, or his or her designee.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.090 City Clerk
+City Clerk means the duly appointed City Clerk of the City, or his or her designee.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.095 City Council
+City Council means the duly elected or appointed City Council of the City.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+
+
+                                                                                               Page 4
+18.110.100 City Engineer
+City Engineer means the duly appointed City Engineer of the City, or his or her designee.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.105 Club
+Club means a Class A or Class B Club. Class A Club means a premises that is owned or leased by a
+corporation, partnership, business trust or association, and that is operated thereby as a bona fide
+nonprofit, social, fraternal or war veterans' club as determined by the Director of Alcoholic
+Beverage Control of the Kansas Department of Revenue, for the exclusive use of the corporate
+stockholders, partners, trust beneficiaries or associates and their families and guests accompanying
+them as provided in K.S.A. 41-2637 (as may be amended). Class B Club means a premises operated
+for profit by a corporation, partnership, or individual to which members of such club may resort for
+the consumption of food or alcoholic beverages and for entertainment. (See 5.20.055 I-K, and K.S.A.
+41-2601 (e) - (g))
+(History: Ord. ZRR-3355; § 1, 2022; Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-1447; ZRR-889
+§18.02)
+
+18.110.110 Code or O.P.M.C.
+Code or O.P.M.C. means the Overland Park Municipal Code.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.115 Code Administrator
+Code Administrator means the duly appointed Code Administrator of the City, or his or her
+designee.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.120 Commercial Districts
+Commercial districts means districts C-O, CP-O, C-1, CP-1, C-2, CP-2, C-3, CP-3, DFD and MXD.
+
+
+(History: Ord. ZRR-3164 §1, 2017; ZRR-2478 §1, 2004; ZRR-2343 §4, 2002; ZRR-1725; ZRR-1661;
+ZRR-1637)
+Effective on: 6/13/2017
+
+
+18.110.125 Community Development Committee
+Community Development Committee means the Community Development Committee of the
+City Council.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+
+
+
+                                                                                            Page 5
+18.110.130 Comprehensive Plan
+Comprehensive plan means the current Comprehensive Plan for the City, as adopted in
+accordance with K.S.A. 12-747.
+(History: Ord. ZRR-3416 §6, 2023; Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.132 Continuing Care Community
+Continuing Care Community means a multi-unit residential project, consisting of one or
+several buildings designed as a unified development, and providing health related services to its
+residents such as nursing care or assistance with activities of daily living. Continuing care
+communities typically provide a range of housing options, as well as common facilities to
+accommodate resident services such as meals, transportation and social activities. Free-standing
+buildings containing 4 or fewer dwelling units for independent senior living may be a component of
+the continuing care community provided they do not comprise more than 25 percent of the total
+units within the development.
+(History: Ord. ZRR-2650 §1, 2007)
+
+18.110.135 Court
+Court means an open, unoccupied space, other than a yard, bounded on three or more sides by
+exterior walls of a building, or by exterior walls of a building and lot lines on which walls are
+allowable.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.140 Cul-de-sac
+Cul-de-sac means a street having only one end open to traffic with the other end permanently
+terminated by a vehicular turnaround.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.145 Curb Level
+Curb Level means the mean level of the curb in front of the lot or, in the case of a corner lot, along
+the abutting street, where the mean curb level is the highest.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.150 Customary Passenger Car
+Customary passenger car means a motor vehicle with motive power designed for carrying 10
+passengers or fewer, including vans, but excluding trailers and vehicles constructed on a truck
+chassis with a gross weight of more than 6,000 pounds.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+
+
+
+                                                                                              Page 6
+18.110.155 Day Care
+Day care means the provision of supervision, training, food, lodging or medical services to persons
+for less than 24 hours a day.
+Child care center means a facility which provides care and educational activities for 13 or more
+children two weeks to 16 years of age for more than three hours and less than 24 hours per day
+including day time, evening, and nighttime care; or which provides before and after school care for
+school-age children. A facility may have fewer than 13 children and be licensed as a center if the
+program and building meet child care center regulations set out in K.S.A. Chapter 65 and K.A.R.
+Chapter 28.
+Day care home means a structure designed and used as a one or two-family dwelling where day
+care is provided for a maximum of twelve (12) children, which is regulated under K.S.A. Chapter 65
+and K.A.R. Chapter 28.
+Mother's Day Out means a day care program operating more than five (5) consecutive hours or
+more than one day per week and in which any one child is enrolled for not more than one session
+per week.
+Preschool means a day care facility providing educational experiences and operating in
+compliance with the definitions and regulations of the State of Kansas.
+(History: Ord. ZRR-2903 §1, 2011; ZRR-1725; ZRR-1693; ZRR-1661; ZRR-1637; ZRR-1237; ZRR-
+889 §18.02)
+
+18.110.160 Department Store
+Department Store means a retail establishment with at least 80,000 square feet of gross floor
+area and offering a wide variety of merchandise and services, usually organized in separate
+departments.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.165 Detached
+Detached means that a building does not have a wall, roof or other structure member in common
+with or in contact with another building.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.170 Developer
+Developer means a person who engages in development of real estate, whether or not that person
+is the landowner.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.175 Development
+
+
+
+
+                                                                                           Page 7
+Development means a grouping of buildings or building sites that are planned as an integrated
+unit or cluster on property under unified control or ownership at the time the zoning was
+approved by the City.
+(History: Ord. No. ZRR-3300 §23, 2020; Ord. ZRR-2812 §14, 2009; ZRR-1725; ZRR-1661; ZRR-1637;
+ZRR-941; ZRR-889 §18.02)
+
+18.110.180 Director of Planning and Development Services or Director
+Director of Planning and Development Services or Director means the duly appointed
+Director of Planning and Development Services of the City (or designee).
+(History: Ord. ZRR-3416 §7, 2023; Ord. ZRR-2343 §5, 2002; ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.185 Display or Catalog Showroom
+Display or catalog showroom means an establishment for the sale of merchandise exclusively
+from a display or catalog and where no exchange of merchandise takes place at the time of sale.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.187 Downtown Districts
+Repealed.
+(History: Ord. ZRR-3164 §6, 2017; ZRR-2343 §6, 2002)
+Effective on: 6/13/2017
+
+
+18.110.188 Drainageway
+Drainageway means a man-made or natural conveyance that transports stormwater overland
+which is frequently referred to as a channel, swale, ditch, gully, stream, or watercourse. The
+drainageway includes all land inundated during the 1% design storm.
+(History: Ord. ZRR-2564 §1, 2005)
+
+18.110.190 Drinking Establishment
+Drinking establishment means a premises that may be open to the general public, where
+alcoholic liquor and cereal malt beverage by the individual drink is served. (See license
+requirements in 5.20.055 N and K.S.A. 41-2601(h), each as may be amended.
+(History: Ord. ZRR-3355 §2, 2022; Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.195 Drive
+Drive means a right-of-way which affords principal means of vehicular access to or through a lot
+or tract of land and which is owned and maintained by the landowner.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+
+
+
+                                                                                            Page 8
+18.110.200 Drive-in Service
+Drive-in service means the service of food or other goods, services or entertainment where
+patrons remain in their motor vehicles which are parked in spaces provided on the premises for
+that purpose.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-1148; ZRR-889 §18.02)
+
+18.110.205 Drive-through Service
+Drive-through service means service where patrons are served through a window or other
+device while remaining in their motor vehicles and where products served to patrons are normally
+not consumed on the premises.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-1148; ZRR-889 §18.02)
+
+18.110.210 Dwelling
+Dwelling means a building or portion thereof designed exclusively for residential occupancy,
+including one-family, two-family and multi-family dwellings, but not including hotels or motels.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.215 Dwelling, Multi-family
+Dwelling, multi-family means a building, or portion thereof, arranged, intended or designed for
+occupancy by 3 or more families, and commonly referred to as a triplex, fourplex, townhouse or
+apartment building. The term “multi-family dwelling” may also include residential projects
+designed for older adults but which do not provide the health related services of a continuing care
+community.
+(History: Ord. ZRR-2650 §2, 2007; ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.220 Dwelling, One-family
+Dwelling, One-family means a building arranged, intended or designed for occupancy by one
+family, but excluding manufactured homes or mobile homes.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.225 Dwelling, Two-family
+Dwelling, two-family means a building arranged, intended or designed for occupancy by 2
+families, commonly referred to as a duplex.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637; ZRR-889 §18.02)
+
+18.110.230 Dwelling Unit
+
+
+
+
+                                                                                             Page 9
+Dwelling unit means an enclosure containing sleeping, kitchen and bathroom facilities designed
+for and used or held ready for use as a permanent residence by one family.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.235 Easement
+Easement means a permanent or temporary grant of right by a landowner to the public, a
+corporation or other persons, of the use of a portion of a lot or tract of land for specified purposes
+where title to said portion of the lot or tract of land remains with the landowner.
+(History: Ord. ZRR-1725; ZRR-1661; ZRR-1637)
+
+18.110.240 Family
+Family means any of the following:
+    1. A group of not more than four (4) related or unrelated persons of any age living together by
+       joint agreement and occupying a single housekeeping unit with common kitchen facilities, or
+       a mixed group of related and non-related persons of any age who together constitute no
+       more than a cumulative total of four (4) persons living together by joint agreement and
+       occupying a single housekeeping unit with common kitchen facilities.
+    2. A group of any size and age consisting entirely of an immediate family. For the purpose of
+       this section an “immediate family” shall be a group consisting of only a spouse, parent, child,
+       grandchild, grandparent, brother or sister, all related by marriage or consanguinity, and all of
+       who can provide documentation of such relationship within a reasonable time upon request
+       by the appropriate enforcement officers of the City. Ten (10) calendar days shall constitute a
+       reasonable period of time unless the occupants can establish the necessity of an extension of
+       time to obtain such documentation from the authorized sources, and any request for an
+       extension of time to the City must be submitted in writing prior to the expiration of the ten
+       day response time, and must be accompanied by names, dates and location of the births or
+       marriages sought to be documented.

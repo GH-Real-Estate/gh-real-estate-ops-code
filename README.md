@@ -1,6 +1,6 @@
 # GH Real Estate Ops Code
 
-Private technical source of truth for GH Real Estate automation code, Zoho setup notes, field maps, sanitized test payloads, deployment runbooks, and Codex/ChatGPT review context.
+Private source of truth for GH Real Estate automation code, Zoho setup notes, field maps, sanitized test payloads, deployment runbooks, Codex/ChatGPT review context, and the approved public legal-authority library.
 
 Final repository location:
 
@@ -12,7 +12,7 @@ GH-Real-Estate/gh-real-estate-ops-code
 
 ```text
 Zoho runs the business.
-GitHub stores the code and technical map.
+GitHub stores the code, technical map, and approved public legal-authority library.
 Codex/ChatGPT reviews and improves the code.
 ```
 
@@ -32,6 +32,8 @@ That means:
 
 Within each source system, each production automation gets its own folder unless it is truly the same runtime responsibility. Late fees, monthly delinquent-rent interest, and returned-payment fees are separate responsibilities and are stored separately.
 
+The top-level `legal/` tree is a governed public-authority reference library, not runtime source code. Its own README, manifests, status labels, validation, and review rules control that subtree.
+
 ## What Belongs Here
 
 This repo is for technical assets only:
@@ -49,6 +51,7 @@ This repo is for technical assets only:
 - Deployment logs.
 - Codex/ChatGPT instructions.
 - Local repo hygiene tools.
+- Approved public legal-authority sources, release manifests, searchable extracts, and monitoring tools under `legal/`.
 
 ## What Does Not Belong Here
 
@@ -75,6 +78,7 @@ Do not store live business records here:
 | Property files, inspection photos, notices | Zoho WorkDrive |
 | Tenant portal / maintenance workflows | Zoho Creator, when ready |
 | Code, automations, field maps, test cases | This private GitHub repo |
+| Approved public legal authorities and source history | `legal/` in this private GitHub repo; live official source controls |
 
 ## Repository Map
 
@@ -137,6 +141,16 @@ src/
     field-maps/
       lease-merge-fields.md
 
+legal/
+  README.md
+  CURRENT_AUTHORITY_INDEX.md
+  PROJECT_INSTRUCTIONS.md
+  SOURCE_GAPS.md
+  generated/project-sources/current/
+  manifests/
+  text/current/authorities/
+  scripts/
+
 docs/
   architecture/
     system-overview.md
@@ -182,6 +196,7 @@ tools/
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |
 | Deployment Log | `docs/runbooks/deployment-log.md` |
 | Codex/ChatGPT Instructions | `AGENTS.md` |
+| Legal Authority Index | `legal/CURRENT_AUTHORITY_INDEX.md` |
 
 ## Change Workflow
 

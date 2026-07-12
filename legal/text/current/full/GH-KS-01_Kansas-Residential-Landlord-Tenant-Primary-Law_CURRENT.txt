@@ -1,0 +1,1993 @@
+                                         GH REAL ESTATE • LEGAL SOURCE PACK
+
+
+
+
+                 KANSAS RESIDENTIAL
+              LANDLORD–TENANT PRIMARY
+                        LAW
+
+
+                             K.S.A. Chapter 58, Article 25 • complete official article text
+
+
+
+
+  PROPERTY                    9401 Nieman Road, Overland Park, Kansas 66214
+
+  CURRENT THROUGH             July 12, 2026
+
+  ACTIVE-SET STATUS           Current-law set; enacted addenda included; withdrawn sources excluded
+
+  SCOPE                       All official sections in Article 25, including the operative KRLTA at 58-2540–2573 and protected-survivor section
+                              58-25,137
+
+
+
+
+    Use rule: Retrieve the controlling text, confirm the trigger and currentness, then obtain Kansas counsel review before
+    enforcement, filing, denial, accommodation decisions, or material lease changes.
+
+ This compilation is a research and retrieval aid, not legal advice, a title opinion, or a substitute for official current law. Summaries and
+ applicability labels are navigation aids; the appended official text controls.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                             Front matter page 1
+ How this bundle should be used
+  LABEL                  HOW TO USE IT
+
+  BINDING                Statute, regulation, ordinance, or controlling court decision. Confirm effective date and later history.
+
+  CONDITIONAL            Binding only when a stated trigger exists—such as HUD assistance, a federally backed mortgage, or third-party
+                         management.
+
+  GUIDANCE               Agency or court-administration material. Useful operationally but not itself controlling law unless incorporated.
+
+  PROPOSED               Monitoring only. Do not apply as current law.
+
+  WITHDRAWN              Excluded from this active set. Keep only in a separately labeled historical archive.
+
+
+ • For GH’s fourplex, K.S.A. 58-2540–2573 is the primary residential act.
+
+ • Older general tenancy, agricultural and mobile-home sections are preserved because this is the complete Article
+ 25 source; do not apply them without confirming scope.
+
+ • Use the Kansas compliance bundle for eviction procedure, fair housing, data, smoke/fire rules, 2026 addenda and
+ current cases.
+
+    Text-integrity rule: appended official PDFs are preserved as retrieved. The front matter adds navigation only and does
+    not alter statutory, regulatory, judicial, or municipal wording.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                           Front matter page 2
+ Source inventory and page map
+ 97 official source documents are included. Page numbers below refer to the finished merged PDF. Use the PDF
+ bookmarks or search the exact citation.
+
+  #     CITATION / SOURCE                 TITLE                                                                                                    PAGES
+
+  1     K.S.A. 58-2501                    Tenants at will; terms of lease in certain cases.                                                        6
+
+  2     K.S.A. 58-2501a                   When tenant may remove buildings and improvements.                                                       7
+
+  3     K.S.A. 58-2502                    Tenants from year to year.                                                                               8
+
+  4     K.S.A. 58-2503                    Rent payable at intervals.                                                                               9
+
+  5     K.S.A. 58-2504                    Termination of tenancy at will; notice.                                                                  10
+
+  6     K.S.A. 58-2505                    Termination of tenancy from year-to-year; notice.                                                        11
+
+  7     K.S.A. 58-2506                    Termination of farm or pastureland tenancy; notice.                                                      12
+
+  8     K.S.A. 58-2506a                   Termination of farm tenancies; landlord's liability for certain substances and services provided by      13
+                                          tenant.
+
+  9     K.S.A. 58-2507                    Termination of lease for three months or longer; notice; effect of payment of rent.                      14
+
+  10    K.S.A. 58-2508                    Termination of tenancy of less than three months for nonpayment of rent; notice.                         15
+
+  11    K.S.A. 58-2509                    Notice to quit not necessary, when.                                                                      16
+
+  12    K.S.A. 58-2510                    Service of notice of termination of lease or tenancy.                                                    17
+
+  13    K.S.A. 58-2511                    Assignment or transfer by tenant, when.                                                                  18
+
+  14    K.S.A. 58-2512                    Re-entry of premises upon violation of K.S.A. 58-2511.                                                   19
+
+  15    K.S.A. 58-2513                    Attornment of tenant unnecessary; payment of rent.                                                       20
+
+  16    K.S.A. 58-2514                    Attornment of tenant to stranger void, when.                                                             21
+
+  17    K.S.A. 58-2515                    Remedies of sublessees.                                                                                  22
+
+  18    K.S.A. 58-2516                    Remedies of alienees of lessors and lessees.                                                             23
+
+  19    K.S.A. 58-2517                    Rents from lands granted for life.                                                                       24
+
+  20    K.S.A. 58-2518                    Recovery of rents dependent on life of another.                                                          25
+
+  21    K.S.A. 58-2519                    Executors and administrators, remedies and liabilities.                                                  26
+
+  22    K.S.A. 58-2520                    Occupant without special contract.                                                                       27
+
+  23    K.S.A. 58-2521                    Repairs and improvements by cotenant.                                                                    28
+
+  24    K.S.A. 58-2522                    Recovery by cotenant of rents and profits.                                                               29
+
+  25    K.S.A. 58-2523                    Action by remainderman or reversioner for waste or trespass.                                             30
+
+  26    K.S.A. 58-2524                    Rent as lien on crop.                                                                                    31
+
+  27    K.S.A. 58-2525                    Lessor's remedies when rent payable in share of crop.                                                    32
+
+  28    K.S.A. 58-2526                    Recovery of rent from purchaser of crop.                                                                 33
+
+  29    K.S.A. 58-2527                    Attachment for nonpayment of rent; grounds; affidavit and bond.                                          34
+
+  30    K.S.A. 58-2528                    Contents of affidavit; proceedings.                                                                      35
+
+  31    K.S.A. 58-2530                    Tenant may waive exemptions.                                                                             36
+
+  32    K.S.A. 58-2531                    Leasing of farm lands; provisions in certain contracts enumerated.                                       37–38
+
+  33    K.S.A. 58-2532                    Terms of such contracts variant from approved rental agreements.                                         39
+
+  34    K.S.A. 58-2533                    Such lease contracts against public policy and unenforceable; tenants to pay fair and reasonable         40
+                                          sums.
+
+  35    K.S.A. 58-2540                    Citation of act.                                                                                         41
+
+  36    K.S.A. 58-2541                    Arrangements not subject to act.                                                                         42
+
+  37    K.S.A. 58-2542                    Jurisdiction of courts; procedure.                                                                       43
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                       Front matter page 3
+  #     CITATION / SOURCE                 TITLE                                                                                                     PAGES
+
+  38    K.S.A. 58-2543                    Definitions.                                                                                              44–45
+
+  39    K.S.A. 58-2544                    Finding of unconscionability; remedies; evidence.                                                         46
+
+  40    K.S.A. 58-2545                    Rental agreement; terms and conditions in absence thereof.                                                47
+
+  41    K.S.A. 58-2546                    Rental agreement not signed and delivered given effect by certain actions; limitation on term.            48
+
+  42    K.S.A. 58-2547                    Prohibited terms and conditions in rental agreement; damages.                                             49
+
+  43    K.S.A. 58-2548                    Inventory of premises by landlord and tenant, when; copies.                                               50
+
+  44    K.S.A. 58-2549                    Receipt of rent subject to certain obligations.                                                           51
+
+  45    K.S.A. 58-2550                    Security deposits; amounts; retention; return; damages for noncompliance.                                 52
+
+  46    K.S.A. 58-2551                    Disclosures required of landlord or person authorized to enter rental agreement; person failing to        53
+                                          comply becomes landlord's agent for certain purposes.
+
+  47    K.S.A. 58-2552                    Delivery of possession of premises; action for possession; damages.                                       54
+
+  48    K.S.A. 58-2553                    Duties of landlord; agreement that tenant perform landlord's duties; limitations.                         55
+
+  49    K.S.A. 58-2554                    Conveyance by landlord or termination by manager; notice; no liability for subsequent events.             56
+
+  50    K.S.A. 58-2555                    Duties of tenant.                                                                                         57
+
+  51    K.S.A. 58-2556                    Rules and regulations of landlord; when enforceable.                                                      58
+
+  52    K.S.A. 58-2557                    Landlord's right to enter; limitations.                                                                   59
+
+  53    K.S.A. 58-2558                    Use of premises; extended absence of tenant.                                                              60
+
+  54    K.S.A. 58-2559                    Material noncompliance by landlord; notice; termination of rental agreement; limitations; remedies;       61
+                                          security deposit.
+
+  55    K.S.A. 58-2560                    Failure by landlord to deliver possession; remedies.                                                      62
+
+  56    K.S.A. 58-2561                    Action for possession for nonpayment of rent; counterclaim, waiver; accrued rent, payment into            63
+                                          court; disposition; when judgment for tenant.
+
+  57    K.S.A. 58-2562                    Damage or destruction by fire or casualty; termination of rental agreement; notice; vacation of part      64
+                                          of dwelling; reduction of rent; security deposit.
+
+  58    K.S.A. 58-2563                    Unlawful removal or exclusion of tenant; diminished services; damages; security deposit.                  65
+
+  59    K.S.A. 58-2564                    Material noncompliance by tenant; notice; termination of rental agreement; limitations; nonpayment        66
+                                          of rent; remedies.
+
+  60    K.S.A. 58-2565                    Extended absence of tenant; damages; entry by landlord; abandonment by tenant, when;                      67–68
+                                          reasonable effort to rent required; termination of rental agreement, when; personal property of
+                                          tenant; disposition, procedure; proceeds; rights of person receiving property.
+
+  61    K.S.A. 58-2566                    Acceptance of late rent; effect.                                                                          69
+
+  62    K.S.A. 58-2567                    Lien or security interest in tenant's personal property unenforceable; distraint abolished, exception.    70
+
+  63    K.S.A. 58-2568                    Landlord's remedies upon termination of rental agreement.                                                 71
+
+  64    K.S.A. 58-2569                    Landlord's recovery or possession of dwelling; limitations.                                               72
+
+  65    K.S.A. 58-2570                    Termination of tenancy; notice; holdover by tenant; remedies; notice obligating tenant beyond terms       73
+                                          of lease agreement, form.
+
+  66    K.S.A. 58-2571                    Tenant's refusal to allow lawful access; remedies; landlord's unlawful or unreasonable entry;             74
+                                          remedies.
+
+  67    K.S.A. 58-2572                    Certain retaliatory actions by landlord prohibited; remedies; increased rent, when; action for            75
+                                          possession, when.
+
+  68    K.S.A. 58-2573                    Inapplicability of act.                                                                                   76
+
+  69    K.S.A. 58-25,100                  Citation of act.                                                                                          77
+
+  70    K.S.A. 58-25,101                  Application of act, exclusions.                                                                           78
+
+  71    K.S.A. 58-25,102                  Jurisdiction of courts; procedure.                                                                        79
+
+  72    K.S.A. 58-25,103                  Definitions.                                                                                              80
+
+  73    K.S.A. 58-25,104                  Finding of unconscionability, remedies; evidence.                                                         81
+
+  74    K.S.A. 58-25,105                  Terms and conditions of rental agreement; terms and conditions in absence of rental agreement;            82
+                                          notice of tenant's rights under act.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                        Front matter page 4
+  #     CITATION / SOURCE                 TITLE                                                                                                      PAGES
+
+  75    K.S.A. 58-25,106                  Prohibited terms and conditions.                                                                           83
+
+  76    K.S.A. 58-25,107                  Receipt of rent subject to certain obligations.                                                            84
+
+  77    K.S.A. 58-25,108                  Security deposits.                                                                                         85–86
+
+  78    K.S.A. 58-25,109                  Disclosures required of landlord or person authorized to enter rental agreement; person failing to         87
+                                          comply becomes landlord's agent for certain purposes; rental agreement not signed and delivered
+                                          given effect by certain actions, limitation on term; explanation of utility rates and charges; written
+                                          notice of rent increase.
+
+  79    K.S.A. 58-25,110                  Delivery of possession of mobile home space; action for possession; damages.                               88
+
+  80    K.S.A. 58-25,111                  Duties of landlord.                                                                                        89
+
+  81    K.S.A. 58-25,112                  Conveyance by landlord or termination by manager; notice; no liability for subsequent events.              90
+
+  82    K.S.A. 58-25,113                  Duties of tenant.                                                                                          91
+
+  83    K.S.A. 58-25,114                  Rules and regulations of landlord, when enforceable; notice; limitations.                                  92–93
+
+  84    K.S.A. 58-25,115                  Landlord's right to access; limitations.                                                                   94
+
+  85    K.S.A. 58-25,116                  Tenant to occupy as a dwelling unit; authority to sublet.                                                  95
+
+  86    K.S.A. 58-25,117                  Material noncompliance by landlord; notice; termination of rental agreement; limitations; remedies;        96
+                                          security deposit.
+
+  87    K.S.A. 58-25,118                  Failure to deliver possession; remedies.                                                                   97
+
+  88    K.S.A. 58-25,119                  Unlawful removal or exclusion of tenant; diminished services; damages; security deposit.                   98
+
+  89    K.S.A. 58-25,120                  Material noncompliance by tenant; notice; termination of rental agreement; limitations; nonpayment         99
+                                          of rent; remedies.
+
+  90    K.S.A. 58-25,121                  Abandonment, remedies; required registration.                                                              100
+
+  91    K.S.A. 58-25,122                  Effect of acceptance of late rent.                                                                         101
+
+  92    K.S.A. 58-25,123                  Termination of tenancy; holdover by tenant; remedies.                                                      102
+
+  93    K.S.A. 58-25,124                  Tenant's refusal to allow lawful access, remedies; landlord's unlawful or unreasonable entry,              103
+                                          remedies.
+
+  94    K.S.A. 58-25,125                  Certain retaliatory actions by landlord prohibited, remedies; increased rent, when; action for             104
+                                          possession, when.
+
+  95    K.S.A. 58-25,126                  Act inapplicable to rental agreements valid prior to act; renewals, extensions or modifications.           105
+
+  96    K.S.A. 58-25,127                  Separate metering for water by landlord; requirements; not public utility.                                 106
+
+  97    K.S.A. 58-25,137                  Housing protections for persons affected by domestic violence, sexual assault, human trafficking or        107–108
+                                          stalking.
+
+
+ Source URLs, retrieval date, authority/applicability labels, and SHA-256 fingerprints are recorded in the companion Markdown manifest.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                         Front matter page 5
+                                    2025 Kansas Statutes
+
+58-2501.   Tenants at will; terms of lease in certain cases. Any person in the possession of real
+property with the assent of the owner is presumed to be a tenant at will, unless the
+contrary is shown except as herein otherwise provided. Where a landlord is renting
+farms in large numbers and a total acreage in excess of five thousand acres, and has
+tenants in excess of ten or more, and by the lease requires such tenants to erect or own
+and maintain substantially all of the buildings and improvements on the farm, such
+lease shall contain just and fair provisions for the free sale and transfer of such
+buildings and improvements, or the purchase thereof by the landlord, without requiring
+the tenant to remove the same from the land.
+History: G.S. 1868, ch. 55, § 1; R.S. 1923, 67-501; L. 1925, ch. 208, § 1; May 28.
+                                 2025 Kansas Statutes
+
+58-2501a.   When tenant may remove buildings and improvements. Where the tenant in
+possession of farm lands under lease, with the owner as provided in K.S.A. 58-2501 owns
+substantially all the improvements on the land, the tenant may transfer his or her term
+and improvements without the consent of the landlord, and any provisions in the lease
+prohibiting such transfer or requiring the tenant or the tenant's assignee to remove such
+buildings or improvements, that does not require the landlord or the new tenant to pay
+the owner thereof the fair value of the improvements to the land at the time of the
+expiration of the lease, shall be void.
+History: L. 1925, ch. 208, § 2; May 28.
+                                  2025 Kansas Statutes
+
+58-2502.   Tenants from year to year. When premises are let for one or more years, and the
+tenant with the assent of the landlord continues to occupy the premises after the
+expiration of the term, such tenant shall be deemed to be a tenant from year to year.
+History: G.S. 1868, ch. 55, § 2; October 31; R.S. 1923, 67-502.
+                                  2025 Kansas Statutes
+
+58-2503.   Rent payable at intervals. When rent is reserved payable at intervals of three
+months or less, the tenant shall be deemed to hold from one period to another equal to
+the interval between the days of payment, unless there is an express contract to the
+contrary.
+History: G.S. 1868, ch. 55, § 3; October 31; R.S. 1923, 67-503.
+                                   2025 Kansas Statutes
+
+58-2504.   Termination of tenancy at will; notice. Thirty days' notice in writing is necessary to
+be given by either party before he or she can terminate a tenancy at will, or from one
+period to another of three months or less; but where in any case rent is reserved
+payable at intervals of less than thirty days, the length of notice need not be greater than
+such interval between the days of payment: Provided, however, That when premises are
+furnished or let by an employer to an employee, said tenancy shall cease and determine
+ten days after written notice to vacate: Provided further, That not more than fifteen (15)
+days' notice in writing by a tenant shall be necessary to terminate any tenancy as
+described in this section of persons in the military service of the United States in which
+the termination of tenancy is necessitated by military orders.
+History: G.S. 1868, ch. 55, § 4; L. 1919, ch. 223, § 1; R.S. 1923, 67-504; L. 1967, ch. 305, §
+1; L. 1973, ch. 223, § 1; July 1.
+                                   2025 Kansas Statutes
+
+58-2505.   Termination of tenancy from year-to-year; notice. All tenancies from year to year,
+other than farm tenancies from year-to-year, may be terminated by at least thirty days'
+notice in writing, given to the tenant prior to the expiration of the year.
+History: G.S. 1868, ch. 55, § 5; L. 1905, ch. 281, § 1; R.S. 1923, 67-505; L. 1978, ch. 215, §
+1; July 1.
+                                  2025 Kansas Statutes
+
+58-2506.   Termination of farm or pastureland tenancy; notice. (a) Except as may be otherwise
+provided by this section or by a written lease signed by the parties thereto, in cases of
+tenants occupying and cultivating farms or occupying or leasing pastureland, the notice
+to terminate such a farm or pastureland tenancy must be given in writing at least 30
+days prior to March 1 and must fix the termination of the tenancy to take place on
+March 1. For purposes of this act, "pastureland" means land used for livestock grazing or
+hay production, or both, which includes perennial vegetation, including, but not limited
+to, native vegetation, grass-like plants, forbs, shrubs, savannas, shrublands, marshes and
+meadows.
+(b) When a notice of termination is given pursuant to subsection (a) after a fall seeded
+grain crop has been planted, as to that part of the farm which is planted to a fall seeded
+grain crop on cropland which has been prepared in conformance with normal practices
+in the area, the notice shall be construed as fixing the termination of the tenancy of such
+portion to take place on the day following the last day of harvesting such crop or crops,
+or August 1, whichever comes first.
+(c) When a notice of termination is given pursuant to subsection (a) after the 30th day
+preceding March 1 and prior to the planting of a fall seeded grain crop on cropland
+which has been prepared in conformance with normal practices in the area, in any year
+in which a fall seeded grain crop has been or will be harvested, the notice shall be
+construed as fixing the termination of the tenancy of that part of the farm devoted to fall
+seeded grain crops on the day following the last day of harvesting such crop or crops in
+the succeeding year or August 1 of such succeeding year, whichever comes first.
+(d) Subject to the provisions of this section, a farm or pastureland tenant becomes a
+tenant from year-to-year by occupying the premises after the expiration of the term
+fixed in a written lease, in which case the notice of termination of tenancy must fix the
+termination of tenancy to take place on the same day of the same month following the
+service of the notice as the day and month of termination fixed in the original lease
+under which the tenant first occupied the premises. Such notice shall be written and
+given to the tenant at least 30 days prior to such termination date.
+History: G.S. 1868, ch. 55, § 6; L. 1919, ch. 224, § 1; R.S. 1923, 67-506; L. 1975, ch. 294, § 1;
+L. 1978, ch. 215, § 2; L. 1979, ch. 175, § 1; L. 1981, ch. 225, § 1; L. 2002, ch. 81, § 1; July 1.
+                                     2025 Kansas Statutes
+
+58-2506a.   Termination of farm tenancies; landlord's liability for certain substances and services
+provided by tenant. (a) When a notice of termination is given by the landlord pursuant to
+subsection (a) or (d) of K.S.A. 58-2506 and amendments thereto, and the tenant prior to
+receiving such notice has (1) performed customary tillage practices or has applied or
+furnished fertilizers, herbicides or pest control substances and (2) has not planted the
+ground, the landlord shall pay the tenant the fair and reasonable value of the services
+furnished and the fertilizers, herbicides or pest control substances furnished.
+(b) Where a farm tenancy is terminated by the landlord on March 1 pursuant to
+subsection (a) of K.S.A. 58-2506 and amendments thereto, and the tenant planted and
+obtained a satisfactory stand of alfalfa the preceding fall, the landlord shall pay the
+tenant the fair and reasonable value of all services performed in preparing and planting
+the alfalfa and for all of the tenant's expenditures for seed, fertilizer, herbicide or pest
+control substances.
+History: L. 1978, ch. 215, § 3; L. 1985, ch. 186, § 1; July 1.
+                                     2025 Kansas Statutes
+
+58-2507.   Termination of lease for three months or longer; notice; effect of payment of rent. If a
+tenant for a period of three months or longer neglect or refuse to pay rent when due, ten
+days' notice in writing to quit shall determine the lease, unless such rent be paid before
+the expiration of said ten days.
+History: G.S. 1868, ch. 55, § 7; October 31; R.S. 1923, 67-507.
+                                    2025 Kansas Statutes
+
+58-2508.   Termination of tenancy of less than three months for nonpayment of rent; notice. If a
+tenant for a period of less than three months shall neglect or refuse to pay rent when
+due, three days' notice in writing to quit shall determine the same, unless such rent be
+paid before the expiration of said three days.
+History: G.S. 1868, ch. 55, § 8; L. 1905, ch. 280, § 1; March 4; R.S. 1923, 67-508.
+                                  2025 Kansas Statutes
+
+58-2509.   Notice to quit not necessary, when. Where the time for the termination of a tenancy
+is specified in the contract, or where a tenant at will commits waste, or in the case of a
+tenant by sufferance, and in any case where the relation of landlord and tenant does not
+exist, no notice to quit shall be necessary.
+History: G.S. 1868, ch. 55, § 9; October 31; R.S. 1923, 67-509.
+                                    2025 Kansas Statutes
+
+58-2510.   Service of notice of termination of lease or tenancy. Notice as required in the
+preceding sections may be served on the tenant, or, if the tenant cannot be found, by
+leaving a copy thereof at the tenant's usual place of residence, or by delivering a copy
+thereof to some person over 12 years of age residing on the premises, or, if no person is
+found upon the premises, by posting a copy of the notice in a conspicuous place thereon,
+or by registered mail, registered mail return receipt requested, or certified mail, return
+receipt requested, addressed to the tenant at the tenant's usual place of residence. Proof
+of service by registered mail may be by the affidavit of the person mailing such notice or
+by the return receipt. Proof of service by certified mail may be by the return receipt.
+History: G.S. 1868, ch. 55, § 10; L. 1905, ch. 280, § 2; R.S. 1923, 67-510; L. 1951, ch. 372, §
+1; L. 1982, ch. 230, § 1; July 1.
+                                  2025 Kansas Statutes
+
+58-2511.   Assignment or transfer by tenant, when. No tenant for a term not exceeding two
+years, or at will, or by sufferance, shall assign or transfer his or her term or interest or
+any part thereof to another without the written consent of the landlord or person
+holding under the landlord.
+History: G.S. 1868, ch. 55, § 11; October 31; R.S. 1923, 67-511.
+                                    2025 Kansas Statutes
+
+58-2512.   Re-entry of premises upon violation of K.S.A. 58-2511. If any tenant shall violate the
+provisions of the preceding section, the landlord or person holding under the landlord,
+after giving ten days' notice to quit possession, shall have a right to re-enter the
+premises and take possession thereof and dispossess the tenant, subtenant or
+undertenant.
+History: G.S. 1868, ch. 55, § 12; October 31; R.S. 1923, 67-512.
+                                   2025 Kansas Statutes
+
+58-2513.   Attornment of tenant unnecessary; payment of rent. A conveyance of real estate or of
+any interest therein by a landlord shall be valid without the attornment of the tenant;
+but the payment of rent by the tenant to the grantor at any time before notice of sale
+given to said tenant shall be good against the grantee.
+History: G.S. 1868, ch. 55, § 13; October 31; R.S. 1923, 67-513.
+                                  2025 Kansas Statutes
+
+58-2514.   Attornment of tenant to stranger void, when. The attornment of a tenant to a stranger
+shall be void, and shall not affect the possession of his or her landlord unless it be made
+with the consent of the landlord, or pursuant to a judgment at law or the order or decree
+of a court.
+History: G.S. 1868, ch. 55, § 14; October 31; R.S. 1923, 67-514.
+                                 2025 Kansas Statutes
+
+58-2515.   Remedies of sublessees. Sublessees shall have the same remedy upon the original
+covenant against the principal landlord as they might have had against their immediate
+lessor.
+History: G.S. 1868, ch. 55, § 15; October 31; R.S. 1923, 67-515.
+                                   2025 Kansas Statutes
+
+58-2516.   Remedies of alienees of lessors and lessees. Alienees of lessors and lessees of land
+shall have the same legal remedies in relation to such land as their principal.
+History: G.S. 1868, ch. 55, § 16; October 31; R.S. 1923, 67-516.
+                                   2025 Kansas Statutes
+
+58-2517.   Rents from lands granted for life. Rents from lands granted for life or lives may be
+recovered as other rents.
+History: G.S. 1868, ch. 55, § 17; October 31; R.S. 1923, 67-517.
+                                   2025 Kansas Statutes
+
+58-2518.   Recovery of rents dependent on life of another. A person entitled to rents dependent
+on the life of another may recover arrears unpaid at the death of that other.
+History: G.S. 1868, ch. 55, § 18; October 31; R.S. 1923, 67-518.
+                                   2025 Kansas Statutes
+
+58-2519.   Executors and administrators, remedies and liabilities. Executors and administrators
+shall have the same remedies to recover rents, and be subject to the same liabilities to
+pay them, as their testators and intestates.
+History: G.S. 1868, ch. 55, § 19; October 31; R.S. 1923, 67-519.
+                                  2025 Kansas Statutes
+
+58-2520.   Occupant without special contract. The occupant without special contract, of any
+lands, shall be liable for the rent to any person entitled thereto.
+History: G.S. 1868, ch. 55, § 20; October 31; R.S. 1923, 67-520.
+                                  2025 Kansas Statutes
+
+58-2521.   Repairs and improvements by cotenant. If a joint tenant, or tenant in common, or
+tenant in coparcenary, have by consent management of the estate, and make repairs
+and improvements with the knowledge and without objection of his or her cotenant or
+coparcener, such cotenant or coparcener shall contribute ratably thereto.
+History: G.S. 1868, ch. 55, § 21; October 31; R.S. 1923, 67-521.
+                                   2025 Kansas Statutes
+
+58-2522.   Recovery by cotenant of rents and profits. A joint tenant, or tenant in common, or
+tenant in coparcenary, may maintain an action against his or her cotenant or
+coparcener or their personal representatives, for receiving more than his or her just
+proportion of the rents and profits.
+History: G.S. 1868, ch. 55, § 22; October 31; R.S. 1923, 67-522.
+                                   2025 Kansas Statutes
+
+58-2523.   Action by remainderman or reversioner for waste or trespass. A person seized of an
+estate in remainder or reversion may maintain an action for waste or trespass for injury
+to the inheritance, notwithstanding an intervening estate for life or years.
+History: G.S. 1868, ch. 55, § 23; October 31; R.S. 1923, 67-523.
+                                  2025 Kansas Statutes
+
+58-2524.   Rent as lien on crop. Any rent due for farming land shall be a lien on the crop
+growing or made on the premises. Such lien may be enforced by action and attachment
+therein, as hereinafter provided.
+History: G.S. 1868, ch. 55, § 24; October 31; R.S. 1923, 67-524.
+                                  2025 Kansas Statutes
+
+58-2525.   Lessor's remedies when rent payable in share of crop. When any such rent is payable
+in a share or certain proportion of the crop, the lessor shall be deemed the owner of
+such share or proportion, and may, if the tenant refuse to deliver the lessor such share
+or proportion, enter upon the land and take possession of the same, or obtain possession
+thereof by action of replevin.
+History: G.S. 1868, ch. 55, § 25; October 31; R.S. 1923, 67-525.
+                                  2025 Kansas Statutes
+
+58-2526.   Recovery of rent from purchaser of crop. The person entitled to the rent may recover
+from the purchaser of the crop, or any part thereof, with notice of the lien the value of
+the crop purchased, to the extent of the rent due and damages.
+History: G.S. 1868, ch. 55, § 26; October 31; R.S. 1923, 67-526.
+                                  2025 Kansas Statutes
+
+58-2527.   Attachment for nonpayment of rent; grounds; affidavit and bond. When any person who
+shall be liable to pay rent (whether the same be due or not, if it be due within one year
+thereafter, and whether the same be payable in money or other things) intends to
+remove, or is removing, or has within thirty days removed his or her property, or the
+crops, or any part thereof, from the leased premises, the person to whom the rent is
+owing may commence an action in the court having jurisdiction; and upon making an
+affidavit stating the amount of rent for which such person is liable, and one or more of
+the above facts, and executing an undertaking as in other cases, an attachment shall
+issue in the same manner and with the like effect as is provided by law in other actions.
+History: G.S. 1868, ch. 55, § 27; October 31; R.S. 1923, 67-527.
+                                   2025 Kansas Statutes
+
+58-2528.   Contents of affidavit; proceedings. In an action to enforce a lien on crops for rent of
+farming lands, the affidavit for an attachment shall state that there is due from the
+defendant to the plaintiff a certain sum, naming it, for rent of farming lands, describing
+the same, and that the plaintiff claims a lien on the crop made on such land. Upon
+making and filing such affidavit and executing an undertaking as prescribed in the
+preceding section, an order of attachment shall issue as in other cases, and shall be
+levied on such crop, or so much thereof as may be necessary; and all other proceedings
+in such attachment shall be the same as in other actions.
+History: G.S. 1868, ch. 55, § 28; October 31; R.S. 1923, 67-528.
+                                  2025 Kansas Statutes
+
+58-2530.   Tenant may waive exemptions. A tenant may waive, in writing, the benefit of the
+exemption laws of this state for all debts contracted for rents.
+History: G.S. 1868, ch. 55, § 30; October 31; R.S. 1923, 67-530.
+                                    2025 Kansas Statutes
+
+58-2531.   Leasing of farm lands; provisions in certain contracts enumerated.
+Whereas, Much farming land in this state is owned by persons or corporations for
+money rent as the sole business of the owners, the rentals of said lands being evidenced
+and secured by written lease contracts obligating the tenants to pay as rent therefor
+large sums of money fully equal to the fair and reasonable rental value of the land
+without any other or further rental obligation on the tenants' part; and
+Whereas, Said lease contracts contain requirements obligating the tenants in addition to
+the payment of said agreed rental to pay to the landlord all taxes or assessments of
+every kind or nature levied or assessed upon said leased land, and if not paid promptly
+when due the amount thereof to be added to the agreed rent proper, such unpaid taxes
+and assessments thenceforth to bear large interest rates until paid, the whole of said
+rent, taxes, assessments, and interest to be carried forward and added to the like
+amounts payable during the succeeding years of the tenancy, and extensions thereof;
+and
+Whereas, Said lease contracts contain the further requirements that all rent inclusive of
+said taxes, assessments, and interest shall constitute a lien on all crops growing or made
+on the leased land during the tenancy or extension thereof, and likewise on all teams,
+farming implements, and machinery owned by the tenant and used by the tenant on the
+land during the lease period, that said lease may be filed as a chattel mortgage, and
+further that before July first, on the landlord's demand, the tenant shall execute a chattel
+mortgage proper, as additional security for the payment of the rent for the current year;
+and
+Whereas, At the original leasing of said lands they were without buildings, fences, or
+other improvements necessary to farm tillage, the tenant and all succeeding tenants
+obligating themselves in said lease contracts to erect or make all buildings, fences, and
+other like improvements necessary to the efficient cultivation of the land, the landlord
+thereof making no improvements nor obligating himself or herself to do so, but
+reserving to himself or herself a lien on all improvements made by the tenant and only
+allowing the removal of any such on the termination of the tenancy and full payment of
+all rent, taxes, assessments, and interest as aforesaid, and the performance of all other
+obligations of the lease; and
+Whereas, Many other burdensome and laborious requirements on the tenants' part are
+contained in said lease contracts, such as pulling up, cleaning out and destroying all
+burrs, thistles and other weeds on the land and the public roads bounding the same;
+mowing or plowing all lands sown to small grain the preceding season, cultivating,
+protecting and maintaining hedge rows, fences, fruit and other trees growing on the
+land, by the first of August; and by the first of October cleaning, plowing, scraping and
+digging out all ditches and drains; and by the first of January trimming all hedges and
+burning the brush thereof; and in default of the performances named by the time stated
+pay to the landlord seventy-five cents per rod for the ditches and drains, twenty-five
+cents per rod for the hedges, two dollars per acre for land left in burrs or weeds, and
+one dollar per acre for stubble land not mowed or plowed; such sums of stipulated
+damage to be added to the rent of the land as though a part thereof; and
+Whereas, Many restrictions and requirements on the tenants' right to cultivate the kinds
+of crops to be grown on the lands are dictated to the tenant in said lease contracts which
+embarrass him or her in earning the stipulated money rental, for failure to comply with
+which a further money payment per acre is charged as rent. It is expressly provided in
+said lease contracts that the tenant shall not allow grain stalks grown on the land to be
+eaten by the tenants' animals, the landlord reserving such grain stalks to himself or
+herself; and as a further burden on the tenant and as a further security to the landlord
+the tenants are made to waive the benefit of the exemption, valuation and appraisement
+laws of the state.
+History: L. 1933, ch. 233, § 1; June 5.
+                                   2025 Kansas Statutes
+
+58-2532.   Terms of such contracts variant from approved rental agreements. The foregoing lease
+conditions and requirements are variant from the ordinary and generally used and
+approved rental agreements between landlord and tenant in the particulars above
+mentioned, are harsh, burdensome, oppressive and extortionate in their terms, and are
+entered into by necessitous persons only because of the scarcity of other rental lands.
+On account of the pledge of lien by the tenant to the landlord of the tenant's crops,
+teams, and all his or her other property the tenant is deprived of credit with merchants
+and banks for the purchase of the comforts and conveniences of ordinary farm life, his
+or her children deprived of educational advantages, and himself or herself and family
+kept impoverished in condition and estate.
+History: L. 1933, ch. 233, § 2; June 5.
+                                     2025 Kansas Statutes
+
+58-2533.   Such lease contracts against public policy and unenforceable; tenants to pay fair and
+reasonable sums. Lease agreements containing all of the burdensome requirements
+heretofore recited are hereby declared to be against the public policy of the state, illegal
+and unenforceable, and the tenants subscribing to the same obligated to pay under said
+leases as rents for the lands only fair and reasonable sums with an accord of lien only
+on the total crops grown on the leased land and on the total of the livestock raised on
+share or lease, and on the total receipts or returns from pasture received by the tenants
+including an accord of lien on the tenants' livestock sufficient to pay pasturage on the
+tenants' livestock on the landlords' land.
+History: L. 1933, ch. 233, § 3; June 5.
+                                  2025 Kansas Statutes
+
+58-2540.   Citation of act. This act shall be known and may be cited as the "residential
+landlord and tenant act."
+History: L. 1975, ch. 290, § 1; July 1.
+                                   2025 Kansas Statutes
+
+58-2541.   Arrangements not subject to act. Unless created to avoid the application of this act,
+the following arrangements are not governed by this act:
+(a) Residence at an institution, public or private, if incidental to detention or the
+provision of medical, geriatric, educational, counseling, religious or similar service;
+(b) occupancy under a contract of sale of a dwelling unit or the property of which it is
+a part, if the occupant is the purchaser or a person who succeeds to the purchaser's
+interest;
+(c) occupancy by a member of a fraternal or social organization in the portion of a
+structure operated for the benefit of the organization;
+(d) transient occupancy in a hotel, motel or rooming house;
+(e) occupancy by an employee of a landlord whose right to occupancy is conditional
+upon employment in and about the premises;
+(f) occupancy by an owner of a condominium unit or a holder of a proprietary lease in
+a cooperative; and
+(g) occupancy under a rental agreement covering premises used by the occupant
+primarily for agricultural purposes.
+History: L. 1975, ch. 290, § 2; July 1.
+                                   2025 Kansas Statutes
+
+58-2542.   Jurisdiction of courts; procedure. The district court shall have jurisdiction over any
+landlord or tenant with respect to any conduct in this state governed by this act or with
+respect to any claim arising from a transaction subject to this act, and notwithstanding
+the provisions of subsection (b) of K.S.A. 61-2802, and amendments thereto, such actions
+may be commenced pursuant to the code of civil procedure for limited actions. Unless
+otherwise specifically provided in this act, the code of civil procedure for limited actions
+shall govern any action commenced pursuant to this act.
+History: L. 1975, ch. 290, § 3; L. 1976, ch. 240, § 1; L. 1976, ch. 151, § 7; L. 2000, ch. 161, §
+106; January 1, 2001.
+                                  2025 Kansas Statutes
+
+58-2543.   Definitions. As used in this act: (a) "Action" includes recoupment, counterclaim,
+setoff, suit in equity and any other proceeding in which rights are determined, including
+an action for possession.
+(b) "Building and housing codes" includes any law, ordinance or governmental
+regulation concerning fitness for habitation, or the construction, maintenance,
+operation, occupancy, use or appearance of any premises or dwelling unit.
+(c) "Dwelling unit" means a structure or the part of a structure that is used as a home,
+residence or sleeping place by one person who maintains a household or by two or
+more persons who maintain a common household; but such term shall not include real
+property used to accommodate a manufactured home or mobile home, unless such
+manufactured home or mobile home is rented or leased by the landlord.
+(d) "Good faith" means honesty in fact in the conduct of the transaction concerned.
+(e) "Landlord" means the owner, lessor or sublessor of the dwelling unit, or the
+building of which it is a part, and it also means a manager of the premises who fails to
+disclose as required by K.S.A. 58-2551 and amendments thereto.
+(f) "Organization" includes a corporation, government, governmental subdivision or
+agency, business trust, estate, trust, partnership or association, two or more persons
+having a joint or common interest, and any other legal or commercial entity.
+(g) "Owner" means one or more persons, jointly or severally, in whom is vested: (1) All
+or part of the legal title to property; or (2) all or part of the beneficial ownership and a
+right to prevent use and enjoyment of the premises; and such term includes a mortgagee
+in possession.
+(h) "Person" includes an individual or organization.
+(i) "Premises" means a dwelling unit and the structure of which it is a part and
+facilities and appurtenances therein and grounds, areas and facilities held out for the
+use of tenants generally or the use of which is promised to the tenant.
+(j) "Rent" means all payments to be made to the landlord under the rental agreement,
+other than the security deposit.
+(k) "Rental agreement" means all agreements, written or oral, and valid rules and
+regulations adopted under K.S.A. 58-2556 and amendments thereto, embodying the
+terms and conditions concerning the use and occupancy of a dwelling unit and premise.
+(l) "Roomer" means a person occupying a dwelling unit that lacks a major bathroom
+and kitchen facility, in a structure where one or more major facilities are used in
+common by occupants of the dwelling unit and other dwelling units. As used herein, a
+major bathroom facility means a toilet, and either a bath or shower, and a major kitchen
+facility means a refrigerator, stove and sink.
+(m) "Security deposit" means any sum of money specified in a rental agreement,
+however denominated, to be deposited with a landlord by a tenant as a condition
+precedent to the occupancy of a dwelling unit, which sum of money, or any part thereof,
+may be forfeited by the tenant under the terms of the rental agreement upon the
+occurrence or breach of conditions specified therein.
+(n) "Single family residence" means a structure maintained and used as a single
+dwelling unit. Notwithstanding that a dwelling unit shares one or more walls with
+another dwelling unit, it is a single family residence if it has direct access to a street or
+thoroughfare and shares neither heating facilities, hot water equipment, nor any other
+essential facility or service with any other dwelling unit.
+(o) "Tenant" means a person entitled under a rental agreement to occupy a dwelling
+unit to the exclusion of others.
+History: L. 1975, ch. 290, § 4; L. 1991, ch. 33, § 33; July 1.
+                                    2025 Kansas Statutes
+
+58-2544.   Finding of unconscionability; remedies; evidence. (a) If the court, as a matter of law,
+finds: (1) A rental agreement or any provision thereof was unconscionable when made,
+the court may refuse to enforce the agreement, enforce the remainder of the agreement
+without the unconscionable provision, or limit the application of any unconscionable
+provision to avoid an unconscionable result; or
+(2) a settlement in which a party waives or agrees to forego a claim or right under this
+act or under a rental agreement was unconscionable at the time it was made, the court
+may refuse to enforce the settlement, enforce the remainder of the settlement without
+the unconscionable provision or limit the application of any unconscionable provision
+to avoid any unconscionable result.
+(b) If unconscionability is put into issue by a party or by the court upon its own
+motion, the parties shall be afforded a reasonable opportunity to present evidence as to
+the setting, purpose and effect of the rental agreement or settlement to aid the court in
+making the determination.
+History: L. 1975, ch. 290, § 5; July 1.
+                                   2025 Kansas Statutes
+
+58-2545.   Rental agreement; terms and conditions in absence thereof. (a) The landlord and tenant
+may include in a rental agreement, terms and conditions not prohibited by this act or
+other rule of law, including rent, term of the agreement and other provisions governing
+the rights and obligations of the parties.
+(b) In absence of agreement, the tenant shall pay as rent the fair rental value for the
+use and occupancy of the dwelling unit.
+(c) Rent shall be payable without demand or notice at the time and place agreed upon
+by the parties. Unless otherwise agreed, rent is payable at the dwelling unit, and
+periodic rent is payable at the beginning of any term of one (1) month or less and
+otherwise in equal monthly installments at the beginning of each month. Unless
+otherwise agreed, rent shall be uniformly apportionable from day-to-day.
+(d) Unless the rental agreement fixes a definite term, the tenancy shall be week-to-
+week, in the case of a roomer who pays weekly rent, and in all other cases month-to-
+month.
+History: L. 1975, ch. 290, § 6; July 1.
+                                     2025 Kansas Statutes
+
+58-2546.   Rental agreement not signed and delivered given effect by certain actions; limitation on
+term. (a) If the landlord does not sign and deliver a written rental agreement which has
+been signed and delivered to such landlord by the tenant, the knowing acceptance of
+rent without reservation by the landlord gives the rental agreement the same effect as if
+it had been signed and delivered by the landlord.
+(b) If the tenant does not sign and deliver a written rental agreement which has been
+signed and delivered to such tenant by the landlord, the knowing acceptance of
+possession and payment of rent without reservation gives the rental agreement the
+same effect as if it had been signed and delivered by the tenant.
+(c) If a rental agreement given effect by the operation of this section provides for a
+term longer than one year, it is effective only for one year.
+History: L. 1975, ch. 290, § 7; July 1.
+                                   2025 Kansas Statutes
+
+58-2547.   Prohibited terms and conditions in rental agreement; damages. (a) No rental agreement
+may provide that the tenant or landlord:
+(1) Agrees to waive or to forego rights or remedies under this act;
+(2) authorizes any person to confess judgment on a claim arising out of the rental
+agreement;
+(3) agrees to pay either party's attorneys' fees; or
+(4) agrees to the exculpation or limitation of any liability of either party arising under
+law or to indemnify either party for that liability or the costs connected therewith,
+except that a rental agreement may provide that a tenant agrees to limit the landlord's
+liability for fire, theft or breakage with respect to common areas of the dwelling unit.
+(b) A provision prohibited by subsection (a) included in a rental agreement is
+unenforceable. If a landlord deliberately uses a rental agreement containing provisions
+known by such landlord to be prohibited, the tenant may recover actual damages
+sustained by such tenant.
+History: L. 1975, ch. 290, § 8; July 1.
+                                   2025 Kansas Statutes
+
+58-2548.   Inventory of premises by landlord and tenant, when; copies. Within five (5) days of the
+initial date of occupancy or upon delivery of possession, the landlord, or such landlord's
+designated representative, and the tenant shall jointly inventory the premises. A written
+record detailing the condition of the premises and any furnishings or appliances
+provided shall be completed. Duplicate copies of the record shall be signed by the
+landlord and the tenant as an indication the inventory was completed. The tenant shall
+be given a copy of the inventory.
+History: L. 1975, ch. 290, § 9; July 1.
+                                   2025 Kansas Statutes
+
+58-2549.   Receipt of rent subject to certain obligations. A rental agreement, assignment,
+conveyance, trust deed or security instrument may not permit the receipt of rent free of
+the obligation to comply with subsection (a) of K.S.A. 58-2553.
+History: L. 1975, ch. 290, § 10; July 1.
+                                   2025 Kansas Statutes
+
+58-2550.   Security deposits; amounts; retention; return; damages for noncompliance. (a) A landlord
+may not demand or receive a security deposit for an unfurnished dwelling unit in an
+amount or value in excess of one month's periodic rent. If the rental agreement provides
+for the tenant to use furniture owned by the landlord, the landlord may demand and
+receive a security deposit not to exceed 11/2 months' rent, and if the rental agreement
+permits the tenant to keep or maintain pets in the dwelling unit, the landlord may
+demand and receive an additional security deposit not to exceed 1/2 of one month's rent.
+A municipal housing authority created under the provisions of K.S.A. 17-2337 et seq.,
+and amendments thereto, which is wholly or partially subsidized by aid from the
+federal government, pursuant to a rental agreement in which rent is determined solely
+by the personal income of the tenant, may demand and receive a security deposit in
+accordance with a schedule established by the housing authority, which is based on the
+bedroom unit size of the dwelling unit. Any such municipal housing authority which
+establishes such a schedule shall provide a deferred payment plan whereby the tenant
+may pay the deposit in reasonable increments over a period of time.
+(b) Upon termination of the tenancy, any security deposit held by the landlord may be
+applied to the payment of accrued rent and the amount of damages which the landlord
+has suffered by reason of the tenant's noncompliance with K.S.A. 58-2555, and
+amendments thereto, and the rental agreement, all as itemized by the landlord in a
+written notice delivered to the tenant. If the landlord proposes to retain any portion of
+the security deposit for expenses, damages or other legally allowable charges under the
+provisions of the rental agreement, other than rent, the landlord shall return the
+balance of the security deposit to the tenant within 14 days after the determination of
+the amount of such expenses, damages or other charges, but in no event to exceed 30
+days after termination of the tenancy, delivery of possession and demand by the tenant.
+If the tenant does not make such demand within 30 days after termination of the
+tenancy, the landlord shall mail that portion of the security deposit due the tenant to the
+tenant's last known address.
+(c) If the landlord fails to comply with subsection (b) of this section, the tenant may
+recover that portion of the security deposit due together with damages in an amount
+equal to 11/2 the amount wrongfully withheld.
+(d) Except as otherwise provided by the rental agreement, a tenant shall not apply or
+deduct any portion of the security deposit from the last month's rent or use or apply
+such tenant's security deposit at any time in lieu of payment of rent. If a tenant fails to
+comply with this subsection, the security deposit shall be forfeited and the landlord may
+recover the rent due as if the deposit had not been applied or deducted from the rent
+due.
+(e) Nothing in this section shall preclude the landlord or tenant from recovering other
+damages to which such landlord or tenant may be entitled under this act.
+(f) The holder of the landlord's interest in the premises at the time of the termination
+of the tenancy shall be bound by this section.
+History: L. 1975, ch. 290, § 11; L. 1978, ch. 216, § 1; L. 1997, ch. 68, § 1; July 1.
+                                    2025 Kansas Statutes
+
+58-2551.   Disclosures required of landlord or person authorized to enter rental agreement; person
+failing to comply becomes landlord's agent for certain purposes. (a) The landlord or any person
+authorized to enter into a rental agreement on the landlord's behalf shall disclose to the
+tenant in writing, at or before the commencement of the tenancy, the name and address
+of:
+(1) The person authorized to manage the premises; and
+(2) an owner of the premises or a person authorized to act for and on behalf of the
+owner for the purpose of service of process and for the purpose of receiving and
+receipting for notices and demands.
+(b) The information required to be furnished by this section shall be kept current and
+this section extends to and is enforceable against any successor landlord, owner or
+manager.
+(c) A person who fails to comply with subsection (a) becomes an agent of each person
+who is a landlord for the purpose of:
+(1) Service of process and receiving and receipting for notices and demands; and
+(2) performing the obligations of the landlord under this act and under the rental
+agreement and expending or making available for such purpose all rent collected from
+the premises.
+History: L. 1975, ch. 290, § 12; July 1.
+                                    2025 Kansas Statutes
+
+58-2552.   Delivery of possession of premises; action for possession; damages. At the
+commencement of the term the landlord shall deliver possession of the premises to the
+tenant in compliance with the rental agreement and K.S.A. 58-2553. The landlord may
+bring an action for possession against any person wrongfully in possession and may
+recover the damages provided in subsection (c) of K.S.A. 58-2570.
+History: L. 1975, ch. 290, § 13; July 1.
+                                     2025 Kansas Statutes
+
+58-2553.   Duties of landlord; agreement that tenant perform landlord's duties; limitations. (a)
+Except when prevented by an act of God, the failure of public utility services or other
+conditions beyond the landlord's control, the landlord shall:
+(1) Comply with the requirements of applicable building and housing codes materially
+affecting health and safety. If the duty imposed by this paragraph is greater than any
+duty imposed by any other paragraph of this subsection, the landlord's duty shall be
+determined in accordance with the provisions of this paragraph;
+(2) exercise reasonable care in the maintenance of the common areas;
+(3) maintain in good and safe working order and condition all electrical, plumbing,
+sanitary, heating, ventilating and air-conditioning appliances including elevators,
+supplied or required to be supplied by such landlord;
+(4) except where provided by a governmental entity, provide and maintain on the
+grounds, for the common use by all tenants, appropriate receptacles and conveniences
+for the removal of ashes, garbage, rubbish and other waste incidental to the occupancy
+of the dwelling unit and arrange for their removal; and
+(5) supply running water and reasonable amounts of hot water at all times and
+reasonable heat, unless the building that includes the dwelling units is not required by
+law to be equipped for that purpose, or the dwelling unit is so constructed that heat or
+hot water is generated by an installation within the exclusive control of the tenant and
+supplied by a direct public utility connection. Nothing in this section shall be construed
+as abrogating, limiting or otherwise affecting the obligation of a tenant to pay for any
+utility service in accordance with the provisions of the rental agreement. The landlord
+shall not interfere with or refuse to allow access or service to a tenant by a
+communication or cable television service duly franchised by a municipality.
+(b) The landlord and tenants of a dwelling unit or units which provide a home,
+residence or sleeping place for not to exceed four households having common areas
+may agree in writing that the tenant is to perform the landlord's duties specified in
+paragraphs (4) and (5) of subsection (a) of this section and also specified repairs,
+maintenance tasks, alterations or remodeling, but only if the transaction is entered into
+in good faith and not for the purpose of evading the obligations of the landlord.
+(c) The landlord and tenant of any dwelling unit, other than a single family residence,
+may agree that the tenant is to perform specified repairs, maintenance tasks, alterations
+or remodeling only if:
+(1) The agreement of the parties is entered into in good faith, and not to evade the
+obligations of the landlord, and is set forth in a separate written agreement signed by
+the parties and supported by adequate consideration;
+(2) the work is not necessary to cure noncompliance with subsection (a)(1) of this
+section; and
+(3) the agreement does not diminish or affect the obligation of the landlord to other
+tenants in the premises.
+(d) The landlord may not treat performance of the separate agreement described in
+subsection (c) of this section as a condition to any obligation or the performance of any
+rental agreement.
+History: L. 1975, ch. 290, § 14; L. 1982, ch. 230, § 2; July 1.
+                                    2025 Kansas Statutes
+
+58-2554.   Conveyance by landlord or termination by manager; notice; no liability for subsequent
+events. (a) Unless otherwise agreed, a landlord, who conveys premises that include a
+dwelling unit subject to a rental agreement in a good faith sale to a bona fide purchaser,
+is relieved of liability under the rental agreement and this act as to events occurring
+subsequent to written notice to the tenant of the conveyance. However, such landlord
+remains liable to the tenant for any portion of a security deposit to which the tenant is
+entitled under K.S.A. 58-2550.
+(b) Unless otherwise agreed, a manager of premises that include a dwelling unit is
+relieved of liability under the rental agreement and this act as to events occurring after
+written notice to the tenant of the termination of such manager's management.
+History: L. 1975, ch. 290, § 15; July 1.
+                                  2025 Kansas Statutes
+
+58-2555.   Duties of tenant. The tenant shall: (a) Comply with all obligations primarily
+imposed upon tenants by applicable provisions of building and housing codes materially
+affecting health and safety;
+(b) keep that part of the premises that such tenant occupies and uses as clean and safe
+as the condition of the premises permit;
+(c) remove from such tenant's dwelling unit all ashes, rubbish, garbage and other
+waste in a clean and safe manner;
+(d) keep all plumbing fixtures in the dwelling unit or used by the tenant as clean as
+their condition permits;
+(e) use in a reasonable manner all electrical, plumbing, sanitary, heating, ventilating,
+air-conditioning and other facilities and appliances, including elevators in the premises;
+(f) be responsible for any destruction, defacement, damage, impairment or removal of
+any part of the premises caused by an act or omission of the tenant or by any person or
+animal or pet on the premises at any time with the express or implied permission or
+consent of the tenant;
+(g) not engage in conduct or allow any person or animal or pet, on the premises with
+the express or implied permission or consent of the tenant, to engage in conduct that
+will disturb the quiet and peaceful enjoyment of the premises by other tenants.
+History: L. 1975, ch. 290, § 16; July 1.
+                                   2025 Kansas Statutes
+
+58-2556.   Rules and regulations of landlord; when enforceable. A landlord, from time to time,
+may adopt rules or regulations, however described, concerning the tenant's use and
+occupancy of the premises. Any such rule or regulation is enforceable against the tenant
+only if:
+(a) Its purpose is to promote the convenience, safety, peace or welfare of the tenants in
+the premises, preserve the landlord's property from abusive use or make a fair
+distribution of services and facilities held out for the tenants generally;
+(b) it is reasonably related to the purpose for which it is adopted;
+(c) it applies to all tenants in the premises equally;
+(d) it is sufficiently explicit in its prohibition, direction or limitation of the tenant's
+conduct to fairly inform the tenant of what such tenant must or must not do to comply;
+(e) it is not for the purpose of evading the obligations of the landlord; and
+(f) the tenant has notice of it at the time such tenant enters into the rental agreement.
+After the tenant enters into the rental agreement, if a rule or regulation which effects a
+substantial modification of the rental agreement is adopted, such rule or regulation is
+not enforceable against the tenant unless such tenant consents to it in writing.
+History: L. 1975, ch. 290, § 17; July 1.
+                                   2025 Kansas Statutes
+
+58-2557.   Landlord's right to enter; limitations. (a) The landlord shall have the right to enter
+the dwelling unit at reasonable hours, after reasonable notice to the tenant, in order to
+inspect the premises, make necessary or agreed repairs, decorations, alterations or
+improvements, supply necessary or agreed services, or exhibit the dwelling unit to
+prospective or actual purchasers, mortgagees, tenants, workmen or contractors.
+(b) The landlord may enter the dwelling unit without consent of the tenant in case of
+an extreme hazard involving the potential loss of life or severe property damage.
+(c) The landlord shall not abuse the right of access or use it to harass the tenant.
+History: L. 1975, ch. 290, § 18; July 1.
+                                  2025 Kansas Statutes
+
+58-2558.   Use of premises; extended absence of tenant. Unless otherwise agreed, the tenant
+shall occupy such tenant's dwelling unit only as a dwelling unit. The rental agreement
+may require that the tenant notify the landlord of any anticipated extended absence
+from the premises in excess of seven days no later than the first day of the extended
+absence.
+History: L. 1975, ch. 290, § 19; July 1.
+                                    2025 Kansas Statutes
+
+58-2559.   Material noncompliance by landlord; notice; termination of rental agreement; limitations;
+remedies; security deposit. (a) Except as otherwise provided in this act, if there is a material
+noncompliance by the landlord with the rental agreement or a noncompliance with
+K.S.A. 58-2553 materially affecting health and safety, the tenant may deliver a written
+notice to the landlord specifying the acts and omissions constituting the breach and that
+the rental agreement will terminate upon a periodic rent-paying date not less than thirty
+(30) days after receipt of the notice. The rental agreement shall terminate as provided in
+the notice, subject to the following:
+(1) If the breach is remediable by repairs or the payment of damages or otherwise, and
+the landlord adequately initiates a good faith effort to remedy the breach within
+fourteen (14) days after receipt of the notice, the rental agreement shall not terminate.
+However, in the event that the same or a similar breach occurs after the fourteen-day
+period provided herein, the tenant may deliver a written notice to the landlord
+specifically describing the breach and stating that the rental agreement shall terminate
+upon a periodic rent-paying date not less than thirty (30) days after the receipt of such
+notice by the landlord. The rental agreement then shall terminate as provided in such
+notice.
+(2) The tenant may not terminate for a condition caused by an act or omission of, or
+which is or can be properly attributable or applicable to, the tenant or any person or
+animal or pet on the premises at any time with the tenant's express or implied
+permission or consent.
+(b) Except as otherwise provided in this act, the tenant may recover damages and
+obtain injunctive relief for any noncompliance by the landlord with the rental
+agreement or K.S.A. 58-2553. The remedy provided in this subsection shall be in addition
+to any right of the tenant arising under subsection (a) of this section.
+(c) If the rental agreement is terminated, the landlord shall return that portion of the
+security deposit recoverable by the tenant under K.S.A. 58-2550.
+(d) The provisions of this section shall not limit a landlord's or tenant's right to
+terminate the rental agreement pursuant to K.S.A. 58-2570, and amendments thereto.
+History: L. 1975, ch. 290, § 20; L. 1978, ch. 218, § 2; L. 1978, ch. 217, § 2; July 1.
+                                    2025 Kansas Statutes
+
+58-2560.   Failure by landlord to deliver possession; remedies. If the landlord fails to deliver
+possession of the dwelling unit to the tenant as provided in K.S.A. 58-2552, rent abates
+until possession is delivered and the tenant:
+(a) Upon at least five days' written notice to the landlord, may terminate the rental
+agreement and upon termination the landlord shall return all of the security deposit; or
+(b) may demand performance of the rental agreement by the landlord and, if the
+tenant elects, maintain an action for possession of the dwelling unit against the
+landlord, or any person wrongfully in possession, and recover the damages sustained by
+such tenant.
+If a person's failure to deliver possession is willful and not in good faith, an aggrieved
+party may recover from such person an amount not more than one and one-half (11/2)
+months' periodic rent or one and one-half (11/2) times the actual damages sustained by
+such party, whichever is greater.
+History: L. 1975, ch. 290, § 21; July 1.
+                                    2025 Kansas Statutes
+
+58-2561.   Action for possession for nonpayment of rent; counterclaim, waiver; accrued rent, payment
+into court; disposition; when judgment for tenant. (a) In an action for possession based upon
+nonpayment of the rent, or in an action for rent where the tenant is in possession, the
+tenant shall counterclaim for any amount which such tenant may recover under the
+rental agreement or this act or such counterclaim shall be deemed to have been waived.
+In that event, the court from time to time may order the tenant to pay into court all or
+part of the rent accrued and thereafter accruing, and shall determine the amount due to
+each party. The party to whom a net amount is owed shall be paid first from the money
+paid into court, and the balance shall be paid by the other party. If no rent remains due
+after application of this section, judgment may be entered for the tenant in the action
+for possession.
+(b) In an action for rent where the tenant is not in possession, the tenant may
+counterclaim as provided in subsection (a), but the tenant shall not be required to pay
+any rent into court.
+History: L. 1975, ch. 290, § 22; July 1.
+                                    2025 Kansas Statutes
+
+58-2562.   Damage or destruction by fire or casualty; termination of rental agreement; notice; vacation
+of part of dwelling; reduction of rent; security deposit. (a) If the dwelling unit or premises are
+damaged or destroyed by fire or casualty to an extent that the use and habitability of the
+dwelling unit is substantially impaired, the tenant:
+(1) May vacate the premises immediately and shall notify the landlord in writing
+within five (5) days thereafter of such tenant's intention to terminate the rental
+agreement, in which case the rental agreement terminates as of the date of vacating; or
+(2) if continued occupancy is lawful, may vacate any part of the dwelling unit rendered
+unusable by the fire or casualty, in which case the tenant's liability for rent is reduced in
+proportion to the diminution in the fair rental value of the dwelling unit.
+(b) If the rental agreement is terminated pursuant to this section, the landlord shall
+return that portion of the security deposit recoverable by the tenant under K.S.A. 58-
+2550, and accounting for rent in the event of either termination of the rental agreement
+or apportionment of rent shall occur as of the date of vacating.
+History: L. 1975, ch. 290, § 23; July 1.
+                                    2025 Kansas Statutes
+
+58-2563.   Unlawful removal or exclusion of tenant; diminished services; damages; security deposit. If
+the landlord unlawfully removes or excludes the tenant from the premises or willfully
+diminishes services to the tenant by interrupting or causing the interruption of electric,
+gas, water or other essential service to the tenant, the tenant may recover possession or
+terminate the rental agreement and, in either case, recover an amount not more than
+one and one-half (11/2) months' periodic rent or the damages sustained by the tenant,
+whichever is greater. If the rental agreement is terminated, the landlord shall return
+that portion of the security deposit recoverable by the tenant under K.S.A. 58-2550.
+History: L. 1975, ch. 290, § 24; July 1.
+                                    2025 Kansas Statutes
+
+58-2564.   Material noncompliance by tenant; notice; termination of rental agreement; limitations;
+nonpayment of rent; remedies. (a) Except as otherwise provided in the residential landlord
+and tenant act, if there is a material noncompliance by the tenant with the rental
+agreement or a noncompliance with K.S.A. 58-2555 and amendments thereto materially
+affecting health and safety, the landlord may deliver a written notice to the tenant
+specifying the acts and omissions constituting the breach and that the rental agreement
+will terminate upon a date not less than 30 days after receipt of the notice, if the breach
+is not remedied in 14 days. The rental agreement shall terminate as provided in the
+notice regardless of the periodic rent-paying date, except that if the breach is
+remediable by repairs or the payment of damages or otherwise, and the tenant
+adequately initiates a good faith effort to remedy the breach prior to the date specified
+in the notice, the rental agreement will not terminate. However, in the event that such
+breach or a similar breach occurs after the 14-day period provided in this subsection,
+the landlord may deliver a written notice to the tenant that the rental agreement will
+terminate upon a date not less than 30 days after receipt of the notice without providing
+the opportunity to remedy the breach. The rental agreement then shall terminate as
+provided in such notice regardless of the periodic rent-paying date.
+(b) The landlord may terminate the rental agreement if rent is unpaid when due and
+the tenant fails to pay rent within three days, after written notice by the landlord of
+nonpayment and such landlord's intention to terminate the rental agreement if the rent
+is not paid within such three-day period. The three-day notice period provided for in
+this subsection shall be computed as three consecutive 24-hour periods. When such
+notice is served on the tenant or to some person over 12 years of age residing on the
+premises, or by posting a copy of the notice in a conspicuous place thereon, the three-
+day period shall commence at the time of delivery or posting. When such notice is
+delivered by mailing, an additional two days from the date of mailing should be allowed
+for the tenant to pay such tenant's rent and thereby avoid having the rental agreement
+terminated.
+(c) Except as otherwise provided in the residential landlord and tenant act, the
+landlord may recover damages and obtain injunctive relief for any noncompliance by
+the tenant with the rental agreement or K.S.A. 58-2555 and amendments thereto.
+(d) The provisions of this section shall not limit a landlord's or tenant's right to
+terminate the rental agreement pursuant to K.S.A. 58-2570, and amendments thereto.
+History: L. 1975, ch. 290, § 25; L. 1978, ch. 218, § 1; L. 1978, ch. 217, § 1; L. 1992, ch. 306,
+§ 1; July 1.
+                                    2025 Kansas Statutes
+
+58-2565.   Extended absence of tenant; damages; entry by landlord; abandonment by tenant, when;
+reasonable effort to rent required; termination of rental agreement, when; personal property of
+tenant; disposition, procedure; proceeds; rights of person receiving property. (a) If the rental
+agreement requires the tenant to give notice to the landlord of an anticipated extended
+absence in excess of seven days required in K.S.A. 58-2558, and amendments thereto,
+and the tenant willfully fails to do so, the landlord may recover actual damages from the
+tenant.
+(b) During any absence of the tenant in excess of 30 days, the landlord may enter the
+dwelling unit at times reasonably necessary. If, after the tenant is 10 days in default for
+nonpayment of rent and has removed a substantial portion of such tenant's belongings
+from the dwelling unit, the landlord may assume that the tenant has abandoned the
+dwelling unit, unless the tenant has notified the landlord to the contrary.
+(c) If the tenant abandons the dwelling unit, the landlord shall make reasonable efforts
+to rent it at a fair rental. If the landlord rents the dwelling unit for a term beginning
+prior to the expiration of the rental agreement, it is deemed to be terminated as of the
+date the new tenancy begins. The rental agreement is deemed to be terminated by the
+landlord as of the date the landlord has notice of the abandonment, if the landlord fails
+to use reasonable efforts to rent the dwelling unit at a fair rental or if the landlord
+accepts the abandonment as a surrender. If the tenancy is from month-to-month, or
+week-to-week, the term of the rental agreement for this purpose shall be deemed to be a
+month or a week, as the case may be.
+(d) If the tenant abandons or surrenders possession of the dwelling unit and leaves
+household goods, furnishings, fixtures or any other personal property in or at the
+dwelling unit or if the tenant is removed from the dwelling unit as a result of a forcible
+detainer action, pursuant to K.S.A. 61-3801 through 61-3808, and amendments thereto,
+and fails to remove any household goods, furnishings, fixtures or any other personal
+property in or at the dwelling unit after possession of the dwelling unit is returned to
+the landlord, the landlord may take possession of the property, store it at tenant's
+expense and sell or otherwise dispose of the same upon the expiration of 30 days after
+the landlord takes possession of the property, if at least 15 days prior to the sale or other
+disposition of such property the landlord shall publish once in a newspaper of general
+circulation in the county in which such dwelling unit is located a notice of the landlord's
+intention to sell or dispose of such property. Within seven days after publication, a copy
+of the published notice shall be mailed by the landlord to the tenant at the tenant's last
+known address. Such notice shall state the name of the tenant, a brief description of the
+property and the approximate date on which the landlord intends to sell or otherwise
+dispose of such property. If the foregoing requirements are met, the landlord may sell or
+otherwise dispose of the property without liability to the tenant or to any other person
+who has or claims to have an interest in such property, except as to any secured creditor
+who gives notice of creditor's interest in such property to the landlord prior to the sale
+or disposition thereof, if the landlord has no knowledge or notice that any person, other
+than the tenant, has or claims to have an interest in such property. During such 30
+period* after the landlord takes possession of the property, and at any time prior to sale
+or other disposition thereof, the tenant may redeem the property upon payment to the
+landlord of the reasonable expenses incurred by the landlord of taking, holding and
+preparing the property for sale and of any amount due from the tenant to the landlord
+for rent or otherwise.
+(e) Any proceeds from the sale or other disposition of the property as provided in
+subsection (d) shall be applied by the landlord in the following order:
+(1) To the reasonable expenses of taking, holding, preparing for sale or disposition,
+giving notice and selling or disposing thereof;
+(2) to the satisfaction of any amount due from the tenant to the landlord for rent or
+otherwise; and,
+(3) the balance, if any, may be retained by the landlord, without liability to the tenant
+or to any other person, other than a secured creditor who gave notice of creditors
+interest as provided in subsection (d), for any profit made as a result of a sale or other
+disposition of such property.
+(f) Any person who purchases or otherwise receives the property pursuant to a sale or
+other disposition of the property as provided under subsection (d) of this section,
+without knowledge that such sale or disposition is in violation of the ownership rights or
+security interest of a third party in the property, takes title to the property free and clear
+of any right, title, claim or interest of the tenant or such third party in the property.
+History: L. 1975, ch. 290, § 26; L. 1996, ch. 113, § 1; L. 2000, ch. 161, § 107; January 1,
+2001.
+                                  2025 Kansas Statutes
+
+58-2566.   Acceptance of late rent; effect. Acceptance of late payment of rent from the tenant
+without reservation by the landlord, or acceptance of performance by the tenant, other
+than for payment of rent, that varies from the terms of the rental agreement, constitutes
+a waiver of the landlord's right to terminate the rental agreement for that breach, unless
+otherwise agreed after the breach has occurred.
+History: L. 1975, ch. 290, § 27; July 1.
+                                     2025 Kansas Statutes
+
+58-2567.   Lien or security interest in tenant's personal property unenforceable; distraint abolished,
+exception. (a) Except as otherwise provided in this act, a lien or security interest on
+behalf of the landlord in the tenant's household goods, furnishings, fixtures or other
+personal property is not enforceable unless perfected prior to the effective date of this
+act.
+(b) Except as otherwise provided in K.S.A. 58-2565, distraint for rent is abolished.
+History: L. 1975, ch. 290, § 28; July 1.
+                                  2025 Kansas Statutes
+
+58-2568.   Landlord's remedies upon termination of rental agreement. Upon termination of the
+rental agreement, the landlord may have a claim and file an action for possession or for
+rent or both. The landlord also may have a separate claim for actual damages for breach
+of the rental agreement and may file an action for such damages prior to the
+termination date of the rental agreement.
+History: L. 1975, ch. 290, § 29; July 1.
+                                   2025 Kansas Statutes
+
+58-2569.   Landlord's recovery or possession of dwelling; limitations. A landlord may not recover
+or take possession of the dwelling unit by action or otherwise, including willful
+diminution of services to the tenant by interrupting or causing the interruption of
+electric, gas, water or other essential service to the tenant, except in case of
+abandonment, surrender or as otherwise permitted in this act.
+History: L. 1975, ch. 290, § 30; July 1.
+                                    2025 Kansas Statutes
+
+58-2570.   Termination of tenancy; notice; holdover by tenant; remedies; notice obligating tenant
+beyond terms of lease agreement, form. (a) The landlord or the tenant may terminate a week-
+to-week tenancy by a written notice given to the other at least seven days prior to the
+termination date specified in the notice.
+(b) The landlord or the tenant may terminate a month-to-month tenancy by a written
+notice given to the other party stating that the tenancy shall terminate upon a periodic
+rent-paying date not less than 30 days after the receipt of the notice, except that not
+more than 15 days' written notice by a tenant shall be necessary to terminate any such
+tenancy where the tenant is in the military service of the United States and termination
+of the tenancy is necessitated by military orders. Any rental agreement for a definite
+term of more than 30 days shall not be construed as a month-to-month tenancy, even
+though the rent is reserved payable at intervals of 30 days.
+(c) If the tenant remains in possession without the landlord's consent after expiration
+of the term of the rental agreement or its termination, the landlord may bring an action
+for possession. In addition, if the tenant's holdover is willful and not in good faith the
+landlord may recover an amount not more than 11/2 months' periodic rent or not more
+than 11/2 times the actual damages sustained by the landlord, whichever is greater. If
+the landlord consents to the tenant's continued occupancy subsection (d) of K.S.A. 58-
+2545, and amendments thereto, shall govern.
+(d) In any action for possession, the landlord may obtain an order of the court granting
+immediate possession of the dwelling unit to the landlord by filing a motion therefor in
+accordance with subsection (b) of K.S.A. 60-207, and amendments thereto, and service
+thereof on the tenant pursuant to K.S.A. 60-205, and amendments thereto. After a
+hearing and presentation of evidence on the motion, and if the judge is satisfied that
+granting immediate possession of the dwelling unit to the landlord is in the interest of
+justice and will properly protect the interests of all the parties, the judge may enter or
+cause to be entered an order for the immediate restitution of the premises to the
+landlord upon the landlord giving an undertaking to the tenant in an amount and with
+such surety as the court may require, conditioned for the payment of damages or
+otherwise if judgment be entered in favor of the tenant.
+(e) If a landlord provides to a tenant a document which, if signed by the landlord or
+tenant or both, would constitute the tenant's written notice to the landlord that the
+tenant intends to vacate the premises, and if such document contains any additional
+terms that are not contained in the rental agreement between the landlord and tenant,
+then the document shall include the following statement in no less than ten-point
+boldface type: 'YOUR SIGNATURE ON THIS DOCUMENT MAY BIND YOU TO ADDITIONAL
+TERMS NOT IN YOUR ORIGINAL LEASE AGREEMENT. IF YOUR LEASE REQUIRES YOU TO
+GIVE WRITTEN NOTICE OF YOUR INTENT TO VACATE, YOU HAVE THE RIGHT TO
+DECLINE TO SIGN THIS DOCUMENT AND TO PROVIDE WRITTEN NOTICE IN ANOTHER
+FORM.' If such statement does not appear in such document, a tenant's signature on
+such document shall not bind the tenant to any additional terms that are not contained
+in the rental agreement.
+History: L. 1975, ch. 290, § 31; L. 1978, ch. 218, § 3; L. 1978, ch. 217, § 3; L. 2003, ch. 103,
+§ 1; July 1.
+                                    2025 Kansas Statutes
+
+58-2571.   Tenant's refusal to allow lawful access; remedies; landlord's unlawful or unreasonable
+entry; remedies. (a) If the tenant refuses to allow lawful access to the dwelling unit, the
+landlord may obtain injunctive relief to compel access, or may terminate the rental
+agreement. In either case, the landlord may recover actual damages.
+(b) If the landlord makes an unlawful entry, or a lawful entry in an unreasonable
+manner, or makes repeated demands for entry otherwise lawful but which have the
+effect of unreasonably harassing the tenant, the tenant may obtain injunctive relief to
+prevent the recurrence of the conduct, or may terminate the rental agreement. In either
+case, the tenant may recover actual damages.
+History: L. 1975, ch. 290, § 32; July 1.
+                                    2025 Kansas Statutes
+
+58-2572.   Certain retaliatory actions by landlord prohibited; remedies; increased rent, when; action
+for possession, when. (a) Except as otherwise provided in this section, a landlord may not
+retaliate by increasing rent or decreasing services after:
+(1) The tenant has complained to a governmental agency, charged with responsibility
+for enforcement of a building or housing code, of a violation applicable to the premises
+materially affecting health and safety; or
+(2) the tenant has complained to the landlord of a violation under K.S.A. 58-2553; or
+(3) the tenant has organized or become a member of a tenants' union or similar
+organization.
+(b) If the landlord acts in violation of subsection (a) of this section, the tenant is
+entitled to the remedies provided in K.S.A. 58-2563 and has a defense in an action
+against such tenant for possession.
+(c) Notwithstanding the provisions of subsection (a), the landlord may increase the
+rent of a tenant even though the tenant has complained of a violation as described in
+clauses (1) or (2) of subsection (a) or has organized or become a member of an
+organization as described in clause (3) of subsection (a), if such rent increase does not
+conflict with a lease agreement in effect and is made in good faith to compensate the
+landlord for expenses incurred as a result of acts of God, public utility service rate
+increases, property tax increases or other increases in costs of operations.
+(d) Notwithstanding subsections (a) and (b), a landlord may bring an action for
+possession if:
+(1) The violation of the applicable building or housing code was caused primarily by
+lack of reasonable care by the tenant or other person or animal or pet upon the
+premises with his or her express or implied consent;
+(2) the tenant is in default in rent; or
+(3) compliance with the applicable building or housing code requires alteration,
+remodeling or demolition which would effectively deprive the tenant of use of the
+dwelling unit. The maintenance of an action under this subsection does not release the
+landlord from liability under subsection (b) of K.S.A. 58-2559.
+History: L. 1975, ch. 290, § 33; July 1.
+                                  2025 Kansas Statutes
+
+58-2573. Inapplicability of act. The provisions of this act shall not: (a) Apply to or affect any
+valid rental agreement entered into prior to the effective date of this act, nor shall it
+apply to or affect any conduct or transaction of the parties to such rental agreement, if
+such conduct or transaction is in accordance with and pursuant to such rental
+agreement; but the provisions of this act shall apply to and govern any renewal,
+extension or modification of any such rental agreement, where such renewal, extension
+or modification is effected on or after the effective date of this act; or
+(b) apply to any person or persons who enter and remain in a dwelling unit without a
+rental agreement and without the landlord's knowledge and such person knows that
+such person is not authorized or privileged to do so and an order to leave has been
+personally communicated to such person by the landlord. Such person or persons may
+be prosecuted pursuant to K.S.A. 21-5808, and amendments thereto.
+History: L. 1975, ch. 290, § 34; L. 1994, ch. 271, § 2; L. 2011, ch. 30, § 204; July 1.
+                                  2025 Kansas Statutes
+
+58-25,100.   Citation of act. K.S.A. 58-25,100 through 58-25,126 shall be known and may be
+cited as the mobile home parks residential landlord and tenant act and shall govern
+mobile home parks residential landlord and tenant actions on and after January 1, 1993.
+History: L. 1992, ch. 306, § 2; July 1.
+                                    2025 Kansas Statutes
+
+58-25,101.   Application of act, exclusions. The provisions of this act shall not apply to an
+occupancy in or operation of public housing pursuant to any federal law or regulation
+with which it might conflict. This act shall govern the rental of mobile home space in
+mobile home parks. When both the mobile home and the space used to accommodate
+the mobile home are rented or leased by the same landlord, the residential landlord and
+tenant act, K.S.A. 58-2540 et seq., and amendments thereto, rather than this act, shall
+apply.
+History: L. 1992, ch. 306, § 3; July 1.
+                                    2025 Kansas Statutes
+
+58-25,102.   Jurisdiction of courts; procedure. The district court shall have jurisdiction over a
+landlord or tenant with respect to conduct in this state governed by this act or with
+respect to any claim arising from a transaction subject to this act, and notwithstanding
+the provisions of subsection (b) of K.S.A. 61-2802, and amendments thereto, such actions
+may be commenced pursuant to the code of civil procedure for limited actions. Unless
+otherwise specifically provided in this act, the code of civil procedure for limited actions
+shall govern any action commenced pursuant to this act. If the relief sought is beyond
+the jurisdiction of a district magistrate judge as provided in K.S.A. 20-302b, and
+amendments thereto, the action shall be heard by a district judge.
+History: L. 1992, ch. 306, § 4; L. 2000, ch. 161, § 108; January 1, 2001.
+                                  2025 Kansas Statutes
+
+58-25,103.   Definitions. Subject to additional definitions contained in subsequent sections
+of this act which apply to specific sections thereof, and unless the context otherwise
+requires, in this act:
+(a) "Building and housing codes" includes any law, ordinance or governmental rule
+and regulation concerning fitness for habitation or the construction, maintenance,
+operation, occupancy, use or appearance of any mobile home park, dwelling unit or
+mobile home space.
+(b) "Business" includes a corporation, government, governmental subdivision or
+agency, business trust, estate, trust, partnership or association, two or more persons
+having a joint or common interest and any other legal or commercial entity which is a
+landlord, owner, manager or constructive agent pursuant to K.S.A. 58-25,109.
+(c) "Dwelling unit" excludes real property used to accommodate a mobile home.
+(d) "Landlord" means the owner, lessor or sublessor of a mobile home park and it also
+means a manager of the mobile home park who fails to disclose as required by K.S.A. 58-
+25,109.
+(e) "Mobile home" includes manufactured homes and mobile homes as defined in
+subsections (a) and (b) of K.S.A. 58-4202, and amendments thereto.
+(f) "Mobile home park" shall mean any site, lot, field or tract of land upon which two or
+more occupied mobile homes are harbored, either free of charge or for revenue
+purposes, and shall include any building, structure, or enclosure used or intended for
+use as part of the equipment of such mobile home park.
+(g) "Mobile home space" means a plot of ground within a mobile home park designed
+for the accommodation of one mobile home.
+(h) "Owner" means one or more persons, jointly or severally, in whom is vested all or
+part of the legal title to property or all or part of the beneficial ownership and a right to
+present use and enjoyment of the mobile home park. The term includes a mortgagee in
+possession.
+(i) "Rent" means all payments to be made to the landlord under the rental agreement,
+other than the security deposit.
+(j) "Rental agreement" means agreements, written or those implied by law, and valid
+rules and regulations adopted under K.S.A. 58-25,114 embodying the terms and
+conditions concerning the use and occupancy of a mobile home space.
+(k) "Security deposit" means a deposit of money to secure performance of a mobile
+home space rental agreement under this act other than a deposit which is exclusively in
+advance payment of rent.
+(l) "Tenant" means a person entitled under a rental agreement to occupy a mobile
+home space to the exclusion of others.
+History: L. 1992, ch. 306, § 5; July 1.
+                                    2025 Kansas Statutes
+
+58-25,104.   Finding of unconscionability, remedies; evidence. (a) If the court, as a matter of law,
+finds that:
+(1) A rental agreement or any provision thereof was unconscionable when made, the
+court may refuse to enforce the agreement, enforce the remainder of the agreement
+without the unconscionable provision or limit the application of any unconscionable
+provision to avoid an unconscionable result.
+(2) A settlement in which a party waives or agrees to forego a claim or right under this
+act or under a rental agreement was unconscionable at the time it was made, the court
+may refuse to enforce the settlement, enforce the remainder of the settlement without
+the unconscionable provision or limit the application of any unconscionable provision
+to avoid any unconscionable result.
+(b) If unconscionability is put into issue by a party or by the court upon its own motion
+the parties shall be afforded a reasonable opportunity to present evidence as to the
+setting, purpose and effect of the rental agreement or settlement to aid the court in
+making the determination.
+History: L. 1992, ch. 306, § 6; July 1.
+                                    2025 Kansas Statutes
+
+58-25,105.   Terms and conditions of rental agreement; terms and conditions in absence of rental
+agreement; notice of tenant's rights under act. (a) The landlord and tenant may include in a
+rental agreement terms and conditions not prohibited by this act or other rule of law
+including rent, term of the agreement and other provisions governing the rights and
+obligations of the parties.
+(b) The tenant shall pay as rent the amount stated in the rental agreement. In the
+absence of a rental agreement, the tenant shall pay as rent the fair rental value for the
+use and occupancy of the mobile home space.
+(c) Rent shall be payable without demand or notice at the time and place agreed upon
+by the parties. Unless otherwise agreed periodic rent is payable at the beginning of any
+term and thereafter in equal monthly installments. Rent shall be uniformly
+apportionable from day to day.
+(d) Rental agreements shall be a month-to-month tenancy unless otherwise specified in
+the rental agreement. Upon the expiration of such agreement, if a new agreement is not
+executed, the tenancy shall be month-to-month. Except as provided in the written rental
+agreement, month-to-month tenancies shall be canceled by at least 60 days' written
+notice given by either party.
+(e) Unless otherwise agreed in writing, improvements, except a natural lawn,
+purchased and installed by a tenant on a mobile home space shall remain the property
+of the tenant even though affixed to or in the ground and may be removed or disposed
+of by the tenant prior to the termination of the tenancy, provided that a tenant shall
+leave the mobile home space in substantially the same or better condition than upon
+taking possession.
+(f) In any rental agreement entered into between a landlord and tenant in a mobile
+home park where five or more mobile homes are harbored, such rental agreement shall
+contain a notice that specifies that the tenant has certain rights under the mobile home
+parks residential landlord and tenant act and copies of the act may be obtained from the
+landlord upon the request of the tenant.
+History: L. 1992, ch. 306, § 7; July 1.
+                                   2025 Kansas Statutes
+
+58-25,106.   Prohibited terms and conditions. (a) A rental agreement shall not provide that the
+tenant or landlord does any of the following:
+(1) Agrees to waive or to forego rights or remedies under this act;
+(2) authorizes any person to confess judgment on a claim arising out of the rental
+agreement;
+(3) agrees to pay the other party's attorney fees;
+(4) agrees to the exculpation or limitation of any liability of the other party arising
+under law or to indemnify the other party for that liability or the costs connected
+therewith; or
+(5) agrees to a designated agent for the sale of tenant's mobile home.
+(b) A provision prohibited by subsection (a) included in a rental agreement is
+unenforceable.
+History: L. 1992, ch. 306, § 8; July 1.
+                                    2025 Kansas Statutes
+
+58-25,107.   Receipt of rent subject to certain obligations. A rental agreement, assignment,
+conveyance, trust deed or security instrument shall not permit the receipt of rent, unless
+the landlord has agreed to comply with K.S.A. 58-25,111.
+History: L. 1992, ch. 306, § 9; L. 1993, ch. 128, § 1; July 1.
+                                   2025 Kansas Statutes
+
+58-25,108.   Security deposits. (a) A landlord shall not demand or receive as a security
+deposit an amount or value in excess of two months' rent.
+(b) All security deposits shall be held by the landlord for the tenant, who is a party to
+the agreement, in a bank, credit union or savings and loan association which is insured
+by an agency of the federal government. Security deposits shall not be commingled with
+the personal funds of the landlord. All security deposits may be held in a trust account,
+which may be a common trust account and which may be an interest bearing account.
+Any interest earned on a security deposit shall be the property of the landlord.
+(c) Upon termination of the tenancy, any security deposit held by the landlord may be
+applied to the payment of accrued rent and the amount of damages which the landlord
+has suffered by reason of the tenant's noncompliance with K.S.A. 58-25,113 and the
+rental agreement, all as itemized by the landlord in a written notice delivered to the
+tenant. If the landlord proposes to retain any portion of the security deposit for
+expenses, damages or other legally allowable charges under the provisions of the rental
+agreement, other than rent, the landlord shall return the balance of the security deposit
+to the tenant within 14 days after the determination of the amount of such expenses,
+damages or other charges, but in no event to exceed 30 days after termination of the
+tenancy, delivery of possession and demand by the tenant. If the tenant does not make
+such demand within 30 days after termination of the tenancy, the landlord shall mail
+that portion of the security deposit due the tenant to the tenant's last-known address.
+(d) If the landlord fails to comply with subsection (c) of this section, the tenant may
+recover that portion of the security deposit due together with damages in an amount
+equal to 11/2 the amount wrongfully withheld.
+(e) Except as otherwise provided by the rental agreement, a tenant shall not apply or
+deduct any portion of the security deposit from the last month's rent or use or apply
+such tenant's security deposit at any time in lieu of payment of rent. If a tenant fails to
+comply with this subsection, the security deposit shall be forfeited and the landlord may
+recover the rent due as if the deposit had not been applied or deducted from the rent
+due.
+(f) Nothing in this section shall preclude the landlord or tenant from recovering other
+damages to which such landlord or tenant may be entitled under this act.
+(g) Upon termination of a landlord's interest in the mobile home park, the landlord or
+the landlord's agent, within a reasonable time, shall transfer the security deposit, or any
+remainder after any lawful deductions to the landlord's successor in interest and notify
+the tenant of the transfer and of the transferee's name and address or return the
+deposit, or any remainder after any lawful deductions to the tenant.
+Upon termination of the landlord's interest in the mobile home park and compliance
+with the provisions of this subsection, the landlord shall be relieved of any further
+liability with respect to the security deposit.
+(h) Upon termination of the landlord's interest in the mobile home park, the landlord's
+successor in interest shall have all the rights and obligations of the landlord with respect
+to the security deposits, except that if the tenant does not object to the stated amount
+within 20 days after written notice to the tenant of the amount of security deposit being
+transferred or assumed, the obligations of the landlord's successor to return the deposit
+shall be limited to the amount contained in the notice. The notice shall contain a
+stamped envelope addressed to the landlord's successor and may be given by mail or by
+personal service.
+History: L. 1992, ch. 306, § 10; July 1.
+                                     2025 Kansas Statutes
+
+58-25,109.   Disclosures required of landlord or person authorized to enter rental agreement; person
+failing to comply becomes landlord's agent for certain purposes; rental agreement not signed and
+delivered given effect by certain actions, limitation on term; explanation of utility rates and charges;
+written notice of rent increase. (a) The landlord or any person authorized to enter into a
+rental agreement on the landlord's behalf shall disclose to the tenant in writing at or
+before the commencement of the tenancy the name and address of:
+(1) The person authorized to manage the mobile home park; and
+(2) the owner of the mobile home park or a person authorized to act for and on behalf
+of the owner for the purpose of service of process and for the purpose of receiving and
+receipting for notices and demands.
+(b) The information required to be furnished by this section shall be kept current and
+this section extends to and is enforceable against any successor landlord, owner or
+manager.
+(c) A person who fails to comply with subsection (a) becomes an agent of each person
+who is a landlord for the following purposes:
+(1) Service of process and receiving and receipting for notices and demands; or
+(2) performing the obligations of the landlord under this act and under the rental
+agreement and expending or making available for the purpose all rent collected from
+the mobile home park.
+(d) (1) If the landlord does not sign and deliver a written rental agreement which has
+been signed and delivered to such landlord by the tenant, the knowing acceptance of
+rent without reservation by the landlord gives the rental agreement the same effect as if
+it had been signed and delivered by the landlord.
+(2) If the tenant does not sign and deliver a written rental agreement which has been
+signed and delivered to such tenant by the landlord, the knowing acceptance of
+possession and payment of rent without reservation gives the rental agreement the
+same effect as if it had been signed and delivered by the tenant.
+(3) If a rental agreement given effect by the operation of this subsection provides for a
+term longer than one year, it is effective only for one year.
+(e) The landlord or any person authorized to enter into a rental agreement on the
+landlord's behalf shall provide a written explanation of utility rates, charges and
+services to the prospective tenant before the rental agreement is signed unless the utility
+charges are paid by the tenant directly to the utility company.
+(f) Each tenant shall be notified, in writing, of any rent increase at least 60 days before
+the effective date. Such effective date shall not be sooner than the expiration date of the
+original rental agreement or any renewal or extension thereof.
+History: L. 1992, ch. 306, § 11; July 1.
+                                    2025 Kansas Statutes
+
+58-25,110.   Delivery of possession of mobile home space; action for possession; damages. At the
+commencement of the term the landlord shall deliver possession of the mobile home
+space to the tenant in compliance with the rental agreement and K.S.A. 58-25,111. The
+landlord may bring an action for possession against any person wrongfully in
+possession and may recover the damages provided in K.S.A. 58-25,123.
+History: L. 1992, ch. 306, § 12; July 1.
+                                   2025 Kansas Statutes
+
+58-25,111.   Duties of landlord. (a) Except as provided in subsections (c) and (d), when
+prevented by an act of God, the failure of public utility services or other conditions
+beyond the landlord's control, the landlord shall:
+(1) Comply with the requirements of all applicable city, county and state codes
+materially affecting health and safety which are primarily imposed upon the landlord. If
+the duty imposed by this paragraph is greater than any duty imposed by any other
+paragraph of this subsection, the landlord's duty shall be determined in accordance with
+the provisions of this paragraph.
+(2) Make all repairs and do whatever is necessary to put and keep the mobile home
+space in a fit and habitable condition.
+(3) Keep all common areas of the mobile home park in a clean and safe condition.
+(4) Maintain in good and safe working order and condition all facilities supplied or
+required to be supplied by the landlord.
+(5) Provide for removal of garbage, rubbish, and other waste from the mobile home
+park.
+(6) Furnish outlets for electric, water and sewer services and provide to such outlets an
+adequate, safe and sanitary supply of such services.
+(b) A landlord shall not impose any conditions of rental or occupancy which restrict
+the tenant in the choice of a seller of fuel, furnishings, goods, services or mobile homes
+connected with the rental or occupancy of a mobile home space unless such condition is
+reasonably necessary to protect the health, safety or welfare of mobile home tenants in
+the park. The landlord may impose reasonable requirements designed to standardize
+methods of utility connection and hookup. If any such conditions are imposed which
+result in charges for such goods or services, the charges shall not exceed the actual cost
+incurred in providing the tenant with such goods or services.
+(c) The landlord and tenant may agree in writing that the tenant is to perform the
+landlord's duties specified in subsection (a)(5) and (6) and also specified repairs,
+maintenance tasks, alterations or remodeling, but only if the transaction is entered into
+in good faith and not for the purpose of evading the obligations of the landlord.
+(d) The landlord and tenant may agree that the tenant is to perform specified repairs,
+maintenance tasks, alterations or remodeling only if:
+(1) The agreement of the parties is entered into in good faith, and not to evade the
+obligations of the landlord, and is set forth in a separate written agreement signed by
+the parties and supported by adequate consideration;
+(2) the work is not necessary to cure noncompliance with subsection (a)(1); and
+(3) the agreement does not diminish or affect the obligation of the landlord to other
+tenants.
+History: L. 1992, ch. 306, § 13; L. 1993, ch. 128, § 2; July 1.
+                                    2025 Kansas Statutes
+
+58-25,112.   Conveyance by landlord or termination by manager; notice; no liability for subsequent
+events. (a) A landlord who conveys a mobile home park in a good faith sale to a bona fide
+purchaser is relieved of liability under the rental agreement and this act as to events
+occurring subsequent to written notice to the tenant of the conveyance.
+(b) A manager of a mobile home park is relieved of liability under the rental
+agreement and this act as to events occurring after written notice to the tenant of the
+termination of the manager's management.
+History: L. 1992, ch. 306, § 14; July 1.
+                                  2025 Kansas Statutes
+
+58-25,113.   Duties of tenant. A tenant shall maintain the mobile home space in as good a
+condition as when the tenant took possession and shall:
+(a) Comply with all obligations primarily imposed upon tenants by applicable
+provisions of city, county and state codes materially affecting health and safety.
+(b) Keep that part of the mobile home park that the tenant occupies and uses
+reasonably clean and safe.
+(c) Dispose from the tenant's mobile home space all rubbish, garbage and other waste
+in a clean and safe manner.
+(d) Not deliberately or negligently destroy, deface, damage, impair or remove any part
+of the mobile home park or knowingly permit any person to do so.
+(e) Act and require other persons in the mobile home park with the tenant's consent to
+act in a manner that will not disturb the tenant's neighbors' peaceful enjoyment of the
+mobile home park.
+History: L. 1992, ch. 306, § 15; July 1.
+                                    2025 Kansas Statutes
+
+58-25,114.   Rules and regulations of landlord, when enforceable; notice; limitations. (a) A landlord
+may adopt rules or regulations, however described, concerning the tenant's use and
+occupancy of the mobile home park. Such rules or regulations are enforceable against
+the tenant only if they are written and if:
+(1) Their purpose is to promote the convenience, safety or welfare of the tenants in the
+mobile home park, to preserve the landlord's property from abuse, to make a fair
+distribution of services and facilities held out for the tenants generally, or to facilitate
+mobile home park management.
+(2) They are reasonably related to the purpose for which adopted.
+(3) They apply to all tenants in the mobile home park in a fair manner.
+(4) They are sufficiently explicit in prohibition, direction or limitation of the tenant's
+conduct to fairly inform that person of what must or must not be done to comply.
+(5) They are not for the purpose of evading the obligations of the landlord.
+(6) the prospective tenant is given a copy of them before the rental agreement is
+entered into.
+(b) Notice of all such additions, changes, deletions or amendments shall be given to all
+mobile home tenants 30 days before they become effective. Any rule or condition of
+occupancy which is unfair and deceptive or which does not conform to the
+requirements of this act shall be unenforceable. A rule or regulation adopted after the
+tenant enters into the rental agreement is enforceable against the tenant only if it does
+not work a substantial modification of that person's rental agreement or the tenant
+consents to it in writing.
+(c) A landlord shall not:
+(1) Deny rental unless the tenant or prospective tenant cannot conform to park rules
+and regulations;
+(2) require any person as a precondition to renting, leasing or otherwise occupying or
+removing from a mobile home space in a mobile home park to pay an entrance or exit
+fee of any kind unless for services actually rendered;
+(3) deny any resident of a mobile home park the right to sell that person's mobile home
+at a price of the person's own choosing, but may reserve the right to approve the
+purchaser of such mobile home as a tenant but such permission may not be
+unreasonably withheld, provided however, that the landlord, in the event of a sale to a
+third party, in order to upgrade the quality of the mobile home park, may require that
+any mobile home in a rundown condition or in disrepair be removed from the park
+within 60 days;
+(4) exact a commission or fee with respect to the price realized by the tenant selling the
+tenant's mobile home, unless the park owner or operator has acted as agent for the
+mobile home owner pursuant to a written agreement;
+(5) prohibit meetings among tenants in the mobile home park relating to mobile home
+living and affairs in the park community or recreational hall if such meetings are held
+at reasonable hours and when the facility is not otherwise in use;
+(6) charge a fee based on the number of members in the tenant's immediate family.
+Immediate family includes the tenant, the tenant's spouse, any children of the tenant or
+the tenant's spouse, and the parents of the tenant or the tenant's spouse;
+(7) charge a fee to an individual resident who shares such resident's mobile home with
+one other person; or
+(8) charge a fee for a guest of a resident who stays in such resident mobile home less
+than 30 days in any calendar year.
+History: L. 1992, ch. 306, § 16; July 1.
+                                    2025 Kansas Statutes
+
+58-25,115.   Landlord's right to access; limitations. (a) A landlord shall not have the right of
+access to a mobile home owned by a tenant without consent of the tenant unless it is an
+extreme hazard involving the potential loss of life or severe property damage.
+(b) The landlord may enter onto the mobile home space at reasonable hours in order
+to inspect the mobile home space, make necessary or agreed repairs or improvements,
+supply necessary or agreed services or exhibit the mobile home space to prospective or
+actual purchasers, mortgagees, tenants, workers or contractors.
+(c) The landlord shall not abuse the right of access or use it to harass the tenant.
+History: L. 1992, ch. 306, § 17; July 1.
+                                    2025 Kansas Statutes
+
+58-25,116.   Tenant to occupy as a dwelling unit; authority to sublet. The tenant shall occupy the
+tenant's mobile home only as a dwelling unit and may rent the mobile home to another,
+only upon written agreement with the park management.
+History: L. 1992, ch. 306, § 18; July 1.
+                                    2025 Kansas Statutes
+
+58-25,117.   Material noncompliance by landlord; notice; termination of rental agreement; limitations;
+remedies; security deposit. (a) Except as provided in this act, if there is a material
+noncompliance by the landlord with the rental agreement or a noncompliance with
+K.S.A. 58-25,111 materially affecting health and safety, the tenant may deliver a written
+notice to the landlord specifying the acts and omissions constituting the breach and that
+the rental agreement will terminate upon a date not less than 30 days after receipt of the
+notice. The rental agreement shall terminate and the mobile home space shall be
+vacated as provided in the notice, subject to the following:
+(1) If the breach is remediable by repairs or the payment of damages or otherwise and
+the landlord initiates a good faith effort to remedy the breach within 14 days after
+receipt of the notice, the rental agreement shall not terminate. However, in the event
+that the same or a similar breach occurs after the fourteen-day period provided herein,
+the tenant may deliver a written notice to the landlord specifically describing the breach
+and stating that the rental agreement shall terminate upon a date not less than 30 days
+after the receipt of such notice by the landlord. The rental agreement then shall
+terminate as provided in such notice.
+(2) The tenant may not terminate for a condition caused by the deliberate or negligent
+act or omission of the tenant, a member of the tenant's family or other person in the
+mobile home park with the tenant's consent.
+(b) Except as provided in this act, the tenant may recover damages, and obtain
+injunctive relief for any noncompliance by the landlord with the rental agreement or
+with K.S.A. 58-25,111.
+(c) The remedy provided in subsection (b) is in addition to any right of the tenant
+arising under subsection (a).
+(d) If the rental agreement is terminated, the landlord shall return that portion of the
+security deposit recoverable by the tenant under K.S.A. 58-25,108.
+History: L. 1992, ch. 306, § 19; July 1.
+                                    2025 Kansas Statutes
+
+58-25,118.   Failure to deliver possession; remedies. (a) If the landlord fails to deliver physical
+possession of the mobile home space to the tenant as provided in K.S.A. 58-25,110, rent
+abates until possession is delivered and the tenant:
+(1) Upon at least five days' written notice to the landlord, may terminate the rental
+agreement and upon termination the landlord shall return all of the security deposit; or
+(2) may demand performance of the rental agreement by the landlord and, if the
+tenant elects, maintain an action for possession of the mobile home space against the
+landlord, or any person in wrongful possession, and recover the damages sustained by
+the tenant.
+(b) If a person's failure to deliver possession is willful and not in good faith, an
+aggrieved party may recover from such person an amount not more than 11/2 months'
+periodic rent or 11/2 times the actual damages sustained by such party, whichever is
+greater.
+History: L. 1992, ch. 306, § 20; July 1.
+                                    2025 Kansas Statutes
+
+58-25,119.   Unlawful removal or exclusion of tenant; diminished services; damages; security deposit.
+If the landlord unlawfully removes or excludes the tenant from the mobile home park
+or willfully diminishes services to the tenant by interrupting or causing the interruption
+of electric, gas, water or other essential service to the tenant, the tenant may recover
+possession or terminate the rental agreement and, in either case, recover an amount not
+to exceed 11/2 months' periodic rent or the actual damages sustained by the tenant,
+whichever is greater. If the rental agreement is terminated, the landlord shall return
+that portion of the security deposit recoverable by the tenant under K.S.A. 58-25,108.
+History: L. 1992, ch. 306, § 21; July 1.
+                                    2025 Kansas Statutes
+
+58-25,120.   Material noncompliance by tenant; notice; termination of rental agreement; limitations;
+nonpayment of rent; remedies. (a) Except as provided in this act, if there is a material
+noncompliance by the tenant with the rental agreement or a noncompliance with K.S.A.
+58-25,113 materially affecting health and safety, the landlord may deliver a written
+notice to the tenant specifying the acts and omissions constituting the breach and that
+the rental agreement will terminate upon a date not less than 30 days after receipt of the
+notice if the breach is not remedied in 14 days. The rental agreement shall terminate as
+provided in the notice, except that, if the breach is remediable by repair or the payment
+of damages or otherwise, and the tenant initiates a good faith effort to remedy the
+breach prior to the date specified in the notice, the rental agreement will not terminate.
+However, in the event that the same or a similar breach occurs after the fourteen-day
+period provided herein, the landlord may deliver a written notice to the tenant that the
+rental agreement will terminate upon a date not less than 30 days after receipt of the
+notice without providing the opportunity to remedy the breach. The rental agreement
+then shall terminate as provided in such notice.
+(b) If rent is unpaid when due and the tenant fails to pay rent within three days after
+written notice by the landlord of nonpayment and of the landlord's intention to
+terminate the rental agreement if the rent is not paid within that period of time, the
+landlord may terminate the rental agreement.
+(c) Except as otherwise provided in this act, the landlord may recover damages and
+obtain injunctive relief for any material noncompliance by the tenant with the rental
+agreement or with K.S.A. 58-25,113.
+History: L. 1992, ch. 306, § 22; July 1.
+                                   2025 Kansas Statutes
+
+58-25,121.   Abandonment, remedies; required registration. (a) A tenant is considered to have
+abandoned a mobile home when the tenant has been absent from the mobile home
+without reasonable explanation for 30 days or more during which time there is a default
+of rent three days after rent is due or when the rental agreement is terminated pursuant
+to the provisions of this act. A tenant's return to the mobile home does not change its
+status as abandoned unless the tenant pays to the landlord all costs incurred for the
+mobile home space, including costs of removal, storage, notice and utilities due and
+owing.
+(b) If a tenant abandons a mobile home on a mobile home space, the landlord shall
+notify the legal owner and known lienholder of the mobile home of the abandonment
+and communicate to the legal owner and lien holder that the legal owner and lien
+holder is liable for any costs incurred for the mobile home space, including rent and
+utilities due and owing. However, the legal owner and lien holder is only liable for costs
+incurred from the point of written notification by the landlord. After the landlord's
+notification, costs for which liability is incurred shall then become the responsibility of
+the legal owner or lienholder of the mobile home. The mobile home may not be
+removed from the mobile home space without a signed written agreement from the
+landlord showing clearance for removal, showing that all debts are paid in full, or
+without an agreement reached with the legal owner and lien holder and the landlord.
+The right of possession of the legal owner or lienholder shall be subject to the landlord's
+claim for the landlord's reasonable costs of removal and storage of the abandoned
+mobile home. Any landlord who is entitled to costs for which liability is incurred as
+provided in this subsection shall have a lien as provided in K.S.A. 58-227 and
+amendments thereto.
+(c) A required standardized registration form shall be filled out by each tenant, upon
+the rental of a mobile home space, showing the mobile home make, year and serial
+number if there is a lien on the mobile home, and if so the lienholder, and who is the
+legal owner of the mobile home. The registration cards or forms shall be kept on file
+with the landlord as long as the mobile home is on the mobile home space within the
+mobile home park.
+History: L. 1992, ch. 306, § 23; July 1.
+                                   2025 Kansas Statutes
+
+58-25,122.   Effect of acceptance of late rent. Acceptance of late payment of rent from the
+tenant without reservation by the landlord or acceptance of performance by the tenant,
+other than for payment of rent, that varies from the terms of the rental agreement
+constitutes a waiver of the landlord's right to terminate the rental agreement for that
+breach, unless otherwise agreed after the breach has occurred.
+History: L. 1992, ch. 306, § 24; July 1.
+                                   2025 Kansas Statutes
+
+58-25,123.   Termination of tenancy; holdover by tenant; remedies. (a) The landlord may
+terminate a tenancy only as provided in this act.
+(b) If the tenant remains in possession without the landlord's consent after expiration
+of the term of the rental agreement or its termination, the landlord may bring an action
+for possession. If the tenant's holdover is willful and not in good faith the landlord in
+addition may recover an amount not to exceed 11/2 months' periodic rent or 11/2 the
+actual damages sustained by the landlord, whichever is greater.
+History: L. 1992, ch. 306, § 25; July 1.
+                                     2025 Kansas Statutes
+
+58-25,124.   Tenant's refusal to allow lawful access, remedies; landlord's unlawful or unreasonable
+entry, remedies. (a) If the tenant refuses to allow lawful access to the mobile home space,
+the landlord may obtain injunctive relief to compel access or may terminate the rental
+agreement. In either case, the landlord may recover actual damages.
+(b) If the landlord makes an unlawful entry or a lawful entry to the mobile home space
+in an unreasonable manner or makes repeated demands for entry otherwise lawful but
+which have the effect of unreasonably harassing the tenant, the tenant may obtain
+injunctive relief to prevent the recurrence of the conduct or terminate the rental
+agreement. In either case, the tenant may recover actual damages.
+History: L. 1992, ch. 306, § 26; July 1.
+                                     2025 Kansas Statutes
+
+58-25,125.   Certain retaliatory actions by landlord prohibited, remedies; increased rent, when; action
+for possession, when. (a) Except as provided in this section, a landlord shall not retaliate by
+increasing rent or decreasing services or by failing to renew a rental agreement after
+any of the following:
+(1) The tenant has complained to a governmental agency charged with responsibility
+for enforcement of a building or housing code of a violation applicable to the mobile
+home park materially affecting health and safety;
+(2) the tenant has complained to the landlord of a violation under K.S.A. 58-25,111; or
+(3) the tenant has organized or become a member of a tenant's union or similar
+organization.
+(b) If the landlord acts in violation of subsection (a), the tenant is entitled to the
+remedies provided in K.S.A. 58-25,119 and has a defense in an action for possession.
+(c) Notwithstanding the provisions of subsection (a), the landlord may increase the
+rent of a tenant even though the tenant has complained of a violation as described in
+clause (1) or (2) of subsection (a) or has organized or become a member of an
+organization as described in clause (3) of subsection (a), if such rent increase does not
+conflict with a lease agreement in effect and is made in good faith to compensate the
+landlord for expenses incurred as a result of acts of God, public utility service rate
+increases, property tax increases or other increases in costs of operations.
+(d) Notwithstanding subsections (a) and (b), a landlord may bring an action for
+possession if either of the following occurs:
+(1) The violation of the applicable building or housing code was caused primarily by
+lack of reasonable care by the tenant or other person upon the premises with the
+tenant's consent.
+(2) The tenant is in default of rent three days after rent is due. The maintenance of the
+action does not release the landlord from liability under subsection (b) of K.S.A. 58-
+25,117.
+History: L. 1992, ch. 306, § 27; July 1.
+                                     2025 Kansas Statutes
+
+58-25,126.   Act inapplicable to rental agreements valid prior to act; renewals, extensions or
+modifications. The provisions of this act shall not apply to or affect any valid rental
+agreement entered into prior to the effective date of this act, nor shall it apply to or
+affect any conduct or transaction of the parties to such rental agreement, if such
+conduct or transaction is in accordance with and pursuant to such rental agreement; but
+the provisions of this act shall apply to and govern any renewal, extension or
+modification of any such rental agreement, where such renewal, extension or
+modification is effected on or after the effective date of this act.
+History: L. 1992, ch. 306, § 28; July 1.
+                                    2025 Kansas Statutes
+
+58-25,127.   Separate metering for water by landlord; requirements; not public utility. (a) The term
+"public utility" within the meaning of K.S.A. 66-104, and amendments thereto, shall not
+include any person or entity in the business of being a landlord who is supplied water
+by a city or water district and who furnishes such water to its tenants pursuant to
+subsection (a)(5) of K.S.A. 58-2553 or subsection (a)(6) of K.S.A. 58-25,111, and
+amendments thereto, with the use of a separate meter to measure the water furnished
+to the tenant, so long as the landlord charges the tenant at the same rate charged by the
+city or water district to the landlord. Any lease between a landlord and tenant in effect
+at the time this section becomes effective shall not be affected by the provisions of this
+section. The furnishing of water by a landlord to a tenant in accordance with this section
+shall not be construed as a sale for resale which may be subject to the jurisdiction of the
+state corporation commission.
+(b) The landlord shall not charge the tenant any surcharge for the installation,
+maintenance or any other purpose related to the use of a separate water meter.
+(c) The landlord shall provide the tenant with a monthly water statement showing the
+computation of the amount the tenant owes, the tenant's meter reading for the current
+water statement period and the tenant's meter reading for the prior water statement
+period.
+History: L. 2005, ch. 72, § 1; July 1.
+                                   2025 Kansas Statutes
+
+58-25,137. Housing protections for persons affected by domestic violence, sexual assault, human
+trafficking or stalking. (a) (1) An applicant shall not be denied tenancy on the basis of, or as
+a direct result of, the fact that the applicant is a protected person if the applicant
+otherwise qualifies for tenancy in or occupancy of the premises.
+(2) A tenant or lessee shall not be evicted from the premises or found to be in violation
+of a rental or lease agreement on the basis of, or as a direct result of, the fact that the
+tenant or lessee is a protected person if the tenant or lessee otherwise qualifies for
+tenancy in or occupancy of the premises.
+(b) (1) A tenant or lessee shall not be liable for rent for the period after the tenant or
+lessee vacates the premises that is the subject of the rental or lease agreement if the
+tenant or lessee:
+(A) Is a protected person; and
+(B) notifies the landlord or property owner as required in subsection (c).
+(2) In any action brought against a tenant or lessee under Kansas law that seeks
+recovery of rent, the tenant or lessee shall have an affirmative defense and not be liable
+for rent for the period after the tenant or lessee vacated the premises that is the subject
+of the rental or lease agreement if, by a preponderance of the evidence, the court finds
+that the tenant or lessee:
+(A) Was a protected person on the date the tenant or lessee vacated the premises that
+is the subject of the rental or lease agreement; and
+(B) notified the landlord or property owner as required in subsection (c).
+(3) This section shall not affect a tenant or lessee's liability for late or unpaid rent or
+other amounts owed to the landlord for the period before the tenant or lessee vacates
+the premises that is the subject of the rental or lease agreement.
+(c) An applicant, tenant or lessee qualifies for the protections under this section if the
+applicant, tenant or lessee is a protected person and provides a statement regarding
+domestic violence, sexual assault, human trafficking or stalking to the landlord or
+property owner. If the landlord or property owner requests, the applicant, tenant or
+lessee shall provide documentation of the domestic violence, sexual assault, human
+trafficking or stalking, which may be in any of the following forms:
+(1) A document signed by the victim and any of the following individuals from whom
+the victim has sought assistance relating to domestic violence, sexual assault, human
+trafficking or stalking, or the effects of such abuse: A person licensed by the state board
+of healing arts to practice medicine and surgery; a person licensed as a physician
+assistant by the state board of healing arts; a person licensed by the board of nursing; or
+a person licensed by the behavioral sciences regulatory board. The document must
+declare under penalty of perjury that the licensed person holds the opinion, in their
+professional judgment within their scope of practice, that the incident of domestic
+violence, sexual assault, human trafficking or stalking that is the basis for protection
+under this section occurred; or
+(2) a court order granting relief to the protected person relating to the alleged domestic
+violence, sexual assault, human trafficking or stalking that is the basis for protection
+under this section.
+(d) The submission of false information by an applicant, tenant or lessee under this
+section may be a basis for a denial of tenancy, eviction or a violation of a rental or lease
+agreement.
+(e) A landlord or property owner may impose a reasonable termination fee not to
+exceed one month's rent on a tenant or lessee who requests termination of a rental or
+lease agreement under the provisions of this section before the expiration date of such
+agreement. Such termination fee may only be imposed if it is contained in the terms of
+the rental or lease agreement.
+(f) As used in this section:
+(1) "Protected person" means a person who, during the preceding 12 months, has been,
+is or is in imminent danger of becoming a victim of domestic violence, sexual assault,
+human trafficking or stalking; and
+(2) "domestic violence," "human trafficking," "sexual assault" and "stalking" mean the
+same as in K.S.A. 75-452, and amendments thereto.
+(g) A tenant or lessee shall not waive, and a landlord or property owner shall not
+require a tenant or lessee to waive, any rights under this section in a rental or lease
+agreement.
+(h) Notwithstanding a termination of a protected person's rental or lease agreement
+under this section, the rental or lease agreement shall continue for any remaining
+tenants or lessees.
+(i) In an action against a landlord or property owner for a violation of this section, the
+court may award statutory damages of $1,000. The court may also award reasonable
+attorney fees and costs.
+History: L. 2019, ch. 56, § 2; July 1.
+

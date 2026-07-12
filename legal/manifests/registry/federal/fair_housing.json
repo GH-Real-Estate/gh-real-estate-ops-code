@@ -1,0 +1,30 @@
+[
+  {
+    "group": "fair_housing",
+    "title": "Consolidated HUD Fair Housing Act Administrative Proceedings",
+    "citation": "24 C.F.R. part 180",
+    "authority": "Tier 1 — binding federal regulation",
+    "applicability": "Triggered by administrative adjudication of a Fair Housing Act charge; useful for litigation procedure and sanctions.",
+    "official_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-07-09/title-24.xml?part=180",
+    "retrieved": "2026-07-12",
+    "currentness": "Official eCFR XML as of 2026-07-09.",
+    "sha256": "355bd5271120eb0481500208527dda294aeb9f2eb0d56d0b45e474f8482ca4f2",
+    "pages": 18,
+    "bytes": 57786,
+    "source_archive_sha256": "aad62de336e31d09c164ebf6b90adbc9b677be430b283e2e6e1ce32ac5d4f607",
+    "render_note": "Searchable PDF rendered from versioned official eCFR XML; exact XML retained.",
+    "bundle_start_page": 139,
+    "bundle_end_page": 156,
+    "build_source_path": "tmp/pdfs/source_downloads/federal/31_24_CFR_Part_180_Fair_Housing_Adjudication_2026-07-09.pdf",
+    "build_source_archive_path": "tmp/pdfs/source_downloads/federal/raw/extensions/title-24_part-180_2026-07-09.xml",
+    "bundle_filename": "GH-FED-01_Federal-Fair-Housing-HUD-Regulations_CURRENT.pdf",
+    "bundle_path": "legal/generated/project-sources/current/GH-FED-01_Federal-Fair-Housing-HUD-Regulations_CURRENT.pdf",
+    "text_full_path": "legal/text/current/full/GH-FED-01_Federal-Fair-Housing-HUD-Regulations_CURRENT.txt",
+    "bundle_sha256": "6a5c1b036a6b94a296e34084fa2490d9822424045f61157bda1f3026c2ed163a",
+    "bundle_pages": 156,
+    "jurisdiction": "Federal",
+    "legal_status": "binding",
+    "release_as_of": "2026-07-12",
+    "release_status": "included-in-approved-release"
+  }
+]

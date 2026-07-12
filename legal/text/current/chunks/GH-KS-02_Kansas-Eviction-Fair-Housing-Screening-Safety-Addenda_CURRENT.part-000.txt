@@ -1,0 +1,3328 @@
+GH Real Estate approved legal-source text chunk — GH-KS-02_Kansas-Eviction-Fair-Housing-Screening-Safety-Addenda_CURRENT.part-000.txt — verified through 2026-07-12. Official source text controls.
+
+                                         GH REAL ESTATE • LEGAL SOURCE PACK
+
+
+
+
+                       KANSAS EVICTION, FAIR
+                       HOUSING & COMPLIANCE
+
+
+             Procedure • civil rights • screening/data • safety • 2026 addenda • current cases
+
+
+
+
+  PROPERTY                    9401 Nieman Road, Overland Park, Kansas 66214
+
+  CURRENT THROUGH             July 12, 2026
+
+  ACTIVE-SET STATUS           Current-law set; enacted addenda included; withdrawn sources excluded
+
+  SCOPE                       Kansas sources that supplement Article 25 and materially affect fourplex leasing, operations, notices,
+                              evictions, safety and applicant/tenant data
+
+
+
+
+    Use rule: Retrieve the controlling text, confirm the trigger and currentness, then obtain Kansas counsel review before
+    enforcement, filing, denial, accommodation decisions, or material lease changes.
+
+ This compilation is a research and retrieval aid, not legal advice, a title opinion, or a substitute for official current law. Summaries and
+ applicability labels are navigation aids; the appended official text controls.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                             Front matter page 1
+ How this bundle should be used
+  LABEL                  HOW TO USE IT
+
+  BINDING                Statute, regulation, ordinance, or controlling court decision. Confirm effective date and later history.
+
+  CONDITIONAL            Binding only when a stated trigger exists—such as HUD assistance, a federally backed mortgage, or third-party
+                         management.
+
+  GUIDANCE               Agency or court-administration material. Useful operationally but not itself controlling law unless incorporated.
+
+  PROPOSED               Monitoring only. Do not apply as current law.
+
+  WITHDRAWN              Excluded from this active set. Keep only in a separately labeled historical archive.
+
+
+ • HB 2357 and SB 391 are binding 2026 addenda effective July 1, 2026; earlier bill drafts are not included.
+
+ • The eviction-procedure corpus includes Chapter 61 Articles 28–41 for procedural completeness; money-collection
+ provisions are not routine eviction authority.
+
+ • Cases are preserved as published official opinions; verify later history before relying on a holding.
+
+ • Agency checklists/guidance are labeled nonbinding and do not replace adopted codes or regulations.
+
+    Text-integrity rule: appended official PDFs are preserved as retrieved. The front matter adds navigation only and does
+    not alter statutory, regulatory, judicial, or municipal wording.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                           Front matter page 2
+ Source inventory and page map
+ 280 official source documents are included. Page numbers below refer to the finished merged PDF. Use the PDF
+ bookmarks or search the exact citation.
+
+  #     CITATION / SOURCE                    TITLE                                                                                                        PAGES
+
+  1     2026 SB 391 (enrolled)               Local housing-policy preemption; effective July 1, 2026                                                      13–14
+
+  2     2026 Sub. HB 2357 (enrolled)         Eviction record expungement and mediation amendments; effective July 1, 2026                                 15–16
+
+  3     Kansas State Fire Marshal            Apartment inspection checklist                                                                               17–31
+
+  4     Housing Authority v. McConnell, 66   Specificity required in a K.S.A. 58-2564 cure notice                                                         32–39
+        Kan. App. 2d 566 (2026)
+
+  5     Schutt v. Foster, 320 Kan. 852       Late fee and unconscionability preservation issues                                                           40–48
+        (2025)
+
+  6     Washburn South Apartments v.         Habitability duties and purported as-is terms                                                                49–65
+        Hession, 65 Kan. App. 2d 626
+        (2025)
+
+  7     K.S.A. 50-623                        Kansas consumer protection act; purpose; construction.                                                       66
+
+  8     K.S.A. 50-624                        Definitions.                                                                                                 67–68
+
+  9     K.S.A. 50-625                        Waiver; agreement to forego rights; settlement of claims.                                                    69
+
+  10    K.S.A. 50-626                        Deceptive acts and practices.                                                                                70–72
+
+  11    K.S.A. 50-627                        Unconscionable acts and practices.                                                                           73
+
+  12    K.S.A. 50-628                        Duties of the attorney general.                                                                              74
+
+  13    K.S.A. 50-629                        General powers of the attorney general.                                                                      75
+
+  14    K.S.A. 50-630                        Rule-making requirements.                                                                                    76
+
+  15    K.S.A. 50-631                        Investigation of violations; remedies.                                                                       77
+
+  16    K.S.A. 50-632                        Remedies of the attorney general or any county or district attorney; procedure for sequestration.            78–79
+
+  17    K.S.A. 50-633                        Coordination with other supervision.                                                                         80
+
+  18    K.S.A. 50-634                        Private remedies.                                                                                            81
+
+  19    K.S.A. 50-635                        Application of act.                                                                                          82
+
+  20    K.S.A. 50-636                        Civil penalties.                                                                                             83
+
+  21    K.S.A. 50-637                        Powers of receiver; effect of receivership.                                                                  84
+
+  22    K.S.A. 50-638                        Jurisdiction and venue.                                                                                      85
+
+  23    K.S.A. 50-639                        Disclaimer or limitation of warranties; liabilities; attorney fees, when; section inapplicable to seed for   86
+                                             planting, livestock for agricultural purposes or disposal of surplus property by a governmental entity.
+
+  24    K.S.A. 50-640                        Door-to-door sales; cancellation; required disclosures; notice of cancellation; definition.                  87–89
+
+  25    K.S.A. 50-642                        Citation of act.                                                                                             90
+
+  26    K.S.A. 50-643                        Severability.                                                                                                91
+
+  27    K.S.A. 50-6,139b                     Requirements for holders of personal information.                                                            92–93
+
+  28    Kansas Supreme Court Task Force      Best practices for eviction proceedings                                                                      94–122
+
+  29    K.S.A. 50-7a01                       Consumer information; security breach; definitions.                                                          123–124
+
+  30    K.S.A. 50-7a02                       Security breach; requirements.                                                                               125–126
+
+  31    K.S.A. 50-7a04                       Severability clause.                                                                                         127
+
+  32    K.S.A. 16-1601                       Short title.                                                                                                 128
+
+  33    K.S.A. 16-1602                       Definitions.                                                                                                 129–130
+
+  34    K.S.A. 16-1603                       Scope.                                                                                                       131
+
+  35    K.S.A. 16-1604                       Prospective application.                                                                                     132
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                             Front matter page 3
+  #     CITATION / SOURCE                 TITLE                                                                                                  PAGES
+
+  36    K.S.A. 16-1605                    Use of electronic records and electronic signatures; state agency written standards governing use of   133
+                                          electronic signatures; rules and regulations governing use of digital signatures by state agencies.
+
+  37    K.S.A. 16-1606                    Construction and application.                                                                          134
+
+  38    K.S.A. 16-1607                    Legal recognition of electronic records, electronic signatures and electronic contracts.               135
+
+  39    K.S.A. 16-1608                    Provision of information in writing; presentation of records.                                          136
+
+  40    K.S.A. 16-1609                    Attribution and effect of electronic records and electronic signatures.                                137
+
+  41    K.S.A. 16-1610                    Effect of change or error.                                                                             138
+
+  42    K.S.A. 16-1611                    Notarization and acknowledgment; electronic notarization.                                              139
+
+  43    K.S.A. 16-1612                    Retention of electronic records; originals.                                                            140
+
+  44    K.S.A. 16-1613                    Admissibility in evidence.                                                                             141
+
+  45    K.S.A. 16-1614                    Automated transactions.                                                                                142
+
+  46    K.S.A. 16-1615                    Time and place of sending and receipt.                                                                 143
+
+  47    K.S.A. 16-1616                    Transferable records.                                                                                  144–145
+
+  48    K.S.A. 16-1617                    Registered certification authorities.                                                                  146
+
+  49    K.S.A. 16-1618                    Rules and regulations.                                                                                 147
+
+  50    K.S.A. 16-1619                    Reciprocity with other jurisdictions.                                                                  148
+
+  51    K.S.A. 16-1620                    Severability.                                                                                          149
+
+  52    K.S.A. 61-2801                    Citation of act.                                                                                       150
+
+  53    K.S.A. 61-2802                    Application of code.                                                                                   151
+
+  54    K.S.A. 61-2803                    Supreme court rules.                                                                                   152
+
+  55    K.S.A. 61-2804                    Filings.                                                                                               153
+
+  56    K.S.A. 61-2805                    Acts by court or judge.                                                                                154
+
+  57    K.S.A. 61-2806                    Construction.                                                                                          155
+
+  58    K.S.A. 61-2901                    Name of parties.                                                                                       156
+
+  59    K.S.A. 61-2902                    Commencement of actions, limitations of actions.                                                       157
+
+  60    K.S.A. 61-2903                    Pleadings and other papers allowed.                                                                    158
+
+  61    K.S.A. 61-2904                    Appearance; answer; counter-claim; affirmative defenses.                                               159
+
+  62    K.S.A. 61-2905                    Counterclaims and cross-claims.                                                                        160
+
+  63    K.S.A. 61-2907                    Service and filing of pleadings and other papers.                                                      161
+
+  64    K.S.A. 61-2908                    Special matters.                                                                                       162
+
+  65    K.S.A. 61-2909                    Computation and extension of time.                                                                     163
+
+  66    K.S.A. 61-2910                    Application of chapter 60, when.                                                                       164
+
+  67    K.S.A. 61-2911                    Claims beyond the scope of actions authorized by K.S.A. 61-2802.                                       165
+
+  68    K.S.A. 61-2912                    Adoption by reference of certain provisions of article 2 of chapter 60.                                166
+
+  69    K.S.A. 61-3001                    Summons; issuance.                                                                                     167
+
+  70    K.S.A. 61-3002                    Summons; time for appearance; form.                                                                    168
+
+  71    K.S.A. 61-3003                    Methods of service of process.                                                                         169–171
+
+  72    K.S.A. 61-3004                    Service of process; time limits; on whom service made.                                                 172
+
+  73    K.S.A. 61-3005                    Proof of service.                                                                                      173
+
+  74    K.S.A. 61-3006                    Service of process outside the state.                                                                  174
+
+  75    K.S.A. 61-3101                    Admission of facts and genuineness of documents; withdrawal or amendment of admission.                 175
+
+  76    K.S.A. 61-3102                    Expenses on refusal to admit truth of matter requested.                                                176
+
+  77    K.S.A. 61-3103                    Interrogatories.                                                                                       177
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                     Front matter page 4
+  #     CITATION / SOURCE                 TITLE                                                                                                  PAGES
+
+  78    K.S.A. 61-3104                    Subpoenas.                                                                                             178
+
+  79    K.S.A. 61-3105                    Depositions.                                                                                           179
+
+  80    K.S.A. 61-3106                    Production of documents.                                                                               180
+
+  81    K.S.A. 61-3201                    Pretrial hearing.                                                                                      181
+
+  82    K.S.A. 61-3202                    Trial of actions by court or jury; evidence.                                                           182
+
+  83    K.S.A. 61-3301                    Default judgment.                                                                                      183
+
+  84    K.S.A. 61-3302                    Judgments.                                                                                             184
+
+  85    K.S.A. 61-3303                    Interest on judgments.                                                                                 185
+
+  86    K.S.A. 61-3304                    Modification of judgment.                                                                              186
+
+  87    K.S.A. 61-3402                    Actions against residents.                                                                             187
+
+  88    K.S.A. 61-3403                    Actions against corporations.                                                                          188
+
+  89    K.S.A. 61-3404                    Actions against nonresidents and nonqualified corporations.                                            189
+
+  90    K.S.A. 61-3405                    Actions against public utility, common carrier or transportation system.                               190
+
+  91    K.S.A. 61-3406                    Multiple parties.                                                                                      191
+
+  92    K.S.A. 61-3407                    Change of venue.                                                                                       192
+
+  93    K.S.A. 61-3408                    Time for objection to venue.                                                                           193
+
+  94    K.S.A. 61-3409                    Effect of improper venue.                                                                              194
+
+  95    K.S.A. 61-3501                    Attachment.                                                                                            195
+
+  96    K.S.A. 61-3502                    Nature of garnishment.                                                                                 196
+
+  97    K.S.A. 61-3503                    When garnishment available before judgment.                                                            197
+
+  98    K.S.A. 61-3504                    When garnishment available after judgment.                                                             198
+
+  99    K.S.A. 61-3505                    Order of garnishment, other than earnings.                                                             199
+
+  10    K.S.A. 61-3506                    Garnishment of funds held by financial institution; administrative fee; order of garnishment           200–201
+  0                                       requirements.
+
+  10    K.S.A. 61-3507                    Order of garnishment, earnings.                                                                        202–203
+  1
+
+  10    K.S.A. 61-3508                    Notice to judgment debtor; hearing on claim of exemption.                                              204
+  2
+
+  10    K.S.A. 61-3509                    Answer of garnishee; attachment of intangible property other than earnings.                            205
+  3
+
+  10    K.S.A. 61-3510                    Attaching earnings.                                                                                    206
+  4
+
+  10    K.S.A. 61-3511                    Reply by judgment creditor or judgment debtor; notification and hearing; burden of proof.              207
+  5
+
+  10    K.S.A. 61-3512                    Garnishee's payment to the judgment creditor; refund of overpayment; release of funds; nonliability    208
+  6                                       of garnishee.
+
+  10    K.S.A. 61-3513                    Payment of earnings withheld by garnishee.                                                             209
+  7
+
+  10    K.S.A. 61-3514                    Failure of garnishee to answer.                                                                        210
+  8
+
+  10    K.S.A. 61-3515                    Failure of garnishee to pay.                                                                           211
+  9
+
+  11    K.S.A. 61-3516                    Miscellaneous garnishment provisions.                                                                  212
+  0
+
+  11    K.S.A. 61-3601                    Stay of proceedings to enforce judgments.                                                              213
+  1
+
+  11    K.S.A. 61-3602                    Procedure.                                                                                             214
+  2
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                     Front matter page 5
+  #     CITATION / SOURCE                 TITLE                                                                                                   PAGES
+
+  11    K.S.A. 61-3603                    Exemption from seizure and sale.                                                                        215
+  3
+
+  11    K.S.A. 61-3604                    Hearing in aid of execution.                                                                            216
+  4
+
+  11    K.S.A. 61-3605                    Order back procedure.                                                                                   217
+  5
+
+  11    K.S.A. 61-3606                    Contempt.                                                                                               218
+  6
+
+  11    K.S.A. 61-3607                    Hearing; penalty.                                                                                       219
+  7
+
+  11    K.S.A. 61-3608                    Bench warrant; hearing; penalty.                                                                        220
+  8
+
+  11    K.S.A. 61-3609                    Service at place of employment.                                                                         221
+  9
+
+  12    K.S.A. 61-3610                    Dormant judgment; revivor.                                                                              222
+  0
+
+  12    K.S.A. 61-3611                    Substitution of judgment creditor.                                                                      223
+  1
+
+  12    K.S.A. 61-3701                    Replevin; procedure; orders; execution; judgment.                                                       224–226
+  2
+
+  12    K.S.A. 61-3702                    Foreclosure of security interest; procedure; orders; execution; judgment.                               227–229
+  3
+
+  12    K.S.A. 61-3703                    Sale of property to satisfy judgment.                                                                   230
+  4
+
+  12    K.S.A. 61-3704                    Return; confirmation of sale.                                                                           231
+  5
+
+  12    K.S.A. 61-3705                    Application of proceeds.                                                                                232
+  6
+
+  12    K.S.A. 61-3801                    Scope.                                                                                                  233
+  7
+
+  12    K.S.A. 61-3802                    Judgment not bar to other actions.                                                                      234
+  8
+
+  12    K.S.A. 61-3803                    Notice to leave premises.                                                                               235
+  9
+
+  13    K.S.A. 61-3804                    Petition for claim.                                                                                     236
+  0
+
+  13    K.S.A. 61-3805                    Summons; time for appearance.                                                                           237
+  1
+
+  13    K.S.A. 61-3806                    Appearance; answer.                                                                                     238
+  2
+
+  13    K.S.A. 61-3807                    Trial.                                                                                                  239
+  3
+
+  13    K.S.A. 61-3808                    Writ of restitution.                                                                                    240
+  4
+
+  13    K.S.A. 61-3901                    Grounds for appeal.                                                                                     241
+  5
+
+  13    K.S.A. 61-3902                    Appeals; procedure.                                                                                     242
+  6
+
+  13    K.S.A. 61-3903                    Appeals from district magistrate judge not regularly admitted to practice law; notice; assignment.      243
+  7
+
+  13    K.S.A. 61-3904                    Execution on judgment pending appeal without bond.                                                      244
+  8
+
+  13    K.S.A. 61-3905                    Stay of proceedings on appeal; bond.                                                                    245
+  9
+
+  14    K.S.A. 61-3906                    Forcible detainer.                                                                                      246
+  0
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                      Front matter page 6
+  #     CITATION / SOURCE                 TITLE                                                                                                      PAGES
+
+  14    K.S.A. 61-3907                    Insufficiency of bond.                                                                                     247
+  1
+
+  14    K.S.A. 61-3908                    Judgment against surety.                                                                                   248
+  2
+
+  14    K.S.A. 61-3909                    Dismissal of appeal.                                                                                       249
+  3
+
+  14    K.S.A. 61-4001                    Docket fee; authorized only by legislative enactment; poverty affidavit; additional court costs;           250
+  4                                       exemptions.
+
+  14    K.S.A. 61-4002                    Items allowable as costs.                                                                                  251
+  5
+
+  14    K.S.A. 61-4101                    Lost or destroyed court files.                                                                             252
+  6
+
+  14    K.S.A. 61-4102                    Affirmation in lieu of oath.                                                                               253
+  7
+
+  14    K.S.A. 61-4103                    Availability of other relief.                                                                              254
+  8
+
+  14    K.S.A. 61-4104                    Effect on pending actions.                                                                                 255
+  9
+
+  15    K.S.A. 44-1001                    Title of act; declaration of state policy and purpose.                                                     256
+  0
+
+  15    K.S.A. 44-1002                    Definitions.                                                                                               257–258
+  1
+
+  15    K.S.A. 44-1003                    Human rights commission; membership; organization compensation and expenses staff.                         259–260
+  2
+
+  15    K.S.A. 44-1004                    Powers and duties of commission.                                                                           261–262
+  3
+
+  15    K.S.A. 44-1005                    Complaints; investigation; proceedings; remedial orders; dismissal of certain complaints, when,            263–265
+  4                                       procedure and effect.
+
+  15    K.S.A. 44-1006                    Construction of act.                                                                                       266
+  5
+
+  15    K.S.A. 44-1007                    Invalidity of part.                                                                                        267
+  6
+
+  15    K.S.A. 44-1009                    Unlawful employment practices; unlawful discriminatory practices.                                          268–270
+  7
+
+  15    K.S.A. 44-1010                    Petition for reconsideration of orders of commission.                                                      271
+  8
+
+  15    K.S.A. 44-1011                    Enforcement of commission orders; judicial review; procedure.                                              272
+  9
+
+  16    K.S.A. 44-1012                    Posting of law and information.                                                                            273
+  0
+
+  16    K.S.A. 44-1013                    Unlawful acts; penalties.                                                                                  274
+  1
+
+  16    K.S.A. 44-1015                    Discrimination in housing; definitions.                                                                    275
+  2
+
+  16    K.S.A. 44-1016                    Same; unlawful acts in connection with sale or rental of real property.                                    276–277
+  3
+
+  16    K.S.A. 44-1017                    Same; unlawful acts as to real estate loans.                                                               278
+  4
+
+  16    K.S.A. 44-1017a                   Homeowners association; removal of certain restrictive covenants; penalties.                               279–280
+  5
+
+  16    K.S.A. 44-1018                    Same; application of act.                                                                                  281
+  6
+
+  16    K.S.A. 44-1019                    Same; complaints; referral to local authority, when; investigation; administrative proceedings;            282–284
+  7                                       election to file action in court; administrative remedial orders.
+
+  16    K.S.A. 44-1020                    Same; subpoenas; witness fees and mileage; interim judicial relief; criminal enforcement of                285
+  8                                       subpoenas.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                         Front matter page 7
+  #     CITATION / SOURCE                 TITLE                                                                                                      PAGES
+
+  16    K.S.A. 44-1021                    Same; judicial review of commission action; civil enforcement of act.                                      286–287
+  9
+
+  17    K.S.A. 44-1022                    Same; civil action by attorney general, when.                                                              288
+  0
+
+  17    K.S.A. 44-1023                    Same; assignment of case; expedition.                                                                      289
+  1
+
+  17    K.S.A. 44-1024                    Same; effect of city ordinances governing housing practices.                                               290
+  2
+
+  17    K.S.A. 44-1025                    Same; cooperation of commission with local agencies; agreements.                                           291
+  3
+
+  17    K.S.A. 44-1026                    Same; unlawful acts; enforcement of section.                                                               292
+  4
+
+  17    K.S.A. 44-1027                    Same; unlawful act; penalties.                                                                             293
+  5
+
+  17    K.S.A. 44-1028                    Same; severability.                                                                                        294
+  6
+
+  17    K.S.A. 44-1029                    Same; act supplemental.                                                                                    295
+  7
+
+  17    K.S.A. 44-1030                    State and local government contracts; mandatory provisions.                                                296
+  8
+
+  17    K.S.A. 44-1031                    Same; personnel to be used in performing contracts; reports; nonapplication to certain contractors.        297
+  9
+
+  18    K.S.A. 44-1032                    Responsibility for and review of compliance with act; subpoenas; access to premises; oaths and             298
+  0                                       depositions; failure to obey court order, effect; immunity of witnesses from prosecution; perjury.
+
+  18    K.S.A. 44-1033                    Initiation and processing complaints; use of information.                                                  299
+  1
+
+  18    K.S.A. 44-1034                    Rules and regulations.                                                                                     300
+  2
+
+  18    K.S.A. 44-1035                    Information on racial identification maintained solely on payroll tapes; retrieval restricted.             301
+  3
+
+  18    K.S.A. 44-1036                    Severability.                                                                                              302
+  4
+
+  18    K.S.A. 44-1037                    Liberal construction.                                                                                      303
+  5
+
+  18    K.S.A. 44-1038                    Provisions of K.S.A. 44-1031 through 44-1037 supplemental to act against discrimination.                   304
+  6
+
+  18    K.S.A. 44-1039                    Unlawful act; perjury.                                                                                     305
+  7
+
+  18    K.S.A. 44-1041                    Unlawful acts; penalty.                                                                                    306
+  8
+
+  18    K.S.A. 44-1042                    Award of compensatory damages; reduction.                                                                  307
+  9
+
+  19    K.S.A. 44-1043                    Provisions of K.S.A. 44-1039 through 44-1042 supplemental to act against discrimination.                   308
+  0
+
+  19    K.S.A. 44-1044                    Probable cause determinations under K.S.A. 44-1005 or 44-1019; exempt from judicial review and             309
+  1                                       civil enforcement of agency actions act.
+
+  19    K.A.R. Agency 21 compilation      Kansas Human Rights Commission rules and regulations (Article 60 fair housing at PDF pp. 39–47)            310–372
+  2
+
+  19    KHRC fair housing poster          Kansas fair housing poster                                                                                 373
+  3
+
+  19    K.S.A. 31-132a                    Fire safety and prevention; apartment house, defined.                                                      374
+  4
+
+  19    K.S.A. 31-133                     Fire marshal; power and duties; rules and regulations.                                                     375–376
+  5
+
+  19    K.S.A. 31-134                     Adoption of rules and regulations, procedure; distribution; fees; remittance; designated as fire           377
+  6                                       prevention code; judicial review.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                         Front matter page 8
+  #     CITATION / SOURCE                 TITLE                                                                                                             PAGES
+
+  19    K.S.A. 31-135                     Advisory committees to assist fire marshal; membership; no compensation.                                          378
+  7
+
+  19    K.S.A. 31-136                     Same; exemptions from regulations, when; procedure.                                                               379
+  8
+
+  19    K.S.A. 31-137                     Same; enforcement of act and regulations; investigations; entry and examination of buildings and                  380
+  9                                       premises; report, filing.
+
+  20    K.S.A. 31-138                     Same; hearings; information and evidence to attorney general or county attorney; prosecution;                     381
+  0                                       assistance by state fire marshal.
+
+  20    K.S.A. 31-139                     Same; right of entry to determine compliance with law and regulations; complaint; order to cease                  382
+  1                                       and desist.
+
+  20    K.S.A. 31-140                     Same; appeals from orders; notice and hearing; decisions; compliance.                                             383
+  2
+
+  20    K.S.A. 31-141                     Same; powers of fire marshal in conduct of hearing; subpoena of witnesses and records; record of                  384
+  3                                       proceedings; statement; failure to comply with subpoena, effect; order by district court; service of
+                                          process; costs, taxation.
+
+  20    K.S.A. 31-142                     Judicial review of fire marshal's action.                                                                         385
+  4
+
+  20    K.S.A. 31-143                     Fire marshal authorized to advise and assist state civil defense director; assistance to municipalities;          386
+  5                                       responsibilities and duties of state fire marshal.
+
+  20    K.S.A. 31-144                     School buildings; definition; inspection; correction of violations; closing in lieu of repair; judicial           387–388
+  6                                       review.
+
+  20    K.S.A. 31-145                     Powers of actual members of organized fire departments.                                                           389
+  7
+
+  20    K.S.A. 31-146                     Mandatory provisions of regulations governing transportation of liquid fuels; how inspections                     390
+  8                                       performed.
+
+  20    K.S.A. 31-147                     Compliance with regulations by hotels, lodging facilities and restaurants.                                        391
+  9
+
+  21    K.S.A. 31-148                     Inspection of building under jurisdiction of state penal director and division of institutional                   392
+  0                                       management.
+
+  21    K.S.A. 31-150                     Fire safety and prevention; school buildings; construction, reconstruction or renovation                          393
+  1                                       requirements; accessibility to persons with a disability; building plans, certification; exceptions; rules
+                                          and regulations.
+
+  21    K.S.A. 31-157                     Fire marshal deputies and investigatory personnel; law enforcement powers, when; training                         394
+  2                                       required, exceptions.
+
+  21    K.S.A. 31-158                     Fire safety and prevention; sale to or purchase by fire department of clothing or equipment which                 395
+  3                                       does not meet standards set by national fire protection association; penalty; definition.
+
+  21    K.S.A. 31-159                     Violations of fire prevention code, administrative penalties.                                                     396
+  4
+
+  21    K.S.A. 31-160                     Smoke detectors; citation of act.                                                                                 397
+  5
+
+  21    K.S.A. 31-161                     Same; definitions.                                                                                                398
+  6
+
+  21    K.S.A. 31-162                     Same; installation of smoke detectors required; limitations on enforcement; certain evidence                      399
+  7                                       inadmissible; insurance payments not affected.
+
+  21    K.S.A. 31-163                     Same; violations; penalties.                                                                                      400
+  8
+
+  21    K.S.A. 31-164                     Same; act in addition to local law.                                                                               401
+  9
+
+  22    K.S.A. 65-1,200                   Citation of act.                                                                                                  402
+  0
+
+  22    K.S.A. 65-1,201                   Definitions.                                                                                                      403
+  1
+
+  22    K.S.A. 65-1,202                   Development and implementation of prevention program; licensure training and inspections; fees;                   404–405
+  2                                       rules and regulations.
+
+  22    K.S.A. 65-1,203                   Licensure or certification to perform lead-based paint activities.                                                406
+  3
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                                Front matter page 9
+  #     CITATION / SOURCE                 TITLE                                                                                                     PAGES
+
+  22    K.S.A. 65-1,204                   Same; qualification requirements.                                                                         407
+  4
+
+  22    K.S.A. 65-1,205                   Remittance of fees.                                                                                       408
+  5
+
+  22    K.S.A. 65-1,206                   Lead-based paint hazard fee fund; sources of revenue; expenditures.                                       409
+  6
+
+  22    K.S.A. 65-1,207                   Denial, suspension or revocation of license or certificate or accreditation of training program, when;    410–411
+  7                                       suspension of abatement program; administrative review.
+
+  22    K.S.A. 65-1,208                   Noncompliance; notice; duty to meet compliance requirements.                                              412
+  8
+
+  22    K.S.A. 65-1,209                   Violations; criminal penalties.                                                                           413
+  9
+
+  23    K.S.A. 65-1,210                   Same; civil penalties; corrective action; appeals; grants to communities to eliminate hazards.            414
+  0
+
+  23    K.S.A. 65-1,211                   Same; additional remedies.                                                                                415
+  1
+
+  23    K.S.A. 65-1,212                   Implementation of act by entities engaging in lead-based paint activities; when.                          416
+  2
+
+  23    K.S.A. 65-1,213                   Statutory audit privilege not applicable.                                                                 417
+  3
+
+  23    K.S.A. 58-3037                    Exemptions.                                                                                               418
+  4
+
+  23    K.S.A. 16-201                     Legal rate of interest; prejudgment interest rate in civil tort actions.                                  419
+  5
+
+  23    K.S.A. 60-2610                    Civil liability for worthless check.                                                                      420–421
+  6
+
+  23    K.S.A. 39-1101                    Rights of persons with disabilities.                                                                      422
+  7
+
+  23    K.S.A. 39-1102                    Same; use of guide dog by legally blind person.                                                           423
+  8
+
+  23    K.S.A. 39-1103                    Same; unlawful to interfere with rights.                                                                  424
+  9
+
+  24    K.S.A. 39-1104                    Same; safety day; proclamation; contents.                                                                 425
+  0
+
+  24    K.S.A. 39-1105                    Same; employment.                                                                                         426
+  1
+
+  24    K.S.A. 39-1106                    Same; name and citation of act.                                                                           427
+  2
+
+  24    K.S.A. 39-1107                    Rights of persons with disabilities; use of hearing assistance dog by person who is deaf or hard of       428
+  3                                       hearing.
+
+  24    K.S.A. 39-1108                    Same; use of service dog by person with disability.                                                       429
+  4
+
+  24    K.S.A. 39-1109                    Use of assistance dog while training.                                                                     430
+  5
+
+  24    K.S.A. 39-1110                    Use of professional therapy dog while training.                                                           431
+  6
+
+  24    K.S.A. 39-1111                    Procedure for verification of person's right to be accompanied by assistance dog or professional          432–433
+  7                                       therapy dog.
+
+  24    K.S.A. 39-1112                    Unlawful misrepresentations.                                                                              434
+  8
+
+  24    K.S.A. 39-1113                    Assistance dogs and professional therapy dogs; definitions.                                               435
+  9
+
+  25    K.S.A. 39-1114                    Children parented by blind individuals; purpose of act; legislative findings.                             436
+  0
+
+  25    K.S.A. 39-1115                    Definitions.                                                                                              437
+  1
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                       Front matter page 10
+  #     CITATION / SOURCE                 TITLE                                                                                                      PAGES
+
+  25    K.S.A. 39-1116                    Blindness of parent or prospective parent in parentage, dissolution of marriage, adoption,                 438
+  2                                       guardianship and child in need of care cases; considerations and restrictions.
+
+  25    K.S.A. 50-701                     Findings and purpose.                                                                                      439
+  3
+
+  25    K.S.A. 50-702                     Definitions and rules of construction.                                                                     440–441
+  4
+
+  25    K.S.A. 50-703                     Permissible purposes of reports.                                                                           442
+  5
+
+  25    K.S.A. 50-704                     Obsolete information.                                                                                      443
+  6
+
+  25    K.S.A. 50-705                     Disclosure of investigative consumer reports.                                                              444
+  7
+
+  25    K.S.A. 50-706                     Compliance procedures.                                                                                     445
+  8
+
+  25    K.S.A. 50-707                     Disclosures to governmental agencies.                                                                      446
+  9
+
+  26    K.S.A. 50-708                     Disclosures to consumers.                                                                                  447
+  0
+
+  26    K.S.A. 50-709                     Conditions of disclosure to consumers.                                                                     448
+  1
+
+  26    K.S.A. 50-710                     Procedure in case of disputed accuracy.                                                                    449
+  2
+
+  26    K.S.A. 50-711                     Charges for certain disclosures.                                                                           450
+  3
+
+  26    K.S.A. 50-712                     Public record information for employment purposes.                                                         451
+  4
+
+  26    K.S.A. 50-713                     Restrictions on investigative consumer reports.                                                            452
+  5
+
+  26    K.S.A. 50-714                     Requirements on users of consumer reports.                                                                 453
+  6
+
+  26    K.S.A. 50-715                     Civil liability for willful noncompliance.                                                                 454
+  7
+
+  26    K.S.A. 50-716                     Civil liability for negligent noncompliance.                                                               455
+  8
+
+  26    K.S.A. 50-717                     Jurisdiction of courts; limitation of actions.                                                             456
+  9
+
+  27    K.S.A. 50-718                     Obtaining information under false pretenses.                                                               457
+  0
+
+  27    K.S.A. 50-719                     Unauthorized disclosures by officers or employees.                                                         458
+  1
+
+  27    K.S.A. 50-720                     Penalties.                                                                                                 459
+  2
+
+  27    K.S.A. 50-721                     Enforcement by consumer credit commissioner.                                                               460
+  3
+
+  27    K.S.A. 50-722                     Citation of act.                                                                                           461
+  4
+
+  27    K.S.A. 50-723                     Security freeze on consumer report; requirements; procedure; damages.                                      462–465
+  5
+
+  27    K.S.A. 50-724                     Security freeze; exceptions.                                                                               466
+  6
+
+  27    K.S.A. 50-725                     Security freeze for protected consumers; requirements; procedure.                                          467–468
+  7
+
+  27    K.S.A. 12-16,120                  Prohibiting rent control or control of real estate purchase price by political subdivisions; exceptions.   469
+  8
+
+  27    K.S.A. 12-16,123                  Cities and counties prohibited from requiring lists of tenants; exceptions.                                470
+  9
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                        Front matter page 11
+  #     CITATION / SOURCE                 TITLE                                                                                                       PAGES
+
+  28    K.S.A. 12-16,138                  Cities; counties; prohibiting periodic interior inspections of residential property; exceptions.            471
+  0
+
+
+ Source URLs, retrieval date, authority/applicability labels, and SHA-256 fingerprints are recorded in the companion Markdown manifest.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                         Front matter page 12
+                            SENATE BILL No. 391
+
+AN ACT concerning private rental housing; prohibiting cities and counties from adopting
+   or enforcing any ordinance or resolution that requires landlords to lease housing to
+   tenants receiving financial assistance from or through the housing choice voucher
+   program or any other housing assistance program or that otherwise restricts a
+   landlord's ability to consider the income source of a prospective tenant.
+
+Be it enacted by the Legislature of the State of Kansas:
+    Section 1. (a) No city or county shall adopt or enforce any
+ordinance or resolution that:
+    (1) Prohibits landlords from refusing to lease privately owned
+single-family or multi-unit residential property or commercial property
+to a person because such person's source of income to pay rent on such
+property consists, in whole or in part, of a financial payment or
+consideration from or through the housing choice voucher program, or
+any successor program, authorized by chapter 8 of title 42 of the United
+States code, or any other housing assistance program in which
+participation by a landlord is voluntary;
+    (2) restricts a landlord's ability to use or consider income-
+qualifying methods, credit scores, credit reports, eviction history,
+property damage history or criminal history or to request such
+information when done to determine whether to lease a property to a
+prospective tenant according to such landlord's customarily applied
+criteria in making such determinations;
+    (3) limits the amount of a security deposit a landlord may require
+to lease a property to a prospective tenant; or
+    (4) requires landlords to grant an automatic right of first refusal to
+tenants.
+    (b) Any ordinance or resolution prohibited by subsection (a) that
+was adopted prior to July 1, 2026, shall be null and void.
+                    SENATE BILL No. 391—page 2
+
+
+
+   Sec. 2. This act shall take effect and be in force from and after its
+publication in the statute book.
+
+I hereby certify that the above BILL originated in the
+SENATE, and passed that body
+
+__________________________
+SENATE adopted
+  Conference Committee Report ________________
+
+
+                        _________________________
+                                                         President of the Senate.
+
+
+                        _________________________
+                                                         Secretary of the Senate.
+
+Passed the HOUSE
+     as amended _________________________
+
+
+HOUSE adopted
+  Conference Committee Report ________________
+
+
+                       _________________________
+                                                          Speaker of the House.
+
+
+                        _________________________
+                                                    Chief Clerk of the House.
+
+
+
+APPROVED _____________________________
+
+
+                        _________________________
+                                                                      Governor.
+                    Substitute for HOUSE BILL No. 2357
+
+AN ACT concerning housing; providing for expungement of certain court records in
+   eviction actions in which the underlying rental agreement is governed by the
+   residential landlord and tenant act; requiring consideration of mediation in eviction
+   actions in which the underlying rental agreement is governed by the residential
+   landlord and tenant act; amending K.S.A. 61-3806 and 61-3807 and repealing the
+   existing sections.
+
+Be it enacted by the Legislature of the State of Kansas:
+    New Section 1. (a) (1) Except as otherwise provided in this
+subsection, a defendant in an eviction action in which the underlying
+rental agreement is governed by K.S.A. 58-2540 et seq., and
+amendments thereto, may make an electronic filing for an expungement
+with the clerk of the district court at no cost. Such filing shall be made
+under the docket number of such eviction action. The defendant shall
+provide service of process to the plaintiff in such action by return
+receipt delivery as described in K.S.A. 60-303, and amendments
+thereto.
+    (2) The plaintiff in such action shall have 30 days after delivery of
+such service of process to file with the court an objection to such
+expungement. If an objection is filed, the court shall conduct a hearing
+and determine whether such expungement will be granted pursuant to
+this section. If no objection is filed, the court shall make such
+determination without a hearing, and there shall be a presumption that
+the monetary judgment owed by the defendant to the plaintiff arising
+from the underlying tenancy or rental agreement related to such
+eviction action, if any, are satisfied.
+    (3) The court shall grant an expungement if three years have
+passed since judgment was entered in such action, the defendant shows
+that the monetary judgment owed by the defendant to the plaintiff
+arising from the underlying tenancy or rental agreement related to such
+eviction action, if any, are satisfied and the defendant has no additional
+judgment entered in an eviction action in which the underlying rental
+agreement is governed by K.S.A. 58-2540 et seq., and amendments
+thereto, within the three-year period.
+    (4) If a tenant has an additional judgment entered in an eviction
+action in which the underlying rental agreement is governed by K.S.A.
+58-2540 et seq., and amendments thereto, within the three-year period
+described in paragraph (1), the preceding judgment shall not be
+expunged until the ensuing judgment is eligible for expungement.
+    (5) In accordance with federal law and requirements, a public
+housing authority may request access to eviction judgment history for
+the past three-year period for active applicants for federal housing
+assistance.
+    (6) An eviction action in which the underlying rental agreement is
+governed by K.S.A. 58-2540 et seq., and amendments thereto, and the
+defendant has an unsatisfied monetary judgment arising from the
+underlying tenancy or rental agreement related to such eviction action
+shall not be expunged unless the defendant and the plaintiff agree to
+such expungement.
+    (7) An order expunging an eviction action pursuant to this section
+shall not be construed to satisfy, extinguish or otherwise affect any
+monetary obligation owed by the defendant to the plaintiff arising from
+the underlying tenancy or rental agreement related to such eviction
+action. Nothing in this section shall impair or limit a plaintiff's right to
+pursue or maintain a separate civil action for unpaid rent, damages or
+other sums owed, including any action permitted under K.S.A. 61-
+3804, and amendments thereto, or other applicable law, within the
+applicable statute of limitations.
+    (b) The judicial council shall develop a form to be utilized for
+obtaining expungement pursuant to this section.
+    Sec. 2. K.S.A. 61-3806 is hereby amended to read as follows: 61-
+3806. (a) A defendant shall either appear in person or by counsel at the
+time and date set forth in the summons or file on or before such date a
+written answer.
+    (b) The answer, when filed, shall contain the information as
+            Substitute for HOUSE BILL No. 2357—page 2
+
+required under subsection (b) of K.S.A. 61-2904(b), and amendments
+thereto.
+   (c) In an action in which the underlying rental agreement is
+governed by K.S.A. 58-2540 et seq., and amendments thereto, the court
+shall consider mediation unless the court finds that mediation would
+not aid the parties materially or is impracticable.
+   Sec. 3. K.S.A. 61-3807 is hereby amended to read as follows: 61-
+3807. (a) If a trial is necessary, the trial shall be conducted within 14
+days after the appearance date stated in the summons.
+   (b) (1) Except as provided in paragraph (2), no continuance shall
+be granted unless the defendant requesting a continuance shall file a
+bond with good and sufficient security approved by the court,
+conditioned for the payment of all damages and rent that may accrue if
+judgment is entered against the defendant.
+   (2) In an action in which the underlying rental agreement is
+governed by K.S.A. 58-2540 et seq., and amendments thereto, the court
+shall order a continuance of not more than 14 days from the date that
+the mediation order is entered if the parties are participating in
+mediation.
+   Sec. 4. K.S.A. 61-3806 and 61-3807 are hereby repealed.
+   Sec. 5. This act shall take effect and be in force from and after its
+publication in the statute book.
+
+I hereby certify that the above BILL originated in the HOUSE, and was
+adopted by that body
+
+
+
+HOUSE adopted
+Conference Committee Report
+
+
+                                                 Speaker of the House.
+
+
+
+                                                 Chief Clerk of the House.
+
+Passed the SENATE
+      as amended
+
+SENATE adopted
+Conference Committee Report
+
+
+                                                  President of the Senate.
+
+
+
+                                                  Secretary of the Senate.
+
+
+APPROVED
+
+
+
+                                                                Governor.
+                                           Apartment Checklist
+                                                    2006 IFC
+
+
+
+
+Residential occupancies containing sleeping units or more than two dwelling units where the occupants are primarily
+permanent in nature.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+                                                             Exit
+
+A: Temporary Egress:
+
+1001.2
+
+           It shall be unlawful to alter a building or structure in a manner that will reduce the number of exits or the
+           capacity of the means of egress to less than required by this code.
+
+B: Door Swing:
+
+1008.2
+
+           Doors shall swing in the direction of egress travel where serving an occupant load of 50 or more persons.
+
+C: Door Locks Required Key:
+
+1008.1.8
+
+           Egress doors shall be operable from the egress side without the use of a key or special knowledge or effort.
+
+           Exceptions: Access doors or gates in barrier walls and fences protecting pool, spas, and hot tubs shall be
+           permitted to have operable parts of the release of latch on self-latching devices at 54 inches (1370 mm)
+           maximum above the finished floor or ground, proved the self-latching devices are not also self-locking
+           devices operated by means of a key, electronic opener or integral combination lock.
+
+D: Travel Distance:
+
+Table 1019.2
+
+           In a Group R-2 occupancy the maximum travel distance to an exit is 50 feet. In all other Group R
+           occupancies, the maximum is 75 feet.
+
+E: Continuous Exits:
+
+1019.3
+
+           Exits shall be continuous from the point of entry into the exit to the exit discharge.
+
+F: Exterior Exits:
+
+1018.2
+
+           Exterior exit doors shall lead directly to the exit discharge or the public way.
+
+G: Normal Illumination:
+
+1006.1
+
+           The means of egress, including the exit discharge, shall be illuminated at all times the building space served
+           by the means of egress is occupied.
+
+H-J: Exit Signs:
+
+1011.1, 1006.1
+
+           Exit signs are required in rooms or areas which require two or more exits. Main exterior exit door signs may
+           be exempt. Exit signs are not required in individual sleeping units or dwelling units in Group R-1, R-2, or R-3.
+           Exit sign placement shall be such that no point in an exit access corridor is more than 100 feet or the listed
+           viewing distance, whichever is less, from the nearest visible exit sign. Exit signs shall be internally or
+           externally illuminated at all times.
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+K: Exit Obstructions:
+
+1003.6
+
+           Obstruction to exits shall not be placed in the required width and exits shall not be obstructed in any manner.
+
+L: Means of Egress:
+
+1003.6
+
+           The required capacity of means of egress shall not be diminished (reduced) along the path of egress travel.
+
+M: Egress Door Widths:
+
+1008.1.1
+
+           Doorways shall not be less than 32 inches in clear width. This does not apply to door openings that are not
+           part of the required means of egress in Group R-2 and R-3 occupancies.
+
+N: Number of Exits:
+
+Table 1015.1
+
+           Two exits or exit access doorways from any space in Group R shall be provided if the occupant load of the
+           space exceeds 10 persons.
+
+O: Access Control Door Locks:
+
+Table 1008.1.3.4
+
+           Access-controlled entrance egress doors are permitted within Group R-1 and R-2 occupancies. The system
+           must be approved. The doors shall be arranged to unlock by a signal from or loss of power to the motion
+           sensor. There shall be a manual unlocking device (button) located 40-48 inches above the floor and within 5
+           feet of the secured doors with a sign that reads: “Push To Exit.” Activation of the fire alarm system or the
+           automatic sprinklers shall unlock the doors.
+
+P: Sleeping Units (10 or Less):
+
+1008.1.8.3
+
+           Egress doors shall be readily operable from the egress side without the use of a key or special knowledge or
+           effort. Doors from individual dwellings or sleeping units of Group R occupancies having an occupant load of
+           10 or less are permitted to be equipped with a night latch, dead bolt or security chain, provided such devices
+           are operable from the inside without the use key or tool.
+
+Q: Emergency Lighting:
+
+1027.5
+
+           In the event of power supply failure, exit illumination shall be automatically provided from an emergency
+           system except where the guestroom or living unit has direct access to the outside at grade level. Applicable
+           to Group R-1, R-2, and R-4 occupancies only. Group R-3 is exempt. Emergency power supply shall provide
+           power for a minimum of 90 minutes. Equipment shall be tested for 30 seconds monthly and 90 minutes
+           annually.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+                                                Fire Protection Systems
+
+A: Sprinkler System Required:
+
+903.2.7
+
+          An automatic sprinkler system shall be provided throughout buildings with a Group R fire area.
+
+B: F and L Fire Extinguishers:
+
+906.1
+
+          1x2A per 600 sq. ft. in light hazard. 1x2A per 3000 sq. ft. in ordinary hazard. Max travel distance to a fire
+          extinguisher is 75 ft. Fire extinguishers shall be mounted, conspicuously located, unobstructed, and
+          available for immediate use. If visual obstruction cannot be avoided, signs shall be provided. Height
+          Requirements: <40lbs – Not more than 5ft >40lbs – Not more than 3.5ft and not less than 4in.
+
+C: Travel Distance:
+
+Table 906.3 (1)
+
+          Maximum travel distance to a fire extinguisher is 75 feet.
+
+D-H: Fire Extinguishers:
+
+906.5
+
+          Fire extinguishers shall be located in conspicuous locations where they will be readily accessible and
+          immediately available for use. Portable fire extinguishers shall not be obstructed or obscured from view. In
+          rooms or areas in which visual obstruction cannot be completely avoided, means shall be provided to
+          indicate the location of extinguishers. Hand-held portable fire extinguishers, not housed in cabinets, shall be
+          installed on hangers or brackets supplied. See Table 906.1 for additional required portable fire extinguishers.
+          Fire extinguishers shall be serviced annually and shall have a current service tag attached. (NFPA 10)
+
+I: Supervised Valves:
+
+903.4
+
+          All valves controlling the water supply and water-flow switches on all sprinkler systems shall be electronically
+          supervised when system has 20 or more sprinkler heads.
+
+J: Painted Sprinkler Heads:
+
+901.8
+
+          Painted sprinkler heads or cover plates are prohibited unless painted at the factory. They cannot be cleaned
+          of paint. They must be replaced. (NFPA 13, 6.2.6.2.1)
+
+K: Kitchen Fire Extinguisher (R1 Hotel/Motels):
+
+904.11
+
+          Group R-1 hotel kitchens must provide extinguishers and protection same as Group A-1 for commercial
+          cooking areas.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+L: Fire Extinguishers:
+
+906.9
+
+           Portable fire extinguishers having a gross weight not exceeding 40 pounds shall be installed so that its top is
+           not more than 5 feet above the floor. Extinguishers having a gross weight exceeding 40 pounds shall be
+           installed so that its top is not more than 3.5 feet above the floor and the bottom not less than 4 inches above
+           the floor.
+
+M: System Maintained:
+
+901.6, Table 901.6.1
+
+           Fire detection, alarm and extinguishing systems shall be maintained in an operative condition at all times,
+           and shall be replaced or repaired where defective. Non-required fire protection systems and equipment shall
+           be inspected, tested and maintained or removed. Records of all inspections, tests and maintenance shall be
+           maintained on the premises for a minimum of 3 years. Fire protection systems shall be inspected, tested and
+           maintained in accordance with the following; Portable fire extinguishers NFPA 10 Dry-chemical extinguishing
+           systems NFPA 17, Wet-chemical extinguishing systems NFPA 17A, Water-based fire protection systems
+           NFPA 25, Fire alarm systems NFPA 72, Commercial Cooking Equipment: NFPA 96, Emergency Standby
+           Power: NFPA 110 and 111.
+
+N: Fire Hydrants:
+
+508.2
+
+           A 3-foot clear space shall be maintained around the circumference of fire hydrants.
+
+O: Smoke Alarms Required:
+
+907.3.2.1
+
+           Single- and multiple-station smoke alarms shall be installed in existing Group R occupancies.
+
+P-S: Fire Alarm System Required:
+
+907.3
+
+           A fire alarm system shall be installed in existing Group R hotel and motels more than three stories or with
+           more than 20 guestrooms. A fire alarm system shall be installed in existing Group R-1 boarding and rooming
+           houses. A fire alarm system shall be installed in existing Group R-2 apartment buildings with more than three
+           stories or with more than 16 dwelling or sleeping units. See exceptions.
+
+T: Commercial Cooking Equipment:
+
+904.11.5
+
+           Commercial cooking equipment involving vegetable oil or animal fat shall be protected by a Class K rated
+           portable fire extinguisher provided within 30-foot travel distance of commercial-type cooking equipment.
+           Minimum 2.5-gallon or two 1.5-gallon Class K wet-chemical portable fire extinguisher.
+
+U: Class K-Fire Extinguishers:
+
+904.11.5.2
+
+           When cooking areas include deep fat fryers, listed Class K portable fire extinguishers shall be provided. 1-4
+           fryers require one 1.5-gallon Class K and 5-8 fryers require two 1.5-gallon Class K portable fire
+           extinguishers.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+V: Maintenance Responsibility:
+
+907.20.5
+
+           The building owner shall be responsible for ensuring that the fire and life safety system are maintained in an
+           operational condition at all times.
+
+W: Fire Watch:
+
+901.7
+
+           Where a required fire protection system is out of service, the fire department and the fire code official shall
+           be notified immediately and, where required by the fire code official, the building shall either be evacuated or
+           an approved fire watch shall be provided for all occupants left unprotected by the shut down until the fire
+           protection system has been returned to service. Where utilized, fire watches shall be provided with at least
+           one approved means for notification of the fire department and their only duty shall be to perform constant
+           patrols of the protected premises and keep watch for fires.
+
+X: Generator Maintenance:
+
+604.3, 604.5
+
+           Emergency and standby power systems shall be maintained in accordance with NFPA 110 and NFPA 111
+           such that the system is capable of supplying service within the time specified for the type and duration
+           required. Routine maintenance, inspection and operational testing shall be overseen by a properly instructed
+           individual.
+
+Y: Cooking Equipment Maintained:
+
+904.11, 2008 (96) 11.2.4, 11.6.1
+
+           Automatic extinguishing systems of commercial cooking equipment shall be serviced at least every 6
+           months by properly trained, qualified, and certified person (s). Fusible links and automatic sprinkler heads
+           with fusible links shall be replaced at least annually. Maintain records and show proof upon inspection, if the
+           exhaust system is found to be contaminated with deposits from grease-laden vapors, the contaminated
+           portions of the exhaust system shall be cleaned by a properly trained, qualified, and certified company or
+           person (s) acceptable to the authority having jurisdiction.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+                                                     Housekeeping
+
+A-E: Combustible Material Storage:
+
+315.2
+
+          Storage of combustible materials in buildings shall be maintained in a neat, orderly manner. Storage shall be
+          separated from heaters or heating devices by distance or shielding so that ignition cannot occur.
+          Combustible material shall not be stored in exits or exit enclosures. Combustible material shall not be stored
+          in boiler rooms, mechanical rooms or electrical equipment rooms.
+
+H: Unvented Heating:
+
+603.4
+
+          Portable unvented fuel-fired heating equipment shall be prohibited in Group R-1, R-2, R-3, and R-4
+          occupancies.
+
+          Exception: Listed and approved unvented fuel-fired heaters in one and two family dwellings.
+
+I: Oily Rags:
+
+304.1
+
+          Materials susceptible to spontaneous ignition, such as oily rags, shall be stored in listed disposal containers
+          (self-closing lids). Contents shall be removed and disposed of daily.
+
+K: Cooking Equipment Cleaned:
+
+904.11.6.3
+
+          Hoods, grease-removal devices, fans, ducts and other appurtenances shall be cleaned at intervals
+          necessary to prevent the accumulation of grease. Cleanings shall be recorded.
+
+L: Fire Department Connection:
+
+508.5.4
+
+          Items shall not be placed or kept near fire hydrants, fire department inlet connections (FDC) in a manner that
+          would prevent such equipment of fire hydrants from being immediately discernible and from gaining
+          immediate access to the fire protection equipment of fire hydrants.
+
+M: Hazardous Spaces:
+
+Table 508.2
+
+          Incidental use areas shall be separated or protected, or both, in accordance with Table 508.2 – 1 hour or
+          assembly Furnace room single piece > 400,000 BTU Boiler room Refrigerant machinery rooms Lab and
+          vocational shops, in Group E Laundry rooms over 100 sq. ft. Storage rooms over 100 sq. ft. 2 hours; or 1
+          hour and assembly Parking garage (section 406.2) Paint shops 2 hours and assembly Incinerator room.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+                                                      Electrical
+
+A-C: Power Strips:
+
+605.4
+
+        Re-locatable power taps shall be of the polarized or grounded type, equipped with overcurrent protection,
+        and shall be listed. Re-locatable power taps shall be directly connected to a permanently installed
+        receptacle. Re-locatable power taps shall not extend through walls, ceilings, floors, under doors or floor
+        coverings, or be subject to environmental or physical damage.
+
+D-J: Extension Cords:
+
+605.5
+
+        Extension cords shall not be a substitute for permanent wiring. Extension cords and flexible cords shall not
+        be affixed to structures, or extended through walls, ceilings or floors. Extension cords shall be plugged
+        directly into an approved receptacle, power tap, or multiplex adapter. Except for approved multi-plug
+        extension cords, each extension cord shall serve only one portable appliance. Extension cords shall not
+        contain splices or damage. Extension cords shall be grounded when serving grounded portable appliances.
+        The capacity of the extension cords shall not be less than the rated capacity of the portable appliance
+        supplied by the cord.
+
+K: Panel:
+
+605.3
+
+        A working space of not less than 30 inches in width, 36 inches in depth and 78 inches in height shall be
+        provided in front of electrical service equipment (panel). Where electrical service equipment is wider than 30
+        inches, the working space shall not be less than the width of the equipment.
+
+L: Junction Box:
+
+605.5
+
+        Open junction boxes and open wiring splices shall be prohibited. Approved covers shall be provided for all
+        switch and outlet boxes.
+
+M: Electrical Motors:
+
+605.8
+
+        Electrical motors shall be maintained free from excessive accumulations of oil, dirt, waste and debris.
+
+N-O: Temporary Wiring:
+
+605.9
+
+        Temporary wiring for electrical power and lighting installations is allowed for a period not to exceed 90 days.
+
+P: Multi-Plug Adapters:
+
+605.4
+
+        Multi-plug adapters, such as cube adapters, un-fused plug strips or any other device not complying with the
+        International Code Council Electrical Administrative Provisions shall be prohibited.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+                                                      Miscellaneous
+
+F-J: Evacuation Plan:
+
+404.2, 405.2
+
+           An approved fire safety and evacuation plan shall be prepared and maintained for Group R-1 buildings and
+           Group R-2 college and university buildings. Employees in Group R-1 occupancies shall be trained in the fire
+           emergency procedures described in the fire evacuation and fire safety plans. Training is annual. Emergency
+           evacuation drills shall be held in Gorup R-1 occupancies quarterly on each shift by employees only. In Group
+           R-1 occupancies, a diagram depicting two evacuation routes shall be posted on or immediately adjacent to
+           every required egress door from each hotel, motel or dormitory sleeping unit.
+
+K: Emergency Guide (R-2 Apartment/Dorm):
+
+408.9
+
+           In Group R-2 occupancies, each tenant shall be given a copy of the emergency guide prior to occupancy.
+
+L: System Maintenance:
+
+907.20.5
+
+           The building owner shall be responsible for ensuring that the fire and life safety system are maintained in an
+           operational condition at all times.
+
+M: Evacuation:
+
+408.9
+
+           In Group R-4 occupancies, a fire safety and evacuation plan shall include special staff actions, including fire
+           protection procedures for residents and shall be amended or revised upon admission of a resident with
+           unusual needs.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+                                                Hazardous Materials
+
+B-C: Hazardous Material Storage:
+
+2703.9.8, 3404.3.3.5.3
+
+         Storage of incompatible materials shall be separated if in containers having a capacity over 5 lbs. of 0.5
+         gallon. Shelf storage of flammable and combustible liquids shall be orderly.
+
+D: Cabinet Identification:
+
+27083.8.7.2
+
+         Hazardous materials storage cabinets shall be clearly identified in an approved manner with red letters on a
+         contrasting background to read: “Hazardous – Keep Fire Away.”
+
+E: Flammable Liquid/Gas Storage:
+
+3404.3.4.4
+
+         Flammable and combustible liquids used for maintenance and the operation of equipment exceeding 10
+         gallons shall be stored in a liquid storage cabinet.
+
+F: Below Grade LPG Storage:
+
+3803.2.1.1
+
+         Portable LP-gas containers shall not be used in a basement, pit or similar location where heavier-than-air
+         gas might collect.
+
+H: Hazardous Material Storage:
+
+3503.1
+
+         Except for cylinder not exceeding 250 cu. Ft. each, used for maintenance purposes, patient care or
+         operation of equipment, flammable gases shall not be stored or used in Group R occupancies.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+                                                     Fire Protection
+
+L: Vertical Shafts:
+
+IFC 704.1, Table 704.1
+
+         Interior vertical shafts, including but not limited to stairways, elevator hoist ways, service and utility shafts
+         that connect two or more stories of a building shall be enclosed or protected as specified in Table 704.1.
+         Group I Vertical openings connecting two or more stories 1-hour protection all, other than Group I Vertical
+         openings are connecting three to five stories 1-hour protection or automatic sprinklers throughout all, other
+         than Group I Vertical openings connecting more than five stories 1-hour protection.
+
+A-E: Rated Doors Maintained:
+
+703.2, 703.4
+
+         Fire doors and smoke barrier doors shall not be blocked or obstructed or otherwise made inoperable. Fire
+         door assemblies shall not be modified. Swinging fire doors shall close from the full open position and latch
+         automatically. The door closer shall exert enough force to close and latch the door from any partially open
+         position. Horizontal and vertical sliding and rolling fire doors shall be inspected and tested annually to
+         confirm proper operation and full closure. A written record shall be maintained and be available. When
+         magnetic hold-open devices on fire doors are out of service the door shall remain in the closed position.
+
+F-H Decorations:
+
+806.1, 807.1
+
+         Natural cut trees shall be prohibited in Group M occupancies unless protected by automatic sprinkler
+         system. Natural cut trees shall be prohibited in Group R-1 and R-2 occupancies unless protected by an
+         automatic sprinkler system. Curtains, draperies, hangings and other decorative materials shall be flame
+         resistant or be noncombustible in Group R-1 and dormitories in Group R-2. Ask to see certificate of
+         treatment.
+
+I: Fire Doors Fusible Links:
+
+703.2
+
+         Fire door fusible links shall be replaced promptly whenever fused or damaged.
+
+J: Fire-Resistance – Rated Construction:
+
+703.1
+
+         The required fire-resistance rating of fire-resistance-rated construction (including walls, fire stops, shaft
+         enclosures, partition smoke barriers, floors, fire-resistive coatings and sprayed fire-resistant materials
+         applied to structural members and fire-resistant joint systems) shall be maintained. Such elements shall be
+         properly repaired, restored or replaced when damages, altered, breached or penetrated. Openings made
+         therein for the passage of pipes, electrical conduit, wires, ducts, air transfer openings and holes made for
+         nay reason shall be protected with approved methods capable of resisting the passage of smoking and fire.
+         Openings through fire-resistance-rated assemblies shall be protected by self- or automatic-closing doors of
+         approved construction meeting the fire protection requirements for the assembly.
+
+K: Interior Finish:
+
+803.1, 803.5, Table 803.3
+
+         Interior wall and ceiling finish shall have a flame spread index not greater than that specified for the group
+         and location designated. Sprinklered- Class C: Exits passageways, corridors, and enclosed rooms and
+         spaces, Non-sprinklered- Class B: Exits passageways and corridors, Class C: Enclosed rooms and spaces.
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+                                          Kansas Statutes and Regulations
+
+KS01: Fire Protection Changes:
+
+K.S.A. 31-150
+
+        New buildings or changes in exiting, fire resistance, or handicapped accessibility, including modifications or
+        additions, shall require that stamped and sealed plans from a licensed architect or engineer be submitted
+        and reviewed by the appropriate authority having jurisdiction. Documentation indicating that the plans have
+        been submitted and approved shall be available to the inspector.
+
+KS02: Emergency Procedures:
+
+K.A.R. 22-18-2(c)
+
+        Tornado procedures shall be established by the administrator of each community college and university for
+        all buildings, which designates tornado safety refuge areas. A notice of location of the tornado safety refuge
+        area shall be posted in conspicuous location. Administrators shall provide copies of tornado plans to local or
+        county preparedness director for approval.
+
+KS03: Building Structural Soundness:
+
+K.S.A. 31-133(a)
+
+        If a building shows severe or worsening settlement, severe cracking of exterior bearing walls, or roof
+        deflection, and a report shall be provided to OSFM for review and determination of appropriate action.
+
+KS04: Exterior Stair Supports:
+
+K.S.A. 31-133(a)
+
+        Exterior stair support shall be either:
+
+        a) structurally supported to the ground; or
+
+        b) documentation of an inspection by an architect or engineer with structural background within the last 5
+        years assuring that the exit stairs will remain structurally sound when supported solely by a building wall.
+
+KS05: Below Grade LP Installation:
+
+K.S.A. 31-133(a)
+
+        Where LP gas appliances are located in below-grade installations where an accumulation of gas vapors is
+        possible, the area or room shall be protected by an approved vapor removal system. If LP gas piping system
+        has not been pressure tested within the last five years or since the installation of new LP gas appliances or
+        changes to LP gas piping, NFPA 85 and NFPA 54 require that the system is pressure tested and
+        documented by authorized LP gas dealer or marketer.
+
+KS06: Boiler Certificate:
+
+K.S.A. 44-924(b)
+
+        A current boiler certificate, no more than 18 months beyond expiration date, shall be posted. This is required
+        for all boilers, all water heaters with a water capacity of 85 gallons or greater, and all water heaters rated for
+        more than 200,000 BTU’s, regardless of size.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+KS07: System Service:
+
+K.A.R. 22-10
+
+        Fixed extinguishing systems protecting commercial cooking equipment shall be serviced by a firm licensed
+        by OSFM. Fusible links shall be replaced yearly. Documentation shall be maintained on-site.
+
+KS08: PTR/Valve Relief:
+
+K.S.A. 44-924(b)
+
+        Pressure and temperature relief (PTR) valves on fuel fired hot water heaters shall appear operational and
+        shall have piping which extends to within 6 inches of the ground. Piping shall not have bends and shall be of
+        an appropriate material.
+
+KS09: Loose Combustible Storage:
+
+K.S.A. 31-133
+
+        Loose combustible storage is prohibited in boiler and furnace rooms and exit ways. Loose combustible
+        storage includes pasteboard boxes, wooden furniture, and material packaged in combustible containers. It
+        does not include bound books or paper bound in reams.
+
+KS10: Compressed Gas Cylinder:
+
+K.S.A. 31-133
+
+        Compressed gas cylinders shall be adequately secured with caps in place when not in use. Cylinders shall
+        be stored away from heat sources.
+
+KS11: Gas Powered Equipment:
+
+K.S.A. 31-133
+
+        Gasoline powered equipment storage is prohibited in boiler, fuel-fired equipment rooms and exit ways.
+
+KS12: Flammable Liquid Storage:
+
+K.S.A. 31-133
+
+        Flammable liquid storage is prohibited in boiler and fuel fired equipment rooms and exit ways. Flammable
+        liquids shall be in containers approved for the use and marked with the material’s name. Storage shall be in
+        an approved flammable liquid storage cabinet when total quantities stored exceed 5 gallons.
+
+KS13: Dangerous Conditions:
+
+K.S.A. 31-133
+
+        Situations requiring immediate action and building evacuation to mitigate an imminent danger to life or
+        health of the building occupants that is not a normal component of the inspection, including a natural gas
+        leak, atmospheric contaminant within the building, complete power failure, or similar emergencies. Inspector
+        is required to contact the Chief of Fire Prevention Division for immediate guidance and determination of
+        requirements and facility response.
+
+KS14: Fire Drill Frequency (Group E):
+
+K.A.R. 22-18-2(a)
+
+        Fire drills shall be conducted once each month that school is in session to simulate actual fire. If records
+        indicate one or more months past due, a drill shall be conducted in the inspector’s presence.
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+KS15: Fire Drill and Disability (Group E):
+
+K.A.R. 22-18-2(a)
+
+        Fire drill procedures for occupants with disabilities shall exist in a written format and shall be maintained.
+
+KS16: Fire Drill Documentation (Group E):
+
+K.A.R. 22-18-2(a)
+
+        Fire drills shall be documented on a record provided by OSFM and publicly posted. Inspector shall verify
+        owner information is complete on drill record.
+
+KS17: Tornado Drill Alarm (Group E):
+
+K.A.R. 22-18-2(c)
+
+        Tornado drills shall use a distinctly different alarm sound from that used for the fire alarm.
+
+KS18: Tornado Refuge Area (Group E):
+
+K.A.R. 22-18-2(c)
+
+        Tornado refuge area location shall be conspicuously posted, typically by signage at a building’s main
+        entrance bulletin board, classrooms, and/or signage at refuge area.
+
+KS19: Tornado Drill Documentation (Group E):
+
+K.A.R. 22-18-2(c)
+
+        Tornado drill shall be documented on record provided by OSFM and publicly posted.
+
+KS20: Escape Window (Group E):
+
+K.S.A. 31-150
+
+        Mobile classrooms require a remote, complying escape window or second exit door.
+
+        Exception: When each classroom has a door directly to the exterior.
+
+KS21: Bus Barns (Group E):
+
+K.S.A. 31-144(c)
+
+        Bus barns and district vehicle repair garages function independently of classrooms and require a 2 hour fire
+        barrier with 1 ½ hour rated door assemblies between them and K-12 school areas, unless otherwise
+        accepted by OSFM and documented in writing. (For auto-shop classrooms, see hazardous rooms.)
+
+KS22: Juvenile Detention Fire Drills (Group I):
+
+K.A.R. 22-15-7(q)
+
+        Quarterly fire drills for staff training are required and must be documented.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+KS23: Juvenile Detention Construction (Group I):
+
+K.A.R. 22-15-7(b) K.S.A. 31-136 (Equivalent construction types)
+
+        Approved construction shall be one of the following for single story buildings:
+
+        1) One hour non-combustible, or
+
+        2) When previously approved and documented in writing by the OSFM
+
+                    a) one-hour wood frame construction, fully sprinkled, and limited 3,900 sq. ft. of detention space, or
+
+                    b) heavy timber construction and fully sprinkled.
+
+KS24: Rolling Fire Doors:
+
+K.S.A. 31-133, 06
+
+        If a fire-rated door is not required at a location, the rolling door should be secured or removed. If a fire-rated
+        door is required, the rolling door should be secured in place or removed completely, and then replaced with
+        properly rated swinging doors. If the overhead doors cannot be immediately eliminated, the rolling doors
+        shall be checked to insure they are being maintained properly and plans should be made to replace the
+        doors.
+
+
+
+
+Kansas Building Fire Safety Handbook 5th Edition
+July, 2024: Office of the State Fire Marshal
+566              COURT OF APPEALS OF KANSAS                               VOL. 66
+
+              Housing Authority of Kansas City v. McConnell
+
+                                  (589 P.3d 62)
+                                   No. 128,977
+
+ HOUSING AUTHORITY OF THE CITY OF KANSAS CITY, Appellee,
+           v. RODERICK MCCONNELL, Appellant.
+
+
+                           SYLLABUS BY THE COURT
+
+1.    LANDLORD AND TENANT—Notice Served on Tenant by Landlord to
+      Vacate Premises under K.S.A. 58-2564(a)—Notice Must Specify Alleged
+      Breaches. When a landlord serves a tenant with a notice under K.S.A. 58-
+      2564(a) that they have 14 days to cure an alleged breach or 30 days to leave
+      the premises, that 14-30 notice must meet several requirements. In particu-
+      lar, the 14-30 notice must clearly and explicitly specify any alleged
+      breaches, so that the tenant can understand what steps must be taken to cure
+      those breaches.
+2.    SAME—30-Day Notice of Termination of Lease under Statute—Valid 14-
+      30 Notice Required for Eviction. A landlord's 30-day notice of the termina-
+      tion of a residential lease (without any curative period) under K.S.A. 58-
+      2564(a) can give rise to an eviction only after a valid 14-30 notice under
+      that statute has been served.
+    Appeal from Wyandotte District Court; CANDICE ALCARAZ, judge. Oral ar-
+gument heard on January 6, 2026. Opinion filed April 10, 2026. Reversed and
+remanded with directions.
+      Nicholas Blessing, of Kansas Legal Services, Inc., for appellant.
+    Hale G. Weirick and Steve N. Gatzoulis, of Evans & Mullinix, P.A., of
+Shawnee, for appellee.
+
+Before WARNER, C.J., HURST and BOLTON FLEMING, JJ.
+     WARNER, C.J.: This case concerns the level of detail a land-
+lord must provide a tenant believed to be in violation of the lease
+before the landlord may file an eviction action. Under K.S.A. 58-
+2564(a), if a tenant is in material noncompliance with a term of
+the lease, the landlord may notify the tenant in writing "specifying
+the acts and omissions constituting the breach" and informing the
+tenant that the lease will be terminated in 30 days unless the tenant
+remedies the breach within 14 days. Courts commonly call this
+written notification a "14-30 notice."
+     In this case, Roderick McConnell argues that the district court
+VOL. 66      COURT OF APPEALS OF KANSAS                        567
+
+          Housing Authority of Kansas City v. McConnell
+
+erred in finding that the Housing Authority of the City of Kansas
+City, Kansas, provided him with sufficient notice and opportunity
+to correct the alleged lease violations before filing for eviction.
+McConnell contends the 14-30 notice he received did not specify
+how he violated a rule against disturbing his neighbors in their
+accommodations, rendering the 30-day notice of termination that
+followed legally infirm. We agree. We thus reverse the district
+court's judgement in favor of the Housing Authority and remand
+with directions to consider what relief is appropriate based on the
+erroneous eviction.
+           FACTUAL AND PROCEDURAL BACKGROUND
+     McConnell previously rented an apartment in the Wyandotte
+Towers, managed by the Housing Authority of the City of Kansas
+City. When McConnell signed his rental agreement, some of the
+terms included agreeing to "[n]ot disturb other residents' peaceful
+enjoyment of their accommodations"; to "act in a cooperative
+manner with neighbors and the Housing Authority's Staff"; and to
+refrain from "acting or speaking in an abusive or threatening man-
+ner toward neighbors and the Housing Authority's staff."
+     The rental agreement also required the Housing Authority to
+fulfill certain obligations. For example, before Housing Authority
+staff could enter McConnell's apartment, the staff were required
+to provide him with written notice 48 hours in advance. And if the
+Housing Authority wished to evict McConnell, it was required to
+provide 30 days' written notice of termination specifically stating
+the reasons for termination.
+     In October 2024, the Housing Authority filed a petition to
+evict McConnell from the premises, stating that it had sent a 14-
+30 notice to McConnell on August 22, 2024, yet he continued to
+possess the unit without permission. While eviction proceedings
+were ongoing, the Housing Authority and McConnell renewed the
+rental agreement for an additional one-year term. On November
+5, 2024, McConnell answered the complaint and counterclaimed
+that the Housing Authority failed to provide appropriate heating
+during the previous winter and refused to repair the heating when
+McConnell complained. The Housing Authority later dismissed
+this eviction action, but McConnell retained his counterclaim.
+568          COURT OF APPEALS OF KANSAS                    VOL. 66
+
+          Housing Authority of Kansas City v. McConnell
+
+     During his time as a tenant, McConnell and the Housing Au-
+thority staff clashed on several issues, including that McConnell
+allowed his wife, Sherlynn Chege (who was not listed as a tenant
+on the lease), to stay in his apartment. On November 6, 2024, a
+security camera recording showed McConnell going to the Hous-
+ing Authority's office and speaking to two of the staff. During the
+encounter, McConnell appeared animated, spoke in a loud voice,
+and gesticulated. This encounter was captured through a security
+video in the entryway of the complex, but it is difficult to under-
+stand what all is being said on the recording. According to the
+property manager of the building, McConnell was upset that
+Chege was banned from the building and used abusive language
+toward the property manager and other staff.
+     On November 18, the Housing Authority sent McConnell an-
+other 14-30 notice alleging that McConnell had breached the
+rental agreement because he allowed an unauthorized guest,
+Chege, to live in his apartment; did not keep his dog on a leash on
+June 7, 2024; did not maintain his animal in common areas on
+November 6, 2024; "disturbed the peace of enjoyment for others";
+and continued to invite Chege into his unit despite her being
+banned from the premises. The notice stated that if McConnell did
+not remedy the breaches in 14 days, his tenancy would be termi-
+nated.
+     Nine days later, McConnell's attorney sent a letter to Housing
+Authority counsel "as part of a good faith effort by Mr. McConnell
+to remedy the alleged breaches of the rental agreement." The letter
+stated that McConnell had remedied all breaches that were specif-
+ically defined, including not inviting Chege back to the property
+and keeping his service dog on a leash. The letter noted, however,
+that some breaches were not specifically defined thus McConnell
+did not know what actions served as the basis of the alleged vio-
+lations. Regardless, McConnell's counsel indicated that
+McConnell would maintain his dog on a leash in common areas
+and would "refrain from disturbing any other residents."
+     On December 3, the property manager went to McConnell's
+apartment to see if he had cured the breaches listed in the 14-30
+notice. A guest who was in McConnell's apartment at the time
+opened the door and told McConnell "the lady" was there.
+VOL. 66       COURT OF APPEALS OF KANSAS                        569
+
+          Housing Authority of Kansas City v. McConnell
+
+McConnell was in the bedroom with his home health nurse at the
+time. McConnell said that there was some "commotion" after the
+door was answered. Both McConnell and the nurse later testified
+that McConnell did not give the property manager permission to
+enter the apartment. But the property manager testified that "[h]e
+told someone to let me in." She entered the apartment and stood
+in the entryway. After 10 minutes, she started to "look around and
+do [her] inspection" and went into the "back area" where she be-
+lieved most of Chege's stuff was held. At that point, McConnell
+became angry and told her to leave. She left the apartment and
+heard McConnell continue to yell after she had gone.
+     On December 17, the Housing Authority sent a 30-day notice
+of eviction (what we call the "30-day notice") to McConnell. This
+notice alleged that on December 3, McConnell failed to cooperate
+with a "unit inspection"; spoke to Housing Authority staff in an
+"abusive and threatening manner"; and "disturbed the peace and
+enjoyment of his neighbors by yelling and disrupting the neigh-
+bors while arguing with the housing authority staff." There was no
+provision in the 30-day notice allowing McConnell to remedy
+these alleged breaches.
+     In January 2025, the Housing Authority amended its petition,
+alleging that because McConnell had received two notices of evic-
+tion (the November 14-30 notice and the December 30-day no-
+tice), he was unlawfully in possession of the unit. The district
+court conducted a two-day bench trial in February 2025. The court
+ultimately awarded $500 in restitution to McConnell for one of his
+counterclaims but entered judgment in favor of the Housing Au-
+thority, granting it possession of the unit and giving McConnell
+14 days to vacate. McConnell appealed.
+                           DISCUSSION
+     The relationship between landlords and tenants in residential
+housing in this state is governed by the Kansas Residential Land-
+lord and Tenant Act (commonly called the RLTA). See K.S.A. 58-
+2540 et seq. Among other things, the RLTA codifies several sub-
+stantive rights and responsibilities of landlords and tenants, spec-
+ifies when a rental agreement may be ended, and defines when and
+how a landlord may evict a tenant from a housing unit. Washburn
+570           COURT OF APPEALS OF KANSAS                    VOL. 66
+
+          Housing Authority of Kansas City v. McConnell
+
+South Apartments v. Hession, 65 Kan. App. 2d 626, 632-33, 570
+P.3d 126 (2025).
+     K.S.A. 58-2564 establishes when and under what conditions
+a landlord may terminate a rental agreement, outlining the steps
+that must be taken before an eviction case is filed. 65 Kan. App.
+2d at 638. The issues in this appeal center on K.S.A. 58-2564(a),
+which states that if a tenant is in material noncompliance with the
+rental agreement, "the landlord may deliver a written notice to the
+tenant specifying the acts and omissions constituting the breach
+and that the rental agreement will terminate upon a date not less
+than 30 days after receipt of the notice, if the breach is not reme-
+died in 14 days." (Emphasis added.) This subsection further pro-
+vides that if the tenant commits the breach listed in the notice "or
+a similar breach" after the 14-day period, the landlord may notify
+the tenant in writing "that the rental agreement will terminate upon
+a date not less than 30 days after receipt of the notice without
+providing the opportunity to remedy the breach." K.S.A. 58-
+2564(a).
+     The district court found that the 30-day notice the Housing
+Authority sent McConnell on December 3 provided a legal basis
+to evict him from the apartment. McConnell now challenges that
+ruling on multiple fronts. He claims that the Housing Authority's
+14-30 notice in November—the predecessor to the 30-day no-
+tice—did not specify how he "disturbed the peace of enjoyment
+for others" and thus did not provide him with sufficient notice to
+allow him to cure the alleged breach. McConnell also argues that
+there was insufficient evidence to support the eviction. After care-
+fully reviewing the record and the parties' arguments, we agree
+that the 14-30 notice was insufficient, rendering the later 30-day
+notice invalid.
+     Our state's appellate courts have long held that a 14-30 notice
+should clearly and explicitly specify any alleged breaches, so that
+the tenant can understand what steps must be taken to cure those
+breaches and remain on the premises. A notice is insufficient if it
+is "'ambiguous, misleading, and unintelligible to the average per-
+son who is to be affected by it.'" Fenn v. Windsor at Kings-
+borough, Inc., 226 Kan. 653, 656, 603 P.2d 188 (1979) (quoting
+58 Am. Jur. 2d Notice § 23, p. 505).
+VOL. 66       COURT OF APPEALS OF KANSAS                        571
+
+          Housing Authority of Kansas City v. McConnell
+
+     In Fenn, the 14-30 notice provided by the landlord did not in-
+clude any reference to a 14-day window for remedying the
+breach—stating only that the tenants had 30 days to surrender pos-
+session of the property due to their "'continuing loud and disrup-
+tive behavior.'" 226 Kan. at 656. The Kansas Supreme Court found
+that the notice did not comply with the statutory require-ment that
+the written notice specify "(1) the [act or] omission con-stituting
+the breach; (2) the 30 day termination of the lease; and
+(3) the right to remedy the breach within 14 days." 226 Kan. at
+656 (referencing K.S.A. 1978 Supp. 58-2564[a], which is materi-
+ally the same as K.S.A. 58-2564[a]).
+     While the Housing Authority's 14-30 notice to McConnell on
+November 18 properly informed McConnell of his general right
+to remedy the breach, the notice failed to "specify the acts and
+omissions constituting the breach." K.S.A. 58-2564(a). The notice
+did not include the date of the alleged violation, nor any descrip-
+tion of the act to which the Housing Authority was referring. In-
+stead, the notice merely cited a vague disturbance of "the peace of
+enjoyment for others," without specifying any facts regarding who
+was involved, what occurred, or where and when the disturbance
+happened. This is patently insufficient under K.S.A. 58-2564(a).
+     The Housing Authority argues that there was sufficient detail
+in the 14-30 notice because it was "issued less than two weeks
+after the incident" on November 6, 2024 (when McConnell argued
+with Housing Authority staff in the office), and thus McConnell
+should have known what act the notice was referring to due to the
+proximity in time to that incident. But we disagree. Indeed, the
+letter from McConnell's attorney indicated that it was unclear what
+the notice's language relating to a disturbance referenced, and the
+Housing Authority never answered this inquiry. Nor does the
+notice provide sufficient information so that a court could as-sess
+whether the alleged breach had been cured. In fact, the notice
+specifically identifies dates for two other alleged breaches but re-
+mains silent as to the circumstances surrounding the disturbance.
+As a panel of this court observed previously in Hill City Housing
+Authority v. Nevins, No. 126,274, 2024 WL 3466559, at *5 (Kan.
+App. 2024) (unpublished opinion), "from an objective standpoint,
+the notice fails to precisely identify the grounds for termination."
+572           COURT OF APPEALS OF KANSAS                    VOL. 66
+
+          Housing Authority of Kansas City v. McConnell
+
+     K.S.A. 58-2564(a) states that a 30-day notice (without any cu-
+rative period) can give rise to an eviction only after a valid 14-30
+notice has been served. Then if a tenant commits the same "breach
+or a similar breach" after the 14-day period, the landlord may no-
+tify the tenant in writing "that the rental agreement will terminate
+upon a date not less than 30 days after receipt of the notice" and
+may do so "without providing the opportunity to remedy the
+breach."
+     The 30-day notice alleged that on December 3, 2024,
+McConnell: (1) failed to cooperate with a "unit inspection"; (2)
+spoke to Housing Authority staff in an "abusive and threatening
+manner"; and (3) "disturbed the peace and enjoyment of his neigh-
+bors by yelling and disrupting the neighbors while arguing with
+the housing authority staff." The only allegation that might con-
+stitute a "similar breach" as any described in the November notice
+is the third violation—that McConnell disturbed the peace and en-
+joyment of his neighbors on December 3 (when the property man-
+ager entered McConnell's apartment without his permission to
+check for compliance with the 14-30 notice). And as we have al-
+ready established, the Housing Authority's 14-30 notice did not
+sufficiently specify the basis for that allegation.
+     Because the 14-30 notice did not specify the acts in which
+McConnell "disturbed the peace of enjoyment for others," the 30-
+day notice that followed was legally deficient. See K.S.A. 58-
+2564(a). The Housing Authority did not properly notify
+McConnell of the breaches it alleged as the basis for terminating
+his lease.
+     Because the 30-day notice—the basis for evicting
+McConnell—was invalid, the district court lacked legal authority
+to evict him from the premises. We thus reverse the district court's
+judgment.
+     McConnell raises a few other arguments under his first issue,
+mainly that the 14-30 notice also did not comply with the lease
+itself and with the specificity requirements of federal housing
+laws. McConnell also argues that there was insufficient evidence
+to support the eviction. Because we have already determined that
+we must reverse the district court's judgment, consideration of
+these remaining arguments is unnecessary.
+VOL. 66       COURT OF APPEALS OF KANSAS                         573
+
+           Housing Authority of Kansas City v. McConnell
+
+    Before closing, we pause to note that McConnell has re-
+quested reinstatement of his lease as a remedy for the erroneous
+eviction. But McConnell did not request a stay of the district
+court's order. As a result, McConnell was evicted from the apart-
+ment and now lives in another residence, and his former apartment
+is no longer available. Under these circumstances, it may not be
+feasible to render McConnell the relief he requests. We therefore
+remand the case to the district court to determine what relief is
+appropriate in light of the erroneous eviction. See, e.g., K.S.A. 58-
+2563 (stating tenant who has been improperly evicted may recover
+one-and-a-half months' rent or actual damages sustained by the
+tenant, whichever is greater).
+    Reversed and remanded with directions.
+852                SUPREME COURT OF KANSAS                              VOL. 320
+
+                                Schutt v. Foster
+
+                                   No. 126,555
+
+     JOHN SCHUTT, as Agent for the Owner J.E. SCHUTT & M.A.
+              SCHUTT FAMILY TRUST, Appellee, v.
+                  SHERRI FOSTER, Appellant, v.
+           JOHN SCHUTT and STUDIO 605-RENEW, LLC,
+                     Third-party Defendants.
+                                  (572 P.3d 770)
+                           SYLLABUS BY THE COURT
+
+1.    APPEAL AND ERROR—Issues Raised for First Time on Appeal—Su-
+      preme Court Rule Requires Exception to Preservation Rule Be Briefed.
+      When appellants raise issues for the first time on appeal, Kansas Supreme
+      Court Rule 6.02(a)(5) (2025 Kan. S. Ct. R. at 36) requires that they brief an
+      exception to the preservation rule in their opening brief.
+2.    SAME—Reply Brief—Exception to General Preservation Rule May Not Be
+      Invoked. Appellants may not invoke an exception to the general preserva-
+      tion rule for the first time in a reply brief.
+      Review of the judgment of the Court of Appeals in an unpublished opinion
+filed July 26, 2024. Appeal from Johnson District Court; JOHN MCENTEE, judge.
+Oral argument held May 13, 2025. Opinion filed July 25, 2025. Judgment of the
+Court of Appeals reversing the district court in part is reversed, and its opinion
+is vacated. Judgment of the district court is affirmed.
+    Eric G. Kraft, of Eric Kraft Law, P.A., of Prairie Village, argued the cause
+and was on the briefs for appellant.
+    Jadh J. Kerr, of Speer & Holliday, LLP, of Olathe, argued the cause and
+was on the briefs for appellees.
+
+The opinion of the court was delivered by
+    WALL, J.: This matter arises from a substantive dispute be-
+tween landlord and tenant. A district court awarded John Schutt
+$21,240 in late fees after Sherri Foster missed three $1,900 rent
+payments, and Foster appealed from this judgment. But the matter
+turns on a question of appellate procedure—issue preservation.
+    Foster argued for the first time on appeal that the late-fee pro-
+vision in the lease was unconscionable. Issues not raised before
+the district court typically cannot be raised on appeal—a principle
+we often call the preservation rule. But we have recognized ex-
+ceptions to this general rule. And the Court of Appeals panel relied
+VOL. 320       SUPREME COURT OF KANSAS                           853
+
+                          Schutt v. Foster
+
+on these exceptions to reach the merits and conclude that the late
+fees were unconscionable under the Residential Landlord and
+Tenant Act, K.S.A. 58-2540 et seq.
+    But our appellate rules establish a procedure that appellants
+must follow to properly invoke exceptions to the preservation rule.
+Supreme Court Rule 6.02(a)(5) (2025 Kan. S. Ct. R. at 36) re-
+quires appellants to identify these exceptions in their opening
+brief. The failure to do so precludes appellate review of unpre-
+served issues.
+    Foster failed to comply with this requirement. She first in-
+voked exceptions to the preservation rule in her reply brief. Our
+rules foreclose this practice. And the panel erred by relying on
+Foster's preservation exceptions to reach the merits. We thus re-
+verse the judgment of the Court of Appeals and vacate its opinion.
+            FACTS AND PROCEDURAL BACKGROUND
+     Schutt leased a residential property to Foster. Under the lease,
+Foster agreed to pay $1,900 per month in rent due on the first of
+the month, with a late charge of $20 per day for any rent paid after
+the due date. Foster also worked as a construction manager, and
+she agreed to perform construction services for Schutt on several
+of his properties.
+     Foster failed to pay her rent for July, August, and September
+2020. In September 2020, Schutt filed a forcible detainer petition
+for rent and possession of the property. Schutt sought a judgment
+against Foster for $7,600 in unpaid rent and late fees plus "ongo-
+ing rent and fees which may accrue during the pendency of the
+action." Foster countersued Schutt for money he owed her for con-
+struction services.
+     Almost two-and-a-half years later, the district court held a
+bench trial and issued its judgment in May 2023. It found Foster
+owed Schutt $5,700 in unpaid rent. The district court also awarded
+Schutt late fees of $21,240. It calculated this amount by applying
+the $20-per-day late fee to the 1,062 days between Foster's first
+missed rent payment and the judgment date. The district court also
+found that Schutt owed Foster for construction work she had com-
+pleted on Schutt's properties and for Schutt's failure to itemize
+damages or return Foster's security deposit. After offsetting the
+854            SUPREME COURT OF KANSAS                     VOL. 320
+
+                          Schutt v. Foster
+
+judgments, the district court ruled that Schutt owed Foster
+$544.98.
+     Foster appealed, challenging the district court's award of
+$21,240 in late fees on several grounds. First, she argued that
+Schutt did not specifically ask for that amount in his forcible de-
+tainer petition. Second, she claimed that the late fees were uncon-
+scionable. Finally, she believed that it was improper to impose late
+fees after she had invoiced Schutt for her construction work or
+after she had vacated the property.
+     Schutt argued that Foster's challenges to the late fees were not
+preserved for appellate review because she had not raised them
+before the district court. He added that Foster had violated Rule
+6.02(a)(5) because she did not explain in her opening brief why
+the newly raised issues were properly before the Court of Appeals.
+     In her reply brief, Foster maintained that her arguments were
+properly before the Court of Appeals because exceptions to the
+preservation rule applied. A panel of the Court of Appeals reached
+the merits, relying on the preservation exceptions Foster asserted
+in her reply brief. Schutt v. Foster, No. 126,555, 2024 WL
+3548641, at *2 (Kan. App. 2024) (unpublished opinion).
+     The panel held that Schutt's petition adequately requested on-
+going rent and late fees. 2024 WL 3548641, at *3. But it held that
+the late fees were unconscionable under K.S.A. 58-2544(a). 2024
+WL 3548641, at *4. It reasoned that the $20-per-day late fee be-
+came unconscionable when the district court assessed late fees af-
+ter the date Foster had vacated the property. 2024 WL 3548641,
+at *4. The panel thus reversed and remanded to the district court.
+It instructed the district court to vacate late-fee amounts exceeding
+$2,460—the amount due for the 123 days between Foster's first
+missed rent payment and the date she vacated the property. 2024
+WL 3548641, at *4. Finally, the panel held that Foster's remaining
+issues were rendered moot by the panel's unconscionability hold-
+ing. 2024 WL 3548641, at *3.
+     Schutt moved for rehearing or modification. He argued that
+K.S.A. 58-2544(b) required the panel to remand the case for an
+evidentiary hearing before deciding whether the late fees were un-
+conscionable. See K.S.A. 58-2544(b) (when the unconscionability
+VOL. 320        SUPREME COURT OF KANSAS                            855
+
+                           Schutt v. Foster
+
+of a rental agreement is put into issue, "the parties shall be af-
+forded a reasonable opportunity to present evidence as to the set-
+ting, purpose and effect of the rental agreement . . . to aid the court
+in making the determination"). The Court of Appeals denied his
+motion.
+    We granted Schutt's petition for review. He raises four issues.
+First, Schutt argues that the panel erred by reaching the merits of
+Foster's unpreserved unconscionability claim. Second, he claims
+that the panel was required to remand for an evidentiary hearing
+before ruling on the unconscionability issue. Third, he contends
+that there was no evidence that the late-fee provision was uncon-
+scionable when made. Finally, he believes the panel erred by rul-
+ing that late fees cannot accrue after Foster vacated the property.
+    Foster did not cross-petition for review of the panel's adverse
+holdings on her other claims, so they are not properly before us.
+See Supreme Court Rule 8.03(i)(1) (2025 Kan. Sup. Ct. R. at 59)
+(issues subject to review include those issues which the petition or
+cross-petition allege were erroneously decided by the Court of Ap-
+peals or warrant review for other reasons).
+    We heard arguments from the parties on May 13, 2025. Juris-
+diction is proper. K.S.A. 20-3018(b) (providing for petitions for
+review of Court of Appeals decisions); K.S.A. 60-2101(b) (Su-
+preme Court has jurisdiction to review Court of Appeals decisions
+upon petition for review).
+                             ANALYSIS
+    We need only address Schutt's first issue—whether the panel
+erred by reaching the merits of Foster's unconscionability issue—
+because it is dispositive of the appeal.
+    A. Standard of Review and Relevant Legal Framework
+     When a panel of the Court of Appeals decides to address an
+unpreserved issue for the first time on appeal, we review that de-
+cision for an abuse of discretion. In re A.S., 319 Kan. 396, 400,
+555 P.3d 732 (2024). A court abuses its discretion when its action
+is (1) arbitrary, fanciful, or unreasonable; (2) based on an error of
+law; or (3) based on an error of fact. 319 Kan. at 400.
+     Generally, appellate courts do not address issues raised for the
+856                SUPREME COURT OF KANSAS                               VOL. 320
+
+                                Schutt v. Foster
+
+first time on appeal. State v. Allen, 314 Kan. 280, 283, 497 P.3d
+566 (2021). But an appellate court may consider a newly raised
+issue when certain recognized exceptions apply. 314 Kan. at 283.
+These exceptions include:
+"'(1) the newly asserted theory involves only a question of law arising on proved
+or admitted facts and is determinative; (2) consideration of the theory is neces-
+sary to serve the ends of justice or to prevent the denial of fundamental rights;
+and (3) the trial court may be affirmed because it was right for the wrong reason.'"
+In re N.E., 316 Kan. 391, 407-08, 516 P.3d 586 (2022).
+
+    Kansas Supreme Court Rules also require that appellants rais-
+ing issues for the first time on appeal must explain why those is-
+sues are properly before the appellate court. See Rule 6.02(a)(5)
+(2025 Kan. S. Ct. R. at 36) ("If the issue was not raised below,
+there must be an explanation why the issue is properly before the
+court."). In other words, appellants who rely on a preservation ex-
+ception must invoke that exception and argue that it applies. See
+State v. Godfrey, 301 Kan. 1041, 1043, 350 P.3d 1068 (2015). An
+appellant who fails to do so is deemed to have waived and aban-
+doned any exceptions to the preservation rule. In re N.E., 316 Kan.
+at 408; Godfrey, 301 Kan. at 1044.
+      B. The panel erred by relying on exceptions to the preser-
+         vation rule that Foster failed to properly invoke under
+         Rule 6.02(a)(5).
+     In her reply brief, Foster argued that two preservation excep-
+tions applied to her unconscionability issue. The panel agreed and
+reached the merits. Schutt, 2024 WL 3548641, at *2. Schutt now
+argues that the panel erred by reaching the merits because Foster
+failed to comply with Rule 6.02. We agree.
+     To understand why, we first interpret the relevant rules of ap-
+pellate procedure to identify the requirements for properly invok-
+ing an exception to the preservation rule. Then, we apply the rules
+to the facts before us and conclude that the panel abused its dis-
+cretion by reaching the merits of Foster's unconscionability issue.
+VOL. 320           SUPREME COURT OF KANSAS                                    857
+
+                                Schutt v. Foster
+
+     1. The rules require appellants to brief exceptions to the
+        preservation rule in the opening brief.
+     When appellants raise an issue for the first time on appeal,
+Rule 6.02(a)(5) requires them to brief an exception to the preser-
+vation rule in the opening brief. The failure to do so cannot be
+cured in the reply brief. This interpretation is supported by the
+plain language of Rule 6.02(a)(5). And it is reinforced when read-
+ing that provision together with other rules of appellate procedure.
+     Kansas Supreme Court Rule 6.01(b) (2025 Kan. S. Ct. R. at
+35) identifies the types of briefs parties may file with the appellate
+courts on direct appeal and the schedule for filing those briefs.
+That rule authorizes parties to file: (1) an appellant's brief; (2) an
+appellee or appellee/cross-appellant's brief; a cross-appellee's
+brief; or an appellee/cross-appellee's brief; and (3) a reply brief.
+     Other rules govern the content of each type of brief. Relevant
+here, Rule 6.02(a) describes the required contents of the appel-
+lant's brief. Under that rule, the appellant's opening brief must cite
+to the record where an issue was raised and decided below or oth-
+erwise explain why the issue is properly before the appellate court:
+     "(a) Required Contents. An appellant's brief must contain the following:
+     ....
+     (5) The arguments and authorities relied on, separated by issue if there is
+more than one. Each issue must begin with citation to the appropriate standard
+of appellate review and a pinpoint reference to the location in the record on ap-
+peal where the issue was raised and ruled on. If the issue was not raised below,
+there must be an explanation why the issue is properly before the court." (Em-
+phases added.) Rule 6.02(a)(5) (2025 Kan. S. Ct. R. at 35).
+
+Thus, under the plain language of the rule, if an appellant intends
+to invoke an exception to the preservation rule, that exception
+must be invoked in the appellant's opening brief.
+    Supreme Court Rule 6.05 governs the content of reply briefs.
+It specifies that the reply brief may address only new matters
+raised by an appellee:
+     "A reply brief may not be submitted unless made necessary by new material
+contained in the appellee's or cross-appellee's brief. A reply brief must include a
+specific reference to the new material being rebutted and may not include, except
+858               SUPREME COURT OF KANSAS                             VOL. 320
+
+                               Schutt v. Foster
+
+by reference, a statement, argument, or authority already included in a preceding
+brief." Rule 6.05 (2025 Kan. S. Ct. R. at 37).
+
+Nothing in Rule 6.05 permits an appellant to invoke an exception
+to the preservation rule for the first time in a reply brief.
+     But what if the appellee's brief first raises preservation con-
+cerns about an appellant's issue, as happened here? One might ar-
+gue that Rule 6.05 allows the appellant to invoke a preservation
+exception in the reply brief as "new material being rebutted" in the
+appellee's brief. But that reading of Rule 6.05 would directly un-
+dercut the plain language in Rule 6.02(a)(5). That language ex-
+plicitly requires the appellant to explain in the opening brief why
+an issue not raised below is properly before the appellate court.
+Reading these rules together, Rule 6.02(a)(5) requires appellants
+relying on a preservation exception to identify and brief that ex-
+ception in their opening brief. Appellants may not invoke preser-
+vation exceptions for the first time in the reply brief.
+     We recognize that in prior decisions applying Rule 6.02(a)(5),
+the court mentioned that the appellants had failed to invoke any
+preservation exceptions in their opening or reply briefs. See State
+v. Ochoa-Lara, 312 Kan. 446, 448, 476 P.3d 791 (2020) ("'Ochoa-
+Lara chose not to submit a reply brief to respond to the State's
+preservation argument.'"); Godfrey, 301 Kan. at 1044 ("[A]fter the
+State raised a lack of preservation in its brief, Godfrey failed again
+to proffer any reason why this court should hear his claim in a
+reply brief."). But in these cases, the court was simply emphasiz-
+ing that the appellants had utterly failed to explain why an unpre-
+served issue warranted review. It was not sanctioning the practice
+of first raising preservation exceptions in the reply brief.
+     Our conclusion that appellants must brief preservation excep-
+tions in the opening brief should come as no surprise. For over a
+decade now, we have been clear that parties who fail to strictly
+comply with Rule 6.02(a)(5) do so at their own peril. See State v.
+Williams, 298 Kan. 1075, 1085, 319 P.3d 528 (2014); see also
+Godfrey, 301 Kan. at 1043 ("We have recently reiterated [in Wil-
+liams] that Rule 6.02[a][5] means what it says and is ignored at a
+litigant's own peril."). We require strict adherence for a good rea-
+son—Rule 6.02(a)(5) encourages sound appellate practices.
+VOL. 320        SUPREME COURT OF KANSAS                           859
+
+                           Schutt v. Foster
+
+    First, it ensures that the parties fully develop the basis for ap-
+pellate review. "Appellate courts cannot be left to divine the
+preservation argument a party might assert or the reasons a party
+might believe preservation is not required." Ochoa-Lara, 312
+Kan. at 449. Requiring appellants to brief preservation issues in
+their opening brief ensures that both parties fully develop those
+issues.
+    Second, the requirement promotes fairness. If a party waits
+until its reply brief to invoke an exception to the preservation rule,
+then the opposing party is left with no opportunity to respond. Our
+rules do not contemplate further briefing after an appellant's reply
+brief. See Rule 6.01(b).
+    2. Foster failed to comply with Rule 6.02(a)(5) because
+       she did not invoke any preservation exceptions until her
+       reply brief.
+     Foster's opening brief failed to conform with Rule 6.02(a)(5).
+She did not challenge the late-fee provision as unconscionable at
+the district court level. So Foster needed to brief an exception to
+the preservation rule in her opening brief. She did not. Foster
+waited until the reply brief to argue that preservation exceptions
+applied to this issue. This practice fails to comply with the rule.
+     Foster counters that she did comply with Rule 6.02(a)(5) in
+her opening brief. She offers two explanations. But neither per-
+suades us that her brief complied with the rule.
+     First, Foster notes that her opening brief complied with the
+rule because it included a pinpoint cite to where the district court
+awarded Schutt $21,240 in late fees. See Rule 6.02(a)(5) (2025
+Kan. S. Ct. R. at 36) ("Each issue must begin with . . . a pinpoint
+reference to the location in the record on appeal where the issue
+was raised and ruled on."). But to comply with the rule, Foster
+needed to include pinpoint cites to the record showing where she
+raised the unconscionability challenge below and where the dis-
+trict court ruled on it. This did not happen because she did not
+raise the unconscionability issue below.
+     Second, Foster asserts that she could not have challenged the
+late-fee provision as unconscionable in district court because
+860              SUPREME COURT OF KANSAS                    VOL. 320
+
+                           Schutt v. Foster
+
+Schutt did not specifically request $21,240 in late fees and the dis-
+trict court did not award this amount until it entered the final judg-
+ment. The premise of Foster's argument is questionable. The panel
+held that Schutt's petition requested ongoing late fees, and Foster
+did not cross-appeal from this holding. But even if we accept the
+premise, Foster simply tries to explain why she waited until her
+appeal to raise the unconscionability challenge. This does not ex-
+plain why the issue is properly before the appellate court as re-
+quired by Rule 6.02(a)(5). See Ochoa-Lara, 312 Kan. at 449 ("A
+party fails to satisfy the requirements of Rule 6.02[a][5] by im-
+plicitly raising an argument as to why an issue is preserved.").
+     Foster's reliance on Russell v. Treanor Investments, 311 Kan.
+675, 466 P.3d 481 (2020), does not alter this conclusion. In Rus-
+sell, the appellant cited the record where the district court raised
+an issue on its own initiative and ruled on it. We held that the ap-
+pellant complied with Rule 6.02(a)(5) because it requires only that
+the appellant cite to where the issue was raised and ruled on—it
+does not require the appellant to be the party that raised the issue.
+311 Kan. at 682. But here, the district court neither raised nor ruled
+on the unconscionability issue. So Russell does not apply.
+     In sum, the panel abused its discretion by reaching the merits
+of Foster's unconscionability claim. Foster raised that claim for
+the first time on appeal. But she did not explain in her opening
+brief why the issue was properly before the Court of Appeals as
+required by Rule 6.02(a)(5). In failing to do so, Foster waived and
+abandoned any argument that an exception to the preservation rule
+applied to her issue. And she could not cure this deficiency in the
+reply brief. The panel's reliance on the preservation exceptions
+that Foster first raised in her reply is inconsistent with Rule
+6.02(a)(5) and constitutes an error of law. Because the panel erred
+by reaching Foster's unconscionability claim, we need not con-
+sider Schutt's other claims of error.
+     Judgment of the Court of Appeals reversing the district court
+in part is reversed, and its opinion is vacated. Judgment of the dis-
+trict court is affirmed.
+      WILSON, J., not participating.
+626               COURT OF APPEALS OF KANSAS                              VOL. 65
+
+                   Washburn South Apartments v. Hession
+
+                                 (570 P.3d 1268)
+                                   No. 126,456
+
+         WASHBURN SOUTH APARTMENTS LLC, Appellee, v.
+                   KIA HESSION, Appellant.
+                                        ___
+                           SYLLABUS BY THE COURT
+
+1.    LANDLORD AND TENANT—Act Defines Duties of Tenants and Land-
+      lords in Residential Leases—Requirement of Habitable Housing. The Kan-
+      sas Residential Landlord and Tenant Act, K.S.A. 58-2540 et seq., defines
+      the legal duties of tenants and landlords in residential leases, regardless of
+      the terms of a rental agreement. Among other duties, a landlord must pro-
+      vide habitable housing—that is, the landlord must reasonably maintain any
+      common areas, provide a housing unit that complies with all material health
+      and safety codes, and ensure that the housing unit is generally safe with
+      adequate electricity, plumbing, sanitation, heat, and ventilation.
+2.    SAME—Legal Duty to Provide Habitable Housing under Act—Cannot Be
+      Waived. Although Kansas law permits landlords to contractually shift some
+      of their duties to tenants in limited circumstances, the legal duty to provide
+      habitable housing—codified in K.S.A. 58-2553(a)(1) through (3)—may not
+      be delegated or waived.
+3.    SAME—Breach of Duty Claim Raises Breach of Warranty Claim—Dam-
+      ages May Be Recovered by Tenant. A tenant claiming a landlord has
+      breached its duty to provide habitable housing raises a breach-of-warranty
+      claim and may recover damages suffered due to the breach. The primary
+      measure of damages is the difference between the fair rental value of the
+      apartment and the amount the tenant paid. The tenant may also recover con-
+      sequential damages that arose from the breach or damages that may reason-
+      ably be assumed to have been within the contemplation of both parties as
+      the probable result of the breach.
+4.    SAME—Statute Permits Landlord to Terminate Rental Agreement if Rent
+      Not Paid—Three Days' Grace Period. When a tenant has not paid their
+      monthly rent, K.S.A. 58-2564(b) permits a landlord to terminate a rental
+      agreement after providing a written notice to the tenant of the deficiency
+      and allowing the tenant to pay the missed rent within three days.
+5.    SAME—Rental Agreement Includes Requirement of the Act—Contract be-
+      tween Landlord and Tenant. A rental agreement for a residential housing
+      unit is a contract between the landlord and tenant that includes—either im-
+      plicitly or explicitly—the requirements of the Residential Landlord and
+      Tenant Act. A violation of the Act is both a statutory violation and a breach
+      of contract.
+VOL. 65         COURT OF APPEALS OF KANSAS                                  627
+
+                 Washburn South Apartments v. Hession
+
+6.   CONTRACTS—Duty of Good Faith for Each Party to Perform Contrac-
+     tual Obligations—Breach of Duty of Good Faith. There is an implicit duty
+     in every contract for each party to perform their contractual obligations in
+     good faith. This duty of good faith means, among other things, that a party
+     will not intentionally or purposely do anything to prevent another party
+     from carrying out their obligations under the agreement. As a corollary, a
+     party to a contract may not refuse to permit another person to perform their
+     obligations and later claim that the person has breached the agreement
+     through that nonperformance. Whether the duty of good faith has been
+     breached and whether that breach caused damage to another contracting
+     party are questions of fact.
+     Appeal from Shawnee District Court; DIANE GLYNN, judge pro tem. Sub-
+mitted without oral argument. Opinion filed June 6, 2025. Reversed and re-
+manded with directions.
+     Rebekah Gaston, of Kansas Holistic Defenders, of Lawrence, for appellant.
+     No appearance by appellee.
+
+Before ISHERWOOD, P.J., WARNER and HURST, JJ.
+     WARNER, J.: Most residential leases in Kansas are governed
+by the Kansas Residential Landlord and Tenant Act (commonly
+called the RLTA). See K.S.A. 58-2540 et seq. The RLTA estab-
+lishes rights and responsibilities of landlords and tenants that can-
+not be waived by a rental contract. For example, tenants must
+comply with applicable health and safety ordinances and keep
+their housing unit reasonably safe and clean. See K.S.A. 58-2555.
+And landlords must provide housing that meets minimum habita-
+bility requirements, meaning the housing must comply with appli-
+cable building and housing codes affecting health and safety. See
+K.S.A. 58-2553(a).
+     This case arises at the intersection of a landlord's legal duty to
+provide habitable housing and a tenant's contractual duty to pay
+their rent. In 2022, Kia Hession was renting an apartment from
+Washburn South Apartments in Topeka. Hession did not make her
+monthly rent payment in October 2022. Later that month, Wash-
+burn South filed this lawsuit seeking to evict her and recover the
+past-due rent. Hession counterclaimed, arguing her apartment did
+not meet minimum habitability requirements and asserting this
+case was filed in retaliation for Hession's communications regard-
+628          COURT OF APPEALS OF KANSAS                    VOL. 65
+
+              Washburn South Apartments v. Hession
+
+ing the apartment's condition with the City of Topeka and a hous-
+ing-assistance program.
+    After an abbreviated trial, the court ruled in Washburn South's
+favor, finding Hession owed her unpaid rent plus interest. (Hes-
+sion had moved out of the apartment while the case was pending.)
+Hession appeals, arguing the court's judgment was based on in-
+correct interpretations of the RLTA. After carefully reviewing the
+record, we agree with Hession that the court's ruling was based on
+errors of law. We therefore reverse the trial court's judgment and
+remand the case for a new trial.
+          FACTUAL AND PROCEDURAL BACKGROUND
+     Hession and her one-year-old daughter moved into an apart-
+ment at Washburn South in November 2019 and lived there for
+three years. On June 8, 2022, Hession renewed her lease for one
+year. The new lease stated that Hession would pay Washburn
+South monthly rent of $550, due the first day of each month. The
+lease also stated that Hession accepted her apartment "as is."
+     Hession's rent was subsidized through the Shelter Plus Care
+housing-assistance program. In August 2022, the program notified
+Hession that it was terminating its assistance voucher at the end
+of September because Hession's apartment did not meet the pro-
+gram's minimal habitability standards. Hession had 38 days after
+receiving notice of the voucher's termination to find a new apart-
+ment that would accept a voucher or lose access to that assistance.
+But she was unable to find another suitable apartment before the
+end of September and was also unable to pay the monthly rent to
+Washburn South by October 1 on her own.
+     On October 4, Washburn South posted a notice on Hession's
+apartment door that she must pay her rent or vacate the apartment
+in three days, or else be evicted from the apartment. Two days
+later, a representative from Doorstep (a local nonprofit organiza-
+tion) contacted Washburn South with questions about how it could
+pay Hession's rent. Washburn South's property manager, Crystal
+Orcutt, told the representative that the apartment complex would
+not accept the payment. Hession did not otherwise pay the rent
+within three days of the notice, but she remained in the apartment.
+     On October 17, Washburn South petitioned to evict Hession
+VOL. 65       COURT OF APPEALS OF KANSAS                           629
+
+               Washburn South Apartments v. Hession
+
+and collect the unpaid rent. Hession filed a written answer to the
+petition. She noted that the Doorstep representative had attempted
+to pay her October rent within the three-day period covered by the
+apartment complex's notice, but Washburn South had rejected the
+offer of payment. Hession also asserted two counterclaims: first,
+that Washburn South violated the RLTA by breaching its warranty
+of habitability under K.S.A. 58-2553 and second, that Washburn
+South's attempt to evict Hession was in retaliation for Hession re-
+porting code violations to the City of Topeka—a violation of
+K.S.A. 58-2572. About two months later, the apartment complex
+filed an answer denying Hession's allegations.
+The trial
+    The court scheduled a bench trial for the eviction case on De-
+cember 27, 2022. Hession moved out of the apartment weeks be-
+fore the trial date. The day of the trial, the court consulted with the
+parties to see whether they wished to proceed with their claims
+since Hession was no longer living at Washburn South. After a
+few minutes of discussion, Hession indicated that she would like
+to proceed with a hearing that day on the remaining issues in the
+case—whether and to what extent any rent was owed by Hession
+and whether she had suffered and was entitled to damages under
+the RLTA.
+    Washburn South's property manager, Orcutt, testified that
+Hession renewed her lease agreement on June 8, 2022, at a
+monthly rate of $550, due the first of each month. She stated that
+Hession did not pay the October rent, and so Orcutt posted the
+three-day notice to Hession's door on October 4. Orcutt acknowl-
+edged that someone from Doorstep contacted her on October 6 to
+pay Hession's October rent, but she stated that she told the repre-
+sentative that Washburn South was "going through evictions and
+not accepting payment from Ms. Hession." The judge asked
+Orcutt whether she would have accepted any rent payment from
+Hession before October 7, and Orcutt replied that the owner of the
+apartment complex had instructed her not to accept any payment
+from Hession.
+    Hession's witnesses focused on the state of her apartment and
+the steps she had taken to mitigate some of her health and safety
+630           COURT OF APPEALS OF KANSAS                    VOL. 65
+
+               Washburn South Apartments v. Hession
+
+concerns. Nathan Dykeman, a code enforcement inspector for the
+City of Topeka, and Greg McGivern, a housing inspector with the
+Shelter Plus Care housing-assistance program, both testified about
+the deficiencies they found when they inspected the apartment in
+the summer of 2022:
+ • Dykeman inspected Hession's apartment in June and August.
+   He found several code violations during his June inspection
+   and summarized these in a letter to Hession and Washburn
+   South. The letter included 8 categories of violations and 27
+   photographs showing the deficiencies. Dykeman testified
+   that when he returned in August, several of the code viola-
+   tions remained unchanged, and he observed no indication
+   that anyone had attempted to address them.
+ • McGivern conducted an inspection of Hession's apartment in
+   July and found several conditions that violated the standards
+   set by Shelter Plus for rental assistance. For example, the
+   front door was damaged and not operating properly, and the
+   front window was taped together. McGivern detailed his
+   findings in a letter to Washburn South and Hession. When
+   McGivern returned for a follow-up inspection in August,
+   none of these issues had been fixed.
+    Hession also testified, describing multiple issues that arose
+during the three years she lived at Washburn South. These issues
+included:
+ •    Leaking water and mold in the bathroom,
+ •    Excessive moisture in the air,
+ •    Wet and dirty carpet,
+ •    Holes in the floorboards,
+ •    Cracks in the windows, and
+ •    Significant insect infestation.
+    Hession had reported these issues to Washburn South, submit-
+ting 8 written and 12 verbal reports. Hession testified that mainte-
+nance staff would come and look at the items needing repairs, but
+no one came back to make the repairs or follow up with Hession.
+She stated that she complained to the City of Topeka, the Shelter
+VOL. 65       COURT OF APPEALS OF KANSAS                          631
+
+               Washburn South Apartments v. Hession
+
+Plus Care housing-assistance program, and the Department of
+Housing and Urban Development about these issues and Wash-
+burn South's lack of responsiveness.
+     Hession testified that when Washburn South did not address
+these issues, she purchased several different cleaning products—
+shampoos, vacuums, and cleaning solutions—to address the car-
+pet problems. Hession explained that she had to clean each section
+of carpet in her apartment once or twice per month and when she
+did so, the water released from the carpet was a dark gray color
+and smelled bad. Needing a fix that did not require time-consum-
+ing cleaning, Hession purchased rugs to cover the carpet so her
+daughter did not have to crawl on the dirty floor. She also pur-
+chased a dehumidifier to reduce the excessive moisture level in
+the air. And she bought plastic containers to store the clothing for
+her and her daughter to prevent it from taking on the odor of the
+apartment. Hession testified that she believed the apartment's con-
+dition warranted no more than $200 per month in rent.
+     Before Hession concluded her testimony, the court asked if
+Hession had given a 14-30 day notice to the landlord—a formal
+notice that she would be dissolving the lease if the landlord did
+not cure these conditions. Hession responded that she never pro-
+vided any formal notices of these conditions to Washburn South.
+The court indicated that this did not prevent her from bringing her
+counterclaim, but it found that Hession could only assert a claim
+for damages that was "tied to the lease that is related to this evic-
+tion" for the rental period beginning June 8, 2022.
+The end of the trial and the court's ruling
+     During Hession's testimony, the court became concerned that
+Hession's trial was taking too long given the other hearings sched-
+uled for that day. The court told the parties that the trial had taken
+more than 90 minutes, and there were "14 more trials waiting in
+the hallway." Hession's lawyer suggested that the parties could
+finish presenting their evidence another day, but the court rejected
+that suggestion. After Washburn South concluded its cross-exam-
+ination of Hession, the trial court ended the hearing "[i]n the in-
+terest of time." The court thus did not allow Hession's attorney any
+632            COURT OF APPEALS OF KANSAS                   VOL. 65
+
+               Washburn South Apartments v. Hession
+
+redirect examination and did not allow either party a closing argu-
+ment or to provide an oral or written summation of the legal
+claims.
+    The court found that Hession owed Washburn South
+$1,011.94 plus interest—the full amount requested by the apart-
+ment complex. The court then ruled against Hession on each of
+her counterclaims:
+ • The court found that Hession could not prevail on her claim
+   that the apartment was uninhabitable, as she "knew the cir-
+   cumstances" and the condition of the apartment when she re-
+   newed her lease in June 2022 and took the apartment "as is."
+   (The court indicated that the rental agreement stated Hession
+   took the apartment "as is," but that agreement is not included
+   in the record.) The court also found that Hession had not
+   provided any "admissible evidence" of damages relating to
+   the habitability of the apartment.
+ • The court found that the Doorstep representative had not
+   tried to make an actual payment—but rather asked how that
+   payment should be made—so Hession had not shown that
+   Washburn South declined any payment between October 4
+   and October 7. And it found that whether Washburn South
+   had wrongfully sought to evict her was moot because she
+   had since moved out of the apartment.
+ • The court found that there was no evidence that Washburn
+   South retaliated against Hession based on her previous re-
+   ports to the City or to Shelter Plus regarding the state of the
+   apartment. The court indicated that Hession had an obliga-
+   tion to show that Washburn South retaliated by either "in-
+   creasing the rent or decreasing services," and she had not
+   done so.
+      Hession appeals.
+                           DISCUSSION
+    The RLTA governs the relationship between landlords and
+tenants in residential housing in this state. The RLTA codifies sev-
+VOL. 65       COURT OF APPEALS OF KANSAS                        633
+
+               Washburn South Apartments v. Hession
+
+eral substantive rights and responsibilities of landlords and ten-
+ants, defines when either party to a rental agreement may end that
+lease, and defines when and how a landlord may evict a tenant
+from a housing unit. This appeal concerns two of the RLTA's pro-
+visions:
+ • K.S.A. 58-2553(a) states that a landlord has a legal duty to
+   provide housing that meets minimal habitability require-
+   ments; and
+ • K.S.A. 58-2564(b) states that a landlord must give a tenant
+   three days to pay any unpaid rent before evicting them from
+   a housing unit.
+     The trial court found that these provisions had no bearing on
+Hession's case, and Hession now challenges several aspects of that
+ruling. She claims the court erred when it concluded that the rental
+agreement's statement that Hession was leasing the apartment "as
+is" relieved Washburn South of its legal duty to provide habitable
+housing under K.S.A. 58-2553(a). Hession also asserts that the
+court's finding that she had not paid her October rent within three
+days of receiving the eviction notice was unsupported by the rec-
+ord, as the apartment manager testified that the owner would not
+accept any payment offered on Hession's behalf. Lastly, Hession
+claims that the court's decision to cut the trial short—not allowing
+any redirect examination by her attorney in presenting her coun-
+terclaims or closing argument—violated her right to due process
+of law. Washburn South remains a party to this appeal but did not
+file a brief.
+     After carefully reviewing the record and Hession's arguments,
+we agree that the trial court's ruling was based on incorrect inter-
+pretations of K.S.A. 58-2553(a) and K.S.A. 58-2564(b). We thus
+reverse the judgment for Washburn South and remand for a new
+trial consistent with this opinion.
+1. The landlord's legal duty to provide habitable housing under
+   K.S.A. 58-2553(a)(1) through (3) may not be waived by a
+   rental agreement.
+    The RLTA establishes legal duties of every tenant and land-
+lord in a residential lease, regardless of the terms of the rental
+634           COURT OF APPEALS OF KANSAS                     VOL. 65
+
+               Washburn South Apartments v. Hession
+
+agreement. Relevant here, the RLTA requires a landlord to rea-
+sonably maintain any common areas, to provide housing that com-
+plies with all material health and safety codes, and to ensure that
+the housing is generally safe with adequate electricity, plumbing,
+sanitation, heat, and ventilation. K.S.A. 58-2553(a)(1)-(3); O'Neill
+v. Dunham, 41 Kan. App. 2d 540, Syl. ¶ 6, 203 P.3d 68 (2009).
+     Although Kansas law permits landlords to contractually shift
+some of their duties to tenants in limited circumstances, the duties
+listed in K.S.A. 58-2553(a)(1) through (3) may not be delegated
+or waived. See K.S.A. 58-2549; Joe v. Spangler, 6 Kan. App. 2d
+630, 632, 631 P.2d 1243 (1981); see also K.S.A. 58-2553(b) (not-
+ing that sections [a][4] and [a][5] may be contractually delegated
+to the tenant if the landlord acts in good faith and not for the pur-
+pose of evading responsibilities under the Act). Courts describe
+these nondelegable responsibilities as the duty to provide habita-
+ble housing. See Love v. Monarch Apartments, 13 Kan. App. 2d
+341, 345, 771 P.2d 79 (1989).
+     K.S.A. 58-2559 provides tenants with two remedies when a
+landlord breaches this legal duty: terminating the rental agreement
+(K.S.A. 58-2559[a]) and recovering damages caused by the land-
+lord's breach (K.S.A. 58-2559[b]). These remedies may be pur-
+sued collectively or individually. See K.S.A. 58-2559(b). A tenant
+who seeks to end the lease can only do so 30 days after they have
+provided a written notice to the landlord detailing the deficiencies
+and the landlord has not made a good-faith effort to repair or oth-
+erwise address the situation within 14 days. See K.S.A. 58-
+2559(a). But these formal notice requirements relating to lease ter-
+mination do not apply to or otherwise restrict a tenant's ability to
+seek damages for a landlord's actions under K.S.A. 58-2559(b).
+See Love, 13 Kan. App. 2d at 345.
+     Hession argued in her answer and counterclaims that Wash-
+burn South breached its legal duty by providing an apartment that
+violated several aspects of the Topeka building code. At the trial,
+the inspectors for the City and the Shelter Plus Care housing-as-
+sistance program described the dismal state of the apartment
+where Hession had lived. Washburn South did not dispute these
+accounts, though it pointed out Hession had not provided the 14-
+30 day notice in K.S.A. 58-2559(a) necessary to terminate the
+VOL. 65       COURT OF APPEALS OF KANSAS                         635
+
+               Washburn South Apartments v. Hession
+
+rental agreement.
+     In its ultimate ruling, the trial court correctly noted that the
+absence of a written notice only prevented Hession from terminat-
+ing the rental agreement, not from pursuing her counterclaim for
+damages or offsetting any damages claimed by Washburn South.
+Yet the court found that Hession had waived these code violations
+and the apartment's other habitability problems when she renewed
+her lease in June 2022, emphasizing that the lease stated that Hes-
+sion was accepting the apartment "as is." The court also found that
+Hession had offered "no admissible evidence" of damages she in-
+curred due to the apartment's condition.
+     Hession challenges both conclusions. She notes that Kansas
+law does not permit landlords to delegate their responsibilities to
+provide housing that meets minimum habitability standards. And
+she asserts that she offered evidence of compensable damages suf-
+fered from the landlord's breach of that duty. We agree.
+     First, Kansas law does not allow a landlord to delegate or shift
+its legal duty to provide a residence that meets basic habitability
+standards. The RLTA unequivocally states that "[a] rental agree-
+ment . . . may not permit the receipt of rent free of the obligation
+to comply with subsection (a) of K.S.A. 58-2553"—the landlord's
+duty to provide habitable housing. K.S.A. 58-2549. Rental agree-
+ments may not waive legal rights of remedies under the RLTA
+unless that waiver is explicitly permitted by the Act's provisions.
+K.S.A. 58-2547(a); see, e.g., K.S.A. 58-2553(b) (allowing some
+landlords to contractually shift obligations in K.S.A. 58-
+2553[a][4] and [5] in certain circumstances). In other words, the
+duty to provide habitable housing is not waived even when a ten-
+ant "had prior knowledge of the defects" of the residence. Span-
+gler, 6 Kan. App. 2d at 632.
+     Thus, the trial court erred when it found that Hession had
+waived any objection to the state of the apartment when she re-
+newed her lease in June 2022. Kansas law does not allow Wash-
+burn South to contract away its legal obligations under the RLTA
+to provide habitable housing. And any effort by Washburn South
+to shrug that obligation via its rental agreement is void and unen-
+forceable. See K.S.A. 28-2547(b).
+636           COURT OF APPEALS OF KANSAS                    VOL. 65
+
+               Washburn South Apartments v. Hession
+
+     This error manifested in at least two ways in the court's ulti-
+mate ruling: The court erroneously concluded that Hession was
+precluded from asserting her defense and counterclaims that
+Washburn South had breached its duties under the RLTA. And the
+court erroneously found that it could not consider any evidence of
+Washburn South's breach of its duty to provide habitable housing
+before Hession renewed her lease in June 2022. These incorrect
+conclusions, rooted in a legal error, permeate the court's evalua-
+tion of both Washburn South's claim for damages and Hession's
+counterclaims.
+     Second, the trial court's alternative conclusion that Hession
+had not provided any evidence of damages is not supported by the
+record. The court found that Hession had provided "no admissible
+evidence" of damages, emphasizing at the trial that the court be-
+lieved it "need[ed] to see money to be able to actually award dam-
+ages." And it noted that although Hession had provided some re-
+ceipts for purchases she had made before she renewed her lease,
+the court would not consider that evidence. In the end, the court
+explained that K.S.A. 58-2572(a) requires a tenant to show that
+their landlord retaliated against them "by increasing rent or de-
+creasing services," and found that Hession had not provided any
+evidence of either action.
+     Kansas courts have long recognized that a tenant who claims
+a landlord has breached its duty to provide habitable housing
+raises a contractual breach-of-warranty claim and may recover
+damages suffered due to the breach. Steele v. Latimer, 214 Kan.
+329, Syl. ¶ 9, 521 P.2d 304 (1974); see Love, 13 Kan. App. 2d at
+345-46. The primary measure of damages is the difference be-
+tween the fair rental value of the deficient apartment and the
+amount the tenant actually paid. See 13 Kan. App. 2d at 345-46.
+The tenant may also recover consequential damages that arose
+"'from the breach itself,'" or damages that "'may reasonably be as-
+sumed to have been within the contemplation of both parties as
+the probable result of the breach.'" 13 Kan. App. 2d at 346.
+     Hession offered evidence that she suffered damages from liv-
+ing in the dilapidated apartment. She testified that she believed
+that her current apartment could only be rented for $200 per
+month—$350 per month under the amount required by her rental
+VOL. 65       COURT OF APPEALS OF KANSAS                         637
+
+               Washburn South Apartments v. Hession
+
+agreement. Cf. In re Acquisition of Property by Eminent Domain,
+299 Kan. 37, 46, 320 P.3d 955 (2014) (property owner may testify
+to the fair market value of property if they explain their rationale
+and demonstrate it is reasonable). Hession also described conse-
+quential damages she claimed to have suffered—she was required
+to purchase multiple rugs and cleaning supplies to try to provide a
+habitable space for herself and her daughter. And, Hession argues,
+the landlord's refusal to address the condition of the apartment
+caused her to lose the housing assistance that had allowed her to
+afford to live there in the first place.
+     The trial court did not state that it found this testimony unre-
+liable, nor did it state that it found the evidence unpersuasive. In-
+stead, it ruled that Hession had offered "no admissible evidence"
+of her damages—a conclusion that is unsupported by the record.
+Again, this error undermines the trial court's ruling and requires a
+new trial.
+2. Refusing to accept a rental payment offered on Hession's be-
+   half during the three-day window in K.S.A. 59-2564(b)
+   raises a factual question whether the landlord was carrying
+   out its duties under the RLTA in good faith.
+     Hession next argues that the trial court misinterpreted K.S.A.
+58-2564(b) when it found Washburn South did not breach its du-
+ties under the RLTA by refusing to accept a payment on Hession's
+behalf before initiating its eviction action. Though we have al-
+ready concluded that we must reverse and remand the trial court's
+judgment, consideration of this question is necessary to help con-
+strain the issues and arguments during the next trial.
+     The facts underlying Hession's argument are largely undis-
+puted. Washburn South posted a notice at Hession's apartment on
+October 4, indicating she had three days to pay her October rent
+or an eviction case would be filed against her. On October 6, a
+representative from Doorstep contacted the property manager
+about paying Hession's rent. The property manager informed the
+representative that Washburn South would not accept any pay-
+ment of Hession's rent. At trial, the court asked the property man-
+ager whether she would have accepted any payment of rent during
+that three-day period; the property manager responded that the
+638           COURT OF APPEALS OF KANSAS                      VOL. 65
+
+               Washburn South Apartments v. Hession
+
+owner of the apartments had instructed her not to accept any pay-
+ment and to move forward with an eviction action.
+     Hession asserts that her October rent would have been paid by
+Doorstep if the property manager had not thwarted Doorstep's
+payment attempt. In other words, the apartment complex refused
+an offer of rent—and never intended to accept any rent—on Hes-
+sion's behalf. Hession asserts that Washburn South was using
+K.S.A. 58-2564(b)'s notice requirements as a box to be checked
+rather than a genuine window to allow Hession to cure her missed
+payment. The trial court found that no payment had been made,
+and even if it had, whether Washburn South could evict Hession
+was moot because she had moved out of the apartment by the time
+of the trial.
+     K.S.A. 58-2564 establishes when and under what conditions
+a landlord may terminate a rental agreement—outlining the steps
+that must be taken before an eviction case is filed. When a tenant
+has not paid their rent, a landlord may terminate a rental agree-
+ment after the landlord provides a written notice to the tenant of
+the deficiency and allows three days for the tenant to pay the out-
+standing rent. K.S.A. 58-2564(b). A landlord who unconditionally
+accepts late rent waives the right to take any action for that breach.
+See K.S.A. 58-2566. But if a tenant does not pay the rent within
+three days of receiving the notice, the rental agreement is dis-
+solved, and the landlord may take additional legal action—such as
+filing a lawsuit to seek possession of the residence or damages
+from the tenant's breach. See K.S.A. 58-2568; see also K.S.A. 61-
+3803 (landlord may file an eviction action after providing 72
+hours' notice that the tenant must leave the premises).
+     Hession's rent was not paid between October 4—when Wash-
+burn South posted its notice—and October 7. Washburn South
+correctly pointed out at trial that the language of K.S.A. 58-
+2564(b) does not include any wiggle room in the payment dead-
+line. But Hession asserts that it would be inequitable to allow a
+landlord to thwart a genuine effort to make a rent payment and
+then proceed with an eviction action.
+     A rental agreement is a contract between the landlord and ten-
+ant that includes—either implicitly or explicitly—the require-
+VOL. 65       COURT OF APPEALS OF KANSAS                           639
+
+               Washburn South Apartments v. Hession
+
+ments of the RLTA. See K.S.A. 58-2547(a) (noting a rental agree-
+ment may not seek to waive the requirements of the RLTA); see
+also Clark v. Walker, 225 Kan. 359, 363-64, 590 P.2d 1043 (1979)
+(discussing the origin and broad application of the RLTA). But
+see K.S.A. 58-2541 (listing specific residential leases to which the
+RLTA does not apply). Thus, a violation of the RLTA is both a
+statutory violation and a breach of contract. Love, 13 Kan. App.
+2d at 345-46.
+     There is an implicit duty in every contract for each party to
+perform their contractual obligations in good faith. Waste Connec-
+tions of Kansas, Inc. v. Ritchie Corp., 296 Kan. 943, 965, 298 P.3d
+250 (2013). This duty of good faith means, among other things,
+that a party will not intentionally or purposely do anything to pre-
+vent another party from carrying out their obligations under the
+agreement. As a corollary, a party to a contract may not refuse to
+permit another person to perform their obligations and later claim
+that the person has breached the agreement through that nonper-
+formance. Bonanza, Inc. v. McLean, 242 Kan. 209, 222, 747 P.2d
+792 (1987). Whether the duty of good faith has been breached and
+whether that breach caused damage to another contracting party
+are questions of fact. See Waste Connections, 296 Kan. at 965.
+     The trial court's questions to the property manager during her
+testimony demonstrated a recognition that parties to residential
+leases, like other contracts, have a duty to act in good faith. But
+the court made no findings as to whether Washburn South had
+breached that duty by refusing Doorstep's offer of rent on October
+6, essentially concluding Hession had not been damaged by the
+filing of the eviction since she later left the premises. But this con-
+clusion failed to appreciate Hession's other arguments—that the
+eviction action itself was wrongful and pursued as retaliation for
+the actions taken by the City and Shelter Plus regarding the health
+and safety concerns at the apartment complex. Hession asserts that
+Washburn South made the filing of this lawsuit possible when it
+refused to accept any payment on her behalf in October 2022; be-
+fore that time, Hession was current on her rent payments.
+     Our review of the record is consistent with Hession's charac-
+terization of these events. The trial court found that Hession had
+640           COURT OF APPEALS OF KANSAS                      VOL. 65
+
+               Washburn South Apartments v. Hession
+
+not been damaged by Washburn South's refusal to accept any Oc-
+tober rent payment offered on her behalf while also finding that
+Hession's retaliation counterclaim was precluded by her failure to
+pay that rent. Thus, the trial court's judgment was the result of cir-
+cular analysis—refusing to consider the reason why Hession's Oc-
+tober rent was not paid but relying on that nonpayment to deny her
+retaliation counterclaim—and was based on an incomplete assess-
+ment of the law and evidence.
+    To address these concerns on remand, the trial court should
+consider (1) whether Washburn South would have accepted any
+payment made on Hession's behalf before October 7, (2) whether
+Washburn South prevented Doorstep from making payments on
+Hession's behalf or refused an offer of payment, and (3) whether
+Washburn South was retaliating against Hession's complaints to
+the City and Shelter Plus.
+3. Because we remand this case for a new trial, we need not
+   consider Hession's remaining due-process argument.
+    In her final claim on appeal, Hession argues that the way the
+court concluded the trial violated her constitutional right to due
+process of law. She points out that the court, realizing it was
+pressed for time because several other trials were scheduled that
+day, abruptly cut the hearing short. In doing so, the court did not
+allow Hession's counsel any redirect examination of Hession—
+even though she had asserted counterclaims against Washburn
+South and had the burden to prove and persuade the court as to her
+assertions. The court also did not allow closing arguments regard-
+ing the parties' claims or counterclaims—it merely announced its
+ruling from the bench once Hession left the stand. According to
+Hession, these actions collectively deprived her of her right to pro-
+cedural due process, which requires an opportunity to be heard "at
+a meaningful time and in a meaningful manner." See In re J.D.C.,
+284 Kan. 155, 166, 159 P.3d 974 (2007).
+    When a person's due-process rights have been violated, the
+appropriate remedy is to reverse the resultant judicial action and
+remand for a new hearing that provides the appropriate procedural
+safeguards. See In re J.O., 43 Kan. App. 2d 754, 763, 232 P.3d
+VOL. 65       COURT OF APPEALS OF KANSAS                          641
+
+               Washburn South Apartments v. Hession
+
+880 (2010). Here, we have already determined that we must re-
+verse the trial court's judgment and remand the case for a new trial.
+Thus, consideration of Hession's procedural challenge is unneces-
+sary and would have no practical effect on the outcome of this
+appeal.
+     But before closing, we pause to comment on the consequences
+of these truncated trial procedures. Regardless of whether the
+court's trial procedure fell short of the duty to provide a meaning-
+ful opportunity to be heard, many of the errors in this case could
+have been avoided if the trial had not ended in such an abrupt
+manner and without the benefit of written or oral legal arguments
+from the parties.
+     We acknowledge that the court had scheduled several trials on
+its docket the afternoon that Hession's trial took place, and that
+this is often a necessary practice to meet aggressive timelines for
+eviction cases set by Kansas statutes. See, e.g., K.S.A. 61-3805
+(summons in an eviction case must provide a date the tenant must
+file an answer or appear at an answer docket, and this date must
+be 3 to 14 days after the petition was filed); K.S.A. 2024 Supp.
+61-3807(a) (court should conduct the eviction trial within 14 days
+after the date listed in the summons). The trial court here was in a
+difficult spot, needing to balance the need for a full evidentiary
+hearing with other competing considerations.
+     But this bind was not inevitable. The court recognized at the
+outset of the trial that these tight deadlines were no longer binding,
+as Hession had moved to a different residence. The court was
+aware that this case involved counterclaims and testimony from
+multiple witnesses. Before the start of trial, the court consulted
+with the parties, who ultimately opted to proceed rather than con-
+tinue the case to a different date. But it is clear from the record
+that the court remained concerned about the other trials scheduled
+for that day. And it is the court—not the parties—that has ultimate
+control over its docket. See Holt v. State, 290 Kan. 491, 498, 232
+P.3d 848 (2010).
+     A court should, to the extent practicable, schedule time for a
+trial that allows the court to consider the claims and counterclaims
+presented. Here, in an effort to conduct the trial in a condensed
+manner so it could hear other scheduled cases, the court issued a
+642            COURT OF APPEALS OF KANSAS                VOL. 65
+
+               Washburn South Apartments v. Hession
+
+ruling based on an incorrect interpretation and application of
+K.S.A. 58-2553(a) and K.S.A. 58-2564(b). And now that case
+must be retried. We reverse the district court's judgment and re-
+mand for a new trial, consistent with the law discussed in this
+opinion.
+      Reversed and remanded with directions.
+                                   2025 Kansas Statutes
+
+50-623.   Kansas consumer protection act; purpose; construction. This act shall be construed
+liberally to promote the following policies:
+(a) To simplify, clarify and modernize the law governing consumer transactions;
+(b) to protect consumers from suppliers who commit deceptive and unconscionable
+practices;
+(c) to protect consumers from unbargained for warranty disclaimers; and
+(d) to provide consumers with a three-day cancellation period for door-to-door sales.
+History: L. 1973, ch. 217, § 1; L. 1974, ch. 230, § 1; L. 1976, ch. 236, § 1; July 1.
+                                  2025 Kansas Statutes
+
+50-624. Definitions. As used in this act:
+(a) "Agricultural purpose" means a purpose related to the production, harvest,
+exhibition, marketing, transportation, processing or manufacture of agricultural
+products by a consumer who cultivates, plants, propagates or nurtures the agricultural
+products. "Agricultural products" includes agricultural, horticultural, viticultural, and
+dairy products, livestock, wildlife, poultry, bees, forest products, fish and shellfish, and
+any products thereof, including processed and manufactured products, and any and all
+products raised or produced on farms and any processed or manufactured products
+thereof.
+(b) "Consumer" means an individual, husband and wife, sole proprietor, or family
+partnership who seeks or acquires property or services for personal, family, household,
+business or agricultural purposes.
+(c) "Consumer transaction" means a sale, lease, assignment or other disposition for
+value of property or services within this state, except insurance contracts regulated
+under state law, to a consumer; or a solicitation by a supplier with respect to any of
+these dispositions. "Consumer transaction" does not include the disposition of
+repossessed collateral by any supplier that is subject to and compliant with any state or
+federal law or rules and regulations with regard to disposition of such repossessed
+collateral.
+(d) "Family partnership" means a partnership in which all of the partners are natural
+persons related to each other, all of whom have a common ancestor within the third
+degree of relationship, by blood or by adoption, or the spouses or the stepchildren of
+any such persons, or persons acting in a fiduciary capacity for persons so related.
+(e) "Final judgment" means a judgment, including any supporting opinion, that
+determines the rights of the parties and concerning which appellate remedies have been
+exhausted or the time for appeal has expired.
+(f) "Lender" means a bank, savings and loan association, savings bank, credit union,
+finance company, mortgage bank, mortgage broker and any affiliate.
+(g) "Merchantable" means, in addition to the qualities prescribed in K.S.A. 84-2-314,
+and amendments thereto, in conformity in all material respects with applicable state
+and federal statutes and regulations establishing standards of quality and safety.
+(h) "Mortgage trigger lead" means a consumer report obtained pursuant to section
+604(c)(1)(B) of the federal fair credit reporting act, 15 U.S.C. § 1681b, where the issuance
+of the report is triggered by an inquiry made with a consumer reporting agency in
+response to an application for credit. Any consumer report on an applicant obtained by
+a lender with whom the applicant has initially applied for credit or who holds or
+services an existing extension of credit of the applicant who is the subject of the report
+is not considered a mortgage trigger lead.
+(i) "Person" means any individual, corporation, government, governmental subdivision
+or agency, business trust, estate, trust, partnership, association, cooperative or other
+legal entity.
+(j) "Property" includes real estate, goods and intangible personal property.
+(k) "Services" includes:
+(1) Work, labor and other personal services;
+(2) privileges with respect to transportation, hotel and restaurant accommodations,
+education, entertainment, recreation, physical culture, hospital accommodations,
+funerals and cemetery accommodations; and
+(3) any other act performed for a consumer by a supplier.
+(l) "Supplier" means a manufacturer, distributor, dealer, seller, lessor, assignor, or
+other person who, in the ordinary course of business, solicits, engages in or enforces
+consumer transactions, whether or not dealing directly with the consumer.
+History: L. 1973, ch. 217, § 2; L. 1974, ch. 230, § 2; L. 1976, ch. 236, § 2; L. 1983, ch. 179, §
+1; L. 1991, ch. 159, § 1; L. 2001, ch. 49, § 1; L. 2005, ch. 22, § 1; L. 2009, ch. 67, § 1; L. 2019,
+ch. 66, § 14; July 1.
+                                   2025 Kansas Statutes
+
+50-625.   Waiver; agreement to forego rights; settlement of claims. (a) Except as otherwise
+provided in this act, a consumer may not waive or agree to forego rights or benefits
+under this act.
+(b) A claim, whether or not disputed, by or against a consumer may be settled for less
+value than the amount claimed.
+(c) A settlement in which the consumer waives or agrees to forego rights or benefits
+under this act is invalid if the court finds the settlement to have been unconscionable at
+the time it was made. The competence of the consumer, any deception or coercion
+practiced upon the consumer, the nature and extent of the legal advice received by the
+consumer, and the value of the consideration are relevant to the issue of
+unconscionability.
+History: L. 1973, ch. 217, § 3; January 1, 1974.
+                                   2025 Kansas Statutes
+
+50-626.   Deceptive acts and practices. (a) No supplier shall engage in any deceptive act or
+practice in connection with a consumer transaction.
+(b) Deceptive acts and practices include, but are not limited to, the following, each of
+which is hereby declared to be a violation of this act, whether or not any consumer has
+in fact been misled:
+(1) Representations made knowingly or with reason to know that:
+(A) Property or services have sponsorship, approval, accessories, characteristics,
+ingredients, uses, benefits or quantities that they do not have;
+(B) the supplier has a sponsorship, approval, status, affiliation or connection that the
+supplier does not have;
+(C) property is original or new, if such property has been deteriorated, altered,
+reconditioned, repossessed or is second-hand or otherwise used to an extent that is
+materially different from the representation;
+(D) property or services are of particular standard, quality, grade, style or model, if
+they are of another which differs materially from the representation;
+(E) the consumer will receive a rebate, discount or other benefit as an inducement for
+entering into a consumer transaction in return for giving the supplier the names of
+prospective consumers or otherwise helping the supplier to enter into other consumer
+transactions, if receipt of benefit is contingent on an event occurring after the consumer
+enters into the transaction;
+(F) property or services has uses, benefits or characteristics unless the supplier relied
+upon and possesses a reasonable basis for making such representation; or
+(G) use, benefit or characteristic of property or services has been proven or otherwise
+substantiated unless the supplier relied upon and possesses the type and amount of
+proof or substantiation represented to exist;
+(2) the willful use, in any oral or written representation, of exaggeration, falsehood,
+innuendo or ambiguity as to a material fact;
+(3) the willful failure to state a material fact, or the willful concealment, suppression or
+omission of a material fact;
+(4) disparaging the property, services or business of another by making, knowingly or
+with reason to know, false or misleading representations of material facts;
+(5) offering property or services without intent to sell them;
+(6) offering property or services without intent to supply reasonable, expectable public
+demand, unless the offer discloses the limitation;
+(7) making false or misleading representations, knowingly or with reason to know, of
+fact concerning the reason for, existence of or amounts of price reductions, or the price
