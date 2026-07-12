@@ -2,6 +2,14 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-12
+
+- Added the GH Real Estate legal authority library under `legal/`.
+- Added eight verified project-source PDF bundles covering 447 canonical Kansas, federal, HUD, and Overland Park sources across 1,718 pages.
+- Added 463 search-sized authority Markdown files for GitHub connector retrieval, plus full bundle text, hashes, release manifests, and source ledgers.
+- Added legal-release validation and a weekly official-source change monitor that opens a `LEGAL REVIEW REQUIRED` issue without automatically changing approved law.
+- Documented corpus limitations, HUD retrieval exceptions, authority-status rules, and the requirement for live-source/counsel verification before high-risk action.
+
 ## 2026-07-08
 
 - Updated Zillow lead intake runtime docs to separate Catalyst Development dry-run settings from Production live settings.

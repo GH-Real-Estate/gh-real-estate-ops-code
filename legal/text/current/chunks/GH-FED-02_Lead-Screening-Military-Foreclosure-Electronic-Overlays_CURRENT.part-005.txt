@@ -1,0 +1,716 @@
+GH Real Estate approved legal-source text chunk — GH-FED-02_Lead-Screening-Military-Foreclosure-Electronic-Overlays_CURRENT.part-005.txt — verified through 2026-07-12. Official source text controls.
+
+  authorized by law for an economically dis-                     Each creditor shall furnish to an applicant a
+  advantaged class of persons;                                 copy of any and all written appraisals and
+§ 7001                              TITLE 15—COMMERCE AND TRADE                                   Page 2304
+
+CHAPTER 96—ELECTRONIC SIGNATURES IN                              (i) informing the consumer of (I) any
+  GLOBAL AND NATIONAL COMMERCE                                 right or option of the consumer to have
+   SUBCHAPTER I—ELECTRONIC RECORDS AND
+                                                               the record provided or made available on
+         SIGNATURES IN COMMERCE                                paper or in nonelectronic form, and (II) the
+                                                               right of the consumer to withdraw the con-
+Sec.
+7001.   General rule of validity.
+                                                               sent to have the record provided or made
+7002.   Exemption to preemption.                               available in an electronic form and of any
+7003.   Specific exceptions.                                   conditions, consequences (which may in-
+7004.   Applicability to Federal and State govern-             clude termination of the parties’ relation-
+          ments.                                               ship), or fees in the event of such with-
+7005.   Studies.                                               drawal;
+7006.   Definitions.
+                                                                 (ii) informing the consumer of whether
+    SUBCHAPTER II—TRANSFERABLE RECORDS                         the consent applies (I) only to the par-
+7021.      Transferable records.                               ticular transaction which gave rise to the
+           SUBCHAPTER III—PROMOTION OF                         obligation to provide the record, or (II) to
+       INTERNATIONAL ELECTRONIC COMMERCE                       identified categories of records that may
+7031.     Principles governing the use of electronic sig-      be provided or made available during the
+           natures in international transactions.              course of the parties’ relationship;
+                                                                 (iii) describing the procedures the con-
+   SUBCHAPTER I—ELECTRONIC RECORDS                             sumer must use to withdraw consent as
+     AND SIGNATURES IN COMMERCE                                provided in clause (i) and to update infor-
+                                                               mation needed to contact the consumer
+§ 7001. General rule of validity                               electronically; and
+(a) In general                                                   (iv) informing the consumer (I) how,
+  Notwithstanding any statute, regulation, or                  after the consent, the consumer may, upon
+other rule of law (other than this subchapter                  request, obtain a paper copy of an elec-
+and subchapter II), with respect to any trans-                 tronic record, and (II) whether any fee will
+action in or affecting interstate or foreign com-              be charged for such copy;
+merce—                                                         (C) the consumer—
+     (1) a signature, contract, or other record re-              (i) prior to consenting, is provided with a
+  lating to such transaction may not be denied                 statement of the hardware and software
+  legal effect, validity, or enforceability solely             requirements for access to and retention of
+  because it is in electronic form; and                        the electronic records; and
+     (2) a contract relating to such transaction                 (ii) consents electronically, or confirms
+  may not be denied legal effect, validity, or en-             his or her consent electronically, in a
+  forceability solely because an electronic sig-               manner that reasonably demonstrates that
+  nature or electronic record was used in its for-             the consumer can access information in
+  mation.                                                      the electronic form that will be used to
+(b) Preservation of rights and obligations                     provide the information that is the subject
+                                                               of the consent; and
+  This subchapter does not—
+     (1) limit, alter, or otherwise affect any re-              (D) after the consent of a consumer in ac-
+  quirement imposed by a statute, regulation, or              cordance with subparagraph (A), if a change
+  rule of law relating to the rights and obliga-              in the hardware or software requirements
+  tions of persons under such statute, regula-                needed to access or retain electronic records
+  tion, or rule of law other than a requirement               creates a material risk that the consumer
+  that contracts or other records be written,                 will not be able to access or retain a subse-
+  signed, or in nonelectronic form; or                        quent electronic record that was the subject
+     (2) require any person to agree to use or ac-            of the consent, the person providing the
+  cept electronic records or electronic signa-                electronic record—
+  tures, other than a governmental agency with                    (i) provides the consumer with a state-
+  respect to a record other than a contract to                  ment of (I) the revised hardware and soft-
+  which it is a party.                                          ware requirements for access to and reten-
+                                                                tion of the electronic records, and (II) the
+(c) Consumer disclosures
+                                                                right to withdraw consent without the im-
+  (1) Consent to electronic records                             position of any fees for such withdrawal
+     Notwithstanding subsection (a), if a statute,              and without the imposition of any condi-
+  regulation, or other rule of law requires that                tion or consequence that was not disclosed
+  information relating to a transaction or trans-               under subparagraph (B)(i); and
+  actions in or affecting interstate or foreign                   (ii) again complies with subparagraph
+  commerce be provided or made available to a                   (C).
+  consumer in writing, the use of an electronic             (2) Other rights
+  record to provide or make available (which-                 (A) Preservation of consumer protections
+  ever is required) such information satisfies the
+                                                                Nothing in this subchapter affects the con-
+  requirement that such information be in writ-
+                                                              tent or timing of any disclosure or other
+  ing if—
+                                                              record required to be provided or made avail-
+       (A) the consumer has affirmatively con-
+                                                              able to any consumer under any statute, reg-
+     sented to such use and has not withdrawn
+                                                              ulation, or other rule of law.
+     such consent;
+       (B) the consumer, prior to consenting, is              (B) Verification or acknowledgment
+     provided with a clear and conspicuous state-               If a law that was enacted prior to this
+     ment—                                                    chapter expressly requires a record to be
+Page 2305                      TITLE 15—COMMERCE AND TRADE                                        § 7001
+
+   provided or made available by a specified          (3) Originals
+   method that requires verification or ac-             If a statute, regulation, or other rule of law
+   knowledgment of receipt, the record may be         requires a contract or other record relating to
+   provided or made available electronically          a transaction in or affecting interstate or for-
+   only if the method used provides verification      eign commerce to be provided, available, or re-
+   or acknowledgment of receipt (whichever is         tained in its original form, or provides con-
+   required).                                         sequences if the contract or other record is not
+ (3) Effect of failure to obtain electronic con-      provided, available, or retained in its original
+     sent or confirmation of consent                  form, that statute, regulation, or rule of law is
+   The legal effectiveness, validity, or enforce-     satisfied by an electronic record that complies
+ ability of any contract executed by a con-           with paragraph (1).
+ sumer shall not be denied solely because of the      (4) Checks
+ failure to obtain electronic consent or con-           If a statute, regulation, or other rule of law
+ firmation of consent by that consumer in ac-         requires the retention of a check, that require-
+ cordance with paragraph (1)(C)(ii).                  ment is satisfied by retention of an electronic
+ (4) Prospective effect                               record of the information on the front and
+                                                      back of the check in accordance with para-
+   Withdrawal of consent by a consumer shall
+                                                      graph (1).
+ not affect the legal effectiveness, validity, or
+ enforceability of electronic records provided      (e) Accuracy and ability to retain contracts and
+ or made available to that consumer in accord-          other records
+ ance with paragraph (1) prior to implementa-          Notwithstanding subsection (a), if a statute,
+ tion of the consumer’s withdrawal of consent.      regulation, or other rule of law requires that a
+ A consumer’s withdrawal of consent shall be        contract or other record relating to a trans-
+ effective within a reasonable period of time       action in or affecting interstate or foreign com-
+ after receipt of the withdrawal by the provider    merce be in writing, the legal effect, validity, or
+ of the record. Failure to comply with para-        enforceability of an electronic record of such
+ graph (1)(D) may, at the election of the con-      contract or other record may be denied if such
+ sumer, be treated as a withdrawal of consent       electronic record is not in a form that is capable
+ for purposes of this paragraph.                    of being retained and accurately reproduced for
+ (5) Prior consent                                  later reference by all parties or persons who are
+                                                    entitled to retain the contract or other record.
+   This subsection does not apply to any
+ records that are provided or made available to     (f) Proximity
+ a consumer who has consented prior to the ef-         Nothing in this subchapter affects the prox-
+ fective date of this subchapter to receive such    imity required by any statute, regulation, or
+ records in electronic form as permitted by any     other rule of law with respect to any warning,
+ statute, regulation, or other rule of law.         notice, disclosure, or other record required to be
+ (6) Oral communications                            posted, displayed, or publicly affixed.
+   An oral communication or a recording of an       (g) Notarization and acknowledgment
+ oral communication shall not qualify as an            If a statute, regulation, or other rule of law re-
+ electronic record for purposes of this sub-        quires a signature or record relating to a trans-
+ section except as otherwise provided under ap-     action in or affecting interstate or foreign com-
+ plicable law.                                      merce to be notarized, acknowledged, verified,
+(d) Retention of contracts and records              or made under oath, that requirement is satis-
+                                                    fied if the electronic signature of the person au-
+ (1) Accuracy and accessibility                     thorized to perform those acts, together with all
+   If a statute, regulation, or other rule of law   other information required to be included by
+ requires that a contract or other record relat-    other applicable statute, regulation, or rule of
+ ing to a transaction in or affecting interstate    law, is attached to or logically associated with
+ or foreign commerce be retained, that require-     the signature or record.
+ ment is met by retaining an electronic record      (h) Electronic agents
+ of the information in the contract or other
+                                                       A contract or other record relating to a trans-
+ record that—
+                                                    action in or affecting interstate or foreign com-
+     (A) accurately reflects the information set
+                                                    merce may not be denied legal effect, validity,
+   forth in the contract or other record; and
+                                                    or enforceability solely because its formation,
+     (B) remains accessible to all persons who
+                                                    creation, or delivery involved the action of one
+   are entitled to access by statute, regulation,
+                                                    or more electronic agents so long as the action
+   or rule of law, for the period required by
+                                                    of any such electronic agent is legally attrib-
+   such statute, regulation, or rule of law, in a
+                                                    utable to the person to be bound.
+   form that is capable of being accurately re-
+   produced for later reference, whether by         (i) Insurance
+   transmission, printing, or otherwise.               It is the specific intent of the Congress that
+ (2) Exception                                      this subchapter and subchapter II apply to the
+                                                    business of insurance.
+   A requirement to retain a contract or other
+ record in accordance with paragraph (1) does       (j) Insurance agents and brokers
+ not apply to any information whose sole pur-          An insurance agent or broker acting under the
+ pose is to enable the contract or other record     direction of a party that enters into a contract
+ to be sent, communicated, or received.             by means of an electronic record or electronic
+§ 7002                                  TITLE 15—COMMERCE AND TRADE                                             Page 2306
+
+signature may not be held liable for any defi-                    amending provisions set out as a note under section 231
+ciency in the electronic procedures agreed to by                  of Title 47, Telecommunications] may be cited as the
+the parties under that contract if—                               ‘Electronic Signatures in Global and National Com-
+    (1) the agent or broker has not engaged in                    merce Act’.’’
+  negligent, reckless, or intentional tortious                    § 7002. Exemption to preemption
+  conduct;
+    (2) the agent or broker was not involved in                   (a) In general
+  the development or establishment of such                          A State statute, regulation, or other rule of
+  electronic procedures; and                                      law may modify, limit, or supersede the provi-
+    (3) the agent or broker did not deviate from                  sions of section 7001 of this title with respect to
+  such procedures.                                                State law only if such statute, regulation, or
+(Pub. L. 106–229, title I, § 101, June 30, 2000, 114              rule of law—
+Stat. 464.)                                                            (1) constitutes an enactment or adoption of
+                                                                    the Uniform Electronic Transactions Act as
+                      Editorial Notes                               approved and recommended for enactment in
+                                                                    all the States by the National Conference of
+                   REFERENCES IN TEXT                               Commissioners on Uniform State Laws in 1999,
+  This chapter, referred to in subsec. (c)(2)(B), was in            except that any exception to the scope of such
+the original ‘‘this Act’’, meaning Pub. L. 106–229, June            Act enacted by a State under section 3(b)(4) of
+30, 2000, 114 Stat. 464, which is classified principally to         such Act shall be preempted to the extent such
+this chapter. For complete classification of this Act to
+                                                                    exception is inconsistent with this subchapter
+the Code, see Short Title note below and Tables.
+  For the effective date of this subchapter, referred to            or subchapter II, or would not be permitted
+in subsec. (c)(5), see Effective Date note below.                   under paragraph (2)(A)(ii) of this subsection;
+                                                                    or
+         Statutory Notes and Related Subsidiaries                      (2)(A) specifies the alternative procedures or
+                                                                    requirements for the use or acceptance (or
+                      EFFECTIVE DATE
+                                                                    both) of electronic records or electronic signa-
+  Pub. L. 106–229, title I, § 107, June 30, 2000, 114 Stat.         tures to establish the legal effect, validity, or
+473, provided that:                                                 enforceability of contracts or other records,
+  ‘‘(a) IN GENERAL.—Except as provided in subsection
+(b), this title [enacting this subchapter] shall be effec-          if—
+tive on October 1, 2000.                                                 (i) such alternative procedures or require-
+  ‘‘(b) EXCEPTIONS.—                                                   ments are consistent with this subchapter
+     ‘‘(1) RECORD RETENTION.—                                          and subchapter II; and
+        ‘‘(A) IN GENERAL.—Subject to subparagraph (B),                   (ii) such alternative procedures or require-
+     this title [enacting this subchapter] shall be effec-             ments do not require, or accord greater legal
+     tive on March 1, 2001, with respect to a requirement
+     that a record be retained imposed by—
+                                                                       status or effect to, the implementation or
+           ‘‘(i) a Federal statute, regulation, or other rule          application of a specific technology or tech-
+        of law, or                                                     nical specification for performing the func-
+           ‘‘(ii) a State statute, regulation, or other rule of        tions of creating, storing, generating, receiv-
+        law administered or promulgated by a State regu-               ing, communicating, or authenticating elec-
+        latory agency.                                                 tronic records or electronic signatures; and
+        ‘‘(B)       DELAYED       EFFECT     FOR      PENDING
+     RULEMAKINGS.—If on March 1, 2001, a Federal regu-                (B) if enacted or adopted after June 30, 2000,
+     latory agency or State regulatory agency has an-               makes specific reference to this chapter.
+     nounced, proposed, or initiated, but not completed,
+     a rulemaking proceeding to prescribe a regulation
+                                                                  (b) Exceptions for actions by States as market
+     under section 104(b)(3) [15 U.S.C. 7004(b)(3)] with re-          participants
+     spect to a requirement described in subparagraph               Subsection (a)(2)(A)(ii) shall not apply to the
+     (A), this title shall be effective on June 1, 2001, with     statutes, regulations, or other rules of law gov-
+     respect to such requirement.                                 erning procurement by any State, or any agency
+     ‘‘(2) CERTAIN GUARANTEED AND INSURED LOANS.—
+  With regard to any transaction involving a loan guar-           or instrumentality thereof.
+  antee or loan guarantee commitment (as those terms              (c) Prevention of circumvention
+  are defined in section 502 of the Federal Credit Re-              Subsection (a) does not permit a State to cir-
+  form Act of 1990 [2 U.S.C. 661a]), or involving a pro-
+  gram listed in the Federal Credit Supplement, Budget
+                                                                  cumvent this subchapter or subchapter II
+  of the United States, FY 2001, this title applies only          through the imposition of nonelectronic deliv-
+  to such transactions entered into, and to any loan or           ery methods under section 8(b)(2) of the Uniform
+  mortgage made, insured, or guaranteed by the United             Electronic Transactions Act.
+  States Government thereunder, on and after one year
+                                                                  (Pub. L. 106–229, title I, § 102, June 30, 2000, 114
+  after the date of enactment of this Act [June 30, 2000].
+     ‘‘(3) STUDENT LOANS.—With respect to any records             Stat. 467.)
+  that are provided or made available to a consumer
+  pursuant to an application for a loan, or a loan made,                 Statutory Notes and Related Subsidiaries
+  pursuant to title IV of the Higher Education Act of                                 EFFECTIVE DATE
+  1965 [20 U.S.C. 1070 et seq.], section 101(c) of this Act
+  [15 U.S.C. 7001(c)] shall not apply until the earlier of—         Section effective Oct. 1, 2000, with exceptions relating
+        ‘‘(A) such time as the Secretary of Education pub-        to record retention and certain loans, see section 107 of
+     lishes revised promissory notes under section                Pub. L. 106–229, set out as a note under section 7001 of
+     432(m) of the Higher Education Act of 1965 [20 U.S.C.        this title.
+     1082(m)]; or
+        ‘‘(B) one year after the date of enactment of this        § 7003. Specific exceptions
+     Act [June 30, 2000].’’                                       (a) Excepted requirements
+                        SHORT TITLE                                 The provisions of section 7001 of this title
+  Pub. L. 106–229, § 1, June 30, 2000, 114 Stat. 464, pro-        shall not apply to a contract or other record to
+vided that: ‘‘This Act [enacting this chapter and                 the extent it is governed by—
+Page 2307                           TITLE 15—COMMERCE AND TRADE                                           § 7004
+
+    (1) a statute, regulation, or other rule of law          § 7004. Applicability to Federal and State govern-
+  governing the creation and execution of wills,                 ments
+  codicils, or testamentary trusts;                          (a) Filing and access requirements
+    (2) a State statute, regulation, or other rule
+  of law governing adoption, divorce, or other                 Subject to subsection (c)(2), nothing in this
+  matters of family law; or                                  subchapter limits or supersedes any requirement
+    (3) the Uniform Commercial Code, as in ef-               by a Federal regulatory agency, self-regulatory
+  fect in any State, other than sections 1–107               organization, or State regulatory agency that
+  and 1–206 and Articles 2 and 2A.                           records be filed with such agency or organiza-
+(b) Additional exceptions                                    tion in accordance with specified standards or
+                                                             formats.
+  The provisions of section 7001 of this title               (b) Preservation of existing rulemaking author-
+shall not apply to—                                              ity
+    (1) court orders or notices, or official court
+  documents (including briefs, pleadings, and                  (1) Use of authority to interpret
+  other writings) required to be executed in con-                Subject to paragraph (2) and subsection (c),
+  nection with court proceedings;                              a Federal regulatory agency or State regu-
+    (2) any notice of—                                         latory agency that is responsible for rule-
+      (A) the cancellation or termination of util-             making under any other statute may interpret
+    ity services (including water, heat, and                   section 7001 of this title with respect to such
+    power);                                                    statute through—
+      (B) default, acceleration, repossession,                      (A) the issuance of regulations pursuant to
+    foreclosure, or eviction, or the right to cure,              a statute; or
+    under a credit agreement secured by, or a                       (B) to the extent such agency is authorized
+    rental agreement for, a primary residence of                 by statute to issue orders or guidance, the
+    an individual;                                               issuance of orders or guidance of general ap-
+      (C) the cancellation or termination of                     plicability that are publicly available and
+    health insurance or benefits or life insurance               published (in the Federal Register in the
+    benefits (excluding annuities); or                           case of an order or guidance issued by a Fed-
+      (D) recall of a product, or material failure               eral regulatory agency).
+    of a product, that risks endangering health               This paragraph does not grant any Federal
+    or safety; or                                             regulatory agency or State regulatory agency
+    (3) any document required to accompany any                authority to issue regulations, orders, or guid-
+  transportation or handling of hazardous mate-               ance pursuant to any statute that does not au-
+  rials, pesticides, or other toxic or dangerous              thorize such issuance.
+  materials.                                                  (2) Limitations on interpretation authority
+(c) Review of exceptions                                        Notwithstanding paragraph (1), a Federal
+  (1) Evaluation required                                     regulatory agency shall not adopt any regula-
+    The Secretary of Commerce, acting through                 tion, order, or guidance described in paragraph
+  the Assistant Secretary for Communications                  (1), and a State regulatory agency is pre-
+  and Information, shall review the operation of              empted by section 7001 of this title from
+  the exceptions in subsections (a) and (b) to                adopting any regulation, order, or guidance
+  evaluate, over a period of 3 years, whether                 described in paragraph (1), unless—
+  such exceptions continue to be necessary for                    (A) such regulation, order, or guidance is
+  the protection of consumers. Within 3 years                   consistent with section 7001 of this title;
+  after June 30, 2000, the Assistant Secretary                    (B) such regulation, order, or guidance
+  shall submit a report to the Congress on the                  does not add to the requirements of such sec-
+  results of such evaluation.                                   tion; and
+  (2) Determinations                                              (C) such agency finds, in connection with
+                                                                the issuance of such regulation, order, or
+    If a Federal regulatory agency, with respect                guidance, that—
+  to matter within its jurisdiction, determines                     (i) there is a substantial justification for
+  after notice and an opportunity for public                      the regulation, order, or guidance;
+  comment, and publishes a finding, that one or                     (ii) the methods selected to carry out
+  more such exceptions are no longer necessary                    that purpose—
+  for the protection of consumers and elimi-                           (I) are substantially equivalent to the
+  nating such exceptions will not increase the                      requirements imposed on records that
+  material risk of harm to consumers, such                          are not electronic records; and
+  agency may extend the application of section                         (II) will not impose unreasonable costs
+  7001 of this title to the exceptions identified in                on the acceptance and use of electronic
+  such finding.                                                     records; and
+(Pub. L. 106–229, title I, § 103, June 30, 2000, 114                (iii) the methods selected to carry out
+Stat. 468.)                                                       that purpose do not require, or accord
+                                                                  greater legal status or effect to, the imple-
+       Statutory Notes and Related Subsidiaries                   mentation or application of a specific
+                    EFFECTIVE DATE                                technology or technical specification for
+  Section effective Oct. 1, 2000, with exceptions relating        performing the functions of creating, stor-
+to record retention and certain loans, see section 107 of         ing, generating, receiving, communicating,
+Pub. L. 106–229, set out as a note under section 7001 of          or authenticating electronic records or
+this title.                                                       electronic signatures.
+§ 7005                           TITLE 15—COMMERCE AND TRADE                                           Page 2308
+
+  (3) Performance standards                              (2) Prospectuses
+    (A) Accuracy, record integrity, accessibility          Within 30 days after June 30, 2000, the Secu-
+      Notwithstanding paragraph (2)(C)(iii), a           rities and Exchange Commission shall issue a
+    Federal regulatory agency or State regu-             regulation or order pursuant to paragraph (1)
+    latory agency may interpret section 7001(d)          exempting from section 7001(c) of this title
+    of this title to specify performance stand-          any records that are required to be provided in
+    ards to assure accuracy, record integrity,           order to allow advertising, sales literature, or
+    and accessibility of records that are required       other information concerning a security
+    to be retained. Such performance standards           issued by an investment company that is reg-
+    may be specified in a manner that imposes a          istered under the Investment Company Act of
+    requirement in violation of paragraph                1940 [15 U.S.C. 80a–1 et seq.], or concerning the
+    (2)(C)(iii) if the requirement (i) serves an im-     issuer thereof, to be excluded from the defini-
+    portant governmental objective; and (ii) is          tion of a prospectus under section 77b(a)(10)(A)
+    substantially related to the achievement of          of this title.
+    that objective. Nothing in this paragraph          (e) Electronic letters of agency
+    shall be construed to grant any Federal reg-         The Federal Communications Commission
+    ulatory agency or State regulatory agency          shall not hold any contract for telecommuni-
+    authority to require use of a particular type      cations service or letter of agency for a pre-
+    of software or hardware in order to comply         ferred carrier change, that otherwise complies
+    with section 7001(d) of this title.                with the Commission’s rules, to be legally inef-
+    (B) Paper or printed form                          fective, invalid, or unenforceable solely because
+       Notwithstanding subsection (c)(1), a Fed-       an electronic record or electronic signature was
+    eral regulatory agency or State regulatory         used in its formation or authorization.
+    agency may interpret section 7001(d) of this       (Pub. L. 106–229, title I, § 104, June 30, 2000, 114
+    title to require retention of a record in a        Stat. 469.)
+    tangible printed or paper form if—
+         (i) there is a compelling governmental                             Editorial Notes
+       interest relating to law enforcement or na-
+                                                                         REFERENCES IN TEXT
+       tional security for imposing such require-
+       ment; and                                          The Government Paperwork Elimination Act, re-
+         (ii) imposing such requirement is essen-      ferred to in subsec. (c)(2), is title XVII of Pub. L.
+       tial to attaining such interest.                105–277, div. C, Oct. 21, 1998, 112 Stat. 2681–749, which
+                                                       amended section 3504 of Title 44, Public Printing and
+  (4) Exceptions for actions by government as          Documents, and enacted provisions set out as a note
+       market participant                              under section 3504 of Title 44. For complete classifica-
+                                                       tion of this Act to the Code, see Tables.
+    Paragraph (2)(C)(iii) shall not apply to the
+                                                          The Investment Company Act of 1940, referred to in
+  statutes, regulations, or other rules of law         subsec. (d)(2), is title I of act Aug. 22, 1940, ch. 686, 54
+  governing procurement by the Federal or any          Stat. 789, which is classified generally to subchapter I
+  State government, or any agency or instru-           (§ 80a–1 et seq.) of chapter 2D of this title. For complete
+  mentality thereof.                                   classification of this Act to the Code, see section 80a–51
+                                                       of this title and Tables.
+(c) Additional limitations
+  (1) Reimposing paper prohibited                             Statutory Notes and Related Subsidiaries
+    Nothing in subsection (b) (other than para-                             EFFECTIVE DATE
+  graph (3)(B) thereof) shall be construed to
+  grant any Federal regulatory agency or State           Section effective Oct. 1, 2000, with exceptions relating
+  regulatory agency authority to impose or re-         to record retention and certain loans, see section 107 of
+                                                       Pub. L. 106–229, set out as a note under section 7001 of
+  impose any requirement that a record be in a         this title.
+  tangible printed or paper form.
+  (2) Continuing obligation under Government           § 7005. Studies
+       Paperwork Elimination Act                       (a) Delivery
+    Nothing in subsection (a) or (b) relieves any        Within 12 months after June 30, 2000, the Sec-
+  Federal regulatory agency of its obligations         retary of Commerce shall conduct an inquiry re-
+  under the Government Paperwork Elimination           garding the effectiveness of the delivery of elec-
+  Act (title XVII of Public Law 105–277).              tronic records to consumers using electronic
+(d) Authority to exempt from consent provision         mail as compared with delivery of written
+  (1) In general                                       records via the United States Postal Service and
+                                                       private express mail services. The Secretary
+    A Federal regulatory agency may, with re-          shall submit a report to the Congress regarding
+  spect to matter within its jurisdiction, by reg-     the results of such inquiry by the conclusion of
+  ulation or order issued after notice and an op-      such 12-month period.
+  portunity for public comment, exempt without
+  condition a specified category or type of            (b) Study of electronic consent
+  record from the requirements relating to con-          Within 12 months after June 30, 2000, the Sec-
+  sent in section 7001(c) of this title if such ex-    retary of Commerce and the Federal Trade Com-
+  emption is necessary to eliminate a substan-         mission shall submit a report to the Congress
+  tial burden on electronic commerce and will          evaluating any benefits provided to consumers
+  not increase the material risk of harm to con-       by    the    procedure       required   by    section
+  sumers.                                              7001(c)(1)(C)(ii) of this title; any burdens imposed
+Page 2309                           TITLE 15—COMMERCE AND TRADE                                                 § 7021
+
+on electronic commerce by that provision;                      ship, limited liability company, association,
+whether the benefits outweigh the burdens;                     joint venture, governmental agency, public
+whether the absence of the procedure required                  corporation, or any other legal or commercial
+by section 7001(c)(1)(C)(ii) of this title would in-           entity.
+crease the incidence of fraud directed against                 (9) Record
+consumers; and suggesting any revisions to the
+                                                                 The term ‘‘record’’ means information that
+provision deemed appropriate by the Secretary
+                                                               is inscribed on a tangible medium or that is
+and the Commission. In conducting this evalua-
+                                                               stored in an electronic or other medium and is
+tion, the Secretary and the Commission shall
+                                                               retrievable in perceivable form.
+solicit comment from the general public, con-
+sumer representatives, and electronic commerce                 (10) Requirement
+businesses.                                                      The term ‘‘requirement’’ includes a prohibi-
+(Pub. L. 106–229, title I, § 105, June 30, 2000, 114           tion.
+Stat. 471.)                                                    (11) Self-regulatory organization
+                                                                 The term ‘‘self-regulatory organization’’
+       Statutory Notes and Related Subsidiaries                means an organization or entity that is not a
+                    EFFECTIVE DATE                             Federal regulatory agency or a State, but that
+                                                               is under the supervision of a Federal regu-
+  Section effective Oct. 1, 2000, with exceptions relating
+to record retention and certain loans, see section 107 of      latory agency and is authorized under Federal
+Pub. L. 106–229, set out as a note under section 7001 of       law to adopt and administer rules applicable
+this title.                                                    to its members that are enforced by such orga-
+                                                               nization or entity, by a Federal regulatory
+§ 7006. Definitions                                            agency, or by another self-regulatory organi-
+  For purposes of this subchapter:                             zation.
+  (1) Consumer                                                 (12) State
+    The term ‘‘consumer’’ means an individual                    The term ‘‘State’’ includes the District of
+  who obtains, through a transaction, products                 Columbia and the territories and possessions
+  or services which are used primarily for per-                of the United States.
+  sonal, family, or household purposes, and also               (13) Transaction
+  means the legal representative of such an indi-                The term ‘‘transaction’’ means an action or
+  vidual.                                                      set of actions relating to the conduct of busi-
+  (2) Electronic                                               ness, consumer, or commercial affairs between
+    The term ‘‘electronic’’ means relating to                  two or more persons, including any of the fol-
+  technology having electrical, digital, mag-                  lowing types of conduct—
+  netic, wireless, optical, electromagnetic, or                    (A) the sale, lease, exchange, licensing, or
+  similar capabilities.                                          other disposition of (i) personal property, in-
+  (3) Electronic agent                                           cluding goods and intangibles, (ii) services,
+                                                                 and (iii) any combination thereof; and
+    The term ‘‘electronic agent’’ means a com-                     (B) the sale, lease, exchange, or other dis-
+  puter program or an electronic or other auto-                  position of any interest in real property, or
+  mated means used independently to initiate                     any combination thereof.
+  an action or respond to electronic records or
+  performances in whole or in part without re-               (Pub. L. 106–229, title I, § 106, June 30, 2000, 114
+  view or action by an individual at the time of             Stat. 472.)
+  the action or response.
+                                                                    Statutory Notes and Related Subsidiaries
+  (4) Electronic record
+                                                                                 EFFECTIVE DATE
+    The term ‘‘electronic record’’ means a con-
+  tract or other record created, generated, sent,              Section effective Oct. 1, 2000, with exceptions relating
+  communicated, received, or stored by elec-                 to record retention and certain loans, see section 107 of
+                                                             Pub. L. 106–229, set out as a note under section 7001 of
+  tronic means.
+                                                             this title.
+  (5) Electronic signature
+    The term ‘‘electronic signature’’ means an                     SUBCHAPTER II—TRANSFERABLE
+  electronic sound, symbol, or process, attached                            RECORDS
+  to or logically associated with a contract or              § 7021. Transferable records
+  other record and executed or adopted by a per-
+  son with the intent to sign the record.                    (a) Definitions
+  (6) Federal regulatory agency                                For purposes of this section:
+    The term ‘‘Federal regulatory agency’’                     (1) Transferable record
+  means an agency, as that term is defined in                    The term ‘‘transferable record’’ means an
+  section 552(f) of title 5.                                   electronic record that—
+  (7) Information                                                  (A) would be a note under Article 3 of the
+                                                                 Uniform Commercial Code if the electronic
+    The term ‘‘information’’ means data, text,
+                                                                 record were in writing;
+  images, sounds, codes, computer programs,
+                                                                   (B) the issuer of the electronic record ex-
+  software, databases, or the like.
+                                                                 pressly has agreed is a transferable record;
+  (8) Person                                                     and
+    The term ‘‘person’’ means an individual, cor-                  (C) relates to a loan secured by real prop-
+  poration, business trust, estate, trust, partner-              erty.
+§ 7031                         TITLE 15—COMMERCE AND TRADE                                           Page 2310
+
+  A transferable record may be executed using        sonable proof that the person is in control of the
+  an electronic signature.                           transferable record. Proof may include access to
+  (2) Other definitions                              the authoritative copy of the transferable record
+                                                     and related business records sufficient to review
+    The terms ‘‘electronic record’’, ‘‘electronic
+                                                     the terms of the transferable record and to es-
+  signature’’, and ‘‘person’’ have the same mean-
+                                                     tablish the identity of the person having control
+  ings provided in section 7006 of this title.
+                                                     of the transferable record.
+(b) Control
+                                                     (g) UCC references
+  A person has control of a transferable record if
+a system employed for evidencing the transfer of       For purposes of this subsection, all references
+interests in the transferable record reliably es-    to the Uniform Commercial Code are to the Uni-
+tablishes that person as the person to which the     form Commercial Code as in effect in the juris-
+transferable record was issued or transferred.       diction the law of which governs the transfer-
+                                                     able record.
+(c) Conditions
+                                                     (Pub. L. 106–229, title II, § 201, June 30, 2000, 114
+  A system satisfies subsection (b), and a person
+                                                     Stat. 473.)
+is deemed to have control of a transferable
+record, if the transferable record is created,
+                                                            Statutory Notes and Related Subsidiaries
+stored, and assigned in such a manner that—
+    (1) a single authoritative copy of the trans-                         EFFECTIVE DATE
+  ferable record exists which is unique, identifi-     Pub. L. 106–229, title II, § 202, June 30, 2000, 114 Stat.
+  able, and, except as otherwise provided in         475, provided that: ‘‘This title [enacting this sub-
+  paragraphs (4), (5), and (6), unalterable;         chapter] shall be effective 90 days after the date of en-
+    (2) the authoritative copy identifies the per-   actment of this Act [June 30, 2000].’’
+  son asserting control as—
+      (A) the person to which the transferable            SUBCHAPTER III—PROMOTION OF
+    record was issued; or                             INTERNATIONAL ELECTRONIC COMMERCE
+      (B) if the authoritative copy indicates that
+                                                     § 7031. Principles governing the use of electronic
+    the transferable record has been transferred,
+                                                         signatures in international transactions
+    the person to which the transferable record
+    was most recently transferred;                   (a) Promotion of electronic signatures
+     (3) the authoritative copy is communicated        (1) Required actions
+   to and maintained by the person asserting             The Secretary of Commerce shall promote
+   control or its designated custodian;                the acceptance and use, on an international
+     (4) copies or revisions that add or change an     basis, of electronic signatures in accordance
+   identified assignee of the authoritative copy       with the principles specified in paragraph (2)
+   can be made only with the consent of the per-       and in a manner consistent with section 7001
+   son asserting control;                              of this title. The Secretary of Commerce shall
+     (5) each copy of the authoritative copy and       take all actions necessary in a manner con-
+   any copy of a copy is readily identifiable as a     sistent with such principles to eliminate or re-
+   copy that is not the authoritative copy; and        duce, to the maximum extent possible, the im-
+     (6) any revision of the authoritative copy is     pediments to commerce in electronic signa-
+   readily identifiable as authorized or unauthor-     tures, for the purpose of facilitating the devel-
+   ized.                                               opment of interstate and foreign commerce.
+(d) Status as holder                                   (2) Principles
+   Except as otherwise agreed, a person having           The principles specified in this paragraph
+control of a transferable record is the holder, as     are the following:
+defined in section 1–201(20) of the Uniform Com-           (A) Remove paper-based obstacles to elec-
+mercial Code, of the transferable record and has         tronic transactions by adopting relevant
+the same rights and defenses as a holder of an           principles from the Model Law on Electronic
+equivalent record or writing under the Uniform           Commerce adopted in 1996 by the United Na-
+Commercial Code, including, if the applicable            tions Commission on International Trade
+statutory requirements under section 3–302(a),           Law.
+9–308, or revised section 9–330 of the Uniform             (B) Permit parties to a transaction to de-
+Commercial Code are satisfied, the rights and            termine the appropriate authentication
+defenses of a holder in due course or a pur-             technologies and implementation models for
+chaser, respectively. Delivery, possession, and          their transactions, with assurance that
+endorsement are not required to obtain or exer-          those technologies and implementation mod-
+cise any of the rights under this subsection.            els will be recognized and enforced.
+(e) Obligor rights                                         (C) Permit parties to a transaction to have
+   Except as otherwise agreed, an obligor under a        the opportunity to prove in court or other
+transferable record has the same rights and de-          proceedings that their authentication ap-
+fenses as an equivalent obligor under equivalent         proaches and their transactions are valid.
+records or writings under the Uniform Commer-              (D) Take a nondiscriminatory approach to
+cial Code.                                               electronic signatures and authentication
+(f) Proof of control                                     methods from other jurisdictions.
+   If requested by a person against which en-        (b) Consultation
+forcement is sought, the person seeking to en-         In conducting the activities required by this
+force the transferable record shall provide rea-     section, the Secretary shall consult with users
+Page 2311                               TITLE 15—COMMERCE AND TRADE                                                  § 7101
+
+and providers of electronic signature products                      1. the significant role which small business and
+and services and other interested persons.                        women entrepreneurs can play in promoting full em-
+                                                                  ployment and balanced growth in our economy;
+(c) Definitions                                                     2. the many obstacles facing women entrepreneurs;
+  As used in this section, the terms ‘‘electronic                 and
+record’’ and ‘‘electronic signature’’ have the                      3. the need to aid and stimulate women’s business en-
+same meanings provided in section 7006 of this                    terprise;
+                                                                    By the authority vested in me as President of the
+title.                                                            United States of America, in order to create a National
+(Pub. L. 106–229, title III, § 301, June 30, 2000, 114            Women’s Business Enterprise Policy and to prescribe
+Stat. 475.)                                                       arrangements for developing, coordinating and imple-
+                                                                  menting a national program for women’s business en-
+        CHAPTER 97—WOMEN’S BUSINESS                               terprise, it is ordered as follows:
+          ENTERPRISE DEVELOPMENT                                   1–1. RESPONSIBILITIES OF THE FEDERAL DEPARTMENTS
+                                                                                       AND AGENCIES
+Sec.
+7101.     Establishment of the Interagency Committee.               1–101. Within the constraints of statutory authority
+7102.     Duties of the Interagency Committee.                    and as otherwise permitted by law:
+7103.     Membership of the Interagency Committee.                  (a) Each department and agency of the Executive
+7104.     Reports from the Interagency Committee.                 Branch shall take appropriate action to facilitate, pre-
+7105.     Establishment of the National Women’s Busi-             serve and strengthen women’s business enterprise and
+            ness Council.                                         to ensure full participation by women in the free enter-
+7106.     Duties of the Council.                                  prise system.
+7107.     Membership of the Council.                                (b) Each department and agency shall take affirma-
+7108.     Definitions.                                            tive action in support of women’s business enterprise in
+7109.     Studies and other research.                             appropriate programs and activities including but not
+7110.     Authorization of appropriations.                        limited to:
+                                                                    (1) management, technical, financial and procure-
+                      Editorial Notes                             ment assistance,
+                                                                    (2) business-related education, training, counseling
+                        CODIFICATION                              and information dissemination, and
+  This chapter is comprised of title IV of Pub. L.                  (3) procurement.
+100–533, as added by Pub. L. 103–403, title IV, § 413, Oct.         (c) Each department or agency empowered to extend
+22, 1994, 108 Stat. 4193, and amended. Title IV of Pub. L.        Federal financial assistance to any program or activity
+100–533 was formerly set out as a note under section 631          shall issue regulations requiring the recipient of such
+of this title.                                                    assistance to take appropriate affirmative action in
+                                                                  support of women’s business enterprise and to prohibit
+§ 7101. Establishment of the Interagency Com-                     actions or policies which discriminate against women’s
+    mittee                                                        business enterprise on the ground of sex. For purposes
+                                                                  of this subsection, Federal financial assistance means
+  There is established an interagency committee                   assistance extended by way of grant, cooperative agree-
+to be known as the Interagency Committee on                       ment, loan or contract other than a contract of insur-
+Women’s Business Enterprise.                                      ance or guaranty. These regulations shall prescribe
+                                                                  sanctions for noncompliance. Unless otherwise speci-
+(Pub. L. 100–533, title IV, § 401, as added Pub. L.               fied by law, no agency sanctions shall be applied until
+103–403, title IV, § 413, Oct. 22, 1994, 108 Stat.                the agency or department concerned has advised the
+4193.)                                                            appropriate person or persons of the failure to comply
+                                                                  with its regulations and has determined that compli-
+                      Editorial Notes                             ance cannot be secured by voluntary means.
+                                                                    1–102. For purposes of this Order, affirmative action
+                     PRIOR PROVISIONS                             may include, but is not limited to, creating or sup-
+                                                                  porting new programs responsive to the special needs of
+  A prior section 401 of Pub. L. 100–533, title IV, Oct. 25,
+                                                                  women’s business enterprise, establishing incentives to
+1988, 102 Stat. 2694, related to the establishment of the
+                                                                  promote business or business-related opportunities for
+National Women’s Business Council, prior to the gen-
+                                                                  women’s business enterprise, collecting and dissemi-
+eral amendment of title IV of Pub. L. 100–533 by Pub. L.
+                                                                  nating information in support of women’s business en-
+103–403. See section 7105 of this title.
+                                                                  terprise, and insuring to women’s business enterprise
+                                                                  knowledge of and ready access to business-related serv-
+        Statutory Notes and Related Subsidiaries                  ices and resources. If, in implementing this Order, an
+            SHORT TITLE OF 2000 AMENDMENT                         agency undertakes to use or to require compliance with
+                                                                  numerical set-asides, or similar measures, it shall state
+  Pub. L. 106–554, § 1(a)(9) [title VII, § 701], Dec. 21, 2000,   the purpose of such measure, and the measure shall be
+114 Stat. 2763, 2763A–701, provided that: ‘‘This title            designed on the basis of pertinent factual findings of
+[amending sections 7107, 7109, and 7110 of this title and         discrimination against women’s business enterprise and
+repealing former section 7109 of this title] may be cited         the need for such measure.
+as the ‘National Women’s Business Council Reauthor-                 1–103. In carrying out their responsibilities under Sec-
+ization Act of 2000’.’’                                           tion 1–1, the departments and agencies shall consult
+                                                                  the Department of Justice, and the Department of Jus-
+                   Executive Documents                            tice shall provide legal guidance concerning these re-
+                                                                  sponsibilities.
+EX. ORD. NO. 12138. NATIONAL WOMEN’S BUSINESS ENTER-
+ PRISE POLICY AND NATIONAL PROGRAM FOR WOMEN’S                     1–2. ESTABLISHMENT OF THE INTERAGENCY COMMITTEE
+ BUSINESS ENTERPRISE                                                        ON WOMEN’S BUSINESS ENTERPRISE
+
+  Ex. Ord. No. 12138, May 18, 1979, 44 F.R. 29637, as               1–201. To help insure that the actions ordered above
+amended by Ex. Ord. No. 12608, Sept. 9, 1987, 52 F.R.             are carried out in an effective manner, I hereby estab-
+34617, provided:                                                  lish the Interagency Committee on Women’s Business
+  In response to the findings of the Interagency Task             Enterprise (hereinafter called the Committee).
+Force on Women Business Owners and congressional                    1–202. The Chairperson of the Committee (hereinafter
+findings that recognize:                                          called the Chairperson) shall be appointed by the Presi-
+Page 985                        TITLE 50—WAR AND NATIONAL DEFENSE                                              § 3820
+
+units of any or all Reserve components of the Armed          Sec.
+Forces of the United States and retired personnel of the     3919.     Exercise of rights under chapter not to affect
+Regular Armed Forces: Provided, that so much of the                     certain future financial transactions.
+authority of the President under the said section 21, as     3920.     Legal representatives.
+amended [this section], as relates to any Reserve com-                SUBCHAPTER II—GENERAL RELIEF
+ponent of the United States Coast Guard or to retired
+personnel of the Regular Coast Guard is hereby dele-         3931.     Protection of servicemembers against default
+gated to the Secretary of Homeland Security.                             judgments.
+  The Secretary of Defense is hereby authorized to re-       3932.     Stay of proceedings when servicemember has
+delegate, subject to such conditions as the Secretary                    notice.
+may deem appropriate, to the Secretaries of the Army,        3933.     Fines and penalties under contracts.
+Navy, and Air Force such functions under this order as       3934.     Stay or vacation of execution of judgments,
+affect their respective services.                                        attachments, and garnishments.
+                                                             3935.     Duration and term of stays; codefendants not
+§ 3820. Procedural rights                                                in service.
+                                                             3936.     Statute of limitations.
+  (a) It is hereby declared to be the purpose of             3937.     Maximum rate of interest on debts incurred
+this section to guarantee to each registrant as-                         before military service.
+serting a claim before a local or appeal board, a            3938.     Child custody protection.
+fair hearing consistent with the informal and                3938a.    Annual notice to members of the Armed
+expeditious processing which is required by se-                          Forces regarding child custody protections
+lective service cases.                                                   guaranteed by the Servicemembers Civil
+  (b) Pursuant to such rules and regulations as                          Relief Act.
+the President may prescribe—                                 SUBCHAPTER III—RENT, INSTALLMENT CON-
+  (1) Each registrant shall be afforded the oppor-            TRACTS, MORTGAGES, LIENS, ASSIGNMENT,
+tunity to appear in person before the local or                LEASES,  COMMUNICATIONS  SERVICE CON-
+                                                              TRACTS
+any appeal board of the Selective Service Sys-
+tem to testify and present evidence regarding                3951.     Evictions and distress.
+his status.                                                  3952.     Protection under installment contracts for
+  (2) Subject to reasonable limitations on the                          purchase or lease.
+number of witnesses and the total time allotted              3953.     Mortgages and trust deeds.
+                                                             3954.     Settlement of stayed cases relating to per-
+to each registrant, each registrant shall have                          sonal property.
+the right to present witnesses on his behalf be-             3955.     Termination of residential or motor vehicle
+fore the local board.                                                   leases.
+  (3) A quorum of any local board or appeal                  3956.     Termination of certain consumer contracts.
+board shall be present during the registrant’s               3957.     Protection of life insurance policy.
+personal appearance.                                         3958.     Enforcement of storage liens.
+  (4) In the event of a decision adverse to the              3959.     Extension of protections to dependents.
+claim of a registrant, the local or appeal board                      SUBCHAPTER IV—LIFE INSURANCE
+making such decision shall, upon request, fur-               3971.     Definitions.
+nish to such registrant a brief written statement            3972.     Insurance rights and protections.
+of the reasons for its decision.                             3973.     Application for insurance protection.
+(June 24, 1948, ch. 625, title I, § 22, as added Pub.        3974.     Policies entitled to protection and lapse of
+                                                                         policies.
+L. 92–129, title I, § 101(a)(36), Sept. 28, 1971, 85         3975.     Policy restrictions.
+Stat. 353.)                                                  3976.     Deduction of unpaid premiums.
+                                                             3977.     Premiums and interest guaranteed by United
+                     Editorial Notes                                     States.
+                      CODIFICATION                           3978.     Regulations.
+                                                             3979.     Review of findings of fact and conclusions of
+  Section was formerly classified to section 471a of the                 law.
+former Appendix to this title prior to editorial reclassi-
+fication and renumbering as this section.                       SUBCHAPTER V—TAXES AND PUBLIC LANDS
+                                                             3991.     Taxes respecting personal property, money,
+       CHAPTER 50—SERVICEMEMBERS CIVIL                                   credits, and real property.
+                   RELIEF                                    3992.     Rights in public lands.
+Sec.
+                                                             3993.     Desert-land entries.
+3901.      Short title.                                      3994.     Mining claims.
+3902.      Purpose.                                     

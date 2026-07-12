@@ -1,0 +1,2917 @@
+GH Real Estate approved legal-source text chunk — GH-OP-01_Overland-Park-Rental-Property-Civil-Rights-Code_CURRENT.part-000.txt — verified through 2026-07-12. Official source text controls.
+
+                                         GH REAL ESTATE • LEGAL SOURCE PACK
+
+
+
+
+                  OVERLAND PARK RENTAL &
+                      PROPERTY CODE
+
+
+              Licensing • property maintenance • nuisances • animals • civil rights • towing
+
+
+
+
+  PROPERTY                    9401 Nieman Road, Overland Park, Kansas 66214
+
+  CURRENT THROUGH             July 12, 2026
+
+  ACTIVE-SET STATUS           Current-law set; enacted addenda included; withdrawn sources excluded
+
+  SCOPE                       Official municipal-code chapters most directly affecting ongoing rental operations at the GH fourplex
+
+
+
+
+    Use rule: Retrieve the controlling text, confirm the trigger and currentness, then obtain Kansas counsel review before
+    enforcement, filing, denial, accommodation decisions, or material lease changes.
+
+ This compilation is a research and retrieval aid, not legal advice, a title opinion, or a substitute for official current law. Summaries and
+ applicability labels are navigation aids; the appended official text controls.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                             Front matter page 1
+ How this bundle should be used
+  LABEL                  HOW TO USE IT
+
+  BINDING                Statute, regulation, ordinance, or controlling court decision. Confirm effective date and later history.
+
+  CONDITIONAL            Binding only when a stated trigger exists—such as HUD assistance, a federally backed mortgage, or third-party
+                         management.
+
+  GUIDANCE               Agency or court-administration material. Useful operationally but not itself controlling law unless incorporated.
+
+  PROPOSED               Monitoring only. Do not apply as current law.
+
+  WITHDRAWN              Excluded from this active set. Keep only in a separately labeled historical archive.
+
+
+ • Overland Park requires a rental license; confirm current license, renewal and inspection status.
+
+ • OPMC 8.10 supplies local civil-rights protections in addition to federal and Kansas law.
+
+ • State 2026 SB 391 preempts specified local housing policies but does not erase otherwise valid city health,
+ safety, licensing or civil-rights rules.
+
+    Text-integrity rule: appended official PDFs are preserved as retrieved. The front matter adds navigation only and does
+    not alter statutory, regulatory, judicial, or municipal wording.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                           Front matter page 2
+ Source inventory and page map
+ 16 official source documents are included. Page numbers below refer to the finished merged PDF. Use the PDF
+ bookmarks or search the exact citation.
+
+  #     CITATION / SOURCE                 TITLE                                                                                   PAGES
+
+  1     OPMC toc 005.024                  OPMC 5.75 Rental Licensing and Inspection                                               4–15
+
+  2     OPMC toc 006                      OPMC Title 6 Animals                                                                    16–62
+
+  3     OPMC toc 007.001                  OPMC 7.01 Code Enforcement                                                              63–64
+
+  4     OPMC toc 007.002                  OPMC 7.04 Nuisances                                                                     65–73
+
+  5     OPMC toc 007.003                  OPMC 7.08 Noise                                                                         74–77
+
+  6     OPMC toc 007.004                  OPMC 7.16 Trees and Shrubs                                                              78–86
+
+  7     OPMC toc 007.005                  OPMC 7.20 Weeds                                                                         87–95
+
+  8     OPMC toc 007.006                  OPMC 7.22 Vehicle Parking and Storage                                                   96–107
+
+  9     OPMC toc 007.007                  OPMC 7.25 Property Maintenance                                                          108–124
+
+  10    OPMC toc 007.008                  OPMC 7.28 Immediate Hazards                                                             125–126
+
+  11    OPMC toc 007.009                  OPMC 7.32 Rat Control                                                                   127–131
+
+  12    OPMC toc 007.010                  OPMC 7.36 Solid Waste and Recyclables                                                   132–144
+
+  13    OPMC toc 007.011                  OPMC 7.54 Excavation Grading and Drainage                                               145–149
+
+  14    OPMC toc 007.013                  OPMC 7.58 Stormwater Pollution                                                          150–156
+
+  15    OPMC toc 008.001                  OPMC 8.10 Civil Rights                                                                  157–164
+
+  16    OPMC toc 012.008                  OPMC 12.21 Private Towing                                                               165–167
+
+
+ Source URLs, retrieval date, authority/applicability labels, and SHA-256 fingerprints are recorded in the companion Markdown manifest.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                      Front matter page 3
+TITLE 5 - BUSINESS LICENSES AND REGULATIONS
+
+5.75 RENTAL LICENSING AND INSPECTION
+Contents:
+ 5.75 Rental Licensing and Inspection
+     5.75.010 Statement of Purpose.
+     5.75.020 Definitions
+         Director
+         Dwelling
+         Dwelling Unit
+         KC Metropolitan Area
+         Manager
+         Occupant / Tenant
+         Owner
+         Owner’s Agent
+         Person
+         Premises
+         Rent
+         Rental Dwelling
+         Rental License
+         Rooming Unit
+     5.75.030 Applicability.
+     5.75.040 Rental License Requirement.
+     5.75.050 Rental Licensing Standards.
+     5.75.060 Application For Rental License; Rental License Fee.
+     5.75.070 Issuance; Renewal.
+     5.75.080 Rental License Not Transferable.
+     5.75.090 Duties of Licensee.
+     5.75.100 Denial, Revocation or Suspension of Rental License.
+     5.75.110 Rental Inspection Program.
+     5.75.120 Notices.
+     5.75.130 Administrative Appeal Procedure.
+     5.75.140 Unlawful Operation of Rental Dwelling.
+
+
+
+                                                                    Page 1
+       5.75.150 Remedies in This Chapter Are Not Exclusive.
+
+
+5.75.010 Statement of Purpose.
+A. The purpose of this Chapter is to protect the public health, safety and general welfare of the
+residents of Overland Park in Rental Dwellings. The further intent of this Chapter is to:
+
+
+       1. Promote safe living conditions and a well-maintained community;
+
+       2. Protect the character and stability of residential areas;
+
+       3. Correct and prevent housing conditions that adversely affect or are likely to adversely
+       affect the safety, health and welfare of residents of rental properties;
+
+       4. Preserve the value of land and buildings throughout the City;
+
+       5. Enforce minimum standards for the exterior maintenance of residential buildings and
+       property;
+
+       6. Protect the public from increased criminal activity that tends to occur in residential areas
+       that are unstable due to Dwellings that are blighted or substandard; and
+
+       7. Provide a mechanism for enforcement and the administration of the City Code to ensure
+       that the above purposes are accomplished.
+
+B. It is not the intent of the City to intrude upon contractual relationships between tenant and
+landlords; nor does the City intend to intervene as an advocate for either party, to act as an arbiter,
+or to hear complaints by landlords or tenants which are not specifically and clearly related to the
+provisions of this Chapter.
+(History: Ord. RLI-3120 §1, 2016)
+Effective on: 2/23/2016
+
+
+5.75.020 Definitions.
+As used in this Chapter, the following terms shall have these prescribed meanings:
+Director – The Director of Planning and Development Services or the Director’s designee.
+Dwelling – A building or structure that contains one or more Dwelling Units or Rooming Units
+intended or designed to be used or occupied for living purposes.
+
+
+
+
+                                                                                               Page 2
+Dwelling Unit – A single unit providing complete independent living facilities for one or more
+persons, including permanent provisions for living, sleeping, eating, cooking, and sanitation.
+KC Metropolitan Area – The area defined by the Kansas City Metropolitan Statistical Area
+(KCMSA).
+Manager – Any person who, alone or jointly or severally with others, shows Rental Dwellings to
+prospective Occupants and/or enters lease agreements on the Owner's behalf, and/or receives Rent
+from Occupants, and/or is responsible for, or arranging for, maintenance of a Rental Dwelling.
+Occupant / Tenant – Any individual living or sleeping in a Rental Dwelling, or having possession of
+a space within a Rental Dwelling.
+Owner – Any Person having a legal or equitable interest in the property; or recorded in the official
+records of the county as holding title to the property; or otherwise having control of the property;
+including the guardian of the estate of any such person, and the executor or administrator of the
+estate of such person if ordered to take possession of real property by a court.
+Owner’s Agent – The Person designated by the Owner to be the agent required by Section 5.75.060
+A.5.
+Person – Any individual, firm, corporation, association, partnership, cooperative or governmental
+agency.
+Premises – A lot, plot or parcel of land, easement or public way, including any structures thereon.
+Rent – Payments of cash or other forms of consideration made periodically by an Occupant to an
+Owner, Owner’s Agent or Manager in return for the use of a Rental Dwelling.
+Rental Dwelling – A Dwelling, or portion of a Dwelling, designed for or used for human habitation
+and offered for Rent.
+Rental License – A license issued by the City permitting a Rental Dwelling to be rented and/or
+occupied by Persons other than the Owner and the Owner’s immediate family, and subject to the
+terms set forth in this Chapter.
+Rooming Unit – Any room or group of rooms forming a single habitable unit occupied or intended
+to be occupied for sleeping or living, but not for cooking purposes.
+(History: Ord. RLI-3120 §2, 2016)
+Effective on: 2/23/2016
+
+
+5.75.030 Applicability.
+A. Applicability – The provisions of this Chapter shall apply to all Rental Dwellings as defined by
+this Chapter. One (1) Rental License shall be issued for each Rental Dwelling building under
+common ownership and shall be deemed to cover all units therein under common ownership. In
+the event any Rental Dwelling building has different ownership for different units therein, each
+Owner shall be required to obtain a separate Rental License. (For example, if each Dwelling Unit of a
+Duplex is owned by separate Owners, each Owner must obtain a separate Rental License.)
+
+
+
+
+                                                                                                 Page 3
+B. Exemptions – The provisions of this Chapter shall not apply to the following, or to other uses
+that, in the sole discretion of the Director, are similar:
+
+       1. Hotels and motels licensed by the State of Kansas;
+
+       2. Convents;
+
+       3. Monasteries;
+
+       4. Parish houses or rectories;
+
+       5. Mosques;
+
+       6. Temples;
+
+       7. Synagogues;
+
+       8. Hospitals;
+
+       9. Nursing homes and assisted living facilities; and
+
+       10. Jails.
+
+C. City Authority – The City shall have authority to exercise its powers under this Chapter including
+the power to issue, renew, deny, revoke or suspend a Rental License; and to declare a Rental
+Dwelling in violation of this Article. These powers shall apply to any Rental Dwelling, in whole or in
+part.
+(History: Ord. RLI-3120 §3, 2016)
+Effective on: 2/23/2016
+
+
+5.75.040 Rental License Requirement.
+On and after July 1, 2017, the City will begin the process of issuing Rental Licenses. Upon
+notification, Owners of Rental Dwellings are required to make application for a Rental License and
+to secure such license. On and after July 1, 2019, no Person shall allow to be occupied, offer for Rent
+or rent to another for occupancy any Rental Dwelling unless the Owner has first obtained a Rental
+License under the terms of this Chapter.
+(History: Ord. RLI-3120 §4, 2016)
+Effective on: 2/23/2016
+
+
+
+
+                                                                                               Page 4
+5.75.050 Rental Licensing Standards.
+The following standards and conditions shall be met in order to hold a Rental License under this
+Chapter:
+
+
+A. The Rental License fee and any re-inspection fee (if any) must be timely paid.
+
+
+B. Information contained in the application shall remain current throughout the term of the Rental
+License, or be updated within thirty (30) days after any changes.
+
+
+C. The Rental Dwelling shall not be declared or found to be dangerous or unsafe for human
+habitation or condemned as hazardous or unfit for human habitation under applicable City Code or
+Kansas Statute.
+
+
+D. The Rental Dwelling and Premises shall remain in compliance with all City Codes materially
+affecting health and safety, or zoning regulations.
+
+
+E. Business entities required to register with the Secretary of State shall remain in good standing
+with the Secretary of State and with the State of Kansas.
+(History: Ord. RLI-3120 §5, 2016)
+Effective on: 2/23/2016
+
+
+5.75.060 Application For Rental License; Rental License Fee.
+A. Application – The Owner of each Rental Dwelling shall make written application to the City on a
+form furnished by the City for such purpose. The Application shall include the following
+information:
+
+       1. Address identifying the location of the Rental Dwelling to be licensed:
+
+       2. Number of Rental Dwelling on Premises;
+
+       3. Owner’s information (as required by subsection B.);
+
+       4. Manager’s information (as required by subsection B.);
+
+
+
+
+                                                                                           Page 5
+      5. If the Owner resides outside the Kansas City Metropolitan Area, or is a business entity
+      without an office in the Kansas City Metropolitan Area operating with regular business hours,
+      the Owner shall designate an Owner’s Agent who shall reside in the Kansas City Metropolitan
+      Area or which is a business entity having an office in the Kansas City Metropolitan Area with
+      regular business hours. The Owner’s Agent information shall be provided as required by
+      subsection B. By designating an Owner’s Agent, the Owner is affirming that the Owner’s
+      Agent may accept service on behalf of the Owner of all Notices to the Owner set forth this
+      Chapter. If an Owner’s Agent is terminated, dissolves, resigns or is otherwise unable
+      or unwilling to serve as the Owner’s Agent, the Owner shall designate a new Owner’s
+      Agent within thirty (30) days thereof. If the Owner fails to designate an Owner’s Agent as
+      required by this Section, the City may take action to deny, revoke, or suspend the Owner’s
+      Rental License pursuant to Section 5.75.100; and
+
+      6. The signature of the Owner, declaring under penalty of perjury that the information
+      contained in the Rental License application is true and correct. If the Owner is a business
+      entity, the signature of an authorized partner or officer shall be provided. (Electronic
+      signatures in compliance with K.S.A. 16-1607 are acceptable.)
+
+B. Owner, Manager and Owner’s Agent information shall be provided as follows:
+
+      1. If the Owner, Manager or Owner’s Agent is a natural person, he or she shall provide a full
+      name, date of birth, residence address, telephone number and email address.
+
+      2. If the Owner, Manager or Owner’s Agent is not a natural person, but is a corporation,
+      limited liability corporation, nonprofit corporation, limited liability partnership, limited
+      partnership, foreign business or any other legal or commercial entity which is required to
+      register with the Secretary of State, the application shall include the following for each
+      Owner, Manager or Owner’s Agent, as applicable:
+
+            a. Full legal name of the entity;
+
+            b. Business address, telephone number, and email address;
+
+            c. The name, date of birth, residence address, telephone number and email address of a
+            partner or officer responsible for the Rental Dwelling; and
+
+            d. Name, address and telephone number of the entity’s registered agent;
+
+      3. A post office box will not be accepted for any address required in this subsection.
+
+
+
+
+                                                                                               Page 6
+C. Rental License Fee – No application shall be considered complete without full payment of the
+required Rental License fee. The full amount of the Rental License fee shall be required regardless
+of the time of year in which the application is made. There shall be no refund or waiver in any case
+when a licensed Rental Dwelling is no longer offered for Rent prior to the end of the licensing term,
+or when the Rental License is revoked as provided for under this Chapter. A fee schedule pertaining
+to Rental License fees shall be fixed by the City Manager, pursuant to the Planning and Development
+Fee and Cost Recovery Policy as adopted by the Governing Body, and the City Manager or their
+designee may establish any and all policies or waivers related to the same.
+(History: Ord. CM-3433 §1, 2023; Ord. RLI-3120 §6, 2016)
+Effective on: 2/23/2016
+
+
+5.75.070 Issuance; Renewal.
+A. Issuance – Upon satisfaction of all application, fee payment and inspection requirements, the
+City shall issue a Rental License to the Owner, unless the Rental License is or has been otherwise
+denied, refused, revoked or suspended pursuant to Section 5.75.100. The Rental License shall
+provide the license number, license expiration date, Rental Dwelling address(es), and identity of the
+Owner and, as applicable, the Manager and Owner’s Agent.
+
+       1. The issuance of a Rental License shall not be construed to be a license for, or an approval
+       of, any violations of any of the provisions of this Chapter or of any other City Code.
+
+B. Renewal – All Rental Licenses issued under this Chapter shall be renewed prior to the expiration
+date indicated on the Rental License. Licenses are initially issued and then renewed biennially
+(once every two years). All Owners shall apply for renewal on a form provided by the City. No
+renewal shall be granted without payment of the required Rental License fee.
+(History: Ord. RLI-3120 §7, 2016)
+Effective on: 2/23/2016
+
+
+5.75.080 Rental License Not Transferable.
+A. A Rental License issued hereunder is not transferable to a new Owner.
+
+B. When an Owner conveys title to a Rental Dwelling to another, the Owner conveying title shall, on
+or before the day of such transfer, notify the City in writing of the name, address and phone number
+of the new Owner.
+
+C. A new Owner shall submit an application for a Rental License in accordance with this Chapter
+(including Rental License fee) no more than thirty (30) days from the date of taking title to the
+property, provided a Rental License is still required for the property.
+(History: Ord. RLI-3120 §8, 2016)
+Effective on: 2/23/2016
+
+
+
+
+                                                                                             Page 7
+5.75.090 Duties of Licensee.
+A. Every Rental Dwelling licensee shall notify the City (in writing or via the City's on-line
+registration) of any change of information contained in the last Rental License application filed with
+the City within thirty (30) days after the changed information.
+
+
+B. The Owner of a Rental Dwelling shall, prior to the time of sale of the Rental Dwelling, notify the
+buyer in writing of all unabated orders and violation notices issued by the City for the Rental
+Dwelling, as well as the requirement that the Rental Dwelling, upon acquisition by a new Owner,
+must be licensed with the City. A copy of the notification shall be provided to the City within five (5)
+days of providing the notification to the buyer. Time of sale is the time when a written purchase
+agreement is executed by the buyer or, in the absence of a purchase agreement, upon the execution
+of any document providing for the conveyance of the Rental Dwelling.
+(History: Ord. RLI-3120 §9, 2016)
+
+Effective on: 2/23/2016
+
+
+5.75.100 Denial, Revocation or Suspension of Rental License.
+After issuing notice and giving an opportunity to be heard, the City may deny, suspend or revoke
+a Rental License as follows:
+
+A. Notice – The City will issue written notice to the Owner that the Rental License will be denied,
+suspended or revoked and the reason(s) therefore, unless the Owner makes a timely request for a
+hearing by filing a hearing request within ten (10) calendar days after being served said notice. The
+notice of denial, revocation or suspension shall be served upon the Owner in person or by certified
+mail. It shall not be a defense to any administrative action taken that the Owner did not receive the
+notice, provided it was served in compliance with the information on file from the last rental
+application (or any supplement thereof). The notice shall provide:
+
+       1. The effective date of the denial, suspension or revocation and the address(es) or other
+       identifying criteria of the Rental Dwelling(s) affected by the denial, suspension or revocation;
+
+       2. The specific reasons for the denial, revocation or suspension, including copies of any
+       applicable inspection reports;
+
+       3. A statement that any rental of the Rental Dwelling while the Rental License is denied,
+       suspended or revoked may subject the Owner to prosecution; and
+
+       4. A description of how to request a hearing as set out below.
+
+
+
+
+                                                                                                Page 8
+B. Hearing Request – Any request for hearing shall be in writing and shall set forth in sufficient
+detail why the Owner believes that City's Notice of Denial, Suspension or Revocation was issued in
+error, or why the proposed action is excessive, inappropriate, or unreasonable. The request for
+hearing will be filed with the Director, and shall stay any administrative enforcement action under
+this Chapter until the Director has issued a final order. If the Owner fails to make a timely request
+for a hearing, the Director shall deny, suspend or revoke the Rental License in accordance with the
+notice.
+
+C. Hearing – Upon receipt of a timely request for a hearing, the Director shall set the matter for
+hearing before the Director (or designee). After the hearing, the Director has the authority to deny,
+revoke or suspend the Rental License if:
+
+       1. There are City Code violations on the Premises; or
+
+       2. The Owner has failed to comply with any requirements of this Chapter.
+
+D. Appeals – Persons aggrieved by a decision of the Director may appeal as set out in Section
+5.75.130.
+
+E. Dangerous or Unsafe Conditions – Notwithstanding the procedure for denial revocation or
+suspension set out above, whenever a Rental Dwelling is determined by the Code Official to be
+dangerous or unsafe pursuant to applicable City Code or Kansas Statutes, the Rental License shall
+immediately be suspended on the effective date of said determination, and the Rental Dwelling shall
+not be occupied until after an inspection by the Code Official and approval of the remedy of any
+conditions that caused the dangerous or unsafe condition.
+(History: Ord. RLI-3120 §10, 2016)
+Effective on: 2/23/2016
+
+
+5.75.110 Rental Inspection Program.
+A. Exterior Inspection – Prior to the issuance of a Rental License or any renewal thereof, the City
+shall conduct an exterior inspection of the Premises to determine compliance with this Chapter.
+Thereafter, exterior inspections may be conducted with such frequency as the City, in its sole
+discretion, determines to be necessary or feasible.
+
+       1. Exterior inspections may include an inspection of the exterior of all buildings on the
+       Premises and all common areas.
+
+       2. Exterior inspections shall be conducted by the City at all reasonable hours, and may be
+       conducted with or without notice to the Owner, Owner’s Agent, Manager or Occupants.
+
+
+
+
+                                                                                             Page 9
+       3. The City shall develop an inspection protocol and standard inspection checklist for all
+       exterior inspections and shall ensure that the inspections are minimally intrusive. At the time
+       of the issuance of a Rental License pursuant to this Chapter, the City will provide the licensee
+       with information on the minimum code requirements for exterior maintenance of Rental
+       Dwellings. Nothing contained herein, or in the information provided to licensees, shall be
+       construed to relieve the Owner or Occupants of responsibility for compliance with all
+       applicable City Codes.
+
+B. Notice of Violation – If an exterior inspection reveals Code violation(s), the City shall serve a
+Notice of Violation upon the Owner or the responsible Person under the requirements of the
+applicable City Code.
+
+C. Non-compliance – Failure to correct any violation(s) by the corrective action date set forth in a
+Notice of Violation may result in the revocation or suspension of the Rental License and/or
+municipal court prosecution, as well as abatement of the violation by the City and assessment of
+associated charges when permitted by City Code or Kansas Statute.
+
+D. Right of Entry – If entry onto the Premises for purposes of inspection is refused, the City shall
+have recourse to every remedy provided by law to secure entry, including but not limited to,
+application for an administrative search warrant.
+(History: Ord. RLI-3120 §11, 2016)
+Effective on: 2/23/2016
+
+
+5.75.120 Notices.
+Unless personal or certified mail is specified, notices required by this Chapter shall be deemed
+sufficient when sent by first class mail to the address(es) specified in the last Rental
+License application filed (or any supplement thereof). If the Rental Dwelling is not licensed
+pursuant to this Chapter, notice is deemed sufficient if sent by first class mail to the Owner’s
+address of record with the Johnson County Department of Records and Tax Administration. Notices
+so mailed are sufficient whether actually received or returned.
+(History: Ord. RLI-3120 §12, 2016)
+Effective on: 2/23/2016
+
+
+5.75.130 Administrative Appeal Procedure.
+A. Following any denial, suspension or revocation of a Rental License (including a renewal) by the
+Director as outlined in Section 5.75.100, an Owner may appeal on the issue of whether the Rental
+License was properly denied, suspended or revoked. The Owner shall submit a written request for
+appeal to the City Clerk within ten (10) calendar days from the date of the final notice of denial,
+suspension or revocation. The request shall contain a statement of the grounds for the appeal. The
+appeal shall be conducted within seven (7) business days of receipt of the written request, unless
+extended by the City for good cause shown.
+
+
+
+
+                                                                                              Page 10
+B. The appeal shall be conducted by an appeals officer designated by the City Manager. The appeals
+officer shall consider and review all relevant evidence and argument.
+
+C. The scope of the appeal shall be limited to whether the City’s denial, suspension or revocation of
+the Rental License was within the scope of its authority, supported by substantial competent
+evidence, and not arbitrary or capricious. The review shall be informal and not subject to the rules
+of civil and/or criminal procedure.
+
+D. The appeals officer shall render a written decision no later than ten (10) business days after the
+review, unless extended by the City for good cause shown, and may affirm, modify or reverse the
+action by Director. The written decision may be personally served upon the Owner or mailed first
+class to the Owner’s address specified in the last Rental License application filed (or any
+supplement thereof).
+(History: Ord. RLI-3120 §13, 2016)
+Effective on: 2/23/2016
+
+
+5.75.140 Unlawful Operation of Rental Dwelling.
+A. It shall be unlawful for any Person to fail to comply with any provision of this Chapter. A Person
+who allows to be occupied or rents to another any Rental Dwelling without a Rental License as
+required by this Chapter is guilty of a misdemeanor punishable as provided in Section 1.12.010 of
+the Overland Park Municipal Code. Each day that a Person fails to comply, or fails to maintain a
+Rental License as required by this Chapter, shall constitute a separate offense.
+
+B. Whenever a Rental Dwelling has been rented without a Rental License, the City may serve a
+Notice of Violation upon the Owner by personal service or by certified mail to the address of record
+with the Johnson County Department of Records and Tax Administration. The Notice of Violation
+shall provide notice of the following:
+
+       1. The Rental Dwelling has been rented without a Rental License;
+
+       2. The Owner must obtain a Rental License by a date certain in order for the Rental Dwelling
+       to remain occupied;
+
+       3. A statement that any rental of the Rental Dwelling or the affected Dwelling Units while the
+       Rental License is revoked or suspended may subject the Owner to prosecution; and
+
+       4. Each day that the Owner fails to obtain a Rental License as required by this Chapter shall
+       constitute a separate offense and is punishable as provided in Section 1.12.010 of the
+       Overland Park Municipal Code.
+
+
+
+
+                                                                                            Page 11
+C. If the Owner fails to comply with the Notice of Violation, the City may issue a Notice to Appear,
+setting a date and time for appearance in Municipal Court. In addition, the City may prominently
+post a notice on the affected Premises indicating that:
+
+       1. The Rental Dwelling is not licensed and is in violation of Chapter 5.75 of the Overland Park
+       Municipal Code;
+
+       2. A statement that any rental of the Rental Dwelling or the affected Dwelling Units while the
+       Rental License is revoked or suspended may subject the Owner to prosecution; and
+
+       3. It shall be unlawful for any Person to deface or remove a posted notice from an unlicensed
+       Rental Dwelling. The unlawful removal of a posting shall constitute a public offense,
+       punishable as provided in Section 1.12.010 of the Overland Park Municipal Code.
+
+D. It shall be unlawful for any Person to deface or remove a posted notice from an unlicensed
+Rental Dwelling. The unlawful removal of a posting shall constitute a public offense, punishable as
+provided in Section 1.12.010 of the Overland Park Municipal Code.
+(History: Ord. RLI-3120 §14, 2016)
+Effective on: 2/23/2016
+
+
+5.75.150 Remedies in This Chapter Are Not Exclusive.
+The remedies provided in this Chapter are not exclusive. They are in addition to and do not
+supersede or preempt other remedies such as condemnation, written violation orders and
+warnings and criminal charges for violation of substantive provisions of any City or State Code
+relating to housing maintenance, fire safety, building codes, zoning, health and the like. Further, the
+remedies in this Chapter do not supersede or affect the legal rights and remedies of landlords
+or tenants provided under State law.
+(History: Ord. RLI-3120 §15, 2016)
+Effective on: 2/23/2016
+
+
+
+
+                                                                                              Page 12
+TITLE 6 - ANIMALS
+Contents:
+ 6.04 Licensing and Registration of Dogs and Cats
+ 6.08 Control and Impoundment of Domestic Animals
+ 6.09 Animal Welfare
+ 6.10 Dangerous Animals
+ 6.12 Injured or Diseased Animals
+ 6.13 Keeping of Chickens
+ 6.14 Beekeeping
+ 6.15 Horses, Mules, Donkeys, and Other Equines
+ 6.16 Enforcement - Penalties
+ Repealed Sections of Title 6 - Animals
+
+
+
+6.04 LICENSING AND REGISTRATION OF DOGS AND
+CATS
+Contents:
+ 6.04.010 Dog/Cat License Fee.
+ 6.04.020 Penalty for Overdue Dog/Cat License Fee.
+ 6.04.030 Registration - Tags.
+ 6.04.035 Violation of 6.04.030 - Penalty.
+ 6.04.040 Collar or Harness Required.
+ 6.04.045 Presentation of Animal.
+ 6.04.050 Number of Dogs and Cats Permitted; Permits.
+ 6.04.051 Number of Dogs and Cats Permitted on Properties Annexed by Ordinance
+ No. A-2367 or Ordinance No. A-2719; Permits.
+ 6.04.055 Appeal.
+ 6.04.056 Appeals, Administrative Hearing.
+ 6.04.057 Subpoena Power.
+ 6.04.058 Inoculation against Rabies Required.
+ 6.04.060 Rabies Certificate Required at Time of Licensing.
+ 6.04.070 Enumeration of Animals.
+ 6.04.080 Fees to General Fund.
+
+
+
+                                                                        Page 1
+ 6.04.090 Severability.
+
+6.04.010 Dog/Cat License Fee.
+   A. There shall be a Dog/Cat License fee imposed upon the owners of each dog and cat of the age
+      of 6 months or over, attaining such age during the license year. This fee may be paid in one,
+      two, or three year increments. The City Manager is hereby authorized to set fees and fee
+      related policies for the Dog/Cat License.
+   B. In no event shall a Dog/Cat License be issued for a dog or cat without proof of current rabies
+      vaccination.
+   C. The Dog/Cat License year shall be from January 1st through December 31st of each year.
+      The Dog/Cat License fee shall be due and payable before June 30th of each year.
+   D. Dogs or cats shall be licensed within 30 days after being brought into the City or attaining 6
+      months of age.
+   E. Failure to pay the Dog/Cat License fee within times prescribed herein constitutes a violation
+      of this Section. The Dog/Cat License fee for those dogs or cats subject to licensing for 6
+      months or less of the Dog/Cat License year shall be prorated at half of the annual Dog/Cat
+      License fee amount.
+
+
+(History: Ord. DAC-3486 §1, 2025; Ord. DAC-3436 §1, 2023; Ord. DAC-3329 §1, 2021; Ord. DAC-
+2771 §1, 2009; DAC-2211 §1, 2000; DAC-1675 §1, 91; DAC-1679 §1, 91; DAC-1311 §1, 85; DAC-
+1311 §1, 85; DAC-711 §1, 72; DAC-697 §1, 72)
+
+6.04.020 Penalty for Overdue Dog/Cat License Fee.
+If the Dog/Cat License fee required by 6.04.010 is not paid within the times provided in that S
+ection, the City Manager is hereby authorized to set an over due penalty that will apply in addition
+to the normal Dog/Cat License fee beginning July 1.
+
+
+(History: Ord. DAC-3436 §2, 2023; Ord. DAC-3329 §2, 2021; Ord. DAC-2211 §2, 2000; DAC-1675 §2,
+91; DAC-697 §2, 72)
+
+6.04.030 Registration - Tags.
+The owner, keepers or harborers of any dog or cat shall cause the same to be registered at the office
+of the City Clerk. The registration shall contain the name and address and telephone number of the
+animal's owner, keeper or harborer, the animal's breed, name, sex, whether spayed or neutered,
+whether microchipped, color and description and such other information as may be deemed
+necessary. Subject to the provisions of 6.04.060, the City Clerk or authorized assistant, shall upon
+payment of the license fee, issue a suitable tag bearing the registration number.
+
+
+(History: Ord. DAC-3388 §1, 2022; Ord. DAC-3329 §3, 2021;Ord. DAC-1679 §2, 9l; DAC-697 §3, 72)
+
+
+
+
+                                                                                             Page 2
+6.04.035 Violation of 6.04.030 - Penalty.
+Every person who is convicted of a violation of 6.04.030 shall be punished by imprisonment for not
+more than 30 days or by a fine in the amount of $50 for the first violation within the period covered
+in the current licensing year and the preceding licensing year; $100 for the second violation within
+said period; $150 for a third violation within said period; $200 for a fourth violation within said
+period; and $500 for a fifth and subsequent violation within said period; or by both such fine and
+imprisonment. Provided, however, no person shall be eligible for a parole or suspension of any part
+of said fine, except that portion of any fine or combination of fines that are assessed from the same
+set of operative facts that exceed $200 may be suspended for not less than 12 months on the
+condition the violator have no further violations of the animal control laws during that period.
+
+
+(History: Ord. DAC-3329 §4, 2021; Ord. DAC-1735 §1, 92; DAC-1679 §3, 91; DAC-1091 §1, 80)
+
+6.04.040 Collar or Harness Required.
+The owner, keeper or harborer of any dog or cat shall cause the same to wear a collar or harness
+while such animal is outside the dwelling of the owner, keeper or harborer. The tag required in
+6.04.030 shall be securely affixed to the collar or harness of each dog or cat registered. The tag shall
+be situated on the collar or harness in such a manner that it may at all times be easily visible to law
+enforcement officers or animal control officers of the city. Replacement tags shall be issued for
+$1.00 each.
+(History: Ord. DAC-2211 §3, 2000; DAC-1679 §4, 91; DAC-697 §4, 72)
+
+6.04.045 Presentation of Animal.
+The owner, keeper or harborer of any dog or cat shall physically produce the animal for
+observation, identification or inspection when requested to do so by a City animal control officer or
+law enforcement officer investigating a violation of the animal control and/or welfare laws of the
+City, provided the officer has probable cause to believe a crime or violation of the animal control
+laws has been committed. Failure to do so is a violation of this title.
+(History: Ord. DAC-1729 §1, 92)
+
+6.04.050 Number of Dogs and Cats Permitted; Permits.
+Except as otherwise provided in Section 6.04.051, the owning, keeping or harboring of any
+combination of 4 dogs and/or cats upon any premises or property, or in any dwelling or living
+quarters of any type within the City is permitted, provided:
+    A. Special Animal Permit. Any person who desires to own, keep, or harbor more than any
+       combination of 4 dogs and/or cats may apply to the City Clerk for an annual "Special Animal
+       Permit" that shall upon issuance permit the applicant to own, keep or harbor the animals
+       specifically allowed in that Special Animal Permit.
+        1. Criteria. All applicants must adequately show that: (1) special circumstances exist that
+           justify the keeping of the subject animals, (2) the keeping of additional animals will not
+           create a nuisance in the surrounding neighborhood, (3) humane care will be provided,
+
+
+
+                                                                                                Page 3
+   and (4) the premises where the animals are kept is suitable for the keeping of multiple
+   animals and is in conformity with all City zoning requirements. The criteria to be
+   evaluated include, without being limited to, the following:
+      a. The animals will be kept or maintained at all times in a safe and sanitary manner.
+      b. The quarters in which such animals are kept or confined will be adequately lighted
+         and ventilated and are so constructed and maintained that they can be kept in a
+         clean and sanitary condition.
+      c. The health and well-being of the animals will not in any way be endangered by the
+         manner of keeping or confinement.
+      d. The keeping of such animals will not harm the surrounding neighborhood or disturb
+         the peace and quiet of the surrounding neighborhood.
+      e. The keeping of such animals will not cause fouling of the air by offensive odors and
+         thereby create or cause unreasonable annoyance or discomfort to neighbors or
+         others in close proximity to the premises where the animals are kept or harbored.
+      f. The animals will not unreasonably annoy humans, endanger the life, health or safety
+         of other animals or persons or substantially interfere with the rights of citizens to
+         the enjoyment of life or property.
+      g. The animals will not repeatedly run or be found at large, will not damage or deposit
+         excretory matter upon the property of anyone other than their owner, and will not
+         chase vehicles or molest or intimidate pedestrians or passersby.
+      h. The animals will not make disturbing noises, including but not limited to, continued
+         and repeated or untimely howling, barking, whining or other utterances causing
+         unreasonable annoyance, disturbance or discomfort to neighbors and others in close
+         proximity to the premises where the animals are kept or harbored, or otherwise be
+         offensive or dangerous to the public health, safety or welfare, by virtue of their
+         behavior, number, type or manner of keeping.
+      i. The applicant, or any person who will share in the care, custody and control of the
+         animals, is not currently in violation of, or has not previously violated any applicable
+         City, state or federal laws, codes, rules or regulations, including, but not limited to,
+         those pertaining to the care and control of animals and the maintenance of their
+         property, which would reflect adversely on their ability to fully comply with the
+         conditions of the subject permit.
+2. Application.
+      a. The City Clerk shall deny any application where the applicant fails to show proof of
+         the aforementioned requirements or an examination of the documentation
+         submitted by the applicant, or an investigation, by the Animal Control Division of the
+         Police Department, or both, reveals that in the opinion of the Animal Control Division
+         the applicant has failed to meet the requirements of this Section.
+      b. Any application for up to 4 dogs, or 4 cats, or 3 dogs and 1 cat, or 3 cats and 1 dog,
+         shall be required to show proof of meeting the required standards by clear and
+         convincing evidence. Any application for more than 4 dogs or cats, or any
+         combination thereof in excess of four (4), shall be required to show proof of meeting
+         the required standards beyond a reasonable doubt.
+
+
+
+
+                                                                                         Page 4
+          c. The Animal Control Division shall submit a written report of its investigation stating
+             the factual basis for its recommendation to grant or deny any application. The
+             Animal Control Division shall consider the comments of neighbors, past violations by
+             applicant, the size, condition and location of the area where the animals will be kept,
+             the size of the animals to be kept, past complaints concerning the applicant, the
+             burden of proof and the criteria set forth in this Section, or any other factors relative
+             to the issue of keeping additional animals.
+          d. The City Clerk shall establish an application process to be followed by all individuals
+             seeking a Special Animal Permit. The Special Animal Permit shall be issued for the
+             period from January 1st through December 31st of each year. The City Manager is
+             hereby authorized to set fees and fee related policies for the Special Animal Permit.
+             All fees shall be nonrefundable and nontransferable. The Special Animal Permit shall
+             be issued for the individual animals listed in the application and shall not be
+             transferable to other animals. Except for Special Animal Permits required for
+             the keeping of more than 2 fostered animals, should an animal subject to the Special
+             Animal Permit be replaced, a new application and Special Animal Permit shall be
+             required, but no new Special Animal Permit fee shall be required. The fact an
+             individual has previously been issued a Special Animal Permit may be considered
+             but shall not be controlling in the City Clerk's decision to issue a Special Animal
+             Permit for a different animal. Nothing in this Section shall exempt or except any
+             applicant or any other person from the registration, vaccination or any other
+             requirement of this Chapter.
+B. Animal Breeder Permit. The City Clerk may issue an annual Animal Breeder Permit to any
+   person who keeps dogs or cats for breeding or selling on a commercial basis within the City.
+   A permit must be obtained for each animal the breeder intends to have bred. The applicant
+   must be in conformity with the City zoning ordinances and state laws, not have been
+   convicted of violating the cruelty or animal welfare laws of this or any other jurisdiction, and
+   make a satisfactory showing that the area for housing the animals will provide a humane
+   standard of care and will not constitute a nuisance to the surrounding neighborhood. The
+   Animal Breeder Permit shall be issued for a one-year period from January 1st through
+   December 31st of each year. The City Manager is hereby authorized to set fees and fee related
+   policies for the Animal Breeder Permit. Notwithstanding, all animals owned, kept or
+   harbored pursuant to this paragraph that are 6 months of age or older must be licensed in
+   accordance with this Chapter.
+C. Animal Fostering.
+    1. Any resident wanting to foster a dog or a cat within the City will need to provide
+       appropriate paperwork from a state licensed adoption shelter or Animal Rescue
+       Organization. The Resident will only be allowed to foster the animal for a total of 180 days
+       before being required to license it with the City.
+    2. Fostered animals shall count toward the 4 total animals allowed under Section A.
+    3. In no event may a dangerous animal as defined in Section 6.10.010 be fostered within the
+       City.
+D. Permit Revocation. Subject to the appeal process set forth in Section 6.04.055, the permits
+   described in this Section may be revoked by the City Clerk upon a showing that; (1) the
+   animal's place of keeping constitutes a nuisance to the surrounding neighbors, (2) humane
+
+
+
+
+                                                                                              Page 5
+       standards of care are not being met by the permittee, (3) a violation of City zoning
+       regulations has occurred, or (4) the permittee had provided false information in their
+       application.
+    E. Definitions.
+        1. "Nuisance" shall be defined as any act which is unreasonably annoying or vexatious to
+           another or substantially interferes with the rights of others and shall include, but not be
+           limited to, obnoxious odors, excessive noise, and creation of an environment attractive to
+           other animals or insects. More than three substantiated violations of this title within a
+           twelve-month period will automatically constitute a nuisance.
+        2. "Humane standards of care" shall be defined to include, but not be limited to, accessibility
+           of the animal to food and water, proper medical attention, proper shelter from the
+           elements, and cleanliness in animal waste areas with regular waste removal.
+        3. "Special circumstances" shall be defined as any unusual, extraordinary and exceptional
+           situation or condition whereby the strict application of the numerical limits set forth in
+           this Section would be contrary to the intent, purposes and objectives of such limitations
+           and would be contrary to the public interest and welfare.
+        4. "Animal Rescue Organization" shall be defined as a licensed non-profit organization that
+           specializes in rescuing, caring for, and rehoming pets.
+    F. Service Animals. The provisions of this Section 6.04.050 shall not be applicable to service
+       animals. For the purposes of this Section, service animals shall be animals providing the
+       services specified in K.S.A. 39-1103 et seq.
+(History: Ord. DAC-3486, §2, 2025; Ord. DAC-3436 §3, 2023; Ord. DAC-2987 §1, 2013; DAC-2693
+§1, 2008; DAC-2399 §1, 2002; DAC-2146 §1, 99; DAC-1833 §1, 94; DAC-1735 §2, 92; DAC-1679 §5,
+91; DAC-1511 §1, 88; DAC-1402 §1, 86; DAC-1385 §1, 86; DAC-1311 §2, 85; DAC-880 §1, 76; DAC-
+711 §2, 72)
+
+6.04.051 Number of Dogs and Cats Permitted on Properties Annexed by
+Ordinance No. A-2367 or Ordinance No. A-2719; Permits.
+The owning, keeping or harboring of dogs and cats upon any premises or property, or in any
+dwelling or living quarters of any type within that portion of the City annexed by either Ordinance
+No. A-2367 or Ordinance No. A-2719 shall be permitted as follows for so long as the property bears
+a county zoning designation. On any tract 20 acres or larger, an aggregate total of 7 adult cats or
+dogs, more than one year old, may be kept, boarded, bred or trained, whether or not for commercial
+gain or as pets. Provided:
+   A. Special Animal Permit. Any person who desires to own, keep, or harbor more than the
+      number of dogs or cats permitted above may apply to the City Clerk for an annual Special
+      Animal Permit that shall upon issuance permit the applicant to own, keep or harbor the
+      animals specifically allowed in that Special Animal Permit.
+       1. Criteria. All applicants must adequately show that: (1) special circumstances exist that
+          justify the keeping of the subject animals, (2) the keeping of additional animals will not
+          create a nuisance in the surrounding neighborhood, (3) humane care will be provided,
+          and (4) the premises where the animals are kept is suitable for the keeping of multiple
+
+
+
+
+                                                                                               Page 6
+   animals and is in conformity with all applicable City zoning requirements. The criteria to
+   be evaluated include, without being limited to, the following:
+      a. The animals will be kept or maintained at all times in a safe and sanitary manner.
+      b. The quarters in which such animals are kept or confined will be adequately lighted
+          and ventilated and are so constructed and maintained that they can be kept in a
+          clean and sanitary condition.
+      c. The health and well-being of the animals will not in any way be endangered by the
+          manner of keeping or confinement.
+      d. The keeping of such animals will not harm the surrounding neighborhood or disturb
+          the peace and quiet of the surrounding neighborhood.
+      e. The keeping of such animals will not cause fouling of the air by offensive odors and
+          thereby create or cause unreasonable annoyance or discomfort to neighbors or
+          others in close proximity to the premises where the animals are kept or harbored.
+      f. The animals will not unreasonably annoy humans, endanger the life, health or safety
+          of other animals or persons or substantially interfere with the rights of citizens to
+          the enjoyment of life or property.
+      g. The animals will not repeatedly run or be found at large, will not damage or deposit
+          excretory matter upon the property of anyone other than their owner, and will not
+          chase vehicles or molest or intimidate pedestrians or passersby.
+      h. The animals will not make disturbing noises, including but not limited to, continued
+          and repeated or untimely howling, barking, whining or other utterances causing
+          unreasonable annoyance, disturbance or discomfort to neighbors and others in close
+          proximity to the premises where the animals are kept or harbored, or otherwise be
+          offensive or dangerous to the public health, safety or welfare, by virtue of their
+          behavior, number, type or manner of keeping.
+       i. The applicant, or any person who will share in the care, custody and control of the
+          animals, is not currently in violation of, or has not previously violated any applicable
+          City, state or federal laws, codes, rules or regulations, including, but not limited to,
+          those pertaining to the care and control of animals and the maintenance of their
+          property, which would reflect adversely on their ability to fully comply with the
+          conditions of the subject permit.
+2. Application.
+      a. The City Clerk shall deny any application where the applicant fails to show proof of
+          the aforementioned requirements or an examination of the documentation
+          submitted by the applicant, or an investigation, by the Animal Control Division of the
+          Police Department, or both, reveals that in the opinion of the Animal Control Division
+          the applicant has failed to meet the requirements of this Section.
+      b. Any application shall be required to show proof of meeting the required standards
+          beyond a reasonable doubt.
+      c. The Animal Control Division shall submit a written report of its investigation stating
+          the factual basis for its recommendation to grant or deny any application. The
+          Animal Control Division shall consider the comments of neighbors, past violations by
+          applicant, the size, condition and location of the area where the animals will be kept,
+          the size of the animals to be kept, past complaints concerning the applicant, the
+
+
+
+                                                                                          Page 7
+                burden of proof and the criteria set forth in this Section, or any other factors relative
+                to the issue of keeping additional animals.
+             d. The City Clerk shall establish an application process to be followed by all individuals
+                seeking a Special Animal Permit. The Special Animal Permit shall be issued for the
+                period from January 1st through December 31st of each year. The City Manager is
+                hereby authorized to set fees and fee related policies for the Special Animal Permit.
+                All fees shall be nonrefundable and nontransferable. The Special Animal Permit shall
+                be issued for the individual animals listed in the application and shall not be
+                transferable to other animals. Except for Special Animal Permits required for the
+                keeping of more than 2 foster animals, should an animal subject to the Special
+                Animal Permit be replaced, a new application and Special Animal Permit shall be
+                required, but no new Special Animal Permit fee shall be required. The fact an
+                individual has previously been issued a Special animal Permit may be considered but
+                shall not be controlling in the City Clerk's decision to issue a Special Animal Permit
+                for a different animal. Nothing in this Section shall exempt or except any applicant or
+                any other person from the registration, vaccination or any other requirement of this
+                Chapter.
+   B. Permit Revocation. Subject to the appeal process set forth in Section 6.06.055, the permits
+      described in this Section may be revoked by the City Clerk upon a showing that: (1) the
+      animal's place of keeping constitutes a nuisance to the surrounding neighbors, (2) humane
+      standards of care are not being met by the permittee, (3) a violation of any applicable zoning
+      regulations has occurred, or (4) the permittee has provided false information in their
+      application.
+   C. Definitions. The terms "nuisance," "humane standards of care" and "special circumstances"
+      shall have the meanings set forth in Section 6.04.050.
+   D. Kennels Previously Approved by County. Any person who, prior to annexation into the City,
+      obtained a conditional use permit from Johnson County for a kennel, shall be allowed to keep
+      dogs and cats in greater numbers than set forth above in accordance with the terms of such
+      conditional use permit. Provided, however, any such person may apply for a "special animal
+      permit" as set forth above.
+   E. Service Animals. The provisions of this Section 6.04.051 shall not be applicable to service
+      animals. For the purposes of this Section, service animals shall be animals providing the
+      services specified in K.S.A. 39-1103 et seq.
+(History: Ord. DAC-3486 §3, 2025; Ord. DAC-3436 §4, 2023; Ord. DAC-2987 §2, 2013; DAC-2693 §2,
+2008; DAC-2399 §2, 2002)
+
+6.04.055 Appeal.
+   A. Any person who is denied a Special Animal Permit, an Animal Breeder Permit or an Animal
+      Foster Home Permit, whose existing permit has been revoked, may within 10 days thereafter
+      file a written notice or statement of appeal from said decision, ruling, action, or finding to the
+      Overland Park Municipal Court for an administrative hearing thereon.
+   B. The City Manager is hereby authorized to set an administrative hearing appeal fee. Such
+      fee shall be paid to the Municipal Court Clerk and is required for each appeal to the Municipal
+      Court, and no appeal shall be set for hearing until such fee has been paid.
+
+
+
+
+                                                                                                 Page 8
+    C. The filing of an appeal under this subsection shall not stay any action taken pursuant to this
+       Chapter.
+
+   D. The hearing shall be conducted by an Overland Park Municipal Court judge who will sit as an
+      administrative judge for purposes of this Chapter. The sole issue for determination shall be
+      whether decisions, rulings, actions, or findings of the Animal Control Officer or the City Clerk
+      (or their respective designees) were within the scope of their authority, supported by
+      substantial evidence, and not arbitrary or capricious in nature. The Court shall make specific
+      findings of fact and conclusions of law in each case.
+
+      Pursuant to its role as administrative judge, the court is empowered to hold hearings,
+      subpoena witnesses, take the testimony of any person under oath and in connection
+      therewith, to require the production of any evidence relating to any matter being heard. In
+      the case of the refusal of any person to comply with any subpoena issued hereunder or to
+      testify in any matter regarding which he or she may be lawfully questioned, the court may
+      order such person to comply with such subpoena and testify; and failure to obey the court's
+      order may be punished by the court as contempt.
+
+(History: Ord. DAC-3436 §5, 2023; Ord. DAC-1679 §6, 91; DAC-1385 §2, 86)
+
+6.04.056 Appeals, Administrative Hearing.
+The hearing on the appeal provided for in 6.10.160 shall be conducted by an Overland Park
+Municipal Court judge who will sit as an administrative judge for purposes of this chapter. The sole
+issue for determination shall be whether decisions, rulings, actions, or findings of the Chief Animal
+Control Officer and/or the City Clerk were within the scope of their authority, supported by
+substantial evidence, and not arbitrary nor capricious in nature. The Court shall make specific
+findings of fact and conclusions of law in each case.
+(History: Ord. DAC-1385 §3, 86)
+
+6.04.057 Subpoena Power.
+Pursuant to its role as administrative judge, the court is empowered to hold hearings, subpoena
+witnesses, take the testimony of any person under oath and in connection therewith, to require the
+production of any evidence relating to any matter being heard. In the case of the refusal of any
+person to comply with any subpoena issued hereunder or to testify in any matter regarding which
+he or she may be lawfully questioned, the court may order such person to comply with such
+subpoena and testify; and failure to obey the court's order may be punished by the court as
+contempt.
+(History: Ord. DAC-1385 §4, 86)
+
+6.04.058 Inoculation against Rabies Required.
+All owners, keepers and harborers of dogs and cats within the City are required to have a registered
+veterinarian inoculate their animal(s) for rabies and insure that the inoculation is valid at all times
+the animal(s) is/are within the City.
+
+
+
+
+                                                                                               Page 9
+(History: Ord. DAC-2138 §1, 98)
+
+6.04.060 Rabies Certificate Required at Time of Licensing.
+No license required by this chapter will be issued until the owner, keeper or harborer of the animal
+furnishes a certificate signed by a registered veterinarian, showing that the animal is currently
+inoculated against rabies. Recognition shall be given to a certificate which indicates a 1-year, 2-year
+or 3-year inoculation period for cats and dogs if duly signed by a registered veterinarian.
+(History: Ord. DAC-2138 §2, 98; DAC-1679 §7, 91; DAC-879 §1, 76; DAC-697 §5, 72)
+
+6.04.070 Enumeration of Animals.
+The City Council may require an annual enumeration of all dogs and cats owned within the City. The
+enumeration shall account for the number and ownership of all dogs and cats owned in the city and
+may be compared and corrected with the records of the county.
+(History: Ord. DAC-697 §6, 72)
+
+6.04.080 Fees to General Fund.
+All fees, charges, and penalties paid to or collected by any officers of the City under or pursuant to
+the provisions of this title shall be paid over to the city treasurer and credited to the general
+operating fund.
+(History: Ord. DAC-697 §16, 72)
+
+6.04.090 Severability.
+If any section, subsection, subdivision, paragraph, sentence, clause or phrase in this chapter or any
+part thereof, is for any reason held to be unconstitutional or invalid or ineffective by any court of
+competent jurisdiction, such decision shall not effect the validity or effectiveness of the remaining
+portions of this chapter or any part thereof.
+(History: Ord. DAC-1311 §3, 85)
+
+
+6.08 CONTROL AND IMPOUNDMENT OF DOMESTIC
+ANIMALS
+Contents:
+ 6.08.010 Ownership.
+ 6.08.020 Dog and Cat Control.
+ 6.08.025 Other Domestic Animals.
+ 6.08.026 Animals Prohibited in Downtown Business District’s Farmers Market.
+ 6.08.030 Seizure.
+ 6.08.060 Redemption of Impounded Animal - Vaccination.
+
+
+
+                                                                                              Page 10
+ 6.08.070 Procedure on Failure to Redeem.
+ 6.08.080 Damage to Property.
+ 6.08.085 Injury to Person or Animal.
+ 6.08.090 Rabies Impoundment Procedures.
+ 6.08.100 Notice of Impoundment of Biting Animal to Chief Animal Control Officer.
+ 6.08.110 Notification of Owner of Impounded Animal.
+ 6.08.120 Lien Against Animal Impounded - Sale or Disposal.
+ 6.08.130 Alternatives for Confined Animal.
+ 6.08.135 Violations; Penalties Generally.
+ 6.08.140 Severability.
+
+6.08.010 Ownership.
+Any person owning, keeping or harboring a dog or cat for seven consecutive days shall be
+conclusively presumed to be the owner of such animal for purposes of this title. In addition, any
+person who signs a receipt for return of an animal from Animal Haven or any other animal shelter
+shall be presumed to be the owner, keeper or harborer of the animal.
+(History: Ord. DAC-1679 §8, 91; DAC-697 §7, 72)
+
+6.08.020 Dog and Cat Control.
+   A. Dog Control. All dogs must be confined to the residential property of the owner, keeper or
+      harborer of said dog; provided, dogs may be taken off the residential property of the owner,
+      keeper or harborer when:
+       1. on a leash, no longer than 10 feet in length and the leash and animal are under the control
+          of a responsible person. Whether a person is responsible shall be determined by giving
+          due consideration to the size and temperament of the animal; provided, all dogs
+          determined to be vicious and registered as vicious animals under the provisions of this
+          chapter shall be muzzled when off the residential property of the owner, keeper or
+          harborer and shall be under the control of an adult;
+       2. the dog is confined in a cage or within the enclosed interior of a motor vehicle; provided,
+          it is a violation of this Section for a dog to be transported in the open bed of a truck unless
+          restrained in a cage or on a leash that will prevent the animal from jumping or falling off
+          the vehicle;
+       3. under the control of the owner, keeper or harborer and during the conduct of an AKC,
+          UKC or other kennel club or organized dog club trial, show or exhibition;
+       4. under the control of the owner, keeper or harborer and during the conduct of legal
+          hunting activities within the City or during the conduct of training a dog for legal hunting
+          activities, provided that if such training includes the discharge of a firearm, the conditions
+          of Overland Park Municipal Code Section 11.12.155 must be complied with; provided
+          further, no training for hunting purposes will be conducted on any property without the
+          permission of the landowner upon whose property the training is occurring; provided
+
+
+
+
+                                                                                                Page 11
+   further that such training and/or hunting activities are prohibited from all public parks
+   and recreational facilities.
+For the purposes of this Section "confined to the residential property of the owner, keeper or
+harborer" shall mean, but not be limited to mean, confined either inside the residential
+structure of the owner, keeper or harborer, or if outside the residential structure of the
+owner, keeper or harborer, the dog shall be physically restrained on a chain or leash or
+within a suitable fence or other proper method of physical restraint from which it cannot
+escape or endanger public safety outside the suitable method of confinement; provided:
+
+
+
+      a. If the dog is in the physical presence of its owner, keeper, or harborer and on its
+         owner's, keeper's or harborer's property and under the demonstrated direct and
+         immediate voice control of its owner, keeper or harborer, it shall be considered
+         confined to the residential property of its owner, keeper or harborer. It shall not be
+         considered confined to the residential property of the owner, keeper or harborer, if
+         the dog is off the property of the owner, keeper or harborer, whether it is under the
+         demonstrated direct and immediate voice control of its owner, keeper or harborer or
+         not.
+      b. Dogs shall not be considered confined to the premises of the residential property of
+         their owner, keeper or harborer if the only restraining device is an electric fence. An
+         electric fence is defined as a fence that shocks an animal or person upon the person
+         or animal touching it.
+      c. Dogs may be confined to the premises of the residential property of their owner,
+         keeper or harborer by an electronic fence or an electronic collar. An electronic fence
+         or electronic collar is defined as a fence or a collar that controls the movement of a
+         dog by emitting an electrical shock when the animal wearing the collar nears the
+         boundary of the owner's, keeper's or harborer's property. The collar may be
+         controlled manually by a person or automatically in a predetermined manner. Dogs
+         confined to residential property of the owner, keeper, or harborer, by an electronic
+         fence or an electronic collar, shall not be permitted to be nearer than 10 feet away
+         from any public sidewalk or property line that is contiguous to neighboring
+         property. In addition, dogs are prohibited from being confined by an electronic fence
+         or an electronic collar in the front yards of an owner's, keeper's or harborer's
+         property. No dog having been found a dangerous animal by the animal control
+         division shall be confined by an electronic fence or an electronic collar. All owners,
+         keepers or harborers of dogs who use an electronic fence shall clearly post their
+         property to indicate to the public that a dog is confined to the property by an
+         electronic fence or electronic collar. Electronic collars may not be used to control a
+         dog when it is off its owner's, keeper's or harborer's property.
+
+ 5. When within a fenced closure on city-owned property under the control of the Director of
+    Parks and Recreation, provided the owner complies with any regulations posted by the
+    Director.
+
+
+
+
+                                                                                       Page 12
+    B. Cat Control. All cats must be under the control of their owner, keeper or harborer at all
+       times. For the purpose of this Section, a cat shall be considered not under control and in
+       violation of this Section in the following situations:
+        1. If a neighbor complains orally or in writing to the owner, keeper or harborer of a cat, that
+           the cat is entering upon the neighbor's property, then the cat's presence on the neighbor's
+           property at any time subsequent to the neighbor's complaint shall constitute a violation of
+           this Section;
+        2. If a cat causes injury to persons or animals.
+        3. If a cat causes damage to property off its owner's, keeper's or harborer's property to
+           include, but not limited to, breaking, bruising, tearing up, digging up, crushing or injuring
+           any lawn, garden, flower bed, plant, shrub or tree in any manner or defecating or
+           urinating upon any private property.
+    C. The provisions of this Section shall not apply to any property zoned RUR, PRUR, RLD or PRLD
+       that is annexed into the City pursuant to Ordinance No. A-2719 unless and until the property
+       is rezoned.
+(History: Ord. DAC-2771 §2, 2009; DAC-2825 §1, 2009; DAC-2728 §1, 2008, modified during
+codification under authority of K.S.A. 12-3015; DAC-1679 §9, 91; DAC-1385 §5, 86; DAC-1311 §4,
+85; DAC-1091 §2, 80; DAC-697)
+
+6.08.025 Other Domestic Animals.
+   A. All domestic animals, excluding dogs and cats, but including cows and horses, although not
+      limited thereto, shall be enclosed with a fence sufficiently close, composed of posts and rails;
+      posts and palings; posts and planks or palisades; posts and wire; rails alone, laid up in the
+      manner commonly called a worm fence; or turf, with ditches on each side, of stone; or a
+      hedge in existence on July 1, 1986, composed either of thorn or Osage orange.
+   B. Fences required under this section are as set out in K.S.A. 29-102 et.seq (1986 Session Laws)
+      or any amendments thereto, which are incorporated by reference as if set out in full herein.
+   C. It shall be unlawful for any domestic animal except as provided in 6.08.020 to run at large.
+   D. If any domestic animal, other than dogs or cats, break free of their lawful enclosure, and
+      trespass on land owned by another person, the owner or occupant of the land may take into
+      possession such animal trespassing, and keep the same until damages can be collected
+      pursuant to K.S.A. 29-408 (1986 Session Laws).
+(History: Ord. DAC-1385 §6, 86)
+
+6.08.026 Animals Prohibited in Downtown Business District’s Farmers Market.
+It shall be unlawful for any person to permit, suffer or allow a dog, cat or other domestic animal to
+enter or remain upon any portion of the property designated as the Downtown Business District’s
+Farmers Market, during those periods the market is open for business to include any time
+designated for "setting up" market displays, provided "service dogs" as defined by K.S.A. 39-1108
+may be upon market property when assisting an individual.
+(History: Ord. DAC-2123 §1, 98)
+
+
+
+
+                                                                                               Page 13
+6.08.030 Seizure.
+When a law enforcement officer or Animal Control Officer detects an animal in violation of 6.08.020
+and 6.08.025, the officer shall make a reasonable attempt to determine, when possible, the owner of
+such animal. If the owner can be determined, such animal may still be seized and impounded in the
+discretion of the officer.
+(History: Ord. DAC-2959 §1, 2012; DAC-2771 §3, 2009; DAC-1385 §7, 86; DAC-1311 §5, 85; DAC-
+697 §10(part), 72)
+
+6.08.060 Redemption of Impounded Animal - Vaccination.
+Redemption of an animal impounded under the provisions of this section shall be permitted upon
+payment of any pound fees and any veterinarian fees then due and owing. In the event the animal
+has not been vaccinated for rabies when the owner seeks to redeem the animal, the owner shall be
+required to sign a written acknowledgment of receipt of the animal which includes a written
+promise to the City to have the animal vaccinated and duly licensed with the City within seven days
+after receipt of the animal. If a registered veterinarian determines it would be temporarily
+dangerous to the health of the animal to vaccinate it during this seven-day period, the owner will be
+given an extension of up to 30 days after the animal's release from impoundment in which to obtain
+the vaccination. In either event, the license tag required by 6.04.030 shall be withheld pending final
+vaccination.
+(History: DAC-1311 §7, 85; DAC-697 §10)
+
+6.08.070 Procedure on Failure to Redeem.
+The City shall have a lien against any animal seized pursuant to 6.08.030 for its keep. If after seven
+days from the date of seizure the animal has not been redeemed, the City shall have the right to
+dispose of the animal through sale to any private individual and apply the sale proceeds to the
+expense incurred in keeping the animal. If after seven days from date of seizure, the animal has not
+been redeemed or sold, then it may be given away or humanely destroyed unless there is good
+reason, in the opinion of the impounding veterinarian, to suspect the presence of rabies in such
+animal; it may then be retained at the discretion of the impounding veterinarian.
+(History: DAC-1311 §8, 85; DAC-697 §11)
+
+6.08.080 Damage to Property.
+It shall be unlawful for the owner, keeper or harborer of any animal to permit, suffer or allow such
+animal to go upon any sidewalk, parkland, or private or public property and break, bruise, tear up,
+dig up, crush or injure any lawn, flower bed, plant, shrub, tree or garden in any manner whatsoever,
+or for the animal to defecate or urinate on any such property, provided it shall not be a violation for
+an animal to defecate on public property if the owner, keeper or harborer cleans the property
+immediately; provided it shall not be a violation for an animal to urinate on public property as long
+as the animal does not urinate on flower beds, shrubs, bushes, trees or other plants, not to include
+grass.
+(History: Ord. NOI-2287 §10, 2001; DAC-1679 §11, 91; DAC-1311 §9, 85; DAC-697 §14)
+
+
+
+
+                                                                                              Page 14
+6.08.085 Injury to Person or Animal.
+It shall be unlawful for the owner, keeper or harborer of any animal to permit such animal to:
+    A. Cause injury to people.
+    B. Bite or cause injury to any person or other animal.
+(History: Ord. DAC-2771 §4, 2009)
+
+6.08.090 Rabies Impoundment Procedures.
+Except as provided in 6.08.130, a dog, cat, or ferret which bites, scratches, or otherwise causes an
+abrasion that breaks the skin of a person shall immediately be quarantined at the owner’s expense
+by City personnel with a City authorized impounding agent or a licensed veterinarian, for a period
+of ten days. 1) If the owner is known and is present or is available to make arrangements, and the
+injury occurs during regular office hours, the animal will be impounded with a veterinarian of the
+owner’s choice whose place of business is in Johnson County, Kansas, for a period of ten days. 2) If
+the injury occurs after normal business hours, and the owner is unable or unavailable to make
+arrangements for impounding of the animal, the animal will be impounded at a City authorized
+impounding agent until the next business day at which time the owner must make arrangements
+for the animal to be transferred to the facility of a licensed veterinarian whose place of business is
+in Johnson County, Kansas, for the remainder of the confinement period. The total period of
+confinement of the animal is to be for a period of not less than ten days from the date of the actual
+bite, scratch or abrasion. Any animal quarantined at the City’s impound agent shall be transferred
+to a licensed veterinarian whose place of business is located within Johnson County, Kansas, no
+later than the next business day upon payment of all fees. Procedures related to the isolation of
+mammals other than dogs, cats and ferrets causing exposure to rabies for observation and
+procedures related to mammals exposed to rabies shall be in accordance with Kansas
+Administrative Regulations 28-1-13 and 28-1-14, or as otherwise directed by a county, state or
+federal health official with jurisdiction and knowledge of the same.
+(History: Ord. DAC-2959 §2, 2012; DAC-2199 §1, 2000; DAC-1311 §10, 85; DAC-880 §2, 76; DAC-
+711 §3, 72)
+
+6.08.100 Notice of Impoundment of Biting Animal to Chief Animal Control
+Officer.
+In all cases of impoundment under this Section, the veterinarian or City-authorized impounding
+agent with whom the dog, cat, ferret or other mammal is impounded, shall give immediate written
+notice to the Chief Animal Control Officer that such animal has been confined and will be confined
+not less than 10 days nor more than 12 days.
+(History: Ord. DAC-2959 §3, 2012; DAC-2771 §5, 2009; DAC-2199 §2, 2000; DAC-1311 §11, 85;
+DAC-711 §3(part), 72; DAC-697 §15(B), 72)
+
+6.08.110 Notification of Owner of Impounded Animal.
+
+
+
+
+                                                                                             Page 15
+If the address of the owner of the animal can be determined, the Chief of Police shall make
+reasonable effort to notify the owner that the animal is impounded under the provisions of
+6.08.090 through 6.08.130 and the owner must redeem the animal and pay all pound fees, any
+veterinarian fees and any license and penalty fees then due and owing the City. Upon redemption,
+the owner must transfer the animal to a licensed veterinarian as required by 6.08.090.
+(History: Ord. DAC-2199 §3, 2000; DAC-711 §3(part), 72; DAC-697 §15(C), 72)
+
+6.08.120 Lien Against Animal Impounded - Sale or Disposal.
+The City shall have a lien against the animal for its keep and if, after the period of impoundment
+provided in 6.08.090 through 6.08.130, the animal has not been redeemed by the owners, the City
+shall have the right to order disposal of the animal through sale to any private individual and apply
+the sale proceeds to the expense incurred in keeping the animal. If the animal is not redeemed or
+sold after the period of impoundment, it may be given away or humanely destroyed.
+(History: Ord. DAC-711 §3(part), 72; DAC-697 §15(D), 72)
+
+6.08.130 Alternatives for Confined Animal.
+    1. In the event the investigating officer determines:
+        A. That the animal owner has no prior animal violations; and
+        B. That the animal is not vicious nor likely to attack or bite someone else; and
+        C. That the animal had an effective rabies inoculation and was duly licensed under this title
+           at the time of the injury, then, the animal need not be impounded in accordance with
+           Section 6.08.090 but the following alternative procedure shall be followed:
+              1. If the injured person, his/her parent, or guardian desires that the animal be
+                 impounded and agrees in writing to pay for its board during the period of
+                 impoundment, it shall be so impounded for the period specified in Section 6.08.090
+                 notwithstanding any other provision of this title.
+              2. If the injured party, his/her parent, or guardian is unwilling to agree in writing to
+                 pay for the animal's board during the period of impoundment, the animal shall be
+                 permitted to remain on the property of its owner or keeper; provided no animal
+                 shall be allowed to remain on the property of its owner or keeper under this Section
+                 unless such person signs a written agreement to keep the animal confined to the
+                 property for the period specified in Section 6.08.090 and further agrees to allow the
+                 animal to be examined periodically to determine its physical condition during the
+                 confinement period. If the owner or keeper is unwilling to sign such an agreement,
+                 the animal shall be immediately impounded in accordance with Section 6.08.090.
+    2. If the animal was not duly licensed with the City but otherwise met the requirements of this
+       paragraph for home confining the animal, the animal must be confined outside the home as
+       required by this Section, provided, should the owner license the animal during the ten day
+       confinement period, the animal may be confined at home in accordance with the standards
+       set forth in this Section for any remaining portion of the confinement period.
+    3. Animal Control officers shall have the authority to remove an animal from home confinement
+       and place it with an animal shelter or veterinarian at any time during home confinement if
+       the animal becomes ill during the quarantine period or the Animal Control officer develops
+
+
+
+                                                                                             Page 16
+      reasonable suspicion that any conditions of home confinement or requirements of this Code,
+      are not being followed.
+(History: Ord. DAC-2756 §1, 2009; DAC-2199 §4, 2000; DAC-1679 §12, 91; DAC-880 §3, 76; DAC-
+711 §3, 72)
+
+6.08.135 Violations; Penalties Generally.
+Unless specific penalties are otherwise provided herein, the following penalties shall apply. Upon a
+first conviction for violation of this chapter, the Court shall assess a fine of no less than $50. Upon a
+second conviction, the Court shall assess a fine of no less than $150. Upon a third or subsequent
+conviction, the Court shall assess a fine of no less than $500. Provided that no prior conviction shall
+be considered in determining the penalty to be assessed if 24 months have elapsed between the
+date of the violation and the date of the conviction next immediately preceding the sentencing date.
+No person shall be eligible for a parole, suspension or reduction of any part of said fine. In addition
+to any such fine imposed, the Court may impose a jail term of up to 30 days, except that portion of
+any fine or combinations of fines assessed from the same set of operative facts that exceed $200
+may be suspended for not less than 12 months on the condition the violator have no further
+violations of the animal control laws during that period.
+(History: Ord. DAC-1735 §3, 92; DAC-1679 §12, 91)
+
+6.08.140 Severability.
+If any section, subsection, subdivision, paragraph, sentence, clause or phrase in this chapter or any
+part thereof, is for any reason held to be unconstitutional or invalid or ineffective by any court of
+competent jurisdiction, such decision shall not effect the validity or effectiveness of the remaining
+portions of this chapter or any part thereof.
+(History: Ord. DAC-1311 §12, 85)
+
+
+6.09 ANIMAL WELFARE
+Contents:
+  6.09.005 Definitions.
+  6.09.010 Cruelty to Animals.
+  6.09.015 Illegal Ownership or Keeping of an Animal.
+  6.09.020 Seizure and Disposition of Animals.
+  6.09.025 Abuse and Neglect of Animals.
+  6.09.035 Rescue of Animals from Vehicles.
+  6.09.037 Commercial Animal Establishments.
+  6.09.040 Unlawful Trapping.
+  6.09.045 Trapping Coyotes in Protection of Private Property and Livestock.
+  6.09.050 Unlawful Trading in Animals.
+
+
+
+
+                                                                                                Page 17
+ 6.09.060 Severability.
+
+6.09.005 Definitions.
+Whenever in this chapter the following terms are used, each shall have the meaning respectively
+ascribed in this section:
+   A. Adequate care is normal and prudent attention to the needs of an animal, including that
+      care which is normally necessary to maintain good health in a specific species of animal;
+   B. Adequate food is wholesome foodstuffs suitable for the species provided at suitable
+      intervals in a sanitary manner in quantities sufficient to maintain good health in an animal
+      considering its age and condition;
+   C. Adequate health care is the provision to each healthy animal of all immunizations and
+      preventive care required to maintain good health; space adequate to allow the animal rest
+      and exercise sufficient to maintain good health; and the provision to each sick, diseased or
+      injured animal of necessary veterinary care or humane death;
+   D. Adequate shelter is a structurally sound, properly ventilated, sanitary and weatherproof
+      shelter suitable for the species, conditions and age of the animal which provides access to
+      shade from direct sunlight and regress from exposure to inclement weather condition;
+   E. Adequate water is a continual access to or access at suitable intervals to a supply of clean,
+      fresh, potable water provided in a sanitary manner suitable for the species, condition and age
+      of the animal in sufficient amounts to maintain good health in the animal.
+    F. Commercial Animal Establishment is any pet shop, grooming shop, boarding kennel,
+       animal exhibit, auction, riding school, stable carriage horse service, cattery, kennel, sentry or
+       guard dog service, animal trainer, business keeping animals in stock for retail or wholesale
+       trade or sale, or any establishment providing one or more of the principal activities of the
+       aforementioned establishment.
+   G. Owner, keeper or harborer is any person who feeds, cares for, shelters or professes or
+      exhibits ownership of an animal.
+(History: Ord. DAC-1729 §2, 92)
+
+6.09.010 Cruelty to Animals.
+   1. "Cruelty to animals" is:
+       A. Intentionally and Maliciously killing, injuring, maiming, torturing, burning or mutilating
+          any Animal. A violation of this provision is a felony which must be charged in the District
+          Court pursuant to K.S.A. 21-6412(b)(1);
+       B. intentionally abandoning or leaving any Animal in any place without making provisions
+          for its proper care;
+       C. having physical custody of any Animal and intentionally failing to provide such food,
+          potable water, protection from the elements, opportunity for exercise and other care as is
+          needed for the health or well-being of such kind of Animal;
+       D. intentionally using a wire, pole, stick, rope or any other object to cause an Equine to lose
+          its balance or fall, for the purpose of sport or entertainment;
+
+
+
+
+                                                                                               Page 18
+   E. intentionally causing any physical injury other than the felony violations set forth in
+      paragraph 1A above;
+   F. molesting, willingly beating with a stick, chain, club or other object, burn or scald with any
+      substance(s), administering any poisonous substance with the intent that the same shall
+      be taken or swallowed, cruelly ill-treating, overworking or overloading, or disfiguring any
+      Animals in the City; whether or not such Animal is owned by that person;
+   G. administering any poison to a domestic animal; or
+   H. exposing any poisonous substance with the intent that the same shall be taken or
+      swallowed by any domestic animal.
+     This Section shall not apply to any person legally exposing poison upon their premises for
+     the purpose of destroying coyotes or other predatory animals.
+2. The provisions of this Section shall not apply to:
+    A. Normal or accepted veterinary practices;
+    B. bona fide experiments carried on by recognized research facilities;
+    C. killing, attempting to kill, trapping, catching or taking of any Animal in accordance with
+        the provisions of Chapter 32 or Chapter 47 of the Kansas Statutes Annotated;
+    D. rodeo practices accepted by the Professional Rodeo Cowboys' Association;
+    E. the humane killing of an Animal which is diseased or disabled beyond recovery for any
+        useful purpose, or the humane killing of Animals for population control, by the Owner
+        thereof or the agent of such Owner residing outside of a City or the Owner thereof within
+        a City if no Animal shelter, pound or licensed veterinarian is within the City, or by a
+        licensed veterinarian at the request of the Owner thereof, or by any officer or agent of any
+        incorporated humane society, the operator of an Animal shelter or pound, a local or state
+        health officer or a licensed veterinarian three business days following the receipt of any
+        such Animal at such society, shelter or pound;
+    F. with respect to farm Animals, normal or accepted practices of Animal husbandry,
+        including the normal and accepted practices for the slaughter of such Animals for food or
+        by-products and the careful or thrifty management of one’s herd or Animals, including
+        Animal care practices common in the industry or region;
+    G. the killing of any Animal by any person at any time which may be found outside of the
+        owned or rented property of the Owner or custodian of such Animal and which is found
+        injuring or posing an immediate threat to any person, farm or domestic Animal;
+    H. an Animal control officer trained by a licensed veterinarian in the use of a tranquilizer
+        gun, using such gun with the appropriate dosage for the size of the Animal, when such
+        Animal is vicious or could not be captured after reasonable attempts using other methods;
+     I. laying an Equine down for medical or identification purposes;
+     J. normal or accepted practices of pest control, as defined in subsection (x) of K.S.A. 2-
+        2438a, and amendments thereto; or
+    K. accepted practices of Animal husbandry pursuant to regulations promulgated by the
+        United States Department of Agriculture for domestic pet Animals under the Animal
+        Welfare Act, public law 89-544, as amended and in effect on July 1, 2006.
+3. As used in this Section:
+
+
+
+
+                                                                                           Page 19
+        A. "Animal" shall have the meaning ascribed to it in K.S.A. 21-6411, and amendments
+           thereto.
+        B. "Equine" means a horse, pony, mule, jenny, donkey, or hinny.
+        C. "Maliciously" means a state of mind characterized by actual evilmindedness or specific
+           intent to do a harmful act without a reasonable justification or excuse.
+    4. The first conviction of cruelty to Animals as described in this Section should be punished
+       pursuant to O.P.M.C. Section 6.16.020.
+    5. The second or subsequent conviction of cruelty to Animals as described in this Section is a
+       non-person felony, that must be charged in the District Court pursuant to K.S.A. 21-
+       6412(b)(2)(B).
+(History: Ord. DAC-2959 §4, 2012; DAC-2864 §1, 2010; DAC-2619 §1, 2006; DAC-1729 §3, 92; DAC-
+1311 §13, 85; POC-949; POC-625)
+
+6.09.015 Illegal Ownership or Keeping of an Animal.
+Illegal ownership or keeping of an animal is owning or keeping on one’s premises an animal by a
+person convicted of unlawful conduct of dog fighting under K.S.A. 21-6414 and amendments
+thereto, cruelty to animals as defined in subsection (a)(1) of K.S.A. 21-6412, and amendments
+thereto or cruelty to animals as defined in O.P.M.C. Section 6.09.010A, within five years of the date
+of such conviction. Every person convicted of violating this Section shall be imprisoned for not
+more than six months or fined not to exceed $1,000, or both such fine and imprisonment. (History:
+Ord. DAC-2959 §5, 2012; DAC-2619 §1, 2006)
+
+6.09.020 Seizure and Disposition of Animals.
+   A. Any public health officer, animal control officer, law enforcement officer or licensed
+      veterinarian, or any officer or agent of any duly incorporated humane society, animal shelter
+      or other appropriate facility, may take into custody any animal, upon either private or public
+      property, which clearly shows evidence of cruelty to animals, as defined in 6.09.010 herein
+      and when failure to do so would result in further injury or pain and suffering to the animal.
+      Such officer, agent or veterinarian may inspect, care for or treat such animal or place such
+      animal in the care of a duly incorporated humane society or licensed veterinarian for
+      treatment, boarding or other care or, if it appears, as determined by an officer of such
+      humane society or by such veterinarian, that the animal is diseased or disabled beyond
+      recovery for any useful purpose, for humane killing.
+   B. If a person is adjudicated guilty of the crime of cruelty to animals, as defined in 6.09.010
+      herein and the court having jurisdiction is satisfied that an animal owned or possessed by
+      such person would be in the future subjected to such crime, such animal shall not be returned
+      to or remain with such person. Such animal may be turned over to a duly incorporated
+      humane society or licensed veterinarian for sale or other disposition.
+(History: Ord. DAC-1729 §4, 92; DAC-1679 §14, 91; DAC-1311 §14, 85; POC-949 §2, 77)
+
+6.09.025 Abuse and Neglect of Animals.
+   A. No owner, keeper or harborer of an animal shall fail to provide the animal with adequate
+      care, adequate food, adequate water, adequate health care, and adequate shelter. Such shelter
+
+
+
+                                                                                            Page 20
+      should be clean, dry, and compatible with the condition, age and species. An animal must also
+      have the opportunity for adequate daily exercise. This requires that an owner must offer
+      some freedom from continuous chaining, stabling and tethering. The area where animals are
+      kept must also be kept free from unsanitary conditions and vermin-harboring debris.
+   B. Tethering. For the purposes of this Section, “tethering” is the use of a chain, leash, tie, tether,
+      rope or other device to restrain any animal to an inanimate object. It shall be unlawful to
+      tether any animal in a manner that is inhumane, cruel, or detrimental to its welfare.
+      In addition to the above general requirements, the tethering of a dog shall be subject to the
+      following conditions:
+       1. Dogs shall not be tethered outside except between the hours of 7:00 a.m. and 7:00 p.m.,
+          and in no such instance shall a dog be tethered for more than 30 minutes without
+          supervision. Supervision shall mean within the visual and auditory range of the owner,
+          without the use of electronic means.
+       2. Dogs shall not be tethered without access to shade when sunlight is likely to cause
+          overheating, or appropriate shelter to provide insulation and protection against cold and
+          dampness when the atmospheric temperature falls below 40 degrees Fahrenheit, or to
+          tether without securing the animals water supply so that it cannot be tipped over by the
+          tether.
+       3. Dogs shall not be tethered in an open area where it can be teased or provoked by persons
+          or in an area that does not provide the dog protection from attack by other animals.
+       4. Dogs shall not be tethered in an area where bare earth is present and no steps have been
+          taken to prevent the area from becoming wet and muddy in the event of precipitation.
+       5. Any device used for the purpose of tethering a dog shall provide the dog at least ten feet in
+          which to run.
+       6. Any device used for the purpose of tethering a dog shall not be of a weight that inhibits
+          the free movement of the dog within the area tethered.
+       7. Dogs shall be tethered in such a manner as to prevent injury, strangulation or
+          entanglement on fences, trees or other man made or natural obstacles.
+       8. It is unlawful to attach chains or other tether restraint implements directly to a dog
+          without the proper use of a collar, harness, or other device designed for that purpose and
+          all such tethering devices shall be made from a material that prevents injury to the
+          animal.
+   C. No person shall offer to give or give a live animal as a prize or as a business inducement or
+      any other form of gratuity.
+
+(History: Ord. DAC-3329 §5, 2021; Ord. DAC-2959 §6, 2012; DAC-1729 §5, 92)
+
+6.09.035 Rescue of Animals from Vehicles.
+
+
+
+
+                                                                                                Page 21
+Whenever any animal is found confined in a motor vehicle in a public place under weather
+conditions that endanger its life as determined by the supervisor of animal control, such is a
+violation of this section and the supervisor of animal control is hereby authorized, with assistance
+from the police which are hereby authorized to enter such vehicle and rescue such animal and
+thereafter impound it. A prominent written notice shall be left on or in the vehicle advising that the
+animal has been removed under the authority of this section and impounded.
+(History: Ord. DAC-1729 §7, 92)
+
+6.09.037 Commercial Animal Establishments.
+Standards: Any person operating a commercial animal establishment shall keep and maintain the
+animals, and all structures, pens, or yards, tanks, ponds, or other holding areas in which the animals
+are kept, in such a manner as to prevent a nuisance or health hazard to humans and to avoid injury
+and illness to these animals. All holding areas must be properly sanitized so as to keep the animals
+enclosed therein free of diseases. All such animals shall be provided with a constant supply of
+wholesome food and water or in lieu of this, the proprietor shall prominently and publicly post and
+shall follow a schedule for adequate feeding and watering. A schedule shall also be posted for
+cleaning and maintaining cages and other holding areas at the facility. Any animal that is infected or
+diseased with an infectious agent shall be immediately isolated in such a manner as to prevent
+spread of disease to any other healthy animals, and it shall be treated immediately to prevent
+further condition deterioration or euthanized, and if the owner or keeper fails or refuses to provide
+for such, the supervisor of animal control may remove each such animal to the animal shelter for
+disposition. All commercial animal establishments must permit inspection of their records,
+premises and the animals harbored therein by animal control officers of the City, law enforcement
+officers, and City officials. Failure to comply with the requirements of this section shall be a
+violation. A conviction for violation of this section shall result in a fine of not less than $500 and not
+more than $1,000. Each day shall be considered a separate offense.
+(History: Ord. DAC-1729 §8, 92)
+
+6.09.040 Unlawful Trapping.
+"Unlawful trapping" is the utilization, except for display or exhibition purposes, of any trap, net,
+snare, or other trapping device which does not painlessly capture or immediately kill its victim; or
+the utilization of any trap of the type commonly known as steel jaw, leghold traps.
+(History: Ord. DAC-1729 §9, 92; DAC-1311 §16, 85; POC-881 §1, 76)
+
+6.09.045 Trapping Coyotes in Protection of Private Property and Livestock.
+    A. Notwithstanding the provisions in Section 6.09.040, upon request by a resident, property
+       owner, homeowner, or homes association, the Chief of Police may find that a coyote (Canis
+       latrans) has become a danger to the private property or livestock of such individual(s) and
+       may authorize and direct the trapping of a specific targeted animal responsible for private
+       property destruction.
+    B. In the event the Chief of Police makes the finding required by subsection A, the Chief may
+       authorize any method of trapping which is found to be humane and necessary when
+       considered in the totality of the circumstances.
+
+
+
+                                                                                                 Page 22
+   C. In the event the Chief deems trapping necessary, the resident, property owner, homeowner
+      or homes association making the request will be responsible for the first $250 of the costs of
+      said trapping.
+   D. All trapping must occur on either City-owned property or property owned or controlled by
+      the resident, property owner, homeowner or homes association, or on other property with
+      the consent of the owner of the property.
+(History: Ord. DAC-2797 §1, 2009)
+
+6.09.050 Unlawful Trading in Animals.
+   A. The sale or giving away of chickens or ducklings younger than eight weeks of age in
+      quantities of less than 25 to a single purchaser; or
+   B. The giving away of any live animal, fish, reptile, or bird as a prize for, or as an inducement to
+      enter any contest, game, or other competition; or as an inducement to enter a place of
+      amusement or business; or offer such animal as an incentive to enter into any business
+      agreement whereby the offer was for the purpose of attracting trade.
+(History: Ord. DAC-1311 §17, 85; POC-881 §2, 76)
+
+6.09.060 Severability.
+If any section, subsection, subdivision, paragraph, sentence, clause or phrase in this chapter or any
+part thereof, is for any reason held to be unconstitutional or invalid or ineffective by any court of
+competent jurisdiction, such decision shall not affect the validity or effectiveness of the remaining
+portions of this chapter or any part thereof.
+(History: Ord. DAC-1311 §18, 85)
+
+
+6.10 DANGEROUS ANIMALS
+Contents:
+ 6.10.010 Definitions.
+ 6.10.020 Prohibition.
+ 6.10.030 Exceptions; Permit and Registration Requirements.
+ 6.10.040 Exemptions.
+ 6.10.050 Notice of Keeping Dangerous Animals.
+ 6.10.060 Seizure and Impounding of Dangerous Animals.
+ 6.10.070 Permit Required.
+ 6.10.080 Issuance of Permit.
+ 6.10.090 Application for Permit.
+ 6.10.100 Dangerous Animal Permit Fee.
+ 6.10.110 Temporary Permits; Powers of Animal Control Officer.
+ 6.10.120 Term and Renewal of Permits.
+
+
+
+                                                                                              Page 23
+ 6.10.130 Inspections, Investigations, and Issuance of Renewal Permits.
+ 6.10.140 Revocation and Suspension of Permits.
+ 6.10.150 Commercial Establishments.
+ 6.10.160 Appeals; Fees.
+ 6.10.165 Appeals, Administrative Hearing.
+ 6.10.166 Subpoena Power.
+ 6.10.168 Appeal; District Court.
+ 6.10.170 Severability.
+ 6.10.180 Violations and Penalties.
+ 6.10.190 Costs to be Paid by Responsible Persons.
+
+6.10.010 Definitions.
+For the purposes of this chapter "dangerous animal" means and includes
+   A. any mammal, amphibian, fish, reptile or fowl which is of a species which, due to size, vicious
+      nature or other characteristics would constitute a danger to human life, physical well-being,
+      or property, including but not limited to, lions, tigers, leopards, panthers, bears, wolves, wolf-
+      hybrid, wolf-mix, Tundra Shepherd, apes, gorillas, monkeys of a species whose average adult
+      weight is 20 pounds or more, foxes, elephants, alligators, crocodiles, and snakes which are
+      venomous or otherwise present a risk of serious physical harm or death to human beings as a
+      result of their nature or physical makeup including, but not limited to, boa constrictors,
+      Madagascar ground boas, green and yellow anacondas, Cuban boas, Indian pythons,
+      reticulated pythons, African rock pythons, Amethystine pythons, Boelen's pythons and all
+      members of the Pythonidae family that exceed six feet in length.
+   B. Any dog or cat having a disposition or propensity to attack or bite any person or animal
+      without provocation, and causing a severe injury as defined in 6.10.050, is hereby defined as
+      a "dangerous animal." For the purposes of this chapter, where the official records of the Chief
+      Animal Control Officer or City Clerk indicate a dog or cat has bitten any person or persons, it
+      shall be prima facie evidence that said dog or cat is a dangerous animal.
+   C. Any Dog or Cat having been previously determined by any other City or Municipality to be a
+      dangerous or vicious animal shall be prima facie evidence that said dog or cat is a dangerous
+      animal, unless that determination was based solely on breed or breed mix.
+Person includes any natural person, association, partnership, organization or corporation.
+
+
+(History: Ord. DAC-3395 §1, 2022; Ord. DAC-3329 §6, 2021; Ord. DAC-1871 §1, 94; DAC-1735 §4,
+92; DAC-1625 §1, 89; DAC-1494 §1, 87; DAC-1442 §1, 87; DAC-1426 §1, 87; DAC-1309 §1, 85; DAC-
+1284; DAC-880)
+
+6.10.020 Prohibition.
+Except as provided in 6.10.030 and 6.10.040, no person shall own, keep, or harbor any dangerous
+animal in the City of Overland Park.
+
+
+
+                                                                                               Page 24
+(History: Ord. DAC-3329 §7, 2021; Ord. DAC-1309 §2, 85)
+
+6.10.030 Exceptions; Permit and Registration Requirements.
+Any person or organization which falls into one of the following subsections shall be permitted to own,
+harbor or have charge, custody, control, or possession of any animal described in 6.10.010(A) hereof,
+provided the person or organization has first secured a permit under 6.10.070; shall also be required to
+register their animals in accordance with the provisions of this ordinance and Title 6 of the Overland Park
+Municipal Code:
+    A. The keeping of such animals in zoos, bona fide educational or medical institutions, museums or
+       any other place where they are kept as live specimens for the public to view, or for the purpose of
+       instruction or study.
+    B. The keeping of such animals for exhibition to the public of such animals by a circus, carnival or
+       other exhibit or show.
+    C. The keeping of such animals in a bona fide, licensed veterinary hospital for treatment.
+    D. Commercial establishments possessing such animals for the purpose of sale or display.
+    E. The keeping of a dangerous dog as defined in 6.10.010(B) or (C) herein shall be subject to the
+       following mandatory requirements:
+        1. Leash and Muzzle. No person shall permit a dangerous dog to go outside its kennel or pen
+           unless such dog is securely leashed with a leash no longer than four (4) feet in length. No
+           person shall permit a dangerous dog to be kept on a chain, rope or other type of leash outside its
+           kennel or pen unless a person is in physical control of the leash. Such dogs may not be leashed
+           to inanimate objects such as trees, posts, buildings, etc. In addition, all dangerous dogs on a
+           leash outside the animal's kennel must be muzzled by a muzzling device sufficient to prevent
+           such dog from biting persons or other animals.
+        2. Confinement. All dangerous dogs shall be securely confined indoors or in a securely enclosed
+           and locked pen or kennel, except when leashed and muzzled as above provided. Such pen,
+           kennel, or structure must have secure sides and a secure top attached to the sides. All structures
+           used to confine dangerous dogs must be locked with a key or combination lock when such
+           animals are within the structure. Such structure must have a secure bottom or floor attached to
+           the sides of the pen or the sides of the pen must be embedded in the ground no less than two (2)
+           feet. All structures erected to house dangerous dogs must comply with all zoning and building
+           regulations of the City. All such structures must be adequately lighted and ventilated and kept
+           in a clean and sanitary condition.
+        3. Confinement Indoors. No dangerous dog may be kept on a porch, patio or in any part of a house
+           or structure that would allow the dog to exit such building on its own volition. In addition, no
+           such animal may be kept in a house or structure when the windows are open or when screen
+           windows or screen doors are the only obstacle preventing the dog from exiting the structure.
+        4. Signs. All owners, keepers or harborers of dangerous dogs within the City shall display in a
+           prominent place on their premises a sign easily readable by the public using the words "Beware
+           of Dog." In addition, a similar sign is required to be posted on the kennel or pen of such animal.
+        5. Insurance. All owners, keepers or harborers of dangerous dogs must, within ten (10) days of the
+           effective date of this ordinance, provide proof to the City Clerk of public liability insurance in a
+           single incident amount of $300,000.00 for bodily injury to or death of any person or persons or
+           for damage to property owned by any persons which may result from the ownership, keeping or
+
+
+
+
+                                                                                                     Page 25
+       maintenance of such animal. At the time of initial registration, the owner, keeper or harborer
+       must present proof to the City Clerk of the required insurance. At the time of subsequent
+       registration, the owner, keeper or harborer must show proof of insurance for the present
+       registration period and proof that there was insurance coverage throughout the period of the
+       prior registration year.
+       In the event said liability insurance is canceled, lapsed, or for any other reason becomes non-
+       enforceable, said owner, keeper, or harborer shall be in violation of the provisions of this
+       ordinance and subject to the penalties provided herein.
+    6. Identification Photographs. All owners, keepers or harborers of dangerous dogs must within
+       ten (10) days of being designated such provide to the City Clerk two color photographs of the
+       registered animal clearly showing the color and approximate size of the animal.
+    7. Reporting Requirements. All owners, keepers or harborers of dangerous dogs must, within ten
+       (10) days of the incident, report the following information in writing to the City Clerk as
+       required hereinafter:
+           a. The removal from the City or death of a dangerous dog.
+           b. The new address of the dangerous dog or owner should the owner move within the
+              corporate City limits.
+    8. Microchipping. All owners of a dangerous dog must provide proof of microchipping to the City
+       Clerk within 10 days of being designated such.
+    9. Spaying/Neutering. All owners of Dangerous Animals must, within 10 days of designation,
+       spay or neuter the animal, if such animal has not previously been sterilized, and provide
+       proof of such to the City Clerk.
+  10. Failure to Comply. It shall be unlawful for the owner, keeper or harborer of a dangerous dog to
+       fail to comply with the requirements and conditions set forth in this ordinance. Any dog found
+       to be the subject of a violation of this ordinance shall be subject to immediate seizure and
+       impoundment. In addition, failure to comply will result in the revocation of the license of such
+       animal and the permit providing for the keeping of such animal resulting in the immediate
+       removal of the animal from the City or provide proof that the animal has been humanely
+       euthanized by its owner to the City.
+F. The keeping of any snakes of the species boa constrictors, Madagascar ground boas, green and
+   yellow anacondas, Cuban boas, Indian pythons, reticulated pythons, African rock pythons,
+   Amethystine pythons, Boelen's pythons and all members of the family pythonidae that exceed six
+   feet in length; provided, these animals shall be kept under the following mandatory conditions.
+  11. In consideration of the right of the public not to be unexpectedly exposed to snakes, these
+       animals will not be openly displayed in a public setting outside of established forums for such
+       practices to include herpetological shows, educational displays, pet stores and other special
+       displays whereby members of the public are forewarned that a snake(s) may be displayed in the
+       open.
+  12. Snakes shall be transported in a manner that precludes escape. At a minimum snakes shall be
+       placed in a sturdy cloth bag free of holes or tears and the bag placed in a box or similar
+       container. The box or container must be locked or sealed during transportation.
+  13. Snakes shall be housed in secure cages with hinged tops or doors or a sliding glass front which
+       includes a locking mechanism. The cage shall be kept in a room modified to prevent snake
+       escapes and which has a door which shall be kept shut or locked when not occupied by the
+       owner.
+
+
+
+
+                                                                                              Page 26
+      14. Snakes requiring permits shall not be sold to minors.
+      15. Pet stores or other vendors or sellers of snakes requiring permits are required to provide a copy
+          of this ordinance to all prospective purchasers of such snakes.
+      16. Snakes will not be fed or in any fashion provided any live or living creature while observable
+          by any member of the public or in any manner which may otherwise violate the humane laws of
+          the City.
+      17. It shall be unlawful and a violation of this subsection for any person to not comply with the
+          standards set forth herein.
+(History: Ord. DAC-3329 §8, 2021; Ord. DAC-2621 §1, 2006; DAC-1871 §2, 94; DAC-1625 §2, 89;
+DAC-1442 §2, 87; DAC-1309 §3, 85; DAC-880 §14)
+
+6.10.040 Exemptions.
+The provisions of this Chapter shall not apply to the transportation of such animals through this
+City. Also, the provision of this Chapter shall not apply to the keeping of a service dog to
+accommodate an individual with a disability recognized by the Americans with Disabilities Act
+(ADA), provided the owner keeper or harborer of the dog can provide reliable verification of the
+training and use of the dog as a service dog.
+(History: Ord. DAC-3329 §9, 2021; Ord. DAC-2959 §7, 2012; DAC-1309 §4, 85)
+
+6.10.050 Notice of Keeping Dangerous Animals.
+Upon the written complaint of any person that a person owns or is keeping or harboring a
+dangerous animal in violation of this chapter in the City, the Chief Animal Control Officer or their
+authorized deputy shall forthwith cause the matter to be investigated; and if after investigation the
+facts indicate that such person named in the complaint is in fact the owner or is keeping or
+harboring any such dangerous animal in the City, shall forthwith send written notice to such person
+requiring such person to safely remove said animal from the City within five days of the date of said
+notice. Notice as herein provided shall not be required where such dangerous animal has
+previously caused severe injury or death to any person or has escaped and is at large in which case
+the Chief Animal Control Officer shall cause said animal to be immediately seized and impounded,
+according to the provisions of 6.10.060, or killed if seizure and impoundment are not possible
+without risk of serious physical harm or death to any person.
+
+
+Severe injury shall include, but is not limited to, any physical injury resulting in broken bones or
+disfiguring lacerations that required suturing.
+
+
+(History: Ord. DAC-3329 §10, 2021; Ord. DAC-1481 §1, 87; DAC-1309 §5, 85)
+
+6.10.060 Seizure and Impounding of Dangerous Animals.
+
+
+
+
+                                                                                                  Page 27
+The Chief Animal Control Officer or their authorized deputy shall forthwith cause to be seized and
+impounded any dangerous animal, where the person owning, keeping or harboring such animal has
+failed to comply with the notice sent pursuant to 6.10.050. Upon a seizure and impoundment, said
+animal shall be delivered to a place of confinement which may be with any organization which is
+authorized by law to accept, own, keep or harbor such animals.
+If, during the course of seizing and impounding any such animal, the animal poses a risk of serious
+physical harm or death to any person, such person or persons authorized by the Chief Animal
+Control Officer may render said animal immobile by means of tranquilizers or other safe drugs; or if
+that is not safely possible, then said animal may be humanely euthanized.
+(History: Ord. DAC-3329 §11, 2021; Ord. DAC-1309 §6, 85)
+
+6.10.070 Permit Required.
+   A. No person under 6.10.030 owning, harboring, or having charge, custody, control or
+      possession of any animal described in 6.10.010 hereof, shall allow such animal to remain
+      within the City unless and until they have first secured a permit so to do and complies with
+      all terms and conditions of such permit; and, in addition thereto, such animal shall at all times
+      be so confined, controlled and restrained in such manner so the life, limb or property of any
+      person lawfully entering such premises shall not be endangered.
+   B. Failure to obtain a permit when required by subsection A after written notification by the
+      Chief Animal Control Officer or their authorized deputy shall be adequate grounds for said
+      officer or deputy to impound said animal until a permit is obtained. If no permit is obtained
+      within ten days, said animal will become property of the impounding agency and subject to
+      be humanely euthanasia.
+(History: Ord. DAC-3329 §12, 2021; Ord. DAC-1309 §7, 85; DAC-1284 §2)
+
+6.10.080 Issuance of Permit.
+Except as hereinafter provided, no person under 6.10.030 shall have, keep, maintain, or have in
+their possession or under their control within the City any animal described in 6.10.010 hereof
+without first applying to and receiving a permit from the City Clerk; provided, no permit shall be
+granted except with such conditions attached as shall, in the opinion of the person or agency
+approving such permit, reasonably insure the public health, safety and general welfare, and in any
+event no permit shall be granted for any animal at any particular location except upon an explicit
+finding by the Chief Animal Control Officer or an authorized deputy that the issuance thereof will
+not be contrary to the public health, safety and general welfare.
+(History: Ord. DAC-3329 §13, 2021; Ord. DAC-1309 §8, 85; DAC-880 §6)
+
+6.10.090 Application for Permit.
+An application for any permit required pursuant to this chapter shall be made to the City Clerk in
+writing and upon a form furnished by the City Clerk. Said application shall be verified by the person
+who desires to have, keep, maintain or have in their possession or under their control, in the city,
+the animal for which a permit is required, and shall set forth the following:
+   A. Name, address and telephone number of the applicant.
+
+
+
+
+                                                                                              Page 28
+   B. The applicant's interest in such animal.
+   C. The proposed location, and the name, address, and telephone number of the owner of such
+       location, and of the lessee, if any.
+   D. The number and general description of all animals for which the permit is sought.
+   E. Any information known to the applicant concerning vicious or dangerous propensities of all
+       such animals.
+   F. The housing arrangements for all such animals with particular details as to safety or
+       structure, locks, fencing, etc.
+   G. Safety precautions proposed to be taken.
+   H. Noises or odors anticipated in the keeping of such animals.
+    I. Prior history of incidents involving the public health or safety involving any of said animals.
+    J. Proof of insurance to cover those who may be injured or killed by said animal.
+   K. A statement, signed by the applicant, indemnifying the City and its agents and employees for
+       any and all injuries that may result from said animal.
+   L. Any additional information required by the Chief Animal Control Officer at the time of filing
+       such application or thereafter.
+(History: Ord. DAC-3329 §14, 2021; Ord. DAC-1309 §9, 85; DAC-880 §7)
+
+6.10.100 Dangerous Animal Permit Fee.
+The City Manager is hereby authorized to set fees and fee related policies for the Dangerous Animal
+Permit. The initial non-refundable fee shall be payable to the City Clerk at the time of filing the
+permit application, and annually thereafter.
+(History: Ord. DAC-3436 §6, 2023; Ord. DAC-3329 §15, 2021; Ord. DAC-1309 §10, 85; DAC-880 §8)
+
+6.10.110 Temporary Permits; Powers of Animal Control Officer.
+The Chief Animal Control Officer may, following application for a permit and pending final
+disposition of the same, grant a temporary permit for the maintenance within the City of any such
+animal upon such conditions as the Chief Animal Control Officer shall, in their sole discretion,
+require when, in their opinion, there is no reasonable doubt as to the consistency thereof with the
+public health, safety and general welfare, but no such animal shall be otherwise kept or maintained
+within this city or permitted to occupy any premises within this city except while such a regular or
+temporary permit is in full force and effect; Provided, however, that any law enforcement officer or
+the Chief Animal Control Officer, or an authorized deputy, shall take possession of any animal
+described under 6.10.010 for which a permit has not been issued and keep the same until the
+proper permit has been secured by the owner or keeper thereof and shall release the same to the
+owner or keeper when all fees and costs have been paid and all laws and permit conditions
+complied with.
+(History: Ord. DAC-3329 §16, 2021; Ord. DAC-1309 §11, 85; DAC-880 §10)
+
+6.10.120 Term and Renewal of Permits.
+
+
+
+
+                                                                                             Page 29
+No permit required by this chapter shall be granted for a period in excess of one year. An
+application for renewal of any permit shall be made not less than 45 days prior to the expiration
+thereof, and shall be accompanied by the same fee as required upon making the original
+application.
+(History: Ord. DAC-3329 §17, 2021; Ord. DAC-1309 §12, 85; DAC-880 §11)
+
+6.10.130 Inspections, Investigations, and Issuance of Renewal Permits.
+Prior to the annual renewal of any permit issued hereunder and at least once not more than six
+months after the issuance of any such permit or after its renewal, the Chief Animal Control Officer
+or their designated representative shall inspect the premises subject to such permit to determine
+whether the person to whom it has been issued is continuing to comply with all of the conditions
+specified in this chapter. In addition, the animal control officer shall investigate the past history of
+the permit holder to determine whether during the past permit period the permit holder was in
+compliance with all of the conditions specified in this chapter. The investigation may include a
+review of department records and interviews with the permit holder and neighbors. If the Chief
+Animal Control Officer determines during any such inspection and investigation that any of the
+conditions therein specified are being violated or have been noted during the past permit period,
+the Chief Animal Control Officer shall recommend denial of a renewal of any such permit, and/or
+shall recommend revocation of such permit in the event that such violation is not corrected within
+such period of time as determined by the Chief Animal Control Officer. Upon completion of the
+investigation and review process provided herein, the Chief Animal Control Officer shall
+recommend to the City Clerk that the dangerous animal permit be renewed or that the renewal
+application be denied. If the recommendation is to deny the permit, the basis for the denial shall be
+included in the recommendation report.
+(History: Ord. DAC-3329 §18, 2021; Ord. DAC-2207 §1, 2000; DAC-1735 §5, 92; DAC-1309 §13, 85;
+DAC-880 §12)
+
+6.10.140 Revocation and Suspension of Permits.
+The City Clerk, upon recommendation of the Chief Animal Control Officer may, for good cause,
+revoke any permit or modify any terms or provisions thereof and may, in the event it is reasonably
+necessary to protect against an immediate threat or danger to the public health or safety, suspend
+any permit or portion thereof without hearing, for a period not to exceed 30 days. Failure to comply
+with any of the provisions of this chapter shall be considered good cause for revocation or
+suspension of a permit.
+(History: Ord. DAC-3329 §19, 2021; Ord. DAC-2207 §2, 2000; DAC-1309 §14, 85; DAC-880 §13)
+
+6.10.150 Commercial Establishments.
+    A. Commercial establishments possessing such animals for the purpose of sale or display may
+       replace the same with others of the same kind, but the number of each shall not be in excess
+       of the number thereof allowed by the terms of such permit. Such establishments may, in the
+       discretion of the Chief Animal Control Officer, be granted a permit for those such numbers of
+       each kind of animal as do not exceed the maximum number such establishment estimates
+       will be maintained by it in this City at any one time during the period of the permit. Such
+
+
+
+
+                                                                                               Page 30
+      permit shall require the immediate notification of the Chief Animal Control Officer upon the
+      acquisition of any animal having a prior history of any incident involving the public health or
+      safety, or resulting in any bodily injury or property damage.
+   B. Upon the sale of any dangerous animal, said commercial establishment shall immediately
+      send notification of said sale along with the name and address of the buyer, the method of
+      transporting the animal, the path of travel of such transportation, and the destination to the
+      Chief Animal Control Officer.
+(History: Ord. DAC-3329 §20, 2021; Ord. DAC-1309 §15, 85; DAC-880 §15)
+
+6.10.160 Appeals; Fees.
+   A. Any person aggrieved by or dissatisfied with any of the following decisions, rulings, actions
+      or findings may within 10 days thereafter file a written notice or statement of appeal from
+      said decision, ruling, action or finding to the Overland Park Municipal Court for an
+      administrative hearing thereon.
+     1. The determination that an animal is dangerous;
+     2. The denial of a Dangerous Animal Permit;
+     3. The denial of a renewal of a previously issued Dangerous Animal Permit;
+     4. The revocation of a previously issued Dangerous Animal Permit; and
+     5. The temporary suspension of any Dangerous Animal Permit or portion thereof.
+   B. The City Manager is hereby authorized to set an administrative hearing appeal fee. Such fee
+      shall be paid to the Municipal Court Clerk and is required for each appeal to the Municipal
+      Court, and no appeal shall be set for hearing until such fee has been paid.
+   C. The filing of an appeal under this subsection shall not stay any action taken pursuant to this
+      Chapter.
+
+   D. The hearing shall be conducted by an Overland Park Municipal Court judge who will sit as an
+      administrative judge for purposes of this Chapter. The sole issue for determination shall be
+      whether decisions, rulings, actions, or findings of the Animal Control Officer or the City Clerk
+      (or their respective designees) were within the scope of their authority, supported by
+      substantial evidence, and not arbitrary or capricious in nature. The Court shall make specific
+      findings of fact and conclusions of law in each case.
+
+     Pursuant to its role as administrative judge, the court is empowered to hold hearings,
+     subpoena witnesses, take the testimony of any person under oath and in connection
+     therewith, to require the production of any evidence relating to any matter being heard. In
+     the case of the refusal of any person to comply with any subpoena issued hereunder or to
+     testify in any matter regarding which he or she may be lawfully questioned, the court may
+     order such person to comply with such subpoena and testify; and failure to obey the court's
+     order may be punished by the court as contempt.
+
+(History: Ord. DAC-3436 §7, 2023; Ord. DAC-3329 §21, 2021; Ord. DAC-2207 §3, 2000; DAC-1309A
+§1, 86; DAC-1309 §16, 85; DAC-880 §16)
+
+
+
+
+                                                                                             Page 31
+6.10.165 Appeals, Administrative Hearing.
+The hearing on the appeal provided for in 6.10.160 shall be conducted by an Overland Park
+municipal court judge who will sit as an administrative judge for purposes of this chapter. The sole
+issue for determination shall be whether decisions, rulings, actions, or findings of the Chief Animal
+Control Officer and/or the City Clerk were within the scope of their authority, supported by
+substantial evidence, and not arbitrary nor capricious in nature. The Court shall make specific
+findings of fact and conclusions of law in each case.
+(History: Ord. DAC-3329 §22, 2021; Ord. DAC-1309A §2, 86)
+
+6.10.166 Subpoena Power.
+Pursuant to its role as administrative judge, the Court is empowered to hold hearings, subpoena
+witnesses, take the testimony of any person under oath and in connection therewith, to require the
+production of any evidence relating to any matter being heard. In the case of the refusal of any
+person to comply with any subpoena issued hereunder or to testify in any matter regarding which
+they may be lawfully questioned, the Court may order such person to comply with such subpoena
+and testify; and failure to obey the Court's order may be punished by the court as contempt.
+(History: Ord. DAC-3329 §23, 2021; Ord. DAC-1309A §3, 86)
+
+6.10.168 Appeal; District Court.
+Any aggrieved party may appeal the decision and findings of the Overland Park municipal court
+judge pursuant to K.S.A. 60-2101(d) (1984 Supp.). However, the filing of an appeal under this
+subsection shall not stay any action taken pursuant to this chapter.
+(History: Ord. DAC-3329 §24, 2021; Ord. DAC-1309A §4, 86)
+
+6.10.170 Severability.
+If any section, subsection, subdivision, paragraph, sentence, clause or phrase in this chapter or any
+part thereof, is for any reason held to be unconstitutional or invalid or ineffective by any court of
+competent jurisdiction, such decision shall not effect the validity or effectiveness of the remaining
+portions of this chapter or any part thereof.
+(History: Ord. DAC-3329 §25, 2021; Ord. DAC-1309 §17,85; DAC-880 §17)
+
+6.10.180 Violations and Penalties.
+
+
+
+
+                                                                                            Page 32
+Any person violating or permitting the violation of any provision of this ordinance shall upon
+conviction in the Overland Park Municipal Court be fined a sum not less than $200 and not more
+than $1,000. In addition to the fine imposed, the Court may sentence the defendant to
+imprisonment in the county jail for a period not to exceed 30 days. Should the defendant refuse to
+remove the dog from the City, the municipal court judge shall find the defendant owner in contempt
+and order the immediate confiscation and impoundment of the animal. Each day that a violation of
+this ordinance continues shall be deemed a separate offense. In addition to the foregoing penalties,
+any person who violates this ordinance shall pay all expenses, including shelter, food, handling,
+veterinary care and testimony necessitated by the enforcement of this ordinance; as well as any
+restitution to the victim as ordered by the Municipal Court judge.
+(History: Ord. DAC-3329 §26, 2021; Ord. DAC-1625 §3, 89; DAC-1442 §3, 87; DAC-1309 §18, 85;
+DAC-880 §18)
+
+6.10.190 Costs to be Paid by Responsible Persons.
+Any reasonable costs incurred by the Chief Animal Control Officer in seizing, impounding, confining
+or disposing of any dangerous or wild animal, pursuant to the provisions of 6.10.050, 6.10.060,
+6.10.070 or 6.10.110 shall be charged against the owner, keeper, or harborer of such animal and
+shall be collected by the City Clerk.
+(History: Ord. DAC-3329 §27, 2021; Ord. DAC-1309 §20, 85)
+
+
+6.12 INJURED OR DISEASED ANIMALS
+Contents:
+ 6.12.010 Destruction of Certain Animals.
+ 6.12.020 Disease Control - Quarantine.
+ 6.12.030 Enforcement of Quarantine.
+ 6.12.040 Dead Animals; Duty to Report.
+ 6.12.050 Removal of Large Dead Animal.
+ 6.12.060 Removal of Small Dead Animal.
+ 6.12.070 Severability.
+
+6.12.010 Destruction of Certain Animals.
+Law enforcement officers or Animal Control Officers of the City or anyone having the authority of
+an Animal Control Officer, as designated by the City Manager or Chief of Police, may kill any dog, cat,
+domestic animal or warm-blooded animal without notice to the owner thereof whether it bears the
+tag herein provided for or not, if such dog, cat, domestic animal or warm-blooded animal is deemed
+by said officer to be a vicious animal, or injured severely with no apparent chance of survival, or in
+such pain as to warrant humane destruction. The remains of any such animal so destroyed shall be
+preserved by such officers to permit a test to be conducted for rabies.
+(History: Ord. DAC-2771 §6, 2009; DAC-697 §12, 72)
+
+
+
+
+                                                                                              Page 33
+6.12.020 Disease Control - Quarantine.
+When rabies or other communicable diseases are known to exist in the community, or when it is
+known to exist in neighboring communities, the mayor may declare a quarantine of all dogs, cats,
+other domestic animals, and any other warm-blooded animals. It shall be the duty of the owner of
+the dog, cat, other domestic animal, and any other warm-blooded animal to keep such dog, cat,
+other domestic animal, and any other warm-blooded animal confined to the premises of such
+owner or keeper and under control.
+(History: Ord. DAC-697 §13(A), 72)
+
+6.12.030 Enforcement of Quarantine.
+It shall be the duty of all Animal Control Officers, or anyone having the authority of an Animal
+Control Officer, law enforcement officers, or those having the authority of law enforcement officers
+to enforce such quarantine. The City Manager and the Chief of Police shall have the right to deputize
+school guards and other persons as needed. Such deputized persons need not seize such animals
+but shall aid in determining the owner to the end that warrants of arrest can be issued against the
+violating owners.
+(History: Ord. DAC-2771 §7, 2009; DAC-697 §13(B), 72)
+
+6.12.040 Dead Animals; Duty to Report.
+It shall be unlawful for any person to put any dead animal in any street, avenue, alley, or other
+public place in the City; and it shall be the duty of the owner, keeper, and all persons having
+knowledge of any dead animal on public property in the City to immediately report the same to the
+City police department, giving the kind of animal and the place where the same may be found. It
+shall be the duty of the animal control officer, immediately upon receipt of such report, to remove
+or provide for the removal of such dead animal.
+(History: Ord. DAC-1311 § 19, 85)
+
+6.12.050 Removal of Large Dead Animal.
+It is the responsibility of the owner or proprietor of the premises to remove all deceased large
+animals within 12 hours after the death of such animal. If not so removed, the animal control
+supervisor shall cause the animal to be removed at actual cost to the owner or proprietor.
+(History: Ord. DAC-1311 §20, 85)
+
+6.12.060 Removal of Small Dead Animal.
+It shall be the responsibility of the owner of a deceased small animal to provide for its removal by
+private means.
+(History: Ord. DAC-2771 §8, 2009; DAC-1311 §21, 85)
+
+6.12.070 Severability.
+
+
+
+                                                                                            Page 34
+If any section, subsection, subdivision, paragraph, sentence, clause or phrase in this chapter or any
+part thereof, is for any reason held to be unconstitutional or invalid or ineffective by any court of
+competent jurisdiction, such decision shall not affect the validity or effectiveness of the remaining
+portions of this chapter or any part thereof.
+(History: Ord. DAC-1311 §22, 85)
+Contents:
+ 6.13.010 Legislative Findings
+ 6.13.020 Definitions
+ 6.13.030 Keeping of Chickens
+ 6.13.040 Permit Required
+ 6.13.050 Performance Standards
+ 6.13.060 Revocation and Suspension.
+ 6.13.070 Appeal
+ 6.13.080 Violations and Penalty
+ 6.13.090 Severability
+
+6.13.010 Legislative Findings
+The Governing Body finds that in order to provide for the allowance of chickens upon single and
+two-family residential properties in the City, or upon an agricultural property of less than 3 acres
+being used for residential purposes, there is a need to regulate and set minimum standards for the
+keeping of such chickens in order to mitigate any detrimental impact to neighboring properties and
+to protect the public health, safety, and welfare of the residents of the City.
+
+
+History: Ord. DAC-3435 §2, 2023.
+
+6.13.020 Definitions
+For the purposes of this Chapter, these words and phrases shall have the following meaning:
+   A.   Chicken means Gallus gallus domesticus of the female sex. This definition does not include
+        male chickens or roosters, or other fowl, such as, but not limited to, peacocks, turkeys,
+        guinea fowls, ducks or waterfowl, all of which are not permitted under this Chapter.
+   B.   Chicken Coop or Coop means an enclosed and roofed structure for housing chickens that
+        provides shelter from the elements.
+   C.   Chicken Run or Run means an enclosed outside yard or area for keeping chickens.
+   D.   Chicken Tractor or Tractor means a movable chicken coop lacking a floor.
+   E.   Humane standards of care shall be defined to include, but not be limited to, accessibility of
+        the chickens to food and water, proper medical attention, proper shelter from the elements,
+        and cleanliness in animal waste areas with regular waste removal.
+   F.   Nuisance means any act which is unreasonably annoying or vexatious to another or
+        substantially interferes with the rights of others and shall include, but not be limited to,
+
+
+
+                                                                                            Page 35
+        obnoxious odors, excessive noise, and creation of an environment attractive to other
+        animals or insects. More than three substantiated violations of this title within a twelve-
+        month period will automatically constitute a nuisance.
+History: Ord. DAC-3435 §3, 2023
+
+6.13.030 Keeping of Chickens
+   A.   It shall be unlawful for any person to keep or otherwise maintain chickens upon any single
+        or two-family residential property within the City, or upon any agricultural property of less
+        than 3 acres being used for residential purposes, unless the chickens are kept in accordance
+        with the provision of this Chapter.
+   B.   It shall further be unlawful for any owner, renter or leaseholder of any such property to
+        allow chickens to be kept or maintained in or upon such property in violation of the
+        provisions of this Chapter.
+   C.   The keeping of chickens is for non-commercial purposes only. It shall be unlawful to engage
+        in chicken breeding or fertilizer production for commercial purposes upon any single or
+        two-family residential property within the City, or upon any agricultural property of less
+        than 3 acres being used for residential purposes.
+History: Ord. DAC-3435 §4, 2023
+
+6.13.040 Permit Required
+   A.   General Requirement. In order for a person to keep or otherwise maintain chickens upon
+        any single or two-family residential property within the City, or upon any agricultural
+        property of less than 3 acres being used for residential purposes, an annual “Chicken
+        Permit” shall be obtained from the City Clerk’s office. The Chicken Permit shall be obtained
+        prior to the keeping chickens on the property. The City Clerk shall establish an application
+        process to be followed by all individuals seeking a Chicken Permit. The Chicken Permit shall
+        be issued for a one year period of time from the date of approval.
+   B.   Application. Applications for a Chicken Permit shall be filed on forms prescribed by the City
+        and include a non-refundable fee and the following information:
+        1. Applicant’s name and contact information.
+             a. If the applicant is not the property owner, then written permission of the property
+                  owner shall be submitted with the application along with the property owner’s
+                  name and contact information.
+        2.   Street address or legal description of the property where chickens will be kept.
+        3.   The requested number of chickens.
+        4.   Sufficient information to show compliance with the Conditions for Approval set forth in
+             C and the Performance Standards set forth in 6.13.050, which shall be confirmed by city
+             staff prior to the issuance of the Chicken Permit.
+   C.   Conditions for Approval. The Applicant must adequately show, by clear and convincing
+        evidence, that the keeping of chickens will not create a nuisance in the surrounding
+        neighborhood, that humane care will be provided, and that the premises where the chickens
+
+
+
+
+                                                                                            Page 36
+       are kept are suitable for the keeping of chickens and is in conformity with all City zoning
+       requirements. The criteria to be evaluated include, without being limited to, the following:
+       1. The chickens will be kept or maintained at all times in a safe and sanitary manner.
+       2. The chicken coop in which the chickens are kept or confined will be adequately lighted
+           and ventilated and is so constructed and maintained that they can be kept in a clean
+           and sanitary condition.
+       3. The health and well-being of the chickens will not in any way be endangered by the
+           manner of keeping or confinement.
+       4. The keeping of the chickens will not harm the surrounding neighborhood or disturb the
+           peace and quiet of the surrounding neighborhood.
+       5. The keeping of the chickens will not cause fouling of the air by offensive odors and
+           thereby create or cause unreasonable annoyance or discomfort to neighbors or others
+           in close proximity to the premises where the chickens are kept.
+       6. The chickens will not unreasonably annoy humans, endanger the life, health or safety of
+           other animals or persons or substantially interfere with the rights of citizens to the
+           enjoyment of life or property.
+       7. The chickens will not repeatedly run or be found at large, will not damage or deposit
+           excretory matter upon the property of anyone other than their owner, and will not
+           molest or intimidate pedestrians or passersby.
+       8. The chickens will not make disturbing noises, including but not limited to, continued
+           and repeated or untimely crowing, whining, growling, cry or other utterances causing
+           unreasonable annoyance, disturbance or discomfort to neighbors and others in close
+           proximity to the premises where the chickens are kept, or otherwise be offensive or
+           dangerous to the public health, safety or welfare, by virtue of their behavior, number,
+           type or manner of keeping.
+       9. The applicant, or any person who will share in the care, custody and control of the
+           chickens, is not currently in violation of, or has not previously violated any applicable
+           City, state or federal laws, codes, rules or regulations, including, but not limited to,
+           those pertaining to the care and control of animals and the maintenance of their
+           property, which would reflect adversely on their ability to fully comply with the
+           conditions of the Chicken Permit.
+       10. The keeping of the chickens will adhere to the Performance Standards set forth in
+           6.13.050.
+As part of the application process, the Animal Control Division shall inspect the property and
+submit a written report of its investigation of the property stating the factual basis for its
+recommendation to grant or deny the application. As part of its evaluation of the above Conditions
+for Approval, the Animal Control Division may consider the comments of neighbors, past violations
+by the applicant, the size, condition and location of the area where the chickens will be kept, past
+complaints concerning the applicant, or any other factors relative to the issue of keeping chickens.
+Upon completion of the investigation and review process the Animal Control Division shall
+recommend approval or denial of the Chicken Permit application. If denial is recommended, the
+basis for the denial shall be included in the report.
+
+
+
+
+                                                                                           Page 37
+The City Clerk shall deny any application where the applicant fails to show proof of the
+aforementioned requirements or an examination of the documentation submitted or any
+investigation by the Animal Control Division, or both, reveals that in the opinion of the Animal
+Control Division that the applicant has failed to meet the requirements of this Chapter.
+   D.   Permit Fee. The City Manager is hereby authorized to set fees and fee related policies for the
+        Chicken Permit. All fees shall be nonrefundable and nontransferable. Failure to pay the fee
+        shall constitute a violation of this Chapter.
+History: Ord. DAC-3435 §5, 2023
+
+6.13.050 Performance Standards
+    A. Number and Type of Chickens.
+        1. Number of Chickens Allowed.1
+
+                              Number of Chickens Allowed
+
+
+                                                               Maximum number of
+             Lot Size           Chicken Permit Required
+                                                                 Hens Allowed
+
+
+ 0.20 - 0.49 Acres                        Yes                          3
+
+
+ 0.50 - 0.99 Acres                        Yes                          6
+
+
+ 1-3 Acres                                Yes                          12
+
+
+ > 3 acres                                No                      No Maximum
+
+        2. Type of Chickens Allowed.
+              a. No rooster and allowed on any property less than 3 acres.
+              b. This Chapter only allows chickens as defined in 6.13.020, and does not allow any
+                 other fowl, such as, but not limited to, peacocks, turkeys, guinea fowls, ducks or
+                 waterfowl, are not permitted under this Chapter.
+    B. Locational Requirements.
+        1. Subject to the provisions of this Chapter, chickens are allowed on:
+              a. Residentially-zoned properties equal to or larger than 0.20 acre and developed with
+                 a detached single-family dwelling or duplex.
+              b. Agricultural property of less than 3 acres being used for residential purposes.
+        2. Setbacks.
+
+
+
+
+                                                                                             Page 38
+          Setback Requirements for Chicken Coops, Mobile Pens and Runs
+
+
+              Yard                                   Required Setback
+
+
+            Front Yard                           Enclosures not permitted
+
+
+            Side Yard                                    10 feet
+
+
+            Rear Yard                                    25 feet
+
+    3. Chickens shall only be kept upon property which is the principal residence of the owner of
+       the chickens. Tenants and renters of property may keep chickens with the written
+       permission of the property owner. Proof of such permission shall be submitted with the
+       application. (See 6.13.040 B.1.i.)
+C. Chicken Coops and Enclosures.
+    1. Chickens must be provided a secure and well ventilated chicken coop. Mobile pens or
+       chicken tractors must not be used as the primary chicken coop.
+    2. Chicken coops and runs must be inspected by an Animal Control Officer prior to obtaining
+       chickens and issuance of a Chicken Permit.
+    3. The floor area of the chicken coop or a combination of the floor area and attached pen
+       area must equal at least 10 square feet of area per chicken.
+    4. For properties less than 3 acres, no chicken coop, mobile pen or run shall exceed 200
+       square feet.
+    5. Chickens must be housed in a chicken coop or other roofed structure, attached pen or
+       detached mobile pen whenever they are unattended by the keeper. During daylight hours,
+       when attended by the keeper, the chickens are allowed in a completely fenced-in yard.
+    6. Chicken coops and runs must be located in a fenced-in rear yard.
+    7. No chicken coop or run shall be located in any area of the property that is considered
+       frontage or a landscaped setback, both as defined by the Unified Development Ordinance.
+D. General Requirements.
+    1. The keeping of chickens shall be done in such a manner as to continually and adequately
+       meet these Performance Standards and the Conditions for Approval set forth in
+       6.13.040C.
+    2. The keeping of chickens shall be done in such a manner as to control noxious odors and
+       the breeding of rodents, flies or other insects, so as not to create a nuisance of any kind.
+       The chicken owner shall take necessary action to reduce the attraction of predators and
+       rodents and the potential infestation of insects and parasites. Chickens found to
+       be infested with insects and parasites that may result in unhealthy conditions to human
+       habitation may be removed by an Animal Control officer.
+    3. All grain and food stored for the use of chickens shall be kept in a rodent-proof container.
+    4. Live slaughter of chickens is prohibited on residential property.
+
+
+
+
+                                                                                          Page 39
+         5. Chickens shall not be allowed to run at large.
+                a. For the purposes of 6.10, any dog attacking a chicken running at large shall not be
+                   construed as a dangerous animal based upon the attack of the chicken.
+         6. It shall further be unlawful to picket or tie any such animal in any of the streets or right-
+            of-way of the City for the purpose of grazing or feeding.
+         7. The chicken owner must provide for the storage and removal of chicken manure. All
+            stored manure shall be covered in a fully enclosed structure with a roof or lid over the
+            entire structure. No more than 3 cubic feet of manure shall be stored. All other chicken
+            manure not used for composting or fertilizing shall be regularly removed in a manner
+            complying with all applicable federal, state and local regulations. The chicken coop,
+            chicken tractor and surrounding area must be kept free from trash and accumulated
+            droppings. Uneaten feed shall be removed in a timely manner.
+
+
+1Properties in the City bearing a county zoning designation may be subject to more restrictive allowances
+based upon applicable zoning regulations. (For example, see Article 18, Section 7.A.1.b of the Johnson County
+Zoning & Subdivision Regulations, incorporated by OPMC 18.100.120 - 18.100.190).
+
+
+History: Ord. DAC-3435 §6, 2023
+
+6.13.060 Revocation and Suspension.
+Upon recommendation of the Animal Control Division, a Chicken Permit may be revoked or
+suspended by the City Clerk upon a showing any of the following:
+
+
+    A. The chicken's place of keeping constitutes a nuisance to the surrounding neighbors;
+    B. Humane standards of care are not being met by the permittee;
+    C. A failure to meet or to continue to meet any applicable Performance Standard or Conditions
+       for Approval;
+    D. A violation of City zoning regulations has occurred;
+    E. The permittee provided false information in their application; or
+    F. In the event it is reasonably necessary to protect against an immediate threat or danger to
+       the public health or safety.
+Failure to comply with any provision of this Chapter shall be considered good cause for revocation
+or suspension of a Chicken Permit.
+
+
+History: Ord. DAC-3435 §7, 2023
+
+6.13.070 Appeal
+    A.   Any person who is denied a Chicken Permit for keeping chickens, or whose existing Chicken
+         Permit has been revoked, may within 10 days thereafter file a written notice or statement of
+
+
+
+
+                                                                                                    Page 40
+        appeal from said decision, ruling, action, or finding to the Overland Park Municipal Court for
+        an administrative hearing thereon.
+   B.   The City Manager is hereby authorized to set an administrative hearing appeal fee for a
+        Chicken Permit appeal. Such fee shall be paid to the Municipal Court Clerk and is required
+        for each appeal to the Municipal Court. No appeal shall be set for hearing until such fee has
+        been paid.
+   C.   The filing of an appeal under this subsection shall not stay any action taken pursuant to this
+        Chapter.
+   D.   The hearing on the appeal shall be conducted by an Overland Park Municipal Court judge
+        who will sit as an administrative judge for purposes of this Chapter. The sole issue for
+        determination shall be whether decisions, rulings, actions, or findings of the Animal Control
+        Officer or the City Clerk (or their respective designees) were within the scope of their
+        authority, supported by substantial evidence, and not arbitrary or capricious in nature. The
+        Court shall make specific findings of fact and conclusions of law in each case.
+
+        Pursuant to its role as administrative judge, the court is empowered to hold hearings,
+        subpoena witnesses, take the testimony of any person under oath and in connection
+        therewith, to require the production of any evidence relating to any matter being heard. In
+        the case of the refusal of any person to comply with any subpoena issued hereunder or to
+        testify in any matter regarding which he or she may be lawfully questioned, the court may
+        order such person to comply with such subpoena and testify; and failure to obey the court's
+        order may be punished by the court as contempt.
+History: Ord. DAC-3435 §8, 2023
+
+6.13.080 Violations and Penalty
+The violation of any provision of this Chapter is a public offense and any person convicted thereof
+shall be punished as provided in 1.12.010. Each day that any violation of these sections shall
+continue shall constitute a separate offense.
+
+
+History: Ord. DAC-3435 §9, 2023
+
+6.13.090 Severability
+If any section, subsection, subdivision, paragraph, sentence, clause or phrase in this Chapter or any
+part thereof, is for any reason held to be unconstitutional or invalid or ineffective by any court of
+competent jurisdiction, such decision shall not affect the validity or effectiveness of the remaining
+portions of this Chapter or any part thereof.
+History: Ord. DAC-3435 §10, 2023
+
+
+6.14 BEEKEEPING
+Contents:
+ 6.14.010 Legislative Findings.
+
+
+
+                                                                                             Page 41
+  6.14.020 Keeping of Bees.
+  6.14.030 Keeping of a Hive, Stand, Box, or Apiary.
+  6.14.040 Multiple Number of Beehives.
+  6.14.050 Subsequent Development of Adjacent Properties.
+  6.14.060 Owner's Hives on Other Properties.
+  6.14.070 Water Facilities.
+  6.14.080 Exemptions.
+  6.14.085 Severability.
+  6.14.090 Violations and Penalty.
+
+6.14.010 Legislative Findings.
+The Governing Body of the City of Overland Park, Kansas, finds that there is a need to regulate and
+set minimum standards for the keeping of bees within the corporate limits of the City to protect the
+public health, safety, and welfare of the residents of Overland Park.
+(History: Ord. BK-1198 §1, 83)
+
+6.14.020 Keeping of Bees.
+It shall be unlawful for any person to place, establish, or maintain any hive, stand, box, or apiary or
+keep any bees in or upon any premises within the corporate limits of the City unless the bees are
+kept in accordance with the provisions of this chapter.
+(History: Ord. BK-1198 §2, 83)
+
+6.14.030 Keeping of a Hive, Stand, Box, or Apiary.
+No hive, stand, or apiary shall be placed or kept:
+    A. Closer than 25 feet to the property line of adjoining residential property if a house or other
+       building used for residential purposes is located on such property;
+    B. Or closer than 75 feet to any house or other building used for residential purposes other than
+       the residence of the keeper of such bees without first obtaining written permission of such
+       land, which permission may be revoked at any time;
+    C. Or closer than 100 feet to the exterior line of the traveled portion of a public street;
+    D. Or upon land not owned or possessed by the keeper of such bees without first obtaining
+       written permission to do so from the owner or person lawfully in possession of such land,
+       which permission may be revoked at any time.
+(History: Ord. BK-1198 §3, 83)
+
+6.14.040 Multiple Number of Beehives.
+
+
+
+
+                                                                                              Page 42
+No more than three beehives shall be placed or kept in a location which is between 75 feet and 600
+feet from a house or other building used for residential purposes other than the residence of the
+keeper of such bees.
+(History: Ord. BK-1198 §4, 83)
+
+6.14.050 Subsequent Development of Adjacent Properties.
+Provided that should adjacent property be later developed, or residential structures located closer
+than the distances herein prescribed, the keeper shall move such hives, stands, boxes, or apiaries to
+comply with these regulations.
+(History: Ord. BK-1198 §5, 83)
+
+6.14.060 Owner's Hives on Other Properties.
+Every person owning a hive, stand, box, or apiary located on premises other than where he resides
+shall identify such hive, stand, box or apiary by a sign or other prominent marking stating in letters
+at least one inch high on a contrasting background the name, address, and phone number of the
+owner of such equipment.
+(History: Ord. BK-1198 §6, 83)
+
+6.14.070 Water Facilities.
+Fresh, clean, watering facilities for the bees shall be provided within 25 feet of each hive, stand, box
+or apiary.
+(History: Ord. BK-1198 §7, 83)
+
+6.14.080 Exemptions.
+Nothing in these regulations shall be deemed or construed to prohibit the keeping of bees within a
+school or university building for the purpose of study or observation, or within a physician's office
+or laboratory for the purpose of medical research, treatment, or other scientific purposes.
+(History: Ord. BK-1198 §8, 83)
+
+6.14.085 Severability.
+If any section, subsection, subdivision, paragraph, sentence, clause or phrase in this chapter or any
+part thereof, is for any reason held to be unconstitutional or invalid or ineffective by any court of
+competent jurisdiction, such decision shall not effect the validity or effectiveness of the remaining
+portions of this chapter or any part thereof.
+(History: Ord. DAC-1311 §23, 85)
+
+6.14.090 Violations and Penalty.
+
+
+
+
+                                                                                               Page 43
+The violation of any provision of 6.14.030 through 6.14.080 is a public offense and any person
+convicted thereof shall be punished as provided in 1.12.010 of the Overland Park Municipal Code.
+Each day that any violation of these sections shall continue shall constitute a separate offense.
+(History: Ord. BK-1198 §9, 83)
+
+
+6.15 HORSES, MULES, DONKEYS, AND OTHER
+EQUINES
+Contents:
+ 6.15 010 Legislative Findings.
+ 6.15.020 Keeping of Horses, Mules, Donkeys or Other Equines.
+ 6.15.030 Density and Distance.
+ 6.15.040 Feeding of Animals and Handling of Animal Wastes.
+ 6.15.045 Severability.
+ 6.15.050 Violations & Penalty.
+
+6.15 010 Legislative Findings.
+The Governing Body of the City of Overland Park, Kansas, finds that there is a need to regulate and
+set minimum standards for the keeping of horses within the corporate limits of the City to protect
+the public health and welfare of the residents of Overland Park.
+(History: Ord. H-1207 §1, 83)
+
+6.15.020 Keeping of Horses, Mules, Donkeys or Other Equines.
+It shall be unlawful for any person to stable, board, or keep within the City of Overland Park any
+horse, mule, donkey, or other equine upon any premises unless the horse, mule, donkey, or other
+equine is kept in accordance with the provisions of this chapter.
+(History: Ord. H-1207 §2, 83)
+
+6.15.030 Density and Distance.
+No more than one horse, mule, donkey, or other equine shall be kept for each 20,000 square feet of
+contiguous, gross land area. No stable or shelter for horses, mules, donkeys or other equines shall
+be permitted closer than 100 feet from any occupied residential structure other than on the same
+tract.
+(History: Ord. H-1207 §3, 83)
+
+6.15.040 Feeding of Animals and Handling of Animal Wastes.
+   A. No feeding or watering troughs or tanks shall be located within 100 feet of a property line.
+   B. All occupied stalls shall be cleaned at least once each day.
+
+
+
+
+                                                                                             Page 44
+   C. Temporary storage of animal waste.
+       1. All waste not immediately disposed of as herein provided shall be stored in a vault or pit
+          constructed of concrete or other approved material which shall be kept covered by a rigid,
+          tight-fitting cover. A permit shall be obtained from the Code Administrator for the
+          construction of the waste vault, and he shall review the plans and inspect the construction
+          of the vault to assure compliance with these regulations. Such vault shall be at least 300
+          feet from any occupied residential structure other than on the same tract.
+       2. Animal waste shall be removed from the vault and disposed of as herein provided
+          whenever necessary to avoid overflow or spillage.
+   D. Waste disposal.
+      All waste shall be disposed of by one of the following methods:
+        1. Animal waste shall be removed from the tract and disposed of in a manner complying
+           with all applicable federal, state, and local regulations.
+        2. Animal waste may be uniformly spread and distributed over agricultural fields when such
+           field is at least 200 feet from any occupied residential structure other than on the same
+           tract.
+    E. The provisions of this Section shall not apply to any property zoned RUR, PRUR, RLD or PRLD
+       that is annexed into the City pursuant to Ordinance No. A-2719, unless and until such
+       property is rezoned.
+(History: Ord. H-2722 §1, 2008; H-1207 §4, 83)
+
+6.15.045 Severability.
+If any section, subsection, subdivision, paragraph, sentence, clause or phrase in this chapter or any
+part thereof, is for any reason held to be unconstitutional or invalid or ineffective by any court of
+competent jurisdiction, such decision shall not affect the validity or effectiveness of the remaining
+portions of this chapter or any part thereof.
+(History: Ord. DAC-1311 §24, 85)
+
+6.15.050 Violations & Penalty.
+The violation of any provision of 6.15.020 through 6.15.040 is a public offense, and any person
+convicted thereof shall be punished as provided in 1.12.010. Each day that any violation of these
+sections shall continue shall constitute a separate offense.
+(History: Ord. H-1207 §5, 83)
+
+
+6.16 ENFORCEMENT - PENALTIES
+Contents:
+ 6.16.010 Enforcement of Title.
+ 6.16.015 Law Enforcement Canines.
+ 6.16.020 General Penalties for Violations of Title.
+
+
+
+
+                                                                                            Page 45
+6.16.010 Enforcement of Title.
+It is made the duty of the animal control officer, or anyone having the authority of animal control
+officer, including but not limited to law enforcement officers, to enforce the terms and provisions of
+this title, and the City Manager or the Police Chief may appoint by and with the consent of the
+Governing Body some suitable person to be known as an animal control officer, whose duties it
+shall be to assist in the enforcement of this title and to work under the immediate supervision and
+direction of the police department. Anyone having the authority of an animal control officer is given
+the authority to seize any animal found outside the City limits when he/she has reasonable grounds
+to believe the animal committed any act within the City which is prohibited by the provisions of this
+title or which subjects the animal to seizure if found within the City. Any private person may, upon
+signed complaint, bring charges against any owner of a dog, cat, or other warm-blooded animal for
+the violation of any of the provisions of this title.
+(History: Ord. DAC-1311 §25, 85; DAC-697 §17, 72)
+
+6.16.015 Law Enforcement Canines.
+The provisions of this title shall not apply to law enforcement canines owned, kept and maintained
+by the City of Overland Park, Kansas, for law enforcement purposes nor shall the provisions of this
+title apply to law enforcement canines brought into the City of Overland Park, Kansas, at the request
+of the City of Overland Park Police Department for assistance in law enforcement purposes,
+provided that all law enforcement canines shall be inoculated against rabies as required by Section
+6.04.060.
+(History: Ord. DAC-1606 §1, 89)
+
+6.16.020 General Penalties for Violations of Title.
+Any person who fails to do anything required by this title or who does anything prohibited by this
+title is guilty of a violation thereof. Any person convicted of the violation of any provision of this
+title where a specific penalty is not otherwise prescribed shall be punished as provided in 1.12.010.
+Each day that any violation of these sections shall continue shall constitute a separate offense.
+(History: Ord. DAC-1131 §26, 85; DAC-697 §18, 72)
+
+
+REPEALED SECTIONS OF TITLE 6 - ANIMALS
+
+Repealed Sections of 6.08 Control and Impoundment of Dogs and Cats
+
+
+6.08.040 Violation of 6.08.020 - Penalty Generally. (Repealed)
+Repealed.
+
+
+
+
+                                                                                             Page 46
+(History: Ord. DAC-1679 §10, 91; DAC-1512 §1, 88; DAC-1385 §8, 86; DAC-1311 §6, 85; DAC-1104
+§1, 81; DAC-1091)
+
+6.08.050 Violation of 6.08.020 - Penalty Procedure. (Repealed)
+Repealed.
+(History: Ord. DAC-1311 §27, 85; DAC-1104 §2, 81; DAC-1091)
+
+Repealed Sections of 6.09 Animal Welfare
+
+
+6.09.030 Injury to a Domestic Animal. (Repealed)
+Repealed.
+(History: Ord. DAC-2959 §8, 2012; DAC-1729 §6, 92; DAC-1311 §15, 85; POC-625 §34, 72)
+
+
+
+
+                                                                                        Page 47
+TITLE 7 - HEALTH AND SANITATION
+
+7.01 CODE ENFORCEMENT - GENERALLY
+Contents:
+ 7.01.100 Authorized Actions.
+ 7.01.200 Required Registration for Problem Properties.
+
+7.01.100 Authorized Actions.
+The Code Official, or, where appropriate, the Governing Body, is authorized, subject to any adopted
+policies or administrative rules or regulations, to take the following actions to bring the subject
+property into compliance with this code or other ordinances of the City. Those actions include,
+without being limited to, abatement of the violation; vacation of the premises until the violation is
+corrected; prohibition of occupancy of the premises until the violation is corrected; issuance of a
+Notice to Appear in Municipal Court; injunctive or other relief in the District Court of Johnson
+County; suspension or revocation of any City licenses pertaining to the premises that remain in
+violation, and any other necessary or appropriate actions authorized by any applicable law,
+ordinance, statute, rule or regulation. If no public necessity is found for the immediate demolition of
+the structure or premises, the code official or Governing Body may take such other action,
+including, without limitation, causing the property to be cleaned, cleared, vacated, secured or
+otherwise repaired or any other action deemed necessary to promote the public health, safety or
+general welfare. The provisions of Section 7.26.230 shall be made applicable to this section and
+pursuant to those provisions and any other applicable laws, statutes, ordinances, rules or
+regulations, the property owner may be charged for the costs incurred by the City in taking any
+actions to abate or correct such unlawful conditions, including administrative fees, and a lien may
+be placed on the property for any such unpaid costs and fees. The City Manager shall designate the
+department, division, employee or agency of the City to enforce this code, and such designee shall,
+for the purposes of this code, be known as the code official or code administrator.
+(History: Ord. CCO-2243 §1, 2000)
+
+7.01.200 Required Registration for Problem Properties.
+
+
+
+
+                                                                                               Page 1
+The Director of Planning and Development Services is authorized to adopt written rules and
+regulations specifying the criteria for placing non-owner occupied property within a responsible
+party registration program for problem properties. These rules and regulations shall follow the
+general guidelines set forth in this section. Such properties shall include, without being limited to,
+properties where the owner or the accused has failed to appear at arraignment or trial, or that have
+been the subject of a prosecution in Municipal or District Court or a civil proceeding in any court of
+competent jurisdiction where, in the course of those judicial proceedings, a warrant for failure to
+appear in court, a contempt of court order, or any similar order reflecting the accused or owner’s
+failure to comply with required court procedures or orders, was issued by the court. The rules and
+regulations shall provide for the inclusion in that program of properties where any code violation
+remains uncorrected after the completion of appropriate court proceedings initiated by the City or
+properties where a failure to correct outstanding violations of the Overland Park Municipal Code
+has resulted in the City being required to undertake action to abate the violation or vacate the
+subject property, or both. The rules and regulations shall contain appropriate procedures
+consistent with the requirements of due process governing the designation of property for
+inclusion in the program and an appeal process for any property owner aggrieved by such
+inclusion. No property subject to the requirements of this registration program may be operated as
+non-owner occupied property within the City, leased or rented to any tenant, or occupied in any
+manner by a tenant of any kind whatsoever, unless and until full compliance with the registration
+program has been certified by the City and all outstanding code violations have been corrected and
+all costs, charges, fees, court fines and costs and all other financial obligations to the City are
+satisfied in full. The rules and regulations shall include, at a minimum, the following matters:
+detailed requirements pertaining to the designation and definition of a responsible party who shall
+be obligated to keep the subject property in full compliance with all applicable code provisions;
+personal information pertaining to that responsible person, such as a residence address and phone
+number as well as documentation of sufficient identifying characteristics of that person to allow, if
+necessary, the issuance of a warrant for their arrest. The Director shall submit a copy of these
+proposed rules and regulations to the Community Development Committee not less than 30 days
+before their effective date.
+(History: Ord. CCO-2243 §1, 2000)
+
+
+
+
+                                                                                              Page 2
+TITLE 7 - HEALTH AND SANITATION
+
+7.04 NUISANCES GENERALLY
+Contents:
+ 7.04.010 Certain Matters Declared Nuisances.
+ 7.04.020 Things Injurious or Annoying.
+ 7.04.150 Title.
+ 7.04.160 Purpose and Findings.
+ 7.04.170 Definitions.
+ 7.04.180 Nuisances or Unsafe Structures Unlawful; Responsibility to Abate.
+ 7.04.190 Enforcement Against Nuisances; Designation of Officer; Order of
+ Abatement; Hearing; Notice to Appear.
+ 7.04.200 Abatement of Nuisance by City; Notice of Costs; Assessment and
+ Collection.
+ 7.04.220 Excavation Fill.
+ 7.04.230 Removal of Unsafe Structures; Salvage, Sale; Assessment and Collection Of
+ Costs; Procedure.
+ 7.04.280 Immediate Hazards.
+ 7.04.290 Right of Entry; Unlawful Interference; Penalty.
+ 7.04.300 Penalty.
+ 7.04.310 Severability.
+
+7.04.010 Certain Matters Declared Nuisances.
+The following sections designate matters that are nuisances.
+(History: Ord. NU-99 Art. I §1 (part) 1961)
+
+7.04.020 Things Injurious or Annoying.
+Every act done, occupation followed or thing kept or maintained by any person or persons,
+partnership or corporation so as to constitute an injury or annoyance to the public is a nuisance.
+(History: Ord. NU-99 Art. I §1(a) 1961)
+(See also: 11.28.095)
+
+7.04.150 Title.
+
+
+
+
+                                                                                           Page 1
+The title of Overland Park Municipal Code Sections 7.04.150 through 7.04.310, inclusive, shall be
+known as the Nuisance and Unsafe Structures Enforcement Act (NUSE Act).
+(History: Ord. NU-1382 §1, 86)
+
+7.04.160 Purpose and Findings.
+    A. The purpose of the Nuisance and Unsafe Structures Enforcement Act is to provide reasonable
+       controls restricting and prohibiting the allowance of nuisances and unsafe structures to exist
+       on property within the City of Overland Park; to declare that certain conditions constitute
+       public nuisances or unsafe structures, which are unsightly, are a menace and dangerous to
+       health of the inhabitants of the City, or of any residential or commercial area and the
+       residents thereof, and are offensive to the general public health, safety, and welfare of the
+       community; to provide a method of enforcement of this Act; to provide procedures to notify
+       property owners or those in control of real property that a violation exists and to allow for
+       self-abatement by such person; to provide property owners or those in control of real
+       property notification and an opportunity to be heard concerning violations of the Act; to
+       provide administrative procedures to allow the City to direct the abatement of violations; to
+       provide a method of assessment or collection of costs for abatement by the City; to declare
+       that the existence of such violations are unlawful; and to provide penalties for enforcement
+       through the Municipal Court system.
+    B. The Governing Body of the City of Overland Park, Kansas, hereby finds that the allowance of
+       nuisances and unsafe or dangerous structures, as defined herein, on private property or
+       adjacent rights-of-way or easements are public nuisances which are unsightly, a menace
+       dangerous to the health of the inhabitants of the City, or of the residential or commercial area
+       and the residents thereof, and are offensive to the general public health, safety, and welfare
+       of the community. Such nuisances or unsafe structures promote conditions which cause
+       disease, pollution; proliferation of rats, vermin, mosquitoes, and snakes; the spread of fire; a
+       harmful environment for transients and to the community as a result of transient use;
+       harmful attractions for children; creates short and long-term impacts on the area including
+       the diminution of property values and the integrity of the neighborhood; and interferes with
+       the orderly development of property in the City.
+(History: Ord. NU-1382 §1, 86)
+
+7.04.170 Definitions.
+For purposes of this Act, the following definitions shall apply:
+    A. City shall mean the City of Overland Park, Kansas.
+    B. Property owner shall mean the named property owner as indicated by the records of the
+       Records and Tax Administration or Appraiser's Office in Johnson County, Kansas.
+    C. Drainageway shall mean a man-made or natural conveyance that transports stormwater
+       overland which is frequently referred to as a channel, swale, engineered swale, ditch, gully,
+       stream, or watercourse. The drainageway includes all land inundated during the 1% design
+       storm. A drainageway does not include areas where water flows in a non-concentrated or
+       sheet flow condition.
+
+
+
+
+                                                                                               Page 2
+D. Representative shall mean any person or entity listed in the Johnson County, Kansas,
+   Appraiser's Office or Treasurer's Office for the purposes of paying taxes; a registered agent
+   with the Kansas Secretary of State's Office for corporate or partnership ownership; an agent
+   or manager directed by the property owner, estate, or court order to represent the interests
+   of the property or to otherwise control activities on the real property; or a corporate officer.
+E. Person shall mean any individual; individuals; partnership; corporation; unincorporated
+   association; other business organization; committee; board; trustee; receiver; agent; or
+   any representative who has charge, care or responsibility for maintenance of any property,
+   lot or parcel of land regardless of status as owner, tenant or lessee, and regardless of whether
+   such person has possession.

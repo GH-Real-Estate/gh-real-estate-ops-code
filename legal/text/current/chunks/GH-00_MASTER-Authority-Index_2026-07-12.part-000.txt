@@ -1,0 +1,311 @@
+GH Real Estate approved legal-source text chunk — GH-00_MASTER-Authority-Index_2026-07-12.part-000.txt — verified through 2026-07-12. Official source text controls.
+
+                                         GH REAL ESTATE • LEGAL SOURCE PACK
+
+
+
+
+                   MASTER AUTHORITY INDEX
+
+
+
+                             Applicability map • currentness register • update protocol
+
+
+
+
+  PROPERTY                    9401 Nieman Road, Overland Park, Kansas 66214
+
+  CURRENT THROUGH             July 12, 2026
+
+  ACTIVE-SET STATUS           Current-law set; enacted addenda included; withdrawn sources excluded
+
+  SCOPE                       Kansas residential operations, federal/HUD overlays, and Overland Park municipal law relevant to GH’s
+                              fourplex
+
+
+
+
+    Use rule: Retrieve the controlling text, confirm the trigger and currentness, then obtain Kansas counsel review before
+    enforcement, filing, denial, accommodation decisions, or material lease changes.
+
+ This compilation is a research and retrieval aid, not legal advice, a title opinion, or a substitute for official current law. Summaries and
+ applicability labels are navigation aids; the appended official text controls.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                             Front matter page 1
+ Executive use instructions
+ This is the controlling navigation document for the active project-source set. Begin here, identify the issue and
+ trigger, then open the cited source bundle. A source’s presence does not mean every provision applies to every
+ event.
+
+ • Prefer current binding statutes, regulations, ordinances and controlling decisions over summaries or agency
+ guidance.
+
+ • Treat proposed rules as monitoring only and withdrawn guidance as historical only.
+
+ • For notices, evictions, denials, adverse action, accommodation decisions, deposit deductions, fee enforcement or
+ filings, verify the exact current text and obtain Kansas counsel review.
+
+ • Never blend a superseded version with current wording. Effective-but-not-yet-codified session laws travel as
+ explicit addenda.
+
+  LABEL                  HOW TO USE IT
+
+  BINDING                Statute, regulation, ordinance, or controlling court decision. Confirm effective date and later history.
+
+  CONDITIONAL            Binding only when a stated trigger exists—such as HUD assistance, a federally backed mortgage, or third-party
+                         management.
+
+  GUIDANCE               Agency or court-administration material. Useful operationally but not itself controlling law unless incorporated.
+
+  PROPOSED               Monitoring only. Do not apply as current law.
+
+  WITHDRAWN              Excluded from this active set. Keep only in a separately labeled historical archive.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                           Front matter page 2
+ Property applicability and unresolved triggers
+  TRIGGER                        STATUS                                   LEGAL EFFECT
+
+  Four dwelling units            Verified in project profile              Apply FHA/Kansas fair housing conservatively; do not assume
+                                                                          owner-occupied small-property exemption.
+
+  LLC ownership                  Verified                                 Owner-occupancy exemption analysis is not established; counsel
+                                                                          should confirm.
+
+  Construction year              Public sources report 1963; official     Treat federal/Kansas lead disclosure and renovation rules as active
+                                 county record not yet verified           until official verification.
+
+  Rental license                 Direct city requirement                  Confirm current Overland Park license and inspection status.
+
+  Federally backed mortgage      Unknown                                  Controls CARES Act covered-property analysis and may affect HUD
+                                                                          equal-access rules.
+
+  Voucher / HUD assistance       Unknown                                  Controls HCV addendum, VAWA, Section 504, Title VI, HUD
+                                                                          lead-safe rules and other program duties.
+
+  Owner versus third-party       GH manages its property; future          Kansas broker/property-management licensing can become active
+  manager                        third-party services unknown             for compensated third-party management.
+
+  Property zoning / lawful       R-3 appears plausible but not verified   Verify official parcel zoning and any lawful nonconforming status
+  occupancy                      to parcel                                before relying on zoning excerpts.
+
+    Conservative default: unless counsel verifies an exemption, act as though federal and Kansas
+    fair-housing duties apply fully. Do not rely on a four-unit exemption without proof of the required owner
+    occupancy and entity analysis.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                        Front matter page 3
+ Issue-to-source map
+  ISSUE                                                START WITH                 PRIMARY AUTHORITY
+
+  Lease terms, deposits, duties, entry, remedies       GH-KS-01                   K.S.A. 58-2540–2573; Article 25 source text
+
+  Notice, eviction, court process                      GH-KS-02                   K.S.A. 61 procedure + 2026 HB 2357 + current cases
+
+  State protected classes / local civil rights         GH-KS-02 + GH-OP-01        K.S.A. 44-1015–1029; OPMC 8.10
+
+  Federal fair housing / advertising                   GH-FED-01                  42 U.S.C. ch. 45; 24 CFR Parts 100, 103, 110
+
+  Assistance animals / accommodations                  GH-FED-01                  42 U.S.C. 3604(f); 24 CFR 100.204; 2026 HUD memo is
+                                                                                  guidance
+
+  Lead disclosure / renovation                         GH-FED-02 + GH-KS-02       Pre-1978 trigger; EPA/HUD/KDHE sources
+
+  Screening / adverse action / tenant data             GH-FED-02 + GH-KS-02       FCRA, Disposal Rule, Kansas credit/data law
+
+  Military, bankruptcy, foreclosure, CARES             GH-FED-02                  Trigger-specific federal overlays
+
+  Voucher / HUD-assisted / VAWA / Section 504          GH-FED-03                  Conditional on verified program/mortgage/assistance facts
+
+  Rental license / inspection / property upkeep        GH-OP-01                   OPMC 5.75 and Title 7 chapters
+
+  Fire, building systems, zoning, parking              GH-OP-02                   OPMC Titles 16 and 18; base ICC text incorporated
+                                                                                  separately
+
+
+
+    Search tip: query an exact citation first (for example, “58-2550,” “24 CFR 100.204,” or “OPMC 5.75”), then search the
+    operational concept.
+
+
+ Currentness register — material 2026 changes
+  SOURCE                    CURRENTNESS / CHANGE                                              ACTIVE-SET TREATMENT
+
+  Kansas statutes           Official 2026 pages retrieved July 12, 2026; some displayed       Current consolidated PDFs + HB 2357 and SB
+                            eviction sections still require session-law overlays.             391 enrolled PDFs.
+
+  HB 2357                   Effective July 1, 2026: eviction-record expungement and           Binding enacted addendum; do not use earlier
+                            mediation provisions.                                             bill versions.
+
+  SB 391                    Effective July 1, 2026 after veto override: specified local       Binding state-local overlay; federal/state fair
+                            voucher/screening/deposit/right-of-first-refusal preemption.      housing and FCRA still control.
+
+  eCFR                      Federal regulation snapshot dated July 9, 2026.                   Binding current regulation text in federal
+                                                                                              bundles.
+
+  HUD guidance              91 FR 17291 (Apr. 6, 2026) records withdrawal of listed FHEO      Withdrawn items excluded from active authority;
+  withdrawals               guidance effective Sept. 17, 2025.                                withdrawal notice retained.
+
+  Assistance animals        HUD memo dated May 22, 2026 is enforcement guidance, not          Label GUIDANCE. Statute, 24 CFR 100.204,
+                            a rule.                                                           precedent and private rights remain controlling.
+
+  Disparate impact          24 CFR 100.500 remains in force; Jan. 2026 removal is             Current regulation retained; proposal excluded
+                            proposed only.                                                    from operative authority.
+
+  HUD equal access          24 CFR 5.105(a)(2) remains current; 2026 revisions are            Conditional on HUD-assisted or HUD-insured
+                            proposed only.                                                    housing trigger.
+
+  Overland Park codes       Official city exports retrieved July 12, 2026; city adopted the   Local amendments included. Copyrighted ICC
+                            2024 International Code package in 2026.                          base texts are incorporated but not reproduced.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                            Front matter page 4
+ GH-specific high-priority legal review queue
+  PRIORITY                         REVIEW POINT
+
+  Fee policy and lease             The project policy can total 25% of monthly rent in staged late fees plus 12% simple annual interest,
+  mismatch                         while current signed leases may contain an older schedule. No source in this pack validates that
+                                   structure. Review under K.S.A. 58-2544, 58-2547 and applicable consumer/unconscionability law before
+                                   enforcement; Schutt v. Foster is not blanket approval.
+
+  Default / cure / eviction        Kansas timing, content, service and court-process rules are exacting. McConnell requires a 14/30 notice
+  notices                          to identify curable acts or omissions with sufficient specificity. Do not use self-help or rely only on
+                                   email/e-sign delivery.
+
+  Lead                             Public sources report a 1963 build, making federal disclosure and renovation rules likely direct. Verify
+                                   official year, keep signed disclosures/pamphlet acknowledgments, and use certified firms/renovators
+                                   where required.
+
+  Fair housing poster              24 CFR Part 110 generally requires display at covered property and places of business. Verify and post
+                                   the current HUD-928.1 poster.
+
+  Assistance animals               The May 2026 HUD memo changes enforcement posture but does not rewrite the FHA or 24 CFR 100.204.
+                                   Use an individualized accommodation process; obtain counsel for denials or disputed documentation.
+
+  Federal-program status           Determine mortgage backing and whether any unit participates in HCV or another HUD program. This
+                                   changes CARES, VAWA, Section 504, Title VI, lead-safe housing and form/addendum duties.
+
+  Fire / grill policy              Overland Park’s adopted fire-code package and amendments may constrain open-flame cooking at a
+                                   fourplex. Compare the lease policy with the current code and obtain fire-official/counsel confirmation; the
+                                   proprietary ICC base text is not reproduced here.
+
+  Sensitive application data       Use federal and Kansas screening/adverse-action rules; retain only what is needed and securely destroy
+                                   consumer-report and personal-information records.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                          Front matter page 5
+ Withdrawn, proposed and historical material
+ The following are intentionally not treated as current operative authority: HUD’s 2013/2020 assistance-animal
+ notices; 2007 LEP guidance; 2016 criminal-record and LEP guidance; the 2022 criminal-record implementation
+ memo; the 2021 sexual-orientation/gender-identity enforcement memo; the 2016 HUD/DOJ land-use statement;
+ 2024 digital-advertising guidance; and 2024 source-of-income testing memorandum. The April 2026 Federal
+ Register withdrawal notice is included to document status.
+
+ • HUD’s January 2026 disparate-impact proposal is not current law; 24 CFR 100.500 remains operative as of this
+ snapshot.
+
+ • HUD’s April 2026 equal-access revisions are proposed, not final; current 24 CFR 5.105(a)(2) remains in the
+ conditional federal set.
+
+ • Kansas introduced bills and ‘Measures Affecting This Section’ cards are not law unless final enactment and
+ effective date are verified.
+
+ • Historical session laws belong in a dated archive with valid-from/valid-to metadata. They should not be uploaded
+ into the active ChatGPT source set unless a past-period question requires them.
+
+    Why no synthetic ‘patched law book’: combining historical wording and addenda into a rewritten rule
+    creates a serious retrieval risk. A law-firm-style system keeps current consolidated text active, attaches
+    enacted-but-not-integrated session laws, and preserves prior versions separately.
+
+
+ Update and replacement protocol
+  CADENCE                        ACTION
+
+  Monthly                        Check Kansas Legislature/Revisor alerts, eCFR changes, HUD/EPA notices, Overland Park ordinances and
+                                 material appellate decisions.
+
+  Quarterly                      Re-retrieve all active sources, compare SHA-256 fingerprints, review proposals/withdrawals and issue a
+                                 dated change log.
+
+  Kansas session close / July    Check enrolled bills, vetoes/overrides, Session Laws, statute-book effective dates and delayed codification.
+  1
+
+  Before any high-risk action    Live-check the exact statute/regulation/city section and local court rules; do not rely only on this snapshot.
+
+  When replacing project         Replace the full active set and master manifest together. Remove superseded active PDFs so ChatGPT
+  sources                        cannot retrieve conflicting versions.
+
+  Historical research            Load only the dated archive needed for the event period, then remove it from the active workspace when
+                                 the task is complete.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                          Front matter page 6
+ Active bundle register
+  FILE                                                                            PAGES   ROLE
+
+  GH-KS-01_Kansas-Residential-Landlord-Tenant-Primary-Law_CURRENT.pdf             108     Kansas Article 25 / KRLTA primary text
+
+  GH-KS-02_Kansas-Eviction-Fair-Housing-Screening-Safety-Addenda_CURRENT.pdf      471     Kansas eviction, fair housing, screening, safety,
+                                                                                          2026 addenda and cases
+
+  GH-FED-01_Federal-Fair-Housing-HUD-Regulations_CURRENT.pdf                      156     Federal fair housing and current HUD
+                                                                                          regulations/guidance status
+
+  GH-FED-02_Lead-Screening-Military-Foreclosure-Electronic-Overlays_CURRENT.pdf   444     Federal lead, screening, service, foreclosure,
+                                                                                          military and communications overlays
+
+  GH-FED-03_CONDITIONAL-HUD-HCV-VAWA-Section504-Programs.pdf                      199     Conditional HUD-assisted / federally backed
+                                                                                          program rules
+
+  GH-OP-01_Overland-Park-Rental-Property-Civil-Rights-Code_CURRENT.pdf            167     Overland Park rental operations, property
+                                                                                          maintenance and civil rights
+
+  GH-OP-02_Overland-Park-Building-Fire-Systems-Zoning-Code_CURRENT.pdf            166     Overland Park building, fire, systems and zoning
+                                                                                          amendments
+
+
+
+ Official portals for live verification
+ Kansas Legislature — 2026 statutes
+ https://www.kslegislature.gov/b2025_26/laws/
+ Kansas Secretary of State — Session Laws
+ https://sos.ks.gov/publications/session-laws.html
+ Kansas Judicial Council — landlord/tenant forms
+ https://www.kjc.ks.gov/legal-forms/evictions-landlord-tenant
+ eCFR
+ https://www.ecfr.gov/
+ U.S. Code
+ https://uscode.house.gov/
+ HUD fair housing
+ https://www.hud.gov/fairhousing
+ EPA lead
+ https://www.epa.gov/lead
+ Overland Park municipal code
+ https://online.encodeplus.com/regs/overlandpark-ks/
+ Overland Park rental licensing
+ https://www.opkansas.gov/rental-licensing-and-inspection
+ Overland Park building codes
+ https://www.opkansas.gov/building-codes
+
+    Prepared for internal research and source retrieval. Not legal advice. Confirm official current law and
+    engage licensed Kansas counsel for legal conclusions or action.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                         Front matter page 7
+

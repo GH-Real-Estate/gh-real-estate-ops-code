@@ -1,0 +1,1897 @@
+GH Real Estate approved legal-source text chunk — GH-FED-03_CONDITIONAL-HUD-HCV-VAWA-Section504-Programs.part-004.txt — verified through 2026-07-12. Official source text controls.
+
+       ‘‘(B) poor health that increases their dependence        from peers and parents.
+    on the abuser;                                                ‘‘(5) A needs assessment on teen relationship abuse
+       ‘‘(C) fear of being placed in a nursing home; and        for the State of California, funded by the California
+       ‘‘(D) ineffective responses by domestic abuse pro-       Department of Health Services, identified a desire for
+    grams and law enforcement.                                  confidentiality and confusion about the law as 2 of
+    ‘‘(8) Disabled women comprise another vulnerable            the most significant barriers to young victims of do-
+  population with unmet needs. Women with disabil-              mestic and dating violence seeking help.
+  ities are more likely to be the victims of abuse and            ‘‘(6) Only one State specifically allows for minors to
+  violence than women without disabilities because of           petition the court for protection orders.
+  their increased physical, economic, social, or psycho-          ‘‘(7) Many youth are involved in dating relation-
+  logical dependence on others.                                 ships, and these relationships can include the same
+    ‘‘(9) Many women with disabilities also fail to re-         kind of domestic violence and dating violence seen in
+  port the abuse, since they are dependent on their             the adult population. In fact, more than 40 percent of
+  abusers and fear being abandoned or institutional-            all incidents of domestic violence involve people who
+  ized.                                                         are not married.
+    ‘‘(10) Of the 598 battered women’s programs sur-              ‘‘(8) 40 percent of girls ages 14 to 17 report knowing
+  veyed—                                                        someone their age who has been hit or beaten by a
+       ‘‘(A) only 35 percent of these programs offered dis-     boyfriend, and 13 percent of college women report
+    ability awareness training for their staff; and             being stalked.
+       ‘‘(B) only 16 percent dedicated a staff member to          ‘‘(9) Of college women who said they had been the
+    provide services to women with disabilities.                victims of rape or attempted rape, 12.8 percent of
+    ‘‘(11) Problems of domestic violence are exacerbated        completed rapes, 35 percent of attempted rapes, and
+  for immigrants when spouses control the immigra-              22.9 percent of threatened rapes took place on a date.
+  tion status of their family members, and abusers use          Almost 60 percent of the completed rapes that oc-
+  threats of refusal to file immigration papers and             curred on campus took place in the victim’s resi-
+  threats to deport spouses and children as powerful            dence.
+  tools to prevent battered immigrant women from                  ‘‘(10) According to a 3-year study of student-ath-
+  seeking help, trapping battered immigrant women in            letes at 10 Division I universities, male athletes made
+  violent homes because of fear of deportation.                 up only 3.3 percent of the general male university
+    ‘‘(12) Battered immigrant women who attempt to              population, but they accounted for 19 percent of the
+  flee abusive relationships may not have access to bi-         students reported for sexual assault and 35 percent of
+  lingual shelters or bilingual professionals, and face         domestic violence perpetrators.’’
+  restrictions on public or financial assistance. They
+                                                                        DEFINITIONS AND GRANT CONDITIONS
+  may also lack assistance of a certified interpreter in
+  court, when reporting complaints to the police or a           Pub. L. 117–103, div. W, § 2(b), Mar. 15, 2022, 136 Stat.
+  9–1–1 operator, or even in acquiring information            846, provided that: ‘‘Section 40002 of the Violence
+  about their rights and the legal system.                    Against Women Act of 1994 (34 U.S.C. 12291) shall apply
+§ 12291                 TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                        Page 350
+
+to this Act [div. W of Pub. L. 107–103, see Tables for      Force to Address Online Harassment and Abuse (Task
+classification] and any grant program authorized under      Force).
+this Act.’’                                                   SEC. 3. Membership. (a) The Director of the White
+                                                            House Gender Policy Council and the Assistant to the
+                 Executive Documents                        President for National Security Affairs, or their des-
+                                                            ignees, shall serve as Co-Chairs of the Task Force.
+ ESTABLISHMENT OF THE WHITE HOUSE TASK FORCE TO               (b) In addition to the Co-Chairs, the Task Force shall
+      ADDRESS ONLINE HARASSMENT AND ABUSE                   consist of the following members:
+   Memorandum of President of the United States, June         (i) the Secretary of State;
+16, 2022, 87 F.R. 37431, provided:                            (ii) the Secretary of Defense;
+   Memorandum for the Heads of Executive Depart-              (iii) the Attorney General;
+ments and Agencies                                            (iv) the Secretary of Commerce;
+   By the authority vested in me as President by the          (v) the Secretary of Health and Human Services;
+Constitution and the laws of the United States of             (vi) the Secretary of Education;
+America, and in order to improve efforts to prevent and       (vii) the Secretary of Veterans Affairs;
+address online harassment and abuse, it is hereby or-         (viii) the Secretary of Homeland Security;
+dered as follows:                                             (ix) the Director of the Office of Science and Tech-
+   SECTION 1. Policy. Technology platforms and social       nology Policy;
+media can be vital tools for expression, civic participa-     (x) the Assistant to the President and Director of the
+tion, and building a sense of community. But the scale,     Domestic Policy Council;
+reach, and amplification effects of technology plat-          (xi) the Assistant to the President for Economic Pol-
+forms have also exacerbated gender-based violence, par-     icy and Director of the National Economic Council;
+ticularly through online harassment and abuse. Online         (xii) the Administrator of the United States Agency
+harassment and abuse include a broad array of harmful       for International Development;
+and sometimes illegal behaviors that are perpetrated          (xiii) the Counsel to the President;
+through the use of technology. Women, adolescent              (xiv) the Counsel to the Vice President; and
+girls, and LGBTQI+ individuals, who may be addition-          (xv) the heads of such other executive departments,
+ally targeted because of their race, ethnicity, religion,   agencies, and offices as the Co-Chairs may, from time
+and other factors, can experience more severe harms         to time, designate.
+from online harassment and abuse. Online harassment           (c) A member of the Task Force may designate, to
+and abuse take many forms, including the non-consen-        perform the Task Force functions of the member, sen-
+sual    distribution     of   intimate  digital   images;   ior officials within the member’s executive department,
+cyberstalking; sextortion; doxing; malicious deep           agency, or office who are full-time officers or employ-
+fakes; gendered disinformation; rape and death threats;     ees of the Federal Government.
+the online recruitment and exploitation of victims of         SEC. 4. Mission and Function. (a) The Task Force shall
+sex trafficking; and various forms of technology-facili-    work across executive departments, agencies, and of-
+tated intimate partner abuse. In the United States, 1 in    fices to assess and address online harassment and abuse
+3 women under the age of 35 reports having been sexu-       that constitute technology-facilitated gender-based vi-
+ally harassed online, and over half of LGBTQI+ individ-     olence, including by:
+uals report having been the target of severe online           (i) improving coordination among executive depart-
+abuse, including sustained harassment, physical             ments, agencies, and offices to maximize the Federal
+threats, and stalking in addition to sexual harassment.     Government’s effectiveness in preventing and address-
+Globally, half of girls report that they are more likely    ing technology-facilitated gender-based violence in the
+to be harassed through social media than on the street.     United States and globally, including by developing
+   In the United States and around the world, women         policy solutions to enhance accountability for those
+and LGBTQI+ political leaders, public figures, activ-       who perpetrate online harms;
+ists, and journalists are especially targeted by              (ii) enhancing and expanding data collection and re-
+sexualized forms of online harassment and abuse, un-        search across the Federal Government to measure the
+dermining their ability to exercise their human rights      costs, prevalence, exposure to, and impact of tech-
+and participate in democracy, governance, and civic         nology-facilitated gender-based violence, including by
+life. Online abuse and harassment, which aim to pre-        studying the mental health effects of abuse on social
+clude women from political decision-making about            media, particularly affecting adolescents;
+their own lives and communities, undermine the func-          (iii) increasing access to survivor-centered services,
+tioning of democracy. Growing evidence also dem-            information, and support for victims, and increasing
+onstrates that online radicalization can be linked to       training and technical assistance for Federal, State,
+gender-based violence, which, along with other forms of     local, Tribal, and territorial governments as well as for
+abuse and harassment, spans the digital and physical        global organizations and entities in the fields of crimi-
+realms. Online harassment and abuse can result in a         nal justice, health and mental health services, edu-
+range of dire consequences for victims, from psycho-        cation, and victim services;
+logical distress and self-censorship to economic losses,      (iv) developing programs and policies to address on-
+disruptions to education, increased self-harm, suicide,     line harassment, abuse, and disinformation campaigns
+homicide, and other forms of physical and sexual vio-       targeting women and LGBTQI+ individuals who are
+lence. Further, digital technologies are often used in      public and political figures, government and civic lead-
+concert with other forms of abuse and harassment, un-       ers, activists, and journalists in the United States and
+derscoring the urgency of addressing the interplay of       globally;
+in-person and online harms. More research is needed to        (v) examining existing Federal laws, regulations, and
+fully understand the nature, magnitude, and costs of        policies to evaluate the adequacy of the current legal
+these harms and ways to address them in the United          framework to address technology-facilitated gender-
+States and globally.                                        based violence; and
+   Therefore, I am directing the Director of the White        (vi) identifying additional opportunities to improve
+House Gender Policy Council and the Assistant to the        efforts to prevent and address technology-facilitated
+President for National Security Affairs to lead an          gender-based violence in United States foreign policy
+interagency effort to address online harassment and         and foreign assistance, including through the Global
+abuse, specifically focused on technology-facilitated       Partnership for Action on Gender-Based Online Harass-
+gender-based violence, and to develop concrete rec-         ment and Abuse.
+ommendations to improve prevention, response, and             (b) Consistent with the objectives of this memo-
+protection efforts through programs and policies in the     randum and applicable law, the Task Force may con-
+United States and globally.                                 sult with and gather relevant information from exter-
+   SEC. 2. Establishment. There is established within the   nal stakeholders, including Federal, State, local, Trib-
+Executive Office of the President the White House Task      al, and territorial government officials, as well as vic-
+Page 351                TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                      § 12301
+
+tim advocates, survivors, law enforcement personnel,               PART A—SAFE STREETS FOR WOMEN
+researchers and academics, civil and human rights
+groups, philanthropic leaders, technology experts, legal        SUBPART 1—SAFETY FOR WOMEN IN PUBLIC
+and international policy experts, industry stake-                             TRANSIT
+holders, and other entities and persons the Task Force
+identifies that will assist the Task Force in accom-         § 12301. Grants for capital improvements to pre-
+plishing the objectives of this memorandum.                      vent crime in public transportation
+  SEC. 5. Reporting on the Work and Recommendations of
+the Task Force. (a) Within 180 days of the date of this
+                                                             (a) General purpose
+memorandum [June 16, 2022], the Co-Chairs of the Task          There is authorized to be appropriated not to
+Force shall submit to the President a blueprint (Initial     exceed $10,000,000, for the Secretary of Transpor-
+Blueprint) outlining a whole-of-government approach          tation (referred to in this section as the ‘‘Sec-
+to preventing and addressing technology-facilitated          retary’’) to make capital grants for the preven-
+gender-based violence, including concrete actions that       tion of crime and to increase security in exist-
+executive departments, agencies, and offices have com-
+mitted to take to implement the Task Force’s rec-
+                                                             ing and future public transportation systems.
+ommendations. The Initial Blueprint shall include a          None of the provisions of this Act may be con-
+synopsis of key lessons from stakeholder consultations       strued to prohibit the financing of projects
+and preliminary recommendations for advancing strat-         under this section where law enforcement re-
+egies to improve efforts to prevent and address tech-        sponsibilities are vested in a local public body
+nology-facilitated gender-based violence. Following          other than the grant applicant.
+submission of the Initial Blueprint to the President,
+                                                             (b) Grants for lighting, camera surveillance, and
+the Co-Chairs of the Task Force shall make an execu-
+tive summary of the Initial Blueprint publicly avail-            security phones
+able.                                                          (1) From the sums authorized for expenditure
+  (b) Within 1 year of the date that the Initial Blue-       under this section for crime prevention, the Sec-
+print is submitted to the President, the Co-Chairs of        retary is authorized to make grants and loans to
+the Task Force shall submit to the President and make        States and local public bodies or agencies for
+publicly available an update and report (1-Year Report)
+                                                             the purpose of increasing the safety of public
+with additional recommendations and actions that ex-
+ecutive departments, agencies, and offices can take to       transportation by—
+advance how Federal, State, local, Tribal, and terri-            (A) increasing lighting within or adjacent to
+torial governments; service providers; international or-       public transportation systems, including bus
+ganizations; technology platforms; schools; and other          stops, subway stations, parking lots, or ga-
+public and private entities can improve efforts to pre-        rages;
+vent and address technology-facilitated gender-based             (B) increasing camera surveillance of areas
+violence.                                                      within and adjacent to public transportation
+  (c) Prior to issuing its Initial Blueprint and 1-Year        systems, including bus stops, subway stations,
+Report, the Co-Chairs of the Task Force shall consoli-         parking lots, or garages;
+date any input received and submit periodic rec-
+                                                                 (C) providing emergency phone lines to con-
+ommendations to the President on policies, regulatory
+actions, and legislation on technology sector account-         tact law enforcement or security personnel in
+ability to address systemic harms to people affected by        areas within or adjacent to public transpor-
+online harassment and abuse.                                   tation systems, including bus stops, subway
+  (d) Following the submission of the 1-Year Report to         stations, parking lots, or garages; or
+the President, the Co-Chairs of the Task Force shall, on         (D) any other project intended to increase
+an annual basis, submit a follow-up report to the Presi-       the security and safety of existing or planned
+dent on implementation of this memorandum.                     public transportation systems.
+  SEC. 6. Definition. For the purposes of this memo-
+randum, the term ‘‘technology-facilitated gender-based         (2) From the sums authorized under this sec-
+violence’’ shall refer to any form of gender-based vio-      tion, at least 75 percent shall be expended on
+lence, including harassment and abuse, which takes           projects of the type described in subsection
+place through, or is aided by, the use of digital tech-      (b)(1)(A) and (B).
+nologies and devices.
+                                                             (c) Reporting
+  SEC. 7. General Provisions. (a) Nothing in this memo-
+randum shall be construed to impair or otherwise af-           All grants under this section are contingent
+fect:                                                        upon the filing of a report with the Secretary
+  (i) the authority granted by law to an executive de-       and the Department of Justice, Office of Victims
+partment or agency, or the head thereof; or                  of Crime, showing crime rates in or adjacent to
+  (ii) the functions of the Director of the Office of Man-   public transportation before, and for a 1-year pe-
+agement and Budget relating to budgetary, administra-
+                                                             riod after, the capital improvement. Statistics
+tive, or legislative proposals.
+  (b) This memorandum shall not apply to independent         shall be compiled on the basis of the type of
+regulatory agencies as described in section 3502(5) of       crime, sex, race, ethnicity, language, and rela-
+title 44, United States Code. Independent regulatory         tionship of victim to the offender.
+agencies are nevertheless strongly encouraged to par-        (d) Increased Federal share
+ticipate in the work of the Task Force.
+  (c) This memorandum shall be implemented con-
+                                                               Notwithstanding any other provision of law,
+sistent with applicable law and subject to the avail-        the Federal share under this section for each
+ability of appropriations.                                   capital improvement project that enhances the
+  (d) This memorandum is not intended to, and does           safety and security of public transportation sys-
+not, create any right or benefit, substantive or proce-      tems and that is not required by law (including
+dural, enforceable at law or in equity by any party          any other provision of this Act) shall be 90 per-
+against the United States, its departments, agencies, or     cent of the net project cost of the project.
+entities, its officers, employees, or agents, or any other
+person.                                                      (e) Special grants for projects to study increas-
+  (e) The Attorney General is authorized and directed             ing security for women
+to publish this memorandum in the Federal Register.            From the sums authorized under this section,
+                                         J.R. BIDEN, JR.     the Secretary shall provide grants and loans for
+§ 12311                 TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                             Page 352
+
+the purpose of studying ways to reduce violent                ‘‘There are authorized to be appropriated to carry out
+crimes against women in public transit through                this section $5,000,000 for each of fiscal years 2014
+better design or operation of public transit sys-             through 2018.’’
+                                                                 2013—Subsec. (c). Pub. L. 113–4 substituted ‘‘$5,000,000
+tems.                                                         for each of fiscal years 2014 through 2018.’’ for
+(f) General requirements                                      ‘‘$5,000,000 for each of fiscal years 2007 through 2011.’’
+   All grants or loans provided under this section               2006—Subsec. (c). Pub. L. 109–271, § 2(b), which di-
+shall be subject to the same terms, conditions,               rected amendment of section 1167 of the Violence
+                                                              Against Women Act of 2005, Pub. L. 109–162, by sub-
+requirements, and provisions applicable to                    stituting ‘‘2007 through 2011’’ for ‘‘2006 through 2010’’,
+grants and loans as specified in section 5321 of              was executed to subsec. (c) of this section, which is sec-
+title 49.                                                     tion 40152 of the Violence Against Women Act of 1994,
+(Pub. L. 103–322, title IV, § 40131, Sept. 13, 1994,          as amended by section 1167 of Pub. L. 109–162, to reflect
+                                                              the probable intent of Congress. See below.
+108 Stat. 1916.)                                                 Pub. L. 109–162, § 1167, added subsec. (c) and struck out
+                                                              heading and text of former subsec. (c) which authorized
+                     Editorial Notes                          appropriations to carry out this section for fiscal years
+                  REFERENCES IN TEXT                          1996 and 1997.
+                                                                 Pub. L. 109–162, § 108, which directed the striking of
+  This Act, referred to in subsecs. (a) and (d), is Pub. L.   subsec. (c) and the insertion of a new subsec. (c), au-
+103–322, Sept. 13, 1994, 108 Stat. 1796, known as the Vio-    thorizing appropriations to carry out this section for
+lent Crime Control and Law Enforcement Act of 1994.           fiscal years 2007 through 2011, was repealed by Pub. L.
+For complete classification of this Act to the Code, see      109–271, § 2(a).
+Short Title of 1994 Act note set out under section 10101
+of this title and Tables.
+                                                                     Statutory Notes and Related Subsidiaries
+                      CODIFICATION
+                                                                       EFFECTIVE DATE OF 2022 AMENDMENT
+  Section was formerly classified to section 13931 of
+Title 42, The Public Health and Welfare, prior to edi-          Amendment by Pub. L. 117–103 not effective until Oct.
+torial reclassification and renumbering as this section.      1 of the first fiscal year beginning after Mar. 15, 2022,
+                                                              see section 4(a) of div. W of Pub. L. 117–103, set out as
+ SUBPART 2—ASSISTANCE TO VICTIMS OF SEXUAL                    an Effective Date note under section 6851 of Title 15,
+                 ASSAULT                                      Commerce and Trade.
+                                                                       EFFECTIVE DATE OF 2013 AMENDMENT
+§ 12311. Training programs
+                                                                Amendment by Pub. L. 113–4 not effective until the
+(a) In general                                                beginning of the fiscal year following Mar. 7, 2013, see
+  The Attorney General, after consultation with               section 4 of Pub. L. 113–4, set out as a note under sec-
+victim advocates and individuals who have ex-                 tion 2261 of Title 18, Crimes and Criminal Procedure.
+pertise in treating sex offenders, shall establish
+                                                              § 12312. Confidentiality of communications be-
+criteria and develop training programs to assist
+                                                                  tween sexual assault or domestic violence
+probation and parole officers and other per-
+                                                                  victims and their counselors
+sonnel who work with released sex offenders in
+the areas of—                                                 (a) Study and development of model legislation
+     (1) case management;                                       The Attorney General shall—
+     (2) supervision; and                                         (1) study and evaluate the manner in which
+     (3) relapse prevention.                                    the States have taken measures to protect the
+(b) Training programs                                           confidentiality of communications between
+  The Attorney General shall ensure, to the ex-                 sexual assault or domestic violence victims
+tent practicable, that training programs devel-                 and their therapists or trained counselors;
+oped under subsection (a) are available in geo-                   (2) develop model legislation that will pro-
+graphically diverse locations throughout the                    vide the maximum protection possible for the
+country.                                                        confidentiality of such communications, with-
+(c) Authorization of appropriations                             in any applicable constitutional limits, taking
+                                                                into account the following factors:
+  There are authorized to be appropriated to                        (A) the danger that counseling programs
+carry out this section $5,000,000 for each of fiscal              for victims of sexual assault and domestic
+years 2023 through 2027.                                          violence will be unable to achieve their goal
+(Pub. L. 103–322, title IV, § 40152, Sept. 13, 1994,              of helping victims recover from the trauma
+108 Stat. 1920; Pub. L. 109–162, title I, § 108, title            associated with these crimes if there is no
+XI, § 1167, Jan. 5, 2006, 119 Stat. 2984, 3121; Pub. L.           assurance that the records of the counseling
+109–271, § 2(a), (b), Aug. 12, 2006, 120 Stat. 751, 752;          sessions will be kept confidential;
+Pub. L. 113–4, title I, § 105, Mar. 7, 2013, 127 Stat.              (B) consideration of the appropriateness of
+77; Pub. L. 117–103, div. W, title XIII, § 1304, Mar.             an absolute privilege for communications
+15, 2022, 136 Stat. 927.)                                         between victims of sexual assault or domes-
+                                                                  tic violence and their therapists or trained
+                     Editorial Notes                              counselors, in light of the likelihood that
+                      CODIFICATION                                such an absolute privilege will provide the
+                                                                  maximum guarantee of confidentiality but
+  Section was formerly classified to section 13941 of             also in light of the possibility that such an
+Title 42, The Public Health and Welfare, prior to edi-
+torial reclassification and renumbering as this section.
+                                                                  absolute privilege may be held to violate the
+                                                                  rights of criminal defendants under the Fed-
+                      AMENDMENTS                                  eral or State constitutions by denying them
+  2022—Subsec. (c). Pub. L. 117–103 amended subsec. (c)           the opportunity to obtain exculpatory evi-
+generally. Prior to amendment, text read as follows:              dence and present it at trial; and
+Page 353               TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                            § 12331
+
+      (C) consideration of what limitations on                                   Editorial Notes
+    the disclosure of confidential communica-                                      CODIFICATION
+    tions between victims of these crimes and
+    their counselors, short of an absolute privi-            Section was formerly classified to section 13943 of
+    lege, are most likely to ensure that the               Title 42, The Public Health and Welfare, prior to edi-
+                                                           torial reclassification and renumbering as this section.
+    counseling programs will not be undermined,
+    and specifically whether no such disclosure                    PART B—SAFE HOMES FOR WOMEN
+    should be allowed unless, at a minimum,
+    there has been a particularized showing by a               SUBPART 1—CONFIDENTIALITY FOR ABUSED
+    criminal defendant of a compelling need for                              PERSONS
+    records of such communications, and ade-
+    quate procedural safeguards are in place to            § 12321. Confidentiality of abused person’s ad-
+    prevent unnecessary or damaging disclo-                    dress
+    sures; and                                             (a) Regulations
+    (3) prepare and disseminate to State authori-            Not later than 90 days after September 13,
+  ties the findings made and model legislation             1994, the United States Postal Service shall pro-
+  developed as a result of the study and evalua-           mulgate regulations to secure the confiden-
+  tion.                                                    tiality of domestic violence shelters and abused
+                                                           persons’ addresses.
+(b) Report and recommendations
+                                                           (b) Requirements
+  Not later than the date that is 1 year after
+September 13, 1994, the Attorney General shall               The regulations under subsection (a) shall re-
+report to the Congress—                                    quire—
+    (1) the findings of the study and the model                (1) in the case of an individual, the presen-
+  legislation required by this section; and                  tation to an appropriate postal official of a
+    (2) recommendations based on the findings                valid, outstanding protection order; and
+  on the need for and appropriateness of further               (2) in the case of a domestic violence shelter,
+  action by the Federal Government.                          the presentation to an appropriate postal au-
+                                                             thority of proof from a State domestic vio-
+(c) Review of Federal evidentiary rules                      lence coalition that meets the requirements of
+  The Judicial Conference of the United States               section 10410 1 of title 42 verifying that the or-
+shall evaluate and report to Congress its views              ganization is a domestic violence shelter.
+on whether the Federal Rules of Evidence should            (c) Disclosure for certain purposes
+be amended, and if so, how they should be                    The regulations under subsection (a) shall not
+amended, to guarantee that the confidentiality             prohibit the disclosure of addresses to State or
+of communications between sexual assault vic-              Federal agencies for legitimate law enforcement
+tims and their therapists or trained counselors            or other governmental purposes.
+will be adequately protected in Federal court
+proceedings.                                               (d) Existing compilations
+(Pub. L. 103–322, title IV, § 40153, Sept. 13, 1994,         Compilations of addresses existing at the time
+108 Stat. 1921.)                                           at which order is presented to an appropriate
+                                                           postal official shall be excluded from the scope
+                                                           of the regulations under subsection (a).
+                    Editorial Notes
+                                                           (Pub. L. 103–322, title IV, § 40281, Sept. 13, 1994,
+                 REFERENCES IN TEXT                        108 Stat. 1938.)
+  The Federal Rules of Evidence, referred to in subsec.
+                                                                                 Editorial Notes
+(c), are set out in the Appendix to Title 28, Judiciary
+and Judicial Procedure.                                                       REFERENCES IN TEXT
+                                                             Section 10410 of title 42, referred to in subsec. (b)(2),
+                     CODIFICATION
+                                                           was generally amended by Pub. L. 111–320, title II, § 201,
+  Section was formerly classified to section 13942 of      Dec. 20, 2010, 124 Stat. 3497, and, as so amended, no
+Title 42, The Public Health and Welfare, prior to edi-     longer contains provisions relating to grants for State
+torial reclassification and renumbering as this section.   domestic violence coalitions. See section 10411 of Title
+                                                           42, The Public Health and Welfare.
+§ 12313. Information programs                                                      CODIFICATION
+  The Attorney General shall compile informa-                Section was formerly classified to section 13951 of
+tion regarding sex offender treatment programs             Title 42, The Public Health and Welfare, prior to edi-
+and ensure that information regarding commu-               torial reclassification and renumbering as this section.
+nity treatment programs in the community into
+                                                                     SUBPART 2—DATA AND RESEARCH
+which a convicted sex offender is released is
+made available to each person serving a sen-               § 12331. Research agenda
+tence of imprisonment in a Federal penal or cor-
+rectional institution for a commission of an of-           (a) Request for contract
+fense under chapter 109A of title 18 or for the              The Attorney General shall request the Na-
+commission of a similar offense, including half-           tional Academy of Sciences, through its Na-
+way houses and psychiatric institutions.                   tional Research Council, to enter into a con-
+(Pub. L. 103–322, title IV, § 40154, Sept. 13, 1994,
+108 Stat. 1922.)                                            1 See References in Text note below.
+§ 12332                TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                        Page 354
+
+tract to develop a research agenda to increase             (d) Authorization of appropriations
+the understanding and control of violence                    There are authorized to be appropriated to
+against women, including rape and domestic vio-            carry out this section $200,000 for fiscal year
+lence. In furtherance of the contract, the Na-             1996.
+tional Academy shall convene a panel of nation-
+ally recognized experts on violence against                (Pub. L. 103–322, title IV, § 40292, Sept. 13, 1994,
+women, in the fields of law, medicine, criminal            108 Stat. 1939.)
+justice, and direct services to victims and ex-
+perts on domestic violence in diverse, ethnic, so-                             Editorial Notes
+cial, and language minority communities and                                     CODIFICATION
+the social sciences. In setting the agenda, the
+                                                             Section was formerly classified to section 13962 of
+Academy shall focus primarily on preventive,
+                                                           Title 42, The Public Health and Welfare, prior to edi-
+educative, social, and legal strategies, including         torial reclassification and renumbering as this section.
+addressing the needs of underserved populations.
+(b) Declination of request                                 § 12333. Number and cost of injuries
+  If the National Academy of Sciences declines             (a) Study
+to conduct the study and develop a research
+                                                             The Secretary of Health and Human Services,
+agenda, it shall recommend a nonprofit private
+                                                           acting through the Centers for Disease Control
+entity that is qualified to conduct such a study.
+                                                           Injury Control Division, shall conduct a study to
+In that case, the Attorney General shall carry
+                                                           obtain a national projection of the incidence of
+out subsection (a) through the nonprofit private
+                                                           injuries resulting from domestic violence, the
+entity recommended by the Academy. In either
+                                                           cost of injuries to health care facilities, and rec-
+case, whether the study is conducted by the Na-
+                                                           ommend health care strategies for reducing the
+tional Academy of Sciences or by the nonprofit
+                                                           incidence and cost of such injuries.
+group it recommends, the funds for the contract
+shall be made available from sums appropriated             (b) Authorization of appropriations
+for the conduct of research by the National In-              There are authorized to be appropriated to
+stitute of Justice.                                        carry out this section—$100,000 for fiscal year
+(c) Report                                                 1996.
+  The Attorney General shall ensure that no                (Pub. L. 103–322, title IV, § 40293, Sept. 13, 1994,
+later than 1 year after September 13, 1994, the            108 Stat. 1940.)
+study required under subsection (a) is completed
+and a report describing the findings made is sub-                              Editorial Notes
+mitted to the Committee on the Judiciary of the
+Senate and the Committee on the Judiciary of                                    CODIFICATION
+the House of Representatives.                                Section was formerly classified to section 13963 of
+                                                           Title 42, The Public Health and Welfare, prior to edi-
+(Pub. L. 103–322, title IV, § 40291, Sept. 13, 1994,       torial reclassification and renumbering as this section.
+108 Stat. 1939.)
+                                                                 Statutory Notes and Related Subsidiaries
+                    Editorial Notes
+                     CODIFICATION                                             CHANGE OF NAME
+
+  Section was formerly classified to section 13961 of        Centers for Disease Control changed to Centers for
+Title 42, The Public Health and Welfare, prior to edi-     Disease Control and Prevention by Pub. L. 102–531, title
+torial reclassification and renumbering as this section.   III, § 312, Oct. 27, 1992, 106 Stat. 3504.
+
+§ 12332. State databases                                      SUBPART 3—RURAL DOMESTIC VIOLENCE AND
+                                                                     CHILD ABUSE ENFORCEMENT
+(a) In general
+  The Attorney General shall study and report              § 12341. Rural domestic violence, dating violence,
+to the States and to Congress on how the States                sexual assault, stalking, and child abuse en-
+may collect centralized databases on the inci-                 forcement assistance
+dence of sexual and domestic violence offenses
+                                                           (a) Purposes
+within a State.
+(b) Consultation                                             The purposes of this section are—
+                                                               (1) to identify, assess, and appropriately re-
+  In conducting its study, the Attorney General              spond to child, youth, and adult victims of do-
+shall consult persons expert in the collection of            mestic violence, sexual assault, dating vio-
+criminal justice data, State statistical adminis-            lence, and stalking in rural communities, by
+trators, law enforcement personnel, and non-                 encouraging collaboration among—
+profit nongovernmental agencies that provide                     (A) domestic violence, dating violence,
+direct services to victims of domestic violence.               sexual assault, and stalking victim service
+The final report shall set forth the views of the              providers;
+persons consulted on the recommendations.                        (B) law enforcement agencies;
+(c) Report                                                       (C) prosecutors;
+  The Attorney General shall ensure that no                      (D) courts;
+later than 1 year after September 13, 1994, the                  (E) other criminal justice service pro-
+study required under subsection (a) is completed               viders;
+and a report describing the findings made is sub-                (F) human and community service pro-
+mitted to the Committees on the Judiciary of                   viders;
+the Senate and the House of Representatives.                     (G) educational institutions; and
+Page 355             TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                           § 12341
+
+     (H) health care providers, including sexual       viding training and resources to Community
+   assault forensic examiners;                         Health Aides involved in the delivery of Indian
+   (2) to establish and expand nonprofit, non-         Health Service programs.
+ governmental, State, tribal, territorial, and       (c) Use of funds
+ local government victim services in rural             Funds appropriated pursuant to this section
+ communities to child, youth, and adult vic-         shall be used only for specific programs and ac-
+ tims;                                               tivities expressly described in subsection (a).
+   (3) to increase the safety and well-being of      (d) Allotments and priorities
+ women and children in rural communities,
+ by—                                                   (1) Allotment for Indian tribes
+     (A) dealing directly and immediately with           (A) In general
+   domestic violence, sexual assault, dating vi-           Not less than 10 percent of the total
+   olence, and stalking occurring in rural com-          amount available under this section for each
+   munities; and                                         fiscal year shall be available for grants
+     (B) creating and implementing strategies            under the program authorized by section
+   to increase awareness and prevent domestic            10452 of this title.
+   violence, sexual assault, dating violence, and
+                                                         (B) Applicability of part 1
+   stalking; and
+                                                           The requirements of this section shall not
+   (4) to develop, expand, implement, and im-            apply to funds allocated for the program de-
+ prove the quality of sexual assault forensic            scribed in subparagraph (A).
+ medical examination or sexual assault nurse
+ examiner programs.                                    (2) Allotment for sexual assault
+                                                         (A) In general
+(b) Grants authorized
+                                                           Not less than 25 percent of the total
+  The Attorney General, acting through the Di-
+                                                         amount appropriated in a fiscal year under
+rector of the Office on Violence Against Women
+                                                         this section shall fund services that mean-
+(referred to in this section as the ‘‘Director’’),
+                                                         ingfully address sexual assault in rural com-
+may award grants to States, Indian tribes, local
+                                                         munities, however at such time as the
+governments, and nonprofit, public or private
+                                                         amounts appropriated reach the amount of
+entities, including tribal nonprofit organiza-
+                                                         $45,000,000, the percentage allocated shall
+tions, to carry out programs serving rural areas
+                                                         rise to 30 percent of the total amount appro-
+or rural communities that address domestic vio-
+                                                         priated, at such time as the amounts appro-
+lence, dating violence, sexual assault, and stalk-
+                                                         priated reach the amount of $50,000,000, the
+ing by—
+                                                         percentage allocated shall rise to 35 percent
+    (1) implementing, expanding, and estab-
+                                                         of the total amount appropriated, and at
+  lishing cooperative efforts and projects among
+                                                         such time as the amounts appropriated
+  law enforcement officers, prosecutors, victim
+                                                         reach the amount of $55,000,000, the percent-
+  service providers, and other related parties to
+                                                         age allocated shall rise to 40 percent of the
+  investigate and prosecute incidents of domes-
+                                                         amounts appropriated.
+  tic violence, dating violence, sexual assault,
+  and stalking, including developing multidisci-         (B) Multiple purpose applications
+  plinary teams focusing on high risk cases with           Nothing in this section shall prohibit any
+  the goal of preventing domestic and dating vi-         applicant from applying for funding to ad-
+  olence homicides;                                      dress sexual assault, domestic violence,
+    (2) providing treatment, counseling, advo-           stalking, or dating violence in the same ap-
+  cacy, legal assistance, and other long-term            plication.
+  and short-term victim and population specific        (3) Allotment for technical assistance
+  services to adult and minor victims of domes-
+  tic violence, dating violence, sexual assault,         Of the amounts appropriated for each fiscal
+  and stalking in rural communities, including         year to carry out this section, not more than
+  assistance in immigration matters;                   8 percent may be used by the Director for
+    (3) working in cooperation with the commu-         technical assistance costs. Of the amounts ap-
+  nity to develop education and prevention             propriated in this subsection, no less than 25
+  strategies directed toward such issues; and          percent of such amounts shall be available to
+    (4) developing, enlarging, or strengthening        a nonprofit, nongovernmental organization or
+  programs addressing sexual assault, including        organizations whose focus and expertise is in
+  sexual assault forensic examiner programs,           addressing sexual assault to provide technical
+  Sexual Assault Response Teams, law enforce-          assistance to sexual assault grantees.
+  ment training, and programs addressing rape          (4) Underserved populations
+  kit backlogs;                                          In awarding grants under this section, the
+    (5) developing programs and strategies that        Director shall give priority to the needs of un-
+  focus on the specific needs of victims of do-        derserved populations.
+  mestic violence, dating violence, sexual as-
+                                                       (5) Allocation of funds for rural States
+  sault, and stalking who reside in remote rural
+  and geographically isolated areas, including           Not less than 75 percent of the total amount
+  addressing the challenges posed by the lack of       made available for each fiscal year to carry
+  access to quality forensic sexual assault ex-        out this section shall be allocated to eligible
+  aminations by trained health care providers,         entities located in rural States.
+  shelters, and victims services, and limited law
+  enforcement resources and training, and pro-        1 So in original. Probably should be ‘‘section’’.
+§ 12341                   TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                 Page 356
+
+(e) Authorization of appropriations                                Subsec. (b)(4), (5). Pub. L. 113–4, § 202(2)(B)(ii), (C), (D),
+                                                                added pars. (4) and (5).
+  (1) In general
+                                                                   Subsec. (e)(1). Pub. L. 113–4, § 202(3), substituted
+    There are authorized to be appropriated                     ‘‘$50,000,000 for each of fiscal years 2014 through 2018’’
+  $100,000,000 for each of fiscal years 2023 through            for ‘‘$55,000,000 for each of the fiscal years 2007 through
+  2027 to carry out this section.                               2011’’.
+                                                                   2006—Pub. L. 109–162, § 203, amended section generally,
+  (2) Additional funding                                        substituting provisions relating to rural domestic vio-
+    In addition to funds received through a                     lence, dating violence, sexual assault, stalking, and
+  grant under subsection (b), a law enforcement                 child abuse enforcement assistance for provisions relat-
+  agency may use funds received through a                       ing to rural domestic violence and child abuse enforce-
+                                                                ment assistance.
+  grant under part Q of title I of the Omnibus
+                                                                   Subsec. (c)(3). Pub. L. 109–162, § 906(d), which directed
+  Crime Control and Safe Streets Act of 1968 (42                the amendment of subsec. (c) by striking par. (3) and
+  U.S.C. 3796dd et seq.) 2 to accomplish the objec-             inserting a new par. (3) which read ‘‘Not less than 10
+  tives of this section.                                        percent of the total amount available under this sec-
+                                                                tion for each fiscal year shall be available for grants
+(Pub. L. 103–322, title IV, § 40295, Sept. 13, 1994,
+                                                                under the program authorized in section 3796gg–10 of
+108 Stat. 1940; Pub. L. 106–386, div. B, title I,               this title. The requirements of this paragraph shall not
+§§ 1105, 1109(d), title V, § 1512(c), Oct. 28, 2000, 114        apply to funds allocated for such program.’’, was re-
+Stat. 1497, 1503, 1533; Pub. L. 109–162, title II,              pealed by Pub. L. 109–271, § 7(b)(2)(A).
+§ 203, title IX, § 906(d), Jan. 5, 2006, 119 Stat. 2998,           Subsec. (d)(1). Pub. L. 109–271, § 7(b)(1), added par. (1)
+3081; Pub. L. 109–271, § 7(b)(1), (2)(A), Aug. 12, 2006,        and struck out former par. (1) which read as follows:
+120 Stat. 764; Pub. L. 113–4, title II, § 202, Mar. 7,          ‘‘Not less than 10 percent of the total amount made
+2013, 127 Stat. 81; Pub. L. 117–103, div. W, title II,          available for each fiscal year to carry out this section
+                                                                shall be allocated for grants to Indian tribes or tribal
+§ 202, Mar. 15, 2022, 136 Stat. 856.)
+                                                                organizations.’’
+                                                                   2000—Subsec. (a)(1). Pub. L. 106–386, § 1109(d)(1), in-
+                      Editorial Notes                           serted ‘‘and dating violence (as defined in section
+                   REFERENCES IN TEXT                           3796gg–2 of this title)’’ after ‘‘domestic violence’’.
+                                                                   Subsec. (a)(2). Pub. L. 106–386, § 1512(c), amended par.
+  The Omnibus Crime Control and Safe Streets Act of             (2) generally. Prior to amendment, par. (2) read as fol-
+1968, referred to in subsec. (e)(2), is Pub. L. 90–351, June    lows: ‘‘to provide treatment and counseling to victims
+19, 1968, 82 Stat. 197. Part Q of title I of the Act was        of domestic violence and dating violence (as defined in
+classified generally to subchapter XII–E (§ 3796dd et           section 3796gg–2 of this title) and child abuse; and’’.
+seq.) of chapter 46 of Title 42, The Public Health and             Pub. L. 106–386, § 1109(d)(2), inserted ‘‘and dating vio-
+Welfare, prior to editorial reclassification as sub-            lence (as defined in section 3796gg–2 of this title)’’ after
+chapter XVI (§ 10381 et seq.) of chapter 101 of this title.     ‘‘domestic violence’’.
+For complete classification of this Act to the Code, see           Subsec. (c)(1). Pub. L. 106–386, § 1105(1), added par. (1)
+Short Title of 1968 Act note set out under section 10101        and struck out heading and text of former par. (1). Text
+of this title and Tables.                                       read as follows: ‘‘There are authorized to be appro-
+                        CODIFICATION                            priated to carry out this section—
+                                                                     ‘‘(A) $7,000,000 for fiscal year 1996;
+  Section was formerly classified to section 13971 of                ‘‘(B) $8,000,000 for fiscal year 1997; and
+Title 42, The Public Health and Welfare, prior to edi-               ‘‘(C) $15,000,000 for fiscal year 1998.’’
+torial reclassification and renumbering as this section.           Subsec. (c)(3). Pub. L. 106–386, § 1105(2), added par. (3).
+Some section numbers or references in amendment
+notes below reflect the classification of such sections                Statutory Notes and Related Subsidiaries
+or references prior to editorial reclassification.
+                                                                          EFFECTIVE DATE OF 2022 AMENDMENT
+                        AMENDMENTS
+                                                                  Amendment by Pub. L. 117–103 not effective until Oct.
+   2022—Subsec. (a)(4). Pub. L. 117–103, § 202(1), added par.   1 of the first fiscal year beginning after Mar. 15, 2022,
+(4).                                                            see section 4(a) of div. W of Pub. L. 117–103, set out as
+   Subsec. (b)(4). Pub. L. 117–103, § 202(2)(A), substituted    an Effective Date note under section 6851 of Title 15,
+semicolon for period at end.                                    Commerce and Trade.
+   Subsec. (b)(5). Pub. L. 117–103, § 202(2)(B), inserted
+‘‘quality forensic sexual assault examinations by                         EFFECTIVE DATE OF 2013 AMENDMENT
+trained health care providers,’’ after ‘‘by the lack of ac-
+cess to’’ and substituted ‘‘shelters, and’’ for ‘‘shelters        Amendment by Pub. L. 113–4 not effective until the
+and’’.                                                          beginning of the fiscal year following Mar. 7, 2013, see
+   Subsec. (e)(1). Pub. L. 117–103, § 202(3), substituted       section 4 of Pub. L. 113–4, set out as a note under sec-
+‘‘$100,000,000 for each of fiscal years 2023 through 2027’’     tion 2261 of Title 18, Crimes and Criminal Procedure.
+for ‘‘$50,000,000 for each of fiscal years 2014 through                   EFFECTIVE DATE OF 2006 AMENDMENT
+2018’’.
+   2013—Subsec. (a)(1)(H). Pub. L. 113–4, § 202(1), inserted      Amendment by Pub. L. 109–162 not effective until the
+‘‘, including sexual assault forensic examiners’’ before        beginning of fiscal year 2007, see section 4 of Pub. L.
+semicolon at end.                                               109–162, set out as a note under section 10261 of this
+   Subsec. (b)(1). Pub. L. 113–4, § 202(2)(A), substituted      title.
+‘‘victim service providers’’ for ‘‘victim advocacy
+groups’’ and inserted ‘‘, including developing multi-           SUBPART 4—TRANSITIONAL HOUSING ASSISTANCE
+disciplinary teams focusing on high risk cases with the           GRANTS FOR VICTIMS OF DOMESTIC VIOLENCE,
+goal of preventing domestic and dating violence homi-             DATING VIOLENCE, SEXUAL ASSAULT, OR STALK-
+cides’’ before semicolon at end.                                  ING
+   Subsec. (b)(2). Pub. L. 113–4, § 202(2)(B)(i), substituted
+‘‘legal assistance, and other long-term and short-term                                 Editorial Notes
+victim and population specific services’’ for ‘‘and other
+long- and short-term assistance’’.                                                      CODIFICATION
+                                                                  This subpart was, in the original, chapter 11 of sub-
+ 2 See References in Text note below.                           title B of title IV of Pub. L. 103–322, and has been des-
+Page 357                    TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                      § 12351
+
+ignated as subpart 4 of this part for purposes of codi-             services, such as transportation, counseling,
+fication. Another chapter 11 of subtitle B of title IV of           child care services, case management, and
+Pub. L. 103–322 was designated subpart 3a (former                   other assistance. Participation in the sup-
+§ 13973) of part B of subchapter III of chapter 136 of Title        port services shall be voluntary. Receipt of
+42, The Public Health and Welfare.
+   Pub. L. 113–4, title VI, § 602(1), Mar. 7, 2013, 127 Stat.
+                                                                    the benefits of the housing assistance de-
+109, substituted ‘‘VICTIMS OF DOMESTIC VIOLENCE,                    scribed in paragraph (2) shall not be condi-
+DATING VIOLENCE, SEXUAL ASSAULT, OR STALK-                          tioned upon the participation of the youth,
+ING’’ for ‘‘CHILD VICTIMS OF DOMESTIC VIOLENCE,                     adults, or their dependents in any or all of
+STALKING, OR SEXUAL ASSAULT’’ in heading.                           the support services offered them.
+                                                                (c) Duration
+§ 12351. Transitional housing assistance grants
+    for victims of domestic violence, dating vio-                 (1) In general
+    lence, sexual assault, or stalking                              Except as provided in paragraph (2), a minor,
+                                                                  an adult, or a dependent, who receives assist-
+(a) In general
+                                                                  ance under this section shall receive that as-
+  The Attorney General, acting in consultation                    sistance for not more than 24 months.
+with the Director of the Office on Violence                       (2) Waiver
+Against Women of the Department of Justice,
+the Department of Housing and Urban Develop-                        The recipient of a grant under this section
+                                                                  may waive the restriction under paragraph (1)
+ment, and the Department of Health and Human
+                                                                  for not more than an additional 6 month pe-
+Services, shall award grants under this section
+                                                                  riod with respect to any minor, adult, or de-
+to States, units of local government, Indian
+                                                                  pendent, who—
+tribes, and other organizations, including do-                         (A) has made a good-faith effort to acquire
+mestic violence and sexual assault victim serv-                     permanent housing; and
+ice providers, domestic violence and sexual as-                        (B) has been unable to acquire permanent
+sault coalitions, other nonprofit, nongovern-                       housing.
+mental organizations, population-specific orga-                 (d) Application
+nizations, or community-based and culturally
+                                                                  (1) In general
+specific organizations, that have a documented
+history of effective work concerning domestic                       Each eligible entity desiring a grant under
+violence, dating violence, sexual assault, or                     this section shall submit an application to the
+stalking (referred to in this section as the ‘‘re-                Attorney General at such time, in such man-
+cipient’’) to carry out programs to provide as-                   ner, and accompanied by such information as
+sistance to minors, adults, and their depend-                     the Attorney General may reasonably require.
+ents—                                                             (2) Contents
+     (1) who are homeless, or in need of transi-                    Each application submitted pursuant to
+  tional housing or other housing assistance, as                  paragraph (1) shall—
+  a result of a situation of domestic violence,                        (A) describe the activities for which assist-
+  dating violence, sexual assault, or stalking;                     ance under this section is sought;
+  and                                                                  (B) provide assurances that any supportive
+     (2) for whom emergency shelter services or                     services offered to participants in programs
+  other crisis intervention services are unavail-                   developed under subsection (b)(3) are vol-
+  able or insufficient.                                             untary and that refusal to receive such serv-
+(b) Grants                                                          ices shall not be grounds for termination
+                                                                    from the program or eviction from the vic-
+  Grants awarded under this section may be                          tim’s housing; and
+used for programs that provide—                                        (C) provide such additional assurances as
+     (1) transitional housing, including funding                    the Attorney General determines to be es-
+  for the operating expenses of newly developed                     sential to ensure compliance with the re-
+  or existing transitional housing.1                                quirements of this section.
+     (2) short-term housing assistance, including                 (3) Application
+  rental or utilities payments assistance and as-
+  sistance with related expenses such as pay-                       Nothing in this subsection shall be con-
+  ment of security deposits and other costs inci-                 strued to require—
+                                                                       (A) victims to participate in the criminal
+  dental to relocation to transitional housing
+                                                                    justice system in order to receive services;
+  for persons described in subsection (a); and
+                                                                    or
+     (3) support services designed to enable a                         (B) domestic violence advocates to breach
+  minor, an adult, or a dependent of such minor                     client confidentiality.
+  or adult, who is fleeing a situation of domestic
+                                                                (e) Report to the Attorney General
+  violence, dating violence, sexual assault, or
+  stalking to—                                                    (1) In general
+       (A) locate and secure permanent housing;                     A recipient of a grant under this section
+       (B) secure employment, including obtain-                   shall annually prepare and submit to the At-
+     ing employment counseling, occupational                      torney General a report describing—
+     training, job retention counseling, and coun-                     (A) the number of minors, adults, and de-
+     seling concerning re-entry in to 2 the work-                   pendents assisted under this section; and
+     force; and                                                        (B) the types of housing assistance and
+       (C) integrate into a community by pro-                       support services provided under this section.
+     viding that minor, adult, or dependent with                  (2) Contents
+                                                                    Each report prepared and submitted pursu-
+ 1 So in original. The period probably should be a semicolon.     ant to paragraph (1) shall include information
+ 2 So in original. Probably should be ‘‘into’’.                   regarding—
+§ 12351               TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                               Page 358
+
+      (A) the purpose and amount of housing as-             iana Islands shall each be allocated not less
+    sistance provided to each minor, adult, or              than 0.5 percent of the total amount appro-
+    dependent, assisted under this section and              priated in the fiscal year for grants pursuant
+    the reason for that assistance;                         to this section.
+      (B) the number of months each minor,                  (C) Underserved populations
+    adult, or dependent, received assistance
+    under this section;                                       (i) INDIAN TRIBES.—
+      (C) the number of minors, adults, and de-                  (I) IN GENERAL.—Not less than 10 percent
+    pendents who—                                             of the total amount available under this
+        (i) were eligible to receive assistance               section for each fiscal year shall be avail-
+      under this section; and                                 able for grants under the program author-
+        (ii) were not provided with assistance                ized by section 10452 of this title.
+      under this section solely due to a lack of                 (II) APPLICABILITY OF PART.— 3 The re-
+      available housing;                                      quirements of this section shall not apply
+        (D) the type of support services provided             to funds allocated for the program de-
+     to each minor, adult, or dependent, assisted             scribed in subclause (I).
+     under this section; and                                  (ii) Priority shall be given to projects de-
+        (E) the client population served and the            veloped under subsection (b) that primarily
+     number of individuals requesting services              serve underserved populations.
+     that the transitional housing program is un-
+     able to serve as a result of a lack of re-             (D) Qualified application defined
+     sources.                                                 In this paragraph, the term ‘‘qualified ap-
+(f) Report to Congress                                      plication’’ means an application that—
+   (1) Reporting requirement                                    (i) has been submitted by an eligible ap-
+                                                              plicant;
+     The Attorney General, with the Director of                 (ii) does not propose any activities that
+   the Violence Against Women Office, shall pre-              may compromise victim safety, includ-
+   pare and submit to the Committee on the Ju-                ing—
+   diciary of the House of Representatives and                     (I) background checks of victims; or
+   the Committee on the Judiciary of the Senate
+                                                                   (II) clinical evaluations to determine
+   a report that contains a compilation of the in-
+                                                                eligibility for services;
+   formation contained in the report submitted
+   under subsection (e) of this section not later                (iii) reflects an understanding of the dy-
+   than 1 month after the end of each even-num-                namics of domestic violence, dating vio-
+   bered fiscal year.                                          lence, sexual assault, or stalking; and
+   (2) Availability of report                                    (iv) does not propose prohibited activi-
+                                                               ties, including mandatory services for vic-
+     In order to coordinate efforts to assist the
+   victims of domestic violence, the Attorney                  tims.
+   General, in coordination with the Director of        (Pub. L. 103–322, title IV, § 40299, as added Pub. L.
+   the Violence Against Women Office, shall             108–21, title VI, § 611, Apr. 30, 2003, 117 Stat. 693;
+   transmit a copy of the report submitted under        amended Pub. L. 109–162, § 3(b)(4), title VI,
+   paragraph (1) to—                                    § 602(a), title IX, § 906(e), formerly § 906(f), title
+        (A) the Office of Community Planning and        XI, § 1135(e), Jan. 5, 2006, 119 Stat. 2971, 3038, 3081,
+     Development at the United States Depart-           3109, renumbered § 906(e), Pub. L. 109–271,
+     ment of Housing and Urban Development;             § 7(b)(2)(B), Aug. 12, 2006, 120 Stat. 764; Pub. L.
+     and                                                109–271, §§ 2(d), 7(c)(1), 8(b), Aug. 12, 2006, 120 Stat.
+        (B) the Office of Women’s Health at the         752, 764–766; Pub. L. 113–4, title VI, § 602(2), Mar.
+     United States Department of Health and             7, 2013, 127 Stat. 109; Pub. L. 117–103, div. W, title
+     Human Services.                                    VI, § 604, Mar. 15, 2022, 136 Stat. 886.)
+(g) Authorization of appropriations
+   (1) In general                                                              Editorial Notes
+     There are authorized to be appropriated to                                  CODIFICATION
+   carry out this section $35,000,000 for each of         Section was formerly classified to section 13975 of
+   fiscal years 2023 through 2027.                      Title 42, The Public Health and Welfare, prior to edi-
+   (2) Minimum amount                                   torial reclassification and renumbering as this section.
+     (A) In general                                     Some section numbers or references in amendment
+                                                        notes below reflect the classification of such sections
+        Except as provided in subparagraph (B),         or references prior to editorial reclassification.
+     unless all qualified applications submitted
+     by any States, units of local government, In-                               AMENDMENTS
+     dian tribes, or organizations within a State          2022—Subsec. (a). Pub. L. 117–103, § 604(1), in introduc-
+     for a grant under this section have been           tory provisions, substituted ‘‘the Director of the Office
+     funded, that State, together with the grant-       on Violence Against Women’’ for ‘‘the Director of the
+     ees within the State (other than Indian            Violence Against Women Office’’ and inserted
+     tribes), shall be allocated in each fiscal year,   ‘‘, population-specific organizations’’ after ‘‘, other
+     not less than 0.75 percent of the total            nonprofit, nongovernmental organizations’’.
+                                                           Subsec. (g)(1). Pub. L. 117–103, § 604(2)(A), substituted
+     amount appropriated in the fiscal year for         ‘‘2023 through 2027’’ for ‘‘2014 through 2018’’.
+     grants pursuant to this section.                      Subsec. (g)(2). Pub. L. 117–103, § 604(2)(B), (C), redesig-
+     (B) Exception                                      nated par. (3) as (2) and struck out former par. (2). Prior
+        The United States Virgin Islands, Amer-
+     ican Samoa, Guam, and the Northern Mar-             3 So in original. Probably should be ‘‘section.—’’.
+Page 359                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                        § 12361
+
+to amendment, text of par. (2) read as follows: ‘‘Of the          the Committee on the Judiciary of the House of Rep-
+amount made available to carry out this section in any            resentatives and the Committee on the Judiciary of the
+fiscal year, up to 5 percent may be used by the Attor-            Senate a report that contains a compilation of the in-
+ney General for evaluation, monitoring, technical as-             formation contained in the report submitted under sub-
+sistance, salaries and administrative expenses.’’                 section (e) of this section.’’
+   Subsec. (g)(2)(B). Pub. L. 117–103, § 604(2)(D), sub-            Subsec. (g)(1). Pub. L. 109–162, § 602(a)(6)(A)–(C), sub-
+stituted ‘‘0.5 percent’’ for ‘‘0.25 percent’’.                    stituted ‘‘$40,000,000’’ for ‘‘$30,000,000’’, ‘‘2007’’ for ‘‘2004’’,
+   Subsec. (g)(3). Pub. L. 117–103, § 604(2)(C), redesignated     and ‘‘2011’’ for ‘‘2008’’.
+par. (3) as (2).                                                    Subsec. (g)(2). Pub. L. 109–162, § 602(a)(6)(D), (E), sub-
+   2013—Pub. L. 113–4, § 602(2)(A), substituted ‘‘victims of      stituted ‘‘up to 5 percent’’ for ‘‘not more than 3 per-
+domestic violence, dating violence, sexual assault, or            cent’’ and inserted ‘‘evaluation, monitoring, technical
+stalking’’ for ‘‘child victims of domestic violence,              assistance,’’ before ‘‘salaries’’.
+stalking, or sexual assault’’ in section catchline.                 Subsec. (g)(3)(C). Pub. L. 109–162, § 602(a)(6)(F), added
+   Subsec. (a)(1). Pub. L. 113–4, § 602(2)(B), struck out         subpar. (C).
+‘‘fleeing’’ before ‘‘a situation’’.                                 Subsec. (g)(3)(C)(i). Pub. L. 109–271, § 7(c)(1)(A), added
+   Subsec. (b)(3). Pub. L. 113–4, § 602(2)(C), added subpar.      cl. (i) and struck out former cl. (i) which read as fol-
+(B), redesignated former subpar. (B) as (C), and, in sub-         lows: ‘‘A minimum of 7 percent of the total amount ap-
+par. (C), struck out ‘‘employment counseling,’’ after             propriated in any fiscal year shall be allocated to tribal
+‘‘case management,’’.                                             organizations serving adult and youth victims of do-
+   Subsec. (g)(1). Pub. L. 113–4, § 602(2)(D)(i), which di-       mestic violence, dating violence, sexual assault, or
+rected substitution of ‘‘$35,000,000 for each of fiscal           stalking, and their dependents.’’
+                                                                    Subsec. (g)(4). Pub. L. 109–271, § 7(c)(1)(B), struck out
+years 2014 through 2018’’ for ‘‘$40,000,000 for each of fis-
+                                                                  par. (4) which read as follows: ‘‘Not less than 10 percent
+cal years 2007 through 2011’’, was executed by making
+                                                                  of the total amount available under this section for
+the substitution for ‘‘$40,000,000 for each of the fiscal
+                                                                  each fiscal year shall be available for grants under the
+years 2007 through 2011’’ to reflect the probable intent
+                                                                  program authorized in section 3796gg–10 of this title.
+of Congress.
+                                                                  The requirements of this paragraph shall not apply to
+   Subsec. (g)(3)(A). Pub. L. 113–4, § 602(2)(D)(ii)(I), sub-
+                                                                  funds allocated for such program.’’
+stituted ‘‘qualified’’ for ‘‘eligible’’.                            Pub. L. 109–162, § 906(e), formerly § 906(f), as renum-
+   Subsec. (g)(3)(D). Pub. L. 113–4, § 602(2)(D)(ii)(II),         bered by Pub. L. 109–271, § 7(b)(2)(B), added par. (4).
+added subpar. (D).
+   2006—Subsec. (a). Pub. L. 109–162, § 602(a)(1)(A), (B), in
+                                                                          Statutory Notes and Related Subsidiaries
+introductory provisions, inserted ‘‘the Department of
+Housing and Urban Development, and the Department                            EFFECTIVE DATE OF 2022 AMENDMENT
+of Health and Human Services,’’ after ‘‘Department of
+                                                                    Amendment by Pub. L. 117–103 not effective until Oct.
+Justice,’’ and ‘‘, including domestic violence and sex-           1 of the first fiscal year beginning after Mar. 15, 2022,
+ual assault victim service providers, domestic violence           see section 4(a) of div. W of Pub. L. 117–103, set out as
+and sexual assault coalitions, other nonprofit, non-              an Effective Date note under section 6851 of Title 15,
+governmental organizations, or community-based and                Commerce and Trade.
+culturally specific organizations, that have a docu-
+mented history of effective work concerning domestic                         EFFECTIVE DATE OF 2013 AMENDMENT
+violence, dating violence, sexual assault, or stalking’’            Amendment by Pub. L. 113–4 not effective until the
+after ‘‘other organizations’’.                                    beginning of the fiscal year following Mar. 7, 2013, see
+   Subsec. (a)(1). Pub. L. 109–162, § 602(a)(1)(C), inserted      section 4 of Pub. L. 113–4, set out as a note under sec-
+‘‘, dating violence, sexual assault, or stalking’’ after          tion 2261 of Title 18, Crimes and Criminal Procedure.
+‘‘domestic violence’’.
+   Subsec. (b)(1). Pub. L. 109–162, § 602(a)(2)(C), added par.               EFFECTIVE DATE OF 2006 AMENDMENT
+(1). Former par. (1) redesignated (2).                              Amendment by sections 602(a) and 906(e) of Pub. L.
+   Subsec. (b)(2). Pub. L. 109–162, § 602(a)(2)(A), redesig-      109–162 not effective until the beginning of fiscal year
+nated par. (1) as (2). Former par. (2) redesignated (3).          2007, see section 4 of Pub. L. 109–162, set out as a note
+   Subsec. (b)(3). Pub. L. 109–162, § 602(a)(2)(A), (B), redes-   under section 10261 of this title.
+ignated par. (2) as (3) and inserted ‘‘, dating violence,
+sexual assault, or stalking’’ after ‘‘violence’’ in intro-                           TRANSFER OF FUNCTIONS
+ductory provisions.                                                 Functions of Office on Women’s Health of the Public
+   Subsec. (b)(3)(B). Pub. L. 109–162, § 602(a)(2)(D), in-        Health Service exercised prior to Mar. 23, 2010, trans-
+serted ‘‘Participation in the support services shall be           ferred to Office on Women’s Health established under
+voluntary. Receipt of the benefits of the housing assist-         section 237a of this title, see section 3509(a)(2) of Pub.
+ance described in paragraph (2) shall not be conditioned          L. 111–148, set out as a note under section 237a of Title
+upon the participation of the youth, adults, or their de-         42, The Public Health and Welfare.
+pendents in any or all of the support services offered
+them.’’ at end.                                                            PART C—CIVIL RIGHTS FOR WOMEN
+   Subsec. (c)(1). Pub. L. 109–162, § 602(a)(3), substituted
+‘‘24 months’’ for ‘‘18 months’’.                                  § 12361. Civil rights
+   Subsec. (d)(2)(B), (C). Pub. L. 109–162, § 602(a)(4), added
+                                                                  (a) Purpose
+subpar. (B) and redesignated former subpar. (B) as (C).
+   Subsec. (e)(2)(A). Pub. L. 109–162, § 602(a)(5)(A), in-          Pursuant to the affirmative power of Congress
+serted ‘‘purpose and’’ before ‘‘amount’’.                         to enact this part under section 5 of the Four-
+   Subsec. (e)(2)(E). Pub. L. 109–162, § 602(a)(5)(B)–(D),        teenth Amendment to the Constitution, as well
+added subpar. (E).                                                as under section 8 of Article I of the Constitu-
+   Subsec. (f)(1). Pub. L. 109–162, § 1135(e), which directed     tion, it is the purpose of this part to protect the
+an amendment substantially identical to that made by
+Pub. L. 109–162, § 3(b)(4), was repealed by Pub. L. 109–271,
+                                                                  civil rights of victims of gender motivated vio-
+§§ 2(d) and 8(b).                                                 lence and to promote public safety, health, and
+   Pub. L. 109–162, § 3(b)(4), substituted ‘‘shall prepare        activities affecting interstate commerce by es-
+and submit to the Committee on the Judiciary of the               tablishing a Federal civil rights cause of action
+House of Representatives and the Committee on the Ju-             for victims of crimes of violence motivated by
+diciary of the Senate a report that contains a compila-           gender.
+tion of the information contained in the report sub-
+                                                                  (b) Right to be free from crimes of violence
+mitted under subsection (e) of this section not later
+than 1 month after the end of each even-numbered fis-               All persons within the United States shall
+cal year.’’ for ‘‘shall annually prepare and submit to            have the right to be free from crimes of violence
+§ 12371                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                             Page 360
+
+motivated by gender (as defined in subsection                     the establishment of a divorce, alimony, equi-
+(d)).                                                             table distribution of marital property, or child
+(c) Cause of action                                               custody decree.
+  A person (including a person who acts under                   (Pub. L. 103–322, title IV, § 40302, Sept. 13, 1994,
+color of any statute, ordinance, regulation, cus-               108 Stat. 1941.)
+tom, or usage of any State) who commits a
+crime of violence motivated by gender and thus                                       Editorial Notes
+deprives another of the right declared in sub-
+section (b) shall be liable to the party injured, in                              REFERENCES IN TEXT
+an action for the recovery of compensatory and                    This part, referred to in subsecs. (a) and (e)(3), was in
+punitive damages, injunctive and declaratory re-                the original ‘‘this subtitle’’, meaning subtitle C of title
+lief, and such other relief as a court may deem                 IV of Pub. L. 103–322, Sept. 13, 1994, 108 Stat. 1941. For
+appropriate.                                                    complete classification of subtitle C of title IV of Pub.
+                                                                L. 103–322 to the Code, see Short Title of 1994 Act note
+(d) Definitions                                                 set out under section 10101 of this title and Tables.
+  For purposes of this section—
+     (1) the term ‘‘crime of violence motivated by                                    CODIFICATION
+  gender’’ means a crime of violence committed                    Section was formerly classified to section 13981 of
+  because of gender or on the basis of gender,                  Title 42, The Public Health and Welfare, prior to edi-
+  and due, at least in part, to an animus based                 torial reclassification and renumbering as this section.
+  on the victim’s gender; and                                     Section is comprised of section 40302 of Pub. L.
+     (2) the term ‘‘crime of violence’’ means— 1                103–322. Subsec. (e)(5) of section 40302 of Pub. L. 103–322
+                                                                amended section 1445 of Title 28, Judiciary and Judicial
+       (A) an act or series of acts that would con-             Procedure.
+     stitute a felony against the person or that
+     would constitute a felony against property if                                 CONSTITUTIONALITY
+     the conduct presents a serious risk of phys-
+                                                                  For information regarding the constitutionality of
+     ical injury to another, and that would come                this section, see the Table of Laws Held Unconstitu-
+     within the meaning of State or Federal of-                 tional in Whole or in Part by the Supreme Court on the
+     fenses described in section 16 of title 18,                Constitution      Annotated       website,   constitu-
+     whether or not those acts have actually re-                tion.congress.gov.
+     sulted in criminal charges, prosecution, or
+     conviction and whether or not those acts                   PART D—EQUAL JUSTICE FOR WOMEN IN COURTS
+     were committed in the special maritime,
+     territorial, or prison jurisdiction of the                    SUBPART 1—EDUCATION AND TRAINING FOR
+     United States; and                                         JUDGES AND COURT PERSONNEL IN STATE COURTS
+       (B) includes an act or series of acts that
+     would constitute a felony described in sub-                § 12371. Grants authorized
+     paragraph (A) but for the relationship be-
+                                                                  The State Justice Institute may award grants
+     tween the person who takes such action and
+                                                                for the purpose of developing, testing, pre-
+     the individual against whom such action is
+                                                                senting, and disseminating model programs to
+     taken.
+                                                                be used by States (as defined in section 10701 of
+(e) Limitation and procedures                                   title 42) in training judges and court personnel
+  (1) Limitation                                                in the laws of the States and by Indian tribes in
+     Nothing in this section entitles a person to               training tribal judges and court personnel in the
+  a cause of action under subsection (c) for ran-               laws of the tribes on rape, sexual assault, do-
+  dom acts of violence unrelated to gender or for               mestic violence, dating violence, and other
+  acts that cannot be demonstrated, by a pre-                   crimes of violence motivated by the victim’s
+  ponderance of the evidence, to be motivated                   gender. Nothing shall preclude the attendance of
+  by gender (within the meaning of subsection                   tribal judges and court personnel at programs
+  (d)).                                                         funded under this section for States to train
+                                                                judges and court personnel on the laws of the
+  (2) No prior criminal action                                  States.
+    Nothing in this section requires a prior
+                                                                (Pub. L. 103–322, title IV, § 40411, Sept. 13, 1994,
+  criminal complaint, prosecution, or conviction
+                                                                108 Stat. 1942; Pub. L. 106–386, div. B, title IV,
+  to establish the elements of a cause of action
+                                                                § 1406(c)(2), (d)(1), Oct. 28, 2000, 114 Stat. 1516.)
+  under subsection (c).
+  (3) Concurrent jurisdiction
+                                                                                     Editorial Notes
+    The Federal and State courts shall have con-
+  current jurisdiction over actions brought pur-                                      CODIFICATION
+  suant to this part.                                             Section was formerly classified to section 13991 of
+  (4) Supplemental jurisdiction                                 Title 42, The Public Health and Welfare, prior to edi-
+                                                                torial reclassification and renumbering as this section.
+    Neither section 1367 of title 28 nor subsection
+  (c) of this section shall be construed, by rea-                                     AMENDMENTS
+  son of a claim arising under such subsection,
+                                                                   2000—Pub. L. 106–386 inserted ‘‘dating violence,’’ after
+  to confer on the courts of the United States                  ‘‘domestic violence,’’ and ‘‘Nothing shall preclude the
+  jurisdiction over any State law claim seeking                 attendance of tribal judges and court personnel at pro-
+                                                                grams funded under this section for States to train
+  1 So in original. The word ‘‘means’’ probably should appear   judges and court personnel on the laws of the States.’’
+after ‘‘(A)’’ below.                                            at end.
+Page 361                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                  § 12372
+
+       Statutory Notes and Related Subsidiaries                  (16) the likelihood of retaliation, recidivism,
+                        SHORT TITLE                            and escalation of violence by batterers, and
+                                                               the potential impact of incarceration and
+  For short title of subtitle D of title IV of Pub. L.
+103–322, which is classified to this part, as the ‘‘Equal
+                                                               other meaningful sanctions for acts of domes-
+Justice for Women in the Courts Act of 1994’’, see sec-        tic violence including violations of orders of
+tion 40401 of Pub. L. 103–322, set out as a Short Title of     protection;
+1994 Act note under section 10101 of this title.                 (17) economic, psychological, social and in-
+                                                               stitutional reasons for victims’ inability to
+§ 12372. Training provided by grants                           leave the batterer, to report domestic violence
+  Training provided pursuant to grants made                    or dating violence or to follow through on
+under this part may include current informa-                   complaints, including the influence of lack of
+tion, existing studies, or current data on—                    support from police, judges, and court per-
+    (1) the nature and incidence of rape and sex-              sonnel, and the legitimate reasons why vic-
+  ual assault by strangers and nonstrangers,                   tims of domestic violence or dating violence
+  marital rape, and incest;                                    may refuse to testify against a defendant;
+    (2) the underreporting of rape, sexual as-                   (18) the need for orders of protection, and the
+  sault, and child sexual abuse;                               implications of mutual orders of protection,
+    (3) the physical, psychological, and economic              dual arrest policies, and mediation in domes-
+  impact of rape and sexual assault on the vic-                tic violence and dating violence cases;
+  tim, the costs to society, and the implications                (19) recognition of and response to gender-
+  for sentencing;                                              motivated crimes of violence other than rape,
+    (4) the psychology of sex offenders, their                 sexual assault and domestic violence, such as
+  high rate of recidivism, and the implications                mass or serial murder motivated by the gender
+  for sentencing;                                              of the victims;
+    (5) the historical evolution of laws and atti-               (20) the issues raised by domestic violence in
+  tudes on rape and sexual assault;                            determining custody and visitation, including
+    (6) sex stereotyping of female and male vic-               how to protect the safety of the child and of a
+  tims of rape and sexual assault, racial stereo-              parent who is not a predominant aggressor of
+  typing of rape victims and defendants, and the               domestic violence, the legitimate reasons par-
+  impact of such stereotypes on credibility of                 ents may report domestic violence, the ways
+  witnesses, sentencing, and other aspects of the              domestic violence may relate to an abuser’s
+  administration of justice;                                   desire to seek custody, and evaluating expert
+    (7) application of rape shield laws and other              testimony in custody and visitation deter-
+  limits on introduction of evidence that may                  minations involving domestic violence;
+  subject victims to improper sex stereotyping                   (21) the issues raised by child sexual assault
+  and harassment in both rape and nonrape                      in determining custody and visitation, includ-
+  cases, including the need for sua sponte judi-               ing how to protect the safety of the child, the
+  cial intervention in inappropriate cross-exam-               legitimate reasons parents may report child
+  ination;                                                     sexual assault, and evaluating expert testi-
+    (8) the use of expert witness testimony on                 mony in custody and visitation determina-
+  rape trauma syndrome, child sexual abuse ac-                 tions involving child sexual assault, including
+  commodation syndrome, post-traumatic stress                  the current scientifically-accepted and empiri-
+  syndrome, and similar issues;                                cally valid research on child sexual assault; 2
+    (9) the legitimate reasons why victims of                    (22) the extent to which addressing domestic
+  rape, sexual assault, and incest may refuse to               violence and victim safety contributes to the
+  testify against a defendant;                                 efficient administration of justice; 3
+    (10) the nature and incidence of domestic vi-
+  olence and dating violence (as defined in sec-             (Pub. L. 103–322, title IV, § 40412, Sept. 13, 1994,
+  tion 10447 1 of this title);                               108 Stat. 1943; Pub. L. 106–386, div. B, title IV,
+    (11) the physical, psychological, and eco-               § 1406(a)(1), (d)(2), Oct. 28, 2000, 114 Stat. 1515,
+  nomic impact of domestic violence and dating               1517.)
+  violence on the victim, the costs to society,
+  and the implications for court procedures and                                     Editorial Notes
+  sentencing;
+    (12) the psychology and self-presentation of                                 REFERENCES IN TEXT
+  batterers and victims and the implications for
+                                                                Section 10447 of this title, referred to in par. (10), was
+  court proceedings and credibility of witnesses;            subsequently repealed and a new section 10447 enacted
+    (13) sex stereotyping of female and male vic-            which does not define the terms ‘‘domestic violence’’ or
+  tims of domestic violence and dating violence,             ‘‘dating violence’’. However, such terms are defined in
+  myths about presence or absence of domestic                section 12291 of this title.
+  violence and dating violence in certain racial,
+  ethnic, religious, or socioeconomic groups, and                                     CODIFICATION
+  their impact on the administration of justice;               Section was formerly classified to section 13992 of
+    (14) historical evolution of laws and atti-              Title 42, The Public Health and Welfare, prior to edi-
+  tudes on domestic violence;                                torial reclassification and renumbering as this section.
+    (15) proper and improper interpretations of              Some section numbers or references in amendment
+  the defenses of self-defense and provocation,              notes below reflect the classification of such sections
+  and the use of expert witness testimony on                 or references prior to editorial reclassification.
+  battered woman syndrome;
+                                                              2 So in original. Probably should be followed by ‘‘and’’.
+
+ 1 See References in Text note below.                         3 So in original. The semicolon probably should be a period.
+§ 12373                   TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                  Page 362
+
+                       AMENDMENTS                                    (5) sentencing;
+   2000—Par. (10). Pub. L. 106–386, § 1406(d)(2)(A), inserted        (6) sentencing alternatives and the nature of
+‘‘and dating violence (as defined in section 3796gg–2 of           supervision of probation and parole;
+this title)’’ before the semicolon.                                  (7) appointments to committees of the Judi-
+   Par. (11). Pub. L. 106–386, § 1406(d)(2)(B), inserted ‘‘and     cial Conference and the courts;
+dating violence’’ after ‘‘domestic violence’’.                       (8) case management and court sponsored al-
+   Par. (13). Pub. L. 106–386, § 1406(d)(2)(C), inserted ‘‘and     ternative dispute resolution programs;
+dating violence’’ after ‘‘domestic violence’’ in two
+places.
+                                                                     (9) the selection, retention, promotion, and
+   Par. (17). Pub. L. 106–386, § 1406(d)(2)(D), inserted ‘‘or      treatment of employees;
+dating violence’’ after ‘‘domestic violence’’ in two                 (10) appointment of arbitrators, experts, and
+places.                                                            special masters;
+   Par. (18). Pub. L. 106–386, § 1406(d)(2)(E), inserted ‘‘and       (11) the admissibility of the victim’s past
+dating violence’’ after ‘‘domestic violence’’.                     sexual history in civil and criminal cases; and
+   Pars. (20) to (22). Pub. L. 106–386, § 1406(a)(1), added          (12) the aspects of the topics listed in section
+pars. (20) to (22).                                                12372 of this title that pertain to issues within
+§ 12373. Cooperation in developing programs in                     the jurisdiction of the Federal courts.
+    making grants under this part                                (c) Clearinghouse
+  The State Justice Institute shall ensure that                    The Administrative Office of the United
+model programs carried out pursuant to grants                    States Courts shall act as a clearinghouse to
+made under this part are developed with the par-                 disseminate any reports and materials issued by
+ticipation of law enforcement officials, public                  the gender bias task forces under subsection (a)
+and private nonprofit victim advocates, includ-                  and to respond to requests for such reports and
+ing national, State, tribal, and local domestic                  materials. The gender bias task forces shall pro-
+violence and sexual assault programs and coali-                  vide the Administrative Office of the Courts of
+tions, legal experts, prosecutors, defense attor-                the United States 1 with their reports and re-
+neys, and recognized experts on gender bias in                   lated material.
+the courts.                                                      (d) Continuing education and training programs
+(Pub. L. 103–322, title IV, § 40413, Sept. 13, 1994,               The Federal Judicial Center, in carrying out
+108 Stat. 1944; Pub. L. 106–386, div. B, title IV,               section 620(b)(3) of title 28, shall include in the
+§ 1406(c)(1), Oct. 28, 2000, 114 Stat. 1516.)                    educational programs it prepares, including the
+                                                                 training programs for newly appointed judges,
+                      Editorial Notes                            information on the aspects of the topics listed in
+                       CODIFICATION                              section 12372 of this title that pertain to issues
+                                                                 within the jurisdiction of the Federal courts,
+  Section was formerly classified to section 13993 of            and shall prepare materials necessary to imple-
+Title 42, The Public Health and Welfare, prior to edi-
+                                                                 ment this subsection.
+torial reclassification and renumbering as this section.
+                       AMENDMENTS
+                                                                 (Pub. L. 103–322, title IV, § 40421, Sept. 13, 1994,
+                                                                 108 Stat. 1944; Pub. L. 106–386, div. B, title IV,
+  2000—Pub. L. 106–386 inserted ‘‘, including national,          § 1406(b)(1), Oct. 28, 2000, 114 Stat. 1516.)
+State, tribal, and local domestic violence and sexual
+assault programs and coalitions’’ after ‘‘victim advo-                                  Editorial Notes
+cates’’.
+                                                                                         CODIFICATION
+SUBPART      2—EDUCATION AND   TRAINING FOR
+  JUDGES     AND COURT PERSONNEL IN FEDERAL                        Section was formerly classified to section 14001 of
+                                                                 Title 42, The Public Health and Welfare, prior to edi-
+  COURTS
+                                                                 torial reclassification and renumbering as this section.
+§ 12381. Authorization of circuit studies; edu-                                          AMENDMENTS
+    cation and training grants
+                                                                   2000—Subsec. (d). Pub. L. 106–386 amended heading
+(a) Studies                                                      and text of subsec. (d) generally, substituting provi-
+  In order to gain a better understanding of the                 sions relating to continuing education and training
+                                                                 programs for provisions relating to model programs.
+nature and the extent of gender bias in the Fed-
+eral courts, the circuit judicial councils are en-                    PART E—VIOLENCE AGAINST WOMEN ACT
+couraged to conduct studies of the instances, if                                IMPROVEMENTS
+any, of gender bias in their respective circuits
+and to implement recommended reforms.                            § 12391. Payment of cost of testing for sexually
+(b) Matters for examination                                          transmitted diseases
+  The studies under subsection (a) may include                   (a) Omitted
+an examination of the effects of gender on—
+    (1) the treatment of litigants, witnesses, at-               (b) Limited testing of defendants
+  torneys, jurors, and judges in the courts, in-                   (1) Court order
+  cluding before magistrate and bankruptcy                           The victim of an offense of the type referred
+  judges;                                                          to in subsection (a) 1 may obtain an order in
+    (2) the interpretation and application of the                  the district court of the United States for the
+  law, both civil and criminal;                                    district in which charges are brought against
+    (3) treatment of defendants in criminal
+  cases;                                                           1 So in original. Probably should be ‘‘Administrative Office of
+    (4) treatment of victims of violent crimes in                the United States Courts’’.
+  judicial proceedings;                                            1 See Codification note below.
+Page 363            TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                            § 12392
+
+ the defendant charged with the offense, after         (7) Contempt for disclosure
+ notice to the defendant and an opportunity to           Any person who discloses the results of a
+ be heard, requiring that the defendant be test-       test in violation of this subsection may be
+ ed for the presence of the etiologic agent for        held in contempt of court.
+ acquired immune deficiency syndrome, and
+ that the results of the test be communicated        (c) Penalties for intentional transmission of HIV
+ to the victim and the defendant. Any test re-         Not later than 6 months after September 13,
+ sult of the defendant given to the victim or        1994, the United States Sentencing Commission
+ the defendant must be accompanied by appro-         shall conduct a study and prepare and submit to
+ priate counseling.                                  the committees 2 on the Judiciary of the Senate
+                                                     and the House of Representatives a report con-
+ (2) Showing required                                cerning recommendations for the revision of
+   To obtain an order under paragraph (1), the       sentencing guidelines that relate to offenses in
+ victim must demonstrate that—                       which an HIV infected individual engages in sex-
+      (A) the defendant has been charged with        ual activity if the individual knows that he or
+   the offense in a State or Federal court, and      she is infected with HIV and intends, through
+   if the defendant has been arrested without a      such sexual activity, to expose another to HIV.
+   warrant, a probable cause determination has
+                                                     (Pub. L. 103–322, title IV, § 40503, Sept. 13, 1994,
+   been made;
+                                                     108 Stat. 1946; Pub. L. 104–294, title VI, § 604(b)(1),
+      (B) the test for the etiologic agent for ac-
+                                                     Oct. 11, 1996, 110 Stat. 3506.)
+   quired immune deficiency syndrome is re-
+   quested by the victim after appropriate
+                                                                            Editorial Notes
+   counseling; and
+      (C) the test would provide information                                 CODIFICATION
+   necessary for the health of the victim of the       Section was formerly classified to section 14011 of
+   alleged offense and the court determines          Title 42, The Public Health and Welfare, prior to edi-
+   that the alleged conduct of the defendant         torial reclassification and renumbering as this section.
+   created a risk of transmission, as deter-           Section is comprised of section 40503 of Pub. L.
+   mined by the Centers for Disease Control, of      103–322. Subsec. (a) of section 40503 of Pub. L. 103–322
+   the etiologic agent for acquired immune de-       amended section 20141 of this title. Subsec. (c) of sec-
+   ficiency syndrome to the victim.                  tion 40503 of Pub. L. 103–322 also enacted provisions list-
+                                                     ed in a table relating to sentencing guidelines set out
+ (3) Follow-up testing                               under section 994 of Title 28, Judiciary and Judicial
+                                                     Procedure.
+   The court may order follow-up tests and
+ counseling under paragraph (1) if the initial                               AMENDMENTS
+ test was negative. Such follow-up tests and           1996—Subsec. (b)(3). Pub. L. 104–294 substituted ‘‘para-
+ counseling shall be performed at the request of     graph (1)’’ for ‘‘paragraph (b)(1)’’.
+ the victim on dates that occur six months and
+ twelve months following the initial test.                  Statutory Notes and Related Subsidiaries
+ (4) Termination of testing requirements                                   CHANGE OF NAME
+   An order for follow-up testing under para-          Centers for Disease Control changed to Centers for
+ graph (3) shall be terminated if the person ob-     Disease Control and Prevention by Pub. L. 102–531, title
+ tains an acquittal on, or dismissal of, all         III, § 312, Oct. 27, 1992, 106 Stat. 3504.
+ charges of the type referred to in subsection                 EFFECTIVE DATE OF 1996 AMENDMENT
+ (a).1
+                                                       Amendment by Pub. L. 104–294 effective Sept. 13, 1994,
+ (5) Confidentiality of test                         see section 604(d) of Pub. L. 104–294, set out as a note
+                                                     under section 13 of Title 18, Crimes and Criminal Proce-
+   The results of any test ordered under this
+                                                     dure.
+ subsection shall be disclosed only to the vic-
+ tim or, where the court deems appropriate, to       § 12392. Enforcement of statutory rape laws
+ the parent or legal guardian of the victim, and
+ to the person tested. The victim may disclose       (a) Sense of Senate
+ the test results only to any medical profes-          It is the sense of the Senate that States and
+ sional, counselor, family member or sexual          local jurisdictions should aggressively enforce
+ partner(s) the victim may have had since the        statutory rape laws.
+ attack. Any such individual to whom the test        (b) Justice Department program on statutory
+ results are disclosed by the victim shall main-         rape
+ tain the confidentiality of such information.
+                                                       Not later than January 1, 1997, the Attorney
+ (6) Disclosure of test results                      General shall establish and implement a pro-
+   The court shall issue an order to prohibit        gram that—
+ the disclosure by the victim of the results of          (1) studies the linkage between statutory
+ any test performed under this subsection to           rape and teenage pregnancy, particularly by
+ anyone other than those mentioned in para-            predatory older men committing repeat of-
+ graph (5). The contents of the court pro-             fenses; and
+ ceedings and test results pursuant to this sec-         (2) educates State and local criminal law en-
+ tion shall be sealed. The results of such test        forcement officials on the prevention and pros-
+ performed on the defendant under this section         ecution of statutory rape, focusing in par-
+ shall not be used as evidence in any criminal
+ trial.                                               2 So in original. Probably should be capitalized.
+§ 12401                   TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                 Page 364
+
+  ticular on the commission of statutory rape by                  (Pub. L. 103–322, title IV, § 40603, Sept. 13, 1994,
+  predatory older men committing repeat of-                       108 Stat. 1951; Pub. L. 106–386, div. B, title I,
+  fenses, and any links to teenage pregnancy.                     § 1106(a), Oct. 28, 2000, 114 Stat. 1497; Pub. L.
+(c) Violence against women initiative                             109–162, title I, § 109, Jan. 5, 2006, 119 Stat. 2984;
+                                                                  Pub. L. 113–4, title XI, § 1103, Mar. 7, 2013, 127
+  The Attorney General shall ensure that the                      Stat. 135; Pub. L. 117–103, div. W, title XIII,
+Department of Justice’s Violence Against                          § 1301, Mar. 15, 2022, 136 Stat. 927.)
+Women initiative addresses the issue of statu-
+tory rape, particularly the commission of statu-                                        Editorial Notes
+tory rape by predatory older men committing
+repeat offenses.                                                                     REFERENCES IN TEXT
+(Pub. L. 104–193, title IX, § 906, Aug. 22, 1996, 110                This part, referred to in text, was in the original
+Stat. 2349.)                                                      ‘‘this subtitle’’, meaning subtitle F of title IV of Pub.
+                                                                  L. 103–322, Sept. 13, 1994, 108 Stat. 1950, which enacted
+                                                                  this part, amended section 534 of Title 28, Judiciary and
+                      Editorial Notes
+                                                                  Judicial Procedure, and enacted provisions set out as a
+                        CODIFICATION                              note under section 534 of Title 28.
+  Section was formerly classified to section 14016 of                                     CODIFICATION
+Title 42, The Public Health and Welfare, prior to edi-
+                                                                    Section was formerly classified to section 14032 of
+torial reclassification and renumbering as this section.
+                                                                  Title 42, The Public Health and Welfare, prior to edi-
+  Section was enacted as part of the Personal Responsi-
+                                                                  torial reclassification and renumbering as this section.
+bility and Work Opportunity Reconciliation Act of 1996,
+and not as part of the Violent Crime Control and Law                                      AMENDMENTS
+Enforcement Act of 1994 which enacted this chapter.
+                                                                    2022—Pub. L. 117–103 substituted ‘‘2023 through 2027’’
+   PART F—NATIONAL STALKER AND DOMESTIC                           for ‘‘2014 through 2018’’.
+           VIOLENCE REDUCTION                                       2013—Pub. L. 113–4 substituted ‘‘$3,000,000 for fiscal
+                                                                  years 2014 through 2018.’’ for ‘‘$3,000,000 for each of fis-
+§ 12401. Grant program                                            cal years 2007 through 2011.’’
+                                                                    2006—Pub. L. 109–162, § 109(2), which directed substi-
+(a) In general                                                    tution of ‘‘2011’’ for ‘‘2006’’, was executed by sub-
+  The Attorney General is authorized to provide                   stituting ‘‘2011’’ for ‘‘2005’’ to reflect the probable in-
+grants to States and units of local government                    tent of Congress, because ‘‘2006’’ does not appear in
+                                                                  text.
+to improve and implement processes for enter-                       Pub. L. 109–162, § 109(1), substituted ‘‘2007’’ for ‘‘2001’’.
+ing data regarding stalking and domestic vio-                       2000—Pub. L. 106–386 reenacted section catchline
+lence into local, State, and national crime infor-                without change and amended text generally. Prior to
+mation databases.                                                 amendment, text read as follows: ‘‘There are authorized
+(b) Eligibility                                                   to be appropriated to carry out this part—
+                                                                      ‘‘(1) $1,500,000 for fiscal year 1996;
+  To be eligible to receive a grant under sub-                        ‘‘(2) $1,750,000 for fiscal year 1997; and
+section (a), a State or unit of local government                      ‘‘(3) $2,750,000 for fiscal year 1998.’’
+shall certify that it has or intends to establish
+a program that enters into the National Crime                            Statutory Notes and Related Subsidiaries
+Information Center records of—
+                                                                            EFFECTIVE DATE OF 2022 AMENDMENT
+     (1) warrants for the arrest of persons vio-
+  lating protection orders intended to protect                      Amendment by Pub. L. 117–103 not effective until Oct.
+  victims from stalking or domestic violence;                     1 of the first fiscal year beginning after Mar. 15, 2022,
+     (2) arrests or convictions of persons vio-                   see section 4(a) of div. W of Pub. L. 117–103, set out as
+                                                                  an Effective Date note under section 6851 of Title 15,
+  lating protection 1 or domestic violence; and
+                                                                  Commerce and Trade.
+     (3) protection orders for the protection of
+  persons from stalking or domestic violence.                     § 12403. Application requirements
+(Pub. L. 103–322, title IV, § 40602, Sept. 13, 1994,                An application for a grant under this part
+108 Stat. 1951; Pub. L. 106–386, div. B, title I,                 shall be submitted in such form and manner,
+§ 1106(b), Oct. 28, 2000, 114 Stat. 1497.)                        and contain such information, as the Attorney
+                                                                  General may prescribe. In addition, applications
+                      Editorial Notes
+                                                                  shall include documentation showing—
+                        CODIFICATION                                  (1) the need for grant funds and that State or
+  Section was formerly classified to section 14031 of               local funding, as the case may be, does not al-
+Title 42, The Public Health and Welfare, prior to edi-              ready cover these operations;
+torial reclassification and renumbering as this section.              (2) intended use of the grant funds, including
+                                                                    a plan of action to increase record input; and
+                        AMENDMENTS                                    (3) an estimate of expected results from the
+ 2000—Subsec. (a). Pub. L. 106–386 inserted ‘‘and imple-            use of the grant funds.
+ment’’ after ‘‘improve’’.
+                                                                  (Pub. L. 103–322, title IV, § 40604, Sept. 13, 1994,
+§ 12402. Authorization of appropriations                          108 Stat. 1951.)
+  There is authorized to be appropriated to                                             Editorial Notes
+carry out this part $3,000,000 for fiscal years 2023
+through 2027.                                                                             CODIFICATION
+                                                                    Section was formerly classified to section 14033 of
+  1 So in original. Probably should be followed by ‘‘orders in-   Title 42, The Public Health and Welfare, prior to edi-
+tended to protect victims from stalking’’.                        torial reclassification and renumbering as this section.
+Page 365                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                               § 12409
+
+§ 12404. Disbursement                                           § 12407. Recommendations on intrastate commu-
+                                                                    nication
+  Not later than 90 days after the receipt of an
+application under this part, the Attorney Gen-                    The State Justice Institute, after consultation
+eral shall either provide grant funds or shall in-              with nationally recognized nonprofit associa-
+form the applicant why grant funds are not                      tions with expertise in data sharing among
+being provided.                                                 criminal justice agencies and familiarity with
+(Pub. L. 103–322, title IV, § 40605, Sept. 13, 1994,            the issues raised in stalking and domestic vio-
+108 Stat. 1952.)                                                lence cases, shall recommend proposals regard-
+                                                                ing how State courts may increase intrastate
+                                                                communication between civil and criminal
+                      Editorial Notes
+                                                                courts.
+                        CODIFICATION                            (Pub. L. 103–322, title IV, § 40608, Sept. 13, 1994,
+  Section was formerly classified to section 14034 of           108 Stat. 1952.)
+Title 42, The Public Health and Welfare, prior to edi-
+torial reclassification and renumbering as this section.                             Editorial Notes
+
+§ 12405. Technical assistance, training, and eval-                                    CODIFICATION
+    uations                                                       Section was formerly classified to section 14037 of
+                                                                Title 42, The Public Health and Welfare, prior to edi-
+  The Attorney General may provide technical                    torial reclassification and renumbering as this section.
+assistance and training in furtherance of the
+purposes of this part, and may provide for the                  § 12408. Inclusion in National Incident-Based Re-
+evaluation of programs that receive funds under                     porting System
+this part, in addition to any evaluation require-
+ments that the Attorney General may prescribe                     Not later than 2 years after September 13, 1994,
+for grantees. The technical assistance, training,               the Attorney General, in accordance with the
+and evaluations authorized by this section may                  States, shall compile data regarding domestic
+be carried out directly by the Attorney General,                violence and intimidation (including stalking)
+or through contracts or other arrangements                      as part of the National Incident-Based Report-
+with other entities.                                            ing System (NIBRS).
+
+(Pub. L. 103–322, title IV, § 40606, Sept. 13, 1994,            (Pub. L. 103–322, title IV, § 40609, Sept. 13, 1994,
+108 Stat. 1952.)                                                108 Stat. 1952.)
+
+                                                                                     Editorial Notes
+                      Editorial Notes
+                                                                                      CODIFICATION
+                        CODIFICATION
+                                                                  Section was formerly classified to section 14038 of
+  Section was formerly classified to section 14035 of           Title 42, The Public Health and Welfare, prior to edi-
+Title 42, The Public Health and Welfare, prior to edi-          torial reclassification and renumbering as this section.
+torial reclassification and renumbering as this section.
+                                                                § 12409. Report to Congress
+§ 12406. Training programs for judges
+                                                                  Each even-numbered fiscal year, the Attorney
+  The State Justice Institute, after consultation               General shall submit to the Congress a biennial
+with nationally recognized nonprofit organiza-                  report that provides information concerning the
+tions with expertise in stalking and domestic vi-               incidence of stalking and domestic violence, and
+olence cases, shall conduct training programs                   evaluates the effectiveness of State antistalking
+for State (as defined in section 10701 1 of title 42)           efforts and legislation.
+and Indian tribal judges to ensure that a judge
+issuing an order in a stalking or domestic vio-                 (Pub. L. 103–322, title IV, § 40610, Sept. 13, 1994,
+lence case has all available criminal history and               108 Stat. 1952; Pub. L. 109–162, § 3(b)(1), title XI,
+other information, whether from State or Fed-                   § 1135(a), Jan. 5, 2006, 119 Stat. 2971, 3108; Pub. L.
+eral sources.                                                   109–271, §§ 2(d), 8(b), Aug. 12, 2006, 120 Stat. 752,
+                                                                766.)
+(Pub. L. 103–322, title IV, § 40607, Sept. 13, 1994,
+108 Stat. 1952.)                                                                     Editorial Notes
+                                                                                      CODIFICATION
+                      Editorial Notes
+                                                                  Section was formerly classified to section 14039 of
+                   REFERENCES IN TEXT                           Title 42, The Public Health and Welfare, prior to edi-
+   Section 10701 of title 42, referred to in text, was in the   torial reclassification and renumbering as this section.
+original ‘‘section 202 of the State Justice Institute Au-                             AMENDMENTS
+thorization Act of 1984’’, and was translated as reading
+‘‘section 202 of the State Justice Institute Act of 1984’’,       2006—Pub. L. 109–162, § 1135(a), which directed an
+which is section 202 of Pub. L. 98–620, to reflect the          amendment substantially identical to that directed by
+probable intent of Congress.                                    Pub. L. 109–162, § 3(b)(1), was repealed by Pub. L. 109–271.
+                                                                  Pub. L. 109–162, § 3(b)(1), which directed the substi-
+                        CODIFICATION                            tution of ‘‘Each even-numbered fiscal year, the Attor-
+  Section was formerly classified to section 14036 of           ney General shall submit to the Congress a biennial re-
+Title 42, The Public Health and Welfare, prior to edi-          port that provides’’ for ‘‘The Attorney General shall
+torial reclassification and renumbering as this section.        submit to the Congress an annual report, beginning 1
+                                                                year after September 13, 1994, that provides’’, was exe-
+                                                                cuted by making the substitution for ‘‘The Attorney
+ 1 See References in Text note below.                           General shall submit to the Congress an annual report,
+§ 12410                   TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                       Page 366
+
+beginning one year after September 13, 1994, that pro-                    (i) provide training programs to assist
+vides’’, to reflect the probable intent of Congress.                   law enforcement agencies, prosecutors,
+                                                                       agencies of States or units of local govern-
+       Statutory Notes and Related Subsidiaries
+                                                                       ment, population specific organizations,
+          REPORT RELATING TO STALKING LAWS                             victim service providers, victim advocates,
+  Pub. L. 105–119, title I, § 115(b)(2), Nov. 26, 1997, 111            or relevant officers in Federal, tribal,
+Stat. 2467, provided that: ‘‘The Attorney General shall                State, territorial, and local courts in rec-
+include in an annual report under section 40610 of the                 ognizing and addressing instances of abuse
+Violent Crime Control and Law Enforcement Act of                       in later life;
+1994 (42 U.S.C. 14039) [now 34 U.S.C. 12409] information                  (ii) provide or enhance services for vic-
+concerning existing or proposed State laws and pen-                    tims of abuse in later life;
+alties for stalking crimes against children.’’                            (iii) establish or support multidisci-
+§ 12410. Definitions                                                   plinary collaborative community re-
+                                                                       sponses to victims of abuse in later life;
+  As used in this part—                                                and
+    (1) the term ‘‘national crime information                             (iv) conduct cross-training for law en-
+  databases’’ refers to the National Crime Infor-                      forcement agencies, prosecutors, agencies
+  mation Center and its incorporated criminal                          of States or units of local government, at-
+  history databases, including the Interstate                          torneys, health care providers, population
+  Identification Index; and                                            specific organizations, faith-based leaders,
+    (2) the term ‘‘protection order’’ includes an                      victim advocates, victim service providers,
+  injunction or any other order issued for the                         courts, and first responders to better serve
+  purpose of preventing violent or threatening                         older victims.
+  acts or harassment against, or contact or com-                     (B) Permissible activities
+  munication with or physical proximity to, an-
+  other person, including temporary and final                          An eligible entity receiving a grant under
+  orders issued by civil or criminal courts (other                   this section may use the funds received
+  than support or child custody orders) whether                      under the grant to—
+  obtained by filing an independent action or as                          (i) provide training programs to assist
+  a pendente lite order in another proceeding so                       attorneys, health care providers, faith-
+  long as any civil order was issued in response                       based leaders, community-based organiza-
+  to a complaint, petition, or motion filed by or                      tions, or other professionals who may iden-
+  on behalf of a person seeking protection.                            tify or respond to abuse in later life; or
+                                                                          (ii) conduct outreach activities and
+(Pub. L. 103–322, title IV, § 40611, Sept. 13, 1994,                   awareness campaigns to ensure that vic-
+108 Stat. 1952.)                                                       tims of abuse in later life receive appro-
+                                                                       priate assistance.
+                       Editorial Notes
+                                                                     (C) Waiver
+                        CODIFICATION
+                                                                       The Attorney General may waive 1 or
+  Section was formerly classified to section 14040 of                more of the activities described in subpara-
+Title 42, The Public Health and Welfare, prior to edi-               graph (A) upon making a determination that
+torial reclassification and renumbering as this section.             the activity would duplicate services avail-
+    PART G—TRAINING AND SERVICES TO END                              able in the community.
+           ABUSE LATER IN LIFE                                       (D) Limitation
+                                                                       An eligible entity receiving a grant under
+                       Editorial Notes
+                                                                     this section may use not more than 10 per-
+                        CODIFICATION                                 cent of the total funds received under the
+  This part was, in the original, subtitle H of title IV             grant for an activity described in subpara-
+of Pub. L. 103–322, as added by Pub. L. 106–386, and was             graph (B)(ii).
+redesignated as part G of this subchapter for purposes             (2) Eligible entities
+of codification.
+  Pub. L. 117–103, div. W, title II, § 204(1), Mar. 15, 2022,        An entity shall be eligible to receive a grant
+136 Stat. 857, substituted ‘‘Training’’ for ‘‘Enhanced             under this section if—
+Training’’ in heading.                                                 (A) the entity is—
+  Pub. L. 113–4, title II, § 204(a), Mar. 7, 2013, 127 Stat. 82,          (i) a State;
+substituted ‘‘ENHANCED TRAINING AND SERVICES                              (ii) a unit of local government;
+TO END ABUSE LATER IN LIFE’’ for ‘‘ELDER                                  (iii) a tribal government or tribal organi-
+ABUSE, NEGLECT, AND EXPLOITATION, INCLUD-                              zation;
+ING DOMESTIC VIOLENCE AND SEXUAL ASSAULT                                  (iv) a population specific organization;
+AGAINST OLDER OR DISABLED INDIVIDUALS’’ in                                (v) a victim service provider; or
+heading.
+                                                                          (vi) a State, tribal, or territorial domes-
+§ 12421. Training and services to end abuse in                         tic violence or sexual assault coalition;
+    later life                                                         and
+  The Attorney General shall make grants to el-                        (B) the entity demonstrates that it is part
+igible entities in accordance with the following:                    of a multidisciplinary partnership that in-
+  (1) Mandatory and permissible activities                           cludes, at a minimum—
+                                                                         (i) a law enforcement agency;
+    (A) Mandatory activities                                             (ii) a prosecutor’s office;
+      An eligible entity receiving a grant under                         (iii) a victim service provider; and
+    this section shall use the funds received                            (iv) a nonprofit program or government
+    under the grant to—                                                agency with demonstrated experience in
+Page 367                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                 § 12431
+
+       assisting individuals 50 years of age or                           Statutory Notes and Related Subsidiaries
+       over.                                                                EFFECTIVE DATE OF 2022 AMENDMENT
+  (3) Underserved populations                                        Amendment by Pub. L. 117–103 not effective until Oct.
+    In making grants under this section, the At-                   1 of the first fiscal year beginning after Mar. 15, 2022,
+                                                                   see section 4(a) of div. W of Pub. L. 117–103, set out as
+  torney General shall give priority to proposals
+                                                                   an Effective Date note under section 6851 of Title 15,
+  providing services to culturally specific and                    Commerce and Trade.
+  underserved populations.
+                                                                            EFFECTIVE DATE OF 2013 AMENDMENT
+  (4) Authorization of appropriations
+                                                                     Amendment by Pub. L. 113–4 not effective until the
+    There is authorized to be appropriated to                      beginning of the fiscal year following Mar. 7, 2013, see
+  carry out this section $10,000,000 for each of                   section 4 of Pub. L. 113–4, set out as a note under sec-
+  fiscal years 2023 through 2027.                                  tion 2261 of Title 18, Crimes and Criminal Procedure.
+(Pub. L. 103–322, title IV, § 40801, as added Pub. L.                 PART H—DOMESTIC VIOLENCE TASK FORCE
+106–386, div. B, title II, § 1209(a), Oct. 28, 2000, 114
+Stat. 1508; amended Pub. L. 113–4, title II,                       § 12431. Task force
+§ 204(a), Mar. 7, 2013, 127 Stat. 82; Pub. L. 117–103,
+div. W, title II, § 204(2), Mar. 15, 2022, 136 Stat.               (a) Establish
+857.)                                                                The Attorney General, in consultation with
+                                                                   national nonprofit, nongovernmental organiza-
+                       Editorial Notes                             tions whose primary expertise is in domestic vi-
+                                                                   olence, shall establish a task force to coordinate
+                        CODIFICATION                               research on domestic violence and to report to
+                                                                   Congress on any overlapping or duplication of
+  Section was formerly classified to section 14041 of
+Title 42, The Public Health and Welfare, prior to edi-
+                                                                   efforts on domestic violence issues. The task
+torial reclassification and renumbering as this section.           force shall be comprised of representatives from
+                                                                   all Federal agencies that fund such research.
+                        AMENDMENTS                                 (b) Uses of funds
+   2022—Pub. L. 117–103, § 204(2)(B), (C)(i), (ii), inserted         Funds appropriated under this section shall be
+introductory provisions, struck out subsec. (a) which              used to—
+defined ‘‘exploitation’’, ‘‘later life’’, and ‘‘neglect’’,
+                                                                       (1) develop a coordinated strategy to
+struck out subsec. (b) designation and heading and text
+of par. (1) of former subsec. (b) which authorized the               strengthen research focused on domestic vio-
+Attorney General to make grants to eligible entities,                lence education, prevention, and intervention
+and redesignated pars. (2) to (5) of former subsec. (b) as           strategies;
+pars. (1) to (4).                                                      (2) track and report all Federal research and
+   Pub. L. 117–103, § 204(2)(A), substituted ‘‘Training’’ for        expenditures on domestic violence; and
+‘‘Enhanced training’’ in section catchline.                            (3) identify gaps and duplication of efforts in
+   Par. (1). Pub. L. 117–103, § 204(2)(C)(iii)(I), struck out        domestic violence research and governmental
+‘‘, including domestic violence, dating violence, sexual
+                                                                     expenditures on domestic violence issues.
+assault, stalking, exploitation, and neglect’’ after
+‘‘life’’ wherever appearing.                                       (c) Report
+   Par. (1)(A)(i). Pub. L. 117–103, § 204(2)(C)(iii)(II)(aa),
+                                                                     The Task Force shall report to Congress annu-
+substituted ‘‘victim advocates, or’’ for ‘‘victim advo-
+cates, and’’ and ‘‘abuse in later life’’ for ‘‘elder abuse’’.      ally on its work under subsection (b).
+   Par. (1)(A)(iv). Pub. L. 117–103, § 204(2)(C)(iii)(II)(bb),     (d) Definition
+substituted ‘‘leaders, victim advocates, victim service
+providers, courts, and first responders to better serve
+                                                                     For purposes of this section, the term ‘‘domes-
+older victims’’ for ‘‘advocates, victim service providers,         tic violence’’ has the meaning given such term
+and courts to better serve victims of abuse in later               by section 10447 1 of this title.
+life’’.                                                            (e) Authorization of Appropriations
+   Par. (1)(B)(i). Pub. L. 117–103, § 204(2)(C)(iii)(III)(aa),
+substituted ‘‘community-based organizations, or other                There is authorized to be appropriated to
+professionals who may identify or respond to abuse in              carry out this section $500,000 for each of fiscal
+later life’’ for ‘‘or other community-based organiza-              years 2001 through 2004.
+tions in recognizing and addressing instances of abuse
+in later life’’.                                                   (Pub. L. 103–322, title IV, § 40901, as added Pub. L.
+   Par. (1)(B)(ii). Pub. L. 117–103, § 204(2)(C)(iii)(III)(bb),    106–386, div. B, title IV, § 1407, Oct. 28, 2000, 114
+which directed amendment of cl. (ii) by striking ‘‘elder           Stat. 1517.)
+abuse and’’, could not be executed because the words
+‘‘elder abuse and’’ did not appear in text.                                              Editorial Notes
+   Par. (2)(A)(iv). Pub. L. 117–103, § 204(2)(C)(iv)(I)(aa),
+struck out ‘‘with demonstrated experience in assisting                                REFERENCES IN TEXT
+individuals over 50 years of age’’ after ‘‘organization’’.           Section 10447 of this title, referred to in subsec. (d),
+   Par. (2)(A)(v). Pub. L. 117–103, § 204(2)(C)(iv)(I)(bb),        was subsequently repealed and a new section 10447 en-
+struck out ‘‘with demonstrated experience in address-              acted which does not define ‘‘domestic violence’’. How-
+ing domestic violence, dating violence, sexual assault,            ever, such term is defined in section 12291 of this title.
+and stalking’’ after ‘‘provider’’.
+   Par. (2)(B)(iv). Pub. L. 117–103, § 204(2)(C)(iv)(II), sub-                             CODIFICATION
+stituted ‘‘50 years of age or over.’’ for ‘‘in later life;’’.
+                                                                     Section was formerly classified to section 14042 of
+   Par. (4). Pub. L. 117–103, § 204(2)(C)(v), substituted
+                                                                   Title 42, The Public Health and Welfare, prior to edi-
+‘‘$10,000,000’’ for ‘‘$9,000,000’’ and ‘‘2023 through 2027’’ for
+                                                                   torial reclassification and renumbering as this section.
+‘‘2014 through 2018’’.
+   2013—Pub. L. 113–4 amended section generally. Prior
+to amendment, section defined terms for this part.                  1 See References in Text note below.
+§ 12441                TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                        Page 368
+
+PART I—PRIVACY PROTECTIONS FOR VICTIMS OF                      (2) nonprofit nongovernmental victim advo-
+ DOMESTIC VIOLENCE, DATING VIOLENCE, SEX-                    cacy organizations having expertise regarding
+ UAL VIOLENCE, AND STALKING                                  confidentiality, privacy, and information tech-
+                                                             nology and how these issues are likely to im-
+§ 12441. Grants to protect the privacy and con-              pact the safety of victims;
+    fidentiality of victims of domestic violence,              (3) States or State agencies;
+    dating violence, sexual assault, and stalking              (4) local governments or agencies;
+  The Attorney General, through the Director of                (5) Indian tribal governments or tribal orga-
+the Office on Violence Against Women, may                    nizations;
+award grants under this part to States, Indian                 (6) territorial governments, agencies, or or-
+tribes, territories, or local agencies or nonprofit,         ganizations; or
+nongovernmental organizations to ensure that                   (7) nonprofit nongovernmental victim advo-
+personally identifying information of adult,                 cacy organizations, including statewide do-
+youth, and child victims of domestic violence,               mestic violence and sexual assault coalitions.
+sexual violence, stalking, and dating violence             (Pub. L. 103–322, title IV, § 41103, as added Pub. L.
+shall not be released or disclosed to the det-             109–162, title I, § 107, Jan. 5, 2006, 119 Stat. 2983.)
+riment of such victimized persons.
+                                                                               Editorial Notes
+(Pub. L. 103–322, title IV, § 41101, as added Pub. L.
+109–162, title I, § 107, Jan. 5, 2006, 119 Stat. 2983.)                         CODIFICATION
+                                                             Section was formerly classified to section 14043b–2 of
+                    Editorial Notes                        Title 42, The Public Health and Welfare, prior to edi-
+                                                           torial reclassification and renumbering as this section.
+                     CODIFICATION
+  Section was formerly classified to section 14043b of     § 12444. Grant conditions
+Title 42, The Public Health and Welfare, prior to edi-       Applicants described in paragraph (1) and
+torial reclassification and renumbering as this section.
+                                                           paragraphs (3) through (6) shall demonstrate
+§ 12442. Purpose areas                                     that they have entered into a significant part-
+                                                           nership with a State, tribal, territorial, or local
+  Grants made under this part may be used—                 victim service or advocacy organization or con-
+    (1) to develop or improve protocols, proce-            dition in order to develop safe, confidential, and
+  dures, and policies for the purpose of pre-              effective protocols, procedures, policies, and sys-
+  venting the release of personally identifying            tems for protecting personally identifying infor-
+  information of victims (such as developing al-           mation of victims.
+  ternative identifiers);
+    (2) to defray the costs of modifying or im-            (Pub. L. 103–322, title IV, § 41104, as added Pub. L.
+  proving existing databases, registries, and vic-         109–162, title I, § 107, Jan. 5, 2006, 119 Stat. 2984.)
+  tim notification systems to ensure that per-
+                                                                               Editorial Notes
+  sonally identifying information of victims is
+  protected from release, unauthorized informa-                             REFERENCES IN TEXT
+  tion sharing and disclosure;                               Paragraph (1) and paragraphs (3) through (6), referred
+    (3) to develop confidential opt out systems            to in text, probably mean paragraphs (1) and (3)
+  that will enable victims of violence to make a           through (6) of section 12443 of this title.
+  single request to keep personally identifying                                 CODIFICATION
+  information out of multiple databases, victim
+                                                             Section was formerly classified to section 14043b–3 of
+  notification systems, and registries; or
+                                                           Title 42, The Public Health and Welfare, prior to edi-
+    (4) to develop safe uses of technology (such           torial reclassification and renumbering as this section.
+  as notice requirements regarding electronic
+  surveillance by government entities), to pro-            PART J—SERVICES, EDUCATION, PROTECTION AND
+  tect against abuses of technology (such as                 JUSTICE FOR YOUNG VICTIMS OF VIOLENCE
+  electronic or GPS stalking), or providing
+  training for law enforcement on high tech                § 12451. Creating hope through outreach, op-
+  electronic crimes of domestic violence, dating               tions, services, and education for children
+  violence, sexual assault, and stalking.                      and youth (‘‘CHOOSE Children & Youth’’)
+                                                           (a) Grants authorized
+(Pub. L. 103–322, title IV, § 41102, as added Pub. L.
+109–162, title I, § 107, Jan. 5, 2006, 119 Stat. 2983.)      The Attorney General, working in collabora-
+                                                           tion with the Secretary of Health and Human
+                    Editorial Notes                        Services and the Secretary of Education, shall
+                                                           award grants to enhance the safety of youth and
+                     CODIFICATION
+                                                           children who are victims of, or exposed to, do-
+  Section was formerly classified to section 14043b–1 of   mestic violence, dating violence, sexual assault,
+Title 42, The Public Health and Welfare, prior to edi-     stalking, or sex trafficking and prevent future
+torial reclassification and renumbering as this section.   violence.
+§ 12443. Eligible entities                                 (b) Program purposes
+                                                             Funds provided under this section may be used
+  Entities eligible for grants under this part in-
+                                                           for the following program purpose areas:
+clude—
+    (1) jurisdictions or agencies within jurisdic-           (1) Services to advocate for and respond to
+  tions having authority or responsibility for                   youth
+  developing or maintaining public databases,                  To develop, expand, and strengthen victim-
+  registries or victim notification systems;                 centered interventions and services that tar-
+Page 369            TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                               § 12451
+
+ get youth, including youth in underserved pop-       sexual assault, stalking, or sex trafficking,
+ ulations, who are victims of domestic vio-           and procedures for handling the require-
+ lence, dating violence, sexual assault, stalk-       ments of court protective orders issued to or
+ ing, and sex trafficking. Services may include       against students;
+ victim services, counseling, advocacy, men-            (C) provide confidential support services
+ toring, educational support, transportation,         for student victims of domestic violence,
+ legal assistance in civil, criminal and adminis-     dating violence, sexual assault, stalking, or
+ trative matters, such as family law cases,           sex trafficking, such as a resource person
+ housing cases, child welfare proceedings, cam-       who is either on-site or on-call;
+ pus administrative proceedings, and civil pro-         (D) implement developmentally appro-
+ tection order proceedings, population-specific       priate educational programming for stu-
+ services, and other activities that support          dents regarding domestic violence, dating vi-
+ youth in finding safety, stability, and justice      olence, sexual assault, stalking, and sex
+ and in addressing the emotional, cognitive,          trafficking and the impact of such violence
+ and physical effects of trauma. Funds may be         on youth; or
+ used to—                                               (E) develop strategies to increase identi-
+     (A) assess and analyze currently available       fication, support, referrals, and prevention
+   services for youth victims of domestic vio-        programming for youth, including youth in
+   lence, dating violence, sexual assault, stalk-     underserved populations, who are at high
+   ing, and sex trafficking, determining rel-         risk of domestic violence, dating violence,
+   evant barriers to such services in a par-          sexual assault, stalking, or sex trafficking.
+   ticular locality, and developing a commu-        (3) Children exposed to violence and abuse
+   nity protocol to address such problems col-        To develop, maintain, or enhance programs
+   laboratively;                                    designed to prevent future incidents of domes-
+     (B) develop and implement policies, prac-      tic violence, dating violence, sexual assault,
+   tices, and procedures to effectively respond     and stalking by preventing, reducing and re-
+   to domestic violence, dating violence, sexual    sponding to children’s exposure to violence in
+   assault, stalking, or sex trafficking against    the home, including by—
+   youth;                                               (A) providing services for children exposed
+     (C) provide technical assistance and train-      to domestic violence, dating violence, sexual
+   ing to enhance the ability of school per-          assault or stalking, including—
+   sonnel, victim service providers, child pro-           (i) direct counseling or advocacy; and
+   tective service workers, staff of law enforce-         (ii) support for the non-abusing parent;
+   ment agencies, prosecutors, court personnel,         and
+   individuals who work in after school pro-
+   grams, medical personnel, social workers,            (B) training and coordination for edu-
+   mental health personnel, and workers in            cational, after-school, and childcare pro-
+   other programs that serve children and             grams on how to—
+   youth to improve their ability to appro-               (i) safely and confidentially identity
+   priately respond to the needs of children and        children and families experiencing domes-
+   youth who are victims of domestic violence,          tic violence, dating violence, sexual as-
+   dating violence, sexual assault, stalking,           sault, or stalking; and
+   and sex trafficking, and to properly refer             (ii) properly refer children exposed and
+   such children, youth, and their families to          their families to services and violence pre-
+   appropriate services;                                vention programs.
+     (D) clarify State or local mandatory re-       (4) Teen dating violence awareness and pre-
+   porting policies and practices regarding             vention
+   peer-on-peer dating violence, sexual assault,      To develop, maintain, or enhance programs
+   stalking, and sex trafficking; or                that change attitudes and behaviors around
+     (E) develop, enlarge, or strengthen cul-       the acceptability of domestic violence, dating
+   turally specific victim services and re-         violence, sexual assault, and stalking and pro-
+   sponses related to, and prevention of, female    vide education and skills training to young in-
+   genital mutilation or cutting.                   dividuals and individuals who influence young
+ (2) Supporting youth through education and         individuals, which—
+     protection                                         (A) may include the use evidenced-based,
+   To enable middle schools, high schools, and        evidence-informed, or innovative strategies
+ institutions of higher education to—                 and practices focused on youth; and
+     (A) provide training to school personnel,          (B) shall include—
+   including healthcare providers and security            (i) age and developmentally-appropriate
+   personnel, on the needs of students who are          education on—
+   victims of domestic violence, dating vio-                 (I) domestic violence;
+   lence, sexual assault, stalking, sex traf-                (II) dating violence;
+   ficking, or female genital mutilation or cut-             (III) sexual assault;
+   ting;                                                     (IV) stalking;
+     (B) develop and implement prevention and                (V) sexual coercion; and
+   intervention policies in middle and high                  (VI) healthy relationship skills, in
+   schools, including appropriate responses to,           school, in the community, or in health
+   and identification and referral procedures             care settings;
+   for, students who are experiencing or perpe-          (ii) community-based collaboration and
+   trating domestic violence, dating violence,         training for individuals with influence on
+§ 12451              TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                         Page 370
+
+       youth, such as parents, teachers, coaches,           (1) require and include appropriate referral
+       healthcare providers, faith leaders, older         systems for child and youth victims;
+       teens, and mentors;                                  (2) protect the confidentiality and privacy of
+         (iii) education and outreach to change           child and youth victim information, particu-
+       environmental factors contributing to do-          larly in the context of parental or third party
+       mestic violence, dating violence, sexual as-       involvement and consent, mandatory report-
+       sault, and stalking; and                           ing duties, and working with other service pro-
+         (iv) policy development targeted to pre-         viders all with priority on victim safety and
+       vention, including school-based policies           autonomy; and
+       and protocols.                                       (3) ensure that all individuals providing
+(c) Eligible applicants                                   intervention or prevention programming to
+  (1) In general                                          children or youth through a program funded
+    To be eligible to receive a grant under this          under this section have completed, or will
+  section, an entity shall be—                            complete, sufficient training in connection
+       (A) a victim service provider, tribal non-         with domestic violence, dating violence, sex-
+    profit organization, Native Hawaiian organi-          ual assault, stalking, and sex trafficking, in-
+    zation, urban Indian organization, or popu-           cluding training on working with youth vic-
+    lation-specific or community-based organi-            tims of domestic violence, dating violence,
+    zation with a demonstrated history of effec-          sexual assault, or sex trafficking in under-
+    tive work addressing the needs of youth who           served populations, if such youth are among
+    are, including runaway or homeless youth              those being served.
+    affected by, victims of domestic violence,         (e) Definitions and grant conditions
+    dating violence, sexual assault, stalking, or         In this section, the definitions and grant con-
+    sex trafficking;                                   ditions provided for in section 12291 of this title
+       (B) a victim service provider that is           shall apply.
+    partnered with an entity that has a dem-
+                                                       (f) Authorization of appropriations
+    onstrated history of effective work address-
+    ing the needs of youth; or                            There is authorized to be appropriated to
+       (C) a public, charter, tribal, or nationally    carry out this section, $30,000,000 for each of fis-
+    accredited private middle or high school, a        cal years 2023 through 2027.
+    school administered by the Department of           (g) Allotment
+    Defense under section 2164 of title 10 or sec-        (1) In general
+    tion 921 of title 20, a group of schools, a
+                                                            Not less than 50 percent of the total amount
+    school district, or an institution of higher
+                                                          appropriated under this section for each fiscal
+    education.
+                                                          year shall be used for the purposes described
+  (2) Partnerships                                        in subsection (b)(1).
+    (A) Education                                         (2) Indian tribes
+       To be eligible to receive a grant for the            Not less than 10 percent of the total amount
+    purposes described in subsection (b)(2), an           appropriated under this section for each fiscal
+    entity described in subparagraph (A) or (B)           year shall be made available for grants under
+    of paragraph (1) shall be partnered with a            the program authorized by section 10452 of this
+    public, charter, tribal, or nationally accred-        title. The requirements of this section shall
+    ited private middle or high school, a school          not apply to funds allocated under this para-
+    administered by the Department of Defense             graph.
+    under section 2164 of title 10 or section 921 of
+    title 20, a group of schools, a school district,   (h) Priority
+    or an institution of higher education.                The Attorney General shall prioritize grant
+    (B) Other partnerships                             applications under this section that coordinate
+                                                       with prevention programs in the community.
+       All applicants under this section are en-
+    couraged to work in partnership with orga-         (Pub. L. 103–322, title IV, § 41201, as added Pub. L.
+    nizations and agencies that work with the          113–4, title III, § 302, Mar. 7, 2013, 127 Stat. 84;
+    relevant population. Such entities may in-         amended Pub. L. 115–393, title I, § 102, Dec. 21,
+    clude—                                             2018, 132 Stat. 5266; Pub. L. 117–103, div. W, title
+         (i) a State, tribe, unit of local govern-     III, § 302, Mar. 15, 2022, 136 Stat. 865.)
+       ment, or territory;
+         (ii) a population specific or community-                           Editorial Notes
+       based organization;                                                    CODIFICATION
+         (iii) batterer intervention programs or
+       sex offender treatment programs with spe-         Section was formerly classified to section 14043c of
+                                                       Title 42, The Public Health and Welfare, prior to edi-
+       cialized knowledge and experience working
+                                                       torial reclassification and renumbering as this section.
+       with youth offenders; or
+         (iv) any other agencies or nonprofit, non-                        PRIOR PROVISIONS
+       governmental organizations with the ca-           A prior section 41201 of title IV of Pub. L. 103–322, as
+       pacity to provide effective assistance to       added Pub. L. 109–162, title III, § 303, Jan. 5, 2006, 119
+       the adult, youth, and child victims served      Stat. 3004, related to services to advocate for and re-
+       by the partnership.                             spond to youth, prior to repeal by Pub. L. 113–4, title
+(d) Grantee requirements                               III, § 302, Mar. 7, 2013, 127 Stat. 84.
+
+  Applicants for grants under this section shall                             AMENDMENTS
+establish and implement policies, practices, and         2022—Subsec. (b)(1). Pub. L. 117–103, § 302(1)(A)(i), sub-
+procedures that—                                       stituted ‘‘target youth, including youth in underserved
+Page 371                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                             § 12462
+
+populations, who are victims of domestic violence, dat-              (4) a study by the Nurse-Family Partnership
+ing violence, sexual assault, stalking, and sex traf-              found that children whose parents did not par-
+ficking’’ for ‘‘target youth who are victims of domestic           ticipate in home visitation programs that pro-
+violence, dating violence, sexual assault, stalking, and
+sex trafficking’’ in introductory provisions.
+                                                                   vided coaching in parenting skills, advice and
+   Subsec.      (b)(1)(D),    (E).    Pub.     L.     117–103,     support, were almost 5 times more likely to be
+§ 302(1)(A)(ii)–(iv), added subpars. (D) and (E).                  abused in their first 2 years of life;
+   Subsec. (b)(2)(A). Pub. L. 117–103, § 302(1)(B)(i), sub-          (5) a child’s exposure to domestic violence
+stituted ‘‘stalking, sex trafficking, or female genital            seems to pose the greatest independent risk
+mutilation or cutting’’ for ‘‘stalking, or sex traf-               for being the victim of any act of partner vio-
+ficking’’.                                                         lence as an adult;
+   Subsec. (b)(2)(C). Pub. L. 117–103, § 302(1)(B)(ii), in-
+serted ‘‘confidential’’ before ‘‘support services’’.
+                                                                     (6) children exposed to domestic violence are
+   Subsec. (b)(2)(E). Pub. L. 117–103, § 302(1)(B)(iii), in-       more likely to believe that using violence is
+serted ‘‘, including youth in underserved populations,’’           an effective means of getting one’s needs met
+after ‘‘programming for youth’’.                                   and managing conflict in close relationships;
+   Subsec. (b)(3), (4). Pub. L. 117–103, § 302(1)(C), added          (7) children exposed to abusive parenting,
+pars. (3) and (4).                                                 harsh or erratic discipline, or domestic vio-
+   Subsec. (c)(1)(A). Pub. L. 117–103, § 302(2)(A)(ii), which      lence are at increased risk for juvenile crime;
+directed insertion of ‘‘Native Hawaiian organization,
+urban Indian organization,’’ before ‘‘or population-spe-
+                                                                   and
+cific community-based organization’’, was executed by                (8) in a national survey of more than 6,000
+making the insertion before ‘‘or population-specific or            American families, 50 percent of men who fre-
+community-based organization’’, to reflect the prob-               quently assaulted their wives also frequently
+able intent of Congress.                                           abused their children.
+   Pub. L. 117–103, § 302(2)(A)(i), inserted ‘‘organization’’
+after ‘‘tribal nonprofit’’.                                      (Pub. L. 103–322, title IV, § 41301, as added Pub. L.
+   Subsec. (c)(2)(A). Pub. L. 117–103, § 302(2)(B), sub-         109–162, title IV, § 401, Jan. 5, 2006, 119 Stat. 3017.)
+stituted ‘‘subparagraph (A) or (B) of paragraph (1)’’ for
+‘‘paragraph (1)’’.                                                                   Editorial Notes
+   Subsec. (d)(3). Pub. L. 117–103, § 302(3), substituted
+‘‘, including training on working with youth victims of                               CODIFICATION
+domestic violence, dating violence, sexual assault, or
+sex trafficking in underserved populations, if such                Section was formerly classified to section 14043d of
+youth are among those being served.’’ for period at end.         Title 42, The Public Health and Welfare, prior to edi-
+   Subsec. (f). Pub. L. 117–103, § 302(4), which directed        torial reclassification and renumbering as this section.
+substitution of ‘‘$30,000,000 for each of fiscal years 2023
+through 2027’’ for ‘‘$15,000,000 for each of fiscal years        § 12462. Purpose
+2014 through 2018’’, was executed by making the substi-
+tution for ‘‘$15,000,000 for each of fiscal years 2019             The purpose of this part is to—
+through 2022’’, to reflect the probable intent of Con-               (1) prevent crimes involving violence against
+gress.                                                             women, children, and youth;
+   2018—Subsec. (f). Pub. L. 115–393 substituted ‘‘2019              (2) increase the resources and services avail-
+through 2022’’ for ‘‘2014 through 2018’’.
+                                                                   able to prevent violence against women, chil-
+       Statutory Notes and Related Subsidiaries
+                                                                   dren, and youth;
+                                                                     (3) reduce the impact of exposure to violence
+          EFFECTIVE DATE OF 2022 AMENDMENT                         in the lives of children and youth so that the
+  Amendment by Pub. L. 117–103 not effective until Oct.            intergenerational cycle of violence is inter-
+1 of the first fiscal year beginning after Mar. 15, 2022,          rupted;
+see section 4(a) of div. W of Pub. L. 117–103, set out as            (4) develop and implement education and
+an Effective Date note under section 6851 of Title 15,             services programs to prevent children in vul-
+Commerce and Trade.                                                nerable families from becoming victims or
+                     EFFECTIVE DATE                                perpetrators of domestic violence, dating vio-
+  Section not effective until the beginning of the fiscal          lence, sexual assault, or stalking;
+year following Mar. 7, 2013, see section 4 of Pub. L.                (5) promote programs to ensure that chil-
+113–4, set out as an Effective Date of 2013 Amendment              dren and youth receive the assistance they
+note under section 2261 of Title 18, Crimes and Criminal           need to end the cycle of violence and develop
+Procedure.                                                         mutually respectful, nonviolent relationships;
+                                                                   and
+PART K—STRENGTHENING AMERICA’S FAMILIES
+                                                                     (6) encourage collaboration among commu-
+ BY PREVENTING VIOLENCE AGAINST WOMEN
+                                                                   nity-based organizations and governmental
+ AND CHILDREN
+                                                                   agencies serving children and youth, providers
+§ 12461. Findings                                                  of health and mental health services and pro-
+                                                                   viders of domestic violence, dating violence,
+  Congress finds that—                                             sexual assault, and stalking victim services to
+    (1) the former United States Advisory Board                    prevent violence against women and children.
+  on Child Abuse suggests that domestic vio-
+  lence may be the single major precursor to                     (Pub. L. 103–322, title IV, § 41302, as added Pub. L.
+  child abuse and neglect fatalities in this coun-               109–162, title IV, § 401, Jan. 5, 2006, 119 Stat. 3018.)
+  try;
+    (2) studies suggest that as many as 10,000,000                                   Editorial Notes
+  children witness domestic violence every year;
+    (3) studies suggest that among children and                                       CODIFICATION
+  teenagers, recent exposure to violence in the                    Section was formerly classified to section 14043d–1 of
+  home was a significant factor in predicting a                  Title 42, The Public Health and Welfare, prior to edi-
+  child’s violent behavior;                                      torial reclassification and renumbering as this section.
+§ 12463              TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                  Page 372
+
+§ 12463. Saving money and reducing tragedies              ing providers that target the special needs of
+    through prevention (SMART Prevention)                 children and youth.
+(a) Grants authorized                                       (F) Any other agencies, population-specific
+                                                          organizations, or nonprofit, nongovern-
+  The Attorney General, in consultation with              mental organizations with the capacity to
+the Secretary of Health and Human Services and            provide necessary expertise to meet the
+the Secretary of Education, is authorized to              goals of the program; or
+award grants for the purpose of preventing do-
+mestic violence, dating violence, sexual assault,          (3) a public, charter, tribal, or nationally ac-
+and stalking by focusing on men and youth as             credited private middle or high school, a
+leaders and influencers of social norms.                 school administered by the Department of De-
+(b) Use of funds                                         fense under section 2164 of title 10 or section
+                                                         921 of title 20, a group of schools, a school dis-
+  Funds provided under this section may be used          trict, or an institution of higher education.
+to develop, maintain or enhance programs that
+                                                      (d) Grantee requirements
+work with men and youth to prevent domestic
+violence, dating violence, sexual assault, and           (1) In general
+stalking by helping men and youth to serve as              Applicants for grants under this section
+role models and social influencers of other men          shall prepare and submit to the Director an
+and youth at the individual, school, community           application at such time, in such manner, and
+or statewide levels.                                     containing such information as the Director
+(c) Eligible entities                                    may require that demonstrates the capacity of
+  To be eligible to receive a grant under this           the applicant and partnering organizations to
+section, an entity shall be—                             undertake the project.
+    (1) a victim service provider, community-            (2) Policies and procedures
+  based organization, tribe or tribal organiza-            Applicants under this section shall establish
+  tion, or other non-profit, nongovernmental or-         and implement policies, practices, and proce-
+  ganization that has a history of effective work        dures that—
+  preventing domestic violence, dating violence,              (A) include appropriate referral systems to
+  sexual assault, or stalking and expertise in the         direct any victim identified during program
+  specific area for which they are applying for            activities to highly qualified follow-up care;
+  funds; or                                                   (B) protect the confidentiality and privacy
+    (2) a partnership between a victim service             of adult and youth victim information, par-
+  provider, community-based organization, tribe            ticularly in the context of parental or third
+  or tribal organization, or other non-profit,             party involvement and consent, mandatory
+  nongovernmental organization that has a his-             reporting duties, and working with other
+  tory of effective work preventing domestic vi-           service providers;
+  olence, dating violence, sexual assault, or                 (C) ensure that all individuals providing
+  stalking and at least one of the following that          prevention programming through a program
+  has expertise in serving children exposed to             funded under this section have completed or

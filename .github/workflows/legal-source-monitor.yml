@@ -1,0 +1,58 @@
+name: Legal Source Monitor
+
+on:
+  schedule:
+    - cron: '27 12 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  compare-official-sources:
+    name: Compare approved hashes with official sources
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check official sources
+        id: monitor
+        continue-on-error: true
+        run: |
+          python legal/scripts/check_official_sources.py \
+            --json-report legal-source-monitor.json \
+            --markdown-report legal-source-monitor.md
+
+      - name: Upload monitor report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: legal-source-monitor-${{ github.run_id }}
+          path: |
+            legal-source-monitor.json
+            legal-source-monitor.md
+          retention-days: 90
+
+      - name: Open or update legal-review issue
+        if: steps.monitor.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title='LEGAL REVIEW REQUIRED: official legal sources changed or could not be verified'
+          existing="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file legal-source-monitor.md
+          else
+            gh issue create --title "$title" --body-file legal-source-monitor.md
+          fi
+
+      - name: Fail after preserving report
+        if: steps.monitor.outcome == 'failure'
+        run: exit 1

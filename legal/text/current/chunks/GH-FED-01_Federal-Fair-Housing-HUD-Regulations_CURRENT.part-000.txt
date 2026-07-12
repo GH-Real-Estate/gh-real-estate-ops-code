@@ -1,0 +1,1859 @@
+GH Real Estate approved legal-source text chunk — GH-FED-01_Federal-Fair-Housing-HUD-Regulations_CURRENT.part-000.txt — verified through 2026-07-12. Official source text controls.
+
+                                         GH REAL ESTATE • LEGAL SOURCE PACK
+
+
+
+
+          FEDERAL FAIR HOUSING & HUD
+                 REGULATIONS
+
+
+                      Binding law • occupancy • accommodations • current guidance status
+
+
+
+
+  PROPERTY                    9401 Nieman Road, Overland Park, Kansas 66214
+
+  CURRENT THROUGH             July 12, 2026
+
+  ACTIVE-SET STATUS           Current-law set; enacted addenda included; withdrawn sources excluded
+
+  SCOPE                       Federal Fair Housing Act, implementing regulations, poster/occupancy materials, and dated 2025–2026 HUD
+                              guidance-status documents
+
+
+
+
+    Use rule: Retrieve the controlling text, confirm the trigger and currentness, then obtain Kansas counsel review before
+    enforcement, filing, denial, accommodation decisions, or material lease changes.
+
+ This compilation is a research and retrieval aid, not legal advice, a title opinion, or a substitute for official current law. Summaries and
+ applicability labels are navigation aids; the appended official text controls.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                             Front matter page 1
+ How this bundle should be used
+  LABEL                  HOW TO USE IT
+
+  BINDING                Statute, regulation, ordinance, or controlling court decision. Confirm effective date and later history.
+
+  CONDITIONAL            Binding only when a stated trigger exists—such as HUD assistance, a federally backed mortgage, or third-party
+                         management.
+
+  GUIDANCE               Agency or court-administration material. Useful operationally but not itself controlling law unless incorporated.
+
+  PROPOSED               Monitoring only. Do not apply as current law.
+
+  WITHDRAWN              Excluded from this active set. Keep only in a separately labeled historical archive.
+
+
+ • Apply the full FHA conservatively unless Kansas counsel confirms a specific exemption on verified facts.
+
+ • A two-person-per-bedroom occupancy standard is a rebuttable starting point, not a hard federal maximum.
+
+ • The May 22, 2026 assistance-animal memo is guidance; statute, regulation, precedent and private-action rights
+ remain controlling.
+
+ • Withdrawn HUD guidance is not reproduced as current authority; the official withdrawal/status document is
+ retained.
+
+    Text-integrity rule: appended official PDFs are preserved as retrieved. The front matter adds navigation only and does
+    not alter statutory, regulatory, judicial, or municipal wording.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                           Front matter page 2
+ Source inventory and page map
+ 11 official source documents are included. Page numbers below refer to the finished merged PDF. Use the PDF
+ bookmarks or search the exact citation.
+
+  #     CITATION / SOURCE                    TITLE                                                                                          PAGES
+
+  1     42 U.S.C. §§ 3601–3631 (2024 U.S.    Fair Housing Act — Title VIII, Civil Rights Act of 1968                                        4–29
+        Code edition)
+
+  2     42 U.S.C. chapter 21, subchapter I   Civil Rights statutes, including 42 U.S.C. §§ 1981 and 1982                                    30–41
+        (2024 U.S. Code edition)
+
+  3     24 C.F.R. part 100                   Discriminatory Conduct Under the Fair Housing Act                                              42–62
+
+  4     24 C.F.R. part 103                   Fair Housing — Complaint Processing                                                            63–72
+
+  5     24 C.F.R. part 110                   Fair Housing Poster                                                                            73–75
+
+  6     91 Fed. Reg. 17291–17292 (Apr. 6,    Notification of Withdrawal of Fair Housing and Equal Opportunity Guidance Documents            76–77
+        2026)
+
+  7     HUD FHEO memorandum, May 22,         Enforcement Guidance — Assessing Requests for the Use of an Animal as a Reasonable             78–103
+        2026                                 Accommodation Under the Fair Housing Act
+
+  8     63 Fed. Reg. 70256, 70256–70257      Fair Housing Enforcement Policy: Occupancy Cases (Keating Memorandum)                          104–105
+        (Dec. 18, 1998), reproducing Mar.
+        20, 1991 memorandum
+
+  9     HUD/DOJ Joint Statement (May 17,     Joint Statement of HUD and DOJ: Reasonable Accommodations Under the Fair Housing Act           106–120
+        2004)
+
+  10    HUD/DOJ Joint Statement (Mar. 5,     Joint Statement of HUD and DOJ: Reasonable Modifications Under the Fair Housing Act            121–138
+        2008)
+
+  11    24 C.F.R. part 180                   Consolidated HUD Fair Housing Act Administrative Proceedings                                   139–156
+
+
+ Source URLs, retrieval date, authority/applicability labels, and SHA-256 fingerprints are recorded in the companion Markdown manifest.
+
+
+
+
+GH Legal Source Pack • Current through July 12, 2026                                                                                Front matter page 3
+§ 3550                       TITLE 42—THE PUBLIC HEALTH AND WELFARE                                              Page 5946
+
+personnel to conduct investigations, establish guide-           Sec.
+lines and timeframes for such investigations, prescribe         3614.       Enforcement by Attorney General.
+requirements for final reports on violations, and pre-          3614–1.     Incentives for self-testing and self-correction.
+scribe procedures for conducting investigations of, and         3614a.      Rules to implement subchapter.
+reporting on, Anti-Deficiency Act violations, was not           3615.       Effect on State laws.
+repeated in subsequent appropriation acts. Similar pro-         3616.       Cooperation with State and local agencies ad-
+visions were contained in the following prior appropria-                      ministering fair housing laws; utilization of
+tion acts:                                                                    services and personnel; reimbursement;
+  Pub. L. 108–447, div. I, title II, Dec. 8, 2004, 118 Stat.                  written agreements; publication in Federal
+3312.                                                                         Register.
+  Pub. L. 108–199, div. G, title II, Jan. 23, 2004, 118 Stat.   3616a.      Fair housing initiatives program.
+389.                                                            3617.       Interference, coercion, or intimidation.
+  Pub. L. 108–7, div. K, title II, Feb. 20, 2003, 117 Stat.     3618.       Authorization of appropriations.
+499, as amended by Pub. L. 108–199, div. G, title II, Jan.      3619.       Separability.
+23, 2004, 118 Stat. 389.                                        SUBCHAPTER II—PREVENTION OF INTIMIDATION
+§ 3550. Audit of Department financial statements                3631.       Violations; penalties.
+
+  For this fiscal year and each fiscal year there-                          SUBCHAPTER I—GENERALLY
+after, subject to appropriations for that purpose,
+the Office of Inspector General shall procure and               § 3601. Declaration of policy
+rely upon the services of an independent exter-                   It is the policy of the United States to provide,
+nal auditor(s) to audit the financial statements                within constitutional limitations, for fair hous-
+of the Department of Housing and Urban Devel-                   ing throughout the United States.
+opment, including the consolidated financial
+statement and the financial statements of the                   (Pub. L. 90–284, title VIII, § 801, Apr. 11, 1968, 82
+Federal Housing Administration and the Gov-                     Stat. 81.)
+ernment National Mortgage Association.
+                                                                          Statutory Notes and Related Subsidiaries
+(Pub. L. 116–260, div. L, title II, Dec. 27, 2020, 134
+Stat. 1891.)                                                                EFFECTIVE DATE OF 1988 AMENDMENT
+                                                                  Pub. L. 100–430, § 13(a), Sept. 13, 1988, 102 Stat. 1636,
+                      Editorial Notes                           provided that: ‘‘This Act and the amendments made by
+                                                                this Act [see Short Title of 1988 Amendment note
+                   REFERENCES IN TEXT                           below] shall take effect on the 180th day beginning
+  This fiscal year, referred to in text, is fiscal year 2021.   after the date of the enactment of this Act [Sept. 13,
+                                                                1988].’’
+                       CODIFICATION
+                                                                              SHORT TITLE OF 1995 AMENDMENT
+  Section was enacted as part of the Department of
+Housing and Urban Development Appropriations Act,                 Pub. L. 104–76, § 1, Dec. 28, 1995, 109 Stat. 787, provided
+2021, and also as part of the Transportation, Housing           that: ‘‘This Act [amending section 3607 of this title]
+and Urban Development, and Related Agencies Appro-              may be cited as the ‘Housing for Older Persons Act of
+priations Act, 2021, and not as part of the Department          1995’.’’
+of Housing and Urban Development Act which com-
+                                                                              SHORT TITLE OF 1988 AMENDMENT
+prises this chapter.
+                                                                  Pub. L. 100–430, § 1, Sept. 13, 1988, 102 Stat. 1619, pro-
+         Statutory Notes and Related Subsidiaries               vided that: ‘‘This Act [enacting sections 3610 to 3614a of
+                                                                this title, amending sections 3602, 3604 to 3608, 3615 to
+                   SIMILAR PROVISIONS                           3619, and 3631 of this title and sections 2341 and 2342 of
+  Provisions similar to this section were contained in          Title 28, Judiciary and Judicial Procedure, repealing
+the following prior appropriation act:                          former sections 3610 to 3613 of this title, and enacting
+  Pub. L. 116–94, div. H, title II, Dec. 20, 2019, 133 Stat.    provisions set out as notes under this section and sec-
+2999.                                                           tion 3602 of this title] may be cited as the ‘Fair Housing
+                                                                Amendments Act of 1988’.’’
+           CHAPTER 45—FAIR HOUSING                                                      SHORT TITLE
+             SUBCHAPTER I—GENERALLY                               Section 1 of Pub. L. 90–284, as added by Pub. L.
+Sec.                                                            100–430, § 2, Sept. 13, 1988, 102 Stat. 1619, provided: ‘‘That
+3601.      Declaration of policy.                               this Act [enacting this chapter, sections 231 to 233, 245,
+3602.      Definitions.                                         2101, and 2102 of Title 18, Crimes and Criminal Proce-
+3603.      Effective dates of certain prohibitions.             dure, and sections 1301 to 1303, 1311, 1312, 1321 to 1326,
+3604.      Discrimination in the sale or rental of hous-        1331, and 1341 of Title 25, Indians, amending sections
+             ing and other prohibited practices.                1973j, 3533, 3535 of this title, and sections 241, 242, and
+3605.      Discrimination in residential real estate-re-        1153 of Title 18, enacting provisions set out as notes
+             lated transactions.                                under sections 231 and 245 of Title 18, and repealing pro-
+3606.      Discrimination in the provision of brokerage         visions set out as notes under section 1360 of Title 28,
+             services.                                          Judiciary and Judicial Procedure] may be cited as the
+3607.      Religious organization or private club exemp-        ‘Civil Rights Act of 1968’.’’
+             tion.                                                Section 800 of Pub. L. 90–284, title VIII, as added by
+3608.      Administration.                                      Pub. L. 100–430, § 4, Sept. 13, 1988, 102 Stat. 1619, provided
+3608a.     Collection of certain data.                          that: ‘‘This title [enacting this subchapter and amend-
+3609.      Education and conciliation; conferences and          ing sections 3533 and 3535 of this title] may be cited as
+             consultations; reports.                            the ‘Fair Housing Act’.’’
+3610.      Administrative     enforcement;    preliminary
+                                                                                       SEPARABILITY
+             matters.
+3611.      Subpoenas; giving of evidence.                         Pub. L. 100–430, § 14, Sept. 13, 1988, 102 Stat. 1636, pro-
+3612.      Enforcement by Secretary.                            vided that: ‘‘If any provision of this Act [see Short
+3613.      Enforcement by private persons.                      Title of 1988 Amendment note above] or the application
+Page 5947                    TITLE 42—THE PUBLIC HEALTH AND WELFARE                                                 § 3602
+
+thereof to any person or circumstances is held invalid,             (1) claims to have been injured by a discrimi-
+the remainder of the Act and the application of the pro-          natory housing practice; or
+vision to other persons not similarly situated or to                (2) believes that such person will be injured
+other circumstances shall not be affected thereby.’’
+                                                                  by a discriminatory housing practice that is
+ DISCLAIMER OF PREEMPTIVE EFFECT ON OTHER ACTS                    about to occur.
+  Pub. L. 100–430, § 12, Sept. 13, 1988, 102 Stat. 1636, pro-     (j) ‘‘Complainant’’ means the person (includ-
+vided that: ‘‘Nothing in the Fair Housing Act [this sub-        ing the Secretary) who files a complaint under
+chapter] as amended by this Act [see Short Title of 1988
+Amendment note above] limits any right, procedure, or
+                                                                section 3610 of this title.
+remedy available under the Constitution or any other              (k) ‘‘Familial status’’ means one or more indi-
+Act of the Congress not so amended.’’                           viduals (who have not attained the age of 18
+                                                                years) being domiciled with—
+                   INITIAL RULEMAKING
+                                                                     (1) a parent or another person having legal
+  Pub. L. 100–430, § 13(b), Sept. 13, 1988, 102 Stat. 1636,       custody of such individual or individuals; or
+provided that: ‘‘In consultation with other appropriate              (2) the designee of such parent or other per-
+Federal agencies, the Secretary shall, not later than             son having such custody, with the written per-
+the 180th day after the date of the enactment of this
+Act [Sept. 13, 1988], issue rules to implement title VIII
+                                                                  mission of such parent or other person.
+[this subchapter] as amended by this Act [see Short             The protections afforded against discrimination
+Title of 1988 Amendment note above]. The Secretary              on the basis of familial status shall apply to any
+shall give public notice and opportunity for comment            person who is pregnant or is in the process of se-
+with respect to such rules.’’
+                                                                curing legal custody of any individual who has
+    FEDERALLY PROTECTED ACTIVITIES; PENALTIES                   not attained the age of 18 years.
+  Penalties for violations respecting federally pro-              (l) ‘‘Conciliation’’ means the attempted resolu-
+tected activities not applicable to and not affecting ac-       tion of issues raised by a complaint, or by the
+tivities under this subchapter, see section 101(b) of Pub.      investigation of such complaint, through infor-
+L. 90–284, set out as a note under section 245 of Title 18,     mal negotiations involving the aggrieved per-
+Crimes and Criminal Procedure.                                  son, the respondent, and the Secretary.
+§ 3602. Definitions                                               (m) ‘‘Conciliation agreement’’ means a written
+                                                                agreement setting forth the resolution of the
+  As used in this subchapter—                                   issues in conciliation.
+  (a) ‘‘Secretary’’ means the Secretary of Hous-                  (n) ‘‘Respondent’’ means—
+ing and Urban Development.                                           (1) the person or other entity accused in a
+  (b) ‘‘Dwelling’’ means any building, structure,                 complaint of an unfair housing practice; and
+or portion thereof which is occupied as, or de-                      (2) any other person or entity identified in
+signed or intended for occupancy as, a residence                  the course of investigation and notified as re-
+by one or more families, and any vacant land                      quired with respect to respondents so identi-
+which is offered for sale or lease for the con-                   fied under section 3610(a) of this title.
+struction or location thereon of any such build-
+ing, structure, or portion thereof.                               (o) ‘‘Prevailing party’’ has the same meaning
+  (c) ‘‘Family’’ includes a single individual.                  as such term has in section 1988 of this title.
+  (d) ‘‘Person’’ includes one or more individuals,              (Pub. L. 90–284, title VIII, § 802, Apr. 11, 1968, 82
+corporations, partnerships, associations, labor                 Stat. 81; Pub. L. 95–598, title III, § 331, Nov. 6,
+organizations, legal representatives, mutual                    1978, 92 Stat. 2679; Pub. L. 100–430, § 5, Sept. 13,
+companies, joint-stock companies, trusts, unin-                 1988, 102 Stat. 1619.)
+corporated organizations, trustees, trustees in
+cases under title 11, receivers, and fiduciaries.                                    Editorial Notes
+  (e) ‘‘To rent’’ includes to lease, to sublease, to
+let and otherwise to grant for a consideration                                        AMENDMENTS
+the right to occupy premises not owned by the                      1988—Subsec. (f). Pub. L. 100–430, § 5(a), substituted
+occupant.                                                       ‘‘3606, or 3617’’ for ‘‘or 3606’’.
+  (f) ‘‘Discriminatory housing practice’’ means                    Subsecs. (h) to (o). Pub. L. 100–430, § 5(b), added sub-
+an act that is unlawful under section 3604, 3605,               secs. (h) to (o).
+3606, or 3617 of this title.                                       1978—Subsec. (d). Pub. L. 95–598 substituted ‘‘trustees
+  (g) ‘‘State’’ means any of the several States,                in cases under title 11’’ for ‘‘trustees in bankruptcy’’.
+the District of Columbia, the Commonwealth of
+                                                                       Statutory Notes and Related Subsidiaries
+Puerto Rico, or any of the territories and pos-
+sessions of the United States.                                           EFFECTIVE DATE OF 1988 AMENDMENT
+  (h) ‘‘Handicap’’ means, with respect to a per-                  Amendment by Pub. L. 100–430 effective on 180th day
+son—                                                            beginning after Sept. 13, 1988, see section 13(a) of Pub.
+     (1) a physical or mental impairment which                  L. 100–430, set out as a note under section 3601 of this
+  substantially limits one or more of such per-                 title.
+  son’s major life activities,
+     (2) a record of having such an impairment,                          EFFECTIVE DATE OF 1978 AMENDMENT
+  or                                                              Amendment by Pub. L. 95–598 effective Oct. 1, 1979,
+     (3) being regarded as having such an impair-               see section 402(a) of Pub. L. 95–598, set out as an Effec-
+  ment,                                                         tive Date note preceding section 101 of Title 11, Bank-
+                                                                ruptcy.
+but such term does not include current, illegal
+use of or addiction to a controlled substance (as                                    TRANSVESTISM
+defined in section 802 of title 21).                              Section 6(b)(3) of Pub. L. 100–430 provided that: ‘‘For
+  (i) ‘‘Aggrieved person’’ includes any person                  the purposes of this Act [see Short Title of 1988 Amend-
+who—                                                            ment note set out under section 3601 of this title] as
+§ 3603                      TITLE 42—THE PUBLIC HEALTH AND WELFARE                                     Page 5948
+
+well as chapter 16 of title 29 of the United States Code       rented (A) without the use in any manner of
+[29 U.S.C. 701 et seq.], neither the term ‘individual with     the sales or rental facilities or the sales or
+handicaps’ nor the term ‘handicap’ shall apply to an in-       rental services of any real estate broker,
+dividual solely because that individual is a transves-
+                                                               agent, or salesman, or of such facilities or
+tite.’’
+                                                               services of any person in the business of sell-
+§ 3603. Effective dates of certain prohibitions                ing or renting dwellings, or of any employee or
+                                                               agent of any such broker, agent, salesman, or
+(a) Application to certain described dwellings
+                                                               person and (B) without the publication, post-
+  Subject to the provisions of subsection (b) and              ing or mailing, after notice, of any advertise-
+section 3607 of this title, the prohibitions                   ment or written notice in violation of section
+against discrimination in the sale or rental of                3604(c) of this title; but nothing in this proviso
+housing set forth in section 3604 of this title                shall prohibit the use of attorneys, escrow
+shall apply:                                                   agents, abstractors, title companies, and other
+  (1) Upon enactment of this subchapter, to—                   such professional assistance as necessary to
+    (A) dwellings owned or operated by the Fed-                perfect or transfer the title, or
+  eral Government;                                               (2) rooms or units in dwellings containing
+    (B) dwellings provided in whole or in part                 living quarters occupied or intended to be oc-
+  with the aid of loans, advances, grants, or con-             cupied by no more than four families living
+  tributions made by the Federal Government,                   independently of each other, if the owner actu-
+  under agreements entered into after November                 ally maintains and occupies one of such living
+  20, 1962, unless payment due thereon has been                quarters as his residence.
+  made in full prior to April 11, 1968;                      (c) Business of selling or renting dwellings de-
+    (C) dwellings provided in whole or in part by                fined
+  loans insured, guaranteed, or otherwise se-                  For the purposes of subsection (b), a person
+  cured by the credit of the Federal Govern-                 shall be deemed to be in the business of selling
+  ment, under agreements entered into after No-              or renting dwellings if—
+  vember 20, 1962, unless payment thereon has                    (1) he has, within the preceding twelve
+  been made in full prior to April 11, 1968: Pro-              months, participated as principal in three or
+  vided, That nothing contained in subpara-                    more transactions involving the sale or rental
+  graphs (B) and (C) of this subsection shall be               of any dwelling or any interest therein, or
+  applicable to dwellings solely by virtue of the                (2) he has, within the preceding twelve
+  fact that they are subject to mortgages held                 months, participated as agent, other than in
+  by an FDIC or FSLIC institution; and                         the sale of his own personal residence in pro-
+    (D) dwellings provided by the development                  viding sales or rental facilities or sales or
+  or the redevelopment of real property pur-                   rental services in two or more transactions in-
+  chased, rented, or otherwise obtained from a                 volving the sale or rental of any dwelling or
+  State or local public agency receiving Federal               any interest therein, or
+  financial assistance for slum clearance or                     (3) he is the owner of any dwelling designed
+  urban renewal with respect to such real prop-                or intended for occupancy by, or occupied by,
+  erty under loan or grant contracts entered                   five or more families.
+  into after November 20, 1962.                              (Pub. L. 90–284, title VIII, § 803, Apr. 11, 1968, 82
+  (2) After December 31, 1968, to all dwellings              Stat. 82.)
+covered by paragraph (1) and to all other dwell-
+                                                             § 3604. Discrimination in the sale or rental of
+ings except as exempted by subsection (b).
+                                                                 housing and other prohibited practices
+(b) Exemptions
+                                                               As made applicable by section 3603 of this title
+  Nothing in section 3604 of this title (other
+                                                             and except as exempted by sections 3603(b) and
+than subsection (c)) shall apply to—
+                                                             3607 of this title, it shall be unlawful—
+    (1) any single-family house sold or rented by              (a) To refuse to sell or rent after the making
+  an owner: Provided, That such private indi-                of a bona fide offer, or to refuse to negotiate for
+  vidual owner does not own more than three                  the sale or rental of, or otherwise make unavail-
+  such single-family houses at any one time:                 able or deny, a dwelling to any person because of
+  Provided further, That in the case of the sale of          race, color, religion, sex, familial status, or na-
+  any such single-family house by a private indi-            tional origin.
+  vidual owner not residing in such house at the               (b) To discriminate against any person in the
+  time of such sale or who was not the most re-              terms, conditions, or privileges of sale or rental
+  cent resident of such house prior to such sale,            of a dwelling, or in the provision of services or
+  the exemption granted by this subsection shall             facilities in connection therewith, because of
+  apply only with respect to one such sale with-             race, color, religion, sex, familial status, or na-
+  in any twenty-four month period: Provided fur-             tional origin.
+  ther, That such bona fide private individual                 (c) To make, print, or publish, or cause to be
+  owner does not own any interest in, nor is                 made, printed, or published any notice, state-
+  there owned or reserved on his behalf, under               ment, or advertisement, with respect to the sale
+  any express or voluntary agreement, title to               or rental of a dwelling that indicates any pref-
+  or any right to all or a portion of the proceeds           erence, limitation, or discrimination based on
+  from the sale or rental of, more than three                race, color, religion, sex, handicap, familial sta-
+  such single-family houses at any one time:                 tus, or national origin, or an intention to make
+  Provided further, That after December 31, 1969,            any such preference, limitation, or discrimina-
+  the sale or rental of any such single-family               tion.
+  house shall be excepted from the application                 (d) To represent to any person because of race,
+  of this subchapter only if such house is sold or           color, religion, sex, handicap, familial status, or
+Page 5949                      TITLE 42—THE PUBLIC HEALTH AND WELFARE                                        § 3604
+
+national origin that any dwelling is not avail-                        (II) light switches, electrical outlets,
+able for inspection, sale, or rental when such                       thermostats, and other environmental con-
+dwelling is in fact so available.                                    trols in accessible locations;
+  (e) For profit, to induce or attempt to induce                       (III) reinforcements in bathroom walls to
+any person to sell or rent any dwelling by rep-                      allow later installation of grab bars; and
+resentations regarding the entry or prospective                        (IV) usable kitchens and bathrooms such
+entry into the neighborhood of a person or per-                      that an individual in a wheelchair can ma-
+sons of a particular race, color, religion, sex,                     neuver about the space.
+handicap, familial status, or national origin.                    (4) Compliance with the appropriate require-
+  (f)(1) To discriminate in the sale or rental, or              ments of the American National Standard for
+to otherwise make unavailable or deny, a dwell-                 buildings and facilities providing accessibility
+ing to any buyer or renter because of a handicap                and usability for physically handicapped people
+of—                                                             (commonly cited as ‘‘ANSI A117.1’’) suffices to
+     (A) that buyer or renter,1                                 satisfy the requirements of paragraph (3)(C)(iii).
+     (B) a person residing in or intending to re-                 (5)(A) If a State or unit of general local gov-
+  side in that dwelling after it is so sold, rented,            ernment has incorporated into its laws the re-
+  or made available; or                                         quirements set forth in paragraph (3)(C), compli-
+     (C) any person associated with that buyer or
+                                                                ance with such laws shall be deemed to satisfy
+  renter.
+                                                                the requirements of that paragraph.
+  (2) To discriminate against any person in the                   (B) A State or unit of general local govern-
+terms, conditions, or privileges of sale or rental              ment may review and approve newly con-
+of a dwelling, or in the provision of services or               structed covered multifamily dwellings for the
+facilities in connection with such dwelling, be-                purpose of making determinations as to whether
+cause of a handicap of—                                         the design and construction requirements of
+    (A) that person; or                                         paragraph (3)(C) are met.
+    (B) a person residing in or intending to re-                  (C) The Secretary shall encourage, but may
+  side in that dwelling after it is so sold, rented,            not require, States and units of local govern-
+  or made available; or                                         ment to include in their existing procedures for
+    (C) any person associated with that person.                 the review and approval of newly constructed
+  (3) For purposes of this subsection, discrimina-              covered multifamily dwellings, determinations
+tion includes—                                                  as to whether the design and construction of
+    (A) a refusal to permit, at the expense of the              such dwellings are consistent with paragraph
+  handicapped person, reasonable modifications                  (3)(C), and shall provide technical assistance to
+  of existing premises occupied or to be occupied               States and units of local government and other
+  by such person if such modifications may be                   persons to implement the requirements of para-
+  necessary to afford such person full enjoyment                graph (3)(C).
+  of the premises except that, in the case of a                   (D) Nothing in this subchapter shall be con-
+  rental, the landlord may where it is reason-                  strued to require the Secretary to review or ap-
+  able to do so condition permission for a modi-                prove the plans, designs or construction of all
+  fication on the renter agreeing to restore the                covered multifamily dwellings, to determine
+  interior of the premises to the condition that                whether the design and construction of such
+  existed before the modification, reasonable                   dwellings are consistent with the requirements
+  wear and tear excepted.2                                      of paragraph 3(C).
+    (B) a refusal to make reasonable accom-                       (6)(A) Nothing in paragraph (5) shall be con-
+  modations in rules, policies, practices, or serv-             strued to affect the authority and responsibility
+  ices, when such accommodations may be nec-                    of the Secretary or a State or local public agen-
+  essary to afford such person equal opportunity                cy certified pursuant to section 3610(f)(3) of this
+  to use and enjoy a dwelling; or                               title to receive and process complaints or other-
+    (C) in connection with the design and con-                  wise engage in enforcement activities under this
+  struction of covered multifamily dwellings for                subchapter.
+  first occupancy after the date that is 30                       (B) Determinations by a State or a unit of
+  months after September 13, 1988, a failure to                 general local government under paragraphs
+  design and construct those dwellings in such a                (5)(A) and (B) shall not be conclusive in enforce-
+  manner that—                                                  ment proceedings under this subchapter.
+      (i) the public use and common use portions                  (7) As used in this subsection, the term ‘‘cov-
+    of such dwellings are readily accessible to                 ered multifamily dwellings’’ means—
+    and usable by handicapped persons;                              (A) buildings consisting of 4 or more units if
+      (ii) all the doors designed to allow passage                such buildings have one or more elevators; and
+    into and within all premises within such                        (B) ground floor units in other buildings con-
+    dwellings are sufficiently wide to allow pas-                 sisting of 4 or more units.
+    sage by handicapped persons in wheelchairs;                   (8) Nothing in this subchapter shall be con-
+    and                                                         strued to invalidate or limit any law of a State
+      (iii) all premises within such dwellings                  or political subdivision of a State, or other ju-
+    contain the following features of adaptive                  risdiction in which this subchapter shall be ef-
+    design:                                                     fective, that requires dwellings to be designed
+         (I) an accessible route into and through               and constructed in a manner that affords handi-
+      the dwelling;                                             capped persons greater access than is required
+                                                                by this subchapter.
+ 1 So in original. The comma probably should be a semicolon.      (9) Nothing in this subsection requires that a
+ 2 So in original. The period probably should be a semicolon.   dwelling be made available to an individual
+§ 3605                         TITLE 42—THE PUBLIC HEALTH AND WELFARE                                              Page 5950
+
+whose tenancy would constitute a direct threat                     Aug. 22, 1974, 88 Stat. 729; Pub. L. 100–430, § 6(c),
+to the health or safety of other individuals or                    Sept. 13, 1988, 102 Stat. 1622.)
+whose tenancy would result in substantial phys-
+ical damage to the property of others.                                                  Editorial Notes
+
+(Pub. L. 90–284, title VIII, § 804, Apr. 11, 1968, 82                                    AMENDMENTS
+Stat. 83; Pub. L. 93–383, title VIII, § 808(b)(1),                   1988—Pub. L. 100–430 amended section generally. Prior
+Aug. 22, 1974, 88 Stat. 729; Pub. L. 100–430,                      to amendment, section read as follows: ‘‘After Decem-
+§§ 6(a)–(b)(2), (e), 15, Sept. 13, 1988, 102 Stat. 1620,           ber 31, 1968, it shall be unlawful for any bank, building
+1622, 1623, 1636.)                                                 and loan association, insurance company or other cor-
+                                                                   poration, association, firm or enterprise whose business
+                       Editorial Notes                             consists in whole or in part in the making of commer-
+                                                                   cial real estate loans, to deny a loan or other financial
+                        AMENDMENTS                                 assistance to a person applying therefor for the purpose
+   1988—Pub. L. 100–430, § 6(e), inserted ‘‘and other pro-         of purchasing, constructing, improving, repairing, or
+hibited practices’’ in section catchline.                          maintaining a dwelling, or to discriminate against him
+   Subsecs. (a), (b). Pub. L. 100–430, § 6(b)(2), inserted ‘‘fa-   in the fixing of the amount, interest rate, duration, or
+milial status,’’ after ‘‘sex,’’.                                   other terms or conditions of such loan or other finan-
+   Subsecs. (c) to (e). Pub. L. 100–430, § 6(b)(1), inserted       cial assistance, because of the race, color, religion, sex,
+‘‘handicap, familial status,’’ after ‘‘sex,’’.                     or national origin of such person or of any person asso-
+   Subsec. (f). Pub. L. 100–430, § 6(a), added subsec. (f).        ciated with him in connection with such loan or other
+   Subsec. (f)(3)(A). Pub. L. 100–430, § 15, which directed        financial assistance or the purposes of such loan or
+the substitution of ‘‘except that, in the case of a rental,        other financial assistance, or of the present or prospec-
+the landlord may where it is reasonable to do so condi-            tive owners, lessees, tenants, or occupants of the dwell-
+tion permission for a modification on the renter agree-            ing or dwellings in relation to which such loan or other
+ing to restore the interior of the premises to the condi-          financial assistance is to be made or given: Provided,
+tion that existed before the modification, reasonable              That nothing contained in this section shall impair the
+wear and tear excepted.’’ for the period at the end of             scope or effectiveness of the exception contained in sec-
+subpar. (A) was executed by making the substitution                tion 3603(b) of this title.’’
+for a semicolon as the probable intent of Congress be-               1974—Pub. L. 93–383 inserted ‘‘, sex’’ after ‘‘religion’’.
+cause subpar. (A) ended with a semicolon, not a period.
+   1974—Pub. L. 93–383 inserted ‘‘, sex’’ after ‘‘religion’’              Statutory Notes and Related Subsidiaries
+wherever appearing in cls. (a) to (e).
+                                                                            EFFECTIVE DATE OF 1988 AMENDMENT
+         Statutory Notes and Related Subsidiaries                    Amendment by Pub. L. 100–430 effective on 180th day
+           EFFECTIVE DATE OF 1988 AMENDMENT                        beginning after Sept. 13, 1988, see section 13(a) of Pub.
+                                                                   L. 100–430, set out as a note under section 3601 of this
+  Amendment by Pub. L. 100–430 effective on 180th day              title.
+beginning after Sept. 13, 1988, see section 13(a) of Pub.
+L. 100–430, set out as a note under section 3601 of this           § 3606. Discrimination in the provision of broker-
+title.                                                                 age services
+§ 3605. Discrimination in residential real estate-                   After December 31, 1968, it shall be unlawful to
+    related transactions                                           deny any person access to or membership or par-
+(a) In general                                                     ticipation in any multiple-listing service, real
+                                                                   estate brokers’ organization or other service, or-
+  It shall be unlawful for any person or other en-                 ganization, or facility relating to the business of
+tity whose business includes engaging in resi-                     selling or renting dwellings, or to discriminate
+dential real estate-related transactions to dis-                   against him in the terms or conditions of such
+criminate against any person in making avail-                      access, membership, or participation, on ac-
+able such a transaction, or in the terms or con-                   count of race, color, religion, sex, handicap, fa-
+ditions of such a transaction, because of race,                    milial status, or national origin.
+color, religion, sex, handicap, familial status, or
+national origin.                                                   (Pub. L. 90–284, title VIII, § 806, Apr. 11, 1968, 82
+(b) ‘‘Residential real estate-related transaction’’                Stat. 84; Pub. L. 93–383, title VIII, § 808(b)(3),
+     defined                                                       Aug. 22, 1974, 88 Stat. 729; Pub. L. 100–430,
+                                                                   § 6(b)(1), Sept. 13, 1988, 102 Stat. 1622.)
+  As used in this section, the term ‘‘residential
+real estate-related transaction’’ means any of                                          Editorial Notes
+the following:
+     (1) The making or purchasing of loans or                                            AMENDMENTS
+  providing other financial assistance—                              1988—Pub. L. 100–430 inserted ‘‘handicap, familial sta-
+       (A) for purchasing, constructing, improv-                   tus,’’ after ‘‘sex,’’.
+     ing, repairing, or maintaining a dwelling; or                   1974—Pub. L. 93–383 inserted ‘‘, sex’’ after ‘‘religion’’.
+       (B) secured by residential real estate.
+                                                                          Statutory Notes and Related Subsidiaries
+    (2) The selling, brokering, or appraising of
+  residential real property.                                                EFFECTIVE DATE OF 1988 AMENDMENT
+(c) Appraisal exemption                                              Amendment by Pub. L. 100–430 effective on 180th day
+                                                                   beginning after Sept. 13, 1988, see section 13(a) of Pub.
+  Nothing in this subchapter prohibits a person                    L. 100–430, set out as a note under section 3601 of this
+engaged in the business of furnishing appraisals                   title.
+of real property to take into consideration fac-
+tors other than race, color, religion, national or-                § 3607. Religious organization or private club ex-
+igin, sex, handicap, or familial status.                               emption
+(Pub. L. 90–284, title VIII, § 805, Apr. 11, 1968, 82                (a) Nothing in this subchapter shall prohibit a
+Stat. 83; Pub. L. 93–383, title VIII, § 808(b)(2),                 religious organization, association, or society,
+Page 5951                       TITLE 42—THE PUBLIC HEALTH AND WELFARE                                      § 3607
+
+or any nonprofit institution or organization op-       been convicted by any court of competent juris-
+erated, supervised or controlled by or in con-         diction of the illegal manufacture or distribu-
+junction with a religious organization, associa-       tion of a controlled substance as defined in sec-
+tion, or society, from limiting the sale, rental or    tion 802 of title 21.
+occupancy of dwellings which it owns or oper-            (5)(A) A person shall not be held personally
+ates for other than a commercial purpose to per-       liable for monetary damages for a violation of
+sons of the same religion, or from giving pref-        this subchapter if such person reasonably relied,
+erence to such persons, unless membership in           in good faith, on the application of the exemp-
+such religion is restricted on account of race,        tion under this subsection relating to housing
+color, or national origin. Nor shall anything in       for older persons.
+this subchapter prohibit a private club not in           (B) For the purposes of this paragraph, a per-
+fact open to the public, which as an incident to       son may only show good faith reliance on the
+its primary purpose or purposes provides lodg-         application of the exemption by showing that—
+ings which it owns or operates for other than a            (i) such person has no actual knowledge that
+commercial purpose, from limiting the rental or          the facility or community is not, or will not
+occupancy of such lodgings to its members or             be, eligible for such exemption; and
+from giving preference to its members.                     (ii) the facility or community has stated for-
+  (b)(1) Nothing in this subchapter limits the ap-       mally, in writing, that the facility or commu-
+plicability of any reasonable local, State, or           nity complies with the requirements for such
+Federal restrictions regarding the maximum               exemption.
+number of occupants permitted to occupy a
+                                                       (Pub. L. 90–284, title VIII, § 807, Apr. 11, 1968, 82
+dwelling. Nor does any provision in this sub-
+                                                       Stat. 84; Pub. L. 100–430, § 6(d), Sept. 13, 1988, 102
+chapter regarding familial status apply with re-
+                                                       Stat. 1622; Pub. L. 104–76, §§ 2, 3, Dec. 28, 1995, 109
+spect to housing for older persons.
+                                                       Stat. 787.)
+  (2) As used in this section, ‘‘housing for older
+persons’’ means housing—                                                    Editorial Notes
+    (A) provided under any State or Federal pro-
+  gram that the Secretary determines is specifi-                             CODIFICATION
+  cally designed and operated to assist elderly          September 13, 1988, referred to in subsec. (b)(3)(A),
+  persons (as defined in the State or Federal          was in the original ‘‘the date of enactment of this Act’’,
+  program); or                                         which was translated as meaning the date of enactment
+    (B) intended for, and solely occupied by, per-     of Pub. L. 100–430, which enacted subsec. (b) of this sec-
+  sons 62 years of age or older; or                    tion, to reflect the probable intent of Congress.
+    (C) intended and operated for occupancy by                               AMENDMENTS
+  persons 55 years of age or older, and—
+      (i) at least 80 percent of the occupied units      1995—Subsec. (b)(2)(C). Pub. L. 104–76, § 2, amended
+                                                       subpar. (C) generally. Prior to amendment, subpar. (C)
+    are occupied by at least one person who is 55
+                                                       read as follows: ‘‘intended and operated for occupancy
+    years of age or older;                             by at least one person 55 years of age or older per unit.
+      (ii) the housing facility or community pub-      In determining whether housing qualifies as housing
+    lishes and adheres to policies and procedures      for older persons under this subsection, the Secretary
+    that demonstrate the intent required under         shall develop regulations which require at least the fol-
+    this subparagraph; and                             lowing factors:
+      (iii) the housing facility or community              ‘‘(i) the existence of significant facilities and serv-
+    complies with rules issued by the Secretary          ices specifically designed to meet the physical or so-
+    for verification of occupancy, which shall—          cial needs of older persons, or if the provision of such
+                                                         facilities and services is not practicable, that such
+         (I) provide for verification by reliable
+                                                         housing is necessary to provide important housing
+      surveys and affidavits; and                        opportunities for older persons; and
+         (II) include examples of the types of poli-       ‘‘(ii) that at least 80 percent of the units are occu-
+      cies and procedures relevant to a deter-           pied by at least one person 55 years of age or older per
+      mination of compliance with the require-           unit; and
+      ment of clause (ii). Such surveys and affi-          ‘‘(iii) the publication of, and adherence to, policies
+      davits shall be admissible in administra-          and procedures which demonstrate an intent by the
+      tive and judicial proceedings for the pur-         owner or manager to provide housing for persons 55
+      poses of such verification.                        years of age or older.’’
+                                                         Subsec. (b)(5). Pub. L. 104–76, § 3, added par. (5).
+ (3) Housing shall not fail to meet the require-         1988—Pub. L. 100–430 designated existing provisions as
+ments for housing for older persons by reason of:      subsec. (a) and added subsec. (b).
+   (A) persons residing in such housing as of
+ September 13, 1988, who do not meet the age                  Statutory Notes and Related Subsidiaries
+ requirements of subsections 1 (2)(B) or (C): Pro-              EFFECTIVE DATE OF 1988 AMENDMENT
+ vided, That new occupants of such housing
+ meet the age requirements of subsections 1              Amendment by Pub. L. 100–430 effective on 180th day
+                                                       beginning after Sept. 13, 1988, see section 13(a) of Pub.
+ (2)(B) or (C); or                                     L. 100–430, set out as a note under section 3601 of this
+   (B) unoccupied units: Provided, That such           title.
+ units are reserved for occupancy by persons
+ who meet the age requirements of sub-                                       REGULATIONS
+ sections 1 (2)(B) or (C).                               Pub. L. 102–550, title IX, § 919, Oct. 28, 1992, 106 Stat.
+  (4) Nothing in this subchapter prohibits con-        3883, provided that: ‘‘The Secretary of Housing and
+                                                       Urban Development shall, not later than 180 days after
+duct against a person because such person has          the date of the enactment of this Act [Oct. 28, 1992],
+                                                       make rules defining what are ‘significant facilities and
+ 1 So in original. Probably should be ‘‘paragraph’’.   services especially designed to meet the physical or so-
+§ 3608                      TITLE 42—THE PUBLIC HEALTH AND WELFARE                                       Page 5952
+
+cial needs of older persons’ required under section               stacles remaining to achieving equal hous-
+807(b)(2) of the Fair Housing Act [42 U.S.C. 3607(b)(2)] to       ing opportunity, and recommendations for
+meet the definition of the term ‘housing for older per-           further legislative or executive action; and
+sons’ in such section.’’                                            (B) containing tabulations of the number
+§ 3608. Administration                                            of instances (and the reasons therefor) in the
+                                                                  preceding year in which—
+(a) Authority and responsibility                                      (i) investigations are not completed as
+  The authority and responsibility for admin-                       required by section 3610(a)(1)(B) of this
+istering this Act shall be in the Secretary of                      title;
+Housing and Urban Development.                                        (ii) determinations are not made within
+                                                                    the time specified in section 3610(g) of this
+(b) Assistant Secretary                                             title; and
+  The Department of Housing and Urban Devel-                          (iii) hearings are not commenced or find-
+opment shall be provided an additional Assist-                      ings and conclusions are not made as re-
+ant Secretary.                                                      quired by section 3612(g) of this title;
+(c) Delegation of authority; appointment of ad-                    (3) cooperate with and render technical as-
+    ministrative law judges; location of concilia-               sistance to Federal, State, local, and other
+    tion meetings; administrative review                         public or private agencies, organizations, and
+  The Secretary may delegate any of his func-                    institutions which are formulating or carrying
+tions, duties, and powers to employees of the                    on programs to prevent or eliminate discrimi-
+Department of Housing and Urban Development                      natory housing practices;
+or to boards of such employees, including func-                    (4) cooperate with and render such technical
+tions, duties, and powers with respect to inves-                 and other assistance to the Community Rela-
+tigating, conciliating, hearing, determining, or-                tions Service as may be appropriate to further
+dering, certifying, reporting, or otherwise acting               its activities in preventing or eliminating dis-
+as to any work, business, or matter under this                   criminatory housing practices;
+subchapter. The person to whom such delega-                        (5) administer the programs and activities
+tions are made with respect to hearing func-                     relating to housing and urban development in
+tions, duties, and powers shall be appointed and                 a manner affirmatively to further the policies
+shall serve in the Department of Housing and                     of this subchapter; and
+Urban Development in compliance with sections                      (6) annually report to the Congress, and
+3105, 3344, 5372, and 7521 of title 5. Insofar as pos-           make available to the public, data on the race,
+sible, conciliation meetings shall be held in the                color, religion, sex, national origin, age, hand-
+cities or other localities where the discrimina-                 icap, and family characteristics of persons and
+tory housing practices allegedly occurred. The                   households who are applicants for, partici-
+Secretary shall by rule prescribe such rights of                 pants in, or beneficiaries or potential bene-
+appeal from the decisions of his administrative                  ficiaries of, programs administered by the De-
+law judges to other administrative law judges or                 partment to the extent such characteristics
+to other officers in the Department, to boards of                are within the coverage of the provisions of
+officers or to himself, as shall be appropriate                  law and Executive orders referred to in sub-
+and in accordance with law.                                      section (f) which apply to such programs (and
+                                                                 in order to develop the data to be included and
+(d) Cooperation of Secretary and executive de-                   made available to the public under this sub-
+    partments and agencies in administration of                  section, the Secretary shall, without regard to
+    housing and urban development programs                       any other provision of law, collect such infor-
+    and activities to further fair housing pur-                  mation relating to those characteristics as the
+    poses                                                        Secretary determines to be necessary or ap-
+  All executive departments and agencies shall                   propriate).
+administer their programs and activities relat-               (f) Provisions of law applicable to Department
+ing to housing and urban development (includ-                      programs
+ing any Federal agency having regulatory or su-                  The provisions of law and Executive orders to
+pervisory authority over financial institutions)              which subsection (e)(6) applies are—
+in a manner affirmatively to further the pur-                      (1) title VI of the Civil Rights Act of 1964 [42
+poses of this subchapter and shall cooperate                     U.S.C. 2000d et seq.];
+with the Secretary to further such purposes.                       (2) this subchapter;
+(e) Functions of Secretary                                         (3) section 794 of title 29;
+                                                                   (4) the Age Discrimination Act of 1975 [42
+  The Secretary of Housing and Urban Develop-
+                                                                 U.S.C. 6101 et seq.];
+ment shall—
+                                                                   (5) the Equal Credit Opportunity Act [15
+    (1) make studies with respect to the nature
+                                                                 U.S.C. 1691 et seq.];
+  and extent of discriminatory housing practices                   (6) section 1982 of this title;
+  in representative communities, urban, subur-                     (7) section 637(a) of title 15;
+  ban, and rural, throughout the United States;                    (8) section 1735f–5 of title 12;
+    (2) publish and disseminate reports, rec-                      (9) section 5309 of this title;
+  ommendations, and information derived from                       (10) section 1701u of title 12;
+  such studies, including an annual report to the                  (11) Executive orders 11063, 11246, 11625, 12250,
+  Congress—                                                      12259, and 12432; and
+       (A) specifying the nature and extent of                     (12) any other provision of law which the
+    progress made nationally in eliminating dis-                 Secretary specifies by publication in the Fed-
+    criminatory housing practices and fur-                       eral Register for the purpose of this sub-
+    thering the purposes of this subchapter, ob-                 section.
+Page 5953                     TITLE 42—THE PUBLIC HEALTH AND WELFARE                                                  § 3608
+
+(Pub. L. 90–284, title VIII, § 808, Apr. 11, 1968, 82            5361 of Title 5, Government Organization and Employ-
+Stat. 84; Pub. L. 95–251, § 3, Mar. 27, 1978, 92 Stat.           ees.
+184; Pub. L. 95–454, title VIII, § 801(a)(3)(J), Oct.                     TREATMENT OF OCCUPANCY STANDARDS
+13, 1978, 92 Stat. 1222; Pub. L. 100–430, § 7, Sept. 13,           Pub. L. 105–276, title V, § 589, Oct. 21, 1998, 112 Stat.
+1988, 102 Stat. 1623.)                                           2651, provided that:
+                                                                   ‘‘(a) ESTABLISHMENT OF POLICY.—Not later than 60
+                      Editorial Notes                            days after the date of the enactment of this Act [Oct.
+                                                                 21, 1998], the Secretary of Housing and Urban Develop-
+                   REFERENCES IN TEXT                            ment shall publish a notice in the Federal Register for
+   This Act, referred to in subsec. (a), means Pub. L.           effect that takes effect upon publication and provides
+90–284, Apr. 11, 1968, 82 Stat. 73, known as the Civil           that the specific and unmodified standards provided in
+Rights Act of 1968. For complete classification of this          the March 20, 1991, Memorandum from the General
+Act to the Code, see Tables.                                     Counsel of the Department of Housing and Urban De-
+   The Civil Rights Act of 1964, referred to in subsec.          velopment to all Regional Counsel shall be the policy
+(f)(1), is Pub. L. 88–352, July 2, 1964, 78 Stat. 241. Title     of the Department of Housing and Urban Development
+VI of the Civil Rights Act of 1964 is classified generally       with respect to complaints of discrimination under the
+to subchapter V (§ 2000d et seq.) of chapter 21 of this          Fair Housing Act (42 U.S.C. 3601 et seq.) on the basis of
+title. For complete classification of this Act to the            familial status which involve an occupancy standard
+Code, see Short Title note set out under section 2000a           established by a housing provider.
+of this title and Tables.                                          ‘‘(b) PROHIBITION OF NATIONAL STANDARD.—The Sec-
+   The Age Discrimination Act of 1975, referred to in            retary of Housing and Urban Development shall not di-
+subsec. (f)(4), is title III of Pub. L. 94–135, Nov. 28, 1975,   rectly or indirectly establish a national occupancy
+78 Stat. 728, which is classified generally to chapter 76        standard.’’
+(§ 6101 et seq.) of this title. For complete classification
+of this Act to the Code, see Short Title note set out                              Executive Documents
+under section 6101 of this title and Tables.                                    EXECUTIVE ORDER NO. 12259
+   The Equal Credit Opportunity Act, referred to in sub-
+sec. (f)(5), is title VII of Pub. L. 90–321, as added by Pub.      Ex. Ord. No. 12259, Dec. 31, 1980, 46 F.R. 1253, which re-
+L. 93–495, title V, § 503, Oct. 28, 1974, 88 Stat. 1521, which   lated to leadership and coordination by Secretary of
+is classified generally to subchapter IV (§ 1691 et seq.) of     Housing and Urban Development of fair housing pro-
+chapter 41 of Title 15, Commerce and Trade. For com-             grams and activities in Federal programs, was revoked
+plete classification of this Act to the Code, see Short          by Ex. Ord. No. 12892, § 6–607, Jan. 17, 1994, 59 F.R. 2939,
+Title note set out under section 1601 of Title 15 and Ta-        set out below.
+bles.                                                            EX. ORD. NO. 12892. LEADERSHIP AND COORDINATION OF
+   The Executive orders referred to in subsec. (f)(11) are        FAIR HOUSING IN FEDERAL PROGRAMS: AFFIRMATIVELY
+set out as notes under sections of the Code as follows:           FURTHERING FAIR HOUSING
+     Ex. Ord. No. 11063: 42 U.S.C. 1982,
+     Ex. Ord. No. 11246: 42 U.S.C. 2000e,                          Ex. Ord. No. 12892, Jan. 17, 1994, 59 F.R. 2939, provided:
+     Ex. Ord. No. 11625: 15 U.S.C. 631,                            By the authority vested in me as President by the
+     Ex. Ord. No. 12250: 42 U.S.C. 2000d–1, and                  Constitution and the laws of the United States of
+     Ex. Ord. No. 12432: 15 U.S.C. 631.                          America, and in accordance with the Fair Housing Act,
+   Ex. Ord. No. 12259, referred to in subsec. (f)(11), was       as amended (42 U.S.C. 3601 et seq.) (‘‘Act’’), in order to
+set out below, prior to revocation by Ex. Ord. No. 12892,        affirmatively further fair housing in all Federal pro-
+Jan. 17, 1994, 59 F.R. 2939, set out below.                      grams and activities relating to housing and urban de-
+                                                                 velopment throughout the United States, it is hereby
+                       CODIFICATION                              ordered as follows:
+                                                                   SECTION 1. Administration of Programs and Activities Re-
+  The second sentence of subsec. (b) of this section has         lating to Housing and Urban Development.
+been omitted as it amended sections 3533(a) and 3535(c)            1–101. Section 808(d) of the Act, as amended [42 U.S.C.
+of this title.                                                   3608(d)], provides that all executive departments and
+                                                                 agencies shall administer their programs and activities
+                       AMENDMENTS
+                                                                 relating to housing and urban development (including
+   1988—Subsec. (d). Pub. L. 100–430, § 7(a), inserted ‘‘(in-    any Federal agency having regulatory or supervisory
+cluding any Federal agency having regulatory or super-           authority over financial institutions) in a manner af-
+visory authority over financial institutions)’’ after            firmatively to further the purposes of the Act and shall
+‘‘urban development’’.                                           cooperate with the Secretary of Housing and Urban De-
+   Subsec. (e)(2). Pub. L. 100–430, § 7(b)(1)(A), inserted       velopment to further such purposes.
+provisions relating to annual report to Congress.                  1–102. As used in this order, the phrase ‘‘programs and
+   Subsec. (e)(6). Pub. L. 100–430, § 7(b)(1)(B)–(D), added      activities’’ shall include programs and activities oper-
+par. (6).                                                        ated, administered, or undertaken by the Federal Gov-
+   Subsec. (f). Pub. L. 100–430, § 7(b)(2), added subsec. (f).   ernment; grants; loans; contracts; insurance; guaran-
+   1978—Subsec. (c). Pub. L. 95–251 substituted ‘‘adminis-       tees; and Federal supervision or exercise of regulatory
+trative law judges’’ for ‘‘hearing examiners’’.                  responsibility (including regulatory or supervisory au-
+   Pub. L. 95–454 substituted ‘‘5372’’ for ‘‘5362’’.             thority over financial institutions).
+                                                                   SEC. 2. Responsibilities of Executive Agencies.
+                                                                   2–201. The primary authority and responsibility for
+       Statutory Notes and Related Subsidiaries
+                                                                 administering the programs and activities relating to
+          EFFECTIVE DATE OF 1988 AMENDMENT                       housing and urban development affirmatively to fur-
+                                                                 ther fair housing is vested in the Secretary of Housing
+  Amendment by Pub. L. 100–430 effective on 180th day            and Urban Development.
+beginning after Sept. 13, 1988, see section 13(a) of Pub.          2–202. The head of each executive agency is respon-
+L. 100–430, set out as a note under section 3601 of this         sible for ensuring that its programs and activities re-
+title.                                                           lating to housing and urban development are adminis-
+                                                                 tered in a manner affirmatively to further the goal of
+          EFFECTIVE DATE OF 1978 AMENDMENT
+                                                                 fair housing as required by section 808 of the Act [42
+  Amendment by Pub. L. 95–454 effective on first day of          U.S.C. 3608] and for cooperating with the Secretary of
+first applicable pay period beginning on or after 90th           Housing and Urban Development, who shall be respon-
+day after Oct. 13, 1978, see section 801(a)(4)(A) of Pub. L.     sible for exercising leadership in furthering the pur-
+95–454, set out as an Effective Date note under section          poses of the Act.
+§ 3608                      TITLE 42—THE PUBLIC HEALTH AND WELFARE                                          Page 5954
+
+   2–203. In carrying out the responsibilities in this        regarding programs and activities of executive agencies
+order, the head of each executive agency shall take ap-       related to housing and urban development that shall:
+propriate steps to require that all persons or other en-          (1) describe the functions, organization, and oper-
+tities who are applicants for, or participants in, or who       ations of the President’s Fair Housing Council;
+are supervised or regulated under, agency programs and            (2) describe the types of programs and activities de-
+activities relating to housing and urban development            fined in section 1–102 of this order that are subject to
+shall comply with this order.                                   the order;
+   2–204. Upon receipt of a complaint alleging facts that         (3) describe the responsibilities and obligations of
+may constitute a violation of the Act or upon receipt           executive agencies in ensuring that programs and ac-
+of information from a consumer compliance examina-              tivities are administered and executed in a manner
+tion or other information suggesting a violation of the         that furthers fair housing;
+Act, each executive agency shall forward such facts or            (4) describe the responsibilities and obligations of
+information to the Secretary of Housing and Urban De-           applicants, participants, and other persons and enti-
+velopment for processing under the Act. Where such              ties involved in housing and urban development pro-
+facts or information indicate a possible pattern or             grams and activities affirmatively to further the goal
+practice of discrimination in violation of the Act, they        of fair housing; and
+also shall be forwarded to the Attorney General. The              (5) describe a method to identify impediments in
+authority of the Federal depository institution regu-           programs or activities that restrict fair housing
+latory agencies to take appropriate action under their          choice and implement incentives that will maximize
+statutory authority remains unaffected.                         the achievement of practices that affirmatively fur-
+   SEC. 3. President’s Fair Housing Council.                    ther fair housing.
+   3–301. There is hereby established an advisory council       (b) coordinate executive agency implementation of
+entitled the ‘‘President’s Fair Housing Council’’             the requirements of this order and issue standards and
+(‘‘Council’’). The Council shall be chaired by the Sec-       procedures regarding:
+retary of Housing and Urban Development and shall                 (1) the administration of programs and activities
+consist of the Secretary of Health and Human Services,          relating to housing and urban development in a man-
+the Secretary of Transportation, the Secretary of Edu-          ner affirmatively to further fair housing; and
+cation, the Secretary of Labor, the Secretary of De-              (2) the cooperation of executive agencies in further-
+fense, the Secretary of Agriculture, the Secretary of           ance of the Secretary of Housing and Urban Develop-
+Veterans Affairs, the Secretary of the Treasury, the            ment’s authority and responsibility under the Act.
+Attorney General, the Secretary of the Interior, the            4–402. Within 180 days of the publication of final regu-
+Chair of the Federal Reserve, the Comptroller of the          lations by the Secretary of Housing and Urban Develop-
+Currency, the Director of the Office of Thrift Super-         ment under section 4–401 of this order, the head of each
+vision, the Chair of the Federal Deposit Insurance Cor-       executive agency shall publish proposed regulations
+poration, and such other officials of executive depart-       providing for the administration of programs and ac-
+ments and agencies as the President may, from time to         tivities relating to housing and urban development in a
+time, designate.                                              manner affirmatively to further fair housing, con-
+   3–302. The President’s Fair Housing Council shall re-      sistent with the Secretary of Housing and Urban Devel-
+view the design and delivery of Federal programs and          opment’s regulations, and with the standards and pro-
+activities to ensure that they support a coordinated          cedures issued pursuant to section 4–401(b) of this
+strategy to affirmatively further fair housing. The           order. As soon as practicable thereafter, each executive
+Council shall propose revisions to existing programs or       agency shall issue its final regulations. All executive
+activities, develop pilot programs and activities, and
+                                                              agencies shall formally submit all such proposed and
+propose new programs and activities to achieve its
+                                                              final regulations, and any related issuances or stand-
+goals.
+   3–303. In support of cooperative efforts among all ex-     ards, to the Secretary of Housing and Urban Develop-
+ecutive agencies, the Secretary of Housing and Urban          ment at least 30 days prior to public announcement.
+                                                                4–403. The Secretary of Housing and Urban Develop-
+Development shall:
+   (a) cooperate with, and render assistance to, the          ment shall review proposed regulations and standards
+heads of all executive agencies in the formulation of         prepared pursuant to section 4–402 of this order to en-
+policies and procedures to implement this order and to        sure conformity with the purposes of the Act and con-
+provide information and guidance on the affirmative           sistency among the operations of the various executive
+administration of programs and activities relating to         agencies and shall provide comments to executive
+housing and urban development and the protection of           agencies with respect thereto on a timely basis.
+the rights accorded by the Act; and                             4–404. In addition to promulgating the regulations de-
+   (b) develop memoranda of understanding and any nec-        scribed in section 4–401 of this order, the Secretary of
+essary implementing procedures among executive agen-          Housing and Urban Development shall promulgate reg-
+cies designed to provide for consultation and the co-         ulations describing the nature and scope of coverage
+ordination of Federal efforts to further fair housing         and the conduct prohibited, including mortgage lending
+through the affirmative administration of programs            discrimination and property insurance discrimination.
+and activities relating to housing and urban develop-           SEC. 5. Administrative Enforcement.
+ment, including coordination of the investigation of            5–501. The head of each executive agency shall be re-
+complaints or other information referred to the Sec-          sponsible for enforcement of this order and, unless pro-
+retary as required by section 2–204 of this order that        hibited by law, shall cooperate and provide records,
+would constitute a violation of the Act or, where rel-        data, and documentation in connection with any other
+evant, other Federal laws. Existing memoranda of un-          agency’s investigation of compliance with provisions of
+derstanding shall remain in effect until superseded.          this order.
+   3–304. In connection with carrying out functions             5–502. If any executive agency concludes that any per-
+under this order, the Secretary of Housing and Urban          son or entity (including any State or local public agen-
+Development is authorized to request from any execu-          cy) applying for or participating in, or supervised or
+tive agency such information and assistance as the Sec-       regulated under, a program or activity relating to
+retary deems necessary. Each agency shall furnish such        housing and urban development has not complied with
+information to the extent permitted by law and, to the        this order or any applicable rule, regulation, or proce-
+extent practicable, provide assistance to the Secretary.      dure issued or adopted pursuant to this order, it shall
+   SEC. 4. Specific Responsibilities.                         endeavor to end and remedy such violation by informal
+   4–401. In implementing the responsibilities under sec-     means, including conference, conciliation, and persua-
+tions 2–201, 2–202, 2–203, and section 3 of this order, the   sion. An executive agency need not pursue informal
+Secretary of Housing and Urban Development shall, to          resolution of matters where similar efforts made by an-
+the extent permitted by law:                                  other executive agency have been unsuccessful, except
+   (a) promulgate regulations in consultation with the        where otherwise required by law. In the event of failure
+Department of Justice and Federal banking agencies            of such informal means, the executive agency, in con-
+Page 5955                   TITLE 42—THE PUBLIC HEALTH AND WELFARE                                                § 3608
+
+formity with rules, regulations, procedures, or policies      status or national origin.’’ All executive agencies shall
+issued or adopted by it pursuant to section 4 of this         revise regulations, guidelines, and procedures issued
+order hereof, shall impose such sanctions as may be au-       pursuant to Part II of Executive Order No. 11063 to re-
+thorized by law. To the extent authorized by law, such        flect this amendment to coverage.
+sanctions may include:                                          (c) Section 102 of Executive Order No. 11063 is revised
+   (a) cancellation or termination of agreements or con-      by deleting the term ‘‘Housing and Home Finance
+tracts with such person, entity, or any State or local        Agency’’ and inserting in lieu thereof the term ‘‘De-
+public agency;                                                partment of Housing and Urban Development.’’
+   (b) refusal to extend any further aid under any pro-         6–605. Nothing in this order shall affect any require-
+gram or activity administered by it and affected by           ment imposed under the Equal Credit Opportunity Act
+this order until it is satisfied that the affected person,    (15 U.S.C. 1691 et seq.), the Home Mortgage Disclosure
+entity, or State or local public agency will comply with      Act (12 U.S.C. 2801 et seq.) or the Community Reinvest-
+the rules, regulations, and procedures issued or adopted      ment Act (12 U.S.C. 2901 et seq.).
+pursuant to this order;                                         6–606. Nothing in this order shall limit the authority
+   (c) refusal to grant supervisory or regulatory ap-         of the Federal banking agencies to carry out their re-
+proval to such person, entity, or State or local public       sponsibilities under current law or regulations.
+agency under any program or activity administered by            6–607. Executive Order No. 12259 is hereby revoked.
+it that is affected by this order or revoke such approval       SEC. 7. Report.
+if previously given; and                                        7–701. The Secretary of Housing and Urban Develop-
+   (d) any other action as may be appropriate under law.      ment shall submit to the President an annual report
+   5–503. Findings of any violation under section 5–502 of    commenting on the progress that the Department of
+this order shall be promptly reported by the head of          Housing and Urban Development and other executive
+each executive agency to the Secretary of Housing and         agencies have made in carrying out requirements and
+Urban Development and the Attorney General. The               responsibilities under this Executive order. The annual
+Secretary of Housing and Urban Development shall for-         report may be consolidated with the annual report on
+ward this information to all other executive agencies.        the state of fair housing required by section 808(e)(2) of
+   5–504. Any executive agency shall also consider invok-     the Act [42 U.S.C. 3608(e)(2)].
+ing appropriate sanctions against any person or entity
+                                                                                                  WILLIAM J. CLINTON.
+where any other executive department or agency has
+initiated action against that person or entity pursuant                FEDERAL LEADERSHIP OF FAIR HOUSING
+to section 5–502 of this order, where the Secretary of
+Housing and Urban Development has issued a charge               Memorandum of President of the United States, Jan.
+against such person or entity that has not been re-           17, 1994, 59 F.R. 8513, provided:
+solved, or where the Attorney General has filed a civil         Memorandum for the Heads of Executive Depart-
+action in Federal Court against such person or entity.        ments and Agencies
+   5–505. Each executive agency shall consult with the          On April 11, 1968, one week after the assassination of
+Secretary of Housing and Urban Development, and the           the great civil rights leader Martin Luther King, Jr.,
+Attorney General where a civil action in Federal Court        the Fair Housing Act [42 U.S.C. 3601 et seq.] was en-
+has been filed, regarding agency actions to invoke            acted (1) to prohibit discrimination in housing, and (2)
+sanctions under the Act. The Department of Housing            to direct the Secretary of Housing and Urban Develop-
+and Urban Development, the Department of Justice,             ment to affirmatively further fair housing in Federal
+and Federal banking agencies shall develop and coordi-        housing and urban development programs. Twenty-five
+nate appropriate policies and procedures for taking ac-       years later, despite a strengthening of the Fair Housing
+tion under their respective authorities. Each decision        Act 5 years ago, hundreds of acts of housing discrimina-
+to invoke sanctions and the reasons therefor shall be         tion occur in our Nation each day.
+documented and shall be provided to the Secretary of            Americans of every income level, seeking to live
+Housing and Urban Development and, where appro-               where they choose, feel the weight of discrimination
+priate, to the Attorney General in a timely manner.           because of the color of their skin, their race, their reli-
+   SEC. 6. General Provisions.                                gion, their gender, their country of origin, or because
+   6–601. Nothing in this order shall limit the authority     they are disabled or have children.
+of the Attorney General to provide for the coordinated          An increasing body of evidence indicates that bar-
+enforcement of nondiscrimination requirements in Fed-         riers to fair housing are pervasive. Forty percent of all
+eral assistance programs under Executive Order No.            families move every 5 years. This statistic is signifi-
+12250 [42 U.S.C. 2000d–1 note].                               cant given the results of a recent study, commissioned
+   6–602. All provisions of regulations, guidelines, and      by the Department of Housing and Urban Development
+procedures proposed to be issued by executive agencies        (HUD), which found that more than half of the African
+pursuant to this order that implement nondiscrimina-          Americans and Latinos seeking to rent or buy a home
+tion requirements of laws covered by Executive Order          are treated differently than whites with the same
+No. 12250 [42 U.S.C. 2000d–1 note] shall be submitted to      qualifications. Moreover, based upon Home Mortgage
+the Attorney General for review in accordance with            Disclosure Act [12 U.S.C. 2801 et seq.] data, the number
+that Executive order. In addition, the Secretary shall        of minority persons who are rejected when attempting
+consult with the Attorney General regarding all regula-       to obtain loans to purchase homes is two to three times
+tions and procedures proposed to be issued under sec-         higher than it is for nonminorities in almost every
+tions 4–401 and 4–402 of this order to assure consistency     metropolitan area of this country.
+with coordinated Federal efforts to enforce non-                Racial and ethnic segregation, both in the private
+discrimination requirements in programs of Federal fi-        housing market and in public and assisted housing, has
+nancial assistance pursuant to Executive Order No.            been well documented. Despite legislation (the Fair
+12250.                                                        Housing Act) and Executive action (Executive Order
+   6–603. Nothing in this order shall affect the authority    No. 11063 [42 U.S.C. 1982 note]), the divisive impact of
+and responsibility of the Attorney General to com-            housing segregation persists in metropolitan areas all
+mence any civil action authorized by the Act.                 across this country. Too many lower income and mi-
+   6–604. (a) Part IV and sections 501 and 503 of Executive   nority Americans face barriers to housing outside of
+Order No. 11063 [42 U.S.C. 1982 note] are revoked. The        central cities. Segregation in housing and schools de-
+activities and functions of the President’s Committee         prives too many of our children and youth of an oppor-
+on Equal Opportunity in Housing described in that Ex-         tunity to enter the marketplace or work on an equal
+ecutive order shall be performed by the Secretary of          footing. For too many families, our cities are no longer
+Housing and Urban Development.                                the launching pads for economic self-sufficiency and
+   (b) Sections 101 and 502(a) of Executive Order No.         upward mobility that they have been for countless im-
+11063 are revised to apply to discrimination because of       migrants and minorities since the country’s birth. And
+‘‘race, color, religion (creed), sex, disability, familial    many Americans who are better off abandon the cities.
+§ 3608                      TITLE 42—THE PUBLIC HEALTH AND WELFARE                                        Page 5956
+
+   The resulting decline in the very heart of too many       velop a pilot program to be implemented in selected
+of our metropolitan areas threatens all of us: the           metropolitan areas. This initiative will promote fair
+health of our dynamic regional economies—the very            housing choice by helping inner-city families to move
+lifeblood of future national economic growth and high-       to suburban neighborhoods and by making the central
+er living standards for all of us and all of our children—   city more attractive to those who have left it. I direct
+is placed at risk.                                           the members of the Council to undertake a demonstra-
+   We can do better. We can start by making sure that        tion program that will reinvent the way assisted hous-
+our own Federal policies and programs across all of our      ing is offered to applicants, will break down jurisdic-
+agencies support the fair housing and equal oppor-           tional barriers in housing opportunities, and will pro-
+tunity goals to which all Americans are committed. If        mote the use of subsidies that diminish residential seg-
+all of our executive agencies affirmatively further fair     regation, and will combine these initiatives with re-
+housing in the design of their policies and administra-      fined educational incentives aimed at improving the ef-
+tion of their programs relating to housing and urban         fectiveness of inner-city schools. I am directing that
+development, a truly nondiscriminatory housing mar-          transportation alternatives be considered along with
+ket will be closer to achievement.                           targeted social service and job training programs as
+   By an Executive Order [Ex. Ord. No. 12892, set out        part of the support necessary to create a one-stop, met-
+above] (‘‘the Order’’) I am issuing today and this memo-     ropolitan area-wide fair housing opportunity pilot pro-
+randum, I am addressing those needs. The Secretary of        gram that will effectively offer Federally assisted hous-
+Housing and Urban Development and, where appro-              ing, Federally insured housing, and private market
+priate, the Attorney General—the officials with the pri-     housing within a metropolitan area to all residents of
+mary responsibility for the enforcement of Federal fair      the area. The pilot program should call upon realtors,
+housing laws—will take the lead in developing and co-        mortgage lenders, housing providers, and local govern-
+ordinating measures to carry out the purposes of this        ments, among others, to assist in expanding housing
+Order.                                                       choices.
+   Through this Order, I am first expanding Executive          To address the findings of recent studies, I hereby di-
+Order No. 11063 to provide protection against discrimi-      rect the Secretary of Housing and Urban Development
+nation in programs of Federal insurance or guaranty to       and the Attorney General and, where appropriate, the
+persons who are disabled and to families with children.      heads of the Federal banking agencies to exercise na-
+   Second, I am revoking the old Executive Order No.         tional leadership to end discrimination in mortgage
+12259 entitled ‘‘Leadership and Coordination of Fair         lending, the secondary mortgage market, and property
+Housing in Federal Programs.’’ The new Executive             insurance practices. The Secretary is directed to issue
+order reflects the expanded authority of the Secretary       regulations to define discriminatory practices in these
+of Housing and Urban Development and I am directing          areas and the Secretary and the Attorney General are
+him to take stronger measures to provide leadership          directed to aggressively enforce the laws prohibiting
+and coordination in affirmatively furthering fair hous-      these practices.
+ing in Federal programs.                                       In each of these areas, I direct the Secretary of Hous-
+   Third, I ask the heads of departments and agencies,       ing and Urban Development to take the lead with the
+including the Federal banking agencies, to cooperate         other Federal agencies in working to gain the vol-
+with the Secretary of Housing and Urban Development          untary cooperation, participation, and expertise of all
+in identifying ways to structure agency programs and         of those in private industry, the States and localities
+activities to affirmatively further fair housing and to      who can assist in achieving the Nation’s fair housing
+promptly negotiate memoranda of understanding with           goals.
+him to accomplish that goal.                                   The Secretary of Housing and Urban Development is
+   Further, I direct the Secretary of Housing and Urban      authorized and directed to publish this memorandum in
+Development to review all of HUD’s programs to assure        the Federal Register.
+that they truly provide equal opportunity and promote                                            WILLIAM J. CLINTON.
+economic self-sufficiency for those who are bene-
+ficiaries and recipients of those programs.                  REDRESSING OUR NATION’S AND THE FEDERAL GOVERN-
+   I also direct the Secretary to review HUD’s programs       MENT’S HISTORY OF DISCRIMINATORY HOUSING PRAC-
+to assure that they contain the maximum incentives to         TICES AND POLICIES
+affirmatively further fair housing and to eliminate bar-       Memorandum of President of the United States, Jan.
+riers to free choice where they continue to exist. This      26, 2021, 86 F.R. 7487, provided:
+review shall include Federally assisted housing, Feder-        Memorandum for the Secretary of Housing and Urban
+ally insured housing and other housing and housing re-       Development
+lated programs, including those of the Government Na-          By the authority vested in me as President by the
+tional Mortgage Association and the Federal Housing          Constitution and the laws of the United States of
+Administration.                                              America, it is hereby ordered as follows:
+   Today, I am establishing a new Cabinet-level organi-        SECTION 1. Background and Policy. Diverse and inclu-
+zation to focus the cooperative efforts of all agencies      sive communities strengthen our democracy. But our
+on fair housing. The President’s Fair Housing Council        Nation’s history has been one of great struggle toward
+will be chaired by the Secretary of Housing and Urban        this ideal. During the 20th century, Federal, State, and
+Development and will consist of the Secretary of             local governments systematically implemented ra-
+Health and Human Services, the Secretary of Transpor-        cially discriminatory housing policies that contributed
+tation, the Secretary of Education, the Secretary of         to segregated neighborhoods and inhibited equal oppor-
+Labor, the Secretary of Defense, the Secretary of Agri-      tunity and the chance to build wealth for Black,
+culture, the Secretary of Veterans Affairs, the Sec-         Latino, Asian American and Pacific Islander, and Na-
+retary of the Treasury, the Attorney General, the Sec-       tive American families, and other underserved commu-
+retary of the Interior, the Chair of the Federal Reserve,    nities. Ongoing legacies of residential segregation and
+the Comptroller of the Currency, the Director of the Of-     discrimination remain ever-present in our society.
+fice of Thrift Supervision, and the Chair of the Federal     These include a racial gap in homeownership; a per-
+Deposit Insurance Corporation.                               sistent undervaluation of properties owned by families
+   The President’s Fair Housing Council shall review         of color; a disproportionate burden of pollution and ex-
+the design and delivery of Federal programs and activi-      posure to the impacts of climate change in commu-
+ties to ensure that they support a coordinated strategy      nities of color; and systemic barriers to safe, acces-
+to affirmatively further fair housing. The Council shall     sible, and affordable housing for people of color, immi-
+propose revisions to existing programs or activities, de-    grants, individuals with disabilities, and lesbian, gay,
+velop pilot programs and activities, and propose new         bisexual, transgender, gender non-conforming, and
+programs and activities to achieve its goals.                queer (LGBTQ+) individuals.
+   I direct the Secretary of Housing and Urban Develop-        Throughout much of the 20th century, the Federal
+ment and the President’s Fair Housing Council to de-         Government systematically supported discrimination
+Page 5957                   TITLE 42—THE PUBLIC HEALTH AND WELFARE                                               § 3608a
+
+and exclusion in housing and mortgage lending. While         (codified at parts 5, 91, 92, 570, 574, 576, and 903 of title
+many of the Federal Government’s housing policies and        24, Code of Federal Regulations), including the effect
+programs expanded homeownership across the country,          that repealing the July 16, 2015, rule entitled ‘‘Affirma-
+many knowingly excluded Black people and other per-          tively Furthering Fair Housing’’ has had on HUD’s
+sons of color, and promoted and reinforced housing seg-      statutory duty to affirmatively further fair housing.
+regation. Federal policies contributed to mortgage red-      The Secretary shall also, as soon as practicable, take
+lining and lending discrimination against persons of         all steps necessary to examine the effects of the Sep-
+color.                                                       tember 24, 2020, rule entitled ‘‘HUD’s Implementation
+  The creation of the Interstate Highway System, fund-       of the Fair Housing Act’s Disparate Impact Standard’’
+ed and constructed by the Federal Government and             (codified at part 100 of title 24, Code of Federal Regula-
+State governments in the 20th century, disproportion-        tions), including the effect that amending the February
+ately burdened many historically Black and low-in-           15, 2013, rule entitled ‘‘Implementation of the Fair
+come neighborhoods in many American cities. Many             Housing Act’s Discriminatory Effects Standard’’ has
+urban interstate highways were deliberately built to         had on HUD’s statutory duty to ensure compliance
+pass through Black neighborhoods, often requiring the        with the Fair Housing Act. Based on that examination,
+destruction of housing and other local institutions. To      the Secretary shall take any necessary steps, as appro-
+this day, many Black neighborhoods are disconnected          priate and consistent with applicable law, to imple-
+from access to high-quality housing, jobs, public tran-      ment the Fair Housing Act’s requirements that HUD
+sit, and other resources.                                    administer its programs in a manner that affirmatively
+  The Federal Government must recognize and ac-              furthers fair housing and HUD’s overall duty to admin-
+knowledge its role in systematically declining to invest     ister the Act (42 U.S.C. 3608(a)) including by preventing
+in communities of color and preventing residents of          practices with an unjustified discriminatory effect.
+those communities from accessing the same services             SEC. 3. General Provisions. (a) Nothing in this memo-
+and resources as their white counterparts. The effects       randum shall be construed to impair or otherwise af-
+of these policy decisions continue to be felt today, as      fect:
+racial inequality still permeates land-use patterns in           (i) the authority granted by law to an executive de-
+most U.S. cities and virtually all aspects of housing          partment or agency, or the head thereof; or
+markets.                                                         (ii) the functions of the Director of the Office of
+  The Congress enacted the Fair Housing Act [42 U.S.C.         Management and Budget relating to budgetary, ad-
+3601 et seq.] more than 50 years ago to lift barriers that     ministrative, or legislative proposals.
+created separate and unequal neighborhoods on the              (b) This memorandum shall be implemented con-
+basis of race, ethnicity, and national origin. Since         sistent with applicable law and subject to the avail-
+then, however, access to housing and the creation of         ability of appropriations.
+wealth through homeownership have remained persist-            (c) This memorandum is not intended to, and does
+ently unequal in the United States. Many neighbor-           not, create any right or benefit, substantive or proce-
+hoods are as racially segregated today as they were in       dural, enforceable at law or in equity by any party
+the middle of the 20th century. People of color are over-    against the United States, its departments, agencies, or
+represented among those experiencing homelessness. In        entities, its officers, employees, or agents, or any other
+addition, people of color disproportionately bear the        person.
+burdens of exposure to air and water pollution, and            (d) You are authorized and directed to publish this
+growing risks of housing instability from climate crises     memorandum in the Federal Register.
+like extreme heat, flooding, and wildfires. And the ra-                                                 J.R. BIDEN, JR.
+cial wealth gap is wider than it was when the Fair
+Housing Act was enacted, driven in part by persistent        § 3608a. Collection of certain data
+disparities in access to homeownership. Although Fed-        (a) In general
+eral fair housing laws were expanded to include protec-
+tions for individuals with disabilities, a lack of access      To assess the extent of compliance with Fed-
+to affordable and integrated living options remains a        eral fair housing requirements (including the re-
+significant problem.                                         quirements established under title VI of Public
+  The Federal Government has a critical role to play in      Law 88–352 [42 U.S.C. 2000d et seq.] and title VIII
+overcoming and redressing this history of discrimina-
+                                                             of Public Law 90–284 [42 U.S.C. 3601 et seq.]), the
+tion and in protecting against other forms of discrimi-
+nation by applying and enforcing Federal civil rights        Secretary of Agriculture shall collect, not less
+and fair housing laws. It can help ensure that fair and      than annually, data on the racial and ethnic
+equal access to housing opportunity exists for all           characteristics of persons eligible for, assisted,
+throughout the United States. This goal is consistent        or otherwise benefiting under each community
+with the Fair Housing Act, which imposes on Federal          development, housing assistance, and mortgage
+departments and agencies the duty to ‘‘administer            and loan insurance and guarantee program ad-
+their programs and activities relating to housing and        ministered by such Secretary. Such data shall
+urban development . . . in a manner affirmatively to
+                                                             be collected on a building by building basis if
+further’’ fair housing (42 U.S.C. 3608(d)). This is not
+only a mandate to refrain from discrimination but a          the Secretary determines such collection to be
+mandate to take actions that undo historic patterns of       appropriate.
+segregation and other types of discrimination and that       (b) Reports to Congress
+afford access to long-denied opportunities.
+  Accordingly, it is the policy of my Administration
+                                                               The Secretary of Agriculture shall include in
+that the Federal Government shall work with commu-           the annual report of such Secretary to the Con-
+nities to end housing discrimination, to provide redress     gress a summary and evaluation of the data col-
+to those who have experienced housing discrimination,        lected by such Secretary under subsection (a)
+to eliminate racial bias and other forms of discrimina-      during the preceding year.
+tion in all stages of home-buying and renting, to lift
+barriers that restrict housing and neighborhood choice,      (Pub. L. 100–242, title V, § 562, Feb. 5, 1988, 101
+to promote diverse and inclusive communities, to en-         Stat. 1944; Pub. L. 104–66, title I, § 1071(e), Dec. 21,
+sure sufficient physically accessible housing, and to se-    1995, 109 Stat. 720.)
+cure equal access to housing opportunity for all.
+  SEC. 2. Examining Recent Regulatory Actions. The Sec-                            Editorial Notes
+retary of Housing and Urban Development (HUD) shall,
+                                                                               REFERENCES IN TEXT
+as soon as practicable, take all steps necessary to ex-
+amine the effects of the August 7, 2020, rule entitled         Public Law 88–352, referred to in subsec. (a), is Pub.
+‘‘Preserving Community and Neighborhood Choice’’             L. 88–352, July 2, 1964, 78 Stat. 241, known as the Civil
+§ 3609                       TITLE 42—THE PUBLIC HEALTH AND WELFARE                                     Page 5958
+
+Rights Act of 1964. Title VI of the Civil Rights Act of          (B) Upon the filing of such a complaint—
+1964 is classified generally to subchapter V (§ 2000d et           (i) the Secretary shall serve notice upon the
+seq.) of chapter 21 of this title. For complete classifica-      aggrieved person acknowledging such filing
+tion of this Act to the Code, see Short Title note set
+out under section 2000a of this title and Tables.
+                                                                 and advising the aggrieved person of the time
+  Title VIII of Public Law 90–284, referred to in subsec.        limits and choice of forums provided under
+(a), is title VIII of Pub. L. 90–284, Apr. 11, 1968, 82 Stat.    this subchapter;
+81, known as the Fair Housing Act, which is classified             (ii) the Secretary shall, not later than 10
+principally to subchapter I (§ 3601 et seq.) of this chap-       days after such filing or the identification of
+ter. For complete classification of this Act to the Code,        an additional respondent under paragraph (2),
+see Short Title note set out under section 3601 of this          serve on the respondent a notice identifying
+title and Tables.
+                                                                 the alleged discriminatory housing practice
+                       CODIFICATION                              and advising such respondent of the proce-
+  Section was enacted as part of the Housing and Com-            dural rights and obligations of respondents
+munity Development Act of 1987, and not as part of               under this subchapter, together with a copy of
+title VIII of Pub. L. 90–284, popularly known as the Fair        the original complaint;
+Housing Act, which comprises this subchapter.                      (iii) each respondent may file, not later than
+                       AMENDMENTS                                10 days after receipt of notice from the Sec-
+  1995—Subsec. (a). Pub. L. 104–66, § 1071(e)(1), struck
+                                                                 retary, an answer to such complaint; and
+out ‘‘the Secretary of Housing and Urban Development               (iv) the Secretary shall make an investiga-
+and’’ before ‘‘the Secretary of Agriculture’’, ‘‘each’’ be-      tion of the alleged discriminatory housing
+fore ‘‘collect, not less than annually’’, and ‘‘involved’’       practice and complete such investigation
+before ‘‘determines such collection’’.                           within 100 days after the filing of the com-
+  Subsec. (b). Pub. L. 104–66, § 1071(e)(2), substituted         plaint (or, when the Secretary takes further
+‘‘The’’ for ‘‘The Secretary of Housing and Urban Devel-          action under subsection (f)(2) with respect to a
+opment and the’’ before ‘‘Secretary of Agriculture’’ and
+struck out ‘‘each’’ before ‘‘include in the’’.
+                                                                 complaint, within 100 days after the com-
+                                                                 mencement of such further action), unless it is
+§ 3609. Education and conciliation; conferences                  impracticable to do so.
+    and consultations; reports                                    (C) If the Secretary is unable to complete the
+   Immediately after April 11, 1968, the Secretary              investigation within 100 days after the filing of
+shall commence such educational and concilia-                   the complaint (or, when the Secretary takes fur-
+tory activities as in his judgment will further                 ther action under subsection (f)(2) with respect
+the purposes of this subchapter. He shall call                  to a complaint, within 100 days after the com-
+conferences of persons in the housing industry                  mencement of such further action), the Sec-
+and other interested parties to acquaint them                   retary shall notify the complainant and re-
+with the provisions of this subchapter and his                  spondent in writing of the reasons for not doing
+suggested means of implementing it, and shall                   so.
+endeavor with their advice to work out pro-                       (D) Complaints and answers shall be under
+grams of voluntary compliance and of enforce-                   oath or affirmation, and may be reasonably and
+ment. He may pay per diem, travel, and trans-                   fairly amended at any time.
+portation expenses for persons attending such                     (2)(A) A person who is not named as a respond-
+conferences as provided in section 5703 of title 5.             ent in a complaint, but who is identified as a re-
+He shall consult with State and local officials                 spondent in the course of investigation, may be
+and other interested parties to learn the extent,               joined as an additional or substitute respondent
+if any, to which housing discrimination exists in               upon written notice, under paragraph (1), to
+their State or locality, and whether and how                    such person, from the Secretary.
+State or local enforcement programs might be                      (B) Such notice, in addition to meeting the re-
+utilized to combat such discrimination in con-                  quirements of paragraph (1), shall explain the
+nection with or in place of, the Secretary’s en-                basis for the Secretary’s belief that the person
+forcement of this subchapter. The Secretary                     to whom the notice is addressed is properly
+shall issue reports on such conferences and con-                joined as a respondent.
+sultations as he deems appropriate.                             (b) Investigative report and conciliation
+(Pub. L. 90–284, title VIII, § 809, Apr. 11, 1968, 82             (1) During the period beginning with the filing
+Stat. 85.)                                                      of such complaint and ending with the filing of
+                                                                a charge or a dismissal by the Secretary, the
+§ 3610. Administrative enforcement; preliminary
+                                                                Secretary shall, to the extent feasible, engage in
+    matters
+                                                                conciliation with respect to such complaint.
+(a) Complaints and answers                                        (2) A conciliation agreement arising out of
+   (1)(A)(i) An aggrieved person may, not later                 such conciliation shall be an agreement between
+than one year after an alleged discriminatory                   the respondent and the complainant, and shall
+housing practice has occurred or terminated,                    be subject to approval by the Secretary.
+file a complaint with the Secretary alleging                      (3) A conciliation agreement may provide for
+such discriminatory housing practice. The Sec-                  binding arbitration of the dispute arising from
+retary, on the Secretary’s own initiative, may                  the complaint. Any such arbitration that results
+also file such a complaint.                                     from a conciliation agreement may award ap-
+   (ii) Such complaints shall be in writing and                 propriate relief, including monetary relief.
+shall contain such information and be in such                     (4) Each conciliation agreement shall be made
+form as the Secretary requires.                                 public unless the complainant and respondent
+   (iii) The Secretary may also investigate hous-               otherwise agree and the Secretary determines
+ing practices to determine whether a complaint                  that disclosure is not required to further the
+should be brought under this section.                           purposes of this subchapter.
+Page 5959               TITLE 42—THE PUBLIC HEALTH AND WELFARE                                   § 3610
+
+  (5)(A) At the end of each investigation under          (A) within the jurisdiction of a State or
+this section, the Secretary shall prepare a final      local public agency; and
+investigative report containing—                         (B) as to which such agency has been cer-
+    (i) the names and dates of contacts with wit-      tified by the Secretary under this subsection;
+  nesses;                                             the Secretary shall refer such complaint to that
+    (ii) a summary and the dates of correspond-       certified agency before taking any action with
+  ence and other contacts with the aggrieved          respect to such complaint.
+  person and the respondent;                            (2) Except with the consent of such certified
+    (iii) a summary description of other perti-       agency, the Secretary, after that referral is
+  nent records;                                       made, shall take no further action with respect
+    (iv) a summary of witness statements; and         to such complaint unless—
+    (v) answers to interrogatories.                       (A) the certified agency has failed to com-
+   (B) A final report under this paragraph may be       mence proceedings with respect to the com-
+amended if additional evidence is later discov-         plaint before the end of the 30th day after the
+ered.                                                   date of such referral;
+(c) Failure to comply with conciliation agree-            (B) the certified agency, having so com-
+     ment                                               menced such proceedings, fails to carry for-
+                                                        ward such proceedings with reasonable
+   Whenever the Secretary has reasonable cause          promptness; or
+to believe that a respondent has breached a con-          (C) the Secretary determines that the cer-
+ciliation agreement, the Secretary shall refer          tified agency no longer qualifies for certifi-
+the matter to the Attorney General with a rec-          cation under this subsection with respect to
+ommendation that a civil action be filed under          the relevant jurisdiction.
+section 3614 of this title for the enforcement of
+such agreement.                                         (3)(A) The Secretary may certify an agency
+(d) Prohibitions and requirements with respect        under this subsection only if the Secretary de-
+     to disclosure of information                     termines that—
+                                                          (i) the substantive rights protected by such
+   (1) Nothing said or done in the course of con-       agency in the jurisdiction with respect to
+ciliation under this subchapter may be made             which certification is to be made;
+public or used as evidence in a subsequent pro-           (ii) the procedures followed by such agency;
+ceeding under this subchapter without the writ-           (iii) the remedies available to such agency;
+ten consent of the persons concerned.                   and
+   (2) Notwithstanding paragraph (1), the Sec-            (iv) the availability of judicial review of
+retary shall make available to the aggrieved            such agency’s action;
+person and the respondent, at any time, upon re-
+quest following completion of the Secretary’s         are substantially equivalent to those created by
+investigation, information derived from an in-        and under this subchapter.
+vestigation and any final investigative report          (B) Before making such certification, the Sec-
+relating to that investigation.                       retary shall take into account the current prac-
+                                                      tices and past performance, if any, of such agen-
+(e) Prompt judicial action                            cy.
+   (1) If the Secretary concludes at any time fol-      (4) During the period which begins on Sep-
+lowing the filing of a complaint that prompt ju-      tember 13, 1988, and ends 40 months after Sep-
+dicial action is necessary to carry out the pur-      tember 13, 1988, each agency certified (including
+poses of this subchapter, the Secretary may au-       an agency certified for interim referrals pursu-
+thorize a civil action for appropriate temporary      ant to 24 CFR 115.11, unless such agency is sub-
+or preliminary relief pending final disposition of    sequently denied recognition under 24 CFR 115.7)
+the complaint under this section. Upon receipt        for the purposes of this subchapter on the day
+of such an authorization, the Attorney General        before September 13, 1988, shall for the purposes
+shall promptly commence and maintain such an          of this subsection be considered certified under
+action. Any temporary restraining order or            this subsection with respect to those matters for
+other order granting preliminary or temporary         which such agency was certified on September
+relief shall be issued in accordance with the Fed-    13, 1988. If the Secretary determines in an indi-
+eral Rules of Civil Procedure. The commence-          vidual case that an agency has not been able to
+ment of a civil action under this subsection does     meet the certification requirements within this
+not affect the initiation or continuation of ad-      40-month period due to exceptional cir-
+ministrative proceedings under this section and       cumstances, such as the infrequency of legisla-
+section 3612 of this title.                           tive sessions in that jurisdiction, the Secretary
+   (2) Whenever the Secretary has reason to be-       may extend such period by not more than 8
+lieve that a basis may exist for the commence-        months.
+ment of proceedings against any respondent              (5) Not less frequently than every 5 years, the
+under sections 3614(a) and 3614(c) of this title or   Secretary shall determine whether each agency
+for proceedings by any governmental licensing         certified under this subsection continues to
+or supervisory authorities, the Secretary shall       qualify for certification. The Secretary shall
+transmit the information upon which such belief       take appropriate action with respect to any
+is based to the Attorney General, or to such au-      agency not so qualifying.
+thorities, as the case may be.                        (g) Reasonable cause determination and effect
+(f) Referral for State or local proceedings             (1) The Secretary shall, within 100 days after
+  (1) Whenever a complaint alleges a discrimina-      the filing of the complaint (or, when the Sec-
+tory housing practice—                                retary takes further action under subsection
+§ 3611                   TITLE 42—THE PUBLIC HEALTH AND WELFARE                                      Page 5960
+
+(f)(2) with respect to a complaint, within 100                              Editorial Notes
+days after the commencement of such further                              REFERENCES IN TEXT
+action), determine based on the facts whether
+reasonable cause exists to believe that a dis-           The Federal Rules of Civil Procedure, referred to in
+criminatory housing practice has occurred or is        subsec. (e)(1), are set out in the Appendix to Title 28,
+                                                       Judiciary and Judicial Procedure.
+about to occur, unless it is impracticable to do
+so, or unless the Secretary has approved a con-                           PRIOR PROVISIONS
+ciliation agreement with respect to the com-             A prior section 3610, Pub. L. 90–284, title VIII, § 810,
+plaint. If the Secretary is unable to make the         Apr. 11, 1968, 82 Stat. 85, related to enforcement, prior
+determination within 100 days after the filing of      to repeal by Pub. L. 100–430, § 8(2).
+the complaint (or, when the Secretary takes fur-
+ther action under subsection (f)(2) with respect              Statutory Notes and Related Subsidiaries
+to a complaint, within 100 days after the com-
+mencement of such further action), the Sec-                                EFFECTIVE DATE
+retary shall notify the complainant and re-              Section effective on 180th day beginning after Sept.
+spondent in writing of the reasons for not doing       13, 1988, see section 13(a) of Pub. L. 100–430, set out as
+so.                                                    an Effective Date of 1988 Amendment note under sec-
+   (2)(A) If the Secretary determines that reason-     tion 3601 of this title.
+able cause exists to believe that a discrimina-
+                                                       § 3611. Subpoenas; giving of evidence
+tory housing practice has occurred or is about to
+occur, the Secretary shall, except as provided in      (a) In general
+subparagraph (C), immediately issue a charge on          The Secretary may, in accordance with this
+behalf of the aggrieved person, for further pro-       subsection, issue subpoenas and order discovery
+ceedings under section 3612 of this title.             in aid of investigations and hearings under this
+   (B) Such charge—                                    subchapter. Such subpoenas and discovery may
+     (i) shall consist of a short and plain state-     be ordered to the same extent and subject to the
+   ment of the facts upon which the Secretary          same limitations as would apply if the sub-
+   has found reasonable cause to believe that a        poenas or discovery were ordered or served in
+   discriminatory housing practice has occurred        aid of a civil action in the United States district
+   or is about to occur;                               court for the district in which the investigation
+     (ii) shall be based on the final investigative    is taking place.
+   report; and
+     (iii) need not be limited to the facts or         (b) Witness fees
+   grounds alleged in the complaint filed under          Witnesses summoned by a subpoena under this
+   subsection (a).                                     subchapter shall be entitled to the same witness
+  (C) If the Secretary determines that the mat-        and mileage fees as witnesses in proceedings in
+ter involves the legality of any State or local        United States district courts. Fees payable to a
+zoning or other land use law or ordinance, the         witness summoned by a subpoena issued at the
+Secretary shall immediately refer the matter to        request of a party shall be paid by that party or,
+the Attorney General for appropriate action            where a party is unable to pay the fees, by the
+under section 3614 of this title, instead of issuing   Secretary.
+such charge.                                           (c) Criminal penalties
+  (3) If the Secretary determines that no reason-        (1) Any person who willfully fails or neglects
+able cause exists to believe that a discrimina-        to attend and testify or to answer any lawful in-
+tory housing practice has occurred or is about to      quiry or to produce records, documents, or other
+occur, the Secretary shall promptly dismiss the        evidence, if it is in such person’s power to do so,
+complaint. The Secretary shall make public dis-        in obedience to the subpoena or other lawful
+closure of each such dismissal.                        order under subsection (a), shall be fined not
+  (4) The Secretary may not issue a charge             more than $100,000 or imprisoned not more than
+under this section regarding an alleged discrimi-      one year, or both.
+natory housing practice after the beginning of           (2) Any person who, with intent thereby to
+the trial of a civil action commenced by the ag-       mislead another person in any proceeding under
+grieved party under an Act of Congress or a            this subchapter—
+State law, seeking relief with respect to that             (A) makes or causes to be made any false
+discriminatory housing practice.                         entry or statement of fact in any report, ac-
+(h) Service of copies of charge                          count, record, or other document produced
+                                                         pursuant to subpoena or other lawful order
+  After the Secretary issues a charge under this
+                                                         under subsection (a);
+section, the Secretary shall cause a copy there-
+                                                           (B) willfully neglects or fails to make or to
+of, together with information as to how to make
+                                                         cause to be made full, true, and correct entries
+an election under section 3612(a) of this title and
+                                                         in such reports, accounts, records, or other
+the effect of such an election, to be served—
+                                                         documents; or
+     (1) on each respondent named in such charge,
+                                                           (C) willfully mutilates, alters, or by any
+  together with a notice of opportunity for a
+                                                         other means falsifies any documentary evi-
+  hearing at a time and place specified in the
+                                                         dence;
+  notice, unless that election is made; and
+     (2) on each aggrieved person on whose behalf      shall be fined not more than $100,000 or impris-
+  the complaint was filed.                             oned not more than one year, or both.
+(Pub. L. 90–284, title VIII, § 810, as added Pub. L.   (Pub. L. 90–284, title VIII, § 811, as added Pub. L.
+100–430, § 8(2), Sept. 13, 1988, 102 Stat. 1625.)      100–430, § 8(2), Sept. 13, 1988, 102 Stat. 1628.)
+Page 5961                    TITLE 42—THE PUBLIC HEALTH AND WELFARE                                           § 3612
+
+                      Editorial Notes                           (e) Resolution of charge
+                    PRIOR PROVISIONS                               Any resolution of a charge before a final order
+  A prior section 3611, Pub. L. 90–284, title VIII, § 811,      under this section shall require the consent of
+Apr. 11, 1968, 82 Stat. 87, related to evidence, prior to re-   the aggrieved person on whose behalf the charge
+peal by Pub. L. 100–430, § 8(2).                                is issued.
+                                                                (f) Effect of trial of civil action on administrative
+       Statutory Notes and Related Subsidiaries                      proceedings
+                     EFFECTIVE DATE                                An administrative law judge may not continue
+  Section effective on 180th day beginning after Sept.          administrative proceedings under this section
+13, 1988, see section 13(a) of Pub. L. 100–430, set out as      regarding any alleged discriminatory housing
+an Effective Date of 1988 Amendment note under sec-             practice after the beginning of the trial of a
+tion 3601 of this title.                                        civil action commenced by the aggrieved party
+                                                                under an Act of Congress or a State law, seeking
+§ 3612. Enforcement by Secretary
+                                                                relief with respect to that discriminatory hous-
+(a) Election of judicial determination                          ing practice.
+  When a charge is filed under section 3610 of                  (g) Hearings, findings and conclusions, and order
+this title, a complainant, a respondent, or an ag-                 (1) The administrative law judge shall com-
+grieved person on whose behalf the complaint                    mence the hearing under this section no later
+was filed, may elect to have the claims asserted                than 120 days following the issuance of the
+in that charge decided in a civil action under                  charge, unless it is impracticable to do so. If the
+subsection (o) in lieu of a hearing under sub-                  administrative law judge is unable to commence
+section (b). The election must be made not later                the hearing within 120 days after the issuance of
+than 20 days after the receipt by the electing                  the charge, the administrative law judge shall
+person of service under section 3610(h) of this                 notify the Secretary, the aggrieved person on
+title or, in the case of the Secretary, not later               whose behalf the charge was filed, and the re-
+than 20 days after such service. The person mak-                spondent, in writing of the reasons for not doing
+ing such election shall give notice of doing so to              so.
+the Secretary and to all other complainants and                    (2) The administrative law judge shall make
+respondents to whom the charge relates.                         findings of fact and conclusions of law within 60
+(b) Administrative law judge hearing in absence                 days after the end of the hearing under this sec-
+    of election                                                 tion, unless it is impracticable to do so. If the
+  If an election is not made under subsection (a)               administrative law judge is unable to make find-
+with respect to a charge filed under section 3610               ings of fact and conclusions of law within such
+of this title, the Secretary shall provide an op-               period, or any succeeding 60-day period there-
+portunity for a hearing on the record with re-                  after, the administrative law judge shall notify
+spect to a charge issued under section 3610 of                  the Secretary, the aggrieved person on whose
+this title. The Secretary shall delegate the con-               behalf the charge was filed, and the respondent,
+duct of a hearing under this section to an ad-                  in writing of the reasons for not doing so.
+ministrative law judge appointed under section                     (3) If the administrative law judge finds that a
+3105 of title 5. The administrative law judge                   respondent has engaged or is about to engage in
+shall conduct the hearing at a place in the vicin-              a discriminatory housing practice, such admin-
+ity in which the discriminatory housing practice                istrative law judge shall promptly issue an order
+is alleged to have occurred or to be about to                   for such relief as may be appropriate, which may
+occur.                                                          include actual damages suffered by the ag-
+                                                                grieved person and injunctive or other equitable
+(c) Rights of parties
+                                                                relief. Such order may, to vindicate the public
+  At a hearing under this section, each party                   interest, assess a civil penalty against the re-
+may appear in person, be represented by coun-                   spondent—
+sel, present evidence, cross-examine witnesses,                      (A) in an amount not exceeding $10,000 if the
+and obtain the issuance of subpoenas under sec-                    respondent has not been adjudged to have
+tion 3611 of this title. Any aggrieved person may                  committed any prior discriminatory housing
+intervene as a party in the proceeding. The Fed-                   practice;
+eral Rules of Evidence apply to the presentation                     (B) in an amount not exceeding $25,000 if the
+of evidence in such hearing as they would in a                     respondent has been adjudged to have com-
+civil action in a United States district court.                    mitted one other discriminatory housing prac-
+(d) Expedited discovery and hearing                                tice during the 5-year period ending on the
+  (1) Discovery in administrative proceedings                      date of the filing of this charge; and
+under this section shall be conducted as expedi-                     (C) in an amount not exceeding $50,000 if the
+tiously and inexpensively as possible, consistent                  respondent has been adjudged to have com-
+with the need of all parties to obtain relevant                    mitted 2 or more discriminatory housing prac-
+evidence.                                                          tices during the 7-year period ending on the
+  (2) A hearing under this section shall be con-                   date of the filing of this charge;
+ducted as expeditiously and inexpensively as                    except that if the acts constituting the discrimi-
+possible, consistent with the needs and rights of               natory housing practice that is the object of the
+the parties to obtain a fair hearing and a com-                 charge are committed by the same natural per-
+plete record.                                                   son who has been previously adjudged to have
+  (3) The Secretary shall, not later than 180 days              committed acts constituting a discriminatory
+after September 13, 1988, issue rules to imple-                 housing practice, then the civil penalties set
+ment this subsection.                                           forth in subparagraphs (B) and (C) may be im-
+§ 3612                  TITLE 42—THE PUBLIC HEALTH AND WELFARE                                Page 5962
+
+posed without regard to the period of time with-      for appropriate temporary relief or restraining
+in which any subsequent discriminatory housing        order, by filing in such court a written petition
+practice occurred.                                    praying that such order be enforced and for ap-
+  (4) No such order shall affect any contract,        propriate temporary relief or restraining order.
+sale, encumbrance, or lease consummated before          (2) The Secretary shall file in court with the
+the issuance of such order and involving a bona       petition the record in the proceeding. A copy of
+fide purchaser, encumbrancer, or tenant without       such petition shall be forthwith transmitted by
+actual notice of the charge filed under this sub-     the clerk of the court to the parties to the pro-
+chapter.                                              ceeding before the administrative law judge.
+  (5) In the case of an order with respect to a       (k) Relief which may be granted
+discriminatory housing practice that occurred
+in the course of a business subject to a licensing      (1) Upon the filing of a petition under sub-
+or regulation by a governmental agency, the           section (i) or (j), the court may—
+Secretary shall, not later than 30 days after the         (A) grant to the petitioner, or any other
+date of the issuance of such order (or, if such         party, such temporary relief, restraining
+order is judicially reviewed, 30 days after such        order, or other order as the court deems just
+order is in substance affirmed upon such re-            and proper;
+view)—                                                    (B) affirm, modify, or set aside, in whole or
+    (A) send copies of the findings of fact, con-       in part, the order, or remand the order for fur-
+  clusions of law, and the order, to that govern-       ther proceedings; and
+  mental agency; and                                      (C) enforce such order to the extent that
+    (B) recommend to that governmental agency           such order is affirmed or modified.
+  appropriate disciplinary action (including,            (2) Any party to the proceeding before the ad-
+  where appropriate, the suspension or revoca-        ministrative law judge may intervene in the
+  tion of the license of the respondent).             court of appeals.
+   (6) In the case of an order against a respondent      (3) No objection not made before the adminis-
+against whom another order was issued within          trative law judge shall be considered by the
+the preceding 5 years under this section, the         court, unless the failure or neglect to urge such
+Secretary shall send a copy of each such order        objection is excused because of extraordinary
+to the Attorney General.                              circumstances.
+   (7) If the administrative law judge finds that     (l) Enforcement decree in absence of petition for
+the respondent has not engaged or is not about             review
+to engage in a discriminatory housing practice,
+                                                         If no petition for review is filed under sub-
+as the case may be, such administrative law
+                                                      section (i) before the expiration of 45 days after
+judge shall enter an order dismissing the charge.
+                                                      the date the administrative law judge’s order is
+The Secretary shall make public disclosure of
+                                                      entered, the administrative law judge’s findings
+each such dismissal.
+                                                      of fact and order shall be conclusive in connec-
+(h) Review by Secretary; service of final order       tion with any petition for enforcement—
+   (1) The Secretary may review any finding, con-          (1) which is filed by the Secretary under sub-
+clusion, or order issued under subsection (g).           section (j) after the end of such day; or
+Such review shall be completed not later than 30           (2) under subsection (m).
+days after the finding, conclusion, or order is so    (m) Court enforcement of administrative order
+issued; otherwise the finding, conclusion, or              upon petition of any person entitled to relief
+order becomes final.
+   (2) The Secretary shall cause the findings of         If before the expiration of 60 days after the
+fact and conclusions of law made with respect to      date the administrative law judge’s order is en-
+any final order for relief under this section, to-    tered, no petition for review has been filed under
+gether with a copy of such order, to be served on     subsection (i), and the Secretary has not sought
+each aggrieved person and each respondent in          enforcement of the order under subsection (j),
+the proceeding.                                       any person entitled to relief under the order
+                                                      may petition for a decree enforcing the order in
+(i) Judicial review
+                                                      the United States court of appeals for the cir-
+   (1) Any party aggrieved by a final order for re-   cuit in which the discriminatory housing prac-
+lief under this section granting or denying in        tice is alleged to have occurred.
+whole or in part the relief sought may obtain a
+                                                      (n) Entry of decree
+review of such order under chapter 158 of title 28.
+   (2) Notwithstanding such chapter, venue of the        The clerk of the court of appeals in which a
+proceeding shall be in the judicial circuit in        petition for enforcement is filed under sub-
+which the discriminatory housing practice is al-      section (l) or (m) shall forthwith enter a decree
+leged to have occurred, and filing of the petition    enforcing the order and shall transmit a copy of
+for review shall be not later than 30 days after      such decree to the Secretary, the respondent
+the order is entered.                                 named in the petition, and to any other parties
+(j) Court enforcement of administrative order         to the proceeding before the administrative law
+     upon petition by Secretary                       judge.
+   (1) The Secretary may petition any United          (o) Civil action for enforcement when election is
+States court of appeals for the circuit in which           made for such civil action
+the discriminatory housing practice is alleged to        (1) If an election is made under subsection (a),
+have occurred or in which any respondent re-          the Secretary shall authorize, and not later than
+sides or transacts business for the enforcement       30 days after the election is made the Attorney
+of the order of the administrative law judge and      General shall commence and maintain, a civil
+Page 5963                   TITLE 42—THE PUBLIC HEALTH AND WELFARE                                         § 3613
+
+action on behalf of the aggrieved person in a                   (B) The computation of such 2-year period
+United States district court seeking relief under            shall not include any time during which an ad-
+this subsection. Venue for such civil action shall           ministrative proceeding under this subchapter
+be determined under chapter 87 of title 28.                  was pending with respect to a complaint or
+  (2) Any aggrieved person with respect to the               charge under this subchapter based upon such
+issues to be determined in a civil action under              discriminatory housing practice. This subpara-
+this subsection may intervene as of right in that            graph does not apply to actions arising from a
+civil action.                                                breach of a conciliation agreement.
+  (3) In a civil action under this subsection, if               (2) An aggrieved person may commence a civil
+the court finds that a discriminatory housing                action under this subsection whether or not a
+practice has occurred or is about to occur, the              complaint has been filed under section 3610(a) of
+court may grant as relief any relief which a                 this title and without regard to the status of
+court could grant with respect to such discrimi-             any such complaint, but if the Secretary or a
+natory housing practice in a civil action under              State or local agency has obtained a concilia-
+section 3613 of this title. Any relief so granted            tion agreement with the consent of an aggrieved
+that would accrue to an aggrieved person in a                person, no action may be filed under this sub-
+civil action commenced by that aggrieved per-                section by such aggrieved person with respect to
+son under section 3613 of this title shall also ac-          the alleged discriminatory housing practice
+crue to that aggrieved person in a civil action              which forms the basis for such complaint except
+under this subsection. If monetary relief is                 for the purpose of enforcing the terms of such an
+sought for the benefit of an aggrieved person                agreement.
+who does not intervene in the civil action, the                 (3) An aggrieved person may not commence a
+court shall not award such relief if that ag-                civil action under this subsection with respect
+grieved person has not complied with discovery               to an alleged discriminatory housing practice
+orders entered by the court.                                 which forms the basis of a charge issued by the
+                                                             Secretary if an administrative law judge has
+(p) Attorney’s fees                                          commenced a hearing on the record under this
+  In any administrative proceeding brought                   subchapter with respect to such charge.
+under this section, or any court proceeding aris-            (b) Appointment of attorney by court
+ing therefrom, or any civil action under this sec-              Upon application by a person alleging a dis-
+tion, the administrative law judge or the court,             criminatory housing practice or a person
+as the case may be, in its discretion, may allow             against whom such a practice is alleged, the
+the prevailing party, other than the United                  court may—
+States, a reasonable attorney’s fee and costs.                    (1) appoint an attorney for such person; or
+The United States shall be liable for such fees                   (2) authorize the commencement or continu-
+and costs to the extent provided by section 504                 ation of a civil action under subsection (a)
+of title 5 or by section 2412 of title 28.                      without the payment of fees, costs, or secu-
+(Pub. L. 90–284, title VIII, § 812, as added Pub. L.            rity, if in the opinion of the court such person
+100–430, § 8(2), Sept. 13, 1988, 102 Stat. 1629.)               is financially unable to bear the costs of such
+                                                                action.
+                     Editorial Notes                         (c) Relief which may be granted
+                                                                (1) In a civil action under subsection (a), if the
+                  REFERENCES IN TEXT
+                                                             court finds that a discriminatory housing prac-
+  The Federal Rules of Evidence, referred to in subsec.      tice has occurred or is about to occur, the court
+(c), are set out in the Appendix to Title 28, Judiciary      may award to the plaintiff actual and punitive
+and Judicial Procedure.                                      damages, and subject to subsection (d), may
+                   PRIOR PROVISIONS                          grant as relief, as the court deems appropriate,
+                                                             any permanent or temporary injunction, tem-
+  A prior section 3612, Pub. L. 90–284, title VIII, § 812,
+                                                             porary restraining order, or other order (includ-
+Apr. 11, 1968, 82 Stat. 88, related to enforcement by pri-
+vate persons, prior to repeal by Pub. L. 100–430, § 8(2).    ing an order enjoining the defendant from en-
+                                                             gaging in such practice or ordering such affirm-
+       Statutory Notes and Related Subsidiaries
+                                                             ative action as may be appropriate).
+                                                                (2) In a civil action under subsection (a), the
+                    EFFECTIVE DATE                           court, in its discretion, may allow the prevailing
+  Section effective on 180th day beginning after Sept.       party, other than the United States, a reason-
+13, 1988, see section 13(a) of Pub. L. 100–430, set out as   able attorney’s fee and costs. The United States
+an Effective Date of 1988 Amendment note under sec-          shall be liable for such fees and costs to the
+tion 3601 of this title.                                     same extent as a private person.
+                                                             (d) Effect on certain sales, encumbrances, and
+§ 3613. Enforcement by private persons                            rentals
+(a) Civil action                                                Relief granted under this section shall not af-
+  (1)(A) An aggrieved person may commence a                  fect any contract, sale, encumbrance, or lease
+civil action in an appropriate United States dis-            consummated before the granting of such relief
+trict court or State court not later than 2 years            and involving a bona fide purchaser, encum-
+after the occurrence or the termination of an al-            brancer, or tenant, without actual notice of the
+leged discriminatory housing practice, or the                filing of a complaint with the Secretary or civil
+breach of a conciliation agreement entered into              action under this subchapter.
+under this subchapter, whichever occurs last, to             (e) Intervention by Attorney General
+obtain appropriate relief with respect to such                  Upon timely application, the Attorney Gen-
+discriminatory housing practice or breach.                   eral may intervene in such civil action, if the
+§ 3614                      TITLE 42—THE PUBLIC HEALTH AND WELFARE                                           Page 5964
+
+Attorney General certifies that the case is of                was addressed resides, was served, or transacts
+general public importance. Upon such interven-                business.
+tion the Attorney General may obtain such re-                 (d) Relief which may be granted in civil actions
+lief as would be available to the Attorney Gen-                   under subsections (a) and (b)
+eral under section 3614(e) of this title in a civil
+                                                                (1) In a civil action under subsection (a) or (b),
+action to which such section applies.
+                                                              the court—
+(Pub. L. 90–284, title VIII, § 813, as added Pub. L.              (A) may award such preventive relief, in-
+100–430, § 8(2), Sept. 13, 1988, 102 Stat. 1633.)               cluding a permanent or temporary injunction,
+                                                                restraining order, or other order against the
+                     Editorial Notes                            person responsible for a violation of this sub-
+                                                                chapter as is necessary to assure the full en-
+                    PRIOR PROVISIONS
+                                                                joyment of the rights granted by this sub-
+  A prior section 3613, Pub. L. 90–284, title VIII, § 813,      chapter;
+Apr. 11, 1968, 82 Stat. 88, related to enforcement by At-         (B) may award such other relief as the court
+torney General by bringing civil action requesting pre-         deems appropriate, including monetary dam-
+ventive relief, prior to repeal by Pub. L. 100–430, § 8(2).
+                                                                ages to persons aggrieved; and
+                                                                  (C) may, to vindicate the public interest, as-
+         Statutory Notes and Related Subsidiaries
+                                                                sess a civil penalty against the respondent—
+                     EFFECTIVE DATE                                  (i) in an amount not exceeding $50,000, for
+                                                                  a first violation; and
+  Section effective on 180th day beginning after Sept.
+13, 1988, see section 13(a) of Pub. L. 100–430, set out as           (ii) in an amount not exceeding $100,000,
+an Effective Date of 1988 Amendment note under sec-               for any subsequent violation.
+tion 3601 of this title.                                        (2) In a civil action under this section, the
+                                                              court, in its discretion, may allow the prevailing
+§ 3614. Enforcement by Attorney General
+                                                              party, other than the United States, a reason-
+(a) Pattern or practice cases                                 able attorney’s fee and costs. The United States
+  Whenever the Attorney General has reason-                   shall be liable for such fees and costs to the ex-
+able cause to believe that any person or group of             tent provided by section 2412 of title 28.
+persons is engaged in a pattern or practice of re-            (e) Intervention in civil actions
+sistance to the full enjoyment of any of the                    Upon timely application, any person may in-
+rights granted by this subchapter, or that any                tervene in a civil action commenced by the At-
+group of persons has been denied any of the                   torney General under subsection (a) or (b) which
+rights granted by this subchapter and such de-                involves an alleged discriminatory housing prac-
+nial raises an issue of general public impor-                 tice with respect to which such person is an ag-
+tance, the Attorney General may commence a                    grieved person or a conciliation agreement to
+civil action in any appropriate United States                 which such person is a party. The court may
+district court.                                               grant such appropriate relief to any such inter-
+(b) On referral of discriminatory housing prac-               vening party as is authorized to be granted to a
+    tice or conciliation agreement for enforce-               plaintiff in a civil action under section 3613 of
+    ment                                                      this title.
+  (1)(A) The Attorney General may commence a                  (Pub. L. 90–284, title VIII, § 814, as added Pub. L.
+civil action in any appropriate United States                 100–430, § 8(2), Sept. 13, 1988, 102 Stat. 1634.)
+district court for appropriate relief with respect
+to a discriminatory housing practice referred to                                   Editorial Notes
+the Attorney General by the Secretary under                                       PRIOR PROVISIONS
+section 3610(g) of this title.                                  A prior section 3614, Pub. L. 90–284, title VIII, § 814,
+  (B) A civil action under this paragraph may be              Apr. 11, 1968, 82 Stat. 88, related to expedition of court
+commenced not later than the expiration of 18                 proceedings under section 3612 or 3613 of this title, prior
+months after the date of the occurrence or the                to repeal by Pub. L. 98–620, title IV, § 402(40), Nov. 8,
+termination of the alleged discriminatory hous-               1984, 98 Stat. 3360.
+ing practice.
+  (2)(A) The Attorney General may commence a                         Statutory Notes and Related Subsidiaries
+civil action in any appropriate United States                                     EFFECTIVE DATE
+district court for appropriate relief with respect
+                                                                Section effective on 180th day beginning after Sept.
+to breach of a conciliation agreement referred to             13, 1988, see section 13(a) of Pub. L. 100–430, set out as
+the Attorney General by the Secretary under                   an Effective Date of 1988 Amendment note under sec-
+section 3610(c) of this title.                                tion 3601 of this title.
+  (B) A civil action may be commenced under
+this paragraph not later than the expiration of               § 3614–1. Incentives for self-testing and self-cor-
+90 days after the referral of the alleged breach                  rection
+under section 3610(c) of this title.                          (a) Privileged information
+(c) Enforcement of subpoenas                                    (1) Conditions for privilege
+  The Attorney General, on behalf of the Sec-                     A report or result of a self-test (as that term
+retary, or other party at whose request a sub-                  is defined by regulation of the Secretary) shall
+poena is issued, under this subchapter, may en-                 be considered to be privileged under paragraph
+force such subpoena in appropriate proceedings                  (2) if any person—
+in the United States district court for the dis-                     (A) conducts, or authorizes an independent
+trict in which the person to whom the subpoena                    third party to conduct, a self-test of any as-
+Page 5965               TITLE 42—THE PUBLIC HEALTH AND WELFARE                                           § 3614a
+
+   pect of a residential real estate related lend-        (1) a court of competent jurisdiction; or
+   ing transaction of that person, or any part of         (2) an administrative law proceeding with
+   that transaction, in order to determine the          appropriate jurisdiction.
+   level or effectiveness of compliance with
+                                                      (Pub. L. 90–284, title VIII, § 814A, as added Pub.
+   this subchapter by that person; and
+                                                      L. 104–208, div. A, title II, § 2302(b)(1), Sept. 30,
+     (B) has identified any possible violation of
+                                                      1996, 110 Stat. 3009–421.)
+   this subchapter by that person and has
+   taken, or is taking, appropriate corrective               Statutory Notes and Related Subsidiaries
+   action to address any such possible viola-
+   tion.                                                                   EFFECTIVE DATE
+ (2) Privileged self-test                               Privilege provided for in this section applicable to
+                                                      self-test conducted before, on, or after effective date of
+    If a person meets the conditions specified in     regulations prescribed under section 2302(b)(2) of Pub.
+  subparagraphs (A) and (B) of paragraph (1)          L. 104–208, set out below, with certain exception, see
+  with respect to a self-test described in that       section 2302(c) of Pub. L. 104–208, set out as a note under
+  paragraph, any report or results of that self-      section 1691c–1 of Title 15, Commerce and Trade.
+  test—
+                                                                            REGULATIONS
+       (A) shall be privileged; and
+       (B) may not be obtained or used by any ap-       Pub. L. 104–208, div. A, title II, § 2302(b)(2), Sept. 30,
+    plicant, department, or agency in any—            1996, 110 Stat. 3009–423, provided that:
+         (i) proceeding or civil action in which        ‘‘(A) IN GENERAL.—Not later than 6 months after the
+                                                      date of enactment of this Act [Sept. 30, 1996], in con-
+       one or more violations of this subchapter      sultation with the Board and after providing notice and
+       are alleged; or                                an opportunity for public comment, the Secretary of
+         (ii) examination or investigation relat-     Housing and Urban Development shall prescribe final
+       ing to compliance with this subchapter.        regulations to implement section 814A of the Fair
+(b) Results of self-testing                           Housing Act [42 U.S.C. 3614–1], as added by this section.
+                                                        ‘‘(B) SELF-TEST.—
+  (1) In general
+                                                           ‘‘(i) DEFINITION.—The regulations prescribed by the
+    No provision of this section may be con-            Secretary under subparagraph (A) shall include a def-
+  strued to prevent an aggrieved person, com-           inition of the term ‘‘self-test’’ for purposes of section
+  plainant, department, or agency from obtain-          814A of the Fair Housing Act, as added by this sec-
+  ing or using a report or results of any self-test     tion.
+                                                           ‘‘(ii) REQUIREMENT FOR SELF-TEST.—The regulations
+  in any proceeding or civil action in which a
+                                                        prescribed by the Secretary under subparagraph (A)
+  violation of this subchapter is alleged, or in        shall specify that a self-test shall be sufficiently ex-
+  any examination or investigation of compli-           tensive to constitute a determination of the level and
+  ance with this subchapter if—                         effectiveness of the compliance by a person engaged
+       (A) the person to whom the self-test re-         in residential real estate related lending activities
+    lates or any person with lawful access to the       with the Fair Housing Act [42 U.S.C. 3601 et seq.].
+    report or the results—                                 ‘‘(iii) SUBSTANTIAL SIMILARITY TO CERTAIN EQUAL
+                                                        CREDIT OPPORTUNITY ACT REGULATIONS.—The regula-
+         (i) voluntarily releases or discloses all,
+                                                        tions prescribed under subparagraph (A) shall be sub-
+       or any part of, the report or results to the
+                                                        stantially similar to the regulations prescribed by
+       aggrieved person, complainant, depart-           the Board to carry out section 704A of the Equal
+       ment, or agency, or to the general public;       Credit Opportunity Act [15 U.S.C. 1691c–1], as added
+       or                                               by this section.’’
+         (ii) refers to or describes the report or
+       results as a defense to charges of viola-      § 3614a. Rules to implement subchapter
+       tions of this subchapter against the person      The Secretary may make rules (including
+       to whom the self-test relates; or              rules for the collection, maintenance, and anal-
+      (B) the report or results are sought in con-    ysis of appropriate data) to carry out this sub-
+    junction with an adjudication or admission        chapter. The Secretary shall give public notice
+    of a violation of this subchapter for the sole    and opportunity for comment with respect to all
+    purpose of determining an appropriate pen-        rules made under this section.
+    alty or remedy.                                   (Pub. L. 90–284, title VIII, § 815, as added Pub. L.
+  (2) Disclosure for determination of penalty or      100–430, § 8(2), Sept. 13, 1988, 102 Stat. 1635.)
+      remedy
+    Any report or results of a self-test that are                          Editorial Notes
+  disclosed for the purpose specified in para-                            PRIOR PROVISIONS
+  graph (1)(B)—
+                                                        A prior section 815 of Pub. L. 90–284 was renumbered
+      (A) shall be used only for the particular       section 816 and is classified to section 3615 of this title.
+    proceeding in which the adjudication or ad-
+    mission referred to in paragraph (1)(B) is               Statutory Notes and Related Subsidiaries
+    made; and
+      (B) may not be used in any other action or                           EFFECTIVE DATE
+    proceeding.                                         Section effective on 180th day beginning after Sept.
+(c) Adjudication                                      13, 1988, see section 13(a) of Pub. L. 100–430, set out as
+                                                      an Effective Date of 1988 Amendment note under sec-
+  An aggrieved person, complainant, depart-           tion 3601 of this title.
+ment, or agency that challenges a privilege as-
+serted under this section may seek a determina-                          INITIAL RULEMAKING
+tion of the existence and application of that           Secretary to issue rules to implement this subchapter
+privilege in—                                         as amended by Pub. L. 100–430 not later than the 180th
+§ 3615                       TITLE 42—THE PUBLIC HEALTH AND WELFARE                                    Page 5966
+
+day after Sept. 13, 1988, see section 13(b) of Pub. L.         cies, public or private nonprofit organizations or
+100–430, set out as a note under section 3601 of this title.   institutions, or other public or private entities
+                                                               that are formulating or carrying out programs
+§ 3615. Effect on State laws
+                                                               to prevent or eliminate discriminatory housing
+  Nothing in this subchapter shall be construed                practices, to develop, implement, carry out, or
+to invalidate or limit any law of a State or po-               coordinate—
+litical subdivision of a State, or of any other ju-                (1) programs or activities designed to obtain
+risdiction in which this subchapter shall be ef-                 enforcement of the rights granted by title VIII
+fective, that grants, guarantees, or protects the                of the Act of April 11, 1968 [42 U.S.C. 3601 et
+same rights as are granted by this subchapter;                   seq.] (commonly referred to as the Civil Rights
+but any law of a State, a political subdivision,                 Act of 1968), or by State or local laws that pro-
+or other such jurisdiction that purports to re-                  vide rights and remedies for alleged discrimi-
+quire or permit any action that would be a dis-                  natory housing practices that are substan-
+criminatory housing practice under this sub-                     tially equivalent to the rights and remedies
+chapter shall to that extent be invalid.                         provided in such title VIII, through such ap-
+                                                                 propriate judicial or administrative pro-
+(Pub. L. 90–284, title VIII, § 816, formerly § 815,
+                                                                 ceedings (including informal methods of con-
+Apr. 11, 1968, 82 Stat. 89; renumbered § 816, Pub.
+                                                                 ference, conciliation, and persuasion) as are
+L. 100–430, § 8(1), Sept. 13, 1988, 102 Stat. 1625.)
+                                                                 available therefor; and
+                                                                   (2) education and outreach programs de-
+                     Editorial Notes
+                                                                 signed to inform the public concerning rights
+                    PRIOR PROVISIONS                             and obligations under the laws referred to in
+  A prior section 816 of Pub. L. 90–284 was renumbered           paragraph (1).
+section 817 and is classified to section 3616 of this title.   (b) Private enforcement initiatives
+§ 3616. Cooperation with State and local agencies                (1) In general
+    administering fair housing laws; utilization                   The Secretary shall use funds made avail-
+    of services and personnel; reimbursement;                    able under this subsection to conduct, through
+    written agreements; publication in Federal                   contracts with private nonprofit fair housing
+    Register                                                     enforcement organizations, investigations of
+                                                                 violations of the rights granted under title
+  The Secretary may cooperate with State and                     VIII of the Civil Rights Act of 1968 [42 U.S.C.
+local agencies charged with the administration                   3601 et seq.], and such enforcement activities
+of State and local fair housing laws and, with                   as appropriate to remedy such violations. The
+the consent of such agencies, utilize the services               Secretary may enter into multiyear contracts
+of such agencies and their employees and, not-                   and take such other action as is appropriate to
+withstanding any other provision of law, may                     enhance the effectiveness of such investiga-
+reimburse such agencies and their employees for                  tions and enforcement activities.
+services rendered to assist him in carrying out
+this subchapter. In furtherance of such coopera-                 (2) Activities
+tive efforts, the Secretary may enter into writ-                   The Secretary shall use funds made avail-
+ten agreements with such State or local agen-                    able under this subsection to conduct, through
+cies. All agreements and terminations thereof                    contracts with private nonprofit fair housing
+shall be published in the Federal Register.                      enforcement organizations, a range of inves-
+(Pub. L. 90–284, title VIII, § 817, formerly § 816,              tigative and enforcement activities designed
+Apr. 11, 1968, 82 Stat. 89; renumbered § 817, Pub.               to—
+L. 100–430, § 8(1), Sept. 13, 1988, 102 Stat. 1625.)                  (A) carry out testing and other investiga-
+                                                                   tive activities in accordance with subsection
+                     Editorial Notes                               (b)(1), including building the capacity for
+                                                                   housing investigative activities in unserved
+                    PRIOR PROVISIONS                               or underserved areas;
+  A prior section 817 of Pub. L. 90–284 was renumbered                (B) discover and remedy discrimination in
+section 818 and is classified to section 3617 of this title.       the public and private real estate markets
+                                                                   and real estate-related transactions, includ-
+         Statutory Notes and Related Subsidiaries                  ing, but not limited to, the making or pur-
+                                                                   chasing of loans or the provision of other fi-
+           FAIR HOUSING INITIATIVES PROGRAM
+                                                                   nancial assistance sales and rentals of hous-
+  Pub. L. 100–242, title V, § 561, Feb. 5, 1988, 101 Stat.         ing and housing advertising;
+1942, as amended, which established a demonstration                   (C) carry out special projects, including
+program on fair housing initiatives and was formerly               the development of prototypes to respond to
+set out as a note under this section, was transferred to
+section 3616a of this title.
+                                                                   new or sophisticated forms of discrimination
+                                                                   against persons protected under title VIII of
+§ 3616a. Fair housing initiatives program                          the Civil Rights Act of 1968 [42 U.S.C. 3601 et
+                                                                   seq.];
+(a) In general                                                        (D) provide technical assistance to local
+  The Secretary of Housing and Urban Develop-                      fair housing organizations, and assist in the
+ment (in this section referred to as the ‘‘Sec-                    formation and development of new fair hous-
+retary’’) may make grants to, or (to the extent                    ing organizations; and
+of amounts provided in appropriation Acts)                            (E) provide funds for the costs and ex-
+enter into contracts or cooperative agreements                     penses of litigation, including expert witness
+with, State or local governments or their agen-                    fees.
+Page 5967               TITLE 42—THE PUBLIC HEALTH AND WELFARE                                    § 3616a
+
+(c) Funding of fair housing organizations               profit organizations representing groups of
+  (1) In general                                        persons protected under title VIII of the Civil
+    The Secretary shall use funds made avail-           Rights Act of 1968 [42 U.S.C. 3601 et seq.], State
+  able under this section to enter into contracts       and local agencies certified by the Secretary
+  or cooperative agreements with qualified fair         under section 810(f) of the Fair Housing Act [42
+  housing enforcement organizations, other pri-         U.S.C. 3610(f)], or other public or private enti-
+  vate nonprofit fair housing enforcement orga-         ties that are formulating or carrying out pro-
+  nizations, and nonprofit groups organizing to         grams to prevent or eliminate discriminatory
+  build their capacity to provide fair housing en-      housing practices, shall establish or support
+  forcement, for the purpose of supporting the          education and outreach programs at the re-
+  continued development or implementation of            gional and local levels.
+  initiatives which enforce the rights granted          (3) Community-based programs
+  under title VIII of the Civil Rights Act of 1968        The Secretary shall provide funding to fair
+  [42 U.S.C. 3601 et seq.], as amended. Contracts       housing organizations and other nonprofit or-
+  or cooperative agreements may not provide             ganizations representing groups of persons
+  more than 50 percent of the operating budget          protected under title VIII of the Civil Rights
+  of the recipient organization for any one year.       Act of 1968, or other public or private entities
+  (2) Capacity enhancement                              that are formulating or carrying out programs
+    The Secretary shall use funds made avail-           to prevent or eliminate discriminatory hous-
+  able under this section to help establish, orga-      ing practices, to support community-based
+  nize, and build the capacity of fair housing en-      education and outreach activities, including
+  forcement organizations, particularly in those        school, church, and community presentations,
+  areas of the country which are currently un-          conferences, and other educational activities.
+  derserved by fair housing enforcement organi-      (e) Program administration
+  zations as well as those areas where large con-       (1) Not less than 30 days before providing a
+  centrations of protected classes exist. For pur-   grant or entering into any contract or coopera-
+  poses of meeting the objectives of this para-      tive agreement to carry out activities author-
+  graph, the Secretary may enter into contracts      ized by this section, the Secretary shall submit
+  or cooperative agreements with qualified fair      notification of such proposed grant, contract, or
+  housing enforcement organizations. The Sec-        cooperative agreement (including a description
+  retary shall establish annual goals which re-      of the geographical distribution of such con-
+  flect the national need for private fair housing   tracts) to the Committee on Banking, Housing,
+  enforcement organizations.                         and Urban Affairs of the Senate and the Com-
+(d) Education and outreach                           mittee on Banking, Finance and Urban Affairs
+  (1) In general                                     of the House of Representatives.
+                                                        (2) Repealed. Pub. L. 104–66, title I, § 1071(d),
+    The Secretary, through contracts with one        Dec. 21, 1995, 109 Stat. 720.
+  or more qualified fair housing enforcement or-     (f) Regulations
+  ganizations, other fair housing enforcement
+  organizations, and other nonprofit organiza-          (1) The Secretary shall issue such regulations
+  tions representing groups of persons protected     as may be necessary to carry out the provisions
+  under title VIII of the Civil Rights Act of 1968   of this section.
+                                                        (2) The Secretary shall, for use during the
+  [42 U.S.C. 3601 et seq.], shall establish a na-
+                                                     demonstration authorized in this section, estab-
+  tional education and outreach program. The
+                                                     lish guidelines for testing activities funded
+  national program shall be designed to provide
+                                                     under the private enforcement initiative of the
+  a centralized, coordinated effort for the devel-
+                                                     fair housing initiatives program. The purpose of
+  opment and dissemination of fair housing
+                                                     such guidelines shall be to ensure that inves-
+  media products, including—                         tigations in support of fair housing enforcement
+       (A) public service announcements, both
+                                                     efforts described in subsection (a)(1) shall de-
+    audio and video;
+       (B) television, radio and print advertise-    velop credible and objective evidence of dis-
+    ments;                                           criminatory housing practices. Such guidelines
+       (C) posters; and                              shall apply only to activities funded under this
+       (D) pamphlets and brochures.                  section, shall not be construed to limit or other-
+                                                     wise restrict the use of facts secured through
+ The Secretary shall designate a portion of the      testing not funded under this section in any
+ amounts provided in subsection (g)(4) for a na-     legal proceeding under Federal fair housing

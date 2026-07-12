@@ -16,6 +16,18 @@ This is a business-operations repo. Treat rent, invoice, payment, lease, tenant,
 6. Minimal manual admin
 7. Low support burden
 
+## Legal Authority Library Rules
+
+- The `legal/` subtree contains public legal authorities and audited extracts, not legal advice, signed leases, tenant records, or internal policy targets.
+- Start with `legal/CURRENT_AUTHORITY_INDEX.md`, `legal/PROJECT_INSTRUCTIONS.md`, `legal/SOURCE_GAPS.md`, and `legal/manifests/authority_registry.json`.
+- Official source text controls over Markdown extraction, summaries, applicability notes, and AI output.
+- Distinguish binding law, conditional law, published case law, guidance, official notices, proposals, withdrawn material, and internal GH policy.
+- Never mark a changed source current merely because an automated hash check detected it. Legal status, effective dates, supersession, and applicability require human review.
+- Never patch old and new wording into a synthetic statute. Keep current consolidated text, effective addenda, and historical versions separately labeled.
+- Keep proposed, withdrawn, monitoring, candidate-branch, and unreviewed material out of the approved current-law path.
+- Run `python legal/scripts/validate_release.py` after changing an approved release.
+- Do not auto-merge a legal-source currentness change. Preserve the approved baseline until a qualified reviewer resolves the change.
+
 ## Working Rules
 
 - Make small, focused, reversible changes.

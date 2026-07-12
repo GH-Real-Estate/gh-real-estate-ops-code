@@ -1,0 +1,1883 @@
+GH Real Estate approved legal-source text chunk — GH-FED-03_CONDITIONAL-HUD-HCV-VAWA-Section504-Programs.part-003.txt — verified through 2026-07-12. Official source text controls.
+
+ assistance under the pilot program (whether or not the PHA has also decided to offer the homeownership option).
+ (b) Applicability of homeownership option requirements. Except as provided in this section, all of the regulations applicable to the
+ homeownership option (as described in §§ 982.625 through 982.641) are also applicable to the pilot program.
+ (c) Initial eligibility requirements. Before commencing homeownership assistance under the pilot program for a family, the PHA must determine
+ that all of the following initial requirements have been satisfied:
+ (1) The family is a disabled family (as defined in § 5.403 of this title);
+ (2) The family annual income does not exceed 99 percent of the median income for the area;
+ (3) The family is not a current homeowner;
+ (4) The family must close on the purchase of the home during the period starting on July 23, 2001 and ending on July 23, 2004; and
+ (5) The family meets the initial requirements described in § 982.626; however, the following initial requirements do not apply to a family seeking
+ to participate in the pilot program:
+ (i) The income eligibility requirements of § 982.201(b)(1);
+ (ii) The first-time homeowner requirements of § 982.627(b); and
+ (iii) The mortgage default requirements of § 982.627(e), if the PHA determines that the default is due to catastrophic medical reasons or due to
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                         Page 74
+ the impact of a federally declared major disaster or emergency.
+ (d) Amount and distribution of homeownership assistance payments. (1) While the family is residing in the home, the PHA shall calculate a
+ monthly homeownership assistance payment on behalf of the family in accordance with § 982.635 and this section.
+ (2) A family that is a low income family (as defined at 24 CFR 5.603(b)) as determined by HUD shall receive the full amount of the monthly
+ homeownership assistance payment calculated under § 982.635.
+ (3) A family whose annual income is greater than the low income family ceiling but does not exceed 89 percent of the median income for the area
+ as determined by HUD shall receive a monthly homeownership assistance payment equal to 66 percent of the amount calculated under § 982.635.
+ (4) A family whose annual income is greater than the 89 percent ceiling but does not exceed 99 percent of the median income for the area as
+ determined by HUD shall receive a monthly homeownership assistance payment equal to 33 percent of the amount calculated under § 982.635.
+ (5) A family whose annual income is greater than 99 percent of the median income for the area shall not receive homeownership assistance under
+ the pilot program.
+ (e) Assistance payments to lender. The PHA must make homeownership assistance payments to a lender on behalf of the disabled family. If the
+ assistance payment exceeds the amount due to the lender, the PHA must pay the excess directly to the family. The provisions of § 982.635(d),
+ which permit the PHA to make monthly homeownership assistance payments directly to the family, do not apply to the pilot program.
+ (f) Mortgage defaults. The requirements of § 982.638(d) regarding mortgage defaults are applicable to the pilot program. However,
+ notwithstanding § 982.638(d), the PHA may, in its discretion, permit a family that has defaulted on its mortgage to move to a new unit with
+ continued voucher homeownership assistance if the PHA determines that the default is due to catastrophic medical reasons or due to the impact
+ of a federally declared major disaster or emergency. The requirements of §§ 982.627(a)(5) and 982.627(e) do not apply to such a family.
+ [66 FR 33613, June 22, 2001]
+
+ § 982.643 Homeownership option: Downpayment assistance grants.
+ (a) General. (1) A PHA may provide a single downpayment assistance grant for a participant that has received tenant-based or project-based
+ rental assistance in the Housing Choice Voucher Program.
+ (2) The downpayment assistance grant must be applied toward the downpayment required in connection with the purchase of the home and/or
+ reasonable and customary closing costs in connection with the purchase of the home.
+ (3) If the PHA permits the downpayment grant to be applied to closing costs, the PHA must define what fees and charges constitute reasonable
+ and customary closing costs. However, if the purchase of a home is financed with FHA mortgage insurance, such financing is subject to FHA
+ mortgage insurance requirements, including any requirements concerning closing costs (see § 982.632(b) of this part regarding the applicability
+ of FHA requirements to voucher homeownership assistance and § 203.27 of this title regarding allowable fees, charges and discounts for
+ FHA-insured mortgages).
+ (b) Maximum downpayment grant. A downpayment assistance grant may not exceed twelve times the difference between the payment standard
+ and the total tenant payment.
+ (c) Payment of downpayment grant. The downpayment assistance grant shall be paid at the closing of the family's purchase of the home.
+ (d) Administrative fee. For each downpayment assistance grant made by the PHA, HUD will pay the PHA a one-time administrative fee in
+ accordance with § 982.152(a)(1)(iii).
+ (e) Return to tenant-based assistance. A family that has received a downpayment assistance grant may apply for and receive tenant-based rental
+ assistance, in accordance with program requirements and PHA policies. However, the PHA may not commence tenant-based rental assistance for
+ occupancy of the new unit so long as any member of the family owns any title or other interest in the home purchased with homeownership
+ assistance. Further, eighteen months must have passed since the family's receipt of the downpayment assistance grant.
+ (f) Implementation of downpayment assistance grants. A PHA may not offer downpayment assistance under this paragraph until HUD publishes
+ a notice in the Federal Register.
+ [67 FR 64494, Oct. 18, 2002]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                       Page 75
+ Nondiscrimination in Federally Assisted Programs of
+                        HUD
+ Citation: 24 C.F.R. part 1
+
+ Authority: Tier 1 — binding federal regulation; federal-assistance dependent
+
+ Applicability / trigger: Conditional: applies to recipients of federal financial assistance from HUD under Title VI.
+
+ Source: https://www.ecfr.gov/api/versioner/v1/full/2026-07-09/title-24.xml?part=1
+
+ Currentness: Official eCFR versioned XML as of 2026-07-09; retrieved 2026-07-12.
+
+ Retrieved: 2026-07-12
+
+
+
+ This is a searchable rendering of an official source. It is not legal advice. The official source controls, and current law must be
+ rechecked before action.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                             Page 1
+ PART 1—NONDISCRIMINATION IN FEDERALLY ASSISTED PROGRAMS OF
+ THE DEPARTMENT OF HOUSING AND URBAN
+ DEVELOPMENT—EFFECTUATION OF TITLE VI OF THE CIVIL RIGHTS ACT
+ OF 1964
+ Authority: 42 U.S.C. 2000d-1 and 3535(d).
+ Source: 38 FR 17949, July 5, 1973, unless otherwise noted.
+
+ § 1.1 Purpose.
+ The purpose of this part 1 is to effectuate the provisions of title VI of the Civil Rights Act of 1964 (hereafter referred to as the Act ) to the end that
+ no person in the United States shall, on the ground of race, color, or national origin, be excluded from participation in, be denied the benefits of,
+ or be otherwise subjected to discrimination under any program or activity receiving Federal financial assistance from the Department of Housing
+ and Urban Development.
+
+ § 1.2 Definitions.
+ As used in this part 1—
+ (a) The term Department means the Department of Housing and Urban Development.
+ (b) The term Secretary means the Secretary of Housing and Urban Development.
+ (c) The term responsible Department official means the Secretary or, to the extent of any delegation of authority by the Secretary to act under this
+ part 1, any other Department official to whom the Secretary may hereafter delegate such authority.
+ (d) The term United States means the States of the United States, the District of Columbia, Puerto Rico, the Virgin Islands, American Samoa,
+ Guam, Wake Island, the Canal Zone, and the territories and possessions of the United States, and the term State means any one of the foregoing.
+ (e) The term Federal financial assistance includes: (1) Grants, loans, and advances of Federal funds, (2) the grant or donation of Federal property
+ and interests in property, (3) the detail of Federal personnel, (4) the sale and lease of, and the permission to use (on other than a casual or transient
+ basis), Federal property or any interest in such property without consideration or at a nominal consideration, or at a consideration which is
+ reduced for the purpose of assisting the recipient, or in recognition of the public interest to be served by such sale or lease to the recipient, and (5)
+ any Federal agreement, arrangement, or other contract which has as one of its purposes the provision of assistance. The term Federal financial
+ assistance does not include a contract of insurance or guaranty.
+ (f) The term recipient means any State, political subdivision of any State, or instrumentality of any State or political subdivision, any public or
+ private agency, institution, organization, or other entity, or any individual, in any State, to whom Federal financial assistance is extended, directly
+ or through another recipient, for any program or activity, or who otherwise participates in carrying out such program or activity (such as a
+ redeveloper in the Urban Renewal Program), including any successor, assign, or transferee thereof, but such term does not include any ultimate
+ beneficiary under any such program or activity.
+ (g) The term applicant means one who submits an application, contract, request, or plan requiring Department approval as a condition to
+ eligibility for Federal financial assistance, and the term application means such an application, contract, request, or plan.
+
+ § 1.3 Application of part 1.
+ This part 1 applies to any program or activity for which Federal financial assistance is authorized under a law administered by the Department. It
+ applies to money paid, property transferred, or other Federal financial assistance extended to any such program or activity on or after January 3,
+ 1965. This part 1 does not apply to: (a) Any Federal financial assistance by way of insurance or guaranty contracts, (b) money paid, property
+ transferred, or other assistance extended to any such program or activity before January 3, 1965, (c) any assistance to any person who is the
+ ultimate beneficiary under any such program or activity, or (d) any employment practice, under any such program or activity, of any employer,
+ employment agency, or labor organization, except to the extent described in § 1.4(c).
+ [38 FR 17949, July 5, 1973, as amended at 83 FR 26360, June 7, 2018]
+
+ § 1.4 Discrimination prohibited.
+ (a) General. No person in the United States shall, on the ground of race, color, or national origin, be excluded from participation in, be denied the
+ benefits of, or be otherwise subjected to discrimination under any program or activity to which this part 1 applies.
+ (b) Specific discriminatory actions prohibited. (1) A recipient under any program or activity to which this part 1 applies may not, directly or
+ through contractual or other arrangements, on the ground of race, color, or national origin:
+ (i) Deny a person any housing, accommodations, facilities, services, financial aid, or other benefits provided under the program or activity;
+ (ii) Provide any housing, accommodations, facilities, services, financial aid, or other benefits to a person which are different, or are provided in a
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                                 Page 2
+ different manner, from those provided to others under the program or activity;
+ (iii) Subject a person to segregation or separate treatment in any matter related to his receipt of housing, accommodations, facilities, services,
+ financial aid, or other benefits under the program or activity;
+ (iv) Restrict a person in any way in access to such housing, accommodations, facilities, services, financial aid, or other benefits, or in the
+ enjoyment of any advantage or privilege enjoyed by others in connection with such housing, accommodations, facilities, services, financial aid,
+ or other benefits under the program or activity;
+ (v) Treat a person differently from others in determining whether he satisfies any occupancy, admission, enrollment, eligibility, membership, or
+ other requirement or condition which persons must meet in order to be provided any housing, accommodations, facilities, services, financial aid,
+ or other benefits provided under the program or activity;
+ (vi) Deny a person opportunity to participate in the program or activity through the provision of services or otherwise, or afford him an
+ opportunity to do so which is different from that afforded others under the program or activity (including the opportunity to participate in the
+ program or activity as an employee but only to the extent set forth in paragraph (c) of this section).
+ (vii) Deny a person the opportunity to participate as a member of a planning or advisory body which is an integral part of the program.
+ (2)(i) A recipient, in determining the types of housing, accommodations, facilities, services, financial aid, or other benefits which will be
+ provided under any such program or activity, or the class of persons to whom, or the situations in which, such housing, accommodations,
+ facilities, services, financial aid, or other benefits will be provided under any such program or activity, or the class of persons to be afforded an
+ opportunity to participate in any such program or activity, may not, directly or through contractual or other arrangements, utilize criteria or
+ methods of administration which have the effect of subjecting persons to discrimination because of their race, color, or national origin, or have
+ the effect of defeating or substantially impairing accomplishment of the objectives of the program or activity as respect to persons of a particular
+ race, color, or national origin.
+ (ii) A recipient, in operating low-rent housing with Federal financial assistance under the United States Housing Act of 1937, as amended (42
+ U.S.C. 1401 et seq. ), shall assign eligible applicants to dwelling units in accordance with a plan, duly adopted by the recipient and approved by
+ the responsible Department official, providing for assignment on a community-wide basis in sequence based upon the date and time the
+ application is received, the size or type of unit suitable, and factors affecting preference or priority established by the recipient's regulations,
+ which are not inconsistent with the objectives of title VI of the Civil Rights Act of 1964 and this part 1. The plan may allow an applicant to refuse
+ a tendered vacancy for good cause without losing his standing on the list but shall limit the number of refusals without cause as prescribed by the
+ responsible Department official.
+ (iii) The responsible Department official is authorized to prescribe and promulgate plans, exceptions, procedures, and requirements for the
+ assignment and reassignment of eligible applicants and tenants consistent with the purpose of paragraph (b)(2)(ii) of this section, this part 1, and
+ title VI of the Civil Rights Act of 1964, in order to effectuate and insure compliance with the requirements imposed thereunder.
+ (3) In determining the site or location of housing, accommodations, or facilities, an applicant or recipient may not make selections with the
+ purpose or effect of excluding individuals from, denying them the benefits of, or subjecting them to discrimination under any program to which
+ this part 1 applies, on the ground of race, color, or national origin; or with the purpose or effect of defeating or substantially impairing the
+ accomplishment of the objectives of the Act or this part 1.
+ (4) As used in this part 1 the housing, accommodations, facilities, services, financial aid, or other benefits provided under a program or activity
+ receiving Federal financial assistance shall be deemed to include any housing, accommodations, facilities, services, financial aid, or other
+ benefits provided in or through a facility provided with the aid of Federal financial assistance.
+ (5) The enumeration of specific forms of prohibited discrimination in paragraphs (b) and (c) of this section does not limit the generality of the
+ prohibition in paragraph (a) of this section.
+ (6)(i) In administering a program regarding which the recipient has previously discriminated against persons on the ground of race, color, or
+ national origin, the recipient must take affirmative action to overcome the effects of prior discrimination.
+ (ii) Even in the absence of such prior discrimination, a recipient in administering a program should take affirmative action to overcome the effects
+ of conditions which resulted in limiting participation by persons of a particular race, color, or national origin.
+ Where previous discriminatory practice or usage tends, on the ground of race, color, or national origin, to exclude individuals from participation
+ in, to deny them the benefits of, or to subject them to discrimination under any program or activity to which this part 1 applies, the applicant or
+ recipient has an obligation to take reasonable action to remove or overcome the consequences of the prior discriminatory practice or usage, and to
+ accomplish the purpose of the Act.
+ (c) Employment practices. (1) Where a primary objective of the Federal financial assistance to a program or activity to which this part 1 applies is
+ to provide employment, a recipient may not, directly or through contractual or other arrangements, subject a person to discrimination on the
+ ground of race, color, or national origin in its employment practices under such program or activity (including recruitment or recruitment
+ advertising, employment, layoff, termination, upgrading, demotion, transfer, rates of pay or other forms of compensation and use of facilities).
+ The requirements applicable to construction employment under such program or activity shall be those specified in or pursuant to part III of
+ Executive Order 11246 or any executive order which supersedes or amends it.
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 3
+ (2) Where a primary objective of the Federal financial assistance is not to provide employment, but discrimination on the ground of race, color, or
+ national origin in the employment practices of the recipient or other persons subject to this part 1 tends, on the ground of race, color, or national
+ origin, to exclude individuals from participation in, to deny them the benefits of, or to subject them to discrimination under any program to which
+ this part 1 applies, the provisions of this paragraph (c) shall apply to the employment practices of the recipient or other persons subject to this part
+ 1 to the extent necessary to assure equality of opportunity to, and nondiscriminatory treatment of, beneficiaries.
+
+ § 1.5 Assurances required.
+ (a) General. (1) Every contract for Federal financial assistance to carry out a program or activity to which this part 1 applies, executed on or after
+ January 3, 1965, and every application for such Federal financial assistance submitted on or after January 3, 1965, shall, as a condition to its
+ approval and the extension of any Federal financial assistance pursuant to such contract or application, contain or be accompanied by an
+ assurance that the program or activity will be conducted and the housing, accommodations, facilities, services, financial aid, or other benefits to
+ be provided will be operated and administered in compliance with all requirements imposed by or pursuant to this part 1. In the case of a contract
+ or application where the Federal financial assistance is to provide or is in the form of personal property or real property or interest therein or
+ structures thereon, the assurance shall obligate the recipient or, in the case of a subsequent transfer, the transferee, for the period during which the
+ property is used for a purpose for which the Federal financial assistance is extended or for another purpose involving the provision of similar
+ services or benefits, or for as long as the recipient retains ownership or possession of the property, whichever is longer. In all other cases the
+ assurance shall obligate the recipient for the period during which Federal financial assistance is extended pursuant to the contract or application.
+ The responsible Department official shall specify the form of the foregoing assurance for such program or activity, and the extent to which like
+ assurances will be required of subgrantees, contractors and subcontractors, transferees, successors in interest, and other participants in the
+ program or activity. Any such assurance shall include provisions which give the United States a right to seek its judicial enforcement.
+ (2) In the case of real property, structures or improvements thereon, or interests therein, acquired through a program of Federal financial
+ assistance the instrument effecting any disposition by the recipient of such real property, structures or improvements thereon, or interests therein,
+ shall contain a covenant running with the land assuring nondiscrimination for the period during which the real property is used for a purpose for
+ which the Federal financial assistance is extended or for another purpose involving the provision of similar services or benefits. In the case where
+ Federal financial assistance is provided in the form of a transfer of real property or interests therein from the Federal Government, the instrument
+ effecting or recording the transfer shall contain such a covenant.
+ (3) In program receiving Federal financial assistance in the form, or for the acquisition, of real property or an interest in real property, to the
+ extent that rights to space on, over, or under any such property are included as part of the program receiving such assistance, the
+ nondiscrimination requirements of this part 1 shall extend to any facility located wholly or in part in such space.
+ (b) Preexisting contracts—funds not disbursed. In any case where a contract for Federal financial assistance, to carry out a program or activity to
+ which this part 1 applies, has been executed prior to January 3, 1965, and the funds have not been fully disbursed by the Department, the
+ responsible Department official shall, where necessary to effectuate the purposes of this part 1, require an assurance similar to that provided in
+ paragraph (a) of this section as a condition to the disbursement of further funds.
+ (c) Preexisting contracts—periodic payments. In any case where a contract for Federal financial assistance, to carry out a program or activity to
+ which this part 1 applies, has been executed prior to January 3, 1965, and provides for periodic payments for the continuation of the program or
+ activity, the recipient shall, in connection with the first application for such periodic payments on or after January 3, 1965: (1) Submit a statement
+ that the program or activity is being conducted in compliance with all requirements imposed by or pursuant to this part 1 and (2) provide such
+ methods of administration for the program or activity as are found by the responsible Department official to give reasonable assurance that the
+ recipient will comply with all requirements imposed by or pursuant to this part 1.
+ (d) Assurances from institutions. (1) In the case of any application for Federal financial assistance to an institution of higher education, the
+ assurance required by this section shall extend to admission practices and to all other practices relating to the treatment of students.
+ (2) The assurance required with respect to an institution of higher education, hospital, or any other institution, insofar as the assurance relates to
+ the institution's practices with respect to admission or other treatment of persons as students, patients, or clients of the institution or to the
+ opportunity to participate in the provision of services or other benefits to such persons, shall be applicable to the entire institution unless the
+ applicant establishes, to the satisfaction of the responsible Department official, that the institution's practices in designated parts or programs of
+ the institution will in no way affect its practices in the program of the institution for which Federal financial assistance is sought, or the
+ beneficiaries of or participants in such program. If in any such case the assistance sought is for the construction of a facility or part of a facility,
+ the assurance shall in any event extend to the entire facility and to facilities operated in connection therewith.
+ (e) Elementary and secondary schools. The requirements of this section with respect to any elementary or secondary school or school system
+ shall be deemed to be satisfied if such school or school system (1) is subject to a final order of a court of the United States for the desegregation
+ of such school or school system, and provides an assurance that it will comply with such order, including any future modification of such order,
+ or (2) submits a plan for the desegregation of such school or school system which the responsible official of the Department of Health and Human
+ Services determines is adequate to accomplish the purposes of the Act and this part 1 within the earliest practicable time, and provides reasonable
+ assurance that it will carry out such plan.
+ [38 FR 17949, July 5, 1973, as amended at 50 FR 9269, Mar. 7, 1985]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                                   Page 4
+ § 1.6 Compliance information.
+ (a) Cooperation and assistance. The responsible Department official and each Department official who by law or delegation has the principal
+ responsibility within the Department for the administration of any law extending financial assistance subject to this part 1 shall to the fullest
+ extent practicable seek the cooperation of recipients in obtaining compliance with this part 1 and shall provide assistance and guidance to
+ recipients to help them comply voluntarily with this part 1.
+ (b) Compliance reports. Each recipient shall keep such records and submit to the responsible Department official or his designee timely,
+ complete, and accurate compliance reports at such times, and in such form and containing such information, as the responsible Department
+ official or his designee may determine to be necessary to enable him to ascertain whether the recipient has complied or is complying with this
+ part 1. In general, recipients should have available for the department racial and ethnic data showing the extent to which members of minority
+ groups are beneficiaries of federally assisted programs.
+ (c) Access to sources of information. Each recipient shall permit access by the responsible Department official or his designee during normal
+ business hours to such of its books, records, accounts, and other sources of information, and its facilities as may be pertinent to ascertain
+ compliance with this part 1. Where any information required of a recipient is in the exclusive possession of any other agency, institution, or
+ person and this agency, institution, or person shall fail or refuse to furnish this information, the recipient shall so certify in its report and shall set
+ forth what efforts it has made to obtain the information.
+ (d) Information to beneficiaries and participants. Each recipient shall make available to participants, beneficiaries, and other interested persons
+ such information regarding the provisions of this part 1 and its applicability to the program or activity under which the recipient receives Federal
+ financial assistance, and make such information available to them in such manner, as the responsible Department official finds necessary to
+ apprise such persons of the protections against discrimination assured them by the Act and this part 1.
+
+ § 1.7 Conduct of investigations.
+ (a) Periodic compliance reviews. The responsible Department official or his designee shall from time to time review the practices of recipients to
+ determine whether they are complying with this part 1.
+ (b) Complaints. Any person who believes himself or any specific class of persons to be subjected to discrimination prohibited by this part 1 may
+ by himself or by a representative file with the responsible Department official or his designee a written complaint. A complaint must be filed not
+ later than 180 days from the date of the alleged discrimination, unless the time for filing is extended by the responsible Department official or his
+ designee.
+ (c) Investigations. The responsible Department official or his designee shall make a prompt investigation whenever a compliance review, report,
+ complaint, or any other information indicates a possible failure to comply with this part 1. The investigation should include, where appropriate, a
+ review of the pertinent practices and policies of the recipient, the circumstances under which the possible noncompliance with this part 1
+ occurred, and other factors relevant to a determination as to whether the recipient has failed to comply with this part .
+ (d) Resolution of matters. (1) If an investigation pursuant to paragraph (c) of this section indicates a failure to comply with this part 1, the
+ responsible Department official or his designee will so inform the recipient and the matter will be resolved by informal means whenever possible.
+ If it has been determined that the matter cannot be resolved by informal means, action will be taken as provided for in § 1.8.
+ (2) If an investigation does not warrant action pursuant to paragraph (d)(1) of this section the responsible Department official or his designee will
+ so inform the recipient and the complainant, if any, in writing.
+ (e) Intimidatory or retaliatory acts prohibited. No recipient or other person shall intimidate, threaten, coerce, or discriminate against any person
+ for the purpose of interfering with any right or privilege secured by title VI of the Act or this part 1, or because he has made a complaint, testified,
+ assisted, or participated in any manner in an investigation, proceeding, or hearing under this part. The identity of complainants shall be kept
+ confidential except to the extent necessary to carry out the purposes of this part, including the conduct of any investigation, hearing, or judicial
+ proceeding arising thereunder.
+
+ § 1.8 Procedure for effecting compliance.
+ (a) General. If there appears to be a failure or threatened failure to comply with this part 1, and if the noncompliance or threatened noncompliance
+ cannot be corrected by informal means, compliance with this part 1 may be effected by the suspension or termination of or refusal to grant or to
+ continue Federal financial assistance, or by any other means authorized by law. Such other means may include, but are not limited to: (1) A
+ reference to the Department of Justice with a recommendation that appropriate proceedings be brought to enforce any rights of the United States
+ under any law of the United States (including other titles of the Act), or any assurance or other contractual undertaking, and (2) any applicable
+ proceeding under State or local law.
+ (b) Noncompliance with § 1.5. If an applicant fails or refuses to furnish an assurance required under § 1.5 or otherwise fails or refuses to comply
+ with the requirement imposed by or pursuant to that section, Federal financial assistance may be refused in accordance with the procedures of
+ paragraph (c) of this section. The Department shall not be required to provide assistance in such a case during the pendency of the administrative
+ proceedings under such paragraph, except that the Department shall continue assistance during the pendency of such proceedings where such
+ assistance is due and payable pursuant to a contract therefor approved prior to January 3, 1965.
+ (c) Termination of or refusal to grant or to continue Federal financial assistance. No order suspending, terminating, or refusing to grant or
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                                   Page 5
+ continue Federal financial assistance shall become effective until (1) the responsible Department official has advised the applicant or recipient of
+ his failure to comply and has determined that compliance cannot be secured by voluntary means, (2) there has been an express finding on the
+ record, after opportunity for hearing, of a failure by the applicant or recipient to comply with a requirement imposed by or pursuant to this part 1,
+ (3) the action has been approved by the Secretary, and (4) the expiration of 30 days after the Secretary has filed with the committees of the House
+ and Senate having legislative jurisdiction over the program or activity involved a full written report of the circumstances and the grounds for such
+ action. Any action to suspend or terminate or to refuse to grant or to continue Federal financial assistance shall be limited to the particular
+ political entity, or part thereof, or other recipient as to whom such a finding has been made and shall be limited in its effect to the particular
+ program, or part thereof, in which such noncompliance has been so found.
+ (d) Other means authorized by law. No action to effect compliance by any other means authorized by law shall be taken until (1) the responsible
+ Department official has determined that compliance cannot be secured by voluntary means, (2) the recipient or other person has been notified of
+ its failure to comply and of the action to be taken to effect compliance, and (3) the expiration of at least 10 days from the mailing of such notice to
+ the applicant or recipient. During this period of at least 10 days additional efforts shall be made to persuade the applicant or recipient to comply
+ with this part 1 and to take such corrective action as may be appropriate.
+
+ § 1.9 Hearings.
+ (a) Opportunity for hearing. Whenever an opportunity for a hearing is required by § 1.8(c), reasonable notice shall be given by registered or
+ certified mail, return receipt requested, to the affected applicant or recipient. This notice shall advise the applicant or recipient of the action
+ proposed to be taken, the specific provision under which the proposed action against it is to be taken, and the matters of fact or law asserted as the
+ basis for this action, and either:
+ (1) Fix a date not less than 20 days after the date of such notice within which the applicant or recipient may request of the responsible Department
+ official that the matter be scheduled for hearing, or (2) advise the applicant or recipient that the matter in question has been set down for hearing
+ at a stated time and place. The time and place so fixed shall be reasonable and shall be subject to change for cause. The complainant, if any, shall
+ be advised of the time and place of the hearing. An applicant or recipient may waive a hearing and submit written information and argument for
+ the record. The failure of an applicant or recipient to request a hearing under this paragraph (a) or to appear at a hearing for which a date has been
+ set shall be deemed to be a waiver of the right to a hearing under section 602 of the Act and § 1.8(c) and consent to the making of a decision on
+ the basis of such information as is available.
+ (b) Hearing procedures. Hearings shall be conducted in accordance with 24 CFR part 180.
+ [38 FR 17949, July 5, 1973, as amended at 61 FR 52217, Oct. 4, 1996]
+
+ § 1.10 Effect on other regulations; forms and instructions.
+ (a) Effect on other regulations. All regulations, orders, or like directions heretofore issued by any officer of the Department which impose
+ requirements designed to prohibit any discrimination against persons on the ground of race, color, or national origin under any program or
+ activity to which this part applies, and which authorize the suspension or termination of or refusal to grant or to continue Federal financial
+ assistance to any applicant or recipient for failure to comply with such requirements, are hereby superseded to the extent that such discrimination
+ is prohibited by this part, except that nothing in this part shall be deemed to relieve any person of any obligation assumed or imposed under any
+ such superseded regulation, order, instruction, or like direction prior to January 3, 1965. Nothing in this part, however, shall be deemed to
+ supersede any of the following (including future amendments thereof):
+ (1) Executive Orders 11246 and 11375 and regulations issued thereunder, or
+ (2) Executive Order 11063 and regulations issued thereunder, or any other order, regulations or instructions, insofar as such order, regulations, or
+ instructions, prohibit discrimination on the ground of race, color, or national origin in any program or activity or situation to which this part is
+ inapplicable, or prohibit discrimination on any other ground.
+ (b) Forms and instructions. The responsible Department official shall assure that forms and detailed instructions and procedures for effectuating
+ this part are issued and promptly made available to interested persons.
+ (c) Supervision and coordination. The Secretary may from time to time assign to officials of the Department, or to officials of other departments
+ or agencies of the Government with the consent of such department or agency, responsibilities in connection with the effectuation of the purposes
+ of title VI of the Act and this part (other than responsibility for final decision as provided in § 1.10), including the achievement of effective
+ coordination and maximum uniformity within the Department and within the Executive Branch of the Government in the application of title VI
+ and this part to similar programs or activities and in similar situations. Any action taken, determination made, or requirement imposed by an
+ official of another department or agency acting pursuant to an assignment of responsibility under this paragraph shall have the same effect as
+ though such action had been taken by the responsible official of this Department.
+ [38 FR 17949, July 5, 1973. Redesignated at 61 FR 52217, Oct. 4, 1996]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 6
+          Nondiscrimination on the Basis of Age in HUD
+                           Programs
+ Citation: 24 C.F.R. part 146
+
+ Authority: Tier 1 — binding federal regulation; federal-assistance dependent
+
+ Applicability / trigger: Conditional: applies to covered HUD programs or activities receiving federal financial assistance.
+
+ Source: https://www.ecfr.gov/api/versioner/v1/full/2026-07-09/title-24.xml?part=146
+
+ Currentness: Official eCFR versioned XML as of 2026-07-09; retrieved 2026-07-12.
+
+ Retrieved: 2026-07-12
+
+
+
+ This is a searchable rendering of an official source. It is not legal advice. The official source controls, and current law must be
+ rechecked before action.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                             Page 1
+ PART 146—NONDISCRIMINATION ON THE BASIS OF AGE IN HUD
+ PROGRAMS OR ACTIVITIES RECEIVING FEDERAL FINANCIAL
+ ASSISTANCE
+ Authority: 42 U.S.C. 3535(d) and 6103.
+ Source: 51 FR 45266, Dec. 17, 1986, unless otherwise noted.
+
+ Subpart A—General
+ § 146.1 Purpose of the Age Discrimination Act of 1975.
+ The Age Discrimination Act of 1975 (the Act) prohibits discrimination on the basis of age in programs or activities receiving Federal financial
+ assistance. The Act, however, permits federally assisted programs and activities and recipients of Federal funds to continue to use certain age
+ distinctions and factors other than age which meet the requirements of the Act and this part.
+
+ § 146.3 Purpose of HUD's age discrimination regulation.
+ The purpose of this part is to state HUD's policies and procedures under the Age Discrimination Act of 1975, consistent with the
+ government-wide age discrimination regulation contained at 45 CFR part 90.
+
+ § 146.5 Applicability of part.
+ This part applies to each program or activity that receives Federal financial assistance provided by HUD.
+
+ § 146.7 Definitions.
+ The terms HUD and Secretary are defined in 24 CFR part 5.
+ Act means the Age Discrimination Act of 1975, 42 U.S.C. 6101-07.
+ Action means any act, activity, policy, rule, standard, or method of administration or the use of any policy, rule, standard, or method of
+ administration.
+ Age means how old a person is, or the number of elapsed years from the date of a person's birth.
+ Age distinction means any action using age or an age-related term.
+ Age-related term means a word or words which necessarily imply a particular age or range of ages (for example, children, adult, older persons,
+ but not student ).
+ Federal financial assistance means any grant, entitlement, loan, cooperative agreement, contract (other than a procurement contract or a contract
+ of insurance or guaranty), or any other arrangement by which HUD provides or otherwise makes available assistance in the form of:
+ (a) Funds;
+ (b) Service of Federal personnel; or
+ (c) Real or personal property or any interest in or use of property, including:
+ (1) Transfers or leases of property for less than fair market value or for reduced consideration; and
+ (2) Proceeds from a subsequent transfer or lease of property if the Federal share of its fair market value is not returned to the Federal government.
+ Recipient means any State or its political subdivisions; any instrumentality of a State or its political subdivisions; any public or private agency;
+ any Indian tribe or Alaskan Native Village, institution, organization, or other entity; or any person to which Federal financial assistance is
+ extended, directly or through another recipient. Recipient includes any successor, assignee, or transferee, but does not include the ultimate
+ beneficiary of the assistance.
+ Subrecipient means any of the entities in the definition of recipient to which a recipient extends or passes on Federal financial assistance. A
+ subrecipient is regarded as a recipient of Federal financial assistance and has all the duties of a recipient set out in this part.
+ United States means the several States, the District of Columbia, Puerto Rico, the Virgin Islands, American Samoa, Guam, Wake Island, the
+ Canal Zone, the Trust Territory of the Pacific Islands, the Northern Marianas, and the territories and possessions of the United States.
+ [51 FR 45266, Dec. 17, 1986, as amended at 61 FR 5206, Feb. 9, 1996]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                               Page 2
+ Subpart B—Standards for Determining Age Discrimination
+ § 146.11 Scope of subpart.
+ This subpart contains the standards that HUD will use to determine whether an age distinction, or a factor other than age that may have a
+ disproportionate effect on persons of different ages, is prohibited.
+
+ § 146.13 Rules against age discrimination.
+ (a) The rules stated in this paragraph are limited by the exceptions contained in paragraphs (b) and (c) of this section.
+ (1) General rule. No person in the United States shall, on the basis of age, be excluded from participation in, be denied the benefits of, or be
+ subjected to discrimination under, any program or activity receiving Federal financial assistance.
+ (2) Specific rules. A recipient may not, in any program or activity receiving Federal financial assistance, directly or through contracting,
+ licensing, or other arrangements, use age distinctions or take any other actions that have the effect, on the basis of age, of:
+ (i) Excluding individuals from, denying them the benefits of, or subjecting them to discrimination under, a program or activity receiving Federal
+ financial assistance; or
+ (ii) Denying or limiting individuals in their opportunity to participate in any program or activity receiving Federal financial assistance.
+ (3) The specific forms of age discrimination listed in paragraph (a)(2) of this section do not necessarily constitute a complete list.
+ (b) Exceptions for normal operation or statutory objective of any program or activity. A recipient is permitted to take an action otherwise
+ prohibited by paragraph (a) of this section if the action reasonably takes into account age as a factor necessary to the normal operation or the
+ achievement of any statutory objective of a program or activity. An action reasonably takes into account age as a factor necessary to the normal
+ operation or the achievement of any statutory objective of a program or activity, if:
+ (1) Age is used as a measure or approximation of one or more other characteristics; and
+ (2) The other characteristics must be measured or approximated in order for the normal operation of the program or activity to continue, or to
+ achieve any statutory objective of the program or activity; and
+ (3) The other characteristics can be reasonably measured or approximated by the use of age; and
+ (4) The other characteristics are impractical to measure directly on an individual basis.
+ (c) Exceptions for reasonable factors other than age. A recipient is permitted to take action otherwise prohibited by paragraph (a) of this section if
+ the action is based on a factor other than age, even though that action may have a disproportionate effect on persons of different ages. An action
+ may be based on a factor other than age only if the factor bears a direct and substantial relationship to the normal operation of the program or
+ activity or the achievement of a statutory objective.
+ (d) Burden of proof. The burden of proving that an age distinction or other action falls within an exception described in paragraph (b) or (c) of
+ this section is on the recipient of Federal financial assistance.
+ (e) For the purposes of paragraphs (b) and (c), normal operation means the operation of a program or activity without significant changes that
+ would impair its ability to meet its statutory objectives. Statutory objectives means any purpose of a program or activity expressly stated in any
+ Federal, State, or local statute adopted by an elected, general purpose legislative body.
+ (f) Notwithstanding paragraph (b) of this section, if a recipient operating a program provides special benefits to the elderly or to children, such
+ use of age distinctions shall be presumed to be necessary to the normal operation of the program.
+
+ Subpart C—Duties of HUD Recipients
+ § 146.21 General responsibilities.
+ Each recipient has primary responsibility to ensure that its programs and activities that receive Federal financial assistance from HUD comply
+ with the provisions of the Act, the government-wide regulation, and this part, and shall take steps to eliminate violations of the Act. A recipient
+ also has responsibility to maintain records, provide information, and to afford HUD access to its records to the extent HUD finds necessary to
+ determine whether a program or activity receiving Federal financial assistance from HUD is in compliance with the Act and this part.
+
+ (Approved by the Office of Management and Budget under control number 2529-0030)
+ [51 FR 45266, Dec. 17, 1986, as amended at 52 FR 7408, Mar. 11, 1987]
+
+ § 146.23 Notice of subrecipients.
+ Whenever a recipient passes Federal financial assistance from HUD to subrecipients, the recipient shall provide the subrecipient with written
+ notice of its obligations under this part and the recipient will remain responsible for the subrecipient's compliance with respect to programs and
+ activities receiving Federal financial assistance from HUD.
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                                Page 3
+ § 146.25 Assurance of compliance and recipient assessment of age distinctions.
+ (a) Each recipient of Federal financial assistance from HUD shall sign a written assurance as specified by HUD that it will comply with the Act
+ and this part with respect to programs and activities receiving Federal financial assistance from HUD.
+ (b) As part of a compliance review under § 146.31 or an investigation under § 146.37, HUD may require a recipient employing the equivalent of
+ 15 or more employees to complete, in a manner specified by the Secretary or Secretary's designee, a written self-evaluation of any age distinction
+ imposed in its program or activity receiving Federal financial assistance from HUD, so that HUD may have to assess the recipient's compliance
+ with the Act. Whenever an assessment indicates a violation of the Act or this part, the recipient shall take corrective action to remedy the
+ violation.
+
+ (Approved by the Office of Management and Budget under control number 2529-0030)
+ [51 FR 45266, Dec. 17, 1986, as amended at 52 FR 7408, Mar. 11, 1987]
+
+ § 146.27 Information requirements.
+ In order to make it possible for HUD to determine whether recipients are in compliance with the Act and this part, each recipient shall:
+ (a) Keep records in a form and containing information that HUD determines is necessary;
+ (b) Make information available to HUD upon request;
+ (c) Permit reasonable access by HUD to the books, records, accounts and other recipient facilities and sources of information.
+
+ (Approved by the Office of Management and Budget under control number 2529-0030)
+ [51 FR 45266, Dec. 17, 1986, as amended at 52 FR 7408, Mar. 11, 1987]
+
+ Subpart D—Investigation, Settlement, and Enforcement Procedures
+ § 146.31 Compliance reviews.
+ (a) HUD may conduct pre-award reviews to determine whether programs or activities submitted for HUD assistance are consistent with the age
+ distinctions set forth at § 146.13(b).
+ (b) If a pre-award review indicates that the proposed programs or activities are not consistent with the age distinctions set forth at § 146.13(b), the
+ application will be returned to the applicant for additional information or clarification or for correction consistent with this part.
+ (c) HUD may conduct compliance reviews of recipients that will enable it to investigate and correct violations of this part. HUD may conduct
+ these reviews even in the absence of a complaint against a recipient. The review may be as comprehensive as necessary for HUD to determine
+ whether a violation has occurred.
+ (d) If a compliance review indicates a violation, HUD will attempt to achieve voluntary compliance. If voluntary compliance cannot be achieved,
+ HUD may begin enforcement procedures as provided in § 146.39.
+
+ § 146.33 Complaints.
+ (a) Any person, individually or as a member of a class or on behalf of others, may file a complaint with HUD alleging discrimination prohibited
+ by the Act. A complainant shall file a complaint within 180 days from the date the complainant first had knowledge of the alleged act of
+ discrimination. However, for good cause, HUD may extend this time limit. The filing date for a complaint will be the date upon which the
+ complaint is deemed sufficient to be processed.
+ (b) HUD shall facilitate the filing of complaints and shall take the following measures:
+ (1) Accept as a sufficient complaint any written legible statement which is signed by the complainant and which identifies the parties involved,
+ the date the complainant first had knowledge of the alleged violation, and describes generally the alleged prohibited action or practice;
+ (2) Freely permit a complainant to add information to the complaint to meet the requirements of a sufficient complaint;
+ (3) Widely disseminate information regarding the obligations of recipients under the Act and this part;
+ (4) Notify the complainant and the recipient of their rights under the complaint process, including the right to have a representative at all stages of
+ the complaint process; and
+ (5) Notify the complainant and the recipient of their right to contact HUD for information and assistance regarding the complaint resolution
+ process.
+ (c) HUD will return to the complainant any complaint determined to be outside the coverage of this part, and shall state the reasons why it is
+ outside the coverage.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 4
+ (Approved by the Office of Management and Budget under control number 2529-0030)
+ [51 FR 45266, Dec. 17, 1986, as amended at 52 FR 7408, Mar. 11, 1987]
+
+ § 146.35 Mediation.
+ (a) HUD shall refer to the Federal Mediation and Conciliation Service, a mediation agency designated by the Secretary of Health and Human
+ Services, all complaints that:
+ (1) Fall within the coverage of this part, unless the age distinction complained of is clearly with an exception; and
+ (2) Contain all information necessary for further processing.
+ (b) Both the complainant and the recipient shall participate in the mediation process to the extent necessary to reach an agreement or make an
+ informal judgment that an agreement is not possible. There should be at least one meeting by each party with the mediator during the mediation
+ process. However, the recipient and the complainant need not meet with the mediator at the same time.
+ (c) If the complainant and the recipient reach an agreement, the mediator shall prepare a written statement of the agreement and have the
+ complainant and recipient sign it. The mediator shall send a copy of the agreement to HUD. HUD will take no further action on the complaint
+ unless the complainant or the recipient fails to comply with the agreement.
+ (d) The mediator shall protect the confidentiality of information obtained in the course of the mediation process. No mediator shall testify in any
+ adjudicative proceeding, produce any document, or otherwise disclose any information obtained in the course of the mediation process without
+ the prior approval of the head of the mediation agency.
+ (e) HUD shall use the mediation process for a maximum of 60 days after receiving a complaint. Mediation ends if:
+ (1) 60 days elapse from the time HUD receives the complaint; or
+ (2) Before the end of the 60-day period, an agreement is reached; or
+ (3) Before the end of the 60-day period, the mediator determines that an agreement cannot be reached.
+ This 60-day period may be extended by the mediator, with the concurrence of HUD, for not more than an additional 30 days if the mediator
+ determines that it is likely that an agreement will be reached during such extended period.
+
+ § 146.37 Investigation.
+ (a) Investigation and settlement following mediation. (1) HUD shall investigate complaints that are unresolved after mediation or are reopened
+ because of an alleged violation of a mediation agreement.
+ (2) In the investigation of complaints filed under this part, HUD will establish facts through such methods as discussion with the complainant and
+ recipient and the review of documents in the possession of either party. HUD may also seek the assistance of any applicable State agency. Where
+ possible, HUD will settle the complaint on terms that are mutually agreeable to the parties.
+ (3) Settlements shall be in writing and signed by the parties and by an authorized HUD official.
+ (4) A settlement shall not affect the initiation or continuation of any other enforcement effort of HUD, including compliance reviews or
+ investigation of other complaints involving the recipient.
+ (5) A settlement reached under this paragraph (a) of this section is an agreement to resolve an alleged violation of the Act to the satisfaction of the
+ parties involved, and does not constitute a finding of discrimination against the recipient.
+ (b) Failure of settlement. If HUD cannot resolve the complaint through settlement, it may make a formal determination that the Act or this part
+ has been violated and begin enforcement procedures, as provided in § 146.39. HUD shall inform the recipient and complainant in writing that the
+ matter cannot be resolved through settlement.
+
+ § 146.39 Enforcement procedures.
+ (a) HUD may enforce the Act this regulation by:
+ (1) Termination of a recipient's financial assistance from HUD under the program or activity involved, if the recipient has violated the Act or this
+ part. The determination of the recipient's violation may be made only after a recipient has had an opportunity for a hearing on the record before an
+ Administrative Law Judge. If the financial assistance consists of a Community Development Block Grant, the requirements of section 109(b) of
+ the Housing and Community Development Act of 1974, 42 U.S.C. 5309, must also be satisfied before the termination of financial assistance.
+ Cases settled in mediation or before hearing will not involve termination of a recipient's Federal financial assistance from HUD.
+ (2) Any other means authorized by law, including, but not limited to:
+ (i) Referral to the Department of Justice for proceedings to enforce any rights of the United States or obligations of the recipient created by the
+ Act or this part;
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 5
+ (ii) Use of any requirement of, or referral to, any Federal, State or local government agency that will have the effect of correcting a violation of
+ the Act or this part.
+ (b) Whenever the Secretary determines that a State or unit of general local government which is a recipient of Federal financial assistance under
+ Title I of the Housing and Community Development Act of 1974, 42 U.S.C. 5301-5317, has failed to comply with requirements of the Age
+ Discrimination Act or this part with respect to a program or activity funded in whole or in part with such assistance, he or she shall notify the
+ Governor of such State or the chief executive officer of such unit of general local government of the noncompliance and shall request the
+ Governor or chief executive officer to secure compliance. If within a reasonable period of time, not to exceed 60 days, the Governor or chief
+ executive officer fails or refuses to secure compliance, the Secretary is authorized to take the action specified in (a) of this section, exercise the
+ powers and functions provided for in section 111(a) of the Housing and Community Act of 1974, 42 U.S.C. 5311(a), or take such other action as
+ may be provided by law.
+ (c) HUD shall limit any termination under § 146.35 to the particular recipient and particular program or activity HUD finds to be in violation of
+ this part. HUD shall not base any part of a termination on a finding with respect to any program or activity of the recipient which does not receive
+ Federal financial assistance from HUD.
+ (d) HUD shall take no action under paragraph (a) of this section until:
+ (1) The Secretary has advised the recipient of its failure to comply with the Act or this part and has determined that voluntary compliance cannot
+ be achieved.
+ (2) Thirty days have elapsed after the Secretary has submitted a written report of the circumstances and grounds of the action to the committees of
+ the Congress having legislative jurisdiction over the Federal program or activity involved. A report shall be filed whenever any action is taken
+ under paragraph (a) of this section.
+ (e)(1) The Secretary may defer the provision of new Federal financial assistance to a recipient when termination proceedings under this section
+ are initiated.
+ (2) New financial assistance from HUD includes all assistance for which HUD requires an application, approval, or submissions under the
+ Community Development Block Grant program including renewal or continuation of existing activities, or authorization of new activities, during
+ the deferral period. New financial assistance from HUD does not include increases in funding as a result of changed computation for formula
+ awards or assistance approved before the beginning of a hearing under this section.
+ (3) HUD shall not impose a deferral until the recipient has received a notice of an opportunity for a hearing under this section. HUD shall not
+ continue a deferral for more than 60 days unless a hearing has begun within that time or the time for beginning the hearing has been extended by
+ mutual consent of the recipient and the Secretary. HUD shall not continue a deferral for more than 30 days after the close of the hearing, unless
+ the hearing results in a finding that the recipient has violated that Act or this part.
+
+ § 146.41 Prohibition against intimidation or retaliation.
+ A recipient may not engage in acts of intimidation or retaliation against any person who:
+ (a) Attempts to assert a right protected by this part; or
+ (b) Cooperates in any mediation, investigation, hearing, or other part of HUD's investigation, settlement, and enforcement process.
+
+ § 146.43 Hearings, decisions, post-termination proceedings.
+ The provisions of 24 CFR part 180 apply to HUD enforcement of this part.
+ [61 FR 52218, Oct. 4, 1996]
+
+ § 146.45 Exhaustion of administrative remedies.
+ (a) A complainant may file a civil action following the exhaustion of administrative remedies under the Act. Administrative remedies are
+ exhausted if:
+ (1) 180 days have elapsed since the complainant filed the complaint and HUD had made no finding with regard to the complaint; or
+ (2) HUD issues any finding in favor of the recipient.
+ (b) If HUD fails to make a finding within 180 days or issues a finding in favor of the recipient, HUD shall:
+ (1) Promptly advise the complainant of this fact;
+ (2) Advise the complainant of his or her right to bring a civil action for injunctive relief; and
+ (3) Inform the complainant:
+ (i) That he or she may bring a civil action only in a United States District Court for the district in which the recipient is located or transacts
+ business;
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                                  Page 6
+ (ii) That a complainant prevailing in a civil action has the right to be awarded the costs of the action, including reasonable attorney's fees, but that
+ the complainant must demand these costs in the complaint;
+ (iii) That before commencing the action, the complainant must give 30 days' notice by registered mail to the Secretary of HUD, the Secretary of
+ Health and Human Services, the Attorney General of the United States, and the recipient;
+ (iv) That the notice must state: the alleged violation of the Act, the relief requested, the court in which the complainant is bringing the action, and
+ whether or not attorney's fees are demanded in the event the complainant prevails; and
+ (v) That the complainant may not bring an action if the same alleged violation of the Act by the same recipient is the subject of a pending action
+ in any court of the United States.
+
+ § 146.47 Remedial and affirmative action by recipients.
+ (a) Where the Secretary finds that a recipient has unlawfully discriminated on the basis of age, the recipient shall take any action that the
+ Secretary may require to overcome the effects of the discrimination. If another recipient exercises control over a subrecipient that has unlawfully
+ discriminated, the Secretary may require both recipients to take remedial action.
+ (b) Even in the absence of a finding of discrimination, a recipient may take affirmative action to overcome the effects of conditions that resulted
+ in limited participation in the recipient's program or activity on the basis of age.
+ (c) If a recipient operating a program which serves the elderly or children in addition to persons of other ages provides special benefits to the
+ elderly or children, the provision of those benefits shall be presumed to be voluntary affirmative action, provided that it does not have the effect
+ of excluding otherwise eligible persons from participation in the program.
+
+ § 146.49 Alternate funds disbursal procedure.
+ (a) Except as otherwise provided in this paragraph and to the extent authorized by law, the Secretary may redisburse funds withheld or terminated
+ under this part directly to an alternate recipient, including any public or non-profit private organization or agency, State or political subdivision of
+ the State. Under title I of the Housing and Community Development Act of 1974, 42 U.S.C. 5301, funds withheld because of a reduction or
+ withdrawal of a recipient's Community Development Block Grant must be reallocated in the succeeding fiscal year, in accordance with the
+ applicable regulations governing that program.
+ (b) The Secretary shall require the alternate recipient to demonstrate:
+ (1) The ability to comply with the regulations; and
+ (2) The ability to achieve the goals of the Federal statute authorizing the program or activity.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                               Page 7
+   Tenant-Based Rental Assistance Lead-Safe Housing
+                         Rule
+ Citation: 24 C.F.R. part 35, subpart M
+
+ Authority: Tier 1 — binding federal regulation; covered assistance dependent
+
+ Applicability / trigger: Conditional: applies to covered tenant-based rental assistance in pre-1978 housing, subject to the
+ subpart's exemptions and thresholds.
+
+ Source: https://www.ecfr.gov/api/versioner/v1/full/2026-07-09/title-24.xml?part=35 (render limited to subpart M)
+
+ Currentness: Official eCFR versioned XML as of 2026-07-09; retrieved 2026-07-12.
+
+ Retrieved: 2026-07-12
+
+
+
+ This is a searchable rendering of an official source. It is not legal advice. The official source controls, and current law must be
+ rechecked before action.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                             Page 1
+ Subpart M—Tenant-Based Rental Assistance
+ Source: 64 FR 50216, Sept. 15, 1999, unless otherwise noted.
+
+ § 35.1200 Purpose and applicability.
+ (a) Purpose. The purpose of this subpart M is to establish procedures to eliminate as far as practicable lead-based paint hazards in housing
+ occupied by families receiving tenant-based rental assistance. Such assistance includes tenant-based rental assistance under the Section 8
+ certificate program, the Section 8 voucher program, the HOME program, the Shelter Plus Care program, the Housing Opportunities for Persons
+ With AIDS (HOPWA) program, and the Indian Housing Block Grant program. Tenant-based rental assistance means rental assistance that is not
+ attached to the structure.
+ (b) Applicability. (1) This subpart applies only to dwelling units occupied or to be occupied by families or households that have one or more
+ children of less than 6 years of age, common areas servicing such dwelling units, and exterior painted surfaces associated with such dwelling
+ units or common areas. Common areas servicing a dwelling unit include those areas through which residents pass to gain access to the unit and
+ other areas frequented by resident children of less than 6 years of age, including on-site play areas and child care facilities.
+ (2) For the purposes of the Section 8 tenant-based certificate program and the Section 8 voucher program:
+ (i) The requirements of this subpart are applicable where an initial or periodic inspection occurs on or after September 15, 2000; and
+ (ii) The PHA shall be the designated party.
+ (3) For the purposes of formula grants awarded under the Housing Opportunities for Persons with AIDS Program (HOPWA) (42 U.S.C. 12901 et
+ seq. ):
+ (i) The requirements of this subpart shall apply to activities for which program funds are first obligated on or after September 15, 2000; and
+ (ii) The grantee shall be the designated party.
+ (4) For the purposes of competitively awarded grants under the HOPWA Program and the Shelter Plus Care program (42 U.S.C. 11402-11407)
+ tenant-based rental assistance component:
+ (i) The requirements of this subpart shall apply to grants awarded pursuant to Notices of Funding Availability published on or after September 15,
+ 2000; and
+ (ii) The grantee shall be the designated party.
+ (5) For the purposes of the HOME program:
+ (i) The requirements of this subpart shall not apply to funds which are committed in accordance with § 92.2 of this title before September 15,
+ 2000; and
+ (ii) The participating jurisdiction shall be the designated party.
+ (6) For the purposes of the Indian Housing Block Grant program:
+ (i) The requirements of this subpart shall apply to activities for which funds are first obligated on or after September 15, 2000; and
+ (ii) The IHBG recipient shall be the designated party.
+ (7) The housing agency, grantee, participating jurisdiction, or IHBG recipient may assign to a subrecipient or other entity the responsibilities of
+ the designated party in this subpart.
+ [64 FR 50216, Sept. 15, 1999; 65 FR 3387, Jan. 21, 2000]
+
+ § 35.1205 Definitions and other general requirements.
+ Definitions and other general requirements that apply to this subpart are found in subpart B of this part.
+
+ § 35.1210 Notices and pamphlet.
+ (a) Notice. In cases where evaluation or paint stabilization is undertaken, the owner shall provide a notice to residents in accordance with §
+ 35.125. A visual assessment alone is not considered an evaluation for purposes of this part.
+ (b) Lead hazard information pamphlet. The owner shall provide the lead hazard information pamphlet in accordance with § 35.130.
+ [64 FR 50216, Sept. 15, 1999, as amended at 69 FR 34273, June 21, 2004]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 2
+ § 35.1215 Activities at initial and periodic inspection.
+ (a) (1) During the initial and periodic inspections, an inspector acting on behalf of the designated party and trained in visual assessment for
+ deteriorated paint surfaces in accordance with procedures established by HUD shall conduct a visual assessment of all painted surfaces in order to
+ identify any deteriorated paint.
+ (2) For tenant-based rental assistance provided under the HOME program, visual assessment shall be conducted as part of the initial and periodic
+ inspections required under § 92.209(i) of this title.
+ (b) The owner shall stabilize each deteriorated paint surface in accordance with § 35.1330(a) and (b) before commencement of assisted
+ occupancy. If assisted occupancy has commenced prior to a periodic inspection, such paint stabilization must be completed within 30 days of
+ notification of the owner of the results of the visual assessment. Paint stabilization is considered complete when clearance is achieved in
+ accordance with § 35.1340. If the owner does not complete the hazard reduction required by this section, the dwelling unit is in violation of
+ Housing Quality Standards (HQS) until the hazard reduction is completed or the unit is no longer covered by this subpart because the unit is no
+ longer under a housing assistance payment (HAP) contract with the housing agency. For the unit subsequently to come under a HAP contract
+ with the housing agency for occupancy by a family with a child under age 6, paint stabilization must be completed, including clearance being
+ achieved in accordance with § 35.1340.
+ (c) The owner shall provide a notice to occupants in accordance with § 35.125(b)(1) and (c) describing the results of the clearance examination.
+ (d) The designated party may grant the owner an extension of time to complete paint stabilization and clearance for reasonable cause, but such an
+ extension shall not extend beyond 90 days after the date of notification to the owner of the results of the visual assessment.
+ [64 FR 50216, Sept. 15, 1999, as amended at 69 FR 34273, June 21, 2004; 82 FR 4170, Jan. 13, 2017]
+
+ § 35.1220 Ongoing lead-based paint maintenance activities.
+ Notwithstanding the designation of the PHA, grantee, participating jurisdiction, or Indian Housing Block Grant (IHBG) recipient as the
+ designated party for this subpart, the owner shall incorporate ongoing lead-based paint maintenance activities into regular building operations in
+ accordance with § 35.1355(a).
+ [69 FR 34273, June 21, 2004]
+
+ § 35.1225 Child with an elevated blood lead level.
+ (a) Within 15 calendar days after being notified by a public health department or other medical health care provider that a child of less than 6
+ years of age living in a dwelling unit to which this subpart applies has been identified as having an elevated blood lead level, the designated party
+ shall complete an environmental investigation of the dwelling unit in which the child lived at the time the blood was last sampled and of common
+ areas servicing the dwelling unit. When the environmental investigation is complete, the designated party shall immediately provide the report of
+ the environmental investigation to the owner of the dwelling unit. If the child identified as having an elevated blood lead level is no longer living
+ in the unit when the designated party receives notification from the public health department or other medical health care provider, but another
+ household receiving tenant-based rental assistance is living in the unit or is planning to live there, the requirements of this section apply just as
+ they do if the child still lives in the unit. If a public health department has already conducted an evaluation of the dwelling unit in regard to the
+ child's elevated blood lead level case, or the designated party conducted an environmental investigation of the unit and common areas servicing
+ the unit between the date the child's blood was last sampled and the date when the designated party received the notification of the elevated blood
+ lead level, the requirements of this paragraph shall not apply. If the designated party or the owner conducted a risk assessment of the unit and
+ common areas servicing the unit during that period, the designated party need not conduct another risk assessment there but shall conduct the
+ elements of an environmental investigation not already conducted during the risk assessment.
+ (b) Verification. After receiving information from a person who is not a medical health care provider that a child of less than 6 years of age living
+ in a dwelling unit covered by this subpart may have an elevated blood lead level, the designated party shall immediately verify the information
+ with the public health department or other medical health care provider. If the public health department or provider denies the request, such as
+ because it does not have the capacity to verify that information, the designated party shall send documentation of the denial to the HUD rental
+ assistance program manager, who shall make an effort to verify the information. If that department or provider verifies that the child has an
+ elevated blood lead level, such verification shall constitute notification, and the designated party shall take the action required in paragraphs (a)
+ and (c) of this section.
+ (c) Lead-based paint hazard reduction. Within 30 calendar days after receiving the report of the environmental investigation from the designated
+ party or the evaluation from the public health department, the owner shall complete the reduction of identified lead-based paint hazards in
+ accordance with § 35.1325 or § 35.1330. Lead-based paint hazard reduction is considered complete when clearance is achieved in accordance
+ with § 35.1340 and the clearance report states that all lead-based paint hazards identified in the environmental investigation have been treated
+ with interim controls or abatement or the public health department certifies that the lead-based paint hazard reduction is complete. The
+ requirements of this paragraph do not apply if the designated party or the owner, between the date the child's blood was last sampled and the date
+ the designated party received the notification of the elevated blood lead level, already conducted an environmental investigation of the unit and
+ common areas servicing the unit and the owner completed reduction of identified lead-based paint hazards. If the owner does not complete the
+ lead-based paint hazard reduction required by this section, the dwelling unit is in violation of the standards of 24 CFR 982.401.
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                            Page 3
+ (d) Notice of lead-based paint hazard evaluation and reduction. The owner shall notify building residents of any lead-based paint hazard
+ evaluation or reduction activities in accordance with § 35.125.
+ (e) Reporting requirement. (1) The owner shall report the name and address of a child identified as having an elevated blood lead level to the
+ public health department within 5 business days of being so notified by any other medical health care professional.
+ (2) The owner shall also report each confirmed case of a child with an elevated blood lead level to the HUD field office and the HUD Office of
+ Lead Hazard Control and Healthy Homes within 5 business days of being so notified.
+ (3) The owner shall provide to the HUD field office documentation that it has conducted the activities of paragraphs (a) through (d) of this
+ section, within 10 business days of the deadline for each activity.
+ (f) Other assisted dwelling units in the property. (1) If the environmental investigation conducted pursuant to paragraph (a) of this section
+ identifies lead-based paint hazards, the designated party or the owner shall, for other assisted dwelling units covered by this part in which a child
+ under age 6 resides or is expected to reside on the date lead-based paint hazard reduction under paragraph (c) of this section is complete, and the
+ common areas servicing those units, conduct a risk assessment in accordance with § 35.1320(b) within 30 calendar days after receipt of the
+ environmental investigation report if there are 20 or fewer such units, or 60 calendar days if there are more such units.
+ (2) If the risk assessment conducted under paragraph (f)(1) of this section identifies lead-based paint hazards, the owner shall complete the
+ reduction of the lead-based paint hazards in accordance with § 35.1325 or § 35.1330 within 30 calendar days, or within 90 calendar days if more
+ than 20 units have lead-based paint hazards such that the control work would disturb painted surfaces that total more than the de minimis
+ threshold of § 35.1350(d). Lead-based paint hazard reduction is considered complete when clearance is achieved in accordance with § 35.1340
+ and the clearance report states that all lead-based paint hazards identified in the risk assessment have been treated with interim controls or
+ abatement.
+ (3) The requirements of this paragraph (f) of this section do not apply if:
+ (i) The designated party or the owner, between the date the child's blood was last sampled and the date the owner received the notification of the
+ elevated blood lead level, both conducted a risk assessment of the other assisted dwelling units covered by paragraph (f)(1) of this section and the
+ common areas servicing those units, and the owner conducted interim controls of identified lead-based paint hazards in accordance with §
+ 35.1225(c); or
+ (ii) The owner has documentation of compliance with evaluation, notification, lead disclosure, ongoing lead-based paint maintenance, and
+ lead-based paint management requirements under this part throughout the 12 months preceding the date the owner received the environmental
+ investigation report pursuant to paragraph (a) of this section; and,
+ (iii) In either case, the owner provided the HUD field office, within 10 business days after receiving the notification of the elevated blood lead
+ level, documentation that it has conducted the activities described in this paragraph (f)(3).
+ (g) Data collection and record keeping responsibilities. At least quarterly, the designated party shall attempt to obtain from the public health
+ department(s) with area(s) of jurisdiction similar to that of the designated party the names and/or addresses of children of less than 6 years of age
+ with an identified elevated blood lead level. At least quarterly, the designated party shall also report an updated list of the addresses of units
+ receiving assistance under a tenant-based rental assistance program to the same public health department(s), except that the report(s) to the public
+ health department(s) is not required if the health department states that it does not wish to receive such report. If it obtains names and addresses of
+ elevated blood lead level children from the public health department(s), the designated party shall match information on cases of elevated blood
+ lead levels with the names and addresses of families receiving tenant-based rental assistance, unless the public health department performs such a
+ matching procedure.
+ If a match occurs, the designated party shall carry out the requirements of this section.
+ [82 FR 4171, Jan. 13, 2017]
+
+
+
+
+GH Federal Legal Source Cache • retrieved 2026-07-12                                                                                              Page 4
+Page 337                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                 § 12291
+
+  (2) Federal share                                                  (2) Selection of communities
+    The Federal share of funding of a program                          Communities identified for such GREAT
+  funded with a grant under paragraph (1) shall                      projects shall be selected by the Attorney
+  not exceed 50 percent.                                             General on the basis of gang-related activity
+  (3) Authorization of appropriations                                in that particular community.
+    There are authorized to be appropriated to                       (3) Amount of assistance per project; allocation
+  carry out this section—                                              The Attorney General shall make available
+       (A) $700,000 for fiscal year 1996;                            not less than $800,000 per project, subject to
+       (B) $1,000,000 for fiscal year 1997;                          the availability of appropriations, and such
+       (C) $1,000,000 for fiscal year 1998;                          funds shall be allocated—
+       (D) $1,100,000 for fiscal year 1999; and                          (A) 50 percent to the affected State and
+       (E) $1,200,000 for fiscal year 2000.                            local law enforcement and prevention orga-
+(d) Definitions                                                        nizations participating in such projects; and
+                                                                         (B) 50 percent to the Bureau of Alcohol,
+  In this section—                                                     Tobacco, Firearms, and Explosives, Depart-
+    ‘‘Indian tribe’’ means a tribe, band, pueblo,                      ment of Justice for salaries, expenses, and
+  nation, or other organized group or commu-                           associated administrative costs for oper-
+  nity of Indians, including an Alaska Native                          ating and overseeing such projects.
+  village (as defined in or established under the
+  Alaska Native Claims Settlement Act (43                          (b) Authorization of appropriations
+  U.S.C. 1601 et seq.),1 that is recognized as eligi-                There is authorized to be appropriated to
+  ble for the special programs and services pro-                   carry out this section—
+  vided by the United States to Indians because                        (1) $20,000,000 for fiscal year 2006;
+  of their status as Indians.                                          (2) $20,000,000 for fiscal year 2007;
+    ‘‘State’’ means a State, the District of Co-                       (3) $20,000,000 for fiscal year 2008;
+  lumbia, the Commonwealth of Puerto Rico,                             (4) $20,000,000 for fiscal year 2009; and
+  the Commonwealth of the Northern Mariana                             (5) $20,000,000 for fiscal year 2010.
+  Islands, American Samoa, Guam, and the
+                                                                   (Pub. L. 103–322, title III, § 32401, Sept. 13, 1994,
+  United States Virgin Islands.
+                                                                   108 Stat. 1902; Pub. L. 107–296, title XI, § 1112(p),
+(Pub. L. 103–322, title III, § 32201, Sept. 13, 1994,              Nov. 25, 2002, 116 Stat. 2278; Pub. L. 109–162, title
+108 Stat. 1901.)                                                   XI, § 1188, Jan. 5, 2006, 119 Stat. 3128.)
+
+                      Editorial Notes                                                   Editorial Notes
+                   REFERENCES IN TEXT                                                    CODIFICATION
+  The Alaska Native Claims Settlement Act, referred                  Section was formerly classified to section 13921 of
+to in subsec. (d), is Pub. L. 92–203, Dec. 18, 1971, 85 Stat.      Title 42, The Public Health and Welfare, prior to edi-
+688, which is classified generally to chapter 33 (§ 1601 et        torial reclassification and renumbering as this section.
+seq.) of Title 43, Public Lands. For complete classifica-
+tion of this Act to the Code, see Short Title note set                                   AMENDMENTS
+out under section 1601 of Title 43 and Tables.                       2006—Subsec. (b). Pub. L. 109–162, which directed the
+                       CODIFICATION                                amendment of section 32401(b) of the Violent Crime
+                                                                   Control Act of 1994 by adding pars. (1) to (5) and strik-
+  Section was formerly classified to section 13911 of              ing out former pars. (1) to (6), was executed by making
+Title 42, The Public Health and Welfare, prior to edi-             the amendments to this section, which is section
+torial reclassification and renumbering as this section.           32401(b) of the Violent Crime Control and Law Enforce-
+                                                                   ment Act of 1994, to reflect the probable intent of Con-
+       Statutory Notes and Related Subsidiaries                    gress. Former pars. (1) to (6) authorized appropriations
+                                                                   for fiscal years 1995 through 2000.
+    ABOLITION OF IMMIGRATION AND NATURALIZATION                      2002—Subsec. (a). Pub. L. 107–296, § 1112(p)(1), sub-
+        SERVICE AND TRANSFER OF FUNCTIONS                          stituted ‘‘Attorney General’’ for ‘‘Secretary of the
+   For abolition of Immigration and Naturalization                 Treasury’’ wherever appearing.
+Service, transfer of functions, and treatment of related             Subsec. (a)(3)(B). Pub. L. 107–296, § 1112(p)(2), sub-
+references, see note set out under section 1551 of Title           stituted ‘‘Bureau of Alcohol, Tobacco, Firearms, and
+8, Aliens and Nationality.                                         Explosives, Department of Justice’’ for ‘‘Bureau of Al-
+                                                                   cohol, Tobacco and Firearms’’.
+   PART I—GANG RESISTANCE EDUCATION AND
+                TRAINING                                                  Statutory Notes and Related Subsidiaries
+
+§ 12281. Gang Resistance Education and Training                             EFFECTIVE DATE OF 2002 AMENDMENT
+    projects                                                         Amendment by Pub. L. 107–296 effective 60 days after
+                                                                   Nov. 25, 2002, see section 4 of Pub. L. 107–296, set out as
+(a) Establishment of projects                                      an Effective Date note under section 101 of Title 6, Do-
+  (1) In general                                                   mestic Security.
+    The Attorney General shall establish not                          SUBCHAPTER III—VIOLENCE AGAINST
+  less than 50 Gang Resistance Education and                                      WOMEN
+  Training (GREAT) projects, to be located in
+  communities across the country, in addition                      § 12291. Definitions and grant provisions
+  to the number of projects currently funded.
+                                                                   (a) Definitions
+ 1 So in original. A closing parenthesis probably should precede     In this subchapter, for the purpose of grants
+the comma.                                                         authorized under this subchapter:
+§ 12291             TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                            Page 338
+
+ (1) Abuse in later life                                   (B) court security personnel;
+   The term ‘‘abuse in later life’’—                       (C) personnel working in related supple-
+     (A) means—                                          mentary offices or programs (such as child
+       (i) neglect, abandonment, economic                support enforcement); and
+     abuse, or willful harm of an adult aged 50            (D) any other court-based or community-
+     or older by an individual in an ongoing re-         based personnel having responsibilities or
+     lationship of trust with the victim; or             authority to address domestic violence, dat-
+       (ii) domestic violence, dating violence,          ing violence, sexual assault, or stalking in
+     sexual assault, or stalking of an adult aged        the court system.
+     50 or older by any individual; and                (7) Courts
+      (B) does not include self-neglect.                 The term ‘‘courts’’ means any civil or crimi-
+ (2) Alaska Native village                             nal, tribal, and Alaska Native Village, Fed-
+    The term ‘‘Alaska Native village’’ has the         eral, State, local or territorial court having
+ same meaning given such term in the Alaska            jurisdiction to address domestic violence, dat-
+ Native Claims Settlement Act (43 U.S.C. 1601          ing violence, sexual assault or stalking, in-
+ et seq.).                                             cluding immigration, family, juvenile, and de-
+                                                       pendency courts, and the judicial officers serv-
+ (3) Child abuse and neglect
+                                                       ing in those courts, including judges, mag-
+    The term ‘‘child abuse and neglect’’ means         istrate judges, commissioners, justices of the
+ any recent act or failure to act on the part of       peace, or any other person with decision-
+ a parent or caregiver with intent to cause            making authority.
+ death, serious physical or emotional harm,            (8) Culturally specific
+ sexual abuse, or exploitation, or an act or fail-
+ ure to act which presents an imminent risk of           The term ‘‘culturally specific’’ means pri-
+ serious harm to an unemancipated minor. This          marily directed toward racial and ethnic mi-
+ definition shall not be construed to mean that        nority groups (as defined in section 1707(g) of
+ failure to leave an abusive relationship, in the      the Public Health Service Act (42 U.S.C.
+ absence of other action constituting abuse or         300u–6(g)).1
+ neglect, is itself abuse or neglect.                  (9) Culturally specific services
+ (4) Child maltreatment                                  The term ‘‘culturally specific services’’
+    The term ‘‘child maltreatment’’ means the          means community-based services that include
+ physical or psychological abuse or neglect of a       culturally relevant and linguistically specific
+ child or youth, including sexual assault and          services and resources to culturally specific
+ abuse.                                                communities.
+ (5) Community-based organization                      (10) Dating partner
+    The term ‘‘community-based organization’’            The term ‘‘dating partner’’ refers to a person
+ means a nonprofit, nongovernmental, or tribal         who is or has been in a social relationship of
+ organization that serves a specific geographic        a romantic or intimate nature with the
+ community that—                                       abuser, and where the existence of such a rela-
+      (A) focuses primarily on domestic vio-           tionship shall be determined based on a con-
+    lence, dating violence, sexual assault, or         sideration of—
+    stalking;                                              (A) the length of the relationship;
+      (B) has established a specialized culturally         (B) the type of relationship; and
+    specific program that addresses domestic vi-           (C) the frequency of interaction between
+    olence, dating violence, sexual assault, or          the persons involved in the relationship.
+    stalking;                                          (11) Dating violence
+      (C) has a primary focus on underserved
+    populations (and includes representatives of         The term ‘‘dating violence’’ means violence
+    these populations) and domestic violence,          committed by a person—
+    dating violence, sexual assault, or stalking;          (A) who is or has been in a social relation-
+    or                                                   ship of a romantic or intimate nature with
+      (D) obtains expertise, or shows dem-               the victim; and
+    onstrated capacity to work effectively, on             (B) where the existence of such a relation-
+    domestic violence, dating violence, sexual           ship shall be determined based on a consider-
+    assault, and stalking through collaboration.         ation of the following factors:
+ (6) Court-based personnel; court-related per-               (i) The length of the relationship.
+      sonnel                                                 (ii) The type of relationship.
+                                                             (iii) The frequency of interaction be-
+    The terms ‘‘court-based personnel’’ and                tween the persons involved in the relation-
+ ‘‘court-related personnel’’ mean individuals              ship.
+ working in the court, whether paid or volun-
+ teer, including—                                      (12) Domestic violence
+      (A) clerks, special masters, domestic rela-        The term ‘‘domestic violence’’ includes fel-
+    tions officers, administrators, mediators,         ony or misdemeanor crimes committed by a
+    custody evaluators, guardians ad litem, law-       current or former spouse or intimate partner
+    yers, negotiators, probation, parole, inter-       of the victim under the family or domestic vi-
+    preters, victim assistants, victim advocates,      olence laws of the jurisdiction receiving grant
+    and judicial, administrative, or any other
+    professionals or personnel similarly involved      1 So in original. The period probably should be preceded by an-
+
+    in the legal process;                            other closing parenthesis.
+Page 339            TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                § 12291
+
+ funding and, in the case of victim services, in-   (18) Indian
+ cludes the use or attempted use of physical          The term ‘‘Indian’’ means a member of an
+ abuse or sexual abuse, or a pattern of any         Indian tribe.
+ other coercive behavior committed, enabled,
+ or solicited to gain or maintain power and         (19) Indian country
+ control over a victim, including verbal, psy-        The term ‘‘Indian country’’ has the same
+ chological, economic, or technological abuse       meaning given such term in section 1151 of
+ that may or may not constitute criminal be-        title 18.
+ havior, by a person who—                           (20) Indian housing
+     (A) is a current or former spouse or inti-
+   mate partner of the victim, or person simi-        The term ‘‘Indian housing’’ means housing
+   larly situated to a spouse of the victim;        assistance described in the Native American
+     (B) is cohabitating, or has cohabitated,       Housing Assistance and Self-Determination
+   with the victim as a spouse or intimate part-    Act of 1996 (25 U.S.C. 4101 et seq., as amended).
+   ner;                                             (21) Indian law enforcement
+     (C) shares a child in common with the vic-
+   tim; or                                            The term ‘‘Indian law enforcement’’ means
+     (D) commits acts against a youth or adult      the departments or individuals under the di-
+   victim who is protected from those acts          rection of the Indian tribe that maintain pub-
+   under the family or domestic violence laws       lic order.
+   of the jurisdiction.                             (22) Indian tribe; Indian Tribe
+ (13) Economic abuse                                  The terms ‘‘Indian tribe’’ and ‘‘Indian Tribe’’
+   The term ‘‘economic abuse’’, in the context      mean a tribe, band, pueblo, nation, or other
+ of domestic violence, dating violence, and         organized group or community of Indians, in-
+ abuse in later life, means behavior that is co-    cluding any Alaska Native village or regional
+ ercive, deceptive, or unreasonably controls or     or village corporation (as defined in, or estab-
+ restrains a person’s ability to acquire, use, or   lished pursuant to, the Alaska Native Claims
+ maintain economic resources to which they          Settlement Act (43 U.S.C. 1601 et seq.)), that is
+ are entitled, including using coercion, fraud,     recognized as eligible for the special programs
+ or manipulation to—                                and services provided by the United States to
+     (A) restrict a person’s access to money, as-   Indians because of their status as Indians.
+   sets, credit, or financial information;
+     (B) unfairly use a person’s personal eco-      (23) Law enforcement
+   nomic resources, including money, assets,          The term ‘‘law enforcement’’ means a public
+   and credit, for one’s own advantage; or          agency charged with policing functions, in-
+     (C) exert undue influence over a person’s      cluding any of its component bureaus (such as
+   financial and economic behavior or deci-         governmental victim services programs or Vil-
+   sions, including forcing default on joint or     lage Public Safety Officers), including those
+   other financial obligations, exploiting pow-     referred to in section 2802 of title 25.
+   ers of attorney, guardianship, or con-           (24) Legal assistance
+   servatorship, or failing or neglecting to act
+   in the best interests of a person to whom one      (A) Definition
+   has a fiduciary duty.                                The term ‘‘legal assistance’’ means assist-
+ (14) Elder abuse                                     ance provided by or under the direct super-
+   The term ‘‘elder abuse’’ means any action          vision of a person described in subparagraph
+ against a person who is 50 years of age or older     (B) to an adult, youth, or child victim of do-
+ that constitutes the willful—                        mestic violence, dating violence, sexual as-
+     (A) infliction of injury, unreasonable con-      sault, or stalking relating to a matter de-
+   finement, intimidation, or cruel punishment        scribed in subparagraph (C).
+   with resulting physical harm, pain, or men-        (B) Person described
+   tal anguish; or                                      A person described in this subparagraph
+     (B) deprivation by a person, including a
+                                                      is—
+   caregiver, of goods or services with intent to
+                                                          (i) a licensed attorney;
+   cause physical harm, mental anguish, or
+                                                          (ii) in immigration proceedings, a Board
+   mental illness.
+                                                        of Immigration Appeals accredited rep-
+ (15) Female genital mutilation or cutting              resentative;
+   The term ‘‘female genital mutilation or cut-           (iii) in claims of the Department of Vet-
+ ting’’ has the meaning given such term in sec-         erans Affairs, a representative authorized
+ tion 116 of title 18.                                  by the Secretary of Veterans Affairs; or
+ (16) Forced marriage                                     (iv) any person who functions as an at-
+   The term ‘‘forced marriage’’ means a mar-            torney or lay advocate in tribal court.
+ riage to which 1 or both parties do not or can-      (C) Matter described
+ not consent, and in which 1 or more elements           A matter described in this subparagraph is
+ of force, fraud, or coercion is present. Forced      a matter relating to—
+ marriage can be both a cause and a con-                  (i) divorce, parental rights, child sup-
+ sequence of domestic violence, dating vio-             port, Tribal, territorial, immigration, em-
+ lence, sexual assault or stalking.                     ployment, administrative agency, housing,
+ (17) Homeless                                          campus, education, healthcare, privacy,
+   The term ‘‘homeless’’ has the meaning given          contract, consumer, civil rights, protec-
+ such term in section 12473 of this title.              tion or other injunctive proceedings, re-
+§ 12291             TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                               Page 340
+
+     lated enforcement proceedings, and other        (29) Protection order or restraining order
+     similar matters;                                  The term ‘‘protection order’’ or ‘‘restraining
+       (ii) criminal justice investigations, pros-   order’’ includes—
+     ecutions, and post-conviction matters (in-          (A) any injunction, restraining order, or
+     cluding sentencing, parole, and probation)        any other order issued by a civil or criminal
+     that impact the victim’s safety, privacy,         court for the purpose of preventing violent
+     or other interests as a victim;                   or threatening acts or harassment against,
+       (iii) alternative dispute resolution, re-       sexual violence or contact or communica-
+     storative practices, or other processes in-       tion with or physical proximity to, another
+     tended to promote victim safety, privacy,         person, including any temporary or final or-
+     and autonomy, and offender account-               ders issued by civil or criminal courts
+     ability, regardless of court involvement; or      whether obtained by filing an independent
+       (iv) with respect to a conviction of a vic-     action or as a pendente lite order in another
+     tim relating to or arising from domestic          proceeding so long as any civil order was
+     violence, dating violence, sexual assault,        issued in response to a complaint, petition,
+     stalking, or sex trafficking victimization        or motion filed by or on behalf of a person
+     of the victim, post-conviction relief pro-        seeking protection; and
+     ceedings in State, local, Tribal, or terri-         (B) any support, child custody or visita-
+     torial court.                                     tion provisions, orders, remedies, or relief
+   (D) Intake or referral                              issued as part of a protection order, restrain-
+     For purposes of this paragraph, intake or         ing order, or stay away injunction pursuant
+   referral, by itself, does not constitute legal      to State, tribal, territorial, or local law au-
+   assistance.                                         thorizing the issuance of protection orders,
+ (25) Personally identifying information or per-       restraining orders, or injunctions for the
+     sonal information                                 protection of victims of domestic violence,
+                                                       dating violence, sexual assault, or stalking.
+   The term ‘‘personally identifying informa-
+ tion’’ or ‘‘personal information’’ means indi-      (30) Rape crisis center
+ vidually identifying information for or about         The term ‘‘rape crisis center’’ means a non-
+ an individual including information likely to       profit, nongovernmental, or tribal organiza-
+ disclose the location of a victim of domestic       tion, or governmental entity in a State other
+ violence, dating violence, sexual assault, or       than a Territory that provides intervention
+ stalking, regardless of whether the informa-        and related assistance, as specified in section
+ tion is encoded, encrypted, hashed, or other-       12511(b)(2)(C) of this title, to victims of sexual
+ wise protected, including—                          assault without regard to their age. In the
+     (A) a first and last name;                      case of a governmental entity, the entity may
+     (B) a home or other physical address;           not be part of the criminal justice system
+     (C) contact information (including a post-      (such as a law enforcement agency) and must
+   al, e-mail or Internet protocol address, or       be able to offer a comparable level of confiden-
+   telephone or facsimile number);                   tiality as a nonprofit entity that provides
+     (D) a social security number, driver license    similar victim services.
+   number, passport number, or student identi-       (31) Restorative practice
+   fication number; and
+     (E) any other information, including date         The term ‘‘restorative practice’’ means a
+   of birth, racial or ethnic background, or reli-   practice relating to a specific harm that—
+   gious affiliation, that would serve to iden-          (A) is community-based and unaffiliated
+   tify any individual.                                with any civil or criminal legal process;
+                                                         (B) is initiated by a victim of the harm;
+ (26) Population specific organization                   (C) involves, on a voluntary basis and
+   The term ‘‘population specific organization’’       without any evidence of coercion or intimi-
+ means a nonprofit, nongovernmental organiza-          dation of any victim of the harm by any in-
+ tion that primarily serves members of a spe-          dividual who committed the harm or anyone
+ cific underserved population and has dem-             associated with any such individual—
+ onstrated experience and expertise providing              (i) 1 or more individuals who committed
+ targeted services to members of that specific           the harm;
+ underserved population.                                   (ii) 1 or more victims of the harm; and
+ (27) Population specific services                         (iii) the community affected by the harm
+                                                         through 1 or more representatives of the
+   The term ‘‘population specific services’’             community;
+ means victim-centered services that address
+ the safety, health, economic, legal, housing,           (D) shall include and has the goal of—
+ workplace, immigration, confidentiality, or               (i) collectively seeking accountability
+ other needs of victims of domestic violence,            from 1 or more individuals who committed
+ dating violence, sexual assault, or stalking,           the harm;
+ and that are designed primarily for and are               (ii) developing a written process whereby
+ targeted to a specific underserved population.          1 or more individuals who committed the
+                                                         harm will take responsibility for the ac-
+ (28) Prosecution                                        tions that caused harm to 1 or more vic-
+   The term ‘‘prosecution’’ means any public             tims of the harm; and
+ agency charged with direct responsibility for             (iii) developing a written course of ac-
+ prosecuting criminal offenders, including such          tion plan—
+ agency’s component bureaus (such as govern-                  (I) that is responsive to the needs of 1
+ mental victim assistance programs).                       or more victims of the harm; and
+Page 341            TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                               § 12291
+
+         (II) upon which 1 or more victims, 1 or    (40) Technological abuse
+       more individuals who committed the             The term ‘‘technological abuse’’ means an
+       harm, and the community can agree; and       act or pattern of behavior that occurs within
+     (E) is conducted in a victim services          domestic violence, sexual assault, dating vio-
+   framework that protects the safety and sup-      lence or stalking and is intended to harm,
+   ports the autonomy of 1 or more victims of       threaten, intimidate, control, stalk, harass,
+   the harm and the community.                      impersonate, exploit, extort, or monitor, ex-
+ (32) Rural area and rural community                cept as otherwise permitted by law, another
+                                                    person, that occurs using any form of tech-
+   The term ‘‘rural area’’ and ‘‘rural commu-       nology, including but not limited to: internet
+ nity’’ mean—                                       enabled devices, online spaces and platforms,
+     (A) any area or community, respectively,       computers, mobile devices, cameras and imag-
+   no part of which is within an area designated    ing programs, apps, location tracking devices,
+   as a standard metropolitan statistical area      or communication technologies, or any other
+   by the Office of Management and Budget;          emerging technologies.
+     (B) any area or community, respectively,
+                                                    (41) Territorial domestic violence or sexual as-
+   that is—
+                                                        sault coalition
+       (i) within an area designated as a metro-
+     politan statistical area or considered as        The term ‘‘territorial domestic violence or
+     part of a metropolitan statistical area; and   sexual assault coalition’’ means a program ad-
+       (ii) located in a rural census tract; or     dressing domestic or sexual violence that is—
+                                                        (A) an established nonprofit, nongovern-
+     (C) any federally recognized Indian tribe.       mental territorial coalition addressing do-
+ (33) Rural State                                     mestic violence or sexual assault within the
+   The term ‘‘rural State’’ means a State that        territory; or
+ has a population density of 57 or fewer persons        (B) a nongovernmental organization with a
+ per square mile or a State in which the largest      demonstrated history of addressing domestic
+ county has fewer than 250,000 people, based on       violence or sexual assault within the terri-
+ the most recent decennial census.                    tory that proposes to incorporate as a non-
+                                                      profit, nongovernmental territorial coali-
+ (34) Sex trafficking
+                                                      tion.
+   The term ‘‘sex trafficking’’ means any con-      (42) Tribal coalition
+ duct proscribed by section 1591 of title 18,
+ whether or not the conduct occurs in inter-          The term ‘‘tribal coalition’’ means an estab-
+ state or foreign commerce or within the spe-       lished nonprofit, nongovernmental Indian or-
+ cial maritime and territorial jurisdiction of      ganization, Alaska Native organization, or a
+ the United States.                                 Native Hawaiian organization that—
+                                                        (A) provides education, support, and tech-
+ (35) Sexual assault                                  nical assistance to member Indian service
+   The term ‘‘sexual assault’’ means any non-         providers, Native Hawaiian organizations, or
+ consensual sexual act proscribed by Federal,         the Native Hawaiian community in a man-
+ tribal, or State law, including when the victim      ner that enables those member providers, or-
+ lacks capacity to consent.                           ganizations, or communities to establish and
+ (36) Stalking                                        maintain culturally appropriate services, in-
+                                                      cluding shelter and rape crisis services, de-
+   The term ‘‘stalking’’ means engaging in a          signed to assist Indian or Native Hawaiian
+ course of conduct directed at a specific person      women and the dependents of those women
+ that would cause a reasonable person to—             who are victims of domestic violence, dating
+     (A) fear for his or her safety or the safety     violence, sexual assault, and stalking; and
+   of others; or                                        (B) is comprised of board and general
+     (B) suffer substantial emotional distress.       members that are representative of—
+ (37) State                                               (i) the member service providers, organi-
+   The term ‘‘State’’ means each of the several         zations, or communities described in sub-
+ States and the District of Columbia, and ex-           paragraph (A); and
+ cept as otherwise provided, the Common-                  (ii) the tribal communities or Native Ha-
+ wealth of Puerto Rico, Guam, American                  waiian communities in which the services
+ Samoa, the Virgin Islands, and the Northern            are being provided.
+ Mariana Islands.                                   (43) Tribal government
+ (38) State domestic violence coalition               The term ‘‘tribal government’’ means—
+   The term ‘‘State domestic violence coali-            (A) the governing body of an Indian tribe;
+ tion’’ means a program determined by the Ad-         or
+ ministration for Children and Families under           (B) a tribe, band, pueblo, nation, or other
+ sections 10402 and 10411 of title 42.                organized group or community of Indians,
+                                                      including any Alaska Native village or re-
+ (39) State sexual assault coalition                  gional or village corporation (as defined in,
+   The term ‘‘State sexual assault coalition’’        or established pursuant to, the Alaska Na-
+ means a program determined by the Center for         tive Claims Settlement Act (43 U.S.C. 1601 et
+ Injury Prevention and Control of the Centers         seq.)), that is recognized as eligible for the
+ for Disease Control and Prevention under the         special programs and services provided by
+ Public Health Service Act (42 U.S.C. 280b et         the United States to Indians because of their
+ seq.).                                               status as Indians.
+§ 12291             TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                 Page 342
+
+ (44) Tribal nonprofit organization                    mented history of effective work concerning
+   The term ‘‘tribal nonprofit organization’’          domestic violence, dating violence, sexual as-
+ means—                                                sault, or stalking.
+     (A) a victim services provider that has as        (51) Victim services or services
+   its primary purpose to assist Native victims          The terms ‘‘victim services’’ and ‘‘services’’
+   of domestic violence, dating violence, sexual       mean services provided to victims of domestic
+   assault, or stalking; and                           violence, dating violence, sexual assault, or
+     (B) staff and leadership of the organization      stalking, including telephonic or web-based
+   must include persons with a demonstrated            hotlines, legal assistance and legal advocacy,
+   history of assisting American Indian or             economic advocacy, emergency and transi-
+   Alaska Native victims of domestic violence,         tional shelter, accompaniment and advocacy
+   dating violence, sexual assault, or stalking.       through medical, civil or criminal justice, im-
+ (45) Tribal organization                              migration, and social support systems, crisis
+   The term ‘‘tribal organization’’ means—             intervention, short-term individual and group
+     (A) the governing body of any Indian tribe;       support services, information and referrals,
+     (B) any legally established organization of       culturally specific services, population spe-
+   Indians which is controlled, sanctioned, or         cific services, and other related supportive
+   chartered by such governing body of a tribe         services.
+   or tribes to be served, or which is democrat-       (52) Youth
+   ically elected by the adult members of the            The term ‘‘youth’’ means a person who is 11
+   Indian community to be served by such orga-         to 24 years old.
+   nization and which includes the maximum
+   participation of Indians in all phases of its     (b) Grant conditions
+   activities; or                                      (1) Match
+     (C) any tribal nonprofit organization.              No matching funds shall be required for any
+ (46) Underserved populations                          grant or subgrant made under this Act for—
+   The term ‘‘underserved populations’’ means              (A) any tribe, territory, or victim service
+ populations who face barriers in accessing and          provider; or
+ using victim services, and includes popu-                 (B) any other entity, including a State,
+ lations underserved because of geographic lo-           that—
+ cation, religion, sexual orientation, gender                (i) petitions for a waiver of any match
+ identity, underserved racial and ethnic popu-             condition imposed by the Attorney Gen-
+ lations, populations underserved because of               eral or the Secretaries of Health and
+ special needs (such as language barriers, dis-            Human Services or Housing and Urban De-
+ abilities, alienage status, or age), and any              velopment; and
+ other population determined to be underserved               (ii) whose petition for waiver is deter-
+ by the Attorney General or by the Secretary               mined by the Attorney General or the Sec-
+ of Health and Human Services, as appropriate.             retaries of Health and Human Services or
+                                                           Housing and Urban Development to have
+ (47) Unit of local government
+                                                           adequately demonstrated the financial
+   The term ‘‘unit of local government’’ means             need of the petitioning entity.
+ any city, county, township, town, borough,            (2) Nondisclosure of confidential or private in-
+ parish, village, or other general purpose polit-          formation
+ ical subdivision of a State.
+                                                         (A) In general
+ (48) Victim advocate
+                                                           In order to ensure the safety of adult,
+   The term ‘‘victim advocate’’ means a person,
+                                                         youth, and child victims of domestic vio-
+ whether paid or serving as a volunteer, who
+                                                         lence, dating violence, sexual assault, or
+ provides services to victims of domestic vio-
+                                                         stalking, and their families, grantees and
+ lence, sexual assault, stalking, or dating vio-
+                                                         subgrantees under this subchapter shall pro-
+ lence under the auspices or supervision of a
+                                                         tect the confidentiality and privacy of per-
+ victim services program.
+                                                         sons receiving services.
+ (49) Victim assistant
+                                                         (B) Nondisclosure
+   The term ‘‘victim assistant’’ means a per-
+                                                           Subject to subparagraphs (C) and (D),
+ son, whether paid or serving as a volunteer,
+                                                         grantees and subgrantees shall not—
+ who provides services to victims of domestic
+                                                             (i) disclose, reveal, or release any person-
+ violence, sexual assault, stalking, or dating vi-
+                                                           ally identifying information or individual
+ olence under the auspices or supervision of a
+                                                           information collected in connection with
+ court or a law enforcement or prosecution
+                                                           services requested, utilized, or denied
+ agency.
+                                                           through grantees’ and subgrantees’ pro-
+ (50) Victim service provider                              grams, regardless of whether the informa-
+   The term ‘‘victim service provider’’ means a            tion has been encoded, encrypted, hashed,
+ nonprofit, nongovernmental or tribal organi-              or otherwise protected; or
+ zation or rape crisis center, including a State             (ii) disclose, reveal, or release individual
+ or tribal coalition, that assists or advocates            client information without the informed,
+ for domestic violence, dating violence, sexual            written, reasonably time-limited consent
+ assault, or stalking victims, including domes-            of the person (or in the case of an
+ tic violence shelters, faith-based organiza-              unemancipated minor, the minor and the
+ tions, and other organizations, with a docu-              parent or guardian or in the case of legal
+Page 343            TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                  § 12291
+
+     incapacity, a court-appointed guardian)            activities authorized in this Act to the
+     about whom information is sought, wheth-           chairman and ranking members of the Com-
+     er for this program or any other Federal,          mittee on the Judiciary of the House of Rep-
+     State, tribal, or territorial grant program,       resentatives and the Committee on the Judi-
+     except that consent for release may not be         ciary of the Senate exercising Congressional
+     given by the abuser of the minor, incapaci-        oversight authority. All disclosures shall
+     tated person, or the abuser of the other           protect confidentiality and omit personally
+     parent of the minor.                               identifying information, including location
+   If a minor or a person with a legally ap-            information about individuals.
+   pointed guardian is permitted by law to re-          (G) Confidentiality assessment and assur-
+   ceive services without the parent’s or guard-           ances
+   ian’s consent, the minor or person with a              Grantees and subgrantees must document
+   guardian may release information without             their compliance with the confidentiality
+   additional consent.                                  and privacy provisions required under this
+   (C) Release                                          section.
+     If release of information described in sub-
+                                                        (H) Death of the party whose privacy had
+   paragraph (B) is compelled by statutory or
+                                                            been protected
+   court mandate—
+        (i) grantees and subgrantees shall make           In the event of the death of any victim
+     reasonable attempts to provide notice to           whose confidentiality and privacy is re-
+     victims affected by the disclosure of infor-       quired to be protected under this subsection,
+     mation; and                                        grantees and subgrantees may share person-
+        (ii) grantees and subgrantees shall take        ally identifying information or individual
+     steps necessary to protect the privacy and         information that is collected about deceased
+     safety of the persons affected by the re-          victims being sought for a fatality review to
+     lease of the information.                          the extent permitted by their jurisdiction’s
+   (D) Information sharing                              law and only if the following conditions are
+                                                        met:
+     (i) Grantees and subgrantees may share—                (i) The underlying objectives of the fa-
+        (I) nonpersonally identifying data in the         tality review are to prevent future deaths,
+     aggregate regarding services to their cli-           enhance victim safety, and increase of-
+     ents and nonpersonally identifying demo-             fender accountability.
+     graphic information in order to comply                 (ii) The fatality review includes policies
+     with Federal, State, tribal, or territorial          and protocols to protect identifying infor-
+     reporting, evaluation, or data collection            mation, including identifying information
+     requirements;                                        about the victim’s children, from further
+        (II) court-generated information and law
+                                                          release outside the fatality review team.
+     enforcement-generated information con-
+                                                            (iii) The grantee or subgrantee makes a
+     tained in secure, governmental registries
+                                                          reasonable effort to get a release from the
+     for protection order enforcement purposes;
+                                                          victim’s personal representative (if one
+     and
+                                                          has been appointed) and from any sur-
+        (III) law enforcement-generated and
+                                                          viving minor children or the guardian of
+     prosecution-generated information nec-
+                                                          such children (but not if the guardian is
+     essary for law enforcement and prosecu-
+                                                          the abuser of the deceased parent), if the
+     tion purposes.
+                                                          children are not capable of knowingly con-
+     (ii) In no circumstances may—                        senting.
+        (I) an adult, youth, or child victim of do-         (iv) The information released is limited
+     mestic violence, dating violence, sexual as-         to that which is necessary for the purposes
+     sault, or stalking be required to provide a          of the fatality review.
+     consent to release his or her personally
+     identifying information as a condition of        (3) Approved activities
+     eligibility for the services provided by the       In carrying out the activities under this sub-
+     grantee or subgrantee;                           chapter, grantees and subgrantees may col-
+        (II) any personally identifying informa-      laborate with or provide information to Fed-
+     tion be shared in order to comply with           eral, State, local, tribal, and territorial public
+     Federal, tribal, or State reporting, evalua-     officials and agencies to develop and imple-
+     tion, or data collection requirements,           ment policies and develop and promote State,
+     whether for this program or any other            local, or tribal legislation or model codes de-
+     Federal, tribal, or State grant program.         signed to reduce or eliminate domestic vio-
+   (E) Statutorily mandated reports of abuse or       lence, dating violence, sexual assault, and
+        neglect                                       stalking if—
+                                                          (A) the confidentiality and privacy re-
+     Nothing in this section prohibits a grantee
+                                                        quirements of this subchapter are main-
+   or subgrantee from reporting suspected
+                                                        tained; and
+   abuse or neglect, as those terms are defined
+                                                          (B) personally identifying information
+   and specifically mandated by the State or
+                                                        about adult, youth, and child victims of do-
+   tribe involved.
+                                                        mestic violence, dating violence, sexual as-
+   (F) Oversight                                        sault, and stalking is not requested or in-
+     Nothing in this paragraph shall prevent            cluded in any such collaboration or informa-
+   the Attorney General from disclosing grant           tion-sharing.
+§ 12291             TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                               Page 344
+
+ (4) Non-supplantation                                percent for technical assistance and training
+   Any Federal funds received under this sub-         relating to grant programs authorized under
+ chapter shall be used to supplement, not sup-        this subchapter, the Office has the authority
+ plant, non-Federal funds that would otherwise        to continue setting aside amounts greater
+ be available for activities under this sub-          than 8 percent.
+ chapter.                                             (B) Requirement
+ (5) Use of funds                                       The Office on Violence Against Women
+   Funds authorized and appropriated under            shall make all technical assistance available
+ this subchapter may be used only for the spe-        as broadly as possible to any appropriate
+ cific purposes described in this subchapter and      grantees, subgrantees, potential grantees, or
+ shall remain available until expended.               other entities without regard to whether the
+                                                      entity has received funding from the Office
+ (6) Reports                                          on Violence Against Women for a particular
+   An entity receiving a grant under this sub-        program or project, with priority given to
+ chapter shall submit to the disbursing agency        recipients awarded a grant before March 15,
+ a report detailing the activities undertaken         2022.
+ with the grant funds, including and providing      (12) Delivery of legal assistance
+ additional information as the agency shall re-
+                                                      Any grantee or subgrantee providing legal
+ quire.
+                                                    assistance with funds awarded under this sub-
+ (7) Evaluation                                     chapter shall comply with the eligibility re-
+   Federal agencies disbursing funds under this     quirements in section 20121(d) of this title.
+ subchapter shall set aside up to 3 percent of      (13) Civil rights
+ such funds in order to conduct—                      (A) Nondiscrimination
+     (A) evaluations of specific programs or
+   projects funded by the disbursing agency              No person in the United States shall, on
+   under this subchapter or related research; or       the basis of actual or perceived race, color,
+     (B) evaluations of promising practices or         religion, national origin, sex, gender iden-
+   problems emerging in the field or related re-       tity (as defined in paragraph 249(c)(4) of title
+   search, in order to inform the agency or            18), sexual orientation, or disability, be ex-
+   agencies as to which programs or projects           cluded from participation in, be denied the
+   are likely to be effective or responsive to         benefits of, or be subjected to discrimination
+   needs in the field.                                 under any program or activity funded in
+                                                       whole or in part with funds made available
+ Final reports of such evaluations shall be            under the Violence Against Women Act of
+ made available to the public via the agency’s         1994 (title IV of Public Law 103–322; 108 Stat.
+ website.                                              1902), the Violence Against Women Act of
+ (8) Nonexclusivity                                    2000 (division B of Public Law 106–386; 114
+                                                       Stat. 1491), the Violence Against Women and
+   Nothing in this subchapter shall be con-
+                                                       Department of Justice Reauthorization Act
+ strued to prohibit male victims of domestic vi-
+                                                       of 2005 (title IX of Public Law 109–162; 119
+ olence, dating violence, sexual assault, and
+                                                       Stat. 3080),2 the Violence Against Women
+ stalking from receiving benefits and services
+                                                       Reauthorization Act of 2013, and any other
+ under this subchapter.
+                                                       program or activity funded in whole or in
+ (9) Prohibition on tort litigation                    part with funds appropriated for grants, co-
+   Funds appropriated for the grant program            operative agreements, and other assistance
+ under this subchapter may not be used to fund         administered by the Office on Violence
+ civil representation in a lawsuit based on a          Against Women.
+ tort claim. This paragraph should not be con-         (B) Exception
+ strued as a prohibition on providing assistance         If sex segregation or sex-specific program-
+ to obtain restitution in a protection order or        ming is necessary to the essential operation
+ criminal case.                                        of a program, nothing in this paragraph
+ (10) Prohibition on lobbying                          shall prevent any such program or activity
+   Any funds appropriated for the grant pro-           from consideration of an individual’s sex. In
+ gram shall be subject to the prohibition in sec-      such circumstances, grantees may meet the
+ tion 1913 of title 18, relating to lobbying with      requirements of this paragraph by providing
+ appropriated moneys.                                  comparable services to individuals who can-
+                                                       not be provided with the sex-segregated or
+ (11) Technical assistance                             sex-specific programming.
+   (A) In general                                      (C) Discrimination
+     Of the total amounts appropriated under             The authority of the Attorney General and
+   this subchapter, not less than 3 percent and        the Office of Justice Programs to enforce
+   up to 8 percent, unless otherwise noted, shall      this paragraph shall be the same as it is
+   be available for providing training and tech-       under section 10228 of this title.2
+   nical assistance relating to the purposes of
+                                                       (D) Construction
+   this subchapter to improve the capacity of
+   the grantees, subgrantees, and other enti-            Nothing contained in this paragraph shall
+   ties. If there is a demonstrated history that       be construed, interpreted, or applied to sup-
+   the Office on Violence Against Women has
+   previously set aside amounts greater than 8      2 See References in Text note below.
+Page 345            TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                               § 12291
+
+   plant, displace, preempt, or otherwise dimin-            (I) deposit an amount equal to the
+   ish the responsibilities and liabilities under         grant funds that were improperly award-
+   other State or Federal civil rights law,               ed to the grantee into the General Fund
+   whether statutory or common.                           of the Treasury; and
+ (14) Clarification of victim services and legal            (II) seek to recoup the costs of the re-
+     assistance                                           payment to the fund from the grant re-
+                                                          cipient that was erroneously awarded
+   Victim services and legal assistance under             grant funds.
+ this subchapter also include services and as-
+                                                     (B) Nonprofit organization requirements
+ sistance to—
+     (A) victims of domestic violence, dating          (i) Definition
+   violence, sexual assault, or stalking who are          For purposes of this paragraph and the
+   also victims of severe forms of trafficking in      grant programs described in this Act, the
+   persons as defined by section 7102 of title 22;     term ‘‘nonprofit organization’’ means an
+     (B) adult survivors of child sexual abuse;        organization that is described in section
+   and                                                 501(c)(3) of title 26 and is exempt from tax-
+     (C) victims of domestic violence, dating vi-      ation under section 501(a) of such title.
+   olence, sexual assault, or stalking who are         (ii) Prohibition
+   also victims of female genital mutilation or           The Attorney General may not award a
+   cutting, or forced marriage.                        grant under any grant program described
+ (15) Accountability                                   in this Act to a nonprofit organization
+   All grants awarded by the Attorney General          that holds money in offshore accounts for
+ under this Act shall be subject to the fol-           the purpose of avoiding paying the tax de-
+ lowing accountability provisions:                     scribed in section 511(a) of title 26.
+   (A) Audit requirement                               (iii) Disclosure
+     (i) In general                                       Each nonprofit organization that is
+                                                       awarded a grant under a grant program de-
+        Beginning in the first fiscal year begin-      scribed in this Act and uses the procedures
+     ning after the date of the enactment of           prescribed in regulations to create a rebut-
+     this Act,2 and in each fiscal year there-         table presumption of reasonableness for
+     after, the Inspector General of the Depart-       the compensation of its officers, directors,
+     ment of Justice shall conduct audits of re-       trustees and key employees, shall disclose
+     cipients of grants under this Act to pre-         to the Attorney General, in the applica-
+     vent waste, fraud, and abuse of funds by          tion for the grant, the process for deter-
+     grantees. The Inspector General shall de-         mining such compensation, including the
+     termine the appropriate number of grant-          independent persons involved in reviewing
+     ees to be audited each year.                      and approving such compensation, the
+     (ii) Definition                                   comparability data used, and contempora-
+        In this paragraph, the term ‘‘unresolved       neous substantiation of the deliberation
+     audit finding’’ means a finding in the final      and decision. Upon request, the Attorney
+     audit report of the Inspector General of          General shall make the information dis-
+     the Department of Justice that the au-            closed under this subsection available for
+     dited grantee has utilized grant funds for        public inspection.
+     an unauthorized expenditure or otherwise        (C) Conference expenditures
+     unallowable cost that is not closed or re-        (i) Limitation
+     solved within 12 months from the date                No amounts authorized to be appro-
+     when the final audit report is issued.            priated to the Department of Justice under
+     (iii) Technical assistance                        this Act may be used by the Attorney Gen-
+        A recipient of grant funds under this Act      eral, or by any individual or organization
+     that is found to have an unresolved audit         awarded discretionary funds through a co-
+     finding shall be eligible to receive prompt,      operative agreement under this Act, to
+     individualized technical assistance to re-        host or support any expenditure for con-
+     solve the audit finding and to prevent fu-        ferences that uses more than $100,000 in
+     ture findings, for a period not to exceed         Department funds, unless the Director or
+     the following 2 fiscal years.                     Principal Deputy Director of the Office on
+                                                       Violence Against Women or the Deputy
+     (iv) Priority
+                                                       Attorney General or such Assistant Attor-
+        In awarding grants under this Act, the         ney Generals, Directors, or principal depu-
+     Attorney General shall give priority to eli-      ties as the Deputy Attorney General may
+     gible entities that did not have an unre-         designate, provides prior written author-
+     solved audit finding during the 3 fiscal          ization that the funds may be expended to
+     years prior to submitting an application          host a conference.
+     for a grant under this Act.                       (ii) Written approval
+     (v) Reimbursement                                    Written approval under clause (i) shall
+        If an entity is awarded grant funds under      include a written estimate of all costs as-
+     this Act during the 2-fiscal-year period in       sociated with the conference, including the
+     which the entity is barred from receiving         cost of all food and beverages, audiovisual
+     grants under paragraph (2), the Attorney          equipment, honoraria for speakers, and
+     General shall—                                    any entertainment.
+§ 12291                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                               Page 346
+
+      (iii) Report                                               The Public Health Service Act, referred to in subsec.
+                                                               (a)(39), is act July 1, 1944, ch. 373, 58 Stat. 682, which is
+        The Deputy Attorney General shall sub-                 classified generally to chapter 6A (§ 201 et seq.) of Title
+      mit an annual report to the Committee on                 42, The Public Health and Welfare. For complete classi-
+      the Judiciary of the Senate and the Com-                 fication of this Act to the Code, see Short Title note
+      mittee on the Judiciary of the House of                  set out under section 201 of Title 42 and Tables.
+      Representatives on all approved con-                       This Act, referred to in subsec. (b)(1), (2)(F), (15), is
+      ference expenditures referenced in this                  Pub. L. 103–322, Sept. 13, 1994, 108 Stat. 1796, known as
+      paragraph.                                               the Violent Crime Control and Law Enforcement Act of
+                                                               1994. For complete classification of this Act to the
+    (D) Annual certification                                   Code, see Short Title of 1994 Act note set out under sec-
+      Beginning in the first fiscal year beginning             tion 10101 of this title and Tables.
+    after the date of the enactment of this Act,2                The Violence Against Women Act of 1994, referred to
+                                                               in subsec. (b)(13)(A), is title IV of Pub. L. 103–322, Sept.
+    the Attorney General shall submit, to the                  13, 1994, 108 Stat. 1902. For complete classification of
+    Committee on the Judiciary and the Com-                    this Act to the Code, see Short Title of 1994 Act note
+    mittee on Appropriations of the Senate and                 set out under section 10101 of this title and Tables.
+    the Committee on the Judiciary and the                       The Violence Against Women Act of 2000, referred to
+    Committee on Appropriations of the House                   in subsec. (b)(13)(A), is div. B of Pub. L. 106–386, Oct. 28,
+    of Representatives, an annual certification                2000, 114 Stat. 1491. For complete classification of this
+    that—                                                      Act to the Code, see Short Title of 2000 Act note set out
+        (i) all audits issued by the Office of the             under section 10101 of this title and Tables.
+                                                                 The Violence Against Women and Department of Jus-
+      Inspector General under paragraph (1) have               tice Reauthorization Act of 2005, referred to in subsec.
+      been completed and reviewed by the appro-                (b)(13)(A), is Pub. L. 109–162, Jan. 5, 2006, 119 Stat. 2960.
+      priate Assistant Attorney General or Di-                 For complete classification of this Act to the Code, see
+      rector;                                                  Short Title of 2006 Act note set out under section 10101
+        (ii) all mandatory exclusions required                 of this title and Tables.
+      under subparagraph (A)(iii) have been                      The Violence Against Women Reauthorization Act of
+      issued;                                                  2013, referred to in subsec. (b)(13)(A), is Pub. L. 113–4,
+        (iii) all reimbursements required under                Mar. 7, 2013, 127 Stat. 54. For complete classification of
+                                                               this Act to the Code, see Short Title of 2013 Act note
+      subparagraph (A)(v) have been made; and                  set out under section 10101 of this title and Tables.
+        (iv) includes a list of any grant recipi-                Section 10228 of this title, referred to in subsec.
+      ents excluded under subparagraph (A) from                (b)(13)(C), was in the original a reference to ‘‘section
+      the previous year.                                       3789d of title 42, United States Code’’ but probably
+  (16) Innovation fund                                         should have been a reference to section 809 of Pub. L.
+                                                               90–351, which was formerly classified to section 3789d of
+    Of the amounts appropriated to carry out                   Title 42, The Public Health and Welfare, prior to edi-
+  this subchapter, not more than 1 percent shall               torial reclassification as section 10228 of this title.
+  be made available for pilot projects, dem-                     The date of the enactment of this Act, referred to in
+  onstration projects, and special initiatives de-             subsec. (b)(15)(A)(i), (D), probably means the date of en-
+  signed to improve Federal, State, local, Trib-               actment of Pub. L. 113–4, which enacted subsec. (b)(16)
+  al, and other community responses to gender-                 [now (b)(15)] of this section and was approved Mar. 7,
+                                                               2013.
+  based violence.
+                                                                                       CODIFICATION
+(Pub. L. 103–322, title IV, § 40002, as added Pub. L.
+109–162, § 3(a), Jan. 5, 2006, 119 Stat. 2964; amend-            Section was formerly classified to section 13925 of
+ed Pub. L. 109–271, §§ 1(d)–(f), 2(e), Aug. 12, 2006,          Title 42, The Public Health and Welfare, prior to edi-
+120 Stat. 751, 752; Pub. L. 111–320, title II, § 202(d),       torial reclassification and renumbering as this section.
+                                                               Some section numbers or references in amendment
+Dec. 20, 2010, 124 Stat. 3509; Pub. L. 113–4, § 3,
+                                                               notes below reflect the classification of such sections
+Mar. 7, 2013, 127 Stat. 56; Pub. L. 117–103, div. W,           or references prior to editorial reclassification.
+§ 2(a), Mar. 15, 2022, 136 Stat. 840; Pub. L. 117–315,
+§ 2(b), Dec. 27, 2022, 136 Stat. 4404.)                                                AMENDMENTS
+                                                                  2022—Subsec. (a). Pub. L. 117–103, § 2(a)(1)(A), sub-
+                     Editorial Notes                           stituted ‘‘In this subchapter, for the purpose of grants
+                                                               authorized under this subchapter’’ for ‘‘In this sub-
+                  REFERENCES IN TEXT
+                                                               chapter’’ in introductory provisions.
+  This subchapter, referred to in text, was in the origi-         Subsec. (a)(1), (2). Pub. L. 117–103, § 2(a)(1)(N), (O),
+nal ‘‘this title’’, meaning title IV of Pub. L. 103–322,       added par. (1) and redesignated former par. (1) as (2).
+Sept. 13, 1994, 108 Stat. 1902, known as the Violence          Former par. (2) redesignated (7).
+Against Women Act of 1994. For complete classification            Subsec. (a)(4), (5). Pub. L. 117–103, § 2(a)(1)(M), redesig-
+of title IV to the Code, see Short Title of 1994 Act note      nated pars. (4) and (5) as (5) and (4), respectively, and
+set out under section 10101 of this title and Tables.          transferred par. (4) to appear after par. (3).
+  The Alaska Native Claims Settlement Act, referred               Subsec. (a)(6). Pub. L. 117–103, § 2(a)(1)(P), added par.
+to in subsec. (a)(2), (22), (43)(B), is Pub. L. 92–203, Dec.   (6). Former par. (6) redesignated (8).
+18, 1971, 85 Stat. 688, which is classified generally to          Subsec. (a)(7). Pub. L. 117–103, § 2(a)(1)(L), redesig-
+chapter 33 (§ 1601 et seq.) of Title 43, Public Lands. For     nated par. (2) as (7) and transferred it to appear before
+complete classification of this Act to the Code, see           par. (8). Former par. (7) redesignated (9).
+Short Title note set out under section 1601 of Title 43           Subsec. (a)(8), (9). Pub. L. 117–103, § 2(a)(1)(K), redesig-
+and Tables.                                                    nated pars. (6) and (7) as (8) and (9), respectively.
+  The Native American Housing Assistance and Self-             Former pars. (8) and (9) redesignated (12) and (10), re-
+Determination Act of 1996, referred to in subsec. (a)(20),     spectively.
+is Pub. L. 104–330, Oct. 26, 1996, 110 Stat. 4016, which is       Subsec. (a)(10), (11). Pub. L. 117–103, § 2(a)(1)(I), redes-
+classified principally to chapter 43 (§ 4101 et seq.) of       ignated pars. (9) and (10) as (10) and (11), respectively.
+Title 25, Indians. For complete classification of this         Former par. (11) redesignated (14).
+Act to the Code, see Short Title note set out under sec-          Subsec. (a)(12). Pub. L. 117–103, § 2(a)(1)(Q), substituted
+tion 4101 of Title 25 and Tables.                              ‘‘includes felony or misdemeanor crimes committed by
+Page 347                  TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                   § 12291
+
+a current or former spouse or intimate partner of the             Former pars. (41) and (42) redesignated (48) and (49), re-
+victim under the family or domestic violence laws of              spectively.
+the jurisdiction receiving grant funding and, in the                 Subsec. (a)(42)(A). Pub. L. 117–315, § 2(b)(1), inserted
+case of victim services, includes the use or attempted            ‘‘, Native Hawaiian organizations, or the Native Hawai-
+use of physical abuse or sexual abuse, or a pattern of            ian community’’ after ‘‘Indian service providers’’,
+any other coercive behavior committed, enabled, or so-            ‘‘, organizations, or communities’’ after ‘‘member pro-
+licited to gain or maintain power and control over a              viders’’, and ‘‘or Native Hawaiian’’ after ‘‘designed to
+victim, including verbal, psychological, economic, or             assist Indian’’.
+technological abuse that may or may not constitute                   Subsec. (a)(42)(B)(i). Pub. L. 117–315, § 2(b)(2)(A), in-
+criminal behavior, by a person who—’’ and subpars. (A)            serted ‘‘, organizations, or communities’’ after ‘‘mem-
+to (D) for ‘‘includes felony or misdemeanor crimes of             ber service providers’’.
+violence committed by a current or former spouse or                  Subsec. (a)(42)(B)(ii). Pub. L. 117–315, § 2(b)(2)(B), in-
+intimate partner of the victim, by a person with whom             serted ‘‘or Native Hawaiian communities’’ after ‘‘tribal
+the victim shares a child in common, by a person who              communities’’.
+is cohabitating with or has cohabitated with the victim              Subsec. (a)(43) to (49). Pub. L. 117–103, § 2(a)(1)(C), re-
+as a spouse or intimate partner, by a person similarly            designated pars. (36) to (42) as (43) to (49), respectively.
+situated to a spouse of the victim under the domestic             Former pars. (43) to (45) redesignated (50) to (52), re-
+or family violence laws of the jurisdiction receiving             spectively.
+grant monies, or by any other person against an adult                Subsec. (a)(50). Pub. L. 117–103, § 2(a)(1)(B), redesig-
+or youth victim who is protected from that person’s               nated par. (43) as (50).
+acts under the domestic or family violence laws of the               Subsec. (a)(51). Pub. L. 117–103, § 2(a)(1)(Y), inserted
+jurisdiction.’’                                                   ‘‘legal assistance and’’ before ‘‘legal advocacy’’.
+   Pub. L. 117–103, § 2(a)(1)(J), redesignated par. (8) as (12)      Pub. L. 117–103, § 2(a)(1)(B), redesignated par. (44) as
+and transferred it to appear after par. (11). Former par.         (51).
+                                                                     Subsec. (a)(52). Pub. L. 117–103, § 2(a)(1)(B), redesig-
+(12) redesignated (17).
+   Subsec. (a)(13) to (16). Pub. L. 117–103, § 2(a)(1)(H), (R),   nated par. (45) as (52).
+(S), added pars. (13), (15) and (16) and redesignated par.           Subsec. (b)(2)(H). Pub. L. 117–103, § 2(a)(2)(A), added
+(11) as (14). Former pars. (13) to (16) redesignated (18) to      subpar. (H).
+                                                                     Subsec. (b)(3). Pub. L. 117–103, § 2(a)(2)(B), substituted
+(20) and (22), respectively.
+   Subsec. (a)(17). Pub. L. 117–103, § 2(a)(1)(T), added par.     ‘‘if—’’ and subpars. (A) and (B) for period at end.
+                                                                     Subsec. (b)(11). Pub. L. 117–103, § 2(a)(2)(C), designated
+(17) and struck out former par. (17). Prior to amend-
+                                                                  existing provisions as subpar. (A), inserted heading and
+ment, text read as follows: ‘‘The term ‘homeless’ has
+                                                                  added subpar. (B).
+the meaning provided in section 12473(6) of this title.’’
+   Pub. L. 117–103, § 2(a)(1)(G), redesignated par. (12) as          Subsec. (b)(14). Pub. L. 117–103, § 2(a)(2)(D), sub-
+(17). Former par. (17) redesignated (21).                         stituted ‘‘to—’’ for ‘‘to’’, inserted subpar. (A) designa-
+   Subsec. (a)(18) to (21). Pub. L. 117–103, § 2(a)(1)(F), (G),   tion before ‘‘victims of domestic violence’’, and added
+redesignated pars. (13) to (15) and (17) as (18) to (21), re-     subpars. (B) and (C).
+spectively. Former pars. (18) to (21) redesignated (23) to           Subsec. (b)(15). Pub. L. 117–103, § 2(a)(2)(E), (F), redes-
+(26), respectively.                                               ignated par. (16) as (15) and struck out former par. (15)
+   Subsec. (a)(22). Pub. L. 117–103, § 2(a)(1)(U), inserted       which related to establishment of biennial conferral
+‘‘; Indian Tribe’’ after ‘‘tribe’’ in heading and sub-            process.
+stituted ‘‘terms ‘Indian tribe’ and ‘Indian Tribe’ mean’’            Subsec. (b)(15)(A)(iii). Pub. L. 117–103, § 2(a)(2)(G)(i),
+for ‘‘term ‘Indian tribe’ means’’ in text.                        added cl. (iii) and struck out former cl. (iii). Prior to
+   Pub. L. 117–103, § 2(a)(1)(F), redesignated par. (16) as       amendment, text read as follows: ‘‘A recipient of grant
+(22) and transferred it to appear before par. (23). Former        funds under this Act that is found to have an unre-
+par. (22) redesignated (27).                                      solved audit finding shall not be eligible to receive
+   Subsec. (a)(23). Pub. L. 117–103, § 2(a)(1)(E), redesig-       grant funds under this Act during the following 2 fiscal
+nated par. (18) as (23). Former par. (23) redesignated            years.’’
+(28).                                                                Subsec. (b)(15)(C)(i). Pub. L. 117–103, § 2(a)(2)(G)(ii),
+   Subsec. (a)(24). Pub. L. 117–103, § 2(a)(1)(V), added par.     substituted ‘‘$100,000’’ for ‘‘$20,000’’ and, which directed
+(24) and struck out former par. (24). Prior to amend-             the insertion of ‘‘the Director or Principal Deputy Di-
+ment, text read as follows: ‘‘The term ‘legal assistance’         rector of the Office on Violence Against Women or’’ be-
+includes assistance to adult and youth victims of do-             fore ‘‘the Deputy Attorney General’’, was executed by
+mestic violence, dating violence, sexual assault, and             making the insertion before ‘‘the Deputy Attorney
+stalking in—                                                      General or’’, to reflect the probable intent of Congress.
+     ‘‘(A) family, tribal, territorial, immigration, em-             Subsec. (b)(16). Pub. L. 117–103, § 2(a)(2)(H), added par.
+   ployment, administrative agency, housing matters,              (16). Former par. (16) redesignated (15).
+   campus administrative or protection or stay away                  2013—Subsec. (a)(1). Pub. L. 113–4, § 3(a)(3), added par.
+   order proceedings, and other similar matters; and              (1). Former par. (1) redesignated (2).
+     ‘‘(B) criminal justice investigations, prosecutions             Subsec. (a)(2). Pub. L. 113–4, § 3(a)(2)(H), redesignated
+   and post-trial matters (including sentencing, parole,          par. (1) as (2). Former par. (2) redesignated (3).
+   and probation) that impact the victim’s safety and                Subsec. (a)(3). Pub. L. 113–4, § 3(a)(4), substituted ‘‘se-
+   privacy.                                                       rious harm to an unemancipated minor.’’ for ‘‘serious
+‘‘Intake or referral, by itself, does not constitute legal        harm.’’
+assistance.’’                                                        Pub. L. 113–4, § 3(a)(2)(H), redesignated par. (2) as (3).
+   Pub. L. 117–103, § 2(a)(1)(E), redesignated par. (19) as       Former par. (3) redesignated (4).
+(24). Former par. (24) redesignated (29).                            Subsec. (a)(4). Pub. L. 113–4, § 3(a)(5), substituted ‘‘The
+   Subsec. (a)(25) to (30). Pub. L. 117–103, § 2(a)(1)(E), re-    term ‘community-based organization’ means a non-
+designated pars. (20) to (25) as (25) to (30), respectively.      profit, nongovernmental, or tribal organization that
+Former pars. (26) to (30) redesignated (32) to (36), re-          serves a specific geographic community that—’’ for
+spectively.                                                       ‘‘The term ‘community-based organization’ means an
+   Subsec. (a)(31). Pub. L. 117–103, § 2(a)(1)(W), added par.     organization that—’’ in introductory provisions.
+(31). Former par. (31) redesignated (37).                            Pub. L. 113–4, § 3(a)(2)(H), redesignated par. (3) as (4).
+   Subsec. (a)(32) to (39). Pub. L. 117–103, § 2(a)(1)(D), re-    Former par. (4) redesignated (5).
+designated pars. (26) to (33) as (32) to (39), respectively.         Subsec. (a)(5). Pub. L. 113–4, § 3(a)(2)(H), redesignated
+Former pars. (34) to (39) redesignated (41) to (46), re-          par. (4) as (5).
+spectively.                                                          Pub. L. 113–4, § 3(a)(1), struck out par. (5), which de-
+   Subsec. (a)(40). Pub. L. 117–103, § 2(a)(1)(X), added par.     fined ‘‘court-based’’ and ‘‘court-related personnel’’.
+(40). Former par. (40) redesignated (47).                            Subsec. (a)(6), (7). Pub. L. 113–4, § 3(a)(6), added pars.
+   Subsec. (a)(41), (42). Pub. L. 117–103, § 2(a)(1)(C), redes-   (6) and (7). Former pars. (6) and (7) redesignated (8) and
+ignated pars. (34) and (35) as (41) and (42), respectively.       (9), respectively.
+§ 12291                   TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                                  Page 348
+
+   Subsec. (a)(8). Pub. L. 113–4, § 3(a)(7), inserted ‘‘or inti-      Subsec. (b)(2)(B). Pub. L. 113–4, § 3(b)(1)(A), added cls.
+mate partner’’ after ‘‘former spouse’’ and after ‘‘as a            (i) and (ii) and concluding provisions, and struck out
+spouse’’.                                                          former cls. (i) and (ii) which read as follows:
+   Pub. L. 113–4, § 3(a)(2)(G), redesignated par. (6) as (8).         ‘‘(i) disclose any personally identifying information
+Former par. (8) redesignated (10).                                 or individual information collected in connection with
+   Subsec. (a)(9) to (11). Pub. L. 113–4, § 3(a)(2)(G), redes-     services requested, utilized, or denied through grantees’
+ignated pars. (7) to (9) as (9) to (11), respectively.             and subgrantees’ programs; or
+Former pars. (10) and (11) redesignated (13) and (14), re-            ‘‘(ii) reveal individual client information without the
+spectively.                                                        informed, written, reasonably time-limited consent of
+   Subsec. (a)(12). Pub. L. 113–4, § 3(a)(8), added par. (12).     the person (or in the case of an unemancipated minor,
+Former par. (12) redesignated (15).                                the minor and the parent or guardian or in the case of
+   Subsec. (a)(13) to (16). Pub. L. 113–4, § 3(a)(2)(F), redes-    persons with disabilities, the guardian) about whom in-
+ignated pars. (10) to (13) as (13) to (16), respectively.          formation is sought, whether for this program or any
+Former pars. (14) to (16) redesignated (17) to (19), re-           other Federal, State, tribal, or territorial grant pro-
+spectively.                                                        gram, except that consent for release may not be given
+   Subsec. (a)(17). Pub. L. 113–4, § 3(a)(2)(F), redesignated      by the abuser of the minor, person with disabilities, or
+par. (14) as (17).                                                 the abuser of the other parent of the minor.’’
+   Pub. L. 113–4, § 3(a)(1), struck out par. (17), which de-          Subsec. (b)(2)(D). Pub. L. 113–4, § 3(b)(1)(B), amended
+fined ‘‘linguistically and culturally specific services’’.         subpar. (D) generally. Prior to amendment, text read as
+   Subsec. (a)(18). Pub. L. 113–4, § 3(a)(9), inserted ‘‘or        follows:‘‘Grantees and subgrantees may share—
+                                                                         ‘‘(i) nonpersonally identifying data in the aggregate
+Village Public Safety Officers’’ after ‘‘governmental
+                                                                      regarding services to their clients and nonpersonally
+victim services programs’’.
+                                                                      identifying demographic information in order to com-
+   Pub. L. 113–4, § 3(a)(2)(F), redesignated par. (15) as (18).
+   Pub. L. 113–4, § 3(a)(1), struck out par. (18), which de-          ply with Federal, State, tribal, or territorial report-
+                                                                      ing, evaluation, or data collection requirements;
+fined ‘‘personally identifying information’’ or ‘‘per-
+                                                                         ‘‘(ii) court-generated information and law-enforce-
+sonal information’’.                                                  ment generated information contained in secure, gov-
+   Subsec. (a)(19). Pub. L. 113–4, § 3(a)(10), inserted at end
+                                                                      ernmental registries for protection order enforce-
+‘‘Intake or referral, by itself, does not constitute legal
+                                                                      ment purposes; and
+assistance.’’                                                            ‘‘(iii) law enforcement- and prosecution-generated
+   Pub. L. 113–4, § 3(a)(2)(F), redesignated par. (16) as (19).       information necessary for law enforcement and pros-
+Former par. (19) redesignated (23).                                   ecution purposes.’’
+   Subsec. (a)(20) to (22). Pub. L. 113–4, § 3(a)(11), added          Subsec. (b)(2)(E) to (G). Pub. L. 113–4, § 3(b)(1)(C)–(E),
+pars. (20) to (22). Former pars. (20), (21), and (22) redesig-     added subpars. (E) and (G) and redesignated former sub-
+nated (24), (26), and (27), respectively.                          par. (E) as (F).
+   Subsec. (a)(23). Pub. L. 113–4, § 3(a)(12), substituted            Subsec. (b)(3). Pub. L. 113–4, § 3(b)(2), added par. (3)
+‘‘assistance’’ for ‘‘services’’.                                   and struck out former par. (3). Prior to amendment,
+   Pub. L. 113–4, § 3(a)(2)(E), redesignated par. (19) as (23).    text read as follows: ‘‘In carrying out the activities
+   Pub. L. 113–4, § 3(a)(1), struck out par. (23), which de-       under this subchapter, grantees and subgrantees may
+fined ‘‘sexual assault’’.                                          collaborate with and provide information to Federal,
+   Subsec. (a)(24). Pub. L. 113–4, § 3(a)(2)(E), redesignated      State, local, tribal, and territorial public officials and
+par. (20) as (24). Former par. (24) redesignated (30).             agencies to develop and implement policies to reduce or
+   Subsec. (a)(25). Pub. L. 113–4, § 3(a)(13), added par. (25).    eliminate domestic violence, dating violence, sexual as-
+Former par. (25) redesignated (31).                                sault, and stalking.’’
+   Subsec. (a)(26). Pub. L. 113–4, § 3(a)(2)(D), redesignated         Subsec. (b)(7). Pub. L. 113–4, § 3(b)(3), inserted at end
+par. (21) as (26). Former par. (26) redesignated (32).             ‘‘Final reports of such evaluations shall be made avail-
+   Subsec. (a)(26)(C). Pub. L. 113–4, § 3(a)(14), added sub-       able to the public via the agency’s website.’’
+par. (C).                                                             Subsec. (b)(12) to (16). Pub. L. 113–4, § 3(b)(4), added
+   Subsec. (a)(27). Pub. L. 113–4, § 3(a)(15), substituted         pars. (12) to (16).
+‘‘57’’ for ‘‘52’’ and ‘‘250,000’’ for ‘‘150,000’’.                    2010—Subsec. (a)(26). Pub. L. 111–320 substituted
+   Pub. L. 113–4, § 3(a)(2)(D), redesignated par. (22) as (27).    ‘‘under sections 10402 and 10411 of this title’’ for ‘‘under
+Former par. (27) redesignated (33).                                the Family Violence Prevention and Services Act (42
+   Subsec. (a)(28). Pub. L. 113–4, § 3(a)(16), added par. (28).    U.S.C. 10410(b))’’.
+Former par. (28) redesignated (34).                                   2006—Subsec. (a)(1). Pub. L. 109–271, § 1(e)(1), sub-
+   Subsec. (a)(29). Pub. L. 113–4, § 3(a)(16), added par. (29).    stituted ‘‘Alaska Native’’ for ‘‘Alaskan’’.
+   Pub. L. 113–4, § 3(a)(1), struck out par. (29) which de-           Subsec. (a)(23). Pub. L. 109–271, § 1(d), substituted
+fined ‘‘tribal coalition’’.                                        ‘‘proscribed’’ for ‘‘prescribed’’.
+   Subsec. (a)(30) to (32). Pub. L. 113–4, § 3(a)(2)(C), redes-       Subsec. (a)(31) to (37). Pub. L. 109–271, § 1(e)(2), (3),
+ignated pars. (24) to (26) as (30) to (32), respectively.          added par. (31) and redesignated former pars. (31) to (36)
+Former pars. (30) to (32) redesignated (36) to (38), re-           as (32) to (37), respectively.
+spectively.                                                           Subsec. (b)(1). Pub. L. 109–271, § 1(f), added par. (1) and
+   Subsec. (a)(33). Pub. L. 113–4, § 3(a)(2)(C), redesignated      struck out former par. (1) which read as follows: ‘‘No
+par. (27) as (33).                                                 matching funds shall be required for a grant or
+   Pub. L. 113–4, § 3(a)(1), struck out par. (33) which de-        subgrant made under this subchapter for any tribe, ter-
+fined ‘‘underserved populations’’.                                 ritory, victim service provider, or any entity that the
+   Subsec. (a)(34). Pub. L. 113–4, § 3(a)(2)(C), redesignated      Attorney General determines has adequately dem-
+par. (28) as (34). Former par. (34) redesignated (41).             onstrated financial need.’’
+   Subsec. (a)(35). Pub. L. 113–4, § 3(a)(17), added par. (35).       Subsec. (b)(11). Pub. L. 109–271, § 2(e), inserted ‘‘Of the
+Former par. (35) redesignated (42).                                total amounts appropriated under this subchapter, not
+   Subsec. (a)(36), (37). Pub. L. 113–4, § 3(a)(2)(B), redesig-    less than 3 percent and up to 8 percent, unless other-
+nated pars. (30) and (31) as (36) and (37), respectively.          wise noted, shall be available for providing training
+   Pub. L. 113–4, § 3(a)(1), struck out pars. (36) and (37),       and technical assistance relating to the purposes of
+which defined ‘‘victim services’’ or ‘‘victim service pro-         this subchapter to improve the capacity of the grant-
+vider’’ and ‘‘youth’’, respectively.                               ees, subgrantees, and other entities.’’ before ‘‘If there is
+   Subsec. (a)(38). Pub. L. 113–4, § 3(a)(2)(B), redesignated      a demonstrated history’’.
+par. (32) as (38).
+   Subsec. (a)(39), (40). Pub. L. 113–4, § 3(a)(18), added                Statutory Notes and Related Subsidiaries
+pars. (39) and (40).
+   Subsec. (a)(41), (42). Pub. L. 113–4, § 3(a)(2)(A), redesig-              EFFECTIVE DATE OF 2022 AMENDMENT
+nated pars. (34) and (35) as (41) and (42), respectively.            Amendment by Pub. L. 117–315 effective one day after
+   Subsec. (a)(43) to (45). Pub. L. 113–4, § 3(a)(19), added       Dec. 27, 2022, see section 3 of Pub. L. 117–315, set out as
+pars. (43) to (45).                                                a note under section 10441 of this title.
+Page 349                TITLE 34—CRIME CONTROL AND LAW ENFORCEMENT                                               § 12291
+
+  Amendment by Pub. L. 117–103 not effective until Oct.           ‘‘(13) More than 500 men and women call the Na-
+1 of the first fiscal year beginning after Mar. 15, 2022,       tional Domestic Violence Hotline every day to get
+see section 4(a) of div. W of Pub. L. 117–103, set out as       immediate, informed, and confidential assistance to
+an Effective Date note under section 6851 of Title 15,          help deal with family violence.
+Commerce and Trade.                                               ‘‘(14) The National Domestic Violence Hotline serv-
+                                                                ice is available, toll-free, 24 hours a day and 7 days a
+         EFFECTIVE DATE OF 2013 AMENDMENT                       week, with bilingual staff, access to translators in 150
+  Amendment by Pub. L. 113–4 not effective until the            languages, and a TTY line for the hearing-impaired.
+beginning of the fiscal year following Mar. 7, 2013, see          ‘‘(15) With access to over 5,000 shelters and service
+section 4 of Pub. L. 113–4, set out as a note under sec-        providers across the United States, Puerto Rico, and
+tion 2261 of Title 18, Crimes and Criminal Procedure.           the United States Virgin Islands, the National Do-
+                                                                mestic Violence Hotline provides crisis intervention
+                        FINDINGS                                and immediately connects callers with sources of
+  Pub. L. 109–162, title II, § 201, Jan. 5, 2006, 119 Stat.     help in their local community.
+2993, provided that: ‘‘Congress finds the following:              ‘‘(16) Approximately 60 percent of the callers indi-
+    ‘‘(1) Nearly 1⁄3 of American women report physical          cate that calling the Hotline is their first attempt to
+  or sexual abuse by a husband or boyfriend at some             address a domestic violence situation and that they
+  point in their lives.                                         have not called the police or any other support serv-
+    ‘‘(2) According to the National Crime Victimization         ices.
+  Survey, 248,000 Americans 12 years of age and older             ‘‘(17) Between 2000 and 2003, there was a 27 percent
+  were raped or sexually assaulted in 2002.                     increase in call volume at the National Domestic Vi-
+    ‘‘(3) Rape and sexual assault in the United States is       olence Hotline.
+  estimated to cost $127,000,000,000 per year, including—         ‘‘(18) Improving technology infrastructure at the
+       ‘‘(A) lost productivity;                                 National Domestic Violence Hotline and training ad-
+       ‘‘(B) medical and mental health care;                    vocates, volunteers, and other staff on upgraded tech-
+       ‘‘(C) police and fire services;                          nology will drastically increase the Hotline’s ability
+       ‘‘(D) social services;                                   to answer more calls quickly and effectively.’’
+       ‘‘(E) loss of and damage to property; and                Pub. L. 109–162, title III, § 301, Jan. 5, 2006, 119 Stat.
+       ‘‘(F) reduced quality of life.                         3003, provided that: ‘‘Congress finds the following:
+    ‘‘(4) Nonreporting of sexual assault in rural areas is        ‘‘(1) Youth, under the age of 18, account for 67 per-
+  a particular problem because of the high rate of non-         cent of all sexual assault victimizations reported to
+  stranger sexual assault.                                      law enforcement officials.
+    ‘‘(5) Geographic isolation often compounds the                ‘‘(2) The Department of Justice consistently finds
+  problems facing sexual assault victims. The lack of           that young women between the ages of 16 and 24 expe-
+  anonymity and accessible support services can limit           rience the highest rate of non-fatal intimate partner
+  opportunities for justice for victims.                        violence.
+    ‘‘(6) Domestic elder abuse is primarily family                ‘‘(3) In 1 year, over 4,000 incidents of rape or sexual
+  abuse. The National Elder Abuse Incidence Study               assault occurred in public schools across the country.
+  found that the perpetrator was a family member in 90            ‘‘(4) Young people experience particular obstacles
+  percent of cases.                                             to seeking help. They often do not have access to
+    ‘‘(7) Barriers for older victims leaving abusive rela-      money, transportation, or shelter services. They
+  tionships include—                                            must overcome issues such as distrust of adults, lack
+       ‘‘(A) the inability to support themselves;               of knowledge about available resources, or pressure
