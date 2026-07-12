@@ -28,6 +28,19 @@ This is a business-operations repo. Treat rent, invoice, payment, lease, tenant,
 - Run `python legal/scripts/validate_release.py` after changing an approved release.
 - Do not auto-merge a legal-source currentness change. Preserve the approved baseline until a qualified reviewer resolves the change.
 
+
+## Accounting Authority Registry Rules
+
+- Start with `accounting/CURRENT_AUTHORITY_INDEX.md`, `accounting/PROJECT_INSTRUCTIONS.md`, `accounting/FASB_APPLICABILITY_INDEX.md`, `accounting/ACCOUNTING_POLICY_MATRIX.md`, and `accounting/manifests/fasb_topic_registry.json`.
+- Keep US GAAP, federal tax, Kansas/local law, signed agreements, GH policy, and Zoho configuration separately labeled.
+- The `accounting/` subtree may store FASB locators and original GH analysis, but never Codification text, screenshots, print exports, scraped FASB content, or licensed commercial guidance without explicit permission for repository and generative-AI use.
+- Do not invent ASC paragraph numbers or treat an ASU, exposure draft, project page, IRS publication, internal memo, or automation as authoritative Codification text or binding law.
+- Exact paragraphs, effective dates, scope exceptions, transition provisions, and private-company alternatives require authorized live verification before a material GAAP assertion.
+- Never force book accounting to equal tax accounting. Identify book-tax differences and preserve adjustment support.
+- Never mark an automated review alert as an accounting change. A qualified reviewer must determine applicability and approve the conclusion.
+- Run `python accounting/scripts/validate_authority_registry.py` after changing the accounting authority release.
+- Do not auto-merge an accounting-authority currentness or policy change.
+
 ## Working Rules
 
 - Make small, focused, reversible changes.

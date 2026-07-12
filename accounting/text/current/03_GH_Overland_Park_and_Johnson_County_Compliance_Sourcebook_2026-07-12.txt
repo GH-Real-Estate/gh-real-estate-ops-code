@@ -1,0 +1,310 @@
+Volume 03
+
+
+Overland Park and Johnson County
+Compliance Sourcebook
+Rental license and inspection, city fee schedule, property-tax administration, local filing calendar,
+and short-term-lodging trigger map
+
+
+
+  Prepared for                       GH Real Estate, LLC
+
+  Property                           Fourplex - 9401 Nieman Road, Overland Park, Kansas 66214
+
+  Current through                    July 12, 2026
+
+  Intended use                       Upload after Volumes 00-02. Use for city and county obligations at 9401 Nieman Road.
+
+  Authority model                    Binding law, authoritative administrative sources, official guidance, GAAP topic locators, and project controls are labeled
+                                     separately.
+
+
+
+
+Important limitation
+This is a curated, dated authority map and operating sourcebook, not a substitute for the live law, a signed lease, a tax return position,
+legal advice, or a CPA engagement. No static PDF can make an AI answer legally binding. The cited live authority controls.
+
+
+
+Prepared as a searchable source for a ChatGPT Project. Official URLs are printed in full in each source register.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                      Page 1
+Volume 03 - OP / Johnson County Compliance                                      Checked through July 12, 2026
+
+
+
+
+Contents
+
+1. Local conclusion for the GH fourplex                                                                    3
+
+
+2. Overland Park Chapter 5.75 map                                                                          3
+
+
+3. Fee and accounting treatment                                                                            3
+
+
+4. General business license and sales tax                                                                  3
+
+
+5. Johnson County real-property tax workflow                                                               4
+
+
+6. Personal-property workflow                                                                              4
+
+
+7. Local compliance calendar                                                                               4
+
+
+8. Short-term lodging - not currently applicable                                                           4
+
+
+9. Local source register                                                                                   4
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                         Page 2
+Volume 03 - OP / Johnson County Compliance                                                                                                                      Checked through July 12, 2026
+
+
+
+
+1. Local conclusion for the GH fourplex
+The central current local obligation is Overland Park rental licensing and inspection under Municipal Code Chapter 5.75. The current
+master fee schedule lists $120 billed biennially for a rental dwelling under common ownership and $120 per building for an apartment
+complex. The license is not a substitute for construction permits, state taxes, property-tax filings, or a valid lease.
+Immediate verification
+Confirm the active rental license shows the correct fourplex address and legal owner, capture its effective/renewal dates, and store the
+issued license and fee receipt. If ownership changed, Chapter 5.75 says the license is not transferable.
+
+
+2. Overland Park Chapter 5.75 map
+ Section             Subject                                      Accounting/compliance evidence
+
+ 5.75.010            Purpose                                      Treat rental licensing as a continuing operating compliance cost
+
+ 5.75.020            Definitions                                  Confirm building, owner/licensee, and rental-dwelling facts
+
+ 5.75.030            Applicability                                Document why fourplex is within the chapter and whether any exemption exists
+
+ 5.75.040            License requirement                          Keep active license, payment receipt, effective period, and responsible owner
+
+ 5.75.050            Licensing standards                          Retain inspection/correction evidence tied to property records
+
+ 5.75.060            Application and fee                          Book fee to rental-license expense; verify owner/building and current fee schedule
+
+ 5.75.070            Issuance and renewal                         Calendar biennial renewal and preserve issued license
+
+ 5.75.080            Nontransferability                           Reapply/review on ownership or entity transfer; do not assume license follows sale
+
+ 5.75.090            Licensee duties                              Maintain local contact/notice compliance and documented responses
+
+ 5.75.100            Denial, revocation, suspension               Escalate notices immediately; track penalties/legal expense separately
+
+ 5.75.110            Inspection program                           Preserve inspection reports, access notices, corrections, invoices, and closure
+
+ 5.75.120            Notices                                      Use legal notice address and archive delivery
+
+ 5.75.130            Administrative appeal                        Calendar stated appeal deadline from the actual notice
+
+ 5.75.140            Unlawful operation                           Do not operate unlicensed; legal review if license lapse occurs
+
+ 5.75.150            Nonexclusive remedies                        City remedies can coexist with other enforcement
+
+
+
+3. Fee and accounting treatment
+ Fee                                 Current schedule                                               Book/tax control
+
+ Rental license                      $120 billed biennially for rental dwelling under common        Expense over service period if material under book policy; tax deduction timing
+                                     ownership; apartment complex $120 per building                 follows method; retain license/receipt
+
+ Building permit <= $5,000           $30 permit + $30 plan review = $60 under current schedule      Capitalize if directly attributable to capital improvement; otherwise analyze
+ work                                                                                               purpose
+
+ Building permit                     $50 permit + $30 plan review = $80 under current schedule      Capitalize if directly attributable to capital improvement; otherwise analyze
+ $5,001-$19,000 work                                                                                purpose
+
+ Building permit > $19,000           Current multiplier 0.0050 on defined valuation                 Tie permit value/fee to project asset schedule
+
+ Late permit                         Applicable permit fee doubled                                  Segregate penalty/late component; do not automatically capitalize a punitive
+                                                                                                    amount
+
+ Reinspection                        $50 under current schedule                                     Classify by cause/project; preserve correction and closure
+
+
+The master fee schedule is effective August 1, 2025 and was the current official schedule identified through the cover date. City fees
+can change; verify the live schedule before payment or budgeting.
+
+
+4. General business license and sales tax
+Overland Park's business-license page lists specific regulated activities and does not identify a general occupational license for
+ordinary long-term residential landlords. That does not remove the separate Chapter 5.75 rental license. Long-term apartment rent is
+not Kansas sales-taxable. Kansas KDOR administers local sales taxes on taxable goods/services; unusual separately sold services or
+taxable personal-property transactions require state/local rate review.
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                         Page 3
+Volume 03 - OP / Johnson County Compliance                                                                                                             Checked through July 12, 2026
+
+
+
+
+5. Johnson County real-property tax workflow
+ - Real property is valued as of January 1. Multifamily residential classification is generally assessed at 11.5% under Kansas law.
+
+ - The deadline to appeal the appraised value is generally 30 days after the value notice is mailed. Calendar the actual notice date and
+   preserve comparable/property-condition evidence.
+
+ - Taxes may be paid in full by December 20 or half by December 20 and half by May 10 of the following year. Weekend/holiday
+   adjustments can change the calendar date.
+
+ - When the lender pays through escrow, reconcile the lender statement to the county bill and receipt. Do not expense the monthly
+   escrow deposit itself.
+
+ - The county estimated-tax notice is informational and not the tax bill; do not post it as a payable or payment.
+
+
+6. Personal-property workflow
+Kansas changed the rendition rule effective January 1, 2025. File an initial personal-property rendition, then file by March 15 only when
+a required change occurs. Johnson County's page should be read with current K.S.A. 79-306 and the 2026 KDOR guide. Appliances,
+laundry machines, furniture, tools, and equipment need a real-versus-personal and exemption review; many assets may be exempt,
+but a mistaken exemption can cause back tax and penalties.
+
+
+7. Local compliance calendar
+ Control                                Frequency / trigger                              Owner evidence
+
+ Overland Park rental license           Biennial; immediately on                         License, application, $120 fee receipt, building/owner match, renewal calendar
+                                        ownership/entity/application change
+
+ Rental inspection / correction         As noticed / program cycle                       Inspection report, tenant access notice, work orders, invoices, photos, reinspection
+                                                                                         closure
+
+ Real-property value notice             Annual mailing                                   Notice, 30-day appeal decision, evidence package, final value
+
+ Real-property tax                      Full or first half Dec. 20; second half May 10   Bill, lender escrow statement, county receipt, Zoho reconciliation
+
+ Personal-property rendition            Initial; then by March 15 only when required     Asset list, exemption analysis, filed statement/confirmation, appraiser
+                                        change occurs                                    correspondence
+
+ Construction permit                    Before covered work                              Permit, valuation/plan-review fee, scope, inspections, final approval, capital project
+                                                                                         link
+
+ Short-term lodging                     Before offering <= 28-day stays                  City/zoning confirmation, KDOR registrations, sales/guest tax rates, platform
+                                                                                         setup, return calendar
+
+
+
+8. Short-term lodging - not currently applicable
+Trigger only
+Current facts describe long-term apartment leases. If GH offers stays of 28 consecutive days or less, stop using the long-term conclusion
+and re-scope before listing or collecting money.
+
+Kansas guidance states transient guest tax generally applies when more than two bedrooms are furnished for guest accommodations
+and the room is rented for 28 consecutive days or less. The official rate table lists Overland Park at 9.00% as of July 1, 2026. Kansas
+sales tax lodging rules have their own sleeping-room and accommodation tests. City zoning, licensing, platform collection, and return
+filing must all be verified before a short-term conversion.
+
+
+9. Local source register
+Local webpages and fee schedules are more volatile than statutes. Recheck rental licensing, fees, and county dates annually and
+whenever the city/county issues a notice.
+
+ OP-RL-001             Overland Park Municipal Code Chapter 5.75                                                      Binding municipal code             Current
+
+ Rental licensing and inspection chapter: purpose, definitions, applicability, license, standards, application/fee, renewal, transfer, duties, enforcement,
+ inspection, notices, appeals, unlawful operation, and remedies.
+ https://codes.opkansas.org/municipal-code/doc-viewer.aspx?secid=7228
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                     Page 4
+Volume 03 - OP / Johnson County Compliance                                                                                                   Checked through July 12, 2026
+
+
+
+ OP-RL-002           Overland Park rental licensing and inspection page                                     Official administration           Current
+
+ Current public-facing application/inspection information and contact point. Use with the binding code and current fee schedule.
+ https://www.opkansas.gov/rental-licensing-and-inspection
+
+
+ OP-FEE-001          Overland Park Master Fee Schedule, effective Aug. 1, 2025                              Official fee schedule             Current
+
+ Rental dwelling under common ownership: $120 billed biennially; apartment complex: $120 per building. Also contains construction permit, late permit,
+ reinspection, and other development fees.
+ https://content.civicplus.com/api/assets/ks-overlandpark/5c2ef6d8-b38f-41aa-999c-0537f894e89c?cache=1800
+
+
+ OP-BL-001           Overland Park business licenses                                                        Official administration           Current
+
+ City lists specific regulated occupations and does not present a general landlord occupational license. Rental licensing remains separately mandatory.
+ https://www.opkansas.gov/business-licenses
+
+
+ OP-TAX-001          Overland Park sales and property taxes                                                 Official administration           Current
+
+ Current local tax-rate links and city budget/tax administration. Kansas KDOR administers local sales tax.
+ https://www.opkansas.gov/sales-and-property-taxes
+
+
+ OP-TG-001           Kansas transient guest tax rates - Overland Park                                       Official state rate table         Conditional
+
+ Overland Park transient guest tax is listed at 9.00% as of July 1, 2026. Not applicable to current long-term leases; re-scope before short stays.
+ https://www.ksrevenue.gov/pdf/tgratesfilers.pdf
+
+
+ OP-TG-002           KDOR transient guest tax page                                                          Official administration           Conditional
+
+ Guest tax generally applies where more than two bedrooms are furnished for guests and stays are 28 consecutive days or less; confirm all
+ sales/lodging rules before conversion.
+ https://www.ksrevenue.gov/bustaxtypestg.html
+
+
+ JC-RE-001           Johnson County real estate property tax                                                Official county administration    Current
+
+ Tax statements, payment methods, full/half due dates, delinquency information, and receipts. Full/first half Dec. 20; second half May 10, adjusted for
+ nonbusiness days.
+ https://www.jocogov.org/department/treasury-taxation-and-vehicles/property-tax/real-estate
+
+
+ JC-DATE-001         Johnson County important dates and deadlines                                           Official county administration    Current
+
+ January 1 valuation; rendition/appeal milestones; 30-day real-property appeal period from value notice; Dec. 20 tax payment. Use current annual
+ calendar.
+ https://www.jocogov.org/department/appraiser/property-information/important-dates-and-deadlines
+
+
+ JC-PP-001           Johnson County personal property                                                       Official county administration    Current
+
+ Local filing portal/contact and classification guidance. Pair with current K.S.A. 79-306 and 2026 state guide for change-only filing rule.
+ https://www.jocogov.org/department/appraiser/property-information/personal-property
+
+
+ JC-PT-001           Johnson County personal property tax payment                                           Official county administration    Conditional
+
+ Payment calendar and delinquency consequences for assessed personal property.
+ https://www.jocogov.org/department/treasury-taxation-and-vehicles/property-tax/personal-property-taxes
+
+
+ JC-SEARCH-          Johnson County property tax search                                                     Official county administration    Current
+ 001
+
+ Retrieve current/previous bills and receipts by address, parcel, quick reference, or name. Preserve PDFs/receipts with escrow reconciliation.
+ https://www.jocogov.org/department/treasury-taxation-and-vehicles/property-tax
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                      Page 5
+

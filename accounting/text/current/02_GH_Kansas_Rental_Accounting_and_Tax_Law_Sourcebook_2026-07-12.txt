@@ -1,0 +1,561 @@
+Volume 02
+
+
+Kansas Rental Accounting and Tax Law
+Sourcebook
+Kansas landlord-deposit law, income tax, sales/use tax, property tax, personal property, LLC
+reporting, information returns, and unclaimed property
+
+
+
+  Prepared for                       GH Real Estate, LLC
+
+  Property                           Fourplex - 9401 Nieman Road, Overland Park, Kansas 66214
+
+  Current through                    July 12, 2026
+
+  Intended use                       Upload after Volumes 00 and 01. Use for Kansas law and state tax questions involving the GH fourplex.
+
+  Authority model                    Binding law, authoritative administrative sources, official guidance, GAAP topic locators, and project controls are labeled
+                                     separately.
+
+
+
+
+Important limitation
+This is a curated, dated authority map and operating sourcebook, not a substitute for the live law, a signed lease, a tax return position,
+legal advice, or a CPA engagement. No static PDF can make an AI answer legally binding. The cited live authority controls.
+
+
+
+Prepared as a searchable source for a ChatGPT Project. Official URLs are printed in full in each source register.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                      Page 1
+Volume 02 - Kansas Rental Accounting and Tax Law Sourcebook                     Checked through July 12, 2026
+
+
+
+
+Contents
+
+1. Scope and applicability                                                                                 3
+
+
+2. Security deposits and tenant money                                                                      3
+
+
+3. Unclaimed tenant refunds and credit balances                                                            3
+
+
+4. Kansas income, sales/use, and property tax summary                                                      4
+
+
+5. Real and personal property calendar                                                                     4
+
+
+6. Kansas LLC books, contributions, and distributions                                                      4
+
+
+7. Vendor and state information reporting                                                                  4
+
+
+8. Conditional Kansas triggers                                                                             5
+
+
+9. Kansas record-retention controls                                                                        5
+
+
+10. Kansas source register                                                                                 5
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                         Page 2
+Volume 02 - Kansas Rental Accounting and Tax Law Sourcebook                                                                                                  Checked through July 12, 2026
+
+
+
+
+1. Scope and applicability
+This volume is tailored to a Kansas domestic LLC owning a long-term residential fourplex in Overland Park. It includes rules that
+directly affect accounting records, tenant liabilities, taxes, entity records, and filing. Employment, short-term lodging, abandoned
+belongings, nonresident-service withholding, and CPA-practice rules are conditional.
+Lease and fee warning
+The supplied target fee policy may not match existing signed leases. Kansas does not make an internal policy enforceable. Before
+invoicing or automating a fee, use the applicable executed lease and obtain Kansas counsel review for unconscionability or disputed
+terms.
+
+
+2. Security deposits and tenant money
+ Step                      Kansas rule                                                                            Required accounting control
+
+ Receipt                   Unfurnished deposit <= one month's periodic rent; furnished <= 1.5 months; pet         Credit tenant-specific liability; validate cap against rent and
+                           extra <= 0.5 month                                                                     furnishings/pet terms
+
+ Label                     Definition applies 'however denominated' when required before occupancy and            Do not rely on 'holding fee' or 'retainer' label; review
+                           forfeitable on breach                                                                  substance and agreement
+
+ Move-in                   Joint signed inventory within five days of occupancy or possession; tenant gets copy   Attach sanitized inventory reference to tenant ledger and
+                                                                                                                  retain photos/evidence
+
+ Application               At termination, may apply to accrued rent and damages for tenant noncompliance /       Do not net silently; debit liability and separately identify each
+                           lease, with written itemization                                                        retained category
+
+ Return                    Balance within 14 days after charges determined, but never later than 30 days after    Calendar facts, record address/demand, issue refund,
+                           termination, possession, and tenant demand; mail to last known address when            preserve delivery/mailing proof
+                           required
+
+ Noncompliance             Tenant may recover amount due plus 1.5 times amount wrongfully withheld                Escalate any disputed or late refund; never use liability as
+                                                                                                                  income because check is stale
+
+ Unclaimed refund          Potential five-year dormancy; due diligence/reporting/remittance rules                 Keep liability and unclaimed-property aging schedule until
+                                                                                                                  paid or remitted
+
+
+K.S.A. 58-2550 does not itself state that deposits must be held in a separate escrow account or earn interest. A dedicated bank
+account can still be a strong internal control, and a lease or other obligation could impose additional requirements. Do not state that
+segregation is a Kansas statutory requirement without another applicable source.
+
+
+3. Unclaimed tenant refunds and credit balances
+ - A stale or uncashed refund check remains a liability. Do not reverse it to rent income merely because a check expired or mail was
+   returned.
+
+ - Kansas property definitions expressly include security deposits, refunds, credit balances, overpayments, and checks. The five-year
+   all-other-property period is the likely rule for an uncashed tenant refund, but classify each item before calendaring.
+
+ - Holder reports are generally due before November 1 for the 12 months preceding July 1. Due diligence for items of at least $100
+   with a usable address generally occurs not more than 120 and not less than 60 days before filing.
+
+ - The limited no-report exception applies when no individual item exceeds $100 and aggregate property is under $250, unless the
+   Treasurer requires a report. Do not treat that exception as permission to recognize income.
+
+ - Keep owner/property records at least 10 years after the property becomes reportable and retain report/remittance confirmations.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                         Page 3
+Volume 02 - Kansas Rental Accounting and Tax Law Sourcebook                                                                                                 Checked through July 12, 2026
+
+
+
+
+4. Kansas income, sales/use, and property tax summary
+ Topic                                  Current GH conclusion                                                                                              Source IDs
+
+ Kansas income tax                      Assumed disregarded rental flows through federal AGI to owner K-40, subject to Kansas modifications                KS-IT-001/002
+
+ Estimated tax                          Review if expected Kansas balance >= $500 and payment safe harbors are not met                                     KS-IT-003
+
+ Long-term apartment rent               Not subject to Kansas retailers' sales tax                                                                         KS-ST-001/002
+
+ Late/returned/damage fees              Ordinary lease-incidental amounts are not separately enumerated taxable services - inference, not a                KS-ST-001/002/005
+                                        fee-specific ruling
+
+ Use tax                                Accrue on untaxed taxable out-of-state purchases used in Kansas                                                    KS-ST-003/005
+
+ Residential repair labor               Real-property repair/remodel labor can be exempt; materials remain taxable                                         KS-ST-004
+
+ Appliance repair                       Parts and labor for tangible personal property can be taxable                                                      KS-ST-004
+
+ Real property assessment               Multifamily residential classification generally 11.5% of fair market value                                        KS-PT-001
+
+ Personal property                      Initial rendition, then change-only filing by March 15 under current rule; exemptions need item analysis           KS-PP-001/002/003
+
+ 1099 copy filing                       Kansas copy may be due by Jan. 31; >50 forms e-file under current specs                                            KS-IR-001
+
+
+
+5. Real and personal property calendar
+ Date / event                     Current requirement                                                                       Control
+
+ January 1                        Valuation/ownership date for real and relevant personal property                          Snapshot assets, ownership, use, and residential
+                                                                                                                            classification
+
+ March 15                         Personal-property initial rendition or required change statement due                      File only when current statute requires; do not
+                                                                                                                            assume unchanged annual filing
+
+ Value notice mailing             Real-property appeal generally within 30 days after mailing                               Calendar from actual notice, not a generic date
+
+ May (current county notice)      Personal-property appeal deadline and decisions vary by annual calendar                   Use Johnson County current dates
+
+ November 1                       Unclaimed-property holder report deadline                                                 Due diligence generally 60-120 days before filing
+
+ December 20                      Full real/personal property tax or first half due                                         Reconcile county receipt or escrow disbursement
+
+ May 10 following year            Second half due                                                                           Calendar weekends/holidays and verify county notice
+
+ April 15 in parity year          Kansas LLC biennial information report                                                    Formation year parity determines filing years; verify
+                                                                                                                            current fee/status
+
+
+
+6. Kansas LLC books, contributions, and distributions
+ - Maintain organization documents, member/manager and contribution records, financial-condition information, and tax returns.
+   Electronic records must be convertible to readable paper within a reasonable time.
+
+ - Book owner cash/property contributions to member equity, not other income. Preserve amount/date/property value and
+   operating-agreement effect.
+
+ - Book owner draws to distributions/equity, not expense. Apply statutory solvency limits and the operating agreement before
+   distribution.
+
+ - File the biennial information report by April 15 in years matching the parity of the formation year. Use the live Secretary of State
+   portal for current fee and status.
+
+
+7. Vendor and state information reporting
+When a federal information return is required for a Kansas resident or Kansas-taxable payee, Kansas copy filing may be required.
+Current KDOR specifications use a January 31 due date and electronic filing for more than 50 forms. Preserve W-9, payment method,
+federal form decision, Kansas nexus, and acceptance confirmation. Federal payment-card reporting rules can prevent duplicate payer
+Forms 1099, but Kansas filing follows the federal form actually required.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                       Page 4
+Volume 02 - Kansas Rental Accounting and Tax Law Sourcebook                                                                                               Checked through July 12, 2026
+
+
+
+
+8. Conditional Kansas triggers
+ Trigger                                Additional rules to activate                                                                                  Source IDs
+
+ Employee hired / worker                Kansas withholding, W-2/KW-3, unemployment insurance, workers compensation, payroll records                   KS-EMP-001/002/003
+ reclassified
+
+ Nonresident manager/consultant         Potential 5% Kansas withholding and return mechanics                                                          KS-EMP-001
+ performs Kansas services
+
+ Stays of 28 days or less               Kansas sales tax and transient guest tax; room/bedroom definitions, registration, rates, and returns          KS-TG-001
+
+ Tenant abandons belongings             30-day holding, publication/mailing, statutory disposition waterfall                                          KS-LT-006
+
+ Kansas expensing election              Asset qualification, federal/Kansas differences, form, and recapture                                          KS-IT-004
+
+ CPA compilation/review/audit           Kansas Board of Accountancy and applicable professional standards                                             KS-CPA-001
+
+ Entity classification/member           Separate Kansas entity returns, withholding/composite issues, and different federal flow-through              KS-LLC / KS-IT plus
+ changes                                                                                                                                              professional review
+
+
+
+9. Kansas record-retention controls
+KDOR's general baseline is current year plus at least three prior years, and sales/use-tax records are commonly open for at least three
+years. That is not sufficient for every GH record. Keep tax returns/elections and entity records permanently; asset basis/depreciation
+until after disposition limitation periods; unclaimed-property records at least 10 years after reportable; and lease/deposit evidence
+through all refund, dispute, and unclaimed-property periods.
+
+
+10. Kansas source register
+The register prioritizes live Kansas statutes and current official administration. Older fact sheets remain useful only where current
+statutes and current guidance do not conflict.
+
+ KS-LT-000           Kansas Residential Landlord and Tenant Act - Article 25 index                                          Binding Kansas statutes        Current
+
+ Live index to the full act. Use it to identify additional lease, disclosure, duty, notice, remedy, abandonment, and applicability provisions when the
+ question extends beyond deposit accounting.
+ https://www.kslegislature.gov/b2025_26/laws/058_000_0000_chapter/058_025_0000_article/
+
+
+ KS-LT-001           K.S.A. 58-2543 - definitions                                                                           Binding Kansas statute         Current
+
+ Defines rent, rental agreement, landlord, tenant, and security deposit. A sum can be a security deposit 'however denominated' when required before
+ occupancy and forfeitable on breach.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0043.html
+
+
+ KS-LT-002           K.S.A. 58-2544 - unconscionability                                                                     Binding Kansas statute         Current
+
+ A court may refuse or limit an unconscionable rental term or settlement. Fee enforceability requires lease and fact review; accounting cannot cure an
+ unenforceable charge.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0044.html
+
+
+ KS-LT-003           K.S.A. 58-2547 - prohibited lease terms                                                                Binding Kansas statute         Current
+
+ Prohibits waivers of statutory rights, confession of judgment, certain attorney-fee clauses, and specified exculpation/indemnity terms in residential
+ rental agreements.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0047.html
+
+
+ KS-LT-004           K.S.A. 58-2548 - move-in inventory                                                                     Binding Kansas statute         Current
+
+ Within five days of occupancy or possession, landlord and tenant jointly prepare and sign duplicate condition inventories; tenant receives a copy.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0048.html
+
+
+ KS-LT-005           K.S.A. 58-2550 - security deposits                                                                     Binding Kansas statute         Current
+
+ Caps, permitted application, written itemization, return timing, and wrongful-withholding damages. Core accounting authority for deposit liabilities.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0050.html
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                   Page 5
+Volume 02 - Kansas Rental Accounting and Tax Law Sourcebook                                                                              Checked through July 12, 2026
+
+
+
+ KS-LT-005A           K.S.A. 58-2551 - owner and manager disclosures                                         Binding Kansas statute        Current
+
+ At or before tenancy, disclose in writing the manager and an owner/authorized person for service/notices; keep information current. Align lease,
+ invoices, payment portal, and notices.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0051.html
+
+
+ KS-LT-005B           K.S.A. 58-2564 - nonpayment and tenant breach                                          Binding Kansas statute        Conditional
+
+ Notice and remedy rules for material breach and nonpayment. A posted late fee or unpaid balance does not itself satisfy legal termination/collection
+ procedures.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0064.html
+
+
+ KS-LT-006            K.S.A. 58-2565 - abandonment and tenant property                                       Binding Kansas statute        Conditional
+
+ Procedures for abandoned tenant property, notice/publication, holding period, disposition costs, debts, and remaining proceeds.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0065.html
+
+
+ KS-LT-007            K.S.A. 58-2566 - acceptance of late rent                                               Binding Kansas statute        Conditional
+
+ Acceptance of late rent without reservation can waive the right to terminate for that breach, unless otherwise agreed after breach. Payment automation
+ must preserve legal review and receipt facts.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_025_0066.html
+
+
+ KS-UP-001            K.S.A. 58-3934 - unclaimed-property definitions                                        Binding Kansas statute        Current
+
+ Property includes security deposits, refunds, credit balances, overpayments, and checks. Prevents stale tenant liabilities from being casually reversed
+ to income.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_039_0034.html
+
+
+ KS-UP-002            K.S.A. 58-3935 - abandonment periods                                                   Binding Kansas statute        Current
+
+ All-other property is generally presumed abandoned five years after the right to demand or obligation to pay arises. Classification can change the
+ dormancy period.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_039_0035.html
+
+
+ KS-UP-003            K.S.A. 58-3950 - holder report and due diligence                                       Binding Kansas statute        Current
+
+ Report before Nov. 1 for the 12 months preceding July 1; 60-120 day due-diligence notice for qualifying items; limited small-holder no-report exception.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_039_0050.html
+
+
+ KS-UP-004            K.S.A. 58-3952 - payment/delivery to administrator                                     Binding Kansas statute        Current
+
+ Remit abandoned property with the report under statutory procedures; retain proof that liability was discharged to the state.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_039_0052.html
+
+
+ KS-UP-005            K.S.A. 58-3964 - unclaimed-property records                                            Binding Kansas statute        Current
+
+ Holder record-retention obligation; project baseline keeps records at least 10 years after property becomes reportable.
+ https://ksrevisor.gov/statutes/chapters/ch58/058_039_0064.html
+
+
+ KS-UP-006            Kansas State Treasurer holder guidelines                                               Official administration       Current
+
+ Current reporting, due diligence, negative-report, remittance, and file-format instructions. Use the live holder portal each reporting cycle.
+ https://kansascash.ks.gov/assets/files/guidelines2.pdf
+
+
+ KS-IT-001            K.S.A. 79-32,109 - Kansas-source income                                                Binding Kansas statute        Current
+
+ Kansas-source income includes income from ownership of Kansas real property and informs nonresident/source analysis.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_032_0109.html
+
+
+ KS-IT-002            K.S.A. 79-32,117 - Kansas adjusted gross income                                        Binding Kansas statute        Current
+
+ Kansas individual AGI starts from federal AGI with Kansas additions/subtractions. Federal Schedule E therefore flows into K-40 under assumed
+ disregarded status, subject to modifications.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_032_0117.html
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                  Page 6
+Volume 02 - Kansas Rental Accounting and Tax Law Sourcebook                                                                                   Checked through July 12, 2026
+
+
+
+ KS-IT-003           2026 K-40ES                                                                              Official filing form             Conditional
+
+ Kansas estimated tax generally applies when expected balance is at least $500 and payment safe harbors are not met. Use annual form for installment
+ dates and computation.
+ https://www.ksrevenue.gov/pdf/k-40es26.pdf
+
+
+ KS-IT-004           K.S.A. 79-32,143a and Form K-120EX                                                       Binding statute / filing form    Conditional
+
+ Kansas expensing modification may apply to qualifying assets. Coordinate with federal depreciation and Kansas recapture; residential building
+ generally not eligible.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_032_0143a.html
+
+
+ KS-ST-001           K.S.A. 79-3603 - retailers' sales tax                                                    Binding Kansas statute           Current
+
+ Taxable enumerated sales and services. Ordinary long-term apartment rent is not an enumerated taxable sale; lodging rules are separate.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_036_0003.html
+
+
+ KS-ST-002           KDOR residential and commercial property rental fact sheet                               Official guidance                Current
+
+ Confirms ordinary real-property rent is not subject to Kansas retailers' sales tax and distinguishes taxable tangible personal property/services.
+ https://www.ksrevenue.gov/factsheets/fsresidential.pdf
+
+
+ KS-ST-003           K.S.A. 79-3703 - compensating use tax                                                    Binding Kansas statute           Current
+
+ Use tax applies to taxable purchases used in Kansas when proper Kansas sales tax was not collected.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_037_0003.html
+
+
+ KS-ST-004           KDOR Publication KS-1525 - contractors                                                   Official guidance                Current
+
+ Current contractor/material/labor tax rules. Residential real-property repair/remodel labor can be exempt while materials, appliances, and
+ tangible-personal-property repair remain taxable.
+ https://www.ksrevenue.gov/pdf/pub1525.pdf
+
+
+ KS-ST-005           KDOR Publication KS-1510                                                                 Official guidance                Current
+
+ Sales/use tax administration, registration, returns, sourcing, and written-ruling caution. Do not rely on oral advice for unusual fee taxability.
+ https://www.ksrevenue.gov/pub1510.html
+
+
+ KS-PT-001           K.S.A. 79-1439 - classification and assessment                                           Binding Kansas statute           Current
+
+ Multifamily residential real property is assessed at 11.5% of fair market value; commercial/industrial real property is 25%. Preserve residential-use
+ facts.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_014_0039.html
+
+
+ KS-PT-002           K.S.A. 79-2004 - property-tax payment                                                    Binding Kansas statute           Current
+
+ Property taxes generally due in full Dec. 20 or in two installments Dec. 20 and May 10, subject to calendar adjustment and current county notice.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_020_0004.html
+
+
+ KS-PP-001           K.S.A. 79-306 - personal-property rendition                                              Binding Kansas statute           Current
+
+ Effective Jan. 1, 2025: initial rendition, then by March 15 only when a required change occurs. File for taxable property owned, leased, or controlled
+ Jan. 1.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_003_0006.html
+
+
+ KS-PP-002           2026 Kansas Personal Property Valuation Guide                                            Official administration          Current
+
+ Classification, exemptions, schedules, penalties, valuation, and current rendition change. The guide is extensive; use relevant sections with county
+ confirmation.
+ https://www.ksrevenue.gov/pdf/ppvg.pdf
+
+
+ KS-PP-003           K.S.A. 79-223 and 79-201w - machinery/equipment exemptions                               Binding Kansas statutes          Current
+
+ Many qualifying post-June 30, 2006 commercial machinery/equipment items and items with retail cost when new <= $1,500 may be exempt.
+ Misclassification can cause back tax/penalty.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_002_0023.html
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                       Page 7
+Volume 02 - Kansas Rental Accounting and Tax Law Sourcebook                                                                                     Checked through July 12, 2026
+
+
+
+ KS-PP-004           K.S.A. 79-201w - $1,500 commercial equipment exemption                                     Binding Kansas statute           Current
+
+ Commercial/industrial machinery and equipment with retail cost when new of $1,500 or less per item may be exempt; the item definition and original
+ new cost need evidence.
+ https://ksrevisor.gov/statutes/chapters/ch79/079_002_0001w.html
+
+
+ KS-LLC-001          K.S.A. 17-76,139 - LLC information report                                                  Binding Kansas statute           Current
+
+ Biennial report due April 15 in years matching formation-year parity; owner/principal-office disclosures; delinquency and forfeiture process. Confirm live
+ fee.
+ https://ksrevisor.gov/statutes/chapters/ch17/017_076_0139.html
+
+
+ KS-LLC-002          Kansas Secretary of State information reports                                              Official administration          Current
+
+ Live filing portal, entity-type instructions, current forms, and current fee. The statute controls timing; portal controls filing mechanics.
+ https://sos.ks.gov/businesses/information-reports.html
+
+
+ KS-LLC-003          K.S.A. 17-7690 - LLC records                                                               Binding Kansas statute           Current
+
+ Maintain financial-condition information, tax returns, organization/member/manager records, and contribution records; electronic records must be
+ convertible to paper.
+ https://ksrevisor.gov/statutes/chapters/ch17/017_076_0090.html
+
+
+ KS-LLC-004          K.S.A. 17-76,110 - LLC distributions                                                       Binding Kansas statute           Current
+
+ Owner draws are equity distributions; do not distribute when statutory liabilities would exceed fair-value assets after the distribution.
+ https://ksrevisor.gov/statutes/chapters/ch17/017_076_0110.html
+
+
+ KS-IR-001           K.S.A. 79-3222 and KDOR K-99MT                                                             Binding statute / filing         Conditional
+                                                                                                                instructions
+
+ Kansas copies of applicable federal information returns; Jan. 31 filing and electronic filing when more than 50 forms under current specifications.
+ Penalties/deduction consequences may apply.
+ https://www.ksrevenue.gov/pdf/k-99mt.pdf
+
+
+ KS-EMP-001          KDOR KW-100 withholding guide                                                              Official guidance                Conditional
+
+ Kansas employer withholding, W-2/KW-3, nonresident service withholding, deposits, and record retention if employee or nonresident-service triggers
+ arise.
+ https://www.ksrevenue.gov/kw100.html
+
+
+ KS-EMP-002          K.S.A. 44-703 - unemployment insurance                                                     Binding Kansas statute           Conditional
+
+ Employer coverage generally can trigger at $1,500 wages in a quarter or one employee in part of a day in 20 weeks, subject to exclusions.
+ https://ksrevisor.gov/statutes/chapters/ch44/044_007_0003.html
+
+
+ KS-EMP-003          K.S.A. 44-505 - workers compensation                                                       Binding Kansas statute           Conditional
+
+ Coverage generally applies above $20,000 annual gross payroll, subject to statutory exceptions and current administration.
+ https://ksrevisor.gov/statutes/chapters/ch44/044_005_0005.html
+
+
+ KS-TG-001           Kansas transient guest tax and Publication KS-1540                                         Binding statutes / official      Conditional
+                                                                                                                guidance
+
+ If stays become 28 consecutive days or less and bedroom/room thresholds are met, sales and transient guest tax registration, collection, and returns
+ can activate.
+ https://www.ksrevenue.gov/pdf/pub1540.pdf
+
+
+ KS-CPA-001          Kansas Board of Accountancy regulations                                                    Professional regulation          Conditional
+
+ Governs licensed Kansas CPAs/firms and professional services. It does not independently require this private landlord's internal books to be GAAP
+ statements.
+ https://ksboa.kansas.gov/wp-content/uploads/Regulations-APRIL-2024-COMPLETE.pdf
+
+
+ KS-RET-001          KDOR Publication KS-1216 - business records                                                Official guidance                Current
+
+ Kansas baseline recordkeeping guidance. Keep longer where federal, unclaimed-property, basis, lease, or dispute rules require.
+ https://www.ksrevenue.gov/pub1216.html
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                         Page 8
+

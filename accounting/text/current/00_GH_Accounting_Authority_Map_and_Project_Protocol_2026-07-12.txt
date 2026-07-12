@@ -1,0 +1,529 @@
+Volume 00 - Start Here
+
+
+Accounting Authority Map and Project
+Protocol
+A property-specific operating index for federal tax, US GAAP, Kansas law, Johnson County
+administration, and Overland Park requirements
+
+
+
+  Prepared for                       GH Real Estate, LLC
+
+  Property                           Fourplex - 9401 Nieman Road, Overland Park, Kansas 66214
+
+  Current through                    July 12, 2026
+
+  Intended use                       Upload first. It tells ChatGPT how to interpret the three detailed sourcebooks and the GH project files.
+
+  Authority model                    Binding law, authoritative administrative sources, official guidance, GAAP topic locators, and project controls are labeled
+                                     separately.
+
+
+
+
+Important limitation
+This is a curated, dated authority map and operating sourcebook, not a substitute for the live law, a signed lease, a tax return position,
+legal advice, or a CPA engagement. No static PDF can make an AI answer legally binding. The cited live authority controls.
+
+
+
+Prepared as a searchable source for a ChatGPT Project. Official URLs are printed in full in each source register.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                      Page 1
+Volume 00 - GH Accounting Authority Map and Project Protocol                    Checked through July 12, 2026
+
+
+
+
+Contents
+
+1. What this package is - and is not                                                                       3
+
+
+2. Authority hierarchy for every answer                                                                    3
+
+
+3. Current facts and assumptions                                                                           3
+
+
+4. Mandatory ChatGPT answer protocol                                                                       4
+
+
+5. Transaction treatment matrix                                                                            4
+
+
+6. Immediate project controls and cleanup priorities                                                       6
+
+
+7. Current Zoho and policy risks observed                                                                  6
+
+
+8. Minimum evidence by workflow                                                                            7
+
+
+9. Retention schedule - conservative project baseline                                                      7
+
+
+10. Refresh and change-control checklist                                                                   7
+
+
+11. Core live-source index                                                                                 8
+
+
+12. Suggested Project source order                                                                         8
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                         Page 2
+Volume 00 - GH Accounting Authority Map and Project Protocol                                                                                             Checked through July 12, 2026
+
+
+
+
+1. What this package is - and is not
+This four-volume package is the most defensible form of a 'complete compilation' for the facts currently known: a dated applicability
+map, operative rules, transaction controls, and a comprehensive official-source register. It does not copy every page of the Internal
+Revenue Code, Kansas Statutes, municipal code, IRS publications, or the copyrighted FASB Codification. A raw legal corpus would be
+harder for a project to retrieve correctly, would mix active and irrelevant rules, and would become stale without warning.
+Binding-output warning
+ChatGPT cannot make an accounting answer legally binding. Only the governing law, valid contracts, filed elections/returns, and decisions
+of the responsible licensed professionals or authorities can do that. The project should produce decision support and draft bookkeeping
+entries, not legal opinions or return-signing assurance.
+
+The three detailed volumes divide the source set by authority: federal tax and GAAP; Kansas law and tax; and Overland Park /
+Johnson County administration. Every material rule is tagged with an official source ID and full URL. If a live source has changed after
+the checked-through date, the live source controls.
+
+
+2. Authority hierarchy for every answer
+ Priority      Source type                                 How the project must use it
+
+ 1             Enacted statutes and municipal              Treat current federal and Kansas statutes and the Overland Park Municipal Code as controlling law
+               code                                        within their scope. Always check effective date and tax year.
+
+ 2             Final Treasury and Kansas                   Use controlling regulations to interpret and implement statutes. Live eCFR and Kansas administrative
+               regulations                                 sources control over an older PDF summary.
+
+ 3             Binding court decisions                     A static compilation cannot safely freeze all case law. Escalate material disputes or ambiguous lease
+                                                           provisions to Kansas counsel or the tax preparer.
+
+ 4             Published IRS / KDOR                        Revenue rulings, procedures, notices, and other published guidance carry more weight than publications
+               administrative guidance                     and FAQs. Check the Internal Revenue Bulletin and current KDOR policy.
+
+ 5             Forms, instructions, publications,          Use for operations and filing mechanics, but do not call them statutes. If they conflict with controlling law,
+               FAQs                                        controlling law wins.
+
+ 6             FASB Accounting Standards                   This is the authoritative source of nongovernmental US GAAP, but it is private financial-reporting
+               Codification                                guidance, not federal income-tax law. Do not reproduce it wholesale.
+
+ 7             Signed lease, loan documents,               These can create enforceable obligations and reporting requirements. Use the executed current
+               operating agreement                         document, not a target policy or old template.
+
+ 8             GH internal accounting policy               Use only if consistent with all higher authorities. A Zoho account name or automation never decides legal
+                                                           or tax treatment.
+
+
+
+3. Current facts and assumptions
+Applicability depends on facts. The project must state which assumptions it used and stop when a missing fact could change the
+answer.
+
+ Assumption                        Current working position                                           Verification trigger
+
+ Entity                            Kansas domestic single-member GH Real Estate, LLC                  Verify articles, operating agreement, current Kansas status, and whether
+                                                                                                      a second member ever acquired an interest.
+
+ Federal classification            Disregarded entity, no Form 8832 or S corporation election         Verify the latest federal return, EIN notices, Forms 8832/2553, and
+                                   assumed                                                            tax-preparer workpapers.
+
+ Activity                          One long-term residential fourplex; ordinary landlord services     Short stays, hotel-like services, a property-management business,
+                                                                                                      dealer activity, or a second property changes the source set.
+
+ Tax accounting                    Cash method assumed for the individual owner                       Verify the most recent Schedule E and accounting-method elections.
+
+ Occupancy history                 At least one unit may have converted from personal to rental use   Confirm unit-by-unit dates, fair market value at conversion, and prior
+                                                                                                      personal-use allocations.
+
+ Employees                         No employees assumed                                               Hiring, payroll, or treating a worker as an employee activates federal and
+                                                                                                      Kansas payroll rules.
+
+ Financial statements              No lender or contract currently identified as requiring GAAP       Read loan covenants, investor agreements, court orders, grants, and
+                                   statements                                                         insurance requirements.
+
+ Fees                              A target fee policy exists but may differ from signed leases       Never automate or book a charge until the applicable executed lease
+                                                                                                      and Kansas enforceability are confirmed.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                      Page 3
+Volume 00 - GH Accounting Authority Map and Project Protocol                                                                                                  Checked through July 12, 2026
+
+
+
+
+4. Mandatory ChatGPT answer protocol
+ 1. Start with the transaction date or tax year, entity, unit/property, payment method, and whether the question asks for GAAP books,
+    tax books, a tax return position, or legal compliance.
+
+ 2. Give four separate conclusions when relevant: clean financial-statement treatment; federal income-tax treatment; Kansas
+    treatment; Overland Park / Johnson County treatment.
+
+ 3. Cite the sourcebook ID and identify the legal weight. Never call an IRS publication, FAQ, FASB update, or internal policy a statute.
+
+ 4. When GAAP and tax differ, post or propose a book-tax adjustment. Do not distort the accounting ledger to force it to equal the tax
+    return.
+
+ 5. For any fee, deposit, refund, or chargeback, use the executed lease for that tenant. Do not infer authorization from Zoho item
+    names or the target fee policy.
+
+ 6. For repairs, renovations, appliances, permits, and closing costs, ask for the invoice, scope, unit of property, placed-in-service date,
+    and related work before classifying.
+
+ 7. For vendor reporting, ask for W-9, entity type, amount paid during the calendar year, payment method, and whether a card or
+    third-party network settled the payment.
+
+ 8. Never invent a threshold, form edition, rate, deadline, election, account code, or lease term. Mark unresolved points 'verify' and
+    identify the exact document or professional needed.
+
+ 9. Treat tenant SSNs, bank data, and payment credentials as prohibited project-source data. Store only redacted evidence and the
+    minimum facts needed for the entry.
+
+ 10. End material recommendations with a verification block: sources used, assumptions, missing evidence, proposed entry, tax
+    adjustment, and escalation trigger.
+
+
+5. Transaction treatment matrix
+This matrix is a retrieval aid, not a substitute for the detailed rules in Volumes 01-03. 'Clean book treatment' means an
+accrual/GAAP-like ledger unless a tax-basis ledger is explicitly selected.
+
+ Transaction                      Clean book treatment                                    Federal tax position                             Kansas/local control
+
+ Current-period rent              Rental income; reduce receivable if accrual             Rental income, generally Schedule E              Ordinary long-term apartment rent is not
+                                  books                                                                                                    Kansas sales-taxable
+
+ Advance rent / last-month rent   GAAP: liability then recognize over lease period;       Taxable when received regardless of period       Lease terms control; not a security
+                                  tax-basis books may recognize on receipt with a         covered                                          deposit if intended as rent
+                                  book-tax adjustment
+
+ Refundable security or pet       Debit cash; credit tenant security-deposit liability;   Not income while returnable                      K.S.A. 58-2543 and 58-2550 caps,
+ deposit                          maintain tenant subledger                                                                                permitted uses, itemization, and return
+                                                                                                                                           deadlines
+
+ Deposit retained for rent or     Debit deposit liability; credit rent/damage             Retained amount generally rental income;         Only legally allowable, itemized charges;
+ breach                           recovery only when legal right is fixed; record         separate deduction or capitalization             wrongful withholding damages apply
+                                  repair or asset separately
+
+ Holding deposit                  Liability while refundable; income or rent only         Substance controls; forfeited or nonrefundable   May meet Kansas security-deposit
+                                  when terms make GH entitled                             amount becomes income when right is fixed        definition despite label; attorney review
+                                                                                                                                           required
+
+ Late / returned-payment /        Rental or other lease income, separately tracked        Generally rental income                          Book and enforce only if supported by
+ cancellation fee                                                                                                                          the signed lease and not unconscionable
+
+ Utility reimbursement            Gross reimbursement income and gross utility            Include tenant-paid owner obligations in rent    Unusual resale or separately metered
+                                  expense unless a defensible net presentation            income; deduct allowable expense separately      arrangements require tax review
+                                  applies
+
+ Zoho / payment processor         Record gross tenant charge; processing fee is a         1099-K does not determine taxable income         Retain processor statements and
+ settlement                       separate expense; reconcile net bank deposit                                                             tenant-level reconciliation
+
+ Uncollected rent                 GAAP accrual: receivable and credit-loss                Cash-method landlord generally has no            Preserve collection and lease records
+                                  analysis; cash/tax books: no income recorded            bad-debt deduction for rent never included
+
+ Mortgage payment                 Split interest expense, principal reduction, escrow     Principal is not deductible; rental interest     Loan and escrow statements support
+                                  funding, and other fees                                 generally may be; tracing rules apply to         property-tax payments
+                                                                                          cash-out proceeds
+
+ Escrow payment                   Funding increases escrow asset; recognize               Deposit to escrow is not itself the deduction    Reconcile county receipt and insurer
+                                  tax/insurance when servicer actually pays                                                                invoice
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                          Page 4
+Volume 00 - GH Accounting Authority Map and Project Protocol                                                                                               Checked through July 12, 2026
+
+
+
+ Transaction                      Clean book treatment                                 Federal tax position                             Kansas/local control
+
+ Repair / maintenance             Expense if it preserves ordinary operating           Apply tangible-property regulations and          Residential real-property repair labor
+                                  condition and is not part of an improvement          elected safe harbors                             may be sales-tax exempt; materials
+                                                                                                                                        remain taxable
+
+ Improvement / renovation         Capitalize by asset/component and depreciate;        Betterment, restoration, or adaptation must be   Permit fees and directly attributable
+                                  preserve placed-in-service date                      capitalized; tax lives and bonus rules differ    costs may be capitalizable; assess use
+                                                                                       from GAAP                                        tax
+
+ Appliance / furniture            Capitalize unless valid book policy permits          Often shorter-life property; de                  May be taxable personal property; many
+                                  expensing; asset subledger                           minimis/bonus/Section 179 analysis is            items may be exempt but classification
+                                                                                       fact-specific                                    must be confirmed
+
+ Rental license / permit          License normally operating expense; construction     Deduct or capitalize consistently with           Overland Park rental license is
+                                  permit usually follows related asset                 underlying purpose                               mandatory and billed biennially
+
+ Owner contribution               Equity contribution, never income                    Generally not rental income                      Maintain LLC contribution records
+
+ Owner draw                       Equity distribution, never expense                   Not a Schedule E deduction                       Kansas LLC solvency limits and
+                                                                                                                                        operating agreement apply
+
+ Business mileage                 Reimburse/record supported business miles            2026 optional rate: 72.5 cents through June      Keep contemporaneous log; personal
+                                  under policy                                         30; 76 cents beginning July 1                    commuting is excluded
+
+ Vendor payment                   Expense or asset based on substance; store           2026 general information-return threshold is     Kansas copy filing may apply; direct
+                                  invoice, W-9, payment method                         $2,000, subject to exceptions                    payments and card payments follow
+                                                                                                                                        different reporting rules
+
+ Uncashed tenant refund           Keep as liability; do not reverse to income merely   No automatic income conclusion                   Kansas unclaimed-property dormancy,
+                                  because check is stale                                                                                due diligence, reporting, and remittance
+                                                                                                                                        may apply
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                      Page 5
+Volume 00 - GH Accounting Authority Map and Project Protocol                                                                                                  Checked through July 12, 2026
+
+
+
+
+6. Immediate project controls and cleanup priorities
+ 1. Confirm that the Overland Park rental license for the fourplex is active, tied to the correct owner/address, and calendared for
+    biennial renewal.
+
+ 2. Verify federal tax classification and accounting method from the latest return and entity-election records before making Schedule E
+    or disregarded-entity assumptions final.
+
+ 3. Build a permanent fixed-asset and depreciation schedule: land, building, unit-level conversion dates, 2026 renovations, appliances,
+    land improvements, accumulated depreciation, and disposition history.
+
+ 4. Reclassify security deposits to tenant-level liabilities and create a move-out checklist that meets Kansas itemization and timing
+    rules.
+
+ 5. Obtain attorney review of the holding-deposit form and reconcile every signed lease to the fee policy before automating charges.
+
+ 6. Adopt a prospective written capitalization / de minimis accounting policy before the first day of the tax year in which it will be used;
+    retain annual election statements with the return.
+
+ 7. Require W-9 collection before non-card vendor payment, preserve payment method, and run a calendar-year 1099 review using
+    the 2026 threshold and exceptions.
+
+ 8. Confirm whether Johnson County ever received an initial personal-property rendition for reportable assets; after that, file by March
+    15 when a required change occurs.
+
+ 9. Separate federal, Kansas, and book-basis adjustments in year-end workpapers, including advance rent, depreciation, passive
+    losses, and owner-occupied conversion allocations.
+
+ 10. Run the annual and event-driven refresh checklist in Section 10 before using the package for a new tax year or changed
+    operation.
+
+
+7. Current Zoho and policy risks observed
+These are review flags based on the supplied chart of accounts and project policy. They are not automatic posting instructions;
+preserve the current file and implement changes only through a controlled chart-of-accounts review.
+
+ Observed Zoho / policy item                       Required correction or control                                             Why it matters
+
+ Security Deposit Returns shown as an              Refunds should normally debit the security-deposit liability, not create   Prevents overstated expense and unresolved tenant
+ expense                                           expense                                                                    liabilities
+
+ Withheld for Damages shown as an expense          Reduce the liability and recognize the legally retained amount; record     Avoids netting and preserves Kansas itemization plus
+                                                   the actual repair or capital asset separately                              federal tax treatment
+
+ Owner's Contribution under Other Income           Move to member equity / contributions                                      Owner funding is not rental revenue
+
+ Renovations used as a broad expense               Invoice-level repair-versus-improvement review and fixed-asset             2026 work may require capitalization and may include
+ bucket                                            schedule                                                                   shorter-life bonus-eligible assets
+
+ Mortgage / escrow not fully split                 Reconcile principal, interest, escrow asset, taxes, insurance, and fees    Only the correct components reach expense and tax
+                                                   monthly                                                                    returns
+
+ Bad Debt Expense for unpaid rent                  For cash-method tax books, do not deduct rent never included in            Book-tax basis differences can otherwise create a
+                                                   income; GAAP accrual treatment is separate                                 false deduction
+
+ Entertainment expense                             Segregate and presumptively treat as nondeductible unless a specific       Federal deduction is generally disallowed
+                                                   exception is documented
+
+ Leasehold Improvements for owned real             Rename/classify as building improvements or the proper owned asset         Asset names should reflect legal ownership and
+ estate                                            unless GH is improving leased premises                                     depreciation unit
+
+ Target late-fee policy differs from older lease   Executed lease must govern each tenant; attorney review before             An internal policy does not amend a signed lease
+ language                                          automation
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                        Page 6
+Volume 00 - GH Accounting Authority Map and Project Protocol                                                                                                 Checked through July 12, 2026
+
+
+
+
+8. Minimum evidence by workflow
+ Workflow                                Required evidence before final classification
+
+ Rent / fee invoice                      Executed lease/addendum, unit, period covered, due date, fee clause, prior invoice status, ACH processing status
+
+ Deposit receipt / refund                Deposit terms, tenant ledger, move-in inventory, possession/termination dates, demand/address, inspection evidence,
+                                         itemized charges, refund proof
+
+ Repair / improvement                    Vendor invoice, detailed scope, photos if material, building system/unit, related project invoices, ready-for-use date,
+                                         permit, payment method
+
+ Mortgage / escrow                       Monthly lender statement, year-end interest statement, escrow analysis, county tax receipt, insurance invoice, principal
+                                         balance
+
+ Vendor / 1099                           Form W-9, contract, invoices, total calendar-year payments, payment rails, backup withholding status, Kansas nexus
+
+ Owner payment                           Business purpose, original receipt, whether reimbursement or contribution, approval, owner account, no duplicate
+                                         company payment
+
+ Mileage / travel                        Date, origin/destination, business purpose, miles, attendees where relevant, receipts, separation of
+                                         commuting/personal use
+
+ Year-end                                Trial balance, bank/processor/escrow reconciliations, tenant deposit rollforward, asset rollforward, loan balances, 1099
+                                         register, filed elections, prior returns
+
+
+
+9. Retention schedule - conservative project baseline
+ Record class                               Project baseline                                          Reason / release condition
+
+ Tax returns and filed elections            Permanent                                                 Entity classification, methods, carryovers, and basis history
+
+ Purchase, closing, improvement,            Permanent through disposition plus the applicable         Basis and allowed-or-allowable depreciation can matter years later
+ depreciation, and sale records             limitation period
+
+ Leases, addenda, inventories, deposit      Tenancy plus at least 6 years; longer for unresolved      Contract, deposit, litigation, and unclaimed-property support
+ ledgers, itemizations                      balances
+
+ Unclaimed-property owner records           At least 10 years after property becomes reportable       Kansas statutory retention
+
+ Bank, processor, invoices, receipts,       At least 7 years after the return is filed                Conservative coverage beyond the common 3-year federal period and
+ mileage, routine tax support                                                                         possible 6-year period
+
+ Employment records, if activated           At least 4 years federally; apply longer Kansas/benefit   Payroll tax and worker classification
+                                            requirements
+
+ Zoho audit exports and reconciliation      At least 7 years; year-end locked exports permanent       Supports electronic record integrity and reconstructed entries
+ packages
+
+
+
+10. Refresh and change-control checklist
+Run annually each January, again before filing, and immediately when a trigger occurs.
+
+ 1. Replace tax-year forms and instructions; verify mileage, depreciation, QBI, estimated-tax, and information-return thresholds.
+
+ 2. Check new federal public laws, Treasury Decisions, Internal Revenue Bulletins, IRS disaster relief, and final regulations.
+
+ 3. Check Kansas session-law changes, KDOR notices/forms, Secretary of State fees/dates, personal-property guidance, and
+    unclaimed-property instructions.
+
+ 4. Check Overland Park Municipal Code Chapter 5.75, master fee schedule, rental inspection guidance, sales/transient guest tax
+    rates, and permit fee schedule.
+
+ 5. Check Johnson County value notices, appeal deadline, property-tax calendar, and personal-property rendition status.
+
+ 6. Refresh the signed-lease register, loan covenants, insurance requirements, occupancy/use, and owner/member status.
+
+ 7. Trigger immediate re-scope for: short-term stays; employees; new member; corporate election; sale/refinance; casualty; second
+    property; major rehabilitation; substantial tenant services; lawsuit; lender GAAP covenant.
+
+ 8. Archive the superseded PDF package with its checked-through date. Never silently overwrite the historical package used for a
+    prior-year return decision.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                      Page 7
+Volume 00 - GH Accounting Authority Map and Project Protocol                                                                                      Checked through July 12, 2026
+
+
+
+
+11. Core live-source index
+Use these portals to refresh the package. Full, topic-level registers appear in Volumes 01-03.
+
+ M-01                 GH Master Property Profile                                                                   Internal fact source            Current
+
+ Identifies entity, fourplex, location, manager, operating stack, and approximate rent. Facts must be refreshed when operations change.
+ Project file: GH_Master_Property_Profile.md
+
+
+ M-02                 GH Current Fee Policy                                                                        Internal policy                 Conditional
+
+ Target operating policy only. The file itself warns that signed lease language may differ. Never treat target amounts as legally authorized without lease
+ review.
+ Project file: GH_Current_Fee_Policy.md
+
+
+ M-03                 FASB Standards and Codification access                                                       Private GAAP authority          Current
+
+ Live access point for authoritative nongovernmental US GAAP. Full Codification is copyrighted and is not reproduced in this package.
+ https://www.fasb.org/standards
+
+
+ M-04                 Title 26, United States Code                                                                 Binding federal statute         Current
+
+ Live federal tax code. Use the tax-year version in force for the transaction and return.
+ https://uscode.house.gov/view.xhtml?edition=prelim&path=%2Fprelim%40title26
+
+
+ M-05                 Title 26, Code of Federal Regulations                                                        Binding federal regulation      Current
+
+ Live Treasury regulations. This source should be checked whenever an IRS publication simplifies or conflicts with a rule.
+ https://www.ecfr.gov/current/title-26
+
+
+ M-06                 Kansas Revisor of Statutes                                                                   Binding state statute           Current
+
+ Live Kansas statutes, including landlord-tenant, income tax, property tax, LLC, and unclaimed-property law.
+ https://ksrevisor.gov/statutes/ksa.html
+
+
+ M-07                 Overland Park Municipal Code                                                                 Binding municipal code          Current
+
+ Live city code, including Chapter 5.75 rental licensing and inspection.
+ https://codes.opkansas.org/municipal-code/
+
+
+ M-08                 Johnson County property information                                                          Official administration         Current
+
+ Current local deadlines, tax statements, renditions, and valuation appeal procedures.
+ https://www.jocogov.org/department/appraiser/property-information
+
+
+
+
+12. Suggested Project source order
+ Order        Source                                                            Purpose
+
+ 1            Volume 00 - Accounting Authority Map and Project Protocol         Retrieval rules, assumptions, matrix, and escalation
+
+ 2            Volume 01 - Federal Rental Tax and US GAAP Sourcebook             Federal tax, depreciation, reporting, recordkeeping, and GAAP topic map
+
+ 3            Volume 02 - Kansas Rental Accounting and Tax Law                  Kansas landlord, income, sales/use, property, LLC, and unclaimed-property law
+              Sourcebook
+
+ 4            Volume 03 - Overland Park and Johnson County                      Rental license, fees, property-tax calendar, and local triggers
+              Compliance Sourcebook
+
+ 5            GH Master Property Profile and current verified entity/tax        Property-specific facts
+              facts
+
+ 6            Executed lease clause library and sanitized current leases        Contract authority for rent, fees, deposits, and utilities
+
+ 7            Zoho chart of accounts and accounting policies                    Implementation layer, subordinate to all authorities above
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                           Page 8
+
