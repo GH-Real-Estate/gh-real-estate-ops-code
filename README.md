@@ -1,6 +1,6 @@
 # GH Real Estate Ops Code
 
-Private source of truth for GH Real Estate automation code, Zoho setup notes, field maps, sanitized test payloads, deployment runbooks, Codex/ChatGPT review context, and the approved public legal-authority library.
+Private source of truth for GH Real Estate automation code, Zoho setup notes, field maps, sanitized test payloads, deployment runbooks, Codex/ChatGPT review context, the approved public legal-authority library, and the governed accounting-authority registry.
 
 Final repository location:
 
@@ -12,7 +12,7 @@ GH-Real-Estate/gh-real-estate-ops-code
 
 ```text
 Zoho runs the business.
-GitHub stores the code, technical map, and approved public legal-authority library.
+GitHub stores the code, technical map, approved public legal-authority library, and governed accounting authority/control layer.
 Codex/ChatGPT reviews and improves the code.
 ```
 
@@ -34,9 +34,11 @@ Within each source system, each production automation gets its own folder unless
 
 The top-level `legal/` tree is a governed public-authority reference library, not runtime source code. Its own README, manifests, status labels, validation, and review rules control that subtree.
 
+The top-level `accounting/` tree is the governed accounting research and policy-control layer. It stores GH-authored analysis, tax/GAAP sourcebooks, FASB locators, applicability metadata, review dates, and generated Project Sources. It does not store FASB Codification text.
+
 ## What Belongs Here
 
-This repo is for technical assets only:
+This repo is for technical and governed authority assets:
 
 - Deluge scripts.
 - Zoho Books custom functions.
@@ -52,6 +54,7 @@ This repo is for technical assets only:
 - Codex/ChatGPT instructions.
 - Local repo hygiene tools.
 - Approved public legal-authority sources, release manifests, searchable extracts, and monitoring tools under `legal/`.
+- GH-authored accounting policies, tax/GAAP sourcebooks, FASB locators, applicability registries, and review controls under `accounting/`.
 
 ## What Does Not Belong Here
 
@@ -67,6 +70,7 @@ Do not store live business records here:
 - Maintenance photos with tenant belongings.
 - Raw webhook logs.
 - OAuth tokens, API keys, refresh tokens, passwords, or private keys.
+- FASB Codification text, screenshots, print exports, scraped FASB content, or licensed commercial accounting material without explicit permission for repository and generative-AI use.
 
 ## Source-Of-Truth Split
 
@@ -79,6 +83,7 @@ Do not store live business records here:
 | Tenant portal / maintenance workflows | Zoho Creator, when ready |
 | Code, automations, field maps, test cases | This private GitHub repo |
 | Approved public legal authorities and source history | `legal/` in this private GitHub repo; live official source controls |
+| Accounting policies, sourcebooks, FASB locators, and review history | `accounting/` in this private GitHub repo; authorized live FASB access and reviewed professional conclusions control |
 
 ## Repository Map
 
@@ -151,6 +156,18 @@ legal/
   text/current/authorities/
   scripts/
 
+accounting/
+  README.md
+  CURRENT_AUTHORITY_INDEX.md
+  PROJECT_INSTRUCTIONS.md
+  FASB_APPLICABILITY_INDEX.md
+  ACCOUNTING_POLICY_MATRIX.md
+  SOURCE_GAPS.md
+  generated/project-sources/current/
+  manifests/
+  text/current/
+  scripts/
+
 docs/
   architecture/
     system-overview.md
@@ -197,6 +214,7 @@ tools/
 | Deployment Log | `docs/runbooks/deployment-log.md` |
 | Codex/ChatGPT Instructions | `AGENTS.md` |
 | Legal Authority Index | `legal/CURRENT_AUTHORITY_INDEX.md` |
+| Accounting Authority Index | `accounting/CURRENT_AUTHORITY_INDEX.md` |
 
 ## Change Workflow
 

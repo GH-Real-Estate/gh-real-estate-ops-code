@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-12",
+  "release_status": "approved-dated-baseline",
+  "scope": "GH Real Estate accounting, federal rental tax, Kansas tax and landlord-accounting controls, and Overland Park/Johnson County administration",
+  "notice": "Internal research and retrieval aid. Live official authority controls. No FASB Codification text is included.",
+  "source_record_count": 114,
+  "files": [
+    {
+      "order": 0,
+      "filename": "00_GH_Accounting_Authority_Map_and_Project_Protocol_2026-07-12.pdf",
+      "repository_path": "accounting/generated/project-sources/current/00_GH_Accounting_Authority_Map_and_Project_Protocol_2026-07-12.pdf",
+      "text_path": "accounting/text/current/00_GH_Accounting_Authority_Map_and_Project_Protocol_2026-07-12.txt",
+      "pages": 8,
+      "bytes": 36902,
+      "sha256": "2a3f74d4db36c5280cef3cfba2f2f9c7b48fb5f2a537a17ec59624f38b96041e"
+    },
+    {
+      "order": 1,
+      "filename": "01_GH_Federal_Rental_Tax_and_US_GAAP_Sourcebook_2026-07-12.pdf",
+      "repository_path": "accounting/generated/project-sources/current/01_GH_Federal_Rental_Tax_and_US_GAAP_Sourcebook_2026-07-12.pdf",
+      "text_path": "accounting/text/current/01_GH_Federal_Rental_Tax_and_US_GAAP_Sourcebook_2026-07-12.txt",
+      "pages": 12,
+      "bytes": 62868,
+      "sha256": "22e0cd7b2359269d224d4ebd4edda99b7f458b793525f4d547ec1bad3ff8df14"
+    },
+    {
+      "order": 2,
+      "filename": "02_GH_Kansas_Rental_Accounting_and_Tax_Law_Sourcebook_2026-07-12.pdf",
+      "repository_path": "accounting/generated/project-sources/current/02_GH_Kansas_Rental_Accounting_and_Tax_Law_Sourcebook_2026-07-12.pdf",
+      "text_path": "accounting/text/current/02_GH_Kansas_Rental_Accounting_and_Tax_Law_Sourcebook_2026-07-12.txt",
+      "pages": 8,
+      "bytes": 42041,
+      "sha256": "4ab54c5531dc1d7925a8f2d50bff037d0d33b0e94ff45e448f9069abda1b5782"
+    },
+    {
+      "order": 3,
+      "filename": "03_GH_Overland_Park_and_Johnson_County_Compliance_Sourcebook_2026-07-12.pdf",
+      "repository_path": "accounting/generated/project-sources/current/03_GH_Overland_Park_and_Johnson_County_Compliance_Sourcebook_2026-07-12.pdf",
+      "text_path": "accounting/text/current/03_GH_Overland_Park_and_Johnson_County_Compliance_Sourcebook_2026-07-12.txt",
+      "pages": 5,
+      "bytes": 24011,
+      "sha256": "d9add335d77ffb0d42e23db43ea09c75d0d54f3c3c8bb827c20e1fe67b9297ed"
+    }
+  ]
+}

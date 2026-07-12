@@ -1,0 +1,847 @@
+Volume 01
+
+
+Federal Rental Tax and US GAAP
+Sourcebook
+Federal income-tax rules, information reporting, recordkeeping, FinCEN status, and a
+licensed-access map to nongovernmental US GAAP
+
+
+
+  Prepared for                       GH Real Estate, LLC
+
+  Property                           Fourplex - 9401 Nieman Road, Overland Park, Kansas 66214
+
+  Current through                    July 12, 2026
+
+  Intended use                       Upload after Volume 00. Use for federal tax and financial-reporting questions involving the GH fourplex.
+
+  Authority model                    Binding law, authoritative administrative sources, official guidance, GAAP topic locators, and project controls are labeled
+                                     separately.
+
+
+
+
+Important limitation
+This is a curated, dated authority map and operating sourcebook, not a substitute for the live law, a signed lease, a tax return position,
+legal advice, or a CPA engagement. No static PDF can make an AI answer legally binding. The cited live authority controls.
+
+
+
+Prepared as a searchable source for a ChatGPT Project. Official URLs are printed in full in each source register.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                      Page 1
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                           Checked through July 12, 2026
+
+
+
+
+Contents
+
+1. Federal scope and controlling assumptions                                                               3
+
+
+2. Federal authority hierarchy                                                                             3
+
+
+3. Entity, return, and accounting method                                                                   3
+
+
+4. Core transaction rules                                                                                  4
+
+
+5. Repairs, improvements, and 2026 renovations                                                             4
+
+
+6. Depreciation and basis control                                                                          5
+
+
+7. Loss limitations and QBI                                                                                5
+
+
+8. Vendor, payment, and cash reporting                                                                     5
+
+
+9. 2025-2026 changes and stale-source traps                                                                6
+
+
+10. US GAAP applicability and topic map                                                                    6
+
+
+11. Federal source register                                                                                7
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                         Page 2
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                               Checked through July 12, 2026
+
+
+
+
+1. Federal scope and controlling assumptions
+This volume assumes GH Real Estate, LLC is a Kansas domestic single-member LLC that has not elected corporate treatment; the
+owner reports ordinary long-term residential rental activity on the cash method; no employees or substantial tenant-convenience
+services exist. Each assumption must be verified from filed documents and actual operations.
+GAAP and tax are different systems
+GAAP is an accrual financial-reporting framework. The Internal Revenue Code and Treasury Regulations control federal taxable income.
+Cash basis and income-tax basis are other comprehensive bases of accounting, not GAAP. Maintain book-tax adjustments instead of
+forcing one system to mimic the other.
+
+
+2. Federal authority hierarchy
+ Rank          Authority                                               Use
+
+ 1             Internal Revenue Code and enacted public                Controlling statutes for the applicable tax year
+               laws
+
+ 2             Treasury Regulations                                    Controlling regulations, subject to statute and binding judicial decisions
+
+ 3             Binding judicial precedent                              Supreme Court, Tenth Circuit, and applicable Tax Court/court precedent; obtain professional
+                                                                       research for disputes
+
+ 4             Published Internal Revenue Bulletin guidance            Revenue rulings/procedures, notices, announcements, and Treasury Decisions
+
+ 5             Forms, instructions, publications, topics, FAQs         Operational guidance; not statutes and not a substitute for controlling authority
+
+ Separate      FASB Codification                                       Authoritative nongovernmental US GAAP if GAAP reporting is required or elected; not tax
+                                                                       law
+
+
+
+3. Entity, return, and accounting method
+ - Verify the latest Form 1040, Schedule E, EIN notice, Articles/operating agreement, and any Forms 8832 or 2553. A single-member
+   domestic LLC is generally disregarded for federal income tax unless it elects corporation treatment.
+
+ - For income-tax information reporting, the owner generally supplies the owner's legal name and TIN on Form W-9 line 1 and the
+   disregarded LLC name on line 2. Employment and certain excise taxes treat the LLC separately.
+
+ - Use the tax accounting method shown on the filed return unless a permissible method change is made. An internal Zoho setup does
+   not elect or change a federal accounting method.
+
+ - Ordinary fourplex rent with normal landlord services is generally Schedule E and excluded from self-employment income.
+   Maid/linen/regular in-unit service or a separate management business can change the return and payroll analysis.
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                             Page 3
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                                           Checked through July 12, 2026
+
+
+
+
+4. Core transaction rules
+ Issue                              Federal operating rule                                                                                                      Primary IDs
+
+ Rent and fees                      Include current rent, advance rent, late/returned-payment/cancellation fees, tenant-paid owner expenses, and                FED-010, FED-020
+                                    property/services received as rent under the applicable timing method
+
+ Refundable deposits                Liability while returnable; income when GH's legal right to retain becomes fixed. Last-month rent is advance rent, not      FED-010, FED-020
+                                    a deposit
+
+ Gross processor settlement         Record gross tenant consideration and a separate processing fee; reconcile Forms 1099-K but do not use them as              FED-020, FED-052
+                                    the taxability test
+
+ Schedule                           Ordinary long-term rental with normal services is generally Schedule E; substantial tenant-convenience services can         FED-021, FED-034
+                                    point to Schedule C and self-employment tax
+
+ Vacancy                            Deductions and depreciation generally begin when ready and available for rent and can continue during temporary             FED-020, FED-022
+                                    vacancy if still held out for rent
+
+ Mortgage                           Interest may be deductible to rental use; principal is not; escrow deposits are not expenses; cash-out interest follows     FED-012, FED-020
+                                    use-of-proceeds tracing
+
+ Repair vs improvement              Deduct repairs; capitalize betterments, restorations, adaptations, acquisitions, and production. Analyze building and       FED-013 to FED-018
+                                    each building system
+
+ De minimis safe harbor             Without an AFS, up to $2,500 per invoice/item if a beginning-of-year procedure exists, books follow it, and annual          FED-015, FED-018
+                                    election is attached to a timely original return
+
+ Small-taxpayer building safe       Average gross receipts <= $10 million; building unadjusted basis <= $1 million; annual total <= lesser of $10,000 or        FED-017
+ harbor                             2%; annual building-by-building election
+
+ Routine maintenance                Recurring building work reasonably expected more than once during the 10-year period may qualify; preserve the              FED-017
+                                    expectation and scope evidence
+
+ Depreciation                       Land excluded; residential rental building generally 27.5-year GDS, straight-line, mid-month; separate shorter-life         FED-022 to FED-026
+                                    assets only with support
+
+ Conversion                         For personal-to-rental conversion, depreciation basis is generally lower of adjusted basis or fair market value at          FED-020, FED-023
+                                    conversion; allocate land and personal periods
+
+ Allowed or allowable               Basis is reduced by depreciation allowed or allowable; a missed-depreciation correction may require an                      FED-022 to FED-025
+                                    accounting-method change
+
+ Loss limits                        Apply basis/at-risk, passive activity, and excess-business-loss rules in the proper order; suspended losses need            FED-030, FED-031,
+                                    year-by-year rollforward                                                                                                    FED-033
+
+ QBI                                Rental qualifies only if it is a Section 162 trade/business or meets Rev. Proc. 2019-38; safe harbor requires separate      FED-032, FED-033
+                                    books, service records, exclusions, and statement
+
+ Vendor reporting                   Collect W-9; for 2026 payments, general threshold $2,000 subject to exceptions; payment cards/qualifying networks           FED-042, FED-050
+                                    are reported by settlement entity                                                                                           to FED-052
+
+ Cash > $10,000                     File Form 8300 generally within 15 days for one or related transactions; specialized cash definition excludes ordinary      FED-053
+                                    checks/cards/ACH/wires
+
+ Records                            Retain source documents, ledgers, elections, audit trail, basis/depreciation, and electronic retrievability sufficient to   FED-045 to FED-047
+                                    substantiate every return amount
+
+
+
+5. Repairs, improvements, and 2026 renovations
+A single invoice amount does not decide classification. Analyze the unit of property and the entire plan of work. For a building, the
+regulations separately test the building structure and systems such as HVAC, plumbing, electrical, elevators, fire protection, security,
+gas distribution, and other listed systems. A replacement that materially improves, restores, or adapts the unit of property is capital
+even when the contractor calls it a repair.
+2026 control
+Do not post the entire renovation program to a 'Renovations' expense account. Build an invoice-level schedule showing scope, related
+project, building/system, unit, placed-in-service date, book treatment, federal tax treatment, Kansas treatment, and supporting source.
+
+ Rule / election                       Core conditions                                                                            Documentation
+
+ De minimis safe harbor                No AFS: generally <= $2,500 per invoice or separately stated item;                         Written prospective policy, invoices/itemization,
+                                       beginning-of-year expensing procedure; consistent books; timely original-return            book treatment, annual election statement
+                                       election
+
+ Small-taxpayer building safe harbor   Average gross receipts <= $10M; eligible building unadjusted basis <= $1M; annual          Building basis, gross-receipts test, annual project
+                                       total <= lesser of $10,000 or 2%                                                           total, building-specific election
+
+ Routine maintenance                   Recurring work reasonably expected more than once in the building/system's first           Maintenance plan, age, history, manufacturer
+                                       10 years; not every replacement qualifies                                                  recommendations, scope
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                           Page 4
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                                        Checked through July 12, 2026
+
+
+
+ Rule / election                       Core conditions                                                                        Documentation
+
+ Materials and supplies                Special rules for components, consumables, and property with economic life <= 12       Receipt, first-use date, item classification, no
+                                       months or qualifying low cost                                                          duplicate capitalization
+
+ Betterment/restoration/adaptation     Capitalize material additions/capacity/productivity/quality gains, restorations, and   Before/after facts, plan of rehabilitation, system
+                                       new/different uses                                                                     analysis, placed-in-service date
+
+
+
+6. Depreciation and basis control
+ Asset / event                           Default federal control                                                                     Do not assume
+
+ Land                                    Allocate and exclude from depreciation                                                      County allocation automatically equals
+                                                                                                                                     federal fair-value allocation
+
+ Residential rental building             27.5-year GDS, straight-line, mid-month after ready and available for rent                  Purchase date or first-rent receipt is always
+                                                                                                                                     placed-in-service date
+
+ Appliances, carpet, furniture           Often 5-year property if separately supportable                                             Every invoice called 'appliance' qualifies or
+                                                                                                                                     Section 179 applies
+
+ Land improvements                       Often 15-year property if separately supportable                                            Building structural components can be
+                                                                                                                                     moved to land improvements without
+                                                                                                                                     analysis
+
+ 2025-2026 qualified property            100% bonus may apply to eligible property acquired after Jan. 19, 2025 and placed in        27.5-year building or land qualifies; passive
+                                         service, subject to exclusions                                                              limits disappear
+
+ Personal-to-rental conversion           Depreciation basis generally lower of adjusted basis or FMV at conversion, land             Original purchase basis always controls
+                                         excluded
+
+ Missed depreciation                     Allowed-or-allowable rule reduces basis; correction may require Form 3115                   Begin claiming late without method analysis
+
+ Disposition                             Track asset-level proceeds, adjusted basis, depreciation, recapture, and gain character     Net sale proceeds against one building
+                                                                                                                                     balance
+
+
+
+7. Loss limitations and QBI
+ - Apply limitations in order: basis and at-risk rules; passive-activity rules; then excess-business-loss rules. Carry each limitation
+   separately.
+
+ - Normal rental real estate remains passive even with active management unless a statutory/regulatory exception applies. The
+   active-participation allowance can be up to $25,000 and generally phases out between $100,000 and $150,000 of modified
+   adjusted gross income, with special filing-status rules.
+
+ - Real-estate-professional status requires more than 750 hours and more than half of the taxpayer's personal-service time in
+   real-property trades/businesses, plus material participation in the rental(s). Do not infer it from job title or ownership.
+
+ - Rental income is QBI only when the activity is a Section 162 trade/business or meets Revenue Procedure 2019-38. The safe harbor
+   needs separate books, qualifying rental-service hours, contemporaneous records, exclusions, and an attached annual statement.
+
+ - Passive-loss and QBI conclusions should be made on the individual return facts, not inside Zoho alone.
+
+
+8. Vendor, payment, and cash reporting
+ Question                            2026 control
+
+ Threshold                           General Sections 6041/6041A threshold is $2,000 for payments after Dec. 31, 2025; royalties, attorney gross proceeds,
+                                     backup withholding, and other exceptions use different rules
+
+ Payment rail                        Check, ACH, cash, and direct bank payments enter GH's payer analysis; payment-card and qualifying third-party-network
+                                     payments generally are reported by the settlement entity on Form 1099-K
+
+ W-9                                 Collect before payment; validate legal name/TIN/entity type; maintain backup-withholding workflow for missing/incorrect
+                                     TINs
+
+ 1099-K                              Reconcile gross amount to Zoho and processor fees/refunds/chargebacks; never use form threshold to decide whether rent
+                                     is income
+
+ Cash over $10,000                   Form 8300 may be due within 15 days for one or related transactions. 'Cash' has a specialized definition;
+                                     ACH/wires/cards/ordinary checks are generally excluded
+
+ E-filing                            The federal 10-return aggregate e-file threshold generally counts covered information returns across types; use current
+                                     instructions and FIRE/IRIS requirements
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                        Page 5
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                                 Checked through July 12, 2026
+
+
+
+
+9. 2025-2026 changes and stale-source traps
+ 1. Permanent 100% bonus depreciation now applies to qualifying property acquired after January 19, 2025. The residential building
+    and land do not qualify; shorter-life assets still require correct classification and passive-loss analysis.
+
+ 2. For payments made in 2026, the general information-return threshold is $2,000, not the $600 shown in 2025 Schedule E
+    instructions. Form-specific exceptions remain.
+
+ 3. The third-party settlement organization Form 1099-K threshold is again more than $20,000 and more than 200 transactions.
+    Payment-card reporting is separate, and processors may issue a form below a threshold.
+
+ 4. The QBI deduction is permanent, but rental real estate is not automatically QBI. Do not rely on an outdated IRS web page that says
+    Section 199A ended after 2025.
+
+ 5. The 2026 business mileage rate changed midyear: 72.5 cents through June 30 and 76 cents beginning July 1 under
+    Announcement 2026-11.
+
+ 6. Domestic US-created LLCs are currently exempt from CTA BOI reporting. Older broad domestic-entity filing guides are obsolete.
+
+ 7. FinCEN's Residential Real Estate Rule was vacated March 19, 2026 and is under appeal. Recheck the live FAQ before any
+    covered transfer.
+
+ 8. Publication 535 was discontinued after tax year 2022. Use the current IRS business-expense resource map and topic-specific
+    publications.
+
+ 9. Never use a document marked DRAFT - NOT FOR FILING as current authority.
+
+
+10. US GAAP applicability and topic map
+No general federal rule identified requires this private, non-SEC, single-member fourplex landlord to issue GAAP financial statements.
+GAAP can become mandatory through a lender covenant, investor agreement, court order, grant, insurance contract, or other specific
+requirement. If GH chooses GAAP, it must apply the relevant Codification consistently and prepare the required
+statements/disclosures for the stated reporting framework.
+
+ ASC topic             Why it can matter to GH                                  Project instruction
+
+ ASC 105               GAAP hierarchy                                           Use the Codification as authoritative; ASUs explain amendments but are not the final
+                                                                                authoritative text
+
+ ASC 210               Balance-sheet presentation                               Separate current assets/liabilities where a complete GAAP statement is prepared
+
+ ASC 230               Statement of cash flows                                  Classify operating, investing, and financing cash flows if a complete GAAP statement is
+                                                                                required
+
+ ASC 250               Accounting changes and error corrections                 Distinguish policy changes, estimates, and prior-period errors; document corrections
+
+ ASC 305               Cash and restricted cash                                 Assess whether deposit/escrow cash is restricted based on legal or contractual terms
+
+ ASC 326               Receivables and credit losses                            Accrual GAAP receivables need expected-credit-loss analysis; tax cash-basis uncollected
+                                                                                rent is different
+
+ ASC 360               Property, plant, equipment; depreciation; impairment     Capitalize assets, assign useful lives, record book depreciation, and review impairment;
+                                                                                tax lives may differ
+
+ ASC 405               Liabilities                                              Refundable tenant deposits are obligations until released/applied under enforceable terms
+
+ ASC 450               Contingencies                                            Assess probable and estimable losses; disclose material contingencies as required
+
+ ASC 470 / 835         Debt and interest                                        Separate principal, interest, debt issuance costs, maturities, and imputation matters
+
+ ASC 505               Equity                                                   Member contributions and distributions are equity, not income or expense
+
+ ASC 606               Revenue from nonlease contracts                          Lease consideration is generally outside ASC 606; distinct nonlease services may require
+                                                                                analysis
+
+ ASC 740               Income taxes                                             Usually not an entity-level provision for a disregarded LLC, but relevant if tax status or
+                                                                                reporting entity changes
+
+ ASC 842               Lessor lease accounting                                  Core GAAP topic for rent, lease classification, collectibility, variable payments, and
+                                                                                nonlease components
+
+ ASC 970               Real estate - general                                    May provide specialized real-estate guidance for certain transactions; use only when the
+                                                                                subtopic applies
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                Page 6
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                                 Checked through July 12, 2026
+
+
+
+Copyright boundary
+The FASB Accounting Standards Codification is copyrighted. This sourcebook provides topic locators, summaries, and live
+licensed-access links only. It does not reproduce or authorize uploading the full Codification.
+
+
+11. Federal source register
+Status labels reflect the facts and law checked through the cover date. 'Conditional' means the source becomes operative only when
+its trigger occurs. Recheck volatile sources before acting.
+
+ FED-001              Title 26, United States Code                                                                       Binding statute               Current
+
+ Controlling federal tax statute. Relevant areas include gross income, deductions, interest, capitalization, depreciation, passive activity, at-risk, QBI,
+ self-employment tax, records, and information returns.
+ https://uscode.house.gov/view.xhtml?edition=prelim&path=%2Fprelim%40title26
+
+
+ FED-002              Public Law 119-21                                                                                  Binding public law            Current
+
+ 2025 legislation affecting 2026 reporting, including permanent 100% bonus depreciation for eligible property, permanent QBI, and information-return
+ thresholds. Use codified current Code after amendments.
+ https://www.govinfo.gov/link/plaw/119/public/21
+
+
+ FED-003              Title 26 eCFR                                                                                      Binding regulation            Current
+
+ Live Treasury Regulations. Current text controls over simplified publications, subject to statute and case law.
+ https://www.ecfr.gov/current/title-26
+
+
+ FED-004              Internal Revenue Bulletin                                                                          Published IRS guidance        Current
+
+ Authoritative publication vehicle for revenue rulings, revenue procedures, notices, announcements, and Treasury Decisions.
+ https://www.irs.gov/internal-revenue-bulletins
+
+
+ FED-005              IRS explanation of tax code, regulations, and official guidance                                    Official explanation          Current
+
+ Explains source hierarchy and reliance limits. Publications and FAQs are useful but do not override statutes or regulations.
+ https://www.irs.gov/privacy-disclosure/tax-code-regulations-and-official-guidance
+
+
+ FED-010              IRC Section 61 and 26 CFR 1.61-8 - rents                                                           Binding statute/regulation    Current
+
+ Rents are gross income. Advance rent is included when received; tenant payment of owner obligations and property/services received for rent may
+ create income.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFR064ad1fa7d3cb20/section-1.61-8
+
+
+ FED-011              IRC Section 446 and 26 CFR 1.446-1 - accounting methods                                            Binding statute/regulation    Current
+
+ Taxable income must use the taxpayer's regular permissible method and clearly reflect income. Tax method is not automatically GAAP.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFRb1609093bcfe759/section-1.446-1
+
+
+ FED-012              IRC Sections 162, 212, and 163                                                                     Binding statutes              Current
+
+ Ordinary/necessary business or income-production expenses and interest. Business-use substantiation, capitalization, personal-use allocation, and
+ interest tracing still apply.
+ https://uscode.house.gov/quicksearch/get.plx?section=162&title=26
+
+
+ FED-013              26 CFR 1.162-3 - materials and supplies                                                            Binding regulation            Current
+
+ Defines and times deductions for materials and supplies, including incidental/non-incidental treatment and coordination with capitalization rules.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFRc4930337f38ecfd/section-1.162-3
+
+
+ FED-014              26 CFR 1.162-4 - repairs and maintenance                                                           Binding regulation            Current
+
+ Deduct repairs and maintenance not otherwise required to be capitalized. Coordinate with the improvement regulations.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFRc4930337f38ecfd/section-1.162-4
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                               Page 7
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                                              Checked through July 12, 2026
+
+
+
+ FED-015              26 CFR 1.263(a)-1 - capitalization and de minimis safe harbor                                                 Binding regulation              Current
+
+ Capitalization baseline and annual de minimis election. For taxpayers without an applicable financial statement, Notice 2015-82 raises the operational
+ ceiling to $2,500 per invoice or separately stated item.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFR210006225231fb0/section-1.263%28a%29-1
+
+
+ FED-016              26 CFR 1.263(a)-2 - acquisitions and production                                                               Binding regulation              Current
+
+ Capitalizes amounts paid to acquire or produce tangible property and specified transaction costs.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFR210006225231fb0/section-1.263%28a%29-2
+
+
+ FED-017              26 CFR 1.263(a)-3 - improvements                                                                              Binding regulation              Current
+
+ Building and system unit-of-property rules; betterment, restoration, and adaptation tests; routine maintenance and small-taxpayer safe harbors;
+ removal costs and dispositions.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFR210006225231fb0/section-1.263%28a%29-3
+
+
+ FED-018              Notice 2015-82                                                                                                Published IRS notice            Current
+
+ Raises the no-applicable-financial-statement de minimis safe-harbor amount from the regulation's printed $500 to $2,500.
+ https://www.irs.gov/pub/irs-drop/n-15-82.pdf
+
+
+ FED-019              IRC Section 280A - rental and personal use                                                                    Binding statute                 Conditional
+
+ Limits and allocates deductions when a dwelling unit has personal use. Historical owner occupancy and any future personal use require unit/day facts
+ and coordination with Publication 527.
+ https://uscode.house.gov/quicksearch/get.plx?section=280A&title=26
+
+
+ FED-020              2025 Publication 527 - Residential Rental Property                                                            Official guidance               Current
+
+ Principal operating guide for rent, deposits, expenses, vacancy, personal use, basis, depreciation, passive losses, and casualty treatment. It is
+ guidance for 2025 returns, posted in 2026.
+ https://www.irs.gov/pub/irs-pdf/p527.pdf
+
+
+ FED-021              2025 Schedule E and instructions                                                                              Official filing instructions    Current
+
+ Ordinary long-term residential rent generally appears in Part I. Identifies Forms 4562, 6198, and 8582 triggers. Substantial services may change
+ reporting.
+ https://www.irs.gov/pub/irs-pdf/i1040se.pdf
+
+
+ FED-022              2025 Publication 946 - How To Depreciate Property                                                             Official guidance               Current
+
+ MACRS, recovery periods, conventions, bonus depreciation, Section 179, dispositions, and accounting-method correction concepts. Pair with current
+ law overlays.
+ https://www.irs.gov/pub/irs-pdf/p946.pdf
+
+
+ FED-023              Publication 551 - Basis of Assets                                                                             Official guidance               Current
+
+ Purchase basis, closing costs, allocations, improvements, adjusted basis, and conversion from personal to rental use.
+ https://www.irs.gov/pub/irs-pdf/p551.pdf
+
+
+ FED-024              Form 4562 instructions                                                                                        Official filing instructions    Current
+
+ Depreciation and amortization filing mechanics, listed property, bonus depreciation, and placed-in-service reporting.
+ https://www.irs.gov/instructions/i4562
+
+
+ FED-025              IRC Sections 167 and 168                                                                                      Binding statutes                Current
+
+ Depreciation authority. Residential rental buildings generally use 27.5-year GDS, straight-line, mid-month; land is nondepreciable. Shorter-lived assets
+ remain fact-specific.
+ https://uscode.house.gov/quicksearch/get.plx?section=168&title=26
+
+
+ FED-026              IRS guidance on permanent 100% additional first-year depreciation                                             Official current guidance       Current
+
+ For qualified property acquired after January 19, 2025. The 27.5-year building and land do not qualify; eligible assets generally need recovery periods
+ of 20 years or less and other requirements.
+ https://www.irs.gov/newsroom/treasury-irs-issue-guidance-on-the-additional-first-year-depreciation-deduction-amended-as-part-of-the-one-big-beautiful-bill
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                            Page 8
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                         Checked through July 12, 2026
+
+
+
+ FED-027              IRC Section 179                                                                         Binding statute                  Conditional
+
+ Elective expensing for qualifying property used in the active conduct of a trade or business, subject to property, income, lodging, use, and annual
+ limits. Do not assume every Schedule E asset qualifies.
+ https://uscode.house.gov/quicksearch/get.plx?section=179&title=26
+
+
+ FED-028              IRC Sections 1011, 1012, and 1016 - adjusted basis                                      Binding statutes                 Current
+
+ Cost and adjusted-basis rules, including basis reductions for depreciation allowed or allowable. Permanent asset history is needed through disposition.
+ https://uscode.house.gov/quicksearch/get.plx?section=1016&title=26
+
+
+ FED-030              IRC Section 465 and Form 6198                                                           Binding statute / filing form    Current
+
+ At-risk limitation applies before passive-activity limitation when a loss exists. Qualified nonrecourse financing rules are fact-specific.
+ https://www.irs.gov/forms-pubs/about-form-6198
+
+
+ FED-031              IRC Section 469, Publication 925, and Form 8582                                         Binding statute / official       Current
+                                                                                                              guidance
+
+ Rental losses are generally passive. Active-participation allowance, real-estate-professional exception, material participation, grouping, and
+ suspended losses require separate analysis.
+ https://www.irs.gov/pub/irs-pdf/p925.pdf
+
+
+ FED-032              IRC Section 199A and Revenue Procedure 2019-38                                          Binding statute / safe harbor    Current
+
+ Potential QBI deduction. Rental property is not automatically a trade or business. Safe harbor requires separate books, service-hour records,
+ exclusions, and an annual statement.
+ https://www.irs.gov/pub/irs-drop/rp-19-38.pdf
+
+
+ FED-033              Revenue Procedure 2025-32                                                               Published IRS procedure          Current
+
+ 2026 inflation-adjusted items, including QBI thresholds, minimum-deduction provisions, excess-business-loss limits, gross-receipts tests, and
+ information-return threshold overlay.
+ https://www.irs.gov/pub/irs-drop/rp-25-32.pdf
+
+
+ FED-034              IRC Section 1402(a)(1)                                                                  Binding statute                  Current
+
+ Ordinary rentals from real estate are generally excluded from net earnings from self-employment, subject to exceptions such as substantial
+ tenant-convenience services or dealer activity.
+ https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A1402+edition%3Aprelim%29
+
+
+ FED-035              IRC Section 1411 and Form 8960 instructions                                             Binding statute / filing         Conditional
+                                                                                                              instructions
+
+ Net investment income tax may apply to passive rental income at higher modified adjusted gross income levels.
+ https://www.irs.gov/pub/irs-pdf/i8960.pdf
+
+
+ FED-036              IRC Section 461(l) - excess business losses                                             Binding statute                  Conditional
+
+ Noncorporate excess-business-loss limitation applies after basis/at-risk and passive-activity rules. Use the current annual threshold and carryforward
+ rules.
+ https://uscode.house.gov/quicksearch/get.plx?section=461&title=26
+
+
+ FED-037              IRC Section 183 - not-for-profit activities                                             Binding statute                  Conditional
+
+ If facts cease to show a profit motive, deductions can be limited. Ordinary profit-seeking rental is assumed, but preserve businesslike records and profit
+ intent.
+ https://uscode.house.gov/quicksearch/get.plx?section=183&title=26
+
+
+ FED-038              IRC Section 274 - substantiation and disallowance                                       Binding statute                  Conditional
+
+ Travel, meals, gifts, listed property, and entertainment limitations. Contemporaneous business-purpose records and specific exceptions control.
+ https://uscode.house.gov/quicksearch/get.plx?section=274&title=26
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                       Page 9
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                                      Checked through July 12, 2026
+
+
+
+ FED-039              IRC Section 163(j) and Form 8990                                                                    Binding statute / filing          Conditional
+                                                                                                                          instructions
+
+ Business-interest limitation. Small-business gross-receipts exception often applies, but tax-shelter status and a real-property-trade/business election
+ can change depreciation and filing.
+ https://www.irs.gov/pub/irs-pdf/i8990.pdf
+
+
+ FED-040              Single-member LLC federal tax rules                                                                 Binding regulations / official    Current
+                                                                                                                          guidance
+
+ A domestic single-member LLC is disregarded for federal income tax unless it elects corporation treatment; it remains separate for employment and
+ certain excise taxes.
+ https://www.irs.gov/businesses/small-businesses-self-employed/single-member-limited-liability-companies
+
+
+ FED-041              26 CFR 301.7701-2 and 301.7701-3                                                                    Binding regulations               Current
+
+ Entity classification rules and elections. Verify no Form 8832 or corporate election before using Schedule E disregarded-entity treatment.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-F/part-301/subpart-ECFR5ffaf3310af6b61/section-301.7701-3
+
+
+ FED-042              Form W-9, Revision March 2024                                                                       Official form                     Current
+
+ For income-tax reporting, a disregarded LLC generally puts the owner's legal name/TIN on line 1 and LLC name on line 2. Use current final form, not a
+ draft.
+ https://www.irs.gov/pub/irs-pdf/fw9.pdf
+
+
+ FED-045              IRC Section 6001 and 26 CFR 1.6001-1                                                                Binding statute/regulation        Current
+
+ Maintain permanent books and records sufficient to establish income, deductions, credits, basis, and return positions.
+ https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFR4423716657898cd/section-1.6001-1
+
+
+ FED-046              Revenue Procedure 97-22 - electronic records                                                        Published IRS procedure           Current
+
+ Electronic record systems must preserve retrievability, integrity, indexing, audit trails, and ability to produce readable records.
+ https://www.irs.gov/pub/irs-tege/rp-97-22.pdf
+
+
+ FED-047              IRS record-retention guidance                                                                       Official guidance                 Current
+
+ Common periods: 3 years generally, 6 years for substantial omission, indefinitely for no/fraudulent return, 4 years for employment taxes; asset records
+ through disposition limitation period.
+ https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records
+
+
+ FED-050              IRC Sections 6041/6041A and 2026 General Instructions for Certain                                   Binding statute / filing          Current
+                                                                                                                          instructions
+                      Information Returns
+
+ For payments after December 31, 2025, the general service/rent reporting threshold is $2,000, indexed after 2026, with form-specific exceptions.
+ Aggregate e-file threshold and deadlines also apply.
+ https://www.irs.gov/pub/irs-pdf/p1099.pdf
+
+
+ FED-051              2026 Forms 1099-MISC and 1099-NEC instructions                                                      Official filing instructions      Current
+
+ Classifies rent, services, attorneys, backup withholding, exceptions, recipient statements, and payer filing mechanics. Card/third-party-network
+ payments generally are not duplicated by the payer.
+ https://www.irs.gov/pub/irs-pdf/i1099mec.pdf
+
+
+ FED-052              Form 1099-K FAQs                                                                                    Official current FAQ              Current
+
+ Payment-card settlements and third-party network reporting. A 1099-K is a reconciliation source; taxability never depends on receipt of the form.
+ https://www.irs.gov/newsroom/form-1099-k-faqs-general-information
+
+
+ FED-053              IRC Section 6050I and Form 8300                                                                     Binding statute / filing form     Conditional
+
+ More than $10,000 in cash received in one or related trade/business transactions generally triggers filing within 15 days and a payer statement. Cash
+ definition is specialized.
+ https://www.irs.gov/forms-pubs/about-form-8300
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                                   Page 10
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                           Checked through July 12, 2026
+
+
+
+ FED-054              2026 Form 1040-ES and Publication 505                                                  Official filing guidance            Conditional
+
+ Estimated federal tax generally applies when expected balance is at least $1,000 and withholding/credits do not meet safe-harbor tests. Use current
+ annual form for dates.
+ https://www.irs.gov/pub/irs-pdf/f1040es.pdf
+
+
+ FED-055              Announcement 2026-11 in IRB 2026-29                                                    Published IRS announcement          2026-specific
+
+ Modifies the 2026 business mileage rate: 72.5 cents per mile through June 30, 2026 and 76 cents beginning July 1, 2026. Preserve contemporaneous
+ substantiation.
+ https://www.irs.gov/pub/irs-irbs/irb26-29.pdf
+
+
+ FED-056              Publication 463 - travel, gifts, and car expenses                                      Official guidance                   Conditional
+
+ Substantiation for vehicle/travel, meals, and gifts; commuting and personal expenses are excluded. Entertainment is generally nondeductible.
+ https://www.irs.gov/pub/irs-pdf/p463.pdf
+
+
+ FED-057              Publication 547 and Form 4684                                                          Official guidance / filing form     Conditional
+
+ Casualty, theft, disaster, insurance reimbursement, and possible replacement-property deferral. Rental/business property uses the business section.
+ https://www.irs.gov/pub/irs-pdf/p547.pdf
+
+
+ FED-058              Publication 544 and Form 4797                                                          Official guidance / filing form     Conditional
+
+ Sale, exchange, foreclosure, abandonment, Section 1231, recapture, and unrecaptured Section 1250 gain. Requires lifetime basis and depreciation
+ records.
+ https://www.irs.gov/pub/irs-pdf/p544.pdf
+
+
+ FED-059              IRS like-kind exchange real-estate tax tips                                            Official guidance                   Conditional
+
+ Section 1031 applies only to qualifying real property held for investment/business and requires strict identification, timing, and qualified-intermediary
+ procedures.
+ https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips
+
+
+ FED-059A             IRC Section 453 - installment sales                                                    Binding statute                     Conditional
+
+ A qualifying deferred-payment sale may use installment reporting, with exceptions and depreciation recapture recognized under special rules. Analyze
+ before signing a seller-financed sale.
+ https://uscode.house.gov/quicksearch/get.plx?section=453&title=26
+
+
+ FED-059B             IRC Sections 1231, 1245, and 1250 - disposition character and                          Binding statutes                    Conditional
+                      recapture
+
+ Sale or casualty character, depreciation recapture, and unrecaptured Section 1250 gain depend on asset-level basis and lifetime depreciation.
+ https://uscode.house.gov/quicksearch/get.plx?section=1250&title=26
+
+
+ FED-060              FinCEN BOI current page and 31 CFR 1010.380                                            Federal regulation / current        Current
+                                                                                                             status
+
+ US-created domestic entities and their US beneficial owners are currently exempt from CTA BOI reporting under the March 2025 rule. Bank KYC
+ obligations are separate.
+ https://www.fincen.gov/boi
+
+
+ FED-061              FinCEN Residential Real Estate Rule status FAQ                                         Official current status             Conditional / volatile
+
+ Rule was vacated March 19, 2026. No reports are currently required while vacatur remains; appeal is pending. Recheck before any sale or
+ non-financed transfer.
+ https://www.fincen.gov/rre-faqs
+
+
+ FED-070              Publication 15 and federal employment-tax forms                                        Official guidance / filing forms    Conditional
+
+ If GH hires an employee, activate worker classification, Forms W-2/941/940, deposits, withholding, and employment-tax records. The owner of a
+ disregarded entity is not their own employee.
+ https://www.irs.gov/pub/irs-pdf/p15.pdf
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                             Page 11
+Volume 01 - Federal Rental Tax and US GAAP Sourcebook                                                                                          Checked through July 12, 2026
+
+
+
+ FED-071                 IRS worker-classification guidance and Form SS-8                                         Official guidance /           Conditional
+                                                                                                                  determination form
+
+ Employee versus independent-contractor status depends on facts, not the contract label. Misclassification can create payroll tax, wage, and state
+ obligations.
+ https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee
+
+
+ GAAP-001                FASB Standards page and Accounting Standards Codification                                Authoritative private GAAP    Current
+
+ The Codification is the single authoritative nongovernmental US GAAP source. Use live access and topic locators; do not reproduce the database
+ wholesale.
+ https://www.fasb.org/standards
+
+
+ GAAP-002                FASB Accounting Standards Codification Basic View                                        Authoritative private GAAP    Current
+
+ Live topic text. Relevant locators include ASC 105, 210, 230, 250, 305, 326, 360, 405, 450, 470, 505, 606, 740, 835, 842, and 970 depending on facts.
+ https://asc.fasb.org/
+
+
+ GAAP-003                FAF Terms of Use                                                                         Copyright / access terms      Current
+
+ Codification content is copyrighted and subject to access/reproduction restrictions. This package summarizes topics and links to live text instead of
+ copying it.
+ https://accountingfoundation.org/page/detail?pageId=%2Fterms-of-use.html
+
+
+ GAAP-004                FASB Topic 842 - Leases                                                                  Authoritative private GAAP    Current
+                                                                                                                  topic
+
+ Lessor lease classification, lease income, variable payments, collectibility, initial direct costs, and nonlease components. Residential leases are usually
+ operating leases but require fact review.
+ https://www.fasb.org/projects/current-projects/leases
+
+
+
+
+GH Real Estate, LLC | Professional reference source - not legal or tax advice                                                                                       Page 12
+

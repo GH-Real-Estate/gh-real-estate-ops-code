@@ -4,6 +4,11 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-12
 
+- Added the governed GH accounting authority library under `accounting/`.
+- Added four dated accounting Project Source PDFs and searchable text covering 114 federal, GAAP-locator, Kansas, Overland Park, and Johnson County source-register records across 33 pages.
+- Added a 54-topic FASB applicability registry covering baseline GAAP, transaction triggers, future structures, and explicit nonapplicability watchpoints.
+- Added transaction-policy, evidence, licensing, and ChatGPT/Codex controls; no FASB Codification text or licensed-source substitute is stored.
+- Added accounting-release validation and a monthly review calendar that opens `ACCOUNTING REVIEW REQUIRED` issues without changing policy.
 - Added the GH Real Estate legal authority library under `legal/`.
 - Added eight verified project-source PDF bundles covering 447 canonical Kansas, federal, HUD, and Overland Park sources across 1,718 pages.
 - Added 463 search-sized authority Markdown files for GitHub connector retrieval, plus full bundle text, hashes, release manifests, and source ledgers.

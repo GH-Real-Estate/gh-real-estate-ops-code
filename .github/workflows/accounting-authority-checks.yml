@@ -1,0 +1,33 @@
+name: Accounting Authority Checks
+
+on:
+  pull_request:
+    paths:
+      - 'accounting/**'
+      - '.github/workflows/accounting-*.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'accounting/**'
+      - '.github/workflows/accounting-*.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-accounting-authority:
+    name: Validate accounting authority registry and sourcebooks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate registry, licensing controls, hashes, PDFs, and searchable text
+        run: python accounting/scripts/validate_authority_registry.py
+

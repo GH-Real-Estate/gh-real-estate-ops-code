@@ -1,0 +1,59 @@
+name: Accounting Authority Review Calendar
+
+on:
+  schedule:
+    - cron: '41 13 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review-calendar:
+    name: Check FASB and accounting-authority review dates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check review calendar
+        id: review
+        continue-on-error: true
+        run: |
+          python accounting/scripts/review_due.py \
+            --json-report accounting-review-due.json \
+            --markdown-report accounting-review-due.md
+
+      - name: Upload review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accounting-authority-review-${{ github.run_id }}
+          path: |
+            accounting-review-due.json
+            accounting-review-due.md
+          retention-days: 90
+
+      - name: Open or update accounting-review issue
+        if: steps.review.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title='ACCOUNTING REVIEW REQUIRED: FASB or accounting authority review is due'
+          existing="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file accounting-review-due.md
+          else
+            gh issue create --title "$title" --body-file accounting-review-due.md
+          fi
+
+      - name: Fail after preserving report
+        if: steps.review.outcome == 'failure'
+        run: exit 1
+
