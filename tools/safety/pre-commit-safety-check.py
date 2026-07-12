@@ -108,6 +108,15 @@ SAFE_SECRET_VALUE_WORDS = {
     '""',
 }
 
+# Public legal-source extracts legitimately contain agency and rulemaking contacts.
+# Skip only the generic email-address PII heuristic in these generated paths;
+# secret, private-key, SSN, bank-data, and filename checks still apply.
+PUBLIC_LEGAL_TEXT_PREFIXES = (
+    "legal/text/current/authorities/",
+    "legal/text/current/chunks/",
+    "legal/text/current/full/",
+)
+
 PII_PATTERNS = [
     ("SSN-like value", re.compile(r"\b\d{3}-\d{2}-\d{4}\b")),
     (
@@ -173,6 +182,11 @@ def scan_text(rel: str, text: str) -> list[str]:
                 problems.append(f"secret assignment in {rel}:{line_no}")
 
         for label, pattern in PII_PATTERNS:
+            if (
+                label == "non-sample email address"
+                and rel.startswith(PUBLIC_LEGAL_TEXT_PREFIXES)
+            ):
+                continue
             if pattern.search(line):
                 problems.append(f"{label} in {rel}:{line_no}")
 
