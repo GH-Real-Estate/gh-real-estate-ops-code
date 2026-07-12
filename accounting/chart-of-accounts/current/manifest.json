@@ -1,0 +1,55 @@
+{
+  "release": "GH-COA-2026-07-12-ultimate-final",
+  "checked_through": "2026-07-12",
+  "property": "9401 Nieman Road, Overland Park, Kansas 66214",
+  "system": "Zoho Books",
+  "counts": {
+    "existing_accounts_audited": 190,
+    "master_catalog_accounts": 183,
+    "retained_or_system_accounts": 176,
+    "proposed_master_accounts": 7,
+    "create_now_accounts": 1,
+    "conditional_master_accounts": 6,
+    "additional_conditional_accounts": 13,
+    "total_trigger_gated_accounts": 19,
+    "accounts_to_retire": 14
+  },
+  "files": {
+    "workbook": {
+      "name": "GH_Real_Estate_Ultimate_Final_Chart_of_Accounts_2026-07-12.xlsx",
+      "sha256": "fff194c007fbffb716e1ba754d0c691e45546cbbfe41461d63cca632f27aaf9f",
+      "committed_to_github": false
+    },
+    "final_chart_of_accounts_csv": {
+      "name": "final_chart_of_accounts.csv",
+      "sha256": "09fa2df8773bcbaaf10a83e56b975a857ea342a0bca3aa0664a6ec10eda8e702"
+    },
+    "conditional_accounts_csv": {
+      "name": "conditional_accounts.csv",
+      "sha256": "713d484f8282da666f491ec075140770efcd12abd6dc36c92e63d76624b0dd5a"
+    },
+    "authority_crosswalk_csv": {
+      "name": "authority_crosswalk.csv",
+      "sha256": "65f40bbc4966923cd7d285ff10f82385fd192f4ce537503250d9913a916f774a"
+    },
+    "readme": {
+      "name": "README.md",
+      "sha256": "5988cd8f70368f96d82e1be795ae5e2d33cac1ad059551eddd943a784d4aee57"
+    }
+  },
+  "primary_repository_sources": [
+    "accounting/CURRENT_AUTHORITY_INDEX.md",
+    "accounting/PROJECT_INSTRUCTIONS.md",
+    "accounting/FASB_APPLICABILITY_INDEX.md",
+    "accounting/ACCOUNTING_POLICY_MATRIX.md",
+    "accounting/SOURCE_GAPS.md",
+    "accounting/policies/FASB_RESEARCH_AND_LICENSING_POLICY.md",
+    "legal/CURRENT_AUTHORITY_INDEX.md"
+  ],
+  "controls": {
+    "fasb_content": "locators and original GH analysis only; no Codification text",
+    "live_authority_controls": true,
+    "transaction_facts_and_signed_agreements_control": true,
+    "professional_review_required_for_material_conclusions": true
+  }
+}
