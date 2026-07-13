@@ -4,15 +4,31 @@ on:
   schedule:
     - cron: '27 12 * * 1'
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'legal/scripts/check_official_sources.py'
+      - 'legal/manifests/source_monitor_overrides.json'
+      - 'legal/manifests/authority_registry.json'
+      - 'legal/requirements-source-monitor.txt'
+      - 'legal/text/current/authorities/**'
+      - '.github/workflows/legal-source-monitor.yml'
+
+concurrency:
+  group: legal-source-monitor-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
   compare-official-sources:
     name: Compare approved hashes with official sources
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    outputs:
+      monitor_outcome: ${{ steps.monitor.outcome }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -21,6 +37,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+
+      - name: Install source monitor dependencies
+        run: python -m pip install --requirement legal/requirements-source-monitor.txt
 
       - name: Check official sources
         id: monitor
@@ -40,8 +59,32 @@ jobs:
             legal-source-monitor.md
           retention-days: 90
 
-      - name: Open or update legal-review issue
+      - name: Fail after preserving report
         if: steps.monitor.outcome == 'failure'
+        run: exit 1
+
+  publish-legal-review:
+    name: Publish legal review issue
+    needs: compare-official-sources
+    if: >-
+      ${{
+        always() &&
+        github.event_name != 'pull_request' &&
+        needs.compare-official-sources.outputs.monitor_outcome == 'failure'
+      }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      issues: write
+    steps:
+      - name: Download monitor report
+        uses: actions/download-artifact@v4
+        with:
+          name: legal-source-monitor-${{ github.run_id }}
+          path: .
+
+      - name: Open or update legal-review issue
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -52,7 +95,3 @@ jobs:
           else
             gh issue create --title "$title" --body-file legal-source-monitor.md
           fi
-
-      - name: Fail after preserving report
-        if: steps.monitor.outcome == 'failure'
-        run: exit 1

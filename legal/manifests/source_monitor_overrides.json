@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "notice": "Technical monitoring policies only. These entries do not approve, promote, or change legal authority.",
+  "overrides": {
+    "Federal Trade Commission business guidance (July 20, 2023)": {
+      "mode": "availability",
+      "official_url": "https://www.ftc.gov/business-guidance/resources/using-consumer-reports-what-landlords-need-know",
+      "reason": "The approved artifact is a rendered PDF of substantive guidance from volatile official HTML. Whole-page bytes include changing site chrome and are not a valid content fingerprint."
+    },
+    "HUD FHEO memorandum, May 22, 2026": {
+      "mode": "availability",
+      "official_url": "https://www.hud.gov/sites/default/files/hudclips/documents/AS-Trainor-Enforcement-Guidance-Assessing-Requests-for-the-use-of-an-animal-as-a-reasonable-accommodation-under-the-fair-housing-act.pdf",
+      "reason": "The approved artifact was normalized from a public-mirror copy because HUD blocked retrieval. Its bytes are not comparable to the official HUD PDF."
+    },
+    "Housing Authority v. McConnell, 66 Kan. App. 2d 566 (2026)": {
+      "mode": "availability",
+      "official_url": "https://searchdro.kscourts.gov/documents/pdf/caseDecisions/9b383f12-cd71-4187-8223-da58dfb25543_128977.pdf",
+      "reason": "The approved artifact is an exact-page extract from an official advance sheet. Its bytes are not comparable to the full official opinion PDF."
+    },
+    "Schutt v. Foster, 320 Kan. 852 (2025)": {
+      "mode": "availability",
+      "official_url": "https://searchdro.kscourts.gov/documents/pdf/caseDecisions/e8a35794-dc62-47c6-9184-09c89c4b9bda_126555.pdf",
+      "reason": "The approved artifact is an exact-page extract from an official advance sheet. Its bytes are not comparable to the full official opinion PDF."
+    },
+    "Washburn South Apartments v. Hession, 65 Kan. App. 2d 626 (2025)": {
+      "mode": "availability",
+      "official_url": "https://searchdro.kscourts.gov/documents/pdf/caseDecisions/35eb8078-f850-4db2-88f5-7dee881cc1ae_126456.pdf",
+      "reason": "The approved artifact is an exact-page extract from an official advance sheet. Its bytes are not comparable to the full official opinion PDF."
+    }
+  }
+}
