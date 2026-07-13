@@ -1,5 +1,5 @@
 {
-  "release": "GH-COA-2026-07-13-live-reconciled",
+  "release": "GH-COA-2026-07-13-live-reconciled-r2",
   "checked_through": "2026-07-13",
   "property": "9401 Nieman Road, Overland Park, Kansas 66214",
   "system": "Zoho Books",
@@ -14,32 +14,32 @@
     "conditional_register_rows": 19
   },
   "source_workbook": {
-    "name": "COA Final(1).xlsx",
-    "sha256": "d7dfe9fce606876048ccfa189343918288bca9495cc9d243cfb0efe5a0bb4c86",
+    "name": "COA Final Revised.xlsx",
+    "sha256": "d01558dd688106b2506f7e4a52e9b2da5eae1f1bea8fd91574762d543933920e",
     "committed_to_github": false,
     "reason": "Excluded because the Account # column contains banking identifiers."
   },
   "files": {
     "zoho_live_chart_of_accounts_sanitized.csv": {
-      "sha256": "2a815d026b2f326d470f0d9ea66f8d900e50d22c88682b0b52d28be8f33fa98d"
+      "sha256": "0799b66c4571c567d3f3d2449441e44dc9eb76ed570bbdca190139d2bbd7c715"
     },
     "final_chart_of_accounts.csv": {
-      "sha256": "8b929b524dcfdf949ec4b2cc7e4f3cd6532d9cd7376487ebdfe7ab4f9bf795b7"
+      "sha256": "c0f7ac7a807e22b1ce2f48088190c2d27e6bbfc2ada9af4161f0ab1a773a67b2"
     },
     "conditional_accounts.csv": {
-      "sha256": "1de45132302fa6c85a56471cf022b35dc216c132ed51657dac892ede73b1e4c5"
+      "sha256": "32c4c24a98fb7a76e9b5ba8bcad3effd9d48ffced135353cbdac5ca7f6e052f8"
     },
     "authority_crosswalk.csv": {
-      "sha256": "0703ded46e768f6bb82fc1351b4d63a6e87dc609cc4469024148a7f2988c9d34"
+      "sha256": "1d93536f363646a21bf62642255dca3a7d11f032438cbe127298e7285b80c85d"
     },
     "reconciliation_audit.md": {
-      "sha256": "e329b128212f49348927b832dac9566e9ef7cf3035c394db9b9f9fe764bad3d8"
+      "sha256": "fb7980d3f736a48bf03532900573260458e73592f4c8b931c6fb7db7c66b7502"
     },
     "README.md": {
-      "sha256": "591cfa03119063a31f45eb66efe4931aa56afdd6e182c09194e22b8ed2f4a120"
+      "sha256": "ca0611fc4fed54291577f64e2c52dc061d6be2947cf1acbfa410980fa18c36d3"
     },
     "CHANGELOG.md": {
-      "sha256": "411b6857278c5093d565d48e3e8ba08670e00fea766727f232382a7ea0f30125"
+      "sha256": "6903f112c580bdae6e81cdca772e809ce5bf8cdbe256d446ea1307689ebe0aa9"
     }
   },
   "controls": {
