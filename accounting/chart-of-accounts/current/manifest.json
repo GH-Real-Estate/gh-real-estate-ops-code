@@ -1,55 +1,57 @@
 {
-  "release": "GH-COA-2026-07-12-ultimate-final",
-  "checked_through": "2026-07-12",
+  "release": "GH-COA-2026-07-13-live-reconciled",
+  "checked_through": "2026-07-13",
   "property": "9401 Nieman Road, Overland Park, Kansas 66214",
   "system": "Zoho Books",
   "counts": {
-    "existing_accounts_audited": 190,
-    "master_catalog_accounts": 183,
-    "retained_or_system_accounts": 176,
-    "proposed_master_accounts": 7,
-    "create_now_accounts": 1,
-    "conditional_master_accounts": 6,
-    "additional_conditional_accounts": 13,
-    "total_trigger_gated_accounts": 19,
-    "accounts_to_retire": 14
+    "live_accounts": 185,
+    "live_active_accounts": 182,
+    "live_inactive_accounts": 3,
+    "coded_accounts": 182,
+    "uncoded_accounts": 3,
+    "duplicate_ids_names_or_nonblank_codes": 0,
+    "orphan_parent_links": 0,
+    "conditional_register_rows": 19
+  },
+  "source_workbook": {
+    "name": "COA Final(1).xlsx",
+    "sha256": "d7dfe9fce606876048ccfa189343918288bca9495cc9d243cfb0efe5a0bb4c86",
+    "committed_to_github": false,
+    "reason": "Excluded because the Account # column contains banking identifiers."
   },
   "files": {
-    "workbook": {
-      "name": "GH_Real_Estate_Ultimate_Final_Chart_of_Accounts_2026-07-12.xlsx",
-      "sha256": "fff194c007fbffb716e1ba754d0c691e45546cbbfe41461d63cca632f27aaf9f",
-      "committed_to_github": false
+    "zoho_live_chart_of_accounts_sanitized.csv": {
+      "sha256": "2a815d026b2f326d470f0d9ea66f8d900e50d22c88682b0b52d28be8f33fa98d"
     },
-    "final_chart_of_accounts_csv": {
-      "name": "final_chart_of_accounts.csv",
-      "sha256": "09fa2df8773bcbaaf10a83e56b975a857ea342a0bca3aa0664a6ec10eda8e702"
+    "final_chart_of_accounts.csv": {
+      "sha256": "8b929b524dcfdf949ec4b2cc7e4f3cd6532d9cd7376487ebdfe7ab4f9bf795b7"
     },
-    "conditional_accounts_csv": {
-      "name": "conditional_accounts.csv",
-      "sha256": "713d484f8282da666f491ec075140770efcd12abd6dc36c92e63d76624b0dd5a"
+    "conditional_accounts.csv": {
+      "sha256": "1de45132302fa6c85a56471cf022b35dc216c132ed51657dac892ede73b1e4c5"
     },
-    "authority_crosswalk_csv": {
-      "name": "authority_crosswalk.csv",
-      "sha256": "65f40bbc4966923cd7d285ff10f82385fd192f4ce537503250d9913a916f774a"
+    "authority_crosswalk.csv": {
+      "sha256": "0703ded46e768f6bb82fc1351b4d63a6e87dc609cc4469024148a7f2988c9d34"
     },
-    "readme": {
-      "name": "README.md",
-      "sha256": "5988cd8f70368f96d82e1be795ae5e2d33cac1ad059551eddd943a784d4aee57"
+    "reconciliation_audit.md": {
+      "sha256": "e329b128212f49348927b832dac9566e9ef7cf3035c394db9b9f9fe764bad3d8"
+    },
+    "README.md": {
+      "sha256": "591cfa03119063a31f45eb66efe4931aa56afdd6e182c09194e22b8ed2f4a120"
+    },
+    "CHANGELOG.md": {
+      "sha256": "411b6857278c5093d565d48e3e8ba08670e00fea766727f232382a7ea0f30125"
     }
   },
-  "primary_repository_sources": [
-    "accounting/CURRENT_AUTHORITY_INDEX.md",
-    "accounting/PROJECT_INSTRUCTIONS.md",
-    "accounting/FASB_APPLICABILITY_INDEX.md",
-    "accounting/ACCOUNTING_POLICY_MATRIX.md",
-    "accounting/SOURCE_GAPS.md",
-    "accounting/policies/FASB_RESEARCH_AND_LICENSING_POLICY.md",
-    "legal/CURRENT_AUTHORITY_INDEX.md"
-  ],
   "controls": {
-    "fasb_content": "locators and original GH analysis only; no Codification text",
-    "live_authority_controls": true,
-    "transaction_facts_and_signed_agreements_control": true,
+    "sanitized_snapshot_is_exact_for_included_fields": true,
+    "excluded_fields": [
+      "Account #",
+      "Mileage Rate",
+      "Mileage Unit",
+      "IsMileage"
+    ],
+    "governance_master_contains_recommended_not_yet_live_corrections": true,
+    "fasb_content": "ASC locators and original GH analysis only; no Codification text",
     "professional_review_required_for_material_conclusions": true
   }
 }
