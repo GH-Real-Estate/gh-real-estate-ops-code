@@ -1,0 +1,57 @@
+{
+  "release": "GH-COA-2026-07-13-live-reconciled-r2",
+  "checked_through": "2026-07-13",
+  "property": "9401 Nieman Road, Overland Park, Kansas 66214",
+  "system": "Zoho Books",
+  "counts": {
+    "live_accounts": 185,
+    "live_active_accounts": 182,
+    "live_inactive_accounts": 3,
+    "coded_accounts": 182,
+    "uncoded_accounts": 3,
+    "duplicate_ids_names_or_nonblank_codes": 0,
+    "orphan_parent_links": 0,
+    "conditional_register_rows": 19
+  },
+  "source_workbook": {
+    "name": "COA Final Revised.xlsx",
+    "sha256": "d01558dd688106b2506f7e4a52e9b2da5eae1f1bea8fd91574762d543933920e",
+    "committed_to_github": false,
+    "reason": "Excluded because the Account # column contains banking identifiers."
+  },
+  "files": {
+    "zoho_live_chart_of_accounts_sanitized.csv": {
+      "sha256": "0799b66c4571c567d3f3d2449441e44dc9eb76ed570bbdca190139d2bbd7c715"
+    },
+    "final_chart_of_accounts.csv": {
+      "sha256": "c0f7ac7a807e22b1ce2f48088190c2d27e6bbfc2ada9af4161f0ab1a773a67b2"
+    },
+    "conditional_accounts.csv": {
+      "sha256": "32c4c24a98fb7a76e9b5ba8bcad3effd9d48ffced135353cbdac5ca7f6e052f8"
+    },
+    "authority_crosswalk.csv": {
+      "sha256": "1d93536f363646a21bf62642255dca3a7d11f032438cbe127298e7285b80c85d"
+    },
+    "reconciliation_audit.md": {
+      "sha256": "fb7980d3f736a48bf03532900573260458e73592f4c8b931c6fb7db7c66b7502"
+    },
+    "README.md": {
+      "sha256": "ca0611fc4fed54291577f64e2c52dc061d6be2947cf1acbfa410980fa18c36d3"
+    },
+    "CHANGELOG.md": {
+      "sha256": "6903f112c580bdae6e81cdca772e809ce5bf8cdbe256d446ea1307689ebe0aa9"
+    }
+  },
+  "controls": {
+    "sanitized_snapshot_is_exact_for_included_fields": true,
+    "excluded_fields": [
+      "Account #",
+      "Mileage Rate",
+      "Mileage Unit",
+      "IsMileage"
+    ],
+    "governance_master_contains_recommended_not_yet_live_corrections": true,
+    "fasb_content": "ASC locators and original GH analysis only; no Codification text",
+    "professional_review_required_for_material_conclusions": true
+  }
+}
