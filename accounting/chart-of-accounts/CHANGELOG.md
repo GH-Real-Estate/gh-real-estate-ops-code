@@ -1,5 +1,13 @@
 # Chart of accounts changelog
 
+## 2026-07-13 revision 2 — Revised live Zoho reconciliation
+
+- Reconciled `COA Final Revised.xlsx` to the repository without committing its banking identifiers.
+- Removed the duplicate Lease Termination Fee Income account and retained `4000.10.03 Early Termination / Lease Buyout Income`.
+- Re-coded the remaining tenant-fee children to a unique, contiguous `4000.10.01`–`.07` sequence.
+- Renamed `6130.02` to Building Improvement Depreciation, added live conditional `6130.03 Land Improvement Depreciation`, and moved appliance/furniture/equipment depreciation to `6130.04`.
+- Retained the unresolved controls for entity segregation, Account-ID history, `1590.02` building-only scoping, system/workflow descriptions, and post-recode item/automation verification.
+
 ## 2026-07-13 — Live Zoho reconciliation
 
 - Reconciled the repository to the uploaded 185-account Zoho export: 182 active and three inactive accounts.
