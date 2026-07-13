@@ -1,6 +1,6 @@
 # GH Real Estate chart of accounts
 
-**Current reconciliation:** 2026-07-13  
+**Current reconciliation:** 2026-07-13 revision 2  
 **Property:** 9401 Nieman Road, Overland Park, Kansas 66214  
 **System:** Zoho Books
 
@@ -13,7 +13,8 @@ This directory separates **what is currently in Zoho** from **what GH should tre
 - `current/reconciliation_audit.md` — unresolved live-Zoho actions and substantive audit findings.
 - `current/manifest.json` — counts, hashes, provenance, and security controls.
 - `CHANGELOG.md` — release history.
-- `releases/2026-07-13/` — immutable copy of the reconciled live snapshot, governance master, audit, and manifest.
+- `releases/2026-07-13/` — immutable first reconciliation.
+- `releases/2026-07-13-r2/` — immutable revised snapshot, governance master, audit, and manifest.
 
 The raw workbook is not committed because it contains banking identifiers in its `Account #` column. The sanitized live CSV is the exact repository record for codes, names, types, statuses, parents, descriptions, and Account IDs.
 
@@ -21,7 +22,8 @@ The raw workbook is not committed because it contains banking identifiers in its
 
 - 185 live accounts: 182 active, three inactive.
 - No duplicate IDs, names, or nonblank codes; no orphan parents or formula errors.
-- Immediate review remains required for personal/other-entity feeds, repurposed Zoho Account IDs, overlapping termination-income accounts, and land-improvement depreciation structure.
+- The duplicate termination-income account is resolved and depreciation expense is now separated among building improvements, land improvements, and appliances/equipment.
+- Immediate review remains required for personal/other-entity feeds, repurposed Zoho Account IDs, `1590.02` building-only scoping, and item/automation remapping after the live code changes.
 - `2200.03 Tenant Deposits Held` remains the single refundable-deposit liability control; tenant/unit/deposit-type subledger detail is mandatory.
 
 ## Authority boundary
