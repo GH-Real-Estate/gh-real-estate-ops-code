@@ -11,3 +11,6 @@
 /.github/workflows/accounting-*.yml @GHRealEstate
 /.github/workflows/authority-*.yml @GHRealEstate
 /.github/workflows/repo-checks.yml @GHRealEstate
+/.github/workflows/ci-failure-response.yml @GHRealEstate
+/tools/ci_failure_response/ @GHRealEstate
+/docs/runbooks/ci-failure-response.md @GHRealEstate
