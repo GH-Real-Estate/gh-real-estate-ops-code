@@ -24,8 +24,9 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
         self.assertIn('echo "run_full=true" >> "$GITHUB_OUTPUT"', content)
         self.assertIn("git diff --name-only --no-renames -z", content)
         self.assertIn("authority/*|tools/authority_refresh/*", content)
-        self.assertIn("legal/manifests/authority_registry.json", content)
-        self.assertIn("accounting/manifests/fasb_topic_registry.json", content)
+        self.assertIn("legal/**", content)
+        self.assertIn("accounting/**", content)
+        self.assertIn("legal/*|accounting/*", content)
         self.assertIn("Confirm unrelated pull request", content)
         self.assertEqual(content.count("steps.scope.outputs.run_full != 'false'"), 3)
         self.assertIn("python tools/authority_refresh/validate_system.py", content)
@@ -243,6 +244,15 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
         self.assertIn("name: Returned fee webhook checks", content)
         self.assertIn("fetch-depth: 0", content)
         self.assertIn("continue-on-error: true", content)
+        self.assertIn(
+            "group: repo-checks-${{ github.event.pull_request.number || github.run_id }}",
+            content,
+        )
+        self.assertIn(
+            "cancel-in-progress: ${{ github.event_name == 'pull_request' }}",
+            content,
+        )
+        self.assertEqual(content.count("timeout-minutes: 15"), 3)
         self.assertIn("'run_zillow=true' 'run_returned=true'", content)
         self.assertIn("git diff --name-only --no-renames -z", content)
         self.assertIn("src/zoho-crm/integrations/zillow-lead-intake/*", content)
@@ -256,6 +266,19 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
             "always() && !cancelled() && needs.safety-scan.outputs.run_returned != 'false'",
             content,
         )
+
+
+    def test_accounting_checks_cancel_only_stale_pr_runs_and_have_timeout(self):
+        content = workflow("accounting-authority-checks.yml")
+        self.assertIn(
+            "group: accounting-authority-checks-${{ github.event.pull_request.number || github.run_id }}",
+            content,
+        )
+        self.assertIn(
+            "cancel-in-progress: ${{ github.event_name == 'pull_request' }}",
+            content,
+        )
+        self.assertIn("timeout-minutes: 15", content)
 
     def test_official_actions_are_pinned_to_immutable_commits(self):
         mutable_reference = re.compile(r"uses:\s+actions/[^@\s]+@(?![0-9a-f]{40}(?:\s|$))")

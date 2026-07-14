@@ -10,10 +10,15 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: repo-checks-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   safety-scan:
     name: Safety scan
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     outputs:
       run_zillow: ${{ steps.scope.outputs.run_zillow }}
       run_returned: ${{ steps.scope.outputs.run_returned }}
@@ -111,6 +116,7 @@ jobs:
     needs: safety-scan
     if: ${{ always() && !cancelled() && needs.safety-scan.outputs.run_zillow != 'false' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: src/zoho-crm/integrations/zillow-lead-intake
@@ -131,6 +137,7 @@ jobs:
     needs: safety-scan
     if: ${{ always() && !cancelled() && needs.safety-scan.outputs.run_returned != 'false' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: src/zoho-payments/webhooks/returned-payment-fee
