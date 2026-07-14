@@ -45,6 +45,8 @@ The document must not be released for signature until all of the following are t
 - Every listed animal has exactly one classification, name or other identifying label, species/type, identifying description, and classification effective date.
 - Household-status checkboxes are derived from the animal schedule and agree with it.
 - Every ordinary-pet charge is populated with a numeric amount or an explicit not-applicable selection; no financial field is blank.
+- The final Lease or signed prospective amendment and the executed addendum expressly adopt the one-time Ordinary-Pet Administration Fee before it is assessed.
+- Qualified Kansas counsel has approved the fee language and CPA/accounting review has approved the revenue classification, Zoho Books item, and posting workflow.
 - Approved and interim assistance animals are excluded from pet-deposit, pet-rent, pet-fee, and animal-specific insurance calculations.
 - Any interim arrangement states its operational terms and expiration date.
 - No diagnosis, medical record, disability details, accommodation support document, live signature image, or tenant-specific test payload is placed in this repository or merged into the lease packet.
@@ -68,11 +70,17 @@ The document must not be released for signature until all of the following are t
 | Deposit accounting | Treat as part of the Kansas security-deposit regime; account for, itemize, apply, and return it with the general security deposit as required by the lease and law |
 | Monthly pet rent | Classify as an `Other Charge`, not `Base Rent` |
 | Blank fields | Generation must fail; the template fallback is `$0.00`, but production must require `$0.00` or an explicit not-applicable choice |
-| Nonrefundable administration fee | Not authorized by the current GH fee policy; do not merge, invoice, or collect it |
+| One-time Ordinary-Pet Administration Fee | `$50.00` once per household for the continuous tenancy, cost-linked to actual ordinary-pet approval-processing work; due only after at least one Ordinary Pet is approved and the signed addendum becomes effective |
+| Administration-fee character | An `Other Charge`, not `Base Rent` or a security deposit; never held for, credited toward, or used to pay damage, cleaning, pest treatment, wear, performance, or breach |
+| No repeat administration fee | Do not charge again at renewal, extension, holdover, replacement-pet approval, additional-pet approval, or a later animal-addendum update during the same continuous tenancy |
+| Pending or approved accommodation | Pause an unassessed administration fee while an accommodation request concerning the fee-triggering animal is pending; use `$0.00` / not applicable for an Approved or Interim Assistance Animal |
+| Later assistance-animal approval | If the sole animal that triggered the administration fee is later approved as an assistance animal, promptly refund or credit the `$50.00`; if at least one approved Ordinary Pet remains, route the fee for individualized review rather than issuing an automatic refund |
 | Late fee, interest, and payment allocation | Do not create a separate formula in the animal addendum; the final lease and approved automation rules control |
 | Approved or interim assistance animal | No pet fee, pet rent, pet deposit, or animal-specific insurance requirement as a condition of the accommodation |
 
-The actual pet-deposit amount, monthly pet-rent rate, chargeable Ordinary-Pet count, first due date, and any approved proration method remain required business inputs. Do not deploy placeholder or blank values.
+The `$50.00` administration fee is a prospective attorney-review policy, not a production authorization. It is ordinarily nonrefundable once earned at effective approval and execution, subject to the assistance-animal refund/credit rule above and any controlling law. It must not be charged before effective approval and execution, after a denial or pre-effectiveness withdrawal, or through a unilateral mid-tenancy rule change. A material mid-tenancy addition requires a signed prospective amendment. GH must retain an internal, non-PII cost rationale for the actual approval-processing work and must not describe the fee as reimbursement for damage or risk.
+
+The actual pet-deposit amount, monthly pet-rent rate, chargeable Ordinary-Pet count, first due date, and any approved proration method remain required business inputs. Do not deploy placeholder or blank values. The administration fee does not create a separate late-fee, interest, collection-cost, or payment-allocation rule.
 
 ## Assistance-Animal Workflow Rules
 
@@ -81,6 +89,7 @@ The actual pet-deposit amount, monthly pet-rent rate, chargeable Ordinary-Pet co
 - A commercial registry, certificate, card, vest, or internet letter is neither required nor independently conclusive.
 - Do not request a diagnosis, medical records, or disability details beyond information lawfully permitted and reasonably necessary for the individualized review.
 - Do not use an ordinary-pet approval, breed, size, species, number, photograph, charge, insurance, or revocation rule automatically against an approved or interim assistance animal.
+- Pause assessment and collection of an unassessed Ordinary-Pet Administration Fee when an accommodation request concerning the fee-triggering animal is pending. Do not treat the pause as approval, denial, or an interim accommodation.
 - Apply the Fair Housing Act, 24 C.F.R. section 100.204, Kansas law, and any applicable conditional program rule through an individualized analysis. Consider necessity, reasonableness, undue financial or administrative burden, fundamental alteration, direct threat, substantial property damage, and effective mitigation only as applicable to the facts.
 - A direct-threat or substantial-damage decision must rely on reliable, objective evidence about the specific animal, current conduct or recent overt acts, the nature/duration/severity/probability of the risk, and whether reasonable measures would sufficiently reduce it. Do not rely on generalized fear, stereotype, breed, size, or species alone.
 - A pending request is not automatically approved or denied. Animal presence during review must follow applicable law and any express interim written arrangement.
@@ -118,7 +127,7 @@ The applicable Overland Park animal-control, licensing, rabies, waste, control, 
 
 1. Attorney approval of the final consolidated form and the post-May-2026 assistance-animal decision process.
 2. Full-lease reconciliation for definitions of Rent, Base Rent, Other Charges, security deposit, payment application, access, default, notice, renewal, and rules.
-3. Confirmed pet-deposit and monthly-pet-rent pricing, due dates, proration, accounting, and invoicing ownership.
+3. Confirmed pet-deposit and monthly-pet-rent pricing, due dates, proration, accounting, and invoicing ownership, plus attorney and CPA/accounting approval of the prospective `$50.00` administration fee, cost rationale, Zoho item, and refund/credit treatment.
 4. Decision on ordinary-pet eligibility standards, supported by consistent administration and insurance review.
 5. Decision on the standard interim-arrangement duration and escalation path.
 6. Applicability check for HCV, Section 504, HUD-insured/assisted housing, federally backed financing, or another program-specific overlay.
@@ -129,6 +138,8 @@ The applicable Overland Park animal-control, licensing, rabies, waste, control, 
 | Topic | Status | Repository reference |
 |---|---|---|
 | Kansas pet-deposit cap and security-deposit treatment, K.S.A. 58-2550 | Binding Kansas law; verify live before use | `legal/text/current/authorities/kansas/core-article25/k-s-a-58-2550-2d8cc759c5.md` |
+| Kansas definitions of Rent and security deposit, K.S.A. 58-2543, and unconscionability review, K.S.A. 58-2544 | Binding Kansas law; substance and facts control | `legal/text/current/authorities/kansas/core-article25/k-s-a-58-2543-00b45d5eec.md` and `legal/text/current/authorities/kansas/core-article25/k-s-a-58-2544-306203dede.md` |
+| Kansas consumer deceptive/unconscionable-practice rules, K.S.A. 50-626 and 50-627 | Binding Kansas law; fact-specific | `legal/text/current/authorities/kansas/consumer-protection/k-s-a-50-626-46622e36fe.md` and `legal/text/current/authorities/kansas/consumer-protection/k-s-a-50-627-792a5b8df4.md` |
 | Prohibited lease terms, K.S.A. 58-2547 | Binding Kansas law; verify live before use | `legal/CURRENT_AUTHORITY_INDEX.md` and the matching approved authority file |
 | Tenant duties, rules, and remedies, K.S.A. 58-2555, 58-2556, and 58-2564 | Binding Kansas law; verify live before use | `legal/CURRENT_AUTHORITY_INDEX.md` and matching `legal/text/current/authorities/kansas/` files |
 | Kansas fair-housing accommodation law, K.S.A. 44-1016 | Binding Kansas law; fact-specific | `legal/text/current/authorities/kansas/fair-housing/k-s-a-44-1016-8c156bd9ba.md` |
@@ -144,7 +155,7 @@ Start legal review with `legal/CURRENT_AUTHORITY_INDEX.md`, `legal/PROJECT_INSTR
 ## Implementation and Rollback
 
 - Keep both legacy templates active until counsel approves the consolidated form and the complete merge/signature path passes sanitized tests.
+- Do not assess the prospective `$50.00` administration fee until the complete Lease/addendum language, signed prospective-adoption method, cost rationale, Zoho Books item, accounting treatment, accommodation pause, refund/credit path, and duplicate-prevention controls are approved and tested.
 - After approval, replace the two legacy tenant-facing templates with one consolidated template in Zoho Contracts/WorkDrive and archive the superseded versions with clear effective dates.
 - Do not interpret merging this Markdown file as deploying or approving a lease document.
 - Rollback is documentation-only: revert this file and the related merge-field map. A template or signed-document rollback must occur in Zoho Contracts/WorkDrive under the approved document-control process.
-
