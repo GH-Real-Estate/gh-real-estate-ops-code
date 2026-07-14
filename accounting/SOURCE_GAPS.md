@@ -31,7 +31,7 @@ The July 12, 2026 accounting release is a strong operational index for GH Real E
 
 ## Automated discovery limits
 
-- Daily discovery covers 9 configured accounting publisher indexes. It does not search the FASB Codification, tax research platforms, private letter rulings, court dockets, local tax administration, or every publication that could affect a transaction.
+- Weekly discovery covers 9 configured accounting publisher indexes. It does not search the FASB Codification, tax research platforms, private letter rulings, court dockets, local tax administration, or every publication that could affect a transaction.
 - A `current` result means no new, modified, or comparison-eligible missing item was detected under the configured comparison policies and no degradation condition occurred. It does not advance the July 12, 2026 release, prove that a conclusion remains valid, or establish US GAAP or tax compliance.
 - FASB results are metadata-only. Exact Codification text, subtopics, paragraphs, scope exceptions, effective dates, transition provisions, and private-company alternatives require authorized live access and qualified review.
 - Recent-item IRS and Treasury indexes use `rolling-window` missing semantics. An older item leaving the published window is not classified as withdrawn, superseded, revoked, or missing.
