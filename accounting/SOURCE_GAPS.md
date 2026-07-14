@@ -34,7 +34,8 @@ The July 12, 2026 accounting release is a strong operational index for GH Real E
 - Tax-year forms, thresholds, mileage rates, bonus depreciation, information-return rules, estimated-tax dates, local rate tables, and property-appeal deadlines are volatile.
 - A semiannual formal review does not replace transaction-triggered, filing-season, weekly-guidance, or notice-specific deadline review.
 - Retrieval success and a source fingerprint do not prove legal currentness, unchanged meaning, effective date, or applicability.
-- The initial tax registry records fingerprints for reviewer use; an `approved_sha256` remains null until a reviewer confirms the retrieved payload is an appropriate stable comparison baseline.
+- The initial tax registry records fingerprints for reviewer use; an `approved_sha256` remains null until a reviewer confirms the retrieved payload is an appropriate stable comparison baseline. An unbaselined direct source is actionable and makes the monitor fail closed.
+- Overland Park Chapter 5.75 monitoring is delegated to the existing legal monitor's semantic official-export comparison; the tax monitor must not hash the JavaScript document-viewer shell.
 - Kansas and Overland Park sources in the accounting sourcebooks are summaries; use the `legal/` corpus and live official sources for legal action.
 - Case-law coverage is not exhaustive.
 - A signed lease can change the accounting evidence and timing but cannot override mandatory law.
@@ -42,4 +43,3 @@ The July 12, 2026 accounting release is a strong operational index for GH Real E
 ## Resolution process
 
 Document the missing fact, source, reviewer, conclusion, effective period, and resulting journal or tax adjustment in a pull request. Update the registry, sourcebook, matrix, and changelog only after review; do not silently overwrite a dated conclusion or auto-merge an authority change.
-
