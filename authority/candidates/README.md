@@ -1,6 +1,6 @@
 # Authority discovery candidates
 
-This directory holds unapproved evidence produced by the daily authority-discovery workflow. It is a review queue, not a current legal or accounting library.
+This directory holds unapproved evidence produced by the weekly Sunday authority-discovery workflow. It is a review queue, not a current legal or accounting library.
 
 ## States
 
