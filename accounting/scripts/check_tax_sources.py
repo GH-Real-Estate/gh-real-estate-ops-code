@@ -29,6 +29,7 @@ from urllib.parse import urlparse
 
 USER_AGENT = "GH-Real-Estate-Tax-Authority-Monitor/1.0"
 MAX_BYTES = 30 * 1024 * 1024
+MIN_BYTES = 32
 TIMEOUT_SECONDS = 45
 RETRY_ATTEMPTS = 3
 RETRYABLE_HTTP_CODES = {408, 425, 429, 500, 502, 503, 504}
@@ -36,6 +37,7 @@ MAX_RETRY_DELAY = 15.0
 DEFAULT_HOST_CONCURRENCY = 2
 ISSUE_MAX_ITEMS = 25
 ISSUE_MAX_CHARS = 25_000
+ACTIONABLE_STATUSES = frozenset({"changed", "error", "review-due", "manual-baseline"})
 SSL_CONTEXT = ssl.create_default_context()
 
 ALLOWED_HOSTS = {
@@ -47,6 +49,7 @@ ALLOWED_HOSTS = {
     "ksrevenue.gov",
     "ksrevisor.gov",
     "missionks.org",
+    "online.encodeplus.com",
     "opkansas.gov",
     "opkansas.org",
     "sos.ks.gov",
@@ -78,6 +81,42 @@ SOURCEBOOK_PATHS = (
     "accounting/text/current/02_GH_Kansas_Rental_Accounting_and_Tax_Law_Sourcebook_2026-07-12.txt",
     "accounting/text/current/03_GH_Overland_Park_and_Johnson_County_Compliance_Sourcebook_2026-07-12.txt",
 )
+
+
+def validate_official_url(url: str, context: str) -> None:
+    """Reject non-HTTPS, credentialed, nonstandard-port, or unapproved URLs."""
+    parsed = urlparse(url)
+    try:
+        port = parsed.port
+    except ValueError as exc:
+        raise ValueError(f"{context} has an invalid URL port") from exc
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname not in ALLOWED_HOSTS
+        or parsed.username is not None
+        or parsed.password is not None
+        or port not in {None, 443}
+    ):
+        raise ValueError(f"{context} does not use an approved official HTTPS URL")
+
+
+class OfficialRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Validate each redirect before urllib contacts the next endpoint."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        validate_official_url(newurl, "redirect target")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+SAFE_OPENER = urllib.request.build_opener(
+    OfficialRedirectHandler(), urllib.request.HTTPSHandler(context=SSL_CONTEXT)
+)
+
+
+def open_official(request, *, timeout: int, context=None):
+    """Open a registry request with a redirect-enforcing HTTPS opener."""
+    del context
+    return SAFE_OPENER.open(request, timeout=timeout)
 
 
 def fail(message: str) -> None:
@@ -146,19 +185,25 @@ def validate_registry(
 
         if item["authority_weight"] not in ALLOWED_AUTHORITY_WEIGHTS:
             fail(f"{record_id} has unsupported authority weight")
-        if item["monitoring_mode"] != "availability-and-fingerprint":
+        monitoring_mode = item["monitoring_mode"]
+        if monitoring_mode not in {
+            "availability-and-fingerprint",
+            "delegated-to-legal-monitor",
+        }:
             fail(f"{record_id} has unsupported monitoring mode")
         if item["volatility"] not in {"low", "medium", "high", "annual"}:
             fail(f"{record_id} has unsupported volatility")
 
-        parsed = urlparse(str(item["official_url"]))
-        if parsed.scheme != "https" or parsed.hostname not in ALLOWED_HOSTS:
-            fail(f"{record_id} does not use an approved official HTTPS host")
+        validate_official_url(str(item["official_url"]), record_id)
 
         last_reviewed = parse_iso_date(item["last_reviewed"], "last_reviewed", record_id)
         next_review = parse_iso_date(item["next_review"], "next_review", record_id)
         if next_review <= last_reviewed:
             fail(f"{record_id} next_review must follow last_reviewed")
+        if next_review.month not in {1, 7} or next_review.day != 15:
+            fail(f"{record_id} next_review must be January 15 or July 15")
+        if (next_review - last_reviewed).days > 190:
+            fail(f"{record_id} next_review exceeds the semiannual interval")
 
         content_types = item["expected_content_types"]
         if not isinstance(content_types, list) or not content_types:
@@ -171,6 +216,42 @@ def validate_registry(
             r"[0-9a-f]{64}", str(approved_sha256)
         ):
             fail(f"{record_id} has an invalid approved_sha256")
+
+        if monitoring_mode == "delegated-to-legal-monitor":
+            delegated_fields = {
+                "delegated_citation",
+                "delegated_registry_path",
+                "delegated_monitor_workflow",
+            }
+            missing_delegated = delegated_fields.difference(item)
+            if missing_delegated:
+                fail(
+                    f"{record_id} lacks delegated fields: "
+                    + ", ".join(sorted(missing_delegated))
+                )
+            if approved_sha256 is not None:
+                fail(f"{record_id} delegated source must not set approved_sha256")
+            registry_relative = Path(str(item["delegated_registry_path"]))
+            workflow_relative = Path(str(item["delegated_monitor_workflow"]))
+            for relative in (registry_relative, workflow_relative):
+                if relative.is_absolute() or ".." in relative.parts:
+                    fail(f"{record_id} has an unsafe delegated repository path")
+            if check_sourcebooks:
+                registry_path = repository_root / registry_relative
+                workflow_path = repository_root / workflow_relative
+                if not registry_path.is_file() or not workflow_path.is_file():
+                    fail(f"{record_id} delegated legal-monitor files are missing")
+                delegated_records = json.loads(registry_path.read_text(encoding="utf-8"))
+                match = next(
+                    (
+                        candidate
+                        for candidate in delegated_records
+                        if candidate.get("citation") == item["delegated_citation"]
+                    ),
+                    None,
+                )
+                if not match or match.get("official_url") != item["official_url"]:
+                    fail(f"{record_id} delegated legal record does not match")
 
         sourcebook_ids = item["sourcebook_ids"]
         if not isinstance(sourcebook_ids, list):
@@ -210,7 +291,7 @@ def download(
     record: dict[str, object],
     *,
     attempts: int = RETRY_ATTEMPTS,
-    opener=urllib.request.urlopen,
+    opener=open_official,
     sleep=time.sleep,
 ) -> dict[str, object]:
     """Retrieve one trusted registry source with bounded transient retries."""
@@ -229,9 +310,11 @@ def download(
             )
             with opener(request, timeout=TIMEOUT_SECONDS, context=SSL_CONTEXT) as response:
                 final_url = response.geturl()
-                final_host = urlparse(final_url).hostname
-                if final_host not in ALLOWED_HOSTS:
-                    raise ValueError(f"redirected to unapproved host {final_host}")
+                validate_official_url(final_url, "final response URL")
+
+                status = int(getattr(response, "status", 0))
+                if not 200 <= status < 300:
+                    raise ValueError(f"unexpected HTTP status {status}")
 
                 content_length = response.headers.get("Content-Length")
                 if content_length and int(content_length) > MAX_BYTES:
@@ -248,13 +331,20 @@ def download(
                     if received > MAX_BYTES:
                         raise ValueError(f"source exceeds {MAX_BYTES} bytes")
                     digest.update(block)
-                    if len(prefix) < 32:
-                        prefix.extend(block[: 32 - len(prefix)])
+                    if len(prefix) < 4096:
+                        prefix.extend(block[: 4096 - len(prefix)])
+
+                if received < MIN_BYTES:
+                    raise ValueError(
+                        f"source returned only {received} bytes; minimum is {MIN_BYTES}"
+                    )
 
                 content_type = str(response.headers.get("Content-Type", ""))
                 content_type = content_type.split(";", 1)[0].strip().lower()
+                if not content_type:
+                    raise ValueError("official source omitted Content-Type")
                 expected = set(record["expected_content_types"])
-                if content_type and content_type not in expected:
+                if content_type not in expected:
                     if not (
                         content_type == "application/octet-stream"
                         and "application/pdf" in expected
@@ -263,12 +353,27 @@ def download(
                         raise ValueError(
                             f"unexpected content type {content_type}; expected {sorted(expected)}"
                         )
-                if "application/pdf" in expected and content_type == "application/pdf":
+                if content_type in {"application/pdf", "application/octet-stream"}:
                     if not bytes(prefix).startswith(b"%PDF-"):
                         raise ValueError("official PDF endpoint did not return a PDF")
+                if content_type in {"text/html", "application/xhtml+xml"}:
+                    html_prefix = bytes(prefix).lstrip(b"\xef\xbb\xbf \t\r\n").lower()
+                    if b"<html" not in html_prefix and not html_prefix.startswith(
+                        b"<!doctype html"
+                    ):
+                        raise ValueError("official HTML endpoint did not return HTML")
+                    soft_errors = (
+                        b"<title>access denied",
+                        b"<title>page not found",
+                        b"<title>not found",
+                        b"cf-chl-",
+                        b"captcha challenge",
+                    )
+                    if any(marker in html_prefix for marker in soft_errors):
+                        raise ValueError("official endpoint returned a soft-error page")
                 return {
                     "ok": True,
-                    "http_status": getattr(response, "status", 200),
+                    "http_status": status,
                     "final_url": final_url,
                     "content_type": content_type or "unreported",
                     "bytes": received,
@@ -302,10 +407,16 @@ def download(
 def evaluate(
     records: list[dict[str, object]], as_of: date, *, formal_review: bool, workers: int
 ) -> list[dict[str, object]]:
+    direct_records = [
+        record
+        for record in records
+        if record["monitoring_mode"] == "availability-and-fingerprint"
+    ]
     semaphores = {
         host: threading.BoundedSemaphore(DEFAULT_HOST_CONCURRENCY)
         for host in {
-            urlparse(str(record["official_url"])).hostname or "" for record in records
+            urlparse(str(record["official_url"])).hostname or ""
+            for record in direct_records
         }
     }
 
@@ -315,10 +426,25 @@ def evaluate(
             return download(record)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, workers)) as executor:
-        downloads = list(executor.map(retrieve, records))
+        direct_downloads = list(executor.map(retrieve, direct_records))
+    downloads_by_id = {
+        str(record["id"]): retrieval
+        for record, retrieval in zip(direct_records, direct_downloads)
+    }
 
     results: list[dict[str, object]] = []
-    for record, retrieval in zip(records, downloads):
+    for record in records:
+        delegated = record["monitoring_mode"] == "delegated-to-legal-monitor"
+        retrieval = (
+            {
+                "ok": True,
+                "delegated": True,
+                "delegated_citation": record["delegated_citation"],
+                "attempts": 0,
+            }
+            if delegated
+            else downloads_by_id[str(record["id"])]
+        )
         due = formal_review or parse_iso_date(
             record["next_review"], "next_review", str(record["id"])
         ) <= as_of
@@ -336,7 +462,9 @@ def evaluate(
             "review_due": due,
             **retrieval,
         }
-        if not retrieval.get("ok"):
+        if delegated:
+            result["status"] = "review-due" if due else "delegated"
+        elif not retrieval.get("ok"):
             result["status"] = "error"
         elif record["approved_sha256"] is not None and (
             retrieval["retrieved_sha256"] != record["approved_sha256"]
@@ -350,7 +478,14 @@ def evaluate(
             result["status"] = "manual-baseline"
         results.append(result)
 
-    order = {"changed": 0, "error": 1, "review-due": 2, "manual-baseline": 3, "unchanged": 4}
+    order = {
+        "changed": 0,
+        "error": 1,
+        "review-due": 2,
+        "manual-baseline": 3,
+        "unchanged": 4,
+        "delegated": 5,
+    }
     results.sort(key=lambda item: (order[str(item["status"])], str(item["id"])))
     return results
 
@@ -392,6 +527,7 @@ def report_lines(payload: dict[str, object], *, issue: bool = False) -> list[str
         f"- Retrieval errors: {counts['error']}",
         f"- Formal reviews due: {counts['review-due']}",
         f"- Reachable sources awaiting a reviewer-approved fingerprint: {counts['manual-baseline']}",
+        f"- Sources delegated to the governed legal monitor: {counts['delegated']}",
         "",
         "> This report detects review candidates only. It does not establish that law changed or that a tax position applies.",
         "",
@@ -399,7 +535,7 @@ def report_lines(payload: dict[str, object], *, issue: bool = False) -> list[str
     actionable = [
         item
         for item in payload["results"]
-        if item["status"] in {"changed", "error", "review-due"}
+        if item["status"] in ACTIONABLE_STATUSES
     ]
     shown = actionable[:ISSUE_MAX_ITEMS] if issue else payload["results"]
     for item in shown:
@@ -414,6 +550,7 @@ def report_lines(payload: dict[str, object], *, issue: bool = False) -> list[str
                 f"- Last / next review: {item['last_reviewed']} / {item['next_review']}",
                 f"- Retrieved SHA-256: `{item.get('retrieved_sha256', 'unavailable')}`",
                 f"- Approved SHA-256: `{item.get('approved_sha256') or 'not yet approved'}`",
+                f"- Delegated legal citation: `{item.get('delegated_citation') or 'not delegated'}`",
                 f"- ETag / Last-Modified: `{item.get('etag') or 'none'}` / `{item.get('last_modified') or 'none'}`",
                 f"- Error: {item.get('error', 'none')}",
                 f"- Reviewer gate: {item['reviewer_gate']}",
@@ -471,7 +608,14 @@ def main() -> int:
         formal_review=args.formal_review,
         workers=args.workers,
     )
-    statuses = ("unchanged", "changed", "error", "review-due", "manual-baseline")
+    statuses = (
+        "unchanged",
+        "changed",
+        "error",
+        "review-due",
+        "manual-baseline",
+        "delegated",
+    )
     counts = {status: sum(item["status"] == status for item in results) for status in statuses}
     payload = {
         "checked_at": datetime.now(timezone.utc).isoformat(),
@@ -499,7 +643,7 @@ def main() -> int:
         write_atomic(args.issue_report, issue_text)
 
     print(json.dumps(counts))
-    return 2 if counts["changed"] or counts["error"] or counts["review-due"] else 0
+    return 2 if any(counts[status] for status in ACTIONABLE_STATUSES) else 0
 
 
 if __name__ == "__main__":
