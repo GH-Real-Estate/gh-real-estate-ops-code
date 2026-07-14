@@ -315,14 +315,15 @@ def _bounded_read(response: Any, max_bytes: int) -> bytes:
     length = response.headers.get("Content-Length")
     if length:
         try:
-            if int(length) > max_bytes:
-                raise AuthorityRefreshError(
-                    f"response exceeds configured {max_bytes}-byte limit"
-                )
+            declared_length = int(length)
         except ValueError:
             # Content-Length is advisory; the bounded read loop below still
             # enforces max_bytes when an upstream server sends malformed data.
-            length = None
+            declared_length = None
+        if declared_length is not None and declared_length > max_bytes:
+            raise AuthorityRefreshError(
+                f"response exceeds configured {max_bytes}-byte limit"
+            )
     chunks: list[bytes] = []
     total = 0
     while True:
