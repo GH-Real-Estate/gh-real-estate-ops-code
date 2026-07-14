@@ -16,17 +16,22 @@ Do not store signed leases here. Do not store tenant-specific completed merge da
 
 ## Lead-disclosure pre-execution gate
 
-For covered target housing, no named lessee may receive a binding lease-signature action until the matching lead record is complete. Use the detailed field definitions in [lead-disclosure-merge-fields.md](lead-disclosure-merge-fields.md).
+For covered target housing, no named lessee may receive a binding lease-signature action until the matching lead record is complete and the exact completed Addendum A PDF is included in the recipient-visible lease package as Exhibit LD-1. Use the detailed field definitions in [lead-disclosure-merge-fields.md](lead-disclosure-merge-fields.md).
 
 | Lease gate field | Source system | Allowed value for lease release | Validation |
 |---|---|---|---|
 | Lead Applicability | Compliance / Creator | `Covered` or `Exempt` | Blank or unresolved defaults to Covered |
 | Lead Record ID | Compliance / Contracts | Matching transaction record ID | Property, unit, leasing period, and named lessees must match this lease |
 | Lead Record Status | Compliance workflow | `Completed` or `Approved Exempt` | All other states block create/send/signature actions |
-| Lead Completion Timestamp | Compliance workflow | Nonblank immutable timestamp | Signature action remains disabled until present; audit later confirms it precedes each binding lease signature |
+| Lead Completion Timestamp | Compliance workflow | Nonblank immutable timestamp | Required for Completed |
 | Lead Exemption Approval | Legal review | Attorney approval reference | Required only for Approved Exempt |
 | Lead Recipient Reconciliation | Sign / Contracts | Exact match | Named lessees, disclosure recipients, acknowledgments, and certifications must be the same set |
-| Lead Audit / Archive ID | Sign / WorkDrive | Nonblank immutable record | Required before release |
+| Lead Audit / Archive ID | Sign / WorkDrive | Nonblank immutable record | Required for Completed |
+| Completed Addendum A File ID | Sign / WorkDrive | Immutable completed PDF ID | Required for Completed |
+| Completed Addendum A SHA-256 | Compliance | Nonblank verified hash | Required for Completed |
+| Exhibit LD-1 Attachment ID | Contracts / Sign | Recipient-visible lease attachment ID | Required for covered transactions before release |
+| Exhibit LD-1 SHA-256 | Contracts / compliance | Exact hash match | Must equal Completed Addendum A SHA-256 |
+| Final Contract Package SHA-256 | Contracts / archive | Nonblank after execution | Archive control; not a pre-signature field |
 
 ### Gate expression
 
@@ -34,12 +39,17 @@ For covered target housing, no named lessee may receive a binding lease-signatur
 lease_signature_enabled =
   (
     lead_record.status == "Completed"
-    AND lead_record.transaction_id == lease.transaction_id
+    AND lead_record.draft_lease_contract_id == lease.contract_id
     AND lead_record.property_id == lease.property_id
     AND lead_record.unit_id == lease.unit_id
     AND lead_record.named_lessees == lease.named_lessees
     AND lead_record.completion_timestamp IS NOT BLANK
     AND lead_record.audit_id IS NOT BLANK
+    AND lead_record.archive_record_id IS NOT BLANK
+    AND lead_record.completed_pdf_file_id IS NOT BLANK
+    AND lead_record.completed_pdf_hash IS NOT BLANK
+    AND lease.exhibit_ld1_attachment_id IS NOT BLANK
+    AND lease.exhibit_ld1_attachment_hash == lead_record.completed_pdf_hash
   )
   OR
   (
@@ -49,6 +59,6 @@ lease_signature_enabled =
   )
 ```
 
-After execution, the audit must prove that `lead_record.completion_timestamp` preceded every named lessee's binding lease-signature timestamp.
+After execution, the audit must prove that the disclosure delivery/completion preceded every named lessee's binding lease-signature timestamp and must store the final contract-package hash.
 
-If Zoho cannot enforce field and document order inside a single transaction, complete a standalone lead-disclosure transaction first and create/send the lease transaction only after the first transaction passes this gate. Do not rely on a later lessor countersignature to cure late disclosure.
+Use two sequential transactions when Zoho cannot enforce the same order in one transaction: complete the standalone lead-disclosure transaction first, then attach its exact completed PDF as Exhibit LD-1 and send the lease. A clause reference, WorkDrive-only file, internal-only attachment, or later lessor countersignature does not satisfy this gate.
