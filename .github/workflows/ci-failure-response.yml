@@ -66,10 +66,11 @@ on:
 permissions:
   contents: read
 
-# Serialize only observations that can mutate the same workflow-and-branch
-# incident. Unrelated workflows and branches must not delay alert publication.
+# Serialize observations that can mutate the same workflow-and-branch incident.
+# queue:max preserves bursts instead of replacing an already-pending observation.
 concurrency:
   group: ci-failure-response-${{ github.event.workflow_run.workflow_id || github.workflow }}-${{ github.event.workflow_run.head_branch || inputs.head_branch || github.ref_name }}
+  queue: max
   cancel-in-progress: false
 
 jobs:
