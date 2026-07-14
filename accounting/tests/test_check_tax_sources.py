@@ -147,10 +147,20 @@ class TaxSourceMonitorTests(unittest.TestCase):
             sample_record(id="FED-TEST-001", approved_sha256="a" * 64),
             sample_record(id="FED-TEST-002", next_review="2026-07-13"),
             sample_record(id="FED-TEST-003"),
+            sample_record(
+                id="FED-TEST-004",
+                approved_sha256="d" * 64,
+                next_review="2026-07-13",
+            ),
         ]
 
         def fake_download(record):
-            digest = "b" * 64 if record["id"] == "FED-TEST-001" else "c" * 64
+            if record["id"] == "FED-TEST-001":
+                digest = "b" * 64
+            elif record["id"] == "FED-TEST-004":
+                digest = "d" * 64
+            else:
+                digest = "c" * 64
             return {"ok": True, "retrieved_sha256": digest, "attempts": 1}
 
         with mock.patch.object(monitor, "download", side_effect=fake_download):
@@ -161,6 +171,7 @@ class TaxSourceMonitorTests(unittest.TestCase):
         self.assertEqual("changed", by_id["FED-TEST-001"])
         self.assertEqual("review-due", by_id["FED-TEST-002"])
         self.assertEqual("manual-baseline", by_id["FED-TEST-003"])
+        self.assertEqual("review-due", by_id["FED-TEST-004"])
 
     def test_atomic_report_write_replaces_complete_target(self):
         with tempfile.TemporaryDirectory() as directory:
