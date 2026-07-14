@@ -1,0 +1,129 @@
+name: Tax Authority Monitor and Semiannual Review
+
+on:
+  schedule:
+    - cron: '23 14 15 1,7 *'
+  workflow_dispatch:
+    inputs:
+      force_formal_review:
+        description: Treat every registered source as due for formal review
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: tax-authority-review-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review-tax-authorities:
+    name: Retrieve official sources and enforce the review calendar
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check official tax sources
+        id: review
+        continue-on-error: true
+        shell: bash
+        env:
+          FORCE_FORMAL_REVIEW: ${{ inputs.force_formal_review }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ARTIFACT_NAME: tax-authority-review-${{ github.run_id }}
+        run: |
+          args=()
+          if [[ "$FORCE_FORMAL_REVIEW" == "true" ]]; then
+            args+=(--formal-review)
+          fi
+          timeout --signal=TERM --kill-after=30s 20m \
+            python accounting/scripts/check_tax_sources.py \
+              "${args[@]}" \
+              --json-report tax-authority-review.json \
+              --markdown-report tax-authority-review.md \
+              --issue-report tax-authority-review-issue.md \
+              --workflow-run-url "$RUN_URL" \
+              --artifact-name "$ARTIFACT_NAME"
+
+      - name: Ensure failure reports exist
+        if: always()
+        shell: bash
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ARTIFACT_NAME: tax-authority-review-${{ github.run_id }}
+        run: |
+          if [[ ! -s tax-authority-review.json ]]; then
+            printf '%s\n' '{"checked_at":null,"notice":"Workflow failed before report generation.","counts":{"unchanged":0,"changed":0,"error":1,"review-due":0,"manual-baseline":0},"results":[]}' > tax-authority-review.json
+          fi
+          if [[ ! -s tax-authority-review.md ]]; then
+            printf '%s\n' \
+              '# Tax-authority monitor workflow failure' \
+              '' \
+              'The workflow failed before producing a complete report.' \
+              '' \
+              "- Workflow run: $RUN_URL" \
+              "- Expected artifact: $ARTIFACT_NAME" \
+              > tax-authority-review.md
+          fi
+          if [[ ! -s tax-authority-review-issue.md ]] || [[ $(wc -c < tax-authority-review-issue.md) -gt 60000 ]]; then
+            printf '%s\n' \
+              '# Tax-authority monitor workflow failure' \
+              '' \
+              'Treat the registered sources as unverified until this run is reviewed.' \
+              '' \
+              "- Workflow run: $RUN_URL" \
+              "- Expected artifact: $ARTIFACT_NAME" \
+              > tax-authority-review-issue.md
+          fi
+
+      - name: Upload tax review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tax-authority-review-${{ github.run_id }}
+          path: |
+            tax-authority-review.json
+            tax-authority-review.md
+            tax-authority-review-issue.md
+          retention-days: 200
+          if-no-files-found: error
+
+      - name: Open or update tax-review issue
+        if: steps.review.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          title='TAX REVIEW REQUIRED: official sources changed, failed, or are due'
+          existing="$(
+            gh issue list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --search "$title in:title" \
+              --json number \
+              --jq '.[0].number // empty'
+          )"
+          if [[ -n "$existing" ]]; then
+            gh issue comment "$existing" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body-file tax-authority-review-issue.md
+          else
+            gh issue create \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$title" \
+              --body-file tax-authority-review-issue.md
+          fi
+
+      - name: Fail after preserving the report
+        if: steps.review.outcome == 'failure'
+        run: exit 1
