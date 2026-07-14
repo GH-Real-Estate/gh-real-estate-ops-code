@@ -34,6 +34,10 @@ class LegalSourceMonitorWorkflowTests(unittest.TestCase):
             self.workflow,
         )
 
+    def test_artifact_retention_is_bounded(self):
+        self.assertIn("retention-days: 14", self.workflow)
+        self.assertNotIn("retention-days: 90", self.workflow)
+
     def test_issue_publication_is_default_branch_only_and_runs_are_serialized(self):
         self.assertIn(
             "github.ref == format('refs/heads/{0}', github.event.repository.default_branch)",
