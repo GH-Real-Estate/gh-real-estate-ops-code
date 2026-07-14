@@ -7,6 +7,10 @@
 - Added current eCFR date resolution, duplicate-URL suppression, per-host throttling, bounded retries, and payload-type validation.
 - Added explicit availability-only policies for five non-byte-comparable derived sources without changing any approved legal-release hash or authority status.
 - Added source-monitor regression tests and live pull-request verification for future monitor changes.
+- Hardened failure publication with explicit repository targeting, default-branch-only issue writes, serialized runs, atomic report replacement, bounded issue summaries, and fallback reports for pre-monitor or missing-artifact failures.
+- Added retry handling for incomplete HTTP responses and corrected reported attempt counts for permanent failures.
+- Made connector-text size validation independent of Windows CRLF checkout conversion without changing committed source text.
+- Documented that fixed official URLs verify registered payloads but do not discover new editions, superseding sources, or later case history.
 
 This technical repair does not approve a source change or advance the July 12, 2026 legal-release verification date.
 

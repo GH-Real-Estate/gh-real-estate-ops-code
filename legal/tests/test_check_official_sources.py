@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import importlib.util
+import http.client
 import io
 import json
 import unittest
 import urllib.error
 from pathlib import Path
+from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -133,6 +135,47 @@ class SourceMonitorTests(unittest.TestCase):
         self.assertEqual(2, result["attempts"])
         self.assertEqual(2, len(calls))
         self.assertEqual([0.0], sleeps)
+
+    def test_download_reports_actual_attempts_for_non_retryable_error(self):
+        calls = []
+
+        def opener(request, **kwargs):
+            calls.append(request.full_url)
+            raise urllib.error.HTTPError(
+                request.full_url, 404, "Not Found", {}, None
+            )
+
+        result = monitor.download_url(
+            "https://example.test/missing",
+            attempts=5,
+            opener=opener,
+            sleep=lambda _: None,
+        )
+
+        self.assertFalse(result["ok"])
+        self.assertEqual(1, result["attempts"])
+        self.assertEqual(1, len(calls))
+
+    def test_download_retries_incomplete_http_response(self):
+        calls = []
+        sleeps = []
+
+        def opener(request, **kwargs):
+            calls.append(request.full_url)
+            if len(calls) == 1:
+                raise http.client.IncompleteRead(b"partial", 100)
+            return FakeResponse(b"complete payload")
+
+        result = monitor.download_url(
+            "https://example.test/source",
+            attempts=2,
+            opener=opener,
+            sleep=sleeps.append,
+        )
+
+        self.assertTrue(result["ok"])
+        self.assertEqual(2, result["attempts"])
+        self.assertEqual([1.0], sleeps)
 
     def test_shared_url_is_downloaded_once(self):
         calls = []
@@ -366,6 +409,130 @@ class SourceMonitorTests(unittest.TestCase):
             self.assertEqual(
                 by_citation[citation]["official_url"], override["official_url"]
             )
+
+    def test_issue_report_is_bounded_and_links_full_artifact(self):
+        payload = {
+            "checked_at": "2026-07-13T00:00:00+00:00",
+            "counts": {"unchanged": 0, "changed": 50, "error": 0, "manual": 5},
+            "results": [
+                {
+                    "status": "changed",
+                    "citation": f"Source {index} " + ("x" * 1_000),
+                    "title": "Changed source",
+                    "url": f"https://example.test/{index}",
+                }
+                for index in range(50)
+            ],
+        }
+
+        report = monitor.build_issue_report(
+            payload,
+            workflow_run_url="https://github.com/example/repo/actions/runs/123",
+            artifact_name="legal-source-monitor-123",
+        )
+
+        self.assertLessEqual(len(report), monitor.ISSUE_REPORT_MAX_CHARS)
+        self.assertIn("Issue summary truncated", report)
+        self.assertIn("legal-source-monitor-123", report)
+        self.assertIn("https://github.com/example/repo/actions/runs/123", report)
+
+    def test_issue_report_stays_bounded_with_oversized_link_metadata(self):
+        payload = {
+            "checked_at": "2026-07-13T00:00:00+00:00",
+            "counts": {"unchanged": 0, "changed": 1, "error": 0, "manual": 0},
+            "results": [
+                {
+                    "status": "changed",
+                    "citation": "Changed source",
+                    "title": "Changed source",
+                    "url": "https://example.test/source",
+                }
+            ],
+        }
+
+        report = monitor.build_issue_report(
+            payload,
+            workflow_run_url="https://github.com/" + ("x" * 2_000),
+            artifact_name="artifact-" + ("y" * 2_000),
+            max_chars=1_000,
+        )
+
+        self.assertLessEqual(len(report), 1_000)
+        self.assertIn("Issue summary truncated", report)
+
+    def test_main_reports_status_counts_and_exit_codes(self):
+        cases = [
+            ([{"status": "unchanged"}, {"status": "manual"}], 0),
+            ([{"status": "changed"}, {"status": "manual"}], 2),
+            ([{"status": "error"}, {"status": "manual"}], 2),
+        ]
+        registry_path = ROOT / "legal" / "manifests" / "authority_registry.json"
+        overrides_path = ROOT / "legal" / "manifests" / "source_monitor_overrides.json"
+
+        for index, (results, expected_exit) in enumerate(cases):
+            written: dict[str, str] = {}
+
+            def capture_write(path: Path, value: str):
+                written[str(path)] = value
+
+            json_report = Path(f"report-{index}.json")
+            markdown_report = Path(f"report-{index}.md")
+            argv = [
+                str(SCRIPT),
+                "--registry",
+                str(registry_path),
+                "--overrides",
+                str(overrides_path),
+                "--json-report",
+                str(json_report),
+                "--markdown-report",
+                str(markdown_report),
+            ]
+            with (
+                self.subTest(results=results),
+                mock.patch("sys.argv", argv),
+                mock.patch.object(monitor, "resolve_checked_urls", return_value=({}, {})),
+                mock.patch.object(monitor, "fetch_unique_urls", return_value={}),
+                mock.patch.object(monitor, "evaluate_records", return_value=results),
+                mock.patch.object(monitor, "write_text_atomic", side_effect=capture_write),
+                mock.patch("sys.stdout", new=io.StringIO()),
+            ):
+                exit_code = monitor.main()
+
+            payload = json.loads(written[str(json_report)])
+            self.assertEqual(expected_exit, exit_code)
+            self.assertEqual(
+                sum(item["status"] == "changed" for item in results),
+                payload["counts"]["changed"],
+            )
+            self.assertEqual(
+                sum(item["status"] == "error" for item in results),
+                payload["counts"]["error"],
+            )
+
+    def test_atomic_report_write_cleans_partial_file_without_replacing_target(self):
+        target = Path("atomic-report-test.json")
+        temporary = mock.MagicMock()
+        temporary.name = ".atomic-report-test.json.partial.tmp"
+        temporary.write.side_effect = OSError("simulated interrupted write")
+        temporary_context = mock.MagicMock()
+        temporary_context.__enter__.return_value = temporary
+        temporary_context.__exit__.return_value = False
+
+        with (
+            mock.patch.object(
+                monitor.tempfile,
+                "NamedTemporaryFile",
+                return_value=temporary_context,
+            ),
+            mock.patch.object(monitor.os, "replace") as replace,
+            mock.patch.object(Path, "unlink") as unlink,
+        ):
+            with self.assertRaisesRegex(OSError, "simulated interrupted write"):
+                monitor.write_text_atomic(target, '{"complete": true}\n')
+
+        replace.assert_not_called()
+        unlink.assert_called_once_with(missing_ok=True)
 
 
 if __name__ == "__main__":
