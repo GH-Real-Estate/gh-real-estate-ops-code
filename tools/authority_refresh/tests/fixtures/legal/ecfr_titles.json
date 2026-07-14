@@ -1,0 +1,32 @@
+{
+  "titles": [
+    {
+      "number": 16,
+      "name": "Commercial Practices",
+      "latest_amended_on": "2026-07-08",
+      "latest_issue_date": "2026-07-08",
+      "up_to_date_as_of": "2026-07-10",
+      "reserved": false
+    },
+    {
+      "number": 24,
+      "name": "Housing and Urban Development",
+      "latest_amended_on": "2026-06-22",
+      "latest_issue_date": "2026-06-22",
+      "up_to_date_as_of": "2026-07-10",
+      "reserved": false
+    },
+    {
+      "number": 35,
+      "name": "Reserved",
+      "latest_amended_on": null,
+      "latest_issue_date": null,
+      "up_to_date_as_of": null,
+      "reserved": true
+    }
+  ],
+  "meta": {
+    "date": "2026-07-10",
+    "import_in_progress": false
+  }
+}

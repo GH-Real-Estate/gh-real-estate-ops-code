@@ -43,8 +43,12 @@ Settings → Branches → Add branch protection rule:
 - [ ] Require approvals: OFF or 0 while solo.
 - [ ] Require conversation resolution before merging: ON.
 - [ ] Require status checks before merging: ON after `.github/workflows/repo-checks.yml` is merged.
+- [ ] Require branches to be up to date before merging: ON. This prevents an open authority-promotion PR from replacing a newer reviewed snapshot.
 - [ ] Required status check: `Safety scan`.
 - [ ] Required status check: `Returned fee webhook checks`.
+- [ ] Required status check: `Validate authority refresh controls`. Its workflow must continue to run on every pull request so unrelated PRs are not blocked by a skipped required check.
+- [ ] Require review from Code Owners: ON for changes under `legal/`, `accounting/`, `authority/`, and the authority workflow paths.
+- [ ] Confirm `@GHRealEstate` in `.github/CODEOWNERS` resolves to a user or team with repository access; replace it before enabling enforcement if it does not.
 - [ ] Require linear history: ON if available.
 - [X] Allow force pushes: OFF.
 - [ ] Allow deletions: OFF.
@@ -70,8 +74,36 @@ Settings → Actions → General:
 
 - [ ] Actions permissions: restricted; avoid marketplace sprawl.
 - [ ] Workflow permissions: read repository contents by default.
-- [ ] Allow GitHub Actions to create and approve pull requests: OFF.
-- [ ] No deploy workflows yet.
+- [ ] Allow GitHub Actions to create and approve pull requests: ON. The authority workflows need pull-request creation; they do not approve or merge their own pull requests.
+- [ ] No live-system deployment workflows. `authority-production` gates repository evidence promotion only; it does not deploy to Zoho or another runtime.
+
+## Authority refresh controls
+
+Settings -> Environments -> New environment:
+
+- [ ] Environment name: `authority-production`.
+- [ ] Required reviewer: repository owner or another qualified operator who is not relying only on the workflow output.
+- [ ] Prevent self-review: ON when GitHub plan and reviewer staffing permit it.
+- [ ] Confirm a second trusted GitHub operator exists before claiming enforced non-self review. Repository approval is an operational gate, not proof of legal, CPA, tax, or licensing qualification.
+- [ ] Deployment branches/tags: protect the `main` branch only.
+- [ ] Do not store FASB credentials, licensed exports, legal client material, tenant data, or accounting records in the environment.
+
+Settings -> Secrets and variables -> Actions:
+
+- [ ] Optional repository secret: `CONGRESS_API_KEY` for Library of Congress metadata discovery.
+- [ ] Leave the secret absent if the API is not needed. That source will report `configuration_required` without blocking critical enacted-law coverage through GovInfo.
+
+Verify after merge:
+
+- [ ] `Authority Discovery` is enabled and scheduled daily at `11:17 UTC`.
+- [ ] `Legal Source Monitor` remains enabled weekly at `12:27 UTC` Monday.
+- [ ] `Accounting Authority Review Calendar` remains enabled monthly at `13:41 UTC` on day 1.
+- [ ] `Authority Release Promotion` requires the `authority-production` approval gate and exact confirmation `PROMOTE_REVIEWED_AUTHORITY_RELEASE`.
+- [ ] Promotion runs only from a clean default-branch checkout and archives `validation-context.json`; confirm its release-record hash and the exact release-plus-snapshot file scope in the resulting PR.
+- [ ] Candidate and promotion workflows create draft pull requests only; repository auto-merge remains OFF.
+- [ ] On the first generated candidate PR and the first generated promotion PR, select **Approve workflows to run** if GitHub shows the approval banner, then verify the required PR-event checks pass on the test-merge commit. Repeat this approval on later bot PRs whenever GitHub requests it; the explicitly dispatched branch-head runs do not necessarily satisfy a pending PR-event check.
+- [ ] Keep bot PRs on `GITHUB_TOKEN` while a human approval click is acceptable. If zero-click bot checks become necessary, provision a narrowly scoped GitHub App installation token; do not add a long-lived PAT.
+- [ ] Branch protection blocks direct pushes and requires the authority check plus CODEOWNERS review for governed paths.
 
 ## Codex / ChatGPT
 

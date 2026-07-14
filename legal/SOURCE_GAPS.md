@@ -26,6 +26,17 @@ The July 12, 2026 release is a strong current operational corpus for a residenti
 - Availability-only records do not fail an otherwise successful scheduled run. A green result means those URLs were reachable with the expected payload type, not that their substance was compared; manually review them before a new approved release and before high-risk reliance.
 - Registered, dated GovInfo and other version-specific URLs verify the integrity of the collected edition. They cannot discover a newer U.S. Code edition, later Federal Register notice, superseding guidance, later case history, or a replacement published at a new URL. Qualified currentness review must perform that discovery separately.
 - The Overland Park semantic PDF check compares extracted text, page order/geometry, and embedded XObjects. It is not a rendered-page visual diff and may not detect a vector- or annotation-only change that leaves those signals unchanged.
-- Two KHRC PDF sources are published through plain HTTP. Exact hashes detect different bytes, but the transport cannot prove freshness against replay of the approved payload; recheck KHRC through an independently trusted channel before material reliance.
+- Two KHRC PDF sources are published only through plain HTTP. The monitor intentionally does not fetch them, records the exact two URLs as acknowledged offline manual gaps, and does not treat them as a changed/error result by themselves. Recheck KHRC through an independently trusted channel before material reliance; every other HTTP source remains a failing monitor error.
+
+## Discovery coverage limits
+
+- Daily discovery covers 13 configured publisher indexes; it is not a complete citator, docket service, legislative-history service, or proof that every relevant source family is configured.
+- A `current` discovery result means no new, modified, or comparison-eligible missing item was detected under the configured comparison policies and no degradation condition occurred. It does not advance the July 12, 2026 legal release or establish that the approved library remains complete or legally current.
+- Recent-item feeds and APIs use `rolling-window` missing semantics. They report new and modified observations, but do not treat an older item disappearing from a limited window as repeal, withdrawal, supersession, or deletion.
+- The Library of Congress legislation API is an optional, noncritical metadata source. Without `CONGRESS_API_KEY`, it reports `configuration_required`; GovInfo remains the critical enacted-law discovery route, but its presence does not eliminate legislative-status review.
+- The Kansas Secretary of State links to the `rules.ks.gov` rules portal. The current automation records portal and index metadata only; rule text, adoption status, effective date, amendment history, and applicability require manual official-source review.
+- `codes.opkansas.org` is the City-linked electronic copy of the Overland Park code. The City Clerk's master copy controls, and discovery from the electronic copy is always a manual-review candidate.
+- Any source retrieval or parser `error` makes discovery `degraded`, even when the catalog marks that source noncritical; missing configuration degrades the domain only when the affected source is critical. A degraded result does not mean that no authority changed and does not permit continued high-risk reliance without live verification.
+- Candidate branches and workflow artifacts are unapproved evidence. They are not production inputs and must not be cited as current law before qualified legal review and a complete dated release.
 
 Record a resolved exception in `CHANGELOG.md`, update the registry and hashes, and regenerate the complete release rather than silently replacing a file.

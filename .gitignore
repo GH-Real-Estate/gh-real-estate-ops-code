@@ -24,11 +24,23 @@
 *.log
 logs/
 
+# Local authority discovery output (review candidates are committed explicitly by workflow)
+authority-refresh-output/
+
 # Node
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+tools/authority_refresh/tests/tmp*/
+tools/authority_refresh/tests/runtime/*
+!tools/authority_refresh/tests/runtime/.gitkeep
+tools/authority_refresh/tests/runtime/*
+!tools/authority_refresh/tests/runtime/.gitkeep
 
 # OS / editor
 .DS_Store

@@ -1,5 +1,14 @@
 # Accounting authority library changelog
 
+## 2026-07-13 - Add governed official-index discovery
+
+- Added daily discovery across 9 configured FASB, IRS, Treasury, and Kansas Department of Revenue publication indexes while retaining the separate monthly stored-review-date calendar.
+- Restricted all FASB discovery to metadata-only storage and required authorized live research plus CPA or qualified accounting review for exact GAAP conclusions.
+- Added fail-closed `current`, `review_required`, and `degraded` discovery states, rolling-window feed semantics, draft candidate pull requests, structured review evidence, and protected evidence promotion.
+- Prohibited automatic changes to accounting policy, tax treatment, books, chart of accounts, or runtime automations from discovery output.
+
+This automation change does not modify, reapprove, or advance the July 12, 2026 accounting release.
+
 ## 2026-07-12 — Initial approved release
 
 - Added four dated accounting, federal tax, Kansas, and local sourcebooks totaling 33 pages and 114 source-register records.

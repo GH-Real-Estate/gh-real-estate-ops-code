@@ -1,0 +1,20 @@
+* text=auto
+
+# Preserve authoritative and generated binary artifacts byte-for-byte on Windows.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
+*.xlsx binary
+*.docx binary
+
+# Deterministic scripts, manifests, and reports use LF in every checkout.
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf

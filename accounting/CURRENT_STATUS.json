@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "domain": "accounting",
+  "status_as_of": "2026-07-13",
+  "overall_state": "approved-dated-baseline-with-scheduled-review-and-live-research-required",
+  "notice": "This file reports repository evidence and review state only. It is not the FASB Codification, tax advice, a CPA opinion, or a representation that GH Real Estate financial statements comply with US GAAP.",
+  "approved_release": {
+    "release_id": "2026-07-12",
+    "release_status": "approved-dated-baseline",
+    "current_through": "2026-07-12",
+    "release_manifest_path": "accounting/manifests/sourcebook_release.json",
+    "fasb_topic_registry_path": "accounting/manifests/fasb_topic_registry.json",
+    "fasb_topic_locator_count": 54,
+    "source_record_count": 114,
+    "sourcebook_pdf_count": 4,
+    "sourcebook_page_count": 33,
+    "fasb_codification_content_state": "not-stored"
+  },
+  "currentness": {
+    "state": "locator-baseline-with-date-reminders-not-live-codification-verification",
+    "registry_validation_state": "passed-in-github-ci-for-approved-release",
+    "registry_validation_run": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/actions/runs/29193726317",
+    "review_calendar": {
+      "state_as_of_status_date": "no-topic-review-date-due-or-overdue",
+      "review_dates": [
+        {
+          "date": "2026-10-15",
+          "topic_count": 23
+        },
+        {
+          "date": "2027-01-15",
+          "topic_count": 20
+        },
+        {
+          "date": "2027-07-15",
+          "topic_count": 11
+        }
+      ]
+    },
+    "human_review_state": "approved-topic-locator-and-original-analysis-baseline-dated-2026-07-12",
+    "promotion_rule": "An official publication alert remains a discovery candidate until a CPA or qualified reviewer verifies authorized source material, applicability, effective dates, transition, and implementation through a pull request."
+  },
+  "consumer_policy": {
+    "general_research": "Use the approved topic map as a research index and verify exact authoritative requirements through authorized live access.",
+    "material_gaap_assertions": "Verify scope, definitions, recognition, measurement, derecognition, presentation, disclosure, transition, effective date, and private-company alternatives for the actual entity and reporting period.",
+    "production_systems": "Pin an approved release commit or tag; never alter books, policy, tax treatment, or automation from an unreviewed discovery result.",
+    "degraded_state": "If a source, review date, or applicability conclusion is unresolved, preserve the approved baseline and prohibit a current US GAAP assertion until reviewed."
+  },
+  "known_limitations": [
+    "The repository contains FASB topic locators and original GH analysis, not Codification text or a licensed substitute for authorized FASB research.",
+    "The topic registry does not establish that GH Real Estate is required to issue US GAAP financial statements.",
+    "Exact subtopics, paragraphs, effective dates, transition provisions, scope exceptions, and private-company alternatives remain transaction- and period-specific.",
+    "The monthly review workflow checks stored dates; a green date check does not prove that live FASB material was reviewed.",
+    "Federal, Kansas, and local tax forms, thresholds, elections, procedures, and effective dates are volatile and require tax-year-specific verification.",
+    "Accounting treatment depends on entity, reporting basis, signed agreements, lender requirements, transaction documents, placed-in-service facts, materiality, estimates, and elections not established by the registry.",
+    "Book accounting, federal tax, Kansas tax, lease treatment, and Zoho configuration are separate layers and must not be forced to match.",
+    "The chart of accounts and production Zoho configuration are not automatically updated or certified by the authority registry.",
+    "Repository binary attributes now protect PDFs in new checkouts; a pre-existing Windows working tree may still need a fresh checkout before local byte-hash validation matches the Git blob."
+  ],
+  "authoritative_paths": [
+    "accounting/CURRENT_AUTHORITY_INDEX.md",
+    "accounting/PROJECT_INSTRUCTIONS.md",
+    "accounting/FASB_APPLICABILITY_INDEX.md",
+    "accounting/ACCOUNTING_POLICY_MATRIX.md",
+    "accounting/SOURCE_GAPS.md",
+    "accounting/manifests/fasb_topic_registry.json"
+  ]
+}

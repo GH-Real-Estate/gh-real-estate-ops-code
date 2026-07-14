@@ -26,7 +26,7 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import parse_qs, urlencode, urlparse
+from urllib.parse import parse_qs, quote_plus, urlencode, urljoin, urlparse, urlsplit
 
 
 USER_AGENT = "GH-Real-Estate-Legal-Monitor/1.1"
@@ -54,6 +54,109 @@ ISSUE_REPORT_MAX_CHARS = 20_000
 ISSUE_REPORT_MAX_ITEMS = 20
 SSL_CONTEXT = ssl.create_default_context()
 
+# This static set must match the HTTPS hosts in the governed authority registry.
+# A new source host therefore requires an intentional code and review change, not
+# merely a data edit that could turn a pull-request run into an SSRF primitive.
+GOVERNED_HTTPS_HOSTS = frozenset(
+    {
+        "firemarshal.ks.gov",
+        "kscourts.gov",
+        "online.encodeplus.com",
+        "searchdro.kscourts.gov",
+        "www.ecfr.gov",
+        "www.epa.gov",
+        "www.ftc.gov",
+        "www.govinfo.gov",
+        "www.hud.gov",
+        "www.justice.gov",
+        "www.kslegislature.gov",
+    }
+)
+
+# No cross-host redirects are currently authorized. Add a destination only after
+# verifying that the specific source publisher controls it; do not allow an
+# entire registrable domain or every host used by some other registry record.
+EXPLICIT_REDIRECT_HOSTS: dict[str, frozenset[str]] = {}
+
+# These two approved legacy citations have no reviewed HTTPS endpoint. They are
+# never fetched over HTTP. Keeping the exact URLs here makes the known gap
+# visible without turning every scheduled run red; any other HTTP URL remains a
+# source error. Replace these entries only through a reviewed authority update.
+ACKNOWLEDGED_NONFETCHABLE_HTTP_SOURCES = {
+    "http://www.khrc.net/pdf/RulesAndRegs.pdf": (
+        "KHRC publishes this legacy PDF only over unauthenticated HTTP; the monitor "
+        "did not fetch it. Verify through an independently trusted KHRC channel."
+    ),
+    "http://www.khrc.net/pdf/kshousing_poster.pdf": (
+        "KHRC publishes this legacy poster only over unauthenticated HTTP; the monitor "
+        "did not fetch it. Verify through an independently trusted KHRC channel."
+    ),
+}
+
+
+class UnsafeMonitorURL(ValueError):
+    """A source URL violates the monitor's fixed network boundary."""
+
+
+def validate_monitor_url(
+    url: str,
+    *,
+    allowed_hosts: set[str] | frozenset[str],
+    label: str,
+) -> str:
+    """Validate one request target and return its exact lower-case host."""
+    if not isinstance(url, str) or not url or len(url) > 8_192:
+        raise UnsafeMonitorURL(f"{label} is empty or oversized")
+    if any(character.isspace() or ord(character) < 32 for character in url):
+        raise UnsafeMonitorURL(f"{label} contains whitespace or a control character")
+    try:
+        parsed = urlsplit(url)
+        port = parsed.port
+    except ValueError as exc:
+        raise UnsafeMonitorURL(f"{label} has an invalid authority or port") from exc
+    if parsed.scheme.lower() != "https":
+        raise UnsafeMonitorURL(f"{label} must use HTTPS")
+    if parsed.username is not None or parsed.password is not None:
+        raise UnsafeMonitorURL(f"{label} must not contain credentials")
+    if port not in (None, 443):
+        raise UnsafeMonitorURL(f"{label} must use the default HTTPS port")
+    if parsed.fragment:
+        raise UnsafeMonitorURL(f"{label} must not contain a fragment")
+    hostname = (parsed.hostname or "").lower()
+    normalized_allowed = {host.lower() for host in allowed_hosts}
+    if not hostname or hostname not in normalized_allowed:
+        raise UnsafeMonitorURL(f"{label} host is not allowlisted: {hostname or 'missing'}")
+    return hostname
+
+
+def allowed_hosts_for_source(url: str) -> frozenset[str]:
+    """Return the initial official host plus explicitly reviewed redirect hosts."""
+    initial_host = validate_monitor_url(
+        url,
+        allowed_hosts=GOVERNED_HTTPS_HOSTS,
+        label="source URL",
+    )
+    return frozenset({initial_host, *EXPLICIT_REDIRECT_HOSTS.get(initial_host, ())})
+
+
+class _AllowlistedRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Reject an unsafe redirect before urllib sends the follow-up request."""
+
+    def __init__(self, allowed_hosts: frozenset[str]):
+        super().__init__()
+        self.allowed_hosts = allowed_hosts
+
+    def redirect_request(self, request, fp, code, message, headers, new_url):
+        target = urljoin(request.full_url, new_url)
+        validate_monitor_url(
+            target,
+            allowed_hosts=self.allowed_hosts,
+            label="redirect target",
+        )
+        return super().redirect_request(
+            request, fp, code, message, headers, target
+        )
+
 
 def retry_delay(headers: object, attempt: int) -> float:
     """Return a bounded Retry-After or exponential-backoff delay."""
@@ -78,15 +181,53 @@ def download_url(
     *,
     capture_body: bool = False,
     attempts: int = RETRY_ATTEMPTS,
-    opener=urllib.request.urlopen,
+    allowed_hosts: set[str] | frozenset[str] | None = None,
+    opener=None,
     sleep=time.sleep,
 ) -> dict[str, object]:
-    """Download and fingerprint one URL with bounded transient retries."""
+    """Download one allowlisted HTTPS URL with bounded transient retries."""
+    try:
+        effective_hosts = (
+            frozenset(host.lower() for host in allowed_hosts)
+            if allowed_hosts is not None
+            else allowed_hosts_for_source(url)
+        )
+        validate_monitor_url(
+            url,
+            allowed_hosts=effective_hosts,
+            label="source URL",
+        )
+    except UnsafeMonitorURL as exc:
+        return {
+            "ok": False,
+            "url": url,
+            "error": f"UnsafeMonitorURL: {exc}",
+            "attempts": 0,
+        }
+
+    safe_opener = None
+    if opener is None:
+        safe_opener = urllib.request.build_opener(
+            urllib.request.HTTPSHandler(context=SSL_CONTEXT),
+            _AllowlistedRedirectHandler(effective_hosts),
+        )
+
     last_error = "download failed"
     for attempt in range(1, max(1, attempts) + 1):
         try:
             request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-            with opener(request, timeout=TIMEOUT, context=SSL_CONTEXT) as response:
+            if safe_opener is not None:
+                opened = safe_opener.open(request, timeout=TIMEOUT)
+            else:
+                opened = opener(request, timeout=TIMEOUT, context=SSL_CONTEXT)
+            with opened as response:
+                geturl = getattr(response, "geturl", None)
+                final_url = geturl() if callable(geturl) else url
+                validate_monitor_url(
+                    final_url,
+                    allowed_hosts=effective_hosts,
+                    label="final response URL",
+                )
                 content_length = response.headers.get("Content-Length")
                 if content_length and int(content_length) > MAX_BYTES:
                     raise ValueError(f"source exceeds {MAX_BYTES} bytes")
@@ -108,8 +249,6 @@ def download_url(
                     if body is not None:
                         body.extend(block)
 
-                geturl = getattr(response, "geturl", None)
-                final_url = geturl() if callable(geturl) else url
                 content_type = str(response.headers.get("Content-Type", ""))
                 return {
                     "ok": True,
@@ -123,6 +262,9 @@ def download_url(
                     "body": bytes(body) if body is not None else None,
                     "attempts": attempt,
                 }
+        except UnsafeMonitorURL as exc:
+            last_error = f"UnsafeMonitorURL: {exc}"
+            break
         except urllib.error.HTTPError as exc:
             last_error = f"HTTPError: HTTP Error {exc.code}: {exc.reason}"
             delay = retry_delay(exc.headers, attempt)
@@ -348,6 +490,16 @@ def fetch_encodeplus_pdf(
     )
     response = downloader(generated_url, capture_body=True)
     request_attempts += int(response.get("attempts", 1))
+    if response.get("error"):
+        error = str(response["error"])
+        for sensitive_value in {
+            remote_file,
+            quote_plus(remote_file, safe=""),
+            quote_plus(remote_file, safe="").lower(),
+        }:
+            if sensitive_value:
+                error = error.replace(sensitive_value, "[redacted-file-token]")
+        response["error"] = error
     response.update(
         url=source_url,
         # Do not persist the temporary file token in reports.
@@ -717,6 +869,18 @@ def evaluate_records(
             "bundle": record.get("bundle_filename"),
         }
 
+        acknowledged_gap = ACKNOWLEDGED_NONFETCHABLE_HTTP_SOURCES.get(official_url)
+        if acknowledged_gap is not None:
+            result.update(
+                status="manual",
+                manual_reason=acknowledged_gap,
+                fetch_method="not-fetched-insecure-legacy-http",
+                transport_verified=False,
+                attempts=0,
+            )
+            results.append(result)
+            continue
+
         if official_url in resolution_errors:
             result.update(status="error", error=resolution_errors[official_url])
             results.append(result)
@@ -753,6 +917,7 @@ def evaluate_records(
                 status="manual",
                 retrieved_sha256=response["retrieved_sha256"],
                 manual_reason=policy["reason"],
+                transport_verified=True,
             )
         elif policy["mode"] == "semantic-pdf-pages":
             try:
@@ -812,7 +977,7 @@ def build_issue_report(
         f"- Unchanged: {counts.get('unchanged', 0)}",
         f"- Changed fingerprints: {counts.get('changed', 0)}",
         f"- Retrieval errors: {counts.get('error', 0)}",
-        f"- Manual-comparison sources reached: {counts.get('manual', 0)}",
+        f"- Manual/source-gap records: {counts.get('manual', 0)}",
         "",
         (
             "> LEGAL REVIEW REQUIRED. A changed fingerprint or retrieval error does "
@@ -931,6 +1096,8 @@ def main() -> int:
         checked_urls.get(str(record["official_url"]), str(record["official_url"]))
         for record in registry
         if str(record["official_url"]) not in resolution_errors
+        and str(record["official_url"])
+        not in ACKNOWLEDGED_NONFETCHABLE_HTTP_SOURCES
     }
     downloads = fetch_unique_urls(
         urls, workers=max(1, args.workers), downloader=downloader
@@ -972,7 +1139,7 @@ def main() -> int:
         f"- Unchanged: {counts['unchanged']}",
         f"- Changed fingerprints: {counts['changed']}",
         f"- Retrieval errors: {counts['error']}",
-        f"- Manual-comparison sources reached: {counts['manual']}",
+        f"- Manual/source-gap records: {counts['manual']}",
         "",
         (
             "> LEGAL REVIEW REQUIRED for changed fingerprints or retrieval errors; "
@@ -980,8 +1147,9 @@ def main() -> int:
         ),
         "",
         (
-            "> MANUAL COMPARISON means the source was reachable, but its official "
-            "payload is not byte-comparable to the approved derived artifact."
+            "> MANUAL/SOURCE GAP means either the HTTPS source was reachable but not "
+            "byte-comparable, or an exact acknowledged legacy HTTP source was not "
+            "fetched. Inspect Fetch method and Manual reason before reliance."
         ),
         "",
     ]

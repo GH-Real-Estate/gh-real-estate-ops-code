@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Official Updates</title>
+  <entry>
+    <id>tag:irs.gov,2026:notice-1</id>
+    <title>Official Tax Guidance Candidate</title>
+    <link rel="alternate" href="https://www.irs.gov/newsroom/official-tax-guidance" />
+    <published>2026-07-02T14:30:00Z</published>
+    <summary>COPYRIGHTED OR UNREVIEWED BODY CONTENT MUST NOT BE STORED.</summary>
+  </entry>
+  <entry>
+    <id>tag:irs.gov,2026:notice-1</id>
+    <title>Official Tax Guidance Candidate</title>
+    <link rel="alternate" href="https://www.irs.gov/newsroom/official-tax-guidance" />
+    <updated>2026-07-02T14:30:00Z</updated>
+  </entry>
+  <entry>
+    <id>tag:example.com,2026:fake</id>
+    <title>Unofficial Tax Guidance</title>
+    <link rel="alternate" href="https://example.com/fake" />
+  </entry>
+</feed>

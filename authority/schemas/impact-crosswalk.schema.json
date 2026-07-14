@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/blob/main/authority/schemas/impact-crosswalk.schema.json",
+  "title": "GH Real Estate authority impact crosswalk",
+  "description": "Maps a detected authority-domain change to repository artifacts that require human review. It never authorizes automatic legal, accounting, or production changes.",
+  "$comment": "ASC references are deliberately limited to three-digit topic locators. No paragraph citation is accepted.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "updated_on",
+    "notice",
+    "mappings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "updated_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "notice": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "mappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/mapping"
+      }
+    }
+  },
+  "$defs": {
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "change_signals",
+        "authority_references",
+        "affected_paths",
+        "review_gate",
+        "automatic_change",
+        "fail_closed_action"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "maxLength": 100
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "change_signals": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "new-authority",
+              "source-content-changed",
+              "effective-date-changed",
+              "authority-status-changed",
+              "source-withdrawn-or-superseded",
+              "official-source-unavailable",
+              "review-overdue",
+              "applicability-fact-changed"
+            ]
+          }
+        },
+        "authority_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/authorityReference"
+          }
+        },
+        "affected_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/affectedPath"
+          }
+        },
+        "review_gate": {
+          "$ref": "#/$defs/reviewGate"
+        },
+        "automatic_change": {
+          "const": "prohibited"
+        },
+        "fail_closed_action": {
+          "enum": [
+            "open-review-and-preserve-approved-baseline",
+            "block-affected-release-and-preserve-production",
+            "mark-degraded-and-require-live-verification"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "authorityReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "reference_type",
+        "reference",
+        "authority_weight",
+        "verification_rule"
+      ],
+      "properties": {
+        "domain": {
+          "enum": [
+            "legal",
+            "accounting",
+            "tax",
+            "contract",
+            "internal-policy"
+          ]
+        },
+        "reference_type": {
+          "enum": [
+            "legal-registry-group",
+            "legal-citation-family",
+            "asc-topic-locator",
+            "official-tax-source-family",
+            "accounting-sourcebook",
+            "accounting-policy-matrix",
+            "signed-agreement",
+            "internal-policy"
+          ]
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "authority_weight": {
+          "enum": [
+            "binding",
+            "conditional-binding",
+            "published-case-law",
+            "guidance",
+            "official-source-locator",
+            "official-tax-guidance",
+            "contractual-evidence",
+            "nonauthoritative-original-analysis",
+            "internal-policy"
+          ]
+        },
+        "verification_rule": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "reference_type": {
+                "const": "asc-topic-locator"
+              }
+            },
+            "required": [
+              "reference_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "domain": {
+                "const": "accounting"
+              },
+              "reference": {
+                "pattern": "^ASC [0-9]{3}$"
+              },
+              "authority_weight": {
+                "const": "official-source-locator"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "affectedPath": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository_path",
+        "artifact_type",
+        "required_action",
+        "reason"
+      ],
+      "properties": {
+        "repository_path": {
+          "type": "string",
+          "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "artifact_type": {
+          "enum": [
+            "financial-automation",
+            "payment-webhook",
+            "legal-authority-library",
+            "accounting-authority-library",
+            "accounting-policy",
+            "contract-field-map",
+            "crm-intake",
+            "operational-documentation"
+          ]
+        },
+        "required_action": {
+          "enum": [
+            "review-only",
+            "review-and-regression-test",
+            "review-configuration-and-test",
+            "regenerate-after-approval",
+            "document-no-change-conclusion"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      }
+    },
+    "reviewGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_roles",
+        "required_evidence",
+        "decision_record"
+      ],
+      "properties": {
+        "required_roles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "kansas-counsel",
+              "qualified-legal-reviewer",
+              "cpa-or-qualified-accounting-reviewer",
+              "tax-professional",
+              "finance-operator",
+              "system-owner",
+              "records-and-licensing-reviewer"
+            ]
+          }
+        },
+        "required_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "official-source-link",
+              "retrieval-and-hash-record",
+              "effective-date-analysis",
+              "applicability-analysis",
+              "signed-agreement-check",
+              "authorized-fasb-research",
+              "book-tax-difference-analysis",
+              "regression-test-results",
+              "production-configuration-check",
+              "licensing-review"
+            ]
+          }
+        },
+        "decision_record": {
+          "enum": [
+            "pull-request-review",
+            "dated-accounting-memo-and-pull-request",
+            "dated-legal-memo-and-pull-request",
+            "dual-review-memo-and-pull-request"
+          ]
+        }
+      }
+    }
+  }
+}

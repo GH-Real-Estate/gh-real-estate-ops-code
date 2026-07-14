@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/authority/schemas/review-approval.schema.json",
+  "title": "Structured authority candidate approval",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "domain", "candidate_sha256", "approvals", "change_resolutions", "impact_resolutions"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "domain": { "enum": ["legal", "accounting"] },
+    "candidate_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "approvals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "reviewer", "reviewed_at", "determination", "evidence_urls"],
+        "properties": {
+          "role": {
+            "enum": [
+              "kansas-counsel",
+              "qualified-legal-reviewer",
+              "cpa-or-qualified-accounting-reviewer",
+              "tax-professional",
+              "finance-operator",
+              "system-owner",
+              "records-and-licensing-reviewer"
+            ]
+          },
+          "reviewer": { "type": "string", "minLength": 1 },
+          "reviewed_at": { "type": "string", "format": "date-time" },
+          "determination": { "enum": ["approved", "rejected"] },
+          "evidence_urls": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "format": "uri", "pattern": "^https://" }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "change_resolutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["item_id", "change_type", "resolution", "evidence_urls"],
+        "properties": {
+          "item_id": { "type": "string", "minLength": 1 },
+          "change_type": { "enum": ["new", "modified", "missing"] },
+          "resolution": {
+            "enum": [
+              "no_material_change",
+              "not_applicable",
+              "superseded",
+              "approved_release_updated"
+            ]
+          },
+          "evidence_urls": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "format": "uri", "pattern": "^https://" }
+          },
+          "approved_paths": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "impact_resolutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mapping_id", "determination", "evidence_urls", "reviewed_paths"],
+        "properties": {
+          "mapping_id": { "type": "string", "minLength": 1 },
+          "determination": {
+            "enum": [
+              "no_change_required",
+              "not_applicable",
+              "approved_paths_updated"
+            ]
+          },
+          "evidence_urls": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "format": "uri", "pattern": "^https://" }
+          },
+          "reviewed_paths": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

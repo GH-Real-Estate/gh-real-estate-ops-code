@@ -1,0 +1,50 @@
+name: Authority Refresh Checks
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+    paths:
+      - 'authority/**'
+      - 'tools/authority_refresh/**'
+      - 'legal/CURRENT_STATUS.json'
+      - 'legal/schemas/**'
+      - 'accounting/CURRENT_STATUS.json'
+      - 'accounting/schemas/**'
+      - '.gitattributes'
+      - '.github/CODEOWNERS'
+      - '.github/workflows/authority-*.yml'
+      - '.github/workflows/accounting-authority-review.yml'
+
+concurrency:
+  group: authority-refresh-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate authority refresh controls
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.x'
+
+      - name: Validate authority system contracts
+        run: python tools/authority_refresh/validate_system.py
+
+      - name: Run authority refresh tests
+        run: python -m unittest discover -s tools/authority_refresh/tests -p 'test_*.py' -v

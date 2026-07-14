@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "domain": "legal",
+  "status_as_of": "2026-07-13",
+  "overall_state": "approved-dated-baseline-with-known-monitoring-limits",
+  "notice": "This file reports repository evidence and review state only. It is not legal advice, a citator, or a representation that GH Real Estate is legally compliant.",
+  "approved_release": {
+    "release_id": "2026-07-12",
+    "release_status": "approved-dated-baseline",
+    "current_through": "2026-07-12",
+    "manifest_path": "legal/manifests/releases/2026-07-12.json",
+    "authority_registry_path": "legal/manifests/authority_registry.json",
+    "authority_record_count": 447,
+    "unique_official_url_count": 443,
+    "pdf_count": 8,
+    "page_count": 1718
+  },
+  "currentness": {
+    "state": "approved-baseline-monitoring-known-sources",
+    "automated_observation": {
+      "observed_on": "2026-07-13",
+      "result": "no-comparable-change-detected",
+      "unchanged_comparable_records": 442,
+      "changed_comparable_records": 0,
+      "retrieval_or_validation_errors": 0,
+      "availability_only_records": 5,
+      "workflow_run": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/actions/runs/29297001769"
+    },
+    "human_review_state": "approved-release-dated-2026-07-12",
+    "promotion_rule": "A detected or discovered change remains a candidate until qualified legal review approves a complete dated release through a pull request."
+  },
+  "consumer_policy": {
+    "general_research": "Use the approved release with its visible current-through date and verify live official authority for material reliance.",
+    "production_systems": "Pin an approved release commit or tag; never consume an unreviewed discovery result or candidate branch.",
+    "degraded_state": "If an applicable source is unavailable, changed, overdue, or awaiting review, preserve the approved baseline and require live official verification before high-risk action."
+  },
+  "known_limitations": [
+    "Monitoring known URLs cannot discover every new statute, ordinance, regulation, notice, replacement URL, later case, or new source family.",
+    "Five approved records are availability-only comparisons: one FTC page, one normalized HUD memorandum, and three Kansas case extracts.",
+    "Availability-only success proves expected reachability and payload type, not substantive equality or currentness.",
+    "Version-specific official URLs can verify the collected edition but cannot prove that a newer edition, notice, guidance document, or later history does not exist.",
+    "The municipal semantic PDF comparison may not detect a vector-only or annotation-only change that leaves extracted text, page geometry, and embedded graphics unchanged.",
+    "Two KHRC sources use plain HTTP, so matching bytes do not independently prove freshness against replay.",
+    "Case-law coverage is curated rather than exhaustive and is not a complete citator.",
+    "Copyrighted model building and safety codes incorporated by reference are not reproduced in full.",
+    "Applicability depends on property, financing, federal-program, ownership, lease, transaction, and enforcement facts that automation cannot establish."
+  ],
+  "authoritative_paths": [
+    "legal/CURRENT_AUTHORITY_INDEX.md",
+    "legal/PROJECT_INSTRUCTIONS.md",
+    "legal/SOURCE_GAPS.md",
+    "legal/manifests/authority_registry.json"
+  ]
+}

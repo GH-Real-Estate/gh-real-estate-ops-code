@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/authority/schemas/promotion-validation-context.schema.json",
+  "title": "Immutable authority promotion validation context",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "domain",
+    "candidate_sha256",
+    "source_revision",
+    "candidate_path",
+    "approval_path",
+    "source_catalog_path",
+    "impact_crosswalk_path",
+    "source_catalog",
+    "impact_crosswalk",
+    "path_manifest"
+  ],
+  "properties": {
+    "contract_version": { "const": "1.0" },
+    "domain": { "enum": ["legal", "accounting"] },
+    "candidate_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "source_revision": {
+      "type": "string",
+      "pattern": "^(?:[a-f0-9]{40}|[a-f0-9]{64})$"
+    },
+    "candidate_path": { "type": "string", "pattern": "^authority/candidates/(?:legal|accounting)/runs/[0-9]+-[0-9]+/candidate\\.json$" },
+    "approval_path": { "type": "string", "pattern": "^authority/reviews/(?:legal|accounting)/.+\\.json$" },
+    "source_catalog_path": { "type": "string", "pattern": "^tools/authority_refresh/config/(?:legal|accounting)_sources\\.json$" },
+    "impact_crosswalk_path": { "const": "authority/impact_crosswalk.json" },
+    "source_catalog": { "type": "object" },
+    "impact_crosswalk": { "type": "object" },
+    "path_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "size_bytes"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "size_bytes": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  }
+}

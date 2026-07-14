@@ -1,0 +1,442 @@
+{
+  "version": 1,
+  "purpose": "Discover candidate legal-authority changes from official publisher endpoints. Discovery is not a legal applicability or currentness decision.",
+  "default_status": "discovered",
+  "allowed_domains": [
+    "api.congress.gov",
+    "kscourts.gov",
+    "kslegislature.gov",
+    "searchdro.kscourts.gov",
+    "sos.ks.gov",
+    "uscode.house.gov",
+    "www.ecfr.gov",
+    "www.federalregister.gov",
+    "www.govinfo.gov",
+    "www.kscourts.gov",
+    "www.kslegislature.gov",
+    "codes.opkansas.org",
+    "www.sos.ks.gov",
+    "rules.ks.gov"
+  ],
+  "delegated_official_publishers": {
+    "codes.opkansas.org": "City-linked electronic municipal-code publication platform. The City Clerk's master copy controls; discoveries remain manual-review.",
+    "rules.ks.gov": "Kansas Secretary of State-linked rules portal. This catalog records the official redirect as metadata; substantive rules review remains manual."
+  },
+  "sources": [
+    {
+      "source_id": "ecfr-relevant-titles",
+      "publisher": "Office of the Federal Register and Government Publishing Office",
+      "jurisdiction": "United States",
+      "authority_type": "federal-regulation-index",
+      "discovery_url": "https://www.ecfr.gov/api/versioner/v1/titles.json",
+      "adapter": "ecfr_titles_json",
+      "storage_policy": "redistributable",
+      "cadence": "daily",
+      "critical": true,
+      "minimum_items": 10,
+      "allowed_hosts": [
+        "www.ecfr.gov"
+      ],
+      "item_url_template": "https://www.ecfr.gov/current/title-{title_number}",
+      "filters": {
+        "title_numbers": [
+          12,
+          16,
+          24,
+          26,
+          28,
+          29,
+          31,
+          40,
+          42,
+          45
+        ],
+        "include_reserved": false
+      },
+      "request": {
+        "accept": "application/json",
+        "timeout_seconds": 30,
+        "max_bytes": 2097152
+      }
+    },
+    {
+      "source_id": "govinfo-public-private-laws-feed",
+      "publisher": "United States Government Publishing Office",
+      "jurisdiction": "United States",
+      "authority_type": "enacted-federal-law-feed",
+      "discovery_url": "https://www.govinfo.gov/rss/plaw.xml",
+      "adapter": "rss_atom",
+      "storage_policy": "redistributable",
+      "cadence": "daily",
+      "critical": true,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "www.govinfo.gov"
+      ],
+      "request": {
+        "accept": "application/rss+xml, application/xml;q=0.9",
+        "timeout_seconds": 30,
+        "max_bytes": 5242880
+      }
+    },
+    {
+      "source_id": "govinfo-us-code-feed",
+      "publisher": "United States Government Publishing Office",
+      "jurisdiction": "United States",
+      "authority_type": "federal-code-publication-feed",
+      "discovery_url": "https://www.govinfo.gov/rss/uscode.xml",
+      "adapter": "rss_atom",
+      "storage_policy": "redistributable",
+      "cadence": "daily",
+      "critical": true,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "www.govinfo.gov"
+      ],
+      "request": {
+        "accept": "application/rss+xml, application/xml;q=0.9",
+        "timeout_seconds": 30,
+        "max_bytes": 5242880
+      }
+    },
+    {
+      "source_id": "govinfo-federal-register-feed",
+      "publisher": "United States Government Publishing Office",
+      "jurisdiction": "United States",
+      "authority_type": "federal-register-publication-feed",
+      "discovery_url": "https://www.govinfo.gov/rss/fr.xml",
+      "adapter": "rss_atom",
+      "storage_policy": "redistributable",
+      "cadence": "daily",
+      "critical": false,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "www.govinfo.gov"
+      ],
+      "request": {
+        "accept": "application/rss+xml, application/xml;q=0.9",
+        "timeout_seconds": 30,
+        "max_bytes": 5242880
+      }
+    },
+    {
+      "source_id": "olrc-us-code-currency",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "authority_type": "us-code-currency-and-pending-update-index",
+      "discovery_url": "https://uscode.house.gov/currency/currency.shtml",
+      "adapter": "official_html_index",
+      "storage_policy": "redistributable",
+      "cadence": "daily",
+      "critical": true,
+      "minimum_items": 10,
+      "allowed_hosts": [
+        "uscode.house.gov"
+      ],
+      "link_filter": {
+        "include_patterns": [
+          "currency",
+          "pending",
+          "usc.*\\.(?:pdf|xml|zip)$"
+        ],
+        "exclude_patterns": []
+      },
+      "request": {
+        "accept": "text/html",
+        "timeout_seconds": 30,
+        "max_bytes": 5242880
+      }
+    },
+    {
+      "source_id": "olrc-us-code-downloads",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "authority_type": "us-code-release-index",
+      "discovery_url": "https://uscode.house.gov/download/download.shtml",
+      "adapter": "official_html_index",
+      "storage_policy": "redistributable",
+      "cadence": "weekly",
+      "critical": true,
+      "minimum_items": 10,
+      "allowed_hosts": [
+        "uscode.house.gov"
+      ],
+      "link_filter": {
+        "include_patterns": [
+          "download",
+          "\\.(?:pdf|xml|zip)$"
+        ],
+        "exclude_patterns": []
+      },
+      "request": {
+        "accept": "text/html",
+        "timeout_seconds": 30,
+        "max_bytes": 5242880
+      }
+    },
+    {
+      "source_id": "congress-legislation-api",
+      "publisher": "Library of Congress",
+      "jurisdiction": "United States",
+      "authority_type": "federal-legislation-candidate-index",
+      "discovery_url": "https://api.congress.gov/v3/bill?format=json&limit=250",
+      "adapter": "official_json_records",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": false,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "api.congress.gov"
+      ],
+      "records_path": "bills",
+      "strict_records": true,
+      "field_map": {
+        "external_id": [
+          "url"
+        ],
+        "title": [
+          "title"
+        ],
+        "official_url": [
+          "url"
+        ],
+        "published_at": [
+          "updateDate",
+          "latestAction.actionDate"
+        ],
+        "effective_at": [],
+        "publisher_status": [
+          "latestAction.text"
+        ]
+      },
+      "metadata_fields": [
+        "congress",
+        "type",
+        "number",
+        "latestAction"
+      ],
+      "request": {
+        "accept": "application/json",
+        "timeout_seconds": 30,
+        "max_bytes": 10485760,
+        "api_key_required": true,
+        "api_key_env": "CONGRESS_API_KEY",
+        "api_key_query_param": "api_key"
+      }
+    },
+    {
+      "source_id": "federal-register-housing-consumer-rulemaking",
+      "publisher": "Office of the Federal Register",
+      "jurisdiction": "United States",
+      "authority_type": "federal-rulemaking-and-notice-index",
+      "discovery_url": "https://www.federalregister.gov/api/v1/documents.json?per_page=100&order=newest&conditions%5Bagencies%5D%5B%5D=housing-and-urban-development&conditions%5Bagencies%5D%5B%5D=consumer-financial-protection-bureau&conditions%5Bagencies%5D%5B%5D=federal-trade-commission&conditions%5Bagencies%5D%5B%5D=environmental-protection-agency",
+      "adapter": "official_json_records",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": true,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "www.federalregister.gov"
+      ],
+      "records_path": "results",
+      "strict_records": true,
+      "field_map": {
+        "external_id": [
+          "document_number"
+        ],
+        "title": [
+          "title"
+        ],
+        "official_url": [
+          "html_url"
+        ],
+        "published_at": [
+          "publication_date"
+        ],
+        "effective_at": [
+          "effective_on"
+        ],
+        "publisher_status": [
+          "type"
+        ]
+      },
+      "metadata_fields": [
+        "type",
+        "agencies",
+        "citation",
+        "docket_ids"
+      ],
+      "request": {
+        "accept": "application/json",
+        "timeout_seconds": 30,
+        "max_bytes": 10485760
+      }
+    },
+    {
+      "source_id": "kansas-legislature-measures",
+      "publisher": "Kansas Legislature",
+      "jurisdiction": "Kansas",
+      "authority_type": "state-legislation-candidate-index",
+      "discovery_url": "https://kslegislature.gov/api/v1/measures/?page_size=1000&ordering=-rev_date",
+      "adapter": "kansas_legislature_json",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": true,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "kslegislature.gov",
+        "www.kslegislature.gov"
+      ],
+      "records_path": "results",
+      "strict_records": true,
+      "item_url_template": "https://kslegislature.gov/api/v1/bill_status/{bill_no}/",
+      "field_map": {
+        "external_id": [
+          "bill_no",
+          "id",
+          "kpid"
+        ],
+        "title": [
+          "short_title",
+          "long_title",
+          "bill_no"
+        ],
+        "official_url": [
+          "web_url",
+          "url",
+          "href"
+        ],
+        "published_at": [
+          "rev_date"
+        ],
+        "effective_at": [],
+        "publisher_status": [
+          "status"
+        ]
+      },
+      "metadata_fields": [
+        "bill_no",
+        "leg_type",
+        "session",
+        "version",
+        "doc_type"
+      ],
+      "request": {
+        "accept": "application/json",
+        "timeout_seconds": 30,
+        "max_bytes": 20971520
+      }
+    },
+    {
+      "source_id": "kansas-sos-register",
+      "publisher": "Kansas Secretary of State",
+      "jurisdiction": "Kansas",
+      "authority_type": "official-state-newspaper-index",
+      "discovery_url": "https://www.sos.ks.gov/publications/kansas-register.html",
+      "adapter": "official_html_index",
+      "storage_policy": "redistributable",
+      "cadence": "weekly",
+      "critical": true,
+      "minimum_items": 2,
+      "allowed_hosts": [
+        "sos.ks.gov",
+        "www.sos.ks.gov",
+        "rules.ks.gov"
+      ],
+      "link_filter": {
+        "include_patterns": [
+          "rules\\.ks\\.gov"
+        ],
+        "exclude_patterns": []
+      },
+      "request": {
+        "accept": "text/html",
+        "timeout_seconds": 30,
+        "max_bytes": 10485760
+      }
+    },
+    {
+      "source_id": "kansas-sos-administrative-regulations",
+      "publisher": "Kansas Secretary of State",
+      "jurisdiction": "Kansas",
+      "authority_type": "state-administrative-regulation-index",
+      "discovery_url": "https://www.sos.ks.gov/publications/kansas-administrative-regulations.html",
+      "adapter": "official_html_index",
+      "storage_policy": "manual-review",
+      "cadence": "weekly",
+      "critical": true,
+      "minimum_items": 5,
+      "allowed_hosts": [
+        "sos.ks.gov",
+        "www.sos.ks.gov",
+        "rules.ks.gov"
+      ],
+      "link_filter": {
+        "include_patterns": [
+          "rules\\.ks\\.gov"
+        ],
+        "exclude_patterns": []
+      },
+      "request": {
+        "accept": "text/html",
+        "timeout_seconds": 30,
+        "max_bytes": 10485760
+      }
+    },
+    {
+      "source_id": "kansas-appellate-decisions",
+      "publisher": "Kansas Judicial Branch",
+      "jurisdiction": "Kansas",
+      "authority_type": "state-appellate-decision-index",
+      "discovery_url": "https://kscourts.gov/Cases-Decisions/Decisions",
+      "adapter": "official_html_index",
+      "storage_policy": "manual-review",
+      "cadence": "weekly",
+      "critical": true,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "kscourts.gov",
+        "www.kscourts.gov",
+        "searchdro.kscourts.gov"
+      ],
+      "link_filter": {
+        "include_patterns": [
+          "/cases-decisions/decisions/",
+          "/documents/pdf/casedecisions/"
+        ],
+        "exclude_patterns": []
+      },
+      "request": {
+        "accept": "text/html",
+        "timeout_seconds": 30,
+        "max_bytes": 10485760
+      }
+    },
+    {
+      "source_id": "overland-park-code-index",
+      "publisher": "City of Overland Park, Kansas",
+      "jurisdiction": "Overland Park, Kansas",
+      "authority_type": "municipal-code-and-ordinance-index",
+      "discovery_url": "https://codes.opkansas.org/municipal-code/doc-view.aspx",
+      "adapter": "official_html_index",
+      "storage_policy": "manual-review",
+      "cadence": "weekly",
+      "critical": true,
+      "minimum_items": 5,
+      "allowed_hosts": [
+        "codes.opkansas.org"
+      ],
+      "link_filter": {
+        "include_patterns": [
+          "/municipal-code/doc-view(?:er)?\\.aspx"
+        ],
+        "exclude_patterns": []
+      },
+      "request": {
+        "accept": "text/html",
+        "timeout_seconds": 30,
+        "max_bytes": 10485760
+      }
+    }
+  ]
+}
