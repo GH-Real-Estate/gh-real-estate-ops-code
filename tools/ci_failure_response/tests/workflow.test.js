@@ -33,6 +33,9 @@ test("workflow is pinned and never executes the failed revision", () => {
   assert.match(content, /persist-credentials: false/);
   assert.match(content, /actions:\s*read/);
   assert.match(content, /issues:\s*write/);
+  assert.match(content, /group: ci-failure-response-.*workflow_run\.workflow_id/);
+  assert.match(content, /workflow_run\.head_branch/);
+  assert.doesNotMatch(content, /^\s*group:\s*ci-failure-response\s*$/m);
   assert.doesNotMatch(content, /workflow_run\.head_sha/);
   assert.doesNotMatch(content, /download-artifact/);
   assert.doesNotMatch(content, /pull_request_target/);

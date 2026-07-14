@@ -32,6 +32,8 @@ The responder monitors:
 
 Incident conclusions are `failure`, `timed_out`, `startup_failure`, and `action_required`. `cancelled`, `neutral`, `skipped`, and `stale` runs are ignored because they are not reliable evidence of a code defect. A newer `success` closes the matching open incident. An older successful run cannot close an incident created by a newer failure.
 
+Responder observations are serialized per monitored workflow and branch. Unrelated workflows and branches run independently so a busy repository cannot delay incident publication, while events that can mutate the same incident remain ordered.
+
 ## Security Model
 
 - The `workflow_run` job checks out only the repository default branch. It never checks out `workflow_run.head_sha`.
