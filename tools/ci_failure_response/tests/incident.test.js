@@ -10,6 +10,7 @@ function createFakeGithub() {
     labels: new Set(),
     issues: [],
     comments: [],
+    workflowRuns: [],
     nextIssue: 1,
   };
 
@@ -58,7 +59,14 @@ function createFakeGithub() {
   return {
     state,
     github: {
-      rest: { issues: issuesApi },
+      rest: {
+        issues: issuesApi,
+        actions: {
+          async listWorkflowRuns() {
+            return { data: { workflow_runs: state.workflowRuns } };
+          },
+        },
+      },
       async paginate(_method, _args) {
         return state.issues;
       },
@@ -172,6 +180,21 @@ test("older success cannot close a newer failure", async () => {
 
   assert.equal(result.reason, "stale-observation");
   assert.equal(state.issues[0].state, "open");
+});
+
+test("failure is ignored when the API already reports a newer success", async () => {
+  const { github, state } = createFakeGithub();
+  state.workflowRuns.push({
+    id: 101,
+    run_attempt: 1,
+    conclusion: "success",
+    created_at: "2026-07-14T10:05:00Z",
+    head_repository: { full_name: "GH-Real-Estate/gh-real-estate-ops-code" },
+  });
+  const result = await responder.handleIncident({ github, context: workflowContext() });
+
+  assert.equal(result.reason, "superseded-failure");
+  assert.equal(state.issues.length, 0);
 });
 
 test("higher attempt for the same run is newer", async () => {
