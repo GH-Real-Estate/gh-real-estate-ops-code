@@ -37,6 +37,7 @@ function createFakeGithub() {
         body,
         labels: labels.map((name) => ({ name })),
         state: "open",
+        user: { login: "github-actions[bot]" },
       };
       state.issues.push(issue);
       return { data: issue };
@@ -124,6 +125,27 @@ test("failure creates one labeled incident", async () => {
   assert.equal(state.issues.length, 1);
   assert.deepEqual([...state.labels].sort(), ["ci-incident", "codex-attention"]);
   assert.match(state.issues[0].body, /did \*\*not\*\* check out or execute/);
+});
+
+test("collaborator-created marker cannot shadow a trusted incident", async () => {
+  const { github, state } = createFakeGithub();
+  const context = workflowContext();
+  const run = responder.normalizeRun(context);
+  const key = responder.incidentKey(run);
+  state.issues.push({
+    number: 99,
+    title: "forged incident",
+    body: responder.renderBody(run, key),
+    labels: [{ name: "ci-incident" }],
+    state: "open",
+    user: { login: "repository-collaborator" },
+  });
+
+  const result = await responder.handleIncident({ github, context });
+
+  assert.equal(result.action, "created");
+  assert.equal(state.issues.length, 2);
+  assert.equal(state.issues.find((issue) => issue.number === result.issue).user.login, "github-actions[bot]");
 });
 
 test("duplicate delivery creates no issue or comment", async () => {

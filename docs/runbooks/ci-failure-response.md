@@ -32,7 +32,7 @@ The responder monitors:
 
 Incident conclusions are `failure`, `timed_out`, `startup_failure`, and `action_required`. `cancelled`, `neutral`, `skipped`, and `stale` runs are ignored because they are not reliable evidence of a code defect. A newer `success` closes the matching open incident. An older successful run cannot close an incident created by a newer failure.
 
-Responder observations are serialized per monitored workflow and branch. Unrelated workflows and branches run independently so a busy repository cannot delay incident publication, while events that can mutate the same incident remain ordered.
+Responder observations are serialized per monitored workflow and branch with `queue: max`, which preserves up to 100 pending observations instead of replacing the existing pending run. Unrelated workflows and branches run independently, and the responder's run-time ordering checks reject stale observations. More than 100 pending observations in one group exceeds GitHub's queue and requires operator reconciliation from Actions history.
 
 ## Security Model
 
@@ -41,7 +41,7 @@ Responder observations are serialized per monitored workflow and branch. Unrelat
 - Its token can read repository contents and Actions run metadata and can write issues only. It cannot push code, create a pull request, approve, merge, deploy, rerun workflows, or read Actions secrets.
 - All third-party Actions are pinned to immutable commit SHAs.
 - Workflow names, branches, actors, SHAs, and URLs are treated as untrusted data, normalized, bounded, and rendered only as inert issue content.
-- Issue bodies carry stable hidden markers so duplicate deliveries update one audit record. Manual simulations use a separate namespace and cannot close real incidents.
+- Only incidents created by `github-actions[bot]` are eligible for marker-based state lookup. Their bodies carry stable hidden markers so duplicate deliveries update one audit record. Manual simulations use a separate namespace and cannot close real incidents.
 - No OpenAI API key is stored in GitHub. The Codex desktop automation uses the user's existing connected GitHub access and runs independently of the privileged GitHub event.
 
 GitHub warns that `workflow_run` may have privileges unavailable to the triggering workflow. Never change this design to execute the failed revision, a failed artifact, or instructions copied from a log while using an issue-write or stronger token.
