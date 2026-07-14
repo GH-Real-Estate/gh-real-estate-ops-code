@@ -137,6 +137,17 @@ test("duplicate delivery creates no issue or comment", async () => {
   assert.equal(state.comments.length, 0);
 });
 
+test("duplicate delivery ignores timestamp drift for the same run and attempt", async () => {
+  const { github, state } = createFakeGithub();
+  await responder.handleIncident({ github, context: workflowContext() });
+  const redelivery = workflowContext({ created_at: "2026-07-14T10:00:01Z" });
+  const result = await responder.handleIncident({ github, context: redelivery });
+
+  assert.equal(result.reason, "duplicate-delivery");
+  assert.equal(state.issues.length, 1);
+  assert.equal(state.comments.length, 0);
+});
+
 test("newer failure updates and comments on the same incident", async () => {
   const { github, state } = createFakeGithub();
   await responder.handleIncident({ github, context: workflowContext() });
