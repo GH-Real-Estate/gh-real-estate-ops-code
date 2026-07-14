@@ -79,11 +79,20 @@ accounting/
 - `CURRENT` means approved for the dated release, not guaranteed current forever.
 - An automated alert, URL fingerprint, or retrieval error is a review candidate, not an accounting or tax conclusion.
 - The tax monitor never promotes a retrieved source, changes a policy, rewrites a sourcebook, modifies the chart of accounts, or posts to Zoho.
+- A direct source without a reviewer-approved stable fingerprint fails closed as a baseline-review item; delegated municipal-code sources remain governed by the existing legal monitor.
 - FASB topic locators and GH-authored summaries may be stored; copied Codification text may not be stored without explicit written permission covering the intended AI use.
 - Exact paragraph citations, effective dates, transition provisions, scope exceptions, and private-company alternatives require live verification before a material GAAP assertion.
 - Tax-year forms, indexed amounts, elections, and filing positions require the final product for the applicable year and CPA review.
 - Proposed standards, draft forms, and exposure drafts are monitoring-only until issued and effective for GH's reporting basis and period.
 - Do not auto-merge accounting- or tax-authority currentness changes.
+
+## Initial and recurring tax-source baseline procedure
+
+1. Manually dispatch `Tax Authority Monitor and Semiannual Review` with `force_formal_review` enabled. The initial run is expected to fail closed because direct sources have no approved fingerprints.
+2. Review every retrieval against the official source, authority weight, effective date, affected tax year, and GH applicability. Dynamic pages may remain unbaselined when whole-page bytes are not a stable comparison.
+3. Through a reviewed pull request, add `approved_sha256` only for a stable like-for-like payload, record the reviewer and disposition in the PR, and advance `last_reviewed` / `next_review` to the next January 15 or July 15.
+4. Delegate a source only to an existing governed monitor that validates the exact official artifact. Do not substitute a viewer shell, search result, unofficial mirror, or rendered derivative.
+5. Keep any unresolved or unbaselined record actionable. A green retrieval alone never approves currentness or a tax conclusion.
 
 ## Current working scope
 
