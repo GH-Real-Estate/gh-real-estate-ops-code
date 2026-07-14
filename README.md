@@ -242,6 +242,7 @@ tools/
 | Accounting Authority Index | `accounting/CURRENT_AUTHORITY_INDEX.md` |
 | Authority Refresh Governance | `authority/README.md` |
 | Authority Refresh Runbook | `docs/runbooks/authority-refresh.md` |
+| CI Failure Response | `docs/runbooks/ci-failure-response.md` |
 
 ## Authority Refresh Controls
 
@@ -252,6 +253,12 @@ tools/
 - **Protected promotion:** reviewed discovery evidence can be archived only through the `authority-production` GitHub environment and exact confirmation `PROMOTE_REVIEWED_AUTHORITY_RELEASE`. That workflow opens another draft pull request and never merges it.
 
 The July 12, 2026 approved legal and accounting baselines remain unchanged by this automation. A green run is evidence that configured checks completed, not a compliance, completeness, legal-currentness, GAAP, or tax certification. See [`docs/runbooks/authority-refresh.md`](docs/runbooks/authority-refresh.md) for triage, review, promotion, and rollback.
+
+## CI Failure Response
+
+`CI Failure Response` watches every current repository workflow and records failures as deduplicated GitHub issues. A recurring Codex task checks that queue, independently diagnoses current failures, and may prepare one focused draft repair PR for a low-risk code defect. It never directly pushes or merges, and legal, accounting, authority, payment, lease, tenant, security, PII, and workflow-control changes remain human-gated.
+
+The event responder checks out only trusted default-branch code, never executes the failed revision or artifacts, and stores no OpenAI key in GitHub. See [`docs/runbooks/ci-failure-response.md`](docs/runbooks/ci-failure-response.md) for monitored workflows, guardrails, smoke testing, and rollback.
 
 ## Change Workflow
 
