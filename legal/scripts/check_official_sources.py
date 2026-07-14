@@ -13,10 +13,13 @@ import concurrent.futures
 import email.utils
 import functools
 import hashlib
+import http.client
 import io
 import json
+import os
 import re
 import ssl
+import tempfile
 import threading
 import time
 import urllib.error
@@ -47,6 +50,8 @@ ECFR_URL_RE = re.compile(
 ENCODEPLUS_BASE = "https://online.encodeplus.com/regs/overlandpark-ks"
 ENCODEPLUS_EXPORT_POLLS = 12
 ENCODEPLUS_POLL_DELAY = 2.0
+ISSUE_REPORT_MAX_CHARS = 20_000
+ISSUE_REPORT_MAX_ITEMS = 20
 SSL_CONTEXT = ssl.create_default_context()
 
 
@@ -126,7 +131,12 @@ def download_url(
                 sleep(delay)
                 continue
             break
-        except (OSError, ValueError, urllib.error.URLError) as exc:
+        except (
+            OSError,
+            ValueError,
+            urllib.error.URLError,
+            http.client.HTTPException,
+        ) as exc:
             last_error = f"{type(exc).__name__}: {exc}"
             if attempt < max(1, attempts):
                 sleep(retry_delay({}, attempt))
@@ -137,7 +147,7 @@ def download_url(
         "ok": False,
         "url": url,
         "error": last_error,
-        "attempts": max(1, attempts),
+        "attempts": attempt,
     }
 
 
@@ -770,6 +780,114 @@ def evaluate_records(
     return results
 
 
+def build_issue_report(
+    payload: dict[str, object],
+    *,
+    workflow_run_url: str,
+    artifact_name: str,
+    max_items: int = ISSUE_REPORT_MAX_ITEMS,
+    max_chars: int = ISSUE_REPORT_MAX_CHARS,
+) -> str:
+    """Build a bounded GitHub issue summary while keeping full details in the artifact."""
+    counts = payload.get("counts")
+    results = payload.get("results")
+    if not isinstance(counts, dict) or not isinstance(results, list):
+        raise ValueError("monitor payload is missing counts or results")
+    if not workflow_run_url.startswith("https://"):
+        raise ValueError("workflow run URL must use HTTPS")
+    if not artifact_name or max_items < 1 or max_chars < 1_000:
+        raise ValueError("invalid issue-report configuration")
+
+    actionable = [
+        item
+        for item in results
+        if isinstance(item, dict) and item.get("status") in {"changed", "error"}
+    ]
+    shown = actionable[:max_items]
+    lines = [
+        "# Legal source monitor alert",
+        "",
+        f"Checked: {payload.get('checked_at', 'unavailable')}",
+        "",
+        f"- Unchanged: {counts.get('unchanged', 0)}",
+        f"- Changed fingerprints: {counts.get('changed', 0)}",
+        f"- Retrieval errors: {counts.get('error', 0)}",
+        f"- Manual-comparison sources reached: {counts.get('manual', 0)}",
+        "",
+        (
+            "> LEGAL REVIEW REQUIRED. A changed fingerprint or retrieval error does "
+            "not by itself establish that law changed."
+        ),
+        "",
+    ]
+    for item in shown:
+        lines.extend(
+            [
+                f"## {str(item.get('status', 'error')).upper()} - {item.get('citation')}",
+                "",
+                f"- Title: {item.get('title')}",
+                f"- Official URL: {item.get('url')}",
+                f"- Error: {item.get('error', 'none')}",
+                "",
+            ]
+        )
+
+    omitted = len(actionable) - len(shown)
+    if omitted:
+        lines.extend(
+            [
+                f"> {omitted} additional changed/error records are omitted from this summary.",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            (
+                f"Full JSON and Markdown reports are stored in artifact `{artifact_name}` "
+                f"on [this workflow run]({workflow_run_url})."
+            ),
+            "",
+        ]
+    )
+
+    report = "\n".join(lines)
+    if len(report) <= max_chars:
+        return report
+
+    truncation = (
+        "\n\n> Issue summary truncated. Review the full report artifact "
+        f"`{artifact_name}` on [this workflow run]({workflow_run_url}).\n"
+    )
+    if len(truncation) >= max_chars:
+        truncation = "\n\n> Issue summary truncated. Review the workflow artifact.\n"
+    return report[: max_chars - len(truncation)].rstrip() + truncation
+
+
+def write_text_atomic(path: Path, content: str) -> None:
+    """Replace a report only after its complete content is safely written."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path: str | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            newline="\n",
+            dir=path.parent,
+            prefix=f".{path.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as temporary:
+            temporary_path = temporary.name
+            temporary.write(content)
+            temporary.flush()
+            os.fsync(temporary.fileno())
+        os.replace(temporary_path, path)
+        temporary_path = None
+    finally:
+        if temporary_path is not None:
+            Path(temporary_path).unlink(missing_ok=True)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -790,9 +908,15 @@ def main() -> int:
     )
     parser.add_argument("--json-report", type=Path, default=Path("legal-source-monitor.json"))
     parser.add_argument("--markdown-report", type=Path, default=Path("legal-source-monitor.md"))
+    parser.add_argument("--issue-report", type=Path)
+    parser.add_argument("--workflow-run-url")
+    parser.add_argument("--artifact-name")
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--retry-attempts", type=int, default=RETRY_ATTEMPTS)
     args = parser.parse_args()
+
+    if args.issue_report and (not args.workflow_run_url or not args.artifact_name):
+        parser.error("--issue-report requires --workflow-run-url and --artifact-name")
 
     registry = json.loads(args.registry.read_text(encoding="utf-8"))
     overrides = load_overrides(args.overrides)
@@ -837,7 +961,7 @@ def main() -> int:
         "counts": counts,
         "results": results,
     }
-    args.json_report.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    write_text_atomic(args.json_report, json.dumps(payload, indent=2) + "\n")
 
     report_items = [item for item in results if item["status"] != "unchanged"]
     lines = [
@@ -887,7 +1011,16 @@ def main() -> int:
                 "",
             ]
         )
-    args.markdown_report.write_text("\n".join(lines), encoding="utf-8")
+    write_text_atomic(args.markdown_report, "\n".join(lines))
+    if args.issue_report:
+        write_text_atomic(
+            args.issue_report,
+            build_issue_report(
+                payload,
+                workflow_run_url=args.workflow_run_url,
+                artifact_name=args.artifact_name,
+            ),
+        )
     print(json.dumps(counts))
     return 2 if counts["changed"] or counts["error"] else 0
 

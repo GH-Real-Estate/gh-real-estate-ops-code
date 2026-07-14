@@ -71,4 +71,8 @@ The scheduled monitor compares official payloads with the matching release finge
 
 Five derived sources are explicitly availability-only in `manifests/source_monitor_overrides.json`: the FTC HTML rendering, the mirror-derived/normalized HUD memorandum, and three exact-page Kansas case extracts. Their official URLs are checked for reachability and payload type, but their bytes are not compared with a non-equivalent derived artifact. They require purpose-built or qualified manual comparison. This exception is visible in every monitor report and documented in `SOURCE_GAPS.md`.
 
+The full JSON and Markdown reports are retained as workflow artifacts. When changed fingerprints, retrieval errors, or a technical workflow failure require review, the default-branch workflow posts a bounded issue summary linked to the full artifact. Feature-branch manual runs cannot modify the production legal-review issue, and scheduled/manual runs for the same ref are serialized.
+
+A green monitor run means the registered comparable payloads matched and the five availability-only sources were reachable. It does not prove complete legal currentness: fixed, dated URLs do not discover later editions, new amendments, superseding notices, later case history, or guidance published at a new URL. Those discovery and manual-comparison checks remain part of the qualified release-review process.
+
 The monitor never silently promotes changed text, rewrites effective dates, or merges a legal update. After human review, regenerate the complete release, update the registry and changelog, replace all eight current PDFs and their text extracts together, and record the review date.

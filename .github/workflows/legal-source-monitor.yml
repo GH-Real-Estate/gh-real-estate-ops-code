@@ -10,11 +10,12 @@ on:
       - 'legal/manifests/source_monitor_overrides.json'
       - 'legal/manifests/authority_registry.json'
       - 'legal/requirements-source-monitor.txt'
+      - 'legal/generated/project-sources/current/**'
       - 'legal/text/current/authorities/**'
       - '.github/workflows/legal-source-monitor.yml'
 
 concurrency:
-  group: legal-source-monitor-${{ github.event_name }}-${{ github.ref }}
+  group: legal-source-monitor-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -45,9 +46,49 @@ jobs:
         id: monitor
         continue-on-error: true
         run: |
-          python legal/scripts/check_official_sources.py \
+          timeout --signal=TERM --kill-after=30s 15m \
+            python legal/scripts/check_official_sources.py \
             --json-report legal-source-monitor.json \
-            --markdown-report legal-source-monitor.md
+            --markdown-report legal-source-monitor.md \
+            --issue-report legal-source-monitor-issue.md \
+            --workflow-run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --artifact-name "legal-source-monitor-${{ github.run_id }}"
+
+      - name: Ensure failure reports exist
+        if: always()
+        shell: bash
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ARTIFACT_NAME: legal-source-monitor-${{ github.run_id }}
+        run: |
+          if [[ ! -s legal-source-monitor.json ]]; then
+            printf '%s\n' '{"checked_at":null,"notice":"Workflow failed before report generation.","counts":{"unchanged":0,"changed":0,"error":1,"manual":0},"results":[{"status":"error","citation":"Workflow execution","title":"Legal source monitor workflow","error":"Workflow failed before report generation."}]}' > legal-source-monitor.json
+          fi
+          if [[ ! -s legal-source-monitor.md ]]; then
+            printf '%s\n' \
+              '# Legal source monitor workflow failure' \
+              '' \
+              'The workflow failed before it produced a complete source-comparison report.' \
+              '' \
+              "- Workflow run: $RUN_URL" \
+              "- Expected artifact: $ARTIFACT_NAME" \
+              '' \
+              '> Treat all monitored sources as unverified until this run is reviewed.' \
+              > legal-source-monitor.md
+          fi
+          if [[ ! -s legal-source-monitor-issue.md ]] ||
+            [[ $(wc -c < legal-source-monitor-issue.md) -gt 60000 ]]; then
+            printf '%s\n' \
+              '# Legal source monitor workflow failure' \
+              '' \
+              'The workflow did not produce a bounded issue summary.' \
+              '' \
+              "- Workflow run: $RUN_URL" \
+              "- Full report artifact: $ARTIFACT_NAME" \
+              '' \
+              '> Treat all monitored sources as unverified until this run is reviewed.' \
+              > legal-source-monitor-issue.md
+          fi
 
       - name: Upload monitor report
         if: always()
@@ -57,7 +98,9 @@ jobs:
           path: |
             legal-source-monitor.json
             legal-source-monitor.md
+            legal-source-monitor-issue.md
           retention-days: 90
+          if-no-files-found: error
 
       - name: Fail after preserving report
         if: steps.monitor.outcome == 'failure'
@@ -70,7 +113,11 @@ jobs:
       ${{
         always() &&
         github.event_name != 'pull_request' &&
-        needs.compare-official-sources.outputs.monitor_outcome == 'failure'
+        github.ref == format('refs/heads/{0}', github.event.repository.default_branch) &&
+        (
+          needs.compare-official-sources.result == 'failure' ||
+          needs.compare-official-sources.outputs.monitor_outcome == 'failure'
+        )
       }}
     runs-on: ubuntu-latest
     permissions:
@@ -79,19 +126,54 @@ jobs:
       issues: write
     steps:
       - name: Download monitor report
+        id: download-report
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
           name: legal-source-monitor-${{ github.run_id }}
           path: .
+
+      - name: Ensure publishable issue summary exists
+        if: always()
+        shell: bash
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ARTIFACT_NAME: legal-source-monitor-${{ github.run_id }}
+        run: |
+          if [[ ! -s legal-source-monitor-issue.md ]] ||
+            [[ $(wc -c < legal-source-monitor-issue.md) -gt 60000 ]]; then
+            printf '%s\n' \
+              '# Legal source monitor workflow failure' \
+              '' \
+              'The comparison job failed and its report artifact could not be downloaded.' \
+              '' \
+              "- Workflow run: $RUN_URL" \
+              "- Expected artifact: $ARTIFACT_NAME" \
+              '' \
+              '> Treat all monitored sources as unverified until this run is reviewed.' \
+              > legal-source-monitor-issue.md
+          fi
 
       - name: Open or update legal-review issue
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           title='LEGAL REVIEW REQUIRED: official legal sources changed or could not be verified'
-          existing="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
+          existing="$(
+            gh issue list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --search "$title in:title" \
+              --json number \
+              --jq '.[0].number // empty'
+          )"
           if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body-file legal-source-monitor.md
+            gh issue comment "$existing" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body-file legal-source-monitor-issue.md
           else
-            gh issue create --title "$title" --body-file legal-source-monitor.md
+            gh issue create \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$title" \
+              --body-file legal-source-monitor-issue.md
           fi

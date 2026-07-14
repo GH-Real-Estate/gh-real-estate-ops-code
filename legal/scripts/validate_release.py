@@ -25,6 +25,15 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def normalized_text_size(content: bytes) -> int:
+    """Measure repository text independently of checkout line-ending conversion."""
+    return len(content.replace(b"\r\n", b"\n"))
+
+
+def connector_text_size(path: Path) -> int:
+    return normalized_text_size(path.read_bytes())
+
+
 def fail(message: str) -> None:
     print(f"ERROR: {message}", file=sys.stderr)
     raise SystemExit(1)
@@ -55,10 +64,10 @@ def main() -> int:
         source_count += len(record.get("sources", []))
 
         text_path = TEXT_DIR / f"{Path(filename).stem}.txt"
-        if not text_path.is_file() or text_path.stat().st_size < 500:
+        if not text_path.is_file() or connector_text_size(text_path) < 500:
             fail(f"missing or empty searchable text: {text_path}")
         chunks = sorted(CHUNK_DIR.glob(f"{Path(filename).stem}.part-*.txt"))
-        if not chunks or any(chunk.stat().st_size > 220_000 for chunk in chunks):
+        if not chunks or any(connector_text_size(chunk) > 220_000 for chunk in chunks):
             fail(f"missing or oversized connector-search chunk for {filename}")
 
     if total_pages != 1718:
@@ -82,7 +91,7 @@ def main() -> int:
     authority_text = sorted(AUTHORITY_TEXT_DIR.rglob("*.md"))
     if len(authority_text) < 447:
         fail(f"expected at least 447 per-authority Markdown files, found {len(authority_text)}")
-    if any(path.stat().st_size > 180_000 for path in authority_text):
+    if any(connector_text_size(path) > 180_000 for path in authority_text):
         fail("one or more connector-search Markdown files exceed 180,000 bytes")
 
     print(
