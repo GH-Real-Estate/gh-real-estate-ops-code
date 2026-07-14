@@ -4,18 +4,21 @@ Use these rules whenever this repository supports a GH Real Estate accounting, b
 
 1. Identify the transaction date or tax year, entity, property/unit, payment method, signed agreement, and reporting basis before reaching a conclusion.
 2. State which question is being answered: operational bookkeeping, US GAAP financial statements, federal income tax, Kansas tax, local compliance, or lease/legal treatment.
-3. Start with `accounting/FASB_APPLICABILITY_INDEX.md`, `accounting/ACCOUNTING_POLICY_MATRIX.md`, and `accounting/manifests/fasb_topic_registry.json`. For public law, also use `legal/CURRENT_AUTHORITY_INDEX.md` and `legal/manifests/authority_registry.json`.
+3. Start with `accounting/FASB_APPLICABILITY_INDEX.md`, `accounting/ACCOUNTING_POLICY_MATRIX.md`, and `accounting/manifests/fasb_topic_registry.json`. For tax questions, first read `accounting/TAX_PROFILE_ASSUMPTIONS.md`, `accounting/TAX_OPPORTUNITY_AND_COMPLIANCE_MATRIX.md`, and `accounting/manifests/tax_authority_registry.json`. For public law, also use `legal/CURRENT_AUTHORITY_INDEX.md` and `legal/manifests/authority_registry.json`.
 4. Separate four conclusions when relevant: clean book treatment, federal tax treatment, Kansas/local treatment, and contract/lease treatment.
 5. Cite an ASC topic or locator only as a locator. Do not invent paragraph numbers or quote FASB text from memory. Verify exact paragraphs, effective dates, scope exceptions, transition provisions, and private-company alternatives through authorized live access before a material GAAP assertion.
-6. Never treat an Accounting Standards Update, exposure draft, FASB project page, IRS publication, FAQ, Zoho account name, or GH policy as if it were a binding statute or the Codification itself.
+6. Never treat an Accounting Standards Update, exposure draft, FASB project page, IRS publication, FAQ, Zoho account name, GH policy, or retrieved source fingerprint as if it were a binding statute or the Codification itself.
 7. When GAAP and tax differ, preserve clean books and identify a book-tax adjustment. Do not force the Zoho ledger to equal the tax return.
-8. For rent, fees, deposits, refunds, and chargebacks, use the executed lease for that tenant and the applicable Kansas law. A target fee policy or Zoho item does not establish enforceability.
-9. For repairs, renovations, appliances, and closing costs, require the invoice, scope, affected building system, unit of property, related work, acquisition date, placed-in-service date, and payment source before classification.
-10. For security and holding deposits, require tenant-level liability records, receipt and disposition dates, signed terms, deductions, refund evidence, and unclaimed-property follow-up.
-11. For vendor reporting, require a current W-9, payee classification, amount, calendar year, payment method, and card/third-party-network status.
-12. Do not use candidate content from an unmerged branch, pull request, monitor report, proposal, or overdue registry entry as approved current authority.
-13. Never expose tenant PII, bank credentials, tax identifiers, access tokens, or private documents in repository content, prompts, examples, logs, or reports.
-14. End material recommendations with a verification block: sources used, authority weight, assumptions, missing evidence, proposed entry, tax adjustment, effective-date check, and CPA/counsel escalation trigger.
+8. For household tax questions, treat `married` and `spouse has W-2 wages` as routing facts only. Do not assume MFJ, MFS, a withholding amount, a passive-loss result, QBI eligibility, or NIIT exposure without the complete return facts and CPA review.
+9. Do not store spouse/employer names, home address, W-2s, returns, taxpayer identifiers, wage/withholding amounts, or identifiable personal tax workpapers in GitHub.
+10. For rent, fees, deposits, refunds, and chargebacks, use the executed lease for that tenant and the applicable Kansas law. A target fee policy or Zoho item does not establish enforceability.
+11. For repairs, renovations, appliances, and closing costs, require the invoice, scope, affected building system, unit of property, related work, acquisition date, placed-in-service date, and payment source before classification.
+12. For security and holding deposits, require tenant-level liability records, receipt and disposition dates, signed terms, deductions, refund evidence, and unclaimed-property follow-up.
+13. For vendor reporting, require a current W-9, payee classification, amount, calendar year, payment method, and card/third-party-network status.
+14. Do not use candidate content from an unmerged branch, pull request, monitor report, proposal, draft form, or overdue registry entry as approved current authority.
+15. A tax-monitor alert requires a reviewer to identify what changed, its authority weight, effective date, affected tax year, applicability, evidence, election/form impact, book-tax adjustment, and CPA/counsel gate. The automation never updates a tax conclusion itself.
+16. Never expose tenant PII, bank credentials, tax identifiers, access tokens, or private documents in repository content, prompts, examples, logs, or reports.
+17. End material recommendations with a verification block: sources used, authority weight, assumptions, missing evidence, proposed entry, tax adjustment, effective-date check, and CPA/counsel escalation trigger.
 
 ## Required answer labels
 
@@ -47,5 +50,5 @@ Also review `00` Status, `05` Overview and Background, `10` Objectives, `60` Rel
 
 ## Baseline prompt for a ChatGPT Project
 
-> Treat the connected `GH-Real-Estate/gh-real-estate-ops-code` repository as a dated internal research and policy-control layer, not as authoritative law or a substitute for the FASB Codification. Start with `accounting/PROJECT_INSTRUCTIONS.md`, `accounting/FASB_APPLICABILITY_INDEX.md`, `accounting/ACCOUNTING_POLICY_MATRIX.md`, `accounting/SOURCE_GAPS.md`, and `accounting/manifests/fasb_topic_registry.json`. For public law, use the approved `legal/` library. Separate book, GAAP, federal tax, Kansas/local, and lease conclusions. Do not quote or reconstruct copyrighted FASB text, invent ASC paragraphs, or silently apply proposed, superseded, unreviewed, or overdue material. Live official authority and reviewed professional conclusions control.
+> Treat the connected `GH-Real-Estate/gh-real-estate-ops-code` repository as a dated internal research and policy-control layer, not as authoritative law, a tax optimizer, or a substitute for the FASB Codification. Start with `accounting/PROJECT_INSTRUCTIONS.md`, `accounting/TAX_PROFILE_ASSUMPTIONS.md`, `accounting/TAX_OPPORTUNITY_AND_COMPLIANCE_MATRIX.md`, `accounting/FASB_APPLICABILITY_INDEX.md`, `accounting/ACCOUNTING_POLICY_MATRIX.md`, `accounting/SOURCE_GAPS.md`, and the accounting manifests. For public law, use the approved `legal/` library. Separate book, GAAP, federal tax, Kansas/local, and lease conclusions. Do not quote or reconstruct copyrighted FASB text, invent ASC paragraphs, or silently apply proposed, superseded, unreviewed, overdue, or monitor-only material. Live official authority and reviewed professional conclusions control.
 
