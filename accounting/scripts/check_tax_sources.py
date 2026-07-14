@@ -338,14 +338,14 @@ def evaluate(
         }
         if not retrieval.get("ok"):
             result["status"] = "error"
-        elif record["approved_sha256"] is not None:
-            result["status"] = (
-                "unchanged"
-                if retrieval["retrieved_sha256"] == record["approved_sha256"]
-                else "changed"
-            )
+        elif record["approved_sha256"] is not None and (
+            retrieval["retrieved_sha256"] != record["approved_sha256"]
+        ):
+            result["status"] = "changed"
         elif due:
             result["status"] = "review-due"
+        elif record["approved_sha256"] is not None:
+            result["status"] = "unchanged"
         else:
             result["status"] = "manual-baseline"
         results.append(result)
