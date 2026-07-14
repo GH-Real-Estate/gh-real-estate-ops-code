@@ -13,7 +13,7 @@ Record every production-relevant deployment or Zoho change.
 - Deployed by: Codex / GitHub Actions
 - Result: `queue: max` active, publisher identity enforced, one bounded incident, one newer-failure comment, one recovery comment, no duplicate/reopened issue, no raw logs/PII/secrets, and no sentinel in the final diff
 - Rollback plan: revert the documentation merge if the record is incorrect; revert PR #52 through a normal reviewed PR if the queue or publisher controls must be rolled back
-- Notes: GitHub preserves up to 100 pending observations per concurrency group. Repository auto-merge remains off; Codex repair remains draft-PR-only; governed/high-risk changes remain human-gated.
+- Notes: Historical pre-change verification only. PR #55 disables the automatic `workflow_run` response path to reduce Actions usage; normal GitHub notifications become the default alert, and the external `GH Repo CI Auto-Repair` Codex task must be paused or disabled separately. Repository auto-merge remains off and governed/high-risk changes remain human-gated.
 
 ## 2026-07-06 - Monthly Interest Lease Accrual Alignment
 
