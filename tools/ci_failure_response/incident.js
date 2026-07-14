@@ -179,6 +179,14 @@ function compareObservations(left, right) {
   return 0;
 }
 
+function sameObservation(left, right) {
+  return (
+    left.runId === right.runId &&
+    left.runAttempt === right.runAttempt &&
+    left.conclusion === right.conclusion
+  );
+}
+
 function issueTitle(run) {
   const simulation = run.namespace === "simulation" ? " [SIMULATION]" : "";
   return oneLine(`CI Incident${simulation}: ${run.workflowName} on ${run.branch}`, 240);
@@ -294,14 +302,16 @@ async function handleIncident({ github, context, core = console, inputs = {} }) 
   }
   const previous = existing ? parseRunMarker(existing.body) : null;
   if (previous) {
+    // Delivery identity is the run, attempt, and conclusion. GitHub may
+    // redeliver the same observation with non-identical timestamp text.
+    if (sameObservation(run, previous)) {
+      core.info("Ignoring duplicate workflow delivery.");
+      return { action: "ignored", reason: "duplicate-delivery", issue: existing.number };
+    }
     const order = compareObservations(run, previous);
     if (order < 0) {
       core.info("Ignoring an observation older than the incident state.");
       return { action: "ignored", reason: "stale-observation", issue: existing.number };
-    }
-    if (order === 0 && previous.conclusion === run.conclusion) {
-      core.info("Ignoring duplicate workflow delivery.");
-      return { action: "ignored", reason: "duplicate-delivery", issue: existing.number };
     }
   }
 
@@ -379,5 +389,6 @@ module.exports = {
   oneLine,
   parseRunMarker,
   renderBody,
+  sameObservation,
 };
 
