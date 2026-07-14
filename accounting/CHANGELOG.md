@@ -4,9 +4,10 @@
 
 - Added a sanitized tax operating profile reflecting a married Kansas household in Mission with spouse W-2 wages while keeping MFJ versus MFS unresolved for CPA comparison.
 - Added a prioritized tax opportunity/compliance matrix with evidence requirements, reviewer gates, and kill criteria.
-- Added a focused machine-readable registry for federal, Kansas, Johnson County, Overland Park, and conditional Mission sources.
+- Added a focused machine-readable registry for federal, Kansas, Johnson County, Overland Park, and conditional Mission sources, including the annual Kansas Form 200 and consumer-use-tax filing authorities.
 - Added a report-only official-source retrieval and fingerprint script with registry/sourcebook validation, bounded retries, host throttling, and regression tests.
-- Added a January/July GitHub workflow that preserves reports and opens one review issue without modifying sourcebooks, tax positions, the chart of accounts, Zoho, elections, payments, or returns.
+- Added a least-privilege January/July GitHub workflow that fails closed for unbaselined sources, preserves reports, and opens one review issue without modifying sourcebooks, tax positions, the chart of accounts, Zoho, elections, payments, or returns.
+- Delegated Overland Park Chapter 5.75 comparison to the existing legal monitor's semantic official-export workflow instead of fingerprinting a JavaScript viewer shell.
 - Confirmed that the reconciled 185-account chart of accounts should not be rebuilt for tax optimization; the leverage is in asset schedules, evidence, elections, timing, household modeling, and CPA workpapers.
 
 This extension does not change the approved July 12 sourcebook release or represent a CPA opinion.
