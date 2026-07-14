@@ -1,5 +1,0 @@
-CI FAILURE RESPONSE LIVE SMOKE TEST SENTINEL
-
-This file contains no tenant data, secrets, or production content.
-Its intentionally risky filename must make the repository safety scan fail.
-It will be removed immediately after the incident issue is verified.
