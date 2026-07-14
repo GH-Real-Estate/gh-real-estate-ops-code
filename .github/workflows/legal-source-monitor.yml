@@ -99,7 +99,7 @@ jobs:
             legal-source-monitor.json
             legal-source-monitor.md
             legal-source-monitor-issue.md
-          retention-days: 90
+          retention-days: 14
           if-no-files-found: error
 
       - name: Fail after preserving report
