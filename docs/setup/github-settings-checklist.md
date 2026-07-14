@@ -95,7 +95,7 @@ Settings -> Secrets and variables -> Actions:
 
 Verify after merge:
 
-- [ ] `Authority Discovery` is enabled and scheduled daily at `11:17 UTC`.
+- [ ] `Authority Discovery` is enabled and scheduled weekly on Sunday at `11:17 UTC`.
 - [ ] `Legal Source Monitor` remains enabled weekly at `12:27 UTC` Monday.
 - [ ] `Accounting Authority Review Calendar` remains enabled monthly at `13:41 UTC` on day 1.
 - [ ] `Authority Release Promotion` requires the `authority-production` approval gate and exact confirmation `PROMOTE_REVIEWED_AUTHORITY_RELEASE`.
@@ -107,11 +107,11 @@ Verify after merge:
 
 ## CI failure response
 
-- [X] `.github/workflows/ci-failure-response.yml` uses default-branch trusted code, immutable Action SHAs, `persist-credentials: false`, and only `contents: read`, `actions: read`, plus job-scoped `issues: write`.
-- [X] Incident issues use `ci-incident` and `codex-attention` labels and contain links plus bounded metadata, not raw logs or artifacts.
-- [X] The GitHub workflow stores no OpenAI API key; recurring remediation uses the connected Codex desktop automation.
-- [X] Confirmed July 14, 2026 after `queue: max`: live burst test opened one bot-created incident (#54), preserved distinct push/PR observations, closed from a newer green run, and created no duplicate or reopened issue.
-- [X] Confirmed July 14, 2026: the `GH Repo CI Auto-Repair` Codex automation is active and limited to draft-PR remediation under `docs/runbooks/ci-failure-response.md`.
+- [X] `.github/workflows/ci-failure-response.yml` is manual-simulation-only; it has no `workflow_run` subscription and does not automatically create or recover incidents for real workflow runs.
+- [X] Manual simulations use default-branch trusted code, immutable Action SHAs, `persist-credentials: false`, and only `contents: read`, `actions: read`, plus job-scoped `issues: write`.
+- [X] Normal GitHub failed-check notifications are the default alerting mechanism.
+- [ ] Pause or disable the external `GH Repo CI Auto-Repair` Codex task manually. Repository code does not control that desktop automation.
+- [X] The July 14, 2026 issue #54 burst/recovery verification is a historical record of the former automatic configuration, before event-driven response was disabled.
 - [ ] Complete the unchecked branch-protection, required-check, CODEOWNERS, secret-scanning, push-protection, restricted-Actions, and authority-environment controls before considering unattended merge behavior.
 - [X] Repository auto-merge remains OFF. Legal, accounting, authority, payment, lease, tenant, security, PII, and workflow-control changes remain human-gated.
 
