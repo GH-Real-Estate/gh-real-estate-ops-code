@@ -1,0 +1,2 @@
+Queue-integrity smoke-test sentinel only.
+No tenant, financial, legal, accounting, credential, secret, or production data is present.
