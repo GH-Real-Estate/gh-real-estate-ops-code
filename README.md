@@ -36,7 +36,7 @@ The top-level `legal/` tree is a governed public-authority reference library, no
 
 The top-level `accounting/` tree is the governed accounting research and policy-control layer. It stores GH-authored analysis, tax/GAAP sourcebooks, FASB locators, applicability metadata, review dates, and generated Project Sources. It does not store FASB Codification text.
 
-The top-level `authority/` tree and `tools/authority_refresh/` package provide a review queue around those two approved libraries. A daily workflow polls 13 legal and 9 accounting official-source indexes, preserves bounded discovery evidence, and opens a draft pull request only when a human review is required. Discovery never rewrites approved legal text, accounting conclusions, effective dates, or production automation.
+The top-level `authority/` tree and `tools/authority_refresh/` package provide a review queue around those two approved libraries. A weekly Sunday workflow polls 14 legal and 9 accounting official-source indexes, preserves bounded discovery evidence, and opens a draft pull request only when a human review is required. Discovery never rewrites approved legal text, accounting conclusions, effective dates, or production automation.
 
 ## What Belongs Here
 
@@ -246,7 +246,7 @@ tools/
 
 ## Authority Refresh Controls
 
-- **Daily discovery:** `Authority Discovery` runs at `11:17 UTC` and can also be started manually. It checks the 13-source legal catalog and 9-source accounting catalog, then reports `current`, `review_required`, or `degraded`.
+- **Weekly discovery:** `Authority Discovery` runs every Sunday at `11:17 UTC` and can also be started manually. It checks the 14-source legal catalog and 9-source accounting catalog, then reports `current`, `review_required`, or `degraded`.
 - **Existing monitors:** `Legal Source Monitor` still performs its weekly approved-payload comparison at `12:27 UTC` each Monday. `Accounting Authority Review Calendar` still checks stored FASB/accounting review dates monthly at `13:41 UTC` on day 1.
 - **No automatic currentness decision:** a discovery change creates or updates candidate evidence and a draft pull request. It does not auto-promote, auto-merge, change the dated approved libraries, or change operational code.
 - **Qualified review:** legal effect and applicability require counsel; GAAP conclusions require a CPA or qualified accounting reviewer using authorized FASB access; tax conclusions require tax-year-specific professional review. Evidence and every candidate resolution must be recorded.
@@ -256,9 +256,9 @@ The July 12, 2026 approved legal and accounting baselines remain unchanged by th
 
 ## CI Failure Response
 
-`CI Failure Response` watches every current repository workflow and records failures as deduplicated GitHub issues. A recurring Codex task checks that queue, independently diagnoses current failures, and may prepare one focused draft repair PR for a low-risk code defect. It never directly pushes or merges, and legal, accounting, authority, payment, lease, tenant, security, PII, and workflow-control changes remain human-gated.
+`CI Failure Response` is retained as a manual simulation and validation tool; it no longer subscribes to completed workflow events or automatically creates and recovers real incident issues. Normal GitHub failed-check notifications are the default alerting mechanism, and the external `GH Repo CI Auto-Repair` Codex task should remain paused or disabled.
 
-The event responder checks out only trusted default-branch code, never executes the failed revision or artifacts, and stores no OpenAI key in GitHub. See [`docs/runbooks/ci-failure-response.md`](docs/runbooks/ci-failure-response.md) for monitored workflows, guardrails, smoke testing, and rollback.
+Manual simulations still use trusted default-branch code, never execute a failed revision or artifacts, and store no OpenAI key in GitHub. See [`docs/runbooks/ci-failure-response.md`](docs/runbooks/ci-failure-response.md) for current behavior, smoke testing, real-failure triage, and historical verification.
 
 ## Change Workflow
 
