@@ -31,6 +31,8 @@ test("workflow is pinned and never executes the failed revision", () => {
   }
   assert.match(content, /ref: \$\{\{ github\.event\.repository\.default_branch \}\}/);
   assert.match(content, /persist-credentials: false/);
+  assert.match(content, /actions:\s*read/);
+  assert.match(content, /issues:\s*write/);
   assert.doesNotMatch(content, /workflow_run\.head_sha/);
   assert.doesNotMatch(content, /download-artifact/);
   assert.doesNotMatch(content, /pull_request_target/);
