@@ -389,6 +389,5 @@ module.exports = {
   oneLine,
   parseRunMarker,
   renderBody,
-  sameObservation,
 };
 
