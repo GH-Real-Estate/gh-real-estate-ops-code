@@ -1,7 +1,7 @@
 # Lead-Based Paint Disclosure and Pre-Execution Gate
 
 **Status:** Attorney review required before production use  
-**Last checked:** July 13, 2026  
+**Last checked:** July 14, 2026  
 **Property context:** GH Real Estate, LLC; 9401 Nieman Road, Overland Park, Kansas
 
 ## Rule in one sentence
@@ -49,25 +49,28 @@ Do not edit, shorten, or paraphrase this statement in the production disclosure.
 
 If a GH application, holding deposit, reservation, acceptance, or other instrument can itself create a contractual obligation, counsel must classify it and move the disclosure gate before GH accepts that obligation.
 
-## Mandatory system sequence
+## Mandatory two-stage system sequence
 
-1. Admin identifies the property/unit, transaction, contract language, leasing period, named lessees, and applicable agent roles.
-2. Admin documents covered/exempt status; covered is the default until approved evidence supports an exemption.
-3. Lessor completes the knowledge and records selections. Never prefill “no knowledge” or “no records” as a global template default.
-4. Admin checks unit, common-area, and building-wide lead files and attaches every available responsive record.
-5. GH delivers the completed disclosure, attachments, and exact current pamphlet to every named lessee.
-6. Each named lessee completes both acknowledgments and the certification; lessor and applicable agents complete their fields.
-7. The system validates all required choices, details, recipients, initials, signatures, dates, attachments, and electronic-delivery evidence.
-8. The lead record becomes immutable with status `Completed`, a completion timestamp, audit ID, and retention date.
-9. Only then may the lease be released for a binding lessee signature.
+1. Admin creates a nonbinding draft lease/transaction ID but does not release the lease for signature.
+2. Admin identifies the property/unit, contract language, leasing period, named lessees, and applicable agent roles.
+3. Admin documents covered/exempt status; covered is the default until approved evidence supports an exemption.
+4. Lessor completes the knowledge and records selections. Never prefill “no knowledge” or “no records” as a global template default.
+5. Admin checks unit, common-area, and building-wide lead files and attaches every available responsive record.
+6. GH sends the completed standalone Addendum A, responsive records, and exact current pamphlet to every named lessee.
+7. Each named lessee completes both acknowledgments and the certification; lessor and applicable agents complete their fields.
+8. The system validates required choices, details, recipients, signatures, dates, attachments, electronic-delivery evidence, and the signing audit.
+9. The completed lead PDF becomes immutable with status `Completed`; store its file ID, SHA-256 hash, completion timestamp, audit ID, archive-record ID, and retention date.
+10. Attach the **exact completed Addendum A PDF** to the matching lease as recipient-visible **Exhibit LD-1**; verify the attachment hash equals the completed disclosure hash.
+11. Only after Exhibit LD-1 is part of the lease package may the lease be released for a binding lessee signature.
+12. After final execution, archive the final contract-package hash and attachment/audit identifiers.
 
-If Zoho Contracts cannot enforce document and field order within one envelope, use two sequential transactions: (1) lead package; then (2) lease. A later landlord countersignature does not cure a lessee who was already bound before disclosure.
+Use two sequential Zoho transactions unless counsel confirms that one transaction can technically enforce the same order. A WorkDrive link, an internal-only Contracts attachment, or a lease clause that merely references the disclosure does not replace inclusion of the exact completed disclosure in or as an attachment to the final contract. A later landlord countersignature does not cure a lessee who was already bound before disclosure.
 
 ## Electronic delivery
 
 Electronic delivery must preserve legally sufficient E-SIGN evidence, including the consumer's affirmative consent, paper-copy option, withdrawal procedures and consequences, access/retention instructions, hardware/software requirements, and proof the recipient can access the electronic records. Fall back to paper when valid electronic delivery cannot be established.
 
-Do not use a delivery link that omits attachments, expires before reasonable access, or prevents the lessee from retaining the disclosure, records, or pamphlet.
+Do not use a delivery link that omits attachments, expires before reasonable access, or prevents the lessee from retaining the disclosure, records, pamphlet, or final lease package.
 
 ## Language
 
@@ -89,18 +92,24 @@ Retain the completed disclosure for at least three years from commencement of th
 - delivery recipients, method, and timestamps;
 - electronic-consent or paper-fallback evidence;
 - all signatures, initials, and platform audit data;
+- completed-disclosure PDF file ID and SHA-256 hash;
+- Exhibit LD-1 attachment ID and hash;
+- final lease contract ID and final contract-package hash;
+- the internal completion/archive record;
 - exemption evidence and attorney approval, when used.
 
 A three-year federal minimum is not a deletion instruction. Counsel should approve a longer retention schedule that fits other claims, contract, and records-management requirements.
 
 ## Current lease reconciliation
 
-The attorney-review lease already contains a lead disclosure as Addendum A after the main lease signature page. Counsel must choose one production method:
+The revised lead-first attorney-review lease uses one production method:
 
-- use a standalone disclosure first and replace the embedded Addendum A with an incorporation reference; or
-- move and enhance the embedded disclosure so it is completed before any binding lease signature.
+- the former embedded disclosure form has been removed;
+- the standalone disclosure is **Addendum A** and is completed first;
+- the lease contains an incorporation clause; and
+- the exact executed Addendum A PDF must be attached to the lease package as **Exhibit LD-1** before the lease is sent for signature.
 
-Do not send two competing disclosure forms with duplicate or inconsistent selections.
+Do not restore the former embedded form or send two competing disclosure forms with duplicate or inconsistent selections. The lease's separate lead-safe renovation restriction remains in place.
 
 ## Primary authorities and official materials
 
