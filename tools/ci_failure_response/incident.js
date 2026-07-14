@@ -238,6 +238,38 @@ async function findIncident(github, owner, repo, key) {
   return issues.find((issue) => !issue.pull_request && String(issue.body || "").includes(marker)) || null;
 }
 
+async function hasNewerSuccessfulRun(github, owner, repo, run, core) {
+  if (run.namespace !== "real") return false;
+  try {
+    const response = await github.rest.actions.listWorkflowRuns({
+      owner,
+      repo,
+      workflow_id: run.workflowId,
+      branch: run.branch,
+      per_page: 20,
+    });
+    return (response.data.workflow_runs || []).some((candidate) => {
+      if (candidate.conclusion !== RECOVERY_CONCLUSION) return false;
+      if (oneLine(candidate.head_repository?.full_name || run.repository, 160) !== run.headRepository) {
+        return false;
+      }
+      return compareObservations(
+        {
+          runId: positiveInteger(candidate.id),
+          runAttempt: positiveInteger(candidate.run_attempt, 1),
+          createdAt: oneLine(candidate.created_at || "", 40),
+        },
+        run,
+      ) > 0;
+    });
+  } catch (error) {
+    // Incident publication remains available if the optional freshness query
+    // is temporarily unavailable. A later success will still close the issue.
+    core.warning(`Could not verify newer workflow runs: ${oneLine(error.message, 160)}`);
+    return false;
+  }
+}
+
 async function handleIncident({ github, context, core = console, inputs = {} }) {
   const run = normalizeRun(context, inputs);
   if (!run) {
@@ -256,6 +288,10 @@ async function handleIncident({ github, context, core = console, inputs = {} }) 
   const key = incidentKey(run);
   await ensureLabels(github, owner, repo);
   const existing = await findIncident(github, owner, repo, key);
+  if (isIncident && !existing && await hasNewerSuccessfulRun(github, owner, repo, run, core)) {
+    core.info("Ignoring a failure superseded by a newer successful run.");
+    return { action: "ignored", reason: "superseded-failure" };
+  }
   const previous = existing ? parseRunMarker(existing.body) : null;
   if (previous) {
     const order = compareObservations(run, previous);
@@ -335,6 +371,7 @@ module.exports = {
   INCIDENT_LABEL,
   MONITORED_WORKFLOWS,
   compareObservations,
+  hasNewerSuccessfulRun,
   handleIncident,
   incidentKey,
   incidentMarker,
