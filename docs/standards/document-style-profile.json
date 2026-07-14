@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "standard_id": "GH-DOC-001",
+  "version": "1.0",
+  "effective_date": "2026-07-14",
+  "scope": {
+    "all_user_facing_artifacts": true,
+    "legal_documents": true,
+    "general_business_documents": true,
+    "plain_text_font_controlled_by_client": true
+  },
+  "priority_order": [
+    "binding_law_or_mandatory_form",
+    "signed_or_attorney_approved_source",
+    "application_and_accessibility_constraints",
+    "GH-DOC-001",
+    "document_specific_approved_choice"
+  ],
+  "typography": {
+    "preferred_appearance": "San Francisco",
+    "apple_system_font_use": {
+      "allowed": "Only when supplied natively by the Apple operating system/application or separately licensed for the specific use",
+      "font_file_distribution": false,
+      "font_file_embedding": false,
+      "repository_binaries": false
+    },
+    "production_document_font": "Inter",
+    "inter_license": "SIL Open Font License 1.1",
+    "css_stack": [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "Inter",
+      "sans-serif"
+    ],
+    "locked_platform_behavior": "Record exception; temporary preview only; final deliverable should use Inter",
+    "sizes_pt": {
+      "title": 18,
+      "status_kicker": 8.3,
+      "subtitle": 9.2,
+      "heading_1": 15,
+      "heading_2": 12,
+      "heading_3": 10.5,
+      "body": 10,
+      "dense_legal_body_min": 9,
+      "table_min": 7.2,
+      "table_typical_min": 7.5,
+      "table_typical_max": 8.8,
+      "header": 7.6,
+      "footer": 7.2
+    },
+    "body_spacing": {
+      "line_spacing": 1.08,
+      "space_before_pt": 0,
+      "space_after_pt": 5
+    }
+  },
+  "page": {
+    "size": "US Letter",
+    "width_in": 8.5,
+    "height_in": 11,
+    "margins_in": {
+      "top": 0.8,
+      "bottom": 0.78,
+      "left": 1,
+      "right": 1
+    },
+    "header_distance_in": 0.35,
+    "footer_distance_in": 0.34,
+    "widow_orphan_control": true,
+    "keep_headings_with_next": true
+  },
+  "colors": {
+    "ink": "#17212B",
+    "blue": "#1F4E79",
+    "muted": "#5C6670",
+    "light_blue": "#E8EEF5",
+    "light_gray": "#F2F4F7",
+    "pale_gold": "#FFF4D6",
+    "risk_red": "#9B1C1C",
+    "border": "#AAB4BE",
+    "background": "#FFFFFF"
+  },
+  "logo": {
+    "owner": "GH Real Estate",
+    "first_page_only_for_legal_documents": true,
+    "max_width_in": 1.6,
+    "max_height_in": 0.45,
+    "recommended_pixels_96ppi": {
+      "width": 150,
+      "height": 45
+    },
+    "preserve_aspect_ratio": true,
+    "government_logo_decorative_use": false
+  },
+  "header": {
+    "centered_default": "GH Real Estate, LLC | [Short Document Name]",
+    "three_zone": {
+      "left": "GH Real Estate, LLC or small GH logo",
+      "center": "Short document name",
+      "right": "Automatic document/contract ID or blank"
+    },
+    "manual_lease_number_in_global_template": false
+  },
+  "footer": {
+    "centered_default": "[Status] | Rev. YYYY-MM-DD | [Execution restriction] | Page X of Y",
+    "three_zone": {
+      "left": "Document status",
+      "center": "Revision date or approved template version",
+      "right": "Page X of Y"
+    }
+  },
+  "legal_structure": {
+    "levels": [
+      "article_or_section",
+      "numbered_clause",
+      "lettered_subsection",
+      "roman_subpart"
+    ],
+    "zoho_clause_type": "Top-level subject family",
+    "zoho_clause": "One independently selectable legal provision",
+    "automatic_numbering_required": true,
+    "toc_threshold_pages": 10,
+    "toc_threshold_top_level_sections": 6,
+    "manual_toc_page_numbers": false
+  },
+  "qa": {
+    "render_every_page": true,
+    "visual_inspection_required": true,
+    "check_font_substitution": true,
+    "check_cross_references": true,
+    "check_attachments": true,
+    "check_merge_fields": true,
+    "check_signatures": true,
+    "check_headers_footers": true,
+    "check_toc_and_bookmarks": true,
+    "record_hash_for_material_documents": true
+  },
+  "authorities": {
+    "apple_fonts": "https://developer.apple.com/fonts/",
+    "inter_license": "https://github.com/rsms/inter/blob/master/LICENSE.txt"
+  }
+}
