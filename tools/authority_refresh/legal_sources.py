@@ -539,7 +539,9 @@ def _normalize_temporal(value: Any) -> str | None:
     try:
         parsed = parsedate_to_datetime(text)
     except (TypeError, ValueError, OverflowError):
-        pass
+        # Some official feeds emit ISO timestamps rather than RFC 2822 dates.
+        # Preserve the explicit None sentinel so the ISO fallback runs below.
+        parsed = None
     if parsed is None:
         try:
             parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))

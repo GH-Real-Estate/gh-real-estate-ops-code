@@ -320,7 +320,9 @@ def _bounded_read(response: Any, max_bytes: int) -> bytes:
                     f"response exceeds configured {max_bytes}-byte limit"
                 )
         except ValueError:
-            pass
+            # Content-Length is advisory; the bounded read loop below still
+            # enforces max_bytes when an upstream server sends malformed data.
+            length = None
     chunks: list[bytes] = []
     total = 0
     while True:

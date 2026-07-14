@@ -3,8 +3,8 @@ from __future__ import annotations
 import io
 import json
 import unittest
+import unittest.mock
 from pathlib import Path
-from unittest import mock
 
 from tools.authority_refresh import core
 from test_support import workspace_temp_directory
@@ -186,7 +186,9 @@ class FetchTests(unittest.TestCase):
                 "api_key_query_param": "api_key",
             }
         )
-        with mock.patch.dict("os.environ", {"TEST_AUTHORITY_API_KEY": sensitive_value}):
+        with unittest.mock.patch.dict(
+            "os.environ", {"TEST_AUTHORITY_API_KEY": sensitive_value}
+        ):
             with self.assertRaisesRegex(core.AuthorityRefreshError, "fetch failed") as caught:
                 core.fetch_source(configured, opener=opener, sleep=lambda _: None)
         self.assertNotIn(sensitive_value, str(caught.exception))
@@ -195,7 +197,7 @@ class FetchTests(unittest.TestCase):
         handler = core._AllowlistedRedirectHandler(["official.example"])
         request = core.urllib.request.Request("https://official.example/index.json")
 
-        with mock.patch.object(
+        with unittest.mock.patch.object(
             core.urllib.request.HTTPRedirectHandler,
             "redirect_request",
         ) as parent_redirect:
@@ -238,7 +240,9 @@ class FetchTests(unittest.TestCase):
                 "api_key_query_param": "api_key",
             }
         )
-        with mock.patch.dict("os.environ", {"TEST_AUTHORITY_API_KEY": "top-secret"}):
+        with unittest.mock.patch.dict(
+            "os.environ", {"TEST_AUTHORITY_API_KEY": "top-secret"}
+        ):
             result = core.fetch_source(configured, opener=opener, sleep=lambda _: None)
         self.assertIn("top-secret", captured[0])
         self.assertNotIn("top-secret", result.final_url)
@@ -260,7 +264,9 @@ class FetchTests(unittest.TestCase):
                 "api_key_query_param": "api_key",
             }
         )
-        with mock.patch.dict("os.environ", {"TEST_AUTHORITY_API_KEY": "top-secret"}):
+        with unittest.mock.patch.dict(
+            "os.environ", {"TEST_AUTHORITY_API_KEY": "top-secret"}
+        ):
             result = core.fetch_source(configured, opener=opener, sleep=lambda _: None)
 
         self.assertNotIn("top-secret", result.final_url)
@@ -500,7 +506,9 @@ class CandidateTests(unittest.TestCase):
                     )
                     for index in range(3)
                 ]
-                with mock.patch.object(core, "MAXIMUM_ITEMS_PER_DOMAIN", domain_limit):
+                with unittest.mock.patch.object(
+                    core, "MAXIMUM_ITEMS_PER_DOMAIN", domain_limit
+                ):
                     candidate, exit_code = core.scan_domain(
                         domain="legal",
                         catalog_path=catalog,
@@ -530,7 +538,7 @@ class CandidateTests(unittest.TestCase):
             fixtures = root / "fixtures"
             fixtures.mkdir()
             (fixtures / "official.json").write_text("{}", encoding="utf-8")
-            with mock.patch.object(core, "MAX_CANDIDATE_JSON_BYTES", 100):
+            with unittest.mock.patch.object(core, "MAX_CANDIDATE_JSON_BYTES", 100):
                 with self.assertRaisesRegex(core.AuthorityRefreshError, "candidate JSON"):
                     core.scan_domain(
                         domain="legal",

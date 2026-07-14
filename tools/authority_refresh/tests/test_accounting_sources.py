@@ -60,31 +60,31 @@ class AccountingSourcesConfigTests(unittest.TestCase):
         }
         configured_ids: set[str] = set()
         for source in config["sources"]:
-            self.assertTrue(required <= source.keys())
+            self.assertLessEqual(required, set(source.keys()))
             self.assertNotIn(source["source_id"], configured_ids)
             configured_ids.add(source["source_id"])
             discovery_host = urlsplit(source["discovery_url"]).hostname
             self.assertEqual("https", urlsplit(source["discovery_url"]).scheme)
             self.assertIn(discovery_host, source["allowed_hosts"])
-            self.assertTrue(set(source["allowed_hosts"]) <= set(config["allowed_domains"]))
+            self.assertLessEqual(
+                set(source["allowed_hosts"]), set(config["allowed_domains"])
+            )
             if "fasb" in source["publisher"].lower():
                 self.assertIn(
                     source["storage_policy"], {"metadata-only", "licensed-no-store"}
                 )
                 self.assertNotEqual("asc.fasb.org", discovery_host)
 
-        self.assertTrue(
-            {
-                "fasb-accounting-standards-updates",
-                "fasb-effective-dates",
-                "fasb-current-projects",
-                "fasb-taxonomy-resources",
-                "irs-internal-revenue-bulletins",
-                "treasury-accounting-and-tax-releases",
-                "kansas-revenue-current-tax-notices",
-            }
-            <= configured_ids
-        )
+        required_ids = {
+            "fasb-accounting-standards-updates",
+            "fasb-effective-dates",
+            "fasb-current-projects",
+            "fasb-taxonomy-resources",
+            "irs-internal-revenue-bulletins",
+            "treasury-accounting-and-tax-releases",
+            "kansas-revenue-current-tax-notices",
+        }
+        self.assertEqual(required_ids, required_ids & configured_ids)
 
     def test_adapter_output_normalizes_through_shared_core(self) -> None:
         catalog = core.load_catalog(CONFIG, domain="accounting")
