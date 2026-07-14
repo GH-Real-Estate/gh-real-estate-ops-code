@@ -9,7 +9,7 @@ These tools are optional and do not deploy anything.
 - `tools/safety/pre-commit-safety-check.py`: local scan for obvious secret/PII mistakes before committing.
 - `tools/authority_refresh/refresh.py`: allowlisted legal/accounting official-index discovery that writes unapproved candidate evidence only.
 - `tools/authority_refresh/validate_system.py`: validates authority catalogs, governance files, crosswalk paths, schemas, CODEOWNERS, and workflow safety contracts.
-- `tools/authority_refresh/promotion.py`: validates structured human approval and, only with the protected exact confirmation, archives immutable review evidence and a discovery snapshot.
+- `tools/authority_refresh/promotion.py`: validates structured human approval and, only with the protected exact confirmation, archives immutable review evidence, its hashed source-revision validation context, and a discovery snapshot.
 
 Run from the repository root:
 

@@ -172,7 +172,17 @@ jobs:
           python tools/authority_refresh/promotion.py \
             --candidate "$CANDIDATE_PATH" \
             --approval "$APPROVAL_PATH" \
-            --release-date "$RELEASE_DATE"
+            --release-date "$RELEASE_DATE" \
+            --source-revision "$(git rev-parse HEAD)"
+
+      - name: Require a clean source revision before context capture
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain --untracked-files=all)" ]]; then
+            echo 'Promotion validation changed the checked-out source revision.' >&2
+            git status --short >&2
+            exit 1
+          fi
 
       - name: Generate immutable release evidence and reviewed snapshot
         env:
@@ -187,6 +197,7 @@ jobs:
             --candidate "$CANDIDATE_PATH" \
             --approval "$APPROVAL_PATH" \
             --release-date "$RELEASE_DATE" \
+            --source-revision "$(git rev-parse HEAD)" \
             --confirm 'PROMOTE_REVIEWED_AUTHORITY_RELEASE' \
             > "$result_file"
           PROMOTION_RESULT="$result_file" python - <<'PY'
@@ -219,7 +230,12 @@ jobs:
               release_dir.resolve(strict=True).relative_to(release_root)
           except (OSError, ValueError) as exc:
               raise SystemExit("generated release resolves outside authority/releases") from exc
-          expected = {"approval.json", "candidate.json", "release.json"}
+          expected = {
+              "approval.json",
+              "candidate.json",
+              "release.json",
+              "validation-context.json",
+          }
           actual = {
               path.relative_to(release_dir).as_posix()
               for path in release_dir.rglob("*")
@@ -260,6 +276,7 @@ jobs:
             "${release_dir}/approval.json" \
             "${release_dir}/candidate.json" \
             "${release_dir}/release.json" \
+            "${release_dir}/validation-context.json" \
             "$snapshot"
 
           changed="$(git diff --cached --name-only | sort)"
@@ -268,6 +285,7 @@ jobs:
               "${release_dir}/approval.json" \
               "${release_dir}/candidate.json" \
               "${release_dir}/release.json" \
+              "${release_dir}/validation-context.json" \
               "$snapshot" \
               | sort
           )"

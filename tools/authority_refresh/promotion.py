@@ -9,6 +9,7 @@ reviewed changes in separate pull requests.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -35,7 +36,10 @@ try:  # package import in tests and modules
         load_impact_crosswalk,
         normalize_item,
         sha256_json,
+        source_minimum_items,
+        validate_catalog,
         validate_complete_index_baseline_coverage,
+        validate_impact_crosswalk,
         validate_official_url,
         write_json_atomic,
     )
@@ -51,13 +55,21 @@ except ImportError:  # direct `python tools/authority_refresh/promotion.py`
         load_impact_crosswalk,
         normalize_item,
         sha256_json,
+        source_minimum_items,
+        validate_catalog,
         validate_complete_index_baseline_coverage,
+        validate_impact_crosswalk,
         validate_official_url,
         write_json_atomic,
     )
 
 
 CONFIRMATION = "PROMOTE_REVIEWED_AUTHORITY_RELEASE"
+VALIDATION_CONTRACT_VERSION = "1.0"
+RELEASE_NOTICE = (
+    "Reviewed discovery baseline only. Official source text controls. "
+    "This release is not a legal or GAAP compliance certification."
+)
 MAX_CANDIDATE_AGE = timedelta(days=7)
 BASE_REQUIRED_ROLE = {
     "legal": "qualified-legal-reviewer",
@@ -172,6 +184,21 @@ APPROVAL_FIELDS = {
     "change_resolutions",
     "impact_resolutions",
 }
+VALIDATION_CONTEXT_FIELDS = {
+    "contract_version",
+    "domain",
+    "candidate_sha256",
+    "source_revision",
+    "candidate_path",
+    "approval_path",
+    "source_catalog_path",
+    "impact_crosswalk_path",
+    "source_catalog",
+    "impact_crosswalk",
+    "path_manifest",
+}
+PATH_MANIFEST_FIELDS = {"path", "sha256", "size_bytes"}
+_USE_CURRENT_BASELINE = object()
 
 
 def _load_json(path: Path, label: str) -> dict[str, Any]:
@@ -317,7 +344,7 @@ def _validate_evidence_urls(value: object, label: str) -> None:
             )
 
 
-def _repo_relative_path(raw_path: object, label: str) -> tuple[str, Path]:
+def _normalized_repo_path(raw_path: object, label: str) -> tuple[str, PurePosixPath]:
     value = str(raw_path)
     pure = PurePosixPath(value)
     if "\\" in value or pure.is_absolute() or ".." in pure.parts:
@@ -325,9 +352,20 @@ def _repo_relative_path(raw_path: object, label: str) -> tuple[str, Path]:
     normalized = pure.as_posix()
     if normalized in {"", "."}:
         raise AuthorityRefreshError(f"{label} must not be empty")
-    resolved = (REPO_ROOT / Path(*pure.parts)).resolve()
+    return normalized, pure
+
+
+def _repo_relative_path(
+    raw_path: object,
+    label: str,
+    *,
+    repo_root: Path = REPO_ROOT,
+) -> tuple[str, Path]:
+    normalized, pure = _normalized_repo_path(raw_path, label)
+    resolved_root = repo_root.resolve()
+    resolved = (resolved_root / Path(*pure.parts)).resolve()
     try:
-        resolved.relative_to(REPO_ROOT.resolve())
+        resolved.relative_to(resolved_root)
     except ValueError as exc:
         raise AuthorityRefreshError(f"{label} escapes the repository") from exc
     return normalized, resolved
@@ -406,7 +444,7 @@ def _validate_source_results(
                 raise AuthorityRefreshError(
                     f"{label}.attempts must be between 1 and {maximum_attempts}"
                 )
-            minimum_items = int(source.get("minimum_items", 1))
+            minimum_items = source_minimum_items(source)
             if item_count < minimum_items:
                 raise AuthorityRefreshError(
                     f"{label}.item_count is below canonical minimum_items={minimum_items}"
@@ -503,6 +541,9 @@ def _validate_candidate(
     candidate: dict[str, Any],
     *,
     output_root: Path,
+    source_catalog: dict[str, Any] | None = None,
+    impact_crosswalk: dict[str, Any] | None = None,
+    historical_baseline: object = _USE_CURRENT_BASELINE,
 ) -> tuple[str, datetime]:
     if (
         len((json.dumps(candidate, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
@@ -528,33 +569,37 @@ def _validate_candidate(
     if status not in ALLOWED_CANDIDATE_STATUSES:
         raise AuthorityRefreshError(f"unsupported candidate status: {status}")
     digest = candidate_digest(candidate)
-    _validate_current_baseline(candidate, output_root=output_root)
+    baseline_descriptor, baseline = _load_candidate_baseline(
+        candidate,
+        output_root=output_root,
+        historical_baseline=historical_baseline,
+    )
 
-    catalog = load_catalog(
-        PACKAGE_DIR / "config" / f"{domain}_sources.json",
-        domain=domain,
+    catalog = (
+        load_catalog(
+            output_root
+            / "tools"
+            / "authority_refresh"
+            / "config"
+            / f"{domain}_sources.json",
+            domain=domain,
+        )
+        if source_catalog is None
+        else validate_catalog(
+            source_catalog,
+            domain=domain,
+            label="archived source catalog",
+        )
     )
     sources = catalog["sources"]
     source_by_id = {str(source["source_id"]): source for source in sources}
     results_by_id = _validate_source_results(candidate, sources)
 
-    baseline_descriptor = _require_exact_keys(
-        candidate.get("approved_baseline"),
-        {"path", "missing", "sha256"},
-        label="candidate.approved_baseline",
-    )
-    if baseline_descriptor["missing"]:
-        baseline = {"schema_version": SCHEMA_VERSION, "domain": domain, "items": []}
-    else:
-        baseline = _load_json(
-            output_root / "authority" / "snapshots" / f"{domain}.json",
-            "current approved baseline",
-        )
     if baseline.get("domain") != domain:
-        raise AuthorityRefreshError("current approved baseline has the wrong domain")
+        raise AuthorityRefreshError("approved baseline has the wrong domain")
     if not baseline_descriptor["missing"]:
         baseline_approved_at = _parse_date(
-            baseline.get("approved_at"), "current approved baseline.approved_at"
+            baseline.get("approved_at"), "approved baseline.approved_at"
         )
         if baseline_approved_at > generated_at.astimezone(timezone.utc).date():
             raise AuthorityRefreshError(
@@ -564,7 +609,7 @@ def _validate_candidate(
         baseline.get("items"),
         domain=domain,
         source_by_id=source_by_id,
-        label="current approved baseline.items",
+        label="approved baseline.items",
     )
     candidate_items = _validate_items(
         candidate.get("items"),
@@ -573,7 +618,16 @@ def _validate_candidate(
         label="candidate.items",
     )
 
-    crosswalk = load_impact_crosswalk(REPO_ROOT / "authority" / "impact_crosswalk.json")
+    crosswalk = (
+        load_impact_crosswalk(
+            output_root / "authority" / "impact_crosswalk.json"
+        )
+        if impact_crosswalk is None
+        else validate_impact_crosswalk(
+            impact_crosswalk,
+            label="archived impact crosswalk",
+        )
+    )
     candidate_by_id = {item["item_id"]: item for item in candidate_items}
     observed_items: list[dict[str, Any]] = []
     observed_ids: set[str] = set()
@@ -647,8 +701,18 @@ def validate_approval(
     approval: dict[str, Any],
     *,
     output_root: Path = REPO_ROOT,
+    source_catalog: dict[str, Any] | None = None,
+    impact_crosswalk: dict[str, Any] | None = None,
+    historical_baseline: object = _USE_CURRENT_BASELINE,
+    require_existing_paths: bool = True,
 ) -> str:
-    digest, generated_at = _validate_candidate(candidate, output_root=output_root)
+    digest, generated_at = _validate_candidate(
+        candidate,
+        output_root=output_root,
+        source_catalog=source_catalog,
+        impact_crosswalk=impact_crosswalk,
+        historical_baseline=historical_baseline,
+    )
     domain = str(candidate["domain"])
     status = candidate.get("status")
     if status == "degraded":
@@ -750,13 +814,17 @@ def validate_approval(
                     f"approved_release_updated resolution {key} requires unique approved_paths"
                 )
             for raw_path in paths:
-                normalized_path, path = _repo_relative_path(raw_path, "approved path")
+                normalized_path, path = _repo_relative_path(
+                    raw_path,
+                    "approved path",
+                    repo_root=output_root,
+                )
                 allowed_prefixes = (f"{domain}/", "authority/")
                 if not normalized_path.startswith(allowed_prefixes):
                     raise AuthorityRefreshError(
                         f"approved path is outside {domain}/ or authority/: {raw_path}"
                     )
-                if not path.is_file():
+                if require_existing_paths and not path.is_file():
                     raise AuthorityRefreshError(f"approved path is missing: {raw_path}")
         elif "approved_paths" in resolution:
             raise AuthorityRefreshError(
@@ -839,12 +907,16 @@ def validate_approval(
                 f"approved_paths_updated impact {mapping_id} requires reviewed_paths"
             )
         for raw_path in reviewed_paths:
-            normalized, path = _repo_relative_path(raw_path, "impact path")
+            normalized, path = _repo_relative_path(
+                raw_path,
+                "impact path",
+                repo_root=output_root,
+            )
             if normalized not in allowed_paths:
                 raise AuthorityRefreshError(
                     f"impact {mapping_id} path is outside its crosswalk: {raw_path}"
                 )
-            if not path.is_file():
+            if require_existing_paths and not path.is_file():
                 raise AuthorityRefreshError(f"impact path is missing: {raw_path}")
         resolved_impacts.add(mapping_id)
     missing_impacts = sorted(set(expected_impacts).difference(resolved_impacts))
@@ -855,38 +927,349 @@ def validate_approval(
     return digest
 
 
-def _validate_current_baseline(
+def _approval_referenced_paths(approval: dict[str, Any]) -> list[str]:
+    """Return the exact sorted path set whose existence review relied on."""
+
+    referenced: set[str] = set()
+    for resolution in approval["change_resolutions"]:
+        for raw_path in resolution.get("approved_paths", []):
+            normalized, _ = _normalized_repo_path(raw_path, "approved path")
+            referenced.add(normalized)
+    for resolution in approval["impact_resolutions"]:
+        for raw_path in resolution["reviewed_paths"]:
+            normalized, _ = _normalized_repo_path(raw_path, "impact path")
+            referenced.add(normalized)
+    return sorted(referenced)
+
+
+def _hash_file(path: Path) -> tuple[str, int]:
+    digest = hashlib.sha256()
+    size = 0
+    try:
+        with path.open("rb") as handle:
+            while chunk := handle.read(1024 * 1024):
+                digest.update(chunk)
+                size += len(chunk)
+    except OSError as exc:
+        raise AuthorityRefreshError(f"cannot hash reviewed path {path}: {exc}") from exc
+    return digest.hexdigest(), size
+
+
+def _build_path_manifest(
+    approval: dict[str, Any],
+    *,
+    output_root: Path,
+) -> list[dict[str, Any]]:
+    manifest: list[dict[str, Any]] = []
+    resolved_root = output_root.resolve()
+    for normalized in _approval_referenced_paths(approval):
+        _, pure = _normalized_repo_path(normalized, "reviewed path")
+        unresolved = resolved_root / Path(*pure.parts)
+        current = resolved_root
+        for part in pure.parts:
+            current /= part
+            if current.is_symlink():
+                raise AuthorityRefreshError(
+                    f"reviewed path must not traverse a symlink: {normalized}"
+                )
+        _, resolved = _repo_relative_path(
+            normalized,
+            "reviewed path",
+            repo_root=resolved_root,
+        )
+        if not unresolved.is_file() or not resolved.is_file():
+            raise AuthorityRefreshError(f"reviewed path is missing: {normalized}")
+        digest, size = _hash_file(resolved)
+        manifest.append({"path": normalized, "sha256": digest, "size_bytes": size})
+    return manifest
+
+
+def _validate_path_manifest(
+    approval: dict[str, Any],
+    value: object,
+) -> list[dict[str, Any]]:
+    manifest = _require_list(value, "validation_context.path_manifest")
+    validated: list[dict[str, Any]] = []
+    paths: list[str] = []
+    for index, raw_entry in enumerate(manifest):
+        label = f"validation_context.path_manifest[{index}]"
+        entry = _require_exact_keys(raw_entry, PATH_MANIFEST_FIELDS, label=label)
+        path, _ = _normalized_repo_path(entry.get("path"), f"{label}.path")
+        digest = entry.get("sha256")
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise AuthorityRefreshError(f"{label}.sha256 must be lowercase SHA-256")
+        size = entry.get("size_bytes")
+        if isinstance(size, bool) or not isinstance(size, int) or size < 0:
+            raise AuthorityRefreshError(f"{label}.size_bytes must be non-negative")
+        paths.append(path)
+        validated.append({"path": path, "sha256": digest, "size_bytes": size})
+    if paths != sorted(set(paths)):
+        raise AuthorityRefreshError(
+            "validation_context.path_manifest must use sorted unique paths"
+        )
+    expected = _approval_referenced_paths(approval)
+    if paths != expected:
+        raise AuthorityRefreshError(
+            "validation_context.path_manifest does not match approval paths; "
+            f"expected={expected}, actual={paths}"
+        )
+    return validated
+
+
+def _relative_source_path(path: Path, *, output_root: Path, label: str) -> str:
+    resolved_root = output_root.resolve()
+    try:
+        relative = path.resolve(strict=True).relative_to(resolved_root)
+    except (OSError, ValueError) as exc:
+        raise AuthorityRefreshError(f"{label} must resolve inside the repository") from exc
+    normalized, _ = _normalized_repo_path(relative.as_posix(), label)
+    return normalized
+
+
+def _validate_context_path(
+    raw_path: object,
+    *,
+    prefix: PurePosixPath,
+    label: str,
+) -> str:
+    normalized, pure = _normalized_repo_path(raw_path, label)
+    try:
+        relative = pure.relative_to(prefix)
+    except ValueError as exc:
+        raise AuthorityRefreshError(f"{label} must be under {prefix.as_posix()}/") from exc
+    if len(relative.parts) < 1 or pure.suffix != ".json":
+        raise AuthorityRefreshError(f"{label} must identify a JSON file")
+    return normalized
+
+
+def _validate_candidate_context_path(
+    raw_path: object,
+    *,
+    domain: str,
+    label: str,
+) -> str:
+    prefix = PurePosixPath("authority") / "candidates" / domain / "runs"
+    normalized = _validate_context_path(raw_path, prefix=prefix, label=label)
+    pure = PurePosixPath(normalized)
+    relative = pure.relative_to(prefix)
+    if (
+        len(relative.parts) != 2
+        or not re.fullmatch(r"[0-9]+-[0-9]+", relative.parts[0])
+        or relative.parts[1] != "candidate.json"
+    ):
+        raise AuthorityRefreshError(
+            f"{label} must be runs/<workflow-run-id>-<attempt>/candidate.json"
+        )
+    return normalized
+
+
+def build_validation_context(
+    *,
+    candidate: dict[str, Any],
+    approval: dict[str, Any],
+    candidate_path: Path,
+    approval_path: Path,
+    output_root: Path,
+    source_revision: str,
+    source_catalog: dict[str, Any],
+    impact_crosswalk: dict[str, Any],
+) -> dict[str, Any]:
+    """Capture immutable inputs needed to replay the promotion decision."""
+
+    if not re.fullmatch(r"(?:[0-9a-f]{40}|[0-9a-f]{64})", source_revision):
+        raise AuthorityRefreshError(
+            "source-revision must be a lowercase 40- or 64-character Git object ID"
+        )
+    domain = str(candidate["domain"])
+    candidate_relative = _relative_source_path(
+        candidate_path,
+        output_root=output_root,
+        label="candidate path",
+    )
+    approval_relative = _relative_source_path(
+        approval_path,
+        output_root=output_root,
+        label="approval path",
+    )
+    validated_candidate_path = _validate_candidate_context_path(
+        candidate_relative,
+        domain=domain,
+        label="candidate path",
+    )
+    if PurePosixPath(validated_candidate_path).parent.name != candidate.get("run_id"):
+        raise AuthorityRefreshError(
+            "candidate path run directory does not match candidate.run_id"
+        )
+    _validate_context_path(
+        approval_relative,
+        prefix=PurePosixPath("authority") / "reviews" / domain,
+        label="approval path",
+    )
+    return {
+        "contract_version": VALIDATION_CONTRACT_VERSION,
+        "domain": domain,
+        "candidate_sha256": candidate["candidate_sha256"],
+        "source_revision": source_revision,
+        "candidate_path": candidate_relative,
+        "approval_path": approval_relative,
+        "source_catalog_path": (
+            f"tools/authority_refresh/config/{domain}_sources.json"
+        ),
+        "impact_crosswalk_path": "authority/impact_crosswalk.json",
+        "source_catalog": source_catalog,
+        "impact_crosswalk": impact_crosswalk,
+        "path_manifest": _build_path_manifest(approval, output_root=output_root),
+    }
+
+
+def validate_archived_release(
+    candidate: dict[str, Any],
+    approval: dict[str, Any],
+    validation_context: dict[str, Any],
+    *,
+    release_date: date,
+    historical_baseline: dict[str, Any] | None,
+    output_root: Path = REPO_ROOT,
+) -> str:
+    """Replay promotion using only one release's immutable validation inputs."""
+
+    context = _require_exact_keys(
+        validation_context,
+        VALIDATION_CONTEXT_FIELDS,
+        label="validation_context",
+    )
+    if context.get("contract_version") != VALIDATION_CONTRACT_VERSION:
+        raise AuthorityRefreshError(
+            "validation_context.contract_version is unsupported"
+        )
+    domain = str(candidate.get("domain", ""))
+    if context.get("domain") != domain:
+        raise AuthorityRefreshError("validation_context domain does not match candidate")
+    if context.get("candidate_sha256") != candidate_digest(candidate):
+        raise AuthorityRefreshError(
+            "validation_context candidate hash does not match candidate"
+        )
+    source_revision = context.get("source_revision")
+    if not isinstance(source_revision, str) or not re.fullmatch(
+        r"(?:[0-9a-f]{40}|[0-9a-f]{64})", source_revision
+    ):
+        raise AuthorityRefreshError("validation_context source_revision is invalid")
+    validated_candidate_path = _validate_candidate_context_path(
+        context.get("candidate_path"),
+        domain=domain,
+        label="validation_context.candidate_path",
+    )
+    if PurePosixPath(validated_candidate_path).parent.name != candidate.get("run_id"):
+        raise AuthorityRefreshError(
+            "validation_context candidate path does not match candidate.run_id"
+        )
+    _validate_context_path(
+        context.get("approval_path"),
+        prefix=PurePosixPath("authority") / "reviews" / domain,
+        label="validation_context.approval_path",
+    )
+    expected_catalog_path = f"tools/authority_refresh/config/{domain}_sources.json"
+    if context.get("source_catalog_path") != expected_catalog_path:
+        raise AuthorityRefreshError(
+            f"validation_context.source_catalog_path must be {expected_catalog_path}"
+        )
+    if context.get("impact_crosswalk_path") != "authority/impact_crosswalk.json":
+        raise AuthorityRefreshError(
+            "validation_context.impact_crosswalk_path must be authority/impact_crosswalk.json"
+        )
+    source_catalog = validate_catalog(
+        context.get("source_catalog"),
+        domain=domain,
+        label="validation_context.source_catalog",
+    )
+    impact_crosswalk = validate_impact_crosswalk(
+        context.get("impact_crosswalk"),
+        label="validation_context.impact_crosswalk",
+    )
+    digest = validate_approval(
+        candidate,
+        approval,
+        output_root=output_root,
+        source_catalog=source_catalog,
+        impact_crosswalk=impact_crosswalk,
+        historical_baseline=historical_baseline,
+        require_existing_paths=False,
+    )
+    _validate_path_manifest(approval, context.get("path_manifest"))
+    baseline_approved_at = (
+        None
+        if historical_baseline is None
+        else _parse_date(
+            historical_baseline.get("approved_at"),
+            "archived predecessor.approved_at",
+        )
+    )
+    validate_release_date(
+        candidate=candidate,
+        approval=approval,
+        release_date=release_date,
+        baseline_approved_at=baseline_approved_at,
+    )
+    return digest
+
+
+def _load_candidate_baseline(
     candidate: dict[str, Any],
     *,
     output_root: Path,
-) -> None:
+    historical_baseline: object = _USE_CURRENT_BASELINE,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Validate the candidate's baseline descriptor and return that baseline.
+
+    Normal promotion reads the current snapshot from ``output_root``. Historical
+    replay supplies the exact predecessor snapshot (or ``None`` for the bootstrap
+    release), so later snapshot changes cannot alter archive validation.
+    """
+
     domain = str(candidate.get("domain", ""))
     expected_relative = f"authority/snapshots/{domain}.json"
-    baseline = candidate.get("approved_baseline")
-    if not isinstance(baseline, dict) or baseline.get("path") != expected_relative:
+    descriptor = _require_exact_keys(
+        candidate.get("approved_baseline"),
+        {"path", "missing", "sha256"},
+        label="candidate.approved_baseline",
+    )
+    if descriptor.get("path") != expected_relative:
         raise AuthorityRefreshError(
             f"candidate approved_baseline.path must be {expected_relative}"
         )
-    missing = baseline.get("missing")
+    missing = descriptor.get("missing")
     if not isinstance(missing, bool):
         raise AuthorityRefreshError("candidate approved_baseline.missing must be boolean")
-    expected_sha = baseline.get("sha256")
-    snapshot_path = output_root / "authority" / "snapshots" / f"{domain}.json"
+    expected_sha = descriptor.get("sha256")
+    if historical_baseline is _USE_CURRENT_BASELINE:
+        snapshot_path = output_root / "authority" / "snapshots" / f"{domain}.json"
+        baseline_value: object = (
+            _load_json(snapshot_path, "current approved baseline")
+            if snapshot_path.is_file()
+            else None
+        )
+    else:
+        baseline_value = historical_baseline
+
     if missing:
         if expected_sha is not None:
             raise AuthorityRefreshError("a missing baseline must have a null sha256")
-        if snapshot_path.exists():
+        if baseline_value is not None:
             raise AuthorityRefreshError(
                 "candidate is stale: an approved snapshot now exists"
             )
-        return
+        return descriptor, {
+            "schema_version": SCHEMA_VERSION,
+            "domain": domain,
+            "items": [],
+        }
     if not isinstance(expected_sha, str) or not re.fullmatch(r"[0-9a-f]{64}", expected_sha):
         raise AuthorityRefreshError("existing baseline requires a lowercase SHA-256")
-    if not snapshot_path.is_file():
+    if not isinstance(baseline_value, dict):
         raise AuthorityRefreshError("candidate is stale: approved snapshot is now missing")
-    current = _load_json(snapshot_path, "current approved baseline")
-    if sha256_json(current) != expected_sha:
+    if sha256_json(baseline_value) != expected_sha:
         raise AuthorityRefreshError("candidate is stale: approved snapshot has changed")
+    return descriptor, baseline_value
 
 
 def _current_baseline_approved_at(
@@ -903,34 +1286,27 @@ def _current_baseline_approved_at(
     return _parse_date(snapshot.get("approved_at"), "current approved baseline.approved_at")
 
 
-def promote(
+def validate_release_date(
     *,
-    candidate_path: Path,
-    approval_path: Path,
+    candidate: dict[str, Any],
+    approval: dict[str, Any],
     release_date: date,
-    output_root: Path,
-    confirmation: str | None,
-    now: datetime | None = None,
-) -> dict[str, Any]:
-    candidate = _load_json(candidate_path, "candidate")
-    approval = _load_json(approval_path, "approval")
-    _validate_latest_candidate(candidate, output_root=output_root, now=now)
-    digest = validate_approval(candidate, approval, output_root=output_root)
-    domain = candidate["domain"]
-    generated_at = datetime.fromisoformat(
-        str(candidate.get("generated_at")).replace("Z", "+00:00")
+    baseline_approved_at: date | None,
+) -> None:
+    """Apply the same chronology gate to live and archived promotions."""
+
+    generated_at = _parse_timestamp(
+        candidate.get("generated_at"),
+        "candidate.generated_at",
     )
     latest_review_date = max(
-        datetime.fromisoformat(
-            str(record["reviewed_at"]).replace("Z", "+00:00")
-        ).astimezone(timezone.utc).date()
+        _parse_timestamp(record.get("reviewed_at"), "reviewed_at")
+        .astimezone(timezone.utc)
+        .date()
         for record in approval["approvals"]
     )
     if release_date > date.today():
         raise AuthorityRefreshError("release-date cannot be in the future")
-    baseline_approved_at = _current_baseline_approved_at(
-        candidate, output_root=output_root
-    )
     if baseline_approved_at is not None and release_date < baseline_approved_at:
         raise AuthorityRefreshError(
             "release-date cannot precede the approved baseline"
@@ -942,6 +1318,65 @@ def promote(
         raise AuthorityRefreshError(
             "release-date cannot precede the candidate or its latest review"
         )
+    candidate_date = generated_at.astimezone(timezone.utc).date()
+    if release_date - candidate_date > MAX_CANDIDATE_AGE:
+        raise AuthorityRefreshError(
+            f"release-date cannot be more than {MAX_CANDIDATE_AGE.days} days "
+            "after candidate.generated_at"
+        )
+
+
+def promote(
+    *,
+    candidate_path: Path,
+    approval_path: Path,
+    release_date: date,
+    output_root: Path,
+    source_revision: str,
+    confirmation: str | None,
+    now: datetime | None = None,
+) -> dict[str, Any]:
+    candidate = _load_json(candidate_path, "candidate")
+    approval = _load_json(approval_path, "approval")
+    _validate_latest_candidate(candidate, output_root=output_root, now=now)
+    domain = candidate["domain"]
+    source_catalog = load_catalog(
+        output_root
+        / "tools"
+        / "authority_refresh"
+        / "config"
+        / f"{domain}_sources.json",
+        domain=domain,
+    )
+    impact_crosswalk = load_impact_crosswalk(
+        output_root / "authority" / "impact_crosswalk.json"
+    )
+    digest = validate_approval(
+        candidate,
+        approval,
+        output_root=output_root,
+        source_catalog=source_catalog,
+        impact_crosswalk=impact_crosswalk,
+    )
+    baseline_approved_at = _current_baseline_approved_at(
+        candidate, output_root=output_root
+    )
+    validate_release_date(
+        candidate=candidate,
+        approval=approval,
+        release_date=release_date,
+        baseline_approved_at=baseline_approved_at,
+    )
+    validation_context = build_validation_context(
+        candidate=candidate,
+        approval=approval,
+        candidate_path=candidate_path,
+        approval_path=approval_path,
+        output_root=output_root,
+        source_revision=source_revision,
+        source_catalog=source_catalog,
+        impact_crosswalk=impact_crosswalk,
+    )
     release_id = f"{release_date.isoformat()}-{domain}-{digest[:12]}"
     release = {
         "schema_version": "1.0",
@@ -951,10 +1386,8 @@ def promote(
         "candidate_generated_at": candidate.get("generated_at"),
         "approved_at": release_date.isoformat(),
         "approval": approval,
-        "notice": (
-            "Reviewed discovery baseline only. Official source text controls. "
-            "This release is not a legal or GAAP compliance certification."
-        ),
+        "validation_context_sha256": sha256_json(validation_context),
+        "notice": RELEASE_NOTICE,
     }
     if confirmation != CONFIRMATION:
         return release
@@ -964,6 +1397,7 @@ def promote(
         raise AuthorityRefreshError(f"release already exists: {release_dir}")
     write_json_atomic(release_dir / "candidate.json", candidate)
     write_json_atomic(release_dir / "approval.json", approval)
+    write_json_atomic(release_dir / "validation-context.json", validation_context)
     write_json_atomic(release_dir / "release.json", release)
     snapshot = {
         "schema_version": "1.0",
@@ -983,6 +1417,7 @@ def main() -> int:
     parser.add_argument("--approval", type=Path, required=True)
     parser.add_argument("--release-date", type=date.fromisoformat, required=True)
     parser.add_argument("--output-root", type=Path, default=REPO_ROOT)
+    parser.add_argument("--source-revision", required=True)
     parser.add_argument("--confirm")
     args = parser.parse_args()
     try:
@@ -991,6 +1426,7 @@ def main() -> int:
             approval_path=args.approval,
             release_date=args.release_date,
             output_root=args.output_root,
+            source_revision=args.source_revision,
             confirmation=args.confirm,
         )
     except AuthorityRefreshError as exc:

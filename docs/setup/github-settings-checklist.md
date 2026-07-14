@@ -99,6 +99,7 @@ Verify after merge:
 - [ ] `Legal Source Monitor` remains enabled weekly at `12:27 UTC` Monday.
 - [ ] `Accounting Authority Review Calendar` remains enabled monthly at `13:41 UTC` on day 1.
 - [ ] `Authority Release Promotion` requires the `authority-production` approval gate and exact confirmation `PROMOTE_REVIEWED_AUTHORITY_RELEASE`.
+- [ ] Promotion runs only from a clean default-branch checkout and archives `validation-context.json`; confirm its release-record hash and the exact release-plus-snapshot file scope in the resulting PR.
 - [ ] Candidate and promotion workflows create draft pull requests only; repository auto-merge remains OFF.
 - [ ] On the first generated candidate PR and the first generated promotion PR, select **Approve workflows to run** if GitHub shows the approval banner, then verify the required PR-event checks pass on the test-merge commit. Repeat this approval on later bot PRs whenever GitHub requests it; the explicitly dispatched branch-head runs do not necessarily satisfy a pending PR-event check.
 - [ ] Keep bot PRs on `GITHUB_TOKEN` while a human approval click is acceptable. If zero-click bot checks become necessary, provision a narrowly scoped GitHub App installation token; do not add a long-lived PAT.

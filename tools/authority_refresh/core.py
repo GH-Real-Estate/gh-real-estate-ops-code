@@ -36,6 +36,7 @@ MAXIMUM_ITEMS_PER_SOURCE = 10_000
 MAXIMUM_ITEMS_PER_DOMAIN = 10_000
 MAX_CANDIDATE_JSON_BYTES = 8 * 1024 * 1024
 MAX_CANDIDATE_MARKDOWN_BYTES = 1024 * 1024
+MAX_EXTERNAL_ID_CHARS = 500
 ALLOWED_STORAGE_POLICIES = {
     "redistributable",
     "metadata-only",
@@ -61,6 +62,26 @@ ITEM_FIELDS = {
 
 class AuthorityRefreshError(RuntimeError):
     """Raised when a source or candidate violates the trust contract."""
+
+
+def source_minimum_items(source: dict[str, Any]) -> int:
+    """Return the validated source floor using policy-aware defaults."""
+    default = (
+        0
+        if source.get("missing_detection", "complete-index") == "rolling-window"
+        else 1
+    )
+    minimum_items = source.get("minimum_items", default)
+    source_id = str(source.get("source_id", "unknown"))
+    if (
+        isinstance(minimum_items, bool)
+        or not isinstance(minimum_items, int)
+        or minimum_items < 0
+    ):
+        raise AuthorityRefreshError(
+            f"minimum_items must be a non-negative integer for {source_id}"
+        )
+    return minimum_items
 
 
 @dataclass(frozen=True)
@@ -188,21 +209,29 @@ def redact_url(url: str, secret_parameters: Iterable[str] = ()) -> str:
     )
 
 
-def load_catalog(path: Path, *, domain: str) -> dict[str, Any]:
-    try:
-        catalog = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        raise AuthorityRefreshError(f"cannot load {path}: {exc}") from exc
+def validate_catalog(
+    catalog: object,
+    *,
+    domain: str,
+    label: str = "source catalog",
+) -> dict[str, Any]:
+    """Validate an already-parsed source catalog.
+
+    Promotion archives the exact parsed catalog used for a release. Keeping value
+    validation separate from file loading lets historical replay use that immutable
+    copy instead of whatever catalog happens to be current later.
+    """
+
     if not isinstance(catalog, dict) or not isinstance(catalog.get("sources"), list):
-        raise AuthorityRefreshError(f"{path} must contain a sources list")
+        raise AuthorityRefreshError(f"{label} must contain a sources list")
     allowed_domains = catalog.get("allowed_domains")
     if not isinstance(allowed_domains, list) or not allowed_domains:
-        raise AuthorityRefreshError(f"{path} must declare allowed_domains")
+        raise AuthorityRefreshError(f"{label} must declare allowed_domains")
 
     seen: set[str] = set()
     for source in catalog["sources"]:
         if not isinstance(source, dict):
-            raise AuthorityRefreshError(f"{path} contains a non-object source")
+            raise AuthorityRefreshError(f"{label} contains a non-object source")
         required = {
             "source_id",
             "publisher",
@@ -249,15 +278,7 @@ def load_catalog(path: Path, *, domain: str) -> dict[str, Any]:
                 f"minimum_baseline_ratio must be greater than zero and at most one "
                 f"for complete-index source {source_id}"
             )
-        minimum_items = source.get("minimum_items", 1)
-        if (
-            isinstance(minimum_items, bool)
-            or not isinstance(minimum_items, int)
-            or minimum_items < 0
-        ):
-            raise AuthorityRefreshError(
-                f"minimum_items must be a non-negative integer for {source_id}"
-            )
+        minimum_items = source_minimum_items(source)
         maximum_items = source.get("maximum_items", DEFAULT_MAXIMUM_ITEMS)
         if (
             isinstance(maximum_items, bool)
@@ -309,6 +330,14 @@ def load_catalog(path: Path, *, domain: str) -> dict[str, Any]:
                 f"FASB source {source_id} cannot default to redistributable storage"
             )
     return catalog
+
+
+def load_catalog(path: Path, *, domain: str) -> dict[str, Any]:
+    try:
+        catalog = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise AuthorityRefreshError(f"cannot load {path}: {exc}") from exc
+    return validate_catalog(catalog, domain=domain, label=str(path))
 
 
 def _bounded_read(response: Any, max_bytes: int) -> bytes:
@@ -462,6 +491,10 @@ def normalize_item(
     official_url = str(raw.get("official_url", "")).strip()
     if not external_id or not title or not official_url:
         raise AuthorityRefreshError("item requires external_id, title, and official_url")
+    if len(external_id) > MAX_EXTERNAL_ID_CHARS:
+        raise AuthorityRefreshError(
+            f"external_id exceeds {MAX_EXTERNAL_ID_CHARS} characters"
+        )
     validate_official_url(
         official_url,
         source["allowed_hosts"],
@@ -482,7 +515,7 @@ def normalize_item(
     normalized = {
         "item_id": item_id,
         "source_id": source_id,
-        "external_id": external_id[:500],
+        "external_id": external_id,
         "title": title[:2_000],
         "official_url": official_url,
         "publisher": str(source["publisher"]),
@@ -747,19 +780,20 @@ def build_candidate(
     return candidate
 
 
-def load_impact_crosswalk(path: Path) -> dict[str, Any]:
-    """Load the conservative alert-routing map used in discovery reports."""
-    try:
-        crosswalk = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        raise AuthorityRefreshError(f"cannot load impact crosswalk {path}: {exc}") from exc
+def validate_impact_crosswalk(
+    crosswalk: object,
+    *,
+    label: str = "impact crosswalk",
+) -> dict[str, Any]:
+    """Validate an already-parsed conservative alert-routing map."""
+
     mappings = crosswalk.get("mappings") if isinstance(crosswalk, dict) else None
     if not isinstance(mappings, list) or not mappings:
-        raise AuthorityRefreshError("impact crosswalk must contain nonempty mappings")
+        raise AuthorityRefreshError(f"{label} must contain nonempty mappings")
     seen: set[str] = set()
     for mapping in mappings:
         if not isinstance(mapping, dict):
-            raise AuthorityRefreshError("impact crosswalk contains a non-object mapping")
+            raise AuthorityRefreshError(f"{label} contains a non-object mapping")
         mapping_id = str(mapping.get("id", ""))
         if not mapping_id or mapping_id in seen:
             raise AuthorityRefreshError(f"invalid or duplicate impact mapping: {mapping_id}")
@@ -777,6 +811,16 @@ def load_impact_crosswalk(path: Path) -> dict[str, Any]:
                 f"impact mapping {mapping_id} lacks affected_paths"
             )
     return crosswalk
+
+
+def load_impact_crosswalk(path: Path) -> dict[str, Any]:
+    """Load the conservative alert-routing map used in discovery reports."""
+
+    try:
+        crosswalk = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise AuthorityRefreshError(f"cannot load impact crosswalk {path}: {exc}") from exc
+    return validate_impact_crosswalk(crosswalk, label=str(path))
 
 
 def build_potential_impacts(
@@ -989,7 +1033,7 @@ def scan_domain(
             normalized = deduplicate_items(
                 normalize_item(item, source, domain=domain) for item in parsed
             )
-            minimum_items = int(source.get("minimum_items", 1))
+            minimum_items = source_minimum_items(source)
             if len(normalized) < minimum_items:
                 raise AuthorityRefreshError(
                     f"source returned {len(normalized)} item(s); "

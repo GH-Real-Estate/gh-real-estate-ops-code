@@ -274,6 +274,18 @@ class FetchTests(unittest.TestCase):
 
 
 class CandidateTests(unittest.TestCase):
+    def test_external_id_limit_is_rejected_before_hashing(self):
+        boundary = "x" * core.MAX_EXTERNAL_ID_CHARS
+        normalized = core.normalize_item(
+            raw_item(external_id=boundary), source(), domain="legal"
+        )
+        self.assertEqual(boundary, normalized["external_id"])
+
+        with self.assertRaisesRegex(core.AuthorityRefreshError, "external_id exceeds"):
+            core.normalize_item(
+                raw_item(external_id=boundary + "x"), source(), domain="legal"
+            )
+
     def test_item_fingerprint_excludes_retrieval_telemetry(self):
         first = core.normalize_item(
             raw_item(metadata={"fetched_at": "2026-07-13T00:00:00+00:00", "version": 1}),
@@ -421,6 +433,43 @@ class CandidateTests(unittest.TestCase):
                 "authority/snapshots/legal.json",
                 candidate["approved_baseline"]["path"],
             )
+
+    def test_empty_rolling_window_is_healthy_without_an_explicit_floor(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            catalog = root / "catalog.json"
+            catalog.write_text(
+                json.dumps(
+                    {
+                        "allowed_domains": ["official.example"],
+                        "sources": [
+                            source(
+                                fixture_filename="official.json",
+                                missing_detection="rolling-window",
+                            )
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            fixtures = root / "fixtures"
+            fixtures.mkdir()
+            (fixtures / "official.json").write_text("{}", encoding="utf-8")
+
+            candidate, exit_code = core.scan_domain(
+                domain="legal",
+                catalog_path=catalog,
+                baseline_path=root / "missing-baseline.json",
+                parser=lambda *_: [],
+                output_dir=root / "output",
+                run_id="empty-window",
+                fixture_dir=fixtures,
+            )
+
+        self.assertEqual(0, exit_code)
+        self.assertEqual("current", candidate["status"])
+        self.assertEqual("healthy", candidate["source_results"][0]["status"])
+        self.assertEqual(0, candidate["source_results"][0]["item_count"])
 
     def test_complete_index_fails_closed_below_baseline_coverage_floor(self):
         with workspace_temp_directory() as directory:

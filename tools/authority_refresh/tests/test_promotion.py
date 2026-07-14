@@ -13,6 +13,7 @@ GENERATED_AT = "2026-07-13T00:00:00+00:00"
 REVIEWED_AT = "2026-07-13T12:00:00+00:00"
 EVIDENCE_URL = "https://official.example/evidence"
 CURRENT_TIME = datetime(2026, 7, 13, 23, 0, tzinfo=timezone.utc)
+SOURCE_REVISION = "1" * 40
 
 
 def rehash(value: dict) -> None:
@@ -87,7 +88,7 @@ def canonical_candidate(
     return core.build_candidate(
         domain=domain,
         generated_at=GENERATED_AT,
-        run_id="test-run",
+        run_id="123456789-1",
         baseline_path=Path("authority") / "snapshots" / f"{domain}.json",
         baseline={"schema_version": core.SCHEMA_VERSION, "domain": domain, "items": []},
         baseline_missing=True,
@@ -146,6 +147,60 @@ def write_latest_candidate(root: Path, candidate_value: dict) -> None:
     path.write_text(json.dumps(candidate_value), encoding="utf-8")
 
 
+def write_validation_inputs(root: Path, domain: str) -> None:
+    catalog_source = promotion.PACKAGE_DIR / "config" / f"{domain}_sources.json"
+    catalog_target = (
+        root
+        / "tools"
+        / "authority_refresh"
+        / "config"
+        / f"{domain}_sources.json"
+    )
+    catalog_target.parent.mkdir(parents=True, exist_ok=True)
+    catalog_target.write_text(
+        catalog_source.read_text(encoding="utf-8"),
+        encoding="utf-8",
+    )
+    crosswalk_source = promotion.REPO_ROOT / "authority" / "impact_crosswalk.json"
+    crosswalk_target = root / "authority" / "impact_crosswalk.json"
+    crosswalk_target.parent.mkdir(parents=True, exist_ok=True)
+    crosswalk_target.write_text(
+        crosswalk_source.read_text(encoding="utf-8"),
+        encoding="utf-8",
+    )
+
+
+def write_promotion_inputs(
+    root: Path,
+    candidate_value: dict,
+    approval_value: dict,
+) -> tuple[Path, Path]:
+    domain = candidate_value["domain"]
+    write_validation_inputs(root, domain)
+    candidate_path = (
+        root
+        / "authority"
+        / "candidates"
+        / domain
+        / "runs"
+        / candidate_value["run_id"]
+        / "candidate.json"
+    )
+    approval_path = (
+        root
+        / "authority"
+        / "reviews"
+        / domain
+        / f"{candidate_value['run_id']}.json"
+    )
+    candidate_path.parent.mkdir(parents=True, exist_ok=True)
+    approval_path.parent.mkdir(parents=True, exist_ok=True)
+    candidate_path.write_text(json.dumps(candidate_value), encoding="utf-8")
+    approval_path.write_text(json.dumps(approval_value), encoding="utf-8")
+    write_latest_candidate(root, candidate_value)
+    return candidate_path, approval_path
+
+
 class PromotionTests(unittest.TestCase):
     def test_degraded_candidate_cannot_be_promoted(self):
         healthy = canonical_candidate()
@@ -153,6 +208,37 @@ class PromotionTests(unittest.TestCase):
         value = canonical_candidate(failed_source_id=failed_source_id)
         with self.assertRaisesRegex(core.AuthorityRefreshError, "degraded"):
             promotion.validate_approval(value, approval(value))
+
+    def test_empty_rolling_window_uses_the_same_zero_floor_during_promotion(self):
+        initial = canonical_candidate()
+        source_results = json.loads(json.dumps(initial["source_results"]))
+        target = next(
+            result
+            for result in source_results
+            if result["missing_detection"] == "rolling-window"
+        )
+        target["item_count"] = 0
+        target["observed_item_ids"] = []
+        items = [
+            item
+            for item in initial["items"]
+            if item["source_id"] != target["source_id"]
+        ]
+        value = core.build_candidate(
+            domain="legal",
+            generated_at=GENERATED_AT,
+            run_id="empty-rolling-window",
+            baseline_path=Path("authority/snapshots/legal.json"),
+            baseline={"schema_version": core.SCHEMA_VERSION, "domain": "legal", "items": []},
+            baseline_missing=True,
+            source_results=source_results,
+            items=items,
+            impact_crosswalk=core.load_impact_crosswalk(
+                promotion.REPO_ROOT / "authority" / "impact_crosswalk.json"
+            ),
+        )
+
+        promotion.validate_approval(value, approval(value))
 
     def test_every_change_requires_a_resolution(self):
         value = canonical_candidate()
@@ -361,6 +447,7 @@ class PromotionTests(unittest.TestCase):
         )
         with workspace_temp_directory() as directory:
             root = Path(directory)
+            write_validation_inputs(root, "legal")
             snapshot_path = root / "authority" / "snapshots" / "legal.json"
             snapshot_path.parent.mkdir(parents=True)
             snapshot_path.write_text(json.dumps(baseline), encoding="utf-8")
@@ -443,16 +530,13 @@ class PromotionTests(unittest.TestCase):
         review = approval(value)
         with workspace_temp_directory() as directory:
             root = Path(directory)
-            candidate_path = root / "candidate.json"
-            approval_path = root / "approval.json"
-            candidate_path.write_text(json.dumps(value), encoding="utf-8")
-            approval_path.write_text(json.dumps(review), encoding="utf-8")
-            write_latest_candidate(root, value)
+            candidate_path, approval_path = write_promotion_inputs(root, value, review)
             release = promotion.promote(
                 candidate_path=candidate_path,
                 approval_path=approval_path,
                 release_date=date(2026, 7, 13),
                 output_root=root,
+                source_revision=SOURCE_REVISION,
                 confirmation=None,
                 now=CURRENT_TIME,
             )
@@ -465,40 +549,168 @@ class PromotionTests(unittest.TestCase):
         review = approval(value)
         with workspace_temp_directory() as directory:
             root = Path(directory)
-            candidate_path = root / "candidate.json"
-            approval_path = root / "approval.json"
-            candidate_path.write_text(json.dumps(value), encoding="utf-8")
-            approval_path.write_text(json.dumps(review), encoding="utf-8")
-            write_latest_candidate(root, value)
+            candidate_path, approval_path = write_promotion_inputs(root, value, review)
             release = promotion.promote(
                 candidate_path=candidate_path,
                 approval_path=approval_path,
                 release_date=date(2026, 7, 13),
                 output_root=root,
+                source_revision=SOURCE_REVISION,
                 confirmation=promotion.CONFIRMATION,
                 now=CURRENT_TIME,
             )
             release_dir = root / "authority" / "releases" / release["release_id"]
             self.assertTrue((release_dir / "candidate.json").is_file())
             self.assertTrue((release_dir / "approval.json").is_file())
+            context_path = release_dir / "validation-context.json"
+            self.assertTrue(context_path.is_file())
+            context = json.loads(context_path.read_text(encoding="utf-8"))
+            self.assertEqual(
+                release["validation_context_sha256"],
+                core.sha256_json(context),
+            )
             snapshot = json.loads(
                 (root / "authority" / "snapshots" / "legal.json").read_text(encoding="utf-8")
             )
             self.assertEqual(value["items"], snapshot["items"])
+
+    def test_archived_replay_uses_immutable_context_after_reviewed_path_is_removed(self):
+        value = canonical_candidate()
+        review = approval(value)
+        reviewed_path = value["potential_impacts"][0]["affected_paths"][0][
+            "repository_path"
+        ]
+        review["impact_resolutions"][0].update(
+            {
+                "determination": "approved_paths_updated",
+                "reviewed_paths": [reviewed_path],
+            }
+        )
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            reviewed_file = root / Path(*reviewed_path.split("/"))
+            reviewed_file.parent.mkdir(parents=True, exist_ok=True)
+            reviewed_file.write_text("reviewed fixture\n", encoding="utf-8")
+            candidate_path, approval_path = write_promotion_inputs(root, value, review)
+            release = promotion.promote(
+                candidate_path=candidate_path,
+                approval_path=approval_path,
+                release_date=date(2026, 7, 13),
+                output_root=root,
+                source_revision=SOURCE_REVISION,
+                confirmation=promotion.CONFIRMATION,
+                now=CURRENT_TIME,
+            )
+            release_dir = root / "authority" / "releases" / release["release_id"]
+            context = json.loads(
+                (release_dir / "validation-context.json").read_text(encoding="utf-8")
+            )
+            reviewed_file.unlink()
+
+            digest = promotion.validate_archived_release(
+                value,
+                review,
+                context,
+                release_date=date(2026, 7, 13),
+                historical_baseline=None,
+                output_root=root,
+            )
+
+        self.assertEqual(value["candidate_sha256"], digest)
+        self.assertEqual([reviewed_path], [entry["path"] for entry in context["path_manifest"]])
+
+    def test_archived_replay_rejects_context_tampering(self):
+        value = canonical_candidate()
+        review = approval(value)
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            candidate_path, approval_path = write_promotion_inputs(root, value, review)
+            release = promotion.promote(
+                candidate_path=candidate_path,
+                approval_path=approval_path,
+                release_date=date(2026, 7, 13),
+                output_root=root,
+                source_revision=SOURCE_REVISION,
+                confirmation=promotion.CONFIRMATION,
+                now=CURRENT_TIME,
+            )
+            release_dir = root / "authority" / "releases" / release["release_id"]
+            context = json.loads(
+                (release_dir / "validation-context.json").read_text(encoding="utf-8")
+            )
+
+            wrong_run = json.loads(json.dumps(context))
+            wrong_run["candidate_path"] = (
+                "authority/candidates/legal/runs/999-1/candidate.json"
+            )
+            with self.assertRaisesRegex(
+                core.AuthorityRefreshError,
+                "does not match candidate.run_id",
+            ):
+                promotion.validate_archived_release(
+                    value,
+                    review,
+                    wrong_run,
+                    release_date=date(2026, 7, 13),
+                    historical_baseline=None,
+                    output_root=root,
+                )
+
+            missing_source = json.loads(json.dumps(context))
+            missing_source["source_catalog"]["sources"].pop()
+            with self.assertRaisesRegex(
+                core.AuthorityRefreshError,
+                "unknown or duplicate source_id",
+            ):
+                promotion.validate_archived_release(
+                    value,
+                    review,
+                    missing_source,
+                    release_date=date(2026, 7, 13),
+                    historical_baseline=None,
+                    output_root=root,
+                )
+
+            extra_path = json.loads(json.dumps(context))
+            extra_path["path_manifest"].append(
+                {"path": "invented.txt", "sha256": "0" * 64, "size_bytes": 0}
+            )
+            with self.assertRaisesRegex(core.AuthorityRefreshError, "does not match"):
+                promotion.validate_archived_release(
+                    value,
+                    review,
+                    extra_path,
+                    release_date=date(2026, 7, 13),
+                    historical_baseline=None,
+                    output_root=root,
+                )
+
+    def test_promotion_requires_a_canonical_source_revision(self):
+        value = canonical_candidate()
+        review = approval(value)
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            candidate_path, approval_path = write_promotion_inputs(root, value, review)
+            with self.assertRaisesRegex(core.AuthorityRefreshError, "source-revision"):
+                promotion.promote(
+                    candidate_path=candidate_path,
+                    approval_path=approval_path,
+                    release_date=date(2026, 7, 13),
+                    output_root=root,
+                    source_revision="not-a-commit",
+                    confirmation=None,
+                    now=CURRENT_TIME,
+                )
 
     def test_candidate_is_stale_when_a_previously_missing_snapshot_now_exists(self):
         value = canonical_candidate()
         review = approval(value)
         with workspace_temp_directory() as directory:
             root = Path(directory)
-            candidate_path = root / "candidate.json"
-            approval_path = root / "approval.json"
             snapshot_path = root / "authority" / "snapshots" / "legal.json"
             snapshot_path.parent.mkdir(parents=True)
             snapshot_path.write_text(json.dumps({"domain": "legal", "items": []}), encoding="utf-8")
-            candidate_path.write_text(json.dumps(value), encoding="utf-8")
-            approval_path.write_text(json.dumps(review), encoding="utf-8")
-            write_latest_candidate(root, value)
+            candidate_path, approval_path = write_promotion_inputs(root, value, review)
 
             with self.assertRaisesRegex(core.AuthorityRefreshError, "stale"):
                 promotion.promote(
@@ -506,6 +718,7 @@ class PromotionTests(unittest.TestCase):
                     approval_path=approval_path,
                     release_date=date(2026, 7, 13),
                     output_root=root,
+                    source_revision=SOURCE_REVISION,
                     confirmation=None,
                     now=CURRENT_TIME,
                 )
@@ -522,15 +735,11 @@ class PromotionTests(unittest.TestCase):
         review = approval(value)
         with workspace_temp_directory() as directory:
             root = Path(directory)
-            candidate_path = root / "candidate.json"
-            approval_path = root / "approval.json"
             snapshot_path = root / "authority" / "snapshots" / "legal.json"
             snapshot_path.parent.mkdir(parents=True)
             changed = {"schema_version": "1.0", "domain": "legal", "items": [{"id": "new"}]}
             snapshot_path.write_text(json.dumps(changed), encoding="utf-8")
-            candidate_path.write_text(json.dumps(value), encoding="utf-8")
-            approval_path.write_text(json.dumps(review), encoding="utf-8")
-            write_latest_candidate(root, value)
+            candidate_path, approval_path = write_promotion_inputs(root, value, review)
 
             with self.assertRaisesRegex(core.AuthorityRefreshError, "stale"):
                 promotion.promote(
@@ -538,6 +747,7 @@ class PromotionTests(unittest.TestCase):
                     approval_path=approval_path,
                     release_date=date(2026, 7, 13),
                     output_root=root,
+                    source_revision=SOURCE_REVISION,
                     confirmation=None,
                     now=CURRENT_TIME,
                 )
@@ -569,11 +779,9 @@ class PromotionTests(unittest.TestCase):
                     snapshot_path = root / "authority" / "snapshots" / "legal.json"
                     snapshot_path.parent.mkdir(parents=True)
                     snapshot_path.write_text(json.dumps(baseline), encoding="utf-8")
-                    candidate_path = root / "candidate.json"
-                    approval_path = root / "approval.json"
-                    candidate_path.write_text(json.dumps(value), encoding="utf-8")
-                    approval_path.write_text(json.dumps(review), encoding="utf-8")
-                    write_latest_candidate(root, value)
+                    candidate_path, approval_path = write_promotion_inputs(
+                        root, value, review
+                    )
 
                     with self.assertRaisesRegex(core.AuthorityRefreshError, expected):
                         promotion.promote(
@@ -581,6 +789,7 @@ class PromotionTests(unittest.TestCase):
                             approval_path=approval_path,
                             release_date=release_date,
                             output_root=root,
+                            source_revision=SOURCE_REVISION,
                             confirmation=None,
                             now=CURRENT_TIME,
                         )
@@ -590,13 +799,10 @@ class PromotionTests(unittest.TestCase):
         review = approval(value)
         with workspace_temp_directory() as directory:
             root = Path(directory)
-            candidate_path = root / "candidate.json"
-            approval_path = root / "approval.json"
-            candidate_path.write_text(json.dumps(value), encoding="utf-8")
-            approval_path.write_text(json.dumps(review), encoding="utf-8")
+            candidate_path, approval_path = write_promotion_inputs(root, value, review)
             different = canonical_candidate(domain="accounting")
             latest_path = root / "authority" / "candidates" / "legal" / "latest"
-            latest_path.mkdir(parents=True)
+            latest_path.mkdir(parents=True, exist_ok=True)
             (latest_path / "candidate.json").write_text(
                 json.dumps(different), encoding="utf-8"
             )
@@ -607,6 +813,7 @@ class PromotionTests(unittest.TestCase):
                     approval_path=approval_path,
                     release_date=date(2026, 7, 13),
                     output_root=root,
+                    source_revision=SOURCE_REVISION,
                     confirmation=None,
                     now=CURRENT_TIME,
                 )
@@ -618,6 +825,7 @@ class PromotionTests(unittest.TestCase):
                     approval_path=approval_path,
                     release_date=date(2026, 7, 13),
                     output_root=root,
+                    source_revision=SOURCE_REVISION,
                     confirmation=None,
                     now=datetime(2026, 7, 21, 0, 0, tzinfo=timezone.utc),
                 )

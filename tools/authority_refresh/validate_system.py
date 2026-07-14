@@ -12,15 +12,18 @@ from __future__ import annotations
 
 import argparse
 import fnmatch
+import hashlib
 import json
 import re
+import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 
 try:  # Support both ``python -m`` and direct script execution.
+    from . import promotion
     from .core import (
         DEFAULT_COMPLETE_INDEX_BASELINE_RATIO,
         AuthorityRefreshError,
@@ -28,6 +31,7 @@ try:  # Support both ``python -m`` and direct script execution.
         sha256_json,
     )
 except ImportError:  # pragma: no cover - exercised by the workflow command.
+    import promotion  # type: ignore[no-redef]
     from core import (  # type: ignore[no-redef]
         DEFAULT_COMPLETE_INDEX_BASELINE_RATIO,
         AuthorityRefreshError,
@@ -42,6 +46,14 @@ EXPECTED_WORKFLOWS = {
     "discovery": Path(".github/workflows/authority-discovery.yml"),
     "promotion": Path(".github/workflows/authority-release-promotion.yml"),
 }
+IMMUTABLE_RELEASE_FILENAMES = frozenset(
+    {
+        "candidate.json",
+        "approval.json",
+        "validation-context.json",
+        "release.json",
+    }
+)
 PROHIBITED_STATUS_KEYS = {
     "compliant",
     "compliance_certified",
@@ -575,6 +587,233 @@ def _validate_crosswalk(
                 )
 
 
+def _validate_source_revision_blobs(
+    node: dict[str, Any],
+    load_blob: Callable[[str], bytes],
+    report: ValidationReport,
+) -> None:
+    """Match archived context to the exact files in its recorded source commit."""
+
+    context = node["validation_context"]
+    label = node["label"]
+    expected_json = {
+        str(context.get("candidate_path", "")): node["candidate"],
+        (
+            f"authority/candidates/{node['candidate'].get('domain', '')}/"
+            "latest/candidate.json"
+        ): node["candidate"],
+        str(context.get("approval_path", "")): node["approval"],
+        str(context.get("source_catalog_path", "")): context.get("source_catalog"),
+        str(context.get("impact_crosswalk_path", "")): context.get(
+            "impact_crosswalk"
+        ),
+    }
+    for path, expected in expected_json.items():
+        try:
+            payload = load_blob(path)
+            actual = json.loads(payload.decode("utf-8"))
+        except (AuthorityRefreshError, UnicodeError, json.JSONDecodeError) as exc:
+            report.error(f"{label}: cannot verify source-revision JSON {path}: {exc}")
+            continue
+        report.require(
+            actual == expected,
+            f"{label}: source revision does not match archived {path}",
+        )
+
+    manifest = context.get("path_manifest")
+    if not isinstance(manifest, list):
+        return
+    for entry in manifest:
+        if not isinstance(entry, dict) or not isinstance(entry.get("path"), str):
+            continue
+        path = entry["path"]
+        try:
+            payload = load_blob(path)
+        except AuthorityRefreshError as exc:
+            report.error(f"{label}: cannot verify reviewed source path {path}: {exc}")
+            continue
+        report.require(
+            len(payload) == entry.get("size_bytes")
+            and hashlib.sha256(payload).hexdigest() == entry.get("sha256"),
+            f"{label}: reviewed path evidence does not match source revision: {path}",
+        )
+
+
+def _validate_release_introduction(
+    first_parent_commits: list[str],
+    *,
+    release_directory: str,
+    source_revision: str,
+    files_at_commit: Callable[[str], set[str]],
+) -> str:
+    """Bind a release to the parent of its unique first-parent introduction.
+
+    Promotion generates all immutable release files in one commit whose parent is
+    the clean default-branch source revision. Following first-parent history makes
+    the same invariant work on an automation branch, a pull-request test merge, a
+    squash merge, and every later checkout without rebinding old releases to HEAD^.
+    """
+
+    if not first_parent_commits:
+        raise AuthorityRefreshError(
+            "first-parent history is unavailable for immutable release provenance"
+        )
+    expected_paths = {
+        f"{release_directory}/{filename}"
+        for filename in IMMUTABLE_RELEASE_FILENAMES
+    }
+    introduction_parent: str | None = None
+    previous_commit: str | None = None
+    release_present = False
+
+    for commit in first_parent_commits:
+        files = files_at_commit(commit)
+        if files and files != expected_paths:
+            missing = sorted(expected_paths.difference(files))
+            extra = sorted(files.difference(expected_paths))
+            raise AuthorityRefreshError(
+                "immutable release files did not enter together or changed later; "
+                f"commit={commit}, missing={missing}, extra={extra}"
+            )
+        present = files == expected_paths
+        if present and not release_present:
+            if previous_commit is None:
+                raise AuthorityRefreshError(
+                    "immutable release cannot be introduced in the repository root commit"
+                )
+            if introduction_parent is not None:
+                raise AuthorityRefreshError(
+                    "immutable release has multiple first-parent introductions"
+                )
+            introduction_parent = previous_commit
+        elif release_present and not present:
+            raise AuthorityRefreshError(
+                "immutable release was removed from first-parent history"
+            )
+        release_present = present
+        previous_commit = commit
+
+    if not release_present or introduction_parent is None:
+        raise AuthorityRefreshError(
+            "immutable release introduction is unavailable from first-parent history"
+        )
+    if source_revision != introduction_parent:
+        raise AuthorityRefreshError(
+            "recorded source revision does not match the immutable release "
+            f"introduction parent: expected {introduction_parent}, "
+            f"actual {source_revision}"
+        )
+    return introduction_parent
+
+
+def _validate_source_revision(
+    root: Path,
+    node: dict[str, Any],
+    report: ValidationReport,
+) -> None:
+    """Verify release provenance against local Git history when it is available."""
+
+    if not (root / ".git").exists():
+        return
+    context = node["validation_context"]
+    revision = context.get("source_revision")
+    if not isinstance(revision, str) or not re.fullmatch(
+        r"(?:[0-9a-f]{40}|[0-9a-f]{64})", revision
+    ):
+        return
+
+    def run_git(*arguments: str) -> subprocess.CompletedProcess[bytes]:
+        try:
+            return subprocess.run(
+                ["git", "-C", str(root), *arguments],
+                check=False,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=30,
+            )
+        except (OSError, subprocess.SubprocessError) as exc:
+            raise AuthorityRefreshError(f"cannot inspect Git history: {exc}") from exc
+
+    try:
+        commit = run_git("cat-file", "-e", f"{revision}^{{commit}}")
+        if commit.returncode != 0:
+            raise AuthorityRefreshError(
+                "recorded source revision is unavailable; fetch full Git history"
+            )
+        ancestor = run_git("merge-base", "--is-ancestor", revision, "HEAD")
+        if ancestor.returncode != 0:
+            raise AuthorityRefreshError(
+                "recorded source revision is not an ancestor of the checked-out commit"
+            )
+        first_parent = run_git("rev-list", "--first-parent", "--reverse", "HEAD")
+        if first_parent.returncode != 0:
+            raise AuthorityRefreshError("cannot read checked-out first-parent history")
+        try:
+            first_parent_commits = [
+                line.decode("ascii")
+                for line in first_parent.stdout.splitlines()
+                if line.strip()
+            ]
+        except UnicodeDecodeError as exc:
+            raise AuthorityRefreshError(
+                "checked-out first-parent history contains an invalid object ID"
+            ) from exc
+        if (
+            revision not in first_parent_commits
+            or any(
+                not re.fullmatch(r"(?:[0-9a-f]{40}|[0-9a-f]{64})", value)
+                for value in first_parent_commits
+            )
+        ):
+            raise AuthorityRefreshError(
+                "recorded source revision is not on the checked-out first-parent history"
+            )
+
+        release_directory = str(node["label"])
+
+        def files_at_commit(commit_id: str) -> set[str]:
+            result = run_git(
+                "ls-tree",
+                "-r",
+                "--name-only",
+                "-z",
+                commit_id,
+                "--",
+                release_directory,
+            )
+            if result.returncode != 0:
+                raise AuthorityRefreshError(
+                    f"cannot inspect immutable release tree at {commit_id}"
+                )
+            try:
+                return {
+                    path.decode("utf-8")
+                    for path in result.stdout.split(b"\0")
+                    if path
+                }
+            except UnicodeDecodeError as exc:
+                raise AuthorityRefreshError(
+                    "immutable release history contains a non-UTF-8 path"
+                ) from exc
+
+        _validate_release_introduction(
+            first_parent_commits,
+            release_directory=release_directory,
+            source_revision=revision,
+            files_at_commit=files_at_commit,
+        )
+
+        def load_blob(path: str) -> bytes:
+            result = run_git("cat-file", "blob", f"{revision}:{path}")
+            if result.returncode != 0:
+                raise AuthorityRefreshError("path is absent from the source revision")
+            return result.stdout
+
+        _validate_source_revision_blobs(node, load_blob, report)
+    except AuthorityRefreshError as exc:
+        report.error(f"{node['label']}: source revision verification failed: {exc}")
+
+
 def _validate_release_chains(
     root: Path,
     parsed: dict[Path, Any],
@@ -599,8 +838,22 @@ def _validate_release_chains(
             not directory.is_symlink(),
             f"{label}: release directory must not be a symlink",
         )
+        expected_filenames = IMMUTABLE_RELEASE_FILENAMES
+        entries = list(directory.iterdir())
+        actual_filenames = {entry.name for entry in entries}
+        report.require(
+            actual_filenames == expected_filenames,
+            f"{label}: immutable release file set must be exactly "
+            f"{sorted(expected_filenames)}; actual={sorted(actual_filenames)}",
+        )
+        for filename in sorted(expected_filenames):
+            path = directory / filename
+            report.require(
+                path.is_file() and not path.is_symlink(),
+                f"{label}/{filename}: immutable release document must be a regular file",
+            )
         documents: dict[str, dict[str, Any]] = {}
-        for filename in ("candidate.json", "approval.json", "release.json"):
+        for filename in sorted(expected_filenames):
             value = parsed.get(directory / filename)
             report.require(
                 isinstance(value, dict),
@@ -608,11 +861,12 @@ def _validate_release_chains(
             )
             if isinstance(value, dict):
                 documents[filename] = value
-        if len(documents) != 3:
+        if len(documents) != 4:
             continue
 
         candidate = documents["candidate.json"]
         approval = documents["approval.json"]
+        validation_context = documents["validation-context.json"]
         release = documents["release.json"]
         domain = candidate.get("domain")
         report.require(
@@ -631,6 +885,26 @@ def _validate_release_chains(
             and release.get("schema_version") == "1.0",
             f"{label}: immutable release documents must use schema_version 1.0",
         )
+        expected_release_fields = {
+            "schema_version",
+            "release_id",
+            "domain",
+            "candidate_sha256",
+            "candidate_generated_at",
+            "approved_at",
+            "approval",
+            "validation_context_sha256",
+            "notice",
+        }
+        report.require(
+            set(release) == expected_release_fields,
+            f"{label}: release fields must be exactly "
+            f"{sorted(expected_release_fields)}; actual={sorted(release)}",
+        )
+        report.require(
+            release.get("notice") == promotion.RELEASE_NOTICE,
+            f"{label}: release notice must preserve the non-certification disclaimer",
+        )
 
         candidate_body = dict(candidate)
         claimed_digest = candidate_body.pop("candidate_sha256", None)
@@ -647,6 +921,12 @@ def _validate_release_chains(
         report.require(
             release.get("approval") == approval,
             f"{label}: release approval does not equal approval.json",
+        )
+        report.require(
+            release.get("validation_context_sha256")
+            == sha256_json(validation_context),
+            f"{label}: release validation-context hash does not match "
+            "validation-context.json",
         )
         report.require(
             release.get("candidate_generated_at") == candidate.get("generated_at"),
@@ -697,6 +977,10 @@ def _validate_release_chains(
                 "baseline": baseline,
                 "snapshot": expected_snapshot,
                 "snapshot_sha256": sha256_json(expected_snapshot),
+                "candidate": candidate,
+                "approval": approval,
+                "validation_context": validation_context,
+                "label": label,
             }
         )
 
@@ -758,6 +1042,43 @@ def _validate_release_chains(
                     "its predecessor release",
                 )
             children.setdefault(predecessor, []).append(node)
+
+        for node in nodes:
+            baseline = node["baseline"]
+            historical_baseline: dict[str, Any] | None
+            if baseline.get("missing") is True:
+                historical_baseline = None
+            else:
+                predecessor = baseline.get("sha256")
+                parent = (
+                    by_snapshot_hash.get(predecessor)
+                    if isinstance(predecessor, str)
+                    else None
+                )
+                if parent is None:
+                    report.error(
+                        f"{node['label']}: archived promotion replay cannot reconstruct "
+                        "the predecessor snapshot"
+                    )
+                    continue
+                historical_baseline = parent["snapshot"]
+            try:
+                promotion.validate_archived_release(
+                    node["candidate"],
+                    node["approval"],
+                    node["validation_context"],
+                    release_date=node["approved_at"],
+                    historical_baseline=historical_baseline,
+                    output_root=root,
+                )
+            except Exception as exc:
+                # Repository content is untrusted at this boundary. Any replay
+                # failure must become a validation error instead of aborting CI.
+                report.error(
+                    f"{node['label']}: archived promotion replay failed: {exc}"
+                )
+            else:
+                _validate_source_revision(root, node, report)
 
         report.require(
             len(roots) == 1,
@@ -895,7 +1216,12 @@ def _validate_workflows(root: Path, report: ValidationReport) -> None:
         _require_workflow_fragments(
             EXPECTED_WORKFLOWS["checks"].as_posix(),
             checks,
-            ("validate_system.py", "unittest", "tools/authority_refresh/tests"),
+            (
+                "validate_system.py",
+                "unittest",
+                "tools/authority_refresh/tests",
+                "fetch-depth: 0",
+            ),
             report,
         )
     discovery = contents.get("discovery")

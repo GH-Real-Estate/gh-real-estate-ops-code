@@ -22,6 +22,8 @@ Official source material controls over repository extracts, summaries, classific
 | `accounting/CURRENT_STATUS.json` | Machine-readable status and limitations for the approved accounting baseline. |
 | `authority/impact_crosswalk.json` | Maps authority-domain signals to existing repository artifacts that require review or testing. |
 | `authority/schemas/impact-crosswalk.schema.json` | Draft 2020-12 contract for the impact crosswalk. |
+| `authority/schemas/promotion-validation-context.schema.json` | Contract for the immutable catalog, crosswalk, source revision, and reviewed-path evidence captured with each promoted discovery release. |
+| `authority/schemas/promotion-release.schema.json` | Contract for the immutable promotion release record and its validation-context binding. |
 | `.github/CODEOWNERS` | Requests GH Real Estate ownership review for authority content and related workflows. |
 
 The existing July 12, 2026 registries remain the approved dated baselines. The new record schemas govern normalized refresh records; they do not retroactively imply that the older registry formats contain fields that were never collected.
@@ -70,7 +72,7 @@ These are record-level governance states. The top-level result of each discovery
 5. Use `impact_crosswalk.json` to identify code, configuration, policy, document, and test surfaces requiring review.
 6. Open a bounded pull request. Legal-effect and applicability decisions require qualified legal review; GAAP decisions require a CPA or qualified accounting reviewer using authorized FASB access; tax decisions require tax-year-specific professional review.
 7. Record the effective-date analysis, applicability facts, licensing decision, reviewer decision, tests, any production configuration check, and one evidence-backed disposition for every conservative potential-impact route.
-8. Merge the bounded candidate evidence and a separate structured approval record to `main`, then use the protected workflow to archive reviewed discovery evidence and update the discovery snapshot. This evidence promotion does not update approved authority content and is never auto-merged.
+8. Merge the bounded candidate evidence and a separate structured approval record to `main`, then use the protected workflow to archive reviewed discovery evidence, its exact validation context, and the discovery snapshot. Each release binds the source revision, source catalog, impact crosswalk, and hashes of reviewed repository paths so CI can replay the original gate without trusting later configuration; full-history CI also verifies those inputs against the recorded commit immediately preceding the release's unique first-parent introduction. Stale source revisions, partial introductions, removal/re-addition, and later mutation fail closed. This evidence promotion does not update approved authority content and is never auto-merged.
 9. When the review requires a legal/accounting currentness change, publish a separate complete dated release only after required professional review. Never auto-merge that release.
 10. Downstream production systems consume only an approved legal/accounting release commit or tag. Candidate branches, discovery artifacts, and reviewed discovery snapshots are never production authority inputs.
 

@@ -98,7 +98,7 @@ This is a per-source state. Today it is expected when `CONGRESS_API_KEY` is abse
 ## Important comparison semantics
 
 - Sources marked `complete-index` may report an approved snapshot item as `missing` only after satisfying an explicit bootstrap item floor and at least 80% of that source's prior approved item count. That is still a review signal, not proof of repeal or withdrawal; a larger drop fails closed as degraded discovery.
-- Sources marked `rolling-window` are limited recent-item feeds or pages. They report new and modified observations, but an old item leaving the window is not reported as missing, repealed, revoked, withdrawn, or superseded.
+- Sources marked `rolling-window` are limited recent-item feeds or pages. They report new and modified observations, but an old item leaving the window is not reported as missing, repealed, revoked, withdrawn, or superseded. An empty current window is healthy unless that source declares an explicit `minimum_items` floor.
 - The Kansas Secretary of State page links to `rules.ks.gov`. The current adapter records official portal/index metadata; substantive rule text, adoption, amendment, effective date, and applicability remain a manual review gap.
 - `codes.opkansas.org` is the City-linked electronic municipal-code copy. The Overland Park City Clerk's master copy controls, and every municipal discovery remains manual-review evidence.
 - FASB sources are metadata-only. Never commit Codification text, screenshots, print exports, copied paragraphs, or scraped licensed content.
@@ -173,10 +173,11 @@ Validate without writing:
 python tools/authority_refresh/promotion.py `
   --candidate authority/candidates/legal/runs/123456789-1/candidate.json `
   --approval authority/reviews/legal/2026-07-13-123456789-1.json `
-  --release-date 2026-07-13
+  --release-date 2026-07-13 `
+  --source-revision (git rev-parse HEAD)
 ```
 
-Replace the example workflow run ID, review filename, and dates with the selected merged evidence. Omitting `--confirm` is intentional. Do not run protected promotion locally. The release date cannot be in the future or precede the candidate date, prior snapshot approval, or latest structured-review date; the candidate must match merged `latest/` and be no more than seven days old.
+Replace the example workflow run ID, review filename, and dates with the selected merged evidence. Omitting `--confirm` is intentional. The source revision must be the clean checked-out commit containing the candidate, approval, catalog, crosswalk, and any reviewed paths. Do not run protected promotion locally. The release date cannot be in the future or precede the candidate date, prior snapshot approval, or latest structured-review date; the candidate must match merged `latest/` and be no more than seven days old.
 
 ## Protected evidence promotion
 
@@ -193,12 +194,12 @@ gh workflow run authority-release-promotion.yml --ref main `
   -f confirmation=PROMOTE_REVIEWED_AUTHORITY_RELEASE
 ```
 
-Replace the example run ID and dates with the merged evidence. For accounting, change all domain paths and `domain=accounting`. The exact confirmation is case-sensitive. The job pauses at the `authority-production` environment for its required human approval, revalidates path scope and the structured evidence, reconstructs the candidate from each source's `observed_item_ids`, the current baseline, the canonical source catalog, and the impact crosswalk, and then opens a draft PR. It writes only:
+Replace the example run ID and dates with the merged evidence. For accounting, change all domain paths and `domain=accounting`. The exact confirmation is case-sensitive. The job pauses at the `authority-production` environment for its required human approval, requires a clean default-branch checkout, revalidates path scope and the structured evidence, reconstructs the candidate from each source's `observed_item_ids`, the current baseline, the canonical source catalog, and the impact crosswalk, and then opens a draft PR. It writes only:
 
-- an immutable `authority/releases/<date>-<domain>-<hash>/` evidence set; and
+- an immutable `authority/releases/<date>-<domain>-<hash>/` evidence set, including `validation-context.json` with the exact source revision, catalog, crosswalk, and reviewed-path hash/size manifest; and
 - `authority/snapshots/<domain>.json`, the baseline for later discovery comparisons.
 
-Required offline validation also proves that releases form a single baseline-hash chain per domain, that child approval dates never precede their parents, and that the checked-in snapshot equals its unique tip. A fork, backdated child, unknown predecessor, second bootstrap root, or manually reconciled snapshot fails CI.
+`release.json` binds that context by SHA-256. Required offline validation replays the same promotion rules against the archived context and historical predecessor snapshot; it does not use today's catalog, crosswalk, or reviewed-path existence. In a Git checkout, it also verifies that the archived candidate, approval, catalog, crosswalk, and reviewed-path hashes match the recorded source commit. That source commit must be the commit immediately preceding the release's unique introduction on first-parent history, not merely any older ancestor. All four immutable release files must enter together and remain present, so a stale source revision, partial introduction, deletion/re-addition, or later mutation fails closed. The validator also proves that releases form a single baseline-hash chain per domain, that child approval dates never precede their parents, and that the checked-in snapshot equals its unique tip. A missing or altered context, invalid approval, unavailable or mismatched source revision, fork, backdated child, unknown predecessor, second bootstrap root, or manually reconciled snapshot fails CI.
 
 The workflow never merges. It blocks while a newer same-repository candidate PR is open and allows only one open automation promotion PR per domain; reconcile the candidate first, and review, merge, or close an existing promotion PR before another dispatch. It explicitly dispatches authority and repository checks for the generated commit. If GitHub shows **Approve workflows to run**, approve it and wait for the PR-event checks too. Require `Validate authority refresh controls`, require the branch to be up to date with `main`, require code-owner approval, resolve all conversations, and merge intentionally only if the evidence archive is correct. Promotion still does not change `legal/`, `accounting/`, or production systems. A substantive currentness change needs a separate complete dated-release PR with its own counsel/CPA/tax review and applicable tests.
 

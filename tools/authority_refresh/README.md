@@ -16,7 +16,9 @@ changes without modifying approved authority content.
 - Reports contain provenance, deterministic item fingerprints, source failures,
   candidate changes, and conservative impact-crosswalk review routes.
 - Candidate output is unapproved and must never be consumed as current authority.
-- Promotion requires structured reviewer evidence and creates a separate review change.
+- Promotion requires structured reviewer evidence and archives a hashed validation
+  context so historical releases replay against their original catalog, crosswalk,
+  predecessor snapshot, source commit, and reviewed-path evidence.
 - Security-sensitive official Actions are pinned to reviewed commit SHAs; Dependabot
   proposes controlled weekly update pull requests instead of moving tags at runtime.
 
@@ -34,7 +36,8 @@ Validate a reviewed candidate without writing anything:
 python tools/authority_refresh/promotion.py `
   --candidate authority/candidates/legal/runs/123456789-1/candidate.json `
   --approval authority/reviews/legal/2026-07-13-123456789-1.json `
-  --release-date 2026-07-13
+  --release-date 2026-07-13 `
+  --source-revision (git rev-parse HEAD)
 ```
 
 Use the immutable per-run candidate, not `latest`. Both candidate evidence and its
@@ -43,6 +46,7 @@ workflow is dispatched. Every candidate change and potential-impact route requir
 exact structured resolution.
 
 Replace the example workflow run ID, review filename, and dates with the selected merged evidence.
+Use a clean checkout so the source revision identifies those exact inputs.
 Only the protected GitHub workflow supplies the exact promotion confirmation string.
 Even then, promotion archives the reviewed discovery baseline; approved legal PDFs,
 accounting conclusions, and current-status assertions remain separately reviewed files.

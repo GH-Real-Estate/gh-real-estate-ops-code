@@ -6,7 +6,7 @@ import json
 import unittest
 from pathlib import Path
 
-from tools.authority_refresh import core, validate_system
+from tools.authority_refresh import core, promotion, validate_system
 from test_support import workspace_temp_directory
 
 
@@ -31,33 +31,143 @@ def write_authority_release(
     approved_at: str,
     run_id: str,
     baseline_snapshot: dict | None,
+    failed_source: bool = False,
+    generated_at_override: str | None = None,
 ) -> dict:
-    candidate = {
-        "schema_version": "1.0",
+    run_digest = core.sha256_bytes(run_id.encode("utf-8"))
+    workflow_run_id = (
+        f"{int(run_digest[:12], 16)}-{int(run_digest[12:20], 16)}"
+    )
+    catalog = core.load_catalog(
+        root / "tools" / "authority_refresh" / "config" / f"{domain}_sources.json",
+        domain=domain,
+    )
+    crosswalk = core.load_impact_crosswalk(
+        root / "authority" / "impact_crosswalk.json"
+    )
+    generated_at = generated_at_override or f"{approved_at}T00:00:00+00:00"
+    source_results: list[dict] = []
+    items: list[dict] = []
+    failed_source_id = catalog["sources"][0]["source_id"] if failed_source else None
+    for configured_source in catalog["sources"]:
+        source_id = configured_source["source_id"]
+        result = {
+            "source_id": source_id,
+            "critical": bool(configured_source["critical"]),
+            "storage_policy": configured_source["storage_policy"],
+            "discovery_url": configured_source["discovery_url"],
+            "retrieved_at": generated_at,
+            "missing_detection": configured_source.get(
+                "missing_detection", "complete-index"
+            ),
+        }
+        if source_id == failed_source_id:
+            result.update(
+                {
+                    "status": "error",
+                    "error": "simulated archived source failure",
+                    "item_count": 0,
+                    "observed_item_ids": [],
+                }
+            )
+        else:
+            observed: list[dict] = []
+            for item_index in range(core.source_minimum_items(configured_source)):
+                item = core.normalize_item(
+                    {
+                        "external_id": f"fixture-{source_id}-{item_index}",
+                        "title": f"Official fixture {item_index} for {source_id}",
+                        "official_url": configured_source["discovery_url"],
+                        "published_at": "2026-07-01",
+                        "effective_at": None,
+                        "status": "published",
+                        "metadata": {"fixture": True},
+                    },
+                    configured_source,
+                    domain=domain,
+                )
+                observed.append(item)
+                items.append(item)
+            result.update(
+                {
+                    "status": "healthy",
+                    "final_url": configured_source["discovery_url"],
+                    "content_type": "application/json",
+                    "payload_sha256": core.sha256_bytes(source_id.encode("utf-8")),
+                    "attempts": 1,
+                    "item_count": len(observed),
+                    "observed_item_ids": sorted(
+                        item["item_id"] for item in observed
+                    ),
+                }
+            )
+        source_results.append(result)
+
+    baseline = baseline_snapshot or {
+        "schema_version": core.SCHEMA_VERSION,
         "domain": domain,
-        "generated_at": f"{approved_at}T00:00:00+00:00",
-        "run_id": run_id,
-        "status": "review_required",
-        "notice": "Synthetic immutable release-chain fixture.",
-        "approved_baseline": {
-            "path": f"authority/snapshots/{domain}.json",
-            "missing": baseline_snapshot is None,
-            "sha256": None if baseline_snapshot is None else core.sha256_json(baseline_snapshot),
-        },
-        "counts": {},
-        "source_results": [],
-        "changes": [],
-        "potential_impacts": [],
-        "items": [{"item_id": f"{domain}-{run_id}"}],
+        "items": [],
     }
-    candidate["candidate_sha256"] = core.sha256_json(candidate)
+    candidate = core.build_candidate(
+        domain=domain,
+        generated_at=generated_at,
+        run_id=workflow_run_id,
+        baseline_path=Path("authority") / "snapshots" / f"{domain}.json",
+        baseline=baseline,
+        baseline_missing=baseline_snapshot is None,
+        source_results=source_results,
+        items=items,
+        impact_crosswalk=crosswalk,
+    )
     approval = {
-        "schema_version": "1.0",
+        "schema_version": core.SCHEMA_VERSION,
         "domain": domain,
         "candidate_sha256": candidate["candidate_sha256"],
-        "approvals": [],
-        "change_resolutions": [],
-        "impact_resolutions": [],
+        "approvals": [
+            {
+                "role": role,
+                "reviewer": "@GHRealEstate",
+                "reviewed_at": f"{approved_at}T12:00:00+00:00",
+                "determination": "approved",
+                "evidence_urls": ["https://official.example/evidence"],
+            }
+            for role in sorted(promotion._required_roles(candidate))
+        ],
+        "change_resolutions": [
+            {
+                "item_id": change["item_id"],
+                "change_type": change["change_type"],
+                "resolution": "no_material_change",
+                "evidence_urls": ["https://official.example/evidence"],
+            }
+            for change in candidate["changes"]
+        ],
+        "impact_resolutions": [
+            {
+                "mapping_id": impact["mapping_id"],
+                "determination": "no_change_required",
+                "evidence_urls": ["https://official.example/evidence"],
+                "reviewed_paths": [],
+            }
+            for impact in candidate["potential_impacts"]
+        ],
+    }
+    validation_context = {
+        "contract_version": promotion.VALIDATION_CONTRACT_VERSION,
+        "domain": domain,
+        "candidate_sha256": candidate["candidate_sha256"],
+        "source_revision": "1" * 40,
+        "candidate_path": (
+            f"authority/candidates/{domain}/runs/{workflow_run_id}/candidate.json"
+        ),
+        "approval_path": f"authority/reviews/{domain}/{workflow_run_id}.json",
+        "source_catalog_path": (
+            f"tools/authority_refresh/config/{domain}_sources.json"
+        ),
+        "impact_crosswalk_path": "authority/impact_crosswalk.json",
+        "source_catalog": catalog,
+        "impact_crosswalk": crosswalk,
+        "path_manifest": [],
     }
     release_id = f"{approved_at}-{domain}-{candidate['candidate_sha256'][:12]}"
     release = {
@@ -68,7 +178,8 @@ def write_authority_release(
         "candidate_generated_at": candidate["generated_at"],
         "approved_at": approved_at,
         "approval": approval,
-        "notice": "Synthetic release-chain fixture.",
+        "validation_context_sha256": core.sha256_json(validation_context),
+        "notice": promotion.RELEASE_NOTICE,
     }
     snapshot = {
         "schema_version": "1.0",
@@ -81,9 +192,43 @@ def write_authority_release(
     directory = f"authority/releases/{release_id}"
     write_json(root, f"{directory}/candidate.json", candidate)
     write_json(root, f"{directory}/approval.json", approval)
+    write_json(root, f"{directory}/validation-context.json", validation_context)
     write_json(root, f"{directory}/release.json", release)
     write_json(root, f"authority/snapshots/{domain}.json", snapshot)
     return snapshot
+
+
+def archived_release_directory(root: Path, snapshot: dict) -> Path:
+    return root / "authority" / "releases" / snapshot["release_id"]
+
+
+def replace_archived_approval(
+    root: Path,
+    snapshot: dict,
+    approval: dict,
+) -> None:
+    directory = archived_release_directory(root, snapshot)
+    write_json(root, str((directory / "approval.json").relative_to(root)), approval)
+    release = read_json(root, str((directory / "release.json").relative_to(root)))
+    release["approval"] = approval
+    write_json(root, str((directory / "release.json").relative_to(root)), release)
+
+
+def replace_validation_context(
+    root: Path,
+    snapshot: dict,
+    context: dict,
+    *,
+    update_release_hash: bool,
+) -> None:
+    directory = archived_release_directory(root, snapshot)
+    context_path = str((directory / "validation-context.json").relative_to(root))
+    write_json(root, context_path, context)
+    if update_release_hash:
+        release_path = str((directory / "release.json").relative_to(root))
+        release = read_json(root, release_path)
+        release["validation_context_sha256"] = core.sha256_json(context)
+        write_json(root, release_path, release)
 
 
 def source(
@@ -276,6 +421,7 @@ def build_valid_workspace(root: Path) -> None:
                     "id": "rent-accounting",
                     "automatic_change": "prohibited",
                     "affected_paths": [{"repository_path": "src/rule.py"}],
+                    "review_gate": {"required_roles": ["system-owner"]},
                     "authority_references": [
                         {
                             "domain": "legal",
@@ -321,6 +467,9 @@ def build_valid_workspace(root: Path) -> None:
 jobs:
   validate:
     steps:
+      - uses: actions/checkout@fixture
+        with:
+          fetch-depth: 0
       - run: python tools/authority_refresh/validate_system.py
       - run: python -m unittest discover -s tools/authority_refresh/tests
 """,
@@ -361,6 +510,137 @@ jobs:
       - run: gh pr create --draft
 """,
     )
+
+
+class ReleaseIntroductionTopologyTests(unittest.TestCase):
+    RELEASE_DIRECTORY = "authority/releases/2026-07-13-legal-0123456789ab"
+    RELEASE_FILES = {
+        f"authority/releases/2026-07-13-legal-0123456789ab/{filename}"
+        for filename in validate_system.IMMUTABLE_RELEASE_FILENAMES
+    }
+    ROOT = "0" * 40
+    SOURCE = "1" * 40
+    INTRODUCTION = "2" * 40
+    LATER = "3" * 40
+    REINTRODUCTION = "4" * 40
+
+    def validate_topology(
+        self,
+        commits: list[str],
+        states: dict[str, set[str]],
+        *,
+        source_revision: str,
+    ) -> str:
+        return validate_system._validate_release_introduction(
+            commits,
+            release_directory=self.RELEASE_DIRECTORY,
+            source_revision=source_revision,
+            files_at_commit=lambda commit: states[commit],
+        )
+
+    def test_binds_to_introduction_parent_across_supported_git_topologies(self):
+        cases = {
+            "promotion branch": (
+                [self.SOURCE, self.INTRODUCTION],
+                {self.SOURCE: set(), self.INTRODUCTION: self.RELEASE_FILES},
+            ),
+            "pull-request synthetic merge": (
+                [self.ROOT, self.SOURCE, self.INTRODUCTION],
+                {
+                    self.ROOT: set(),
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES,
+                },
+            ),
+            "squash merge": (
+                [self.ROOT, self.SOURCE, self.INTRODUCTION],
+                {
+                    self.ROOT: set(),
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES,
+                },
+            ),
+            "later unrelated commit": (
+                [self.ROOT, self.SOURCE, self.INTRODUCTION, self.LATER],
+                {
+                    self.ROOT: set(),
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES,
+                    self.LATER: self.RELEASE_FILES,
+                },
+            ),
+        }
+        for name, (commits, states) in cases.items():
+            with self.subTest(topology=name):
+                parent = self.validate_topology(
+                    commits,
+                    states,
+                    source_revision=self.SOURCE,
+                )
+                self.assertEqual(self.SOURCE, parent)
+
+    def test_rejects_an_older_first_parent_as_the_recorded_source(self):
+        states = {
+            self.ROOT: set(),
+            self.SOURCE: set(),
+            self.INTRODUCTION: self.RELEASE_FILES,
+        }
+
+        with self.assertRaisesRegex(
+            core.AuthorityRefreshError,
+            "does not match the immutable release introduction parent",
+        ):
+            self.validate_topology(
+                [self.ROOT, self.SOURCE, self.INTRODUCTION],
+                states,
+                source_revision=self.ROOT,
+            )
+
+    def test_rejects_unavailable_root_partial_and_removed_release_history(self):
+        cases = {
+            "unavailable": (
+                [],
+                {},
+                "history is unavailable",
+            ),
+            "root introduction": (
+                [self.INTRODUCTION],
+                {self.INTRODUCTION: self.RELEASE_FILES},
+                "repository root commit",
+            ),
+            "partial introduction": (
+                [self.SOURCE, self.INTRODUCTION],
+                {
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES
+                    - {f"{self.RELEASE_DIRECTORY}/approval.json"},
+                },
+                "did not enter together",
+            ),
+            "delete and re-add": (
+                [
+                    self.SOURCE,
+                    self.INTRODUCTION,
+                    self.LATER,
+                    self.REINTRODUCTION,
+                ],
+                {
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES,
+                    self.LATER: set(),
+                    self.REINTRODUCTION: self.RELEASE_FILES,
+                },
+                "was removed from first-parent history",
+            ),
+        }
+        for name, (commits, states, message) in cases.items():
+            with self.subTest(case=name):
+                with self.assertRaisesRegex(core.AuthorityRefreshError, message):
+                    self.validate_topology(
+                        commits,
+                        states,
+                        source_revision=self.SOURCE,
+                    )
 
 
 class ValidateSystemTests(unittest.TestCase):
@@ -503,6 +783,445 @@ class ValidateSystemTests(unittest.TestCase):
             report = validate_system.validate_repository(root)
 
             self.assertTrue(report.ok, "\n".join(report.errors))
+
+    def test_rejects_degraded_archived_candidate(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="degraded",
+                baseline_snapshot=None,
+                failed_source=True,
+            )
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn(
+                "archived promotion replay failed: a degraded candidate cannot be promoted",
+                "\n".join(report.errors),
+            )
+
+    def test_rejects_archived_release_backdated_before_candidate_and_review(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            snapshot = write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="backdated-root",
+                baseline_snapshot=None,
+            )
+            old_directory = archived_release_directory(root, snapshot)
+            release = read_json(root, f"{old_directory.relative_to(root)}/release.json")
+            backdated_release_id = (
+                f"2026-07-11-legal-{release['candidate_sha256'][:12]}"
+            )
+            new_directory = old_directory.parent / backdated_release_id
+            old_directory.rename(new_directory)
+            release["approved_at"] = "2026-07-11"
+            release["release_id"] = backdated_release_id
+            write_json(
+                root,
+                f"{new_directory.relative_to(root)}/release.json",
+                release,
+            )
+            snapshot["approved_at"] = "2026-07-11"
+            snapshot["release_id"] = backdated_release_id
+            write_json(root, "authority/snapshots/legal.json", snapshot)
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn(
+                "release-date cannot precede the candidate or its latest review",
+                "\n".join(report.errors),
+            )
+
+    def test_rejects_release_notice_that_claims_compliance_certification(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            snapshot = write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="certifying-notice",
+                baseline_snapshot=None,
+            )
+            release_directory = archived_release_directory(root, snapshot)
+            release_path = f"{release_directory.relative_to(root)}/release.json"
+            release = read_json(root, release_path)
+            release["notice"] = "This release certifies complete legal compliance."
+            write_json(root, release_path, release)
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn(
+                "release notice must preserve the non-certification disclaimer",
+                "\n".join(report.errors),
+            )
+
+    def test_rejects_archived_release_of_a_stale_candidate(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="stale-candidate",
+                baseline_snapshot=None,
+                generated_at_override="2026-06-01T00:00:00+00:00",
+            )
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn(
+                "release-date cannot be more than 7 days after candidate.generated_at",
+                "\n".join(report.errors),
+            )
+
+    def test_rejects_missing_or_empty_archived_approval(self):
+        with self.subTest(case="missing approval document"):
+            with workspace_temp_directory() as directory:
+                root = Path(directory)
+                build_valid_workspace(root)
+                snapshot = write_authority_release(
+                    root,
+                    domain="legal",
+                    approved_at="2026-07-12",
+                    run_id="missing-approval",
+                    baseline_snapshot=None,
+                )
+                (archived_release_directory(root, snapshot) / "approval.json").unlink()
+
+                report = validate_system.validate_repository(root)
+
+                self.assertIn(
+                    "approval.json: immutable release document is missing or invalid",
+                    "\n".join(report.errors),
+                )
+
+        with self.subTest(case="empty approval records"):
+            with workspace_temp_directory() as directory:
+                root = Path(directory)
+                build_valid_workspace(root)
+                snapshot = write_authority_release(
+                    root,
+                    domain="legal",
+                    approved_at="2026-07-12",
+                    run_id="empty-approvals",
+                    baseline_snapshot=None,
+                )
+                release_dir = archived_release_directory(root, snapshot)
+                approval = json.loads(
+                    (release_dir / "approval.json").read_text(encoding="utf-8")
+                )
+                approval["approvals"] = []
+                replace_archived_approval(root, snapshot, approval)
+
+                report = validate_system.validate_repository(root)
+
+                self.assertIn(
+                    "at least one structured approval is required",
+                    "\n".join(report.errors),
+                )
+
+    def test_rejects_archived_approval_missing_required_role(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            snapshot = write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="missing-role",
+                baseline_snapshot=None,
+            )
+            release_dir = archived_release_directory(root, snapshot)
+            approval = json.loads(
+                (release_dir / "approval.json").read_text(encoding="utf-8")
+            )
+            approval["approvals"].pop()
+            replace_archived_approval(root, snapshot, approval)
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn(
+                "missing approved reviewer determination",
+                "\n".join(report.errors),
+            )
+
+    def test_rejects_missing_archived_change_or_impact_resolutions(self):
+        for field, expected in (
+            ("change_resolutions", "change resolutions do not match candidate"),
+            ("impact_resolutions", "impact resolutions do not match candidate"),
+        ):
+            with self.subTest(field=field):
+                with workspace_temp_directory() as directory:
+                    root = Path(directory)
+                    build_valid_workspace(root)
+                    snapshot = write_authority_release(
+                        root,
+                        domain="legal",
+                        approved_at="2026-07-12",
+                        run_id=f"missing-{field}",
+                        baseline_snapshot=None,
+                    )
+                    release_dir = archived_release_directory(root, snapshot)
+                    approval = json.loads(
+                        (release_dir / "approval.json").read_text(encoding="utf-8")
+                    )
+                    self.assertTrue(approval[field])
+                    approval[field] = []
+                    replace_archived_approval(root, snapshot, approval)
+
+                    report = validate_system.validate_repository(root)
+
+                    self.assertIn(expected, "\n".join(report.errors))
+
+    def test_rejects_rejected_or_invalid_archived_determination(self):
+        for determination, expected in (
+            ("rejected", "required reviewer rejected the candidate"),
+            ("uncertain", "unsupported reviewer determination: uncertain"),
+        ):
+            with self.subTest(determination=determination):
+                with workspace_temp_directory() as directory:
+                    root = Path(directory)
+                    build_valid_workspace(root)
+                    snapshot = write_authority_release(
+                        root,
+                        domain="legal",
+                        approved_at="2026-07-12",
+                        run_id=f"determination-{determination}",
+                        baseline_snapshot=None,
+                    )
+                    release_dir = archived_release_directory(root, snapshot)
+                    approval = json.loads(
+                        (release_dir / "approval.json").read_text(encoding="utf-8")
+                    )
+                    approval["approvals"][0]["determination"] = determination
+                    replace_archived_approval(root, snapshot, approval)
+
+                    report = validate_system.validate_repository(root)
+
+                    self.assertIn(expected, "\n".join(report.errors))
+
+    def test_rejects_missing_extra_or_tampered_validation_context(self):
+        with self.subTest(case="missing"):
+            with workspace_temp_directory() as directory:
+                root = Path(directory)
+                build_valid_workspace(root)
+                snapshot = write_authority_release(
+                    root,
+                    domain="legal",
+                    approved_at="2026-07-12",
+                    run_id="missing-context",
+                    baseline_snapshot=None,
+                )
+                context_path = (
+                    archived_release_directory(root, snapshot)
+                    / "validation-context.json"
+                )
+                context_path.unlink()
+
+                report = validate_system.validate_repository(root)
+
+                self.assertIn(
+                    "validation-context.json: immutable release document is missing or invalid",
+                    "\n".join(report.errors),
+                )
+
+        with self.subTest(case="extra field"):
+            with workspace_temp_directory() as directory:
+                root = Path(directory)
+                build_valid_workspace(root)
+                snapshot = write_authority_release(
+                    root,
+                    domain="legal",
+                    approved_at="2026-07-12",
+                    run_id="extra-context",
+                    baseline_snapshot=None,
+                )
+                release_dir = archived_release_directory(root, snapshot)
+                context = json.loads(
+                    (release_dir / "validation-context.json").read_text(
+                        encoding="utf-8"
+                    )
+                )
+                context["unexpected"] = True
+                replace_validation_context(
+                    root,
+                    snapshot,
+                    context,
+                    update_release_hash=True,
+                )
+
+                report = validate_system.validate_repository(root)
+
+                self.assertIn(
+                    "validation_context fields do not match the contract",
+                    "\n".join(report.errors),
+                )
+
+        with self.subTest(case="tampered content"):
+            with workspace_temp_directory() as directory:
+                root = Path(directory)
+                build_valid_workspace(root)
+                snapshot = write_authority_release(
+                    root,
+                    domain="legal",
+                    approved_at="2026-07-12",
+                    run_id="tampered-context",
+                    baseline_snapshot=None,
+                )
+                release_dir = archived_release_directory(root, snapshot)
+                context = json.loads(
+                    (release_dir / "validation-context.json").read_text(
+                        encoding="utf-8"
+                    )
+                )
+                context["source_catalog"]["sources"][0]["discovery_url"] = (
+                    "https://official.example.gov/legal/tampered"
+                )
+                replace_validation_context(
+                    root,
+                    snapshot,
+                    context,
+                    update_release_hash=False,
+                )
+
+                report = validate_system.validate_repository(root)
+
+                self.assertIn(
+                    "release validation-context hash does not match",
+                    "\n".join(report.errors),
+                )
+
+    def test_rejects_extra_file_in_immutable_release_directory(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            snapshot = write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="extra-file",
+                baseline_snapshot=None,
+            )
+            extra_path = archived_release_directory(root, snapshot) / "notes.txt"
+            extra_path.write_text("untracked archive mutation\n", encoding="utf-8")
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn(
+                "immutable release file set must be exactly",
+                "\n".join(report.errors),
+            )
+
+    def test_archived_replay_is_independent_of_current_configuration_drift(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="historical-context",
+                baseline_snapshot=None,
+            )
+            catalog_path = "tools/authority_refresh/config/legal_sources.json"
+            catalog = read_json(root, catalog_path)
+            catalog["sources"][0]["discovery_url"] = (
+                "https://official.example.gov/legal/current-revision"
+            )
+            write_json(root, catalog_path, catalog)
+            crosswalk_path = "authority/impact_crosswalk.json"
+            crosswalk = read_json(root, crosswalk_path)
+            crosswalk["mappings"][0]["id"] = "rent-accounting-v2"
+            write_json(root, crosswalk_path, crosswalk)
+
+            report = validate_system.validate_repository(root)
+
+            self.assertTrue(report.ok, "\n".join(report.errors))
+
+    def test_source_revision_blobs_must_match_archived_context(self):
+        reviewed_payload = b"reviewed evidence\n"
+        context = {
+            "candidate_path": "authority/candidates/legal/runs/1-1/candidate.json",
+            "approval_path": "authority/reviews/legal/1-1.json",
+            "source_catalog_path": "tools/authority_refresh/config/legal_sources.json",
+            "impact_crosswalk_path": "authority/impact_crosswalk.json",
+            "source_catalog": {"sources": ["catalog"]},
+            "impact_crosswalk": {"mappings": ["crosswalk"]},
+            "path_manifest": [
+                {
+                    "path": "legal/reviewed.txt",
+                    "sha256": core.sha256_bytes(reviewed_payload),
+                    "size_bytes": len(reviewed_payload),
+                }
+            ],
+        }
+        candidate = {"candidate": "archived", "domain": "legal"}
+        approval = {"approval": "archived"}
+        node = {
+            "label": "authority/releases/fixture",
+            "candidate": candidate,
+            "approval": approval,
+            "validation_context": context,
+        }
+        blobs = {
+            context["candidate_path"]: json.dumps(candidate).encode("utf-8"),
+            "authority/candidates/legal/latest/candidate.json": json.dumps(
+                candidate
+            ).encode("utf-8"),
+            context["approval_path"]: json.dumps(approval).encode("utf-8"),
+            context["source_catalog_path"]: json.dumps(
+                context["source_catalog"]
+            ).encode("utf-8"),
+            context["impact_crosswalk_path"]: json.dumps(
+                context["impact_crosswalk"]
+            ).encode("utf-8"),
+            "legal/reviewed.txt": reviewed_payload,
+        }
+
+        report = validate_system.ValidationReport()
+        validate_system._validate_source_revision_blobs(
+            node,
+            blobs.__getitem__,
+            report,
+        )
+        self.assertTrue(report.ok, "\n".join(report.errors))
+
+        blobs[context["candidate_path"]] = b'{"candidate":"tampered"}'
+        tampered_report = validate_system.ValidationReport()
+        validate_system._validate_source_revision_blobs(
+            node,
+            blobs.__getitem__,
+            tampered_report,
+        )
+        self.assertIn(
+            "source revision does not match archived",
+            "\n".join(tampered_report.errors),
+        )
+
+        blobs[context["candidate_path"]] = json.dumps(candidate).encode("utf-8")
+        blobs["authority/candidates/legal/latest/candidate.json"] = (
+            b'{"candidate":"stale","domain":"legal"}'
+        )
+        stale_report = validate_system.ValidationReport()
+        validate_system._validate_source_revision_blobs(
+            node,
+            blobs.__getitem__,
+            stale_report,
+        )
+        self.assertIn(
+            "latest/candidate.json",
+            "\n".join(stale_report.errors),
+        )
 
     def test_rejects_release_chain_fork(self):
         with workspace_temp_directory() as directory:

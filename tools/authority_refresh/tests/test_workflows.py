@@ -16,6 +16,7 @@ def workflow(name: str) -> str:
 class AuthorityWorkflowContractTests(unittest.TestCase):
     def test_refresh_checks_run_validator_and_complete_test_suite(self):
         content = workflow("authority-refresh-checks.yml")
+        self.assertIn("fetch-depth: 0", content)
         self.assertIn("workflow_dispatch:", content)
         self.assertIn("python tools/authority_refresh/validate_system.py", content)
         self.assertIn("python -m unittest discover -s tools/authority_refresh/tests", content)
@@ -140,7 +141,13 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
         self.assertIn('"${release_dir}/approval.json"', content)
         self.assertIn('"${release_dir}/candidate.json"', content)
         self.assertIn('"${release_dir}/release.json"', content)
+        self.assertIn('"${release_dir}/validation-context.json"', content)
         self.assertIn('"authority/snapshots/${DOMAIN}.json"', content)
+        self.assertGreaterEqual(
+            content.count('--source-revision "$(git rev-parse HEAD)"'),
+            2,
+        )
+        self.assertIn("git status --porcelain --untracked-files=all", content)
         self.assertIn('git diff --cached --name-only | sort', content)
         self.assertIn('git diff --name-only', content)
         self.assertIn('git ls-files --others --exclude-standard', content)
