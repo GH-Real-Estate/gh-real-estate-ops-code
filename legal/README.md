@@ -35,6 +35,7 @@ legal/
   context/
   generated/project-sources/current/
   manifests/
+    intake/
   scripts/
   text/current/
 ```
@@ -43,6 +44,7 @@ legal/
 - `text/current/authorities/` contains 463 search-sized Markdown files representing the 447 canonical sources; long sources are split into numbered parts. `text/current/full/` and `chunks/` preserve bundle-level text.
 - `manifests/authority_registry.json` records citations, official URLs, source hashes, authority labels, and bundle page locations.
 - `manifests/releases/2026-07-12.json` is the machine-readable build record.
+- `manifests/intake/` preserves hashes and bounded review evidence for user-provided documents. Intake records and source binaries are excluded from approved current law.
 - `context/` documents the boundary between legal authority and operational facts. Internal policy files are intentionally excluded from this legal release and never override a statute, regulation, ordinance, court order, or signed agreement.
 - `scripts/` validates releases and checks official sources for possible changes.
 
@@ -55,6 +57,7 @@ Known access exceptions and corpus limitations are recorded in [`SOURCE_GAPS.md`
 - An enacted amendment that is not yet incorporated into a consolidated code is stored and applied as a dated addendum only to the provisions it changes.
 - Historical text must be date-scoped. Never patch old wording into current text to create a synthetic statute.
 - A source-monitor alert is a review candidate, not automatically current law.
+- A user-provided document is intake evidence only. Its text cannot enter `current` without live official-source verification, qualified review, and a complete dated release.
 
 ## Unresolved applicability facts
 
@@ -70,7 +73,7 @@ Confirm these facts before relying on conditional authorities:
 
 Two complementary automations now run without changing this approved library:
 
-1. `Authority Discovery` runs daily at `11:17 UTC` (and on manual dispatch) against 13 configured legal official-source indexes. It looks for later publications and index changes that fixed approved URLs cannot discover. Its result is `current`, `review_required`, or `degraded`; these are discovery-run states, not legal conclusions.
+1. `Authority Discovery` runs daily at `11:17 UTC` (and on manual dispatch) against 14 configured legal official-source indexes. It looks for later publications and index changes that fixed approved URLs cannot discover. The catalog includes the Kansas Legislature's stable current Chapter 58 Article 25 index, bounded to 90–150 section links and treated as review-only metadata. Its result is `current`, `review_required`, or `degraded`; these are discovery-run states, not legal conclusions.
 2. `Legal Source Monitor` remains the weekly Monday `12:27 UTC` integrity check described below. It compares the known approved sources and their release fingerprints.
 
 Daily discovery writes only bounded workflow evidence and, for `review_required` or `degraded`, a draft candidate pull request under `authority/candidates/legal/`. It never edits `legal/`, promotes text, changes an effective date, changes operational code, or merges a pull request. Feed/API sources marked `rolling-window` can add or modify observations, but an older item falling out of a publisher's limited recent-results window is not reported as repealed, withdrawn, or missing. Any source retrieval or parser `error`, or missing configuration for a critical source, makes the run `degraded` and preserves the dated baseline.
@@ -88,3 +91,5 @@ The full JSON and Markdown reports are retained as workflow artifacts. When chan
 A green monitor run means the registered comparable payloads matched and the five availability-only sources were reachable. It does not prove complete legal currentness: fixed, dated URLs do not discover later editions, new amendments, superseding notices, later case history, or guidance published at a new URL. Those discovery and manual-comparison checks remain part of the qualified release-review process.
 
 Neither automation silently promotes changed text, rewrites effective dates, or merges a legal update. After human review, regenerate the complete release, update the registry and changelog, replace all eight current PDFs and their text extracts together, and record the review date.
+
+User-provided documents follow a separate metadata-only intake path. Run `python legal/scripts/validate_intake.py` to enforce repository-path, count, provenance, and no-promotion controls; then use the same qualified review and complete-release process before changing approved authority.
