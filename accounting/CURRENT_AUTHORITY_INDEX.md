@@ -1,12 +1,13 @@
 # GH accounting authority release — current index
 
-**Current through:** July 12, 2026  
+**Authority baseline current through:** July 12, 2026  
+**Sanitized tax profile checked through:** July 13, 2026  
 **Property:** 9401 Nieman Road, Overland Park, Kansas 66214  
-**Release status:** Approved dated baseline
+**Release status:** Approved dated sourcebook baseline with a governed tax-review extension
 
-> Internal accounting research and retrieval aid. Live official authority, signed agreements, filed elections, and reviewed professional conclusions control.
+> Internal accounting and tax research aid. Live official authority, signed agreements, filed elections, complete return facts, and reviewed professional conclusions control.
 
-## Release contents
+## Approved sourcebook release
 
 - 4 searchable Project Source PDFs.
 - 33 compiled pages.
@@ -14,6 +15,16 @@
 - 54 FASB topics classified as baseline, transaction-triggered, future-structure, or currently not applicable.
 - Machine-readable review dates and licensing controls.
 - Automated validation and monthly human-review reminders.
+
+## Governed tax-review extension
+
+- `TAX_PROFILE_ASSUMPTIONS.md` stores sanitized routing facts only; no taxpayer identifiers, employer identity, wage amounts, returns, or workpapers.
+- `TAX_OPPORTUNITY_AND_COMPLIANCE_MATRIX.md` ranks practical tax decisions, evidence, CPA gates, and kill criteria.
+- `manifests/tax_authority_registry.json` identifies the focused official federal, Kansas, Johnson County, Overland Park, and Mission sources that require recurring review.
+- `scripts/check_tax_sources.py` validates the registry, retrieves official sources, records fingerprints and availability, and reports due reviews.
+- `.github/workflows/tax-authority-review.yml` runs January 15 and July 15 and opens or updates one review issue when a source changed, failed retrieval, or is due.
+
+The extension does not change the approved July 12 sourcebook text. Any substantive sourcebook or tax-policy update requires reviewed effective dates, affected tax years, a changelog entry, and a pull request.
 
 ## Project Source upload order
 
@@ -29,12 +40,15 @@ Upload or replace the four files together. A repository change does not silently
 ## Retrieval order
 
 1. `accounting/PROJECT_INSTRUCTIONS.md`
-2. `accounting/FASB_APPLICABILITY_INDEX.md`
-3. `accounting/ACCOUNTING_POLICY_MATRIX.md`
-4. `accounting/manifests/fasb_topic_registry.json`
-5. Applicable `accounting/text/current/` sourcebook text
-6. `legal/CURRENT_AUTHORITY_INDEX.md` and official public-law source
-7. Authorized live Codification access for exact FASB requirements
+2. `accounting/TAX_PROFILE_ASSUMPTIONS.md` for tax questions
+3. `accounting/TAX_OPPORTUNITY_AND_COMPLIANCE_MATRIX.md` for tax planning and CPA gates
+4. `accounting/FASB_APPLICABILITY_INDEX.md`
+5. `accounting/ACCOUNTING_POLICY_MATRIX.md`
+6. `accounting/manifests/tax_authority_registry.json` and applicable live official source
+7. `accounting/manifests/fasb_topic_registry.json`
+8. Applicable `accounting/text/current/` sourcebook text
+9. `legal/CURRENT_AUTHORITY_INDEX.md` and official public-law source
+10. Authorized live Codification access for exact FASB requirements
 
 ## Status rules
 
@@ -42,6 +56,7 @@ Upload or replace the four files together. A repository change does not silently
 - **Transaction-triggered:** activate only when the stated fact exists.
 - **Future-structure:** reassess after a significant ownership, financing, or business-model change.
 - **Currently not applicable:** do not apply under present facts; retain the trigger.
+- **Review due:** retrieve and compare the current official source, identify effective dates and affected tax years, and obtain the required reviewer approval.
 - **Overdue:** locator may remain useful, but no material currentness assertion may rely on it until reviewed.
 
 ## FASB content boundary
