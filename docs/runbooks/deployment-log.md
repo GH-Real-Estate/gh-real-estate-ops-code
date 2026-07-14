@@ -5,7 +5,7 @@ Record every production-relevant deployment or Zoho change.
 ## 2026-07-14 — CI Failure Response Live Verification
 
 - System: GitHub / Codex
-- Repo branch / commit: `codex/ci-failure-response-smoke-final` / pending documentation merge
+- Repo branch / commit: `codex/ci-failure-response-smoke-final` / PR #50
 - Files changed: `docs/setup/github-settings-checklist.md`, `docs/runbooks/ci-failure-response.md`, `docs/runbooks/deployment-log.md`
 - Business rule changed? no; repository incident-response behavior was verified without changing legal, accounting, payment, lease, tenant, or live-system rules
 - Dry-run completed? not applicable
