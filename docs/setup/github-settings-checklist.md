@@ -110,7 +110,7 @@ Verify after merge:
 - [X] `.github/workflows/ci-failure-response.yml` uses default-branch trusted code, immutable Action SHAs, `persist-credentials: false`, and only `contents: read`, `actions: read`, plus job-scoped `issues: write`.
 - [X] Incident issues use `ci-incident` and `codex-attention` labels and contain links plus bounded metadata, not raw logs or artifacts.
 - [X] The GitHub workflow stores no OpenAI API key; recurring remediation uses the connected Codex desktop automation.
-- [X] Confirmed July 14, 2026: live non-sensitive failure/recovery test opened one incident (#51), kept distinct push/PR runs in that incident, closed it from a newer green run, and created no duplicate issue.
+- [X] Confirmed July 14, 2026 after `queue: max`: live burst test opened one bot-created incident (#54), preserved distinct push/PR observations, closed from a newer green run, and created no duplicate or reopened issue.
 - [X] Confirmed July 14, 2026: the `GH Repo CI Auto-Repair` Codex automation is active and limited to draft-PR remediation under `docs/runbooks/ci-failure-response.md`.
 - [ ] Complete the unchecked branch-protection, required-check, CODEOWNERS, secret-scanning, push-protection, restricted-Actions, and authority-environment controls before considering unattended merge behavior.
 - [X] Repository auto-merge remains OFF. Legal, accounting, authority, payment, lease, tenant, security, PII, and workflow-control changes remain human-gated.
