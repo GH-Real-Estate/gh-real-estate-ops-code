@@ -54,6 +54,7 @@ This repo is for technical and governed authority assets:
 - Smoke tests.
 - Deployment logs.
 - Codex/ChatGPT instructions.
+- Repository-wide document drafting, typography, and output-QA standards.
 - Local repo hygiene tools.
 - Approved public legal-authority sources, release manifests, searchable extracts, and monitoring tools under `legal/`.
 - GH-authored accounting policies, tax/GAAP sourcebooks, FASB locators, applicability registries, and review controls under `accounting/`.
@@ -182,6 +183,9 @@ authority/
   impact_crosswalk.json
 
 docs/
+  standards/
+    document-drafting-standard.md
+    document-style-profile.json
   architecture/
     system-overview.md
   adr/
@@ -233,6 +237,7 @@ tools/
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |
 | Deployment Log | `docs/runbooks/deployment-log.md` |
 | Codex/ChatGPT Instructions | `AGENTS.md` |
+| Document Drafting and Typography Standard | `docs/standards/document-drafting-standard.md` |
 | Legal Authority Index | `legal/CURRENT_AUTHORITY_INDEX.md` |
 | Accounting Authority Index | `accounting/CURRENT_AUTHORITY_INDEX.md` |
 | Authority Refresh Governance | `authority/README.md` |
