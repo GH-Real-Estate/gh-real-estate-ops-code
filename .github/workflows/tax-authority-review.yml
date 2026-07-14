@@ -17,16 +17,21 @@ concurrency:
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
-  review-tax-authorities:
+  compare-tax-authorities:
     name: Retrieve official sources and enforce the review calendar
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    permissions:
+      contents: read
+    outputs:
+      monitor_outcome: ${{ steps.review.outcome }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -63,7 +68,7 @@ jobs:
           ARTIFACT_NAME: tax-authority-review-${{ github.run_id }}
         run: |
           if [[ ! -s tax-authority-review.json ]]; then
-            printf '%s\n' '{"checked_at":null,"notice":"Workflow failed before report generation.","counts":{"unchanged":0,"changed":0,"error":1,"review-due":0,"manual-baseline":0},"results":[]}' > tax-authority-review.json
+            printf '%s\n' '{"checked_at":null,"notice":"Workflow failed before report generation.","counts":{"unchanged":0,"changed":0,"error":1,"review-due":0,"manual-baseline":0,"delegated":0},"results":[]}' > tax-authority-review.json
           fi
           if [[ ! -s tax-authority-review.md ]]; then
             printf '%s\n' \
@@ -98,13 +103,63 @@ jobs:
           retention-days: 200
           if-no-files-found: error
 
+      - name: Fail after preserving the report
+        if: ${{ always() && steps.review.outcome == 'failure' }}
+        run: exit 1
+
+  publish-tax-review:
+    name: Publish tax review issue
+    needs: compare-tax-authorities
+    if: >-
+      ${{
+        always() &&
+        github.ref == format('refs/heads/{0}', github.event.repository.default_branch) &&
+        (
+          needs.compare-tax-authorities.result == 'failure' ||
+          needs.compare-tax-authorities.outputs.monitor_outcome == 'failure'
+        )
+      }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      issues: write
+    steps:
+      - name: Download tax review report
+        id: download-report
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: tax-authority-review-${{ github.run_id }}
+          path: .
+
+      - name: Ensure publishable issue summary exists
+        if: always()
+        shell: bash
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ARTIFACT_NAME: tax-authority-review-${{ github.run_id }}
+        run: |
+          if [[ ! -s tax-authority-review-issue.md ]] ||
+            [[ $(wc -c < tax-authority-review-issue.md) -gt 60000 ]]; then
+            printf '%s\n' \
+              '# Tax-authority monitor workflow failure' \
+              '' \
+              'The comparison job failed and its report artifact could not be downloaded.' \
+              '' \
+              "- Workflow run: $RUN_URL" \
+              "- Expected artifact: $ARTIFACT_NAME" \
+              '' \
+              '> Treat registered sources as unverified until this run is reviewed.' \
+              > tax-authority-review-issue.md
+          fi
+
       - name: Open or update tax-review issue
-        if: steps.review.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          title='TAX REVIEW REQUIRED: official sources changed, failed, or are due'
+          title='TAX REVIEW REQUIRED: sources changed, failed, are due, or need baselines'
           existing="$(
             gh issue list \
               --repo "$GITHUB_REPOSITORY" \
@@ -123,7 +178,3 @@ jobs:
               --title "$title" \
               --body-file tax-authority-review-issue.md
           fi
-
-      - name: Fail after preserving the report
-        if: steps.review.outcome == 'failure'
-        run: exit 1
