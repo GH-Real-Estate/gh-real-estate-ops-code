@@ -6,12 +6,13 @@ from __future__ import annotations
 import importlib.util
 import io
 import json
+import sys
 import tempfile
 import unittest
+import unittest.mock
 import urllib.error
 from datetime import date
 from pathlib import Path
-from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -30,11 +31,12 @@ class FakeResponse:
         *,
         content_type: str = "text/html",
         final_url: str = "https://www.irs.gov/publications/p527",
+        status: int = 200,
     ) -> None:
         self._stream = io.BytesIO(payload)
         self._final_url = final_url
         self.headers = {"Content-Type": content_type, "Content-Length": str(len(payload))}
-        self.status = 200
+        self.status = status
 
     def __enter__(self):
         return self
@@ -79,7 +81,7 @@ class TaxSourceMonitorTests(unittest.TestCase):
             )
         )
         records = monitor.validate_registry(payload, ROOT, check_sourcebooks=False)
-        self.assertEqual(40, len(records))
+        self.assertEqual(43, len(records))
 
     def test_registry_rejects_unapproved_host(self):
         payload = {
@@ -89,7 +91,18 @@ class TaxSourceMonitorTests(unittest.TestCase):
             "records": [sample_record(id=f"FED-TEST-{index:03d}") for index in range(30)],
         }
         payload["records"][0]["official_url"] = "https://example.com/tax"
-        with self.assertRaisesRegex(ValueError, "approved official HTTPS host"):
+        with self.assertRaisesRegex(ValueError, "approved official HTTPS URL"):
+            monitor.validate_registry(payload, ROOT, check_sourcebooks=False)
+
+    def test_registry_enforces_semiannual_review_date(self):
+        payload = {
+            "schema_version": 1,
+            "formal_review_cadence": "semiannual",
+            "formal_review_months": [1, 7],
+            "records": [sample_record(id=f"FED-TEST-{index:03d}") for index in range(30)],
+        }
+        payload["records"][0]["next_review"] = "2030-07-15"
+        with self.assertRaisesRegex(ValueError, "semiannual interval"):
             monitor.validate_registry(payload, ROOT, check_sourcebooks=False)
 
     def test_download_retries_rate_limit_and_records_actual_attempts(self):
@@ -106,7 +119,7 @@ class TaxSourceMonitorTests(unittest.TestCase):
                     {"Retry-After": "0"},
                     None,
                 )
-            return FakeResponse(b"stable payload")
+            return FakeResponse(b"<!doctype html><html>stable payload</html>")
 
         result = monitor.download(
             sample_record(), attempts=2, opener=opener, sleep=sleeps.append
@@ -135,12 +148,31 @@ class TaxSourceMonitorTests(unittest.TestCase):
             sample_record(),
             attempts=1,
             opener=lambda *_args, **_kwargs: FakeResponse(
-                b"%PDF-1.7", content_type="application/pdf"
+                b"%PDF-1.7" + (b"x" * 64), content_type="application/pdf"
             ),
             sleep=lambda _delay: None,
         )
         self.assertFalse(result["ok"])
         self.assertIn("unexpected content type", result["error"])
+
+    def test_download_rejects_empty_success_payload(self):
+        result = monitor.download(
+            sample_record(),
+            attempts=1,
+            opener=lambda *_args, **_kwargs: FakeResponse(b""),
+            sleep=lambda _delay: None,
+        )
+        self.assertFalse(result["ok"])
+        self.assertIn("minimum", result["error"])
+
+    def test_redirect_handler_rejects_http_and_unapproved_hosts(self):
+        handler = monitor.OfficialRedirectHandler()
+        request = urllib.request.Request("https://www.irs.gov/publications/p527")
+        for target in ("http://www.irs.gov/plaintext", "https://example.com/tax"):
+            with self.subTest(target=target), self.assertRaisesRegex(
+                ValueError, "approved official HTTPS URL"
+            ):
+                handler.redirect_request(request, None, 302, "Found", {}, target)
 
     def test_evaluate_separates_change_detection_from_formal_review(self):
         records = [
@@ -151,6 +183,13 @@ class TaxSourceMonitorTests(unittest.TestCase):
                 id="FED-TEST-004",
                 approved_sha256="d" * 64,
                 next_review="2026-07-13",
+            ),
+            sample_record(
+                id="OP-TEST-005",
+                monitoring_mode="delegated-to-legal-monitor",
+                delegated_citation="OPMC toc 005.024",
+                delegated_registry_path="legal/registry.json",
+                delegated_monitor_workflow=".github/workflows/legal.yml",
             ),
         ]
 
@@ -163,7 +202,7 @@ class TaxSourceMonitorTests(unittest.TestCase):
                 digest = "c" * 64
             return {"ok": True, "retrieved_sha256": digest, "attempts": 1}
 
-        with mock.patch.object(monitor, "download", side_effect=fake_download):
+        with unittest.mock.patch.object(monitor, "download", side_effect=fake_download):
             results = monitor.evaluate(
                 records, date(2026, 7, 13), formal_review=False, workers=2
             )
@@ -172,6 +211,35 @@ class TaxSourceMonitorTests(unittest.TestCase):
         self.assertEqual("review-due", by_id["FED-TEST-002"])
         self.assertEqual("manual-baseline", by_id["FED-TEST-003"])
         self.assertEqual("review-due", by_id["FED-TEST-004"])
+        self.assertEqual("delegated", by_id["OP-TEST-005"])
+
+    def test_manual_baselines_are_actionable(self):
+        self.assertIn("manual-baseline", monitor.ACTIONABLE_STATUSES)
+
+    def test_main_fails_closed_for_manual_baseline(self):
+        registry = ROOT / "accounting" / "manifests" / "tax_authority_registry.json"
+        argv = [
+            str(SCRIPT),
+            "--registry",
+            str(registry),
+            "--repository-root",
+            str(ROOT),
+            "--skip-sourcebook-check",
+            "--json-report",
+            "report.json",
+            "--markdown-report",
+            "report.md",
+        ]
+        with (
+            unittest.mock.patch.object(sys, "argv", argv),
+            unittest.mock.patch.object(
+                monitor, "evaluate", return_value=[{"status": "manual-baseline"}]
+            ),
+            unittest.mock.patch.object(monitor, "report_lines", return_value=["report"]),
+            unittest.mock.patch.object(monitor, "write_atomic"),
+            unittest.mock.patch("sys.stdout", new=io.StringIO()),
+        ):
+            self.assertEqual(2, monitor.main())
 
     def test_atomic_report_write_replaces_complete_target(self):
         with tempfile.TemporaryDirectory() as directory:
