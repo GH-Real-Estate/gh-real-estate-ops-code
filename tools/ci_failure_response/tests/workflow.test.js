@@ -11,7 +11,7 @@ const candidates = [
 ];
 const workflowPath = candidates.find((candidate) => fs.existsSync(candidate));
 
-test("workflow is pinned and never executes the failed revision", () => {
+test("workflow supports only manual simulation and preserves security controls", () => {
   assert.ok(workflowPath, "ci-failure-response.yml was not found");
   const content = fs.readFileSync(workflowPath, "utf8");
   for (const name of [
@@ -29,17 +29,19 @@ test("workflow is pinned and never executes the failed revision", () => {
   for (const line of content.split("\n").filter((entry) => entry.trim().startsWith("uses:"))) {
     assert.match(line, /@[0-9a-f]{40}(?:\s+#.*)?$/);
   }
+  assert.match(content, /^  workflow_dispatch:/m);
+  assert.match(content, /^  pull_request:/m);
+  assert.match(content, /^  push:/m);
+  assert.doesNotMatch(content, /^  workflow_run:/m);
+  assert.match(content, /if: \$\{\{ github\.event_name == 'workflow_dispatch' \}\}/);
   assert.match(content, /ref: \$\{\{ github\.event\.repository\.default_branch \}\}/);
   assert.match(content, /persist-credentials: false/);
   assert.match(content, /actions:\s*read/);
   assert.match(content, /issues:\s*write/);
-  assert.match(content, /group: ci-failure-response-.*workflow_run\.workflow_id/);
-  assert.match(content, /workflow_run\.head_branch/);
   assert.match(content, /queue:\s*max/);
-  assert.doesNotMatch(content, /^\s*group:\s*ci-failure-response\s*$/m);
+  assert.doesNotMatch(content, /group:.*workflow_run/);
   assert.doesNotMatch(content, /workflow_run\.head_sha/);
   assert.doesNotMatch(content, /download-artifact/);
   assert.doesNotMatch(content, /pull_request_target/);
   assert.doesNotMatch(content, /contents:\s*write/);
 });
-
