@@ -1,3 +1,0 @@
-CI failure-response smoke-test sentinel only.
-No tenant, financial, legal, accounting, credential, or production data is present.
-This temporary filename intentionally exercises the repository safety scan.
