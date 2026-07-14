@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/authority/schemas/discovery-candidate.schema.json",
+  "title": "Authority discovery candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "domain",
+    "generated_at",
+    "run_id",
+    "status",
+    "notice",
+    "approved_baseline",
+    "counts",
+    "source_results",
+    "changes",
+    "potential_impacts",
+    "items",
+    "candidate_sha256"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "domain": { "enum": ["legal", "accounting"] },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "run_id": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "status": { "enum": ["current", "review_required", "degraded"] },
+    "notice": { "type": "string", "minLength": 1 },
+    "approved_baseline": { "type": "object" },
+    "counts": { "type": "object" },
+    "source_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "status", "item_count", "observed_item_ids"],
+        "properties": {
+          "source_id": { "type": "string", "minLength": 1 },
+          "critical": { "type": "boolean" },
+          "storage_policy": { "type": "string" },
+          "discovery_url": { "type": "string", "format": "uri" },
+          "retrieved_at": { "type": "string", "format": "date-time" },
+          "missing_detection": { "enum": ["complete-index", "rolling-window"] },
+          "status": { "enum": ["healthy", "error", "configuration_required"] },
+          "item_count": { "type": "integer", "minimum": 0 },
+          "observed_item_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "final_url": { "type": "string", "format": "uri" },
+          "content_type": { "type": "string", "minLength": 1 },
+          "payload_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "attempts": { "type": "integer", "minimum": 1 },
+          "error": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "changes": { "type": "array", "items": { "type": "object" } },
+    "potential_impacts": { "type": "array", "items": { "type": "object" } },
+    "items": { "type": "array", "items": { "type": "object" } },
+    "candidate_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

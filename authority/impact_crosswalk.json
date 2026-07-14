@@ -1,0 +1,968 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-07-13",
+  "notice": "This crosswalk identifies repository artifacts that require review after an authority signal. It does not determine legal effect, GAAP applicability, tax treatment, contract enforceability, or production readiness, and it never authorizes an automatic operational change.",
+  "mappings": [
+    {
+      "id": "rent-delinquency-late-fees-and-interest",
+      "name": "Rent delinquency, late fees, and tenant interest charges",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "core_article25",
+          "authority_weight": "binding",
+          "verification_rule": "Verify the current official Kansas source, effective date, applicability, and any later authority before changing a charge, grace-period, notice, or collection rule."
+        },
+        {
+          "domain": "contract",
+          "reference_type": "signed-agreement",
+          "reference": "Executed tenant lease and amendments",
+          "authority_weight": "contractual-evidence",
+          "verification_rule": "Review the executed agreement for the affected tenant; a repository template or target policy does not establish enforceability."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 310",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to verify scope, recognition, measurement, presentation, disclosure, and effective-date requirements for the actual transaction and reporting period."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 842",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to determine lessor-accounting treatment for the actual lease facts; the topic locator is not a conclusion."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "src/zoho-books/automations/late-fee-guard/Late_Fee_Guard.deluge",
+          "artifact_type": "financial-automation",
+          "required_action": "review-and-regression-test",
+          "reason": "The function contains timing, percentage, eligibility, duplicate-prevention, and invoice-delivery behavior for late fees."
+        },
+        {
+          "repository_path": "src/zoho-books/automations/monthly-interest-billing/Monthly_Interest_Billing.deluge",
+          "artifact_type": "financial-automation",
+          "required_action": "review-and-regression-test",
+          "reason": "The function contains the tenant-interest rate, eligibility date, threshold, consolidation, and invoice-delivery behavior."
+        },
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "The accounting treatment must remain separate from legal enforceability and must record any reviewed change or no-change conclusion."
+        },
+        {
+          "repository_path": "legal/CURRENT_AUTHORITY_INDEX.md",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Only a qualified review can promote changed authority into the approved legal baseline."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "kansas-counsel",
+          "cpa-or-qualified-accounting-reviewer",
+          "finance-operator",
+          "system-owner"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "signed-agreement-check",
+          "authorized-fasb-research",
+          "regression-test-results",
+          "production-configuration-check"
+        ],
+        "decision_record": "dual-review-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "block-affected-release-and-preserve-production"
+    },
+    {
+      "id": "returned-payment-fees",
+      "name": "Returned-payment fee assessment and invoicing",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "core_article25",
+          "authority_weight": "binding",
+          "verification_rule": "Verify current Kansas landlord-tenant law and any fee-specific authority before changing amount, timing, collection, or disclosure behavior."
+        },
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "consumer_protection",
+          "authority_weight": "binding",
+          "verification_rule": "Review current Kansas consumer-protection authority for the actual payment and communication practice."
+        },
+        {
+          "domain": "contract",
+          "reference_type": "signed-agreement",
+          "reference": "Executed tenant lease and payment terms",
+          "authority_weight": "contractual-evidence",
+          "verification_rule": "Confirm the affected tenant's executed terms; a configured fee amount is not proof that the charge is enforceable."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 310",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access for any material receivable conclusion and verify the relevant reporting period."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "src/zoho-payments/webhooks/returned-payment-fee/src/index.js",
+          "artifact_type": "payment-webhook",
+          "required_action": "review-configuration-and-test",
+          "reason": "The webhook decides whether a failed payment is final and may create a returned-payment fee invoice using a runtime amount."
+        },
+        {
+          "repository_path": "src/zoho-payments/webhooks/returned-payment-fee/docs/environment-variables.md",
+          "artifact_type": "operational-documentation",
+          "required_action": "review-configuration-and-test",
+          "reason": "Runtime fee, dry-run, signature, and invoice-delivery controls must stay aligned with reviewed policy."
+        },
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "Any book-treatment effect must be documented separately from legal enforceability."
+        },
+        {
+          "repository_path": "legal/CURRENT_AUTHORITY_INDEX.md",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Changed legal material cannot enter the approved baseline without human review."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "kansas-counsel",
+          "cpa-or-qualified-accounting-reviewer",
+          "finance-operator",
+          "system-owner"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "signed-agreement-check",
+          "authorized-fasb-research",
+          "regression-test-results",
+          "production-configuration-check"
+        ],
+        "decision_record": "dual-review-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "block-affected-release-and-preserve-production"
+    },
+    {
+      "id": "tenant-credits-payments-and-retainers",
+      "name": "Tenant credits, unapplied payments, and retainers",
+      "change_signals": [
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 305",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to verify cash, restricted-cash, presentation, and disclosure requirements for the actual facts."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 310",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to verify receivable recognition, measurement, and presentation for the reporting period."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 405",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to evaluate liability recognition and extinguishment for the specific credit or retainer arrangement."
+        },
+        {
+          "domain": "contract",
+          "reference_type": "signed-agreement",
+          "reference": "Executed tenant lease, payment plan, and credit documentation",
+          "authority_weight": "contractual-evidence",
+          "verification_rule": "Verify ownership, purpose, branch, restrictions, and authorized application of each credit from primary records."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "src/zoho-books/automations/apply-unused-credits/ApplyUnusedCredits.deluge",
+          "artifact_type": "financial-automation",
+          "required_action": "review-and-regression-test",
+          "reason": "The function applies credit notes, unapplied payments, and retainers to rent invoices and must remain idempotent and branch-safe."
+        },
+        {
+          "repository_path": "src/zoho-books/field-maps/books-automation-settings.md",
+          "artifact_type": "operational-documentation",
+          "required_action": "review-configuration-and-test",
+          "reason": "Field flags and branch mappings determine which invoices are eligible for automatic credit application."
+        },
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "The reviewed treatment for cash, receivables, credits, and liabilities must be preserved in policy."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "cpa-or-qualified-accounting-reviewer",
+          "finance-operator",
+          "system-owner"
+        ],
+        "required_evidence": [
+          "authorized-fasb-research",
+          "applicability-analysis",
+          "signed-agreement-check",
+          "regression-test-results",
+          "production-configuration-check"
+        ],
+        "decision_record": "dated-accounting-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "block-affected-release-and-preserve-production"
+    },
+    {
+      "id": "security-and-holding-deposits",
+      "name": "Security deposits and holding deposits",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "core_article25",
+          "authority_weight": "binding",
+          "verification_rule": "Verify current Kansas deposit collection, holding, deduction, notice, refund, and disposition requirements against official sources."
+        },
+        {
+          "domain": "contract",
+          "reference_type": "signed-agreement",
+          "reference": "Executed lease and deposit or holding-fee agreement",
+          "authority_weight": "contractual-evidence",
+          "verification_rule": "Determine whether the amount is refundable, earned, advance rent, a liability, or another category from the signed terms and actual facts."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 305",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access for cash and restricted-cash treatment under the actual arrangement."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 405",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access for liability recognition, measurement, presentation, and extinguishment under the actual arrangement."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "legal/CURRENT_AUTHORITY_INDEX.md",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "The approved legal baseline contains Kansas landlord-tenant authority used for deposit decisions."
+        },
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "Deposit liability, cash restriction, revenue, and unclaimed-property treatment must remain separated and evidence-based."
+        },
+        {
+          "repository_path": "src/zoho-contracts/field-maps/lease-merge-fields.md",
+          "artifact_type": "contract-field-map",
+          "required_action": "review-only",
+          "reason": "Lease merge fields can carry deposit terms, but the field map is not proof of the executed agreement or legal treatment."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "kansas-counsel",
+          "cpa-or-qualified-accounting-reviewer",
+          "finance-operator"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "signed-agreement-check",
+          "authorized-fasb-research"
+        ],
+        "decision_record": "dual-review-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "block-affected-release-and-preserve-production"
+    },
+    {
+      "id": "lease-revenue-concessions-and-collectibility",
+      "name": "Lease revenue, concessions, and collectibility",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 842",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to verify lessor classification, payments, collectibility, concessions, components, modifications, presentation, disclosure, and effective dates."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 310",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to evaluate any recognized tenant receivable for the actual facts and period."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 326",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to determine whether and how the credit-loss model applies to the recognized financial asset."
+        },
+        {
+          "domain": "contract",
+          "reference_type": "signed-agreement",
+          "reference": "Executed lease, amendments, concessions, and payment plans",
+          "authority_weight": "contractual-evidence",
+          "verification_rule": "Use the complete executed agreement and actual collection history; templates and Zoho invoice labels are not sufficient evidence."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "The matrix records the approved operating-book treatment and research boundary for rent and concessions."
+        },
+        {
+          "repository_path": "accounting/FASB_APPLICABILITY_INDEX.md",
+          "artifact_type": "accounting-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Topic classification and research priorities may require review without copying Codification text."
+        },
+        {
+          "repository_path": "src/zoho-books/field-maps/books-automation-settings.md",
+          "artifact_type": "operational-documentation",
+          "required_action": "review-configuration-and-test",
+          "reason": "Rent flags, invoice types, payment options, and branch mappings affect how operating records support the reviewed treatment."
+        },
+        {
+          "repository_path": "src/zoho-contracts/field-maps/lease-merge-fields.md",
+          "artifact_type": "contract-field-map",
+          "required_action": "review-only",
+          "reason": "The field map must capture approved commercial terms consistently but does not replace the executed lease."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "cpa-or-qualified-accounting-reviewer",
+          "finance-operator",
+          "system-owner"
+        ],
+        "required_evidence": [
+          "authorized-fasb-research",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "signed-agreement-check",
+          "production-configuration-check"
+        ],
+        "decision_record": "dated-accounting-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "open-review-and-preserve-approved-baseline"
+    },
+    {
+      "id": "fair-housing-screening-and-accommodations",
+      "name": "Fair housing, screening, and accommodation workflows",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "source-withdrawn-or-superseded",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "fair_housing",
+          "authority_weight": "binding",
+          "verification_rule": "Verify current federal and Kansas binding authority, effective dates, later history, protected-class scope, exemptions, and property facts."
+        },
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "fair_housing_regulations",
+          "authority_weight": "conditional-binding",
+          "verification_rule": "Separate binding regulations from posters and guidance and verify which requirements apply to the property and activity."
+        },
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "lead_screening_overlays",
+          "authority_weight": "conditional-binding",
+          "verification_rule": "Verify consumer-report, screening, military, foreclosure, and other overlay triggers before changing applicant or tenant handling."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "legal/CURRENT_AUTHORITY_INDEX.md",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "The approved legal source pack distinguishes binding law, conditional law, notices, cases, and guidance."
+        },
+        {
+          "repository_path": "src/zoho-crm/integrations/zillow-lead-intake/src/index.js",
+          "artifact_type": "crm-intake",
+          "required_action": "review-and-regression-test",
+          "reason": "Lead-intake fields and routing must avoid introducing prohibited screening or inconsistent treatment if operational requirements change."
+        },
+        {
+          "repository_path": "src/zoho-crm/field-maps/zillow-to-crm-to-contracts.md",
+          "artifact_type": "contract-field-map",
+          "required_action": "review-only",
+          "reason": "Field mappings can affect which applicant and accommodation facts move between systems and must remain minimized and consistently handled."
+        },
+        {
+          "repository_path": "src/zoho-contracts/field-maps/lease-merge-fields.md",
+          "artifact_type": "contract-field-map",
+          "required_action": "review-only",
+          "reason": "Lease document fields may require review after a binding legal change but cannot be altered from automated legal interpretation."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "kansas-counsel",
+          "qualified-legal-reviewer",
+          "system-owner"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "retrieval-and-hash-record",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "regression-test-results"
+        ],
+        "decision_record": "dated-legal-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "block-affected-release-and-preserve-production"
+    },
+    {
+      "id": "lead-based-paint-disclosures",
+      "name": "Lead-based paint disclosures and records",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "source-withdrawn-or-superseded",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "lead_screening_overlays",
+          "authority_weight": "conditional-binding",
+          "verification_rule": "Verify the property's construction facts and current federal and Kansas disclosure, pamphlet, certification, record-retention, and renovation requirements."
+        },
+        {
+          "domain": "contract",
+          "reference_type": "signed-agreement",
+          "reference": "Executed lead disclosure and lease records",
+          "authority_weight": "contractual-evidence",
+          "verification_rule": "Confirm that required disclosures and acknowledgments were actually delivered and executed for the relevant tenancy."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "legal/CURRENT_AUTHORITY_INDEX.md",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "The legal pack contains federal and Kansas lead-related authorities and guidance that require controlled promotion."
+        },
+        {
+          "repository_path": "src/zoho-contracts/field-maps/lease-merge-fields.md",
+          "artifact_type": "contract-field-map",
+          "required_action": "review-only",
+          "reason": "Document-generation fields may support disclosures, but the map does not prove delivery, execution, or legal sufficiency."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "kansas-counsel",
+          "qualified-legal-reviewer",
+          "system-owner"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "retrieval-and-hash-record",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "signed-agreement-check"
+        ],
+        "decision_record": "dated-legal-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "block-affected-release-and-preserve-production"
+    },
+    {
+      "id": "eviction-notices-and-service",
+      "name": "Eviction, termination notices, and service requirements",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "source-withdrawn-or-superseded",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "eviction_procedure",
+          "authority_weight": "binding",
+          "verification_rule": "Verify current statutes, court rules, published cases, court forms, service rules, effective dates, and case-specific facts before any notice, filing, or lockout-related action."
+        },
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "core_article25",
+          "authority_weight": "binding",
+          "verification_rule": "Verify the current official tenancy-termination and landlord-remedy provisions and any later authority."
+        },
+        {
+          "domain": "contract",
+          "reference_type": "signed-agreement",
+          "reference": "Executed lease, amendments, ledger, notices, and proof of service",
+          "authority_weight": "contractual-evidence",
+          "verification_rule": "Use complete tenant-specific records; repository templates or accounting balances cannot establish entitlement to possession."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "legal/CURRENT_AUTHORITY_INDEX.md",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Eviction authority is high-risk and may not be promoted or operationalized without qualified review."
+        },
+        {
+          "repository_path": "legal/manifests/registry/kansas/eviction_procedure.json",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "The registry subset identifies approved sources but is not an exhaustive citator or case-specific legal conclusion."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "kansas-counsel",
+          "system-owner"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "retrieval-and-hash-record",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "signed-agreement-check"
+        ],
+        "decision_record": "dated-legal-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "block-affected-release-and-preserve-production"
+    },
+    {
+      "id": "property-capitalization-depreciation-and-impairment",
+      "name": "Property capitalization, depreciation, impairment, and disposition",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 360",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access for recognition, measurement, depreciation, impairment, held-for-sale, derecognition, presentation, and disclosure requirements."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 970",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to verify real-estate industry scope and interaction with other topics for the actual project or transaction."
+        },
+        {
+          "domain": "tax",
+          "reference_type": "official-tax-source-family",
+          "reference": "Federal rental-property basis, capitalization, depreciation, disposition, and repair regulations and guidance",
+          "authority_weight": "official-tax-guidance",
+          "verification_rule": "Research the current tax-year statute, regulations, procedures, forms, elections, and facts separately from book accounting."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "The book policy must remain distinct from tax depreciation and be supported by invoices, scope, placed-in-service dates, allocation, and disposition evidence."
+        },
+        {
+          "repository_path": "accounting/FASB_APPLICABILITY_INDEX.md",
+          "artifact_type": "accounting-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Topic-level applicability and research priorities may change after qualified review."
+        },
+        {
+          "repository_path": "accounting/text/current/01_GH_Federal_Rental_Tax_and_US_GAAP_Sourcebook_2026-07-12.txt",
+          "artifact_type": "accounting-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "The dated sourcebook is original GH analysis and must not be silently edited in place as if it were authoritative law or Codification text."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "cpa-or-qualified-accounting-reviewer",
+          "tax-professional",
+          "finance-operator"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "authorized-fasb-research",
+          "book-tax-difference-analysis"
+        ],
+        "decision_record": "dated-accounting-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "open-review-and-preserve-approved-baseline"
+    },
+    {
+      "id": "debt-financing-and-interest",
+      "name": "Debt, refinancing, lender reporting, and interest",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 470",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access for debt recognition, modification, extinguishment, classification, covenant, maturity, presentation, and disclosure requirements."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 835",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access for interest recognition, imputation, capitalization, measurement, presentation, and disclosure under the actual financing."
+        },
+        {
+          "domain": "contract",
+          "reference_type": "signed-agreement",
+          "reference": "Executed note, mortgage, modification, refinance, escrow, and covenant documents",
+          "authority_weight": "contractual-evidence",
+          "verification_rule": "Use complete signed financing records and lender statements; accounting-system labels are not sufficient evidence."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "Debt, financing costs, escrow, cash-out tracing, current classification, and interest treatment require documented evidence and review."
+        },
+        {
+          "repository_path": "accounting/FASB_APPLICABILITY_INDEX.md",
+          "artifact_type": "accounting-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Topic-level applicability and research priorities may change without storing copyrighted Codification text."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "cpa-or-qualified-accounting-reviewer",
+          "finance-operator"
+        ],
+        "required_evidence": [
+          "authorized-fasb-research",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "signed-agreement-check"
+        ],
+        "decision_record": "dated-accounting-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "open-review-and-preserve-approved-baseline"
+    },
+    {
+      "id": "contingencies-claims-and-subsequent-events",
+      "name": "Contingencies, legal claims, and subsequent events",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "authority-status-changed",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 450",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access and counsel-supported facts for loss recognition, measurement, and disclosure analysis."
+        },
+        {
+          "domain": "accounting",
+          "reference_type": "asc-topic-locator",
+          "reference": "ASC 855",
+          "authority_weight": "official-source-locator",
+          "verification_rule": "Use authorized FASB access to evaluate events after the reporting date and before statements are available or issued."
+        },
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "cases",
+          "authority_weight": "published-case-law",
+          "verification_rule": "Verify later history, precedential status, jurisdiction, and factual fit through qualified legal research; the repository case set is curated, not exhaustive."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "Material claims and post-period events require a documented accounting conclusion supported by counsel and reporting-period facts."
+        },
+        {
+          "repository_path": "legal/manifests/registry/kansas/cases.json",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "The current case subset is not an exhaustive or automatically updated citator."
+        },
+        {
+          "repository_path": "accounting/FASB_APPLICABILITY_INDEX.md",
+          "artifact_type": "accounting-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Topic classification may require review when a material claim or subsequent event arises."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "kansas-counsel",
+          "cpa-or-qualified-accounting-reviewer"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "applicability-analysis",
+          "authorized-fasb-research"
+        ],
+        "decision_record": "dual-review-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "mark-degraded-and-require-live-verification"
+    },
+    {
+      "id": "tax-reporting-and-book-tax-differences",
+      "name": "Federal and Kansas tax reporting and book-tax differences",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "review-overdue",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "tax",
+          "reference_type": "official-tax-source-family",
+          "reference": "Federal rental real-estate statutes, regulations, revenue procedures, forms, instructions, and official guidance",
+          "authority_weight": "official-tax-guidance",
+          "verification_rule": "Verify the current tax year, entity classification, elections, thresholds, payment method, placed-in-service facts, and authoritative source hierarchy."
+        },
+        {
+          "domain": "tax",
+          "reference_type": "official-tax-source-family",
+          "reference": "Kansas tax statutes, regulations, forms, instructions, and official guidance",
+          "authority_weight": "official-tax-guidance",
+          "verification_rule": "Verify the current Kansas tax year, entity and filing facts, effective dates, and current official forms and instructions."
+        },
+        {
+          "domain": "internal-policy",
+          "reference_type": "accounting-policy-matrix",
+          "reference": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "authority_weight": "nonauthoritative-original-analysis",
+          "verification_rule": "Preserve clean book accounting and separately document tax adjustments; the internal matrix is not tax law."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "accounting/ACCOUNTING_POLICY_MATRIX.md",
+          "artifact_type": "accounting-policy",
+          "required_action": "document-no-change-conclusion",
+          "reason": "The policy matrix must separate operational books, US GAAP questions, federal tax, Kansas tax, and lease/legal treatment."
+        },
+        {
+          "repository_path": "accounting/text/current/01_GH_Federal_Rental_Tax_and_US_GAAP_Sourcebook_2026-07-12.txt",
+          "artifact_type": "accounting-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Tax thresholds, forms, elections, and effective dates are volatile; approved dated analysis must be versioned rather than silently overwritten."
+        },
+        {
+          "repository_path": "accounting/text/current/02_GH_Kansas_Rental_Accounting_and_Tax_Law_Sourcebook_2026-07-12.txt",
+          "artifact_type": "accounting-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Kansas tax and landlord-accounting analysis must be regenerated only after source and professional review."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "tax-professional",
+          "cpa-or-qualified-accounting-reviewer",
+          "finance-operator"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "book-tax-difference-analysis"
+        ],
+        "decision_record": "dated-accounting-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "mark-degraded-and-require-live-verification"
+    },
+    {
+      "id": "building-fire-zoning-and-rental-licensing",
+      "name": "Building, fire, zoning, occupancy, and rental licensing",
+      "change_signals": [
+        "new-authority",
+        "source-content-changed",
+        "effective-date-changed",
+        "authority-status-changed",
+        "source-withdrawn-or-superseded",
+        "official-source-unavailable",
+        "applicability-fact-changed"
+      ],
+      "authority_references": [
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "overland_park_code",
+          "authority_weight": "binding",
+          "verification_rule": "Verify current municipal code, adopting ordinances, incorporated-code licensing limits, parcel zoning, occupancy, amendments, and effective dates."
+        },
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "fire_smoke",
+          "authority_weight": "binding",
+          "verification_rule": "Verify current Kansas and local fire and smoke requirements and the property's actual classification and systems."
+        },
+        {
+          "domain": "legal",
+          "reference_type": "legal-registry-group",
+          "reference": "licensing_conditional",
+          "authority_weight": "conditional-binding",
+          "verification_rule": "Verify the current licensing trigger and live property/license facts before relying on the conditional authority."
+        }
+      ],
+      "affected_paths": [
+        {
+          "repository_path": "legal/CURRENT_AUTHORITY_INDEX.md",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "The legal pack contains municipal exports and local amendments but not unrestricted copies of copyrighted model codes incorporated by reference."
+        },
+        {
+          "repository_path": "legal/manifests/registry/overland-park/overland_park_code.json",
+          "artifact_type": "legal-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "enCodePlus content requires semantic comparison and qualified review before promotion."
+        },
+        {
+          "repository_path": "accounting/text/current/03_GH_Overland_Park_and_Johnson_County_Compliance_Sourcebook_2026-07-12.txt",
+          "artifact_type": "accounting-authority-library",
+          "required_action": "regenerate-after-approval",
+          "reason": "Local compliance costs, licenses, permits, and obligations can affect accounting evidence but the sourcebook is dated original analysis."
+        }
+      ],
+      "review_gate": {
+        "required_roles": [
+          "kansas-counsel",
+          "qualified-legal-reviewer",
+          "records-and-licensing-reviewer",
+          "system-owner"
+        ],
+        "required_evidence": [
+          "official-source-link",
+          "retrieval-and-hash-record",
+          "effective-date-analysis",
+          "applicability-analysis",
+          "licensing-review"
+        ],
+        "decision_record": "dated-legal-memo-and-pull-request"
+      },
+      "automatic_change": "prohibited",
+      "fail_closed_action": "mark-degraded-and-require-live-verification"
+    }
+  ]
+}

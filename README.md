@@ -36,6 +36,8 @@ The top-level `legal/` tree is a governed public-authority reference library, no
 
 The top-level `accounting/` tree is the governed accounting research and policy-control layer. It stores GH-authored analysis, tax/GAAP sourcebooks, FASB locators, applicability metadata, review dates, and generated Project Sources. It does not store FASB Codification text.
 
+The top-level `authority/` tree and `tools/authority_refresh/` package provide a review queue around those two approved libraries. A daily workflow polls 13 legal and 9 accounting official-source indexes, preserves bounded discovery evidence, and opens a draft pull request only when a human review is required. Discovery never rewrites approved legal text, accounting conclusions, effective dates, or production automation.
+
 ## What Belongs Here
 
 This repo is for technical and governed authority assets:
@@ -55,6 +57,7 @@ This repo is for technical and governed authority assets:
 - Local repo hygiene tools.
 - Approved public legal-authority sources, release manifests, searchable extracts, and monitoring tools under `legal/`.
 - GH-authored accounting policies, tax/GAAP sourcebooks, FASB locators, applicability registries, and review controls under `accounting/`.
+- Unapproved discovery candidates, structured review evidence, dated refresh snapshots, and authority-to-code impact mappings under `authority/`.
 
 ## What Does Not Belong Here
 
@@ -84,6 +87,7 @@ Do not store live business records here:
 | Code, automations, field maps, test cases | This private GitHub repo |
 | Approved public legal authorities and source history | `legal/` in this private GitHub repo; live official source controls |
 | Accounting policies, sourcebooks, FASB locators, and review history | `accounting/` in this private GitHub repo; authorized live FASB access and reviewed professional conclusions control |
+| Discovery candidates and review evidence | `authority/` in this private GitHub repo; candidates are never current authority or production inputs |
 
 ## Repository Map
 
@@ -168,6 +172,15 @@ accounting/
   text/current/
   scripts/
 
+authority/
+  README.md
+  candidates/
+  reviews/
+  releases/
+  snapshots/
+  schemas/
+  impact_crosswalk.json
+
 docs/
   architecture/
     system-overview.md
@@ -176,6 +189,7 @@ docs/
   business-rules/
     lease-automation-rules.md
   runbooks/
+    authority-refresh.md
     deployment-log.md
     rollback-checklist.md
     smoke-test-checklist.md
@@ -197,6 +211,12 @@ samples/
 
 tools/
   README.md
+  authority_refresh/
+    README.md
+    refresh.py
+    promotion.py
+    validate_system.py
+    config/
   safety/
     pre-commit-safety-check.py
 ```
@@ -215,6 +235,18 @@ tools/
 | Codex/ChatGPT Instructions | `AGENTS.md` |
 | Legal Authority Index | `legal/CURRENT_AUTHORITY_INDEX.md` |
 | Accounting Authority Index | `accounting/CURRENT_AUTHORITY_INDEX.md` |
+| Authority Refresh Governance | `authority/README.md` |
+| Authority Refresh Runbook | `docs/runbooks/authority-refresh.md` |
+
+## Authority Refresh Controls
+
+- **Daily discovery:** `Authority Discovery` runs at `11:17 UTC` and can also be started manually. It checks the 13-source legal catalog and 9-source accounting catalog, then reports `current`, `review_required`, or `degraded`.
+- **Existing monitors:** `Legal Source Monitor` still performs its weekly approved-payload comparison at `12:27 UTC` each Monday. `Accounting Authority Review Calendar` still checks stored FASB/accounting review dates monthly at `13:41 UTC` on day 1.
+- **No automatic currentness decision:** a discovery change creates or updates candidate evidence and a draft pull request. It does not auto-promote, auto-merge, change the dated approved libraries, or change operational code.
+- **Qualified review:** legal effect and applicability require counsel; GAAP conclusions require a CPA or qualified accounting reviewer using authorized FASB access; tax conclusions require tax-year-specific professional review. Evidence and every candidate resolution must be recorded.
+- **Protected promotion:** reviewed discovery evidence can be archived only through the `authority-production` GitHub environment and exact confirmation `PROMOTE_REVIEWED_AUTHORITY_RELEASE`. That workflow opens another draft pull request and never merges it.
+
+The July 12, 2026 approved legal and accounting baselines remain unchanged by this automation. A green run is evidence that configured checks completed, not a compliance, completeness, legal-currentness, GAAP, or tax certification. See [`docs/runbooks/authority-refresh.md`](docs/runbooks/authority-refresh.md) for triage, review, promotion, and rollback.
 
 ## Change Workflow
 

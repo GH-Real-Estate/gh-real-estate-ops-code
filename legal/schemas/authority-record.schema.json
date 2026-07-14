@@ -1,0 +1,726 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/blob/main/legal/schemas/authority-record.schema.json",
+  "title": "GH Real Estate legal authority record",
+  "description": "Governed record for a discovered, reviewed, or released legal authority. Automated discovery never establishes legal effect, applicability, or compliance.",
+  "$comment": "There is intentionally no compliant or is_compliant property. Currentness and reviewer decisions are separate, bounded states.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "domain",
+    "title",
+    "citation",
+    "jurisdiction",
+    "authority_type",
+    "authority_weight",
+    "official_url",
+    "currentness",
+    "dates",
+    "provenance",
+    "licensing",
+    "review",
+    "impact_domains"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$",
+      "description": "Stable repository identifier; do not derive it from mutable title text."
+    },
+    "external_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 256,
+      "description": "Identifier assigned by the official publisher, when available."
+    },
+    "domain": {
+      "const": "legal"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "citation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "country",
+        "level"
+      ],
+      "properties": {
+        "country": {
+          "const": "US"
+        },
+        "level": {
+          "enum": [
+            "federal",
+            "state",
+            "county",
+            "municipal",
+            "multi-jurisdiction"
+          ]
+        },
+        "subdivision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "locality": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 150
+        }
+      }
+    },
+    "authority_type": {
+      "enum": [
+        "constitution",
+        "statute",
+        "session-law",
+        "regulation",
+        "ordinance",
+        "court-decision",
+        "administrative-order",
+        "official-notice",
+        "agency-guidance",
+        "official-form",
+        "proposed-rule",
+        "withdrawn-material",
+        "incorporated-standard",
+        "other-official-material"
+      ]
+    },
+    "authority_weight": {
+      "enum": [
+        "binding",
+        "conditional-binding",
+        "published-case-law",
+        "persuasive",
+        "guidance",
+        "official-notice",
+        "proposed",
+        "withdrawn",
+        "superseded",
+        "informational"
+      ]
+    },
+    "official_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "Official publisher URL. Plain HTTP requires an explicit provenance limitation."
+    },
+    "storage_policy": {
+      "enum": [
+        "redistributable",
+        "metadata-only",
+        "manual-review"
+      ],
+      "description": "Discovery-stage storage policy. The reviewed licensing.storage_class remains the release control."
+    },
+    "currentness": {
+      "$ref": "#/$defs/currentness"
+    },
+    "dates": {
+      "$ref": "#/$defs/legalDates"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "licensing": {
+      "$ref": "#/$defs/licensing"
+    },
+    "review": {
+      "$ref": "#/$defs/review"
+    },
+    "release": {
+      "$ref": "#/$defs/release"
+    },
+    "impact_domains": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "leasing",
+          "rent-and-fees",
+          "security-deposits",
+          "payments-and-credits",
+          "eviction-and-notices",
+          "fair-housing",
+          "screening-and-consumer-reports",
+          "lead-based-paint",
+          "military-and-foreclosure",
+          "privacy-and-data-security",
+          "building-fire-and-safety",
+          "licensing-zoning-and-occupancy",
+          "tax-and-unclaimed-property",
+          "federal-programs",
+          "records-and-electronic-transactions",
+          "general-operations"
+        ]
+      }
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "supersedes": {
+          "$ref": "#/$defs/recordIdList"
+        },
+        "superseded_by": {
+          "$ref": "#/$defs/recordIdList"
+        },
+        "amends": {
+          "$ref": "#/$defs/recordIdList"
+        },
+        "implements": {
+          "$ref": "#/$defs/recordIdList"
+        },
+        "related": {
+          "$ref": "#/$defs/recordIdList"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Publisher-specific facts preserved without treating publisher labels as GH review decisions.",
+      "additionalProperties": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "authority_type": {
+            "const": "proposed-rule"
+          }
+        },
+        "required": [
+          "authority_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "authority_weight": {
+            "const": "proposed"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "authority_type": {
+            "const": "withdrawn-material"
+          }
+        },
+        "required": [
+          "authority_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "authority_weight": {
+            "enum": [
+              "withdrawn",
+              "superseded"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "currentness": {
+            "properties": {
+              "state": {
+                "const": "approved-current-through-date"
+              }
+            },
+            "required": [
+              "state"
+            ]
+          }
+        },
+        "required": [
+          "currentness"
+        ]
+      },
+      "then": {
+        "required": [
+          "release"
+        ],
+        "properties": {
+          "review": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              },
+              "decision": {
+                "const": "approve-for-approved-release"
+              }
+            }
+          },
+          "release": {
+            "required": [
+              "approved_release_id"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "licensing": {
+            "properties": {
+              "rights_status": {
+                "enum": [
+                  "licensed-internal-use-only",
+                  "metadata-link-only",
+                  "unknown-review-required"
+                ]
+              }
+            },
+            "required": [
+              "rights_status"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "licensing": {
+            "properties": {
+              "storage_class": {
+                "enum": [
+                  "hash-and-metadata-only",
+                  "metadata-and-link-only",
+                  "no-repository-storage"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "currentness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "basis",
+        "last_checked_at",
+        "current_through"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "discovered",
+            "candidate",
+            "change-detected",
+            "awaiting-legal-review",
+            "approved-current-through-date",
+            "approved-historical",
+            "superseded",
+            "withdrawn",
+            "source-unavailable",
+            "review-overdue",
+            "rejected"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "last_checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "current_through": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "next_review_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "source_availability": {
+          "enum": [
+            "available",
+            "available-insecure-transport",
+            "temporarily-unavailable",
+            "permanently-unavailable",
+            "not-checked"
+          ]
+        }
+      }
+    },
+    "legalDates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "published_on",
+        "effective_on",
+        "repealed_on",
+        "superseded_on"
+      ],
+      "properties": {
+        "published_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "effective_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "repealed_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "superseded_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "codified_through": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "date_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publisher",
+        "source_url",
+        "retrieval_method",
+        "retrieved_at",
+        "comparison_mode"
+      ],
+      "properties": {
+        "publisher": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "final_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "source_identifier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300
+        },
+        "retrieval_method": {
+          "enum": [
+            "official-api",
+            "official-feed",
+            "official-download",
+            "official-html",
+            "official-export",
+            "manual-official-retrieval",
+            "public-mirror-exception",
+            "link-only"
+          ]
+        },
+        "retrieved_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "content_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "evidence_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "comparison_mode": {
+          "enum": [
+            "exact-sha256",
+            "normalized-text",
+            "semantic-pdf",
+            "official-metadata",
+            "availability-only",
+            "not-yet-compared"
+          ]
+        },
+        "publisher_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300,
+          "description": "Raw publisher status; never substitutes for the GH currentness state."
+        },
+        "transport_limitation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      }
+    },
+    "licensing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rights_status",
+        "storage_class",
+        "redistribution_status",
+        "basis",
+        "last_reviewed_on"
+      ],
+      "properties": {
+        "rights_status": {
+          "enum": [
+            "public-domain-us-government",
+            "public-record-reproduction-permitted",
+            "permission-granted",
+            "licensed-internal-use-only",
+            "metadata-link-only",
+            "unknown-review-required"
+          ]
+        },
+        "storage_class": {
+          "enum": [
+            "full-source-permitted",
+            "official-extract-permitted",
+            "hash-and-metadata-only",
+            "metadata-and-link-only",
+            "no-repository-storage"
+          ]
+        },
+        "redistribution_status": {
+          "enum": [
+            "permitted",
+            "permitted-with-attribution",
+            "internal-use-only",
+            "not-permitted",
+            "unknown-do-not-redistribute"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "terms_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "last_reviewed_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "required_role",
+        "decision",
+        "reviewed_at"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "unreviewed",
+            "review-requested",
+            "in-review",
+            "changes-requested",
+            "approved",
+            "rejected",
+            "review-overdue"
+          ]
+        },
+        "required_role": {
+          "enum": [
+            "kansas-counsel",
+            "qualified-legal-reviewer",
+            "records-and-licensing-reviewer",
+            "dual-legal-and-licensing-review"
+          ]
+        },
+        "decision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "approve-for-approved-release",
+            "approve-as-historical",
+            "approve-as-guidance",
+            "approve-as-conditional",
+            "reject-not-authoritative",
+            "reject-out-of-scope",
+            "reject-licensing",
+            "defer-missing-facts",
+            null
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "review_evidence_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "approved_release_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "approved_commit_sha": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "approved_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "recordIdList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+      }
+    }
+  }
+}

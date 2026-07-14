@@ -47,6 +47,7 @@ accounting/
   README.md
   CURRENT_AUTHORITY_INDEX.md
   PROJECT_INSTRUCTIONS.md
+  CURRENT_STATUS.json
   FASB_APPLICABILITY_INDEX.md
   ACCOUNTING_POLICY_MATRIX.md
   CHANGELOG.md
@@ -71,6 +72,16 @@ accounting/
 - Exact paragraph citations, effective dates, transition provisions, scope exceptions, and private-company alternatives require live verification before a material GAAP assertion.
 - Proposed standards and exposure drafts are monitoring-only until issued and effective for GH's reporting basis and period.
 - Do not auto-merge accounting-authority currentness changes.
+
+## Automated discovery and review
+
+`Authority Discovery` runs daily at `11:17 UTC` (and on manual dispatch) against 9 configured accounting official-source indexes: four public FASB publication/project/taxonomy indexes, IRS Internal Revenue Bulletins, Treasury releases, and three Kansas Department of Revenue indexes. It reports `current`, `review_required`, or `degraded`. These are discovery-run states only; they do not establish GAAP applicability, tax treatment, effective dates, or compliance.
+
+FASB collection is strictly metadata-only: official locators, titles, identifiers, dates, and publisher status may be retained, but Codification text, screenshots, print exports, and scraped licensed content are prohibited. A CPA or qualified accounting reviewer must use authorized live FASB access to verify exact scope, paragraphs, effective dates, transition, elections, and implementation. Tax changes require tax-year-specific professional review.
+
+`Accounting Authority Review Calendar` remains a separate monthly control at `13:41 UTC` on day 1. It checks stored review dates; it does not query or validate live Codification content. Daily discovery writes only candidate evidence under `authority/candidates/accounting/` and may open a draft pull request or degraded-source issue. It never edits this approved library, changes the books or automation, promotes a conclusion, or merges a pull request.
+
+Recent-item sources marked `rolling-window` do not treat an item falling out of a publisher's limited recent-results page as withdrawn or missing. Any source retrieval or parser `error`, or missing configuration for a critical source, makes the run `degraded`, preserves the July 12, 2026 baseline, and requires live verification before a material GAAP or tax assertion. Review and promotion procedures are in [`../docs/runbooks/authority-refresh.md`](../docs/runbooks/authority-refresh.md).
 
 ## Current working scope
 

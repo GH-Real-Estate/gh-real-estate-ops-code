@@ -1,0 +1,31 @@
+{
+  "count": 3,
+  "results": [
+    {
+      "document_number": "2026-12345",
+      "title": "Housing program final rule",
+      "html_url": "https://www.federalregister.gov/documents/2026/07/13/2026-12345/housing-program-final-rule",
+      "publication_date": "2026-07-13",
+      "effective_on": "2026-08-12",
+      "type": "Rule",
+      "agencies": [
+        {"name": "Housing and Urban Development Department"}
+      ]
+    },
+    {
+      "document_number": "2026-12345",
+      "title": "Duplicate housing program final rule",
+      "html_url": "https://www.federalregister.gov/documents/2026/07/13/2026-12345/housing-program-final-rule#duplicate",
+      "publication_date": "2026-07-13",
+      "effective_on": "2026-08-12",
+      "type": "Rule"
+    },
+    {
+      "document_number": "mirror-1",
+      "title": "Untrusted mirror",
+      "html_url": "https://example.invalid/federal-register/mirror-1",
+      "publication_date": "2026-07-13",
+      "type": "Notice"
+    }
+  ]
+}

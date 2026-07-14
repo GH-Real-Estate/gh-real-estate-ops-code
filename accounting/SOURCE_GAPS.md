@@ -29,7 +29,17 @@ The July 12, 2026 accounting release is a strong operational index for GH Real E
 - Case-law coverage is not exhaustive.
 - A signed lease can change the accounting evidence and timing but cannot override mandatory law.
 
+## Automated discovery limits
+
+- Daily discovery covers 9 configured accounting publisher indexes. It does not search the FASB Codification, tax research platforms, private letter rulings, court dockets, local tax administration, or every publication that could affect a transaction.
+- A `current` result means no new, modified, or comparison-eligible missing item was detected under the configured comparison policies and no degradation condition occurred. It does not advance the July 12, 2026 release, prove that a conclusion remains valid, or establish US GAAP or tax compliance.
+- FASB results are metadata-only. Exact Codification text, subtopics, paragraphs, scope exceptions, effective dates, transition provisions, and private-company alternatives require authorized live access and qualified review.
+- Recent-item IRS and Treasury indexes use `rolling-window` missing semantics. An older item leaving the published window is not classified as withdrawn, superseded, revoked, or missing.
+- The monthly review calendar checks repository dates only. A green calendar result does not prove that live FASB, IRS, Treasury, Kansas, contractual, or entity facts were reviewed.
+- Any source retrieval or parser `error` makes discovery `degraded`, even when the catalog marks that source noncritical; missing configuration degrades the domain only when the affected source is critical. It does not mean no accounting or tax authority changed. Preserve the approved baseline and prohibit a material currentness assertion until the source and impact are reviewed.
+- Candidate branches and workflow artifacts are unapproved metadata and review evidence. They must not drive journal entries, tax positions, chart-of-accounts changes, financial statements, or automation.
+
 ## Resolution process
 
-Document the missing fact, source, reviewer, conclusion, effective period, and resulting journal or tax adjustment in a pull request. Update the registry and changelog only after review; do not silently overwrite a dated conclusion.
+Document the missing fact, official evidence, reviewer qualifications, conclusion, effective period, and resulting journal or tax adjustment in a pull request. GAAP review requires a CPA or qualified accounting reviewer using authorized FASB access; tax review requires a tax professional for the applicable year. Update the registry and changelog only after review; do not silently overwrite a dated conclusion.
 

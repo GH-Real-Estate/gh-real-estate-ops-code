@@ -1,0 +1,401 @@
+name: Authority Discovery
+
+on:
+  schedule:
+    - cron: '17 11 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: authority-discovery-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    name: Discover ${{ matrix.domain }} authority changes
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        domain:
+          - legal
+          - accounting
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.x'
+
+      - name: Scan official discovery sources
+        id: discovery
+        continue-on-error: true
+        env:
+          CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
+        run: |
+          python tools/authority_refresh/refresh.py \
+            --domain "${{ matrix.domain }}" \
+            --output-dir authority-refresh-output \
+            --run-id "${{ github.run_id }}-${{ github.run_attempt }}"
+
+      - name: Ensure a bounded failure artifact exists
+        if: always()
+        shell: bash
+        env:
+          DOMAIN: ${{ matrix.domain }}
+          RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          mkdir -p authority-refresh-output
+          if [[ ! -s "authority-refresh-output/${DOMAIN}-candidate.json" ]]; then
+            python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          domain = os.environ["DOMAIN"]
+          candidate = {
+              "schema_version": "1.0",
+              "domain": domain,
+              "generated_at": datetime.now(timezone.utc).isoformat(),
+              "run_id": os.environ["RUN_ID"],
+              "status": "degraded",
+              "notice": (
+                  "The discovery runner failed before producing a complete candidate. "
+                  "Official sources and qualified review control."
+              ),
+              "approved_baseline": {
+                  "path": f"authority/snapshots/{domain}.json",
+                  "missing": not Path(f"authority/snapshots/{domain}.json").is_file(),
+                  "sha256": None,
+              },
+              "counts": {
+                  "sources": 0,
+                  "healthy_sources": 0,
+                  "items": 0,
+                  "new": 0,
+                  "modified": 0,
+                  "missing_items": 0,
+                  "source_errors": 1,
+                  "configuration_required": 0,
+                  "potential_impacts": 0,
+              },
+              "source_results": [{
+                  "source_id": "workflow-execution",
+                  "critical": True,
+                  "status": "error",
+                  "error": "Discovery failed before a candidate was produced.",
+                  "item_count": 0,
+                  "observed_item_ids": [],
+              }],
+              "changes": [],
+              "potential_impacts": [],
+              "items": [],
+          }
+          canonical = json.dumps(candidate, sort_keys=True, separators=(",", ":"))
+          candidate["candidate_sha256"] = hashlib.sha256(canonical.encode()).hexdigest()
+          Path(f"authority-refresh-output/{domain}-candidate.json").write_text(
+              json.dumps(candidate, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+          fi
+          if [[ ! -s "authority-refresh-output/${DOMAIN}-candidate.md" ]]; then
+            printf '%s\n' \
+              "# ${DOMAIN^} authority discovery failure" \
+              '' \
+              'The discovery runner failed before it produced a complete report.' \
+              '' \
+              "- Workflow run: ${RUN_URL}" \
+              '' \
+              '> Treat discovery coverage as degraded until this run is reviewed.' \
+              > "authority-refresh-output/${DOMAIN}-candidate.md"
+          fi
+          if [[ ! -s "authority-refresh-output/${DOMAIN}-candidate-issue.md" ]] ||
+            [[ $(wc -c < "authority-refresh-output/${DOMAIN}-candidate-issue.md") -gt 60000 ]]; then
+            cp "authority-refresh-output/${DOMAIN}-candidate.md" \
+              "authority-refresh-output/${DOMAIN}-candidate-issue.md"
+          fi
+
+      - name: Upload discovery evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: authority-discovery-${{ matrix.domain }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            authority-refresh-output/${{ matrix.domain }}-candidate.json
+            authority-refresh-output/${{ matrix.domain }}-candidate.md
+            authority-refresh-output/${{ matrix.domain }}-candidate-issue.md
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Fail after preserving non-current evidence
+        if: steps.discovery.outcome == 'failure'
+        run: exit 1
+
+  publish:
+    name: Publish ${{ matrix.domain }} candidate for human review
+    needs: scan
+    if: >-
+      ${{
+        always() &&
+        (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') &&
+        github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+      }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      actions: write
+      contents: write
+      issues: write
+      pull-requests: write
+    strategy:
+      fail-fast: false
+      matrix:
+        domain:
+          - legal
+          - accounting
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Download discovery evidence
+        id: download
+        continue-on-error: true
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: authority-discovery-${{ matrix.domain }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: authority-refresh-output
+
+      - name: Ensure publishable degraded evidence exists
+        if: always()
+        shell: bash
+        env:
+          DOMAIN: ${{ matrix.domain }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          write_failure_report() {
+            local reason="$1"
+            printf '%s\n' \
+              "# ${DOMAIN^} authority discovery artifact unavailable" \
+              '' \
+              "$reason" \
+              '' \
+              "- Workflow run: ${RUN_URL}" \
+              '' \
+              '> Treat discovery coverage as degraded until this run is reviewed.' \
+              > "${DOMAIN}-artifact-failure.md"
+          }
+
+          for artifact in candidate.json candidate.md candidate-issue.md; do
+            if [[ ! -s "authority-refresh-output/${DOMAIN}-${artifact}" ]]; then
+              write_failure_report \
+                "The read-only scan job did not publish a complete ${artifact} artifact."
+              exit 1
+            fi
+          done
+          if [[ $(wc -c < "authority-refresh-output/${DOMAIN}-candidate.json") -gt 8388608 ]]; then
+            write_failure_report \
+              'The candidate JSON exceeds the 8 MiB repository publication limit.'
+            exit 1
+          fi
+          if [[ $(wc -c < "authority-refresh-output/${DOMAIN}-candidate.md") -gt 1048576 ]]; then
+            write_failure_report \
+              'The full candidate report exceeds the 1 MiB repository publication limit.'
+            exit 1
+          fi
+          if [[ $(wc -c < "authority-refresh-output/${DOMAIN}-candidate-issue.md") -gt 61440 ]]; then
+            write_failure_report \
+              'The issue summary exceeds the 60 KiB publication limit.'
+            exit 1
+          fi
+          if ! python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from tools.authority_refresh.core import sha256_json
+
+          domain = os.environ["DOMAIN"]
+          candidate = json.loads(
+              Path(f"authority-refresh-output/{domain}-candidate.json").read_text(encoding="utf-8")
+          )
+          if candidate.get("domain") != domain:
+              raise SystemExit("candidate domain does not match publisher matrix")
+          if candidate.get("status") not in {"current", "review_required", "degraded"}:
+              raise SystemExit("candidate has an unsupported status")
+          claimed_hash = candidate.pop("candidate_sha256", None)
+          if claimed_hash != sha256_json(candidate):
+              raise SystemExit("candidate hash verification failed")
+          candidate["candidate_sha256"] = claimed_hash
+          Path("candidate-status.txt").write_text(candidate["status"], encoding="utf-8")
+          PY
+          then
+            write_failure_report \
+              'The candidate JSON failed domain, status, or SHA-256 validation.'
+            exit 1
+          fi
+
+      - name: Publish review candidate branch and pull request
+        if: success() && hashFiles('candidate-status.txt') != ''
+        shell: bash
+        env:
+          DOMAIN: ${{ matrix.domain }}
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          status="$(cat candidate-status.txt)"
+          if [[ "$status" == 'current' ]]; then
+            echo 'No candidate changes require review.'
+            exit 0
+          fi
+
+          branch="automation/authority-${DOMAIN}-candidate"
+          domain_root="authority/candidates/${DOMAIN}"
+          destination="${domain_root}/latest"
+          archive="${domain_root}/runs/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            git fetch origin "$branch:refs/remotes/origin/$branch"
+            git checkout -B "$branch" "origin/$branch"
+            git merge --no-edit "origin/${DEFAULT_BRANCH}"
+          else
+            git checkout -b "$branch" "origin/${DEFAULT_BRANCH}"
+          fi
+          mkdir -p "$destination" "$archive"
+          for target in "$destination" "$archive"; do
+            cp "authority-refresh-output/${DOMAIN}-candidate.json" "$target/candidate.json"
+            cp "authority-refresh-output/${DOMAIN}-candidate.md" "$target/README.md"
+            cp "authority-refresh-output/${DOMAIN}-candidate-issue.md" "$target/issue-summary.md"
+          done
+
+          git add "$domain_root"
+          changed="$(git diff --cached --name-only)"
+          if [[ -z "$changed" ]]; then
+            echo 'The candidate branch already contains this run evidence.'
+            exit 0
+          fi
+          while IFS= read -r path; do
+            [[ "$path" == "${domain_root}/"* ]] || {
+              echo "Refusing out-of-scope candidate change: $path" >&2
+              exit 1
+            }
+          done <<< "$changed"
+          git commit -m "chore(authority): publish ${DOMAIN} discovery candidate"
+          pr_changed="$(git diff --name-only "origin/${DEFAULT_BRANCH}...HEAD")"
+          while IFS= read -r path; do
+            [[ "$path" == "${domain_root}/"* ]] || {
+              echo "Refusing out-of-scope pull request change: $path" >&2
+              exit 1
+            }
+          done <<< "$pr_changed"
+          git push origin "$branch"
+
+          title="${DOMAIN^} authority discovery candidate requires review"
+          open_prs="$(
+            gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --limit 1000 \
+              --json number,isCrossRepository,headRepositoryOwner,headRefName,baseRefName \
+              --jq '.[] | [.number, .isCrossRepository, .headRepositoryOwner.login, .headRefName, .baseRefName] | @tsv'
+          )"
+          existing=''
+          while IFS=$'\t' read -r number cross_repository head_owner head_ref base_ref; do
+            if [[ "$cross_repository" == 'false' ]] &&
+              [[ "${head_owner,,}" == "${REPOSITORY_OWNER,,}" ]] &&
+              [[ "$head_ref" == "$branch" ]] &&
+              [[ "$base_ref" == "$DEFAULT_BRANCH" ]]; then
+              existing="$number"
+              break
+            fi
+          done <<< "$open_prs"
+          if [[ -n "$existing" ]]; then
+            gh pr edit "$existing" \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$title" \
+              --body-file "authority-refresh-output/${DOMAIN}-candidate-issue.md"
+          else
+            gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --base "$DEFAULT_BRANCH" \
+              --head "$branch" \
+              --draft \
+              --title "$title" \
+              --body-file "authority-refresh-output/${DOMAIN}-candidate-issue.md"
+          fi
+
+          gh workflow run authority-refresh-checks.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref "$branch"
+          gh workflow run repo-checks.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref "$branch"
+
+      - name: Open or update degraded-discovery issue
+        if: always() && !cancelled() && hashFiles('candidate-status.txt') != ''
+        shell: bash
+        env:
+          DOMAIN: ${{ matrix.domain }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [[ "$(cat candidate-status.txt)" == 'degraded' ]] || exit 0
+          title="AUTHORITY DISCOVERY DEGRADED: ${DOMAIN} sources require attention"
+          existing="$(
+            gh issue list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --search "$title in:title" \
+              --json number \
+              --jq '.[0].number // empty'
+          )"
+          if [[ -n "$existing" ]]; then
+            gh issue comment "$existing" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body-file "authority-refresh-output/${DOMAIN}-candidate-issue.md"
+          else
+            gh issue create \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$title" \
+              --body-file "authority-refresh-output/${DOMAIN}-candidate-issue.md"
+          fi
+
+      - name: Report invalid or missing artifact to an issue
+        if: failure() && hashFiles(format('{0}-artifact-failure.md', matrix.domain)) != ''
+        shell: bash
+        env:
+          DOMAIN: ${{ matrix.domain }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="AUTHORITY DISCOVERY DEGRADED: ${DOMAIN} artifact unavailable"
+          existing="$(
+            gh issue list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --search "$title in:title" \
+              --json number \
+              --jq '.[0].number // empty'
+          )"
+          if [[ -n "$existing" ]]; then
+            gh issue comment "$existing" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body-file "${DOMAIN}-artifact-failure.md"
+          else
+            gh issue create \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$title" \
+              --body-file "${DOMAIN}-artifact-failure.md"
+          fi

@@ -19,7 +19,7 @@ Zoho Creator
   -> tenant portal / maintenance workflows when ready
 
 GitHub
-  -> code, field maps, sanitized samples, runbooks, version history
+  -> code, field maps, sanitized samples, runbooks, approved dated authority libraries, version history
 
 Codex / ChatGPT
   -> review, debugging, patching, documentation, test planning
@@ -39,6 +39,25 @@ src/zoho-contracts/  # Contracts merge-field maps only
 
 Cross-system docs remain under `docs/`. Sanitized sample payloads remain under `samples/`.
 
+Authority governance is separated from runtime code:
+
+```text
+allowlisted official indexes
+  -> daily read-only discovery (13 legal + 9 accounting)
+  -> current | review_required | degraded
+  -> candidate evidence and draft pull request
+  -> counsel / CPA / tax / licensing review as applicable
+  -> protected evidence-promotion workflow
+  -> draft promotion pull request
+  -> separately reviewed dated legal or accounting release
+```
+
+`legal/` and `accounting/` remain the approved dated research baselines. `authority/` contains unapproved candidates, structured review evidence, discovery snapshots, and the impact crosswalk. `tools/authority_refresh/` contains standard-library discovery, validation, and promotion controls. No discovery or promotion workflow deploys to Zoho, changes books, edits a lease, changes tenant treatment, updates runtime code, or merges itself.
+
+The daily discovery workflow runs at `11:17 UTC`. It supplements, but does not replace, the weekly Monday `12:27 UTC` legal approved-source hash monitor or the monthly day-1 `13:41 UTC` accounting review-date calendar. FASB discovery stores metadata only; exact GAAP conclusions require authorized live access and qualified review. Source failures preserve the approved baseline and visibly degrade the affected currentness claim.
+
 ## Non-Negotiable Split
 
 Zoho owns live business data. GitHub owns technical logic and sanitized documentation.
+
+Official law, authorized accounting authority, signed agreements, and reviewed professional conclusions control over repository summaries and automation output. GitHub provides versioned evidence and review gates; it does not certify legal, GAAP, tax, or operational compliance.

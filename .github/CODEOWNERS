@@ -1,0 +1,13 @@
+# Authority libraries and governance controls require GH Real Estate review.
+/.github/CODEOWNERS @GHRealEstate
+/.github/dependabot.yml @GHRealEstate
+/legal/ @GHRealEstate
+/accounting/ @GHRealEstate
+/authority/ @GHRealEstate
+/tools/authority_refresh/ @GHRealEstate
+
+# Source discovery, currentness, validation, review, and shared safety workflows.
+/.github/workflows/legal-*.yml @GHRealEstate
+/.github/workflows/accounting-*.yml @GHRealEstate
+/.github/workflows/authority-*.yml @GHRealEstate
+/.github/workflows/repo-checks.yml @GHRealEstate

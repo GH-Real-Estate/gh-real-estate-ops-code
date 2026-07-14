@@ -127,6 +127,7 @@ class SourceMonitorTests(unittest.TestCase):
         result = monitor.download_url(
             "https://example.test/source",
             attempts=2,
+            allowed_hosts={"example.test"},
             opener=opener,
             sleep=sleeps.append,
         )
@@ -148,6 +149,7 @@ class SourceMonitorTests(unittest.TestCase):
         result = monitor.download_url(
             "https://example.test/missing",
             attempts=5,
+            allowed_hosts={"example.test"},
             opener=opener,
             sleep=lambda _: None,
         )
@@ -169,6 +171,7 @@ class SourceMonitorTests(unittest.TestCase):
         result = monitor.download_url(
             "https://example.test/source",
             attempts=2,
+            allowed_hosts={"example.test"},
             opener=opener,
             sleep=sleeps.append,
         )
@@ -176,6 +179,132 @@ class SourceMonitorTests(unittest.TestCase):
         self.assertTrue(result["ok"])
         self.assertEqual(2, result["attempts"])
         self.assertEqual([1.0], sleeps)
+
+    def test_governed_allowlist_matches_registry_https_hosts(self):
+        registry = json.loads(
+            (ROOT / "legal" / "manifests" / "authority_registry.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        https_hosts = {
+            monitor.urlsplit(str(record["official_url"])).hostname
+            for record in registry
+            if monitor.urlsplit(str(record["official_url"])).scheme == "https"
+        }
+
+        self.assertEqual(https_hosts, set(monitor.GOVERNED_HTTPS_HOSTS))
+        http_urls = {
+            str(record["official_url"])
+            for record in registry
+            if monitor.urlsplit(str(record["official_url"])).scheme != "https"
+        }
+        self.assertEqual(
+            http_urls,
+            set(monitor.ACKNOWLEDGED_NONFETCHABLE_HTTP_SOURCES),
+        )
+
+    def test_acknowledged_http_registry_sources_are_offline_manual_gaps(self):
+        registry = json.loads(
+            (ROOT / "legal" / "manifests" / "authority_registry.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        records = [
+            record
+            for record in registry
+            if str(record["official_url"])
+            in monitor.ACKNOWLEDGED_NONFETCHABLE_HTTP_SOURCES
+        ]
+
+        results = monitor.evaluate_records(
+            records,
+            {},
+            {},
+            {},
+            {},
+            ROOT,
+        )
+
+        self.assertEqual(2, len(results))
+        self.assertTrue(all(result["status"] == "manual" for result in results))
+        self.assertTrue(all(result["transport_verified"] is False for result in results))
+        self.assertTrue(
+            all(
+                result["fetch_method"] == "not-fetched-insecure-legacy-http"
+                for result in results
+            )
+        )
+
+    def test_download_rejects_unsafe_initial_url_without_opening_it(self):
+        opener = mock.Mock()
+
+        result = monitor.download_url(
+            "http://example.test/source",
+            attempts=1,
+            allowed_hosts={"example.test"},
+            opener=opener,
+        )
+
+        self.assertFalse(result["ok"])
+        self.assertEqual(0, result["attempts"])
+        self.assertIn("must use HTTPS", result["error"])
+        opener.assert_not_called()
+
+    def test_redirect_handler_rejects_off_host_target_before_following(self):
+        handler = monitor._AllowlistedRedirectHandler(frozenset({"official.test"}))
+        request = monitor.urllib.request.Request("https://official.test/source")
+
+        with self.assertRaisesRegex(monitor.UnsafeMonitorURL, "not allowlisted"):
+            handler.redirect_request(
+                request,
+                None,
+                302,
+                "Found",
+                {},
+                "https://169.254.169.254/latest/meta-data/",
+            )
+
+    def test_download_rejects_off_host_final_response_before_reading(self):
+        response = FakeResponse(
+            b"untrusted",
+            url="https://attacker.invalid/payload",
+        )
+        opener = mock.Mock(return_value=response)
+
+        result = monitor.download_url(
+            "https://official.test/source",
+            attempts=1,
+            allowed_hosts={"official.test"},
+            opener=opener,
+        )
+
+        self.assertFalse(result["ok"])
+        self.assertIn("final response URL host is not allowlisted", result["error"])
+        self.assertEqual(0, response._body.tell())
+
+    def test_download_rejects_https_downgrade_and_url_credentials(self):
+        credential_url = "".join(
+            ("https://user:", "sample", "@official.test/source")
+        )
+        downgrade = monitor.download_url(
+            "https://official.test/source",
+            attempts=1,
+            allowed_hosts={"official.test"},
+            opener=lambda request, **kwargs: FakeResponse(
+                b"untrusted", url="http://official.test/source"
+            ),
+        )
+        credentials = monitor.download_url(
+            credential_url,
+            attempts=1,
+            allowed_hosts={"official.test"},
+            opener=mock.Mock(),
+        )
+
+        self.assertFalse(downgrade["ok"])
+        self.assertIn("must use HTTPS", downgrade["error"])
+        self.assertFalse(credentials["ok"])
+        self.assertIn("must not contain credentials", credentials["error"])
 
     def test_shared_url_is_downloaded_once(self):
         calls = []
@@ -227,10 +356,44 @@ class SourceMonitorTests(unittest.TestCase):
 
         self.assertTrue(result["ok"])
         self.assertEqual("encodeplus-token-export", result["fetch_method"])
+        self.assertEqual(source_url, result["url"])
         self.assertEqual(source_url, result["final_url"])
         self.assertEqual(2, result["attempts"])
         self.assertEqual(2, len(calls))
         self.assertTrue(all(capture_body for _, capture_body in calls))
+
+    def test_encodeplus_export_redacts_generated_token_from_errors(self):
+        source_url = (
+            "https://online.encodeplus.com/regs/overlandpark-ks/"
+            "export2doc.aspx?pdf=1&tocid=005.024"
+        )
+        token = "generated/private source.pdf"
+
+        def downloader(url: str, *, capture_body: bool = False):
+            self.assertTrue(capture_body)
+            if "component.aspx" in url:
+                return {
+                    "ok": True,
+                    "body": json.dumps({"Ready": True, "File": token}).encode(),
+                    "attempts": 1,
+                }
+            return {
+                "ok": False,
+                "url": url,
+                "error": f"failed for {url}",
+                "attempts": 1,
+            }
+
+        result = monitor.fetch_encodeplus_pdf(
+            source_url, downloader=downloader, sleep=lambda _: None
+        )
+
+        self.assertFalse(result["ok"])
+        self.assertEqual(source_url, result["url"])
+        self.assertEqual(source_url, result["final_url"])
+        self.assertNotIn(token, result["error"])
+        self.assertNotIn(monitor.quote_plus(token, safe=""), result["error"])
+        self.assertIn("[redacted-file-token]", result["error"])
 
     def test_encodeplus_rejects_non_boolean_ready_flag(self):
         source_url = (
@@ -509,6 +672,55 @@ class SourceMonitorTests(unittest.TestCase):
                 sum(item["status"] == "error" for item in results),
                 payload["counts"]["error"],
             )
+
+    def test_main_does_not_fail_only_for_acknowledged_offline_http_gaps(self):
+        full_registry = json.loads(
+            (ROOT / "legal" / "manifests" / "authority_registry.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        records = [
+            record
+            for record in full_registry
+            if str(record["official_url"])
+            in monitor.ACKNOWLEDGED_NONFETCHABLE_HTTP_SOURCES
+        ]
+        results = monitor.evaluate_records(records, {}, {}, {}, {}, ROOT)
+        written: dict[str, str] = {}
+        registry_path = ROOT / "legal" / "manifests" / "authority_registry.json"
+        overrides_path = ROOT / "legal" / "manifests" / "source_monitor_overrides.json"
+        json_report = Path("acknowledged-http-report.json")
+        markdown_report = Path("acknowledged-http-report.md")
+        argv = [
+            str(SCRIPT),
+            "--registry",
+            str(registry_path),
+            "--overrides",
+            str(overrides_path),
+            "--json-report",
+            str(json_report),
+            "--markdown-report",
+            str(markdown_report),
+        ]
+        with (
+            mock.patch("sys.argv", argv),
+            mock.patch.object(monitor, "resolve_checked_urls", return_value=({}, {})),
+            mock.patch.object(monitor, "fetch_unique_urls", return_value={}),
+            mock.patch.object(monitor, "evaluate_records", return_value=results),
+            mock.patch.object(
+                monitor,
+                "write_text_atomic",
+                side_effect=lambda path, value: written.__setitem__(str(path), value),
+            ),
+            mock.patch("sys.stdout", new=io.StringIO()),
+        ):
+            exit_code = monitor.main()
+
+        payload = json.loads(written[str(json_report)])
+
+        self.assertEqual(0, exit_code)
+        self.assertEqual(2, payload["counts"]["manual"])
+        self.assertEqual(0, payload["counts"]["error"])
 
     def test_atomic_report_write_cleans_partial_file_without_replacing_target(self):
         target = Path("atomic-report-test.json")

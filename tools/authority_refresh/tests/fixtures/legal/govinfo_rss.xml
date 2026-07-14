@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Official publications</title>
+    <item>
+      <guid>PLAW-119publ42</guid>
+      <title>Public Law 119-42</title>
+      <link>https://www.govinfo.gov/app/details/PLAW-119publ42</link>
+      <pubDate>Mon, 13 Jul 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <guid>PLAW-119publ42</guid>
+      <title>Duplicate Public Law 119-42</title>
+      <link>https://www.govinfo.gov/app/details/PLAW-119publ42#duplicate</link>
+      <pubDate>Mon, 13 Jul 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <guid>untrusted-copy</guid>
+      <title>Untrusted copy</title>
+      <link>https://example.invalid/copied-law</link>
+      <pubDate>Mon, 13 Jul 2026 13:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

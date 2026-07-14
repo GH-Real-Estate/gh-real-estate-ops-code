@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Official updates</title>
+  <entry>
+    <id>tag:official.example,2026:notice-1</id>
+    <title>Official notice one</title>
+    <updated>2026-07-13T14:30:00-05:00</updated>
+    <link rel="self" href="https://www.govinfo.gov/api/notice-1" />
+    <link rel="alternate" href="https://www.govinfo.gov/app/details/NOTICE-1" />
+  </entry>
+  <entry>
+    <id>tag:untrusted.example,2026:notice-2</id>
+    <title>Offsite notice</title>
+    <updated>2026-07-13T20:00:00Z</updated>
+    <link rel="alternate" href="https://malicious.invalid/notice-2" />
+  </entry>
+</feed>

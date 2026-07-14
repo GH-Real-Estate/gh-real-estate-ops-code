@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "allowed_domains": [
+    "fasb.org",
+    "www.fasb.org",
+    "storage.fasb.org",
+    "irs.gov",
+    "www.irs.gov",
+    "home.treasury.gov",
+    "ksrevenue.gov",
+    "www.ksrevenue.gov"
+  ],
+  "sources": [
+    {
+      "source_id": "fasb-accounting-standards-updates",
+      "publisher": "Financial Accounting Standards Board (FASB)",
+      "jurisdiction": "United States",
+      "authority_type": "gaap-change-notice",
+      "discovery_url": "https://www.fasb.org/standards/accounting-standard-updates",
+      "adapter": "fasb_asu_index",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": true,
+      "minimum_items": 10,
+      "allowed_hosts": [
+        "fasb.org",
+        "www.fasb.org",
+        "storage.fasb.org"
+      ],
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    },
+    {
+      "source_id": "fasb-effective-dates",
+      "publisher": "Financial Accounting Standards Board (FASB)",
+      "jurisdiction": "United States",
+      "authority_type": "gaap-effective-date-index",
+      "discovery_url": "https://www.fasb.org/standards/accounting-standard-updated-effective-date",
+      "adapter": "fasb_effective_dates",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": true,
+      "minimum_items": 2,
+      "allowed_hosts": [
+        "fasb.org",
+        "www.fasb.org",
+        "storage.fasb.org"
+      ],
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    },
+    {
+      "source_id": "fasb-current-projects",
+      "publisher": "Financial Accounting Standards Board (FASB)",
+      "jurisdiction": "United States",
+      "authority_type": "gaap-project-monitoring",
+      "discovery_url": "https://www.fasb.org/projects/current-projects",
+      "adapter": "fasb_project_index",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": false,
+      "minimum_items": 5,
+      "allowed_hosts": [
+        "fasb.org",
+        "www.fasb.org",
+        "storage.fasb.org"
+      ],
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    },
+    {
+      "source_id": "fasb-taxonomy-resources",
+      "publisher": "Financial Accounting Standards Board (FASB)",
+      "jurisdiction": "United States",
+      "authority_type": "financial-reporting-taxonomy",
+      "discovery_url": "https://www.fasb.org/projects/fasb-taxonomies",
+      "adapter": "fasb_taxonomy_index",
+      "storage_policy": "metadata-only",
+      "cadence": "weekly",
+      "critical": false,
+      "minimum_items": 2,
+      "allowed_hosts": [
+        "fasb.org",
+        "www.fasb.org",
+        "storage.fasb.org"
+      ],
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    },
+    {
+      "source_id": "irs-internal-revenue-bulletins",
+      "publisher": "Internal Revenue Service",
+      "jurisdiction": "United States",
+      "authority_type": "federal-tax-administrative-guidance",
+      "discovery_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
+      "adapter": "irs_irb_index",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": true,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "irs.gov",
+        "www.irs.gov"
+      ],
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    },
+    {
+      "source_id": "treasury-accounting-and-tax-releases",
+      "publisher": "United States Department of the Treasury",
+      "jurisdiction": "United States",
+      "authority_type": "federal-tax-and-financial-announcement",
+      "discovery_url": "https://home.treasury.gov/news/press-releases",
+      "adapter": "treasury_press_index",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": false,
+      "missing_detection": "rolling-window",
+      "allowed_hosts": [
+        "home.treasury.gov"
+      ],
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    },
+    {
+      "source_id": "kansas-revenue-current-tax-notices",
+      "publisher": "Kansas Department of Revenue",
+      "jurisdiction": "Kansas",
+      "authority_type": "state-tax-administrative-guidance",
+      "discovery_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
+      "adapter": "kansas_revenue_index",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": true,
+      "minimum_items": 2,
+      "allowed_hosts": [
+        "ksrevenue.gov",
+        "www.ksrevenue.gov"
+      ],
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    },
+    {
+      "source_id": "kansas-revenue-prior-tax-notices",
+      "publisher": "Kansas Department of Revenue",
+      "jurisdiction": "Kansas",
+      "authority_type": "state-tax-administrative-guidance-archive",
+      "discovery_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
+      "adapter": "kansas_revenue_index",
+      "storage_policy": "metadata-only",
+      "cadence": "weekly",
+      "critical": false,
+      "minimum_items": 5,
+      "allowed_hosts": [
+        "ksrevenue.gov",
+        "www.ksrevenue.gov"
+      ],
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    },
+    {
+      "source_id": "kansas-revenue-policy-library",
+      "publisher": "Kansas Department of Revenue",
+      "jurisdiction": "Kansas",
+      "authority_type": "state-tax-policy-library-index",
+      "discovery_url": "https://www.ksrevenue.gov/prpil.html",
+      "adapter": "official_index",
+      "storage_policy": "metadata-only",
+      "cadence": "weekly",
+      "critical": false,
+      "minimum_items": 5,
+      "allowed_hosts": [
+        "ksrevenue.gov",
+        "www.ksrevenue.gov"
+      ],
+      "match": {
+        "path_prefixes": [
+          "/taxnotices/",
+          "/taxrulings/",
+          "/pdf/"
+        ],
+        "title_patterns": [
+          "Notice\\s+\\d",
+          "Revenue\\s+Ruling\\s+",
+          "Directive\\s+\\d",
+          "Information\\s+Guide"
+        ]
+      },
+      "request": {
+        "max_bytes": 5000000,
+        "accept": "text/html,application/xhtml+xml"
+      }
+    }
+  ]
+}

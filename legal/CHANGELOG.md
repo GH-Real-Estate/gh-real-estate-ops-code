@@ -1,5 +1,14 @@
 # Legal authority library changelog
 
+## 2026-07-13 - Add governed official-index discovery
+
+- Added a daily, allowlisted discovery layer covering 13 legal publisher indexes to complement the existing weekly approved-source hash monitor.
+- Added fail-closed `current`, `review_required`, and `degraded` discovery states, rolling-window feed semantics, draft candidate pull requests, structured review evidence, and a protected evidence-promotion gate.
+- Documented the optional noncritical Congress API key, the Kansas Secretary of State linked-rules manual gap, and the City Clerk control over the City-linked Overland Park electronic-code copy.
+- Required qualified legal review, official evidence, effective-date analysis, and a complete dated release before any discovered change can affect approved legal material or operations.
+
+This automation change does not modify, reapprove, or advance the July 12, 2026 legal release.
+
 ## 2026-07-13 - Repair official-source monitoring semantics
 
 - Corrected the monitor to compare official archived payloads with `source_archive_sha256` instead of comparing XML/HTML bytes with rendered-PDF hashes.
@@ -8,6 +17,8 @@
 - Added explicit availability-only policies for five non-byte-comparable derived sources without changing any approved legal-release hash or authority status.
 - Added source-monitor regression tests and live pull-request verification for future monitor changes.
 - Hardened failure publication with explicit repository targeting, default-branch-only issue writes, serialized runs, atomic report replacement, bounded issue summaries, and fallback reports for pre-monitor or missing-artifact failures.
+- Restricted monitor requests and redirects to exact governed HTTPS/443 hosts, rejected credentials and HTTPS downgrades before following redirects, and revalidated every final response URL before reading content.
+- Stopped fetching the two exact legacy KHRC HTTP sources; they remain explicit offline manual gaps without making every scheduled run fail, while any other insecure URL fails closed.
 - Added retry handling for incomplete HTTP responses and corrected reported attempt counts for permanent failures.
 - Made connector-text size validation independent of Windows CRLF checkout conversion without changing committed source text.
 - Documented that fixed official URLs verify registered payloads but do not discover new editions, superseding sources, or later case history.

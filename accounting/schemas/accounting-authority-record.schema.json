@@ -1,0 +1,737 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/blob/main/accounting/schemas/accounting-authority-record.schema.json",
+  "title": "GH Real Estate accounting authority record",
+  "description": "Governed accounting, tax, or financial-reporting authority record. A locator or automated alert is not an accounting conclusion and never establishes US GAAP compliance.",
+  "$comment": "There is intentionally no compliant or is_compliant property. Exact FASB paragraphs are outside this schema and require authorized live research.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "domain",
+    "title",
+    "framework",
+    "authority_type",
+    "authority_weight",
+    "official_url",
+    "applicability",
+    "currentness",
+    "dates",
+    "provenance",
+    "licensing",
+    "review",
+    "impact_domains"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "external_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "domain": {
+      "const": "accounting"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "framework": {
+      "enum": [
+        "us-gaap",
+        "federal-tax",
+        "kansas-tax",
+        "kansas-public-law",
+        "local-public-law",
+        "signed-agreement",
+        "gh-accounting-policy",
+        "zoho-configuration"
+      ]
+    },
+    "authority_type": {
+      "enum": [
+        "fasb-codification-topic-locator",
+        "accounting-standards-update",
+        "fasb-project-page",
+        "fasb-effective-date-material",
+        "fasb-taxonomy-release",
+        "fasb-official-notice",
+        "statute",
+        "regulation",
+        "revenue-ruling-or-procedure",
+        "official-tax-form-or-instruction",
+        "official-tax-guidance",
+        "state-or-local-guidance",
+        "signed-agreement",
+        "original-gh-analysis",
+        "internal-accounting-policy",
+        "system-configuration"
+      ]
+    },
+    "authority_weight": {
+      "enum": [
+        "authoritative-source-locator",
+        "authoritative-public-law",
+        "official-standards-communication",
+        "official-project-information",
+        "official-tax-guidance",
+        "nonauthoritative-original-analysis",
+        "contractual-evidence",
+        "internal-policy",
+        "system-configuration",
+        "superseded",
+        "informational"
+      ]
+    },
+    "official_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "topic_locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic"
+      ],
+      "properties": {
+        "topic": {
+          "type": "string",
+          "pattern": "^ASC [0-9]{3}$",
+          "description": "Topic-level locator only. Do not place subtopic, section, or paragraph identifiers here."
+        },
+        "research_sections": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "00",
+              "05",
+              "10",
+              "15",
+              "20",
+              "25",
+              "30",
+              "35",
+              "40",
+              "45",
+              "50",
+              "55",
+              "60",
+              "65",
+              "75"
+            ]
+          },
+          "description": "Section categories to research through authorized access; not paragraph citations."
+        }
+      }
+    },
+    "applicability": {
+      "$ref": "#/$defs/applicability"
+    },
+    "currentness": {
+      "$ref": "#/$defs/currentness"
+    },
+    "dates": {
+      "$ref": "#/$defs/accountingDates"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "licensing": {
+      "$ref": "#/$defs/licensing"
+    },
+    "review": {
+      "$ref": "#/$defs/review"
+    },
+    "implementation": {
+      "$ref": "#/$defs/implementation"
+    },
+    "impact_domains": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "financial-statement-presentation",
+          "cash-and-restricted-cash",
+          "receivables-and-credit-losses",
+          "tenant-deposits-and-liabilities",
+          "property-and-depreciation",
+          "debt-and-interest",
+          "lease-accounting-and-rent",
+          "fees-and-other-income",
+          "contingencies-and-legal-matters",
+          "related-parties-and-owner-equity",
+          "tax-basis-and-book-tax-differences",
+          "vendor-and-information-reporting",
+          "business-combinations-and-entity-structure",
+          "software-and-intangibles",
+          "fair-value-and-financial-instruments",
+          "disclosures-and-subsequent-events",
+          "zoho-books-configuration"
+        ]
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Publisher-specific facts retained separately from GH applicability and review decisions.",
+      "additionalProperties": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "authority_type": {
+            "const": "fasb-codification-topic-locator"
+          }
+        },
+        "required": [
+          "authority_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "topic_locator"
+        ],
+        "properties": {
+          "framework": {
+            "const": "us-gaap"
+          },
+          "authority_weight": {
+            "const": "authoritative-source-locator"
+          },
+          "licensing": {
+            "properties": {
+              "rights_status": {
+                "const": "metadata-link-only"
+              },
+              "storage_class": {
+                "const": "link-and-topic-locator-only"
+              },
+              "codification_text_status": {
+                "const": "not-stored"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "currentness": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "reviewed-applicable",
+                  "reviewed-not-applicable",
+                  "effective-pending",
+                  "implemented"
+                ]
+              }
+            },
+            "required": [
+              "state"
+            ]
+          }
+        },
+        "required": [
+          "currentness"
+        ]
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              },
+              "decision": {
+                "enum": [
+                  "applicable",
+                  "not-applicable",
+                  "effective-pending",
+                  "approved-for-implementation"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "currentness": {
+            "properties": {
+              "state": {
+                "const": "implemented"
+              }
+            },
+            "required": [
+              "state"
+            ]
+          }
+        },
+        "required": [
+          "currentness"
+        ]
+      },
+      "then": {
+        "required": [
+          "implementation"
+        ],
+        "properties": {
+          "implementation": {
+            "properties": {
+              "status": {
+                "const": "implemented-and-verified"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "entity_scope",
+        "trigger_facts",
+        "conclusion_basis"
+      ],
+      "properties": {
+        "classification": {
+          "enum": [
+            "baseline",
+            "transaction-triggered",
+            "future-structure",
+            "currently-not-applicable",
+            "under-review"
+          ]
+        },
+        "entity_scope": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "reporting_period": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "trigger_facts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "conclusion_basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "private_company_review": {
+          "enum": [
+            "required",
+            "not-required",
+            "not-yet-determined"
+          ]
+        }
+      }
+    },
+    "currentness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "basis",
+        "last_checked_at",
+        "current_through",
+        "next_review_on"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "discovered",
+            "locator-mapped-dated-baseline",
+            "official-change-detected",
+            "awaiting-cpa-review",
+            "reviewed-applicable",
+            "reviewed-not-applicable",
+            "effective-pending",
+            "implemented",
+            "source-unavailable",
+            "review-overdue",
+            "superseded",
+            "rejected"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "last_checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "current_through": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "next_review_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "accountingDates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "published_on",
+        "effective_on",
+        "early_adoption_on",
+        "superseded_on"
+      ],
+      "properties": {
+        "published_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "effective_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "early_adoption_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "superseded_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "date_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publisher",
+        "source_url",
+        "retrieval_method",
+        "retrieved_at",
+        "publisher_status"
+      ],
+      "properties": {
+        "publisher": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "final_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "source_identifier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300
+        },
+        "retrieval_method": {
+          "enum": [
+            "official-api",
+            "official-feed",
+            "official-download",
+            "official-html",
+            "manual-authorized-research",
+            "link-only"
+          ]
+        },
+        "retrieved_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "evidence_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "publisher_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300,
+          "description": "Raw publisher label; not a GH applicability or currentness conclusion."
+        }
+      }
+    },
+    "licensing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rights_status",
+        "storage_class",
+        "codification_text_status",
+        "redistribution_status",
+        "basis",
+        "last_reviewed_on"
+      ],
+      "properties": {
+        "rights_status": {
+          "enum": [
+            "public-domain-us-government",
+            "public-record-reproduction-permitted",
+            "permission-granted",
+            "licensed-internal-use-only",
+            "metadata-link-only",
+            "original-gh-content",
+            "unknown-review-required"
+          ]
+        },
+        "storage_class": {
+          "enum": [
+            "official-public-source-permitted",
+            "original-analysis-permitted",
+            "link-and-topic-locator-only",
+            "hash-and-metadata-only",
+            "metadata-and-link-only",
+            "no-repository-storage"
+          ]
+        },
+        "codification_text_status": {
+          "enum": [
+            "not-stored",
+            "not-applicable",
+            "permission-required-before-storage"
+          ]
+        },
+        "redistribution_status": {
+          "enum": [
+            "permitted",
+            "permitted-with-attribution",
+            "internal-use-only",
+            "not-permitted",
+            "unknown-do-not-redistribute"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "terms_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "last_reviewed_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "required_role",
+        "decision",
+        "reviewed_at"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "unreviewed",
+            "review-requested",
+            "in-review",
+            "changes-requested",
+            "approved",
+            "rejected",
+            "review-overdue"
+          ]
+        },
+        "required_role": {
+          "enum": [
+            "cpa-or-qualified-accounting-reviewer",
+            "tax-professional",
+            "kansas-counsel",
+            "records-and-licensing-reviewer",
+            "dual-accounting-and-legal-review",
+            "dual-accounting-and-licensing-review"
+          ]
+        },
+        "decision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "applicable",
+            "not-applicable",
+            "effective-pending",
+            "approved-for-implementation",
+            "approve-as-locator-only",
+            "reject-not-authoritative",
+            "reject-out-of-scope",
+            "reject-licensing",
+            "defer-missing-facts",
+            null
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "review_evidence_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        }
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "repository_paths",
+        "verified_at"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not-assessed",
+            "impact-assessed",
+            "implementation-required",
+            "implementation-in-progress",
+            "implemented-unverified",
+            "implemented-and-verified",
+            "no-system-change-required"
+          ]
+        },
+        "repository_paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+          }
+        },
+        "verified_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "verification_evidence_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        }
+      }
+    }
+  }
+}

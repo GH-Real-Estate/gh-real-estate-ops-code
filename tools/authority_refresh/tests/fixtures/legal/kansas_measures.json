@@ -1,0 +1,41 @@
+{
+  "count": 4,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "bill_no": "HB2001",
+      "short_title": "Residential rental housing amendments",
+      "leg_type": "bill",
+      "session": "2026",
+      "version": "enrolled",
+      "rev_date": "2026-07-11T10:00:00-05:00",
+      "status": "signed"
+    },
+    {
+      "bill_no": "HB2001",
+      "short_title": "Duplicate residential rental housing amendments",
+      "leg_type": "bill",
+      "session": "2026",
+      "version": "enrolled",
+      "rev_date": "2026-07-11T10:00:00-05:00",
+      "status": "signed"
+    },
+    {
+      "bill_no": "SB33",
+      "long_title": "An act concerning consumer protection",
+      "leg_type": "bill",
+      "session": "2026",
+      "doc_type": "introduced",
+      "rev_date": "not-a-date",
+      "status": "introduced",
+      "web_url": "https://www.kslegislature.gov/li/b2025_26/measures/sb33/"
+    },
+    {
+      "bill_no": "HB9999",
+      "short_title": "Offsite mirror",
+      "version": "introduced",
+      "web_url": "https://example.invalid/hb9999"
+    }
+  ]
+}

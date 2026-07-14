@@ -5,20 +5,28 @@ on:
     - cron: '41 13 1 * *'
   workflow_dispatch:
 
+concurrency:
+  group: accounting-authority-review-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: read
-  issues: write
 
 jobs:
   review-calendar:
     name: Check FASB and accounting-authority review dates
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      review_outcome: ${{ steps.review.outcome }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: '3.x'
 
@@ -30,30 +38,113 @@ jobs:
             --json-report accounting-review-due.json \
             --markdown-report accounting-review-due.md
 
+      - name: Ensure failure reports exist
+        if: always()
+        shell: bash
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ARTIFACT_NAME: accounting-authority-review-${{ github.run_id }}
+        run: |
+          if [[ ! -s accounting-review-due.json ]]; then
+            printf '%s\n' '{"checked_at":null,"status":"degraded","notice":"Review calendar failed before report generation.","due":[]}' > accounting-review-due.json
+          fi
+          if [[ ! -s accounting-review-due.md ]] ||
+            [[ $(wc -c < accounting-review-due.md) -gt 60000 ]]; then
+            printf '%s\n' \
+              '# Accounting authority review workflow failure' \
+              '' \
+              'The review-calendar job failed before producing a complete report.' \
+              '' \
+              "- Workflow run: $RUN_URL" \
+              "- Expected artifact: $ARTIFACT_NAME" \
+              '' \
+              '> Treat the accounting review calendar as unverified until this run is reviewed.' \
+              > accounting-review-due.md
+          fi
+
       - name: Upload review report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: accounting-authority-review-${{ github.run_id }}
           path: |
             accounting-review-due.json
             accounting-review-due.md
           retention-days: 90
-
-      - name: Open or update accounting-review issue
-        if: steps.review.outcome == 'failure'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          title='ACCOUNTING REVIEW REQUIRED: FASB or accounting authority review is due'
-          existing="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
-          if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body-file accounting-review-due.md
-          else
-            gh issue create --title "$title" --body-file accounting-review-due.md
-          fi
+          if-no-files-found: error
 
       - name: Fail after preserving report
         if: steps.review.outcome == 'failure'
         run: exit 1
 
+  publish-accounting-review:
+    name: Publish accounting review issue
+    needs: review-calendar
+    if: >-
+      ${{
+        always() &&
+        github.ref == format('refs/heads/{0}', github.event.repository.default_branch) &&
+        (
+          needs.review-calendar.result == 'failure' ||
+          needs.review-calendar.outputs.review_outcome == 'failure'
+        )
+      }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: read
+      issues: write
+    steps:
+      - name: Download review report
+        id: download-report
+        continue-on-error: true
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: accounting-authority-review-${{ github.run_id }}
+          path: .
+
+      - name: Ensure publishable issue summary exists
+        if: always()
+        shell: bash
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ARTIFACT_NAME: accounting-authority-review-${{ github.run_id }}
+        run: |
+          if [[ ! -s accounting-review-due.md ]] ||
+            [[ $(wc -c < accounting-review-due.md) -gt 60000 ]]; then
+            printf '%s\n' \
+              '# Accounting authority review workflow failure' \
+              '' \
+              'The review job failed and its report artifact could not be downloaded.' \
+              '' \
+              "- Workflow run: $RUN_URL" \
+              "- Expected artifact: $ARTIFACT_NAME" \
+              '' \
+              '> Treat the accounting review calendar as unverified until this run is reviewed.' \
+              > accounting-review-due.md
+          fi
+
+      - name: Open or update accounting-review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title='ACCOUNTING REVIEW REQUIRED: FASB or accounting authority review is due'
+          existing="$(
+            gh issue list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --search "$title in:title" \
+              --json number \
+              --jq '.[0].number // empty'
+          )"
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body-file accounting-review-due.md
+          else
+            gh issue create \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$title" \
+              --body-file accounting-review-due.md
+          fi
