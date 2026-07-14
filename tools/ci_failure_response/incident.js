@@ -22,6 +22,7 @@ const INCIDENT_CONCLUSIONS = new Set([
 const RECOVERY_CONCLUSION = "success";
 const INCIDENT_LABEL = "ci-incident";
 const ATTENTION_LABEL = "codex-attention";
+const INCIDENT_PUBLISHER = "github-actions[bot]";
 const MARKER_VERSION = "v1";
 
 function oneLine(value, maxLength = 160) {
@@ -243,7 +244,12 @@ async function findIncident(github, owner, repo, key) {
     per_page: 100,
   });
   const marker = incidentMarker(key);
-  return issues.find((issue) => !issue.pull_request && String(issue.body || "").includes(marker)) || null;
+  return issues.find(
+    (issue) =>
+      !issue.pull_request &&
+      oneLine(issue.user?.login, 80).toLowerCase() === INCIDENT_PUBLISHER &&
+      String(issue.body || "").includes(marker),
+  ) || null;
 }
 
 async function hasNewerSuccessfulRun(github, owner, repo, run, core) {
