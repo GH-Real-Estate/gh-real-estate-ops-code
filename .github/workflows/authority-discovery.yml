@@ -2,7 +2,7 @@ name: Authority Discovery
 
 on:
   schedule:
-    - cron: '17 11 * * *'
+    - cron: '17 11 * * 0'
   workflow_dispatch:
 
 concurrency:
@@ -134,7 +134,7 @@ jobs:
             authority-refresh-output/${{ matrix.domain }}-candidate.json
             authority-refresh-output/${{ matrix.domain }}-candidate.md
             authority-refresh-output/${{ matrix.domain }}-candidate-issue.md
-          retention-days: 90
+          retention-days: 14
           if-no-files-found: error
 
       - name: Fail after preserving non-current evidence
