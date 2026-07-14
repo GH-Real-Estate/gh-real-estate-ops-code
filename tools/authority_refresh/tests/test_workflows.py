@@ -14,10 +14,18 @@ def workflow(name: str) -> str:
 
 
 class AuthorityWorkflowContractTests(unittest.TestCase):
-    def test_refresh_checks_run_validator_and_complete_test_suite(self):
+    def test_refresh_checks_keep_required_name_and_fail_open_path_gating(self):
         content = workflow("authority-refresh-checks.yml")
+        self.assertIn("name: Validate authority refresh controls", content)
         self.assertIn("fetch-depth: 0", content)
         self.assertIn("workflow_dispatch:", content)
+        self.assertIn("id: scope", content)
+        self.assertIn("continue-on-error: true", content)
+        self.assertIn('echo "run_full=true" >> "$GITHUB_OUTPUT"', content)
+        self.assertIn("git diff --name-only --no-renames -z", content)
+        self.assertIn("authority/*|tools/authority_refresh/*", content)
+        self.assertIn("Confirm unrelated pull request", content)
+        self.assertEqual(content.count("steps.scope.outputs.run_full != 'false'"), 3)
         self.assertIn("python tools/authority_refresh/validate_system.py", content)
         self.assertIn("python -m unittest discover -s tools/authority_refresh/tests", content)
         self.assertIn("permissions:\n  contents: read", content)
@@ -27,9 +35,11 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
         self.assertNotIn("paths:", pull_request_section)
         self.assertIn("paths:", push_section)
 
-    def test_discovery_is_daily_manual_and_read_only_until_publish(self):
+    def test_discovery_is_weekly_manual_and_read_only_until_publish(self):
         content = workflow("authority-discovery.yml")
-        self.assertRegex(content, r"cron: ['\"]17 11 \* \* \*['\"]")
+        self.assertRegex(content, r"cron: ['\"]17 11 \* \* 0['\"]")
+        self.assertIn("retention-days: 14", content)
+        self.assertNotIn("retention-days: 90", content)
         self.assertIn("workflow_dispatch:", content)
         scan, publisher = content.split("\n  publish:\n", maxsplit=1)
         self.assertIn("\n  scan:\n", scan)
@@ -205,6 +215,8 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
         )
         self.assertIn("if-no-files-found: error", scan)
         self.assertRegex(content, r"timeout-minutes: 10")
+        self.assertIn("retention-days: 14", content)
+        self.assertNotIn("retention-days: 90", content)
 
     def test_authority_workflows_do_not_contain_automatic_merge_commands(self):
         for name in (
@@ -218,11 +230,30 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
                 self.assertNotIn("enablepullrequestautomerge", content)
                 self.assertIsNone(re.search(r"\bauto-?merge\b", content))
 
-    def test_repo_checks_support_explicit_bot_branch_dispatch(self):
+    def test_repo_checks_are_main_only_and_fail_open_by_changed_path(self):
         content = workflow("repo-checks.yml")
         self.assertIn("workflow_dispatch:", content)
         self.assertIn("permissions:\n  contents: read", content)
         self.assertNotIn("actions: write", content)
+        self.assertNotIn("codex/**", content)
+        self.assertIn("name: Safety scan", content)
+        self.assertIn("name: Zillow lead intake checks", content)
+        self.assertIn("name: Returned fee webhook checks", content)
+        self.assertIn("fetch-depth: 0", content)
+        self.assertIn("continue-on-error: true", content)
+        self.assertIn("'run_zillow=true' 'run_returned=true'", content)
+        self.assertIn("git diff --name-only --no-renames -z", content)
+        self.assertIn("src/zoho-crm/integrations/zillow-lead-intake/*", content)
+        self.assertIn("src/zoho-payments/webhooks/returned-payment-fee/*", content)
+        self.assertEqual(content.count("needs: safety-scan"), 2)
+        self.assertIn(
+            "always() && !cancelled() && needs.safety-scan.outputs.run_zillow != 'false'",
+            content,
+        )
+        self.assertIn(
+            "always() && !cancelled() && needs.safety-scan.outputs.run_returned != 'false'",
+            content,
+        )
 
     def test_official_actions_are_pinned_to_immutable_commits(self):
         mutable_reference = re.compile(r"uses:\s+actions/[^@\s]+@(?![0-9a-f]{40}(?:\s|$))")
