@@ -69,6 +69,16 @@ This is a business-operations repo. Treat rent, invoice, payment, lease, tenant,
 - Do not make cosmetic-only changes unless requested.
 - Do not introduce unnecessary frameworks, services, or abstractions.
 
+## Document Drafting and Typography Standard
+
+- Before creating or materially revising any user-facing document, read and follow `docs/standards/document-drafting-standard.md` and its machine-readable profile.
+- This applies to legal documents and all other GH Real Estate drafting artifacts, including DOCX, PDF, notices, letters, policies, forms, reports, checklists, presentations, Zoho templates, and web/application copy.
+- Use Apple's San Francisco appearance only when the Apple operating system/application supplies it natively or a separate license expressly permits the use. Never add, upload, redistribute, or embed Apple SF font binaries.
+- Use Inter as the production font for ordinary legal, business, cross-platform, Word, PDF, and Zoho documents.
+- Plain-text chat and Markdown cannot force the viewer's font; any downloadable or rendered artifact created from that content must follow the standard.
+- Mandatory legal forms, exact statutory language, accessibility requirements, and attorney-approved formatting override the brand standard.
+- Render and visually inspect every page of a final DOCX or PDF before delivery.
+
 ## Default GitHub Code-Change Workflow
 
 When Codex/ChatGPT changes code, scripts, workflow files, configuration, tests, or production-relevant operational docs in this GitHub repo, the default is end-to-end completion:
