@@ -23,7 +23,7 @@ For covered target housing, no named lessee may receive a binding lease-signatur
 | Lead Applicability | Compliance / Creator | `Covered` or `Exempt` | Blank or unresolved defaults to Covered |
 | Lead Record ID | Compliance / Contracts | Matching transaction record ID | Property, unit, leasing period, and named lessees must match this lease |
 | Lead Record Status | Compliance workflow | `Completed` or `Approved Exempt` | All other states block create/send/signature actions |
-| Lead Completion Timestamp | Compliance workflow | Immutable timestamp | Must precede every named lessee's binding lease-signature timestamp |
+| Lead Completion Timestamp | Compliance workflow | Nonblank immutable timestamp | Signature action remains disabled until present; audit later confirms it precedes each binding lease signature |
 | Lead Exemption Approval | Legal review | Attorney approval reference | Required only for Approved Exempt |
 | Lead Recipient Reconciliation | Sign / Contracts | Exact match | Named lessees, disclosure recipients, acknowledgments, and certifications must be the same set |
 | Lead Audit / Archive ID | Sign / WorkDrive | Nonblank immutable record | Required before release |
@@ -38,7 +38,8 @@ lease_signature_enabled =
     AND lead_record.property_id == lease.property_id
     AND lead_record.unit_id == lease.unit_id
     AND lead_record.named_lessees == lease.named_lessees
-    AND lead_record.completion_timestamp < lease.earliest_binding_signature_timestamp
+    AND lead_record.completion_timestamp IS NOT BLANK
+    AND lead_record.audit_id IS NOT BLANK
   )
   OR
   (
@@ -47,5 +48,7 @@ lease_signature_enabled =
     AND lead_record.exemption_counsel_approval IS NOT BLANK
   )
 ```
+
+After execution, the audit must prove that `lead_record.completion_timestamp` preceded every named lessee's binding lease-signature timestamp.
 
 If Zoho cannot enforce field and document order inside a single transaction, complete a standalone lead-disclosure transaction first and create/send the lease transaction only after the first transaction passes this gate. Do not rely on a later lessor countersignature to cure late disclosure.
