@@ -37,7 +37,7 @@ jobs:
           set -euo pipefail
 
           # Fail open: missing or invalid event/diff data must run both suites.
-          printf '%s\\n' 'run_zillow=true' 'run_returned=true' >> "$GITHUB_OUTPUT"
+          printf '%s\n' 'run_zillow=true' 'run_returned=true' >> "$GITHUB_OUTPUT"
 
           case "$EVENT_NAME" in
             workflow_dispatch)
@@ -95,8 +95,8 @@ jobs:
             esac
           done < "$changed_paths"
 
-          printf 'run_zillow=%s\\n' "$run_zillow" >> "$GITHUB_OUTPUT"
-          printf 'run_returned=%s\\n' "$run_returned" >> "$GITHUB_OUTPUT"
+          printf 'run_zillow=%s\n' "$run_zillow" >> "$GITHUB_OUTPUT"
+          printf 'run_returned=%s\n' "$run_returned" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
