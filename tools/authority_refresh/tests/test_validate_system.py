@@ -264,6 +264,31 @@ def build_valid_workspace(root: Path) -> None:
         )
         for index in range(13)
     ]
+    kansas_article_25 = source(
+        validate_system.KANSAS_ARTICLE_25_SOURCE_ID,
+        publisher="Kansas Legislature",
+        host="www.kslegislature.gov",
+        path="laws/058_000_0000_chapter/058_025_0000_article/",
+    )
+    kansas_article_25.update(
+        {
+            "authority_type": "state-statute-current-index",
+            "discovery_url": validate_system.KANSAS_ARTICLE_25_DISCOVERY_URL,
+            "adapter": "official_html_index",
+            "critical": True,
+            "missing_detection": "complete-index",
+            "minimum_items": 90,
+            "maximum_items": 150,
+            "minimum_baseline_ratio": 0.9,
+            "link_filter": {
+                "include_patterns": [
+                    validate_system.KANSAS_ARTICLE_25_LINK_PATTERN
+                ],
+                "exclude_patterns": [],
+            },
+        }
+    )
+    legal_sources.append(kansas_article_25)
     accounting_sources = [
         source(
             "fasb-public-notices",
@@ -283,7 +308,13 @@ def build_valid_workspace(root: Path) -> None:
     write_json(
         root,
         "tools/authority_refresh/config/legal_sources.json",
-        {"allowed_domains": ["official.example.gov"], "sources": legal_sources},
+        {
+            "allowed_domains": [
+                "official.example.gov",
+                "www.kslegislature.gov",
+            ],
+            "sources": legal_sources,
+        },
     )
     write_json(
         root,
@@ -653,6 +684,36 @@ class ValidateSystemTests(unittest.TestCase):
 
             self.assertTrue(report.ok, "\n".join(report.errors))
             self.assertGreater(report.checks, 50)
+
+    def test_rejects_drift_in_kansas_article_25_monitor_contract(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            catalog_path = "tools/authority_refresh/config/legal_sources.json"
+            catalog = read_json(root, catalog_path)
+            monitor = next(
+                item
+                for item in catalog["sources"]
+                if item["source_id"]
+                == validate_system.KANSAS_ARTICLE_25_SOURCE_ID
+            )
+            monitor["allowed_hosts"] = [
+                "www.kslegislature.gov",
+                "official.example.gov",
+            ]
+            monitor["maximum_items"] = 500
+            monitor["link_filter"] = {
+                "include_patterns": ["058_025"],
+                "exclude_patterns": [],
+            }
+            write_json(root, catalog_path, catalog)
+
+            report = validate_system.validate_repository(root)
+
+            messages = "\n".join(report.errors)
+            self.assertIn("allowed_hosts must be", messages)
+            self.assertIn("maximum_items must be 150", messages)
+            self.assertIn("link_filter must be", messages)
 
     def test_rejects_paragraph_locator_and_automatic_change(self):
         with workspace_temp_directory() as directory:

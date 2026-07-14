@@ -40,7 +40,17 @@ except ImportError:  # pragma: no cover - exercised by the workflow command.
     )
 
 
-EXPECTED_SOURCE_COUNTS = {"legal": 13, "accounting": 9}
+EXPECTED_SOURCE_COUNTS = {"legal": 14, "accounting": 9}
+KANSAS_ARTICLE_25_SOURCE_ID = "kansas-chapter-58-article-25-index"
+KANSAS_ARTICLE_25_DISCOVERY_URL = (
+    "https://www.kslegislature.gov/laws/058_000_0000_chapter/"
+    "058_025_0000_article/"
+)
+KANSAS_ARTICLE_25_LINK_PATTERN = (
+    r"^https://www\.kslegislature\.gov/b[0-9]{4}_[0-9]{2}/"
+    r"laws/058_000_0000_chapter/058_025_0000_article/"
+    r"(058_025_[0-9a-z]+)_section/\1_k/?$"
+)
 EXPECTED_WORKFLOWS = {
     "checks": Path(".github/workflows/authority-refresh-checks.yml"),
     "discovery": Path(".github/workflows/authority-discovery.yml"),
@@ -262,6 +272,49 @@ def _validate_status(
     return status
 
 
+def _validate_kansas_article_25_source(
+    sources: list[dict[str, Any]],
+    label: str,
+    report: ValidationReport,
+) -> None:
+    """Keep the stable Kansas index monitor bounded and review-only."""
+
+    source = next(
+        (
+            value
+            for value in sources
+            if value.get("source_id") == KANSAS_ARTICLE_25_SOURCE_ID
+        ),
+        None,
+    )
+    report.require(
+        source is not None,
+        f"{label}: required source {KANSAS_ARTICLE_25_SOURCE_ID} is missing",
+    )
+    if source is None:
+        return
+    expected = {
+        "discovery_url": KANSAS_ARTICLE_25_DISCOVERY_URL,
+        "adapter": "official_html_index",
+        "storage_policy": "metadata-only",
+        "critical": True,
+        "missing_detection": "complete-index",
+        "minimum_items": 90,
+        "maximum_items": 150,
+        "minimum_baseline_ratio": 0.9,
+        "allowed_hosts": ["www.kslegislature.gov"],
+        "link_filter": {
+            "include_patterns": [KANSAS_ARTICLE_25_LINK_PATTERN],
+            "exclude_patterns": [],
+        },
+    }
+    for field, value in expected.items():
+        report.require(
+            source.get(field) == value,
+            f"{label}: {KANSAS_ARTICLE_25_SOURCE_ID}.{field} must be {value!r}",
+        )
+
+
 def _validate_catalogs(root: Path, report: ValidationReport) -> None:
     for domain, expected_count in EXPECTED_SOURCE_COUNTS.items():
         path = root / "tools" / "authority_refresh" / "config" / f"{domain}_sources.json"
@@ -298,6 +351,8 @@ def _validate_catalogs(root: Path, report: ValidationReport) -> None:
                 f"{label}: complete-index source {source_id} must retain at least "
                 f"{DEFAULT_COMPLETE_INDEX_BASELINE_RATIO:.0%} baseline coverage",
             )
+        if domain == "legal":
+            _validate_kansas_article_25_source(sources, label, report)
         if domain != "accounting":
             continue
         fasb_sources = []

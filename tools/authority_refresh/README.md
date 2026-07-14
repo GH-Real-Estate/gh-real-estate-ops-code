@@ -9,6 +9,10 @@ changes without modifying approved authority content.
 - Source payloads are bounded and redirects are revalidated.
 - Complete indexes require explicit bootstrap item floors and at least 80% of the
   prior approved source-item count before they can assert that an item is missing.
+- The Kansas Chapter 58 Article 25 monitor follows the Legislature's stable current
+  URL, accepts only redirected Article 25 section links, and fails closed outside
+  its 90-to-150-item boundary. Its metadata is discovery evidence for human review,
+  never an automatic legal-currentness or promotion decision.
 - Per-source, per-domain, candidate JSON, and report byte ceilings fail closed before
   write-enabled publication, preventing malformed indexes from bloating the repository.
 - Accounting sources carry explicit storage policies; current FASB indexes are

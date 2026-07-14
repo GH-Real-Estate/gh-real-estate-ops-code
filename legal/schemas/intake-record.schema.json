@@ -1,0 +1,342 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/blob/main/legal/schemas/intake-record.schema.json",
+  "title": "GH Real Estate legal intake evidence record",
+  "description": "Metadata-only evidence for a user-provided legal document. Intake records are excluded from the approved current-law release until a separate qualified review and complete release process occurs.",
+  "$comment": "This schema intentionally cannot represent an approved or current authority, and binary_stored is fixed at false.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "received_on",
+    "classification",
+    "source_document",
+    "storage",
+    "review",
+    "scope",
+    "comparison",
+    "notice"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{2,127}$"
+    },
+    "received_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "classification": {
+      "const": "user-provided-historical-reference"
+    },
+    "source_document": {
+      "$ref": "#/$defs/sourceDocument"
+    },
+    "storage": {
+      "$ref": "#/$defs/storage"
+    },
+    "review": {
+      "$ref": "#/$defs/review"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "comparison": {
+      "$ref": "#/$defs/comparison"
+    },
+    "notice": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 1000
+    }
+  },
+  "$defs": {
+    "sourceDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "original_filename",
+        "media_type",
+        "byte_size",
+        "sha256",
+        "self_reported_last_updated",
+        "embedded_links"
+      ],
+      "properties": {
+        "original_filename": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
+          "pattern": "^[^/\\\\]+\\.docx$"
+        },
+        "media_type": {
+          "const": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "self_reported_last_updated": {
+          "type": "string",
+          "format": "date"
+        },
+        "embedded_links": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "total_count",
+            "unique_count",
+            "hosts"
+          ],
+          "properties": {
+            "total_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unique_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "hosts": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9.-]+$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "storage_class",
+        "binary_stored",
+        "rights_status",
+        "redistribution_status"
+      ],
+      "properties": {
+        "storage_class": {
+          "const": "hash-and-metadata-only"
+        },
+        "binary_stored": {
+          "const": false
+        },
+        "rights_status": {
+          "const": "unknown-review-required"
+        },
+        "redistribution_status": {
+          "const": "unknown-do-not-redistribute"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reviewed_on",
+        "excluded_from_approved_current",
+        "disposition"
+      ],
+      "properties": {
+        "status": {
+          "const": "reviewed-for-scope-and-currentness-not-approved-as-authority"
+        },
+        "reviewed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "excluded_from_approved_current": {
+          "const": true
+        },
+        "disposition": {
+          "const": "metadata-only-no-current-authority-change"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claimed_scope",
+        "observed_scope",
+        "heading_count",
+        "populated_operative_section_count",
+        "blank_or_repealed_heading_count",
+        "first_section",
+        "last_section",
+        "reserved_ranges"
+      ],
+      "properties": {
+        "claimed_scope": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "observed_scope": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "heading_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "populated_operative_section_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blank_or_repealed_heading_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "first_section": {
+          "$ref": "#/$defs/section"
+        },
+        "last_section": {
+          "$ref": "#/$defs/section"
+        },
+        "reserved_ranges": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^58-[0-9,]+[a-z]? through 58-[0-9,]+[a-z]?$"
+          }
+        }
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "performed_on",
+        "official_index",
+        "repository_current",
+        "document_overlap",
+        "differences"
+      ],
+      "properties": {
+        "performed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "official_index": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "publisher",
+            "url",
+            "label",
+            "operative_section_count"
+          ],
+          "properties": {
+            "publisher": {
+              "const": "Kansas Legislature"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://www\\.kslegislature\\.gov/"
+            },
+            "label": {
+              "type": "string",
+              "pattern": "^[0-9]{4} Kansas Statutes$"
+            },
+            "operative_section_count": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "repository_current": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "authority_directory",
+            "registry_path",
+            "bundle_path",
+            "operative_section_count"
+          ],
+          "properties": {
+            "authority_directory": {
+              "$ref": "#/$defs/repositoryPath"
+            },
+            "registry_path": {
+              "$ref": "#/$defs/repositoryPath"
+            },
+            "bundle_path": {
+              "$ref": "#/$defs/repositoryPath"
+            },
+            "operative_section_count": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "document_overlap": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "common_operative_section_count",
+            "document_new_operative_section_count",
+            "document_omitted_current_section_count",
+            "document_only_blank_headings"
+          ],
+          "properties": {
+            "common_operative_section_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "document_new_operative_section_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "document_omitted_current_section_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "document_only_blank_headings": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/section"
+              }
+            }
+          }
+        },
+        "differences": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "section": {
+      "type": "string",
+      "pattern": "^58-[0-9,]+[a-z]?$"
+    },
+    "repositoryPath": {
+      "type": "string",
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "record_id": "intake-kansas-article25-user-docx-2026-07-14",
+  "received_on": "2026-07-14",
+  "classification": "user-provided-historical-reference",
+  "source_document": {
+    "original_filename": "Kansas Statutes Chapter 58.—PERSONAL AND REAL PROPERTY.docx",
+    "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "byte_size": 35325,
+    "sha256": "b97b34db1c7f6c5842a856a56a03f50e93bf0715560ff2824f1286d918390c9a",
+    "self_reported_last_updated": "2024-09-16",
+    "embedded_links": {
+      "total_count": 33,
+      "unique_count": 21,
+      "hosts": [
+        "www.ksrevisor.org"
+      ]
+    }
+  },
+  "storage": {
+    "storage_class": "hash-and-metadata-only",
+    "binary_stored": false,
+    "rights_status": "unknown-review-required",
+    "redistribution_status": "unknown-do-not-redistribute"
+  },
+  "review": {
+    "status": "reviewed-for-scope-and-currentness-not-approved-as-authority",
+    "reviewed_on": "2026-07-14",
+    "excluded_from_approved_current": true,
+    "disposition": "metadata-only-no-current-authority-change"
+  },
+  "scope": {
+    "claimed_scope": "Kansas Statutes Chapter 58 — Personal and Real Property",
+    "observed_scope": "Kansas Statutes Chapter 58, Article 25 landlord-tenant extract",
+    "heading_count": 69,
+    "populated_operative_section_count": 68,
+    "blank_or_repealed_heading_count": 1,
+    "first_section": "58-2501",
+    "last_section": "58-2573",
+    "reserved_ranges": [
+      "58-2534 through 58-2539",
+      "58-2574 through 58-2599"
+    ]
+  },
+  "comparison": {
+    "performed_on": "2026-07-14",
+    "official_index": {
+      "publisher": "Kansas Legislature",
+      "url": "https://www.kslegislature.gov/b2025_26/laws/058_000_0000_chapter/058_025_0000_article/",
+      "label": "2026 Kansas Statutes",
+      "operative_section_count": 97
+    },
+    "repository_current": {
+      "authority_directory": "legal/text/current/authorities/kansas/core-article25",
+      "registry_path": "legal/manifests/registry/kansas/core_article25.json",
+      "bundle_path": "legal/generated/project-sources/current/GH-KS-01_Kansas-Residential-Landlord-Tenant-Primary-Law_CURRENT.pdf",
+      "operative_section_count": 97
+    },
+    "document_overlap": {
+      "common_operative_section_count": 68,
+      "document_new_operative_section_count": 0,
+      "document_omitted_current_section_count": 29,
+      "document_only_blank_headings": [
+        "58-2529"
+      ]
+    },
+    "differences": [
+      "The document self-labels its text as last updated on September 16, 2024 and uses legacy headings and editorial wording.",
+      "The document contains a blank 58-2529 heading that does not appear on the official Article 25 index observed on July 14, 2026.",
+      "The document omits 29 operative sections present in both the observed official index and the approved repository release, including 58-25,100 through 58-25,127 and 58-25,137.",
+      "Section 58-2573 in the document uses an older K.S.A. 2023 Supp. 21-5808 cross-reference; the observed official section page uses K.S.A. 21-5808."
+    ]
+  },
+  "notice": "This record preserves intake and comparison evidence only. It is not legal advice, does not approve the user-provided document as authority, and does not advance or alter the approved legal release. Live official text controls."
+}

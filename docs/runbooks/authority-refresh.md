@@ -12,7 +12,7 @@ GitHub cron schedules use UTC and therefore shift relative to Central Time when 
 
 | Workflow | Schedule | Purpose | Write boundary |
 |---|---:|---|---|
-| `Authority Discovery` | Daily, `11:17 UTC`; manual dispatch | Poll 13 legal and 9 accounting official-source indexes for candidate publications or metadata changes | Read-only scan; publisher may update only `authority/candidates/<domain>/`, a draft PR, and a degraded-source issue |
+| `Authority Discovery` | Daily, `11:17 UTC`; manual dispatch | Poll 14 legal and 9 accounting official-source indexes for candidate publications or metadata changes | Read-only scan; publisher may update only `authority/candidates/<domain>/`, a draft PR, and a degraded-source issue |
 | `Legal Source Monitor` | Monday, `12:27 UTC`; manual dispatch | Compare known approved legal payloads and semantic fingerprints | Report artifact and bounded legal-review issue only |
 | `Accounting Authority Review Calendar` | Day 1 monthly, `13:41 UTC`; manual dispatch | Check stored FASB/accounting review dates | Report artifact and bounded accounting-review issue only |
 | `Authority Release Promotion` | Manual only | Validate structured review and archive immutable evidence plus the reviewed discovery snapshot | Protected draft PR affecting only `authority/releases/` and one `authority/snapshots/<domain>.json` |

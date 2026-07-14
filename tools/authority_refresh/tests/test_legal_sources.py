@@ -188,6 +188,41 @@ class LegalSourceParserTests(unittest.TestCase):
                 "https://sos.ks.gov/publications/index.html",
             )
 
+    def test_kansas_article_25_index_admits_only_matching_section_links(self) -> None:
+        config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+        source = next(
+            source
+            for source in config["sources"]
+            if source["source_id"] == "kansas-chapter-58-article-25-index"
+        )
+        final_url = (
+            "https://www.kslegislature.gov/b2025_26/laws/"
+            "058_000_0000_chapter/058_025_0000_article/"
+        )
+
+        items = legal_sources.parse(
+            fixture("kansas_article_25_index.html"),
+            source,
+            FETCHED_AT,
+            final_url,
+        )
+
+        self.assertEqual(len(items), 2)
+        self.assertEqual(
+            {item["official_url"] for item in items},
+            {
+                final_url
+                + "058_025_0001_section/058_025_0001_k/",
+                final_url
+                + "058_025_0001a_section/058_025_0001a_k/",
+            },
+        )
+        self.assertEqual(
+            {item["metadata"]["source_response_url"] for item in items},
+            {final_url},
+        )
+        self.assert_items_are_discovery_only(items, {"www.kslegislature.gov"})
+
     def test_kansas_parser_preserves_versions_and_publisher_status_as_metadata(self) -> None:
         source = {
             "adapter": "kansas_legislature_json",
@@ -363,6 +398,38 @@ class LegalSourceConfigurationTests(unittest.TestCase):
         )
 
         self.assertEqual(source["missing_detection"], "rolling-window")
+
+    def test_kansas_article_25_index_has_fail_closed_discovery_contract(self) -> None:
+        source = next(
+            source
+            for source in self.config["sources"]
+            if source["source_id"] == "kansas-chapter-58-article-25-index"
+        )
+
+        self.assertEqual(
+            source["discovery_url"],
+            "https://www.kslegislature.gov/laws/058_000_0000_chapter/"
+            "058_025_0000_article/",
+        )
+        self.assertEqual(source["adapter"], "official_html_index")
+        self.assertEqual(source["storage_policy"], "metadata-only")
+        self.assertTrue(source["critical"])
+        self.assertEqual(source["missing_detection"], "complete-index")
+        self.assertEqual(source["minimum_items"], 90)
+        self.assertEqual(source["maximum_items"], 150)
+        self.assertEqual(source["minimum_baseline_ratio"], 0.9)
+        self.assertEqual(source["allowed_hosts"], ["www.kslegislature.gov"])
+        self.assertEqual(
+            source["link_filter"],
+            {
+                "include_patterns": [
+                    r"^https://www\.kslegislature\.gov/b[0-9]{4}_[0-9]{2}/"
+                    r"laws/058_000_0000_chapter/058_025_0000_article/"
+                    r"(058_025_[0-9a-z]+)_section/\1_k/?$"
+                ],
+                "exclude_patterns": [],
+            },
+        )
 
 
 if __name__ == "__main__":

@@ -30,7 +30,7 @@ The July 12, 2026 release is a strong current operational corpus for a residenti
 
 ## Discovery coverage limits
 
-- Daily discovery covers 13 configured publisher indexes; it is not a complete citator, docket service, legislative-history service, or proof that every relevant source family is configured.
+- Daily discovery covers 14 configured publisher indexes; it is not a complete citator, docket service, legislative-history service, or proof that every relevant source family is configured.
 - A `current` discovery result means no new, modified, or comparison-eligible missing item was detected under the configured comparison policies and no degradation condition occurred. It does not advance the July 12, 2026 legal release or establish that the approved library remains complete or legally current.
 - Recent-item feeds and APIs use `rolling-window` missing semantics. They report new and modified observations, but do not treat an older item disappearing from a limited window as repeal, withdrawal, supersession, or deletion.
 - The Library of Congress legislation API is an optional, noncritical metadata source. Without `CONGRESS_API_KEY`, it reports `configuration_required`; GovInfo remains the critical enacted-law discovery route, but its presence does not eliminate legislative-status review.
@@ -38,5 +38,14 @@ The July 12, 2026 release is a strong current operational corpus for a residenti
 - `codes.opkansas.org` is the City-linked electronic copy of the Overland Park code. The City Clerk's master copy controls, and discovery from the electronic copy is always a manual-review candidate.
 - Any source retrieval or parser `error` makes discovery `degraded`, even when the catalog marks that source noncritical; missing configuration degrades the domain only when the affected source is critical. A degraded result does not mean that no authority changed and does not permit continued high-risk reliance without live verification.
 - Candidate branches and workflow artifacts are unapproved evidence. They are not production inputs and must not be cited as current law before qualified legal review and a complete dated release.
+
+## User-provided document intake limits
+
+- A DOCX received on July 14, 2026 self-reports a September 16, 2024 update and is an incomplete Kansas Statutes Chapter 58, Article 25 extract. It contains 68 populated operative sections already present in the approved repository release and omits 29 operative sections listed by both the observed official Article 25 index and the repository release.
+- The document binary is not stored because its compilation provenance and redistribution rights were not established. Its hash, bounded scope findings, and comparison evidence are retained under `manifests/intake/`.
+- The live Article 25 page labeled itself `2026 Kansas Statutes` and listed 97 operative sections on July 14, 2026. The 2025 Kansas Revisor composite amendment listing contains no `58-25xx` entry, and the reviewed 2026 official pages did not identify an enacted Article 25 amendment. These checks support the intake disposition but do not authenticate the online text or advance the approved release date.
+- The Kansas Revisor describes the online K.S.A. as unofficial. The printed bound K.S.A. and current Cumulative Supplement are the authenticated source; high-risk reliance still requires live verification and qualified Kansas legal review.
+- The daily Article 25 index monitor detects section-link additions, removals, and catchline changes. It does not by itself prove that body text behind an unchanged section link is unchanged; the weekly registered-source comparison, legislative-measure discovery, live official review, and authenticated print source remain complementary controls.
+- The intake comparison does not advance the July 12, 2026 release verification date, establish continuing legal currentness, or substitute for live official-source and qualified legal review. Do not cite the user document as authority or copy its text into the approved current path.
 
 Record a resolved exception in `CHANGELOG.md`, update the registry and hashes, and regenerate the complete release rather than silently replacing a file.

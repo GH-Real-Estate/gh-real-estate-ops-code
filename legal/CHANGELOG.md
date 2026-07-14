@@ -1,5 +1,15 @@
 # Legal authority library changelog
 
+## 2026-07-14 - Record Kansas Article 25 user document as intake evidence
+
+- Audited a user-provided DOCX that self-reports a September 16, 2024 update and found it to be an incomplete Article 25 extract rather than all of Kansas Statutes Chapter 58.
+- Recorded its SHA-256, scope, official-index comparison, omissions, and disposition in a metadata-only intake record without storing the binary.
+- Confirmed that all 68 populated operative sections in the document were already represented in the approved repository release; the document added no operative authority and omitted 29 sections present in the observed official index and repository release.
+- Added a strict intake schema, fail-closed validator, regression tests, and CI enforcement that prohibit binary storage or silent promotion into approved current law.
+- Added the Kansas Legislature's stable current Chapter 58 Article 25 index as the fourteenth governed legal discovery source, with an exact section-link filter, a 90–150 item boundary, and review-only metadata handling.
+
+This intake audit does not modify, reapprove, or advance the July 12, 2026 legal release. Live official source text and qualified legal review remain required for reliance or a future release change.
+
 ## 2026-07-13 - Add governed official-index discovery
 
 - Added a daily, allowlisted discovery layer covering 13 legal publisher indexes to complement the existing weekly approved-source hash monitor.
