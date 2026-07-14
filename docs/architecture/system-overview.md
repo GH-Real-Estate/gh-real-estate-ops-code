@@ -43,7 +43,7 @@ Authority governance is separated from runtime code:
 
 ```text
 allowlisted official indexes
-  -> daily read-only discovery (13 legal + 9 accounting)
+  -> weekly Sunday read-only discovery (14 legal + 9 accounting)
   -> current | review_required | degraded
   -> candidate evidence and draft pull request
   -> counsel / CPA / tax / licensing review as applicable
@@ -54,22 +54,20 @@ allowlisted official indexes
 
 `legal/` and `accounting/` remain the approved dated research baselines. `authority/` contains unapproved candidates, structured review evidence, discovery snapshots, and the impact crosswalk. `tools/authority_refresh/` contains standard-library discovery, validation, and promotion controls. No discovery or promotion workflow deploys to Zoho, changes books, edits a lease, changes tenant treatment, updates runtime code, or merges itself.
 
-The daily discovery workflow runs at `11:17 UTC`. It supplements, but does not replace, the weekly Monday `12:27 UTC` legal approved-source hash monitor or the monthly day-1 `13:41 UTC` accounting review-date calendar. FASB discovery stores metadata only; exact GAAP conclusions require authorized live access and qualified review. Source failures preserve the approved baseline and visibly degrade the affected currentness claim.
+The weekly discovery workflow runs every Sunday at `11:17 UTC`. It supplements, but does not replace, the weekly Monday `12:27 UTC` legal approved-source hash monitor or the monthly day-1 `13:41 UTC` accounting review-date calendar. FASB discovery stores metadata only; exact GAAP conclusions require authorized live access and qualified review. Source failures preserve the approved baseline and visibly degrade the affected currentness claim.
 
 ## CI Failure Response
 
 ```text
-completed monitored GitHub Actions run
-  -> trusted default-branch incident responder
-  -> deduplicated GitHub issue
-  -> recurring Codex diagnosis
-  -> focused draft repair PR only when low risk
+failed GitHub Actions check
+  -> normal GitHub notification
+  -> operator inspects the current run
+  -> focused repair PR only when a repository defect is proven
   -> normal checks and human review
   -> intentional merge
-  -> newer successful run closes the incident
 ```
 
-The event responder cannot push code, approve, merge, deploy, execute the failed revision, or read its artifacts. High-risk and governed domains remain diagnosis-only. See `docs/runbooks/ci-failure-response.md`.
+The repository responder is manual-simulation-only; automatic `workflow_run` incidents and recovery closure are disabled. The external `GH Repo CI Auto-Repair` Codex task should remain paused or disabled. High-risk and governed domains remain human-gated. See `docs/runbooks/ci-failure-response.md`.
 
 ## Non-Negotiable Split
 
