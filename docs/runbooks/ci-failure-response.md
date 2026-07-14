@@ -36,7 +36,7 @@ Incident conclusions are `failure`, `timed_out`, `startup_failure`, and `action_
 
 - The `workflow_run` job checks out only the repository default branch. It never checks out `workflow_run.head_sha`.
 - It never downloads or executes the failed run's artifacts or logs.
-- Its token can read repository contents and write issues only. It cannot push code, create a pull request, approve, merge, deploy, rerun workflows, or read Actions secrets.
+- Its token can read repository contents and Actions run metadata and can write issues only. It cannot push code, create a pull request, approve, merge, deploy, rerun workflows, or read Actions secrets.
 - All third-party Actions are pinned to immutable commit SHAs.
 - Workflow names, branches, actors, SHAs, and URLs are treated as untrusted data, normalized, bounded, and rendered only as inert issue content.
 - Issue bodies carry stable hidden markers so duplicate deliveries update one audit record. Manual simulations use a separate namespace and cannot close real incidents.
