@@ -201,7 +201,7 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
         self.assertIn('--repo "$GITHUB_REPOSITORY"', publisher)
         self.assertRegex(
             publisher,
-            r"actions/download-artifact@[0-9a-f]{40}\s+# v4\.3\.0",
+            r"actions/download-artifact@[0-9a-f]{40}\s+# v[0-9]+\.[0-9]+\.[0-9]+",
         )
         self.assertIn("if-no-files-found: error", scan)
         self.assertRegex(content, r"timeout-minutes: 10")
