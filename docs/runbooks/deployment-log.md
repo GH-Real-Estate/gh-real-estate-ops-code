@@ -2,18 +2,18 @@
 
 Record every production-relevant deployment or Zoho change.
 
-## 2026-07-14 — CI Failure Response Live Verification
+## 2026-07-14 — CI Failure Response Queue And Publisher Verification
 
 - System: GitHub / Codex
-- Repo branch / commit: `codex/ci-failure-response-smoke-final` / PR #50
+- Repo branch / commit: `codex/ci-response-queue-smoke` / PR #53; queue/publisher fix merged in PR #52
 - Files changed: `docs/setup/github-settings-checklist.md`, `docs/runbooks/ci-failure-response.md`, `docs/runbooks/deployment-log.md`
-- Business rule changed? no; repository incident-response behavior was verified without changing legal, accounting, payment, lease, tenant, or live-system rules
+- Business rule changed? no; repository incident-response controls changed without modifying legal, accounting, payment, lease, tenant, or live-system rules
 - Dry-run completed? not applicable
-- Smoke test completed? yes; issue #51 opened from controlled failure runs `29360457766` and `29360469434`, then closed from green recovery run `29360572712`; PR recovery run `29360576130` also passed
+- Smoke test completed? yes; bot-created issue #54 preserved the distinct push/PR failures in one record, then closed from green recovery run `29361402852`; PR recovery run `29361405235` also passed
 - Deployed by: Codex / GitHub Actions
-- Result: one deduplicated incident, bounded evidence only, one recovery comment, no raw logs/PII/secrets, and no sentinel in the final diff
-- Rollback plan: revert the documentation merge if the record is incorrect; revert PRs #47 and #48 through normal reviewed PRs if responder behavior must be rolled back
-- Notes: repository auto-merge remains off. Codex repair remains draft-PR-only, and governed/high-risk changes remain human-gated.
+- Result: `queue: max` active, publisher identity enforced, one bounded incident, one newer-failure comment, one recovery comment, no duplicate/reopened issue, no raw logs/PII/secrets, and no sentinel in the final diff
+- Rollback plan: revert the documentation merge if the record is incorrect; revert PR #52 through a normal reviewed PR if the queue or publisher controls must be rolled back
+- Notes: GitHub preserves up to 100 pending observations per concurrency group. Repository auto-merge remains off; Codex repair remains draft-PR-only; governed/high-risk changes remain human-gated.
 
 ## 2026-07-06 - Monthly Interest Lease Accrual Alignment
 

@@ -91,7 +91,7 @@ The simulation validates incident lifecycle only. Validate Codex repair behavior
 
 ### Last live verification
 
-On July 14, 2026, disposable PR #50 intentionally failed only the safety scan with a non-sensitive filename sentinel. Issue #51 opened once, retained the distinct push and pull-request observations in one audit record, and closed after the sentinel was removed and a newer `Repo Checks` run succeeded. Failure runs `29360457766` and `29360469434`, recovery runs `29360572712` and `29360576130`, and the issue's single recovery comment provide the reproducible evidence. The sentinel was deleted before the documentation-only PR was merged.
+On July 14, 2026, disposable PR #53 validated the post-PR-#52 queue and publisher-integrity controls. A non-sensitive filename sentinel failed only the safety scan. Bot-created issue #54 opened once, preserved the distinct `codex/**` push and pull-request failure observations in one record (including PR run `29361325265`), and closed from green recovery run `29361402852`; PR recovery run `29361405235` also passed without duplicating or reopening the issue. The sentinel was deleted before this documentation-only record was merged.
 
 ## Incident Handling
 
