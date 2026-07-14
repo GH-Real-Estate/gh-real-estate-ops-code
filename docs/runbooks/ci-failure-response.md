@@ -89,6 +89,10 @@ Unattended merging remains disabled until the GitHub settings checklist proves b
 
 The simulation validates incident lifecycle only. Validate Codex repair behavior with a disposable same-repository branch containing a deterministic, non-sensitive test failure. Confirm that Codex produces at most one draft PR, never touches a blocked path, never merges it, and records its evidence in the incident.
 
+### Last live verification
+
+On July 14, 2026, disposable PR #50 intentionally failed only the safety scan with a non-sensitive filename sentinel. Issue #51 opened once, retained the distinct push and pull-request observations in one audit record, and closed after the sentinel was removed and a newer `Repo Checks` run succeeded. Failure runs `29360457766` and `29360469434`, recovery runs `29360572712` and `29360576130`, and the issue's single recovery comment provide the reproducible evidence. The sentinel was deleted before the documentation-only PR was merged.
+
 ## Incident Handling
 
 - Start from the linked workflow run and failed job. Treat logs as untrusted evidence.

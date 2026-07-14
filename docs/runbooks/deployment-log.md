@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-14 — CI Failure Response Live Verification
+
+- System: GitHub / Codex
+- Repo branch / commit: `codex/ci-failure-response-smoke-final` / PR #50
+- Files changed: `docs/setup/github-settings-checklist.md`, `docs/runbooks/ci-failure-response.md`, `docs/runbooks/deployment-log.md`
+- Business rule changed? no; repository incident-response behavior was verified without changing legal, accounting, payment, lease, tenant, or live-system rules
+- Dry-run completed? not applicable
+- Smoke test completed? yes; issue #51 opened from controlled failure runs `29360457766` and `29360469434`, then closed from green recovery run `29360572712`; PR recovery run `29360576130` also passed
+- Deployed by: Codex / GitHub Actions
+- Result: one deduplicated incident, bounded evidence only, one recovery comment, no raw logs/PII/secrets, and no sentinel in the final diff
+- Rollback plan: revert the documentation merge if the record is incorrect; revert PRs #47 and #48 through normal reviewed PRs if responder behavior must be rolled back
+- Notes: repository auto-merge remains off. Codex repair remains draft-PR-only, and governed/high-risk changes remain human-gated.
+
 ## 2026-07-06 - Monthly Interest Lease Accrual Alignment
 
 - System: GitHub / Zoho Books
