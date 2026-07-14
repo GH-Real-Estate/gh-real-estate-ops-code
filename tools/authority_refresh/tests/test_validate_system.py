@@ -586,7 +586,311 @@ class ReleaseIntroductionTopologyTests(unittest.TestCase):
             "squash merge": (
                 [self.ROOT, self.SOURCE, self.INTRODUCTION],
                 {
-        …3102 tokens truncated…-11"
+                    self.ROOT: set(),
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES,
+                },
+            ),
+            "later unrelated commit": (
+                [self.ROOT, self.SOURCE, self.INTRODUCTION, self.LATER],
+                {
+                    self.ROOT: set(),
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES,
+                    self.LATER: self.RELEASE_FILES,
+                },
+            ),
+        }
+        for name, (commits, states) in cases.items():
+            with self.subTest(topology=name):
+                parent = self.validate_topology(
+                    commits,
+                    states,
+                    source_revision=self.SOURCE,
+                )
+                self.assertEqual(self.SOURCE, parent)
+
+    def test_rejects_an_older_first_parent_as_the_recorded_source(self):
+        states = {
+            self.ROOT: set(),
+            self.SOURCE: set(),
+            self.INTRODUCTION: self.RELEASE_FILES,
+        }
+
+        with self.assertRaisesRegex(
+            core.AuthorityRefreshError,
+            "does not match the immutable release introduction parent",
+        ):
+            self.validate_topology(
+                [self.ROOT, self.SOURCE, self.INTRODUCTION],
+                states,
+                source_revision=self.ROOT,
+            )
+
+    def test_rejects_unavailable_root_partial_and_removed_release_history(self):
+        cases = {
+            "unavailable": (
+                [],
+                {},
+                "history is unavailable",
+            ),
+            "root introduction": (
+                [self.INTRODUCTION],
+                {self.INTRODUCTION: self.RELEASE_FILES},
+                "repository root commit",
+            ),
+            "partial introduction": (
+                [self.SOURCE, self.INTRODUCTION],
+                {
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES
+                    - {f"{self.RELEASE_DIRECTORY}/approval.json"},
+                },
+                "did not enter together",
+            ),
+            "delete and re-add": (
+                [
+                    self.SOURCE,
+                    self.INTRODUCTION,
+                    self.LATER,
+                    self.REINTRODUCTION,
+                ],
+                {
+                    self.SOURCE: set(),
+                    self.INTRODUCTION: self.RELEASE_FILES,
+                    self.LATER: set(),
+                    self.REINTRODUCTION: self.RELEASE_FILES,
+                },
+                "was removed from first-parent history",
+            ),
+        }
+        for name, (commits, states, message) in cases.items():
+            with self.subTest(case=name):
+                with self.assertRaisesRegex(core.AuthorityRefreshError, message):
+                    self.validate_topology(
+                        commits,
+                        states,
+                        source_revision=self.SOURCE,
+                    )
+
+
+class ValidateSystemTests(unittest.TestCase):
+    def test_valid_workspace_passes(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+
+            report = validate_system.validate_repository(root)
+
+            self.assertTrue(report.ok, "\n".join(report.errors))
+            self.assertGreater(report.checks, 50)
+
+    def test_rejects_drift_in_kansas_article_25_monitor_contract(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            catalog_path = "tools/authority_refresh/config/legal_sources.json"
+            catalog = read_json(root, catalog_path)
+            monitor = next(
+                item
+                for item in catalog["sources"]
+                if item["source_id"]
+                == validate_system.KANSAS_ARTICLE_25_SOURCE_ID
+            )
+            monitor["allowed_hosts"] = [
+                "www.kslegislature.gov",
+                "official.example.gov",
+            ]
+            monitor["maximum_items"] = 500
+            monitor["link_filter"] = {
+                "include_patterns": ["058_025"],
+                "exclude_patterns": [],
+            }
+            write_json(root, catalog_path, catalog)
+
+            report = validate_system.validate_repository(root)
+
+            messages = "\n".join(report.errors)
+            self.assertIn("allowed_hosts must be", messages)
+            self.assertIn("maximum_items must be 150", messages)
+            self.assertIn("link_filter must be", messages)
+
+    def test_rejects_paragraph_locator_and_automatic_change(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            crosswalk = read_json(root, "authority/impact_crosswalk.json")
+            crosswalk["mappings"][0]["automatic_change"] = "allowed"
+            crosswalk["mappings"][0]["authority_references"][1]["reference"] = "ASC 842-10-25-1"
+            crosswalk["mappings"][0]["affected_paths"][0]["repository_path"] = "src/missing.py"
+            crosswalk["mappings"].append(dict(crosswalk["mappings"][0]))
+            write_json(root, "authority/impact_crosswalk.json", crosswalk)
+
+            report = validate_system.validate_repository(root)
+
+            messages = "\n".join(report.errors)
+            self.assertIn("automatic_change must be prohibited", messages)
+            self.assertIn("paragraph locators are prohibited", messages)
+            self.assertIn("duplicate mapping id", messages)
+            self.assertIn("referenced path does not exist", messages)
+
+    def test_rejects_recursive_compliance_key_and_count_drift(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            status = read_json(root, "legal/CURRENT_STATUS.json")
+            status["currentness"] = {
+                "claim": {"compliant": True, "compliance_certified": True}
+            }
+            status["approved_release"]["authority_record_count"] = 99
+            write_json(root, "legal/CURRENT_STATUS.json", status)
+
+            report = validate_system.validate_repository(root)
+
+            messages = "\n".join(report.errors)
+            self.assertIn("prohibited blanket-compliance key", messages)
+            self.assertIn("authority_record_count does not match", messages)
+
+    def test_rejects_fasb_redistribution(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            catalog = read_json(root, "tools/authority_refresh/config/accounting_sources.json")
+            catalog["sources"][0]["storage_policy"] = "redistributable"
+            write_json(root, "tools/authority_refresh/config/accounting_sources.json", catalog)
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn("FASB", "\n".join(report.errors))
+            self.assertFalse(report.ok)
+
+    def test_rejects_codification_scraping(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            catalog = read_json(root, "tools/authority_refresh/config/accounting_sources.json")
+            catalog["allowed_domains"].append("asc.fasb.org")
+            catalog["sources"][0]["allowed_hosts"] = ["asc.fasb.org"]
+            catalog["sources"][0]["discovery_url"] = "https://asc.fasb.org/codification"
+            write_json(root, "tools/authority_refresh/config/accounting_sources.json", catalog)
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn("not scrape Codification", "\n".join(report.errors))
+
+    def test_rejects_auto_merge_and_missing_binary_rule(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            workflow = root / ".github/workflows/authority-discovery.yml"
+            workflow.write_text(workflow.read_text(encoding="utf-8") + "\n# gh pr merge --auto\n")
+            write_text(root, ".gitattributes", "*.pdf text\n*.zip binary\n*.xlsx binary\n*.docx binary\n")
+
+            report = validate_system.validate_repository(root)
+
+            messages = "\n".join(report.errors)
+            self.assertIn("automatic or direct pull-request merge is prohibited", messages)
+            self.assertIn("*.pdf must be marked binary", messages)
+
+    def test_invalid_json_is_reported_without_crashing(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            write_text(root, "authority/broken.json", "{not-json")
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn("authority/broken.json: cannot parse JSON", "\n".join(report.errors))
+
+    def test_rejects_missing_authority_refresh_code_owner(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            codeowners = root / ".github" / "CODEOWNERS"
+            codeowners.write_text(
+                codeowners.read_text(encoding="utf-8").replace(
+                    "/tools/authority_refresh/ @owner\n",
+                    "",
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn(
+                "no owner covers tools/authority_refresh/promotion.py",
+                "\n".join(report.errors),
+            )
+
+    def test_accepts_single_immutable_release_chain_with_matching_tip(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            first = write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-11",
+                run_id="root",
+                baseline_snapshot=None,
+            )
+            write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="tip",
+                baseline_snapshot=first,
+            )
+
+            report = validate_system.validate_repository(root)
+
+            self.assertTrue(report.ok, "\n".join(report.errors))
+
+    def test_rejects_degraded_archived_candidate(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="degraded",
+                baseline_snapshot=None,
+                failed_source=True,
+            )
+
+            report = validate_system.validate_repository(root)
+
+            self.assertIn(
+                "archived promotion replay failed: a degraded candidate cannot be promoted",
+                "\n".join(report.errors),
+            )
+
+    def test_rejects_archived_release_backdated_before_candidate_and_review(self):
+        with workspace_temp_directory() as directory:
+            root = Path(directory)
+            build_valid_workspace(root)
+            snapshot = write_authority_release(
+                root,
+                domain="legal",
+                approved_at="2026-07-12",
+                run_id="backdated-root",
+                baseline_snapshot=None,
+            )
+            old_directory = archived_release_directory(root, snapshot)
+            release = read_json(root, f"{old_directory.relative_to(root)}/release.json")
+            backdated_release_id = (
+                f"2026-07-11-legal-{release['candidate_sha256'][:12]}"
+            )
+            new_directory = old_directory.parent / backdated_release_id
+            old_directory.rename(new_directory)
+            release["approved_at"] = "2026-07-11"
+            release["release_id"] = backdated_release_id
+            write_json(
+                root,
+                f"{new_directory.relative_to(root)}/release.json",
+                release,
+            )
+            snapshot["approved_at"] = "2026-07-11"
             snapshot["release_id"] = backdated_release_id
             write_json(root, "authority/snapshots/legal.json", snapshot)
 
