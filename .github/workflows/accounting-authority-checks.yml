@@ -5,19 +5,21 @@ on:
     paths:
       - 'accounting/**'
       - '.github/workflows/accounting-*.yml'
+      - '.github/workflows/tax-authority-review.yml'
   push:
     branches:
       - main
     paths:
       - 'accounting/**'
       - '.github/workflows/accounting-*.yml'
+      - '.github/workflows/tax-authority-review.yml'
 
 permissions:
   contents: read
 
 jobs:
   validate-accounting-authority:
-    name: Validate accounting authority registry and sourcebooks
+    name: Validate accounting and tax authority registries
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -28,6 +30,11 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Validate registry, licensing controls, hashes, PDFs, and searchable text
+      - name: Validate accounting registry, licensing controls, hashes, PDFs, and searchable text
         run: python accounting/scripts/validate_authority_registry.py
 
+      - name: Validate the focused tax-authority registry and sourcebook cross-references
+        run: python accounting/scripts/check_tax_sources.py --validate-only
+
+      - name: Test the report-only tax-authority monitor
+        run: python -m unittest discover -s accounting/tests -p 'test_*.py'
