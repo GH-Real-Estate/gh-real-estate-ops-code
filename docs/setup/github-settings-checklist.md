@@ -107,7 +107,7 @@ Verify after merge:
 
 ## CI failure response
 
-- [X] `.github/workflows/ci-failure-response.yml` uses default-branch trusted code, immutable Action SHAs, `persist-credentials: false`, and only `contents: read` plus job-scoped `issues: write`.
+- [X] `.github/workflows/ci-failure-response.yml` uses default-branch trusted code, immutable Action SHAs, `persist-credentials: false`, and only `contents: read`, `actions: read`, plus job-scoped `issues: write`.
 - [X] Incident issues use `ci-incident` and `codex-attention` labels and contain links plus bounded metadata, not raw logs or artifacts.
 - [X] The GitHub workflow stores no OpenAI API key; recurring remediation uses the connected Codex desktop automation.
 - [ ] After merge, dispatch one isolated simulated `failure` and matching `success`; verify one incident opens, recovers, and closes without duplication.
