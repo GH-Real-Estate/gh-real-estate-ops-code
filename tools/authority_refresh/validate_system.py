@@ -516,7 +516,345 @@ def _validate_accounting_baseline(
             isinstance(value, int) and not isinstance(value, bool) and value >= 0
             for value in page_values
         ) and len(page_values) == len(files)
-        r…3424 tokens truncated…on,
+        report.require(
+            pages_are_valid,
+            "accounting release manifest pages must be nonnegative integers",
+        )
+        report.require(
+            approved.get("sourcebook_pdf_count") == len(files),
+            "accounting CURRENT_STATUS PDF count does not match sourcebook_release.json",
+        )
+        if pages_are_valid:
+            report.require(
+                approved.get("sourcebook_page_count") == sum(page_values),
+                "accounting CURRENT_STATUS page count does not match sourcebook_release.json",
+            )
+        for index, item in enumerate(files):
+            if not isinstance(item, dict):
+                report.error(f"accounting release file {index} must be an object")
+                continue
+            for key in ("repository_path", "text_path"):
+                _require_repository_path(
+                    root, item.get(key), f"accounting release files[{index}].{key}", report
+                )
+    report.require(
+        release.get("release_date") == approved.get("current_through"),
+        "accounting release date does not match CURRENT_STATUS current_through",
+    )
+    report.require(
+        approved.get("fasb_codification_content_state") == "not-stored",
+        "accounting CURRENT_STATUS must state that FASB Codification content is not stored",
+    )
+    defaults = registry.get("record_defaults", {})
+    report.require(
+        isinstance(defaults, dict) and defaults.get("copyrighted_text_stored") is False,
+        "FASB registry must explicitly state copyrighted_text_stored=false",
+    )
+    return topic_numbers
+
+
+def _validate_crosswalk(
+    root: Path,
+    parsed: dict[Path, Any],
+    fasb_topics: set[int],
+    legal_groups: set[str],
+    report: ValidationReport,
+) -> None:
+    path = "authority/impact_crosswalk.json"
+    crosswalk = _data(parsed, root, path)
+    if not isinstance(crosswalk, dict):
+        report.error(f"{path}: must contain an object")
+        return
+    mappings = crosswalk.get("mappings")
+    report.require(isinstance(mappings, list) and bool(mappings), f"{path}: mappings must be nonempty")
+    if not isinstance(mappings, list):
+        return
+    seen_ids: set[str] = set()
+    for index, mapping in enumerate(mappings):
+        context = f"{path} mappings[{index}]"
+        if not isinstance(mapping, dict):
+            report.error(f"{context}: must be an object")
+            continue
+        mapping_id = mapping.get("id")
+        report.require(
+            isinstance(mapping_id, str) and bool(mapping_id), f"{context}: id must be nonempty"
+        )
+        if isinstance(mapping_id, str):
+            report.require(mapping_id not in seen_ids, f"{context}: duplicate mapping id {mapping_id}")
+            seen_ids.add(mapping_id)
+        report.require(
+            mapping.get("automatic_change") == "prohibited",
+            f"{context}: automatic_change must be prohibited",
+        )
+
+        affected_paths = mapping.get("affected_paths")
+        report.require(
+            isinstance(affected_paths, list) and bool(affected_paths),
+            f"{context}: affected_paths must be nonempty",
+        )
+        if isinstance(affected_paths, list):
+            for path_index, affected in enumerate(affected_paths):
+                if not isinstance(affected, dict):
+                    report.error(f"{context} affected_paths[{path_index}]: must be an object")
+                    continue
+                _require_repository_path(
+                    root,
+                    affected.get("repository_path"),
+                    f"{context} affected_paths[{path_index}]",
+                    report,
+                )
+
+        references = mapping.get("authority_references")
+        report.require(
+            isinstance(references, list) and bool(references),
+            f"{context}: authority_references must be nonempty",
+        )
+        if not isinstance(references, list):
+            continue
+        for ref_index, reference in enumerate(references):
+            ref_context = f"{context} authority_references[{ref_index}]"
+            if not isinstance(reference, dict):
+                report.error(f"{ref_context}: must be an object")
+                continue
+            ref_type = reference.get("reference_type")
+            ref_value = reference.get("reference")
+            if ref_type == "asc-topic-locator":
+                match = ASC_TOPIC_PATTERN.fullmatch(str(ref_value))
+                report.require(
+                    match is not None,
+                    f"{ref_context}: ASC locator must be exactly 'ASC ' plus three digits; paragraph locators are prohibited",
+                )
+                if match:
+                    report.require(
+                        int(match.group(1)) in fasb_topics,
+                        f"{ref_context}: {ref_value} is absent from the FASB topic registry",
+                    )
+            elif ref_type == "legal-registry-group":
+                report.require(
+                    ref_value in legal_groups,
+                    f"{ref_context}: legal registry group does not exist: {ref_value}",
+                )
+            if isinstance(ref_value, str):
+                report.require(
+                    not re.search(r"\bASC\s+[0-9]{3}[-–—][0-9]", ref_value, re.IGNORECASE)
+                    and not re.search(r"\bparagraph\b", ref_value, re.IGNORECASE),
+                    f"{ref_context}: invented paragraph-level locators are prohibited",
+                )
+
+
+def _validate_source_revision_blobs(
+    node: dict[str, Any],
+    load_blob: Callable[[str], bytes],
+    report: ValidationReport,
+) -> None:
+    """Match archived context to the exact files in its recorded source commit."""
+
+    context = node["validation_context"]
+    label = node["label"]
+    expected_json = {
+        str(context.get("candidate_path", "")): node["candidate"],
+        (
+            f"authority/candidates/{node['candidate'].get('domain', '')}/"
+            "latest/candidate.json"
+        ): node["candidate"],
+        str(context.get("approval_path", "")): node["approval"],
+        str(context.get("source_catalog_path", "")): context.get("source_catalog"),
+        str(context.get("impact_crosswalk_path", "")): context.get(
+            "impact_crosswalk"
+        ),
+    }
+    for path, expected in expected_json.items():
+        try:
+            payload = load_blob(path)
+            actual = json.loads(payload.decode("utf-8"))
+        except (AuthorityRefreshError, UnicodeError, json.JSONDecodeError) as exc:
+            report.error(f"{label}: cannot verify source-revision JSON {path}: {exc}")
+            continue
+        report.require(
+            actual == expected,
+            f"{label}: source revision does not match archived {path}",
+        )
+
+    manifest = context.get("path_manifest")
+    if not isinstance(manifest, list):
+        return
+    for entry in manifest:
+        if not isinstance(entry, dict) or not isinstance(entry.get("path"), str):
+            continue
+        path = entry["path"]
+        try:
+            payload = load_blob(path)
+        except AuthorityRefreshError as exc:
+            report.error(f"{label}: cannot verify reviewed source path {path}: {exc}")
+            continue
+        report.require(
+            len(payload) == entry.get("size_bytes")
+            and hashlib.sha256(payload).hexdigest() == entry.get("sha256"),
+            f"{label}: reviewed path evidence does not match source revision: {path}",
+        )
+
+
+def _validate_release_introduction(
+    first_parent_commits: list[str],
+    *,
+    release_directory: str,
+    source_revision: str,
+    files_at_commit: Callable[[str], set[str]],
+) -> str:
+    """Bind a release to the parent of its unique first-parent introduction.
+
+    Promotion generates all immutable release files in one commit whose parent is
+    the clean default-branch source revision. Following first-parent history makes
+    the same invariant work on an automation branch, a pull-request test merge, a
+    squash merge, and every later checkout without rebinding old releases to HEAD^.
+    """
+
+    if not first_parent_commits:
+        raise AuthorityRefreshError(
+            "first-parent history is unavailable for immutable release provenance"
+        )
+    expected_paths = {
+        f"{release_directory}/{filename}"
+        for filename in IMMUTABLE_RELEASE_FILENAMES
+    }
+    introduction_parent: str | None = None
+    previous_commit: str | None = None
+    release_present = False
+
+    for commit in first_parent_commits:
+        files = files_at_commit(commit)
+        if files and files != expected_paths:
+            missing = sorted(expected_paths.difference(files))
+            extra = sorted(files.difference(expected_paths))
+            raise AuthorityRefreshError(
+                "immutable release files did not enter together or changed later; "
+                f"commit={commit}, missing={missing}, extra={extra}"
+            )
+        present = files == expected_paths
+        if present and not release_present:
+            if previous_commit is None:
+                raise AuthorityRefreshError(
+                    "immutable release cannot be introduced in the repository root commit"
+                )
+            if introduction_parent is not None:
+                raise AuthorityRefreshError(
+                    "immutable release has multiple first-parent introductions"
+                )
+            introduction_parent = previous_commit
+        elif release_present and not present:
+            raise AuthorityRefreshError(
+                "immutable release was removed from first-parent history"
+            )
+        release_present = present
+        previous_commit = commit
+
+    if not release_present or introduction_parent is None:
+        raise AuthorityRefreshError(
+            "immutable release introduction is unavailable from first-parent history"
+        )
+    if source_revision != introduction_parent:
+        raise AuthorityRefreshError(
+            "recorded source revision does not match the immutable release "
+            f"introduction parent: expected {introduction_parent}, "
+            f"actual {source_revision}"
+        )
+    return introduction_parent
+
+
+def _validate_source_revision(
+    root: Path,
+    node: dict[str, Any],
+    report: ValidationReport,
+) -> None:
+    """Verify release provenance against local Git history when it is available."""
+
+    if not (root / ".git").exists():
+        return
+    context = node["validation_context"]
+    revision = context.get("source_revision")
+    if not isinstance(revision, str) or not re.fullmatch(
+        r"(?:[0-9a-f]{40}|[0-9a-f]{64})", revision
+    ):
+        return
+
+    def run_git(*arguments: str) -> subprocess.CompletedProcess[bytes]:
+        try:
+            return subprocess.run(
+                ["git", "-C", str(root), *arguments],
+                check=False,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=30,
+            )
+        except (OSError, subprocess.SubprocessError) as exc:
+            raise AuthorityRefreshError(f"cannot inspect Git history: {exc}") from exc
+
+    try:
+        commit = run_git("cat-file", "-e", f"{revision}^{{commit}}")
+        if commit.returncode != 0:
+            raise AuthorityRefreshError(
+                "recorded source revision is unavailable; fetch full Git history"
+            )
+        ancestor = run_git("merge-base", "--is-ancestor", revision, "HEAD")
+        if ancestor.returncode != 0:
+            raise AuthorityRefreshError(
+                "recorded source revision is not an ancestor of the checked-out commit"
+            )
+        first_parent = run_git("rev-list", "--first-parent", "--reverse", "HEAD")
+        if first_parent.returncode != 0:
+            raise AuthorityRefreshError("cannot read checked-out first-parent history")
+        try:
+            first_parent_commits = [
+                line.decode("ascii")
+                for line in first_parent.stdout.splitlines()
+                if line.strip()
+            ]
+        except UnicodeDecodeError as exc:
+            raise AuthorityRefreshError(
+                "checked-out first-parent history contains an invalid object ID"
+            ) from exc
+        if (
+            revision not in first_parent_commits
+            or any(
+                not re.fullmatch(r"(?:[0-9a-f]{40}|[0-9a-f]{64})", value)
+                for value in first_parent_commits
+            )
+        ):
+            raise AuthorityRefreshError(
+                "recorded source revision is not on the checked-out first-parent history"
+            )
+
+        release_directory = str(node["label"])
+
+        def files_at_commit(commit_id: str) -> set[str]:
+            result = run_git(
+                "ls-tree",
+                "-r",
+                "--name-only",
+                "-z",
+                commit_id,
+                "--",
+                release_directory,
+            )
+            if result.returncode != 0:
+                raise AuthorityRefreshError(
+                    f"cannot inspect immutable release tree at {commit_id}"
+                )
+            try:
+                return {
+                    path.decode("utf-8")
+                    for path in result.stdout.split(b"\0")
+                    if path
+                }
+            except UnicodeDecodeError as exc:
+                raise AuthorityRefreshError(
+                    "immutable release history contains a non-UTF-8 path"
+                ) from exc
+
+        _validate_release_introduction(
+            first_parent_commits,
+            release_directory=release_directory,
+            source_revision=revision,
             files_at_commit=files_at_commit,
         )
 
