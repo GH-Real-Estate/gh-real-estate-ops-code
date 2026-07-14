@@ -328,6 +328,35 @@
       }
     },
     {
+      "source_id": "kansas-chapter-58-article-25-index",
+      "publisher": "Kansas Legislature",
+      "jurisdiction": "Kansas",
+      "authority_type": "state-statute-current-index",
+      "discovery_url": "https://www.kslegislature.gov/laws/058_000_0000_chapter/058_025_0000_article/",
+      "adapter": "official_html_index",
+      "storage_policy": "metadata-only",
+      "cadence": "daily",
+      "critical": true,
+      "missing_detection": "complete-index",
+      "minimum_items": 90,
+      "maximum_items": 150,
+      "minimum_baseline_ratio": 0.9,
+      "allowed_hosts": [
+        "www.kslegislature.gov"
+      ],
+      "link_filter": {
+        "include_patterns": [
+          "^https://www\\.kslegislature\\.gov/b[0-9]{4}_[0-9]{2}/laws/058_000_0000_chapter/058_025_0000_article/(058_025_[0-9a-z]+)_section/\\1_k/?$"
+        ],
+        "exclude_patterns": []
+      },
+      "request": {
+        "accept": "text/html",
+        "timeout_seconds": 30,
+        "max_bytes": 5242880
+      }
+    },
+    {
       "source_id": "kansas-sos-register",
       "publisher": "Kansas Secretary of State",
       "jurisdiction": "Kansas",
