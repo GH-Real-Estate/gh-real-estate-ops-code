@@ -24,6 +24,8 @@ class AuthorityWorkflowContractTests(unittest.TestCase):
         self.assertIn('echo "run_full=true" >> "$GITHUB_OUTPUT"', content)
         self.assertIn("git diff --name-only --no-renames -z", content)
         self.assertIn("authority/*|tools/authority_refresh/*", content)
+        self.assertIn("legal/manifests/authority_registry.json", content)
+        self.assertIn("accounting/manifests/fasb_topic_registry.json", content)
         self.assertIn("Confirm unrelated pull request", content)
         self.assertEqual(content.count("steps.scope.outputs.run_full != 'false'"), 3)
         self.assertIn("python tools/authority_refresh/validate_system.py", content)
