@@ -111,7 +111,7 @@ Verify after merge:
 - [X] Incident issues use `ci-incident` and `codex-attention` labels and contain links plus bounded metadata, not raw logs or artifacts.
 - [X] The GitHub workflow stores no OpenAI API key; recurring remediation uses the connected Codex desktop automation.
 - [ ] After merge, dispatch one isolated simulated `failure` and matching `success`; verify one incident opens, recovers, and closes without duplication.
-- [ ] Confirm the `GH Repo CI Auto-Repair` Codex automation is active and limited to draft-PR remediation under `docs/runbooks/ci-failure-response.md`.
+- [X] Confirmed July 14, 2026: the `GH Repo CI Auto-Repair` Codex automation is active and limited to draft-PR remediation under `docs/runbooks/ci-failure-response.md`.
 - [ ] Complete the unchecked branch-protection, required-check, CODEOWNERS, secret-scanning, push-protection, restricted-Actions, and authority-environment controls before considering unattended merge behavior.
 - [X] Repository auto-merge remains OFF. Legal, accounting, authority, payment, lease, tenant, security, PII, and workflow-control changes remain human-gated.
 
