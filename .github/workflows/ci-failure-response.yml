@@ -1,0 +1,137 @@
+name: CI Failure Response
+
+on:
+  workflow_run:
+    workflows:
+      - Accounting Authority Checks
+      - Accounting Authority Review Calendar
+      - Authority Discovery
+      - Authority Refresh Checks
+      - Authority Release Promotion
+      - Legal Release Checks
+      - Legal Source Monitor
+      - Repo Checks
+    types:
+      - completed
+
+  workflow_dispatch:
+    inputs:
+      conclusion:
+        description: Simulated monitored-workflow conclusion
+        required: true
+        default: failure
+        type: choice
+        options:
+          - failure
+          - success
+      workflow_name:
+        description: Simulated monitored workflow
+        required: true
+        default: Repo Checks
+        type: choice
+        options:
+          - Accounting Authority Checks
+          - Accounting Authority Review Calendar
+          - Authority Discovery
+          - Authority Refresh Checks
+          - Authority Release Promotion
+          - Legal Release Checks
+          - Legal Source Monitor
+          - Repo Checks
+      head_branch:
+        description: Isolated simulated branch identity
+        required: true
+        default: simulation/ci-failure-response
+        type: string
+      scenario_key:
+        description: Reuse this value for a failure/recovery simulation pair
+        required: true
+        default: manual
+        type: string
+
+  pull_request:
+    paths:
+      - .github/workflows/ci-failure-response.yml
+      - tools/ci_failure_response/**
+      - docs/runbooks/ci-failure-response.md
+
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/ci-failure-response.yml
+      - tools/ci_failure_response/**
+      - docs/runbooks/ci-failure-response.md
+
+permissions:
+  contents: read
+
+# A single queue prevents concurrent workflow completions from racing to create
+# duplicate incident issues.
+concurrency:
+  group: ci-failure-response
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate CI failure responder
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Check out proposed responder
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Run responder tests
+        run: |
+          node --check tools/ci_failure_response/incident.js
+          node --test tools/ci_failure_response/tests/*.test.js
+
+  incident:
+    name: Record or recover CI incident
+    if: ${{ github.event_name == 'workflow_run' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: read
+      issues: write
+    steps:
+      - name: Check out trusted response code
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Process workflow observation
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        env:
+          SIMULATED_CONCLUSION: ${{ inputs.conclusion || '' }}
+          SIMULATED_WORKFLOW: ${{ inputs.workflow_name || '' }}
+          SIMULATED_HEAD_BRANCH: ${{ inputs.head_branch || '' }}
+          SIMULATED_SCENARIO_KEY: ${{ inputs.scenario_key || '' }}
+        with:
+          script: |
+            const responder = require('./tools/ci_failure_response/incident.js');
+            await responder.handleIncident({
+              github,
+              context,
+              core,
+              inputs: {
+                conclusion: process.env.SIMULATED_CONCLUSION,
+                workflowName: process.env.SIMULATED_WORKFLOW,
+                headBranch: process.env.SIMULATED_HEAD_BRANCH,
+                scenarioKey: process.env.SIMULATED_SCENARIO_KEY,
+              },
+            });
+

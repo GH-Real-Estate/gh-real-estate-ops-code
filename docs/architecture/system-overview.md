@@ -56,6 +56,21 @@ allowlisted official indexes
 
 The daily discovery workflow runs at `11:17 UTC`. It supplements, but does not replace, the weekly Monday `12:27 UTC` legal approved-source hash monitor or the monthly day-1 `13:41 UTC` accounting review-date calendar. FASB discovery stores metadata only; exact GAAP conclusions require authorized live access and qualified review. Source failures preserve the approved baseline and visibly degrade the affected currentness claim.
 
+## CI Failure Response
+
+```text
+completed monitored GitHub Actions run
+  -> trusted default-branch incident responder
+  -> deduplicated GitHub issue
+  -> recurring Codex diagnosis
+  -> focused draft repair PR only when low risk
+  -> normal checks and human review
+  -> intentional merge
+  -> newer successful run closes the incident
+```
+
+The event responder cannot push code, approve, merge, deploy, execute the failed revision, or read its artifacts. High-risk and governed domains remain diagnosis-only. See `docs/runbooks/ci-failure-response.md`.
+
 ## Non-Negotiable Split
 
 Zoho owns live business data. GitHub owns technical logic and sanitized documentation.
