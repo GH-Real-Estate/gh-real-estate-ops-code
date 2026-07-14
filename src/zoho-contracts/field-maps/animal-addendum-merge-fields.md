@@ -15,7 +15,7 @@ The listed API/link names are proposed names, not a representation that the fiel
 | Lease, premises, and tenant identity | Zoho CRM / approved lease record | Confirm the live module and API names |
 | Ordinary-pet approval and descriptive data | Zoho CRM or approved animal subform | Use a repeatable animal record if supported; never use live data in repository tests |
 | Accommodation decision and operational conditions | Restricted accommodation workflow | Merge only decision status and operational terms needed to implement it; keep support material private |
-| Pet deposit and recurring pet rent | Approved lease record, synchronized with Zoho Books as designed | The final source-of-truth and invoicing owner require business approval |
+| Ordinary-pet deposit, rent, and administration fee | Approved lease record, synchronized with Zoho Books as designed | The final source-of-truth, invoicing owner, Zoho item, accounting treatment, and duplicate-prevention method require attorney, business, and CPA/accounting approval |
 | Signatures and signing dates | Zoho Sign / Zoho Contracts | Do not merge stored signature images |
 | Final executed document | Zoho Contracts / Zoho Sign / Zoho WorkDrive | Never store a signed or tenant-specific merged document in GitHub |
 
@@ -48,6 +48,7 @@ These fields should be calculated from the animal schedule, not independently en
 | One or More Ordinary Pets Approved | `Has_Ordinary_Pet` | Boolean | `true` when Ordinary-Pet count is at least one |
 | Approved Assistance Animal Confirmed | `Has_Approved_Assistance_Animal` | Boolean | `true` when an animal classification is `Approved Assistance Animal` |
 | Interim Arrangement Stated | `Has_Interim_Assistance_Animal` | Boolean | `true` when an animal classification is `Interim Assistance Animal` |
+| Accommodation Request Pending | `Animal_Accommodation_Request_Pending` | Boolean, workflow-only | Restricted-workflow flag; when `true` for a fee-triggering animal, pause administration-fee assessment and collection without treating the request as approved, denied, or interim |
 | Ordinary-Pet Count | `Ordinary_Pet_Count` | Integer | Count only animals classified `Ordinary Pet`; range `0-3` unless a signed continuation page is used |
 | Approved Assistance-Animal Count | `Approved_Assistance_Animal_Count` | Integer | Count only approved assistance animals |
 | Interim Assistance-Animal Count | `Interim_Assistance_Animal_Count` | Integer | Count only interim assistance animals |
@@ -94,6 +95,12 @@ These fields apply only to animals classified `Ordinary Pet`. Approved and inter
 | Aggregate Refundable Additional Pet Security Deposit | Approved lease/financial record | `Pet_Deposit_Amount` | Currency, two decimals | Required as `0.00` or approved amount; aggregate for all Ordinary Pets; must be `<= 0.5 x Periodic Rent` |
 | Pet Deposit Due Date | Lease/addendum record | `Pet_Deposit_Due_Date` | Date, `YYYY-MM-DD` | Required when deposit amount is greater than zero |
 | Pet Deposit Not Applicable | Lease/addendum record | `Pet_Deposit_Not_Applicable` | Boolean | Must be `true` when no Ordinary Pet exists; mutually exclusive with positive deposit |
+| One-Time Ordinary-Pet Administration Fee | Approved lease/configuration record | `Ordinary_Pet_Administration_Fee_Amount` | Currency, two decimals | Controlled value: exactly `50.00` only for the first eligible approval in the household's continuous tenancy; otherwise `0.00` |
+| Administration Fee Due Date | Lease/addendum record | `Ordinary_Pet_Administration_Fee_Due_Date` | Date, `YYYY-MM-DD` | Required only when the fee is `50.00`; may not precede effective ordinary-pet approval and execution of the signed addendum or prospective amendment |
+| Administration Fee Not Applicable | Lease/addendum record | `Ordinary_Pet_Administration_Fee_Not_Applicable` | Boolean | Must be `true` when the fee is `0.00`; mutually exclusive with a positive fee |
+| Administration Fee Previously Assessed | Approved financial/audit record | `Ordinary_Pet_Administration_Fee_Previously_Assessed` | Boolean, workflow-only | `true` after one valid assessment in the continuous tenancy; blocks renewal, replacement-pet, additional-pet, and addendum-update repeats |
+| Administration Fee Event Key | Derived workflow value | `Ordinary_Pet_Administration_Fee_Event_Key` | Text, workflow-only | Stable idempotency key based on parent lease/continuous-tenancy ID plus fee type; never use tenant or animal names |
+| Administration Fee Assessment Status | Approved financial/audit record | `Ordinary_Pet_Administration_Fee_Status` | Picklist: `Not Applicable`, `Paused`, `Eligible`, `Invoiced`, `Paid`, `Voided`, `Refunded`, `Credited`, `Manual Review` | Required; state transitions must be immutable/auditable and must not contain accommodation evidence |
 | Monthly Pet Rent Rate | Approved lease/financial record | `Pet_Rent_Rate_Per_Ordinary_Pet` | Currency, two decimals | Required as `0.00` or approved rate |
 | Chargeable Ordinary-Pet Count | Derived | `Pet_Rent_Chargeable_Count` | Integer | Must equal the approved chargeable Ordinary-Pet count; assistance animals excluded |
 | Total Monthly Pet Rent | Derived / approved override | `Pet_Rent_Total_Monthly` | Currency, two decimals | Normally rate multiplied by count; require documented approval for any exception |
@@ -106,9 +113,16 @@ Financial guardrails:
 
 - Fail generation if a charge field is blank. Use `0.00` plus the corresponding not-applicable flag where no charge applies.
 - The aggregate refundable additional pet deposit may not exceed one-half of one month's periodic rent under K.S.A. 58-2550.
-- Do not create a per-animal deposit, nonrefundable pet administration fee, assistance-animal charge, duplicate late-fee formula, or duplicate interest formula.
+- The one-time Ordinary-Pet Administration Fee is exactly `$50.00` once per household for the continuous tenancy and is cost-linked to actual approval-processing work. Never multiply it by animal count or assess it again at renewal, extension, holdover, replacement-pet approval, additional-pet approval, or a later addendum update.
+- Assess the administration fee only after at least one Ordinary Pet is approved and the final Lease/addendum or signed prospective amendment containing the charge is executed and effective. A denied or withdrawn request before effectiveness produces `0.00` / not applicable.
+- The fee is ordinarily nonrefundable once earned, subject to the controlled assistance-animal void/refund/credit rule below and any controlling law. Automation must not label an amount earned before effective approval and execution.
+- Treat the administration fee as an `Other Charge`, not `Base Rent` or a security deposit. Never hold it for, credit it toward, or use it to pay damage, cleaning, pest treatment, wear, performance, or breach.
+- Do not assess or collect an unassessed administration fee while an accommodation request concerning the fee-triggering animal is pending. Approved and interim assistance animals are excluded and produce `0.00` / not applicable.
+- If the sole animal that triggered a paid administration fee is later approved as an assistance animal, void an unpaid invoice or promptly issue a traceable `$50.00` refund/credit. If an approved Ordinary Pet remains, set `Manual Review`; do not automatically refund or retain the fee based on accommodation evidence.
+- Do not create a separate late-fee, interest, collection-cost, or payment-allocation formula for the administration fee.
 - Label monthly pet rent as an `Other Charge`, not `Base Rent`.
-- Do not create a Zoho Books invoice, recurring charge, or deposit entry until the final lease/addendum, source-of-truth system, accounting treatment, item IDs, and duplicate-prevention method are approved.
+- Do not create a per-animal deposit or assistance-animal charge.
+- Do not create a Zoho Books invoice, recurring charge, refund, credit, or deposit entry until the final lease/addendum, source-of-truth system, accounting treatment, controlled item IDs, signed prospective-adoption method, and duplicate-prevention method are approved by Kansas counsel and CPA/accounting review.
 
 ## Signer and Audit Fields
 
@@ -136,12 +150,17 @@ Before document generation:
 4. Recalculate household-status booleans and all classification counts from the animal rows.
 5. Suppress ordinary-pet-only descriptive fields for approved/interim assistance animals unless an approved legal rule requires them.
 6. Force all pet charges to `0.00` / not applicable when there is no Ordinary Pet.
-7. Exclude approved/interim assistance animals from deposit and pet-rent calculations.
-8. Enforce the aggregate pet-deposit cap using the current periodic-rent value.
-9. Recalculate monthly pet rent and reject an unexplained mismatch.
-10. Require interim operational terms and expiration when any animal is interim.
-11. Scan merged values and attachments for medical information, accommodation support documents, signature images, tenant PII not needed in the contract, and secrets.
-12. Create an immutable audit event without logging tenant names, animal names, phone numbers, emails, accommodation evidence, or document contents.
+7. Exclude approved/interim assistance animals from deposit, administration-fee, and pet-rent calculations.
+8. Pause an unassessed administration fee when the restricted workflow reports a pending accommodation request concerning the fee-triggering animal.
+9. Require the executed final Lease/addendum or signed prospective amendment to contain the `$50.00` fee before eligibility; never add it unilaterally during an existing tenancy.
+10. Enforce exactly one administration-fee event per household/continuous tenancy using the stable event key and prior-assessment flag; block renewals, replacements, additional pets, and document updates from creating another event.
+11. Require `50.00` plus a due date on an eligible first event; otherwise require `0.00` plus the not-applicable flag. Reject a blank, override, per-animal multiplier, pre-effectiveness due date, or unexplained state transition.
+12. Enforce the aggregate pet-deposit cap using the current periodic-rent value.
+13. Recalculate monthly pet rent and reject an unexplained mismatch.
+14. Require interim operational terms and expiration when any animal is interim.
+15. Route later assistance-animal reclassification to the controlled void/refund/credit rule without exposing accommodation evidence to the lease or accounting payload.
+16. Scan merged values and attachments for medical information, accommodation support documents, signature images, tenant PII not needed in the contract, and secrets.
+17. Create an immutable audit event without logging tenant names, animal names, phone numbers, emails, accommodation evidence, or document contents.
 
 After generation, a human reviewer must compare the preview against the approved template and parent Lease before sending it for signature.
 
@@ -151,11 +170,15 @@ Use synthetic values only.
 
 | Test | Expected result |
 |---|---|
-| One Ordinary Pet with completed deposit and monthly pet rent | Generates; charges reconcile; deposit cap passes |
-| Two Ordinary Pets with one aggregate deposit | Generates; no duplicate/per-animal deposit |
+| First Ordinary Pet in a household's continuous tenancy with executed effective fee language | Generates with one `$50.00` administration fee; charges reconcile; deposit cap passes |
+| Two Ordinary Pets approved together | Generates one `$50.00` household administration fee and one aggregate deposit; no per-animal multiplication |
+| Renewal, extension, holdover, replacement pet, additional pet, or addendum update after a valid fee event | Generates no second administration fee; prior event key blocks duplication |
 | One Approved Assistance Animal and no Ordinary Pet | Generates with all pet charges `0.00` / N/A; no ordinary-pet fields or medical information |
 | One Interim Assistance Animal | Generates only when interim terms and expiration are present; no pet charges |
-| Mixed household: one Ordinary Pet plus one Approved Assistance Animal | Generates; only the Ordinary Pet is included in charge counts |
+| Pending accommodation request concerning the proposed fee-triggering animal | Administration fee is paused; no invoice is created; request is not treated as approved or denied |
+| Sole charged Ordinary Pet later approved as an assistance animal | Open fee is voided or paid fee is refunded/credited for exactly `$50.00` with an audit event |
+| Mixed household: one Ordinary Pet plus one Approved Assistance Animal | Generates; only the Ordinary Pet is included in charge counts; administration-fee refund status routes to manual review if previously assessed |
+| Duplicate administration-fee event key or previous-assessment flag is true | Blocked; no invoice, renewal charge, or replacement/additional-pet charge |
 | Blank classification or partially populated animal row | Blocked |
 | Blank charge field | Blocked even though the template would treat blank as `$0.00` |
 | Aggregate pet deposit greater than one-half month's periodic rent | Blocked |
@@ -169,6 +192,8 @@ Do not activate this map until:
 
 - Kansas counsel approves the final addendum and assistance-animal decision workflow.
 - The full current lease has been reconciled.
+- The final Lease/addendum or signed prospective amendment expressly adopts the `$50.00` administration fee, and counsel approves its one-time, cost-linked, non-security, accommodation-pause, and refund/credit terms.
+- CPA/accounting review approves the Zoho Books item, revenue account, recognition, refund/credit workflow, and audit treatment; a chart-of-accounts label alone never authorizes the charge.
 - Every live Zoho module, field/API name, picklist value, permission, signature role, financial owner, and validation rule has been verified.
 - Sanitized tests pass and a rendered preview is manually reviewed.
 - The legacy templates remain available for rollback until the consolidated workflow is accepted.
