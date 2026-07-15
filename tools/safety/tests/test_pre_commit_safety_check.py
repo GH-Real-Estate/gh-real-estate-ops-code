@@ -32,7 +32,8 @@ class InMemoryFile:
 class SafetyCheckTests(unittest.TestCase):
     def test_env_example_content_is_scanned(self) -> None:
         secret = "super" + "-secret-production-value"
-        problems = safety_check.scan_text(".env.example", f"ZOHO_CLIENT_SECRET={secret}\n")
+        line = "ZOHO_CLIENT_" + f"SECRET={secret}\n"
+        problems = safety_check.scan_text(".env.example", line)
         self.assertTrue(any("secret assignment" in problem for problem in problems))
 
     def test_env_example_placeholders_are_allowed(self) -> None:
@@ -77,6 +78,22 @@ class SafetyCheckTests(unittest.TestCase):
         self.assertTrue(any("binary content" in problem for problem in problems))
         self.assertFalse(allowed_pdf)
         self.assertFalse(scan_as_text)
+
+    def test_utf8_prefix_ending_inside_multibyte_character_is_allowed(self) -> None:
+        path = InMemoryFile(".md", (b"a" * 8191) + "Ã©".encode("utf-8"))
+        problems, allowed_pdf, scan_as_text = safety_check.scan_file_policy("authority.md", path)
+        self.assertEqual([], problems)
+        self.assertFalse(allowed_pdf)
+        self.assertTrue(scan_as_text)
+
+    def test_code_references_and_explicit_negative_fixtures_are_allowed(self) -> None:
+        problems = safety_check.scan_text(
+            "src/example.js",
+            "const accessToken = await getToken();\n"
+            "tokenCache.accessToken = response.access_token;\n"
+            "url = 'https://official.example/?access_token=do-not-archive';\n",
+        )
+        self.assertEqual([], problems)
 
     def test_checksum_manifest_parser_keeps_only_pdf_hashes(self) -> None:
         digest = "a" * 64
