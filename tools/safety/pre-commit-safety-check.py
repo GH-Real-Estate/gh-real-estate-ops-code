@@ -106,6 +106,16 @@ MAX_TEXT_BYTES = 5 * 1024 * 1024
 MAX_PDF_BYTES = 25 * 1024 * 1024
 MAX_TOTAL_PDF_BYTES = 75 * 1024 * 1024
 
+# One pre-existing HUD extraction uses a custom embedded font and contains NUL
+# control bytes after page 8. Keep the exact reviewed artifact readable to the
+# authority tooling, but make any byte change fail closed until it is replaced
+# through the governed legal-source regeneration process.
+HASH_PINNED_CONTROL_TEXT_SHA256 = {
+    "legal/text/current/authorities/federal/federal-official/"
+    "hud-fheo-memorandum-may-22-2026-d1bcc85d6f.md":
+        "f64b54f1bfeb7d91c93bcea6d876aff4f667345dd14db0d50a27ec9904c85820",
+}
+
 DANGEROUS_EXACT_NAMES = {
     ".npmrc",
     ".pypirc",
@@ -304,6 +314,9 @@ def scan_file_policy(rel: str, path: Path) -> tuple[list[str], bool, bool]:
     with path.open("rb") as handle:
         content = handle.read()
     if b"\x00" in content:
+        expected_hash = HASH_PINNED_CONTROL_TEXT_SHA256.get(rel)
+        if expected_hash == hashlib.sha256(content).hexdigest():
+            return [], False, True
         return [f"Unapproved binary content: {rel}"], False, False
     # Full UTF-8 validation still occurs in scan_repository.read_text().
     return [], False, True
