@@ -20,7 +20,6 @@ ROOT = Path(__file__).resolve().parents[2]
 # The example environment file is exempt only from the risky filename rule. Its
 # contents must always be scanned so a pasted production value cannot bypass CI.
 FILENAME_ALLOWLIST = {".env.example"}
-CONTENT_SCAN_SKIP = {"tools/safety/pre-commit-safety-check.py"}
 
 SKIP_DIRS = {
     ".git",
@@ -243,6 +242,18 @@ def should_skip(path: Path) -> bool:
     return any(part in SKIP_DIRS for part in path.parts)
 
 
+def classify_path_for_scan(path: Path) -> str:
+    """Classify paths without allowing skipped directory names to hide symlinks."""
+
+    if path.is_symlink():
+        return "symlink"
+    if should_skip(path):
+        return "skip"
+    if not path.is_file():
+        return "ignore"
+    return "file"
+
+
 def is_safe_secret_reference(value: str) -> bool:
     raw = value.strip().strip("'\"")
     lowered = raw.lower()
@@ -288,19 +299,17 @@ def scan_file_policy(rel: str, path: Path) -> tuple[list[str], bool, bool]:
     if size > MAX_TEXT_BYTES:
         return [f"Text or unknown file exceeds {MAX_TEXT_BYTES}-byte limit: {rel}"], False, False
 
+    # Text files are capped above, so reading the full payload is bounded. Check
+    # the entire file so binary data cannot be hidden after a benign prefix.
     with path.open("rb") as handle:
-        sample = handle.read(min(size, 8192))
-    if b"\x00" in sample:
+        content = handle.read()
+    if b"\x00" in content:
         return [f"Unapproved binary content: {rel}"], False, False
-    # Full UTF-8 validation occurs in scan_repository.read_text(). Decoding an
-    # arbitrary prefix here can split a valid multibyte character at 8192 bytes.
+    # Full UTF-8 validation still occurs in scan_repository.read_text().
     return [], False, True
 
 
 def scan_text(rel: str, text: str) -> list[str]:
-    if rel in CONTENT_SCAN_SKIP:
-        return []
-
     problems: list[str] = []
     for line_no, line in enumerate(text.splitlines(), start=1):
         if rel.startswith(OPERATIONAL_ID_PREFIXES) and LONG_OPERATIONAL_ID_RE.search(line):
@@ -387,12 +396,11 @@ def scan_repository(root: Path = ROOT) -> list[str]:
     problems.extend(manifest_problems)
     try:
         for path in sorted(root.rglob("*")):
-            if should_skip(path):
-                continue
-            if path.is_symlink():
+            classification = classify_path_for_scan(path)
+            if classification == "symlink":
                 problems.append(f"Symbolic links are prohibited: {rel_path(path)}")
                 continue
-            if not path.is_file():
+            if classification != "file":
                 continue
 
             rel = rel_path(path)
