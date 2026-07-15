@@ -34,3 +34,15 @@ updates:
     versioning-strategy: increase-if-necessary
     commit-message:
       prefix: "chore(zillow)"
+
+  - package-ecosystem: pip
+    directory: /legal
+    schedule:
+      interval: weekly
+      day: monday
+      time: "14:00"
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
+    commit-message:
+      prefix: "chore(legal-python)"
