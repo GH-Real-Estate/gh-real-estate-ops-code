@@ -43,6 +43,14 @@ class SafetyCheckTests(unittest.TestCase):
         )
         self.assertEqual([], problems)
 
+    def test_scanner_source_is_not_exempt_from_secret_detection(self) -> None:
+        secret = "actual" + "-production-secret-value"
+        line = "ZOHO_CLIENT_" + f"SECRET={secret}\n"
+        problems = safety_check.scan_text(
+            "tools/safety/pre-commit-safety-check.py", line
+        )
+        self.assertTrue(any("secret assignment" in problem for problem in problems))
+
     def test_long_operational_identifiers_are_blocked(self) -> None:
         problems = safety_check.scan_text(
             "src/zoho-books/example.deluge", 'itemId = "123456789012345678";\n'
@@ -78,6 +86,23 @@ class SafetyCheckTests(unittest.TestCase):
         self.assertTrue(any("binary content" in problem for problem in problems))
         self.assertFalse(allowed_pdf)
         self.assertFalse(scan_as_text)
+
+    def test_binary_content_after_prefix_is_blocked(self) -> None:
+        path = InMemoryFile(".bin", (b"A" * 8192) + b"\x00hidden")
+        problems, allowed_pdf, scan_as_text = safety_check.scan_file_policy(
+            "payload.bin", path
+        )
+        self.assertTrue(any("binary content" in problem for problem in problems))
+        self.assertFalse(allowed_pdf)
+        self.assertFalse(scan_as_text)
+
+    def test_skipped_directory_name_cannot_hide_symlink(self) -> None:
+        path = SimpleNamespace(
+            parts=("repo", "node_modules"),
+            is_symlink=lambda: True,
+            is_file=lambda: False,
+        )
+        self.assertEqual("symlink", safety_check.classify_path_for_scan(path))
 
     def test_utf8_prefix_ending_inside_multibyte_character_is_allowed(self) -> None:
         path = InMemoryFile(".md", (b"a" * 8191) + "Ã©".encode("utf-8"))
