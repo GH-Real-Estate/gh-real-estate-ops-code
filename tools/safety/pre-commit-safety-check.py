@@ -13,7 +13,7 @@ import hashlib
 import json
 import re
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -63,6 +63,7 @@ GOVERNED_PDF_PREFIXES = (
 
 ACCOUNTING_PDF_MANIFEST = "accounting/manifests/sourcebook_release.json"
 LEGAL_CHECKSUM_MANIFEST = "legal/manifests/SHA256SUMS"
+ACCOUNTING_CONTENT_MANIFEST_GLOB = "accounting/chart-of-accounts/**/manifest.json"
 
 BLOCKED_BINARY_SUFFIXES = {
     ".7z",
@@ -399,6 +400,51 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def validate_accounting_content_manifest(root: Path, manifest: Path) -> list[str]:
+    """Verify that every declared accounting artifact exists at its exact hash."""
+
+    rel_manifest = manifest.relative_to(root).as_posix()
+    try:
+        payload = json.loads(manifest.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        return [f"Could not read content manifest {rel_manifest}: {exc}"]
+
+    files = payload.get("files") if isinstance(payload, dict) else None
+    if not isinstance(files, dict) or not files:
+        return [f"Content manifest has no files mapping: {rel_manifest}"]
+
+    problems: list[str] = []
+    for label, metadata in files.items():
+        context = f"{rel_manifest} files.{label}"
+        if not isinstance(metadata, dict):
+            problems.append(f"Content manifest entry must be an object: {context}")
+            continue
+        repository_path = metadata.get("repository_path")
+        digest = metadata.get("sha256")
+        if not isinstance(repository_path, str):
+            problems.append(f"Content manifest entry needs repository_path: {context}")
+            continue
+        pure_path = PurePosixPath(repository_path)
+        if pure_path.is_absolute() or ".." in pure_path.parts:
+            problems.append(f"Unsafe repository_path in content manifest: {context}")
+            continue
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            problems.append(f"Invalid sha256 in content manifest: {context}")
+            continue
+
+        target = root.joinpath(*pure_path.parts)
+        if target.is_symlink() or not target.is_file():
+            problems.append(
+                f"Content manifest target is missing or not a regular file: "
+                f"{context} -> {repository_path}"
+            )
+        elif sha256_file(target) != digest:
+            problems.append(
+                f"Content manifest hash mismatch: {context} -> {repository_path}"
+            )
+    return problems
+
+
 def scan_repository(root: Path = ROOT) -> list[str]:
     global ROOT
     previous_root = ROOT
@@ -407,6 +453,8 @@ def scan_repository(root: Path = ROOT) -> list[str]:
     governed_pdf_bytes = 0
     approved_pdf_hashes, manifest_problems = load_approved_pdf_hashes(root)
     problems.extend(manifest_problems)
+    for manifest in sorted(root.glob(ACCOUNTING_CONTENT_MANIFEST_GLOB)):
+        problems.extend(validate_accounting_content_manifest(root, manifest))
     try:
         for path in sorted(root.rglob("*")):
             classification = classify_path_for_scan(path)
