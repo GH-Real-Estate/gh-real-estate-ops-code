@@ -5,7 +5,7 @@ import hashlib
 import io
 import json
 import unittest
-from unittest import mock
+import unittest.mock as mock
 from pathlib import Path
 from types import SimpleNamespace
 
