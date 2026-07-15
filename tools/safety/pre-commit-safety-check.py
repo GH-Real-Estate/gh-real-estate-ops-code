@@ -401,7 +401,7 @@ def sha256_file(path: Path) -> str:
 
 
 def validate_accounting_content_manifest(root: Path, manifest: Path) -> list[str]:
-    """Verify that every declared accounting artifact exists at its exact hash."""
+    """Verify committed artifacts and explicitly documented unavailable history."""
 
     rel_manifest = manifest.relative_to(root).as_posix()
     try:
@@ -441,6 +441,38 @@ def validate_accounting_content_manifest(root: Path, manifest: Path) -> list[str
         elif sha256_file(target) != digest:
             problems.append(
                 f"Content manifest hash mismatch: {context} -> {repository_path}"
+            )
+
+    unavailable = payload.get("unavailable_artifacts", {})
+    if not isinstance(unavailable, dict):
+        problems.append(
+            f"Content manifest unavailable_artifacts must be a mapping: {rel_manifest}"
+        )
+        return problems
+
+    for label, metadata in unavailable.items():
+        context = f"{rel_manifest} unavailable_artifacts.{label}"
+        if label in files:
+            problems.append(
+                f"Content manifest artifact cannot be both committed and unavailable: {context}"
+            )
+            continue
+        if not isinstance(metadata, dict):
+            problems.append(f"Unavailable artifact entry must be an object: {context}")
+            continue
+        if metadata.get("committed_to_github") is not False:
+            problems.append(
+                f"Unavailable artifact must set committed_to_github to false: {context}"
+            )
+        digest = metadata.get("sha256")
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            problems.append(f"Invalid sha256 for unavailable artifact: {context}")
+        reason = metadata.get("reason")
+        if not isinstance(reason, str) or not reason.strip():
+            problems.append(f"Unavailable artifact needs a reason: {context}")
+        if "repository_path" in metadata:
+            problems.append(
+                f"Unavailable artifact must not claim a repository_path: {context}"
             )
     return problems
 
