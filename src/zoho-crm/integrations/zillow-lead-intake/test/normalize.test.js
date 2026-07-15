@@ -71,7 +71,7 @@ test('normalizes official Zillow camelCase fields', () => {
   assert.equal(lead.firstName, 'Rachel');
   assert.equal(lead.lastName, 'Lee');
   assert.equal(lead.email, 'rachel@example.com');
-  assert.equal(lead.phone, '+SYNTHETIC-ID-002');
+  assert.equal(lead.phone, '+15555558378');
   assert.equal(lead.secondaryPhone, '');
   assert.equal(lead.desiredMoveInDate, '2016-09-26');
   assert.equal(lead.propertyAddress, '246 Tennessee Avenue, C102, Sunnyvale, CA 94086');
@@ -94,7 +94,7 @@ test('rejects lead without email or phone', () => {
 test('builds stable hash key when Zillow lead ID is absent', () => {
   const keyA = buildLeadKey({
     email: 'test.tenant@example.com',
-    phone: '+SYNTHETIC-ID-003',
+    phone: '+19135550100',
     listingId: 'listing-1',
     propertyAddress: '1000 Example Avenue, Unit 1, Sample City, KS 00000',
     unit: 'Unit 1',
@@ -104,7 +104,7 @@ test('builds stable hash key when Zillow lead ID is absent', () => {
 
   const keyB = buildLeadKey({
     email: 'test.tenant@example.com',
-    phone: '+SYNTHETIC-ID-003',
+    phone: '+19135550100',
     listingId: 'listing-1',
     propertyAddress: '1000 Example Avenue, Unit 1, Sample City, KS 00000',
     unit: 'Unit 1',
@@ -181,7 +181,7 @@ test('builds CRM Lead plan with primary Zillow phone mapped to Mobile only', () 
   assert.equal(plan.leadRecord.Last_Name, 'Tenant');
   assert.equal(plan.leadRecord.Company, '1000 Example Avenue');
   assert.equal(plan.leadRecord.Email, 'test.tenant@example.com');
-  assert.equal(plan.leadRecord.Mobile, '+SYNTHETIC-ID-003');
+  assert.equal(plan.leadRecord.Mobile, '+19135550100');
   assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Phone'), false);
   assert.equal(plan.leadRecord.Zillow_Lead_Key, 'zillow:lead_test_123');
   assert.equal(plan.leadRecord.Lead_Source, 'Zillow');
@@ -215,8 +215,8 @@ test('maps secondary phone aliases to standard Phone when present', () => {
   }, '2026-07-01T12:00:00.000Z');
 
   const plan = buildCrmLeadPlan(lead, null, buildRoutingWarnings(lead, null));
-  assert.equal(plan.leadRecord.Mobile, '+SYNTHETIC-ID-003');
-  assert.equal(plan.leadRecord.Phone, '+SYNTHETIC-ID-004');
+  assert.equal(plan.leadRecord.Mobile, '+19135550100');
+  assert.equal(plan.leadRecord.Phone, '+19135550101');
 });
 
 test('uses URL-encoded body as the default accepted content type', () => {
@@ -225,7 +225,7 @@ test('uses URL-encoded body as the default accepted content type', () => {
 });
 
 test('normalizes utility values', () => {
-  assert.equal(normalizePhone('(913) 555-0100'), '+SYNTHETIC-ID-003');
+  assert.equal(normalizePhone('(913) 555-0100'), '+19135550100');
   assert.equal(normalizeDate('7/7/2026'), '2026-07-07');
   assert.equal(normalizeDate('20260707'), '2026-07-07');
   assert.equal(normalizeFieldKey('listingContactEmail'), 'listing_contact_email');
