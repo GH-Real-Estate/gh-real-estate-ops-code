@@ -231,7 +231,7 @@ The long-term routing source is the CRM Units module. Populate these Unit fields
 Example `Zillow_Routing_Unit_Key`:
 
 ```text
-9401 nieman road|unit 3|overland park|ks|66214
+1000 example avenue|unit 3|sample city|ks|00000
 ```
 
 ## Legacy Static Map Fallback
@@ -240,10 +240,10 @@ Use this only for temporary testing or one-off exceptions:
 
 ```json
 {
-  "listing:2097508172": {
-    "propertyId": "1111111111111111111",
-    "unitId": "2222222222222222222",
-    "propertyName": "9401 Nieman Rd",
+  "listing:SYNTHETIC-ID-005": {
+    "propertyId": "SYNTHETIC-ID-001",
+    "unitId": "SYNTHETIC-ID-006",
+    "propertyName": "1000 Example Avenue",
     "unitName": "Unit 3"
   }
 }

@@ -21,10 +21,10 @@
   },
   "files": {
     "zoho_live_chart_of_accounts_sanitized.csv": {
-      "sha256": "0799b66c4571c567d3f3d2449441e44dc9eb76ed570bbdca190139d2bbd7c715"
+      "sha256": "70b317e6ef4775f0e2a522357eadae511ad4d9facf3f331498f33ecbe53fabbc"
     },
     "final_chart_of_accounts.csv": {
-      "sha256": "c0f7ac7a807e22b1ce2f48088190c2d27e6bbfc2ada9af4161f0ab1a773a67b2"
+      "sha256": "e96b3c3cdf5bb0e35d626bf118cd26e06270a9f7d20073a11e5c1239766c8af8"
     },
     "conditional_accounts.csv": {
       "sha256": "32c4c24a98fb7a76e9b5ba8bcad3effd9d48ffced135353cbdac5ca7f6e052f8"
@@ -33,17 +33,17 @@
       "sha256": "1d93536f363646a21bf62642255dca3a7d11f032438cbe127298e7285b80c85d"
     },
     "reconciliation_audit.md": {
-      "sha256": "fb7980d3f736a48bf03532900573260458e73592f4c8b931c6fb7db7c66b7502"
+      "sha256": "7483cf664a9290c62ef1588ef6cc563ac36fcf97482f258d9cd746fb0d6d236e"
     },
     "README.md": {
-      "sha256": "ca0611fc4fed54291577f64e2c52dc061d6be2947cf1acbfa410980fa18c36d3"
+      "sha256": "a5b3bff4cacbe57dec4d7e83cf35ee9d0d9100492951584d6a469035a0fe0ca9"
     },
     "CHANGELOG.md": {
-      "sha256": "6903f112c580bdae6e81cdca772e809ce5bf8cdbe256d446ea1307689ebe0aa9"
+      "sha256": "7ad7da77cb1fe73031f8341feba4e68e533321802f2b33839fbc9b345a987942"
     }
   },
   "controls": {
-    "sanitized_snapshot_is_exact_for_included_fields": true,
+    "sanitized_snapshot_is_exact_for_included_fields": false,
     "excluded_fields": [
       "Account #",
       "Mileage Rate",
@@ -52,6 +52,8 @@
     ],
     "governance_master_contains_recommended_not_yet_live_corrections": true,
     "fasb_content": "ASC locators and original GH analysis only; no Codification text",
-    "professional_review_required_for_material_conclusions": true
+    "professional_review_required_for_material_conclusions": true,
+    "live_account_ids_committed": false,
+    "account_id_representation": "Deterministic public aliases; private crosswalk retained outside GitHub"
   }
 }

@@ -6,8 +6,8 @@
 
 This directory separates **what is currently in Zoho** from **what GH should treat as the accounting-governance master**:
 
-- `current/zoho_live_chart_of_accounts_sanitized.csv` — exact 185-row live snapshot from the uploaded export, excluding bank-account numbers and mileage/import-only fields.
-- `current/final_chart_of_accounts.csv` — the same 185 live accounts and IDs with governance roles, recommended statuses, reporting mappings, and corrected control descriptions.
+- `current/zoho_live_chart_of_accounts_sanitized.csv` — 185-row sanitized live snapshot with deterministic public Account-ID aliases, excluding bank-account numbers and mileage/import-only fields.
+- `current/final_chart_of_accounts.csv` — the same 185 live accounts and public aliases with governance roles, recommended statuses, reporting mappings, and corrected control descriptions.
 - `current/conditional_accounts.csv` — accounts that are live-but-gated or should be created only after a documented transaction trigger.
 - `current/authority_crosswalk.csv` — accounting, tax, legal, and workflow cross-checks.
 - `current/reconciliation_audit.md` — unresolved live-Zoho actions and substantive audit findings.
@@ -16,7 +16,7 @@ This directory separates **what is currently in Zoho** from **what GH should tre
 - `releases/2026-07-13/` — immutable first reconciliation.
 - `releases/2026-07-13-r2/` — immutable revised snapshot, governance master, audit, and manifest.
 
-The raw workbook is not committed because it contains banking identifiers in its `Account #` column. The sanitized live CSV is the exact repository record for codes, names, types, statuses, parents, descriptions, and Account IDs.
+The raw workbook is not committed because it contains banking identifiers in its `Account #` column. The sanitized live CSV is the exact repository record for codes, names, types, statuses, parents, descriptions, and public Account-ID aliases. The private alias-to-Zoho-ID crosswalk is retained outside GitHub.
 
 ## Current status
 

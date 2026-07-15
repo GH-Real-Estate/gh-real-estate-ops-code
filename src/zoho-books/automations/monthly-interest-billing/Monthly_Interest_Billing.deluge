@@ -31,7 +31,7 @@
 // =================================================================================================
 apiBase = "https://www.zohoapis.com/books/v3";
 // -------------------- CONTEXT --------------------
-orgId = "873302182";
+orgId = "";
 if(organization != null && organization.get("organization_id") != null)
 {
 	orgId = organization.get("organization_id").toString();
@@ -50,7 +50,7 @@ interestThroughDateString = interestThroughDate.toString("yyyy-MM-dd");
 // -------------------- CONFIG --------------------
 interestInvoicePrefix = "INT-";
 interestInvoiceNumberDigits = 6;
-interestItemId = "5858793000003568001";
+interestItemId = "CONFIG_REQUIRED_INTEREST_ITEM_ID";
 interestAprPct = 10.00;
 // Eligibility: do not assess until unpaid Rent is more than 30 days delinquent.
 interestFirstEligibleDaysAfterDue = 31;

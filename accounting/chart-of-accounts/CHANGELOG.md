@@ -1,5 +1,11 @@
 # Chart of accounts changelog
 
+## 2026-07-14 — Public-repository identifier redaction
+
+- Replaced live Zoho Account IDs with consistent `PUBLIC-ACCT-####` aliases in current and dated reconciliation files.
+- Kept the private alias-to-Zoho-ID crosswalk outside GitHub; account names, codes, hierarchy, status, governance mappings, and row counts remain reviewable.
+- Regenerated manifest hashes for every changed public artifact.
+
 ## 2026-07-13 revision 2 — Revised live Zoho reconciliation
 
 - Reconciled `COA Final Revised.xlsx` to the repository without committing its banking identifiers.

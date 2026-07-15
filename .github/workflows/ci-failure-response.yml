@@ -64,7 +64,7 @@ jobs:
   validate:
     name: Validate CI failure responder
     if: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       contents: read
@@ -87,7 +87,7 @@ jobs:
   incident:
     name: Record or recover CI incident
     if: ${{ github.event_name == 'workflow_dispatch' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       actions: read

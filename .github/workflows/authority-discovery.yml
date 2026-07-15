@@ -15,7 +15,7 @@ permissions:
 jobs:
   scan:
     name: Discover ${{ matrix.domain }} authority changes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     permissions:
       contents: read
@@ -28,11 +28,13 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
-          python-version: '3.x'
+          python-version: '3.13'
 
       - name: Scan official discovery sources
         id: discovery
@@ -150,7 +152,7 @@ jobs:
         (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') &&
         github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
       }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
       actions: write

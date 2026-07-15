@@ -1,5 +1,9 @@
 # 2026-07-01 — Use One Private Repo For GH Real Estate
 
+## Status
+
+Historical. The single-repository architecture remains, but the private-visibility decision is superseded by ADR 0004.
+
 ## Decision
 
 Use one private repository for GH Real Estate technical assets:

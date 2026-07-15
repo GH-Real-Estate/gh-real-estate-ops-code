@@ -87,7 +87,7 @@ $leadKey = "manual:zillow:minimal:$stamp"
 
 $minimalLead = @{
   Last_Name = "Tenant"
-  Company = "9401 Nieman Road"
+  Company = "1000 Example Avenue"
   Email = "minimal.live.test.$stamp@example.com"
   Lead_Source = "Zillow"
   Lead_Status = "New Zillow Inquiry"
@@ -132,7 +132,7 @@ Run only after the token test succeeds. This checks the Units module and routing
 
 ```powershell
 $unitsModule = "Units"
-$criteriaRaw = "(Zillow_Routing_Unit_Key:equals:9401 nieman road|unit 3|overland park|ks|66214)"
+$criteriaRaw = "(Zillow_Routing_Unit_Key:equals:1000 example avenue|unit 3|sample city|ks|00000)"
 $criteriaEncoded = [System.Uri]::EscapeDataString($criteriaRaw)
 $unitSearchUrl = "https://www.zohoapis.com/crm/v8/$unitsModule/search?criteria=$criteriaEncoded&per_page=2"
 
@@ -172,24 +172,24 @@ $nowIso = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss+00:00")
 $fullLead = @{
   First_Name = "Live Test"
   Last_Name = "Tenant"
-  Company = "9401 Nieman Road"
+  Company = "1000 Example Avenue"
   Email = "full.live.test.$stamp@example.com"
-  Mobile = "+19135550100"
+  Mobile = "+SYNTHETIC-ID-003"
   Lead_Source = "Zillow"
   Lead_Status = "New Zillow Inquiry"
   Requested_Move_In_Date = "2026-07-07"
   Inquiry_Message = "Message: Live upsert diagnostic only. Delete this CRM Lead."
   Zillow_Renter_Profile_Summary = "Bedrooms sought: 2`nBathrooms sought: 1"
   Zillow_Lead_Key = $leadKey
-  Zillow_Listing_ID = "2097508172"
+  Zillow_Listing_ID = "SYNTHETIC-ID-005"
   Zillow_Lead_Type = "tourRequest"
   Zillow_Provider_Model_ID = "0"
-  Zillow_Property_Address_Raw = "9401 Nieman Road, Unit 3, Overland Park, KS 66214"
-  Zillow_Listing_Street = "9401 Nieman Road"
+  Zillow_Property_Address_Raw = "1000 Example Avenue, Unit 3, Sample City, KS 00000"
+  Zillow_Listing_Street = "1000 Example Avenue"
   Zillow_Listing_Unit = "Unit 3"
-  Zillow_Listing_City = "Overland Park"
+  Zillow_Listing_City = "Sample City"
   Zillow_Listing_State = "KS"
-  Zillow_Listing_Postal_Code = "66214"
+  Zillow_Listing_Postal_Code = "00000"
   Zillow_Source_Payload_Hash = "manual-full-test-$stamp"
   Zillow_Received_At = $nowIso
   Last_Zillow_Sync_At = $nowIso

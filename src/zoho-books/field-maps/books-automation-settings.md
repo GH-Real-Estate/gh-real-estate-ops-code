@@ -6,7 +6,7 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 
 | Setting | Current Value | Status / Notes |
 |---|---:|---|
-| Zoho Books organization ID | `873302182` | Observed in saved Deluge source; schedule context can override when present. |
+| Zoho Books organization ID | `[PRIVATE CONFIGURATION REQUIRED]` | Observed in saved Deluge source; schedule context can override when present. |
 | Zoho Books connection name | `zbooks` | Observed in Deluge automation code. Verify in Zoho before live deployment. |
 | Apply-unused-credits workflow module | `Invoice` | Must be an Invoice workflow, not an Estimate workflow. |
 | Apply-unused-credits trigger | Event Based / Created | Runs when a new invoice is created. Do not enable during bulk historical imports unless intentional. |
@@ -14,10 +14,10 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 | Apply-unused-credits unused-credit source | `/contacts/{customer_id}/receivables/unusedcredits` | Reads unused customer credits from Zoho Books contact receivables. |
 | Apply-unused-credits retainer option | `include_unused_retainer_payments=true` | Includes unused retainer payments in the credit list. |
 | Apply-unused-credits branch rule | Invoice `branch_id` must match credit `branch_id` | Prevents cross-branch credit application. Blank branch values fail closed unless explicitly changed after verification. |
-| Late-fee item ID | `5858793000001596035` | Observed in Late Fee Guard. Non-secret, but verify in Zoho Books. |
-| Interest item ID | `5858793000003568001` | Used by monthly interest billing. Verify item exists and maps to delinquent-rent interest. |
+| Late-fee item ID | `[PRIVATE CONFIGURATION REQUIRED]` | Observed in Late Fee Guard. Non-secret, but verify in Zoho Books. |
+| Interest item ID | `[PRIVATE CONFIGURATION REQUIRED]` | Used by monthly interest billing. Verify item exists and maps to delinquent-rent interest. |
 | Late-fee invoice template name | `Fee Invoice - Late Fee` | Observed in Late Fee Guard. Verify template exists. |
-| Late-fee invoice template ID | `5858793000001838039` | Observed in Late Fee Guard. Verify before live deployment. |
+| Late-fee invoice template ID | `[PRIVATE CONFIGURATION REQUIRED]` | Observed in Late Fee Guard. Verify before live deployment. |
 | Late-fee / interest source ledger field | `cf_late_fee_stages_applied` | Source invoice custom field used for late-fee and monthly-interest idempotency/history. |
 | Rent invoice flag field | `cf_is_rent_invoice` | Source invoice must be marked as rent for fee and monthly-interest processing. |
 | Do-not-assess invoice field | `cf_do_not_assess_fees` | Optional exclusion flag. |
