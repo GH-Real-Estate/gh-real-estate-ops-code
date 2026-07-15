@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import io
 import unittest
+from unittest import mock
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -95,6 +97,22 @@ class SafetyCheckTests(unittest.TestCase):
         self.assertTrue(any("binary content" in problem for problem in problems))
         self.assertFalse(allowed_pdf)
         self.assertFalse(scan_as_text)
+
+    def test_hash_pinned_control_text_requires_exact_reviewed_bytes(self) -> None:
+        content = b"reviewed\x00legacy"
+        rel = "legal/text/current/authorities/federal/example.md"
+        digest = hashlib.sha256(content).hexdigest()
+        with mock.patch.dict(
+            safety_check.HASH_PINNED_CONTROL_TEXT_SHA256,
+            {rel: digest},
+            clear=True,
+        ):
+            allowed = safety_check.scan_file_policy(rel, InMemoryFile(".md", content))
+            changed = safety_check.scan_file_policy(
+                rel, InMemoryFile(".md", content + b"changed")
+            )
+        self.assertEqual(([], False, True), allowed)
+        self.assertTrue(any("binary content" in problem for problem in changed[0]))
 
     def test_skipped_directory_name_cannot_hide_symlink(self) -> None:
         path = SimpleNamespace(
