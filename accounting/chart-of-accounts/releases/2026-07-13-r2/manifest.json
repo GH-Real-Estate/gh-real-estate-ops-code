@@ -30,11 +30,11 @@
     },
     "conditional_accounts.csv": {
       "sha256": "32c4c24a98fb7a76e9b5ba8bcad3effd9d48ffced135353cbdac5ca7f6e052f8",
-      "repository_path": "accounting/chart-of-accounts/conditional_accounts.csv"
+      "repository_path": "accounting/chart-of-accounts/current/conditional_accounts.csv"
     },
     "authority_crosswalk.csv": {
       "sha256": "1d93536f363646a21bf62642255dca3a7d11f032438cbe127298e7285b80c85d",
-      "repository_path": "accounting/chart-of-accounts/authority_crosswalk.csv"
+      "repository_path": "accounting/chart-of-accounts/current/authority_crosswalk.csv"
     },
     "reconciliation_audit.md": {
       "sha256": "7483cf664a9290c62ef1588ef6cc563ac36fcf97482f258d9cd746fb0d6d236e",
