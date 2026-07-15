@@ -1,2 +1,2 @@
 # Required for semantic comparison of token-generated PDFs with approved bundle pages.
-pypdf==6.8.0
+pypdf==6.14.2
