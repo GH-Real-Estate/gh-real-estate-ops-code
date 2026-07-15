@@ -21,25 +21,32 @@
   },
   "files": {
     "zoho_live_chart_of_accounts_sanitized.csv": {
-      "sha256": "aa6647a6d6e6c89355a7bc0ee3bc5831792ba8911cf0d00dd231a191366fe363"
+      "sha256": "aa6647a6d6e6c89355a7bc0ee3bc5831792ba8911cf0d00dd231a191366fe363",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13/zoho_live_chart_of_accounts_sanitized.csv"
     },
     "final_chart_of_accounts.csv": {
-      "sha256": "f2a63b7886f54e8fd060dbc55e22612352c7c2340bf6c80689b11a4d8c918af2"
+      "sha256": "f2a63b7886f54e8fd060dbc55e22612352c7c2340bf6c80689b11a4d8c918af2",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13/final_chart_of_accounts.csv"
     },
     "conditional_accounts.csv": {
-      "sha256": "1de45132302fa6c85a56471cf022b35dc216c132ed51657dac892ede73b1e4c5"
+      "sha256": "1de45132302fa6c85a56471cf022b35dc216c132ed51657dac892ede73b1e4c5",
+      "repository_path": "accounting/chart-of-accounts/conditional_accounts.csv"
     },
     "authority_crosswalk.csv": {
-      "sha256": "0703ded46e768f6bb82fc1351b4d63a6e87dc609cc4469024148a7f2988c9d34"
+      "sha256": "0703ded46e768f6bb82fc1351b4d63a6e87dc609cc4469024148a7f2988c9d34",
+      "repository_path": "accounting/chart-of-accounts/authority_crosswalk.csv"
     },
     "reconciliation_audit.md": {
-      "sha256": "e230a95ab18b88e358ec282775eb181f99e669976dfca5810869d195a89ecec7"
+      "sha256": "e230a95ab18b88e358ec282775eb181f99e669976dfca5810869d195a89ecec7",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13/reconciliation_audit.md"
     },
     "README.md": {
-      "sha256": "a5b3bff4cacbe57dec4d7e83cf35ee9d0d9100492951584d6a469035a0fe0ca9"
+      "sha256": "a5b3bff4cacbe57dec4d7e83cf35ee9d0d9100492951584d6a469035a0fe0ca9",
+      "repository_path": "accounting/chart-of-accounts/README.md"
     },
     "CHANGELOG.md": {
-      "sha256": "7ad7da77cb1fe73031f8341feba4e68e533321802f2b33839fbc9b345a987942"
+      "sha256": "7ad7da77cb1fe73031f8341feba4e68e533321802f2b33839fbc9b345a987942",
+      "repository_path": "accounting/chart-of-accounts/CHANGELOG.md"
     }
   },
   "controls": {
