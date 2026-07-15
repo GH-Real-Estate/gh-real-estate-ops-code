@@ -46,3 +46,15 @@ updates:
     versioning-strategy: increase-if-necessary
     commit-message:
       prefix: "chore(legal-python)"
+
+  - package-ecosystem: pip
+    directory: /tools/safety
+    schedule:
+      interval: weekly
+      day: monday
+      time: "14:15"
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
+    commit-message:
+      prefix: "chore(safety-python)"
