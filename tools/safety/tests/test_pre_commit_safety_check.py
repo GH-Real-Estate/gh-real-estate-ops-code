@@ -197,6 +197,64 @@ class SafetyCheckTests(unittest.TestCase):
             problems = safety_check.validate_accounting_content_manifest(root, manifest)
         self.assertTrue(any("hash mismatch" in problem for problem in problems))
 
+    def test_accounting_content_manifest_governs_unavailable_history(self) -> None:
+        digest = hashlib.sha256(b"historical artifact\n").hexdigest()
+        root = mock.MagicMock()
+        manifest = mock.MagicMock()
+        manifest.relative_to.return_value = Path(
+            "accounting/chart-of-accounts/releases/legacy/manifest.json"
+        )
+        manifest.read_text.return_value = json.dumps(
+            {
+                "files": {
+                    "committed.csv": {
+                        "repository_path": "accounting/committed.csv",
+                        "sha256": digest,
+                    }
+                },
+                "unavailable_artifacts": {
+                    "historical.csv": {
+                        "sha256": digest,
+                        "committed_to_github": False,
+                        "reason": "The immutable release did not include this artifact.",
+                    }
+                },
+            }
+        )
+        target = mock.MagicMock()
+        root.joinpath.return_value = target
+        target.is_symlink.return_value = False
+        target.is_file.return_value = True
+
+        with mock.patch.object(safety_check, "sha256_file", return_value=digest):
+            self.assertEqual(
+                [], safety_check.validate_accounting_content_manifest(root, manifest)
+            )
+
+        manifest.read_text.return_value = json.dumps(
+            {
+                "files": {
+                    "committed.csv": {
+                        "repository_path": "accounting/committed.csv",
+                        "sha256": digest,
+                    }
+                },
+                "unavailable_artifacts": {
+                    "historical.csv": {
+                        "sha256": digest,
+                        "committed_to_github": True,
+                        "repository_path": "accounting/missing.csv",
+                        "reason": "",
+                    }
+                },
+            }
+        )
+        with mock.patch.object(safety_check, "sha256_file", return_value=digest):
+            problems = safety_check.validate_accounting_content_manifest(root, manifest)
+        self.assertTrue(any("committed_to_github" in problem for problem in problems))
+        self.assertTrue(any("needs a reason" in problem for problem in problems))
+        self.assertTrue(any("must not claim" in problem for problem in problems))
+
 
 if __name__ == "__main__":
     unittest.main()
