@@ -33,8 +33,12 @@ test("workflow supports only manual simulation and preserves security controls",
   assert.match(content, /^  pull_request:/m);
   assert.match(content, /^  push:/m);
   assert.doesNotMatch(content, /^  workflow_run:/m);
-  assert.match(content, /if: \$\{\{ github\.event_name == 'workflow_dispatch' \}\}/);
-  assert.match(content, /ref: \$\{\{ github\.event\.repository\.default_branch \}\}/);
+  assert.match(
+    content,
+    /github\.event_name == 'workflow_dispatch' &&\s*github\.ref == format\('refs\/heads\/\{0\}', github\.event\.repository\.default_branch\)/,
+  );
+  assert.match(content, /ref: \$\{\{ github\.sha \}\}/);
+  assert.match(content, /git ls-remote --exit-code origin/);
   assert.match(content, /persist-credentials: false/);
   assert.match(content, /actions:\s*read/);
   assert.match(content, /issues:\s*write/);

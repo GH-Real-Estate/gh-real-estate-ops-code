@@ -1,16 +1,20 @@
-# Authority libraries and governance controls require GH Real Estate review.
-/.github/CODEOWNERS @GHRealEstate
-/.github/dependabot.yml @GHRealEstate
+# Default ownership prevents new paths from silently bypassing review.
+* @GHRealEstate
+
+# Security, workflow, and public-boundary controls.
+/.github/ @GHRealEstate
+/SECURITY.md @GHRealEstate
+/CONTRIBUTING.md @GHRealEstate
+/NOTICE @GHRealEstate
+/tools/safety/ @GHRealEstate
+/docs/security/ @GHRealEstate
+/docs/setup/github-settings-checklist.md @GHRealEstate
+
+# Runtime, financial, tenant, legal, tax, and accounting controls.
+/src/ @GHRealEstate
 /legal/ @GHRealEstate
 /accounting/ @GHRealEstate
 /authority/ @GHRealEstate
 /tools/authority_refresh/ @GHRealEstate
-
-# Source discovery, currentness, validation, review, and shared safety workflows.
-/.github/workflows/legal-*.yml @GHRealEstate
-/.github/workflows/accounting-*.yml @GHRealEstate
-/.github/workflows/authority-*.yml @GHRealEstate
-/.github/workflows/repo-checks.yml @GHRealEstate
-/.github/workflows/ci-failure-response.yml @GHRealEstate
 /tools/ci_failure_response/ @GHRealEstate
-/docs/runbooks/ci-failure-response.md @GHRealEstate
+/docs/runbooks/ @GHRealEstate

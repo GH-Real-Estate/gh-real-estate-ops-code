@@ -98,13 +98,13 @@ LIVE_MODE_ENABLED=true
 LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
 EXPECTED_LIVE_MODE_CONFIRMATION=GH_ZILLOW_LEAD_INTAKE_LIVE_APPROVED
 ALLOW_JSON_PAYLOADS=false
-GENERIC_PUBLIC_ERRORS=false
-ENABLE_HEALTH=true
+GENERIC_PUBLIC_ERRORS=true
+ENABLE_HEALTH=false
 HEALTH_HEADER_NAME=x-gh-health-token
-HEALTH_CHECK_TOKEN=<set in Catalyst, do not commit>
-ENABLE_CACHE_REPLAY_DEFENSE=false
-STRICT_REPLAY_FAILURE=false
-REPLAY_CACHE_SEGMENT_ID=
+HEALTH_CHECK_TOKEN=
+ENABLE_CACHE_REPLAY_DEFENSE=true
+STRICT_REPLAY_FAILURE=true
+REPLAY_CACHE_SEGMENT_ID=<set the Catalyst cache segment ID>
 REPLAY_WINDOW_SECONDS=300
 ZOHO_CLIENT_ID=<set in Catalyst, do not commit>
 ZOHO_CLIENT_SECRET=<set in Catalyst, do not commit>
@@ -134,10 +134,10 @@ SKIP_CADENCES_ON_UPDATE=false
 DEFAULT_LEAD_SOURCE=Zillow
 DEFAULT_LEAD_STATUS=New Zillow Inquiry
 LEAD_DUPLICATE_CHECK_FIELDS=Zillow_Lead_Key
-DEBUG_ERRORS=true
+DEBUG_ERRORS=false
 ```
 
-`ENABLE_HEALTH`, `HEALTH_HEADER_NAME`, `HEALTH_CHECK_TOKEN`, `GENERIC_PUBLIC_ERRORS=false`, and `DEBUG_ERRORS=true` are temporary diagnostics. After the live smoke test passes, either set `ENABLE_HEALTH=false` or rotate the health token, and return `GENERIC_PUBLIC_ERRORS=true`.
+Production must keep generic public errors enabled, debug errors disabled, the health endpoint disabled, and replay defense fail-closed. Create a dedicated Catalyst cache segment and set `REPLAY_CACHE_SEGMENT_ID` before enabling live mode. Run any temporary health/debug smoke test in a non-production Catalyst environment with a rotated token; do not weaken these values in Production.
 
 ## Important Cadence Skip Note
 
@@ -231,7 +231,7 @@ The long-term routing source is the CRM Units module. Populate these Unit fields
 Example `Zillow_Routing_Unit_Key`:
 
 ```text
-9401 nieman road|unit 3|overland park|ks|66214
+1000 example avenue|unit 3|sample city|ks|00000
 ```
 
 ## Legacy Static Map Fallback
@@ -240,14 +240,16 @@ Use this only for temporary testing or one-off exceptions:
 
 ```json
 {
-  "listing:2097508172": {
-    "propertyId": "1111111111111111111",
-    "unitId": "2222222222222222222",
-    "propertyName": "9401 Nieman Rd",
+  "listing:synthetic id 005": {
+    "propertyId": "SYNTHETIC-ID-001",
+    "unitId": "SYNTHETIC-ID-006",
+    "propertyName": "1000 Example Avenue",
     "unitName": "Unit 3"
   }
 }
 ```
+
+Replace `propertyId` and `unitId` with private Zoho record IDs in runtime configuration. Never commit those production IDs.
 
 Do not put approved rent or deposit in routing configuration. Rent and deposit belong to GH Real Estate property/unit/lease records and Zoho Books setup, not Zillow prospect intake.
 

@@ -6,7 +6,7 @@ Node.js webhook gateway for Zoho Payments returned/failed payment events. The we
 
 ```text
 Event source: Zoho Payments
-Execution runtime: Zoho Catalyst Advanced I/O / Node.js 18
+Execution runtime: Zoho Catalyst Advanced I/O / Node.js 24
 Accounting write target: Zoho Books
 Main file: src/index.js
 Package file: package.json

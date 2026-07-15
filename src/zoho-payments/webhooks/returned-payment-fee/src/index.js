@@ -2,7 +2,7 @@
 
 /**
  * GH Real Estate — Zoho Payments Returned Payment Fee Webhook Gateway
- * Platform: Zoho Catalyst Advanced I/O, Node.js 18
+ * Platform: Zoho Catalyst Advanced I/O, Node.js 24
  * Entry: module.exports = async (req, res) => { ... }
  *
  * Purpose

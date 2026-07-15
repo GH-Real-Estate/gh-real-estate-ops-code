@@ -5,7 +5,7 @@
   "description": "Secure Zillow Rentals lead intake webhook that normalizes Zillow form-urlencoded callbacks and upserts raw inquiries into Zoho CRM Leads.",
   "main": "index.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=24 <25"
   },
   "scripts": {
     "check": "node --check index.js && node --check src/index.js && node --check src/server.js",

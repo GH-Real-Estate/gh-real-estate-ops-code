@@ -21,29 +21,36 @@
   },
   "files": {
     "zoho_live_chart_of_accounts_sanitized.csv": {
-      "sha256": "0799b66c4571c567d3f3d2449441e44dc9eb76ed570bbdca190139d2bbd7c715"
+      "sha256": "70b317e6ef4775f0e2a522357eadae511ad4d9facf3f331498f33ecbe53fabbc",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13-r2/zoho_live_chart_of_accounts_sanitized.csv"
     },
     "final_chart_of_accounts.csv": {
-      "sha256": "c0f7ac7a807e22b1ce2f48088190c2d27e6bbfc2ada9af4161f0ab1a773a67b2"
+      "sha256": "e96b3c3cdf5bb0e35d626bf118cd26e06270a9f7d20073a11e5c1239766c8af8",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13-r2/final_chart_of_accounts.csv"
     },
     "conditional_accounts.csv": {
-      "sha256": "32c4c24a98fb7a76e9b5ba8bcad3effd9d48ffced135353cbdac5ca7f6e052f8"
+      "sha256": "32c4c24a98fb7a76e9b5ba8bcad3effd9d48ffced135353cbdac5ca7f6e052f8",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13-r2/conditional_accounts.csv"
     },
     "authority_crosswalk.csv": {
-      "sha256": "1d93536f363646a21bf62642255dca3a7d11f032438cbe127298e7285b80c85d"
+      "sha256": "1d93536f363646a21bf62642255dca3a7d11f032438cbe127298e7285b80c85d",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13-r2/authority_crosswalk.csv"
     },
     "reconciliation_audit.md": {
-      "sha256": "fb7980d3f736a48bf03532900573260458e73592f4c8b931c6fb7db7c66b7502"
+      "sha256": "7483cf664a9290c62ef1588ef6cc563ac36fcf97482f258d9cd746fb0d6d236e",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13-r2/reconciliation_audit.md"
     },
     "README.md": {
-      "sha256": "ca0611fc4fed54291577f64e2c52dc061d6be2947cf1acbfa410980fa18c36d3"
+      "sha256": "9dece23a28275a99c250a58f7faad4381dca397e6a62de1ce8eaa6fc3d86b0ac",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13-r2/README.md"
     },
     "CHANGELOG.md": {
-      "sha256": "6903f112c580bdae6e81cdca772e809ce5bf8cdbe256d446ea1307689ebe0aa9"
+      "sha256": "11a4bf294b82fb3e84599c102d3d34c8434cabb3e5040591abc6e89e78bdd523",
+      "repository_path": "accounting/chart-of-accounts/releases/2026-07-13-r2/CHANGELOG.md"
     }
   },
   "controls": {
-    "sanitized_snapshot_is_exact_for_included_fields": true,
+    "sanitized_snapshot_is_exact_for_included_fields": false,
     "excluded_fields": [
       "Account #",
       "Mileage Rate",
@@ -52,6 +59,9 @@
     ],
     "governance_master_contains_recommended_not_yet_live_corrections": true,
     "fasb_content": "ASC locators and original GH analysis only; no Codification text",
-    "professional_review_required_for_material_conclusions": true
+    "professional_review_required_for_material_conclusions": true,
+    "account_id_representation": "Current tree uses deterministic public aliases. Pre-redaction live IDs remain recoverable from public Git history and PR diffs and must be treated as public identifiers, not secrets.",
+    "live_account_ids_in_current_tree": false,
+    "legacy_live_account_ids_exposed_in_public_history": true
   }
 }

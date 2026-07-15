@@ -10,3 +10,51 @@ updates:
     open-pull-requests-limit: 5
     commit-message:
       prefix: "chore(actions)"
+
+  - package-ecosystem: npm
+    directory: /src/zoho-payments/webhooks/returned-payment-fee
+    schedule:
+      interval: weekly
+      day: monday
+      time: "13:30"
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
+    commit-message:
+      prefix: "chore(returned-fee)"
+
+  - package-ecosystem: npm
+    directory: /src/zoho-crm/integrations/zillow-lead-intake
+    schedule:
+      interval: weekly
+      day: monday
+      time: "13:45"
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
+    commit-message:
+      prefix: "chore(zillow)"
+
+  - package-ecosystem: pip
+    directory: /legal
+    schedule:
+      interval: weekly
+      day: monday
+      time: "14:00"
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
+    commit-message:
+      prefix: "chore(legal-python)"
+
+  - package-ecosystem: pip
+    directory: /tools/safety
+    schedule:
+      interval: weekly
+      day: monday
+      time: "14:15"
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
+    commit-message:
+      prefix: "chore(safety-python)"

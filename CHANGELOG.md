@@ -4,6 +4,9 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-14
 
+- Hardened the public boundary with CodeQL, dependency review, workflow-policy enforcement, fail-closed binary/PDF controls, full CODEOWNERS coverage, security/contribution templates, and immutable runtime pins.
+- Removed live-looking operational identifiers and property examples from public runtime/reference files, replacing account IDs with consistent public aliases and deployment values with fail-closed placeholders.
+- Moved both Catalyst packages and CI from unsupported Node.js 18 to Node.js 24.
 - Reduced GitHub Actions fan-out without weakening the unconditional repository safety scan or changing required check names.
 - Moved `Authority Discovery` from daily execution to Sunday at `11:17 UTC`, while retaining manual dispatch.
 - Added fail-open changed-path gating so the Zillow, returned-payment, and authority suites run fully whenever their governed scope changes or diff detection is uncertain.

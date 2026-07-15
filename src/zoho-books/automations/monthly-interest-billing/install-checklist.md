@@ -13,7 +13,7 @@
 
 - [ ] Schedule name is `GHRE Monthly Interest Billing`.
 - [ ] Confirm Zoho Books connection name is `zbooks` or update the script before install.
-- [ ] Confirm interest item ID `5858793000003568001` exists and maps to delinquent-rent interest.
+- [ ] Confirm interest item ID `[PRIVATE CONFIGURATION REQUIRED]` exists and maps to delinquent-rent interest.
 - [ ] Confirm rent invoice flag field `cf_is_rent_invoice` exists and is populated only on eligible rent/source invoices.
 - [ ] Confirm source invoice token field `cf_late_fee_stages_applied` exists.
 - [ ] Confirm interest invoices are not marked as rent.

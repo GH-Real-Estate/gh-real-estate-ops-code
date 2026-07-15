@@ -96,7 +96,7 @@ test('builds stable hash key when Zillow lead ID is absent', () => {
     email: 'test.tenant@example.com',
     phone: '+19135550100',
     listingId: 'listing-1',
-    propertyAddress: '9401 Nieman Rd, Unit 1, Overland Park, KS 66214',
+    propertyAddress: '1000 Example Avenue, Unit 1, Sample City, KS 00000',
     unit: 'Unit 1',
     leadType: 'tourRequest',
     message: 'Tour request'
@@ -106,7 +106,7 @@ test('builds stable hash key when Zillow lead ID is absent', () => {
     email: 'test.tenant@example.com',
     phone: '+19135550100',
     listingId: 'listing-1',
-    propertyAddress: '9401 Nieman Rd, Unit 1, Overland Park, KS 66214',
+    propertyAddress: '1000 Example Avenue, Unit 1, Sample City, KS 00000',
     unit: 'Unit 1',
     leadType: 'tourRequest',
     message: 'Tour request'
@@ -118,35 +118,35 @@ test('builds stable hash key when Zillow lead ID is absent', () => {
 
 test('resolves property and unit from static map before CRM Unit lookup', async () => {
   const lead = normalizeZillowLeadPayload({
-    listingId: 'zpid_test_9401_1',
+    listingId: 'zpid_example_1000_1',
     name: 'Test Tenant',
     email: 'test.tenant@example.com'
   }, '2026-07-01T12:00:00.000Z');
 
   const propertyUnit = await resolvePropertyUnit(lead, {
-    'listing:zpid test 9401 1': {
-      propertyId: '1111111111111111111',
-      unitId: '2222222222222222222',
-      propertyName: '9401 Nieman Rd',
+    'listing:zpid example 1000 1': {
+      propertyId: 'SYNTHETIC-ID-001',
+      unitId: 'SYNTHETIC-ID-006',
+      propertyName: '1000 Example Avenue',
       unitName: 'Unit 1'
     }
   });
 
   assert.equal(propertyUnit.unitName, 'Unit 1');
-  assert.equal(propertyUnit.propertyName, '9401 Nieman Rd');
+  assert.equal(propertyUnit.propertyName, '1000 Example Avenue');
   assert.equal(propertyUnit.matchedBy, 'runtime_map');
 });
 
 test('builds routing unit key from Zillow listing address components', () => {
   assert.equal(
     buildRoutingUnitKey({
-      listingStreet: '9401 Nieman Road',
+      listingStreet: '1000 Example Avenue',
       listingUnit: 'Unit 3',
-      listingCity: 'Overland Park',
+      listingCity: 'Sample City',
       listingState: 'KS',
-      listingPostalCode: '66214'
+      listingPostalCode: '00000'
     }),
-    '9401 nieman road|unit 3|overland park|ks|66214'
+    '1000 example avenue|unit 3|sample city|ks|00000'
   );
 });
 
@@ -156,12 +156,12 @@ test('builds CRM Lead plan with primary Zillow phone mapped to Mobile only', () 
     name: 'Test Tenant',
     email: 'test.tenant@example.com',
     phone: '913-555-0100',
-    listingId: 'zpid_test_9401_1',
-    listingStreet: '9401 Nieman Road',
+    listingId: 'zpid_example_1000_1',
+    listingStreet: '1000 Example Avenue',
     listingUnit: 'Unit 3',
-    listingCity: 'Overland Park',
+    listingCity: 'Sample City',
     listingState: 'KS',
-    listingPostalCode: '66214',
+    listingPostalCode: '00000',
     movingDate: '20260707',
     leadType: 'question',
     moveInTimeframe: 'month',
@@ -170,16 +170,16 @@ test('builds CRM Lead plan with primary Zillow phone mapped to Mobile only', () 
   }, '2026-07-01T12:00:00.000Z', 'payloadhash123');
 
   const propertyUnit = {
-    propertyId: '1111111111111111111',
-    unitId: '2222222222222222222',
-    propertyName: '9401 Nieman Rd',
+    propertyId: 'SYNTHETIC-ID-001',
+    unitId: 'SYNTHETIC-ID-006',
+    propertyName: '1000 Example Avenue',
     unitName: 'Unit 3'
   };
 
   const plan = buildCrmLeadPlan(lead, propertyUnit, buildRoutingWarnings(lead, propertyUnit));
 
   assert.equal(plan.leadRecord.Last_Name, 'Tenant');
-  assert.equal(plan.leadRecord.Company, '9401 Nieman Rd');
+  assert.equal(plan.leadRecord.Company, '1000 Example Avenue');
   assert.equal(plan.leadRecord.Email, 'test.tenant@example.com');
   assert.equal(plan.leadRecord.Mobile, '+19135550100');
   assert.equal(Object.prototype.hasOwnProperty.call(plan.leadRecord, 'Phone'), false);
@@ -187,14 +187,14 @@ test('builds CRM Lead plan with primary Zillow phone mapped to Mobile only', () 
   assert.equal(plan.leadRecord.Lead_Source, 'Zillow');
   assert.equal(plan.leadRecord.Lead_Status, 'New Zillow Inquiry');
   assert.equal(plan.leadRecord.Requested_Move_In_Date, '2026-07-07');
-  assert.equal(plan.leadRecord.Zillow_Property_Address_Raw, '9401 Nieman Road, Unit 3, Overland Park, KS 66214');
+  assert.equal(plan.leadRecord.Zillow_Property_Address_Raw, '1000 Example Avenue, Unit 3, Sample City, KS 00000');
   assert.equal(plan.leadRecord.Zillow_Lead_Type, 'question');
   assert.equal(plan.leadRecord.Zillow_Move_In_Timeframe, 'month');
-  assert.equal(plan.leadRecord.Zillow_Listing_Street, '9401 Nieman Road');
+  assert.equal(plan.leadRecord.Zillow_Listing_Street, '1000 Example Avenue');
   assert.equal(plan.leadRecord.Zillow_Listing_Unit, 'Unit 3');
-  assert.equal(plan.leadRecord.Zillow_Listing_City, 'Overland Park');
+  assert.equal(plan.leadRecord.Zillow_Listing_City, 'Sample City');
   assert.equal(plan.leadRecord.Zillow_Listing_State, 'KS');
-  assert.equal(plan.leadRecord.Zillow_Listing_Postal_Code, '66214');
+  assert.equal(plan.leadRecord.Zillow_Listing_Postal_Code, '00000');
   assert.equal(plan.leadRecord.Zillow_Source_Payload_Hash, 'payloadhash123');
   assert.equal(plan.leadRecord.Zillow_Intake_Status, 'Routing Matched');
   assert.equal(plan.leadRecord.Zillow_Raw_Payload_Stored, false);
@@ -211,7 +211,7 @@ test('maps secondary phone aliases to standard Phone when present', () => {
     email: 'test.tenant@example.com',
     phone: '913-555-0100',
     secondaryPhone: '913-555-0101',
-    listingId: 'zpid_test_9401_1'
+    listingId: 'zpid_example_1000_1'
   }, '2026-07-01T12:00:00.000Z');
 
   const plan = buildCrmLeadPlan(lead, null, buildRoutingWarnings(lead, null));

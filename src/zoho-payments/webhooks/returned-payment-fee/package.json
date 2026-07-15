@@ -5,7 +5,7 @@
   "description": "Zoho Payments payment.failed webhook for GH Real Estate returned-payment fee handling in Zoho Books.",
   "main": "src/index.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=24 <25"
   },
   "dependencies": {
     "zcatalyst-sdk-node": "3.4.0"

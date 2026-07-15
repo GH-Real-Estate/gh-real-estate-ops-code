@@ -47,7 +47,7 @@ test('source-of-truth verification happens before Books invoice creation', () =>
 
 test('returned-fee ownership stays under Zoho Payments with Catalyst runtime documented', () => {
   assert.match(readme, /Event source:\s*Zoho Payments/);
-  assert.match(readme, /Execution runtime:\s*Zoho Catalyst Advanced I\/O \/ Node\.js 18/);
+  assert.match(readme, /Execution runtime:\s*Zoho Catalyst Advanced I\/O \/ Node\.js 24/);
   assert.match(readme, /The trigger event originates from Zoho Payments/);
   assert.match(securityModel, /Zoho Payments webhook/);
   assert.match(securityModel, /Catalyst function/);

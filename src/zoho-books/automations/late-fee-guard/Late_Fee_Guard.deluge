@@ -55,10 +55,10 @@ catch (eNowParts)
 feeInvoicePrefix = "LF-";
 feeInvoiceNumberDigits = 6;
 // Item IDs (stable)
-lateFeeItemId = "5858793000001596035";
+lateFeeItemId = "";
 // Optional: create a separate Books item for "Delinquent Rent Interest" and paste its item_id here.
 // If blank, interest invoices will use lateFeeItemId as a fallback, but the description will still identify the charge as interest.
-interestItemId = "5858793000003568001";
+interestItemId = "";
 // Invoice custom fields
 stagesFieldApiName = "cf_late_fee_stages_applied";
 rentInvoiceFlagApiName = "cf_is_rent_invoice";
@@ -80,7 +80,7 @@ enableFeeInvoiceEmailTemplates = true;
 lateFeeInvoiceEmailTemplateName = "Fee Invoice - Late Fee";
 // Email template IDs (preferred; pulled from the edit URL parameter `email_template_id`).
 // If blank, the script will attempt to resolve template IDs by name via /settings/emailtemplates.
-lateFeeInvoiceEmailTemplateId = "5858793000001838039";
+lateFeeInvoiceEmailTemplateId = "";
 // Email delivery improvements
 // 1) Mark newly-created fee invoices as SENT before emailing (avoids draft-email edge cases).
 markFeeInvoicesAsSentBeforeEmail = true;

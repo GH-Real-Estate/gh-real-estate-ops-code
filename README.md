@@ -1,6 +1,6 @@
 # GH Real Estate Ops Code
 
-Private source of truth for GH Real Estate automation code, Zoho setup notes, field maps, sanitized test payloads, deployment runbooks, Codex/ChatGPT review context, the approved public legal-authority library, and the governed accounting-authority registry.
+Public, sanitized technical source of truth for GH Real Estate automation code, Zoho setup notes, field maps, synthetic test payloads, deployment runbooks, Codex/ChatGPT review context, the approved public legal-authority library, and the governed accounting-authority registry.
 
 Final repository location:
 
@@ -16,7 +16,9 @@ GitHub stores the code, technical map, approved public legal-authority library, 
 Codex/ChatGPT reviews and improves the code.
 ```
 
-This repository is not a tenant file cabinet, accounting ledger, lease vault, or CRM replacement.
+This repository is not a tenant file cabinet, accounting ledger, lease vault, CRM replacement, or production configuration store.
+
+Because the repository is public, every commit must be treated as permanently disclosed. Keep credentials, operational IDs, tenant/customer data, private documents, production payloads, and licensed non-redistributable material outside GitHub. See `SECURITY.md` and `docs/security/data-classification.md` before contributing.
 
 ## Structure Rule
 
@@ -85,10 +87,10 @@ Do not store live business records here:
 | Signed leases and legal documents | Zoho Contracts / Zoho Sign / Zoho WorkDrive |
 | Property files, inspection photos, notices | Zoho WorkDrive |
 | Tenant portal / maintenance workflows | Zoho Creator, when ready |
-| Code, automations, field maps, test cases | This private GitHub repo |
-| Approved public legal authorities and source history | `legal/` in this private GitHub repo; live official source controls |
-| Accounting policies, sourcebooks, FASB locators, and review history | `accounting/` in this private GitHub repo; authorized live FASB access and reviewed professional conclusions control |
-| Discovery candidates and review evidence | `authority/` in this private GitHub repo; candidates are never current authority or production inputs |
+| Code, automations, field maps, test cases | This public, sanitized GitHub repo |
+| Approved public legal authorities and source history | `legal/` in this public, sanitized GitHub repo; live official source controls |
+| Accounting policies, sourcebooks, FASB locators, and review history | `accounting/` in this public, sanitized GitHub repo; authorized live FASB access and reviewed professional conclusions control |
+| Discovery candidates and review evidence | `authority/` in this public, sanitized GitHub repo; candidates are never current authority or production inputs |
 
 ## Repository Map
 

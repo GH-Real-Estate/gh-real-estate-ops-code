@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
-"""Repository safety scan for GH Real Estate technical assets.
+"""Fail-closed repository safety scan for public GH Real Estate assets.
 
-This is not a replacement for judgment or GitHub secret scanning. It catches
-risky filenames, obvious literal secret assignments, and common PII patterns
-before a change is merged or copied into a runtime package.
+This complements GitHub secret scanning. It blocks risky file types and names,
+obvious credentials, and common PII before a pull request can merge. It does not
+certify that governed PDF contents are free of PII; legal/accounting validators
+and human review remain required for those explicitly allowed files.
 """
 
 from __future__ import annotations
 
+import hashlib
+import json
 import re
+import subprocess
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[2]
 
-ALLOWLISTED_FILES = {
-    ".env.example",
-    "tools/safety/pre-commit-safety-check.py",
-}
+# The example environment file is exempt only from the risky filename rule. Its
+# contents must always be scanned so a pasted production value cannot bypass CI.
+FILENAME_ALLOWLIST = {".env.example"}
 
 SKIP_DIRS = {
     ".git",
@@ -33,8 +36,12 @@ TEXT_SUFFIXES = {
     ".css",
     ".csv",
     ".deluge",
+    ".ds",
     ".env",
     ".example",
+    ".gitattributes",
+    ".gitignore",
+    ".gitkeep",
     ".html",
     ".js",
     ".json",
@@ -44,13 +51,97 @@ TEXT_SUFFIXES = {
     ".sh",
     ".toml",
     ".txt",
+    ".urlencoded",
     ".xml",
     ".yaml",
     ".yml",
 }
 
-# Filename checks focus on documents/exports that are likely to contain live data.
-# System names such as src/zoho-payments are allowed.
+GOVERNED_PDF_PREFIXES = (
+    "legal/generated/project-sources/current/",
+    "accounting/generated/project-sources/current/",
+)
+
+ACCOUNTING_PDF_MANIFEST = "accounting/manifests/sourcebook_release.json"
+LEGAL_CHECKSUM_MANIFEST = "legal/manifests/SHA256SUMS"
+ACCOUNTING_CONTENT_MANIFEST_GLOB = "accounting/chart-of-accounts/**/manifest.json"
+
+BLOCKED_BINARY_SUFFIXES = {
+    ".7z",
+    ".avi",
+    ".bak",
+    ".bmp",
+    ".db",
+    ".doc",
+    ".docm",
+    ".docx",
+    ".dump",
+    ".gif",
+    ".gz",
+    ".heic",
+    ".jpeg",
+    ".jpg",
+    ".kdbx",
+    ".keystore",
+    ".mov",
+    ".mp3",
+    ".mp4",
+    ".p12",
+    ".pfx",
+    ".png",
+    ".psd",
+    ".rar",
+    ".sqlite",
+    ".sqlite3",
+    ".tar",
+    ".tif",
+    ".tiff",
+    ".wav",
+    ".webp",
+    ".xls",
+    ".xlsm",
+    ".xlsx",
+    ".zip",
+}
+
+MAX_TEXT_BYTES = 5 * 1024 * 1024
+MAX_PDF_BYTES = 25 * 1024 * 1024
+MAX_TOTAL_PDF_BYTES = 75 * 1024 * 1024
+
+# One pre-existing HUD extraction uses a custom embedded font and contains NUL
+# control bytes after page 8. Keep the exact reviewed artifact readable to the
+# authority tooling, but make any byte change fail closed until it is replaced
+# through the governed legal-source regeneration process.
+HASH_PINNED_CONTROL_TEXT_SHA256 = {
+    "legal/text/current/authorities/federal/federal-official/"
+    "hud-fheo-memorandum-may-22-2026-d1bcc85d6f.md":
+        "f64b54f1bfeb7d91c93bcea6d876aff4f667345dd14db0d50a27ec9904c85820",
+}
+
+DANGEROUS_EXACT_NAMES = {
+    ".npmrc",
+    ".pypirc",
+    ".netrc",
+    "auth.json",
+    "credentials",
+    "credentials.json",
+    "id_dsa",
+    "id_ed25519",
+    "id_ecdsa",
+    "id_rsa",
+    "kubeconfig",
+    "service-account.json",
+    "terraform.tfstate",
+}
+
+DANGEROUS_SUFFIXES = {
+    ".jks",
+    ".key",
+    ".ovpn",
+    ".pem",
+    ".tfstate",
+}
+
 RISKY_FILE_PATTERNS = [
     ("environment file", re.compile(r"(^|/)\.env($|\.)", re.IGNORECASE)),
     ("pay stub", re.compile(r"pay\s*-?\s*stub|paystub", re.IGNORECASE)),
@@ -70,11 +161,22 @@ RISKY_FILE_PATTERNS = [
 
 PRIVATE_KEY_RE = re.compile(r"-----BEGIN (RSA |DSA |EC |OPENSSH )?PRIVATE KEY-----", re.IGNORECASE)
 SECRET_ASSIGNMENT_RE = re.compile(
-    r"\b(?P<name>client[_-]?secret|zoho_client_secret|refresh[_-]?token|zoho_refresh_token|"
-    r"api[_-]?key|private[_-]?key|password|webhook[_-]?(secret|signing[_-]?key))\b"
+    r"\b(?P<name>access[_-]?token|api[_-]?key|auth[_-]?token|client[_-]?secret|"
+    r"password|private[_-]?key|refresh[_-]?token|secret[_-]?key|"
+    r"webhook[_-]?(secret|signing[_-]?key)|zoho_client_secret|zoho_refresh_token)\b"
     r"\s*[:=]\s*['\"]?(?P<value>[^'\"\s,})\]]+)",
     re.IGNORECASE,
 )
+
+TOKEN_PATTERNS = [
+    ("GitHub token", re.compile(r"\bgh[pousr]_[A-Za-z0-9_]{30,}\b")),
+    ("AWS access key", re.compile(r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b")),
+    ("Slack token", re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{20,}\b")),
+    ("Stripe secret key", re.compile(r"\bsk_(?:live|test)_[A-Za-z0-9]{16,}\b")),
+    ("Google API key", re.compile(r"\bAIza[0-9A-Za-z_-]{35}\b")),
+    ("Bearer credential", re.compile(r"\bBearer\s+[A-Za-z0-9._~+/-]{24,}={0,2}\b", re.IGNORECASE)),
+    ("credentialed URL", re.compile(r"\bhttps?://[^/@\s:]+:[^/@\s]+@", re.IGNORECASE)),
+]
 
 SAFE_SECRET_VALUE_PREFIXES = (
     "<",
@@ -82,14 +184,18 @@ SAFE_SECRET_VALUE_PREFIXES = (
     "$",
     "{{",
     "[",
-    "paste_",
-    "replace_",
     "config.",
-    "process.env",
     "env(",
     "os.environ",
-    "settings.",
+    "paste_",
+    "process.env",
+    "replace_",
+    "runtime",
     "secrets.",
+    "settings.",
+    "await",
+    "parsed.",
+    "response.",
 )
 
 SAFE_SECRET_VALUE_WORDS = {
@@ -104,18 +210,24 @@ SAFE_SECRET_VALUE_WORDS = {
     "none",
     "null",
     "undefined",
+    "do-not-archive",
     "''",
     '""',
 }
 
-# Public legal-source extracts legitimately contain agency and rulemaking contacts.
-# Skip only the generic email-address PII heuristic in these generated paths;
-# secret, private-key, SSN, bank-data, and filename checks still apply.
 PUBLIC_LEGAL_TEXT_PREFIXES = (
     "legal/text/current/authorities/",
     "legal/text/current/chunks/",
     "legal/text/current/full/",
 )
+
+OPERATIONAL_ID_PREFIXES = (
+    "accounting/chart-of-accounts/",
+    "src/zoho-books/",
+    "src/zoho-crm/integrations/zillow-lead-intake/",
+    "src/zoho-payments/",
+)
+LONG_OPERATIONAL_ID_RE = re.compile(r"\b\d{15,20}\b")
 
 PII_PATTERNS = [
     ("SSN-like value", re.compile(r"\b\d{3}-\d{2}-\d{4}\b")),
@@ -142,10 +254,58 @@ def should_skip(path: Path) -> bool:
     return any(part in SKIP_DIRS for part in path.parts)
 
 
-def is_text_candidate(path: Path) -> bool:
-    if path.suffix.lower() in TEXT_SUFFIXES:
-        return True
-    return path.name.startswith(".env")
+def load_tracked_paths(root: Path) -> tuple[set[str], list[str]]:
+    """Return Git-tracked paths so ignored vendor trees cannot hide commits."""
+
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "-z"],
+            cwd=root,
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            timeout=15,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return set(), ["Could not enumerate Git-tracked files; safety scan fails closed"]
+    if result.returncode != 0:
+        return set(), ["Could not enumerate Git-tracked files; safety scan fails closed"]
+    try:
+        paths = {
+            raw.decode("utf-8").replace("\\", "/")
+            for raw in result.stdout.split(b"\0")
+            if raw
+        }
+    except UnicodeDecodeError:
+        return set(), ["Git reported a non-UTF-8 tracked path; safety scan fails closed"]
+    return paths, []
+
+
+def scan_tracked_skip_policy(rel: str, tracked_paths: set[str]) -> list[str]:
+    """Reject committed files in directories skipped only for local performance."""
+
+    if rel not in tracked_paths:
+        return []
+    parts = set(PurePosixPath(rel).parts)
+    prohibited = sorted(parts.intersection(SKIP_DIRS - {".git"}))
+    if not prohibited:
+        return []
+    return [
+        "Tracked file is prohibited inside vendor/cache directory "
+        f"{prohibited[0]}: {rel}"
+    ]
+
+
+def classify_path_for_scan(path: Path) -> str:
+    """Classify paths without allowing skipped directory names to hide symlinks."""
+
+    if path.is_symlink():
+        return "symlink"
+    if should_skip(path):
+        return "skip"
+    if not path.is_file():
+        return "ignore"
+    return "file"
 
 
 def is_safe_secret_reference(value: str) -> bool:
@@ -157,35 +317,74 @@ def is_safe_secret_reference(value: str) -> bool:
 
 
 def scan_filename(rel: str) -> list[str]:
-    if rel in ALLOWLISTED_FILES:
+    if rel in FILENAME_ALLOWLIST:
         return []
 
-    problems: list[str] = []
+    path = Path(rel)
+    lowered_name = path.name.lower()
+    if lowered_name in DANGEROUS_EXACT_NAMES or path.suffix.lower() in DANGEROUS_SUFFIXES:
+        return [f"Credential-bearing filename is prohibited: {rel}"]
+
     for label, pattern in RISKY_FILE_PATTERNS:
         if pattern.search(rel):
-            problems.append(f"Risky filename ({label}): {rel}")
-            break
-    return problems
+            return [f"Risky filename ({label}): {rel}"]
+    return []
+
+
+def scan_file_policy(rel: str, path: Path) -> tuple[list[str], bool, bool]:
+    """Return problems, whether this is an allowed PDF, and whether to scan text."""
+
+    suffix = path.suffix.lower()
+    size = path.stat().st_size
+
+    if suffix == ".pdf":
+        if not rel.startswith(GOVERNED_PDF_PREFIXES):
+            return [f"PDF outside governed source directories is prohibited: {rel}"], False, False
+        if size > MAX_PDF_BYTES:
+            return [f"Governed PDF exceeds {MAX_PDF_BYTES}-byte limit: {rel}"], False, False
+        with path.open("rb") as handle:
+            if handle.read(5) != b"%PDF-":
+                return [f"File uses .pdf without a PDF signature: {rel}"], False, False
+        return [], True, False
+
+    if suffix in BLOCKED_BINARY_SUFFIXES:
+        return [f"Unapproved binary/document type {suffix}: {rel}"], False, False
+
+    if size > MAX_TEXT_BYTES:
+        return [f"Text or unknown file exceeds {MAX_TEXT_BYTES}-byte limit: {rel}"], False, False
+
+    # Text files are capped above, so reading the full payload is bounded. Check
+    # the entire file so binary data cannot be hidden after a benign prefix.
+    with path.open("rb") as handle:
+        content = handle.read()
+    if b"\x00" in content:
+        expected_hash = HASH_PINNED_CONTROL_TEXT_SHA256.get(rel)
+        if expected_hash == hashlib.sha256(content).hexdigest():
+            return [], False, True
+        return [f"Unapproved binary content: {rel}"], False, False
+    # Full UTF-8 validation still occurs in scan_repository.read_text().
+    return [], False, True
 
 
 def scan_text(rel: str, text: str) -> list[str]:
-    if rel in ALLOWLISTED_FILES:
-        return []
-
     problems: list[str] = []
     for line_no, line in enumerate(text.splitlines(), start=1):
+        if rel.startswith(OPERATIONAL_ID_PREFIXES) and LONG_OPERATIONAL_ID_RE.search(line):
+            problems.append(f"long operational identifier in {rel}:{line_no}")
+
         if PRIVATE_KEY_RE.search(line):
             problems.append(f"private key block in {rel}:{line_no}")
+
+        for label, pattern in TOKEN_PATTERNS:
+            if pattern.search(line):
+                problems.append(f"{label} in {rel}:{line_no}")
 
         for match in SECRET_ASSIGNMENT_RE.finditer(line):
             if not is_safe_secret_reference(match.group("value")):
                 problems.append(f"secret assignment in {rel}:{line_no}")
 
         for label, pattern in PII_PATTERNS:
-            if (
-                label == "non-sample email address"
-                and rel.startswith(PUBLIC_LEGAL_TEXT_PREFIXES)
-            ):
+            if label == "non-sample email address" and rel.startswith(PUBLIC_LEGAL_TEXT_PREFIXES):
                 continue
             if pattern.search(line):
                 problems.append(f"{label} in {rel}:{line_no}")
@@ -193,27 +392,202 @@ def scan_text(rel: str, text: str) -> list[str]:
     return problems
 
 
-def main() -> int:
+def parse_checksum_manifest(text: str) -> dict[str, str]:
+    approved: dict[str, str] = {}
+    for line in text.splitlines():
+        match = re.fullmatch(r"([0-9a-f]{64})\s+(.+\.pdf)", line.strip(), re.IGNORECASE)
+        if match:
+            approved[match.group(2).replace("\\", "/")] = match.group(1).lower()
+    return approved
+
+
+def parse_accounting_pdf_manifest(payload: object) -> dict[str, str]:
+    if not isinstance(payload, dict) or not isinstance(payload.get("files"), list):
+        return {}
+    approved: dict[str, str] = {}
+    for item in payload["files"]:
+        if not isinstance(item, dict):
+            continue
+        path = item.get("repository_path")
+        digest = item.get("sha256")
+        if isinstance(path, str) and isinstance(digest, str) and re.fullmatch(r"[0-9a-f]{64}", digest):
+            approved[path.replace("\\", "/")] = digest
+    return approved
+
+
+def load_approved_pdf_hashes(root: Path) -> tuple[dict[str, str], list[str]]:
+    approved: dict[str, str] = {}
     problems: list[str] = []
 
-    for path in sorted(ROOT.rglob("*")):
-        if should_skip(path) or not path.is_file():
+    accounting_manifest = root / ACCOUNTING_PDF_MANIFEST
+    legal_manifest = root / LEGAL_CHECKSUM_MANIFEST
+    try:
+        approved.update(
+            parse_accounting_pdf_manifest(json.loads(accounting_manifest.read_text(encoding="utf-8")))
+        )
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        problems.append(f"Could not load governed PDF manifest {ACCOUNTING_PDF_MANIFEST}: {exc}")
+    try:
+        approved.update(parse_checksum_manifest(legal_manifest.read_text(encoding="utf-8")))
+    except (OSError, UnicodeError) as exc:
+        problems.append(f"Could not load governed PDF manifest {LEGAL_CHECKSUM_MANIFEST}: {exc}")
+
+    return approved, problems
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def validate_accounting_content_manifest(root: Path, manifest: Path) -> list[str]:
+    """Verify committed artifacts and explicitly documented unavailable history."""
+
+    rel_manifest = manifest.relative_to(root).as_posix()
+    try:
+        payload = json.loads(manifest.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        return [f"Could not read content manifest {rel_manifest}: {exc}"]
+
+    files = payload.get("files") if isinstance(payload, dict) else None
+    if not isinstance(files, dict) or not files:
+        return [f"Content manifest has no files mapping: {rel_manifest}"]
+
+    problems: list[str] = []
+    for label, metadata in files.items():
+        context = f"{rel_manifest} files.{label}"
+        if not isinstance(metadata, dict):
+            problems.append(f"Content manifest entry must be an object: {context}")
+            continue
+        repository_path = metadata.get("repository_path")
+        digest = metadata.get("sha256")
+        if not isinstance(repository_path, str):
+            problems.append(f"Content manifest entry needs repository_path: {context}")
+            continue
+        pure_path = PurePosixPath(repository_path)
+        if pure_path.is_absolute() or ".." in pure_path.parts:
+            problems.append(f"Unsafe repository_path in content manifest: {context}")
+            continue
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            problems.append(f"Invalid sha256 in content manifest: {context}")
             continue
 
-        rel = rel_path(path)
-        problems.extend(scan_filename(rel))
+        target = root.joinpath(*pure_path.parts)
+        if target.is_symlink() or not target.is_file():
+            problems.append(
+                f"Content manifest target is missing or not a regular file: "
+                f"{context} -> {repository_path}"
+            )
+        elif sha256_file(target) != digest:
+            problems.append(
+                f"Content manifest hash mismatch: {context} -> {repository_path}"
+            )
 
-        if not is_text_candidate(path):
+    unavailable = payload.get("unavailable_artifacts", {})
+    if not isinstance(unavailable, dict):
+        problems.append(
+            f"Content manifest unavailable_artifacts must be a mapping: {rel_manifest}"
+        )
+        return problems
+
+    for label, metadata in unavailable.items():
+        context = f"{rel_manifest} unavailable_artifacts.{label}"
+        if label in files:
+            problems.append(
+                f"Content manifest artifact cannot be both committed and unavailable: {context}"
+            )
             continue
-
-        try:
-            text = path.read_text(encoding="utf-8", errors="ignore")
-        except Exception as exc:
-            problems.append(f"Could not read text file {rel}: {exc}")
+        if not isinstance(metadata, dict):
+            problems.append(f"Unavailable artifact entry must be an object: {context}")
             continue
+        if metadata.get("committed_to_github") is not False:
+            problems.append(
+                f"Unavailable artifact must set committed_to_github to false: {context}"
+            )
+        digest = metadata.get("sha256")
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            problems.append(f"Invalid sha256 for unavailable artifact: {context}")
+        reason = metadata.get("reason")
+        if not isinstance(reason, str) or not reason.strip():
+            problems.append(f"Unavailable artifact needs a reason: {context}")
+        if "repository_path" in metadata:
+            problems.append(
+                f"Unavailable artifact must not claim a repository_path: {context}"
+            )
+    return problems
 
-        problems.extend(scan_text(rel, text))
 
+def scan_repository(root: Path = ROOT) -> list[str]:
+    global ROOT
+    previous_root = ROOT
+    ROOT = root
+    problems: list[str] = []
+    governed_pdf_bytes = 0
+    tracked_paths, tracked_problems = load_tracked_paths(root)
+    problems.extend(tracked_problems)
+    approved_pdf_hashes, manifest_problems = load_approved_pdf_hashes(root)
+    problems.extend(manifest_problems)
+    for manifest in sorted(root.glob(ACCOUNTING_CONTENT_MANIFEST_GLOB)):
+        problems.extend(validate_accounting_content_manifest(root, manifest))
+    try:
+        for path in sorted(root.rglob("*")):
+            classification = classify_path_for_scan(path)
+            if classification == "symlink":
+                problems.append(f"Symbolic links are prohibited: {rel_path(path)}")
+                continue
+            if classification == "skip":
+                problems.extend(
+                    scan_tracked_skip_policy(rel_path(path), tracked_paths)
+                )
+                continue
+            if classification != "file":
+                continue
+
+            rel = rel_path(path)
+            problems.extend(scan_filename(rel))
+
+            try:
+                policy_problems, allowed_pdf, scan_as_text = scan_file_policy(rel, path)
+            except OSError as exc:
+                problems.append(f"Could not inspect file {rel}: {exc}")
+                continue
+
+            problems.extend(policy_problems)
+            if policy_problems:
+                continue
+            if allowed_pdf:
+                governed_pdf_bytes += path.stat().st_size
+                expected_hash = approved_pdf_hashes.get(rel)
+                if not expected_hash:
+                    problems.append(f"Governed PDF is not present in an approved hash manifest: {rel}")
+                elif sha256_file(path) != expected_hash:
+                    problems.append(f"Governed PDF hash does not match its approved manifest: {rel}")
+                continue
+            if not scan_as_text:
+                continue
+
+            try:
+                text = path.read_text(encoding="utf-8")
+            except (OSError, UnicodeError) as exc:
+                problems.append(f"Could not read UTF-8 text file {rel}: {exc}")
+                continue
+            problems.extend(scan_text(rel, text))
+
+        if governed_pdf_bytes > MAX_TOTAL_PDF_BYTES:
+            problems.append(
+                "Governed PDFs total "
+                f"{governed_pdf_bytes} bytes, exceeding {MAX_TOTAL_PDF_BYTES}-byte repository limit"
+            )
+        return problems
+    finally:
+        ROOT = previous_root
+
+
+def main() -> int:
+    problems = scan_repository(ROOT)
     if problems:
         print("Safety check found issues:\n")
         for problem in problems:

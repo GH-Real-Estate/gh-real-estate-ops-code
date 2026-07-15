@@ -44,10 +44,10 @@ Do not use `Apt. 1` or `Unit 1` in `Unit_Number` because it is a Number field.
 Keep the readable display name in the standard `Name` field:
 
 ```text
-9401 Nieman Road - Apt. 1
-9401 Nieman Road - Apt. 2
-9401 Nieman Road - Apt. 3
-9401 Nieman Road - Apt. 4
+1000 Example Avenue - Apt. 1
+1000 Example Avenue - Apt. 2
+1000 Example Avenue - Apt. 3
+1000 Example Avenue - Apt. 4
 ```
 
 ## Property Lookup Rule
@@ -55,7 +55,7 @@ Keep the readable display name in the standard `Name` field:
 Set every Unit's `Property` lookup to its parent property:
 
 ```text
-9401 Nieman Road
+1000 Example Avenue
 ```
 
 This lets the intake populate both `Requested Unit` and `Requested Property` on the CRM Lead.
@@ -66,25 +66,25 @@ Use lowercase plain text. No backticks. No quotation marks.
 
 | Unit | Zillow Routing Unit Key |
 |---|---|
-| 9401 Nieman Road - Apt. 1 | `9401 nieman road|unit 1|overland park|ks|66214` |
-| 9401 Nieman Road - Apt. 2 | `9401 nieman road|unit 2|overland park|ks|66214` |
-| 9401 Nieman Road - Apt. 3 | `9401 nieman road|unit 3|overland park|ks|66214` |
-| 9401 Nieman Road - Apt. 4 | `9401 nieman road|unit 4|overland park|ks|66214` |
+| 1000 Example Avenue - Apt. 1 | `1000 example avenue|unit 1|sample city|ks|00000` |
+| 1000 Example Avenue - Apt. 2 | `1000 example avenue|unit 2|sample city|ks|00000` |
+| 1000 Example Avenue - Apt. 3 | `1000 example avenue|unit 3|sample city|ks|00000` |
+| 1000 Example Avenue - Apt. 4 | `1000 example avenue|unit 4|sample city|ks|00000` |
 
 These values match the current internal test payload format:
 
 ```text
-listingStreet=9401 Nieman Road
+listingStreet=1000 Example Avenue
 listingUnit=Unit 3
-listingCity=Overland Park
+listingCity=Sample City
 listingState=KS
-listingPostalCode=66214
+listingPostalCode=00000
 ```
 
 The runtime normalizes that into:
 
 ```text
-9401 nieman road|unit 3|overland park|ks|66214
+1000 example avenue|unit 3|sample city|ks|00000
 ```
 
 ## Fields To Leave Blank Until Zillow Sends Real Data
@@ -105,7 +105,7 @@ After saving `Zillow_Routing_Unit_Key` on a Unit, test CRM search:
 
 ```powershell
 $unitsModule = "Units"
-$criteriaRaw = "(Zillow_Routing_Unit_Key:equals:9401 nieman road|unit 3|overland park|ks|66214)"
+$criteriaRaw = "(Zillow_Routing_Unit_Key:equals:1000 example avenue|unit 3|sample city|ks|00000)"
 $criteriaEncoded = [System.Uri]::EscapeDataString($criteriaRaw)
 $unitSearchUrl = "https://www.zohoapis.com/crm/v8/$unitsModule/search?criteria=$criteriaEncoded&per_page=2"
 
