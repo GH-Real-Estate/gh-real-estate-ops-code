@@ -240,7 +240,7 @@ Use this only for temporary testing or one-off exceptions:
 
 ```json
 {
-  "listing:SYNTHETIC-ID-005": {
+  "listing:synthetic id 005": {
     "propertyId": "SYNTHETIC-ID-001",
     "unitId": "SYNTHETIC-ID-006",
     "propertyName": "1000 Example Avenue",
@@ -248,6 +248,8 @@ Use this only for temporary testing or one-off exceptions:
   }
 }
 ```
+
+Replace `propertyId` and `unitId` with private Zoho record IDs in runtime configuration. Never commit those production IDs.
 
 Do not put approved rent or deposit in routing configuration. Rent and deposit belong to GH Real Estate property/unit/lease records and Zoho Books setup, not Zillow prospect intake.
 
