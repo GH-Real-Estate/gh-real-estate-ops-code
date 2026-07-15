@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import hashlib
 import io
+import json
 import unittest
 from unittest import mock
 from pathlib import Path
@@ -163,6 +164,38 @@ class SafetyCheckTests(unittest.TestCase):
         self.assertEqual(
             {"accounting/generated/project-sources/current/source.pdf": digest}, approved
         )
+
+    def test_accounting_content_manifest_verifies_paths_and_hashes(self) -> None:
+        digest = hashlib.sha256(b"safe\n").hexdigest()
+        root = mock.MagicMock()
+        manifest = mock.MagicMock()
+        target = mock.MagicMock()
+        manifest.relative_to.return_value = Path(
+            "accounting/chart-of-accounts/manifest.json"
+        )
+        manifest.read_text.return_value = json.dumps(
+            {
+                "files": {
+                    "artifact.csv": {
+                        "repository_path": "accounting/artifact.csv",
+                        "sha256": digest,
+                    }
+                }
+            }
+        )
+        root.joinpath.return_value = target
+        target.is_symlink.return_value = False
+        target.is_file.return_value = True
+
+        with mock.patch.object(safety_check, "sha256_file", return_value=digest):
+            self.assertEqual(
+                [], safety_check.validate_accounting_content_manifest(root, manifest)
+            )
+        with mock.patch.object(
+            safety_check, "sha256_file", return_value="0" * 64
+        ):
+            problems = safety_check.validate_accounting_content_manifest(root, manifest)
+        self.assertTrue(any("hash mismatch" in problem for problem in problems))
 
 
 if __name__ == "__main__":
