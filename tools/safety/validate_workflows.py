@@ -14,7 +14,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 FULL_SHA_RE = re.compile(r"^[0-9a-f]{40}$")
-NODE_18_RE = re.compile(r"^18(?:\.x)?$", re.IGNORECASE)
+REQUIRED_NODE_VERSION = "24"
 ALLOWED_ACTION_OWNERS = {"actions", "github"}
 
 # Write permissions are denied unless the exact workflow and job are listed.
@@ -215,12 +215,26 @@ def validate_workflow(path: Path, text: str) -> list[str]:
                 )
 
             step_with = step.get("with", {})
-            if isinstance(step_with, Mapping):
-                node_version = step_with.get("node-version")
-                if node_version is not None and NODE_18_RE.fullmatch(
-                    str(node_version).strip()
-                ):
-                    problems.append(f"job {job_name} Node.js 18 is prohibited")
+            is_setup_node = isinstance(reference, str) and reference.lower().startswith(
+                "actions/setup-node@"
+            )
+            if is_setup_node:
+                if not isinstance(step_with, Mapping):
+                    problems.append(
+                        f"job {job_name} setup-node must pin node-version: "
+                        f"{REQUIRED_NODE_VERSION}"
+                    )
+                else:
+                    if "node-version-file" in step_with:
+                        problems.append(
+                            f"job {job_name} node-version-file is prohibited"
+                        )
+                    node_version = step_with.get("node-version")
+                    if str(node_version).strip() != REQUIRED_NODE_VERSION:
+                        problems.append(
+                            f"job {job_name} setup-node must pin Node.js "
+                            f"{REQUIRED_NODE_VERSION}"
+                        )
 
             if isinstance(reference, str) and reference.lower().startswith(
                 "actions/checkout@"

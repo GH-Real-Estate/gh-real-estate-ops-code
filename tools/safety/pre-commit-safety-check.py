@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path, PurePosixPath
 
@@ -253,6 +254,48 @@ def should_skip(path: Path) -> bool:
     return any(part in SKIP_DIRS for part in path.parts)
 
 
+def load_tracked_paths(root: Path) -> tuple[set[str], list[str]]:
+    """Return Git-tracked paths so ignored vendor trees cannot hide commits."""
+
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "-z"],
+            cwd=root,
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            timeout=15,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return set(), ["Could not enumerate Git-tracked files; safety scan fails closed"]
+    if result.returncode != 0:
+        return set(), ["Could not enumerate Git-tracked files; safety scan fails closed"]
+    try:
+        paths = {
+            raw.decode("utf-8").replace("\\", "/")
+            for raw in result.stdout.split(b"\0")
+            if raw
+        }
+    except UnicodeDecodeError:
+        return set(), ["Git reported a non-UTF-8 tracked path; safety scan fails closed"]
+    return paths, []
+
+
+def scan_tracked_skip_policy(rel: str, tracked_paths: set[str]) -> list[str]:
+    """Reject committed files in directories skipped only for local performance."""
+
+    if rel not in tracked_paths:
+        return []
+    parts = set(PurePosixPath(rel).parts)
+    prohibited = sorted(parts.intersection(SKIP_DIRS - {".git"}))
+    if not prohibited:
+        return []
+    return [
+        "Tracked file is prohibited inside vendor/cache directory "
+        f"{prohibited[0]}: {rel}"
+    ]
+
+
 def classify_path_for_scan(path: Path) -> str:
     """Classify paths without allowing skipped directory names to hide symlinks."""
 
@@ -483,6 +526,8 @@ def scan_repository(root: Path = ROOT) -> list[str]:
     ROOT = root
     problems: list[str] = []
     governed_pdf_bytes = 0
+    tracked_paths, tracked_problems = load_tracked_paths(root)
+    problems.extend(tracked_problems)
     approved_pdf_hashes, manifest_problems = load_approved_pdf_hashes(root)
     problems.extend(manifest_problems)
     for manifest in sorted(root.glob(ACCOUNTING_CONTENT_MANIFEST_GLOB)):
@@ -492,6 +537,11 @@ def scan_repository(root: Path = ROOT) -> list[str]:
             classification = classify_path_for_scan(path)
             if classification == "symlink":
                 problems.append(f"Symbolic links are prohibited: {rel_path(path)}")
+                continue
+            if classification == "skip":
+                problems.extend(
+                    scan_tracked_skip_policy(rel_path(path), tracked_paths)
+                )
                 continue
             if classification != "file":
                 continue

@@ -125,14 +125,14 @@ class WorkflowPolicyTests(unittest.TestCase):
         problems = validate_workflows.validate_workflow(self.path, text)
         self.assertTrue(any("write permission is not allowlisted" in p for p in problems))
 
-    def test_node_18_and_duplicate_keys_are_blocked(self) -> None:
+    def test_unapproved_node_versions_and_duplicate_keys_are_blocked(self) -> None:
         node_18 = workflow(
             """  test:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
-          node-version: 18"""
+          node-version: 18.20.4"""
         )
         duplicate = node_18.replace(
             "    runs-on: ubuntu-24.04\n",
@@ -140,7 +140,7 @@ class WorkflowPolicyTests(unittest.TestCase):
         )
         self.assertTrue(
             any(
-                "Node.js 18" in problem
+                "pin Node.js 24" in problem
                 for problem in validate_workflows.validate_workflow(
                     self.path, node_18
                 )
@@ -154,6 +154,19 @@ class WorkflowPolicyTests(unittest.TestCase):
                 )
             )
         )
+
+    def test_node_version_file_cannot_bypass_runtime_pin(self) -> None:
+        text = workflow(
+            """  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version-file: .nvmrc"""
+        )
+        problems = validate_workflows.validate_workflow(self.path, text)
+        self.assertTrue(any("node-version-file is prohibited" in p for p in problems))
+        self.assertTrue(any("pin Node.js 24" in p for p in problems))
 
 
 if __name__ == "__main__":

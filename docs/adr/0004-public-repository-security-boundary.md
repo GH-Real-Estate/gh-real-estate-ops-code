@@ -1,4 +1,4 @@
-# 2026-07-14 â€” Public Repository Security Boundary
+# 2026-07-14 — Public Repository Security Boundary
 
 ## Status
 

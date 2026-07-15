@@ -41,12 +41,12 @@
       "repository_path": "accounting/chart-of-accounts/current/reconciliation_audit.md"
     },
     "README.md": {
-      "sha256": "a5b3bff4cacbe57dec4d7e83cf35ee9d0d9100492951584d6a469035a0fe0ca9",
-      "repository_path": "accounting/chart-of-accounts/README.md"
+      "sha256": "9dece23a28275a99c250a58f7faad4381dca397e6a62de1ce8eaa6fc3d86b0ac",
+      "repository_path": "accounting/chart-of-accounts/current/README.md"
     },
     "CHANGELOG.md": {
-      "sha256": "7ad7da77cb1fe73031f8341feba4e68e533321802f2b33839fbc9b345a987942",
-      "repository_path": "accounting/chart-of-accounts/CHANGELOG.md"
+      "sha256": "11a4bf294b82fb3e84599c102d3d34c8434cabb3e5040591abc6e89e78bdd523",
+      "repository_path": "accounting/chart-of-accounts/current/CHANGELOG.md"
     }
   },
   "controls": {
@@ -60,7 +60,8 @@
     "governance_master_contains_recommended_not_yet_live_corrections": true,
     "fasb_content": "ASC locators and original GH analysis only; no Codification text",
     "professional_review_required_for_material_conclusions": true,
-    "live_account_ids_committed": false,
-    "account_id_representation": "Deterministic public aliases; private crosswalk retained outside GitHub"
+    "account_id_representation": "Current tree uses deterministic public aliases. Pre-redaction live IDs remain recoverable from public Git history and PR diffs and must be treated as public identifiers, not secrets.",
+    "live_account_ids_in_current_tree": false,
+    "legacy_live_account_ids_exposed_in_public_history": true
   }
 }
