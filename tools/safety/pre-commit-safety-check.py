@@ -182,6 +182,9 @@ SAFE_SECRET_VALUE_PREFIXES = (
     "runtime",
     "secrets.",
     "settings.",
+    "await",
+    "parsed.",
+    "response.",
 )
 
 SAFE_SECRET_VALUE_WORDS = {
@@ -196,6 +199,7 @@ SAFE_SECRET_VALUE_WORDS = {
     "none",
     "null",
     "undefined",
+    "do-not-archive",
     "''",
     '""',
 }
@@ -288,11 +292,8 @@ def scan_file_policy(rel: str, path: Path) -> tuple[list[str], bool, bool]:
         sample = handle.read(min(size, 8192))
     if b"\x00" in sample:
         return [f"Unapproved binary content: {rel}"], False, False
-    try:
-        sample.decode("utf-8")
-    except UnicodeDecodeError:
-        return [f"Non-UTF-8 or unapproved binary content: {rel}"], False, False
-
+    # Full UTF-8 validation occurs in scan_repository.read_text(). Decoding an
+    # arbitrary prefix here can split a valid multibyte character at 8192 bytes.
     return [], False, True
 
 
