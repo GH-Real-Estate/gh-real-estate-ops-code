@@ -70,7 +70,7 @@ jobs:
           path: |
             accounting-review-due.json
             accounting-review-due.md
-          retention-days: 90
+          retention-days: 14
           if-no-files-found: error
 
       - name: Fail after preserving report

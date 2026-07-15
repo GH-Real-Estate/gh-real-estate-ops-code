@@ -12,7 +12,7 @@ GitHub cron schedules use UTC and therefore shift relative to Central Time when 
 
 | Workflow | Schedule | Purpose | Write boundary |
 |---|---:|---|---|
-| `Authority Discovery` | Daily, `11:17 UTC`; manual dispatch | Poll 14 legal and 9 accounting official-source indexes for candidate publications or metadata changes | Read-only scan; publisher may update only `authority/candidates/<domain>/`, a draft PR, and a degraded-source issue |
+| `Authority Discovery` | Sunday, `11:17 UTC`; manual dispatch | Poll 14 legal and 9 accounting official-source indexes for candidate publications or metadata changes | Read-only scan; publisher may update only `authority/candidates/<domain>/`, a draft PR, and a degraded-source issue |
 | `Legal Source Monitor` | Monday, `12:27 UTC`; manual dispatch | Compare known approved legal payloads and semantic fingerprints | Report artifact and bounded legal-review issue only |
 | `Accounting Authority Review Calendar` | Day 1 monthly, `13:41 UTC`; manual dispatch | Check stored FASB/accounting review dates | Report artifact and bounded accounting-review issue only |
 | `Authority Release Promotion` | Manual only | Validate structured review and archive immutable evidence plus the reviewed discovery snapshot | Protected draft PR affecting only `authority/releases/` and one `authority/snapshots/<domain>.json` |
@@ -62,6 +62,8 @@ gh workflow run authority-discovery.yml --ref main
 
 The same operation is available in GitHub under Actions -> Authority Discovery -> Run workflow. Run it from `main`; only the default-branch publisher is allowed to create candidate PRs or issues.
 
+Discovery, legal-monitor, and accounting-review artifacts are retained for 14 days. Their publisher jobs consume them within the same workflow run. Download evidence that needs longer temporary review before expiry, or preserve it through the governed candidate/release process; do not treat an expired artifact as proof that a check never ran.
+
 ## Interpret a discovery result
 
 ### `current`
@@ -107,7 +109,7 @@ This is a per-source state. Today it is expected when `CONGRESS_API_KEY` is abse
 
 If `authority/snapshots/<domain>.json` does not yet exist, the first scan compares the official indexes with an empty baseline. Every successfully discovered item is therefore reported as `new`. This is expected bootstrap behavior, not a claim that every law, standard, or tax publication just changed.
 
-The system does not auto-approve that initial inventory. A qualified reviewer must resolve every candidate change and every conservative impact route before the first reviewed discovery snapshot can be promoted. If any source errors during bootstrap, the run is `degraded` and cannot establish the snapshot. Until that first snapshot is merged, later daily runs will continue to compare against an empty baseline and may produce another all-new candidate; keep the selected per-run evidence immutable and reconcile any newer run before promotion.
+The system does not auto-approve that initial inventory. A qualified reviewer must resolve every candidate change and every conservative impact route before the first reviewed discovery snapshot can be promoted. If any source errors during bootstrap, the run is `degraded` and cannot establish the snapshot. Until that first snapshot is merged, later weekly runs will continue to compare against an empty baseline and may produce another all-new candidate; keep the selected per-run evidence immutable and reconcile any newer run before promotion.
 
 ## Candidate-to-promotion sequence
 

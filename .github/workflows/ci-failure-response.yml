@@ -1,19 +1,6 @@
 name: CI Failure Response
 
 on:
-  workflow_run:
-    workflows:
-      - Accounting Authority Checks
-      - Accounting Authority Review Calendar
-      - Authority Discovery
-      - Authority Refresh Checks
-      - Authority Release Promotion
-      - Legal Release Checks
-      - Legal Source Monitor
-      - Repo Checks
-    types:
-      - completed
-
   workflow_dispatch:
     inputs:
       conclusion:
@@ -66,10 +53,10 @@ on:
 permissions:
   contents: read
 
-# Serialize observations that can mutate the same workflow-and-branch incident.
-# queue:max preserves bursts instead of replacing an already-pending observation.
+# Serialize manual observations that can mutate the same simulation incident.
+# queue:max preserves a failure/recovery pair instead of replacing a pending run.
 concurrency:
-  group: ci-failure-response-${{ github.event.workflow_run.workflow_id || github.workflow }}-${{ github.event.workflow_run.head_branch || inputs.head_branch || github.ref_name }}
+  group: ci-failure-response-${{ github.workflow }}-${{ inputs.head_branch || github.ref_name }}-${{ inputs.scenario_key || 'validation' }}
   queue: max
   cancel-in-progress: false
 
@@ -99,7 +86,7 @@ jobs:
 
   incident:
     name: Record or recover CI incident
-    if: ${{ github.event_name == 'workflow_run' || github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

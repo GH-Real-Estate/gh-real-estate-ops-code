@@ -2,6 +2,14 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-14
+
+- Reduced GitHub Actions fan-out without weakening the unconditional repository safety scan or changing required check names.
+- Moved `Authority Discovery` from daily execution to Sunday at `11:17 UTC`, while retaining manual dispatch.
+- Added fail-open changed-path gating so the Zillow, returned-payment, and authority suites run fully whenever their governed scope changes or diff detection is uncertain.
+- Disabled automatic `workflow_run` incident/recovery execution; `CI Failure Response` now supports manual simulation and validation only, with normal GitHub notifications as the default alert.
+- Reduced authority-discovery, legal-monitor, and accounting-review artifact retention from 90 days to 14 days after verifying their publishers consume artifacts within the same workflow run.
+
 ## 2026-07-12
 
 - Added the governed GH accounting authority library under `accounting/`.

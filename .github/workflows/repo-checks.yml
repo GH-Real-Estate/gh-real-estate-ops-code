@@ -6,18 +6,102 @@ on:
   push:
     branches:
       - main
-      - codex/**
 
 permissions:
   contents: read
+
+concurrency:
+  group: repo-checks-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   safety-scan:
     name: Safety scan
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      run_zillow: ${{ steps.scope.outputs.run_zillow }}
+      run_returned: ${{ steps.scope.outputs.run_returned }}
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Detect integration test scope
+        id: scope
+        continue-on-error: true
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PUSH_BASE_SHA: ${{ github.event.before }}
+          PUSH_HEAD_SHA: ${{ github.event.after }}
+        run: |
+          set -euo pipefail
+
+          # Fail open: missing or invalid event/diff data must run both suites.
+          printf '%s\n' 'run_zillow=true' 'run_returned=true' >> "$GITHUB_OUTPUT"
+
+          case "$EVENT_NAME" in
+            workflow_dispatch)
+              exit 0
+              ;;
+            pull_request)
+              base_sha="$PR_BASE_SHA"
+              head_sha="$PR_HEAD_SHA"
+              comparison="${base_sha}...${head_sha}"
+              ;;
+            push)
+              base_sha="$PUSH_BASE_SHA"
+              head_sha="$PUSH_HEAD_SHA"
+              comparison="${base_sha}..${head_sha}"
+              ;;
+            *)
+              echo "::warning::Unsupported event; running all integration suites."
+              exit 0
+              ;;
+          esac
+
+          commit_is_usable() {
+            local sha="$1"
+            [[ "$sha" =~ ^[0-9a-fA-F]{40}$ ]] &&
+              [[ ! "$sha" =~ ^0+$ ]] &&
+              git cat-file -e "${sha}^{commit}" 2>/dev/null
+          }
+
+          if ! commit_is_usable "$base_sha" || ! commit_is_usable "$head_sha"; then
+            echo "::warning::Comparison commits are unavailable; running all integration suites."
+            exit 0
+          fi
+
+          changed_paths="$(mktemp)"
+          trap 'rm -f "$changed_paths"' EXIT
+          if ! git diff --name-only --no-renames -z "$comparison" -- > "$changed_paths"; then
+            echo "::warning::Changed-path detection failed; running all integration suites."
+            exit 0
+          fi
+
+          run_zillow=false
+          run_returned=false
+          while IFS= read -r -d '' path; do
+            case "$path" in
+              src/zoho-crm/integrations/zillow-lead-intake/*)
+                run_zillow=true
+                ;;
+              src/zoho-payments/webhooks/returned-payment-fee/*)
+                run_returned=true
+                ;;
+              .github/workflows/repo-checks.yml)
+                run_zillow=true
+                run_returned=true
+                ;;
+            esac
+          done < "$changed_paths"
+
+          printf 'run_zillow=%s\n' "$run_zillow" >> "$GITHUB_OUTPUT"
+          printf 'run_returned=%s\n' "$run_returned" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
@@ -29,7 +113,10 @@ jobs:
 
   zillow-lead-intake:
     name: Zillow lead intake checks
+    needs: safety-scan
+    if: ${{ always() && !cancelled() && needs.safety-scan.outputs.run_zillow != 'false' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: src/zoho-crm/integrations/zillow-lead-intake
@@ -47,7 +134,10 @@ jobs:
 
   returned-fee-webhook:
     name: Returned fee webhook checks
+    needs: safety-scan
+    if: ${{ always() && !cancelled() && needs.safety-scan.outputs.run_returned != 'false' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: src/zoho-payments/webhooks/returned-payment-fee

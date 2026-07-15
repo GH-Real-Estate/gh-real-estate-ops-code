@@ -511,7 +511,7 @@ jobs:
         """name: Authority discovery
 on:
   schedule:
-    - cron: '17 11 * * *'
+    - cron: '17 11 * * 0'
   workflow_dispatch:
 permissions:
   contents: write

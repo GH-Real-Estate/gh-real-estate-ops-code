@@ -9,10 +9,8 @@ on:
     paths:
       - 'authority/**'
       - 'tools/authority_refresh/**'
-      - 'legal/CURRENT_STATUS.json'
-      - 'legal/schemas/**'
-      - 'accounting/CURRENT_STATUS.json'
-      - 'accounting/schemas/**'
+      - 'legal/**'
+      - 'accounting/**'
       - '.gitattributes'
       - '.github/CODEOWNERS'
       - '.github/workflows/authority-*.yml'
@@ -38,13 +36,68 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Detect governed authority scope
+        id: scope
+        continue-on-error: true
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          # Fail open: only a successfully computed, definitely unrelated PR may skip.
+          echo "run_full=true" >> "$GITHUB_OUTPUT"
+          if [[ "$EVENT_NAME" != "pull_request" ]]; then
+            exit 0
+          fi
+
+          commit_is_usable() {
+            local sha="$1"
+            [[ "$sha" =~ ^[0-9a-fA-F]{40}$ ]] &&
+              [[ ! "$sha" =~ ^0+$ ]] &&
+              git cat-file -e "${sha}^{commit}" 2>/dev/null
+          }
+
+          if ! commit_is_usable "$PR_BASE_SHA" || ! commit_is_usable "$PR_HEAD_SHA"; then
+            echo "::warning::Comparison commits are unavailable; running full authority validation."
+            exit 0
+          fi
+
+          changed_paths="$(mktemp)"
+          trap 'rm -f "$changed_paths"' EXIT
+          if ! git diff --name-only --no-renames -z "${PR_BASE_SHA}...${PR_HEAD_SHA}" -- > "$changed_paths"; then
+            echo "::warning::Changed-path detection failed; running full authority validation."
+            exit 0
+          fi
+
+          run_full=false
+          while IFS= read -r -d '' path; do
+            case "$path" in
+              authority/*|tools/authority_refresh/*|legal/*|accounting/*|.gitattributes|.github/CODEOWNERS|.github/workflows/authority-*.yml|.github/workflows/accounting-authority-review.yml)
+                run_full=true
+                break
+                ;;
+            esac
+          done < "$changed_paths"
+
+          echo "run_full=$run_full" >> "$GITHUB_OUTPUT"
+
+      - name: Confirm unrelated pull request
+        if: ${{ steps.scope.outputs.run_full == 'false' }}
+        run: echo "No governed authority paths changed; full validation is not required."
+
       - name: Set up Python
+        if: ${{ steps.scope.outputs.run_full != 'false' }}
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: '3.x'
 
       - name: Validate authority system contracts
+        if: ${{ steps.scope.outputs.run_full != 'false' }}
         run: python tools/authority_refresh/validate_system.py
 
       - name: Run authority refresh tests
+        if: ${{ steps.scope.outputs.run_full != 'false' }}
         run: python -m unittest discover -s tools/authority_refresh/tests -p 'test_*.py' -v
