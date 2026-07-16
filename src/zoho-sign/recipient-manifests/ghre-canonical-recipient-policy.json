@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "ghre-canonical-recipient-policy",
+  "title": "GH Real Estate Canonical Zoho Sign Recipient Policy",
+  "effective_date": "2026-07-15",
+  "governance_status": "active",
+  "scope": "All GH Real Estate contract documents sent from Zoho Contracts to Zoho Sign",
+  "source_of_truth": true,
+  "recipient_numbering_policy": {
+    "R1": {
+      "canonical_role": "Tenant 1 / Primary Counterparty Signer",
+      "required_when": "A tenant or primary counterparty must sign"
+    },
+    "R2": {
+      "canonical_role": "Tenant 2 / Additional Counterparty Signer",
+      "required_when": "A second tenant or counterparty signer exists",
+      "conditional": true
+    },
+    "R3": {
+      "canonical_role": "Tenant 3 / Additional Counterparty Signer",
+      "required_when": "A third tenant or counterparty signer exists",
+      "conditional": true
+    },
+    "R4": {
+      "canonical_role": "GH Real Estate, LLC Authorized Representative",
+      "required_when": "GH Real Estate is a signing party",
+      "fixed_role": true,
+      "must_sign_last": true
+    },
+    "R5_plus": {
+      "canonical_role": "Additional non-landlord signer roles, including guarantors, witnesses, or approved program-specific signers",
+      "required_when": "The governed document manifest requires the additional signer",
+      "conditional": true
+    }
+  },
+  "signing_order_policy": {
+    "rule": "Recipient numbers identify field ownership and do not by themselves control routing order. Configure signing positions separately so every tenant, guarantor, and other required non-landlord signer completes signing before GH Real Estate.",
+    "default_positions": {
+      "R1": 1,
+      "R2": 1,
+      "R3": 1,
+      "R4": 2,
+      "R5_plus": 1
+    },
+    "landlord_last_gate": "Do not send unless R4 is the final signing position and no signer is scheduled after R4."
+  },
+  "optional_signer_policy": {
+    "rule": "Optional people are omitted entirely; an actual named signer is never given an optional signature field.",
+    "tenant_2_absent": "Remove the R2 recipient, all R2 tags, and the Tenant 2 signature row.",
+    "tenant_3_absent": "Remove the R3 recipient, all R3 tags, and the Tenant 3 signature row.",
+    "additional_signer_absent": "Remove the applicable R5+ recipient, tags, and signature block."
+  },
+  "canonical_simple_tags": {
+    "tenant_1_signature": "{{S:R1}}",
+    "tenant_1_sign_date": "{{SD:R1}}",
+    "tenant_2_signature": "{{S:R2}}",
+    "tenant_2_sign_date": "{{SD:R2}}",
+    "tenant_3_signature": "{{S:R3}}",
+    "tenant_3_sign_date": "{{SD:R3}}",
+    "landlord_signature": "{{S:R4}}",
+    "landlord_sign_date": "{{SD:R4}}"
+  },
+  "validation_rules": [
+    "Every signing document must declare a recipient manifest.",
+    "R4 is reserved for GH Real Estate, LLC's authorized representative in every GH contract document where GH signs.",
+    "R4 must be routed after all other required signers.",
+    "No signer may be routed after R4.",
+    "Do not renumber GH Real Estate based on the number of tenants.",
+    "Do not use padded tags or formatted sign-date tags unless separately approved by the active text-tag registry and required smoke tests.",
+    "Use only production-safe simple tags unless the active registry expressly approves another syntax."
+  ],
+  "exceptions": {
+    "rule": "Any exception requires an explicit repository change, documented rationale, validation updates, and approval before live use.",
+    "single_party_internal_document": "A document not signed by GH Real Estate is outside the R4 landlord requirement but still requires a manifest."
+  }
+}
