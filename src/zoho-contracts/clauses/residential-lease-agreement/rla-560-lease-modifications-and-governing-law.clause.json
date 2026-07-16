@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "General Provisions",
+  "clause_name": "RLA-560 — Residential Lease — Lease Modifications and Governing Law",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Will material changes be signed by all required parties, with Kansas law and the proper county venue governing?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "12.11. Lease Modifications",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Material changes to Rent, Security Deposit, lease term, utilities, fees, or substantive Lease obligations must be in a written amendment signed by Landlord and all adult Tenants, except for lawful changes to rules, month-to-month terms, or changes otherwise allowed by law. Oral modifications are not binding."
+        },
+        {
+          "style": "Heading 3",
+          "text": "12.12. Governing Law and Venue"
+        },
+        {
+          "style": "Normal",
+          "text": "This Lease is governed by Kansas law. Venue for court proceedings is in the Kansas county where the Premises is located, unless applicable law requires otherwise."
+        }
+      ]
+    }
+  ]
+}

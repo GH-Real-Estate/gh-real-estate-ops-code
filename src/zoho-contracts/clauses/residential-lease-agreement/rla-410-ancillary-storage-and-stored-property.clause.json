@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Ancillary Storage",
+  "clause_name": "RLA-410 — Residential Lease — Ancillary Storage and Stored Property",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Is every storage area separately approved under the governed storage addendum, with stored property remaining subject to Kansas disposition law?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "10.3. Storage Units",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Storage is allowed only if Landlord approves a specific ancillary storage area in a signed Ancillary Storage Addendum. Storage rent is an Other Charge. No separate storage Security Deposit or contractual lien applies under that form. Tenant must not store flammable, hazardous, illegal, perishable, pest-attracting, high-value, or otherwise prohibited items. Landlord does not insure Tenant's stored property, and no provision exculpates liability imposed by law. If the arrangement is legally classified as self-service storage, this form and process must be replaced before use."
+        },
+        {
+          "style": "Heading 3",
+          "text": "10.4. Property Left in Storage, Common Areas, or Premises"
+        },
+        {
+          "style": "Normal",
+          "text": "Property left after surrender, actual abandonment, eviction, or move-out, or left in an unauthorized common area, will be handled only under controlling Kansas law, including K.S.A. 58-2565 where applicable. No Lease clause, rule, or storage termination shortens the statutory waiting, notice, mailing, publication, redemption, or disposition process. Tenant may be responsible for reasonable, actual, documented removal, storage, notice, hauling, disposal, cleaning, and repair costs to the extent recoverable by law."
+        }
+      ]
+    }
+  ]
+}

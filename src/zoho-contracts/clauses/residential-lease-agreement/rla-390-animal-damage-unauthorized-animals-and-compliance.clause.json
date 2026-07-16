@@ -1,0 +1,56 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Animals and Accommodations",
+  "clause_name": "RLA-390 — Residential Lease — Animal Damage, Unauthorized Animals, and Compliance",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard animal-damage, unauthorized-animal, licensing, revocation, and wildlife rules apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "9.4. Pet Damage and Conduct",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant is responsible for reasonable, actual, documented costs and damages caused by an approved or unauthorized animal to the extent allowed by law, including damage beyond ordinary wear and tear, odor, stains, waste, pest treatment, injury, and actual HOA or municipal charges. Ordinary pets must be controlled and comply with legally required licensing and vaccination duties and the Ordinary Pet Addendum. Assistance animals are governed by Section 9.3 and any Assistance Animal Accommodation Addendum. Landlord will not recover twice for the same loss."
+        },
+        {
+          "style": "Heading 3",
+          "text": "9.5. Unauthorized Animals"
+        },
+        {
+          "style": "Normal",
+          "text": "An unauthorized ordinary pet is a material violation. Landlord may require removal, recover actual damages, and impose only ordinary-pet charges expressly stated in a signed agreement and allowed by law. No pet charge or ordinary-pet remedy applies to an animal that must be allowed as a reasonable accommodation when prohibited by law."
+        },
+        {
+          "style": "Heading 3",
+          "text": "9.6. Vaccination, Licensing, and Local Ordinances"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant must comply with all animal licensing, vaccination, leash, sanitation, waste, nuisance, and animal-control laws. Dogs must be leashed and under control outside the Premises as required by Overland Park rules and HOA rules. Tenant must promptly provide proof of compliance upon Landlord's reasonable request."
+        },
+        {
+          "style": "Heading 3",
+          "text": "9.7. Revocation of Pet Permission"
+        },
+        {
+          "style": "Normal",
+          "text": "Permission for an ordinary pet may be revoked only after any notice and cure opportunity required by the Lease and law if Tenant violates the Ordinary Pet Addendum, law, HOA rules, or reasonable property rules, or if the animal creates an unmitigated nuisance, direct threat, repeated disturbance, unsanitary condition, or property damage. Assistance-animal issues are handled through the individualized accommodation process and not under this ordinary-pet revocation provision."
+        },
+        {
+          "style": "Heading 3",
+          "text": "9.8. No Feeding Stray or Wild Animals"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant may not feed, harbor, or attract stray animals, wildlife, birds, raccoons, squirrels, cats, or other animals on or near the Premises in a manner that creates pests, nuisance, property damage, or safety concerns."
+        }
+      ]
+    }
+  ]
+}

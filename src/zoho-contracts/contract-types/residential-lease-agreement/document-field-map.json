@@ -1,0 +1,891 @@
+{
+  "$schema": "../../schemas/document-field-map.schema.json",
+  "schema_version": "1.0.0",
+  "map_id": "ghre-rla-document-field-map",
+  "contract_type": "Residential Lease Agreement",
+  "registry_ref": "../../field-maps/contract-field-registry.json",
+  "mappings": [
+    {
+      "source_variable": "lease_number",
+      "business_meaning": "Stable human-readable lease identifier.",
+      "registry_field_id": "lease_number",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM approved Lease record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.lease_number"
+      ]
+    },
+    {
+      "source_variable": "landlord_name",
+      "business_meaning": "Landlord organization name.",
+      "registry_field_id": "party_a_name",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts Party A",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.landlord",
+        "section_1_1",
+        "ending_text.landlord_label"
+      ]
+    },
+    {
+      "source_variable": "premises_street",
+      "business_meaning": "Property street address execution snapshot.",
+      "registry_field_id": "property_address_line_1_snapshot",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Property record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.premises",
+        "section_1_2"
+      ]
+    },
+    {
+      "source_variable": "premises_unit",
+      "business_meaning": "Property unit identifier execution snapshot.",
+      "registry_field_id": "property_unit_number_snapshot",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Unit record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.premises",
+        "section_1_2"
+      ]
+    },
+    {
+      "source_variable": "premises_city",
+      "business_meaning": "Property city execution snapshot.",
+      "registry_field_id": "property_city_snapshot",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Property record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.premises",
+        "section_1_2"
+      ]
+    },
+    {
+      "source_variable": "premises_state",
+      "business_meaning": "Property state execution snapshot.",
+      "registry_field_id": "property_state_code_snapshot",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Property record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.premises",
+        "section_1_2"
+      ]
+    },
+    {
+      "source_variable": "premises_postal_code",
+      "business_meaning": "Property postal-code execution snapshot.",
+      "registry_field_id": "property_postal_code_snapshot",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Property record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.premises",
+        "section_1_2"
+      ]
+    },
+    {
+      "source_variable": "tenant_1_name",
+      "business_meaning": "Tenant 1 name snapshot when Party B is expressly Tenant 1.",
+      "registry_field_id": "party_b_name",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts Party B",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.tenant_1",
+        "ending_text.tenant_1_printed_name"
+      ]
+    },
+    {
+      "source_variable": "agreement_effective_date",
+      "business_meaning": "Date the contract becomes active, not a signature date.",
+      "registry_field_id": "agreement_effective_date",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts agreement record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.effective_date"
+      ]
+    },
+    {
+      "source_variable": "lease_end_date",
+      "business_meaning": "Fixed-term lease expiration date.",
+      "registry_field_id": "term_end_date",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts agreement record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "tenant_field_api_metadata",
+      "document_locations": [
+        "cover.lease_ends",
+        "section_1_3.lease_ends",
+        "section_2_1"
+      ]
+    },
+    {
+      "source_variable": "monthly_rent",
+      "business_meaning": "Monthly Base Rent agreed for the tenancy.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease snapshot; Zoho Books owns invoices and payment truth",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "monthly_rent_source_ownership",
+      "document_locations": [
+        "cover.base_rent",
+        "section_1_3.base_rent",
+        "section_3_2.first_full_month_rent_amount",
+        "section_3_2.next_regular_rent_amount",
+        "section_3_1"
+      ]
+    },
+    {
+      "source_variable": "security_deposit",
+      "business_meaning": "Security Deposit amount agreed, not paid or held balance.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease snapshot; Zoho Books owns liability and refund truth",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "security_deposit_source_ownership",
+      "document_locations": [
+        "cover.security_deposit",
+        "section_1_3.security_deposit",
+        "section_3_2.security_deposit",
+        "section_4_1"
+      ]
+    },
+    {
+      "source_variable": "lease_commencement_date",
+      "business_meaning": "Date the lease term and possession period begins.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "lease_commencement_field",
+      "document_locations": [
+        "cover.lease_begins",
+        "section_1_3.lease_begins",
+        "section_2_1"
+      ]
+    },
+    {
+      "source_variable": "tenant_2_name",
+      "business_meaning": "Tenant 2 verified legal-name snapshot.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved CRM Lease party relationship",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "tenant_two_three_identity_fields",
+      "document_locations": [
+        "cover.tenant_2",
+        "ending_text.tenant_2_printed_name"
+      ]
+    },
+    {
+      "source_variable": "tenant_3_name",
+      "business_meaning": "Tenant 3 verified legal-name snapshot.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved CRM Lease party relationship",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "tenant_two_three_identity_fields",
+      "document_locations": [
+        "cover.tenant_3",
+        "ending_text.tenant_3_printed_name"
+      ]
+    },
+    {
+      "source_variable": "statutory_notice_information",
+      "business_meaning": "Manager and owner or authorized notice-agent names and complete physical mailing addresses.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved legal notice configuration",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "statutory_notice_address",
+      "document_locations": [
+        "section_1_4.notice_table",
+        "ending_text.notice_address_confirmed"
+      ]
+    },
+    {
+      "source_variable": "utility_responsibilities",
+      "business_meaning": "Per-utility tenant, landlord-paid, or separate-allocation responsibility.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved CRM Lease utility schedule",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "conditional_utility_values",
+      "document_locations": [
+        "section_5_1.utility_table"
+      ]
+    },
+    {
+      "source_variable": "hoa_applicability_and_delivery",
+      "business_meaning": "HOA applicability and current packet or handbook delivery evidence.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved property and delivery records",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "hoa_applicability",
+      "document_locations": [
+        "section_10_12",
+        "section_14_2",
+        "addendum_b"
+      ]
+    },
+    {
+      "source_variable": "lead_disclosure_evidence",
+      "business_meaning": "Construction-year or exemption decision, executed disclosure, and EPA pamphlet delivery evidence.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Controlled lead-disclosure workflow",
+      "snapshot_behavior": "freeze_at_execution",
+      "status": "deferred",
+      "gate_id": "lead_disclosure",
+      "document_locations": [
+        "section_12_10",
+        "section_14_2",
+        "attachment.addendum_a"
+      ]
+    },
+    {
+      "source_variable": "lease_end_time",
+      "business_meaning": "Local clock time at which the fixed lease term expires.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease snapshot",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "lease_end_time",
+      "document_locations": [
+        "cover.lease_end_time",
+        "section_1_3.lease_end_time",
+        "section_2_1.lease_end_time"
+      ]
+    },
+    {
+      "source_variable": "parking_space_count",
+      "business_meaning": "Number of parking spaces approved for the tenancy.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease parking schedule",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "parking_terms",
+      "document_locations": [
+        "section_1_3.parking_space_count",
+        "section_10_8.parking_space_count"
+      ]
+    },
+    {
+      "source_variable": "parking_assignment_details",
+      "business_meaning": "Any assigned parking stall, permit, location, limitation, or express unassigned-parking status.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease parking schedule",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "parking_terms",
+      "document_locations": [
+        "section_1_3.parking_assignment",
+        "section_10_8.parking_assignment"
+      ]
+    },
+    {
+      "source_variable": "storage_applicability",
+      "business_meaning": "Whether ancillary storage is approved for the tenancy.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease and Storage records",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "storage_terms",
+      "document_locations": [
+        "section_1_3.storage_applicability",
+        "section_10_3.storage_applicability",
+        "section_14_2.ancillary_storage_addendum_status"
+      ]
+    },
+    {
+      "source_variable": "storage_unit_identifier",
+      "business_meaning": "Approved ancillary storage unit or area identifier.",
+      "registry_field_id": "storage_unit_number",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Unit or Storage record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "storage_terms",
+      "document_locations": [
+        "section_10_3.storage_unit_identifier",
+        "attachment.ancillary_storage_addendum.storage_unit_identifier"
+      ]
+    },
+    {
+      "source_variable": "storage_rent_amount",
+      "business_meaning": "Monthly rent for each approved ancillary storage unit; Zoho Books remains the invoice and payment source of truth.",
+      "registry_field_id": "storage_unit_rent_amount",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM approved Lease or Storage record; Zoho Books owns invoicing",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "storage_terms",
+      "document_locations": [
+        "section_1_3.storage_rent",
+        "section_3_2.storage_rent",
+        "section_10_3.storage_rent",
+        "attachment.ancillary_storage_addendum.storage_rent"
+      ]
+    },
+    {
+      "source_variable": "storage_term_start_date",
+      "business_meaning": "Date an approved ancillary storage term begins.",
+      "registry_field_id": "storage_term_start_date",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Lease or Storage record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "storage_terms",
+      "document_locations": [
+        "attachment.ancillary_storage_addendum.term_start"
+      ]
+    },
+    {
+      "source_variable": "storage_term_end_date",
+      "business_meaning": "Date an approved ancillary storage term ends, when fixed.",
+      "registry_field_id": "storage_term_end_date",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Lease or Storage record",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "storage_terms",
+      "document_locations": [
+        "attachment.ancillary_storage_addendum.term_end"
+      ]
+    },
+    {
+      "source_variable": "storage_addendum_status",
+      "business_meaning": "Whether the required Ancillary Storage Addendum is executed for the approved storage arrangement.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Controlled lease-packet attachment workflow",
+      "snapshot_behavior": "freeze_at_execution",
+      "status": "deferred",
+      "gate_id": "storage_terms",
+      "document_locations": [
+        "section_10_3.storage_addendum_status",
+        "section_14_2.ancillary_storage_addendum_status"
+      ]
+    },
+    {
+      "source_variable": "prorated_rent_period_start",
+      "business_meaning": "First date included in the initial prorated Base Rent period.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease transaction snapshot",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "initial_amounts_due",
+      "document_locations": [
+        "section_3_2.prorated_rent_period_start"
+      ]
+    },
+    {
+      "source_variable": "prorated_rent_period_end",
+      "business_meaning": "Last date included in the initial prorated Base Rent period.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease transaction snapshot",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "initial_amounts_due",
+      "document_locations": [
+        "section_3_2.prorated_rent_period_end"
+      ]
+    },
+    {
+      "source_variable": "prorated_rent_amount",
+      "business_meaning": "Initial prorated Base Rent amount calculated under Section 3.15 from approved lease terms.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved lease-generation calculation; Zoho Books owns invoice and payment truth",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "initial_amounts_due",
+      "document_locations": [
+        "section_3_2.prorated_rent_amount"
+      ]
+    },
+    {
+      "source_variable": "first_full_month_rent_period",
+      "business_meaning": "Calendar month or other approved period for the first full Base Rent charge.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease transaction snapshot",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "initial_amounts_due",
+      "document_locations": [
+        "section_3_2.first_full_month_rent_period"
+      ]
+    },
+    {
+      "source_variable": "total_due_before_possession",
+      "business_meaning": "Total of the separately approved initial charges due before possession, without double counting.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved lease-generation calculation; Zoho Books owns receivable and payment truth",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "initial_amounts_due",
+      "document_locations": [
+        "section_3_2.total_due_before_possession"
+      ]
+    },
+    {
+      "source_variable": "next_regular_rent_due_date",
+      "business_meaning": "Date the next regular full Base Rent payment is due after the initial amounts.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease transaction snapshot",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "initial_amounts_due",
+      "document_locations": [
+        "section_3_2.next_regular_rent_due_date"
+      ]
+    },
+    {
+      "source_variable": "ordinary_pet_approval_status",
+      "business_meaning": "Whether one or more ordinary pets are approved for this tenancy.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Lease animal schedule",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "pet_terms",
+      "document_locations": [
+        "section_9_1.ordinary_pet_approval",
+        "section_14_2.ordinary_pet_addendum_status"
+      ]
+    },
+    {
+      "source_variable": "ordinary_pet_addendum_status",
+      "business_meaning": "Whether the required Ordinary Pet Addendum is executed for each approved ordinary pet.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Controlled lease-packet attachment workflow",
+      "snapshot_behavior": "freeze_at_execution",
+      "status": "deferred",
+      "gate_id": "pet_terms",
+      "document_locations": [
+        "section_9_2.ordinary_pet_addendum_status",
+        "section_14_2.ordinary_pet_addendum_status"
+      ]
+    },
+    {
+      "source_variable": "ordinary_pet_rent_amount",
+      "business_meaning": "Recurring ordinary-pet rent expressly stated in the signed Ordinary Pet Addendum.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Ordinary Pet Addendum snapshot; Zoho Books owns invoicing",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "pet_terms",
+      "document_locations": [
+        "section_3_2.approved_ordinary_pet_charges",
+        "section_9_2.ordinary_pet_rent",
+        "attachment.ordinary_pet_addendum.pet_rent"
+      ]
+    },
+    {
+      "source_variable": "ordinary_pet_fee_amount",
+      "business_meaning": "Any non-refundable ordinary-pet fee expressly labeled in the signed Ordinary Pet Addendum.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Ordinary Pet Addendum snapshot; Zoho Books owns invoicing",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "pet_terms",
+      "document_locations": [
+        "section_3_2.approved_ordinary_pet_charges",
+        "section_9_2.ordinary_pet_fee",
+        "attachment.ordinary_pet_addendum.pet_fee"
+      ]
+    },
+    {
+      "source_variable": "ordinary_pet_security_deposit_amount",
+      "business_meaning": "Refundable ordinary-pet security deposit subject to the aggregate Kansas deposit cap.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Ordinary Pet Addendum snapshot; Zoho Books owns deposit liability truth",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "pet_terms",
+      "document_locations": [
+        "section_3_2.approved_ordinary_pet_charges",
+        "section_4_2.pet_security_deposit",
+        "section_9_2.pet_security_deposit",
+        "attachment.ordinary_pet_addendum.pet_security_deposit"
+      ]
+    },
+    {
+      "source_variable": "appliance_inventory",
+      "business_meaning": "Property-specific list of landlord-provided appliances, furnishings, and window coverings.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved Zoho CRM Property or Unit inventory snapshot",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "appliance_inventory",
+      "document_locations": [
+        "section_7_1.appliance_inventory",
+        "section_7_4.move_in_inventory"
+      ]
+    },
+    {
+      "source_variable": "landlord_authorized_representative_name",
+      "business_meaning": "Printed legal name of the individual authorized to sign for GH Real Estate, LLC.",
+      "registry_field_id": "party_a_primary_contact_name",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts Party A contact metadata plus owner-approved authorization record",
+      "snapshot_behavior": "freeze_at_execution",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "landlord_authorized_representative",
+      "document_locations": [
+        "ending_text.landlord_authorized_representative_name",
+        "addendum_b.landlord_authorized_representative_name"
+      ]
+    },
+    {
+      "source_variable": "landlord_authorized_representative_title",
+      "business_meaning": "Approved organizational title or signing capacity of the individual signing for GH Real Estate, LLC.",
+      "registry_field_id": "party_a_primary_contact_job_title",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts Party A contact metadata plus owner-approved authorization record",
+      "snapshot_behavior": "freeze_at_execution",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "landlord_authorized_representative",
+      "document_locations": [
+        "ending_text.landlord_authorized_representative_title",
+        "addendum_b.landlord_authorized_representative_title"
+      ]
+    },
+    {
+      "source_variable": "landlord_signing_authority_evidence",
+      "business_meaning": "Current evidence that the named representative may sign the lease and applicable addenda for GH Real Estate, LLC.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved authorization and access-control record",
+      "snapshot_behavior": "verify_at_execution",
+      "status": "deferred",
+      "gate_id": "landlord_authorized_representative",
+      "document_locations": [
+        "ending_text.landlord_signature_authorization",
+        "addendum_b.landlord_signature_authorization"
+      ]
+    },
+    {
+      "source_variable": "property_manager_name",
+      "business_meaning": "Name of the person authorized to manage the Premises, distinct from unverified signer or notice-agent assumptions.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved property-management and statutory-notice configuration",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "cover.property_manager",
+        "section_1_4.person_authorized_to_manage"
+      ]
+    },
+    {
+      "source_variable": "landlord_operational_phone",
+      "business_meaning": "Approved operational phone number visibly required in the notice and signature tables.",
+      "registry_field_id": "party_a_primary_contact_phone",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts Party A contact metadata",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "section_1_4.phone",
+        "ending_text.landlord_phone",
+        "addendum_b.landlord_phone"
+      ]
+    },
+    {
+      "source_variable": "landlord_operational_email",
+      "business_meaning": "Approved operational email address visibly required in the notice and signature tables.",
+      "registry_field_id": "party_a_primary_contact_email",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts Party A contact metadata",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "section_1_4.email",
+        "ending_text.landlord_email",
+        "addendum_b.landlord_email"
+      ]
+    },
+    {
+      "source_variable": "tenant_1_contact_phone",
+      "business_meaning": "Tenant 1 phone number included only where the controlling signature table visibly requires it.",
+      "registry_field_id": "party_b_primary_contact_phone",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts Party B contact metadata",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "ending_text.tenant_1_phone",
+        "addendum_b.tenant_1_phone"
+      ]
+    },
+    {
+      "source_variable": "tenant_1_contact_email",
+      "business_meaning": "Tenant 1 email address included only where the controlling signature table visibly requires it.",
+      "registry_field_id": "party_b_primary_contact_email",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho Contracts Party B contact metadata",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "ending_text.tenant_1_email",
+        "addendum_b.tenant_1_email"
+      ]
+    },
+    {
+      "source_variable": "tenant_2_contact_phone",
+      "business_meaning": "Tenant 2 phone number after Party C role and live metadata are verified.",
+      "registry_field_id": "party_c_primary_contact_phone",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved CRM Lease party relationship",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "ending_text.tenant_2_phone",
+        "addendum_b.tenant_2_phone"
+      ]
+    },
+    {
+      "source_variable": "tenant_2_contact_email",
+      "business_meaning": "Tenant 2 email address after Party C role and live metadata are verified.",
+      "registry_field_id": "party_c_primary_contact_email",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved CRM Lease party relationship",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "ending_text.tenant_2_email",
+        "addendum_b.tenant_2_email"
+      ]
+    },
+    {
+      "source_variable": "tenant_3_contact_phone",
+      "business_meaning": "Tenant 3 phone number after Party D role and live metadata are verified.",
+      "registry_field_id": "party_d_primary_contact_phone",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved CRM Lease party relationship",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "ending_text.tenant_3_phone",
+        "addendum_b.tenant_3_phone"
+      ]
+    },
+    {
+      "source_variable": "tenant_3_contact_email",
+      "business_meaning": "Tenant 3 email address after Party D role and live metadata are verified.",
+      "registry_field_id": "party_d_primary_contact_email",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved CRM Lease party relationship",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_role_and_metadata_verification",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "ending_text.tenant_3_email",
+        "addendum_b.tenant_3_email"
+      ]
+    },
+    {
+      "source_variable": "emergency_maintenance_contact",
+      "business_meaning": "Approved emergency maintenance phone, email, or reporting channel shown in the landlord disclosure table.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved property-management configuration",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "required_contact_fields",
+      "document_locations": [
+        "section_1_4.emergency_maintenance_contact"
+      ]
+    },
+    {
+      "source_variable": "municipality_jurisdiction",
+      "business_meaning": "Premises municipality snapshot used to determine whether local-law references apply.",
+      "registry_field_id": "property_city_snapshot",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Property record plus owner-approved jurisdiction determination",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "approved_pending_live_metadata",
+      "gate_id": "municipality_jurisdiction_applicability",
+      "document_locations": [
+        "section_1_8.local_fair_housing_law",
+        "section_9_6.local_animal_rules",
+        "section_10_9.local_towing_rules"
+      ]
+    },
+    {
+      "source_variable": "overland_park_local_provisions_applicable",
+      "business_meaning": "Verified decision that the source's Overland Park and OPMC provisions apply to the Premises.",
+      "registry_field_id": null,
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Owner-approved property jurisdiction and current legal-authority review",
+      "snapshot_behavior": "verify_at_generation",
+      "status": "deferred",
+      "gate_id": "municipality_jurisdiction_applicability",
+      "document_locations": [
+        "section_1_8.overland_park_reference",
+        "section_9_6.overland_park_reference",
+        "section_10_9.opmc_reference"
+      ]
+    }
+  ],
+  "unresolved_fields": [
+    "monthly_rent",
+    "security_deposit",
+    "lease_commencement_date",
+    "tenant_2_name",
+    "tenant_3_name",
+    "statutory_notice_information",
+    "utility_responsibilities",
+    "hoa_applicability_and_delivery",
+    "lead_disclosure_evidence",
+    "lease_end_time",
+    "parking_space_count",
+    "parking_assignment_details",
+    "storage_applicability",
+    "storage_unit_identifier",
+    "storage_rent_amount",
+    "storage_term_start_date",
+    "storage_term_end_date",
+    "storage_addendum_status",
+    "prorated_rent_period_start",
+    "prorated_rent_period_end",
+    "prorated_rent_amount",
+    "first_full_month_rent_period",
+    "total_due_before_possession",
+    "next_regular_rent_due_date",
+    "ordinary_pet_approval_status",
+    "ordinary_pet_addendum_status",
+    "ordinary_pet_rent_amount",
+    "ordinary_pet_fee_amount",
+    "ordinary_pet_security_deposit_amount",
+    "appliance_inventory",
+    "landlord_authorized_representative_name",
+    "landlord_authorized_representative_title",
+    "landlord_signing_authority_evidence",
+    "property_manager_name",
+    "landlord_operational_phone",
+    "landlord_operational_email",
+    "tenant_1_contact_phone",
+    "tenant_1_contact_email",
+    "tenant_2_contact_phone",
+    "tenant_2_contact_email",
+    "tenant_3_contact_phone",
+    "tenant_3_contact_email",
+    "emergency_maintenance_contact",
+    "municipality_jurisdiction",
+    "overland_park_local_provisions_applicable"
+  ]
+}

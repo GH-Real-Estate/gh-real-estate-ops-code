@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Use, Occupancy and Conduct",
+  "clause_name": "RLA-350 — Residential Lease — Conduct, Noise, Smoking, and Controlled Substances",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard lawful-conduct, quiet-hours, smoking, vaping, and controlled-substance restrictions apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "8.6. Legal Compliance and Conduct",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant, occupants, guests, invitees, and pets must comply with all laws, ordinances, HOA rules, fire codes, health and safety rules, and reasonable written property rules. Tenant must not create nuisance, harassment, threats, disturbance, damage, unsafe conditions, excessive traffic, disorderly conduct, or interference with other residents' quiet enjoyment."
+        },
+        {
+          "style": "Heading 3",
+          "text": "8.7. Noise and Quiet Hours"
+        },
+        {
+          "style": "Normal",
+          "text": "Noise must be kept at a reasonable level at all times and especially between 10:00 p.m. and 7:00 a.m. Tenant is responsible for noise from televisions, speakers, instruments, parties, guests, pets, vehicles, heavy walking, and other sources. Repeated complaints or verified disturbances may constitute a material breach."
+        },
+        {
+          "style": "Heading 3",
+          "text": "8.8. Smoking and Vaping Prohibited"
+        },
+        {
+          "style": "Normal",
+          "text": "Smoking, vaping, burning incense, and use of cigarettes, cigars, pipes, e-cigarettes, hookahs, marijuana, cannabis, or similar products are prohibited inside the Premises, in common areas, in storage areas, and within twenty (20) feet of the building or any location where smoke or odor may enter the building. Tenant is responsible for smoke, odor, residue, cleaning, repainting, deodorizing, filter replacement, damage, and related costs caused by Tenant, occupants, guests, or invitees."
+        },
+        {
+          "style": "Heading 3",
+          "text": "8.9. Marijuana and Controlled Substances"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant, occupants, guests, and invitees may not grow, produce, possess, consume, ingest, smoke, vape, distribute, manufacture, or store marijuana, cannabis, illegal drugs, or drug paraphernalia on or about the Premises, including activities claimed to be medical or recreational, except for lawful prescription medication possessed and used by the person for whom it is prescribed."
+        }
+      ]
+    }
+  ]
+}

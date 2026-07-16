@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-320 — Residential Lease — Improvements",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Will approved improvements remain with the property, with any required restoration obligation documented?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "7.10. Improvements",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Unless Landlord agrees otherwise in writing, any approved improvement, fixture, installation, or attachment becomes Landlord property when installed and must remain at move-out. Landlord may require Tenant to restore the Premises to its prior condition at Tenant's expense if the installation was unauthorized or if written approval required restoration."
+        }
+      ]
+    }
+  ]
+}

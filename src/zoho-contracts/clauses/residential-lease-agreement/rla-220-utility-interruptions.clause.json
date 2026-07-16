@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Utilities and Services",
+  "clause_name": "RLA-220 — Residential Lease — Utility Interruptions",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the standard utility-interruption allocation apply without limiting a non-waivable landlord duty?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "5.8. Utility Interruptions",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord is not an insurer against interruptions caused by a utility provider, storm, outage, government action, Tenant nonpayment, or circumstances outside Landlord's reasonable control. Tenant must promptly report any condition affecting health, safety, or property. This section does not excuse a duty imposed by K.S.A. 58-2553 or liability for an interruption caused or prolonged by Landlord's breach, negligence, or willful conduct."
+        }
+      ]
+    }
+  ]
+}

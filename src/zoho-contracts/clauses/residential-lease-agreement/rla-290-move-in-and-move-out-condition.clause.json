@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-290 — Residential Lease — Move-In and Move-Out Condition",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Will the parties complete the statutory move-in inventory and use any move-out inspection only as a preliminary record?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "7.4. Move-In Inventory",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Within five (5) days after the initial date of occupancy or delivery of possession, Landlord or Landlord's representative and Tenant shall jointly inventory the Premises and complete a written condition record covering the Premises and all Landlord-provided furnishings and appliances. Duplicate copies shall be signed, and Tenant shall receive one signed copy. Photographs and unilateral notes may supplement but do not replace the joint process required by K.S.A. 58-2548."
+        },
+        {
+          "style": "Heading 3",
+          "text": "7.5. Move-Out Inspection"
+        },
+        {
+          "style": "Normal",
+          "text": "After Tenant vacates and removes personal property, the parties may document move-out condition on a separate record. Tenant may request to attend if scheduling is practical. Move-out observations are preliminary and do not constitute a release, settlement, final damage determination, or Security Deposit accounting. Every deduction remains subject to Section 4 and Kansas law."
+        }
+      ]
+    }
+  ]
+}

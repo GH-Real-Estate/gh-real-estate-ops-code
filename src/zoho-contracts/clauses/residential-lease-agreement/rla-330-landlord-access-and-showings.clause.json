@@ -1,0 +1,36 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Access and Inspection",
+  "clause_name": "RLA-330 — Residential Lease — Landlord Access and Showings",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard Kansas notice, emergency-entry, inspection, repair, and showing rules apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "8.1. Landlord Access",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord may enter at reasonable hours, after reasonable notice, to inspect the Premises; make necessary or agreed repairs, decorations, alterations, or improvements; supply necessary or agreed services; or exhibit the Premises to prospective or actual purchasers, mortgagees, tenants, workers, or contractors. Except when circumstances reasonably require shorter notice, Landlord ordinarily will give at least twenty-four (24) hours' notice. Landlord shall not abuse the right of access or use it to harass Tenant."
+        },
+        {
+          "style": "Normal",
+          "text": "Landlord may enter without Tenant's consent only in an extreme hazard involving potential loss of life or severe property damage, during an extended absence or actual abandonment when K.S.A. 58-2565 authorizes entry, under a court order, or as otherwise expressly authorized by law. Suspicion of abandonment alone does not authorize entry."
+        },
+        {
+          "style": "Heading 3",
+          "text": "8.2. Showings"
+        },
+        {
+          "style": "Normal",
+          "text": "During the final sixty (60) days of the Lease term, after notice of nonrenewal or move-out, after default, or when the Premises is listed for sale or financing inspection, Tenant must reasonably cooperate with showings to prospective tenants, buyers, lenders, inspectors, contractors, or agents. Landlord will use reasonable efforts to minimize inconvenience."
+        }
+      ]
+    }
+  ]
+}

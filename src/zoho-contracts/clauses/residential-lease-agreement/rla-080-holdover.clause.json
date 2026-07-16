@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Default, Remedies and Termination",
+  "clause_name": "RLA-080 — Residential Lease — Holdover",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the standard Kansas holdover provision apply without a separately signed holdover arrangement?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "2.13. Holdover",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "If Tenant or any occupant remains in possession after the Lease expires or terminates without Landlord's written consent, Tenant is a holdover occupant and Landlord may bring an action for possession. Unless Landlord gives written consent to a different arrangement, Tenant owes use-and-occupancy charges at the then-current Rent rate, prorated daily, plus lawful actual damages. If the holdover is willful and not in good faith, Landlord may recover the maximum holdover damages allowed by Kansas law, including up to one and one-half (1.5) months' periodic Rent or up to one and one-half (1.5) times actual damages, whichever is greater, if awarded or allowed by law. Acceptance of payment does not create a new fixed-term lease unless Landlord agrees in writing."
+        }
+      ]
+    }
+  ]
+}

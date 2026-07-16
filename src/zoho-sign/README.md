@@ -9,6 +9,7 @@ This directory governs Zoho Sign-specific configuration that is consumed by cont
 - Zoho Sign `R<n>` values are contiguous indexes for the actual recipients added to an envelope. They are not permanent Party A/Party B identifiers and they do not determine signing order.
 - GH Real Estate, LLC must be the final actual recipient and must have the final signing position in every document GH signs.
 - In a base residential document, GH is R2 with one tenant, R3 with two tenants, and R4 with three tenants.
+- `residential-lease-one-tenant.recipient-manifest.json`, `residential-lease-two-tenants.recipient-manifest.json`, and `residential-lease-three-tenants.recipient-manifest.json` govern the supported Residential Lease signer sets.
 - Guarantors, witnesses, and other governed non-landlord signers are inserted before GH, which moves GH to the next contiguous R-number.
 - Do not create dummy recipients to preserve a fixed R-number. No signer may be routed after GH.
 - `recipient-manifests/validate_recipient_policy.py` validates the canonical policy and all checked-in `*.recipient-manifest.json` files.

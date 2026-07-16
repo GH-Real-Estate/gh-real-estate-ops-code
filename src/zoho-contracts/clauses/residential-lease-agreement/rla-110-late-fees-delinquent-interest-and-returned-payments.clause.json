@@ -1,0 +1,44 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Rent, Fees and Payment",
+  "clause_name": "RLA-110 — Residential Lease — Late Fees, Delinquent Interest, and Returned Payments",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Are the stated late-fee, simple-interest, and returned-payment provisions approved for this lease without an attorney-approved exception?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "3.5. Late Fees",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "If any portion of monthly Base Rent remains unpaid after 5:00 p.m. Central Time on the 5th day of the month, Tenant shall be charged a late fee equal to five percent (5%) of the unpaid monthly Base Rent. If any portion of monthly Base Rent remains unpaid after 5:00 p.m. Central Time on the 10th day of the month, Tenant shall be charged an additional late fee equal to five percent (5%) of the unpaid monthly Base Rent. Total late fees for a monthly Base Rent charge shall not exceed ten percent (10%) of the unpaid monthly Base Rent for that month. Late fees are intended to compensate Landlord for administrative time, inconvenience, collection administration, and loss caused by late payment, and are not interest. Late fees are not charged on prior late fees, interest, returned-payment fees, online payment or processing fees, administrative fees, application fees, utility reimbursements, repair charges, security deposits, court costs, collection costs, or other fee-only or reimbursement charges. No late fee is charged solely because an approved ACH or portal payment is pending, if that payment was initiated before the applicable deadline and later completes; if the payment fails, late fees may apply as of the original due date."
+        },
+        {
+          "style": "Heading 3",
+          "text": "3.6. Interest on Delinquent Rent"
+        },
+        {
+          "style": "Normal",
+          "text": "If unpaid Base Rent remains unpaid after the thirtieth (30th) calendar day following its original due date, Landlord may assess simple interest on the unpaid Base Rent only at ten percent (10%) per year, or the maximum lawful rate if lower, accruing prospectively beginning on the thirty-first (31st) day until paid. Interest is calculated daily, is not compounded, and may be billed no more often than once per calendar month."
+        },
+        {
+          "style": "Normal",
+          "text": "No interest is charged on prior interest, late fees, returned-payment fees, payment-processing fees, pet charges, storage rent, utility reimbursements, repair charges, deposits, court costs, collection costs, or other fee-only or reimbursement charges."
+        },
+        {
+          "style": "Heading 3",
+          "text": "3.7. Returned Payments"
+        },
+        {
+          "style": "Normal",
+          "text": "If a payment fails because of insufficient funds, a stop-payment instruction, an invalid or closed account, revocation, inaccurate information supplied by Tenant, or another reason attributable to Tenant or Tenant's financial institution, Tenant owes one returned-payment fee of $30.00, or the maximum lawful amount if lower. No returned-payment fee is imposed for a duplicate attempt, a valid unauthorized-transfer claim, or a failure caused by Landlord, the payment provider, or a system error not attributable to Tenant. Any returned-payment fee will be separately invoiced and will not be electronically debited unless separately authorized and after any notice required by law."
+        }
+      ]
+    }
+  ]
+}

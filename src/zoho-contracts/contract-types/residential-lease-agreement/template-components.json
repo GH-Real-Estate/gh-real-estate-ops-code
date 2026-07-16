@@ -1,0 +1,457 @@
+{
+  "schema_version": "1.0.0",
+  "component_set_id": "ghre-rla-native-template-components",
+  "deployment_status": {
+    "state": "draft_only",
+    "published": false,
+    "attorney_review_required": true,
+    "execution_blocked": true,
+    "signature_request_sent": false
+  },
+  "typography_standard": "../../standards/contract-authoring-standard.json",
+  "components": [
+    {
+      "component_id": "cover-page",
+      "component_type": "intro_text_and_table",
+      "title": "RESIDENTIAL LEASE AGREEMENT",
+      "intro_lines": [
+        "Lease No.: ____________________",
+        "GH Real Estate, LLC | ____________________________________________",
+        "This document has legal consequences. If you do not understand any part of it, consult an attorney before signing."
+      ],
+      "table": [
+        [
+          "Landlord",
+          "GH Real Estate, LLC, a Kansas limited liability company"
+        ],
+        [
+          "Property Manager",
+          "____________________________"
+        ],
+        [
+          "Premises",
+          "____________________________________________"
+        ],
+        [
+          "Tenant #1",
+          ""
+        ],
+        [
+          "Tenant #2",
+          ""
+        ],
+        [
+          "Tenant #3",
+          ""
+        ],
+        [
+          "Effective Date",
+          ""
+        ],
+        [
+          "Lease Begins",
+          ""
+        ],
+        [
+          "Lease Ends",
+          "____________________ at ____________________"
+        ],
+        [
+          "Base Rent",
+          "$ __________________ per month"
+        ],
+        [
+          "Security Deposit",
+          "$ __________________"
+        ]
+      ],
+      "warning": "ATTORNEY REVIEW DRAFT — Complete all blanks and required addenda. Do not send for tenant signature or deliver possession until Kansas counsel approves the packet and every production gate is satisfied.",
+      "field_gate_ids": [
+        "tenant_field_api_metadata",
+        "monthly_rent_source_ownership",
+        "security_deposit_source_ownership",
+        "lease_commencement_field",
+        "lease_end_time",
+        "tenant_two_three_identity_fields",
+        "required_contact_fields"
+      ]
+    },
+    {
+      "component_id": "dynamic-table-of-contents",
+      "component_type": "dynamic_toc",
+      "expected_entries": [
+        [
+          "1",
+          "Parties, Premises, Occupancy, and Required Disclosures",
+          "3"
+        ],
+        [
+          "2",
+          "Term, Possession, Renewal, Early Termination, and Holdover",
+          "4"
+        ],
+        [
+          "3",
+          "Rent, Charges, and Payments",
+          "6"
+        ],
+        [
+          "4",
+          "Security Deposit",
+          "7"
+        ],
+        [
+          "5",
+          "Utilities, Plumbing, Trash, Recycling, and Waste",
+          "8"
+        ],
+        [
+          "6",
+          "Maintenance, Repairs, Mold, Pest Control, and Environmental Hazards",
+          "9"
+        ],
+        [
+          "7",
+          "Appliances, Fixtures, Condition, Alterations, Keys, and Locks",
+          "11"
+        ],
+        [
+          "8",
+          "Landlord Access, Use of Premises, Conduct, Drugs, and Safety",
+          "12"
+        ],
+        [
+          "9",
+          "Pets and Assistance Animals",
+          "13"
+        ],
+        [
+          "10",
+          "Common Areas, HOA Rules, and Amenities",
+          "14"
+        ],
+        [
+          "11",
+          "Move-Out, Abandoned Property, Default, and Remedies",
+          "15"
+        ],
+        [
+          "12",
+          "Insurance, Liability, Notices, Addenda, and Miscellaneous Terms",
+          "17"
+        ],
+        [
+          "13",
+          "Dispute Rights and Court Process",
+          "18"
+        ],
+        [
+          "14",
+          "Signatures and Lease Packet Acknowledgment",
+          "19"
+        ],
+        [
+          "A",
+          "Lead-Based Paint Disclosure (separate pre-executed attachment)",
+          "—"
+        ],
+        [
+          "B",
+          "HOA and Tenant Handbook Acknowledgment",
+          "20"
+        ]
+      ],
+      "include_heading_levels": [
+        "Heading 1"
+      ],
+      "gate_id": "dynamic_toc"
+    },
+    {
+      "component_id": "article-headings",
+      "component_type": "heading_sequence",
+      "style": "Heading 1",
+      "headings": [
+        "1. Parties, Premises, Occupancy, and Required Disclosures",
+        "2. Term, Possession, Renewal, Early Termination, and Holdover",
+        "3. Rent, Charges, and Payments",
+        "4. Security Deposit",
+        "5. Utilities, Plumbing, Trash, Recycling, and Waste",
+        "6. Maintenance, Repairs, Mold, Pest Control, and Environmental Hazards",
+        "7. Appliances, Fixtures, Condition, Alterations, Keys, and Locks",
+        "8. Landlord Access, Use of Premises, Conduct, Drugs, and Safety",
+        "9. Pets and Assistance Animals",
+        "10. Common Areas, HOA Rules, and Amenities",
+        "11. Move-Out, Abandoned Property, Default, and Remedies",
+        "12. Insurance, Liability, Notices, Addenda, and Miscellaneous Terms",
+        "13. Dispute Rights and Court Process",
+        "14. Signatures and Lease Packet Acknowledgment"
+      ]
+    },
+    {
+      "component_id": "lease-summary-table",
+      "component_type": "clause_text_and_table",
+      "heading": "1.3. Lease Summary",
+      "paragraphs": [
+        "The business terms below apply unless completed differently in a signed addendum or amendment. If this summary conflicts with a more specific Lease section, the more specific provision controls unless prohibited by law."
+      ],
+      "table": [
+        [
+          "Item",
+          "Term / Amount",
+          "Notes"
+        ],
+        [
+          "Lease Begins",
+          "____________________",
+          "Tenant may not take possession until all move-in conditions are satisfied."
+        ],
+        [
+          "Lease Ends",
+          "____________________ at ____________________",
+          "Fixed-term tenancy unless lawfully extended or terminated."
+        ],
+        [
+          "Base Rent",
+          "$____________________ per month",
+          "Due on or before the 1st day of each month."
+        ],
+        [
+          "Security Deposit",
+          "$____________________",
+          "Subject to Kansas deposit limits and lawful deductions."
+        ],
+        [
+          "Approved Occupants",
+          "See Section 1.5",
+          "Only named Tenants and approved occupants may reside at the Premises."
+        ],
+        [
+          "Parking",
+          "____________________ spaces, subject to HOA rules and availability",
+          "No assigned stall is guaranteed unless separately stated in writing."
+        ],
+        [
+          "Storage",
+          "$____________________ per month per approved storage unit unless otherwise stated",
+          "Only if approved and documented."
+        ]
+      ],
+      "gate_ids": [
+        "monthly_rent_source_ownership",
+        "security_deposit_source_ownership",
+        "lease_commencement_field",
+        "lease_end_time",
+        "parking_terms",
+        "storage_terms"
+      ]
+    },
+    {
+      "component_id": "landlord-disclosure-and-notice-address",
+      "component_type": "clause_text_and_table",
+      "heading": "1.4. Landlord Disclosure and Notice Address",
+      "paragraphs": [
+        "At or before commencement of the tenancy, Landlord shall provide Tenant in writing with the name and mailing address of the person authorized to manage the Premises and the name and mailing address of the owner or other person authorized to receive service of process, notices, and demands on the owner's behalf. The required mailing address in the table below must be completed before signing. Landlord shall keep this information current by written notice. An email address or telephone number does not replace the required mailing address."
+      ],
+      "table": [
+        [
+          "Item",
+          "Information",
+          "Use"
+        ],
+        [
+          "Owner / Landlord",
+          "GH Real Estate, LLC",
+          "Owner / Landlord"
+        ],
+        [
+          "Person Authorized To Manage Premises",
+          "____________________________",
+          "Property management and maintenance communications"
+        ],
+        [
+          "Person Authorized For Service, Notices, and Demands",
+          "GH Real Estate, LLC / ____________________",
+          "Kansas statutory notices and demands"
+        ],
+        [
+          "Mailing / Notice Address",
+          "____________________________________________",
+          "Must be completed before signing"
+        ],
+        [
+          "Phone",
+          "____________________________",
+          "Operational contact; not a substitute for legal service unless allowed by law"
+        ],
+        [
+          "Email",
+          "____________________________",
+          "Operational contact; statutory notices only where allowed by law"
+        ],
+        [
+          "Emergency Maintenance Contact",
+          "____________________________",
+          "Emergency maintenance reporting"
+        ],
+        [
+          "Designated Agent, if any",
+          "____________________________________________",
+          "If appointed in writing"
+        ]
+      ],
+      "gate_ids": [
+        "statutory_notice_address",
+        "tenant_field_api_metadata",
+        "landlord_authorized_representative",
+        "required_contact_fields"
+      ]
+    },
+    {
+      "component_id": "initial-amounts-due-table",
+      "component_type": "clause_text_and_table",
+      "heading": "3.2. Initial Amounts Due Before Occupancy",
+      "paragraphs": [
+        "The following amounts are due before possession unless Landlord states otherwise in writing. Non-refundable fees must be separately labeled as non-refundable."
+      ],
+      "table": [
+        [
+          "Charge",
+          "Amount",
+          "Notes"
+        ],
+        [
+          "Prorated Base Rent from ______ through ______",
+          "$________________",
+          "Daily proration under Section 3.15"
+        ],
+        [
+          "First Full Month's Base Rent for __________",
+          "$________________",
+          "Do not duplicate prorated rent"
+        ],
+        [
+          "Security Deposit",
+          "$________________",
+          "Refundable subject to lawful deductions"
+        ],
+        [
+          "Approved Ordinary Pet Charges",
+          "$________________",
+          "Only as stated in signed Ordinary Pet Addendum"
+        ],
+        [
+          "Storage Rent",
+          "$________________",
+          "Only as stated in signed Storage Addendum"
+        ],
+        [
+          "Total Due Before Possession",
+          "$________________",
+          "Complete before signature envelope is sent"
+        ],
+        [
+          "Next Regular Base Rent Due",
+          "Date: __________ Amount: $__________",
+          ""
+        ]
+      ],
+      "gate_ids": [
+        "monthly_rent_source_ownership",
+        "security_deposit_source_ownership",
+        "initial_amounts_due",
+        "pet_terms",
+        "storage_terms"
+      ]
+    },
+    {
+      "component_id": "utility-responsibility-table",
+      "component_type": "clause_text_and_table",
+      "heading": "5.1. Tenant Utility Responsibilities",
+      "paragraphs": [
+        "Tenant is responsible only for utilities expressly assigned to Tenant in the checked schedule below or a signed Utility Addendum. Landlord is responsible for any utility marked included or Landlord-paid. No unchecked utility is automatically shifted to Tenant. Any shared, allocated, or submetered charge must use a separately disclosed, lawful written method that identifies the service, formula, billing frequency, records available for review, and any lawful administrative charge."
+      ],
+      "table": [
+        [
+          "Utility",
+          "Tenant Direct Account",
+          "Included / Landlord Paid",
+          "Separate Allocation Addendum",
+          "Notes"
+        ],
+        [
+          "Electricity",
+          "☐",
+          "☐",
+          "☐",
+          ""
+        ],
+        [
+          "Natural Gas",
+          "☐",
+          "☐",
+          "☐",
+          ""
+        ],
+        [
+          "Water",
+          "☐",
+          "☐",
+          "☐",
+          ""
+        ],
+        [
+          "Sewer / Wastewater",
+          "☐",
+          "☐",
+          "☐",
+          ""
+        ],
+        [
+          "Trash / Recycling",
+          "☐",
+          "☐",
+          "☐",
+          ""
+        ],
+        [
+          "Internet / Telephone",
+          "☐",
+          "☐",
+          "☐",
+          ""
+        ],
+        [
+          "Common-Area Utilities",
+          "N/A",
+          "☐",
+          "☐",
+          ""
+        ]
+      ],
+      "gate_ids": [
+        "conditional_utility_values"
+      ]
+    },
+    {
+      "component_id": "article-13-operative-text",
+      "component_type": "article_body",
+      "article_heading": "13. Dispute Rights and Court Process",
+      "paragraphs": [
+        "Nothing in this Lease waives either party's right to a jury trial, statutory claim, defense, counterclaim, notice, hearing, appeal, or other court process available under applicable law. Landlord may recover possession only through lawful procedures. The parties have not agreed in this Lease to pre-dispute arbitration or a waiver of jury trial."
+      ],
+      "gate_ids": [
+        "legal_currentness"
+      ]
+    }
+  ],
+  "ending_text_variants": {
+    "one_tenant": "src/zoho-contracts/contract-types/residential-lease-agreement/ending-text/one-tenant.md",
+    "two_tenants": "src/zoho-contracts/contract-types/residential-lease-agreement/ending-text/two-tenants.md",
+    "three_tenants": "src/zoho-contracts/contract-types/residential-lease-agreement/ending-text/three-tenants.md"
+  },
+  "addendum_b_variants": {
+    "one_tenant": "src/zoho-contracts/contract-types/residential-lease-agreement/addendum-b/one-tenant.md",
+    "two_tenants": "src/zoho-contracts/contract-types/residential-lease-agreement/addendum-b/two-tenants.md",
+    "three_tenants": "src/zoho-contracts/contract-types/residential-lease-agreement/addendum-b/three-tenants.md"
+  }
+}

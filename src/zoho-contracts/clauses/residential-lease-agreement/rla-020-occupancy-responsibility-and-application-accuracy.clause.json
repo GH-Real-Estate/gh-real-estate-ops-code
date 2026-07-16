@@ -1,0 +1,44 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Use, Occupancy and Conduct",
+  "clause_name": "RLA-020 — Residential Lease — Occupancy, Responsibility, and Application Accuracy",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the named tenants, approved occupants, joint-responsibility terms, and application-information duties match the source facts?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "1.5. Approved Occupants",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Occupancy is limited to the named Tenant(s), approved occupants listed below, and children born to or legally placed with a named Tenant during the Lease term, subject to applicable law and lawful occupancy limits. No other person may reside at the Premises without Landlord's prior written approval."
+        },
+        {
+          "style": "Normal",
+          "text": "Approved Occupant: ____________________________ Approved Occupant: ____________________________ Approved Occupant: ____________________________"
+        },
+        {
+          "style": "Heading 3",
+          "text": "1.6. Joint and Several Responsibility"
+        },
+        {
+          "style": "Normal",
+          "text": "Each Tenant is jointly and severally responsible for the full amount of Base Rent, Other Charges, actual damages, utilities, lawful fees, reimbursements, and every other lawful obligation under this Lease, regardless of any private arrangement between Tenants. Operational communications to one Tenant may be copied to the other Tenants. Nothing in this section makes statutory service on one Tenant effective service on another person when applicable law requires separate service or delivery."
+        },
+        {
+          "style": "Heading 3",
+          "text": "1.7. Application Accuracy and Contact Information"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant represents that all material application, screening, identity, income, occupant, pet, vehicle, and emergency-contact information provided to Landlord was true and complete when provided. A material false statement or omission on which Landlord reasonably relied may constitute a material breach, subject to applicable law. Tenant must update mailing address, phone, email, approved occupants, animals, and vehicles within ten (10) days after a material change."
+        }
+      ]
+    }
+  ]
+}

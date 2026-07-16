@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Default, Remedies and Termination",
+  "clause_name": "RLA-460 — Residential Lease — Move-Out and Obligation to Vacate",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard surrender-condition and obligation-to-vacate rules apply at tenancy end?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "11.1. Move-Out Condition",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "At move-out, Tenant must return the Premises clean, empty, undamaged beyond ordinary wear and tear, free of trash and personal property, with all keys/access devices returned, utilities maintained through surrender, and forwarding address provided. Tenant is responsible for cleaning, hauling, repairs, missing items, damages, unpaid amounts, and other lawful charges."
+        },
+        {
+          "style": "Heading 3",
+          "text": "11.2. Obligation to Vacate"
+        },
+        {
+          "style": "Normal",
+          "text": "If Tenant gives a valid notice to vacate or Landlord gives a valid notice of nonrenewal or termination, Tenant must vacate on or before the stated date unless Landlord gives written consent to remain. Tenant may not unilaterally extend the move-out date."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-300 — Residential Lease — Alterations, Installations, and Exterior Appearance",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard consent, legal-exception, and exterior-appearance rules apply to alterations and installations?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "7.6. Alterations and Installations",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant may not make repairs, alterations, painting, flooring changes, lock or fixture changes, plumbing installations, shelves, mounts, cameras, alarm systems, or other modifications without Landlord's prior written consent, except as applicable law provides. Nothing in this section restricts a reasonable accommodation or reasonable modification protected by fair housing law; such a request may be made orally or in writing and will be evaluated under Section 1.8. Tenant is responsible for actual damage and lawful restoration costs from unauthorized work."
+        },
+        {
+          "style": "Heading 3",
+          "text": "7.7. Satellite / Antenna and Legal Exceptions"
+        },
+        {
+          "style": "Normal",
+          "text": "Any satellite dish, antenna, or similar device is subject to applicable federal law, HOA rules, safety restrictions, and Landlord's reasonable installation requirements. Nothing in this Lease prohibits an installation that Landlord is legally required to allow, but Tenant must request approval before installation and must comply with lawful conditions."
+        },
+        {
+          "style": "Heading 3",
+          "text": "7.8. Window Coverings, Signs, and Exterior Appearance"
+        },
+        {
+          "style": "Normal",
+          "text": "Window coverings visible from outside must be ordinary curtains, blinds, or shades and must present a neat exterior appearance. Sheets, blankets, foil, cardboard, signs, decals, flags, or other improvised coverings may not be used in windows unless Landlord approves in writing or applicable law requires an exception."
+        }
+      ]
+    }
+  ]
+}

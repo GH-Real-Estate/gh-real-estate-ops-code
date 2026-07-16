@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-280 — Residential Lease — Appliances and Furnishings",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the listed landlord-provided appliances and the standard care, repair, and amenity limitations apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "7.1. Provided Appliances",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "The following items are provided with the Premises unless crossed out or modified in writing: ____________________. These items are provided for Tenant's use and remain Landlord property unless Landlord states otherwise in writing."
+        },
+        {
+          "style": "Heading 3",
+          "text": "7.2. Appliance and Furnishing Responsibility"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant must keep provided appliances and furnishings clean and use them only for their intended purposes and according to manufacturer instructions. Landlord is responsible for repair or replacement required by ordinary wear and tear and legal maintenance obligations. Tenant is responsible for repair or replacement required because of misuse, negligence, damage, improper installation, overloading, failure to clean, failure to report a malfunction, or use inconsistent with manufacturer instructions."
+        },
+        {
+          "style": "Heading 3",
+          "text": "7.3. No Warranty of Convenience"
+        },
+        {
+          "style": "Normal",
+          "text": "Landlord does not guarantee uninterrupted availability of a nonessential amenity, but will use reasonable efforts to repair or replace malfunctioning Landlord-provided appliances. Nothing in this section waives Landlord's duties under K.S.A. 58-2553, applicable code, the Lease, or another law, or limits a remedy that cannot lawfully be waived."
+        }
+      ]
+    }
+  ]
+}

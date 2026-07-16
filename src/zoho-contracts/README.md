@@ -7,6 +7,9 @@ Use this area for sanitized technical merge-field maps, the governed field regis
 ```text
 clauses/
   README.md
+  residential-lease-agreement/
+contract-types/
+  residential-lease-agreement/
 field-maps/
   animal-addendum-merge-fields.md
   contract-field-registry.json
@@ -16,10 +19,15 @@ runbooks/
   apply-contract-authoring-standard.md
 schemas/
   clause-definition.schema.json
+  contract-type-implementation.schema.json
   contract-field-registry.schema.json
+  document-field-map.schema.json
+  source-manifest.schema.json
+  source-to-clause-crosswalk.schema.json
 scripts/
   validate_contract_authoring_standard.py
   validate_contract_field_registry.py
+  validate_residential_lease_implementation.py
 standards/
   contract-authoring-standard.json
   contract-authoring-standard.md
@@ -28,6 +36,8 @@ templates/
 tests/
   test_validate_contract_authoring_standard.py
   test_validate_contract_field_registry.py
+  test_validate_recipient_policy.py
+  test_validate_residential_lease_implementation.py
 ```
 
 ## Contract and Clause Authoring Standard
@@ -39,6 +49,14 @@ Create governed clause records only as `clauses/**/*.clause.json` using `templat
 Zoho Sign recipient fields are governed separately under `../zoho-sign/`. Use only production-approved canonical syntax; keep officially documented advanced tags blocked until the controlled Contracts-to-Sign smoke test passes.
 
 The live template update, Inter-font gate, synthetic signature test, republish control, and forward-repair rollback are documented in `runbooks/apply-contract-authoring-standard.md`.
+
+## Residential Lease Draft Package
+
+`contract-types/residential-lease-agreement/` is the governed implementation package for the July 14, 2026 Lead-First Residential Lease Agreement. It records source hashes and precedence, complete source coverage, the ordered 59-clause library, native template components, 55 sanitized field mappings, conditional attachments, signer-count variants, attorney-review questions, and all 29 unresolved production gates.
+
+The source DOCX and matching 20-page PDF are not stored in this public repository. Their tenant-facing wording and visual order control the live Draft; repository standards control structure, fields, typography, recipient routing, validation, and publication gates. Prohibited instance data is represented only by visible blanks and governed field gates.
+
+The package is not a deployment artifact and is not legal approval. It must remain Draft, unpublished, blocked from execution, and unsent. Do not close a gate from repository evidence alone when the gate requires authenticated Zoho metadata, a live preview, a completed Sign smoke test, current official-source review, or Kansas attorney approval.
 
 ## Canonical Field Registry
 
@@ -60,6 +78,8 @@ Do not create integration code from a display label or proposed API name. Confir
 ```powershell
 python src/zoho-contracts/scripts/validate_contract_authoring_standard.py
 python src/zoho-contracts/scripts/validate_contract_field_registry.py
+python src/zoho-contracts/scripts/validate_residential_lease_implementation.py
+python src/zoho-sign/recipient-manifests/validate_recipient_policy.py
 python -m unittest discover -s src/zoho-contracts/tests -p 'test_*.py' -v
 ```
 

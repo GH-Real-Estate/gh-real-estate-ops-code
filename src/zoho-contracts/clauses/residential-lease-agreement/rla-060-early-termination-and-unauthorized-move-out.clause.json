@@ -1,0 +1,44 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Default, Remedies and Termination",
+  "clause_name": "RLA-060 — Residential Lease — Early Termination and Unauthorized Move-Out",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Will any early termination use a signed buy-out or another lawful basis rather than an automatic personal-circumstances release?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "2.8. Tenant Early Termination / Buy-Out",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "An early-termination buy-out is effective only if Landlord accepts Tenant's request in a separate written agreement signed by Landlord and all Tenants. Unless that agreement provides otherwise, Tenant shall pay Base Rent through the agreed surrender date and a buy-out fee equal to two (2) months' Base Rent. Upon timely surrender and full performance of the agreement, the buy-out fee releases Tenant from Base Rent and re-letting damages accruing after the agreed termination date."
+        },
+        {
+          "style": "Normal",
+          "text": "The buy-out does not release amounts accrued before surrender, physical damage, utilities, lawful Other Charges, or another obligation expressly excluded in the signed agreement. Landlord shall not recover duplicate Base Rent, vacancy damages, or re-letting damages for a period compensated by the buy-out fee. If no signed buy-out agreement exists, Section 2.9 and applicable mitigation law control."
+        },
+        {
+          "style": "Heading 3",
+          "text": "2.9. Unauthorized Early Move-Out"
+        },
+        {
+          "style": "Normal",
+          "text": "If Tenant vacates early without legal excuse or Landlord's written approval, Tenant remains responsible for unpaid Rent, lawful charges, actual damages, reasonable re-letting costs, and any rent deficiency after Landlord makes reasonable efforts to re-rent the Premises, subject to applicable law and without double recovery."
+        },
+        {
+          "style": "Heading 3",
+          "text": "2.10. Job Relocation and Personal Circumstances"
+        },
+        {
+          "style": "Normal",
+          "text": "A job relocation, school transfer, marriage, divorce, separation, reconciliation, health issue, loss of employment, roommate dispute, or financial hardship does not automatically release Tenant from this Lease unless Landlord approves a written early termination request or applicable law requires release."
+        }
+      ]
+    }
+  ]
+}

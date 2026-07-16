@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Animals and Accommodations",
+  "clause_name": "RLA-380 — Residential Lease — Assistance Animals",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does an assistance-animal request require the individualized accommodation process rather than ordinary-pet terms?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "9.3. Assistance Animals",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "An assistance animal allowed as a reasonable accommodation is not an ordinary pet. No pet rent, pet fee, or pet deposit will be charged for a legally protected assistance animal. If the disability or need is not readily apparent, Landlord may request only reliable information allowed by law. A direct-threat, substantial-damage, restriction, or removal decision will be based on an individualized assessment of objective evidence concerning the specific animal's actual conduct and consideration of whether reasonable measures can sufficiently reduce the risk. Tenant remains responsible for actual animal-caused damage and generally applicable sanitation and control duties to the extent allowed by law."
+        }
+      ]
+    }
+  ]
+}

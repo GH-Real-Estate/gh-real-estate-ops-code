@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Deposits and Prepaid Amounts",
+  "clause_name": "RLA-490 — Residential Lease — Deposit Deductions and Other Charges",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Are move-out deductions and any separate charge lawful, documented, and not duplicative?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "11.8. Security Deposit Deductions and Other Charges",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord may deduct lawful amounts from the Security Deposit and may separately bill Tenant for lawful charges exceeding the deposit. Deductions may include unpaid rent, utilities, cleaning beyond ordinary wear and tear, repairs, damage, missing keys/access devices, hauling, storage, pest treatment caused by Tenant, pet damage, and other legally allowable charges."
+        }
+      ]
+    }
+  ]
+}

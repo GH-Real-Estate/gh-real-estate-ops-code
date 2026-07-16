@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Default, Remedies and Termination",
+  "clause_name": "RLA-470 — Residential Lease — Default Events and Notice or Cure",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard material-default, nonpayment, notice, cure, and urgent-lawful-action provisions apply without acceleration or self-help?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "11.3. Default Events",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "A default occurs only when Tenant, an occupant, guest, invitee, animal, or Tenant's property materially fails to comply with a lawful Lease obligation or applicable tenant duty. A minor, technical, disputed, or nonmaterial issue is not automatically a material default. Every remedy remains subject to the notice, cure, service, fair housing, anti-retaliation, and court-process requirements of applicable law."
+        },
+        {
+          "style": "Heading 3",
+          "text": "11.4. Default for Nonpayment"
+        },
+        {
+          "style": "Normal",
+          "text": "If Base Rent or another amount legally subject to the nonpayment remedy remains unpaid when due, Landlord may deliver a written notice that complies with K.S.A. 58-2564(b) and applicable service law. This Lease does not shorten the required payment period, expand permitted service methods, or authorize filing before the statutory period expires. A disputed fee or reimbursement will not be treated as grounds for an expedited nonpayment eviction unless that remedy is legally available on the established facts."
+        },
+        {
+          "style": "Heading 3",
+          "text": "11.5. Default for Other Breaches"
+        },
+        {
+          "style": "Normal",
+          "text": "For material noncompliance other than nonpayment, Landlord may deliver a written notice specifying with reasonable factual detail the acts and omissions constituting the breach and stating that this Lease will terminate on a date not less than thirty (30) days after Tenant receives the notice if the breach is not remedied within fourteen (14) days. If Tenant adequately initiates a good-faith cure within the fourteen-day period, the Lease will not terminate on that notice. If the same or a similar breach occurs after the fourteen-day period, Landlord may deliver a second written notice terminating the Lease on a date not less than thirty (30) days after receipt, without another opportunity to cure, only to the extent permitted by K.S.A. 58-2564(a)."
+        },
+        {
+          "style": "Heading 3",
+          "text": "11.6. Conduct Requiring Urgent Legal Action"
+        },
+        {
+          "style": "Normal",
+          "text": "Violence, serious threats, substantial property damage, illegal activity, or another immediate danger may require emergency services, protective orders, injunctive relief, or another lawful expedited response. Nothing in this section creates a contractual immediate eviction or eliminates any notice, cure, service, or court procedure required by law. Landlord may use an expedited or no-cure remedy only when a specific current statute or court order authorizes that remedy on the established facts."
+        }
+      ]
+    }
+  ]
+}

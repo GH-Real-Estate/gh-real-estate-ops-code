@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Animals and Accommodations",
+  "clause_name": "RLA-370 — Residential Lease — Pet Approval and Charges",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Is every ordinary pet separately approved and charged only through the governed Ordinary Pet Addendum?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "9.1. No Animals Without Approval",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "An ordinary pet may not be kept, brought, housed, fed, watched, or allowed on the Premises without Landlord's prior written approval. This prior-approval rule does not apply to a service animal, assistance animal, or visiting animal protected by applicable law. A request for an assistance animal may be oral or written and will be evaluated under Sections 1.8 and 9.3."
+        },
+        {
+          "style": "Heading 3",
+          "text": "9.2. Pet Charges and Pet Addendum"
+        },
+        {
+          "style": "Normal",
+          "text": "If Landlord approves an ordinary pet, Tenant must sign the Ordinary Pet Addendum and pay only the pet charges specifically stated there. Any refundable Pet Security Deposit is part of the statutory Security Deposit regime and may not exceed the aggregate Kansas limit. Ordinary pet rent, fees, deposits, breed limits, weight limits, and number limits do not apply to an assistance animal to the extent prohibited by law."
+        }
+      ]
+    }
+  ]
+}

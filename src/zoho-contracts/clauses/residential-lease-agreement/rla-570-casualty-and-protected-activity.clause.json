@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Insurance, Risk and Liability",
+  "clause_name": "RLA-570 — Residential Lease — Casualty and Protected Activity",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the standard casualty and force-majeure allocation apply without penalizing lawful protected activity?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "12.13. Force Majeure and Casualty",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Events beyond a party's reasonable control do not excuse any duty or remedy that applicable law makes non-waivable. If fire or casualty substantially impairs the use and habitability of the Premises, Tenant may vacate immediately and notify Landlord in writing within five (5) days after vacating of Tenant's intention to terminate, in which event the Lease terminates as of the date Tenant vacated. If continued occupancy is lawful, Tenant may vacate the unusable part and Base Rent will be reduced in proportion to the reduction in fair rental value. If the Lease terminates, Landlord shall account for Base Rent as of the vacate date and return the recoverable Security Deposit under K.S.A. 58-2550 and 58-2562."
+        },
+        {
+          "style": "Heading 3",
+          "text": "12.14. False Statements and Protected Activity"
+        },
+        {
+          "style": "Normal",
+          "text": "Material false statements, fraudulent documents, or material omissions may be a default. Nothing in this Lease penalizes Tenant for exercising lawful rights, making good-faith complaints to government authorities, requesting repairs, requesting fair housing accommodations, or engaging in other protected activity."
+        }
+      ]
+    }
+  ]
+}

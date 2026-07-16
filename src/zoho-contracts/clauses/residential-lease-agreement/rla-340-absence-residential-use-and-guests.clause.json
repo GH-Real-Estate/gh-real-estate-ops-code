@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Use, Occupancy and Conduct",
+  "clause_name": "RLA-340 — Residential Lease — Absence, Residential Use, and Guests",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard extended-absence notice, residential-use, and guest-limit provisions fit the tenancy facts?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "8.3. Extended Absence",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant must notify Landlord in writing of any planned absence from the Premises exceeding seven (7) consecutive days and must take reasonable steps to protect the Premises, including maintaining heat, utilities, plumbing protection, security, and emergency contact availability. Tenant remains responsible for damage caused or worsened by absence or failure to notify."
+        },
+        {
+          "style": "Heading 3",
+          "text": "8.4. Residential Use Only"
+        },
+        {
+          "style": "Normal",
+          "text": "The Premises may be used only as a private residence by Tenant and approved occupants. Ordinary remote or administrative work is permitted if it involves no employees or customers visiting the property, signage, stored business inventory, unusual deliveries, nuisance, increased traffic, unlawful use, zoning violation, insurance issue, or material increase in property risk. Short-term rental, boarding, lodging, public-facing work, or high-traffic commercial activity requires Landlord's prior written consent and compliance with law, zoning, HOA rules, insurance, and this Lease."
+        },
+        {
+          "style": "Heading 3",
+          "text": "8.5. Guests and Unauthorized Occupants"
+        },
+        {
+          "style": "Normal",
+          "text": "Guests may not stay more than fourteen (14) consecutive days or twenty-one (21) total days in any six-month period without Landlord's prior written approval. Receiving mail, possessing a temporary key, contributing to expenses, or any single factor does not conclusively establish unauthorized residency; Landlord will consider the total circumstances. Landlord may require screening and a signed Lease amendment before approving a new adult resident. This section is subject to Section 1.8, including requests involving a live-in aide, caregiver, or other protected accommodation."
+        }
+      ]
+    }
+  ]
+}

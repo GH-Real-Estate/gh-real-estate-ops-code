@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Parties, Premises and Term",
+  "clause_name": "RLA-050 — Residential Lease — Renewal, Move-Out Notice, and Month-to-Month Terms",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard fixed-term expiration, move-out notice, month-to-month conversion, and renewal rules apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "2.4. End of Fixed Term and Month-to-Month Conversion",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Unless the parties sign a written renewal, Landlord gives nonrenewal notice, Tenant gives required move-out notice, or termination occurs under this Lease or applicable law, occupancy after the fixed term with Landlord's consent will convert to a month-to-month tenancy on the same terms, except as changed by lawful written notice."
+        },
+        {
+          "style": "Heading 3",
+          "text": "2.5. Notice of Move-Out at End of Fixed Term"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant must give Landlord at least sixty (60) days' written notice before the Lease end date if Tenant intends to vacate at the end of the fixed term. This notice requirement does not release Tenant from liability for the full fixed term and does not limit either party's statutory termination rights."
+        },
+        {
+          "style": "Heading 3",
+          "text": "2.6. Month-to-Month Termination"
+        },
+        {
+          "style": "Normal",
+          "text": "Either party may terminate a month-to-month tenancy only by written notice as required by Kansas law. The notice must state that the tenancy terminates on a periodic rent-paying date not less than thirty (30) days after receipt of the notice, unless a different notice period is required by law."
+        },
+        {
+          "style": "Heading 3",
+          "text": "2.7. Rent Increases and Renewal Terms"
+        },
+        {
+          "style": "Normal",
+          "text": "Rent will not increase during the fixed term unless Tenant agrees in a signed written amendment or unless a specific charge is authorized by this Lease. Any renewal, extension, or month-to-month tenancy may be subject to increased rent or modified terms after lawful written notice. No material change to Rent, Security Deposit, utilities, fees, or lease term is effective during a fixed term unless signed by Landlord and all adult Tenants or otherwise allowed by law."
+        }
+      ]
+    }
+  ]
+}

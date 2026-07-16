@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-250 — Residential Lease — Mold and Pest Control",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard moisture-prevention, mold-reporting, pest-control, and causation rules apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "6.6. Mold Prevention and Reporting",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant must use reasonable ventilation, temperature control, cleaning, and moisture prevention and must promptly report leaks, condensation, water intrusion, dampness, visible mold, mildew, or musty odors. Tenant may be charged only for reasonable, documented costs to the extent reliable evidence establishes that Tenant caused or materially worsened the condition. Tenant is not responsible for a preexisting condition, structural defect, common-area source, or Landlord's failure to perform a non-waivable duty."
+        },
+        {
+          "style": "Heading 3",
+          "text": "6.7. Pest Control and Bed Bugs"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant must keep the Premises reasonably clean, promptly report signs of pests, cooperate with lawful inspection and treatment, and not use unsafe self-treatment. Tenant may be charged only for reasonable, documented treatment and related costs to the extent reliable evidence establishes that Tenant, an occupant, guest, animal, poor housekeeping, unreported condition, or infested personal property caused or materially worsened the infestation. Tenant is not responsible for a preexisting infestation, structural defect, common-area source, or Landlord's failure to perform a non-waivable duty."
+        }
+      ]
+    }
+  ]
+}

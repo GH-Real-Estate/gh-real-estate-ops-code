@@ -1,0 +1,918 @@
+{
+  "$schema": "../../schemas/source-manifest.schema.json",
+  "schema_version": "1.0.0",
+  "manifest_id": "ghre-rla-lead-first-2026-07-14",
+  "contract_type": "Residential Lease Agreement",
+  "deployment_status": {
+    "state": "draft_only",
+    "published": false,
+    "attorney_review_required": true,
+    "execution_blocked": true,
+    "signature_request_sent": false
+  },
+  "governance_baseline": {
+    "repository": "GH-Real-Estate/gh-real-estate-ops-code",
+    "main_commit": "1db5084fdd41dfff730947c0a3678c98c242d136",
+    "recipient_policy_commit": "b96986c364abb6955dc98c9063fcba6b1fb5d78e",
+    "recipient_policy_commit_is_ancestor": true
+  },
+  "sources": [
+    {
+      "source_id": "lead-first-docx",
+      "path": "Residential Lease Agreement - Lead-First Attorney Review Draft.docx",
+      "role": "controlling_tenant_facing_language",
+      "filename": "Residential Lease Agreement - Lead-First Attorney Review Draft.docx",
+      "format": "docx",
+      "sha256": "df3dddbc58235996dcfadd0602703e7fd1c58fdc859a5c0465312422ce03a04e",
+      "page_count": 20,
+      "precedence": 1,
+      "status": "controlling_tenant_facing_language",
+      "control_scope": [
+        "legal_language",
+        "section_order",
+        "visible_headings",
+        "defined_terms",
+        "tables",
+        "warnings",
+        "business_terms",
+        "addendum_references",
+        "signature_labels",
+        "statutory_citations_in_draft"
+      ]
+    },
+    {
+      "source_id": "lead-first-pdf",
+      "path": "Residential Lease Agreement - Lead-First Attorney Review Draft.pdf",
+      "role": "controlling_visual_comparison",
+      "filename": "Residential Lease Agreement - Lead-First Attorney Review Draft.pdf",
+      "format": "pdf",
+      "sha256": "16ea38596be8c1327ead3c14b43a050f0978511a4c338ee8ae02a46242db8c42",
+      "page_count": 20,
+      "precedence": 2,
+      "status": "controlling_visual_comparison",
+      "control_scope": [
+        "page_layout",
+        "colors",
+        "visual_order"
+      ]
+    },
+    {
+      "source_id": "build-matrix",
+      "path": "GH_Zoho_Contracts_Build_Matrix_2026-07-12.xlsx",
+      "role": "secondary_migration_reference_only",
+      "filename": "GH_Zoho_Contracts_Build_Matrix_2026-07-12.xlsx",
+      "format": "xlsx",
+      "sha256": "50c4f508127aa84d8efa3eb7e65944741e4d47484be457b8b057e92b61277061",
+      "page_count": null,
+      "precedence": 5,
+      "status": "secondary_migration_reference_only",
+      "control_scope": [
+        "gap_analysis_where_consistent"
+      ]
+    },
+    {
+      "source_id": "excluded-older-docx",
+      "path": "Residential Lease Agreement (7).docx",
+      "role": "excluded",
+      "filename": "Residential Lease Agreement (7).docx",
+      "format": "docx",
+      "sha256": "88c3d4e3ca731bdd324f01951a0a49de18b66f88bae075857098390432f8197b",
+      "page_count": 22,
+      "precedence": null,
+      "status": "excluded",
+      "control_scope": []
+    }
+  ],
+  "source_units": [
+    {
+      "source_ref": "document-title",
+      "source_heading": "RESIDENTIAL LEASE AGREEMENT",
+      "source_order": 1
+    },
+    {
+      "source_ref": "table-of-contents",
+      "source_heading": "Table of Contents",
+      "source_order": 2
+    },
+    {
+      "source_ref": "article-1",
+      "source_heading": "1. Parties, Premises, Occupancy, and Required Disclosures",
+      "source_order": 3
+    },
+    {
+      "source_ref": "1.1",
+      "source_heading": "1.1. Parties",
+      "source_order": 4
+    },
+    {
+      "source_ref": "1.2",
+      "source_heading": "1.2. Premises",
+      "source_order": 5
+    },
+    {
+      "source_ref": "1.3",
+      "source_heading": "1.3. Lease Summary",
+      "source_order": 6
+    },
+    {
+      "source_ref": "1.4",
+      "source_heading": "1.4. Landlord Disclosure and Notice Address",
+      "source_order": 7
+    },
+    {
+      "source_ref": "1.5",
+      "source_heading": "1.5. Approved Occupants",
+      "source_order": 8
+    },
+    {
+      "source_ref": "1.6",
+      "source_heading": "1.6. Joint and Several Responsibility",
+      "source_order": 9
+    },
+    {
+      "source_ref": "1.7",
+      "source_heading": "1.7. Application Accuracy and Contact Information",
+      "source_order": 10
+    },
+    {
+      "source_ref": "1.8",
+      "source_heading": "1.8. Fair Housing and Accommodation Requests",
+      "source_order": 11
+    },
+    {
+      "source_ref": "article-2",
+      "source_heading": "2. Term, Possession, Renewal, Early Termination, and Holdover",
+      "source_order": 12
+    },
+    {
+      "source_ref": "2.1",
+      "source_heading": "2.1. Lease Term",
+      "source_order": 13
+    },
+    {
+      "source_ref": "2.2",
+      "source_heading": "2.2. Move-In and Possession",
+      "source_order": 14
+    },
+    {
+      "source_ref": "2.3",
+      "source_heading": "2.3. Delay of Possession",
+      "source_order": 15
+    },
+    {
+      "source_ref": "2.4",
+      "source_heading": "2.4. End of Fixed Term and Month-to-Month Conversion",
+      "source_order": 16
+    },
+    {
+      "source_ref": "2.5",
+      "source_heading": "2.5. Notice of Move-Out at End of Fixed Term",
+      "source_order": 17
+    },
+    {
+      "source_ref": "2.6",
+      "source_heading": "2.6. Month-to-Month Termination",
+      "source_order": 18
+    },
+    {
+      "source_ref": "2.7",
+      "source_heading": "2.7. Rent Increases and Renewal Terms",
+      "source_order": 19
+    },
+    {
+      "source_ref": "2.8",
+      "source_heading": "2.8. Tenant Early Termination / Buy-Out",
+      "source_order": 20
+    },
+    {
+      "source_ref": "2.9",
+      "source_heading": "2.9. Unauthorized Early Move-Out",
+      "source_order": 21
+    },
+    {
+      "source_ref": "2.10",
+      "source_heading": "2.10. Job Relocation and Personal Circumstances",
+      "source_order": 22
+    },
+    {
+      "source_ref": "2.11",
+      "source_heading": "2.11. Military and Protected-Person Rights",
+      "source_order": 23
+    },
+    {
+      "source_ref": "2.12",
+      "source_heading": "2.12. Death of Sole Tenant",
+      "source_order": 24
+    },
+    {
+      "source_ref": "2.13",
+      "source_heading": "2.13. Holdover",
+      "source_order": 25
+    },
+    {
+      "source_ref": "article-3",
+      "source_heading": "3. Rent, Charges, and Payments",
+      "source_order": 26
+    },
+    {
+      "source_ref": "3.1",
+      "source_heading": "3.1. Base Rent",
+      "source_order": 27
+    },
+    {
+      "source_ref": "3.2",
+      "source_heading": "3.2. Initial Amounts Due Before Occupancy",
+      "source_order": 28
+    },
+    {
+      "source_ref": "3.3",
+      "source_heading": "3.3. Approved Payment Methods",
+      "source_order": 29
+    },
+    {
+      "source_ref": "3.4",
+      "source_heading": "3.4. Time of Receipt",
+      "source_order": 30
+    },
+    {
+      "source_ref": "3.5",
+      "source_heading": "3.5. Late Fees",
+      "source_order": 31
+    },
+    {
+      "source_ref": "3.6",
+      "source_heading": "3.6. Interest on Delinquent Rent",
+      "source_order": 32
+    },
+    {
+      "source_ref": "3.7",
+      "source_heading": "3.7. Returned Payments",
+      "source_order": 33
+    },
+    {
+      "source_ref": "3.8",
+      "source_heading": "3.8. Application of Payments",
+      "source_order": 34
+    },
+    {
+      "source_ref": "3.9",
+      "source_heading": "3.9. Other Charges",
+      "source_order": 35
+    },
+    {
+      "source_ref": "3.10",
+      "source_heading": "3.10. Government, HOA, Utility, and Tax-Related Charges",
+      "source_order": 36
+    },
+    {
+      "source_ref": "3.11",
+      "source_heading": "3.11. No Withholding or Offset Except as Allowed by Law",
+      "source_order": 37
+    },
+    {
+      "source_ref": "3.12",
+      "source_heading": "3.12. No Excuse for Late Payment",
+      "source_order": 38
+    },
+    {
+      "source_ref": "3.13",
+      "source_heading": "3.13. Monthly Statements and Invoices",
+      "source_order": 39
+    },
+    {
+      "source_ref": "3.14",
+      "source_heading": "3.14. Concessions and Credits",
+      "source_order": 40
+    },
+    {
+      "source_ref": "3.15",
+      "source_heading": "3.15. Partial-Month Proration",
+      "source_order": 41
+    },
+    {
+      "source_ref": "article-4",
+      "source_heading": "4. Security Deposit",
+      "source_order": 42
+    },
+    {
+      "source_ref": "4.1",
+      "source_heading": "4.1. Security Deposit Amount",
+      "source_order": 43
+    },
+    {
+      "source_ref": "4.2",
+      "source_heading": "4.2. Kansas Deposit Caps",
+      "source_order": 44
+    },
+    {
+      "source_ref": "4.3",
+      "source_heading": "4.3. Application of Security Deposit",
+      "source_order": 45
+    },
+    {
+      "source_ref": "4.4",
+      "source_heading": "4.4. Return and Itemization",
+      "source_order": 46
+    },
+    {
+      "source_ref": "4.5",
+      "source_heading": "4.5. Multiple Tenants",
+      "source_order": 47
+    },
+    {
+      "source_ref": "4.6",
+      "source_heading": "4.6. No Security Deposit as Rent",
+      "source_order": 48
+    },
+    {
+      "source_ref": "4.7",
+      "source_heading": "4.7. No Automatic Forfeiture for Ordinary Violations",
+      "source_order": 49
+    },
+    {
+      "source_ref": "4.8",
+      "source_heading": "4.8. Non-Refundable Fees",
+      "source_order": 50
+    },
+    {
+      "source_ref": "4.9",
+      "source_heading": "4.9. Transfer of Deposit Upon Sale or Assignment",
+      "source_order": 51
+    },
+    {
+      "source_ref": "article-5",
+      "source_heading": "5. Utilities, Plumbing, Trash, Recycling, and Waste",
+      "source_order": 52
+    },
+    {
+      "source_ref": "5.1",
+      "source_heading": "5.1. Tenant Utility Responsibilities",
+      "source_order": 53
+    },
+    {
+      "source_ref": "5.2",
+      "source_heading": "5.2. Failure to Maintain Utilities",
+      "source_order": 54
+    },
+    {
+      "source_ref": "5.3",
+      "source_heading": "5.3. Proof and Account Cooperation",
+      "source_order": 55
+    },
+    {
+      "source_ref": "5.4",
+      "source_heading": "5.4. Trash, Recycling, and Bulk Items",
+      "source_order": 56
+    },
+    {
+      "source_ref": "5.5",
+      "source_heading": "5.5. Plumbing Rules",
+      "source_order": 57
+    },
+    {
+      "source_ref": "5.6",
+      "source_heading": "5.6. Plumbing and Freeze Damage",
+      "source_order": 58
+    },
+    {
+      "source_ref": "5.7",
+      "source_heading": "5.7. Outdoor Water Spigots",
+      "source_order": 59
+    },
+    {
+      "source_ref": "5.8",
+      "source_heading": "5.8. Utility Interruptions",
+      "source_order": 60
+    },
+    {
+      "source_ref": "article-6",
+      "source_heading": "6. Maintenance, Repairs, Mold, Pest Control, and Environmental Hazards",
+      "source_order": 61
+    },
+    {
+      "source_ref": "6.1",
+      "source_heading": "6.1. Landlord Maintenance Responsibilities",
+      "source_order": 62
+    },
+    {
+      "source_ref": "6.2",
+      "source_heading": "6.2. Tenant Maintenance Responsibilities",
+      "source_order": 63
+    },
+    {
+      "source_ref": "6.3",
+      "source_heading": "6.3. Maintenance Requests and Emergencies",
+      "source_order": 64
+    },
+    {
+      "source_ref": "6.4",
+      "source_heading": "6.4. Access for Repairs and Scheduling",
+      "source_order": 65
+    },
+    {
+      "source_ref": "6.5",
+      "source_heading": "6.5. Smoke and Carbon Monoxide Detectors",
+      "source_order": 66
+    },
+    {
+      "source_ref": "6.6",
+      "source_heading": "6.6. Mold Prevention and Reporting",
+      "source_order": 67
+    },
+    {
+      "source_ref": "6.7",
+      "source_heading": "6.7. Pest Control and Bed Bugs",
+      "source_order": 68
+    },
+    {
+      "source_ref": "6.8",
+      "source_heading": "6.8. Asbestos and Building Materials",
+      "source_order": 69
+    },
+    {
+      "source_ref": "6.9",
+      "source_heading": "6.9. Lead-Based Paint Renovation Restriction",
+      "source_order": 70
+    },
+    {
+      "source_ref": "6.10",
+      "source_heading": "6.10. Temporary Relocation for Repairs",
+      "source_order": 71
+    },
+    {
+      "source_ref": "article-7",
+      "source_heading": "7. Appliances, Fixtures, Condition, Alterations, Keys, and Locks",
+      "source_order": 72
+    },
+    {
+      "source_ref": "7.1",
+      "source_heading": "7.1. Provided Appliances",
+      "source_order": 73
+    },
+    {
+      "source_ref": "7.2",
+      "source_heading": "7.2. Appliance and Furnishing Responsibility",
+      "source_order": 74
+    },
+    {
+      "source_ref": "7.3",
+      "source_heading": "7.3. No Warranty of Convenience",
+      "source_order": 75
+    },
+    {
+      "source_ref": "7.4",
+      "source_heading": "7.4. Move-In Inventory",
+      "source_order": 76
+    },
+    {
+      "source_ref": "7.5",
+      "source_heading": "7.5. Move-Out Inspection",
+      "source_order": 77
+    },
+    {
+      "source_ref": "7.6",
+      "source_heading": "7.6. Alterations and Installations",
+      "source_order": 78
+    },
+    {
+      "source_ref": "7.7",
+      "source_heading": "7.7. Satellite / Antenna and Legal Exceptions",
+      "source_order": 79
+    },
+    {
+      "source_ref": "7.8",
+      "source_heading": "7.8. Window Coverings, Signs, and Exterior Appearance",
+      "source_order": 80
+    },
+    {
+      "source_ref": "7.9",
+      "source_heading": "7.9. Keys, Locks, and Lockouts",
+      "source_order": 81
+    },
+    {
+      "source_ref": "7.10",
+      "source_heading": "7.10. Improvements",
+      "source_order": 82
+    },
+    {
+      "source_ref": "article-8",
+      "source_heading": "8. Landlord Access, Use of Premises, Conduct, Drugs, and Safety",
+      "source_order": 83
+    },
+    {
+      "source_ref": "8.1",
+      "source_heading": "8.1. Landlord Access",
+      "source_order": 84
+    },
+    {
+      "source_ref": "8.2",
+      "source_heading": "8.2. Showings",
+      "source_order": 85
+    },
+    {
+      "source_ref": "8.3",
+      "source_heading": "8.3. Extended Absence",
+      "source_order": 86
+    },
+    {
+      "source_ref": "8.4",
+      "source_heading": "8.4. Residential Use Only",
+      "source_order": 87
+    },
+    {
+      "source_ref": "8.5",
+      "source_heading": "8.5. Guests and Unauthorized Occupants",
+      "source_order": 88
+    },
+    {
+      "source_ref": "8.6",
+      "source_heading": "8.6. Legal Compliance and Conduct",
+      "source_order": 89
+    },
+    {
+      "source_ref": "8.7",
+      "source_heading": "8.7. Noise and Quiet Hours",
+      "source_order": 90
+    },
+    {
+      "source_ref": "8.8",
+      "source_heading": "8.8. Smoking and Vaping Prohibited",
+      "source_order": 91
+    },
+    {
+      "source_ref": "8.9",
+      "source_heading": "8.9. Marijuana and Controlled Substances",
+      "source_order": 92
+    },
+    {
+      "source_ref": "8.10",
+      "source_heading": "8.10. Grills and Open-Flame Devices",
+      "source_order": 93
+    },
+    {
+      "source_ref": "8.11",
+      "source_heading": "8.11. Hazardous Materials and Fire Safety",
+      "source_order": 94
+    },
+    {
+      "source_ref": "8.12",
+      "source_heading": "8.12. Security and Crime Reporting",
+      "source_order": 95
+    },
+    {
+      "source_ref": "article-9",
+      "source_heading": "9. Pets and Assistance Animals",
+      "source_order": 96
+    },
+    {
+      "source_ref": "9.1",
+      "source_heading": "9.1. No Animals Without Approval",
+      "source_order": 97
+    },
+    {
+      "source_ref": "9.2",
+      "source_heading": "9.2. Pet Charges and Pet Addendum",
+      "source_order": 98
+    },
+    {
+      "source_ref": "9.3",
+      "source_heading": "9.3. Assistance Animals",
+      "source_order": 99
+    },
+    {
+      "source_ref": "9.4",
+      "source_heading": "9.4. Pet Damage and Conduct",
+      "source_order": 100
+    },
+    {
+      "source_ref": "9.5",
+      "source_heading": "9.5. Unauthorized Animals",
+      "source_order": 101
+    },
+    {
+      "source_ref": "9.6",
+      "source_heading": "9.6. Vaccination, Licensing, and Local Ordinances",
+      "source_order": 102
+    },
+    {
+      "source_ref": "9.7",
+      "source_heading": "9.7. Revocation of Pet Permission",
+      "source_order": 103
+    },
+    {
+      "source_ref": "9.8",
+      "source_heading": "9.8. No Feeding Stray or Wild Animals",
+      "source_order": 104
+    },
+    {
+      "source_ref": "article-10",
+      "source_heading": "10. Common Areas, HOA Rules, and Amenities",
+      "source_order": 105
+    },
+    {
+      "source_ref": "10.1",
+      "source_heading": "10.1. Common Areas",
+      "source_order": 106
+    },
+    {
+      "source_ref": "10.2",
+      "source_heading": "10.2. Laundry",
+      "source_order": 107
+    },
+    {
+      "source_ref": "10.3",
+      "source_heading": "10.3. Storage Units",
+      "source_order": 108
+    },
+    {
+      "source_ref": "10.4",
+      "source_heading": "10.4. Property Left in Storage, Common Areas, or Premises",
+      "source_order": 109
+    },
+    {
+      "source_ref": "10.5",
+      "source_heading": "10.5. Building Security",
+      "source_order": 110
+    },
+    {
+      "source_ref": "10.6",
+      "source_heading": "10.6. Exterior Cleanliness, Patios, Balconies, and Storage",
+      "source_order": 111
+    },
+    {
+      "source_ref": "10.7",
+      "source_heading": "10.7. Snow and Ice",
+      "source_order": 112
+    },
+    {
+      "source_ref": "10.8",
+      "source_heading": "10.8. Parking",
+      "source_order": 113
+    },
+    {
+      "source_ref": "10.9",
+      "source_heading": "10.9. Parking Violations and Towing",
+      "source_order": 114
+    },
+    {
+      "source_ref": "10.10",
+      "source_heading": "10.10. Vehicle Repairs",
+      "source_order": 115
+    },
+    {
+      "source_ref": "10.11",
+      "source_heading": "10.11. Parking Liability",
+      "source_order": 116
+    },
+    {
+      "source_ref": "10.12",
+      "source_heading": "10.12. HOA Compliance",
+      "source_order": 117
+    },
+    {
+      "source_ref": "10.13",
+      "source_heading": "10.13. HOA Amenities and Pool",
+      "source_order": 118
+    },
+    {
+      "source_ref": "10.14",
+      "source_heading": "10.14. Packages and Mail",
+      "source_order": 119
+    },
+    {
+      "source_ref": "article-11",
+      "source_heading": "11. Move-Out, Abandoned Property, Default, and Remedies",
+      "source_order": 120
+    },
+    {
+      "source_ref": "11.1",
+      "source_heading": "11.1. Move-Out Condition",
+      "source_order": 121
+    },
+    {
+      "source_ref": "11.2",
+      "source_heading": "11.2. Obligation to Vacate",
+      "source_order": 122
+    },
+    {
+      "source_ref": "11.3",
+      "source_heading": "11.3. Default Events",
+      "source_order": 123
+    },
+    {
+      "source_ref": "11.4",
+      "source_heading": "11.4. Default for Nonpayment",
+      "source_order": 124
+    },
+    {
+      "source_ref": "11.5",
+      "source_heading": "11.5. Default for Other Breaches",
+      "source_order": 125
+    },
+    {
+      "source_ref": "11.6",
+      "source_heading": "11.6. Conduct Requiring Urgent Legal Action",
+      "source_order": 126
+    },
+    {
+      "source_ref": "11.7",
+      "source_heading": "11.7. Abandonment",
+      "source_order": 127
+    },
+    {
+      "source_ref": "11.8",
+      "source_heading": "11.8. Security Deposit Deductions and Other Charges",
+      "source_order": 128
+    },
+    {
+      "source_ref": "11.9",
+      "source_heading": "11.9. Remedies and No Double Recovery",
+      "source_order": 129
+    },
+    {
+      "source_ref": "11.10",
+      "source_heading": "11.10. Court Costs, Filing Fees, and Collection Costs",
+      "source_order": 130
+    },
+    {
+      "source_ref": "11.11",
+      "source_heading": "11.11. No Self-Help Eviction",
+      "source_order": 131
+    },
+    {
+      "source_ref": "11.12",
+      "source_heading": "11.12. Acceptance, Reservation, and Waiver",
+      "source_order": 132
+    },
+    {
+      "source_ref": "11.13",
+      "source_heading": "11.13. Credit Reporting and Collections",
+      "source_order": 133
+    },
+    {
+      "source_ref": "11.14",
+      "source_heading": "11.14. Survival",
+      "source_order": 134
+    },
+    {
+      "source_ref": "article-12",
+      "source_heading": "12. Insurance, Liability, Notices, Addenda, and Miscellaneous Terms",
+      "source_order": 135
+    },
+    {
+      "source_ref": "12.1",
+      "source_heading": "12.1. Renter's Insurance",
+      "source_order": 136
+    },
+    {
+      "source_ref": "12.2",
+      "source_heading": "12.2. No Default for Declining Renter's Insurance",
+      "source_order": 137
+    },
+    {
+      "source_ref": "12.3",
+      "source_heading": "12.3. Tenant Responsibility for Damage and Claims",
+      "source_order": 138
+    },
+    {
+      "source_ref": "12.4",
+      "source_heading": "12.4. Tenant Personal Property and Uninsured Losses",
+      "source_order": 139
+    },
+    {
+      "source_ref": "12.5",
+      "source_heading": "12.5. Insurance and Subrogation",
+      "source_order": 140
+    },
+    {
+      "source_ref": "12.6",
+      "source_heading": "12.6. Subordination, Transfer, and Attornment",
+      "source_order": 141
+    },
+    {
+      "source_ref": "12.7",
+      "source_heading": "12.7. Estoppel Certificate",
+      "source_order": 142
+    },
+    {
+      "source_ref": "12.8",
+      "source_heading": "12.8. Notices",
+      "source_order": 143
+    },
+    {
+      "source_ref": "12.9",
+      "source_heading": "12.9. Electronic Communications",
+      "source_order": 144
+    },
+    {
+      "source_ref": "12.10",
+      "source_heading": "12.10. Addenda and Lease Packet",
+      "source_order": 145
+    },
+    {
+      "source_ref": "12.11",
+      "source_heading": "12.11. Lease Modifications",
+      "source_order": 146
+    },
+    {
+      "source_ref": "12.12",
+      "source_heading": "12.12. Governing Law and Venue",
+      "source_order": 147
+    },
+    {
+      "source_ref": "12.13",
+      "source_heading": "12.13. Force Majeure and Casualty",
+      "source_order": 148
+    },
+    {
+      "source_ref": "12.14",
+      "source_heading": "12.14. False Statements and Protected Activity",
+      "source_order": 149
+    },
+    {
+      "source_ref": "12.15",
+      "source_heading": "12.15. Data Privacy",
+      "source_order": 150
+    },
+    {
+      "source_ref": "12.16",
+      "source_heading": "12.16. Electronic Signatures and Counterparts",
+      "source_order": 151
+    },
+    {
+      "source_ref": "12.17",
+      "source_heading": "12.17. Severability",
+      "source_order": 152
+    },
+    {
+      "source_ref": "12.18",
+      "source_heading": "12.18. Entire Agreement",
+      "source_order": 153
+    },
+    {
+      "source_ref": "12.19",
+      "source_heading": "12.19. Interpretation",
+      "source_order": 154
+    },
+    {
+      "source_ref": "article-13",
+      "source_heading": "13. Dispute Rights and Court Process",
+      "source_order": 155
+    },
+    {
+      "source_ref": "article-13-body",
+      "source_heading": "Article 13 operative paragraph",
+      "source_order": 156
+    },
+    {
+      "source_ref": "article-14",
+      "source_heading": "14. Signatures and Lease Packet Acknowledgment",
+      "source_order": 157
+    },
+    {
+      "source_ref": "14.1",
+      "source_heading": "14.1. Acknowledgment",
+      "source_order": 158
+    },
+    {
+      "source_ref": "14.2",
+      "source_heading": "14.2. Lease Packet and Production Checklist",
+      "source_order": 159
+    },
+    {
+      "source_ref": "addendum-b",
+      "source_heading": "Addendum B. HOA and Tenant Handbook Acknowledgment",
+      "source_order": 160
+    },
+    {
+      "source_ref": "addendum-a-reference",
+      "source_heading": "Lead-Based Paint Disclosure (separate pre-executed attachment)",
+      "source_order": 161
+    }
+  ],
+  "authority_baseline": {
+    "approved_release_verified_through": "2026-07-12",
+    "current_authority_index": "legal/CURRENT_AUTHORITY_INDEX.md",
+    "post_july_14_approved_legal_change": false,
+    "status": "live_source_verification_and_kansas_attorney_review_required"
+  },
+  "binary_storage_policy": {
+    "source_binaries_committed": false,
+    "local_absolute_paths_committed": false,
+    "reason": "Public repository stores governed metadata and sanitized text records, not private source binaries."
+  },
+  "public_repository_normalization": [
+    "The source premises address is replaced with a visible blank and governed field locations.",
+    "The individual property-manager name, phone, and email are replaced with visible blanks.",
+    "The property-specific HOA packet name is replaced with a visible blank because applicability is unresolved.",
+    "Landlord representative name and capacity remain visible blanks until authorization and field mapping are verified.",
+    "The source lease-end time remains a visible blank until the approved lease snapshot field and value are verified.",
+    "The source parking-space count and any assignment details remain visible blanks until the property-specific parking terms are approved.",
+    "The source storage rent, applicability, unit, term, and addendum status remain visible blanks until the ancillary-storage terms are approved.",
+    "The source appliance list remains a visible blank until the property-specific appliance inventory is approved.",
+    "Pet approval, addendum status, and pet rent, fee, or deposit values remain visible blanks until the ordinary-pet terms are approved.",
+    "Initial-rent periods, prorated amounts, total due before possession, and the next regular rent date remain visible blanks until the transaction snapshot is approved.",
+    "Overland Park and OPMC wording is preserved from the controlling source but cannot be used unless the Premises municipality and local-law applicability are verified.",
+    "Operative legal wording, order, defined terms, citations, and non-sensitive business terms are otherwise preserved."
+  ]
+}

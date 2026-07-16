@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Parties, Premises and Term",
+  "clause_name": "RLA-010 — Residential Lease — Parties and Premises",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does this agreement use GH Real Estate as Landlord and the identified dwelling without a nonstandard party or premises structure?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "1.1. Parties",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "This Residential Lease Agreement (the \"Lease\") is entered into by and between GH Real Estate, LLC, a Kansas limited liability company (\"Landlord\"), and the individual Tenant(s) named on the cover page and signature page (individually and collectively, \"Tenant\")."
+        },
+        {
+          "style": "Heading 3",
+          "text": "1.2. Premises"
+        },
+        {
+          "style": "Normal",
+          "text": "Landlord leases to Tenant, and Tenant leases from Landlord, the residential apartment located at ____________________________________________, together with the fixtures, Landlord-provided appliances, assigned keys/access devices, any approved storage unit, and permitted common-area rights described in this Lease or a signed addendum (the \"Premises\")."
+        }
+      ]
+    }
+  ]
+}

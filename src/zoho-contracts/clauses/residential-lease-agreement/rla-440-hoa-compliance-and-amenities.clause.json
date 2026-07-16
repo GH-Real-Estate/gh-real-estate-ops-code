@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Compliance and Disclosures",
+  "clause_name": "RLA-440 — Residential Lease — HOA Compliance and Amenities",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does an HOA apply, have its current rules been delivered, and are the standard pass-through and amenity limitations accurate?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "10.12. HOA Compliance",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant, occupants, guests, invitees, and animals must comply with lawful HOA rules actually provided to Tenant. Landlord shall provide reasonable documentation of any HOA fine or charge passed through to Tenant. Tenant is responsible only to the extent the charge was actually imposed and directly caused by Tenant or a person, animal, or property for whom Tenant is responsible. No markup is added unless expressly stated and lawful."
+        },
+        {
+          "style": "Heading 3",
+          "text": "10.13. HOA Amenities and Pool"
+        },
+        {
+          "style": "Normal",
+          "text": "Use of any HOA pool, amenity, laundry, parking, or common facility is subject to HOA rules, availability, seasonal closure, maintenance, and suspension. Landlord does not guarantee any amenity unless required by law or expressly stated in writing. Tenant must accompany guests where required and must follow posted rules."
+        }
+      ]
+    }
+  ]
+}

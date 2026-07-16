@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-240 — Residential Lease — Smoke and Carbon Monoxide Detectors",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard installation, documentation, testing, reporting, and anti-tampering duties apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "6.5. Smoke and Carbon Monoxide Detectors",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord shall supply and install all smoke alarms and carbon-monoxide alarms required by applicable law and shall document that they are present and operational when possession is delivered. After taking possession, Tenant shall test and maintain smoke alarms inside the rental unit as required by K.S.A. 31-162, promptly report any problem, and never disable, remove, obstruct, or tamper with an alarm. Landlord remains responsible for every owner duty imposed by law."
+        }
+      ]
+    }
+  ]
+}

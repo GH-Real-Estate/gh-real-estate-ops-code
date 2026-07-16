@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-310 — Residential Lease — Keys, Locks, and Lockouts",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard key, lock, access-device, return, and lockout-cost provisions apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "7.9. Keys, Locks, and Lockouts",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant may not change, rekey, add, remove, or disable any lock, access device, latch, or security device without Landlord's prior written consent except as required by law. Tenant must return all keys and access devices at move-out. If Landlord voluntarily provides lockout assistance, Tenant may be charged Landlord's reasonable actual cost not exceeding $75.00. A third-party locksmith's actual charge may be higher and is paid directly by Tenant unless law requires otherwise."
+        }
+      ]
+    }
+  ]
+}

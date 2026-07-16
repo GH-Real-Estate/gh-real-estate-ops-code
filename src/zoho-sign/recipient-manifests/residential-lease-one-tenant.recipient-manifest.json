@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "residential-lease-one-tenant",
+  "document_type": "Residential Lease Agreement",
+  "gh_signs": true,
+  "recipients": [
+    {
+      "role": "R1",
+      "business_role": "Tenant 1",
+      "signing_position": 1
+    },
+    {
+      "role": "R2",
+      "business_role": "GH Real Estate, LLC Authorized Representative",
+      "signing_position": 2
+    }
+  ],
+  "landlord_role": "R2"
+}
