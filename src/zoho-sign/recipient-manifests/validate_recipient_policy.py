@@ -12,7 +12,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 from urllib.parse import urlparse
 
 ROLE_RE = re.compile(r"^R([1-9]|1[0-9]|2[0-5])$")
