@@ -4,6 +4,11 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-15
 
+- Added a governed 16-item Zoho Contracts Clause Type master list, clause-definition schema/template, generated authoring reference, and CI validation for every checked-in `.clause.json` record.
+- Added a Contracts-scoped typography profile for Inter, the Title/Heading 1-5/Normal hierarchy, US Letter layout, 0.75-inch margins, 1.15 line spacing, and non-justified text.
+- Added a separate Zoho Sign field/tag registry covering all current document fields, canonical simple tags, user-confirmed compatibility aliases, and fail-closed advanced/unsupported syntax.
+- Added a controlled Contracts-to-Sign smoke-test and live-template runbook, including Inter installation, preview-versus-completed Sign Date checks, republish controls, and forward-repair rollback because a republished prior version cannot be natively restored.
+- This update governs future drafting and CI only; it does not change, republish, or restyle live or existing contracts.
 - Added a governed Zoho Contracts field registry covering all 46 submitted system fields and 19 submitted custom fields.
 - Recorded Zoho Contracts native/expected types, portable cross-application types, proposed CRM field types, sensitivity, constraints, aliases, and official-source evidence.
 - Added a checked-in JSON Schema, dependency-free validator, generated human-readable catalog, and regression tests enforced by the repository safety workflow.

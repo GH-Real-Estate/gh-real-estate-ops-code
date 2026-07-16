@@ -1,10 +1,11 @@
 # GH Real Estate Document Drafting and Typography Standard
 
 **Standard ID:** GH-DOC-001  
-**Version:** 1.0  
-**Effective date:** July 14, 2026  
+**Version:** 1.1  
+**Effective date:** July 15, 2026  
 **Scope:** All user-facing documents and reusable drafting artifacts created for GH Real Estate by ChatGPT, Codex, repository generators, or connected applications  
-**Machine-readable profile:** [document-style-profile.json](document-style-profile.json)
+**Machine-readable profile:** [document-style-profile.json](document-style-profile.json)  
+**Zoho Contracts authoring profile:** [contract-authoring-standard.md](../../src/zoho-contracts/standards/contract-authoring-standard.md)
 
 ## 1. Purpose and priority
 
@@ -168,7 +169,7 @@ Use this hierarchy unless a mandatory form controls:
 Preferred numbering:
 
 ```text
-2. TERM, POSSESSION, RENEWAL, EARLY TERMINATION, AND HOLDOVER
+2. PARTIES, PREMISES AND TERM
 2.1 Lease Term
 2.2 Move-In and Delivery of Possession
 2.3 Renewal
@@ -180,10 +181,13 @@ Preferred numbering:
 
 For Zoho Contracts:
 
-- A **clause type** is the top-level subject family, such as `2. Term, Possession, Renewal, Early Termination, and Holdover`.
-- Each independently selectable legal provision is its own **clause**, such as `2.1 Lease Term` or `2.2 Move-In and Delivery of Possession`.
+- A **Clause Type** is the top-level subject family. Use only the exact values in the governed 16-item master list under `src/zoho-contracts/standards/`.
+- Each independently selectable legal provision is its own **Clause**, such as `2.1 Lease Term` or `2.2 Move-In and Delivery of Possession`.
+- Keep Clause Name, library Question, language-variant Clause Title, and Language as distinct governed values.
+- The Question must identify the factual decision that helps the contract owner select the standard language or an approved alternative.
+- Exactly one language variant is standard. Approved alternatives may have different Clause Titles.
+- Do not repeat Clause Title text inside Language merely to simulate the separate Zoho title field.
 - Do not place unrelated subjects in one oversized clause merely to reduce the clause count.
-- Clause-selection questions must identify the factual decision that determines whether the standard or alternative language applies.
 - Numbering must be generated or reconciled automatically; never maintain duplicate numbering manually in multiple systems.
 
 ### 5.2 Drafting quality
@@ -259,13 +263,18 @@ For nonlegal letters, reports, checklists, instructions, emails converted to doc
 
 ### 7.3 Zoho Contracts and Zoho Sign
 
-- Use Inter if the tenant-facing editor or final rendering engine supports it.
+The Contracts-specific profile at `src/zoho-contracts/standards/contract-authoring-standard.json` overrides the general page and type defaults only for Zoho Contracts templates and clauses.
+
+- Confirm Inter Regular and Bold are available organization-wide. If absent, install approved Inter TTF files through Zoho Writer organization font settings before publication; request a documented exception only if installation is impossible.
 - Do not upload or embed Apple's SF font package.
-- If Zoho does not expose Inter or custom-font support, document the limitation. A temporary editor font may be used only for authoring preview; the attorney-approved final rendering must use Inter when technically possible.
-- Use reusable clause types and atomic clauses under the hierarchy in section 5.1.
-- Use merge fields for transaction data rather than manual edits.
+- Use Heading 1 for the Clause Type/article heading in the template, Heading 2 for the language-variant Clause Title, Heading 3-5 for nested clause subheadings, and Normal for operative Language.
+- Use only the governed Clause Type master list and store checked-in clause definitions in the CI-scanned `src/zoho-contracts/clauses/` path.
+- Use Contracts merge fields for transaction data and the separate Zoho Sign registry for recipient fields.
+- Treat Sign Date as the date the recipient actually signs; it is expected to be blank before signing.
+- Keep formatted and choice-field text tags blocked until a synthetic Contracts-to-Sign test proves both field conversion in preview and final value behavior after signing.
 - Test the final merged contract, not only the blank template.
-- Preserve signature order, required attachments, audit records, and final PDF pagination.
+- Preserve signature order, required attachments, audit records, final PDF pagination, and the last approved export needed for a forward-repair rollback.
+- Republishing affects new contracts only. Repository changes do not restyle existing contracts or deploy live Zoho configuration.
 
 ### 7.4 Web and application interfaces
 

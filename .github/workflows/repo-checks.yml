@@ -112,8 +112,9 @@ jobs:
       - name: Run repository safety scan
         run: python tools/safety/pre-commit-safety-check.py
 
-      - name: Validate Zoho Contracts field registry
+      - name: Validate Zoho Contracts governance
         run: |
+          python src/zoho-contracts/scripts/validate_contract_authoring_standard.py
           python src/zoho-contracts/scripts/validate_contract_field_registry.py
           python -m unittest discover -s src/zoho-contracts/tests -p 'test_*.py' -v
 

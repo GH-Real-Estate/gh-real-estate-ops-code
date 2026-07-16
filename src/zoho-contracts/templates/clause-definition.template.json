@@ -1,0 +1,24 @@
+{
+  "$schema": "../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "General Provisions",
+  "clause_name": "Sample Clause Definition",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Should this contract use the standard sample language or an attorney-approved alternate?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "Sample Clause Title",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Replace this instructional text with attorney-approved standard clause language before publication."
+        }
+      ]
+    }
+  ]
+}
