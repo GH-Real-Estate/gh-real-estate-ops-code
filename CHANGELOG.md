@@ -8,9 +8,9 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Added a Contracts-scoped typography profile for Inter, the Title/Heading 1-5/Normal hierarchy, US Letter layout, 0.75-inch margins, 1.15 line spacing, and non-justified text.
 - Added a separate Zoho Sign field/tag registry covering all current document fields, canonical simple tags, user-confirmed compatibility aliases, and fail-closed advanced/unsupported syntax.
 - Added a controlled Contracts-to-Sign smoke-test and live-template runbook, including Inter installation, preview-versus-completed Sign Date checks, republish controls, and forward-repair rollback because a republished prior version cannot be natively restored.
-- Added a canonical Zoho Sign recipient-manifest policy: R1 Tenant 1, R2 conditional Tenant 2, R3 conditional Tenant 3, and R4 always GH Real Estate, LLC's authorized representative.
-- Required all tenants, guarantors, and other non-landlord signers to complete signing before R4; recipient numbering remains separate from Zoho Sign routing position, and no signer may be routed after R4.
-- Reserved R5 and higher for governed additional roles such as guarantors or witnesses while preserving GH Real Estate as R4 and the final signer.
+- Added a canonical Zoho Sign recipient-manifest policy that treats R1-R25 as contiguous indexes for actual envelope recipients rather than permanent business-role IDs or signing-order positions.
+- Required GH Real Estate, LLC to be the final actual recipient and final signer in every document GH signs: R2 with one tenant, R3 with two tenants, R4 with three tenants, and the next contiguous role when additional governed signers precede GH.
+- Prohibited placeholder recipients, recipient-number gaps, and any signer routed after GH; added a dependency-free recipient-policy validator, regression tests, and a required repository-check step.
 - This update governs future drafting and CI only; it does not change, republish, or restyle live or existing contracts.
 - Added a governed Zoho Contracts field registry covering all 46 submitted system fields and 19 submitted custom fields.
 - Recorded Zoho Contracts native/expected types, portable cross-application types, proposed CRM field types, sensitivity, constraints, aliases, and official-source evidence.
