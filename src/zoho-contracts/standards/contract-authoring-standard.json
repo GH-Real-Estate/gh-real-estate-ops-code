@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0.0",
+  "standard_id": "ghre-zoho-contracts-authoring",
+  "title": "GH Real Estate Zoho Contracts Authoring Standard",
+  "effective_date": "2026-07-15",
+  "scope": "Contract and clause content authored for GH Real Estate in Zoho Contracts",
+  "governance_status": "active",
+  "official_sources": [
+    {
+      "title": "Adding and Managing Clauses",
+      "url": "https://help.zoho.com/portal/en/kb/contracts/admin-guide/clause-library/articles/adding-and-managing-clauses"
+    },
+    {
+      "title": "Managing Contract Types",
+      "url": "https://help.zoho.com/portal/en/kb/contracts/admin-guide/contract-types/creation-and-management/articles/managing-contract-types"
+    },
+    {
+      "title": "Tailor the Settings as per Your Needs",
+      "url": "https://help.zoho.com/portal/en/kb/contracts/getting-started/articles/tailor-the-settings-as-per-your-needs"
+    },
+    {
+      "title": "Add document fields using text tags",
+      "url": "https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/automatic-field-addition-in-zoho-sign"
+    }
+  ],
+  "clause_type_master_list": [
+    "Agreement Structure",
+    "Parties, Premises and Term",
+    "Rent, Fees and Payment",
+    "Deposits and Prepaid Amounts",
+    "Utilities and Services",
+    "Use, Occupancy and Conduct",
+    "Maintenance, Repairs and Condition",
+    "Access and Inspection",
+    "Animals and Accommodations",
+    "Ancillary Storage",
+    "Insurance, Risk and Liability",
+    "Default, Remedies and Termination",
+    "Personal Property and Abandonment",
+    "Notices and Communications",
+    "Compliance and Disclosures",
+    "General Provisions"
+  ],
+  "clause_requirements": {
+    "required_metadata": [
+      "clause_type",
+      "clause_name",
+      "zoho_api_name",
+      "zoho_api_name_status",
+      "library_question",
+      "language_variants"
+    ],
+    "zoho_api_name_policy": "Keep zoho_api_name null until the exact API name is read from authenticated tenant metadata; a non-null value requires tenant_verified status.",
+    "library_question_policy": "Write one plain-language question ending in a question mark that helps the contract owner choose the standard language or an approved alternate during contract creation.",
+    "contract_type_override_policy": "Use contract_type_question_overrides only when a contract type needs a more specific selection question; the library question remains required.",
+    "language_variant_policy": "Every clause has exactly one standard language variant and may have zero or more approved alternate variants. Every variant stores its reader-facing clause title separately with clause_title_style Heading 2; blocks contain only substantive language styled Heading 3-5 or Normal.",
+    "legal_review_policy": "A registry record and formatting validation do not constitute legal approval. Clause language must complete the repository's legal review process before publication."
+  },
+  "allowed_clause_language_block_styles": [
+    "Heading 3",
+    "Heading 4",
+    "Heading 5",
+    "Normal"
+  ],
+  "semantic_style_map": [
+    {
+      "semantic_role": "main_document_title",
+      "zoho_writer_style": "Title",
+      "clause_language_block_allowed": false,
+      "notes": "Apply only in the contract template outside clause-library records."
+    },
+    {
+      "semantic_role": "article_heading",
+      "zoho_writer_style": "Heading 1",
+      "clause_language_block_allowed": false,
+      "notes": "Top-level article or major section heading managed in the contract template, outside clause language."
+    },
+    {
+      "semantic_role": "clause_title",
+      "zoho_writer_style": "Heading 2",
+      "clause_language_block_allowed": false,
+      "notes": "Stored as clause_title metadata for each standard or alternate language variant and rendered separately from substantive language blocks."
+    },
+    {
+      "semantic_role": "subsection_heading",
+      "zoho_writer_style": "Heading 3",
+      "clause_language_block_allowed": true,
+      "notes": "First-level subsection within a clause."
+    },
+    {
+      "semantic_role": "nested_heading_level_1",
+      "zoho_writer_style": "Heading 4",
+      "clause_language_block_allowed": true,
+      "notes": "Nested heading below a subsection."
+    },
+    {
+      "semantic_role": "nested_heading_level_2",
+      "zoho_writer_style": "Heading 5",
+      "clause_language_block_allowed": true,
+      "notes": "Deepest permitted heading; do not create Heading 6."
+    },
+    {
+      "semantic_role": "body_text",
+      "zoho_writer_style": "Normal",
+      "clause_language_block_allowed": true,
+      "notes": "Paragraphs, list text, and other substantive clause language."
+    }
+  ],
+  "typography": {
+    "scope": "Zoho Contracts templates and clause content only",
+    "body_text": {
+      "font_family": "Inter",
+      "font_size_pt": 11,
+      "font_weight": "Regular",
+      "color_hex": "#000000",
+      "alignment": "Left"
+    },
+    "main_title": {
+      "font_family": "Inter",
+      "font_size_pt": 18,
+      "font_weight": "Bold",
+      "color_hex": "#000000",
+      "alignment": "Center",
+      "zoho_writer_style": "Title"
+    },
+    "article_heading": {
+      "font_family": "Inter",
+      "font_size_pt": 12,
+      "font_weight": "Bold",
+      "color_hex": "#1F4E79",
+      "alignment": "Left",
+      "zoho_writer_style": "Heading 1"
+    },
+    "subheadings": {
+      "styles": [
+        "Heading 2",
+        "Heading 3",
+        "Heading 4",
+        "Heading 5"
+      ],
+      "font_family": "Inter",
+      "font_size_pt": 11,
+      "font_weight": "Bold",
+      "color_hex": "#000000",
+      "alignment": "Left"
+    },
+    "tables_and_forms": {
+      "font_family": "Inter",
+      "font_size_pt": 10,
+      "font_weight": "Regular",
+      "color_hex": "#000000",
+      "alignment": "Left"
+    },
+    "header_and_footer": {
+      "font_family": "Inter",
+      "font_size_pt": 8.5,
+      "allowed_font_size_pt": {
+        "minimum": 8,
+        "maximum": 8.5
+      },
+      "font_weight": "Regular",
+      "color_hex": "#666666"
+    },
+    "line_spacing": 1.15,
+    "paragraph_spacing_after_pt": 6,
+    "allowed_paragraph_spacing_after_pt": {
+      "minimum": 4,
+      "maximum": 6
+    },
+    "page": {
+      "size": "US Letter",
+      "width_in": 8.5,
+      "height_in": 11,
+      "margins_in": {
+        "top": 0.75,
+        "right": 0.75,
+        "bottom": 0.75,
+        "left": 0.75
+      }
+    },
+    "paragraph_alignment": {
+      "allowed": [
+        "Left"
+      ],
+      "fully_justified_allowed": false
+    }
+  },
+  "tenant_verification_gates": {
+    "inter_font_availability": {
+      "status": "tenant_verification_required",
+      "instruction": "Confirm that Inter Regular and Inter Bold are available organization-wide in the connected Zoho Writer/Contracts tenant before publishing. If unavailable, stop and install the approved Inter Regular and Bold fonts organization-wide first. Seek a governed typography amendment only if installation is impossible; never silently substitute another font."
+    },
+    "live_template_republish": {
+      "status": "manual_controlled_change_required",
+      "instruction": "Changing this repository standard does not restyle existing live templates. Update and republish each affected template through a reviewed change, then render and inspect a sample contract."
+    }
+  },
+  "zoho_sign_text_tag_registry": "src/zoho-sign/field-tags/zoho-contracts-text-tag-registry.json"
+}
