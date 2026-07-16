@@ -80,3 +80,11 @@ Use the active text-tag registry for syntax approval. This recipient policy does
 ## Document-specific manifest files
 
 Any checked-in `*.recipient-manifest.json` file must declare the actual recipients in contiguous order, each recipient's business role and signing position, and the GH landlord recipient when GH signs. The repository validator rejects gaps, placeholder recipients, a landlord that is not last, or any signer routed after the landlord.
+
+The Residential Lease Agreement has three checked-in manifests:
+
+- `residential-lease-one-tenant.recipient-manifest.json`
+- `residential-lease-two-tenants.recipient-manifest.json`
+- `residential-lease-three-tenants.recipient-manifest.json`
+
+Each manifest has a matching governed Ending Text and conditional Addendum B fragment under `src/zoho-contracts/contract-types/residential-lease-agreement/`. Select the fragment matching the actual tenant count before preview or signature testing. Do not leave extra signature rows, skip recipient numbers, or use a fixed GH R-number across variants.

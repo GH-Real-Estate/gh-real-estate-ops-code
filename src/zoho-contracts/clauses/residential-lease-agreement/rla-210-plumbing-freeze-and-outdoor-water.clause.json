@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-210 — Residential Lease — Plumbing, Freeze, and Outdoor Water",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard plumbing-use, freeze-protection, and outdoor-spigot duties apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "5.5. Plumbing Rules",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant may not place grease, oils, wipes, paper towels, feminine products, diapers, toys, rags, food scraps, cat litter, chemicals, drain cleaner, or other improper items into drains, toilets, disposals, sinks, or plumbing. Tenant must promptly report leaks, slow drains, running toilets, backups, low heat, or freeze risks. Tenant may use a plunger for ordinary clogs but may not use chemical drain cleaners or perform unauthorized plumbing work."
+        },
+        {
+          "style": "Heading 3",
+          "text": "5.6. Plumbing and Freeze Damage"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant is responsible for plumbing stoppages, overflow, freeze damage, water damage, and related costs caused or worsened by Tenant, occupants, guests, pets, improper items, misuse, failure to maintain utilities, failure to keep heat on, or failure to report issues promptly."
+        },
+        {
+          "style": "Heading 3",
+          "text": "5.7. Outdoor Water Spigots"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant must disconnect hoses from outdoor spigots during freezing weather and must not leave hoses, sprinklers, or water devices running unattended. Tenant is responsible for damage caused by misuse or failure to follow seasonal instructions."
+        }
+      ]
+    }
+  ]
+}

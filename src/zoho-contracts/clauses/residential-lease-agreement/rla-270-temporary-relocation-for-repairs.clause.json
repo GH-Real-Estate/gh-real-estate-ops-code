@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-270 — Residential Lease — Temporary Relocation for Repairs",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "May repair or remediation work require the standard temporary-relocation process without waiving applicable law?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "6.10. Temporary Relocation for Repairs",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "If repair, casualty, code work, pest treatment, environmental remediation, or other work not caused by Tenant reasonably requires Tenant to temporarily vacate the Premises, Landlord may arrange temporary relocation or other lawful accommodation as required by law. If the condition or work is caused by Tenant, occupants, guests, pets, or Tenant's property, Tenant is responsible for resulting reasonable costs to the extent allowed by law."
+        }
+      ]
+    }
+  ]
+}

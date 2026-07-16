@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "General Provisions",
+  "clause_name": "RLA-580 — Residential Lease — Data Privacy and Electronic Signatures",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard lawful data-handling and electronic-signature provisions apply without broader consent or disclosure?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "12.15. Data Privacy",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord may collect, use, disclose, retain, and destroy Tenant information only for lawful and reasonably necessary housing, payment, maintenance, compliance, collection, financing, sale, and property-management purposes and will use reasonable safeguards appropriate to the information's sensitivity. This Lease is not authorization to disclose consumer reports, bank-account information, identification documents, or disability-related information except as permitted by law. Accommodation and consumer-report records should be maintained separately with restricted access."
+        },
+        {
+          "style": "Heading 3",
+          "text": "12.16. Electronic Signatures and Counterparts"
+        },
+        {
+          "style": "Normal",
+          "text": "This Lease and any addendum may be signed electronically and in counterparts. Electronic signatures, copies, scans, and PDFs are intended to be enforceable to the same extent as originals under applicable law."
+        }
+      ]
+    }
+  ]
+}

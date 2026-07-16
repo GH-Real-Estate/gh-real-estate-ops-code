@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Rent, Fees and Payment",
+  "clause_name": "RLA-140 — Residential Lease — Partial-Month Proration",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the calendar-day proration formula apply, with no signed lawful alternate formula controlling?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "3.15. Partial-Month Proration",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Unless a signed writing states another lawful formula, Base Rent for a partial month is monthly Base Rent divided by the number of calendar days in that month, multiplied by the number of days for which Tenant is responsible."
+        }
+      ]
+    }
+  ]
+}

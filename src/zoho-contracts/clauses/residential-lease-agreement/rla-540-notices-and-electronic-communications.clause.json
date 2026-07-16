@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Notices and Communications",
+  "clause_name": "RLA-540 — Residential Lease — Notices and Electronic Communications",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Is the complete statutory notice information approved, with electronic operational communications not replacing mandatory service methods?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "12.8. Notices",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "All notices must be in writing when the Lease or law requires writing. Statutory default, cure, termination, eviction, protected-person, foreclosure, or other legally prescribed notices shall be delivered by the method and in the format required by the law governing that notice. Email, text, or portal delivery is supplemental unless applicable law and a valid electronic-transactions agreement make electronic delivery sufficient. Notices to Tenant may be addressed to the Premises and any other written notice address Tenant provides."
+        },
+        {
+          "style": "Heading 3",
+          "text": "12.9. Electronic Communications"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant consents to reasonable operational communications by email, text, phone, or tenant portal. Consent to sign this Lease electronically does not require either party to conduct every later transaction electronically. Electronic records must remain capable of being downloaded, printed, and retained. Tenant may request a reasonable paper or other nonelectronic communication method or accommodation. This section does not substitute electronic delivery for a statutory service method that remains mandatory."
+        }
+      ]
+    }
+  ]
+}

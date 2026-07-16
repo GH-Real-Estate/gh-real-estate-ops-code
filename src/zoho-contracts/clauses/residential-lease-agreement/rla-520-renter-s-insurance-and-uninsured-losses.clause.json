@@ -1,0 +1,56 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Insurance, Risk and Liability",
+  "clause_name": "RLA-520 — Residential Lease — Renter's Insurance and Uninsured Losses",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does renter's insurance remain optional and strongly recommended, with no automatic default for declining it?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "12.1. Renter's Insurance",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant is not required to maintain renter's insurance as a condition of this Lease unless a separate written amendment or addendum signed by Landlord and Tenant states otherwise. Landlord strongly recommends that Tenant obtain and maintain renter's insurance throughout the tenancy, including personal-property coverage, personal-liability coverage, loss-of-use/additional-living-expense coverage, water-damage coverage, theft coverage, fire and smoke coverage, weather-related coverage, vandalism coverage, casualty coverage, and any endorsements Tenant considers appropriate. Tenant may choose the insurance company, coverage limits, deductible, and policy terms. Landlord does not sell insurance, select coverage for Tenant, guarantee that any policy is adequate, or provide insurance advice."
+        },
+        {
+          "style": "Heading 3",
+          "text": "12.2. No Default for Declining Renter's Insurance"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant's decision not to maintain renter's insurance is not, by itself, a default. Declining insurance does not limit Tenant's responsibility for Base Rent, lawful Other Charges, actual damage, loss, injury, claims, fines, costs, or liability caused by Tenant, occupants, guests, invitees, ordinary pets, assistance animals, or Tenant's property to the extent allowed by law. Landlord is not required to purchase insurance for Tenant or Tenant's property."
+        },
+        {
+          "style": "Heading 3",
+          "text": "12.3. Tenant Responsibility for Damage and Claims"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant is responsible for actual damage, loss, injury, fines, and claims caused by Tenant, occupants, guests, invitees, pets, or Tenant's property to the extent allowed by law. Tenant must promptly notify Landlord of any incident, claim, casualty, injury, police call, fire, flood, or insurance matter involving the Premises."
+        },
+        {
+          "style": "Heading 3",
+          "text": "12.4. Tenant Personal Property and Uninsured Losses"
+        },
+        {
+          "style": "Normal",
+          "text": "Landlord's insurance does not cover Tenant's personal property, vehicles, stored items, relocation expenses, loss-of-use expenses, or personal liability. If Tenant does not obtain renter's insurance, Tenant accepts the risk that Tenant's losses may be uninsured. Tenant is strongly encouraged to obtain renter's insurance covering theft, fire, smoke, water damage, weather, vandalism, casualty, personal liability, and temporary housing expenses. Nothing in this section waives, reduces, or limits any non-waivable right or remedy Tenant may have for Landlord's breach of a duty imposed by applicable law."
+        },
+        {
+          "style": "Heading 3",
+          "text": "12.5. Insurance and Subrogation"
+        },
+        {
+          "style": "Normal",
+          "text": "To the extent permitted by law and any applicable insurance policies, each party should look first to available insurance for covered losses. Nothing in this section waives claims that cannot lawfully be waived, requires either party to indemnify the other where prohibited by law, or limits liability in a manner prohibited by Kansas residential landlord-tenant law."
+        }
+      ]
+    }
+  ]
+}

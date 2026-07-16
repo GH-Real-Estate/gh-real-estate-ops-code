@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Utilities and Services",
+  "clause_name": "RLA-190 — Residential Lease — Utility Account Duties",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Are all tenant-assigned utility accounts expressly identified, with the standard cooperation duties applying?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "5.2. Failure to Maintain Utilities",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Failure to maintain a utility expressly assigned to Tenant may constitute a material breach only if it creates a material health, safety, habitability, freeze, plumbing, pest, mold, or property-damage risk and after any notice and cure required by law. If Landlord pays a utility charge that Tenant is responsible for, Tenant must reimburse the reasonable, actual, documented amount as an Other Charge after written demand. This section does not excuse Landlord's non-waivable duties or authorize utility interruption as self-help."
+        },
+        {
+          "style": "Heading 3",
+          "text": "5.3. Proof and Account Cooperation"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant must provide proof of utility account setup upon Landlord's reasonable request and must cooperate with Landlord, HOA, and utility providers to prevent interruption, leaks, waste, meter problems, or service issues."
+        }
+      ]
+    }
+  ]
+}

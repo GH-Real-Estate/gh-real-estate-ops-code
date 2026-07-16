@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Deposits and Prepaid Amounts",
+  "clause_name": "RLA-180 — Residential Lease — Transfer of Deposit",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Will any sale or management transfer follow the standard Kansas deposit-transfer and notice rules?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "4.9. Transfer of Deposit Upon Sale or Assignment",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "If ownership or management changes, the Security Deposit will be transferred or otherwise handled as required by law, and Tenant will receive any notice required by law. No transfer, notice, or Lease provision releases any person from deposit liability that Kansas law preserves, including liability under K.S.A. 58-2550(f) and 58-2554."
+        }
+      ]
+    }
+  ]
+}

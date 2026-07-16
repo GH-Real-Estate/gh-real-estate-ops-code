@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Rent, Fees and Payment",
+  "clause_name": "RLA-130 — Residential Lease — Withholding, Late Payment, Statements, and Credits",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard non-waiver, statement, hardship, concession, and credit provisions apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "3.11. No Withholding or Offset Except as Allowed by Law",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant must pay Rent in full when due and may not withhold, offset, or deduct Rent except as expressly allowed by applicable law. Nothing in this Lease waives Tenant's non-waivable rights or remedies under Kansas law."
+        },
+        {
+          "style": "Heading 3",
+          "text": "3.12. No Excuse for Late Payment"
+        },
+        {
+          "style": "Normal",
+          "text": "Job loss, reduced hours, health issues, travel, payment-processor issues, roommate disputes, or financial hardship do not excuse late payment. Tenant should contact Landlord before default if a payment issue arises, but Landlord is not required to accept late or partial payment."
+        },
+        {
+          "style": "Heading 3",
+          "text": "3.13. Monthly Statements and Invoices"
+        },
+        {
+          "style": "Normal",
+          "text": "Any monthly statement, invoice, ledger, or portal balance is provided for convenience and collection administration. It does not amend this Lease. If a monthly statement or invoice conflicts with this Lease, this Lease controls unless a signed written amendment states otherwise."
+        },
+        {
+          "style": "Heading 3",
+          "text": "3.14. Concessions and Credits"
+        },
+        {
+          "style": "Normal",
+          "text": "Any move-in concession, discount, waived fee, free-rent period, or other credit must be in writing. If Tenant defaults, moves out early without legal excuse, or fails to satisfy the conditions stated for the concession, Landlord may revoke only those concessions that the written concession agreement expressly states are conditional, to the extent allowed by law."
+        }
+      ]
+    }
+  ]
+}

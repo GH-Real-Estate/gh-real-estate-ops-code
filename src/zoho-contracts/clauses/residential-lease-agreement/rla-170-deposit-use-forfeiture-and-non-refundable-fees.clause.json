@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Deposits and Prepaid Amounts",
+  "clause_name": "RLA-170 — Residential Lease — Deposit Use, Forfeiture, and Non-Refundable Fees",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Is the deposit treated as not rent and not automatically forfeited, with any non-refundable fee separately lawful and labeled?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "4.6. No Security Deposit as Rent",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant may not apply the Security Deposit to Rent or use it as last month's rent. Attempting to do so is a material breach and does not excuse the rent obligation. To the extent allowed by Kansas law and this Lease, misuse of the Security Deposit as Rent may result in forfeiture of the Security Deposit while preserving Landlord's right to recover unpaid Rent."
+        },
+        {
+          "style": "Heading 3",
+          "text": "4.7. No Automatic Forfeiture for Ordinary Violations"
+        },
+        {
+          "style": "Normal",
+          "text": "Except as expressly allowed by Kansas law for improper application of the Security Deposit to Rent, the Security Deposit is not automatically forfeited because of a Lease violation. Landlord may apply it only to amounts lawfully deductible. If lawful deductions exceed the Security Deposit, Tenant remains responsible for the balance."
+        },
+        {
+          "style": "Heading 3",
+          "text": "4.8. Non-Refundable Fees"
+        },
+        {
+          "style": "Normal",
+          "text": "A non-refundable fee is enforceable only if separately stated, clearly labeled, and not held to secure future damage, rent, or other performance. Any amount that functions as security is part of the Security Deposit and is subject to Kansas deposit limits and accounting requirements regardless of its label."
+        }
+      ]
+    }
+  ]
+}

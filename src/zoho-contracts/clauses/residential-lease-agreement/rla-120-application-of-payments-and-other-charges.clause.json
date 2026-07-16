@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Rent, Fees and Payment",
+  "clause_name": "RLA-120 — Residential Lease — Application of Payments and Other Charges",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Will payments and documented non-rent charges be handled under the stated order and pass-through limits?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "3.8. Application of Payments",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Unless applicable law, a court order, or a contemporaneous written agreement requires otherwise, payments will be applied first to current Base Rent, then to the oldest unpaid Base Rent, and then to other lawful charges in chronological order. Acceptance of a partial or late payment has the effect provided by K.S.A. 58-2566."
+        },
+        {
+          "style": "Heading 3",
+          "text": "3.9. Other Charges"
+        },
+        {
+          "style": "Normal",
+          "text": "Other Charges means lawful amounts owed under this Lease other than the Security Deposit and Base Rent, including utility reimbursements, storage rent, pet rent, documented repair costs caused by Tenant, and documented HOA or municipal charges caused by Tenant or persons or animals for whom Tenant is responsible. Other Charges are due within ten (10) days after written demand unless this Lease states another due date. Labeling an amount an Other Charge does not make it Base Rent or authorize a nonpayment eviction remedy that applicable law does not allow."
+        },
+        {
+          "style": "Heading 3",
+          "text": "3.10. Government, HOA, Utility, and Tax-Related Charges"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant is responsible only for an actual, documented charge directly caused by a proven act or omission of Tenant, an occupant, guest, invitee, ordinary pet, assistance animal, or Tenant's property. Tenant is not responsible under this section for Landlord's ordinary property taxes, ownership assessments, licensing expenses, capital expenses, or code violations not caused by Tenant. Landlord will provide reasonable supporting documentation and will not add a markup unless expressly stated and lawful."
+        }
+      ]
+    }
+  ]
+}

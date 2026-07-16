@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Parties, Premises and Term",
+  "clause_name": "RLA-040 — Residential Lease — Lease Term, Move-In, and Delay of Possession",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the fixed term, move-in conditions, and lawful delay-of-possession remedies apply to this tenancy?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "2.1. Lease Term",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "The Lease begins on __________________ and ends at __________________ on __________________, unless terminated earlier or extended under this Lease or applicable law."
+        },
+        {
+          "style": "Heading 3",
+          "text": "2.2. Move-In and Possession"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant may not take possession, receive keys/access devices, or move personal property into the Premises until all amounts due before occupancy are paid in certified or cleared funds, required utilities are established where applicable, all required addenda are signed, and Landlord has delivered possession. Tenant acknowledges that Landlord strongly recommends renter's insurance, but renter's insurance is not required as a condition of possession unless a separate written amendment or addendum signed by Landlord and Tenant states otherwise."
+        },
+        {
+          "style": "Heading 3",
+          "text": "2.3. Delay of Possession"
+        },
+        {
+          "style": "Normal",
+          "text": "If Landlord fails to deliver possession as required by this Lease, K.S.A. 58-2552, and applicable habitability law, Base Rent abates until possession is delivered. Tenant may, upon at least five (5) days' written notice, terminate this Lease, in which event Landlord shall return the entire Security Deposit and all unearned prepaid Base Rent. Alternatively, Tenant may demand performance and pursue possession and damages as permitted by K.S.A. 58-2560. Nothing in this section limits remedies available when a failure to deliver possession is willful and not in good faith."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Maintenance, Repairs and Condition",
+  "clause_name": "RLA-230 — Residential Lease — Maintenance Responsibilities and Requests",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard landlord and tenant maintenance duties, request channels, emergency reporting, and repair-access rules apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "6.1. Landlord Maintenance Responsibilities",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord shall comply with applicable building and housing codes materially affecting health and safety; exercise reasonable care in maintaining common areas; maintain Landlord-supplied electrical, plumbing, sanitary, heating, ventilating, and air-conditioning systems in good and safe working order; provide and arrange removal of appropriate common waste receptacles; and supply running water, reasonable hot water, and reasonable heat except where a lawful direct utility arrangement places generation and payment within Tenant's exclusive control. Nothing in this Lease delegates or waives a duty that K.S.A. 58-2549, 58-2553, or another law makes nondelegable."
+        },
+        {
+          "style": "Heading 3",
+          "text": "6.2. Tenant Maintenance Responsibilities"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant shall perform the duties imposed by K.S.A. 58-2555, including keeping the occupied area as clean and safe as its condition permits, removing waste safely, using facilities and appliances reasonably, avoiding damage, and not disturbing other residents' peaceful enjoyment. Tenant shall replace ordinary consumables such as light bulbs and filters only if expressly assigned. No Tenant duty or later rule shifts a Landlord duty that may be delegated only through a separate signed agreement, good faith, adequate consideration, or other requirements of K.S.A. 58-2553."
+        },
+        {
+          "style": "Heading 3",
+          "text": "6.3. Maintenance Requests and Emergencies"
+        },
+        {
+          "style": "Normal",
+          "text": "Routine maintenance requests may be submitted through the tenant portal, email, text, or another method Landlord reasonably approves. A portal request does not prevent Tenant from giving any separate statutory notice in a method permitted by law. Emergencies involving fire, flood, active leak, gas odor, electrical hazard, dangerous loss of heat, sewer backup, or immediate threat to life or severe property damage must be reported immediately by phone after calling 911 or the utility provider where appropriate."
+        },
+        {
+          "style": "Heading 3",
+          "text": "6.4. Access for Repairs and Scheduling"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant must provide reasonable access for inspections, repairs, contractors, pest treatment, code work, insurance inspections, showings, and other purposes permitted by K.S.A. 58-2557 or applicable law. Tenant must reasonably secure animals and valuables. If Tenant unlawfully refuses access, Landlord may seek the remedies in K.S.A. 58-2571 and recover only reasonable, actual, documented costs or damages to the extent allowed by law."
+        }
+      ]
+    }
+  ]
+}

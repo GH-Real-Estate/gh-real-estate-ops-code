@@ -1,0 +1,44 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Use, Occupancy and Conduct",
+  "clause_name": "RLA-360 — Residential Lease — Fire, Hazardous Materials, and Security",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the property use the standard grill, open-flame, hazardous-material, fire-safety, and crime-reporting rules?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "8.10. Grills and Open-Flame Devices",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Charcoal grills, propane or LP-gas grills, natural-gas grills, pellet or wood-burning grills, smokers, hibachis, fire pits, torches, and other open-flame cooking or heating devices are prohibited on balconies, decks, patios, landings, or within ten (10) feet of combustible construction and in every other location restricted by fire code, HOA rule, insurance, or written property rule. Propane cylinders, lighter fluid, charcoal, pellets, fireworks, and other grilling fuel may not be stored in the Premises, basement, common area, or storage unit."
+        },
+        {
+          "style": "Normal",
+          "text": "A listed electric cooking appliance may be used outdoors only in a location Landlord designates in writing, on a stable noncombustible surface, attended continuously, connected without an unsafe extension cord, and operated according to manufacturer instructions, code, HOA rules, and written property rules. No cooking device may be used indoors, in the basement, in a garage, or in another enclosed area. Any open-flame exception requires prior written Landlord approval and site-specific confirmation from the appropriate fire official."
+        },
+        {
+          "style": "Heading 3",
+          "text": "8.11. Hazardous Materials and Fire Safety"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant may not store gasoline, kerosene, fuels, explosives, fireworks, flammable liquids, hazardous chemicals, excessive paint or solvent, ammunition, excessive combustibles, or other dangerous materials in or around the Premises except ordinary household products stored safely in ordinary quantities. Tenant must not block exits, stairways, halls, electrical panels, fire extinguishers, mechanical areas, or access routes."
+        },
+        {
+          "style": "Heading 3",
+          "text": "8.12. Security and Crime Reporting"
+        },
+        {
+          "style": "Normal",
+          "text": "Tenant must exercise reasonable care for personal safety, keep doors and windows secured, protect access devices, and call 911 before contacting Landlord in an emergency. Landlord does not insure Tenant against crime or guarantee that lighting, locks, cameras, or other measures will prevent criminal activity. Nothing in this section exculpates or limits liability imposed by law or waives a non-waivable duty or remedy."
+        }
+      ]
+    }
+  ]
+}

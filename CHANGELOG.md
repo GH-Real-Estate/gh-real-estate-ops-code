@@ -4,6 +4,12 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-16
 
+- Added a Draft-only, attorney-review-required Zoho Contracts implementation package for the July 14, 2026 Lead-First Residential Lease Agreement.
+- Added 59 governed clause records, a 161-unit source-to-clause crosswalk, sanitized document-field mappings, native template-component guidance, attachment requirements, visual QA controls, and one-, two-, and three-tenant Ending Text and Addendum B variants.
+- Added three document-specific Zoho Sign recipient manifests that keep GH Real Estate, LLC as the final actual recipient and final signer for each supported tenant count.
+- Added four package schemas, a dependency-free Residential Lease implementation validator, regression tests, and a required repository-check step.
+- Kept all 29 production gates open, including rent and deposit source ownership, statutory notice information, legal review, live metadata verification, lead and HOA applicability, parking, storage, lease-end time, initial amounts, pets, appliances, required contacts, signer authority, municipality applicability, required initials, signer-fragment selection, visual QA, and signature smoke testing.
+- This repository change does not publish, send, execute, or alter a live lease. Any live Zoho copy must remain Draft, unpublished, blocked from execution, and unsent until every gate is closed.
 - Added a governed Zoho CRM module-and-field catalog covering 14 known GH Real Estate modules, 736 known fields or candidates, and 120 choice fields.
 - Required field specifications to use `Field Label — Field Type`, separate actual API names from proposed names, include creation help text no longer than 255 characters, and assign a six-digit hex color to every choice value.
 - Added a working Zoho CRM field-type catalog, a metadata-only Modules/Fields export helper, a dependency-free catalog validator, and a path-scoped GitHub Actions check.

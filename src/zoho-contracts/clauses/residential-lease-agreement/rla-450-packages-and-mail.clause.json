@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Personal Property and Abandonment",
+  "clause_name": "RLA-450 — Residential Lease — Packages and Mail",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the standard mail-forwarding, delivery-instruction, package-retrieval, and no-custody language apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "10.14. Packages and Mail",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant is responsible for forwarding mail, giving delivery instructions, and promptly retrieving packages. Unless Landlord expressly accepts custody in writing, Landlord does not take custody of mail or packages. Nothing in this section exculpates or limits liability imposed by law."
+        }
+      ]
+    }
+  ]
+}

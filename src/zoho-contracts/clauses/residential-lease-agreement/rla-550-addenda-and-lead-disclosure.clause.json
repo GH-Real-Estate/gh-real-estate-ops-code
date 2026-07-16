@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Compliance and Disclosures",
+  "clause_name": "RLA-550 — Residential Lease — Addenda and Lead Disclosure",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Have all applicable addenda been delivered, with the separate executed lead disclosure and pamphlet evidence complete where required?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "12.10. Addenda and Lease Packet",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "The Lease packet consists only of this Lease, signed addenda, and rules or external documents actually delivered to Tenant and identified in Section 14.2. Ordinary pets are governed by the Ordinary Pet Addendum; assistance animals are governed by applicable fair housing law and any Assistance Animal Accommodation Addendum. A later rule is enforceable only if it satisfies K.S.A. 58-2556. A rule that substantially modifies the Lease is not enforceable during the tenancy unless Tenant consents in writing. No handbook or HOA rule waives statutory rights or creates a new fee or material obligation without legally required consent."
+        },
+        {
+          "style": "Normal",
+          "text": "Lead-Based Paint Disclosure. For covered target housing, the separately executed Disclosure of Information on Lead-Based Paint and/or Lead-Based Paint Hazards dated __________ (\"Addendum A\") is attached to, incorporated into, and made part of this Lease. Landlord must complete Addendum A and deliver the current federally approved pamphlet and all identified records/reports before releasing this Lease for Tenant signature. The exact executed Addendum A PDF must remain attached to the final Lease contract; this incorporation does not replace any required field, acknowledgment, certification, signature, or date on Addendum A."
+        }
+      ]
+    }
+  ]
+}

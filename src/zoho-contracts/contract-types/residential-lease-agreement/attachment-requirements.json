@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "requirement_set_id": "ghre-rla-attachments",
+  "deployment_status": {
+    "state": "draft_only",
+    "published": false,
+    "attorney_review_required": true,
+    "execution_blocked": true,
+    "signature_request_sent": false
+  },
+  "requirements": [
+    {
+      "requirement_id": "executed-addendum-a-lead-disclosure",
+      "display_name": "Executed Addendum A — Lead-Based Paint Disclosure",
+      "conditional": true,
+      "required_when": "Covered target housing and no verified exemption applies.",
+      "must_be_completed_before": [
+        "lease_release_for_tenant_signature",
+        "tenant_obligation"
+      ],
+      "must_remain_attached_to_final_contract": true,
+      "blank_form_prohibited": true,
+      "gate_id": "lead_disclosure"
+    },
+    {
+      "requirement_id": "epa-lead-pamphlet-delivery-evidence",
+      "display_name": "Current EPA lead pamphlet delivery evidence",
+      "conditional": true,
+      "required_when": "The lead-disclosure workflow applies.",
+      "must_be_completed_before": [
+        "lease_release_for_tenant_signature"
+      ],
+      "must_remain_attached_to_final_contract": false,
+      "blank_form_prohibited": false,
+      "gate_id": "lead_disclosure"
+    },
+    {
+      "requirement_id": "addendum-b-hoa-handbook-acknowledgment",
+      "display_name": "Addendum B — HOA and Tenant Handbook Acknowledgment",
+      "conditional": true,
+      "required_when": "A current HOA packet or GH tenant handbook is actually delivered and identified.",
+      "must_be_completed_before": [
+        "publish",
+        "send_for_signature"
+      ],
+      "must_remain_attached_to_final_contract": true,
+      "blank_form_prohibited": false,
+      "gate_id": "hoa_applicability"
+    }
+  ],
+  "addendum_b_rules": {
+    "applicability_values": [
+      "applicable",
+      "not_applicable",
+      "unknown"
+    ],
+    "default_value": "unknown",
+    "preselection_forbidden": true,
+    "delivery_status_preselection_forbidden": true,
+    "version_and_delivery_date_required_when_delivered": true,
+    "signer_count_variant_required": true
+  }
+}

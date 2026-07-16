@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Compliance and Disclosures",
+  "clause_name": "RLA-030 — Residential Lease — Fair Housing and Accommodation Requests",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the standard fair-housing and individualized accommodation-request process apply without attorney-approved alternate language?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "1.8. Fair Housing and Accommodation Requests",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord conducts housing activities in accordance with applicable federal, Kansas, and Overland Park fair housing laws. An applicant, Tenant, or a person acting on that individual's behalf may request a reasonable accommodation or reasonable modification orally or in writing and need not use a particular form or special words. Landlord will respond promptly and conduct an individualized review. If the disability or disability-related need is not readily apparent, Landlord may request only reliable information reasonably necessary to evaluate the request and will not require detailed medical records or information prohibited by law. No person will be retaliated against for making a good-faith request or exercising a protected right."
+        }
+      ]
+    }
+  ]
+}

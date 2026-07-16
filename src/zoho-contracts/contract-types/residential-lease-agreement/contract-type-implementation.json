@@ -1,0 +1,1182 @@
+{
+  "$schema": "../../schemas/contract-type-implementation.schema.json",
+  "schema_version": "1.0.0",
+  "implementation_id": "ghre-rla-zoho-contracts-draft",
+  "contract_type": "Residential Lease Agreement",
+  "deployment_status": {
+    "state": "draft_only",
+    "published": false,
+    "attorney_review_required": true,
+    "execution_blocked": true,
+    "signature_request_sent": false
+  },
+  "source_manifest_ref": "source-manifest.json",
+  "crosswalk_ref": "source-to-clause-crosswalk.json",
+  "field_map_ref": "document-field-map.json",
+  "template_components_ref": "template-components.json",
+  "attachment_requirements_ref": "attachment-requirements.json",
+  "reconciliation": {
+    "preferred_action": "reuse_existing_contract_type",
+    "existing_record_name": "Residential Lease Agreement",
+    "duplicate_creation_allowed": false,
+    "preserve_prior_published_version": true,
+    "edit_executed_agreement_allowed": false,
+    "publish_allowed": false
+  },
+  "clause_records": [
+    {
+      "code": "RLA-010",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-010-parties-and-premises.clause.json",
+      "clause_name": "RLA-010 — Residential Lease — Parties and Premises",
+      "clause_type": "Parties, Premises and Term",
+      "clause_title": "1.1. Parties",
+      "source_sections": [
+        "1.1",
+        "1.2"
+      ],
+      "library_question": "Does this agreement use GH Real Estate as Landlord and the identified dwelling without a nonstandard party or premises structure?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-020",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-020-occupancy-responsibility-and-application-accuracy.clause.json",
+      "clause_name": "RLA-020 — Residential Lease — Occupancy, Responsibility, and Application Accuracy",
+      "clause_type": "Use, Occupancy and Conduct",
+      "clause_title": "1.5. Approved Occupants",
+      "source_sections": [
+        "1.5",
+        "1.6",
+        "1.7"
+      ],
+      "library_question": "Do the named tenants, approved occupants, joint-responsibility terms, and application-information duties match the source facts?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-030",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-030-fair-housing-and-accommodation-requests.clause.json",
+      "clause_name": "RLA-030 — Residential Lease — Fair Housing and Accommodation Requests",
+      "clause_type": "Compliance and Disclosures",
+      "clause_title": "1.8. Fair Housing and Accommodation Requests",
+      "source_sections": [
+        "1.8"
+      ],
+      "library_question": "Does the standard fair-housing and individualized accommodation-request process apply without attorney-approved alternate language?",
+      "production_gate_ids": [
+        "municipality_jurisdiction_applicability"
+      ],
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-040",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-040-lease-term-move-in-and-delay-of-possession.clause.json",
+      "clause_name": "RLA-040 — Residential Lease — Lease Term, Move-In, and Delay of Possession",
+      "clause_type": "Parties, Premises and Term",
+      "clause_title": "2.1. Lease Term",
+      "source_sections": [
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "library_question": "Do the fixed term, move-in conditions, and lawful delay-of-possession remedies apply to this tenancy?",
+      "production_gate_ids": [
+        "lease_end_time"
+      ],
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-050",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-050-renewal-move-out-notice-and-month-to-month-terms.clause.json",
+      "clause_name": "RLA-050 — Residential Lease — Renewal, Move-Out Notice, and Month-to-Month Terms",
+      "clause_type": "Parties, Premises and Term",
+      "clause_title": "2.4. End of Fixed Term and Month-to-Month Conversion",
+      "source_sections": [
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7"
+      ],
+      "library_question": "Do the standard fixed-term expiration, move-out notice, month-to-month conversion, and renewal rules apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-060",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-060-early-termination-and-unauthorized-move-out.clause.json",
+      "clause_name": "RLA-060 — Residential Lease — Early Termination and Unauthorized Move-Out",
+      "clause_type": "Default, Remedies and Termination",
+      "clause_title": "2.8. Tenant Early Termination / Buy-Out",
+      "source_sections": [
+        "2.8",
+        "2.9",
+        "2.10"
+      ],
+      "library_question": "Will any early termination use a signed buy-out or another lawful basis rather than an automatic personal-circumstances release?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-070",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-070-military-protected-person-and-sole-tenant-rights.clause.json",
+      "clause_name": "RLA-070 — Residential Lease — Military, Protected-Person, and Sole-Tenant Rights",
+      "clause_type": "Default, Remedies and Termination",
+      "clause_title": "2.11. Military and Protected-Person Rights",
+      "source_sections": [
+        "2.11",
+        "2.12"
+      ],
+      "library_question": "Do the mandatory military, protected-person, casualty, and sole-tenant-death protections apply without restriction?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-080",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-080-holdover.clause.json",
+      "clause_name": "RLA-080 — Residential Lease — Holdover",
+      "clause_type": "Default, Remedies and Termination",
+      "clause_title": "2.13. Holdover",
+      "source_sections": [
+        "2.13"
+      ],
+      "library_question": "Does the standard Kansas holdover provision apply without a separately signed holdover arrangement?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-090",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-090-base-rent.clause.json",
+      "clause_name": "RLA-090 — Residential Lease — Base Rent",
+      "clause_type": "Rent, Fees and Payment",
+      "clause_title": "3.1. Base Rent",
+      "source_sections": [
+        "3.1"
+      ],
+      "library_question": "Does the standard monthly Base Rent due date and receipt deadline apply once the governed rent field is approved?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-100",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-100-payment-methods-and-receipt.clause.json",
+      "clause_name": "RLA-100 — Residential Lease — Payment Methods and Receipt",
+      "clause_type": "Rent, Fees and Payment",
+      "clause_title": "3.3. Approved Payment Methods",
+      "source_sections": [
+        "3.3",
+        "3.4"
+      ],
+      "library_question": "Do the listed payment methods and provisional electronic-payment timing rules apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-110",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-110-late-fees-delinquent-interest-and-returned-payments.clause.json",
+      "clause_name": "RLA-110 — Residential Lease — Late Fees, Delinquent Interest, and Returned Payments",
+      "clause_type": "Rent, Fees and Payment",
+      "clause_title": "3.5. Late Fees",
+      "source_sections": [
+        "3.5",
+        "3.6",
+        "3.7"
+      ],
+      "library_question": "Are the stated late-fee, simple-interest, and returned-payment provisions approved for this lease without an attorney-approved exception?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-120",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-120-application-of-payments-and-other-charges.clause.json",
+      "clause_name": "RLA-120 — Residential Lease — Application of Payments and Other Charges",
+      "clause_type": "Rent, Fees and Payment",
+      "clause_title": "3.8. Application of Payments",
+      "source_sections": [
+        "3.8",
+        "3.9",
+        "3.10"
+      ],
+      "library_question": "Will payments and documented non-rent charges be handled under the stated order and pass-through limits?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-130",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-130-withholding-late-payment-statements-and-credits.clause.json",
+      "clause_name": "RLA-130 — Residential Lease — Withholding, Late Payment, Statements, and Credits",
+      "clause_type": "Rent, Fees and Payment",
+      "clause_title": "3.11. No Withholding or Offset Except as Allowed by Law",
+      "source_sections": [
+        "3.11",
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "library_question": "Do the standard non-waiver, statement, hardship, concession, and credit provisions apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-140",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-140-partial-month-proration.clause.json",
+      "clause_name": "RLA-140 — Residential Lease — Partial-Month Proration",
+      "clause_type": "Rent, Fees and Payment",
+      "clause_title": "3.15. Partial-Month Proration",
+      "source_sections": [
+        "3.15"
+      ],
+      "library_question": "Does the calendar-day proration formula apply, with no signed lawful alternate formula controlling?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-150",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-150-deposit-amount-and-kansas-caps.clause.json",
+      "clause_name": "RLA-150 — Residential Lease — Deposit Amount and Kansas Caps",
+      "clause_type": "Deposits and Prepaid Amounts",
+      "clause_title": "4.1. Security Deposit Amount",
+      "source_sections": [
+        "4.1",
+        "4.2"
+      ],
+      "library_question": "Will the governed deposit amount satisfy the furnished-unit and ordinary-pet limits after ownership and cap validation?",
+      "production_gate_ids": [
+        "pet_terms"
+      ],
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-160",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-160-deposit-application-return-and-multiple-tenants.clause.json",
+      "clause_name": "RLA-160 — Residential Lease — Deposit Application, Return, and Multiple Tenants",
+      "clause_type": "Deposits and Prepaid Amounts",
+      "clause_title": "4.3. Application of Security Deposit",
+      "source_sections": [
+        "4.3",
+        "4.4",
+        "4.5"
+      ],
+      "library_question": "Do the standard lawful-deduction, accounting, return, and multiple-tenant refund rules apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-170",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-170-deposit-use-forfeiture-and-non-refundable-fees.clause.json",
+      "clause_name": "RLA-170 — Residential Lease — Deposit Use, Forfeiture, and Non-Refundable Fees",
+      "clause_type": "Deposits and Prepaid Amounts",
+      "clause_title": "4.6. No Security Deposit as Rent",
+      "source_sections": [
+        "4.6",
+        "4.7",
+        "4.8"
+      ],
+      "library_question": "Is the deposit treated as not rent and not automatically forfeited, with any non-refundable fee separately lawful and labeled?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-180",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-180-transfer-of-deposit.clause.json",
+      "clause_name": "RLA-180 — Residential Lease — Transfer of Deposit",
+      "clause_type": "Deposits and Prepaid Amounts",
+      "clause_title": "4.9. Transfer of Deposit Upon Sale or Assignment",
+      "source_sections": [
+        "4.9"
+      ],
+      "library_question": "Will any sale or management transfer follow the standard Kansas deposit-transfer and notice rules?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-190",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-190-utility-account-duties.clause.json",
+      "clause_name": "RLA-190 — Residential Lease — Utility Account Duties",
+      "clause_type": "Utilities and Services",
+      "clause_title": "5.2. Failure to Maintain Utilities",
+      "source_sections": [
+        "5.2",
+        "5.3"
+      ],
+      "library_question": "Are all tenant-assigned utility accounts expressly identified, with the standard cooperation duties applying?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-200",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-200-trash-recycling-and-bulk-items.clause.json",
+      "clause_name": "RLA-200 — Residential Lease — Trash, Recycling, and Bulk Items",
+      "clause_type": "Utilities and Services",
+      "clause_title": "5.4. Trash, Recycling, and Bulk Items",
+      "source_sections": [
+        "5.4"
+      ],
+      "library_question": "Does the property use the standard trash, recycling, container, and bulk-item rules?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-210",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-210-plumbing-freeze-and-outdoor-water.clause.json",
+      "clause_name": "RLA-210 — Residential Lease — Plumbing, Freeze, and Outdoor Water",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "5.5. Plumbing Rules",
+      "source_sections": [
+        "5.5",
+        "5.6",
+        "5.7"
+      ],
+      "library_question": "Do the standard plumbing-use, freeze-protection, and outdoor-spigot duties apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-220",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-220-utility-interruptions.clause.json",
+      "clause_name": "RLA-220 — Residential Lease — Utility Interruptions",
+      "clause_type": "Utilities and Services",
+      "clause_title": "5.8. Utility Interruptions",
+      "source_sections": [
+        "5.8"
+      ],
+      "library_question": "Does the standard utility-interruption allocation apply without limiting a non-waivable landlord duty?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-230",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-230-maintenance-responsibilities-and-requests.clause.json",
+      "clause_name": "RLA-230 — Residential Lease — Maintenance Responsibilities and Requests",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "6.1. Landlord Maintenance Responsibilities",
+      "source_sections": [
+        "6.1",
+        "6.2",
+        "6.3",
+        "6.4"
+      ],
+      "library_question": "Do the standard landlord and tenant maintenance duties, request channels, emergency reporting, and repair-access rules apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-240",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-240-smoke-and-carbon-monoxide-detectors.clause.json",
+      "clause_name": "RLA-240 — Residential Lease — Smoke and Carbon Monoxide Detectors",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "6.5. Smoke and Carbon Monoxide Detectors",
+      "source_sections": [
+        "6.5"
+      ],
+      "library_question": "Do the standard installation, documentation, testing, reporting, and anti-tampering duties apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-250",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-250-mold-and-pest-control.clause.json",
+      "clause_name": "RLA-250 — Residential Lease — Mold and Pest Control",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "6.6. Mold Prevention and Reporting",
+      "source_sections": [
+        "6.6",
+        "6.7"
+      ],
+      "library_question": "Do the standard moisture-prevention, mold-reporting, pest-control, and causation rules apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-260",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-260-environmental-materials-and-lead-renovation.clause.json",
+      "clause_name": "RLA-260 — Residential Lease — Environmental Materials and Lead Renovation",
+      "clause_type": "Compliance and Disclosures",
+      "clause_title": "6.8. Asbestos and Building Materials",
+      "source_sections": [
+        "6.8",
+        "6.9"
+      ],
+      "library_question": "Do the property-specific asbestos and lead-renovation cautions apply pending verified construction-year and lead-workflow facts?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-270",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-270-temporary-relocation-for-repairs.clause.json",
+      "clause_name": "RLA-270 — Residential Lease — Temporary Relocation for Repairs",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "6.10. Temporary Relocation for Repairs",
+      "source_sections": [
+        "6.10"
+      ],
+      "library_question": "May repair or remediation work require the standard temporary-relocation process without waiving applicable law?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-280",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-280-appliances-and-furnishings.clause.json",
+      "clause_name": "RLA-280 — Residential Lease — Appliances and Furnishings",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "7.1. Provided Appliances",
+      "source_sections": [
+        "7.1",
+        "7.2",
+        "7.3"
+      ],
+      "library_question": "Do the listed landlord-provided appliances and the standard care, repair, and amenity limitations apply?",
+      "production_gate_ids": [
+        "appliance_inventory"
+      ],
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-290",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-290-move-in-and-move-out-condition.clause.json",
+      "clause_name": "RLA-290 — Residential Lease — Move-In and Move-Out Condition",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "7.4. Move-In Inventory",
+      "source_sections": [
+        "7.4",
+        "7.5"
+      ],
+      "library_question": "Will the parties complete the statutory move-in inventory and use any move-out inspection only as a preliminary record?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-300",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-300-alterations-installations-and-exterior-appearance.clause.json",
+      "clause_name": "RLA-300 — Residential Lease — Alterations, Installations, and Exterior Appearance",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "7.6. Alterations and Installations",
+      "source_sections": [
+        "7.6",
+        "7.7",
+        "7.8"
+      ],
+      "library_question": "Do the standard consent, legal-exception, and exterior-appearance rules apply to alterations and installations?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-310",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-310-keys-locks-and-lockouts.clause.json",
+      "clause_name": "RLA-310 — Residential Lease — Keys, Locks, and Lockouts",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "7.9. Keys, Locks, and Lockouts",
+      "source_sections": [
+        "7.9"
+      ],
+      "library_question": "Do the standard key, lock, access-device, return, and lockout-cost provisions apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-320",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-320-improvements.clause.json",
+      "clause_name": "RLA-320 — Residential Lease — Improvements",
+      "clause_type": "Maintenance, Repairs and Condition",
+      "clause_title": "7.10. Improvements",
+      "source_sections": [
+        "7.10"
+      ],
+      "library_question": "Will approved improvements remain with the property, with any required restoration obligation documented?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-330",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-330-landlord-access-and-showings.clause.json",
+      "clause_name": "RLA-330 — Residential Lease — Landlord Access and Showings",
+      "clause_type": "Access and Inspection",
+      "clause_title": "8.1. Landlord Access",
+      "source_sections": [
+        "8.1",
+        "8.2"
+      ],
+      "library_question": "Do the standard Kansas notice, emergency-entry, inspection, repair, and showing rules apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-340",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-340-absence-residential-use-and-guests.clause.json",
+      "clause_name": "RLA-340 — Residential Lease — Absence, Residential Use, and Guests",
+      "clause_type": "Use, Occupancy and Conduct",
+      "clause_title": "8.3. Extended Absence",
+      "source_sections": [
+        "8.3",
+        "8.4",
+        "8.5"
+      ],
+      "library_question": "Do the standard extended-absence notice, residential-use, and guest-limit provisions fit the tenancy facts?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-350",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-350-conduct-noise-smoking-and-controlled-substances.clause.json",
+      "clause_name": "RLA-350 — Residential Lease — Conduct, Noise, Smoking, and Controlled Substances",
+      "clause_type": "Use, Occupancy and Conduct",
+      "clause_title": "8.6. Legal Compliance and Conduct",
+      "source_sections": [
+        "8.6",
+        "8.7",
+        "8.8",
+        "8.9"
+      ],
+      "library_question": "Do the standard lawful-conduct, quiet-hours, smoking, vaping, and controlled-substance restrictions apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-360",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-360-fire-hazardous-materials-and-security.clause.json",
+      "clause_name": "RLA-360 — Residential Lease — Fire, Hazardous Materials, and Security",
+      "clause_type": "Use, Occupancy and Conduct",
+      "clause_title": "8.10. Grills and Open-Flame Devices",
+      "source_sections": [
+        "8.10",
+        "8.11",
+        "8.12"
+      ],
+      "library_question": "Does the property use the standard grill, open-flame, hazardous-material, fire-safety, and crime-reporting rules?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-370",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-370-pet-approval-and-charges.clause.json",
+      "clause_name": "RLA-370 — Residential Lease — Pet Approval and Charges",
+      "clause_type": "Animals and Accommodations",
+      "clause_title": "9.1. No Animals Without Approval",
+      "source_sections": [
+        "9.1",
+        "9.2"
+      ],
+      "library_question": "Is every ordinary pet separately approved and charged only through the governed Ordinary Pet Addendum?",
+      "production_gate_ids": [
+        "pet_terms"
+      ],
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-380",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-380-assistance-animals.clause.json",
+      "clause_name": "RLA-380 — Residential Lease — Assistance Animals",
+      "clause_type": "Animals and Accommodations",
+      "clause_title": "9.3. Assistance Animals",
+      "source_sections": [
+        "9.3"
+      ],
+      "library_question": "Does an assistance-animal request require the individualized accommodation process rather than ordinary-pet terms?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-390",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-390-animal-damage-unauthorized-animals-and-compliance.clause.json",
+      "clause_name": "RLA-390 — Residential Lease — Animal Damage, Unauthorized Animals, and Compliance",
+      "clause_type": "Animals and Accommodations",
+      "clause_title": "9.4. Pet Damage and Conduct",
+      "source_sections": [
+        "9.4",
+        "9.5",
+        "9.6",
+        "9.7",
+        "9.8"
+      ],
+      "library_question": "Do the standard animal-damage, unauthorized-animal, licensing, revocation, and wildlife rules apply?",
+      "production_gate_ids": [
+        "pet_terms",
+        "municipality_jurisdiction_applicability"
+      ],
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-400",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-400-common-areas-and-laundry.clause.json",
+      "clause_name": "RLA-400 — Residential Lease — Common Areas and Laundry",
+      "clause_type": "Use, Occupancy and Conduct",
+      "clause_title": "10.1. Common Areas",
+      "source_sections": [
+        "10.1",
+        "10.2"
+      ],
+      "library_question": "Does the property provide the referenced common areas or laundry, with the standard use and care rules applying?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-410",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-410-ancillary-storage-and-stored-property.clause.json",
+      "clause_name": "RLA-410 — Residential Lease — Ancillary Storage and Stored Property",
+      "clause_type": "Ancillary Storage",
+      "clause_title": "10.3. Storage Units",
+      "source_sections": [
+        "10.3",
+        "10.4"
+      ],
+      "library_question": "Is every storage area separately approved under the governed storage addendum, with stored property remaining subject to Kansas disposition law?",
+      "production_gate_ids": [
+        "storage_terms"
+      ],
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-420",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-420-building-security-exterior-areas-snow-and-ice.clause.json",
+      "clause_name": "RLA-420 — Residential Lease — Building Security, Exterior Areas, Snow and Ice",
+      "clause_type": "Use, Occupancy and Conduct",
+      "clause_title": "10.5. Building Security",
+      "source_sections": [
+        "10.5",
+        "10.6",
+        "10.7"
+      ],
+      "library_question": "Do the standard building-security, exterior-area, and verified exclusive-use snow-and-ice duties apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-430",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-430-parking-and-vehicles.clause.json",
+      "clause_name": "RLA-430 — Residential Lease — Parking and Vehicles",
+      "clause_type": "Use, Occupancy and Conduct",
+      "clause_title": "10.8. Parking",
+      "source_sections": [
+        "10.8",
+        "10.9",
+        "10.10",
+        "10.11"
+      ],
+      "library_question": "Do the source parking allowance and standard towing, vehicle-repair, and vehicle-risk provisions apply?",
+      "production_gate_ids": [
+        "parking_terms",
+        "municipality_jurisdiction_applicability"
+      ],
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-440",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-440-hoa-compliance-and-amenities.clause.json",
+      "clause_name": "RLA-440 — Residential Lease — HOA Compliance and Amenities",
+      "clause_type": "Compliance and Disclosures",
+      "clause_title": "10.12. HOA Compliance",
+      "source_sections": [
+        "10.12",
+        "10.13"
+      ],
+      "library_question": "Does an HOA apply, have its current rules been delivered, and are the standard pass-through and amenity limitations accurate?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-450",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-450-packages-and-mail.clause.json",
+      "clause_name": "RLA-450 — Residential Lease — Packages and Mail",
+      "clause_type": "Personal Property and Abandonment",
+      "clause_title": "10.14. Packages and Mail",
+      "source_sections": [
+        "10.14"
+      ],
+      "library_question": "Does the standard mail-forwarding, delivery-instruction, package-retrieval, and no-custody language apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-460",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-460-move-out-and-obligation-to-vacate.clause.json",
+      "clause_name": "RLA-460 — Residential Lease — Move-Out and Obligation to Vacate",
+      "clause_type": "Default, Remedies and Termination",
+      "clause_title": "11.1. Move-Out Condition",
+      "source_sections": [
+        "11.1",
+        "11.2"
+      ],
+      "library_question": "Do the standard surrender-condition and obligation-to-vacate rules apply at tenancy end?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-470",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-470-default-events-and-notice-or-cure.clause.json",
+      "clause_name": "RLA-470 — Residential Lease — Default Events and Notice or Cure",
+      "clause_type": "Default, Remedies and Termination",
+      "clause_title": "11.3. Default Events",
+      "source_sections": [
+        "11.3",
+        "11.4",
+        "11.5",
+        "11.6"
+      ],
+      "library_question": "Do the standard material-default, nonpayment, notice, cure, and urgent-lawful-action provisions apply without acceleration or self-help?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-480",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-480-abandonment-and-property-disposition.clause.json",
+      "clause_name": "RLA-480 — Residential Lease — Abandonment and Property Disposition",
+      "clause_type": "Personal Property and Abandonment",
+      "clause_title": "11.7. Abandonment",
+      "source_sections": [
+        "11.7"
+      ],
+      "library_question": "Are the statutory abandonment facts and the full Kansas storage, publication, mailing, redemption, and disposition process satisfied?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-490",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-490-deposit-deductions-and-other-charges.clause.json",
+      "clause_name": "RLA-490 — Residential Lease — Deposit Deductions and Other Charges",
+      "clause_type": "Deposits and Prepaid Amounts",
+      "clause_title": "11.8. Security Deposit Deductions and Other Charges",
+      "source_sections": [
+        "11.8"
+      ],
+      "library_question": "Are move-out deductions and any separate charge lawful, documented, and not duplicative?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-500",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-500-remedies-court-costs-and-no-self-help.clause.json",
+      "clause_name": "RLA-500 — Residential Lease — Remedies, Court Costs, and No Self-Help",
+      "clause_type": "Default, Remedies and Termination",
+      "clause_title": "11.9. Remedies and No Double Recovery",
+      "source_sections": [
+        "11.9",
+        "11.10",
+        "11.11"
+      ],
+      "library_question": "Will only lawful, nonduplicative remedies and court-authorized costs be pursued without self-help eviction?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-510",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-510-acceptance-waiver-collections-and-survival.clause.json",
+      "clause_name": "RLA-510 — Residential Lease — Acceptance, Waiver, Collections, and Survival",
+      "clause_type": "Default, Remedies and Termination",
+      "clause_title": "11.12. Acceptance, Reservation, and Waiver",
+      "source_sections": [
+        "11.12",
+        "11.13",
+        "11.14"
+      ],
+      "library_question": "Do the standard acceptance, reservation, waiver, credit-reporting, collection, and survival provisions apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-520",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-520-renter-s-insurance-and-uninsured-losses.clause.json",
+      "clause_name": "RLA-520 — Residential Lease — Renter's Insurance and Uninsured Losses",
+      "clause_type": "Insurance, Risk and Liability",
+      "clause_title": "12.1. Renter's Insurance",
+      "source_sections": [
+        "12.1",
+        "12.2",
+        "12.3",
+        "12.4",
+        "12.5"
+      ],
+      "library_question": "Does renter's insurance remain optional and strongly recommended, with no automatic default for declining it?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-530",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-530-subordination-transfer-and-estoppel.clause.json",
+      "clause_name": "RLA-530 — Residential Lease — Subordination, Transfer, and Estoppel",
+      "clause_type": "General Provisions",
+      "clause_title": "12.6. Subordination, Transfer, and Attornment",
+      "source_sections": [
+        "12.6",
+        "12.7"
+      ],
+      "library_question": "Do the standard lawful subordination, ownership-transfer, attornment, and reasonable estoppel provisions apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-540",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-540-notices-and-electronic-communications.clause.json",
+      "clause_name": "RLA-540 — Residential Lease — Notices and Electronic Communications",
+      "clause_type": "Notices and Communications",
+      "clause_title": "12.8. Notices",
+      "source_sections": [
+        "12.8",
+        "12.9"
+      ],
+      "library_question": "Is the complete statutory notice information approved, with electronic operational communications not replacing mandatory service methods?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-550",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-550-addenda-and-lead-disclosure.clause.json",
+      "clause_name": "RLA-550 — Residential Lease — Addenda and Lead Disclosure",
+      "clause_type": "Compliance and Disclosures",
+      "clause_title": "12.10. Addenda and Lease Packet",
+      "source_sections": [
+        "12.10"
+      ],
+      "library_question": "Have all applicable addenda been delivered, with the separate executed lead disclosure and pamphlet evidence complete where required?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-560",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-560-lease-modifications-and-governing-law.clause.json",
+      "clause_name": "RLA-560 — Residential Lease — Lease Modifications and Governing Law",
+      "clause_type": "General Provisions",
+      "clause_title": "12.11. Lease Modifications",
+      "source_sections": [
+        "12.11",
+        "12.12"
+      ],
+      "library_question": "Will material changes be signed by all required parties, with Kansas law and the proper county venue governing?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-570",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-570-casualty-and-protected-activity.clause.json",
+      "clause_name": "RLA-570 — Residential Lease — Casualty and Protected Activity",
+      "clause_type": "Insurance, Risk and Liability",
+      "clause_title": "12.13. Force Majeure and Casualty",
+      "source_sections": [
+        "12.13",
+        "12.14"
+      ],
+      "library_question": "Does the standard casualty and force-majeure allocation apply without penalizing lawful protected activity?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-580",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-580-data-privacy-and-electronic-signatures.clause.json",
+      "clause_name": "RLA-580 — Residential Lease — Data Privacy and Electronic Signatures",
+      "clause_type": "General Provisions",
+      "clause_title": "12.15. Data Privacy",
+      "source_sections": [
+        "12.15",
+        "12.16"
+      ],
+      "library_question": "Do the standard lawful data-handling and electronic-signature provisions apply without broader consent or disclosure?",
+      "deployment_status": "draft_only_attorney_review_required"
+    },
+    {
+      "code": "RLA-590",
+      "path": "src/zoho-contracts/clauses/residential-lease-agreement/rla-590-severability-entire-agreement-and-interpretation.clause.json",
+      "clause_name": "RLA-590 — Residential Lease — Severability, Entire Agreement, and Interpretation",
+      "clause_type": "General Provisions",
+      "clause_title": "12.17. Severability",
+      "source_sections": [
+        "12.17",
+        "12.18",
+        "12.19"
+      ],
+      "library_question": "Do the standard severability, entire-agreement, defined-scope, and interpretation provisions apply?",
+      "deployment_status": "draft_only_attorney_review_required"
+    }
+  ],
+  "recipient_manifests": {
+    "one_tenant": "src/zoho-sign/recipient-manifests/residential-lease-one-tenant.recipient-manifest.json",
+    "two_tenants": "src/zoho-sign/recipient-manifests/residential-lease-two-tenants.recipient-manifest.json",
+    "three_tenants": "src/zoho-sign/recipient-manifests/residential-lease-three-tenants.recipient-manifest.json"
+  },
+  "ending_text_variants": {
+    "one_tenant": "src/zoho-contracts/contract-types/residential-lease-agreement/ending-text/one-tenant.md",
+    "two_tenants": "src/zoho-contracts/contract-types/residential-lease-agreement/ending-text/two-tenants.md",
+    "three_tenants": "src/zoho-contracts/contract-types/residential-lease-agreement/ending-text/three-tenants.md"
+  },
+  "addendum_b_variants": {
+    "one_tenant": "src/zoho-contracts/contract-types/residential-lease-agreement/addendum-b/one-tenant.md",
+    "two_tenants": "src/zoho-contracts/contract-types/residential-lease-agreement/addendum-b/two-tenants.md",
+    "three_tenants": "src/zoho-contracts/contract-types/residential-lease-agreement/addendum-b/three-tenants.md"
+  },
+  "template_structure": [
+    "cover-page",
+    "dynamic-table-of-contents",
+    "articles-1-through-13-with-governed-clauses-and-native-tables",
+    "signer-count-ending-text",
+    "conditional-addendum-b",
+    "conditional-executed-addendum-a-attachment"
+  ],
+  "approval_workflow": {
+    "existing_workflow": "GH Standard Lease Approval",
+    "safe_owner_review_may_be_preserved": true,
+    "qualified_legal_reviewer_configured": false,
+    "legal_review_remains_external_gate": true
+  },
+  "attachments": {
+    "lead_first_architecture": true,
+    "embedded_blank_addendum_a_prohibited": true,
+    "attachment_manifest": "attachment-requirements.json"
+  },
+  "addendum_b": {
+    "conditional": true,
+    "hoa_applicability_default": "unknown",
+    "preselection_forbidden": true,
+    "gate_id": "hoa_applicability",
+    "required_initials_gate_id": "required_initials_design",
+    "draft_initials_design": "all_actual_tenants_initial_each_delivery_row_pending_attorney_and_live_validation"
+  },
+  "qa": {
+    "plan": "qa-plan.md",
+    "controlling_pdf_pages": 20,
+    "all_pages_must_be_compared": true,
+    "target_page_count": 20,
+    "exact_page_count_may_not_override_legal_language": true,
+    "required_initials": {
+      "source_required": true,
+      "gate_id": "required_initials_design",
+      "selection_required": true,
+      "one_tenant_roles": [
+        "R1"
+      ],
+      "two_tenant_roles": [
+        "R1",
+        "R2"
+      ],
+      "three_tenant_roles": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "approved_tag_type": "I",
+      "landlord_initials_required": false
+    },
+    "jurisdiction_review": {
+      "gate_id": "municipality_jurisdiction_applicability",
+      "source_locality": "Overland Park, Kansas",
+      "source_local_code": "OPMC 12.21.030",
+      "local_references_preserved": true,
+      "use_outside_verified_jurisdiction_blocked": true
+    }
+  },
+  "attorney_review_questions": "attorney-review-questions.md",
+  "production_gates": [
+    {
+      "gate_id": "legal_currentness",
+      "status": "open",
+      "reason": "The approved legal authority baseline remains verified through July 12, 2026 and is not a citator.",
+      "blocks": [
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "attorney_reviewer",
+      "status": "open",
+      "reason": "No qualified Kansas attorney reviewer is configured in the current approval workflow.",
+      "blocks": [
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "tenant_field_api_metadata",
+      "status": "open",
+      "reason": "Exact live Zoho Contracts API names and duplicate checks require authenticated metadata verification.",
+      "blocks": [
+        "insert_unverified_fields",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "monthly_rent_source_ownership",
+      "status": "open",
+      "reason": "Monthly Rent is absent from the canonical Contracts field registry and source ownership is unresolved.",
+      "blocks": [
+        "insert_monthly_rent_field",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "security_deposit_source_ownership",
+      "status": "open",
+      "reason": "Security Deposit is absent from the canonical Contracts field registry pending ownership and accounting controls.",
+      "blocks": [
+        "insert_security_deposit_field",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "lease_commencement_field",
+      "status": "open",
+      "reason": "Lease Begins is legally distinct from Agreement Date and has no approved field.",
+      "blocks": [
+        "insert_lease_commencement_field",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "statutory_notice_address",
+      "status": "open",
+      "reason": "The manager and owner or notice-agent names and complete mailing addresses are not approved.",
+      "blocks": [
+        "complete_notice_table",
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "tenant_two_three_identity_fields",
+      "status": "open",
+      "reason": "Party C and Party D contact fields are not approved Tenant 2 or Tenant 3 legal-name snapshots.",
+      "blocks": [
+        "insert_tenant_two_three_names",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "lead_disclosure",
+      "status": "open",
+      "reason": "Construction-year or exemption evidence, executed Addendum A, and current EPA pamphlet delivery evidence are unresolved.",
+      "blocks": [
+        "mark_lead_complete",
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "hoa_applicability",
+      "status": "open",
+      "reason": "HOA applicability, packet version, delivery status, and Addendum B inclusion are unresolved.",
+      "blocks": [
+        "preselect_hoa_status",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "conditional_utility_values",
+      "status": "open",
+      "reason": "Per-utility responsibility and any separate allocation addendum are not approved.",
+      "blocks": [
+        "select_utility_values",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "signature_fragment_automation",
+      "status": "open",
+      "reason": "A supported conditional Ending Text mechanism has not been verified; the correct signer-count fragment must be selected.",
+      "blocks": [
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "recipient_smoke_test",
+      "status": "open",
+      "reason": "Preview conversion and completed-signature value population have not been smoke-tested for all signer-count variants.",
+      "blocks": [
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "inter_availability",
+      "status": "open",
+      "reason": "Inter availability must be verified in the live Zoho Writer tenant without uploading unauthorized font files.",
+      "blocks": [
+        "finalize_typography",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "dynamic_toc",
+      "status": "open",
+      "reason": "Dynamic Table of Contents support and final page-number refresh require live preview verification.",
+      "blocks": [
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "header_footer_placeholder",
+      "status": "open",
+      "reason": "The organization header must be checked for unresolved literal Document Name output without changing global settings.",
+      "blocks": [
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "draft_visual_qa",
+      "status": "open",
+      "reason": "A complete live Draft preview has not yet been compared against all 20 controlling PDF pages.",
+      "blocks": [
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "intake_form",
+      "status": "open",
+      "reason": "No governed Residential Lease intake form is configured.",
+      "blocks": [
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "formatted_sign_date_smoke_test",
+      "status": "open",
+      "reason": "Formatted Sign Date remains outside the production-safe allowlist pending separate conversion and completed-signature evidence.",
+      "blocks": [
+        "use_formatted_sign_date",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "parking_terms",
+      "status": "open",
+      "reason": "The property-specific parking-space count, assignment details, permit terms, HOA limits, and availability are not approved.",
+      "blocks": [
+        "populate_parking_terms",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "storage_terms",
+      "status": "open",
+      "reason": "Storage applicability, unit identifier, rent, term, and executed Ancillary Storage Addendum status are not approved as one coherent arrangement.",
+      "blocks": [
+        "populate_storage_terms",
+        "include_storage_addendum",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "lease_end_time",
+      "status": "open",
+      "reason": "The source lease-end time is a variable transaction value with no approved governed field or verified lease snapshot value.",
+      "blocks": [
+        "populate_lease_end_time",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "initial_amounts_due",
+      "status": "open",
+      "reason": "The initial prorated period and amount, first full-month period, total due before possession, and next regular rent date are not approved as a reconciled transaction snapshot.",
+      "blocks": [
+        "populate_initial_amounts_due",
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "pet_terms",
+      "status": "open",
+      "reason": "Ordinary-pet approval, executed addendum status, and any pet rent, fee, or refundable deposit are not approved for this tenancy.",
+      "blocks": [
+        "populate_pet_terms",
+        "include_ordinary_pet_addendum",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "appliance_inventory",
+      "status": "open",
+      "reason": "The property-specific landlord-provided appliance and furnishing inventory is not approved.",
+      "blocks": [
+        "populate_appliance_inventory",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "landlord_authorized_representative",
+      "status": "open",
+      "reason": "The GH Real Estate authorized representative's printed name, title, and current authority to sign have not been verified.",
+      "blocks": [
+        "populate_landlord_signer",
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "required_contact_fields",
+      "status": "open",
+      "reason": "The exact approved property-manager, operational, emergency-maintenance, and signer contact fields and live API metadata are not fully verified.",
+      "blocks": [
+        "populate_required_contact_fields",
+        "publish"
+      ]
+    },
+    {
+      "gate_id": "municipality_jurisdiction_applicability",
+      "status": "open",
+      "reason": "The Premises municipality and applicability of the source's Overland Park and OPMC provisions have not been verified for the transaction.",
+      "blocks": [
+        "include_local_law_references",
+        "publish",
+        "send_for_signature"
+      ]
+    },
+    {
+      "gate_id": "required_initials_design",
+      "status": "open",
+      "reason": "The source requires initials locations, but attorney approval and live verification of the all-tenant initials design and correct signer-count fragment selection remain outstanding.",
+      "blocks": [
+        "finalize_initials_fields",
+        "publish",
+        "send_for_signature"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Deposits and Prepaid Amounts",
+  "clause_name": "RLA-160 — Residential Lease — Deposit Application, Return, and Multiple Tenants",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard lawful-deduction, accounting, return, and multiple-tenant refund rules apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "4.3. Application of Security Deposit",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Upon termination of the tenancy, Landlord may apply the Security Deposit to accrued rent, damages beyond ordinary wear and tear, cleaning or restoration beyond ordinary wear and tear, unpaid utilities, unpaid lawful charges, missing keys or access devices, pet-related damage, storage-unit damage, and other legally allowable charges under this Lease and Kansas law."
+        },
+        {
+          "style": "Heading 3",
+          "text": "4.4. Return and Itemization"
+        },
+        {
+          "style": "Normal",
+          "text": "Landlord shall provide a written itemization of every deduction, including accrued Base Rent, and return the remaining Security Deposit within fourteen (14) days after determining the amount of expenses, damages, or other lawful charges, but no later than thirty (30) days after termination of the tenancy and delivery of possession. Landlord will mail the accounting and refund to Tenant's written forwarding address. If no forwarding address is provided, Landlord shall mail them to Tenant's last known address. As a contractual practice, Landlord will provide the accounting within this period without requiring a separate demand from Tenant."
+        },
+        {
+          "style": "Heading 3",
+          "text": "4.5. Multiple Tenants"
+        },
+        {
+          "style": "Normal",
+          "text": "Unless all Tenants provide written instructions signed by all adult Tenants, Landlord may issue any deposit refund and accounting jointly to all Tenants and mail it to the forwarding address provided by any one Tenant or to the last known address."
+        }
+      ]
+    }
+  ]
+}

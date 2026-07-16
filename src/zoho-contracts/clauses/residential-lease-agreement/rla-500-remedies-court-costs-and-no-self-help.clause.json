@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Default, Remedies and Termination",
+  "clause_name": "RLA-500 — Residential Lease — Remedies, Court Costs, and No Self-Help",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Will only lawful, nonduplicative remedies and court-authorized costs be pursued without self-help eviction?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "11.9. Remedies and No Double Recovery",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord may pursue lawful remedies including rent, possession, damages, costs, and other relief allowed by law. Landlord will not recover duplicate rent for the same period. Remedies are cumulative only to the extent allowed by law."
+        },
+        {
+          "style": "Heading 3",
+          "text": "11.10. Court Costs, Filing Fees, and Collection Costs"
+        },
+        {
+          "style": "Normal",
+          "text": "Each party is responsible for that party's attorney fees except when a statute or court order expressly permits an award. Tenant is responsible for filing fees, service fees, sheriff fees, and other court costs only when awarded by a court or otherwise expressly authorized by law. No administrative or collection charge may be used to recover attorney fees prohibited by K.S.A. 58-2547."
+        },
+        {
+          "style": "Heading 3",
+          "text": "11.11. No Self-Help Eviction"
+        },
+        {
+          "style": "Normal",
+          "text": "Landlord will recover possession only through lawful procedures. Nothing in this Lease authorizes a self-help eviction prohibited by law."
+        }
+      ]
+    }
+  ]
+}

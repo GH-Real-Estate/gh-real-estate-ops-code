@@ -1,0 +1,36 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Default, Remedies and Termination",
+  "clause_name": "RLA-070 — Residential Lease — Military, Protected-Person, and Sole-Tenant Rights",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the mandatory military, protected-person, casualty, and sole-tenant-death protections apply without restriction?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "2.11. Military and Protected-Person Rights",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Nothing in this Lease limits any mandatory termination or other right under the Servicemembers Civil Relief Act; K.S.A. 58-25,137 protections for persons affected by domestic violence, sexual assault, human trafficking, or stalking; casualty or condemnation law; fair housing law; or another applicable law. A qualifying protected person who provides the statement and any documentation lawfully requested is not liable for Base Rent for the period after vacating as provided by K.S.A. 58-25,137, but remains responsible for amounts lawfully owed for the period before vacating."
+        },
+        {
+          "style": "Normal",
+          "text": "Landlord may impose only a reasonable protected-person termination fee, not exceeding one (1) month's Base Rent, and only to the extent permitted by K.S.A. 58-25,137(e). That fee replaces, and is not added to, the Section 2.8 buy-out fee. Termination by a protected person does not automatically terminate the Lease obligations of remaining Tenants unless applicable law requires otherwise."
+        },
+        {
+          "style": "Heading 3",
+          "text": "2.12. Death of Sole Tenant"
+        },
+        {
+          "style": "Normal",
+          "text": "If the sole Tenant dies, Landlord will communicate with Tenant's lawful representative, estate, or other person legally authorized to act for Tenant. The estate remains responsible for Rent and lawful charges through the termination or surrender date, subject to applicable law. Personal property left behind will be handled under the abandoned-property provisions of this Lease and Kansas law. An emergency contact does not become a tenant merely by being listed as an emergency contact."
+        }
+      ]
+    }
+  ]
+}

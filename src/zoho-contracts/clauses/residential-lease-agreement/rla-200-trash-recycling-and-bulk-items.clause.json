@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Utilities and Services",
+  "clause_name": "RLA-200 — Residential Lease — Trash, Recycling, and Bulk Items",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the property use the standard trash, recycling, container, and bulk-item rules?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "5.4. Trash, Recycling, and Bulk Items",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant must place trash and recycling only in approved receptacles and must comply with city, HOA, and hauler rules. Trash and recycling containers must be stored in a screened or enclosed location except for scheduled pickup, may not be placed out earlier than allowed by city or HOA rules, and must be removed promptly after collection. Tenant must bag trash, flatten cardboard as required, keep containers accessible to the hauler, and arrange bulk-item pickup only as allowed by the HOA and hauler. Trash, garbage, food waste, furniture, mattresses, construction debris, hazardous waste, and bulk items may not be stored in common areas, patios, balconies, stairways, hallways, yards, or outside the Premises except as allowed for scheduled pickup. Tenant is responsible for charges caused by improper disposal."
+        }
+      ]
+    }
+  ]
+}

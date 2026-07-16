@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Rent, Fees and Payment",
+  "clause_name": "RLA-100 — Residential Lease — Payment Methods and Receipt",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the listed payment methods and provisional electronic-payment timing rules apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "3.3. Approved Payment Methods",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Approved methods are the Online Tenant Portal ACH method, personal check, cashier's check, money order, or another documented method Landlord approves. Cash is not accepted unless Landlord agrees otherwise in writing or applicable law requires acceptance. Landlord may restrict personal checks after a returned payment. If the portal is unavailable, or if Tenant needs another method because of disability, lack of effective electronic access, or another circumstance protected by law, Landlord will provide a reasonable noncash alternative. At least one method will remain available that does not require recurring preauthorized electronic debits."
+        },
+        {
+          "style": "Heading 3",
+          "text": "3.4. Time of Receipt"
+        },
+        {
+          "style": "Normal",
+          "text": "A payment is received when credited to Landlord's designated account or payment system. An approved ACH or portal payment initiated before the applicable deadline is provisionally timely while legitimately processing if it later completes. If it fails for a reason attributable to Tenant, Tenant's bank, or inaccurate information supplied by Tenant, the unpaid amount is treated as unpaid as of the original due date. No late fee or returned-payment fee will be imposed solely because of an error attributable to Landlord or the payment processor when Tenant timely initiated the payment, supplied accurate information, maintained sufficient available funds, and promptly completes payment by an approved alternative after notice."
+        }
+      ]
+    }
+  ]
+}

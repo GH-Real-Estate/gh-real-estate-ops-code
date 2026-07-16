@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Deposits and Prepaid Amounts",
+  "clause_name": "RLA-150 — Residential Lease — Deposit Amount and Kansas Caps",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Will the governed deposit amount satisfy the furnished-unit and ordinary-pet limits after ownership and cap validation?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "4.1. Security Deposit Amount",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant shall pay a Security Deposit of $__________________. The Security Deposit is not advance rent and may not be used by Tenant as last month's rent or to offset Rent or other amounts due."
+        },
+        {
+          "style": "Heading 3",
+          "text": "4.2. Kansas Deposit Caps"
+        },
+        {
+          "style": "Normal",
+          "text": "For an unfurnished dwelling unit, the Security Deposit shall not exceed one month's periodic rent. If the dwelling unit is furnished, the Security Deposit shall not exceed one and one-half months' periodic rent. If Landlord permits Tenant to keep a pet, Landlord may require an additional refundable pet security deposit up to one-half month's rent, subject to Kansas law. Assistance animals are addressed separately in the Pets and Assistance Animals section."
+        }
+      ]
+    }
+  ]
+}

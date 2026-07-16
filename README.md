@@ -30,7 +30,7 @@ That means:
 - Zoho Payments webhooks live under `src/zoho-payments/`.
 - Zoho CRM field maps and functions live under `src/zoho-crm/`.
 - Zoho Creator exports/docs live under `src/zoho-creator/`.
-- Zoho Contracts field governance, clause authoring standards, validation, and merge maps live under `src/zoho-contracts/`.
+- Zoho Contracts field governance, clause authoring standards, Draft implementation packages, validation, and merge maps live under `src/zoho-contracts/`.
 - Zoho Sign field/tag governance lives separately under `src/zoho-sign/`.
 
 Within each source system, each production automation gets its own folder unless it is truly the same runtime responsibility. Late fees, monthly delinquent-rent interest, and returned-payment fees are separate responsibilities and are stored separately.
@@ -51,7 +51,7 @@ This repo is for technical and governed authority assets:
 - Zoho Catalyst / webhook code.
 - Sanitized Zoho Creator `.ds` exports.
 - Zoho field maps.
-- Zoho Contracts field maps, clause definitions, and authoring standards.
+- Zoho Contracts field maps, clause definitions, authoring standards, and sanitized Draft implementation packages.
 - Zoho Sign field/tag references and integration guardrails.
 - Sanitized sample payloads.
 - Install checklists.
@@ -154,6 +154,9 @@ src/
     README.md
     clauses/
       README.md
+      residential-lease-agreement/
+    contract-types/
+      residential-lease-agreement/
     field-maps/
       contract-field-registry.json
       contract-field-registry.md
@@ -163,10 +166,15 @@ src/
       apply-contract-authoring-standard.md
     schemas/
       clause-definition.schema.json
+      contract-type-implementation.schema.json
       contract-field-registry.schema.json
+      document-field-map.schema.json
+      source-manifest.schema.json
+      source-to-clause-crosswalk.schema.json
     scripts/
       validate_contract_authoring_standard.py
       validate_contract_field_registry.py
+      validate_residential_lease_implementation.py
     standards/
       contract-authoring-standard.json
       contract-authoring-standard.md
@@ -175,12 +183,19 @@ src/
     tests/
       test_validate_contract_authoring_standard.py
       test_validate_contract_field_registry.py
+      test_validate_recipient_policy.py
+      test_validate_residential_lease_implementation.py
 
   zoho-sign/
     README.md
     field-tags/
       zoho-contracts-text-tag-registry.json
       zoho-contracts-text-tag-registry.md
+    recipient-manifests/
+      ghre-canonical-recipient-policy.json
+      residential-lease-one-tenant.recipient-manifest.json
+      residential-lease-two-tenants.recipient-manifest.json
+      residential-lease-three-tenants.recipient-manifest.json
 
 legal/
   README.md
@@ -267,7 +282,9 @@ tools/
 | Zoho Books Automation Settings | `src/zoho-books/field-maps/books-automation-settings.md` |
 | Zoho Contracts Field Registry | `src/zoho-contracts/field-maps/contract-field-registry.md` |
 | Zoho Contracts Authoring Standard | `src/zoho-contracts/standards/contract-authoring-standard.md` |
+| Residential Lease Draft Implementation | `src/zoho-contracts/contract-types/residential-lease-agreement/README.md` |
 | Zoho Sign Text Tag Registry | `src/zoho-sign/field-tags/zoho-contracts-text-tag-registry.md` |
+| Zoho Sign Recipient Policy | `src/zoho-sign/recipient-manifests/README.md` |
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |
 | Deployment Log | `docs/runbooks/deployment-log.md` |
 | Codex/ChatGPT Instructions | `AGENTS.md` |

@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Rent, Fees and Payment",
+  "clause_name": "RLA-090 — Residential Lease — Base Rent",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the standard monthly Base Rent due date and receipt deadline apply once the governed rent field is approved?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "3.1. Base Rent",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Base Rent is $__________________ per month, due in advance on or before the 1st day of each month. Rent must be received by Landlord no later than 5:00 p.m. Central Time on the due date."
+        }
+      ]
+    }
+  ]
+}

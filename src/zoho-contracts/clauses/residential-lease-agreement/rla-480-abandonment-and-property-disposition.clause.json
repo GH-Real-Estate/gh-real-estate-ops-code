@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Personal Property and Abandonment",
+  "clause_name": "RLA-480 — Residential Lease — Abandonment and Property Disposition",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Are the statutory abandonment facts and the full Kansas storage, publication, mailing, redemption, and disposition process satisfied?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "11.7. Abandonment",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Landlord may presume abandonment only when the conditions in K.S.A. 58-2565 are satisfied, including that Tenant is at least ten (10) days in default for nonpayment of Base Rent and has removed a substantial portion of Tenant's belongings, unless Tenant has notified Landlord to the contrary. After abandonment, Landlord shall make reasonable efforts to rent the Premises at a fair rental and account for mitigation as required by law."
+        },
+        {
+          "style": "Normal",
+          "text": "Personal property remaining after abandonment, surrender, or lawful recovery of possession may be taken and stored at Tenant's expense, but may not be sold or otherwise disposed of until thirty (30) days after Landlord takes possession and completion of the publication and mailing procedure required by K.S.A. 58-2565(d), including publication at least fifteen (15) days before disposition and mailing a copy to Tenant within seven (7) days after publication. Tenant retains the statutory right to redeem before disposition. Nothing in this Lease authorizes earlier disposal."
+        }
+      ]
+    }
+  ]
+}

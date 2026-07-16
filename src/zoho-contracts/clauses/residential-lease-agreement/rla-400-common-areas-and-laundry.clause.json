@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Use, Occupancy and Conduct",
+  "clause_name": "RLA-400 — Residential Lease — Common Areas and Laundry",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Does the property provide the referenced common areas or laundry, with the standard use and care rules applying?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "10.1. Common Areas",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant must keep hallways, stairs, laundry areas, sidewalks, entries, yards, parking areas, and other common areas free of trash, storage, bicycles, furniture, packages, obstructions, smoking, and nuisance. An approved ordinary pet or protected assistance animal may use common areas under reasonable control and sanitation rules. Landlord may remove unauthorized property only after notice when practical and in a manner permitted by law, and may recover reasonable, actual, documented costs caused by Tenant."
+        },
+        {
+          "style": "Heading 3",
+          "text": "10.2. Laundry"
+        },
+        {
+          "style": "Normal",
+          "text": "Laundry facilities, if provided, are for ordinary residential use only. Tenant must clean lint traps, promptly remove laundry, use machines properly, and report malfunctions. Landlord is not responsible for lost, damaged, or stolen laundry unless required by law."
+        }
+      ]
+    }
+  ]
+}

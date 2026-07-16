@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/clause-definition.schema.json",
+  "schema_version": "1.0.0",
+  "clause_type": "Use, Occupancy and Conduct",
+  "clause_name": "RLA-420 — Residential Lease — Building Security, Exterior Areas, Snow and Ice",
+  "zoho_api_name": null,
+  "zoho_api_name_status": "tenant_verification_required",
+  "library_question": "Do the standard building-security, exterior-area, and verified exclusive-use snow-and-ice duties apply?",
+  "contract_type_question_overrides": [],
+  "language_variants": [
+    {
+      "variant_id": "standard",
+      "variant_kind": "standard",
+      "clause_title": "10.5. Building Security",
+      "clause_title_style": "Heading 2",
+      "blocks": [
+        {
+          "style": "Normal",
+          "text": "Tenant must not prop open exterior doors, share access codes with unauthorized persons, duplicate keys without permission, tamper with locks, or allow unauthorized access. Lost keys, fobs, codes, or access devices must be reported promptly."
+        },
+        {
+          "style": "Heading 3",
+          "text": "10.6. Exterior Cleanliness, Patios, Balconies, and Storage"
+        },
+        {
+          "style": "Normal",
+          "text": "Patios, balconies, landings, entries, and exterior areas must be neat and used only for ordinary outdoor furniture and approved plants unless HOA rules or Landlord state otherwise. No indoor furniture, appliances, trash, rugs over railings, laundry, storage boxes, bikes, grills, fuel, tires, tools, construction materials, signs, or unsightly items may be kept outside without written approval."
+        },
+        {
+          "style": "Heading 3",
+          "text": "10.7. Snow and Ice"
+        },
+        {
+          "style": "Normal",
+          "text": "Landlord retains responsibility for reasonable care of common areas as required by K.S.A. 58-2553. Tenant is responsible only for an exclusive-use area expressly identified here: ______________________________, and only to the extent that assignment is lawful. Tenant must report hazardous conditions and must not create ice hazards by discharging water, draining hoses, or leaving items in walkways. No handbook or later rule shifts a nondelegable common-area duty."
+        }
+      ]
+    }
+  ]
+}
