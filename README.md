@@ -30,7 +30,7 @@ That means:
 - Zoho Payments webhooks live under `src/zoho-payments/`.
 - Zoho CRM field maps and functions live under `src/zoho-crm/`.
 - Zoho Creator exports/docs live under `src/zoho-creator/`.
-- Zoho Contracts merge maps live under `src/zoho-contracts/`.
+- Zoho Contracts field governance, validation, and merge maps live under `src/zoho-contracts/`.
 
 Within each source system, each production automation gets its own folder unless it is truly the same runtime responsibility. Late fees, monthly delinquent-rent interest, and returned-payment fees are separate responsibilities and are stored separately.
 
@@ -151,7 +151,16 @@ src/
   zoho-contracts/
     README.md
     field-maps/
+      contract-field-registry.json
+      contract-field-registry.md
       lease-merge-fields.md
+      animal-addendum-merge-fields.md
+    schemas/
+      contract-field-registry.schema.json
+    scripts/
+      validate_contract_field_registry.py
+    tests/
+      test_validate_contract_field_registry.py
 
 legal/
   README.md
@@ -236,6 +245,7 @@ tools/
 | Monthly Interest Billing | `src/zoho-books/automations/monthly-interest-billing/Monthly_Interest_Billing.deluge` |
 | Returned Payment Webhook | `src/zoho-payments/webhooks/returned-payment-fee/src/index.js` |
 | Zoho Books Automation Settings | `src/zoho-books/field-maps/books-automation-settings.md` |
+| Zoho Contracts Field Registry | `src/zoho-contracts/field-maps/contract-field-registry.md` |
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |
 | Deployment Log | `docs/runbooks/deployment-log.md` |
 | Codex/ChatGPT Instructions | `AGENTS.md` |
