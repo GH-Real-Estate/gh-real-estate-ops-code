@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "standard_id": "GH-DOC-001",
-  "version": "1.0",
-  "effective_date": "2026-07-14",
+  "version": "1.1",
+  "effective_date": "2026-07-15",
   "scope": {
     "all_user_facing_artifacts": true,
     "legal_documents": true,
@@ -138,5 +138,134 @@
   "authorities": {
     "apple_fonts": "https://developer.apple.com/fonts/",
     "inter_license": "https://github.com/rsms/inter/blob/master/LICENSE.txt"
+  },
+  "platform_profiles": {
+    "zoho_contracts": {
+      "governed_by": "src/zoho-contracts/standards/contract-authoring-standard.json",
+      "scope": "Contract and clause content authored for GH Real Estate in Zoho Contracts",
+      "typography": {
+        "scope": "Zoho Contracts templates and clause content only",
+        "body_text": {
+          "font_family": "Inter",
+          "font_size_pt": 11,
+          "font_weight": "Regular",
+          "color_hex": "#000000",
+          "alignment": "Left"
+        },
+        "main_title": {
+          "font_family": "Inter",
+          "font_size_pt": 18,
+          "font_weight": "Bold",
+          "color_hex": "#000000",
+          "alignment": "Center",
+          "zoho_writer_style": "Title"
+        },
+        "article_heading": {
+          "font_family": "Inter",
+          "font_size_pt": 12,
+          "font_weight": "Bold",
+          "color_hex": "#1F4E79",
+          "alignment": "Left",
+          "zoho_writer_style": "Heading 1"
+        },
+        "subheadings": {
+          "styles": [
+            "Heading 2",
+            "Heading 3",
+            "Heading 4",
+            "Heading 5"
+          ],
+          "font_family": "Inter",
+          "font_size_pt": 11,
+          "font_weight": "Bold",
+          "color_hex": "#000000",
+          "alignment": "Left"
+        },
+        "tables_and_forms": {
+          "font_family": "Inter",
+          "font_size_pt": 10,
+          "font_weight": "Regular",
+          "color_hex": "#000000",
+          "alignment": "Left"
+        },
+        "header_and_footer": {
+          "font_family": "Inter",
+          "font_size_pt": 8.5,
+          "allowed_font_size_pt": {
+            "minimum": 8,
+            "maximum": 8.5
+          },
+          "font_weight": "Regular",
+          "color_hex": "#666666"
+        },
+        "line_spacing": 1.15,
+        "paragraph_spacing_after_pt": 6,
+        "allowed_paragraph_spacing_after_pt": {
+          "minimum": 4,
+          "maximum": 6
+        },
+        "page": {
+          "size": "US Letter",
+          "width_in": 8.5,
+          "height_in": 11,
+          "margins_in": {
+            "top": 0.75,
+            "right": 0.75,
+            "bottom": 0.75,
+            "left": 0.75
+          }
+        },
+        "paragraph_alignment": {
+          "allowed": [
+            "Left"
+          ],
+          "fully_justified_allowed": false
+        }
+      },
+      "semantic_style_map": [
+        {
+          "semantic_role": "main_document_title",
+          "zoho_writer_style": "Title",
+          "clause_language_block_allowed": false,
+          "notes": "Apply only in the contract template outside clause-library records."
+        },
+        {
+          "semantic_role": "article_heading",
+          "zoho_writer_style": "Heading 1",
+          "clause_language_block_allowed": false,
+          "notes": "Top-level article or major section heading managed in the contract template, outside clause language."
+        },
+        {
+          "semantic_role": "clause_title",
+          "zoho_writer_style": "Heading 2",
+          "clause_language_block_allowed": false,
+          "notes": "Stored as clause_title metadata for each standard or alternate language variant and rendered separately from substantive language blocks."
+        },
+        {
+          "semantic_role": "subsection_heading",
+          "zoho_writer_style": "Heading 3",
+          "clause_language_block_allowed": true,
+          "notes": "First-level subsection within a clause."
+        },
+        {
+          "semantic_role": "nested_heading_level_1",
+          "zoho_writer_style": "Heading 4",
+          "clause_language_block_allowed": true,
+          "notes": "Nested heading below a subsection."
+        },
+        {
+          "semantic_role": "nested_heading_level_2",
+          "zoho_writer_style": "Heading 5",
+          "clause_language_block_allowed": true,
+          "notes": "Deepest permitted heading; do not create Heading 6."
+        },
+        {
+          "semantic_role": "body_text",
+          "zoho_writer_style": "Normal",
+          "clause_language_block_allowed": true,
+          "notes": "Paragraphs, list text, and other substantive clause language."
+        }
+      ]
+    }
   }
 }
