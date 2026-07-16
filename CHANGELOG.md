@@ -2,6 +2,15 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-15
+
+- Added a governed Zoho Contracts field registry covering all 46 submitted system fields and 19 submitted custom fields.
+- Recorded Zoho Contracts native/expected types, portable cross-application types, proposed CRM field types, sensitivity, constraints, aliases, and official-source evidence.
+- Added a checked-in JSON Schema, dependency-free validator, generated human-readable catalog, and regression tests enforced by the repository safety workflow.
+- Added fail-closed metadata gates for tenant-specific or ambiguous fields; unverified Contracts and CRM API names remain unset and cannot be used for synchronization.
+- Designated `Storage Term Starts` as a deprecated alias of `Storage Term Begins` and flagged `Lease Agreement Effective Date` for review against the system `Agreement Date`.
+- This is a sanitized design/governance update only; it does not create, alter, or deploy fields in the live Zoho tenant.
+
 ## 2026-07-14
 
 - Hardened the public boundary with CodeQL, dependency review, workflow-policy enforcement, fail-closed binary/PDF controls, full CODEOWNERS coverage, security/contribution templates, and immutable runtime pins.
