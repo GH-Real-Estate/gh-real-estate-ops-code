@@ -95,12 +95,12 @@ def validate_api_domain(raw: str) -> str:
     return value
 
 
-def request_json(url: str, access_token: str) -> dict[str, Any]:
+def request_json(url: str, oauth_value: str) -> dict[str, Any]:
     request = Request(
         url,
         method="GET",
         headers={
-            "Authorization": f"Zoho-oauthtoken {access_token}",
+            "Authorization": f"Zoho-oauthtoken {oauth_value}",
             "Accept": "application/json",
             "User-Agent": "GH-Real-Estate-Zoho-CRM-Metadata-Exporter/1.0",
         },
