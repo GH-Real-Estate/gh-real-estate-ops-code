@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.1.0",
+  "policy_id": "ghre-canonical-recipient-policy",
+  "title": "GH Real Estate Canonical Zoho Sign Recipient and Final-Signer Policy",
+  "effective_date": "2026-07-16",
+  "governance_status": "active",
+  "scope": "All GH Real Estate contract documents sent from Zoho Contracts to Zoho Sign",
+  "source_of_truth": true,
+  "official_sources": [
+    {
+      "title": "Zoho Sign — Add document fields using text tags",
+      "url": "https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/automatic-field-addition-in-zoho-sign"
+    },
+    {
+      "title": "Zoho Sign — Send documents for signatures",
+      "url": "https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/send-for-signatures"
+    }
+  ],
+  "recipient_index_policy": {
+    "canonical_pattern": "R1 through R25",
+    "rule": "R<n> identifies the nth actual recipient added to the Zoho Sign request. Recipient numbers are contiguous field-ownership indexes, not permanent business-role IDs and not signing-order positions.",
+    "contiguous_required": true,
+    "gaps_allowed": false,
+    "placeholder_recipients_allowed": false,
+    "every_signer_requires_at_least_one_field": true,
+    "business_roles_are_not_fixed_to_recipient_numbers": true
+  },
+  "landlord_final_signer_policy": {
+    "business_role": "GH Real Estate, LLC Authorized Representative",
+    "business_role_alias": "GHRE_LANDLORD",
+    "recipient_formula": "R{number_of_actual_non_landlord_recipients + 1}",
+    "must_be_last_actual_recipient": true,
+    "must_have_final_signing_position": true,
+    "no_signer_after_landlord": true,
+    "fixed_R4_rule": "R4 is the landlord recipient only when exactly three actual non-landlord recipients precede GH Real Estate. With fewer or more preceding signers, use the next contiguous recipient number and keep GH Real Estate last."
+  },
+  "base_residential_manifests": {
+    "one_tenant": {
+      "recipients": [
+        {
+          "role": "R1",
+          "business_role": "Tenant 1",
+          "signing_position": 1
+        },
+        {
+          "role": "R2",
+          "business_role": "GH Real Estate, LLC Authorized Representative",
+          "signing_position": 2
+        }
+      ],
+      "landlord_role": "R2",
+      "canonical_tags": {
+        "tenant_1_signature": "{{S:R1}}",
+        "tenant_1_sign_date": "{{SD:R1}}",
+        "landlord_signature": "{{S:R2}}",
+        "landlord_sign_date": "{{SD:R2}}"
+      }
+    },
+    "two_tenants": {
+      "recipients": [
+        {
+          "role": "R1",
+          "business_role": "Tenant 1",
+          "signing_position": 1
+        },
+        {
+          "role": "R2",
+          "business_role": "Tenant 2",
+          "signing_position": 1
+        },
+        {
+          "role": "R3",
+          "business_role": "GH Real Estate, LLC Authorized Representative",
+          "signing_position": 2
+        }
+      ],
+      "landlord_role": "R3",
+      "canonical_tags": {
+        "tenant_1_signature": "{{S:R1}}",
+        "tenant_1_sign_date": "{{SD:R1}}",
+        "tenant_2_signature": "{{S:R2}}",
+        "tenant_2_sign_date": "{{SD:R2}}",
+        "landlord_signature": "{{S:R3}}",
+        "landlord_sign_date": "{{SD:R3}}"
+      }
+    },
+    "three_tenants": {
+      "recipients": [
+        {
+          "role": "R1",
+          "business_role": "Tenant 1",
+          "signing_position": 1
+        },
+        {
+          "role": "R2",
+          "business_role": "Tenant 2",
+          "signing_position": 1
+        },
+        {
+          "role": "R3",
+          "business_role": "Tenant 3",
+          "signing_position": 1
+        },
+        {
+          "role": "R4",
+          "business_role": "GH Real Estate, LLC Authorized Representative",
+          "signing_position": 2
+        }
+      ],
+      "landlord_role": "R4",
+      "canonical_tags": {
+        "tenant_1_signature": "{{S:R1}}",
+        "tenant_1_sign_date": "{{SD:R1}}",
+        "tenant_2_signature": "{{S:R2}}",
+        "tenant_2_sign_date": "{{SD:R2}}",
+        "tenant_3_signature": "{{S:R3}}",
+        "tenant_3_sign_date": "{{SD:R3}}",
+        "landlord_signature": "{{S:R4}}",
+        "landlord_sign_date": "{{SD:R4}}"
+      }
+    }
+  },
+  "additional_signer_policy": {
+    "rule": "Add each actual guarantor, witness, or other governed signer before the landlord recipient, then assign GH Real Estate the next contiguous recipient number and the final signing position.",
+    "renumber_landlord_when_additional_signers_exist": true,
+    "dummy_or_placeholder_recipients_forbidden": true,
+    "additional_signers_after_landlord_forbidden": true,
+    "document_specific_manifest_required": true
+  },
+  "signing_order_policy": {
+    "rule": "Recipient numbers control field ownership only. Configure signing positions separately so every tenant, guarantor, witness, and other required non-landlord signer completes before GH Real Estate.",
+    "parallel_non_landlord_signing_allowed": true,
+    "landlord_last_gate": "Do not send unless the GHRE_LANDLORD recipient has the highest signing position and no signer is scheduled after it."
+  },
+  "optional_signer_policy": {
+    "rule": "Optional people are omitted entirely. An actual named signer is never given an optional signature field.",
+    "absent_signer_action": "Remove the absent recipient, all related tags, and the signature row; then regenerate the remaining recipient manifest and tags with contiguous R-numbers.",
+    "actual_signer_signature_required": true
+  },
+  "validation_rules": [
+    "Every signing document must declare a document-specific recipient manifest.",
+    "Recipient roles must be contiguous from R1 with no gaps.",
+    "Every signer must have at least one assigned field.",
+    "GH Real Estate must be the final actual recipient and must have the final signing position.",
+    "No signer may be routed after GH Real Estate.",
+    "R4 is valid for GH Real Estate only when three actual non-landlord recipients precede it.",
+    "Do not create dummy recipients merely to preserve an R-number.",
+    "Do not use padded tags or formatted sign-date tags unless separately approved by the active text-tag registry and required smoke tests.",
+    "Use only production-safe simple tags unless the active registry expressly approves another syntax."
+  ],
+  "exceptions": {
+    "rule": "Any exception requires an explicit repository change, documented rationale, validation updates, and approval before live use.",
+    "document_not_signed_by_gh": "A document not signed by GH Real Estate is outside the landlord-final requirement but still requires a contiguous recipient manifest."
+  }
+}
