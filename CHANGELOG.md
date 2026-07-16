@@ -2,6 +2,14 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-16
+
+- Added a governed Zoho CRM module-and-field catalog covering 14 known GH Real Estate modules, 736 known fields or candidates, and 120 choice fields.
+- Required field specifications to use `Field Label — Field Type`, separate actual API names from proposed names, include creation help text no longer than 255 characters, and assign a six-digit hex color to every choice value.
+- Added a working Zoho CRM field-type catalog, a metadata-only Modules/Fields export helper, a dependency-free catalog validator, and a path-scoped GitHub Actions check.
+- Reconciled current Zillow Lead and Unit API names against reviewed runtime code and runbooks, while retaining conflicting workbook proposals only as superseded aliases.
+- This is a sanitized repository-governance update only. It does not create, modify, or verify fields in the live Zoho CRM tenant; unverified API names remain unset or explicitly proposed.
+
 ## 2026-07-15
 
 - Added a governed 16-item Zoho Contracts Clause Type master list, clause-definition schema/template, generated authoring reference, and CI validation for every checked-in `.clause.json` record.

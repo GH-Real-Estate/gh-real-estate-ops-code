@@ -1,0 +1,54 @@
+name: CRM Field Catalog
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'src/zoho-crm/AGENTS.md'
+      - 'src/zoho-crm/README.md'
+      - 'src/zoho-crm/field-maps/crm-module-field-catalog.md'
+      - 'src/zoho-crm/field-maps/crm-module-fields/**'
+      - 'src/zoho-crm/standards/**'
+      - 'src/zoho-crm/tools/**'
+      - '.github/workflows/crm-field-catalog.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/zoho-crm/AGENTS.md'
+      - 'src/zoho-crm/README.md'
+      - 'src/zoho-crm/field-maps/crm-module-field-catalog.md'
+      - 'src/zoho-crm/field-maps/crm-module-fields/**'
+      - 'src/zoho-crm/standards/**'
+      - 'src/zoho-crm/tools/**'
+      - '.github/workflows/crm-field-catalog.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: crm-field-catalog-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  validate:
+    name: Validate CRM field catalog
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.13'
+
+      - name: Validate governed CRM module and field catalog
+        run: |
+          python src/zoho-crm/tools/validate-crm-field-catalog.py
+          python -m py_compile \
+            src/zoho-crm/tools/validate-crm-field-catalog.py \
+            src/zoho-crm/tools/export-crm-metadata.py
