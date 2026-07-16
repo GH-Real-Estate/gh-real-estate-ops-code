@@ -79,6 +79,19 @@ This is a business-operations repo. Treat rent, invoice, payment, lease, tenant,
 - Mandatory legal forms, exact statutory language, accessibility requirements, and attorney-approved formatting override the brand standard.
 - Render and visually inspect every page of a final DOCX or PDF before delivery.
 
+## Zoho Contracts Authoring and Zoho Sign Rules
+
+- Before creating or materially revising a Zoho Contracts template or clause, read `src/zoho-contracts/standards/contract-authoring-standard.json`, its generated Markdown view, the clause schema/template, and the governed Zoho Sign text-tag registry.
+- Use only the exact Clause Type values in the governed 16-item master list. Do not invent synonyms, aliases, or one-off Clause Types.
+- Store every governed clause definition under `src/zoho-contracts/clauses/` with the `.clause.json` suffix so CI scans it.
+- Every clause must include a Clause Type, stable Clause Name, neutral library Question, exactly one standard language plus any approved alternatives, and a language-variant Clause Title. Keep Zoho's Clause Title metadata separate from the Language body so the title is not duplicated.
+- In contract templates, use Heading 1 for the Clause Type/article heading. Render the language-variant Clause Title as Heading 2. Inside clause Language, label every block explicitly as Heading 3, Heading 4, Heading 5, or Normal and preserve a valid heading hierarchy.
+- Apply the Zoho Contracts-specific typography profile. It overrides the general document defaults only for Zoho Contracts templates and clauses.
+- Keep Contracts merge fields and Sign recipient fields in their separate governed registries. A Sign editor field does not imply that a text tag exists.
+- Prefer the canonical unstarred Initial tag `{{I:R1}}`; `{{I:R1*}}` is a user-confirmed compatibility alias, not the published canonical form.
+- Keep formatted or choice-field Sign tags blocked until the exact Contracts-to-Sign path passes the synthetic preview and completed-signature smoke test.
+- A repository merge governs future drafting and CI; it does not alter, republish, or restyle live or existing contracts.
+
 ## Default GitHub Code-Change Workflow
 
 When Codex/ChatGPT changes code, scripts, workflow files, configuration, tests, or production-relevant operational docs in this GitHub repo, the default is end-to-end completion:
