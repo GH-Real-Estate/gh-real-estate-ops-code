@@ -1,0 +1,400 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "ghre-zoho-contracts-to-sign-text-tags",
+  "title": "GH Real Estate Zoho Contracts to Zoho Sign Text Tag Registry",
+  "effective_date": "2026-07-15",
+  "scope": "Text tags embedded in Zoho Contracts content and converted to signer fields by Zoho Sign",
+  "governance_status": "active",
+  "official_sources": [
+    {
+      "title": "Add document fields using text tags",
+      "url": "https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/automatic-field-addition-in-zoho-sign"
+    },
+    {
+      "title": "Document fields in Zoho Sign",
+      "url": "https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/document-fields-in-zoho-sign"
+    },
+    {
+      "title": "Zoho Sign API basic concepts",
+      "url": "https://www.zoho.com/sign/api/basic-concepts.html"
+    },
+    {
+      "title": "Send Documents for Signatures",
+      "url": "https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/send-for-signatures"
+    }
+  ],
+  "recipient_role_policy": {
+    "canonical_pattern": "R1 through R25",
+    "minimum": 1,
+    "maximum": 25,
+    "manifest_required": true,
+    "manifest_rule": "Every document or clause containing a tag must declare the intended recipient roles, and every signer role in that manifest must have at least one assigned field.",
+    "implicit_first_recipient_allowed": false
+  },
+  "document_safety_policy": {
+    "official_limit": "Zoho documents the feature for documents less than 75 pages.",
+    "maximum_pages": 74,
+    "single_physical_line_required": true,
+    "ascii_braces_and_quotes_required": true,
+    "trailing_width_spaces_allowed": false,
+    "rule": "Keep each tag on one physical line with ASCII {{ }}, straight double quotes, and no hidden line breaks. This registry intentionally forbids width-padding spaces so source scans remain deterministic."
+  },
+  "mandatory_marker_policy": {
+    "marker": "*",
+    "meaningful_for": [
+      "TF",
+      "checkbox"
+    ],
+    "compatibility_accepted_for": [
+      "S",
+      "I"
+    ],
+    "rule": "Zoho documents the asterisk as the mandatory marker for text fields and checkboxes. Existing simple signature and initial tags with a redundant asterisk are accepted for compatibility but the asterisk does not change their required behavior."
+  },
+  "evidence_policy": {
+    "officially_documented_grammar": "Syntax recorded from Zoho's current automatic-field-addition help page.",
+    "user_confirmed_contracts_handoff": [
+      "{{I:R1*}}"
+    ],
+    "tenant_smoke_test_evidence_recorded": [],
+    "rule": "Official grammar, observed Contracts-to-Sign behavior, and tenant smoke-test evidence are separate facts. A documented tag is not automatically approved for this integration path."
+  },
+  "compatibility_aliases": [
+    {
+      "field": "Initial",
+      "canonical_syntax": "{{I:R1}}",
+      "alias_syntax": "{{I:R1*}}",
+      "evidence_status": "user_confirmed_contracts_handoff",
+      "notes": "Accepted for existing Contracts content. The asterisk is redundant for Initial and is not the canonical published syntax."
+    }
+  ],
+  "production_safe_simple_tags": [
+    {
+      "code": "S",
+      "field": "Signature",
+      "syntax": "{{S:R1}}",
+      "asterisk_policy": "compatibility_only",
+      "behavior": "Captures the recipient's signature."
+    },
+    {
+      "code": "I",
+      "field": "Initial",
+      "syntax": "{{I:R1}}",
+      "asterisk_policy": "compatibility_only",
+      "behavior": "Captures the recipient's initials. The user-confirmed {{I:R1*}} form is recorded separately as a compatibility alias."
+    },
+    {
+      "code": "SD",
+      "field": "Sign Date",
+      "syntax": "{{SD:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Zoho Sign fills this field only after the recipient signs; it is not a Contracts merge value or a pre-send date."
+    },
+    {
+      "code": "D",
+      "field": "Date",
+      "syntax": "{{D:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Collects a date entered by the recipient."
+    },
+    {
+      "code": "N",
+      "field": "Full Name",
+      "syntax": "{{N:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Adds the recipient full-name field."
+    },
+    {
+      "code": "FN",
+      "field": "First Name",
+      "syntax": "{{FN:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Adds the recipient first-name field."
+    },
+    {
+      "code": "LN",
+      "field": "Last Name",
+      "syntax": "{{LN:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Adds the recipient last-name field."
+    },
+    {
+      "code": "E",
+      "field": "Email",
+      "syntax": "{{E:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Adds the recipient email field."
+    },
+    {
+      "code": "CO",
+      "field": "Company",
+      "syntax": "{{CO:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Adds the recipient company field."
+    },
+    {
+      "code": "JT",
+      "field": "Job Title",
+      "syntax": "{{JT:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Adds the recipient job-title field."
+    },
+    {
+      "code": "TF",
+      "field": "Text",
+      "syntax": "{{TF:R1*}}",
+      "asterisk_policy": "meaningful_optional",
+      "behavior": "Collects recipient-entered text; append * when the text field must be mandatory."
+    },
+    {
+      "code": "[]",
+      "field": "Checkbox",
+      "syntax": "{{[]}}",
+      "asterisk_policy": "editor_or_smoke_test_for_required",
+      "behavior": "Exact published shorthand for one checkbox. Approved only when an explicit recipient manifest contains R1 as the sole signer; configure mandatory behavior in the Sign editor unless a separate tenant smoke test proves tagged mandatory syntax."
+    },
+    {
+      "code": "A",
+      "field": "Attachment",
+      "syntax": "{{A:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Allows the recipient to attach a supporting document."
+    },
+    {
+      "code": "ST",
+      "field": "Stamp",
+      "syntax": "{{ST:R1}}",
+      "asterisk_policy": "forbidden",
+      "behavior": "Adds a stamp field for the recipient."
+    }
+  ],
+  "official_but_contracts_pipeline_unverified": [
+    {
+      "field": "Formatted Sign Date",
+      "syntax": "{{SD:R1:(dateformat=\"MMM dd yyyy\")}}",
+      "official_status": "documented",
+      "pipeline_status": "contracts_pipeline_unverified",
+      "production_policy": "blocked_until_smoke_tested",
+      "notes": "Official Zoho Sign grammar supports dateformat. A user reported that this form did not autopopulate in the Contracts-to-Sign handoff, but it is unclear whether the tag failed to convert in preview or the Sign Date was merely blank before signing. Keep it blocked until both stages are tested separately.",
+      "required_smoke_tests": [
+        "preview_field_conversion",
+        "post_signature_value_population"
+      ]
+    },
+    {
+      "field": "Dropdown",
+      "syntax": "{{DD:R1:Text(options=\"option 1, option 2, option 3\")}}",
+      "official_status": "documented",
+      "pipeline_status": "contracts_pipeline_unverified",
+      "production_policy": "blocked_until_smoke_tested",
+      "notes": "Choice field syntax is documented by Zoho Sign but is not approved for the Contracts pipeline."
+    },
+    {
+      "field": "Radio",
+      "syntax": "{{(Radio1):Recipient1:RadioA}}",
+      "official_status": "documented",
+      "pipeline_status": "contracts_pipeline_unverified",
+      "production_policy": "blocked_until_smoke_tested",
+      "notes": "Each option uses its own tag and options in one group must be on the same page."
+    },
+    {
+      "field": "Checkbox Group",
+      "syntax": "{{CBG:Recipient1:checkboxgroup-1[checkbox1]}}",
+      "official_status": "documented",
+      "pipeline_status": "contracts_pipeline_unverified",
+      "production_policy": "blocked_until_smoke_tested",
+      "notes": "Each checkbox in the group uses a separate tag with the same group name."
+    }
+  ],
+  "official_but_ghre_blocked_features": [
+    {
+      "feature": "published_longhand_and_shorthand_examples",
+      "official_examples": [
+        "{{Signature}}",
+        "{{S}}",
+        "{{Company:Recipient2}}",
+        "{{CO:R2}}",
+        "{{Textfield:Recipient1*}}",
+        "{{TF:R1*}}",
+        "{{Jobtitle}}",
+        "{{JT}}",
+        "{{Initial}}",
+        "{{I}}",
+        "{{Signdate}}",
+        "{{SD}}",
+        "{{Checkbox}}",
+        "{{[]}}",
+        "{{Fullname}}",
+        "{{N}}",
+        "{{Customdate:Recipient1}}",
+        "{{D:R1}}",
+        "{{Firstname}}",
+        "{{FN}}",
+        "{{Lastname}}",
+        "{{LN}}",
+        "{{Attachment}}",
+        "{{A}}",
+        "{{Stamp}}",
+        "{{ST}}",
+        "{{Email}}",
+        "{{E}}"
+      ],
+      "ghre_policy": "blocked_without_explicit_R_role",
+      "notes": "GHRE uses explicit shorthand recipient roles for deterministic multi-recipient templates."
+    },
+    {
+      "feature": "omitted_recipient_defaults_to_first",
+      "official_examples": [
+        "{{S}}",
+        "{{I}}",
+        "{{SD}}"
+      ],
+      "ghre_policy": "forbidden",
+      "notes": "Zoho defaults an omitted recipient to the first recipient; GHRE requires an explicit recipient-role manifest and role-bearing tags except the exact single-recipient checkbox shorthand."
+    },
+    {
+      "feature": "general_field_name_grammar",
+      "official_examples": [
+        "{{<field type>:Recipient<n>:<field name in case of text field>*}}"
+      ],
+      "ghre_policy": "blocked_until_smoke_tested",
+      "notes": "Named-field grammar is broader than the production allowlist and is not accepted by the scanner."
+    },
+    {
+      "feature": "font_parameters",
+      "official_examples": [
+        "{{<field type>:recipient<n>:<field name in case of text field>*(font=\"<Font Name>\":fontsize=\"<font_size>\":fontcolor=\"<color_code>\")}}",
+        "{{Textfield:Recipient1:Address*(font=\"Roboto\";fontsize=\"24\";fontcolor=\"ff0077\")}}"
+      ],
+      "ghre_policy": "contracts_pipeline_unverified_and_blocked",
+      "notes": "The official generic form uses colon separators while its example uses semicolons. Because the published separators are internally inconsistent, GHRE does not guess and requires an isolated tenant smoke test."
+    },
+    {
+      "feature": "trailing_width_padding",
+      "official_examples": [
+        "{{S:R1          }}"
+      ],
+      "ghre_policy": "forbidden",
+      "notes": "Zoho documents trailing spaces to increase field width. GHRE forbids them so source scans and diffs remain deterministic; adjust placement in a governed Sign template instead."
+    }
+  ],
+  "official_document_field_catalog": [
+    {
+      "field": "Signature",
+      "text_tag_syntax": "{{S:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Initial",
+      "text_tag_syntax": "{{I:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Stamp",
+      "text_tag_syntax": "{{ST:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Image",
+      "text_tag_syntax": null,
+      "placement": "Add in the Zoho Sign editor, a governed Sign template, or the Zoho Sign API; no dedicated official text-tag grammar is published."
+    },
+    {
+      "field": "Company",
+      "text_tag_syntax": "{{CO:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Full Name",
+      "text_tag_syntax": "{{N:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Email",
+      "text_tag_syntax": "{{E:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Sign Date",
+      "text_tag_syntax": "{{SD:R1}}",
+      "placement": "production_safe_text_tag; value appears after signing"
+    },
+    {
+      "field": "Date",
+      "text_tag_syntax": "{{D:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Text",
+      "text_tag_syntax": "{{TF:R1*}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Job Title",
+      "text_tag_syntax": "{{JT:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Checkbox",
+      "text_tag_syntax": "{{[]}}",
+      "placement": "production-safe only for an explicitly manifested single R1 signer; use the Sign editor for recipient-specific or mandatory configuration"
+    },
+    {
+      "field": "Dropdown",
+      "text_tag_syntax": "{{DD:R1:Text(options=\"option 1, option 2, option 3\")}}",
+      "placement": "official text tag; blocked in Contracts pipeline until smoke-tested"
+    },
+    {
+      "field": "Radio",
+      "text_tag_syntax": "{{(Radio1):Recipient1:RadioA}}",
+      "placement": "official text tag; blocked in Contracts pipeline until smoke-tested"
+    },
+    {
+      "field": "Payment",
+      "text_tag_syntax": null,
+      "placement": "Configure through Zoho Sign with Zoho Checkout, a governed Sign template, or the API; no dedicated official text-tag grammar is published."
+    },
+    {
+      "field": "Attachment",
+      "text_tag_syntax": "{{A:R1}}",
+      "placement": "production_safe_text_tag"
+    },
+    {
+      "field": "Formula",
+      "text_tag_syntax": null,
+      "placement": "Configure in the Zoho Sign editor, a governed Sign template, or the API; no dedicated official text-tag grammar is published."
+    },
+    {
+      "field": "Checkbox Group",
+      "text_tag_syntax": "{{CBG:Recipient1:checkboxgroup-1[checkbox1]}}",
+      "placement": "official text tag; blocked in Contracts pipeline until smoke-tested"
+    },
+    {
+      "field": "Split Text",
+      "text_tag_syntax": null,
+      "placement": "Configure in the Zoho Sign editor, a governed Sign template, or the API; no dedicated official text-tag grammar is published."
+    }
+  ],
+  "unsupported_or_invented_text_tags": [
+    {
+      "name": "Phone",
+      "reason": "Zoho's current official text-tag table does not publish a dedicated Phone tag. Use a Text field with validation in Sign or place the field through a governed template/API workflow."
+    },
+    {
+      "name": "Image",
+      "reason": "Image is a Sign document field, but no dedicated official text-tag grammar is published."
+    },
+    {
+      "name": "Payment",
+      "reason": "Payment is a Sign document field, but no dedicated official text-tag grammar is published."
+    },
+    {
+      "name": "Formula",
+      "reason": "Formula is a Sign document field, but no dedicated official text-tag grammar is published."
+    },
+    {
+      "name": "SplitText",
+      "reason": "Split Text is a Sign document field, but no dedicated official text-tag grammar is published."
+    }
+  ]
+}
