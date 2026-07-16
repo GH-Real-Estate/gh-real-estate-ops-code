@@ -3,7 +3,7 @@
 **Catalog ID:** GH-ZOHO-CRM-FIELDS-001  
 **Version:** 1.0.0  
 **Effective date:** July 16, 2026  
-**Machine-readable sources:** one governed CSV per module under [`crm-module-fields/`](crm-module-fields/)
+**Machine-readable sources:** one or more governed CSV files per module under [`crm-module-fields/`](crm-module-fields/)
 
 ## Purpose
 
