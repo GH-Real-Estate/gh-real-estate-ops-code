@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GH-Real-Estate/gh-real-estate-ops-code/src/zoho-contracts/schemas/contract-field-registry.schema.json",
+  "title": "GH Real Estate Zoho Contracts Field Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "registry_id",
+    "version",
+    "as_of_date",
+    "record_counts",
+    "allowed_custom_types",
+    "official_sources",
+    "policies",
+    "fields"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "registry_id": {"const": "GHRE-ZC-FIELDS"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "as_of_date": {"type": "string", "format": "date"},
+    "record_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "custom", "total"],
+      "properties": {
+        "system": {"type": "integer", "minimum": 0},
+        "custom": {"type": "integer", "minimum": 0},
+        "total": {"type": "integer", "minimum": 1}
+      }
+    },
+    "allowed_custom_types": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Text",
+          "Date",
+          "Number",
+          "Currency",
+          "Dropdown",
+          "Single Checkbox",
+          "Percent",
+          "Phone",
+          "Email"
+        ]
+      }
+    },
+    "official_sources": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "policies": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/field"}
+    }
+  },
+  "$defs": {
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "classification",
+        "status",
+        "zoho",
+        "portable_type",
+        "crm",
+        "source_of_truth",
+        "sensitivity",
+        "validation"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "label": {"type": "string", "minLength": 1, "maxLength": 255},
+        "classification": {"enum": ["system", "custom"]},
+        "status": {"enum": ["active", "deprecated_alias", "review_required"]},
+        "aliases": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "canonical_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "zoho": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ui_type",
+            "expected_native_type",
+            "api_name",
+            "type_status",
+            "evidence_id"
+          ],
+          "properties": {
+            "ui_type": {
+              "type": ["string", "null"],
+              "enum": [
+                null,
+                "Text",
+                "Date",
+                "Number",
+                "Currency",
+                "Dropdown",
+                "Single Checkbox",
+                "Percent",
+                "Phone",
+                "Email"
+              ]
+            },
+            "expected_native_type": {
+              "enum": [
+                "Boolean",
+                "Number",
+                "String",
+                "Date",
+                "Index",
+                "Text",
+                "Currency",
+                "Term",
+                "Percent",
+                "Phone",
+                "Email",
+                "Unknown"
+              ]
+            },
+            "api_name": {
+              "anyOf": [
+                {"type": "null"},
+                {"type": "string", "minLength": 1, "pattern": "^[A-Za-z][A-Za-z0-9_]*$"}
+              ]
+            },
+            "type_status": {
+              "enum": [
+                "official_system_semantics",
+                "design_decision",
+                "tenant_api_required",
+                "tenant_api_verified"
+              ]
+            },
+            "evidence_id": {"type": "string", "minLength": 1},
+            "allow_decimals": {"type": "boolean"}
+          }
+        },
+        "portable_type": {
+          "enum": [
+            "text",
+            "multiline_text",
+            "date",
+            "integer",
+            "currency",
+            "phone",
+            "email",
+            "duration",
+            "entity_reference",
+            "time_zone",
+            "unknown"
+          ]
+        },
+        "unit": {"type": "string", "minLength": 1},
+        "allowed_values": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "crm": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["recommended_type", "proposed_api_name", "api_name_status"],
+          "properties": {
+            "recommended_type": {
+              "enum": [
+                "Single Line",
+                "Multi Line",
+                "Date",
+                "Number",
+                "Currency",
+                "Phone",
+                "Email",
+                "Pick List",
+                "Lookup",
+                "Composite",
+                "Unresolved"
+              ]
+            },
+            "proposed_api_name": {
+              "anyOf": [
+                {"type": "null"},
+                {"type": "string", "minLength": 1, "pattern": "^[A-Za-z][A-Za-z0-9_]*$"}
+              ]
+            },
+            "api_name_status": {
+              "enum": [
+                "proposed_unverified",
+                "tenant_api_required",
+                "design_required",
+                "do_not_create",
+                "do_not_create_until_defined",
+                "tenant_api_verified"
+              ]
+            }
+          }
+        },
+        "source_of_truth": {"type": "string", "minLength": 1},
+        "sensitivity": {
+          "enum": [
+            "internal_contract",
+            "internal_identifier",
+            "restricted_pii",
+            "restricted_property",
+            "confidential_financial"
+          ]
+        },
+        "validation": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"classification": {"const": "system"}}},
+          "then": {"properties": {"zoho": {"properties": {"ui_type": {"type": "null"}}}}}
+        },
+        {
+          "if": {"properties": {"classification": {"const": "custom"}}},
+          "then": {
+            "properties": {
+              "zoho": {
+                "properties": {
+                  "ui_type": {
+                    "enum": [
+                      "Text",
+                      "Date",
+                      "Number",
+                      "Currency",
+                      "Dropdown",
+                      "Single Checkbox",
+                      "Percent",
+                      "Phone",
+                      "Email"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {"properties": {"status": {"const": "deprecated_alias"}}},
+          "then": {"required": ["canonical_id"]}
+        },
+        {
+          "if": {
+            "properties": {
+              "zoho": {
+                "required": ["type_status"],
+                "properties": {"type_status": {"const": "tenant_api_verified"}}
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "zoho": {
+                "properties": {"api_name": {"type": "string", "minLength": 1}}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "crm": {
+                "required": ["api_name_status"],
+                "properties": {"api_name_status": {"const": "tenant_api_verified"}}
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "crm": {
+                "properties": {
+                  "proposed_api_name": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
