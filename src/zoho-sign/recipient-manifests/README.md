@@ -49,33 +49,33 @@ An optional person is omitted entirely. If Tenant 2, Tenant 3, a guarantor, or a
 
 If the person exists and is a named signer, the signature is required.
 
-## Canonical simple tags
+## Canonical tags
 
 ### One tenant
 
 ```text
-Tenant 1: {{S:R1}} and {{SD:R1}}
-GH Real Estate: {{S:R2}} and {{SD:R2}}
+Tenant 1: {{S:R1}} and {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}
+GH Real Estate: {{S:R2}} and {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}}
 ```
 
 ### Two tenants
 
 ```text
-Tenant 1: {{S:R1}} and {{SD:R1}}
-Tenant 2: {{S:R2}} and {{SD:R2}}
-GH Real Estate: {{S:R3}} and {{SD:R3}}
+Tenant 1: {{S:R1}} and {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}
+Tenant 2: {{S:R2}} and {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}}
+GH Real Estate: {{S:R3}} and {{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}}
 ```
 
 ### Three tenants
 
 ```text
-Tenant 1: {{S:R1}} and {{SD:R1}}
-Tenant 2: {{S:R2}} and {{SD:R2}}
-Tenant 3: {{S:R3}} and {{SD:R3}}
-GH Real Estate: {{S:R4}} and {{SD:R4}}
+Tenant 1: {{S:R1}} and {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}
+Tenant 2: {{S:R2}} and {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}}
+Tenant 3: {{S:R3}} and {{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}}
+GH Real Estate: {{S:R4}} and {{SD:R4:(dateformat="MM/dd/yyyy hh:mm a z")}}
 ```
 
-Use the active text-tag registry for syntax approval. This recipient policy does not approve padded tags, formatted sign-date tags, or other advanced syntax.
+Use the active text-tag registry for syntax approval. For Sign Date, use only the exact `MM/dd/yyyy hh:mm a z` format shown above, with one explicit recipient per tag and no `*`. This recipient policy does not approve padded, combined-recipient, noncanonical formatted, or other advanced syntax.
 
 ## Document-specific manifest files
 
