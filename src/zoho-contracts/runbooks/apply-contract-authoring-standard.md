@@ -124,11 +124,23 @@ The only GHRE-approved Sign Date syntax is the zero-padded 12-hour timestamp bel
 
 A Sign Date is the date the recipient completes signing. It is expected to be blank before signing; that is different from a tag failing to convert into a field.
 
+Do not combine recipient numbers in one field. Controlled 2026-07-17 probes showed that some combined-recipient strings can create a field while assigning it only to the first parsed recipient. Field formation is a false positive unless the preview shows the correct single owner. Repeat separate canonical R1, R2, R3, and later tags instead.
+
+There is no documented table-specific Sign Date syntax. Zoho requires every text tag to remain on one physical line and states that a tag moved to the next line will not be detected. For every signature table:
+
+1. Start with the unchanged canonical tag in a widened or merged Date cell.
+2. Inspect the rendered source before Sign conversion. The opening braces, complete tag, and closing braces must appear on one physical line and on one page.
+3. If necessary, reduce only the raw tag's source font or revise column widths; do not change the production date format merely to make it fit.
+4. Disable **Allow row to break across pages** for the signature row.
+5. If the canonical text tag cannot be kept on one line, use a native signer/signatory-block Sign Date field or `{{SD:R1}}`, then set `MM/dd/yyyy hh:mm a z` in the Zoho Sign field properties. Verify and save that configuration in the governed template before publication.
+
+Use the 10-test diagnostic matrix in `src/zoho-sign/field-tags/zoho-contracts-text-tag-registry.md` only in a synthetic document. Noncanonical tests are diagnostic evidence, not production syntax.
+
 ## 5. Synthetic Contracts-to-Sign Smoke Test
 
 1. Create a short synthetic contract of 74 pages or fewer using one of the exact supported recipient manifests and a controlled GHRE-owned test mailbox for every actual recipient.
 2. Do not include absent signers or placeholder recipients. Confirm the recipient sequence is contiguous from R1 and GH is the last actual recipient.
-3. Include the canonical formatted Sign Date tag for every actual recipient. Use one separate tag per recipient; do not combine recipient numbers in production content.
+3. Include the canonical formatted Sign Date tag for every actual recipient. Use one separate tag per recipient; do not combine recipient numbers in production content. A combined tag fails even if Zoho forms a field when that field is assigned only to the first recipient.
 4. Send the synthetic contract from Zoho Contracts to Zoho Sign.
 5. In the Zoho Sign preview, verify:
    - no literal supported tag remains in the document;
@@ -139,6 +151,7 @@ A Sign Date is the date the recipient completes signing. It is expected to be bl
    - signature and initial fields are required;
    - text and checkbox required markers behave as intended; and
    - fields do not overlap, wrap, or shift onto another page.
+   - every raw Sign Date source tag inside a table stayed on one physical line before conversion, and no portion of a tag crossed a row or page boundary.
 6. Configure signing order separately. All non-landlord signers must have an earlier position; GH must have the highest and final position. Multiple non-landlord signers may share a position and sign in parallel.
 7. Complete the signing flow with every synthetic recipient.
 8. Inspect the completed document and confirm:

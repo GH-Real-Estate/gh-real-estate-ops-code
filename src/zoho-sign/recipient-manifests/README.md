@@ -24,6 +24,8 @@ That does **not** mean GH Real Estate is always `R4`. GH is `R4` only when exact
 
 Recipient numbers identify field ownership. Signing positions control routing. Multiple non-landlord signers may share the same earlier signing position and sign in parallel; GH must have the highest position and no recipient may be routed after GH.
 
+One field cannot be jointly owned by multiple recipients. The 2026-07-17 controlled probes showed that some combined-recipient Sign Date strings can create a field while silently assigning it only to the first parsed recipient. Treat that preview conversion as a false positive. Use a separate field and a separate canonical tag for every R-number, then inspect the assigned recipient in Zoho Sign preview.
+
 ## Additional signers
 
 A guarantor, witness, or other governed signer is inserted before GH. GH is then renumbered to the next contiguous recipient slot.
@@ -75,7 +77,7 @@ Tenant 3: {{S:R3}} and {{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}}
 GH Real Estate: {{S:R4}} and {{SD:R4:(dateformat="MM/dd/yyyy hh:mm a z")}}
 ```
 
-Use the active text-tag registry for syntax approval. For Sign Date, use only the exact `MM/dd/yyyy hh:mm a z` format shown above, with one explicit recipient per tag and no `*`. This recipient policy does not approve padded, combined-recipient, noncanonical formatted, or other advanced syntax.
+Use the active text-tag registry for syntax approval. For Sign Date, use only the exact `MM/dd/yyyy hh:mm a z` format shown above, with one explicit recipient per tag and no `*`. This recipient policy does not approve padded, combined-recipient, noncanonical formatted, or other advanced syntax. If a combined expression happens to form a field, it is still invalid because only the first recipient owns it.
 
 ## Document-specific manifest files
 

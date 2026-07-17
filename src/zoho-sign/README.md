@@ -22,6 +22,8 @@ This directory governs Zoho Sign-specific configuration that is consumed by cont
 
 Only entries classified as `production_safe_simple_tags` may be committed to production contract content without a new tenant smoke test. The sole approved formatted exception is the canonical Sign Date `{{SD:R<n>:(dateformat="MM/dd/yyyy hh:mm a z")}}`, with exactly one recipient per tag and no `*`. Noncanonical Sign Date formats, multi-recipient tags, and choice-field tags remain fail-closed until separately approved.
 
+Controlled testing on 2026-07-17 confirmed two pipeline constraints. First, a combined-recipient expression may appear to convert while assigning the resulting field only to the first parsed recipient; one field therefore always requires one explicit recipient and separate tags must be repeated for R1, R2, R3, and later roles. Second, Zoho publishes no table-specific Sign Date syntax: the raw tag must stay on one physical line. A narrow table cell that wraps or page-splits the tag prevents detection. The generated field-tag registry contains the ranked 10-test table-cell matrix and the governed native-field fallback.
+
 The field catalog distinguishes between fields available in the Zoho Sign editor and fields with published text-tag grammar. Do not invent a tag merely because a corresponding editor field exists.
 
 The field-tag registry governs syntax. The recipient-manifest policy governs which actual recipient owns each R-number and when each signer is routed. Generic R1 examples in the syntax registry are syntax examples only and do not override a document-specific recipient manifest.

@@ -34,6 +34,13 @@ class RecipientPolicyTests(unittest.TestCase):
     def test_repository_validation_is_clean(self) -> None:
         self.assertEqual(VALIDATOR.validate_repository(ROOT), [])
 
+    def test_one_field_one_recipient_observation_is_locked(self) -> None:
+        ownership = self.policy["field_ownership_policy"]
+        self.assertTrue(ownership["one_recipient_per_field"])
+        self.assertFalse(ownership["combined_recipient_tags_allowed"])
+        self.assertIn("first parsed recipient", ownership["observed_behavior"])
+        self.assertIn("Field formation is not proof", ownership["rule"])
+
     def test_one_tenant_manifest_places_gh_at_r2_and_last(self) -> None:
         manifest = {
             "schema_version": "1.0.0",
