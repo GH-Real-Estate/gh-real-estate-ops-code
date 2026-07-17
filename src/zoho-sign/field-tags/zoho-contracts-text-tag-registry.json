@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "registry_id": "ghre-zoho-contracts-to-sign-text-tags",
   "title": "GH Real Estate Zoho Contracts to Zoho Sign Text Tag Registry",
   "effective_date": "2026-07-17",
@@ -21,6 +21,22 @@
     {
       "title": "Send Documents for Signatures",
       "url": "https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/send-for-signatures"
+    },
+    {
+      "title": "Zoho Sign FAQ — line breaks in text tags",
+      "url": "https://help.zoho.com/portal/en/kb/zoho-sign/faqs/general-faqs/articles/subscription-and-digital-signature-providers"
+    },
+    {
+      "title": "Zoho Writer — stop table rows from splitting across pages",
+      "url": "https://help.zoho.com/portal/en/kb/writer/layout-design-guide/document-layout-printing/table-layout/articles/stop-a-table-row-from-splitting-over-two-pages"
+    },
+    {
+      "title": "Zoho Writer — insert a non-breaking space",
+      "url": "https://help.zoho.com/portal/en/kb/writer/layout-design-guide/text-textbox-layout/articles/how-to-add-non-breaking-space-in-writer"
+    },
+    {
+      "title": "Zoho Contracts — sending a contract for signature",
+      "url": "https://help.zoho.com/portal/en/kb/contracts/user-guide/signature/articles/send-for-signature"
     }
   ],
   "recipient_role_policy": {
@@ -58,7 +74,7 @@
     "output_example": "07/17/2026 03:42 PM CDT",
     "recipient_rule": "Encode exactly one explicit R1-R25 recipient role per Sign Date tag and repeat the canonical tag separately for every recipient who needs a signing timestamp.",
     "mandatory_marker_rule": "Do not add *. Sign Date is system-populated after that recipient signs; Zoho documents the mandatory marker only for text fields and checkboxes.",
-    "verification_rule": "The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion on 2026-07-17. Complete one post-signature value check before publishing a live template."
+    "verification_rule": "The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion in ordinary body text on 2026-07-17. A narrow table cell can wrap or page-split the source tag and prevent conversion. Keep the complete tag on one physical line and complete both a table-placement preview check and a post-signature value check before publishing a live template."
   },
   "evidence_policy": {
     "officially_documented_grammar": "Syntax recorded from Zoho's current automatic-field-addition help page.",
@@ -77,6 +93,98 @@
       }
     ],
     "rule": "Official grammar, observed Contracts-to-Sign behavior, and tenant smoke-test evidence are separate facts. A documented tag is not automatically approved for this integration path."
+  },
+  "observed_pipeline_constraints": {
+    "multiple_recipient_field_ownership": {
+      "status": "invalid",
+      "evidence_date": "2026-07-17",
+      "tested_families": [
+        "comma-separated recipient tokens",
+        "ampersand-joined recipient tokens",
+        "other combined shorthand and longhand recipient expressions"
+      ],
+      "observation": "Some combined-recipient Sign Date variants produced a field, but Zoho assigned that field only to the first parsed recipient. Field formation is therefore a false positive and is not evidence of joint ownership.",
+      "rule": "One Sign field has one recipient owner. Use one separate canonical tag for R1, R2, R3, and every other intended recipient; combined-recipient tags are invalid."
+    },
+    "table_cell_sign_date": {
+      "status": "open_layout_smoke_test",
+      "evidence_date": "2026-07-17",
+      "observation": "A formatted Sign Date tag converted in ordinary document body text, while the same kind of long tag remained literal after wrapping over multiple lines in a narrow table cell; one observed tag was split across a page boundary. A shorter date-only Sign Date field was present in a table and displayed the editor format dd MMM yyyy.",
+      "official_rule": "Zoho requires every text tag to remain on one physical line and states that a tag moved to the next line will not be detected. Zoho publishes no separate table-specific Sign Date grammar.",
+      "production_rule": "Keep the canonical MM/dd/yyyy hh:mm a z tag unchanged, widen or merge the Date cell or reduce only the source-tag font until the raw tag remains on one physical line, and disable Allow row to break across pages. Verify field ownership in preview and the populated timestamp after signing. If layout cannot preserve one line, use a native Sign Date field or the short {{SD:R1}} fallback and set the custom format in the Zoho Sign field properties; do not silently publish a noncanonical text tag.",
+      "diagnostic_matrix": [
+        {
+          "order": 1,
+          "classification": "production_control",
+          "tag": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
+          "placement": "Use a widened or merged Date cell; keep the complete raw tag on one physical line and disable row splitting.",
+          "purpose": "Highest-probability test and unchanged GHRE production standard."
+        },
+        {
+          "order": 2,
+          "classification": "diagnostic_only",
+          "tag": "{{SD:R1:(dateformat=\"MM/dd/yyyy h:mm a z\")}}",
+          "placement": "Use the same widened or merged no-wrap cell as test 1.",
+          "purpose": "Confirms that h versus hh is not the table failure; h remains noncanonical for GHRE."
+        },
+        {
+          "order": 3,
+          "classification": "production_control",
+          "tag": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
+          "placement": "Keep the original cell width, reduce only the raw source tag to 6 pt, and disable row splitting.",
+          "purpose": "Tests whether fitting the canonical tag on one rendered line fixes conversion without redesigning the table."
+        },
+        {
+          "order": 4,
+          "classification": "experimental_diagnostic_only",
+          "tag": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
+          "placement": "Insert each visible gap inside the date format as a Writer non-breaking space; do not use in production unless a completed smoke test succeeds.",
+          "purpose": "Tests whether preventing breaks at the internal spaces preserves one line; Zoho does not document non-breaking spaces as Sign format characters."
+        },
+        {
+          "order": 5,
+          "classification": "official_example_diagnostic",
+          "tag": "{{SD:R1:(dateformat=\"MMM dd yyyy HH:mm z\")}}",
+          "placement": "Use the original table cell with no manual line break.",
+          "purpose": "Tests Zoho's exact published formatted Sign Date example in the affected table."
+        },
+        {
+          "order": 6,
+          "classification": "diagnostic_only",
+          "tag": "{{SD:R1:(dateformat=\"MM/dd/yyyy HH:mm z\")}}",
+          "placement": "Use the original table cell with no manual line break.",
+          "purpose": "Shorter 24-hour timestamp with timezone."
+        },
+        {
+          "order": 7,
+          "classification": "diagnostic_only",
+          "tag": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a\")}}",
+          "placement": "Use the original table cell with no manual line break.",
+          "purpose": "Shorter 12-hour timestamp without timezone."
+        },
+        {
+          "order": 8,
+          "classification": "diagnostic_only",
+          "tag": "{{SD:R1:(dateformat=\"MM/dd/yyyy\")}}",
+          "placement": "Use the original table cell.",
+          "purpose": "Date-only width control; conversion here but not in tests 1-7 confirms a layout-length threshold."
+        },
+        {
+          "order": 9,
+          "classification": "diagnostic_only",
+          "tag": "{{SD:R1:(dateformat=\"MM/dd/yyyy,hh:mm,a,z\")}}",
+          "placement": "Use the original table cell.",
+          "purpose": "No-space parser control using punctuation Zoho documents as accepted; output punctuation is not the GHRE standard."
+        },
+        {
+          "order": 10,
+          "classification": "fallback_only",
+          "tag": "{{SD:R1}}",
+          "placement": "After conversion, set MM/dd/yyyy hh:mm a z in the Zoho Sign field properties or replace it with a native signer/signatory-block Sign Date field.",
+          "purpose": "Reliable short-tag fallback when the table cannot preserve the canonical formatted tag on one physical line."
+        }
+      ]
+    }
   },
   "compatibility_aliases": [
     {
