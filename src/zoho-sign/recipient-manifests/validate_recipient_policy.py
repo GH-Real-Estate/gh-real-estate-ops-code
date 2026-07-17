@@ -201,6 +201,7 @@ def validate_policy(policy: Any) -> list[str]:
         "source_of_truth",
         "official_sources",
         "recipient_index_policy",
+        "field_ownership_policy",
         "landlord_final_signer_policy",
         "base_residential_manifests",
         "additional_signer_policy",
@@ -215,8 +216,8 @@ def validate_policy(policy: Any) -> list[str]:
         errors.append(f"recipient policy is missing keys: {', '.join(sorted(missing))}")
     if extra:
         errors.append(f"recipient policy has unexpected keys: {', '.join(sorted(extra))}")
-    if policy.get("schema_version") != "1.2.0":
-        errors.append("recipient policy schema_version must be 1.2.0")
+    if policy.get("schema_version") != "1.3.0":
+        errors.append("recipient policy schema_version must be 1.3.0")
     if policy.get("policy_id") != "ghre-canonical-recipient-policy":
         errors.append("recipient policy_id changed")
     if policy.get("governance_status") != "active":
@@ -256,6 +257,26 @@ def validate_policy(policy: Any) -> list[str]:
         errors.append("every signer must require at least one assigned field")
     if index_policy.get("business_roles_are_not_fixed_to_recipient_numbers") is not True:
         errors.append("business roles must not be fixed to recipient numbers")
+
+    ownership = policy.get("field_ownership_policy", {})
+    if not isinstance(ownership, dict):
+        errors.append("field_ownership_policy must be an object")
+    else:
+        if set(ownership) != {
+            "one_recipient_per_field",
+            "combined_recipient_tags_allowed",
+            "observed_behavior",
+            "rule",
+        }:
+            errors.append("field_ownership_policy must contain the exact governed keys")
+        if ownership.get("one_recipient_per_field") is not True:
+            errors.append("every Sign field must have exactly one recipient owner")
+        if ownership.get("combined_recipient_tags_allowed") is not False:
+            errors.append("combined-recipient Sign tags must remain forbidden")
+        if "first parsed recipient" not in str(ownership.get("observed_behavior", "")):
+            errors.append("field ownership evidence must record first-recipient-only assignment")
+        if "Field formation is not proof" not in str(ownership.get("rule", "")):
+            errors.append("field ownership rule must reject preview formation as proof of joint ownership")
 
     landlord_policy = policy.get("landlord_final_signer_policy", {})
     if landlord_policy.get("business_role") != LANDLORD_ROLE:
