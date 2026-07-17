@@ -452,9 +452,9 @@ class ResidentialLeaseImplementationTests(unittest.TestCase):
         manifest = self.valid_recipient_manifest(2)
         text = "\n".join(
             [
-                "{{S:R1}} {{SD:R1}}",
-                "{{S:R2}} {{SD:R2}}",
-                "{{S:R3}} {{SD:R3}}",
+                '{{S:R1}} {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+                '{{S:R2}} {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+                '{{S:R3}} {{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}}',
             ]
         )
         self.assertEqual(
@@ -462,14 +462,18 @@ class ResidentialLeaseImplementationTests(unittest.TestCase):
             [],
         )
         errors = validator.validate_ending_text(
-            text.replace("{{SD:R3}}", ""), manifest, name="ending-text"
+            text.replace(
+                '{{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}}', ""
+            ),
+            manifest,
+            name="ending-text",
         )
         self.assertTrue(any("Sign Date tag for R3" in error for error in errors))
 
-    def test_formatted_sign_date_is_rejected_in_ending_text(self) -> None:
+    def test_noncanonical_sign_date_is_rejected_in_ending_text(self) -> None:
         manifest = self.valid_recipient_manifest(1)
         text = (
-            "{{S:R1}} {{SD:R1}} {{S:R2}} "
+            '{{S:R1}} {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}} {{S:R2}} '
             '{{SD:R2:(dateformat="MMM dd yyyy")}}'
         )
         errors = validator.validate_ending_text(
@@ -486,9 +490,9 @@ class ResidentialLeaseImplementationTests(unittest.TestCase):
                 "<!-- Do not preselect HOA applicability or delivery status -->",
                 "# Addendum B. HOA and Tenant Handbook Acknowledgment",
                 "{{I:R1}} {{I:R1}} {{I:R2}} {{I:R2}}",
-                "{{S:R1}} {{SD:R1}}",
-                "{{S:R2}} {{SD:R2}}",
-                "{{S:R3}} {{SD:R3}}",
+                '{{S:R1}} {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+                '{{S:R2}} {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+                '{{S:R3}} {{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}}',
             ]
         )
         self.assertEqual(
@@ -497,7 +501,8 @@ class ResidentialLeaseImplementationTests(unittest.TestCase):
         )
 
         unsafe = text.replace("{{I:R2}}", "", 1).replace(
-            "{{SD:R3}}", '{{SD:R3:(dateformat="MMM dd yyyy")}}'
+            '{{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SD:R3:(dateformat="MMM dd yyyy")}}',
         )
         errors = validator.validate_addendum_b(
             unsafe, manifest, name="addendum-b"

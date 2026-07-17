@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "policy_id": "ghre-canonical-recipient-policy",
   "title": "GH Real Estate Canonical Zoho Sign Recipient and Final-Signer Policy",
-  "effective_date": "2026-07-16",
+  "effective_date": "2026-07-17",
   "governance_status": "active",
   "scope": "All GH Real Estate contract documents sent from Zoho Contracts to Zoho Sign",
   "source_of_truth": true,
@@ -51,9 +51,9 @@
       "landlord_role": "R2",
       "canonical_tags": {
         "tenant_1_signature": "{{S:R1}}",
-        "tenant_1_sign_date": "{{SD:R1}}",
+        "tenant_1_sign_date": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
         "landlord_signature": "{{S:R2}}",
-        "landlord_sign_date": "{{SD:R2}}"
+        "landlord_sign_date": "{{SD:R2:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}"
       }
     },
     "two_tenants": {
@@ -77,11 +77,11 @@
       "landlord_role": "R3",
       "canonical_tags": {
         "tenant_1_signature": "{{S:R1}}",
-        "tenant_1_sign_date": "{{SD:R1}}",
+        "tenant_1_sign_date": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
         "tenant_2_signature": "{{S:R2}}",
-        "tenant_2_sign_date": "{{SD:R2}}",
+        "tenant_2_sign_date": "{{SD:R2:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
         "landlord_signature": "{{S:R3}}",
-        "landlord_sign_date": "{{SD:R3}}"
+        "landlord_sign_date": "{{SD:R3:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}"
       }
     },
     "three_tenants": {
@@ -110,13 +110,13 @@
       "landlord_role": "R4",
       "canonical_tags": {
         "tenant_1_signature": "{{S:R1}}",
-        "tenant_1_sign_date": "{{SD:R1}}",
+        "tenant_1_sign_date": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
         "tenant_2_signature": "{{S:R2}}",
-        "tenant_2_sign_date": "{{SD:R2}}",
+        "tenant_2_sign_date": "{{SD:R2:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
         "tenant_3_signature": "{{S:R3}}",
-        "tenant_3_sign_date": "{{SD:R3}}",
+        "tenant_3_sign_date": "{{SD:R3:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
         "landlord_signature": "{{S:R4}}",
-        "landlord_sign_date": "{{SD:R4}}"
+        "landlord_sign_date": "{{SD:R4:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}"
       }
     }
   },
@@ -145,8 +145,8 @@
     "No signer may be routed after GH Real Estate.",
     "R4 is valid for GH Real Estate only when three actual non-landlord recipients precede it.",
     "Do not create dummy recipients merely to preserve an R-number.",
-    "Do not use padded tags or formatted sign-date tags unless separately approved by the active text-tag registry and required smoke tests.",
-    "Use only production-safe simple tags unless the active registry expressly approves another syntax."
+    "Use only the canonical formatted Sign Date syntax approved by the active text-tag registry, with exactly one explicit recipient per tag and no asterisk.",
+    "Use only production-safe tags approved by the active registry."
   ],
   "exceptions": {
     "rule": "Any exception requires an explicit repository change, documented rationale, validation updates, and approval before live use.",

@@ -20,7 +20,7 @@ This directory governs Zoho Sign-specific configuration that is consumed by cont
 - `field-tags/zoho-contracts-text-tag-registry.md` is generated documentation for operators and contract authors.
 - `../zoho-contracts/scripts/validate_contract_authoring_standard.py` validates the Contracts authoring standard and Sign field-tag registry.
 
-Only entries classified as `production_safe_simple_tags` may be committed to production contract content without a new tenant smoke test. Officially documented formatted or choice-field tags remain fail-closed until the exact Contracts-to-Sign path is proven in an isolated sample document.
+Only entries classified as `production_safe_simple_tags` may be committed to production contract content without a new tenant smoke test. The sole approved formatted exception is the canonical Sign Date `{{SD:R<n>:(dateformat="MM/dd/yyyy hh:mm a z")}}`, with exactly one recipient per tag and no `*`. Noncanonical Sign Date formats, multi-recipient tags, and choice-field tags remain fail-closed until separately approved.
 
 The field catalog distinguishes between fields available in the Zoho Sign editor and fields with published text-tag grammar. Do not invent a tag merely because a corresponding editor field exists.
 

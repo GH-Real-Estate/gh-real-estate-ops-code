@@ -28,7 +28,7 @@ Documents included in or delivered with this Lease are listed below. Checklist e
 
 | Party / Printed Name | Signature | Date | Email / Phone |
 |---|---|---|---|
-| Tenant #1 ____________________________ | {{S:R1}} | {{SD:R1}} | ____________________________ |
-| Landlord: GH Real Estate, LLC, By ____________________, ____________________ | {{S:R2}} | {{SD:R2}} | ____________________________ |
+| Tenant #1 ____________________________ | {{S:R1}} | {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}} | ____________________________ |
+| Landlord: GH Real Estate, LLC, By ____________________, ____________________ | {{S:R2}} | {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}} | ____________________________ |
 
 Notice Address Confirmed: ______________________________________________

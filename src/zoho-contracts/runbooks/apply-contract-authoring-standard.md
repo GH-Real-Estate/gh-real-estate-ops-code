@@ -96,30 +96,30 @@ Examples:
 Tenant 1 printed name: {{N:R1}}
 Tenant 1 initials: {{I:R1}}
 Tenant 1 signature: {{S:R1}}
-Tenant 1 date signed: {{SD:R1}}
+Tenant 1 date signed: {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}
 GH signature: {{S:R2}}
-GH date signed: {{SD:R2}}
+GH date signed: {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}}
 ```
 
 ### Three tenants
 
 ```text
 Tenant 1 signature: {{S:R1}}
-Tenant 1 date signed: {{SD:R1}}
+Tenant 1 date signed: {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}
 Tenant 2 signature: {{S:R2}}
-Tenant 2 date signed: {{SD:R2}}
+Tenant 2 date signed: {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}}
 Tenant 3 signature: {{S:R3}}
-Tenant 3 date signed: {{SD:R3}}
+Tenant 3 date signed: {{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}}
 GH signature: {{S:R4}}
-GH date signed: {{SD:R4}}
+GH date signed: {{SD:R4:(dateformat="MM/dd/yyyy hh:mm a z")}}
 ```
 
-`{{I:R1*}}` may be retained as a user-confirmed compatibility alias, but the canonical published form is `{{I:R1}}` and the asterisk is redundant because Initial is already required. Use `*` as a meaningful required marker only for text fields and checkboxes.
+`{{I:R1*}}` may be retained as a user-confirmed compatibility alias, but the canonical published form is `{{I:R1}}` and the asterisk is redundant because Initial is already required. Use `*` as a meaningful required marker only for text fields and checkboxes. Do not add `*` to Sign Date: Zoho Sign populates it automatically after the assigned recipient signs.
 
-The formatted Sign Date tag below is documented by Zoho Sign but is not production-approved for the Contracts handoff until the smoke test in this runbook passes:
+The only GHRE-approved Sign Date syntax is the zero-padded 12-hour timestamp below, with the recipient number changed for that one field owner:
 
 ```text
-{{SD:R1:(dateformat="MMM dd yyyy")}}
+{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}
 ```
 
 A Sign Date is the date the recipient completes signing. It is expected to be blank before signing; that is different from a tag failing to convert into a field.
@@ -128,7 +128,7 @@ A Sign Date is the date the recipient completes signing. It is expected to be bl
 
 1. Create a short synthetic contract of 74 pages or fewer using one of the exact supported recipient manifests and a controlled GHRE-owned test mailbox for every actual recipient.
 2. Do not include absent signers or placeholder recipients. Confirm the recipient sequence is contiguous from R1 and GH is the last actual recipient.
-3. Include both `{{SD:R1}}` and the formatted Sign Date tag in clearly labeled test locations when testing formatted date support.
+3. Include the canonical formatted Sign Date tag for every actual recipient. Use one separate tag per recipient; do not combine recipient numbers in production content.
 4. Send the synthetic contract from Zoho Contracts to Zoho Sign.
 5. In the Zoho Sign preview, verify:
    - no literal supported tag remains in the document;
@@ -142,13 +142,12 @@ A Sign Date is the date the recipient completes signing. It is expected to be bl
 6. Configure signing order separately. All non-landlord signers must have an earlier position; GH must have the highest and final position. Multiple non-landlord signers may share a position and sign in parallel.
 7. Complete the signing flow with every synthetic recipient.
 8. Inspect the completed document and confirm:
-   - the simple Sign Date contains the actual signing date;
-   - the formatted Sign Date contains that same date in `MMM dd yyyy` format when that syntax is under test;
+   - every Sign Date contains that recipient's actual signing timestamp in `MM/dd/yyyy hh:mm a z` format;
    - signatures and initials are present;
    - the completion certificate shows the intended signer identities and signing order;
    - no signer completed after GH; and
    - the rendered PDF follows the typography profile without font substitution.
-9. Record the template version, manifest, test date, result, and reviewer. Only after a passing result may the formatted Sign Date tag move from `contracts_pipeline_unverified` to a production-safe status in the registry.
+9. Record the template version, manifest, test date, result, and reviewer. The preview conversion passed on 2026-07-17; a completed-signature value check is still required before publishing a live template.
 
 ## 6. Publish and Verify
 

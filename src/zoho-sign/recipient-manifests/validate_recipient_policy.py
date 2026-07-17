@@ -17,7 +17,9 @@ from urllib.parse import urlparse
 
 ROLE_RE = re.compile(r"^R([1-9]|1[0-9]|2[0-5])$")
 SIMPLE_SIGNATURE_RE = re.compile(r"^\{\{S:(R(?:[1-9]|1[0-9]|2[0-5]))\}\}$")
-SIMPLE_SIGN_DATE_RE = re.compile(r"^\{\{SD:(R(?:[1-9]|1[0-9]|2[0-5]))\}\}$")
+CANONICAL_SIGN_DATE_RE = re.compile(
+    r'^\{\{SD:(R(?:[1-9]|1[0-9]|2[0-5])):\(dateformat="MM/dd/yyyy hh:mm a z"\)\}\}$'
+)
 LANDLORD_ROLE = "GH Real Estate, LLC Authorized Representative"
 POLICY_FILE = "ghre-canonical-recipient-policy.json"
 MANIFEST_GLOB = "*.recipient-manifest.json"
@@ -33,6 +35,10 @@ ZOHO_SEND_URL = (
 
 def repository_root() -> Path:
     return Path(__file__).resolve().parents[3]
+
+
+def canonical_sign_date_tag(role: str) -> str:
+    return f'{{{{SD:{role}:(dateformat="MM/dd/yyyy hh:mm a z")}}}}'
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -150,13 +156,13 @@ def _validate_canonical_tags(
     for key, value in tags.items():
         prefix = f"{path}.{key}"
         if not _non_empty(key) or not _non_empty(value):
-            errors.append(f"{prefix} must contain a non-empty simple tag")
+            errors.append(f"{prefix} must contain a non-empty governed tag")
             continue
         signature_match = SIMPLE_SIGNATURE_RE.fullmatch(value)
-        date_match = SIMPLE_SIGN_DATE_RE.fullmatch(value)
+        date_match = CANONICAL_SIGN_DATE_RE.fullmatch(value)
         if not signature_match and not date_match:
             errors.append(
-                f"{prefix} must use an unpadded production-safe {{S:Rn}} or {{SD:Rn}} tag"
+                f"{prefix} must use an unpadded {{S:Rn}} tag or the canonical one-recipient formatted Sign Date tag"
             )
             continue
         role = (signature_match or date_match).group(1)
@@ -175,7 +181,7 @@ def _validate_canonical_tags(
     if landlord_role:
         if tags.get("landlord_signature") != f"{{{{S:{landlord_role}}}}}":
             errors.append(f"{path}.landlord_signature must target final recipient {landlord_role}")
-        if tags.get("landlord_sign_date") != f"{{{{SD:{landlord_role}}}}}":
+        if tags.get("landlord_sign_date") != canonical_sign_date_tag(landlord_role):
             errors.append(f"{path}.landlord_sign_date must target final recipient {landlord_role}")
     return errors
 
@@ -209,8 +215,8 @@ def validate_policy(policy: Any) -> list[str]:
         errors.append(f"recipient policy is missing keys: {', '.join(sorted(missing))}")
     if extra:
         errors.append(f"recipient policy has unexpected keys: {', '.join(sorted(extra))}")
-    if policy.get("schema_version") != "1.1.0":
-        errors.append("recipient policy schema_version must be 1.1.0")
+    if policy.get("schema_version") != "1.2.0":
+        errors.append("recipient policy schema_version must be 1.2.0")
     if policy.get("policy_id") != "ghre-canonical-recipient-policy":
         errors.append("recipient policy_id changed")
     if policy.get("governance_status") != "active":

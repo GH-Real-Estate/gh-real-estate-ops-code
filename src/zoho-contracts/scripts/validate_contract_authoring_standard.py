@@ -156,7 +156,6 @@ EXPECTED_TYPOGRAPHY = {
 SIMPLE_TAG_CODES = [
     "S",
     "I",
-    "SD",
     "D",
     "N",
     "FN",
@@ -169,10 +168,15 @@ SIMPLE_TAG_CODES = [
     "ST",
 ]
 
+CANONICAL_SIGN_DATE_FORMAT = "MM/dd/yyyy hh:mm a z"
+CANONICAL_SIGN_DATE_R1 = (
+    '{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}'
+)
+
 PRODUCTION_TAG_LOCKS = [
     ("S", "Signature", "{{S:R1}}", "compatibility_only"),
     ("I", "Initial", "{{I:R1}}", "compatibility_only"),
-    ("SD", "Sign Date", "{{SD:R1}}", "forbidden"),
+    ("SD", "Sign Date", CANONICAL_SIGN_DATE_R1, "forbidden"),
     ("D", "Date", "{{D:R1}}", "forbidden"),
     ("N", "Full Name", "{{N:R1}}", "forbidden"),
     ("FN", "First Name", "{{FN:R1}}", "forbidden"),
@@ -209,7 +213,6 @@ OFFICIAL_SIGN_FIELDS = [
 ]
 
 UNVERIFIED_COMPLEX_FIELDS = [
-    "Formatted Sign Date",
     "Dropdown",
     "Radio",
     "Checkbox Group",
@@ -225,7 +228,7 @@ OFFICIAL_FIELD_SYNTAX = {
     "Company": "{{CO:R1}}",
     "Full Name": "{{N:R1}}",
     "Email": "{{E:R1}}",
-    "Sign Date": "{{SD:R1}}",
+    "Sign Date": CANONICAL_SIGN_DATE_R1,
     "Date": "{{D:R1}}",
     "Text": "{{TF:R1*}}",
     "Job Title": "{{JT:R1}}",
@@ -389,7 +392,7 @@ def _result(
 def classify_tag(tag: str, registry: dict[str, Any] | None = None) -> dict[str, Any]:
     """Classify one exact Zoho Sign tag using the fail-closed Contracts policy.
 
-    ``production_safe`` means the simple tag can pass the Contracts pipeline.
+    ``production_safe`` means the governed tag can pass the Contracts pipeline.
     ``official_pipeline_unverified`` means Zoho publishes the grammar, but GH Real
     Estate still blocks it pending an isolated Contracts-to-Sign smoke test.
     Everything else is ``invalid``.
@@ -430,12 +433,26 @@ def classify_tag(tag: str, registry: dict[str, Any] | None = None) -> dict[str, 
                 recipient_role=role,
                 reason="recipient role must be R1 through R25",
             )
+        if match.group("format") != CANONICAL_SIGN_DATE_FORMAT:
+            return _result(
+                tag,
+                "invalid",
+                code="SD",
+                recipient_role=role,
+                reason=(
+                    "GHRE permits only the canonical Sign Date format "
+                    f"{CANONICAL_SIGN_DATE_FORMAT!r}"
+                ),
+            )
         return _result(
             tag,
-            "official_pipeline_unverified",
+            "production_safe",
             code="SD",
             recipient_role=role,
-            reason="formatted Sign Date is officially documented but blocked pending a Contracts pipeline smoke test",
+            reason="user-confirmed canonical GHRE formatted Sign Date tag",
+            warnings=(
+                "verify the populated timestamp after completing the signing flow before publishing a live template",
+            ),
         )
 
     match = DROPDOWN_RE.fullmatch(tag)
@@ -518,7 +535,12 @@ def classify_tag(tag: str, registry: dict[str, Any] | None = None) -> dict[str, 
                 reason="recipient role must be R1 through R25",
             )
         if code not in SIMPLE_TAG_CODES:
-            if code in INVENTED_TAG_NAMES:
+            if code == "SD":
+                reason = (
+                    "GHRE requires the canonical formatted Sign Date tag "
+                    '{{SD:Rn:(dateformat="MM/dd/yyyy hh:mm a z")}}'
+                )
+            elif code in INVENTED_TAG_NAMES:
                 reason = f"{code} has no published dedicated Zoho Sign text-tag grammar"
             else:
                 reason = f"unknown or unapproved Zoho Sign text-tag code: {code}"
@@ -823,6 +845,7 @@ def validate_sign_registry(registry: Any) -> list[str]:
                 "recipient_role_policy",
                 "document_safety_policy",
                 "mandatory_marker_policy",
+                "canonical_sign_date_policy",
                 "evidence_policy",
                 "compatibility_aliases",
                 "production_safe_simple_tags",
@@ -834,10 +857,10 @@ def validate_sign_registry(registry: Any) -> list[str]:
             "Sign registry",
         )
     )
-    if registry.get("schema_version") != "1.0.0":
-        errors.append("Sign registry schema_version must be 1.0.0")
-    if registry.get("effective_date") != "2026-07-15":
-        errors.append("Sign registry effective_date must be 2026-07-15")
+    if registry.get("schema_version") != "1.1.0":
+        errors.append("Sign registry schema_version must be 1.1.0")
+    if registry.get("effective_date") != "2026-07-17":
+        errors.append("Sign registry effective_date must be 2026-07-17")
     errors.extend(_validate_sources(registry.get("official_sources"), "official_sources"))
     source_urls = {
         source.get("url")
@@ -903,6 +926,30 @@ def validate_sign_registry(registry: Any) -> list[str]:
         errors.append("asterisk must be meaningful only for TF and checkbox")
     if marker.get("compatibility_accepted_for") != ["S", "I"]:
         errors.append("redundant asterisk compatibility must be limited to S and I")
+    sign_date_policy = registry.get("canonical_sign_date_policy", {})
+    errors.extend(
+        _exact_keys(
+            sign_date_policy,
+            {
+                "format",
+                "syntax_pattern",
+                "r1_example",
+                "output_example",
+                "recipient_rule",
+                "mandatory_marker_rule",
+                "verification_rule",
+            },
+            "canonical_sign_date_policy",
+        )
+    )
+    if sign_date_policy.get("format") != CANONICAL_SIGN_DATE_FORMAT:
+        errors.append("canonical Sign Date format changed")
+    if sign_date_policy.get("r1_example") != CANONICAL_SIGN_DATE_R1:
+        errors.append("canonical R1 Sign Date syntax changed")
+    if "Do not add *" not in str(sign_date_policy.get("mandatory_marker_rule", "")):
+        errors.append("canonical Sign Date policy must explicitly forbid the asterisk")
+    if "one" not in str(sign_date_policy.get("recipient_rule", "")).lower():
+        errors.append("canonical Sign Date policy must require one recipient per tag")
     evidence = registry.get("evidence_policy", {})
     errors.extend(
         _exact_keys(
@@ -916,10 +963,25 @@ def validate_sign_registry(registry: Any) -> list[str]:
             "evidence_policy",
         )
     )
-    if evidence.get("user_confirmed_contracts_handoff") != ["{{I:R1*}}"]:
-        errors.append("user-confirmed Contracts handoff evidence must record only {{I:R1*}}")
-    if evidence.get("tenant_smoke_test_evidence_recorded") != []:
-        errors.append("tenant smoke-test evidence must remain empty until proof is recorded")
+    if evidence.get("user_confirmed_contracts_handoff") != [
+        "{{I:R1*}}",
+        CANONICAL_SIGN_DATE_R1,
+    ]:
+        errors.append(
+            "user-confirmed Contracts handoff evidence must record the Initial alias and canonical formatted Sign Date"
+        )
+    expected_smoke_evidence = [
+        {
+            "date": "2026-07-17",
+            "syntax": CANONICAL_SIGN_DATE_R1,
+            "stage": "preview_field_conversion",
+            "result": "passed",
+            "source": "user-confirmed Zoho Contracts-to-Zoho Sign test",
+            "post_signature_value_population": "pending",
+        }
+    ]
+    if evidence.get("tenant_smoke_test_evidence_recorded") != expected_smoke_evidence:
+        errors.append("tenant smoke-test evidence must record the exact 2026-07-17 preview result")
     aliases = registry.get("compatibility_aliases")
     expected_alias = {
         "field": "Initial",
@@ -997,15 +1059,6 @@ def validate_sign_registry(registry: Any) -> list[str]:
                 "production_policy",
                 "notes",
             }
-            if entry.get("field") == "Formatted Sign Date":
-                expected_keys.add("required_smoke_tests")
-                if entry.get("required_smoke_tests") != [
-                    "preview_field_conversion",
-                    "post_signature_value_population",
-                ]:
-                    errors.append(
-                        "Formatted Sign Date must separately test preview conversion and post-signature value"
-                    )
             errors.extend(_exact_keys(entry, expected_keys, f"unverified tag {index}"))
             result = classify_tag(entry.get("syntax", ""), registry)
             if result["classification"] != "official_pipeline_unverified":
@@ -1325,7 +1378,7 @@ def render_authoring_markdown(standard: dict[str, Any]) -> str:
             "",
             f"- **Inter availability:** {standard['tenant_verification_gates']['inter_font_availability']['instruction']}",
             f"- **Existing live templates:** {standard['tenant_verification_gates']['live_template_republish']['instruction']}",
-            f"- **Zoho Sign fields:** Follow `{standard['zoho_sign_text_tag_registry']}`. Only production-safe simple tags pass the default scanner.",
+            f"- **Zoho Sign fields:** Follow `{standard['zoho_sign_text_tag_registry']}`. Only production-safe governed tags pass the default scanner.",
             "",
             "## Official Zoho sources",
             "",
@@ -1343,17 +1396,17 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
         "<!-- Generated by validate_contract_authoring_standard.py; edit the JSON source. -->",
         "# Zoho Contracts to Zoho Sign Text Tag Registry",
         "",
-        "This registry is fail-closed: a field visible in the Zoho Sign editor is not assumed to have text-tag syntax. Only the simple tags below are approved for production Contracts content.",
+        "This registry is fail-closed: a field visible in the Zoho Sign editor is not assumed to have text-tag syntax. Only the governed tags below are approved for production Contracts content.",
         "",
         f"**Effective date:** {registry['effective_date']}",
         "",
         "## Evidence levels",
         "",
         "- **Official grammar:** Recorded from Zoho's current automatic-field-addition documentation.",
-        "- **User-confirmed Contracts handoff:** `{{I:R1*}}` has been observed converting successfully.",
-        "- **Tenant smoke-test evidence:** None is recorded yet. Official grammar and tenant handoff proof are not treated as the same fact.",
+        "- **User-confirmed Contracts handoff:** `{{I:R1*}}` and the canonical formatted Sign Date have been observed converting successfully.",
+        "- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview field conversion on 2026-07-17; completed-signature timestamp verification remains required before live-template publication.",
         "",
-        "## Production-safe simple tags",
+        "## Production-safe tags",
         "",
         "| Field | Code | Exact example | Operational behavior |",
         "|---|---|---|---|",
@@ -1365,7 +1418,15 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
     lines.extend(
         [
             "",
-            "Zoho documents `*` as meaningful only for Text and Checkbox fields. The exact published checkbox shorthand `{{[]}}` is approved here only for an explicitly manifested single R1 signer and does not encode mandatory behavior; configure a required checkbox in the Sign editor unless a separate smoke test proves a role-specific tagged form. A redundant `*` on Signature (`S`) or Initial (`I`) is accepted for compatibility, including the user-confirmed `{{I:R1*}}`; do not infer additional semantics from it. Sign Date (`SD`) is populated by Zoho Sign only after the recipient signs.",
+            "Zoho documents `*` as meaningful only for Text and Checkbox fields. The exact published checkbox shorthand `{{[]}}` is approved here only for an explicitly manifested single R1 signer and does not encode mandatory behavior; configure a required checkbox in the Sign editor unless a separate smoke test proves a role-specific tagged form. A redundant `*` on Signature (`S`) or Initial (`I`) is accepted for compatibility, including the user-confirmed `{{I:R1*}}`; do not infer additional semantics from it. Do not add `*` to Sign Date (`SD`): it is system-populated after the assigned recipient signs.",
+            "",
+            "## Canonical GHRE Sign Date standard",
+            "",
+            f"- Exact R1 syntax: `{_markdown_escape(registry['canonical_sign_date_policy']['r1_example'])}`",
+            f"- Output example: `{registry['canonical_sign_date_policy']['output_example']}`",
+            f"- Recipient rule: {registry['canonical_sign_date_policy']['recipient_rule']}",
+            f"- Required-marker rule: {registry['canonical_sign_date_policy']['mandatory_marker_rule']}",
+            f"- Verification: {registry['canonical_sign_date_policy']['verification_rule']}",
             "",
             "## Official syntax blocked pending Contracts-pipeline testing",
             "",
@@ -1380,7 +1441,7 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
     lines.extend(
         [
             "",
-            "The formatted Sign Date syntax is official, including `{{SD:R1:(dateformat=\"MMM dd yyyy\")}}`. A user reported that it did not autopopulate, but that observation is ambiguous: preview conversion and post-signature value population are different checks because Sign Date is blank until signing. Keep it blocked until both stages pass separately; use `{{SD:R1}}` meanwhile.",
+            "Dropdown, radio, and checkbox-group tags remain blocked until their exact Contracts-to-Sign paths pass isolated smoke tests.",
             "",
             "## Other published features blocked by GHRE",
             "",
@@ -1425,7 +1486,7 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
             "- Keep every tag on one physical line and use ASCII braces and straight double quotes.",
             "- Declare recipients explicitly as R1-R25; implicit first-recipient assignment is not allowed in governed content.",
             "- Every signer in the recipient-role manifest must have at least one assigned field, and every tag recipient must appear in the manifest.",
-            "- Complex, formatted, unknown, or invented tags fail the production scanner.",
+            "- Noncanonical formatted, multi-recipient, unknown, or invented tags fail the production scanner.",
             "",
             "## Official Zoho sources",
             "",

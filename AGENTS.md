@@ -89,7 +89,7 @@ This is a business-operations repo. Treat rent, invoice, payment, lease, tenant,
 - Apply the Zoho Contracts-specific typography profile. It overrides the general document defaults only for Zoho Contracts templates and clauses.
 - Keep Contracts merge fields and Sign recipient fields in their separate governed registries. A Sign editor field does not imply that a text tag exists.
 - Prefer the canonical unstarred Initial tag `{{I:R1}}`; `{{I:R1*}}` is a user-confirmed compatibility alias, not the published canonical form.
-- Keep formatted or choice-field Sign tags blocked until the exact Contracts-to-Sign path passes the synthetic preview and completed-signature smoke test.
+- For Sign Date, use only `{{SD:R<n>:(dateformat="MM/dd/yyyy hh:mm a z")}}`, substituting exactly one explicit R1-R25 role per tag. Do not add `*`; Zoho documents that required marker for text fields and checkboxes, while Sign Date is system-populated after signing. Keep noncanonical Sign Date formats, multi-recipient tags, and choice-field tags blocked unless separately approved through the governed smoke-test process.
 - A repository merge governs future drafting and CI; it does not alter, republish, or restyle live or existing contracts.
 
 ## Default GitHub Code-Change Workflow
