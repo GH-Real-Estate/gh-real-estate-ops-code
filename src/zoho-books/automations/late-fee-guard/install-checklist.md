@@ -27,6 +27,8 @@
 - [ ] Confirm late-fee, interest, processing-fee, NSF, security-deposit, application-fee, voided, written-off, and zero-balance invoices are excluded.
 - [ ] Confirm pending ACH/online payment suppresses late-fee creation.
 - [ ] Confirm failed/returned payment does not create an RF invoice from this function.
+- [ ] Confirm the source rent invoice's partial-payment setting is unchanged after the ledger update.
+- [ ] Confirm the created late-fee invoice inherits the source invoice's top-level `allow_partial_payments` value.
 - [ ] Confirm logs contain no PII.
 
 ## Deployment
