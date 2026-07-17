@@ -38,7 +38,7 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 | Returned-payment fee amount | `RETURNED_FEE_AMOUNT=30.00` | Matches uploaded lease template Section 3.7. Do not set to $35 unless the lease is amended. |
 | Returned-payment ledger field | `cf_returned_payment_fee_events` | Used by webhook to prevent duplicate returned-payment fee events. |
 | Optional latest returned-fee invoice field | `cf_returned_fee_invoice_number` | Only updated if enabled by env. |
-| Partial-payment source field | Top-level `allow_partial_payments` | Preserve the generated source invoice's value on LF, INT, and RF invoices and on generic source-ledger update fallbacks. Do not nest it inside `payment_options`. |
+| Partial-payment source field | Top-level `allow_partial_payments` | Preserve or explicitly resolve the source value on newly created LF, INT, and RF invoices. Source-ledger updates must write custom fields only. Do not nest this field inside `payment_options`. |
 
 ## Required Before Live Automation
 
