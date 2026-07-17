@@ -28,7 +28,8 @@
 //   - Fee-only invoices, deposits, returned-payment fees, late fees, and interest invoices are skipped.
 //   - Interest is simple interest only. It is not compounded and is not charged on fees.
 //   - Duplicate prevention uses both customer-period invoice references and source-invoice tokens.
-//   - Source and created-invoice updates preserve the source invoice's top-level allow_partial_payments value.
+//   - Newly created interest invoices resolve the governed source invoices' top-level allow_partial_payments values.
+//   - Source-invoice token updates modify only custom fields and never write payment behavior.
 // =================================================================================================
 apiBase = "https://www.zohoapis.com/books/v3";
 // -------------------- CONTEXT --------------------
@@ -847,7 +848,22 @@ for each  customerIdKey in customerIdsWithInterestRows
 	invoiceTemplateToUse = interestInvoiceTemplateId;
 	paymentOptionsToUse = null;
 	firstRow = rowsForCustomer.get(0);
-	allowPartialPaymentsToUse = firstRow.get("source_allow_partial_payments");
+	allowPartialPaymentsToUse = null;
+	for each  interestRowPaymentSetting in rowsForCustomer
+	{
+		sourceAllowPartialPaymentsForResolution = interestRowPaymentSetting.get("source_allow_partial_payments");
+		if(sourceAllowPartialPaymentsForResolution != null)
+		{
+			if(sourceAllowPartialPaymentsForResolution == true)
+			{
+				allowPartialPaymentsToUse = true;
+			}
+			else if(allowPartialPaymentsToUse == null)
+			{
+				allowPartialPaymentsToUse = false;
+			}
+		}
+	}
 	if(inheritSourceInvoicePdfTemplate && ifnull(firstRow.get("source_template_id"),"").toString() != "")
 	{
 		invoiceTemplateToUse = firstRow.get("source_template_id").toString();
@@ -1157,7 +1173,6 @@ for each  customerIdKey in customerIdsWithInterestRows
 		sourceInvoiceId = interestRowToPersist.get("source_invoice_id").toString();
 		sourceInvoiceNumber = interestRowToPersist.get("source_invoice_number").toString();
 		sourceStageFieldCustomFieldId = ifnull(interestRowToPersist.get("stage_field_customfield_id"),"").toString();
-		sourceAllowPartialPaymentsPersist = interestRowToPersist.get("source_allow_partial_payments");
 		baseTokensPersist = interestRowToPersist.get("base_tokens");
 		logLinesPersist = interestRowToPersist.get("log_lines");
 		interestTotalPrior = ifnull(interestRowToPersist.get("interest_total_charged"),0).toDecimal();
@@ -1275,10 +1290,6 @@ for each  customerIdKey in customerIdsWithInterestRows
 				customFieldList.add(customFieldMap);
 				invoiceUpdatePayload = Map();
 				invoiceUpdatePayload.put("custom_fields",customFieldList);
-				if(sourceAllowPartialPaymentsPersist != null)
-				{
-					invoiceUpdatePayload.put("allow_partial_payments",sourceAllowPartialPaymentsPersist);
-				}
 				invoiceUpdateResponse = invokeurl
 				[
 					url :apiBase + "/invoices/" + sourceInvoiceId + "?organization_id=" + orgId
