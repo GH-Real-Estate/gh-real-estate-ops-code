@@ -215,24 +215,31 @@ class ContractAuthoringStandardTests(unittest.TestCase):
                     "invalid",
                 )
 
-    def test_formatted_sign_date_is_official_but_unverified(self) -> None:
+    def test_canonical_formatted_sign_date_is_production_safe(self) -> None:
         result = validator.classify_tag(
-            '{{SD:R1:(dateformat="MMM dd yyyy")}}', self.sign_registry
+            '{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}', self.sign_registry
         )
-        self.assertEqual(result["classification"], "official_pipeline_unverified")
+        self.assertEqual(result["classification"], "production_safe")
 
-    def test_production_scan_blocks_formatted_sign_date(self) -> None:
+    def test_production_scan_accepts_canonical_formatted_sign_date(self) -> None:
         result = validator.scan_text_tags(
-            '{{SD:R1:(dateformat="MMM dd yyyy")}}', ["R1"]
-        )
-        self.assertTrue(any("smoke test" in error for error in result["errors"]))
-
-    def test_nonproduction_scan_warns_on_formatted_sign_date(self) -> None:
-        result = validator.scan_text_tags(
-            '{{SD:R1:(dateformat="MMM dd yyyy")}}', ["R1"], production=False
+            '{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}', ["R1"]
         )
         self.assertEqual(result["errors"], [])
-        self.assertTrue(any("smoke test" in warning for warning in result["warnings"]))
+
+    def test_noncanonical_and_simple_sign_date_tags_are_rejected(self) -> None:
+        for tag in (
+            '{{SD:R1:(dateformat="MMM dd yyyy")}}',
+            "{{SD:R1}}",
+            '{{SD:R1*:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SD:R1,R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SD:R1&R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+        ):
+            with self.subTest(tag=tag):
+                self.assertEqual(
+                    validator.classify_tag(tag, self.sign_registry)["classification"],
+                    "invalid",
+                )
 
     def test_manifest_signer_without_field_is_rejected(self) -> None:
         result = validator.scan_text_tags("{{S:R1}}", ["R1", "R2"])
@@ -249,7 +256,9 @@ class ContractAuthoringStandardTests(unittest.TestCase):
     def test_multiline_and_smart_quote_tags_are_rejected(self) -> None:
         multiline = validator.scan_text_tags("{{S:\nR1}}", ["R1"])
         self.assertTrue(multiline["errors"])
-        smart = validator.classify_tag('{{SD:R1:(dateformat=“MMM dd yyyy”)}}')
+        smart = validator.classify_tag(
+            '{{SD:R1:(dateformat=“MM/dd/yyyy hh:mm a z”)}}'
+        )
         self.assertEqual(smart["classification"], "invalid")
 
     def test_official_document_field_catalog_is_complete(self) -> None:
