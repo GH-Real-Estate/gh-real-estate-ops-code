@@ -169,8 +169,11 @@ CLAUSE_FILE_RE = re.compile(
 CODE_RE = re.compile(r"\bRLA-(?P<number>\d{3})\b", re.IGNORECASE)
 ROLE_RE = re.compile(r"^R(?P<number>[1-9]|1[0-9]|2[0-5])$")
 TAG_RE = re.compile(r"\{\{.*?\}\}", re.DOTALL)
-APPROVED_ENDING_TAG_RE = re.compile(
-    r"^\{\{(?P<code>S|SD|I):(?P<role>R(?:[1-9]|1[0-9]|2[0-5]))\}\}$"
+APPROVED_SIMPLE_ENDING_TAG_RE = re.compile(
+    r"^\{\{(?P<code>S|I):(?P<role>R(?:[1-9]|1[0-9]|2[0-5]))\}\}$"
+)
+CANONICAL_SIGN_DATE_RE = re.compile(
+    r'^\{\{SD:(?P<role>R(?:[1-9]|1[0-9]|2[0-5])):\(dateformat="MM/dd/yyyy hh:mm a z"\)\}\}$'
 )
 
 
@@ -1187,21 +1190,24 @@ def validate_sign_fragment(
     dates: Counter[str] = Counter()
     initials: Counter[str] = Counter()
     for tag in raw_tags:
-        match = APPROVED_ENDING_TAG_RE.fullmatch(tag)
-        if not match:
+        simple_match = APPROVED_SIMPLE_ENDING_TAG_RE.fullmatch(tag)
+        date_match = CANONICAL_SIGN_DATE_RE.fullmatch(tag)
+        if not simple_match and not date_match:
             errors.append(
                 f"{name}: unsupported Sign tag {tag!r}; "
-                "use only {{S:Rn}}, {{SD:Rn}}, or source-required {{I:Rn}}"
+                "use only {{S:Rn}}, source-required {{I:Rn}}, or the canonical one-recipient formatted Sign Date"
             )
             continue
+        match = simple_match or date_match
         role = match.group("role")
         if role not in roles:
             errors.append(f"{name}: tag {tag} references absent recipient {role}")
-        if match.group("code") == "S":
+        code = simple_match.group("code") if simple_match else "SD"
+        if code == "S":
             signatures[role] += 1
-        elif match.group("code") == "SD":
+        elif code == "SD":
             dates[role] += 1
-        elif match.group("code") == "I":
+        elif code == "I":
             initials[role] += 1
     for role in roles:
         if signatures[role] != 1:
