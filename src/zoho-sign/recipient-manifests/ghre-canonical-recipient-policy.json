@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "policy_id": "ghre-canonical-recipient-policy",
   "title": "GH Real Estate Canonical Zoho Sign Recipient and Final-Signer Policy",
   "effective_date": "2026-07-17",
@@ -24,6 +24,12 @@
     "placeholder_recipients_allowed": false,
     "every_signer_requires_at_least_one_field": true,
     "business_roles_are_not_fixed_to_recipient_numbers": true
+  },
+  "field_ownership_policy": {
+    "one_recipient_per_field": true,
+    "combined_recipient_tags_allowed": false,
+    "observed_behavior": "Some combined-recipient Sign Date probes created a field, but Zoho assigned it only to the first parsed recipient.",
+    "rule": "Field formation is not proof of joint ownership. Assign every field to exactly one R<n> recipient and repeat separate canonical tags for each intended signer."
   },
   "landlord_final_signer_policy": {
     "business_role": "GH Real Estate, LLC Authorized Representative",
@@ -146,6 +152,7 @@
     "R4 is valid for GH Real Estate only when three actual non-landlord recipients precede it.",
     "Do not create dummy recipients merely to preserve an R-number.",
     "Use only the canonical formatted Sign Date syntax approved by the active text-tag registry, with exactly one explicit recipient per tag and no asterisk.",
+    "Treat every combined-recipient field expression as invalid even if Zoho creates a field, because the observed field was assigned only to the first parsed recipient.",
     "Use only production-safe tags approved by the active registry."
   ],
   "exceptions": {
