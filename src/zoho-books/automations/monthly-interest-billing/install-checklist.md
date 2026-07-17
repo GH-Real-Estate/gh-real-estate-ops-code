@@ -36,6 +36,8 @@
 - [ ] Run against one customer with multiple eligible rent invoices; one consolidated monthly interest invoice is created.
 - [ ] Run again for the same customer and period; no duplicate invoice is created.
 - [ ] Confirm source rent invoice tokens include `INTPERIOD_YYYYMM`, `INTINV_YYYYMM=...`, `INTTHRU=...`, and `INTTOTAL=...`.
+- [ ] Confirm source rent invoice partial-payment settings are unchanged after token persistence.
+- [ ] Confirm the created interest invoice inherits the first governed source invoice's top-level `allow_partial_payments` value.
 - [ ] Confirm late-fee, returned-payment, processing-fee, application-fee, security-deposit, voided, deleted, and zero-balance invoices are excluded.
 - [ ] Confirm logs contain no PII.
 
