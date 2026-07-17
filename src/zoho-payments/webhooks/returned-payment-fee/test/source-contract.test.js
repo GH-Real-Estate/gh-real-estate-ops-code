@@ -57,3 +57,10 @@ test('returned-payment fee amount defaults to the current lease-template amount'
   assert.match(source, /returnedFeeAmount:\s*envNumber\('RETURNED_FEE_AMOUNT',\s*30\.00\)/);
   assert.match(envDocs, /RETURNED_FEE_AMOUNT=30\.00/);
 });
+
+test('fee invoice creation and source-ledger updates preserve partial-payment behavior', () => {
+  assert.match(source, /typeof sourceInvoice\.allow_partial_payments === 'boolean'/);
+  assert.match(source, /invoiceBody\.allow_partial_payments = sourceInvoice\.allow_partial_payments/);
+  assert.match(source, /updateBody\.allow_partial_payments = sourceInvoice\.allow_partial_payments/);
+  assert.doesNotMatch(source, /payment_options\s*=\s*\{[^}]*allow_partial_payments/s);
+});
