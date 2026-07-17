@@ -19,6 +19,7 @@
 - [ ] Returned-payment fee created only once.
 - [ ] Returned-payment fee amount is `$30.00` unless law requires a lower amount.
 - [ ] Related invoice/customer matched correctly.
+- [ ] Returned-fee invoice inherits the source invoice's top-level `allow_partial_payments` value when present; source-ledger update writes custom fields only.
 - [ ] Logs do not contain bank data or tenant PII.
 
 ## Deployment

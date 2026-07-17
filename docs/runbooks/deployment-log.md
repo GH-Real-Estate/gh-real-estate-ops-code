@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-17 — Partial-Payment Preservation Source Correction
+
+- System: GitHub / Zoho Books / Zoho Payments / Zoho Catalyst
+- Repo branch / commit: `agent/preserve-zoho-partial-payments` / PR #67
+- Files changed: LF and monthly-interest Deluge functions; returned-payment webhook and source-contract test; Books settings; install/test checklists
+- Business rule changed? no; new fee invoices now inherit or deterministically resolve the existing top-level `allow_partial_payments` setting, while source-ledger updates leave payment behavior untouched
+- Dry-run completed? not applicable for source-control update
+- Smoke test completed? repository, authority-refresh, and security checks passed on PR #67; live Zoho smoke test required after deployment
+- Deployed by: ChatGPT / GitHub update
+- Result: source corrected; no existing recurring profile, generated invoice, payment, or live Zoho function changed
+- Rollback plan: revert the merge commit; if deployed later, restore the prior saved function/webhook versions and rerun the payment smoke tests
+- Notes: verify the actual generated rent invoice under Sales > Invoices. A checked recurring-profile setting does not retroactively prove that an already-generated invoice allows partial payment.
+
 ## 2026-07-14 — CI Failure Response Queue And Publisher Verification
 
 - System: GitHub / Codex

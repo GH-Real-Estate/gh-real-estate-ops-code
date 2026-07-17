@@ -1,8 +1,8 @@
 // =================================================================================================
 // FILE: Monthly_Interest_Billing.deluge
 // TARGET: Zoho Books > Automation > Schedules > Custom Function
-// VERSION: v1.6_LEASE_ALIGNED_ORIGINAL_DUE_DATE_INTEREST
-// PATCHED: 2026-07-06
+// VERSION: v1.7_PARTIAL_PAYMENT_PRESERVATION
+// PATCHED: 2026-07-17
 //
 // PURPOSE
 //   Creates monthly simple-interest invoices for delinquent rent balances only.
@@ -28,6 +28,8 @@
 //   - Fee-only invoices, deposits, returned-payment fees, late fees, and interest invoices are skipped.
 //   - Interest is simple interest only. It is not compounded and is not charged on fees.
 //   - Duplicate prevention uses both customer-period invoice references and source-invoice tokens.
+//   - Newly created interest invoices resolve the governed source invoices' top-level allow_partial_payments values.
+//   - Source-invoice token updates modify only custom fields and never write payment behavior.
 // =================================================================================================
 apiBase = "https://www.zohoapis.com/books/v3";
 // -------------------- CONTEXT --------------------
@@ -81,7 +83,6 @@ interestInvoiceEmailTemplateId = "";
 inheritSourceInvoicePdfTemplate = true;
 inheritSourceInvoicePaymentOptions = true;
 enableOnlinePaymentsForInterestInvoices = true;
-allowPartialPaymentsOnInterestInvoices = false;
 forcePaymentGatewayName = "zoho_payments";
 // Runtime bounds.
 invoiceListFilterBy = "Status.Unpaid";
@@ -402,6 +403,7 @@ for each  invoiceSummary in candidateInvoices
 	customFields = invoiceSummary.get("custom_fields");
 	sourceInvoiceTemplateId = ifnull(invoiceSummary.get("template_id"),"").toString();
 	sourcePaymentOptions = invoiceSummary.get("payment_options");
+	sourceAllowPartialPaymentsObj = invoiceSummary.get("allow_partial_payments");
 	invoiceAchPaymentInitiatedObj = invoiceSummary.get("ach_payment_initiated");
 	for each  detailAttempt in ITER_3
 	{
@@ -422,6 +424,7 @@ for each  invoiceSummary in candidateInvoices
 				customFields = detailInvoice.get("custom_fields");
 				sourceInvoiceTemplateId = ifnull(detailInvoice.get("template_id"),sourceInvoiceTemplateId).toString();
 				sourcePaymentOptions = detailInvoice.get("payment_options");
+				sourceAllowPartialPaymentsObj = detailInvoice.get("allow_partial_payments");
 				invoiceAchPaymentInitiatedObj = detailInvoice.get("ach_payment_initiated");
 				invoiceReferenceNumber = ifnull(detailInvoice.get("reference_number"),invoiceReferenceNumber).toString().trim();
 				break;
@@ -763,6 +766,7 @@ for each  invoiceSummary in candidateInvoices
 	row.put("interest_amount",interestAmount);
 	row.put("source_template_id",sourceInvoiceTemplateId);
 	row.put("source_payment_options",sourcePaymentOptions);
+	row.put("source_allow_partial_payments",sourceAllowPartialPaymentsObj);
 	row.put("stage_field_customfield_id",stageFieldCustomFieldId);
 	row.put("base_tokens",baseTokens);
 	row.put("log_lines",logLines);
@@ -844,6 +848,22 @@ for each  customerIdKey in customerIdsWithInterestRows
 	invoiceTemplateToUse = interestInvoiceTemplateId;
 	paymentOptionsToUse = null;
 	firstRow = rowsForCustomer.get(0);
+	allowPartialPaymentsToUse = null;
+	for each  interestRowPaymentSetting in rowsForCustomer
+	{
+		sourceAllowPartialPaymentsForResolution = interestRowPaymentSetting.get("source_allow_partial_payments");
+		if(sourceAllowPartialPaymentsForResolution != null)
+		{
+			if(sourceAllowPartialPaymentsForResolution == true)
+			{
+				allowPartialPaymentsToUse = true;
+			}
+			else if(allowPartialPaymentsToUse == null)
+			{
+				allowPartialPaymentsToUse = false;
+			}
+		}
+	}
 	if(inheritSourceInvoicePdfTemplate && ifnull(firstRow.get("source_template_id"),"").toString() != "")
 	{
 		invoiceTemplateToUse = firstRow.get("source_template_id").toString();
@@ -894,6 +914,10 @@ for each  customerIdKey in customerIdsWithInterestRows
 	invoicePayload.put("due_date",interestThroughDateString);
 	invoicePayload.put("invoice_number",nextInterestInvoiceNumber);
 	invoicePayload.put("reference_number",customerPeriodReference);
+	if(allowPartialPaymentsToUse != null)
+	{
+		invoicePayload.put("allow_partial_payments",allowPartialPaymentsToUse);
+	}
 	if(invoiceTemplateToUse != "")
 	{
 		invoicePayload.put("template_id",invoiceTemplateToUse);
@@ -987,7 +1011,6 @@ for each  customerIdKey in customerIdsWithInterestRows
 			else if(forcePaymentGatewayName != "")
 			{
 				desiredPaymentOptions = Map();
-				desiredPaymentOptions.put("allow_partial_payments",allowPartialPaymentsOnInterestInvoices);
 				paymentGateways = List();
 				paymentGateway = Map();
 				paymentGateway.put("configured",true);
@@ -998,6 +1021,10 @@ for each  customerIdKey in customerIdsWithInterestRows
 			if(existingGatewayCount == 0 && desiredPaymentOptions != null)
 			{
 				paymentUpdatePayload = Map();
+				if(allowPartialPaymentsToUse != null)
+				{
+					paymentUpdatePayload.put("allow_partial_payments",allowPartialPaymentsToUse);
+				}
 				paymentUpdatePayload.put("payment_options",desiredPaymentOptions);
 				paymentUpdateResponse = invokeurl
 				[

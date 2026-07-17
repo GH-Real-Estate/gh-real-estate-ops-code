@@ -1,7 +1,7 @@
 // =================================================================================================
 // FILE: Late_Fee_Guard_ScheduleBody (Zoho Books Scheduled Function)
-// VERSION: v64_LEASE_ALIGNED_D5_D10_10APR_PATCHED
-// PATCHED: 2026-06-30
+// VERSION: v65_PARTIAL_PAYMENT_PRESERVATION
+// PATCHED: 2026-07-17
 //
 // LOGGING:
 //   - Default (debugMode=false): minimal output (SKIP, ERROR, WARN/ALERT only).
@@ -15,6 +15,8 @@
 //   - Suppresses late-fee creation while an ACH/online payment is still initiated, pending, or processing.
 //   - Sends late-fee invoice emails using INVOICE email templates (Invoice Notification scope).
 //   - Forces Zoho Payments/online payment options on fee invoices when configured.
+//   - Preserves the source rent invoice's top-level allow_partial_payments setting on newly created fee invoices.
+//   - Source-invoice ledger updates modify only custom fields and never write payment behavior.
 //
 // IMPORTANT
 //   - Returned-payment / returned-check fee creation has been intentionally removed from this script.
@@ -101,7 +103,6 @@ inheritSourceInvoicePaymentOptions = true;
 // INVALID_DATA error, set forcePaymentGatewayName to the gateway_name value found on a normal invoice's
 // payment_options.payment_gateways[] payload.
 enableOnlinePaymentsForFeeInvoices = true;
-allowPartialPaymentsOnFeeInvoices = false;
 forcePaymentGatewayName = "zoho_payments";
 // API resiliency
 retryMaxAttempts = 3;
@@ -576,6 +577,7 @@ for each  page in ITER_50
 		customFields = invRec.get("custom_fields");
 		sourceInvoiceTemplateId = ifnull(invRec.get("template_id"),"").toString();
 		sourcePaymentOptions = invRec.get("payment_options");
+		sourceAllowPartialPaymentsObj = invRec.get("allow_partial_payments");
 		invoiceAchPaymentInitiatedObj = invRec.get("ach_payment_initiated");
 		detailInvoice = null;
 		for each  attDet in ITER_60
@@ -601,6 +603,7 @@ for each  page in ITER_50
 					customFields = detailInvoice.get("custom_fields");
 					sourceInvoiceTemplateId = ifnull(detailInvoice.get("template_id"),sourceInvoiceTemplateId).toString();
 					sourcePaymentOptions = detailInvoice.get("payment_options");
+					sourceAllowPartialPaymentsObj = detailInvoice.get("allow_partial_payments");
 					invoiceAchPaymentInitiatedObj = detailInvoice.get("ach_payment_initiated");
 					break;
 				}
@@ -1506,6 +1509,10 @@ for each  page in ITER_50
 					lfInv.put("date",lfAssessDateStr);
 					lfInv.put("due_date",lfAssessDateStr);
 					lfInv.put("invoice_number",nextFeeInvoiceNumber);
+					if(sourceAllowPartialPaymentsObj != null)
+					{
+						lfInv.put("allow_partial_payments",sourceAllowPartialPaymentsObj);
+					}
 					if(chargeType == "interest")
 					{
 						lfInv.put("reference_number","Interest (" + stageToken + ") for " + invNumber);
@@ -1673,7 +1680,6 @@ for each  page in ITER_50
 								else if(forcePaymentGatewayName != "")
 								{
 									desiredPayOptLF = Map();
-									desiredPayOptLF.put("allow_partial_payments",allowPartialPaymentsOnFeeInvoices);
 									pgListLF = List();
 									pgLF = Map();
 									pgLF.put("configured",true);
@@ -1684,6 +1690,10 @@ for each  page in ITER_50
 								if(existingGatewayCount == 0 && desiredPayOptLF != null)
 								{
 									updPayLF = Map();
+									if(sourceAllowPartialPaymentsObj != null)
+									{
+										updPayLF.put("allow_partial_payments",sourceAllowPartialPaymentsObj);
+									}
 									updPayLF.put("payment_options",desiredPayOptLF);
 									updRespPayLF = invokeurl
 									[

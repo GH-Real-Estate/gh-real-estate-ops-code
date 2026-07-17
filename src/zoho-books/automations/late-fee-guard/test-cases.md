@@ -16,7 +16,7 @@ Use sanitized records only. These cases are for the Zoho Books scheduled Deluge 
 | Overlapping scheduled runs | Start two guarded runs against the same eligible invoice | At most one fee invoice is created for each stage |
 | Stage-field persistence failure | Simulate failure updating `cf_late_fee_stages_applied` after fee creation | Warning/alert is logged; duplicate-search fallback prevents repeat creation on next run |
 | Paid invoice | Balance is zero | No fee created |
-| Partial payment | Balance remains after threshold | Fee behavior matches lease/code rule and total cap |
+| Partial payment | Source rent invoice has `allow_partial_payments=true` and a remaining balance after threshold | Fee behavior matches lease/code rule and total cap; the source invoice remains enabled and the created late-fee invoice carries the same top-level value |
 | Pending ACH/online payment | Latest payment is pending, processing, initiated, or in review | Late-fee stages are suppressed for that run |
 | Returned/failed payment | Latest payment is definitively failed/returned | Pending-payment suppression is removed; normal late-fee rules apply; no RF invoice is created here |
 | Customer fee exempt | Contact has fee-exempt flag or exemption date through today | No fee created |
@@ -32,4 +32,6 @@ Use sanitized records only. These cases are for the Zoho Books scheduled Deluge 
 2. Confirm the function creates the expected D5/D10 invoice once.
 3. Re-run the same test and confirm idempotency.
 4. Confirm the source rent invoice has `cf_late_fee_stages_applied` tokens/logs updated.
-5. Confirm no returned-payment / NSF invoice is created by this function.
+5. Confirm the source rent invoice's partial-payment checkbox/API value is unchanged after the ledger update.
+6. Confirm the created late-fee invoice inherits the source invoice's top-level `allow_partial_payments` value.
+7. Confirm no returned-payment / NSF invoice is created by this function.

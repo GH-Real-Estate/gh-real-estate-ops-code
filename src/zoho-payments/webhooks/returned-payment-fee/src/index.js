@@ -803,6 +803,10 @@ async function createReturnedFeeInvoice(sourceInvoice, payment, attemptToken, ac
     terms: 'Due upon receipt.'
   };
 
+  if (typeof sourceInvoice.allow_partial_payments === 'boolean') {
+    invoiceBody.allow_partial_payments = sourceInvoice.allow_partial_payments;
+  }
+
   const contactPersonIds = extractInvoiceContactPersonIds(sourceInvoice);
   if (contactPersonIds.length > 0) {
     invoiceBody.contact_persons = contactPersonIds;

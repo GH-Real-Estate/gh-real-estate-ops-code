@@ -19,7 +19,10 @@ Use sanitized records only. These cases are for the separate Zoho Books schedule
 | Security deposit invoice | Source invoice/header/line indicates security deposit | Excluded from interest |
 | Application fee invoice | Source invoice/header/line indicates application fee | Excluded from interest |
 | Fee-only invoice | Invoice has only excluded fee/deposit lines | Excluded from interest |
-| Partial payment | Original rent invoice total is higher than current balance | Interest uses current outstanding balance |
+| Partial payment | One source rent invoice has `allow_partial_payments=true` and total exceeds current balance | Interest uses current outstanding balance; the source setting remains enabled and the created interest invoice carries `true` |
+| Mixed partial-payment settings | Consolidated customer rows include at least one `true` and one `false` | Created interest invoice uses `true`; source invoices remain unchanged |
+| All known settings disabled | Every non-null source value is `false` | Created interest invoice uses `false`; source invoices remain unchanged |
+| Partial-payment setting absent | Every source response omits the field | Created interest payload omits `allow_partial_payments`; source invoices remain unchanged |
 | Voided/deleted invoice | Status is void or deleted | Excluded from interest |
 | ACH initiated | Source invoice has `ach_payment_initiated=true` | Interest skipped for that invoice in this run |
 | Logs check | Debug disabled during normal run | No tenant PII, bank data, or secrets in logs |
@@ -33,4 +36,6 @@ Use sanitized records only. These cases are for the separate Zoho Books schedule
 5. Re-run for the same billing month and confirm no duplicate invoice is created.
 6. Inspect the created invoice line descriptions: they must include source invoice number, APR, interest period, and days.
 7. Inspect each source rent invoice: it must receive the interest period and invoice ID tokens.
-8. Confirm no returned-payment invoice is created by this function.
+8. Confirm each source rent invoice's partial-payment checkbox/API value is unchanged after token persistence.
+9. Confirm the created interest invoice uses `true` if any governed source allows partial payment, `false` only if every known source disables it, and omits the field if all source values are absent.
+10. Confirm no returned-payment invoice is created by this function.
