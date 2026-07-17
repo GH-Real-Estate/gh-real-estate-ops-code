@@ -885,8 +885,8 @@ def validate_sign_registry(registry: Any) -> list[str]:
             "Sign registry",
         )
     )
-    if registry.get("schema_version") != "1.2.0":
-        errors.append("Sign registry schema_version must be 1.2.0")
+    if registry.get("schema_version") != "1.3.0":
+        errors.append("Sign registry schema_version must be 1.3.0")
     if registry.get("effective_date") != "2026-07-17":
         errors.append("Sign registry effective_date must be 2026-07-17")
     errors.extend(_validate_sources(registry.get("official_sources"), "official_sources"))
@@ -929,6 +929,9 @@ def validate_sign_registry(registry: Any) -> list[str]:
                 "official_limit",
                 "maximum_pages",
                 "single_physical_line_required",
+                "applies_to_all_text_tags",
+                "rendered_visual_wrap_is_failure",
+                "rendered_preflight_required",
                 "ascii_braces_and_quotes_required",
                 "trailing_width_spaces_allowed",
                 "rule",
@@ -940,8 +943,17 @@ def validate_sign_registry(registry: Any) -> list[str]:
         errors.append("document text-tag safety maximum must be 74 pages")
     if safety.get("single_physical_line_required") is not True:
         errors.append("single physical line policy must be enabled")
+    if safety.get("applies_to_all_text_tags") is not True:
+        errors.append("rendered single-line policy must apply to every text tag")
+    if safety.get("rendered_visual_wrap_is_failure") is not True:
+        errors.append("automatic visual wrapping must remain a field-formation failure")
+    if safety.get("rendered_preflight_required") is not True:
+        errors.append("rendered text-tag preflight must be required")
     if safety.get("ascii_braces_and_quotes_required") is not True:
         errors.append("ASCII delimiter policy must be enabled")
+    safety_rule = str(safety.get("rule", "")).lower()
+    if "rendered physical line" not in safety_rule or "visual wrapping" not in safety_rule:
+        errors.append("document safety rule must distinguish rendered visual wrapping from source newlines")
     marker = registry.get("mandatory_marker_policy", {})
     errors.extend(
         _exact_keys(
@@ -1006,7 +1018,15 @@ def validate_sign_registry(registry: Any) -> list[str]:
             "result": "passed",
             "source": "user-confirmed Zoho Contracts-to-Zoho Sign test",
             "post_signature_value_population": "pending",
-        }
+        },
+        {
+            "date": "2026-07-17",
+            "syntax": '{{SD:R<n>:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            "stage": "table_preview_rendered_line_control",
+            "result": "passed_when_single_line_and_failed_when_visually_wrapped",
+            "source": "sanitized user-confirmed Zoho Contracts-to-Zoho Sign table test",
+            "post_signature_value_population": "pending",
+        },
     ]
     if evidence.get("tenant_smoke_test_evidence_recorded") != expected_smoke_evidence:
         errors.append("tenant smoke-test evidence must record the exact 2026-07-17 preview result")
@@ -1049,12 +1069,18 @@ def validate_sign_registry(registry: Any) -> list[str]:
             "observed_pipeline_constraints.table_cell_sign_date",
         )
     )
-    if table.get("status") != "open_layout_smoke_test":
-        errors.append("table-cell Sign Date constraint must remain an open layout smoke test")
+    if table.get("status") != "confirmed_rendered_single_line_requirement":
+        errors.append("table-cell Sign Date constraint must remain a confirmed rendered single-line requirement")
     if "one physical line" not in str(table.get("official_rule", "")):
         errors.append("table-cell official rule must preserve Zoho's one-line requirement")
+    if "visual wrap" not in str(table.get("official_rule", "")).lower():
+        errors.append("table-cell official rule must treat visual wrapping as a line break")
+    if "same table" not in str(table.get("observation", "")).lower():
+        errors.append("table-cell evidence must record a successful control in the same table")
     if CANONICAL_SIGN_DATE_FORMAT not in str(table.get("production_rule", "")):
         errors.append("table-cell production rule must preserve the canonical Sign Date format")
+    if "every Zoho Sign text tag" not in str(table.get("production_rule", "")):
+        errors.append("rendered single-line production rule must apply to every Zoho Sign text tag")
     matrix = table.get("diagnostic_matrix")
     if not isinstance(matrix, list) or len(matrix) != 10:
         errors.append("table-cell Sign Date diagnostic matrix must contain exactly 10 tests")
@@ -1508,7 +1534,8 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
         "",
         "- **Official grammar:** Recorded from Zoho's current automatic-field-addition documentation.",
         "- **User-confirmed Contracts handoff:** `{{I:R1*}}` and the canonical formatted Sign Date have been observed converting successfully.",
-        "- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview field conversion in ordinary body text on 2026-07-17. Combined-recipient probes and narrow-table placement exposed separate ownership and wrapping constraints; table-placement and completed-signature checks remain required before live-template publication.",
+        "- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview conversion in ordinary body text on 2026-07-17. Controlled table testing then confirmed that syntactically valid tags form only when the complete source tag fits on one rendered physical line; a visual wrap prevents detection even without a manual newline. Completed-signature value checks remain required before live-template publication.",
+        "- **Universal rendered-line gate:** Every Zoho Sign text tag, from its opening braces through both closing braces, must fit on one rendered physical line and one page before conversion. This is a layout requirement in addition to valid syntax.",
         "",
         "## Production-safe tags",
         "",
@@ -1542,14 +1569,14 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
             "",
             "A field appearing in preview does not prove that a combined-recipient expression worked. Inspect its assigned recipient. Use separate R1, R2, R3, and later tags.",
             "",
-            "### Sign Date inside table cells",
+            "### Rendered single-line requirement in table cells",
             "",
             f"- Status: `{registry['observed_pipeline_constraints']['table_cell_sign_date']['status']}`",
             f"- Observed result: {registry['observed_pipeline_constraints']['table_cell_sign_date']['observation']}",
             f"- Official rule and syntax conclusion: {registry['observed_pipeline_constraints']['table_cell_sign_date']['official_rule']}",
             f"- Production rule: {registry['observed_pipeline_constraints']['table_cell_sign_date']['production_rule']}",
             "",
-            "There is no documented table-specific text-tag syntax. The ranked tests below isolate rendered wrapping and provide a governed fallback. Run them only in a synthetic document with controlled recipients; do not promote a diagnostic tag into live content.",
+            "There is no documented table-specific text-tag syntax. The same syntax works in tables when the complete tag stays on one rendered physical line. The ranked tests below preserve the diagnostic record and provide a governed fallback. Run them only in a synthetic document with controlled recipients; do not promote a diagnostic tag into live content.",
             "",
             "| Test | Classification | Exact tag | Placement | Purpose |",
             "|---:|---|---|---|---|",
@@ -1627,7 +1654,8 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
             "",
             f"- Maximum document length: **{registry['document_safety_policy']['maximum_pages']} pages** (Zoho documents the feature for documents less than 75 pages).",
             "- Maximum recipient manifest: **25 recipients**, matching Zoho Sign's sending limit.",
-            "- Keep every tag on one physical line and use ASCII braces and straight double quotes.",
+            "- Keep every complete tag, including both closing braces, on one rendered physical line and one page; automatic visual wrapping is a failure even without a manual newline.",
+            "- Use ASCII braces and straight double quotes.",
             "- Declare recipients explicitly as R1-R25; implicit first-recipient assignment is not allowed in governed content.",
             "- Every signer in the recipient-role manifest must have at least one assigned field, and every tag recipient must appear in the manifest.",
             "- Noncanonical formatted, multi-recipient, unknown, or invented tags fail the production scanner.",
