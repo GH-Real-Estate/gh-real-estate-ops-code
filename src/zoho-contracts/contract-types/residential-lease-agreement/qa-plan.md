@@ -38,3 +38,7 @@ Fail the preview if it contains Roboto, an RLA code, an internal question, an AP
 ## Signature smoke-test gate
 
 Use only a short fictitious `TEST — DO NOT SEND TO TENANT` document and controlled GH-owned test mailboxes. Test preview field conversion separately from post-signature value population for every signer-count variant. Verify every required `{{I:Rn}}` converts for the intended tenant, GH receives no initials field, and the one-, two-, or three-tenant fragment is selected exactly. Do not send even a synthetic request without explicit user approval.
+
+For Sign Date, run an ordinary-paragraph control and the ranked table-cell tests in the generated Sign registry. Begin with the unchanged `{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}` standard in a wide or merged Date cell. Fail the test if the raw tag wraps, crosses a page boundary, remains literal, or is assigned to the wrong recipient. Disable **Allow row to break across pages** for every signature row. The 2026-07-17 combined-recipient probes are negative evidence: some formed a field, but only the first recipient owned it, so every intended signer must have a separate tag and field.
+
+Do not treat the visible `dd MMM yyyy` editor format in a table as proof that the four-`M` source syntax or a timestamp format was accepted. Record the exact source tag, placement, preview owner, preview format, completed value, and result for each controlled test without names, emails, phone numbers, or screenshots containing test identities.
