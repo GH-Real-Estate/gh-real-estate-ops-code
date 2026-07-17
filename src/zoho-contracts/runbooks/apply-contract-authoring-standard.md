@@ -76,7 +76,7 @@ Heading levels are semantic. Do not choose a heading solely because its visual a
 
 ## 4. Resolve the Recipient Manifest and Add Zoho Sign Text Tags
 
-Use the production-safe shorthand forms in the Sign registry. Keep every tag on one physical line and use straight ASCII braces and quotation marks.
+Use the production-safe shorthand forms in the Sign registry. Valid syntax is only the first gate: keep every complete tag, from its opening braces through both closing braces, on one rendered physical line and one page. Automatic visual wrapping is a failure even if the source contains no manual newline. Use straight ASCII braces and quotation marks.
 
 Recipient roles must be generated from the actual signer set:
 
@@ -126,10 +126,10 @@ A Sign Date is the date the recipient completes signing. It is expected to be bl
 
 Do not combine recipient numbers in one field. Controlled 2026-07-17 probes showed that some combined-recipient strings can create a field while assigning it only to the first parsed recipient. Field formation is a false positive unless the preview shows the correct single owner. Repeat separate canonical R1, R2, R3, and later tags instead.
 
-There is no documented table-specific Sign Date syntax. Zoho requires every text tag to remain on one physical line and states that a tag moved to the next line will not be detected. For every signature table:
+There is no documented table-specific Sign Date syntax. Controlled 2026-07-17 testing confirmed Zoho's documented line rule in the Contracts-to-Sign path: syntactically valid `hh` Sign Date tags remained literal when visually wrapped, while Sign fields formed inside the same table when their complete source tags fit on one rendered physical line. Apply this rendered-line gate to every text tag, not only Sign Date. For every signature table:
 
 1. Start with the unchanged canonical tag in a widened or merged Date cell.
-2. Inspect the rendered source before Sign conversion. The opening braces, complete tag, and closing braces must appear on one physical line and on one page.
+2. Inspect the rendered source before Sign conversion. The opening braces, complete tag, and both closing braces must appear on one rendered physical line and on one page. Do not rely on the source being one paragraph; visual word-wrap still fails.
 3. If necessary, reduce only the raw tag's source font or revise column widths; do not change the production date format merely to make it fit.
 4. Disable **Allow row to break across pages** for the signature row.
 5. If the canonical text tag cannot be kept on one line, use a native signer/signatory-block Sign Date field or `{{SD:R1}}`, then set `MM/dd/yyyy hh:mm a z` in the Zoho Sign field properties. Verify and save that configuration in the governed template before publication.
@@ -151,7 +151,7 @@ Use the 10-test diagnostic matrix in `src/zoho-sign/field-tags/zoho-contracts-te
    - signature and initial fields are required;
    - text and checkbox required markers behave as intended; and
    - fields do not overlap, wrap, or shift onto another page.
-   - every raw Sign Date source tag inside a table stayed on one physical line before conversion, and no portion of a tag crossed a row or page boundary.
+   - every complete raw text tag stayed on one rendered physical line before conversion, and no portion—including either closing brace—crossed a line, row, or page boundary.
 6. Configure signing order separately. All non-landlord signers must have an earlier position; GH must have the highest and final position. Multiple non-landlord signers may share a position and sign in parallel.
 7. Complete the signing flow with every synthetic recipient.
 8. Inspect the completed document and confirm:

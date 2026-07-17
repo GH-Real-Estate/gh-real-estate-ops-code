@@ -1076,7 +1076,7 @@
     {
       "gate_id": "formatted_sign_date_smoke_test",
       "status": "open",
-      "reason": "The canonical formatted Sign Date is production-approved and converted in ordinary body text, but narrow table cells wrapped or page-split the raw tag and prevented detection. Single-line table placement, correct one-recipient ownership, and completed-signature timestamp population remain unverified.",
+      "reason": "Controlled table preview testing confirmed that the canonical formatted Sign Date forms when its complete source tag fits on one rendered physical line and remains literal when visually wrapped. The universal rendered-line rule and one-recipient ownership rule are confirmed, but every signer-count fragment and completed-signature timestamp population still require live Draft verification.",
       "blocks": [
         "use_formatted_sign_date",
         "publish"

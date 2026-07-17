@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "registry_id": "ghre-zoho-contracts-to-sign-text-tags",
   "title": "GH Real Estate Zoho Contracts to Zoho Sign Text Tag Registry",
   "effective_date": "2026-07-17",
@@ -51,9 +51,12 @@
     "official_limit": "Zoho documents the feature for documents less than 75 pages.",
     "maximum_pages": 74,
     "single_physical_line_required": true,
+    "applies_to_all_text_tags": true,
+    "rendered_visual_wrap_is_failure": true,
+    "rendered_preflight_required": true,
     "ascii_braces_and_quotes_required": true,
     "trailing_width_spaces_allowed": false,
-    "rule": "Keep each tag on one physical line with ASCII {{ }}, straight double quotes, and no hidden line breaks. This registry intentionally forbids width-padding spaces so source scans remain deterministic."
+    "rule": "Keep every complete Zoho Sign text tag, from the opening {{ through the closing }}, on one rendered physical line and one page. Automatic visual wrapping is a failure even when the source contains no manual newline. Inspect the rendered Contracts or Writer document before Sign conversion, use ASCII {{ }}, straight double quotes, and no hidden line breaks. This registry intentionally forbids width-padding spaces so source scans remain deterministic."
   },
   "mandatory_marker_policy": {
     "marker": "*",
@@ -74,7 +77,7 @@
     "output_example": "07/17/2026 03:42 PM CDT",
     "recipient_rule": "Encode exactly one explicit R1-R25 recipient role per Sign Date tag and repeat the canonical tag separately for every recipient who needs a signing timestamp.",
     "mandatory_marker_rule": "Do not add *. Sign Date is system-populated after that recipient signs; Zoho documents the mandatory marker only for text fields and checkboxes.",
-    "verification_rule": "The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion in ordinary body text on 2026-07-17. A narrow table cell can wrap or page-split the source tag and prevent conversion. Keep the complete tag on one physical line and complete both a table-placement preview check and a post-signature value check before publishing a live template."
+    "verification_rule": "The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion in ordinary body text on 2026-07-17. Controlled table testing then confirmed that syntactically valid Sign Date tags remain literal when visually wrapped, while Sign fields form inside the same table when their complete tags fit on one rendered physical line. Keep the complete tag, including both closing braces, on one rendered line and complete a post-signature value check before publishing a live template."
   },
   "evidence_policy": {
     "officially_documented_grammar": "Syntax recorded from Zoho's current automatic-field-addition help page.",
@@ -89,6 +92,14 @@
         "stage": "preview_field_conversion",
         "result": "passed",
         "source": "user-confirmed Zoho Contracts-to-Zoho Sign test",
+        "post_signature_value_population": "pending"
+      },
+      {
+        "date": "2026-07-17",
+        "syntax": "{{SD:R<n>:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
+        "stage": "table_preview_rendered_line_control",
+        "result": "passed_when_single_line_and_failed_when_visually_wrapped",
+        "source": "sanitized user-confirmed Zoho Contracts-to-Zoho Sign table test",
         "post_signature_value_population": "pending"
       }
     ],
@@ -107,11 +118,11 @@
       "rule": "One Sign field has one recipient owner. Use one separate canonical tag for R1, R2, R3, and every other intended recipient; combined-recipient tags are invalid."
     },
     "table_cell_sign_date": {
-      "status": "open_layout_smoke_test",
+      "status": "confirmed_rendered_single_line_requirement",
       "evidence_date": "2026-07-17",
-      "observation": "A formatted Sign Date tag converted in ordinary document body text, while the same kind of long tag remained literal after wrapping over multiple lines in a narrow table cell; one observed tag was split across a page boundary. A shorter date-only Sign Date field was present in a table and displayed the editor format dd MMM yyyy.",
-      "official_rule": "Zoho requires every text tag to remain on one physical line and states that a tag moved to the next line will not be detected. Zoho publishes no separate table-specific Sign Date grammar.",
-      "production_rule": "Keep the canonical MM/dd/yyyy hh:mm a z tag unchanged, widen or merge the Date cell or reduce only the source-tag font until the raw tag remains on one physical line, and disable Allow row to break across pages. Verify field ownership in preview and the populated timestamp after signing. If layout cannot preserve one line, use a native Sign Date field or the short {{SD:R1}} fallback and set the custom format in the Zoho Sign field properties; do not silently publish a noncanonical text tag.",
+      "observation": "User-confirmed table preview testing showed syntactically valid Sign Date tags using the canonical hh format remained literal when they visually wrapped, while a Signature tag converted in the same table and Sign Date fields formed in a wider table cell. Tables are supported; rendered line fit, not a separate table grammar, controls automatic field formation. Earlier controls also showed that multiple supported dateformat variants can form when the complete tag remains on one rendered physical line. Preview formation does not yet prove completed timestamp population.",
+      "official_rule": "Zoho requires every text tag to remain on one physical line and states that a tag moved to the next line will not be detected. A visual wrap counts as moving to the next line even without a manual newline. Zoho publishes no separate table-specific Sign Date grammar.",
+      "production_rule": "Apply the rendered single-line requirement to every Zoho Sign text tag. Keep the canonical MM/dd/yyyy hh:mm a z Sign Date tag unchanged, including both closing braces, on one rendered physical line and one page. Widen or merge the field cell, reduce only the source-tag font, or restructure the layout; disable Allow row to break across pages. Verify field ownership in preview and the populated timestamp after signing. If layout cannot preserve one line, use a native Sign Date field or the short {{SD:R1}} fallback and set the custom format in the Zoho Sign field properties; do not silently publish a wrapped or noncanonical text tag.",
       "diagnostic_matrix": [
         {
           "order": 1,

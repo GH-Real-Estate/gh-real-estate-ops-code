@@ -288,8 +288,13 @@ class ContractAuthoringStandardTests(unittest.TestCase):
         self.assertIn("first parsed recipient", multiple["observation"])
 
         table = constraints["table_cell_sign_date"]
-        self.assertEqual(table["status"], "open_layout_smoke_test")
+        self.assertEqual(
+            table["status"], "confirmed_rendered_single_line_requirement"
+        )
         self.assertIn("one physical line", table["official_rule"])
+        self.assertIn("visual wrap", table["official_rule"])
+        self.assertIn("same table", table["observation"])
+        self.assertIn("every Zoho Sign text tag", table["production_rule"])
         self.assertIn("MM/dd/yyyy hh:mm a z", table["production_rule"])
         self.assertEqual(len(table["diagnostic_matrix"]), 10)
         self.assertEqual(
@@ -297,6 +302,19 @@ class ContractAuthoringStandardTests(unittest.TestCase):
             '{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}',
         )
         self.assertEqual(table["diagnostic_matrix"][-1]["tag"], "{{SD:R1}}")
+
+    def test_rendered_single_line_policy_applies_to_every_text_tag(self) -> None:
+        safety = self.sign_registry["document_safety_policy"]
+        self.assertTrue(safety["single_physical_line_required"])
+        self.assertTrue(safety["applies_to_all_text_tags"])
+        self.assertTrue(safety["rendered_visual_wrap_is_failure"])
+        self.assertTrue(safety["rendered_preflight_required"])
+        self.assertIn("rendered physical line", safety["rule"])
+        self.assertIn("Automatic visual wrapping is a failure", safety["rule"])
+
+        rendered = validator.render_sign_markdown(self.sign_registry)
+        self.assertIn("Universal rendered-line gate", rendered)
+        self.assertIn("including both closing braces", rendered)
 
     def test_official_document_field_catalog_is_complete(self) -> None:
         fields = [
