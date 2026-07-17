@@ -29,8 +29,8 @@ They verify the webhook keeps safe defaults, replay/lock controls, live-mode cir
 | Dry run | `DRY_RUN=true` | Returns would-create result; no invoice created or emailed |
 | Live circuit breaker | `DRY_RUN=false` without live confirmation | Startup/config validation fails safely |
 | Lease fee amount | `RETURNED_FEE_AMOUNT=30.00` | Created/would-create RF invoice uses `$30.00`, unless law requires lower amount |
-| Partial payments enabled | Source invoice has top-level `allow_partial_payments=true` | RF invoice and source-ledger update both preserve `true` |
-| Partial payments disabled | Source invoice has top-level `allow_partial_payments=false` | RF invoice and source-ledger update both preserve `false` |
-| Partial-payment field absent | Source response omits `allow_partial_payments` | RF payload omits the field and leaves Zoho behavior unchanged |
+| Partial payments enabled | Source invoice has top-level `allow_partial_payments=true` | RF invoice inherits `true`; source-ledger update writes custom fields only |
+| Partial payments disabled | Source invoice has top-level `allow_partial_payments=false` | RF invoice inherits `false`; source-ledger update writes custom fields only |
+| Partial-payment field absent | Source response omits `allow_partial_payments` | RF creation payload omits the field and the source-ledger update leaves payment behavior untouched |
 | Email disabled | `SEND_INVOICE_ON_CREATE=false` | Fee invoice may be created; email send is skipped intentionally |
 | Logs check | Event processed with diagnostics off | No bank data, tenant PII, tokens, or secrets in logs |
