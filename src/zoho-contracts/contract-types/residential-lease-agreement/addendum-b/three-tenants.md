@@ -10,7 +10,7 @@ Complete and sign this Addendum only for each document actually delivered to Ten
 
 | Party / Printed Name | Signature | Date | Email / Phone |
 |---|---|---|---|
-| Tenant #1 ____________________________ | {{S:R1}} | {{SD:R1}} | ____________________________ |
-| Tenant #2 ____________________________ | {{S:R2}} | {{SD:R2}} | ____________________________ |
-| Tenant #3 ____________________________ | {{S:R3}} | {{SD:R3}} | ____________________________ |
-| Landlord / Authorized Representative ____________________________ | {{S:R4}} | {{SD:R4}} | ____________________________ |
+| Tenant #1 ____________________________ | {{S:R1}} | {{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}} | ____________________________ |
+| Tenant #2 ____________________________ | {{S:R2}} | {{SD:R2:(dateformat="MM/dd/yyyy hh:mm a z")}} | ____________________________ |
+| Tenant #3 ____________________________ | {{S:R3}} | {{SD:R3:(dateformat="MM/dd/yyyy hh:mm a z")}} | ____________________________ |
+| Landlord / Authorized Representative ____________________________ | {{S:R4}} | {{SD:R4:(dateformat="MM/dd/yyyy hh:mm a z")}} | ____________________________ |
