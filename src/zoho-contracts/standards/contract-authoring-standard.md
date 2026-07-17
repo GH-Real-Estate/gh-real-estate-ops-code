@@ -69,7 +69,7 @@ The main document title uses the Writer **Title** style and article headings use
 
 - **Inter availability:** Confirm that Inter Regular and Inter Bold are available organization-wide in the connected Zoho Writer/Contracts tenant before publishing. If unavailable, stop and install the approved Inter Regular and Bold fonts organization-wide first. Seek a governed typography amendment only if installation is impossible; never silently substitute another font.
 - **Existing live templates:** Changing this repository standard does not restyle existing live templates. Update and republish each affected template through a reviewed change, then render and inspect a sample contract.
-- **Zoho Sign fields:** Follow `src/zoho-sign/field-tags/zoho-contracts-text-tag-registry.json`. Only production-safe simple tags pass the default scanner.
+- **Zoho Sign fields:** Follow `src/zoho-sign/field-tags/zoho-contracts-text-tag-registry.json`. Only production-safe governed tags pass the default scanner.
 
 ## Official Zoho sources
 
