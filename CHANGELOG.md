@@ -4,6 +4,8 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-17
 
+- Recorded controlled multi-recipient Sign Date probes as negative evidence: some expressions formed a field, but Zoho assigned it only to the first parsed recipient. GHRE therefore requires one field and one canonical tag per recipient.
+- Documented that Zoho publishes no table-specific Sign Date syntax and requires every raw tag to remain on one physical line. Added a ranked 10-test table-cell matrix, no-row-split controls, a native-field fallback, and an explicit residential-lease publication gate for table placement and completed timestamp verification.
 - Standardized GH Real Estate Sign Date fields on `{{SD:R<n>:(dateformat="MM/dd/yyyy hh:mm a z")}}`, using one explicit recipient per tag and a zero-padded 12-hour timestamp with AM/PM and timezone.
 - Recorded the user-confirmed Zoho Contracts-to-Zoho Sign preview conversion result and retained a completed-signature value check as a live-template publication gate.
 - Clarified that `*` is meaningful for required text fields and checkboxes, not Sign Date; Sign Date is populated automatically after its assigned recipient signs.
