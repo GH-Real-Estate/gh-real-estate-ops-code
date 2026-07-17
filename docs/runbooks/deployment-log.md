@@ -7,7 +7,7 @@ Record every production-relevant deployment or Zoho change.
 - System: GitHub / Zoho Books / Zoho Payments / Zoho Catalyst
 - Repo branch / commit: `agent/preserve-zoho-partial-payments` / PR #67
 - Files changed: LF and monthly-interest Deluge functions; returned-payment webhook and source-contract test; Books settings; install/test checklists
-- Business rule changed? no; code now preserves the source invoice's existing top-level `allow_partial_payments` setting instead of defaulting or nesting it incorrectly
+- Business rule changed? no; new fee invoices now inherit or deterministically resolve the existing top-level `allow_partial_payments` setting, while source-ledger updates leave payment behavior untouched
 - Dry-run completed? not applicable for source-control update
 - Smoke test completed? repository, authority-refresh, and security checks passed on PR #67; live Zoho smoke test required after deployment
 - Deployed by: ChatGPT / GitHub update
