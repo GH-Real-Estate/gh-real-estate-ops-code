@@ -2,6 +2,13 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-17
+
+- Standardized GH Real Estate Sign Date fields on `{{SD:R<n>:(dateformat="MM/dd/yyyy hh:mm a z")}}`, using one explicit recipient per tag and a zero-padded 12-hour timestamp with AM/PM and timezone.
+- Recorded the user-confirmed Zoho Contracts-to-Zoho Sign preview conversion result and retained a completed-signature value check as a live-template publication gate.
+- Clarified that `*` is meaningful for required text fields and checkboxes, not Sign Date; Sign Date is populated automatically after its assigned recipient signs.
+- Updated the governed recipient policy, residential lease signature fragments, validators, tests, generated references, and operator runbook. This repository update does not republish or change a live Zoho template.
+
 ## 2026-07-16
 
 - Added a Draft-only, attorney-review-required Zoho Contracts implementation package for the July 14, 2026 Lead-First Residential Lease Agreement.
