@@ -9,7 +9,8 @@ This registry is fail-closed: a field visible in the Zoho Sign editor is not ass
 
 - **Official grammar:** Recorded from Zoho's current automatic-field-addition documentation.
 - **User-confirmed Contracts handoff:** `{{I:R1*}}` and the canonical formatted Sign Date have been observed converting successfully.
-- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview field conversion in ordinary body text on 2026-07-17. Combined-recipient probes and narrow-table placement exposed separate ownership and wrapping constraints; table-placement and completed-signature checks remain required before live-template publication.
+- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview conversion in ordinary body text on 2026-07-17. Controlled table testing then confirmed that syntactically valid tags form only when the complete source tag fits on one rendered physical line; a visual wrap prevents detection even without a manual newline. Completed-signature value checks remain required before live-template publication.
+- **Universal rendered-line gate:** Every Zoho Sign text tag, from its opening braces through both closing braces, must fit on one rendered physical line and one page before conversion. This is a layout requirement in addition to valid syntax.
 
 ## Production-safe tags
 
@@ -38,7 +39,7 @@ Zoho documents `*` as meaningful only for Text and Checkbox fields. The exact pu
 - Output example: `07/17/2026 03:42 PM CDT`
 - Recipient rule: Encode exactly one explicit R1-R25 recipient role per Sign Date tag and repeat the canonical tag separately for every recipient who needs a signing timestamp.
 - Required-marker rule: Do not add *. Sign Date is system-populated after that recipient signs; Zoho documents the mandatory marker only for text fields and checkboxes.
-- Verification: The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion in ordinary body text on 2026-07-17. A narrow table cell can wrap or page-split the source tag and prevent conversion. Keep the complete tag on one physical line and complete both a table-placement preview check and a post-signature value check before publishing a live template.
+- Verification: The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion in ordinary body text on 2026-07-17. Controlled table testing then confirmed that syntactically valid Sign Date tags remain literal when visually wrapped, while Sign fields form inside the same table when their complete tags fit on one rendered physical line. Keep the complete tag, including both closing braces, on one rendered line and complete a post-signature value check before publishing a live template.
 
 ## Observed Contracts-to-Sign constraints
 
@@ -50,14 +51,14 @@ Zoho documents `*` as meaningful only for Text and Checkbox fields. The exact pu
 
 A field appearing in preview does not prove that a combined-recipient expression worked. Inspect its assigned recipient. Use separate R1, R2, R3, and later tags.
 
-### Sign Date inside table cells
+### Rendered single-line requirement in table cells
 
-- Status: `open_layout_smoke_test`
-- Observed result: A formatted Sign Date tag converted in ordinary document body text, while the same kind of long tag remained literal after wrapping over multiple lines in a narrow table cell; one observed tag was split across a page boundary. A shorter date-only Sign Date field was present in a table and displayed the editor format dd MMM yyyy.
-- Official rule and syntax conclusion: Zoho requires every text tag to remain on one physical line and states that a tag moved to the next line will not be detected. Zoho publishes no separate table-specific Sign Date grammar.
-- Production rule: Keep the canonical MM/dd/yyyy hh:mm a z tag unchanged, widen or merge the Date cell or reduce only the source-tag font until the raw tag remains on one physical line, and disable Allow row to break across pages. Verify field ownership in preview and the populated timestamp after signing. If layout cannot preserve one line, use a native Sign Date field or the short {{SD:R1}} fallback and set the custom format in the Zoho Sign field properties; do not silently publish a noncanonical text tag.
+- Status: `confirmed_rendered_single_line_requirement`
+- Observed result: User-confirmed table preview testing showed syntactically valid Sign Date tags using the canonical hh format remained literal when they visually wrapped, while a Signature tag converted in the same table and Sign Date fields formed in a wider table cell. Tables are supported; rendered line fit, not a separate table grammar, controls automatic field formation. Earlier controls also showed that multiple supported dateformat variants can form when the complete tag remains on one rendered physical line. Preview formation does not yet prove completed timestamp population.
+- Official rule and syntax conclusion: Zoho requires every text tag to remain on one physical line and states that a tag moved to the next line will not be detected. A visual wrap counts as moving to the next line even without a manual newline. Zoho publishes no separate table-specific Sign Date grammar.
+- Production rule: Apply the rendered single-line requirement to every Zoho Sign text tag. Keep the canonical MM/dd/yyyy hh:mm a z Sign Date tag unchanged, including both closing braces, on one rendered physical line and one page. Widen or merge the field cell, reduce only the source-tag font, or restructure the layout; disable Allow row to break across pages. Verify field ownership in preview and the populated timestamp after signing. If layout cannot preserve one line, use a native Sign Date field or the short {{SD:R1}} fallback and set the custom format in the Zoho Sign field properties; do not silently publish a wrapped or noncanonical text tag.
 
-There is no documented table-specific text-tag syntax. The ranked tests below isolate rendered wrapping and provide a governed fallback. Run them only in a synthetic document with controlled recipients; do not promote a diagnostic tag into live content.
+There is no documented table-specific text-tag syntax. The same syntax works in tables when the complete tag stays on one rendered physical line. The ranked tests below preserve the diagnostic record and provide a governed fallback. Run them only in a synthetic document with controlled recipients; do not promote a diagnostic tag into live content.
 
 | Test | Classification | Exact tag | Placement | Purpose |
 |---:|---|---|---|---|
@@ -124,7 +125,8 @@ No dedicated official text tag is published for Image, Payment, Formula, or Spli
 
 - Maximum document length: **74 pages** (Zoho documents the feature for documents less than 75 pages).
 - Maximum recipient manifest: **25 recipients**, matching Zoho Sign's sending limit.
-- Keep every tag on one physical line and use ASCII braces and straight double quotes.
+- Keep every complete tag, including both closing braces, on one rendered physical line and one page; automatic visual wrapping is a failure even without a manual newline.
+- Use ASCII braces and straight double quotes.
 - Declare recipients explicitly as R1-R25; implicit first-recipient assignment is not allowed in governed content.
 - Every signer in the recipient-role manifest must have at least one assigned field, and every tag recipient must appear in the manifest.
 - Noncanonical formatted, multi-recipient, unknown, or invented tags fail the production scanner.
