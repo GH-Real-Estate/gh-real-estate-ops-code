@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "registry_id": "ghre-zoho-contracts-to-sign-text-tags",
   "title": "GH Real Estate Zoho Contracts to Zoho Sign Text Tag Registry",
-  "effective_date": "2026-07-15",
+  "effective_date": "2026-07-17",
   "scope": "Text tags embedded in Zoho Contracts content and converted to signer fields by Zoho Sign",
   "governance_status": "active",
   "official_sources": [
@@ -49,14 +49,33 @@
       "S",
       "I"
     ],
-    "rule": "Zoho documents the asterisk as the mandatory marker for text fields and checkboxes. Existing simple signature and initial tags with a redundant asterisk are accepted for compatibility but the asterisk does not change their required behavior."
+    "rule": "Zoho documents the asterisk as the mandatory marker for text fields and checkboxes. It is not a Sign Date modifier, so GHRE forbids it on SD; Sign Date is populated automatically after signing. Existing simple signature and initial tags with a redundant asterisk are accepted for compatibility but the asterisk does not change their required behavior."
+  },
+  "canonical_sign_date_policy": {
+    "format": "MM/dd/yyyy hh:mm a z",
+    "syntax_pattern": "{{SD:R<n>:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
+    "r1_example": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
+    "output_example": "07/17/2026 03:42 PM CDT",
+    "recipient_rule": "Encode exactly one explicit R1-R25 recipient role per Sign Date tag and repeat the canonical tag separately for every recipient who needs a signing timestamp.",
+    "mandatory_marker_rule": "Do not add *. Sign Date is system-populated after that recipient signs; Zoho documents the mandatory marker only for text fields and checkboxes.",
+    "verification_rule": "The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion on 2026-07-17. Complete one post-signature value check before publishing a live template."
   },
   "evidence_policy": {
     "officially_documented_grammar": "Syntax recorded from Zoho's current automatic-field-addition help page.",
     "user_confirmed_contracts_handoff": [
-      "{{I:R1*}}"
+      "{{I:R1*}}",
+      "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}"
     ],
-    "tenant_smoke_test_evidence_recorded": [],
+    "tenant_smoke_test_evidence_recorded": [
+      {
+        "date": "2026-07-17",
+        "syntax": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
+        "stage": "preview_field_conversion",
+        "result": "passed",
+        "source": "user-confirmed Zoho Contracts-to-Zoho Sign test",
+        "post_signature_value_population": "pending"
+      }
+    ],
     "rule": "Official grammar, observed Contracts-to-Sign behavior, and tenant smoke-test evidence are separate facts. A documented tag is not automatically approved for this integration path."
   },
   "compatibility_aliases": [
@@ -86,9 +105,9 @@
     {
       "code": "SD",
       "field": "Sign Date",
-      "syntax": "{{SD:R1}}",
+      "syntax": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
       "asterisk_policy": "forbidden",
-      "behavior": "Zoho Sign fills this field only after the recipient signs; it is not a Contracts merge value or a pre-send date."
+      "behavior": "GHRE canonical signing timestamp. Zoho Sign fills this field only after R1 signs and renders a zero-padded MM/DD/YYYY date, two-digit 12-hour time, AM/PM, and timezone. Use one separate tag per recipient and do not add *."
     },
     {
       "code": "D",
@@ -169,18 +188,6 @@
     }
   ],
   "official_but_contracts_pipeline_unverified": [
-    {
-      "field": "Formatted Sign Date",
-      "syntax": "{{SD:R1:(dateformat=\"MMM dd yyyy\")}}",
-      "official_status": "documented",
-      "pipeline_status": "contracts_pipeline_unverified",
-      "production_policy": "blocked_until_smoke_tested",
-      "notes": "Official Zoho Sign grammar supports dateformat. A user reported that this form did not autopopulate in the Contracts-to-Sign handoff, but it is unclear whether the tag failed to convert in preview or the Sign Date was merely blank before signing. Keep it blocked until both stages are tested separately.",
-      "required_smoke_tests": [
-        "preview_field_conversion",
-        "post_signature_value_population"
-      ]
-    },
     {
       "field": "Dropdown",
       "syntax": "{{DD:R1:Text(options=\"option 1, option 2, option 3\")}}",
@@ -316,8 +323,8 @@
     },
     {
       "field": "Sign Date",
-      "text_tag_syntax": "{{SD:R1}}",
-      "placement": "production_safe_text_tag; value appears after signing"
+      "text_tag_syntax": "{{SD:R1:(dateformat=\"MM/dd/yyyy hh:mm a z\")}}",
+      "placement": "GHRE canonical production-safe text tag; one explicit recipient per tag; value appears after signing; no asterisk"
     },
     {
       "field": "Date",
