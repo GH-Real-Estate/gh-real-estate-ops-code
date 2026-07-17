@@ -9,7 +9,7 @@ This registry is fail-closed: a field visible in the Zoho Sign editor is not ass
 
 - **Official grammar:** Recorded from Zoho's current automatic-field-addition documentation.
 - **User-confirmed Contracts handoff:** `{{I:R1*}}` and the canonical formatted Sign Date have been observed converting successfully.
-- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview field conversion on 2026-07-17; completed-signature timestamp verification remains required before live-template publication.
+- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview field conversion in ordinary body text on 2026-07-17. Combined-recipient probes and narrow-table placement exposed separate ownership and wrapping constraints; table-placement and completed-signature checks remain required before live-template publication.
 
 ## Production-safe tags
 
@@ -38,7 +38,41 @@ Zoho documents `*` as meaningful only for Text and Checkbox fields. The exact pu
 - Output example: `07/17/2026 03:42 PM CDT`
 - Recipient rule: Encode exactly one explicit R1-R25 recipient role per Sign Date tag and repeat the canonical tag separately for every recipient who needs a signing timestamp.
 - Required-marker rule: Do not add *. Sign Date is system-populated after that recipient signs; Zoho documents the mandatory marker only for text fields and checkboxes.
-- Verification: The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion on 2026-07-17. Complete one post-signature value check before publishing a live template.
+- Verification: The exact R1 syntax passed user-confirmed Zoho Contracts-to-Zoho Sign preview conversion in ordinary body text on 2026-07-17. A narrow table cell can wrap or page-split the source tag and prevent conversion. Keep the complete tag on one physical line and complete both a table-placement preview check and a post-signature value check before publishing a live template.
+
+## Observed Contracts-to-Sign constraints
+
+### One field, one recipient
+
+- Status: `invalid`
+- Observed result: Some combined-recipient Sign Date variants produced a field, but Zoho assigned that field only to the first parsed recipient. Field formation is therefore a false positive and is not evidence of joint ownership.
+- Production rule: One Sign field has one recipient owner. Use one separate canonical tag for R1, R2, R3, and every other intended recipient; combined-recipient tags are invalid.
+
+A field appearing in preview does not prove that a combined-recipient expression worked. Inspect its assigned recipient. Use separate R1, R2, R3, and later tags.
+
+### Sign Date inside table cells
+
+- Status: `open_layout_smoke_test`
+- Observed result: A formatted Sign Date tag converted in ordinary document body text, while the same kind of long tag remained literal after wrapping over multiple lines in a narrow table cell; one observed tag was split across a page boundary. A shorter date-only Sign Date field was present in a table and displayed the editor format dd MMM yyyy.
+- Official rule and syntax conclusion: Zoho requires every text tag to remain on one physical line and states that a tag moved to the next line will not be detected. Zoho publishes no separate table-specific Sign Date grammar.
+- Production rule: Keep the canonical MM/dd/yyyy hh:mm a z tag unchanged, widen or merge the Date cell or reduce only the source-tag font until the raw tag remains on one physical line, and disable Allow row to break across pages. Verify field ownership in preview and the populated timestamp after signing. If layout cannot preserve one line, use a native Sign Date field or the short {{SD:R1}} fallback and set the custom format in the Zoho Sign field properties; do not silently publish a noncanonical text tag.
+
+There is no documented table-specific text-tag syntax. The ranked tests below isolate rendered wrapping and provide a governed fallback. Run them only in a synthetic document with controlled recipients; do not promote a diagnostic tag into live content.
+
+| Test | Classification | Exact tag | Placement | Purpose |
+|---:|---|---|---|---|
+| 1 | `production_control` | `{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}` | Use a widened or merged Date cell; keep the complete raw tag on one physical line and disable row splitting. | Highest-probability test and unchanged GHRE production standard. |
+| 2 | `diagnostic_only` | `{{SD:R1:(dateformat="MM/dd/yyyy h:mm a z")}}` | Use the same widened or merged no-wrap cell as test 1. | Confirms that h versus hh is not the table failure; h remains noncanonical for GHRE. |
+| 3 | `production_control` | `{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}` | Keep the original cell width, reduce only the raw source tag to 6 pt, and disable row splitting. | Tests whether fitting the canonical tag on one rendered line fixes conversion without redesigning the table. |
+| 4 | `experimental_diagnostic_only` | `{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}` | Insert each visible gap inside the date format as a Writer non-breaking space; do not use in production unless a completed smoke test succeeds. | Tests whether preventing breaks at the internal spaces preserves one line; Zoho does not document non-breaking spaces as Sign format characters. |
+| 5 | `official_example_diagnostic` | `{{SD:R1:(dateformat="MMM dd yyyy HH:mm z")}}` | Use the original table cell with no manual line break. | Tests Zoho's exact published formatted Sign Date example in the affected table. |
+| 6 | `diagnostic_only` | `{{SD:R1:(dateformat="MM/dd/yyyy HH:mm z")}}` | Use the original table cell with no manual line break. | Shorter 24-hour timestamp with timezone. |
+| 7 | `diagnostic_only` | `{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a")}}` | Use the original table cell with no manual line break. | Shorter 12-hour timestamp without timezone. |
+| 8 | `diagnostic_only` | `{{SD:R1:(dateformat="MM/dd/yyyy")}}` | Use the original table cell. | Date-only width control; conversion here but not in tests 1-7 confirms a layout-length threshold. |
+| 9 | `diagnostic_only` | `{{SD:R1:(dateformat="MM/dd/yyyy,hh:mm,a,z")}}` | Use the original table cell. | No-space parser control using punctuation Zoho documents as accepted; output punctuation is not the GHRE standard. |
+| 10 | `fallback_only` | `{{SD:R1}}` | After conversion, set MM/dd/yyyy hh:mm a z in the Zoho Sign field properties or replace it with a native signer/signatory-block Sign Date field. | Reliable short-tag fallback when the table cannot preserve the canonical formatted tag on one physical line. |
+
+Only tests 1 and 3 preserve the canonical GHRE syntax. Tests 2 and 4-9 are diagnostics; test 10 is a governed fallback that requires setting the final format in Zoho Sign or using a native signer field.
 
 ## Official syntax blocked pending Contracts-pipeline testing
 
@@ -101,3 +135,7 @@ No dedicated official text tag is published for Image, Payment, Formula, or Spli
 - [Document fields in Zoho Sign](https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/document-fields-in-zoho-sign)
 - [Zoho Sign API basic concepts](https://www.zoho.com/sign/api/basic-concepts.html)
 - [Send Documents for Signatures](https://help.zoho.com/portal/en/kb/zoho-sign/user-guide/sending-a-document/articles/send-for-signatures)
+- [Zoho Sign FAQ — line breaks in text tags](https://help.zoho.com/portal/en/kb/zoho-sign/faqs/general-faqs/articles/subscription-and-digital-signature-providers)
+- [Zoho Writer — stop table rows from splitting across pages](https://help.zoho.com/portal/en/kb/writer/layout-design-guide/document-layout-printing/table-layout/articles/stop-a-table-row-from-splitting-over-two-pages)
+- [Zoho Writer — insert a non-breaking space](https://help.zoho.com/portal/en/kb/writer/layout-design-guide/text-textbox-layout/articles/how-to-add-non-breaking-space-in-writer)
+- [Zoho Contracts — sending a contract for signature](https://help.zoho.com/portal/en/kb/contracts/user-guide/signature/articles/send-for-signature)
