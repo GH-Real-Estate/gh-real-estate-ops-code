@@ -38,6 +38,7 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 | Returned-payment fee amount | `RETURNED_FEE_AMOUNT=30.00` | Matches uploaded lease template Section 3.7. Do not set to $35 unless the lease is amended. |
 | Returned-payment ledger field | `cf_returned_payment_fee_events` | Used by webhook to prevent duplicate returned-payment fee events. |
 | Optional latest returned-fee invoice field | `cf_returned_fee_invoice_number` | Only updated if enabled by env. |
+| Partial-payment source field | Top-level `allow_partial_payments` | Preserve the generated source invoice's value on LF, INT, and RF invoices and on generic source-ledger update fallbacks. Do not nest it inside `payment_options`. |
 
 ## Required Before Live Automation
 
@@ -52,6 +53,8 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 - [ ] Confirm the source of truth for rent invoice identification: `cf_is_rent_invoice`.
 - [ ] Confirm test invoices cannot trigger fees unless intentionally marked as rent.
 - [ ] Confirm the `zbooks` connection can read invoices, read contacts, create invoices, update invoices, and send invoices where configured.
+- [ ] Inspect the actual generated rent invoice under Sales > Invoices and verify its top-level `allow_partial_payments` value; the recurring profile checkbox alone does not verify an already-generated invoice.
+- [ ] If a saved bank account is associated with the recurring profile, verify whether auto-charge is intended before promising the tenant control over a partial payment amount.
 - [ ] Confirm Apply Unused Credits is configured as an Invoice Created workflow, not an Estimate workflow.
 - [ ] Confirm Apply Unused Credits should run for every new invoice or add a Zoho Books workflow filter.
 
@@ -63,6 +66,7 @@ Use Zoho API names, not display labels, whenever possible.
 
 | Date | Change | Verified By |
 |---|---|---|
+| 2026-07-17 | Corrected LF/INT/RF partial-payment inheritance to use and preserve the top-level `allow_partial_payments` invoice field | Repository review; live Zoho verification pending |
 | 2026-07-06 | Updated Monthly Interest Billing to accrue from the original due date once eligible after 30 days | ChatGPT / GitHub update |
 | 2026-07-06 | Moved Monthly Interest Billing into its own Zoho Books automation folder and aligned settings with saved v1.5 code | ChatGPT / GitHub update |
 | 2026-07-06 | Verified RF fee amount should be `$30.00` under the uploaded lease template | ChatGPT review of lease template |
