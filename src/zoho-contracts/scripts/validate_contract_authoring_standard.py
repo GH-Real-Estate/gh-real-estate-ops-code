@@ -389,6 +389,21 @@ def _result(
     }
 
 
+def _looks_like_multi_recipient_sign_date(tag: str) -> bool:
+    """Return true when a Sign Date tag's recipient slot contains 2+ indexes.
+
+    Zoho may permissively create a field from some of these strings while
+    assigning it only to the first parsed recipient. Treat that conversion as
+    a false positive and reject the source with an actionable message.
+    """
+
+    lowered = tag.lower()
+    if not (lowered.startswith("{{sd:") or lowered.startswith("{{signdate:")):
+        return False
+    parts = tag.split(":", 2)
+    return len(parts) >= 2 and len(re.findall(r"\d{1,2}", parts[1])) > 1
+
+
 def classify_tag(tag: str, registry: dict[str, Any] | None = None) -> dict[str, Any]:
     """Classify one exact Zoho Sign tag using the fail-closed Contracts policy.
 
@@ -409,6 +424,18 @@ def classify_tag(tag: str, registry: dict[str, Any] | None = None) -> dict[str, 
             tag,
             "invalid",
             reason="tag must use ASCII braces, straight quotes, and ASCII content",
+        )
+
+    if _looks_like_multi_recipient_sign_date(tag):
+        return _result(
+            tag,
+            "invalid",
+            code="SD",
+            reason=(
+                "multi-recipient Sign Date fields are invalid: observed Zoho "
+                "conversion may create a field but assigns it only to the first "
+                "parsed recipient; use one separate canonical tag per recipient"
+            ),
         )
 
     if tag == "{{[]}}":
@@ -847,6 +874,7 @@ def validate_sign_registry(registry: Any) -> list[str]:
                 "mandatory_marker_policy",
                 "canonical_sign_date_policy",
                 "evidence_policy",
+                "observed_pipeline_constraints",
                 "compatibility_aliases",
                 "production_safe_simple_tags",
                 "official_but_contracts_pipeline_unverified",
@@ -857,8 +885,8 @@ def validate_sign_registry(registry: Any) -> list[str]:
             "Sign registry",
         )
     )
-    if registry.get("schema_version") != "1.1.0":
-        errors.append("Sign registry schema_version must be 1.1.0")
+    if registry.get("schema_version") != "1.2.0":
+        errors.append("Sign registry schema_version must be 1.2.0")
     if registry.get("effective_date") != "2026-07-17":
         errors.append("Sign registry effective_date must be 2026-07-17")
     errors.extend(_validate_sources(registry.get("official_sources"), "official_sources"))
@@ -982,6 +1010,82 @@ def validate_sign_registry(registry: Any) -> list[str]:
     ]
     if evidence.get("tenant_smoke_test_evidence_recorded") != expected_smoke_evidence:
         errors.append("tenant smoke-test evidence must record the exact 2026-07-17 preview result")
+
+    constraints = registry.get("observed_pipeline_constraints", {})
+    errors.extend(
+        _exact_keys(
+            constraints,
+            {"multiple_recipient_field_ownership", "table_cell_sign_date"},
+            "observed_pipeline_constraints",
+        )
+    )
+    multiple = constraints.get("multiple_recipient_field_ownership", {})
+    errors.extend(
+        _exact_keys(
+            multiple,
+            {"status", "evidence_date", "tested_families", "observation", "rule"},
+            "observed_pipeline_constraints.multiple_recipient_field_ownership",
+        )
+    )
+    if multiple.get("status") != "invalid":
+        errors.append("combined-recipient field ownership must remain invalid")
+    if "first parsed recipient" not in str(multiple.get("observation", "")):
+        errors.append("combined-recipient evidence must record first-recipient-only assignment")
+    if "one recipient owner" not in str(multiple.get("rule", "")).lower():
+        errors.append("combined-recipient rule must require one recipient owner per field")
+
+    table = constraints.get("table_cell_sign_date", {})
+    errors.extend(
+        _exact_keys(
+            table,
+            {
+                "status",
+                "evidence_date",
+                "observation",
+                "official_rule",
+                "production_rule",
+                "diagnostic_matrix",
+            },
+            "observed_pipeline_constraints.table_cell_sign_date",
+        )
+    )
+    if table.get("status") != "open_layout_smoke_test":
+        errors.append("table-cell Sign Date constraint must remain an open layout smoke test")
+    if "one physical line" not in str(table.get("official_rule", "")):
+        errors.append("table-cell official rule must preserve Zoho's one-line requirement")
+    if CANONICAL_SIGN_DATE_FORMAT not in str(table.get("production_rule", "")):
+        errors.append("table-cell production rule must preserve the canonical Sign Date format")
+    matrix = table.get("diagnostic_matrix")
+    if not isinstance(matrix, list) or len(matrix) != 10:
+        errors.append("table-cell Sign Date diagnostic matrix must contain exactly 10 tests")
+    else:
+        if [entry.get("order") for entry in matrix if isinstance(entry, dict)] != list(
+            range(1, 11)
+        ):
+            errors.append("table-cell Sign Date diagnostics must be ordered 1 through 10")
+        for index, entry in enumerate(matrix):
+            prefix = f"observed_pipeline_constraints.table_cell_sign_date.diagnostic_matrix[{index}]"
+            if not isinstance(entry, dict):
+                errors.append(f"{prefix} must be an object")
+                continue
+            errors.extend(
+                _exact_keys(
+                    entry,
+                    {"order", "classification", "tag", "placement", "purpose"},
+                    prefix,
+                )
+            )
+            for key in ("classification", "tag", "placement", "purpose"):
+                if not _non_empty_string(entry.get(key)):
+                    errors.append(f"{prefix}.{key} must be non-empty")
+        first = matrix[0] if isinstance(matrix[0], dict) else {}
+        last = matrix[-1] if isinstance(matrix[-1], dict) else {}
+        if first.get("tag") != CANONICAL_SIGN_DATE_R1:
+            errors.append("table-cell diagnostic 1 must use the exact canonical Sign Date")
+        if first.get("classification") != "production_control":
+            errors.append("table-cell diagnostic 1 must be the production control")
+        if last.get("tag") != "{{SD:R1}}":
+            errors.append("table-cell diagnostic 10 must retain the short-tag fallback")
     aliases = registry.get("compatibility_aliases")
     expected_alias = {
         "field": "Initial",
@@ -1404,7 +1508,7 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
         "",
         "- **Official grammar:** Recorded from Zoho's current automatic-field-addition documentation.",
         "- **User-confirmed Contracts handoff:** `{{I:R1*}}` and the canonical formatted Sign Date have been observed converting successfully.",
-        "- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview field conversion on 2026-07-17; completed-signature timestamp verification remains required before live-template publication.",
+        "- **Tenant smoke-test evidence:** The canonical formatted Sign Date passed preview field conversion in ordinary body text on 2026-07-17. Combined-recipient probes and narrow-table placement exposed separate ownership and wrapping constraints; table-placement and completed-signature checks remain required before live-template publication.",
         "",
         "## Production-safe tags",
         "",
@@ -1427,6 +1531,46 @@ def render_sign_markdown(registry: dict[str, Any]) -> str:
             f"- Recipient rule: {registry['canonical_sign_date_policy']['recipient_rule']}",
             f"- Required-marker rule: {registry['canonical_sign_date_policy']['mandatory_marker_rule']}",
             f"- Verification: {registry['canonical_sign_date_policy']['verification_rule']}",
+            "",
+            "## Observed Contracts-to-Sign constraints",
+            "",
+            "### One field, one recipient",
+            "",
+            f"- Status: `{registry['observed_pipeline_constraints']['multiple_recipient_field_ownership']['status']}`",
+            f"- Observed result: {registry['observed_pipeline_constraints']['multiple_recipient_field_ownership']['observation']}",
+            f"- Production rule: {registry['observed_pipeline_constraints']['multiple_recipient_field_ownership']['rule']}",
+            "",
+            "A field appearing in preview does not prove that a combined-recipient expression worked. Inspect its assigned recipient. Use separate R1, R2, R3, and later tags.",
+            "",
+            "### Sign Date inside table cells",
+            "",
+            f"- Status: `{registry['observed_pipeline_constraints']['table_cell_sign_date']['status']}`",
+            f"- Observed result: {registry['observed_pipeline_constraints']['table_cell_sign_date']['observation']}",
+            f"- Official rule and syntax conclusion: {registry['observed_pipeline_constraints']['table_cell_sign_date']['official_rule']}",
+            f"- Production rule: {registry['observed_pipeline_constraints']['table_cell_sign_date']['production_rule']}",
+            "",
+            "There is no documented table-specific text-tag syntax. The ranked tests below isolate rendered wrapping and provide a governed fallback. Run them only in a synthetic document with controlled recipients; do not promote a diagnostic tag into live content.",
+            "",
+            "| Test | Classification | Exact tag | Placement | Purpose |",
+            "|---:|---|---|---|---|",
+            *[
+                "| "
+                + " | ".join(
+                    [
+                        str(entry["order"]),
+                        f"`{_markdown_escape(entry['classification'])}`",
+                        f"`{_markdown_escape(entry['tag'])}`",
+                        _markdown_escape(entry["placement"]),
+                        _markdown_escape(entry["purpose"]),
+                    ]
+                )
+                + " |"
+                for entry in registry["observed_pipeline_constraints"][
+                    "table_cell_sign_date"
+                ]["diagnostic_matrix"]
+            ],
+            "",
+            "Only tests 1 and 3 preserve the canonical GHRE syntax. Tests 2 and 4-9 are diagnostics; test 10 is a governed fallback that requires setting the final format in Zoho Sign or using a native signer field.",
             "",
             "## Official syntax blocked pending Contracts-pipeline testing",
             "",
