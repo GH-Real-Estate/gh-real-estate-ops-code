@@ -902,13 +902,8 @@ async function appendLedgerToken(sourceInvoice, attemptToken, rfInvoiceId, rfInv
     nextCustomFields = mergeCustomField(nextCustomFields, CONFIG.optionalLatestRfInvoiceFieldApiName, rfInvoiceNumber || rfInvoiceId || '');
   }
 
-  const updateBody = { custom_fields: nextCustomFields };
-  if (typeof sourceInvoice.allow_partial_payments === 'boolean') {
-    updateBody.allow_partial_payments = sourceInvoice.allow_partial_payments;
-  }
-
   const url = booksUrl(`/invoices/${encodeURIComponent(sourceInvoice.invoice_id)}`, { organization_id: CONFIG.zohoBooksOrgId });
-  await zohoRequestJson('PUT', url, updateBody, accessToken);
+  await zohoRequestJson('PUT', url, { custom_fields: nextCustomFields }, accessToken);
 }
 
 async function zohoGetJson(url, accessToken) {
