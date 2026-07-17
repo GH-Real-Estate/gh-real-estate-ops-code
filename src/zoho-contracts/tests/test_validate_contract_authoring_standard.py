@@ -232,14 +232,29 @@ class ContractAuthoringStandardTests(unittest.TestCase):
             '{{SD:R1:(dateformat="MMM dd yyyy")}}',
             "{{SD:R1}}",
             '{{SD:R1*:(dateformat="MM/dd/yyyy hh:mm a z")}}',
-            '{{SD:R1,R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
-            '{{SD:R1&R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
         ):
             with self.subTest(tag=tag):
                 self.assertEqual(
                     validator.classify_tag(tag, self.sign_registry)["classification"],
                     "invalid",
                 )
+
+    def test_combined_recipient_sign_dates_fail_with_first_recipient_reason(self) -> None:
+        for tag in (
+            '{{SD:R1,R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SD:R1&R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SD:R1|R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SD:R1;R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SD:R1+R2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SignDate:Recipient1,Recipient2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SignDate:Recipient1&Recipient2:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+            '{{SignDate:Recipients[1,2,3]:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+        ):
+            with self.subTest(tag=tag):
+                result = validator.classify_tag(tag, self.sign_registry)
+                self.assertEqual(result["classification"], "invalid")
+                self.assertIn("first parsed recipient", result["reason"])
+                self.assertIn("one separate canonical tag", result["reason"])
 
     def test_manifest_signer_without_field_is_rejected(self) -> None:
         result = validator.scan_text_tags("{{S:R1}}", ["R1", "R2"])
@@ -256,10 +271,32 @@ class ContractAuthoringStandardTests(unittest.TestCase):
     def test_multiline_and_smart_quote_tags_are_rejected(self) -> None:
         multiline = validator.scan_text_tags("{{S:\nR1}}", ["R1"])
         self.assertTrue(multiline["errors"])
+        wrapped_sign_date = validator.classify_tag(
+            '{{SD:R1:(dateformat="MM/dd/yyyy\nhh:mm a z")}}'
+        )
+        self.assertEqual(wrapped_sign_date["classification"], "invalid")
+        self.assertIn("one physical line", wrapped_sign_date["reason"])
         smart = validator.classify_tag(
             '{{SD:R1:(dateformat=“MM/dd/yyyy hh:mm a z”)}}'
         )
         self.assertEqual(smart["classification"], "invalid")
+
+    def test_observed_sign_date_pipeline_constraints_are_locked(self) -> None:
+        constraints = self.sign_registry["observed_pipeline_constraints"]
+        multiple = constraints["multiple_recipient_field_ownership"]
+        self.assertEqual(multiple["status"], "invalid")
+        self.assertIn("first parsed recipient", multiple["observation"])
+
+        table = constraints["table_cell_sign_date"]
+        self.assertEqual(table["status"], "open_layout_smoke_test")
+        self.assertIn("one physical line", table["official_rule"])
+        self.assertIn("MM/dd/yyyy hh:mm a z", table["production_rule"])
+        self.assertEqual(len(table["diagnostic_matrix"]), 10)
+        self.assertEqual(
+            table["diagnostic_matrix"][0]["tag"],
+            '{{SD:R1:(dateformat="MM/dd/yyyy hh:mm a z")}}',
+        )
+        self.assertEqual(table["diagnostic_matrix"][-1]["tag"], "{{SD:R1}}")
 
     def test_official_document_field_catalog_is_complete(self) -> None:
         fields = [
