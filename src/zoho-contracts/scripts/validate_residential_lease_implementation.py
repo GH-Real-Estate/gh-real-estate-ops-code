@@ -219,7 +219,6 @@ def _non_empty(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
-
 def _markdown_escape(value: Any) -> str:
     """Escape one value for a Markdown table cell."""
 
