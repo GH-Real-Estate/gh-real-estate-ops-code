@@ -2,6 +2,15 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-20
+
+- Added a public, sanitized, text-first Zoho Suite and Twilio reference library for ChatGPT, Codex, and GitHub connector retrieval under `docs/reference/zoho-suite/`.
+- Added a cross-suite system-ownership and integration index, the canonical Deluge master reference, and individual official-source-anchored product references for CRM, Books, Creator, Catalyst, Contracts, Sign, WorkDrive, Sites, Flow, Analytics, Forms, Billing, Checkout, Payments, Bookings, Mail, and Twilio.
+- Added product-level API, authentication, metadata, field/resource, event, limit, error, security, testing, deployment, reconciliation, and GH/Sylvara workflow guidance with dated source registries and explicit volatile/live-metadata labels.
+- Added nested reference-maintenance instructions and a source manifest linking the searchable Markdown to separately distributed, rendered-and-inspected PDF companions.
+- Expanded the system overview to show public intake/scheduling, integration runtime, communications, and analytics boundaries.
+- This documentation-only update contains no credentials, production identifiers, tenant records, private payloads, or live configuration and does not deploy or modify Zoho, Catalyst, or Twilio behavior.
+
 ## 2026-07-19
 
 - Added a generated, professional Markdown reading view of all 59 ordered Residential Lease clause records for Articles 1–12, including article navigation, clause metadata, source links, library questions, and verbatim standard language.

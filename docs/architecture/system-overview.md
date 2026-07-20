@@ -6,6 +6,9 @@
 Zillow / Zoho Forms
   -> application intake and verification forms
 
+Zoho Sites / Zoho Bookings
+  -> approved public entry points and appointment scheduling
+
 Zoho CRM
   -> applicant, tenant, property/unit relationship tracking
 
@@ -17,6 +20,15 @@ Zoho Books / Zoho Payments
 
 Zoho Creator
   -> tenant portal / maintenance workflows when ready
+
+Zoho Catalyst / Zoho Flow
+  -> governed custom runtime, webhooks, event processing, and bounded orchestration
+
+Zoho Mail / Twilio
+  -> approved email, SMS, and voice delivery; delivery status is not business-state authority
+
+Zoho Analytics
+  -> derivative reporting and dashboards; corrections return to the owning system
 
 GitHub
   -> code, field maps, sanitized samples, runbooks, approved dated authority libraries, version history
@@ -38,6 +50,12 @@ src/zoho-contracts/  # Contracts merge-field maps only
 ```
 
 Cross-system docs remain under `docs/`. Sanitized sample payloads remain under `samples/`.
+
+The dated, official-source-anchored product knowledge collection lives under
+`docs/reference/zoho-suite/`. Its Markdown files are retrieval context for
+ChatGPT, Codex, and the GitHub connector; they do not override current official
+provider documentation, approved policy, authenticated live metadata, or
+runtime deployment evidence.
 
 Authority governance is separated from runtime code:
 
