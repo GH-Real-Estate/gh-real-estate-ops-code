@@ -10,6 +10,7 @@ clauses/
   residential-lease-agreement/
 contract-types/
   residential-lease-agreement/
+    readable-clause-library.md
 field-maps/
   animal-addendum-merge-fields.md
   contract-field-registry.json
@@ -56,6 +57,8 @@ The live template update, Inter-font gate, synthetic signature test, republish c
 
 The source DOCX and matching 20-page PDF are not stored in this public repository. Their tenant-facing wording and visual order control the live Draft; repository standards control structure, fields, typography, recipient routing, validation, and publication gates. Prohibited instance data is represented only by visible blanks and governed field gates.
 
+The generated [`readable-clause-library.md`](contract-types/residential-lease-agreement/readable-clause-library.md) presents the 59 ordered Article 1–12 clause records in a professional reading format. It is a clause-library reference—not the complete lease—and the canonical `.clause.json` files must be edited instead of the generated Markdown.
+
 The package is not a deployment artifact and is not legal approval. It must remain Draft, unpublished, blocked from execution, and unsent. Do not close a gate from repository evidence alone when the gate requires authenticated Zoho metadata, a live preview, a completed Sign smoke test, current official-source review, or Kansas attorney approval.
 
 ## Canonical Field Registry
@@ -88,6 +91,7 @@ To intentionally regenerate generated Markdown after editing either canonical JS
 ```powershell
 python src/zoho-contracts/scripts/validate_contract_authoring_standard.py --write-markdown
 python src/zoho-contracts/scripts/validate_contract_field_registry.py --write-markdown
+python src/zoho-contracts/scripts/validate_residential_lease_implementation.py --write-markdown
 ```
 
 ## Rules

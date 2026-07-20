@@ -8,6 +8,8 @@ The public repository does not store the source binaries or live addresses, pers
 
 Nothing here is attorney approval or a live Zoho deployment. The Contract Type must remain Draft, unpublished, blocked from execution, and unsent until every production gate is closed.
 
+[`readable-clause-library.md`](readable-clause-library.md) is the generated professional reading view of the 59 ordered clause records for Articles 1–12. It is not the complete lease and must not be edited directly; update the referenced `.clause.json` files and regenerate it through the validator.
+
 Run:
 
 ```powershell
@@ -16,4 +18,10 @@ python src/zoho-contracts/scripts/validate_contract_field_registry.py
 python src/zoho-contracts/scripts/validate_residential_lease_implementation.py
 python src/zoho-sign/recipient-manifests/validate_recipient_policy.py
 python -m unittest discover -s src/zoho-contracts/tests -p 'test_*.py' -v
+```
+
+To intentionally regenerate the readable clause library after validated JSON changes:
+
+```powershell
+python src/zoho-contracts/scripts/validate_residential_lease_implementation.py --write-markdown
 ```

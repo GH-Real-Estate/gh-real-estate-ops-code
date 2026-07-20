@@ -668,6 +668,43 @@ class ResidentialLeaseImplementationTests(unittest.TestCase):
             [],
         )
 
+    def test_readable_clause_library_matches_canonical_json(self) -> None:
+        path = ROOT / validator.READABLE_CLAUSE_LIBRARY_REL
+        actual = path.read_text(encoding="utf-8")
+        self.assertEqual(
+            actual,
+            validator.render_readable_clause_library(ROOT),
+        )
+
+    def test_readable_clause_library_contains_exact_ordered_clause_set(
+        self,
+    ) -> None:
+        path = ROOT / validator.READABLE_CLAUSE_LIBRARY_REL
+        actual = path.read_text(encoding="utf-8")
+        codes = [
+            line.removeprefix("### ").split(" —", 1)[0]
+            for line in actual.splitlines()
+            if line.startswith("### RLA-")
+        ]
+        self.assertEqual(codes, validator.EXPECTED_CODES)
+        self.assertEqual(actual.count("- **Source JSON:**"), 59)
+        self.assertIn("## Article 1 —", actual)
+        self.assertIn("## Article 12 —", actual)
+        self.assertNotIn("## Article 13 —", actual)
+
+    def test_readable_clause_library_drift_is_rejected(self) -> None:
+        path = ROOT / validator.READABLE_CLAUSE_LIBRARY_REL
+        actual = path.read_text(encoding="utf-8")
+        self.assertEqual(
+            validator.readable_clause_library_drift_errors(ROOT, actual),
+            [],
+        )
+        errors = validator.readable_clause_library_drift_errors(
+            ROOT,
+            actual + "\nStale manual edit.\n",
+        )
+        self.assertTrue(any("generated Markdown is stale" in item for item in errors))
+
     def test_missing_package_returns_errors_without_crashing(self) -> None:
         errors = validator.validate_repository(ROOT / "missing-rla-fixture-root")
         self.assertTrue(errors)

@@ -2,6 +2,13 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-19
+
+- Added a generated, professional Markdown reading view of all 59 ordered Residential Lease clause records for Articles 1–12, including article navigation, clause metadata, source links, library questions, and verbatim standard language.
+- Extended the Residential Lease validator with deterministic regeneration and fail-closed drift detection, plus regression coverage for exact clause count and order.
+- Kept the `.clause.json` records canonical and clearly separated the clause library from non-clause tables, Articles 13–14, signatures, addenda, and attachments.
+- This repository update does not alter, publish, approve, or deploy the live Zoho lease; the package remains Draft only, unpublished, execution-blocked, and attorney-review-required.
+
 ## 2026-07-17
 
 - Audited every Zoho Books invoice write path for partial-payment behavior. The repository does not update recurring-invoice profiles, but LF/INT payloads contained an explicit false default and malformed nested field, while RF payloads omitted inheritance.

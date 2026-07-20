@@ -4,6 +4,8 @@ Store every repository-managed Zoho Contracts clause definition in this director
 
 Start from `../templates/clause-definition.template.json` and follow `../schemas/clause-definition.schema.json`.
 
+The Residential Lease clause JSON is compiled into the generated [`readable-clause-library.md`](../contract-types/residential-lease-agreement/readable-clause-library.md) for professional review. Do not edit that Markdown directly; edit the canonical `.clause.json` records and regenerate it through the Residential Lease validator.
+
 Each record must:
 
 - use one exact Clause Type from the 16-item master list;
