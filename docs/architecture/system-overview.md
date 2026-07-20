@@ -9,6 +9,12 @@ Zillow / Zoho Forms
 Zoho Sites / Zoho Bookings
   -> approved public entry points and appointment scheduling
 
+Zoho One / Zoho Directory
+  -> organization identity, user lifecycle, application assignment, and access governance
+
+Zoho API Console / Zoho Accounts
+  -> OAuth client registration, consent, regional authorization, and token lifecycle
+
 Zoho CRM
   -> applicant, tenant, property/unit relationship tracking
 
@@ -24,8 +30,14 @@ Zoho Creator
 Zoho Catalyst / Zoho Flow
   -> governed custom runtime, webhooks, event processing, and bounded orchestration
 
-Zoho Mail / Twilio
-  -> approved email, SMS, and voice delivery; delivery status is not business-state authority
+Zoho Calendar / Zoho Meeting / Zoho ToDo
+  -> scheduling, collaboration, and task coordination; these do not replace the owning business system
+
+Zoho People
+  -> employee HR and workforce operations when adopted; never tenant or applicant authority
+
+Zoho Mail / Zoho Voice / Twilio
+  -> approved email, telephony, SMS, and voice delivery; delivery or call status is not business-state authority
 
 Zoho Analytics
   -> derivative reporting and dashboards; corrections return to the owning system

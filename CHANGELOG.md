@@ -4,6 +4,8 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-20
 
+- Expanded the Zoho Suite AI reference library to cover every application shown in the supplied Zoho app inventory by adding individual official-source-anchored handbooks for Zoho API Console, Calendar, Meeting, One, People, ToDo, and Voice.
+- Added an explicit 22-item screenshot coverage audit plus identity, OAuth-client, calendar, collaboration, workforce, task, and telephony ownership boundaries. This documentation does not enable an application, create an OAuth client, assign a user, place or record a call, create an employee record, schedule a meeting, or deploy an integration.
 - Added a public, sanitized, text-first Zoho Suite and Twilio reference library for ChatGPT, Codex, and GitHub connector retrieval under `docs/reference/zoho-suite/`.
 - Added a cross-suite system-ownership and integration index, the canonical Deluge master reference, and individual official-source-anchored product references for CRM, Books, Creator, Catalyst, Contracts, Sign, WorkDrive, Sites, Flow, Analytics, Forms, Billing, Checkout, Payments, Bookings, Mail, and Twilio.
 - Added product-level API, authentication, metadata, field/resource, event, limit, error, security, testing, deployment, reconciliation, and GH/Sylvara workflow guidance with dated source registries and explicit volatile/live-metadata labels.
