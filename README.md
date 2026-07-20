@@ -58,6 +58,7 @@ This repo is for technical and governed authority assets:
 - Smoke tests.
 - Deployment logs.
 - Codex/ChatGPT instructions.
+- Dated, official-source-anchored Zoho Suite and Twilio AI reference documents under `docs/reference/zoho-suite/`.
 - Repository-wide document drafting, typography, and output-QA standards.
 - Local repo hygiene tools.
 - Approved public legal-authority sources, release manifests, searchable extracts, and monitoring tools under `legal/`.
@@ -229,6 +230,18 @@ authority/
   impact_crosswalk.json
 
 docs/
+  reference/
+    zoho-suite/
+      README.md
+      source-manifest.json
+      products/
+        collection-index.md
+        deluge-master-knowledge-base.md
+        zoho-crm.md
+        zoho-books.md
+        zoho-creator.md
+        zoho-catalyst.md
+        ...
   standards/
     document-drafting-standard.md
     document-style-profile.json
@@ -288,6 +301,7 @@ tools/
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |
 | Deployment Log | `docs/runbooks/deployment-log.md` |
 | Codex/ChatGPT Instructions | `AGENTS.md` |
+| Zoho Suite and Twilio AI Reference Library | `docs/reference/zoho-suite/README.md` |
 | Document Drafting and Typography Standard | `docs/standards/document-drafting-standard.md` |
 | Legal Authority Index | `legal/CURRENT_AUTHORITY_INDEX.md` |
 | Accounting Authority Index | `accounting/CURRENT_AUTHORITY_INDEX.md` |
