@@ -35,11 +35,13 @@
 
 ## IDX-010 Collection catalog
 
-The collection is deliberately split into product-specific, searchable handbooks. Each PDF has a matching Markdown source in GitHub so ChatGPT, Codex, and the GitHub connector can retrieve exact sections without extracting a binary PDF.
+The collection is deliberately split into product-specific, searchable handbooks. This edition contains 26 PDFs: this cross-suite index plus 25 standalone technical handbooks. Each PDF has a matching Markdown source in GitHub so ChatGPT, Codex, and the GitHub connector can retrieve exact sections without extracting a binary PDF.
 
 | Handbook | Primary retrieval use |
 |---|---|
 | Deluge Master Knowledge Base | Language syntax, task grammar, functions, execution contexts, error handling, testing, and cross-product Deluge patterns |
+| Zoho API Console Master Knowledge Base | OAuth client registration, client types, authorization flows, scopes, tokens, data centers, consent, rotation, revocation, and credential governance |
+| Zoho One Master Knowledge Base | Central suite administration, Directory, users/groups, app assignment, SSO, security policies, audit, and organization governance |
 | Zoho CRM Master Knowledge Base | Modules, fields, metadata, records, queries, workflows, Blueprints, functions, bulk APIs, notifications, and relationship authority |
 | Zoho Books Master Knowledge Base | Organizations, contacts, invoices, payments, credits, expenses, banking/accounting automation, webhooks, custom functions, and ledger controls |
 | Zoho Creator Master Knowledge Base | Applications, forms, reports, pages, workflows, Deluge, environments, portals, APIs, SDKs, and tenant/maintenance portal patterns |
@@ -55,13 +57,49 @@ The collection is deliberately split into product-specific, searchable handbooks
 | Zoho Checkout Master Knowledge Base | Payment pages, pricing modes, field collection, URL prefill, notifications, integrations, and documented platform boundary |
 | Zoho Payments Master Knowledge Base | Payment sessions, methods, customers, refunds, payouts, disputes/events, webhooks, and payment safety controls |
 | Zoho Bookings Master Knowledge Base | Services, staff, workspaces, availability, appointments, customers, notifications, APIs, and scheduling workflows |
+| Zoho Calendar Master Knowledge Base | Calendars, events, recurrence, attendees, sharing, free/busy, OAuth, REST APIs, activity logs, and scheduling boundaries |
 | Zoho Mail Master Knowledge Base | Organizations, domains, users, mailboxes, messages, folders, APIs, OAuth, retention, and transactional-use boundaries |
+| Zoho Meeting Master Knowledge Base | Meetings, webinars, sessions, recordings, moderator controls, integrations, embeds/SDKs, security, and automation boundaries |
+| Zoho People Master Knowledge Base | Employee forms and records, leave, attendance, timesheets, approvals, files, APIs, webhooks, and sensitive workforce-data controls |
+| Zoho ToDo Master Knowledge Base | Personal/group tasks, projects, subtasks, assignees, status, recurrence, reminders, and the supported Zoho Mail Tasks API surface |
+| Zoho Voice Master Knowledge Base | Cloud telephony, numbers, users, departments, routing, queues/IVRs, call logs, recordings, CRM/Zoho One integration, and communications controls |
 | Twilio Master Knowledge Base | Messaging, voice, phone numbers, Conversations, Verify, webhooks, status callbacks, compliance, and Zoho integration patterns |
+
+### IDX-011 Screenshot coverage audit
+
+The July 20, 2026 Zoho application screenshot supplied for this collection contains the 22 items below. Every item now has an individual handbook; the collection also retains Deluge, Zoho Analytics, and Twilio because they are required cross-cutting engineering references even though they were not shown in that screenshot.
+
+| Screenshot item | Canonical handbook | Coverage status |
+|---|---|---|
+| Zoho API Console | Zoho API Console Master Knowledge Base | Included |
+| Zoho Billing | Zoho Billing Master Knowledge Base | Included |
+| Zoho Bookings | Zoho Bookings Master Knowledge Base | Included |
+| Zoho Books | Zoho Books Master Knowledge Base | Included |
+| Zoho Catalyst | Zoho Catalyst Master Knowledge Base | Included |
+| Zoho Calendar | Zoho Calendar Master Knowledge Base | Included |
+| Zoho Checkout | Zoho Checkout Master Knowledge Base | Included |
+| Zoho Contracts | Zoho Contracts Master Knowledge Base | Included |
+| Zoho Creator | Zoho Creator Master Knowledge Base | Included |
+| Zoho CRM | Zoho CRM Master Knowledge Base | Included |
+| Zoho Flow | Zoho Flow Master Knowledge Base | Included |
+| Zoho Forms | Zoho Forms Master Knowledge Base | Included |
+| Zoho Mail | Zoho Mail Master Knowledge Base | Included |
+| Zoho Meeting | Zoho Meeting Master Knowledge Base | Included |
+| Zoho One | Zoho One Master Knowledge Base | Included |
+| Zoho Payments | Zoho Payments Master Knowledge Base | Included |
+| Zoho People | Zoho People Master Knowledge Base | Included |
+| Zoho Sign | Zoho Sign Master Knowledge Base | Included |
+| Zoho Sites | Zoho Sites Master Knowledge Base | Included |
+| Zoho ToDo | Zoho ToDo Master Knowledge Base | Included |
+| Zoho Voice | Zoho Voice Master Knowledge Base | Included |
+| Zoho WorkDrive | Zoho WorkDrive Master Knowledge Base | Included |
 
 ## IDX-020 System-of-record and responsibility matrix
 
 | Information or action | Authoritative system | Supporting systems | Boundary rule |
 |---|---|---|---|
+| OAuth client registration, redirect URIs, and provider client credentials | Zoho API Console plus the approved secret manager | Zoho Accounts, Catalyst, product APIs | The console registers clients; it is not a business-data store, token vault, or substitute for connection governance |
+| Organization identity, user lifecycle, groups, app assignment, and suite access policy | Zoho One / Zoho Directory when adopted as the organization control plane | Individual Zoho applications | Product roles and record permissions still require product-level verification; suite assignment alone does not grant every API operation |
 | Prospect, applicant, tenant, owner, vendor, property, unit, leasing relationship | Zoho CRM | Forms, Creator, Catalyst, Analytics | Downstream systems keep only the identifier and fields needed for their responsibility |
 | Invoice, payment, credit, deposit accounting, expense, balance, financial report | Zoho Books | Payments, Checkout, Billing, Analytics, Catalyst | Only Books posts or corrects accounting truth unless an approved subsystem is explicitly authoritative |
 | Subscription and recurring product lifecycle | Zoho Billing when adopted for that business line | Payments, Books, Checkout | Define whether Billing or Books owns invoices before implementation; never dual-create silently |
@@ -72,7 +110,12 @@ The collection is deliberately split into product-specific, searchable handbooks
 | Tenant portal and approved maintenance workflow | Zoho Creator | CRM, WorkDrive, Books, Catalyst | Creator is the interaction/workflow layer, not a shadow ledger or ungoverned master CRM |
 | Public site content and approved public entry point | Zoho Sites | Forms, Bookings, Checkout | A public form or page must minimize collection and route data into the authoritative workflow |
 | Appointment availability and booking status | Zoho Bookings | CRM, Mail, Twilio, Calendar integration | Synchronize the business result to CRM only through an explicit mapping and duplicate rule |
+| Calendar event, attendee response, recurrence, sharing, and free/busy state | Zoho Calendar | Bookings, Meeting, CRM | Calendar is scheduling authority for its own events, not applicant, lease, tenant, or work-order authority |
+| Meeting/webinar session and collaboration artifact | Zoho Meeting | Calendar, CRM, Mail, WorkDrive | A session or recording does not prove CRM disposition, legal notice, consent, or training completion without an approved evidence rule |
+| Employee HR, leave, attendance, timesheet, and workforce record | Zoho People when adopted | Zoho One, Calendar, Analytics | Never store tenant/customer operations in People merely because an employee participates; workforce data needs separate privacy controls |
+| Personal or group task state | Zoho ToDo | Mail, Calendar, CRM | ToDo supports work coordination; high-risk business state remains in its owning system and cannot be closed by a task checkbox alone |
 | Email mailbox record | Zoho Mail | CRM, Catalyst, Flow | Email delivery does not prove consent, legal notice, or CRM-state transition |
+| Zoho Voice call routing, call detail, recording, and telephony-user configuration | Zoho Voice | CRM, Zoho One, Mail | CRM may retain the approved activity link/summary, but Voice controls telephony evidence and access; calling consent and recording rules remain policy-gated |
 | SMS/voice delivery event | Twilio | CRM, Catalyst, Flow | Messaging requires approved consent, quiet-hour, opt-out, template, and retention rules |
 | Cross-system event processing and custom runtime state | Zoho Catalyst | All connected systems | Store only operational state such as receipt, idempotency, retry, and sanitized audit facts |
 | Low-code SaaS orchestration | Zoho Flow | All connected systems | Use for bounded, observable flows; move complex or high-risk durable logic to governed code/runtime |
@@ -136,7 +179,11 @@ Retrieve and preserve a sanitized snapshot of the exact live configuration neede
 - WorkDrive team/workspace/folder identifiers, permissions, sharing restrictions, and retention requirements.
 - Catalyst project/environment, API Gateway, functions, connections, tables, jobs, signals, secrets/config aliases, and deployed revision.
 - Flow connection ownership, trigger/action versions, custom functions, flow history, error policy, and enabled state.
-- Forms/Sites/Bookings/Mail/Twilio identifiers, configured fields, routing, notification, consent, and webhook state.
+- API Console client type, redirect URIs, approved scopes, credential owner, environments, regional accounts domain, rotation/revocation runbook, and secret-storage reference without exposing the secret.
+- Zoho One/Directory organization, verified domains, users, groups, app assignments, administrative roles, SSO/security policies, and audit availability.
+- Calendar/Meeting/ToDo identifiers, sharing/attendee/assignee rules, recurrence, notification, recording, retention, Mail/ToDo webhook configuration and secret owner (never the secret), and integration state.
+- People organization/portal, forms, field labels/link names, employees, leave/attendance/timesheet policy, approvals, roles, webhooks, and sensitive-data restrictions.
+- Forms/Sites/Bookings/Mail/Voice/Twilio identifiers, configured fields, routing, notification, consent, recording, retention, and webhook or native-integration state.
 
 Record discovery time, environment, source, and hash where useful. Do not commit sensitive snapshots to the public repository.
 
@@ -161,6 +208,9 @@ Record discovery time, environment, source, and hash where useful. Do not commit
 | Human approval | Product approval/Blueprint/Contracts/Sign workflow | Approval evidence cannot be captured or role separation is inadequate |
 | Reporting | Analytics or product-native reports | The report attempts to mutate or redefine operational truth |
 | Public intake | Forms/Sites/Bookings/Checkout configured for minimum collection | Sensitive evidence or identity proofing requires an authenticated portal |
+| Central identity and app lifecycle | Zoho One/Directory native administration plus approved provisioning | An API or external identity provider is required, or a product role must be governed separately |
+| Calendar, meeting, or task coordination | Calendar/Meeting/ToDo native features and documented APIs/integrations | The coordination event would mutate high-risk business truth or needs durable multi-system replay |
+| Business telephony | Zoho Voice native CRM/Zoho One integration or the separately approved Twilio architecture | Call routing, recording, messaging, consent, retention, or reconciliation requires custom runtime control |
 
 `INFERENCE`: Simplicity is a control only when it preserves traceability, error handling, replay safety, and ownership. A short custom function can be riskier than a larger governed service if it performs irreversible work without receipts or recovery.
 

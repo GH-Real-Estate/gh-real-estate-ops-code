@@ -2,7 +2,7 @@
 
 This directory is the public, sanitized, text-first research baseline for designing and reviewing GH Real Estate and Sylvara business systems with ChatGPT, Codex, and the GitHub connector.
 
-The matching PDFs are distributed as project-source artifacts. GitHub stores Markdown because it is searchable, diffable, reviewable, and substantially easier for an AI agent to retrieve precisely than a binary PDF.
+The matching PDFs are distributed as project-source artifacts. GitHub stores Markdown because it is searchable, diffable, reviewable, and substantially easier for an AI agent to retrieve precisely than a binary PDF. This edition contains 26 PDFs: one cross-suite index and 25 standalone technical handbooks covering every application in the supplied 22-item Zoho inventory plus Deluge, Zoho Analytics, and Twilio.
 
 ## Start Here
 
@@ -19,6 +19,8 @@ The matching PDFs are distributed as project-source artifacts. GitHub stores Mar
 |---|---|---|
 | Cross-suite collection | [`collection-index.md`](products/collection-index.md) | Ownership, identifiers, event processing, integration selection, safety, and AI answer contract |
 | Deluge | [`deluge-master-knowledge-base.md`](products/deluge-master-knowledge-base.md) | Language syntax, tasks, runtime contexts, functions, patterns, and testing |
+| Zoho API Console | [`zoho-api-console.md`](products/zoho-api-console.md) | OAuth client registration, authorization flows, scopes, tokens, regional endpoints, and credential governance |
+| Zoho One | [`zoho-one.md`](products/zoho-one.md) | Suite administration, Directory, identity, app assignment, SSO, policies, and organization governance |
 | Zoho CRM | [`zoho-crm.md`](products/zoho-crm.md) | Relationship and leasing-pipeline authority |
 | Zoho Books | [`zoho-books.md`](products/zoho-books.md) | Accounting, receivables, payments, credits, and financial reports |
 | Zoho Creator | [`zoho-creator.md`](products/zoho-creator.md) | Approved portal and low-code workflow layer |
@@ -34,7 +36,12 @@ The matching PDFs are distributed as project-source artifacts. GitHub stores Mar
 | Zoho Checkout | [`zoho-checkout.md`](products/zoho-checkout.md) | Hosted payment pages and configured collection flows |
 | Zoho Payments | [`zoho-payments.md`](products/zoho-payments.md) | Payment processing events, refunds, payouts, and reconciliation inputs |
 | Zoho Bookings | [`zoho-bookings.md`](products/zoho-bookings.md) | Services, staff availability, appointments, and scheduling notifications |
+| Zoho Calendar | [`zoho-calendar.md`](products/zoho-calendar.md) | Calendars, events, attendees, sharing, free/busy, scheduling APIs, and activity evidence |
 | Zoho Mail | [`zoho-mail.md`](products/zoho-mail.md) | Organization mailboxes, messages, folders, and mail administration |
+| Zoho Meeting | [`zoho-meeting.md`](products/zoho-meeting.md) | Meetings, webinars, sessions, recordings, embeds/SDKs, integrations, and collaboration controls |
+| Zoho People | [`zoho-people.md`](products/zoho-people.md) | Employee HR records, forms, leave, attendance, approvals, files, and workforce automation |
+| Zoho ToDo | [`zoho-todo.md`](products/zoho-todo.md) | Personal/group tasks, projects, assignees, reminders, recurrence, and supported Tasks APIs |
+| Zoho Voice | [`zoho-voice.md`](products/zoho-voice.md) | Cloud telephony, numbers, users, routing, call logs/recordings, CRM integration, and communications governance |
 | Twilio | [`twilio.md`](products/twilio.md) | Approved SMS, voice, Verify, Conversations, and delivery callbacks |
 
 [`source-manifest.json`](source-manifest.json) records the research edition, product document IDs, matching PDF filenames, checksums, and repository paths after the collection is generated.
