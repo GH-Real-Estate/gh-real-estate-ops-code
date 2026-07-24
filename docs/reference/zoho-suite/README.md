@@ -7,11 +7,12 @@ The matching PDFs are distributed as project-source artifacts. GitHub stores Mar
 ## Start Here
 
 1. Read [`products/collection-index.md`](products/collection-index.md) to identify the owning system and cross-system boundaries.
-2. Open every product reference crossed by the workflow.
-3. Open [`products/deluge-master-knowledge-base.md`](products/deluge-master-knowledge-base.md) whenever the implementation uses Deluge or a Zoho custom function.
-4. Revalidate volatile facts against the exact official URL in the product's source registry.
-5. Retrieve live authenticated metadata before generating deployable code or field maps.
-6. Apply repository security, testing, approval, deployment, and rollback rules before changing runtime behavior.
+2. Use the [Zoho MCP capability catalog](mcp/README.md) for the current service inventory, verified preconfigured templates, complete tool-name inventory, and GH Real Estate server recommendation.
+3. Open every product reference crossed by the workflow.
+4. Open [`products/deluge-master-knowledge-base.md`](products/deluge-master-knowledge-base.md) whenever the implementation uses Deluge or a Zoho custom function.
+5. Revalidate volatile facts against the exact official URL in the product's source registry.
+6. Retrieve live authenticated metadata before generating deployable code or field maps.
+7. Apply repository security, testing, approval, deployment, and rollback rules before changing runtime behavior.
 
 ## Product References
 
