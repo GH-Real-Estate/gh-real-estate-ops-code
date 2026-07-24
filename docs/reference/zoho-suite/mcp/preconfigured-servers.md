@@ -37,7 +37,7 @@ This is a dated account-specific portal snapshot. Recheck the live modal before 
 | Email Automation & Follow-up | Zoho CRM | 1 | Critical | Do not authorize initially; its sole tool sends external mail. |
 | CommandCenter CRM Actions | Zoho CRM and Zoho CommandCenter | 9 | Critical | Defer; it mutates journeys/stages and can attach automation functions. |
 | Accountant Management System | Zoho Books | 67 | Critical | Do not authorize; it exposes Chart of Accounts, journal, project, custom-field, and deletion operations. |
-| Books Financial Overview | Zoho Books | 12 | Medium-High | First preconfigured candidate after the CRM audit; all captured tools are reads, but they expose sensitive financial data. |
+| Books Financial Overview | Zoho Books | 12 | Medium-High | Instantiated as `gh_zoho_books_review`; the 12 captured tools remain reads, but the target Books organization is not verified in the supplied evidence. |
 | Books Transactions & Creation | Zoho Books | 9 | Critical | Defer; it can create invoices and contacts. |
 | Payments Management | Zoho Payments | 15 | Critical | Do not authorize initially; it creates payment sessions, links, customers, and refunds. |
 | Mail Reading & Search | Zoho Mail | 13 | High | Defer; it exposes message and attachment contents and includes `flagMessages`, which changes state. |
@@ -350,7 +350,7 @@ list_bank_transactions
 list_chart_of_accounts
 ```
 
-All captured tools are named reads. This is the best verified preconfigured candidate, but it exposes sensitive financial and contact data and does not advance the current CRM configuration objective.
+All captured tools are named reads. This template has been instantiated as `gh_zoho_books_review` with the same 12-tool membership. Codex advertises the names with the `ZohoBooks_` prefix. The server exposes sensitive financial and contact data, and its target Books organization is not verified in the supplied evidence. See [`configured-servers.md`](configured-servers.md) for the current sanitized inventory.
 
 ### Books Transactions & Creation
 
@@ -496,18 +496,21 @@ The current [Zoho CRM MCP overview](https://www.zoho.com/crm/developer/docs/mcp/
 
 ## First-Server Decision
 
-Create **GH CRM Configuration Audit** first as a custom, Zoho-hosted, read-only tool selection. Do not custom-code an MCP server.
+The original decision was to create **GH CRM Configuration Audit** first as a custom, Zoho-hosted, read-only tool selection. That decision has been implemented and expanded.
 
-None of the verified preconfigured templates matches the required boundary:
+### Current Implementation Status
 
-- `CRM Data & Metadata Operations` includes production-record reads and writes but omits several configuration-audit reads.
-- `CRM Automation & Workflows` includes destructive workflow and notification writes.
-- `CommandCenter CRM Actions` changes journeys and stage actions.
-- `Books Financial Overview` is the safest verified preconfigured template, but it is accounting scope and does not solve the first CRM objective.
+| Codex Server ID | Origin | Current Status | Tool Boundary |
+|---|---|---|---|
+| `gh_zoho_crm_audit` | Custom Zoho-hosted server | Production organization acceptance passed | 18 CRM configuration metadata reads |
+| `gh_zoho_crm_changes` | Custom Zoho-hosted server | Production organization target confirmed; no mutation acceptance test recorded | 15 configuration writes, 7 record reads, 4 record writes, and 1 organization check |
+| `gh_zoho_books_review` | **Books Financial Overview** template | Configured; target Books organization not verified in supplied evidence | 12 financial and contact reads |
 
-The exact 14-tool read-only allowlist, rollout, and kill criteria are maintained in [`recommended-first-server.md`](recommended-first-server.md).
+The Audit server expanded from the original 14-tool proposal to 18 reads by adding field-ID, single-layout-rule, workflow field-update, and single-field-update readback coverage.
 
-If Gabriel later wants the first preconfigured template after the CRM audit, use **Books Financial Overview** unchanged only after confirming the live modal still contains the same 12 read tools and the correct GH Real Estate Books organization.
+The Changes server is not configuration-only. Its 11 record/COQL additions can retrieve or modify production CRM records, including multi-record and mass updates. The current capture shows no delete, upsert, merge, conversion, email-send, permission, role, profile, or user-management tool.
+
+The exact current server identifiers and `ZohoCRM_` / `ZohoBooks_` names advertised to Codex are maintained in [`configured-servers.md`](configured-servers.md). These configured servers are separate from this file's dated 19-template portal snapshot. The Zoho picker may show the corresponding names without the Codex service prefix.
 
 ## Required Recheck Before Creation
 
@@ -516,7 +519,7 @@ If Gabriel later wants the first preconfigured template after the CRM audit, use
 3. Match every selected tool to the current official Tool Manual.
 4. Classify the tool as read, write, destructive, external communication, financial, access-control, or unknown.
 5. Confirm the exact organization and environment.
-6. Use Authorization on Demand and keep Codex approval at Always Ask.
+6. Use individual OAuth/Authorization on Demand and recommend Codex `prompt` approval for sensitive reads and every write; verify the actual local approval mode separately.
 7. Stop if the server exposes any unapproved tool or the target is ambiguous.
 
 Do not create a template merely to inspect its tools when the modal exposes the list before the **Create** action.
