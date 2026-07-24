@@ -167,6 +167,47 @@ class AccountingSourcesParserTests(unittest.TestCase):
                 source["discovery_url"],
             )
 
+    def test_fasb_host_detection_requires_dns_label_boundary(self) -> None:
+        source = _source(
+            "treasury_press_index",
+            discovery_url="https://notfasb.org/publications",
+            allowed_hosts=["notfasb.org"],
+            publisher="Independent Accounting Publisher",
+            storage_policy="full-text-copy",
+        )
+        self.assertEqual(
+            [],
+            accounting_sources.parse(
+                b"<html></html>",
+                source,
+                self.fetched_at,
+                source["discovery_url"],
+            ),
+        )
+
+    def test_fasb_host_detection_handles_apex_subdomain_and_trailing_dot(
+        self,
+    ) -> None:
+        for host in ("fasb.org", "updates.fasb.org", "updates.fasb.org."):
+            with self.subTest(host=host):
+                source = _source(
+                    "fasb_asu_index",
+                    discovery_url=f"https://{host}/standards",
+                    allowed_hosts=[host.rstrip(".")],
+                    publisher="Independent Accounting Publisher",
+                    storage_policy="full-text-copy",
+                )
+                with self.assertRaisesRegex(
+                    accounting_sources.SourceConfigurationError,
+                    "FASB discovery is restricted",
+                ):
+                    accounting_sources.parse(
+                        b"<html></html>",
+                        source,
+                        self.fetched_at,
+                        source["discovery_url"],
+                    )
+
     def test_fasb_codification_application_is_not_a_discovery_source(self) -> None:
         source = _source(
             "fasb_asu_index",
