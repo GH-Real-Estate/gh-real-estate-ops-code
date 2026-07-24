@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-24 — Zoho MCP Production Servers Configured
+
+- System: Zoho CRM / Zoho Books / Codex
+- Repo branch / commit: live setup performed outside the repository; sanitized documentation added through `agent/document-configured-zoho-mcp-servers`
+- Files changed: live Zoho-hosted MCP server selections and local Codex MCP configuration; no server URL, credential, identifier, or raw response recorded
+- Business rule changed? no
+- Dry-run completed? not applicable; Gabriel explicitly selected the GH Real Estate production CRM organization
+- Smoke test completed? partial; Audit confirmed GH Real Estate and `type: production`, and its module call succeeded but was transport-truncated with an advertised projection returning `PATTERN_NOT_MATCHED`; Changes production target was confirmed without testing a mutation; Books organization acceptance is not evidenced
+- Deployed by: Gabriel
+- Result: `gh_zoho_crm_audit` exposes 18 CRM metadata reads, `gh_zoho_crm_changes` exposes 27 mixed configuration/record tools, and `gh_zoho_books_review` exposes 12 Books reads
+- Rollback plan: disable the affected Codex server entry, remove or narrow its Zoho tool selection, and revoke its authorization if compromise or unintended access is suspected
+- Notes: the Changes server includes 11 record/COQL tools beyond its original 16 organization/configuration tools. This entry documents the reported live capability surface; it does not prove that any CRM mutation or Books data read succeeded.
+
 ## 2026-07-17 — Partial-Payment Preservation Source Correction
 
 - System: GitHub / Zoho Books / Zoho Payments / Zoho Catalyst
