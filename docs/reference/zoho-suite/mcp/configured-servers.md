@@ -12,7 +12,7 @@ This inventory is based on:
 - A successful read-only CRM module inventory through `gh_zoho_crm_audit`.
 - A successful organization-only target check through `gh_zoho_crm_changes`.
 
-The evidence confirms server identifiers, advertised tool names, OAuth status, and the production target for both CRM servers. The supplied evidence does not establish which Zoho Books organization `gh_zoho_books_review` targets; that server still requires an organization-only acceptance check before financial review.
+The evidence confirms server identifiers, advertised tool names, OAuth status, and the production target for both CRM servers. The Audit server's `ZohoCRM_getModules` call succeeded, but the response was transport-truncated and an advertised field projection returned `PATTERN_NOT_MATCHED`; the captured module pairs are confirmed, but completeness is not certified. The Changes server target check did not test a mutation. The supplied evidence does not establish which Zoho Books organization `gh_zoho_books_review` targets; that server still requires an organization-only acceptance check before financial review.
 
 No MCP URL, secure API key, token, organization ID, record payload, tenant information, or accounting data belongs in this repository.
 
