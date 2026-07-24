@@ -1,11 +1,11 @@
 # Zoho MCP Capability Catalog
 
 **Verified:** July 24, 2026  
-**Purpose:** Sanitized technical source of truth for deciding which Zoho-hosted MCP servers and tools GH Real Estate should expose to Codex.
+**Purpose:** Sanitized technical source of truth for the Zoho-hosted MCP servers and tools GH Real Estate exposes or may expose to Codex.
 
 ## Bottom Line
 
-Zoho MCP currently exposes a much broader tool surface than GH Real Estate should authorize. The official Tool Manual snapshot contains:
+Zoho MCP exposes a much broader tool surface than GH Real Estate should authorize. The official Tool Manual snapshot contains:
 
 - 51 Zoho services and 9,697 tool rows.
 - 8 extended Zoho-family services and 836 tool rows.
@@ -21,15 +21,37 @@ The authenticated Zoho MCP portal evidence supplied for this review catalogs 19 
 
 Those templates are not the same thing as Zoho CRM's separate product-specific set of four pre-built MCP servers.
 
+GH Real Estate currently has three configured Codex server entries with 57 per-server tool memberships:
+
+- `gh_zoho_crm_audit` — 18 CRM configuration metadata reads.
+- `gh_zoho_crm_changes` — 27 mixed CRM organization, configuration-write, record-read, and record-write tools.
+- `gh_zoho_books_review` — 12 Books financial/contact reads.
+
+The exact sanitized current state is recorded in [`configured-servers.md`](configured-servers.md).
+
 ## Files
 
 | File | Purpose |
 |---|---|
+| [`configured-servers.md`](configured-servers.md) | Current GH server identifiers, OAuth status, exact Codex-advertised tools, target-verification status, risks, and operating controls |
 | [`preconfigured-servers.md`](preconfigured-servers.md) | Verified portal template names, descriptions, exact tool memberships, risk review, and evidence gaps |
 | [`tool-inventory.md`](tool-inventory.md) | Searchable inventory of all 10,533 exact tool names grouped across 59 services |
-| [`recommended-first-server.md`](recommended-first-server.md) | Exact first-server decision, allowlist, exclusions, rollout, and kill criteria |
+| [`recommended-first-server.md`](recommended-first-server.md) | Implemented rollout decision, current boundaries, exclusions, controls, and stop criteria |
 
 ## What Is Verified
+
+### Configured GH Servers
+
+The redacted Codex MCP inventory supplied on July 24, 2026 confirms:
+
+- The three exact server identifiers listed above.
+- OAuth authentication displayed for each server.
+- All 57 per-server tool memberships using the exact names advertised to Codex.
+- The `ZohoCRM_` and `ZohoBooks_` prefixes used by Codex.
+
+Separate acceptance checks confirmed the GH Real Estate production organization for both CRM servers. The supplied evidence does not confirm the target Books organization, so `gh_zoho_books_review` remains acceptance-pending.
+
+The CRM Changes server is not configuration-only. It contains the original organization/configuration set plus seven production-record reads and four production-record writes. The repository records that expanded boundary explicitly.
 
 ### Official Tool Catalog
 
@@ -99,12 +121,13 @@ Do not assume that a tool exists merely because the underlying product has a RES
 
 ## Source Hierarchy
 
-1. Live authenticated Zoho MCP portal modal for the exact template composition.
-2. Official Zoho MCP Tool Manual for service and tool definitions.
-3. Official product-specific MCP or API documentation.
-4. This repository's security, risk, and implementation recommendations.
+1. Live Codex MCP inventory for the current GH server identifiers and advertised tool names.
+2. Live authenticated Zoho MCP portal modal for exact template composition.
+3. Official Zoho MCP Tool Manual for service and tool definitions.
+4. Official product-specific MCP or API documentation.
+5. This repository's security, risk, and implementation recommendations.
 
-When sources conflict, the live portal and current product developer documentation control. For example, an official Zoho community announcement says five CRM pre-built servers are available but names only four, while the current CRM developer overview explicitly groups the capability into four. This catalog treats the developer overview as the current product-specific source.
+When sources conflict, current authenticated product evidence and current product developer documentation control within their respective scopes. For example, the Codex inventory controls the exact prefixed tool names that Codex receives, while Zoho's portal controls the selected server composition. An official Zoho community announcement says five CRM pre-built servers are available but names only four, while the current CRM developer overview explicitly groups the capability into four. This catalog treats the developer overview as the current product-specific source.
 
 ## Official Sources
 
@@ -117,13 +140,15 @@ When sources conflict, the live portal and current product developer documentati
 
 ## Refresh Rule
 
-Recheck this catalog before enabling a new service, after Zoho changes a template, or at least quarterly while the MCP product is changing rapidly. A refresh must record:
+Recheck this catalog before enabling a new service, after Zoho changes a template or GH changes a server, or at least quarterly while the MCP product is changing rapidly. A refresh must record:
 
 - Review date.
 - Manual bundle hash.
 - Service and tool counts.
+- Current GH server identifiers, OAuth status, and exact Codex-advertised tool names.
+- Target-organization acceptance status for every configured server.
 - Portal template names and descriptions.
 - Exact tool membership from every template modal being considered.
 - Any plan, organization, role, scope, or data-center limitation.
 
-Never place an MCP server URL, API key, OAuth token, organization ID, tenant record, accounting record, or raw portal response in this public repository.
+Never place an MCP server URL, secure API key, OAuth token, organization ID, tenant record, accounting record, or raw portal response in this public repository.
