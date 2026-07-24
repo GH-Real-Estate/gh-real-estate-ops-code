@@ -51,6 +51,8 @@ The redacted Codex MCP inventory supplied on July 24, 2026 confirms:
 
 Separate acceptance checks confirmed the GH Real Estate production organization for both CRM servers. The supplied evidence does not confirm the target Books organization, so `gh_zoho_books_review` remains acceptance-pending.
 
+The Audit server's module call succeeded but was transport-truncated, and its advertised field projection returned `PATTERN_NOT_MATCHED`. The reported module pairs are confirmed, but completeness is not certified. The Changes server acceptance test confirmed only its target; it did not test a mutation.
+
 The CRM Changes server is not configuration-only. It contains the original organization/configuration set plus seven production-record reads and four production-record writes. The repository records that expanded boundary explicitly.
 
 ### Official Tool Catalog
