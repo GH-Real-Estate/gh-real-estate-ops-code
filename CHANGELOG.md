@@ -7,6 +7,7 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Added a sanitized current-state inventory for the three configured GH Real Estate Zoho MCP server entries: the 18-tool CRM configuration audit server, the 27-tool mixed CRM changes server, and the 12-tool Books review server.
 - Recorded the exact `ZohoCRM_` and `ZohoBooks_` names advertised to Codex, OAuth status, CRM production acceptance results, the pending Books organization gate, and the prohibition on committing MCP URLs or authentication material.
 - Updated the rollout decision from the original 14-tool audit proposal to the implemented 18-tool readback boundary and documented that the CRM Changes server now includes 11 production-record operations beyond its original 16 organization/configuration tools.
+- Recorded that the CRM module acceptance call succeeded but was transport-truncated and its advertised projection returned `PATTERN_NOT_MATCHED`, so the confirmed module pairs do not certify a complete inventory; no Changes-server mutation was tested.
 - Added operating controls for production record reads, single and bulk writes, financial reads, organization verification, explicit per-call approval, readback, and Zoho log review.
 - This documentation-only update does not change Codex configuration, OAuth permissions, Zoho CRM, Zoho Books, or any production record.
 
