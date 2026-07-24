@@ -123,13 +123,13 @@ Do not assume that a tool exists merely because the underlying product has a RES
 
 ## Source Hierarchy
 
-1. Live Codex MCP inventory for the current GH server identifiers and advertised tool names.
-2. Live authenticated Zoho MCP portal modal for exact template composition.
-3. Official Zoho MCP Tool Manual for service and tool definitions.
-4. Official product-specific MCP or API documentation.
-5. This repository's security, risk, and implementation recommendations.
+1. Current official Zoho MCP Tool Manual and product-specific API/reference documentation for tool behavior and supported capabilities.
+2. Current official Zoho help and administration documentation.
+3. Authenticated live Codex and Zoho MCP metadata for the exact GH server identifiers, advertised names, selected composition, organization, and environment.
+4. Approved GH policy and current repository runtime evidence.
+5. These dated catalog documents.
 
-When sources conflict, current authenticated product evidence and current product developer documentation control within their respective scopes. For example, the Codex inventory controls the exact prefixed tool names that Codex receives, while Zoho's portal controls the selected server composition. An official Zoho community announcement says five CRM pre-built servers are available but names only four, while the current CRM developer overview explicitly groups the capability into four. This catalog treats the developer overview as the current product-specific source.
+When sources conflict, use the higher-authority source within the fact being evaluated and update the affected reference. For example, official documentation controls tool behavior, while authenticated live metadata establishes which exact prefixed names and selections the current GH servers expose. An official Zoho community announcement says five CRM pre-built servers are available but names only four, while the current CRM developer overview explicitly groups the capability into four. This catalog treats the developer overview as the current product-specific source.
 
 ## Official Sources
 
