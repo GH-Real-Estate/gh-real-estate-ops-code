@@ -11,19 +11,21 @@ Zoho MCP currently exposes a much broader tool surface than GH Real Estate shoul
 - 8 extended Zoho-family services and 836 tool rows.
 - 59 services and 10,533 total tool rows.
 
-The authenticated Zoho MCP portal captures supplied for this review directly show 15 preconfigured templates:
+The authenticated Zoho MCP portal evidence supplied for this review catalogs 19 preconfigured templates:
 
 - 11 Zoho CRM templates.
 - 3 Zoho Books templates.
+- 1 Zoho Payments template.
+- 3 Zoho Mail templates.
 - 1 Zoho WorkDrive template.
 
-Those 15 templates are not the same thing as Zoho CRM's separate product-specific set of four pre-built MCP servers.
+Those templates are not the same thing as Zoho CRM's separate product-specific set of four pre-built MCP servers.
 
 ## Files
 
 | File | Purpose |
 |---|---|
-| [`preconfigured-servers.md`](preconfigured-servers.md) | Verified portal template names, descriptions, tool-membership evidence, and risk review |
+| [`preconfigured-servers.md`](preconfigured-servers.md) | Verified portal template names, descriptions, exact tool memberships, risk review, and evidence gaps |
 | [`tool-inventory.md`](tool-inventory.md) | Searchable inventory of all 10,533 exact tool names grouped across 59 services |
 | [`recommended-first-server.md`](recommended-first-server.md) | Exact first-server decision, allowlist, exclusions, rollout, and kill criteria |
 
@@ -41,11 +43,24 @@ The inventory records exact tool names and per-service counts. Zoho's official m
 
 ### Preconfigured Templates
 
-The 15 template names and card descriptions were transcribed from the authenticated U.S. Zoho MCP portal captures supplied on July 24, 2026.
+The 19 template names and card descriptions were transcribed from authenticated U.S. Zoho MCP portal evidence supplied on July 24, 2026.
 
-Only **CRM Data & Metadata Operations** had its tool modal captured. It shows 16 tool chips representing 15 unique tools because `getModuleByApiName` appears twice. Exact tool membership for the other 14 templates is not published in the indexed official documentation and was not visible in the supplied captures.
+Exact tool membership is captured for all 18 CRM, Books, Payments, and Mail templates:
 
-This repository labels that gap explicitly. It does not reverse-engineer or invent template membership.
+- 11 Zoho CRM templates.
+- 3 Zoho Books templates.
+- 1 Zoho Payments template.
+- 3 Zoho Mail templates.
+
+The WorkDrive template's name and description are captured, but its exact tool membership remains `Not Verified`.
+
+`CRM Data & Metadata Operations` displays 16 tool chips representing 15 unique names because `getModuleByApiName` appears twice. The repository preserves that observation without treating it as a second capability.
+
+Across the 18 verified templates, the evidence contains 217 displayed tool chips, 216 unique per-template memberships, and 177 unique tool names across templates.
+
+Four exact names in the live templates are not present in the dated public Tool Manual bundle: `cloneWorkflowRule`, `add_journal_attachment`, `getMessageAttachmentContent`, and `uploadAttachments`. They are recorded in a separately labeled live-portal overlay in `tool-inventory.md`; they do not alter the bundle-derived 10,533-tool total.
+
+This repository does not infer missing tool membership from a template title or description.
 
 ## Important Distinctions
 
