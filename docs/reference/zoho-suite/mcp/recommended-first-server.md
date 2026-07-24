@@ -1,11 +1,11 @@
-# Recommended Zoho MCP Rollout
+# Recommended First Zoho MCP Server
 
 **Original decision:** Start with a custom, Zoho-hosted, read-only CRM configuration audit server.  
 **Current status:** Implemented and expanded as of July 24, 2026.
 
 The sanitized source of truth for the live server identifiers and exact Codex-advertised tools is [`configured-servers.md`](configured-servers.md).
 
-## Current Implementation
+## Current Implementation Status
 
 | Order | Codex Server ID | Status | Current Boundary |
 |---:|---|---|---|
@@ -18,9 +18,9 @@ These are custom or adapted Zoho-hosted server allowlists. They are not coded se
 
 The Audit acceptance test confirmed GH Real Estate and `type: production`. Its module call succeeded but was transport-truncated, and an advertised field projection returned `PATTERN_NOT_MATCHED`; the reported module pairs are confirmed, but inventory completeness is not certified. The Changes server's production target was confirmed without testing a mutation. The Books organization remains unverified in the supplied evidence.
 
-## Why The Audit Server Still Wins
+## Why This Wins
 
-Codex needs a narrow, reliable way to inspect the current CRM configuration before proposing controlled changes. The audit server keeps tenant/applicant records, financial records, communications, and destructive tools outside its boundary while supporting readback for every configuration class currently writable through the Changes server.
+Codex needs a narrow, reliable way to inspect the current CRM configuration before proposing controlled changes. The Audit server keeps tenant/applicant records, financial records, communications, and destructive tools outside its boundary while supporting readback for every configuration class currently writable through the Changes server.
 
 No captured preconfigured CRM template matches that boundary:
 
@@ -30,7 +30,9 @@ No captured preconfigured CRM template matches that boundary:
 - **Books Financial Overview** is read-only but addresses accounting review rather than CRM configuration.
 - **Mail Reading & Search** exposes message and attachment content and includes mailbox state changes.
 
-## Current Audit Allowlist
+## Exact Initial Allowlist
+
+The original 14-tool Audit proposal has been expanded to the following 18-tool current allowlist:
 
 | Tool | Purpose |
 |---|---|
@@ -64,7 +66,9 @@ The original design limited `gh_zoho_crm_changes` to one organization check and 
 
 This is production authority, not a test-only sandbox. The current evidence establishes that the tools are configured, but it does not establish whether the 11 record-tool additions were a deliberate permanent boundary or permission drift. They materially increase PII and operational risk. The server has no delete, upsert, merge, conversion, email-send, permission, role, profile, or user-management tools, but the remaining bulk write tools can still cause widespread changes.
 
-Use this sequence for every production change:
+## First Use
+
+The first Audit acceptance check is complete. Use this sequence for each production change:
 
 1. Audit the exact current configuration or records.
 2. Show the target, current state, proposed state, exact write tool, exact parameters, expected record count, expected effect, and rollback approach.
@@ -73,9 +77,18 @@ Use this sequence for every production change:
 5. Read back the result through the narrowest available read tool.
 6. Review the Zoho MCP execution log.
 
-Do not treat a broad request such as “clean up CRM” as approval for multiple writes.
+Do not treat a broad request such as “clean up CRM” as approval for multiple writes. Do not store organization IDs, user IDs, raw responses, tenant/applicant records, emails, phone numbers, addresses, or other private data in GitHub.
 
-## Books Review Boundary
+## Rollout Order
+
+1. **`gh_zoho_crm_audit`** — implemented; keep read-only.
+2. **`gh_zoho_crm_changes`** — implemented against production; require a bounded proposed diff and per-call approval.
+3. **`gh_zoho_books_review`** — configured; verify the Books organization before financial review.
+4. **GH WorkDrive Read** — defer until a concrete recurring document workflow exists and the exact tool membership is captured.
+
+Do not convert the Audit server into a write-capable server. Keeping the read and write servers separate preserves a clear permission boundary and makes the Codex tool list easier to reason about.
+
+## First Preconfigured Server
 
 `gh_zoho_books_review` implements the 12-read-tool **Books Financial Overview** template. It can read contacts, invoices, bills, expenses, bank accounts, bank transactions, items, and the Chart of Accounts.
 
@@ -86,7 +99,7 @@ Before its first financial review:
 3. Stop if the organization is ambiguous.
 4. Keep per-call approval enabled because the server can return PII and financial data.
 
-Do not expand it with invoice, contact, journal, payment, refund, Chart of Accounts, currency-adjustment, project, user, or deletion writes without a separate approved workflow.
+Do not expand it with invoice, contact, journal, payment, refund, Chart of Accounts, currency-adjustment, project, user, or deletion writes without a separate approved workflow. Do not use **Accountant Management System** as a shortcut; its captured 67-tool surface includes destructive accounting and configuration operations.
 
 ## Explicit Exclusions
 
@@ -102,13 +115,19 @@ Do not add:
 - A cross-suite GH Real Estate super-server.
 - A coded MCP wrapper before a native-tool or policy-enforcement gap is proven.
 
-## Approval And Authorization
+## Approval and Authorization
 
 - Use individual OAuth/Authorization on Demand rather than shared credentials.
 - Require per-call approval for `gh_zoho_crm_changes` and `gh_zoho_books_review`.
 - Verify the exact organization after authentication or server configuration changes.
 - Keep MCP URLs, API keys, OAuth tokens, organization IDs, raw responses, tenant records, and accounting records out of GitHub.
 - Treat repository documentation as an allowlist reference, not proof of live configuration or deployment.
+
+## Time and Capital Allocation
+
+- Capital: **$0** for the current native-server design.
+- Create no additional server unless a specific approved workflow cannot be completed with the current three-server design.
+- MCP work remains subordinate to urgent GH safety, tenant, legal, and cash obligations and to Sylvara customer acquisition.
 
 ## Continue Criteria
 
@@ -122,7 +141,7 @@ Continue using the current design only while all are true:
 - Zoho's MCP logs show only the expected user and calls.
 - The servers resolve approved GH configuration or operational work instead of creating general exploration.
 
-## Stop Criteria
+## Kill Criteria
 
 Stop the affected workflow if any are true:
 
@@ -134,6 +153,14 @@ Stop the affected workflow if any are true:
 - Readback cannot verify the result.
 - Tool approvals or Zoho permissions do not enforce the expected boundary.
 
-## Time And Capital Guardrail
+## What To Ignore
 
-The MCP infrastructure is sufficient. Do not create more servers unless a specific approved workflow cannot be completed with the current three-server design. MCP work remains subordinate to urgent safety, tenant, legal, cash, and Sylvara customer-acquisition priorities.
+- A single cross-suite GH Real Estate server.
+- A coded MCP wrapper before a native-tool gap is proven.
+- Broad Books write authority.
+- Contact merging or deletion.
+- Autonomous emails.
+- WorkDrive management without a concrete workflow.
+- Zoho Payments or refund operations.
+- Zoho Contracts automation through MCP while Zoho Contracts is absent from the current Tool Manual.
+- Sylvara MCP product development before repeated paid demand.
