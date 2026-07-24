@@ -2,6 +2,14 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-24
+
+- Added a sanitized current-state inventory for the three configured GH Real Estate Zoho MCP server entries: the 18-tool CRM configuration audit server, the 27-tool mixed CRM changes server, and the 12-tool Books review server.
+- Recorded the exact `ZohoCRM_` and `ZohoBooks_` names advertised to Codex, OAuth status, CRM production acceptance results, the pending Books organization gate, and the prohibition on committing MCP URLs or authentication material.
+- Updated the rollout decision from the original 14-tool audit proposal to the implemented 18-tool readback boundary and documented that the CRM Changes server now includes 11 production-record operations beyond its original 16 organization/configuration tools.
+- Added operating controls for production record reads, single and bulk writes, financial reads, organization verification, explicit per-call approval, readback, and Zoho log review.
+- This documentation-only update does not change Codex configuration, OAuth permissions, Zoho CRM, Zoho Books, or any production record.
+
 ## 2026-07-20
 
 - Expanded the Zoho Suite AI reference library to cover every application shown in the supplied Zoho app inventory by adding individual official-source-anchored handbooks for Zoho API Console, Calendar, Meeting, One, People, ToDo, and Voice.
