@@ -13,6 +13,19 @@ The official manual remains authoritative for parameters, purpose descriptions, 
 - 8 extended Zoho-family services with 836 tool rows.
 - 59 services and 10,533 total tool rows.
 
+## Live Portal Overlay
+
+The authenticated U.S. Zoho MCP portal template memberships supplied on July 24, 2026 contain four exact tool names that are not present in the dated public Tool Manual bundle used for the 10,533-row inventory:
+
+| Service | Live Portal Tool | Captured Preconfigured Server |
+|---|---|---|
+| Zoho CRM | `cloneWorkflowRule` | CRM Automation & Workflows |
+| Zoho Books | `add_journal_attachment` | Accountant Management System |
+| Zoho Mail | `getMessageAttachmentContent` | Mail Reading & Search |
+| Zoho Mail | `uploadAttachments` | Mail Sending & Replies |
+
+These names are a live-portal overlay, not additions to the bundle-derived inventory. Preserve the exact capitalization and spelling. Before authorizing any of them, inspect the current live Tool Manual entry, OAuth scope, parameters, and behavior. The live authenticated portal controls when it conflicts with this dated public snapshot.
+
 ## Service Index
 
 | Service | Catalog | Tool Rows |
