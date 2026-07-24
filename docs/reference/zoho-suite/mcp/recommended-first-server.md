@@ -8,12 +8,13 @@ This is a custom tool selection in the Zoho MCP console. It is not a coded MCP s
 
 The immediate objective is to let Codex inspect GH Real Estate's CRM configuration before proposing controlled changes.
 
-None of the 15 captured preconfigured templates matches that boundary:
+None of the 19 captured preconfigured templates matches that boundary:
 
-- **CRM Data & Metadata Operations** mixes record reads, record writes, users, and configuration metadata.
-- **CRM Automation & Workflows** implies workflow writes and notification changes.
-- **Books Financial Overview** addresses accounting review, not CRM configuration.
-- **WorkDrive File Management** is unrelated and may include file-management writes.
+- **CRM Data & Metadata Operations** contains 16 displayed tool chips / 15 unique tools. It mixes four production-record writes, record reads, user data, and configuration metadata, while omitting several layout, picklist, and workflow audit tools.
+- **CRM Automation & Workflows** contains 17 tools, including rule, field-update, and email-notification creation, updates, reordering, cloning, and deletion.
+- **CommandCenter CRM Actions** contains nine tools that can update journeys and stages and add automation functions.
+- **Books Financial Overview** contains 12 read tools and is the safest verified preconfigured template, but it addresses accounting review rather than CRM configuration.
+- **Mail Reading & Search** exposes message and attachment content and is not strictly read-only because it includes `flagMessages`.
 
 A custom read-only server exposes only the metadata needed for the audit and keeps tenant/applicant records, financial records, communications, and destructive tools out of scope.
 
@@ -68,10 +69,22 @@ Do not store organization IDs, user IDs, raw API responses, tenant/applicant rec
 
 1. **GH CRM Configuration Audit** — custom Zoho-hosted, read-only.
 2. **GH CRM Configuration Changes** — separate custom server, only after the audit; add one approved write class at a time.
-3. **GH Books Review** — start from Books Financial Overview only after its live modal proves the exact tool set is read-only.
-4. **GH WorkDrive Read** — defer until a concrete recurring document workflow exists.
+3. **GH Books Review** — use the verified 12-tool **Books Financial Overview** template only after the CRM pilot.
+4. **GH WorkDrive Read** — defer until a concrete recurring document workflow exists and the exact template modal is captured.
 
 Do not convert the read-only audit server into a write-capable server. Keeping read and write servers separate preserves a clear permission boundary and makes the Codex tool list easier to reason about.
+
+## First Preconfigured Server
+
+If the question is limited to preconfigured templates, **Books Financial Overview** is the first one worth creating. Its captured composition contains only 12 `list_*` and `get_*` tools:
+
+- It is still second in the overall rollout because accounting review is not the immediate objective.
+- It must remain separate from CRM.
+- It may read sensitive contacts, invoices, bank accounts, and transactions.
+- It must use the correct GH Real Estate Books organization, Authorization on Demand, and Always Ask in Codex.
+- It must not be expanded with invoice, journal, payment, refund, Chart of Accounts, or deletion tools.
+
+Do not use **Accountant Management System** as a shortcut. Its 67 tools include journal and Chart of Accounts creation, updates, and deletions, base-currency adjustments, projects, users, and custom fields.
 
 ## Approval and Authorization
 
@@ -118,5 +131,6 @@ Stop and do not add write tools if any are true:
 - Contact merging or deletion.
 - Autonomous emails.
 - WorkDrive management.
+- Zoho Payments or refund operations.
 - Zoho Contracts automation through MCP; Zoho Contracts is not listed in the current Tool Manual.
 - Sylvara MCP product development before repeated paid demand.
