@@ -16,6 +16,8 @@ The sanitized source of truth for the live server identifiers and exact Codex-ad
 
 These are custom or adapted Zoho-hosted server allowlists. They are not coded servers hosted in GitHub or Catalyst.
 
+The Audit acceptance test confirmed GH Real Estate and `type: production`. Its module call succeeded but was transport-truncated, and an advertised field projection returned `PATTERN_NOT_MATCHED`; the reported module pairs are confirmed, but inventory completeness is not certified. The Changes server's production target was confirmed without testing a mutation. The Books organization remains unverified in the supplied evidence.
+
 ## Why The Audit Server Still Wins
 
 Codex needs a narrow, reliable way to inspect the current CRM configuration before proposing controlled changes. The audit server keeps tenant/applicant records, financial records, communications, and destructive tools outside its boundary while supporting readback for every configuration class currently writable through the Changes server.
