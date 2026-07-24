@@ -252,9 +252,15 @@ def _validate_source(source: dict[str, Any], final_url: str) -> None:
     if _canonical_official_url(final_url, discovery_url, allowed_hosts) is None:
         raise SourceConfigurationError("final_url is not an allowlisted HTTPS URL")
 
-    discovery_host = (urlsplit(discovery_url).hostname or "").lower()
+    discovery_host = (
+        (urlsplit(discovery_url).hostname or "").lower().rstrip(".")
+    )
     publisher = str(source["publisher"]).lower()
-    is_fasb = "fasb" in publisher or discovery_host.endswith("fasb.org")
+    is_fasb = (
+        "fasb" in publisher
+        or discovery_host == "fasb.org"
+        or discovery_host.endswith(".fasb.org")
+    )
     if is_fasb and source["storage_policy"] not in _FASB_STORAGE_POLICIES:
         raise SourceConfigurationError(
             "FASB discovery is restricted to metadata-only or licensed-no-store"

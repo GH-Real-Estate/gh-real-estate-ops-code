@@ -288,7 +288,7 @@ test("untrusted event text is bounded and inert", () => {
   const body = responder.renderBody(run, responder.incidentKey(run));
 
   assert.ok(run.branch.length <= 200);
-  assert.doesNotMatch(body, /https:\/\/example\.com/);
+  assert.equal(run.url, null);
   assert.doesNotMatch(body, /`bad`/);
   assert.match(body, /Run link unavailable/);
 });
