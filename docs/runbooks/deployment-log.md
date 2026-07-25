@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-25 — Catalyst And WorkDrive MCP Expansion Captured
+
+- System: Zoho Catalyst / Zoho WorkDrive / Zoho CRM / Codex / GitHub
+- Repo branch / commit: live configuration reported outside the repository; sanitized documentation on `agent/update-zoho-mcp-inventory`
+- Files changed: configured-server inventory, MCP catalog/rollout/template references, document-intake controls, changelog, and this evidence-only log entry
+- Business rule changed? no live tenant, lease, document, CRM, or automation behavior changed
+- Dry-run completed? deterministic inventory reconciliation and documentation validation only
+- Smoke test completed? no live-system smoke test; Catalyst target/action, WorkDrive identity/Team Folder/binary/write, document-processor, event-source, and CRM document-workflow acceptance remain pending
+- Deployed by: Gabriel configured the reported native servers; Codex reconciled the sanitized evidence
+- Result: captured `gh_zoho_catalyst_webhook_audit` (15), `gh_zoho_catalyst_webhook_breakglass` (5), `gh_zoho_catalyst_webhook_release` (7), `gh_zoho_workdrive_audit` (20), and `gh_zoho_workdrive_changes` (5), bringing the current inventory to 10 servers and 352 memberships
+- Rollback plan: revert the documentation commit; for live access concerns, disconnect the exact affected server and revoke or narrow its Zoho authorization. Do not delete WorkDrive resources or CRM records as rollback.
+- Notes: current WorkDrive/CRM tools are sufficient for supervised filing and link updates after acceptance. Unattended PDF/OCR extraction still requires the documented narrow processor and event trigger. No server, OAuth grant, Catalyst function/route/pipeline, WorkDrive file/folder, private document, CRM record, or production automation was changed or tested by this repository update.
+
 ## 2026-07-25 — Zoho Books MCP Expansion Captured
 
 - System: Zoho Books / Codex / GitHub

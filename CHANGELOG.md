@@ -15,6 +15,10 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Confirmed that `ZohoBooks_add_journal_attachment` is absent from both current write selections even though the authenticated Zoho template capture and current Journals API support the operation.
 - Added a supervised Books accountant control plan with a 166/17/53/27 target split, no-delete correction policy, fixed-organization and durable-idempotency requirements, high-risk tool moves, Configuration Admin isolation, and human-only journal approval/publication and period unlocking.
 - This documentation-only Books update does not change Codex configuration, OAuth permissions, any Zoho MCP server, Zoho Books, or any financial record.
+- Expanded the sanitized configured-server inventory from five servers/300 memberships to ten servers/352 memberships by adding the exact three Catalyst webhook-administration and two WorkDrive selections reported in the July 25 evidence. All 52 added memberships already exist in the governed tool catalog.
+- Added a cross-chat document-intake capability review. The current WorkDrive 20-read/5-write split and CRM one-record tools are complete for supervised filing and linking after acceptance; unattended processing still requires a narrow two-tool `gh_document_processor`, a controlled arrival trigger, approved CRM link/resource fields, and target/binary/write acceptance.
+- Recorded conditional CRM-native folder, CRM-attachment, WorkDrive summary, Catalyst cron/job-pool, and read-only Mail tools without adding them to the initial allowlist; excluded multi-download progress from one-document intake and documented function-provisioning, webhook-registration, secret-entry, OCR/extraction, hashing, and malware-scan gaps.
+- This documentation-only Catalyst/WorkDrive update does not change a server, OAuth grant, Catalyst project, WorkDrive file/folder, private document, CRM record, or live automation.
 
 ## 2026-07-24
 
