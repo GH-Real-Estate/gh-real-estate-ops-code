@@ -55,7 +55,7 @@ Use the governed GH semantic palette in the authoring standard and field catalog
 - Verify actual values with the Modules and Fields Metadata APIs before production use.
 - Runtime defaults are not equivalent to a live metadata export.
 - Do not enable the optional `Zillow Intake Events` module merely to create a duplicate source of truth.
-- Do not use `proposed_unverified`, `not_proposed_unverified`, superseded, or prohibited entries in automation.
+- Do not use `proposed_unverified`, `not_proposed_unverified`, `blocked_protected_module`, `historical_target_only_non_deployable`, superseded, or prohibited entries in automation.
 - Do not create duplicate fields to work around a label/API-name mismatch.
 
 ## Data safety
@@ -70,9 +70,17 @@ Run:
 
 ```bash
 python src/zoho-crm/tools/validate-crm-field-catalog.py
+python src/zoho-crm/tools/validate-protected-module-baselines.py
 python -m py_compile \
   src/zoho-crm/tools/validate-crm-field-catalog.py \
+  src/zoho-crm/tools/validate-protected-module-baselines.py \
   src/zoho-crm/tools/export-crm-metadata.py
 ```
 
 A repository catalog change is not complete until the validator passes.
+
+The live API names `Leads`, `Equipment` (display label Property Assets),
+`Pets`, and `Tenant_Vehicles` (display label Vehicles) are protected by the
+baselines under `field-maps/protected-modules/`. Treat their mutation policy
+as deny. The historical `equipment.csv` target design does not authorize
+writes to live API `Equipment`.

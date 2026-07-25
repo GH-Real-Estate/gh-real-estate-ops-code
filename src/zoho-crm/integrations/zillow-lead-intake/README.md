@@ -135,6 +135,16 @@ Do **not** create Phase 2 fields for `Manual_Review_Required`, `Manual_Review_Re
 
 If actual CRM API names differ from the verified names above, set `ZOHO_CRM_FIELD_MAP_JSON` in the runtime config.
 
+## Verified Units Runtime Defaults
+
+The active runtime configuration is owned by `src/index.js`.
+
+- Units module fallback: `Units`
+- Unit auto-number field: `Unit_I_D`
+- Unit status field: `Unit_Status`
+
+`ZOHO_CRM_UNITS_MODULE` remains an environment override for a future verified module API change. Do not use the retired `CustomModule4`, `Unit_ID`, or `Occupancy_Status` defaults. Leave `ZOHO_CRM_FIELD_MAP_JSON={}` when the live APIs above apply.
+
 ## Picklists
 
 ### Lead Status

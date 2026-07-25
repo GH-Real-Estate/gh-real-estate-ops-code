@@ -1,12 +1,12 @@
 {
   "$schema": "../schemas/contract-field-registry.schema.json",
   "registry_id": "GHRE-ZC-FIELDS",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "as_of_date": "2026-07-24",
   "record_counts": {
     "system": 46,
-    "custom": 34,
-    "total": 80
+    "custom": 35,
+    "total": 81
   },
   "allowed_custom_types": [
     "Text",
@@ -1051,6 +1051,18 @@
       "source_of_truth": "Zoho CRM approved Lease credit snapshot after verification against Zoho Books",
       "sensitivity": "confidential_financial",
       "validation": "Holding-deposit credit applied to initial amounts; nonnegative and two decimals. This snapshot is not proof of payment."
+    },
+    {
+      "id": "first_full_month_base_rent_amount",
+      "label": "First Full Month Base Rent Amount",
+      "classification": "custom",
+      "status": "review_required",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "First_Full_Month_Base_Rent_Amount", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease initial-amount snapshot; Zoho Books owns invoicing and payment truth",
+      "sensitivity": "confidential_financial",
+      "validation": "First full month of Base Rent due before possession; nonnegative and two decimals. Do not map or automate until the complete initial-amount equation, Books reconciliation, readiness gate, and controlled Contracts canary pass."
     },
     {
       "id": "total_due_before_possession",

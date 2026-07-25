@@ -1,194 +1,328 @@
 # GH Real Estate Zoho CRM Module and Field Catalog
 
 - **Catalog ID:** GH-ZOHO-CRM-FIELDS-001
-- **Version:** 1.1.0
+- **Version:** 1.2.0
 - **Effective date:** July 24, 2026
-- **Machine-readable sources:** one or more governed CSV files per module under [`crm-module-fields/`](crm-module-fields/)
+- **Machine-readable field registry:** governed CSV files under [`crm-module-fields/`](crm-module-fields/)
+- **Production reconciliation ledger:** [`zoho-crm-production-reconciliation-2026-07-24.md`](../../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md)
+- **Protected-module baselines:** [`protected-modules/`](protected-modules/)
+- **Production global-picklist registry:** [`global-picklists/`](global-picklists/)
 
-## Purpose
+## Purpose and source-of-truth boundary
 
-This catalog records every GH Real Estate CRM business, integration, planned, and legacy-candidate field currently known from the reviewed repository and the supplied CRM workbooks.
+This catalog is the human-readable index for GH Real Estate's Zoho CRM field
+governance. The per-module CSV files are the machine-readable field registry.
+They include verified live fields, repository/runtime fields, proposed fields,
+blocked decisions, historical aliases, and legacy setup candidates.
 
-It is a governed planning and verification registry. It is **not** proof that every proposed field or custom module exists in the live Zoho CRM organization.
+A row in the registry is not proof that a proposed field exists. A live field
+is authoritative only when its `api_name_status` is `verified_live_mcp` and its
+exact post-write/readback facts are protected by the validator. Repository
+runtime fields are authoritative only for the named integration contract.
+
+When evidence conflicts, use this precedence:
+
+1. current production metadata returned by the approved CRM MCP servers;
+2. reviewed production runtime code and integration maps;
+3. the governed repository catalog and runbooks;
+4. screenshots, workbooks, and historical target designs.
+
+Live metadata proves configuration, not record accuracy, synchronization,
+accounting truth, legal consent, signature enforceability, or contract
+readiness. No CRM records or tenant/applicant PII belong in this repository.
 
 ## Non-negotiable rules
 
-1. Refer to every field as **Field Label — Field Type**.
-2. For field creation or material field revision, provide:
-   - field label;
-   - Zoho UI field type;
-   - actual API name and verification status;
-   - help text of no more than 255 characters;
-   - required/unique/default behavior when relevant;
-   - picklist values, order, scope, default, and six-digit hex colors when relevant. `UNCOLORED` is allowed only for `verified_live_mcp` rows with scope `module_local_live_uncolored` or `standard_module_live_uncolored` when live metadata returns null colors; proposed choice fields still require six-digit hex colors.
-3. Never infer an API name from a label. Use `TBD_FROM_ZOHO_METADATA` until the live metadata API or a reviewed runtime integration proves it.
-4. A proposed API name is not an actual API name.
-5. Use actual API names, never labels, in Deluge, REST payloads, functions, webhooks, merge maps, and integration settings.
-6. Do not build every candidate field automatically. Use the `disposition`, `phase`, and verification status in the per-module CSV registry.
-7. Keep tenant PII, applications, screening reports, signed documents, and production secrets out of this repository.
+1. Refer to fields as **Field Label — Field Type**.
+2. Never infer an API name from a label. A proposed API name is not an actual
+   API name.
+3. Use actual API names in Deluge, REST payloads, functions, webhooks, merge
+   maps, and integration settings.
+4. Field type is a creation-time control. A CRM type must also pass the
+   destination-specific Books, Contracts, Sign, Catalyst, or Creator
+   compatibility gate before integration use.
+5. A choice-field change must preserve exact display/reference/actual values,
+   order, default, used state, colors, history, and global-set association when
+   those facts are available.
+6. `UNCOLORED` is allowed only as exact live evidence under
+   `module_local_live_uncolored`, `standard_module_live_uncolored`, or
+   `global_live_uncolored`. Those scopes are evidence modes, never substitutes
+   for a designed target value/color specification.
+7. Respect each row's `api_name_status`, `disposition`, and `phase`. Blocked,
+   superseded, and `do_not_create` rows must not return to a build queue without
+   a separately reviewed migration decision.
+8. Do not hardcode secrets or store CRM records, signed documents, screening
+   reports, financial transactions, or tenant PII in this catalog.
 
-## Module inventory
+## Governed CSV inventory
 
-| Display label | Zoho base module | Module type | API name | API-name status | Known fields | Verified field APIs | Still unverified |
-|---|---|---|---|---|---:|---:|---:|
-| Leads | Leads | standard | `Leads` | verified_standard_zoho_and_repo_runtime | 60 | 34 | 26 |
-| Zillow Intake Events | Custom | custom_optional_integration_log | `Zillow_Intake_Events` | repo_runtime_default_needs_live_metadata | 10 | 0 | 10 |
-| Properties | Accounts | standard_renamed | `Accounts` | verified_standard_zoho | 76 | 6 | 70 |
-| Contacts | Contacts | standard | `Contacts` | verified_standard_zoho | 52 | 4 | 48 |
-| Rental Applications | Deals | standard_renamed | `Deals` | verified_standard_zoho | 80 | 20 | 60 |
-| Units | Custom | custom | `Units` | verified_repo_live_integration | 54 | 7 | 47 |
-| Leases | Custom | custom | `Leases` | verified_live_mcp | 249 | 42 | 207 |
-| Maintenance Requests | Cases | standard_renamed | `Cases` | verified_standard_zoho | 46 | 0 | 46 |
-| Inspections | Custom | custom | `TBD_FROM_ZOHO_METADATA` | tbd_from_live_module_metadata | 36 | 0 | 36 |
-| Notices | Custom | custom | `TBD_FROM_ZOHO_METADATA` | tbd_from_live_module_metadata | 21 | 0 | 21 |
-| Vendors | Vendors | standard | `Vendors` | verified_standard_zoho | 24 | 0 | 24 |
-| Tasks | Tasks | standard | `Tasks` | verified_standard_zoho | 10 | 0 | 10 |
-| Equipment | Custom | custom | `TBD_FROM_ZOHO_METADATA` | tbd_from_live_module_metadata | 13 | 0 | 13 |
-| Lease Documents / Addenda | Custom | custom_candidate | `TBD_FROM_ZOHO_METADATA` | tbd_from_live_module_metadata | 16 | 0 | 16 |
-| **Total** | -- | -- | -- | -- | **747** | **113** | **634** |
+“Verified field APIs” includes `verified_live_mcp`,
+`verified_repo_live_integration`, and `verified_repo_runtime`. It does not mean
+that every verified field is automatically populated or safe for every
+integration.
 
-## Verification status
+| CSV module label | Zoho base/module API | Module API status | Catalog rows | Verified field APIs | Still unverified |
+|---|---|---|---:|---:|---:|
+| Condition Reports | `Condition_Reports` | `verified_live_mcp` | 5 | 5 | 0 |
+| Contacts | `Contacts` | `verified_standard_zoho` | 52 | 13 | 39 |
+| Equipment (historical target CSV only) | Not authoritative for a live module | `historical_target_only_non_deployable` | 13 | 0 | 13 |
+| Inspections | `Inspections` | `verified_live_mcp` | 36 | 19 | 17 |
+| Leads | `Leads` | `verified_standard_zoho_and_repo_runtime` | 60 | 34 | 26 |
+| Lease Documents / Addenda | Custom candidate | `tbd_from_live_module_metadata` | 16 | 0 | 16 |
+| Leases | `Leases` | `verified_live_mcp` | 249 | 43 | 206 |
+| Maintenance Requests | `Cases` | `verified_standard_zoho` | 46 | 16 | 30 |
+| Notices | Custom candidate | `tbd_from_live_module_metadata` | 21 | 0 | 21 |
+| Properties | `Accounts` | `verified_standard_zoho` | 76 | 14 | 62 |
+| Rental Applications | `Deals` | `verified_standard_zoho` | 80 | 26 | 54 |
+| Storage Units | `Storage_Units` | `verified_live_mcp` | 3 | 3 | 0 |
+| Tasks | `Tasks` | `verified_standard_zoho` | 10 | 3 | 7 |
+| Units | `Units` | `verified_repo_live_integration` | 54 | 29 | 25 |
+| Utilities | `Utilities` | `verified_live_mcp` | 2 | 2 | 0 |
+| Vendors | `Vendors` | `verified_standard_zoho` | 24 | 1 | 23 |
+| Zillow Intake Events | `Zillow_Intake_Events` | `repo_runtime_default_needs_live_metadata` | 10 | 0 | 10 |
+| **Total** | — | — | **757** | **208** | **549** |
 
-- `verified_standard_zoho`: a standard module API name confirmed by official Zoho metadata documentation.
-- `verified_repo_runtime`: a field API name used by the reviewed Zillow integration and documented in the repository.
-- `verified_repo_live_integration`: a module or field API name documented as verified by the integration runbook.
-- `verified_live_mcp`: a module or field API name returned by the approved production metadata connector and confirmed by post-write readback.
-- `repo_runtime_default_needs_live_metadata`: code contains the value, but no live Fields Metadata export has been checked in.
-- `proposed_unverified`: workbook suggestion only.
-- `not_proposed_unverified`: known label/type without a safe API-name proposal.
-- `tbd_from_live_module_metadata`: custom module API name must be read from the live Modules Metadata response.
-- `superseded_by_verified_repo_field`: an older proposal conflicts with a governed field; do not create a duplicate.
-- `prohibited_current_design`: intentionally excluded by the current data-minimization design.
+The 208 verified APIs comprise 170 current live metadata readbacks, 34
+Zillow/Lead runtime APIs, and four Unit APIs documented by the live
+integration. The remaining 549 rows are intentionally not represented as
+verified live configuration.
 
-## Current verified integration surface
+The historical [`equipment.csv`](crm-module-fields/equipment.csv) is not the
+live Property Assets schema. Production API `Equipment` is the protected
+**Property Assets** module described below. The historical CSV cannot
+authorize a create, update, delete, choice, or layout operation.
 
-### Leads — Standard module — API name `Leads`
+## Protected production modules
 
-The reviewed Zillow integration currently governs 34 Lead field API names. Examples include:
+These modules are metadata-audit/documentation only. Their sanitized baselines
+are checksum-controlled under the default-deny policy in
+[`protected-module-policy.json`](protected-modules/protected-module-policy.json).
 
-| Field Label — Field Type | Verified API name | Status |
-|---|---|---|
-| Mobile — Phone / Standard | `Mobile` | Governed current |
-| Phone — Phone / Standard | `Phone` | Governed current |
-| Requested Property — Lookup | `Requested_Property` | Governed current |
-| Requested Unit — Lookup | `Requested_Unit` | Governed current |
-| Requested Move-In Date — Date | `Requested_Move_In_Date` | Governed current |
-| Zillow Property Address Raw — Single Line | `Zillow_Property_Address_Raw` | Governed current |
-| Zillow Intake Status — Pick List | `Zillow_Intake_Status` | Governed current |
-| Zillow Raw Payload Stored — Checkbox | `Zillow_Raw_Payload_Stored` | Governed current |
+| Live display label | Module API | Baseline fields | Captured sections | Mutation policy |
+|---|---|---:|---:|---|
+| Leads | `Leads` | 82 | 10 | Deny; preserve Zillow/Catalyst API contract |
+| Property Assets | `Equipment` | 106 | 13 | Deny |
+| Pets | `Pets` | 44 | 7 | Deny |
+| Vehicles | `Tenant_Vehicles` | 29 | 5 | Deny |
 
-The catalog also retains older workbook aliases, but marks conflicting proposals as `superseded_alias` so ChatGPT or Codex does not create duplicate Lead fields.
+Do not create, update, rename, retire, or delete fields; change choices,
+formulas, lookups, rollups, auto-number settings, required/default/unique
+flags, tooltips, permissions, sections, or layouts; or attach/detach global
+picklists in these modules. A baseline refresh is documentation work and does
+not authorize a live mutation. An explicitly authorized same-repository
+baseline, checksum, validator, and documentation update remains possible after
+fresh metadata readback and review. Checksums detect repository drift; they are
+not independent attestation of current live state.
 
-### Units — Custom module — API name `Units`
+## Current verified reconciliation surface
 
-The Units module API name and core routing fields are documented as verified:
+The July 24 production ledger records 83 custom fields created and read back
+across 12 operating modules, additive reconciliation of four standard
+picklists, professional field/section placement, and verified reuse of
+compatible live fields. The complete live snapshot currently contains 170
+`verified_live_mcp` rows. Exact field facts remain in the module CSVs; the
+validator freezes every column of every live row.
 
-| Field Label — Field Type | Verified API name | Status |
-|---|---|---|
-| Unit Name — Single Line / Module Name | `Name` | Governed current |
-| Property — Lookup | `Property` | Governed current |
-| Unit Number — Number | `Unit_Number` | Governed current |
-| Zillow Listing ID — Single Line | `Zillow_Listing_ID` | Governed current |
-| Zillow Provider Model ID — Single Line | `Zillow_Provider_Model_ID` | Governed current |
-| Zillow Listing Contact Prefix — Single Line | `Zillow_Listing_Contact_Prefix` | Governed current |
-| Zillow Routing Unit Key — Single Line | `Zillow_Routing_Unit_Key` | Governed current |
+### Exact standard picklist readback
 
-`Occupancy_Status` and `Unit_ID` remain runtime defaults that still require a live Fields Metadata response.
+`-None-` is a Zoho field-level platform sentinel. It is retained in readback
+notes and validator rules but omitted from governed business-choice strings.
+All choices below had null colors, null default, and history off at readback.
 
-### Rental Applications -- Standard Deals module renamed -- API name `Deals`
-
-The July 24, 2026 production reconciliation created and read back 15 bounded application fields. The governed CSV records the exact API name, type, tooltip, lookup target, choices/colors, and disposition for each.
-
-The standard `Stage` field remains the application-stage field. No custom `Application Stage` field was created, and the requested target Stage list is not claimed to exist live. Final readback found 18 uncolored display options, default null, history enabled, and stale/misaligned underlying actual values; the governed CSV row preserves every exact pair. Stage values were not changed because the current tool could not safely reconcile those pairs with pipeline/probability semantics. Standard `Amount` was not repurposed because an active Big Deal Rule depends on Amount and Probability.
-
-CSV `help_text` preserves the exact live readback. The submitted creation payload used normalized/paraphrased wording for some values instead of the user-supplied prose, and the tool stored/read that payload exactly. The rows therefore do not prove verbatim prompt-text equality. The current update schema cannot change tooltips; a later supported update must apply the supplied exact text and read it back.
-
-### Leases -- Custom module -- API name `Leases`
-
-The custom module API `Leases` and its post-write metadata were verified through the approved production metadata connector on July 24, 2026. The bounded build created 33 fields, reused seven compatible fields, created eight ordered sections, and read back all 40 reconciled placements. The inventory counts 42 verified Lease APIs because the live APIs `Monthly_Rent` and `Prorated_Rent` were also verified even though their target semantics remain blocked and they are not governed-current mappings.
-
-Important live variances and unresolved items:
-
-- live `Tenant` (`Tenant`) is the primary-tenant relationship; no duplicate field labeled Primary Tenant was created;
-- live `Lease_Start_Date`, `Lease_End_Date`, `Move_In_Date`, and `Security_Deposit` were reused for the approved Lease snapshots;
-- Lease Status history tracking is enabled, target choices/colors are present, and legacy values remain; the live label is `Ready For Contract`, but order interleaves target/legacy values with new `Draft` last, default is null, and the field remains optional;
-- required/default/readiness controls remain unsupported by the current configuration tool;
-- `Monthly_Rent` and `Prorated_Rent` remain semantically ambiguous, so no duplicate Base/Total/Prorated Base Rent fields were created;
-- Lease Number remains blocked until an auto-number prefix/format is approved; and
-- First Full Month Base Rent Amount remains a confirmed field/equation gap.
-
-See the sanitized [production reconciliation](../../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) for the full applied/blocked manifest and rollback.
-
-## Picklist color standard
-
-These are GH Real Estate's recommended semantic colors. They are not claimed to be Zoho's default colors.
-
-| Color | Hex |
+| Module / field | Exact live order |
 |---|---|
-| Blue | `#2563EB` |
-| Amber | `#D97706` |
-| Purple | `#7C3AED` |
-| Green | `#16A34A` |
-| Red | `#DC2626` |
-| Gray | `#6B7280` |
-| Orange | `#EA580C` |
-| Teal | `#0F766E` |
-| Cyan | `#0891B2` |
-| Indigo | `#4F46E5` |
-| Pink | `#DB2777` |
-| Lime | `#65A30D` |
-| Brown | `#92400E` |
+| Cases / `Status` | New; Escalated; On Hold; Closed; Triage; Scheduled; Waiting on Tenant; Waiting on Vendor; In Progress; Completed; Cancelled |
+| Cases / `Priority` | `-None-`; High; Medium; Low; Emergency; Normal |
+| Cases / `Case_Origin` | `-None-`; Email; Phone; Web; Tenant Portal; Text; Landlord Created; Inspection |
+| Tasks / `Priority` | High; Highest; Low; Lowest; Normal; Emergency |
 
-Use semantic colors first:
+Tasks Priority is a standard module picklist, not the unverified “GH Priority”
+global set previously suggested by repository material.
 
-- blue: new, informational, or unworked;
-- amber: waiting, pending, or action required;
-- purple: showing, contract, or signature workflow;
-- green: approved, active, verified, or complete;
-- orange: legal review, nonstandard handling, or heightened caution;
-- red: denied, failed, terminated, or urgent;
-- gray: inactive, archived, unknown, duplicate, or not applicable.
+### Production global picklists
 
-The per-module CSV registry gives every known picklist value a six-digit hex recommendation and identifies whether the assignment came from the supplied color matrix, a semantic fallback, or a categorical rotation.
+The exact metadata-only registry contains ten visible global sets. Confirmed
+GH-governed sets are `States`, `Countries`, `Contact_Type`,
+`Property_Type`, and `GH_Lifecycle_Status`; `Building_Entry_Type` is an
+unassociated candidate whose values remain unknown. Zoho/system sets
+`team_member_role__s`, `access__s`, `Country__s`, and `States__s` are
+non-mutation boundaries.
 
-## Field-type status
+`GH_Lifecycle_Status` is associated with
+`Accounts.Property_Status` and `Vendors.Vendor_Status`, with exact order
+Active, Inactive, Archived. The full 50-state and 195-country lists and all
+confirmed associations are stored in
+[`production-global-picklist-registry.json`](global-picklists/production-global-picklist-registry.json).
+Unknown or unused values must never be interpreted as safe to delete.
 
-The companion [`crm-field-type-catalog.md`](../standards/crm-field-type-catalog.md) is a working type vocabulary. Zoho does not permit changing a custom field's type after creation, so field type must be confirmed before the field is built.
+## Duplicate prevention and field ownership
 
-The registry separates:
+The validator locks reviewed outcomes for duplicate-prone fields:
 
-- `field_type`: the proposed or governed Zoho UI type;
-- `expected_api_data_type`: the expected metadata type when the mapping is clear;
-- actual live metadata: not claimed until exported from Zoho CRM.
+- Contacts reuses standard `Other_Phone`, `First_Name`, `Middle_Name`, and
+  `Last_Name`; proposed duplicates are `do_not_create`.
+- Contacts preferred-contact, contact-role/status, Books-customer-ID, and
+  Contracts-counterparty concepts remain blocked where live type, active-rule,
+  or integration ownership conflicts exist.
+- Properties reuses `Primary_Contact`, `Owner`, and global-backed
+  `Account_Type`; Notice Phone remains blocked until the legal/operational
+  meaning of standard `Phone` is approved.
+- Units reuses `Unit_I_D`, `Unit_Status`, `Current_Tenant`, `Bathrooms`,
+  `Bedrooms`, `Square_Feet`, and `Zoho_WorkDrive_Folder_URL`. Historical
+  `Unit_ID`, `Occupancy_Status`, and WorkDrive aliases are not create targets.
+- Inspections reuses module name API `Name`, `Status`, `Primary_Tenant`,
+  `Signed_Checklist_PDF_URL`, and `Photos_Folder_URL`; historical duplicate
+  labels are not create targets.
 
-## Live verification procedure
+### Operational and evidence-only fields
 
-Use:
+- Contacts `Email_Operational_Consent` and `SMS_Operational_Consent` are
+  history-off operational flags with no source, timestamp, or revocation
+  evidence. They are not marketing-consent proof or sole messaging
+  authorization.
+- Inspections `Tenant_Signed` and `Landlord_Signed` are manual operational
+  checkboxes. No Zoho Sign evidence integration is verified, so they are not
+  signature or enforcement proof.
+- Deals `Zoho_Creator_Application_ID` and Cases `Creator_Ticket_ID` are optional
+  Single Line fields without verified uniqueness. They are prohibited as sole
+  upsert/idempotency keys until uniqueness, normalization, collision/duplicate
+  handling, and post-write readback exist.
+
+### Convenience and financial snapshots
+
+Contacts `Current_Lease` and `Current_Unit`, plus Units `Current_Lease`,
+`Current_Lease_End_Date`, and `Current_Base_Rent`, are non-authoritative
+convenience/snapshot fields. No idempotent sync workflow currently owns them.
+Operators must not treat them as automatically current.
+
+Leases owns tenancy and lease history. Zoho Books owns invoice, payment,
+credit, deposit, and balance truth. Units `Security_Deposit_Default` and
+`Current_Base_Rent` are optional editable planning/default snapshots only:
+they are not payment evidence or enforceable tenant amounts and must not be
+automatically copied or charged. Lease-specific amounts require approved terms,
+policy review, applicable furnished/deposit-cap review, and readback.
+
+## Lease and Contracts readiness
+
+The live Lease field `First_Full_Month_Base_Rent_Amount` is Currency(2), with
+the exact tooltip:
+
+> First full-month base-rent input for the due-before-possession calculation.
+> Reconcile to approved lease terms and Zoho Books before contract readiness.
+
+That input does not close the calculation or mapping gate:
+
+- `Total_Due_Before_Possession` is an editable Currency snapshot, not a
+  verified Formula field.
+- No available MCP server exposed Zoho Contracts or Zoho Sign field-mapping
+  administration, so Formula-field portability to Contracts is unverified.
+- Do not convert the total to Formula or claim it is contract-ready without a
+  destination mapping test and readback. The safest integration shape is a
+  controlled, idempotent calculation that materializes the approved result
+  into a Currency snapshot for Contracts, with component and output readback.
+- Existing `Monthly_Rent` and `Prorated_Rent` semantics remain ambiguous.
+- Lease Number remains blocked until its auto-number format and collision
+  policy are approved.
+- Lease Status values/history exist, but target order, default Draft, and
+  required behavior remain unenforced.
+- Exact pre-change placement for seven moved legacy fields was not captured;
+  rollback must use an authorized Zoho audit/export and must not guess.
+
+The Residential Lease Agreement remains Draft, unpublished, unsent,
+execution-blocked, and attorney-review-required. No Contracts extension,
+mapping, button, signer configuration, contract request, publication, or
+signature send is asserted by this CRM catalog.
+
+## Field-type governance
+
+The supplied UI screenshot is evidence of CRM field types available in the
+layout editor; it is not proof that a field exists or that another Zoho product
+can map it. The companion
+[`crm-field-type-catalog.md`](../standards/crm-field-type-catalog.md) records
+the reviewed CRM type vocabulary and integration gates.
+
+Before creating or mapping a field, verify:
+
+- exact CRM metadata type and constraints;
+- lookup target or multi-select lookup behavior;
+- precision for Currency, Decimal, Percent, and Long Integer;
+- auto-number prefix/start/suffix;
+- formula return type and recomputation behavior;
+- default, mandatory, unique, history, and color-coding settings; and
+- destination-specific Books, Contracts, Sign, Catalyst, or Creator support.
+
+If the necessary product metadata/documentation MCP is unavailable, mark the
+compatibility `unverified` and stop. Do not infer it from the CRM UI.
+
+## Verification statuses
+
+| Status | Meaning |
+|---|---|
+| `verified_live_mcp` | Exact production metadata was returned through the approved CRM MCP and preserved by readback validation. |
+| `verified_repo_runtime` | API name is used by reviewed runtime code; this is not current live metadata proof. |
+| `verified_repo_live_integration` | API name is documented by the reviewed live integration boundary. |
+| `proposed_unverified` | Target proposal only; not safe for integration use. |
+| `not_proposed_unverified` | Known label/type without a safe API proposal. |
+| `repo_runtime_default_needs_live_metadata` | Runtime contains a default that still requires live metadata verification. |
+| `blocked_protected_module` | Proposal is absent from a protected live baseline and is explicitly nondeployable; do not create. |
+| `historical_target_only_non_deployable` | Historical target-design evidence only; never a live create/update manifest. |
+| `blocked_ambiguous` | Semantic, ownership, type, or dependency conflict blocks creation/reuse. |
+| `superseded_by_verified_live_mcp_field` | A verified live field replaces the historical proposal; do not create. |
+| `superseded_by_verified_repo_field` | A governed repository field replaces the historical alias; do not create. |
+| `unsupported_by_current_mcp` | The current MCP surface cannot safely apply or verify the requested behavior. |
+| `prohibited_current_design` | Intentionally excluded by the current security/data-minimization design. |
+
+## Validation and change gate
+
+Run from the repository root:
 
 ```text
-GET /crm/v8/settings/modules
-GET /crm/v8/settings/fields?module={module_API_name}&type=all
+python src/zoho-crm/tools/validate-crm-field-catalog.py
+python src/zoho-crm/tools/validate-protected-module-baselines.py
+python -m unittest discover -s src/zoho-crm/tests -p "test_*.py" -v
 ```
 
-The repository helper [`export-crm-metadata.py`](../tools/export-crm-metadata.py) exports sanitized module and field metadata without reading CRM records. Compare that export to this catalog before creating automations or treating a proposed API name as real.
+The field-catalog validator checks required columns, API-name syntax, live
+evidence source IDs, exact live manifests, lookup targets, choices/order/colors,
+sentinel readback, policy warnings, duplicate-prevention decisions, and a
+canonical digest of all 170 live rows. Protected-baseline checksums fail closed
+on unauthorized field/layout drift.
 
-## Known limitations and next gate
+Any live change still requires:
 
-- Live metadata was read only through the approved CRM audit/configuration connectors; no CRM records or PII were retrieved.
-- Production readback verified the bounded Rental Application/Lease fields documented in their governed CSV rows. It did not certify every historical workbook candidate.
-- `Zillow Intake Events` remains an optional, disabled-by-default runtime candidate; it is not approved as a second source of truth and its live existence is unconfirmed.
-- Current Zillow Lead and Unit routing API names remain reconciled against reviewed repository code/runbooks; only the targeted related-source fields used by the Lease handoff received current live readback.
-- Unverified custom-module and field candidates remain explicitly unset or proposed and cannot be used in automation.
-- The June 29 Properties workbook is a record export. Its headers are label evidence only; it cannot prove API names or field types.
-- Zoho Contracts contract-type API names, extension mappings, button tokens, counterparty settings, and signer routing remain manual/unverified.
-- The Approved Application-to-Lease automation is unsupported by the current tool surface and must be implemented later as a durable, idempotent workflow.
+1. an exact organization/environment gate;
+2. metadata-only preflight and dependency review;
+3. a bounded, reviewable mutation manifest;
+4. immediate post-write readback;
+5. rollback evidence that does not guess prior state; and
+6. repository updates in the same reviewed change.
 
-## Sources
+## Known limitations
 
-- Official Zoho CRM API v8 Modules Metadata: https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html
-- Official Zoho CRM API v8 Fields Metadata: https://www.zoho.com/crm/developer/docs/api/v8/field-meta.html
-- Official Zoho CRM custom field types: https://help.zoho.com/portal/en/kb/crm/customize-crm-account/customizing-fields/articles/types-of-fields
-- Repository Zillow field map and Lead/Unit integration runbooks
-- `GH_Zoho_CRM_Field_Matrix_Contracts_Zillow_Portal_2026-07-08.xlsx`
-- `GH_Real_Estate_Zoho_CRM_Setup_Spec.xlsx`
-- `Properties_2026_06_29.xlsx`
+- The live audit used approved metadata/configuration MCP servers only. No
+  Browser control, CRM records, PII, credentials, or Books transactions were
+  accessed.
+- The 757-row CSV registry is broader than the verified live surface; it
+  intentionally retains unverified and blocked planning evidence.
+- Deals Stage remains unchanged because its display/actual values are
+  stale/misaligned and pipeline/probability dependencies were not safely
+  writable through the available MCP.
+- Required/default controls and complete Lease readiness are not implemented by
+  catalog documentation alone.
+- `Zillow_Intake_Events` remains an optional disabled-by-default runtime
+  candidate, not a second source of truth.
+- Zoho Contracts contract-type API names, field mappings, extension behavior,
+  signer routing, and Zoho Sign evidence remain unverified on the available MCP
+  surface.
+
+## References
+
+- [CRM field authoring standard](../standards/crm-module-field-authoring-standard.md)
+- [CRM field-type catalog](../standards/crm-field-type-catalog.md)
+- [Protected module policy and baselines](protected-modules/README.md)
+- [Production global-picklist registry](global-picklists/README.md)
+- [Production reconciliation ledger](../../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md)
+- [Lease-system reconciliation](../../../docs/runbooks/zoho-crm-lease-system-reconciliation.md)
+- Official Zoho CRM Modules Metadata: https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html
+- Official Zoho CRM Fields Metadata: https://www.zoho.com/crm/developer/docs/api/v8/field-meta.html
+- Official Zoho CRM field types: https://help.zoho.com/portal/en/kb/crm/customize-crm-account/customizing-fields/articles/types-of-fields

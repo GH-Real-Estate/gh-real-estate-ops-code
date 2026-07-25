@@ -1113,7 +1113,7 @@
     {
       "gate_id": "initial_amounts_due",
       "status": "open",
-      "reason": "CRM proration dates, pet/storage proration amounts, holding credit, total due, and next due date were verified, but base/prorated base rent remain ambiguous, First Full Month Base Rent is missing, and the complete equation and Contracts mapping are unresolved.",
+      "reason": "CRM proration dates, pet/storage proration amounts, holding credit, total due, next due date, and First Full Month Base Rent (`First_Full_Month_Base_Rent_Amount`, Currency with precision 2) were verified, but base and prorated-base rent semantics remain ambiguous; the complete equation, optional audit formula, Books reconciliation/readiness gate, Contracts mapping, and controlled Contracts/Sign canary remain unresolved.",
       "blocks": [
         "populate_initial_amounts_due",
         "publish",

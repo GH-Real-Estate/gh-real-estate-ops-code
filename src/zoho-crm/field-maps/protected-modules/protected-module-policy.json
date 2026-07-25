@@ -1,0 +1,66 @@
+{
+  "policy_id": "GH-ZOHO-CRM-PROTECTED-MODULES",
+  "schema_version": "1.0.0",
+  "organization_gate": {
+    "company_name": "GH Real Estate",
+    "environment_type": "production"
+  },
+  "default_mutation_policy": "deny",
+  "authorized_baseline_refresh_required": true,
+  "baselines": [
+    {
+      "display_label": "Leads",
+      "module_api_name": "Leads",
+      "filename": "leads.json",
+      "field_count": 82,
+      "layout_count": 1,
+      "section_count": 10,
+      "canonical_sha256": "7ab966c12f7598661073f1b849daace2fb183a39956acb500a5ff298d1fd1ad5",
+      "additional_guard": "Preserve the Zillow/Catalyst runtime field and idempotency contract."
+    },
+    {
+      "display_label": "Property Assets",
+      "module_api_name": "Equipment",
+      "filename": "property-assets.json",
+      "field_count": 106,
+      "layout_count": 1,
+      "section_count": 13,
+      "canonical_sha256": "a31d330538bfde3a15b2d9f3e4b91db946bcf5f452e1e6c008f4f6dbaf12d90e",
+      "additional_guard": "API Equipment is the protected Property Assets module, not a separate Equipment module."
+    },
+    {
+      "display_label": "Pets",
+      "module_api_name": "Pets",
+      "filename": "pets.json",
+      "field_count": 44,
+      "layout_count": 1,
+      "section_count": 7,
+      "canonical_sha256": "987ea1c89b1c491fefef6786fba411713a2a8dbb0e5860d852f8521ec0a55cbc",
+      "additional_guard": "No field, choice, lookup, section, or layout mutation is authorized."
+    },
+    {
+      "display_label": "Vehicles",
+      "module_api_name": "Tenant_Vehicles",
+      "filename": "vehicles.json",
+      "field_count": 29,
+      "layout_count": 1,
+      "section_count": 5,
+      "canonical_sha256": "c05838f11577039ac39522b7a0098ee1674d60ca423b1a62a4fc886116b58873",
+      "additional_guard": "The five captured sections include default, Quick Create, and Business Card modes."
+    }
+  ],
+  "historical_catalog_guards": [
+    {
+      "path": "src/zoho-crm/field-maps/crm-module-fields/equipment.csv",
+      "live_module_api_name": "Equipment",
+      "live_display_label": "Property Assets",
+      "catalog_role": "historical_target_design_only",
+      "authorizes_live_writes": false
+    }
+  ],
+  "enforcement_boundary": {
+    "repository_baseline_drift": "blocked_by_ci",
+    "live_zoho_admin_drift": "requires_fresh_metadata_audit",
+    "record_data_in_scope": false
+  }
+}

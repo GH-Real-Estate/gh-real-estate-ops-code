@@ -159,6 +159,18 @@ EXPECTED_PRODUCTION_GATE_IDS = frozenset(
 )
 # Kept as an alias for callers that use the earlier constant name.
 REQUIRED_OPEN_GATES = EXPECTED_PRODUCTION_GATE_IDS
+REQUIRED_DEFERRED_DOCUMENT_MAPPINGS = {
+    "first_full_month_base_rent_amount": {
+        "registry_field_id": "first_full_month_base_rent_amount",
+        "zoho_api_name": None,
+        "api_name_status": "tenant_verification_required",
+        "status": "deferred",
+        "gate_id": "initial_amounts_due",
+        "document_locations": [
+            "section_3_2.first_full_month_base_rent_amount"
+        ],
+    },
+}
 LANDLORD_BUSINESS_ROLE = "GH Real Estate, LLC Authorized Representative"
 
 CLAUSE_NAME_RE = re.compile(
@@ -1347,6 +1359,35 @@ def validate_field_map(
             "document field map contains duplicate source_variable values: "
             + ", ".join(duplicates)
         )
+    if field_map.get("map_id") == "ghre-rla-document-field-map":
+        by_variable = {
+            mapping.get("source_variable"): mapping
+            for mapping in mappings
+            if isinstance(mapping, dict) and _non_empty(mapping.get("source_variable"))
+        }
+        unresolved_fields = field_map.get("unresolved_fields")
+        for source_variable, expected in REQUIRED_DEFERRED_DOCUMENT_MAPPINGS.items():
+            mapping = by_variable.get(source_variable)
+            if not isinstance(mapping, dict):
+                errors.append(
+                    "document field map is missing required deferred mapping "
+                    f"{source_variable!r}"
+                )
+                continue
+            for key, expected_value in expected.items():
+                if mapping.get(key) != expected_value:
+                    errors.append(
+                        f"document field map {source_variable!r}.{key} must be "
+                        f"{expected_value!r}"
+                    )
+            if (
+                not isinstance(unresolved_fields, list)
+                or source_variable not in unresolved_fields
+            ):
+                errors.append(
+                    f"document field map unresolved_fields must include "
+                    f"{source_variable!r} while its mapping remains deferred"
+                )
     return errors
 
 

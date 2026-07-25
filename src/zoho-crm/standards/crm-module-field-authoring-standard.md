@@ -181,7 +181,7 @@ For every picklist, multi-select picklist, standard Stage, radio-style choice, o
 8. A six-digit hex color for every value.
 9. The reason for the color when the meaning is not obvious.
 
-Do not invent a color when live metadata returns `colour_code: null`. A live-readback row may use `Label=UNCOLORED` with scope `module_local_live_uncolored` or `standard_module_live_uncolored`; this representation is allowed only with `verified_live_mcp`. Proposed choice fields still require a six-digit hex color for every value.
+Do not invent a color when live metadata returns `colour_code: null`. A live-readback row may use `Label=UNCOLORED` with scope `module_local_live_uncolored`, `standard_module_live_uncolored`, or `global_live_uncolored`; this representation is allowed only with `verified_live_mcp`. `global_live_uncolored` is evidence that MCP readback confirmed null colors on a verified live global set, not a substitute for governed target colors. Proposed choice fields still require a six-digit hex color for every value.
 
 ### 8.1 GH semantic palette
 
