@@ -18,6 +18,8 @@ For GH Real Estate's current fourplex:
 
 There is no general public Zillow Rentals CRUD API for creating a listing directly. Zillow's documented automation path is an approval-gated XML feed that Zillow pulls from an HTTP, HTTPS, FTPS, or SFTP location. Zillow says testing typically takes four to six weeks. See [Rentals Feed Integrations](https://www.zillowgroup.com/developers/api/rentals/rentals-feed-integrations/) and the [Rental Listing Bulk Feed Guide](https://s3.amazonaws.com/files.hotpads.com/+guides/Rental+Listing+Bulk+Feed+Guide.pdf).
 
+The current Bulk Feed Guide directs small owners and property managers to Zillow Rental Manager or a third-party syndicator instead of maintaining a custom feed. That recommendation and GH Real Estate's present scale are why the no-code decision is the default, even if the eligibility inquiry is worth making.
+
 ## Why the source is Property plus Unit
 
 | Choice | Result |
