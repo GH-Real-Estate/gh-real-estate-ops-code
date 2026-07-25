@@ -9,6 +9,7 @@ on:
       - 'src/zoho-crm/field-maps/crm-module-field-catalog.md'
       - 'src/zoho-crm/field-maps/crm-module-fields/**'
       - 'src/zoho-crm/standards/**'
+      - 'src/zoho-crm/tests/**'
       - 'src/zoho-crm/tools/**'
       - '.github/workflows/crm-field-catalog.yml'
   push:
@@ -20,6 +21,7 @@ on:
       - 'src/zoho-crm/field-maps/crm-module-field-catalog.md'
       - 'src/zoho-crm/field-maps/crm-module-fields/**'
       - 'src/zoho-crm/standards/**'
+      - 'src/zoho-crm/tests/**'
       - 'src/zoho-crm/tools/**'
       - '.github/workflows/crm-field-catalog.yml'
 
@@ -49,6 +51,7 @@ jobs:
       - name: Validate governed CRM module and field catalog
         run: |
           python src/zoho-crm/tools/validate-crm-field-catalog.py
+          python -m unittest discover -s src/zoho-crm/tests -p 'test_*.py'
           python -m py_compile \
             src/zoho-crm/tools/validate-crm-field-catalog.py \
             src/zoho-crm/tools/export-crm-metadata.py

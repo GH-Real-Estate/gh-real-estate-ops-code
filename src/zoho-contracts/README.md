@@ -63,18 +63,18 @@ The package is not a deployment artifact and is not legal approval. It must rema
 
 ## Canonical Field Registry
 
-`field-maps/contract-field-registry.json` is the machine-readable source of truth for the current Zoho Contracts field inventory and proposed CRM crosswalk. The generated Markdown view is for operators and reviewers.
+`field-maps/contract-field-registry.json` is the machine-readable source of truth for the current Zoho Contracts field inventory and CRM crosswalk. The generated Markdown view is for operators and reviewers.
 
 The registry records:
 
-- all 46 submitted Zoho system fields and 19 submitted custom fields;
+- all 46 submitted Zoho system fields and 34 submitted custom fields;
 - the selected Zoho Contracts custom-field type where applicable;
 - expected system-field semantics without pretending system fields use the custom menu;
-- portable and proposed CRM field types;
+- portable CRM field types plus bounded tenant-verified, unverified, blocked, and prohibited CRM API mappings;
 - source-of-truth ownership, sensitivity, validation, aliases, and review status;
 - tenant-metadata verification gates for exact Contracts and CRM API names.
 
-Do not create integration code from a display label or proposed API name. Confirm the actual Contracts `apiName`, `metaType`, `dataType`, and `displayType` through the authenticated Zoho metadata API, and confirm the exact CRM module/layout field metadata before activation.
+Do not create integration code from a display label or unverified API name. Confirm the actual Contracts `apiName`, `metaType`, `dataType`, and `displayType` through the authenticated Zoho metadata API. A tenant-verified CRM source API does not verify its Zoho Contracts destination API.
 
 ## Validation
 

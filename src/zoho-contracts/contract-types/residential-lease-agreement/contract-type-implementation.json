@@ -934,7 +934,7 @@
     {
       "gate_id": "tenant_field_api_metadata",
       "status": "open",
-      "reason": "Exact live Zoho Contracts API names and duplicate checks require authenticated metadata verification.",
+      "reason": "The Leases module and bounded CRM source-field API names were verified by production metadata readback on July 24, 2026, but Lease Number has no approved source API because its prefix/format are undefined, and exact Zoho Contracts API names, duplicate checks, and module-wise mappings remain unverified.",
       "blocks": [
         "insert_unverified_fields",
         "publish"
@@ -943,7 +943,7 @@
     {
       "gate_id": "monthly_rent_source_ownership",
       "status": "open",
-      "reason": "Monthly Rent is absent from the canonical Contracts field registry and source ownership is unresolved.",
+      "reason": "The existing CRM Monthly_Rent field is semantically ambiguous between base and total monthly rent, so no duplicate was created; the Contracts destination mapping and Books reconciliation remain unresolved.",
       "blocks": [
         "insert_monthly_rent_field",
         "publish"
@@ -952,7 +952,7 @@
     {
       "gate_id": "security_deposit_source_ownership",
       "status": "open",
-      "reason": "Security Deposit is absent from the canonical Contracts field registry pending ownership and accounting controls.",
+      "reason": "CRM Security Deposit (Security_Deposit) was verified and reused as the approved Lease snapshot, but the Contracts destination mapping and Books deposit-liability controls remain unverified.",
       "blocks": [
         "insert_security_deposit_field",
         "publish"
@@ -961,7 +961,7 @@
     {
       "gate_id": "lease_commencement_field",
       "status": "open",
-      "reason": "Lease Begins is legally distinct from Agreement Date and has no approved field.",
+      "reason": "CRM Lease Start Date (Lease_Start_Date) was verified and reused as a commencement snapshot distinct from Agreement_Date, but the Contracts destination mapping and transaction-level legal approval remain open.",
       "blocks": [
         "insert_lease_commencement_field",
         "publish"
@@ -980,7 +980,7 @@
     {
       "gate_id": "tenant_two_three_identity_fields",
       "status": "open",
-      "reason": "Party C and Party D contact fields are not approved Tenant 2 or Tenant 3 legal-name snapshots.",
+      "reason": "CRM Tenant_2 and Tenant_3 relationships and their legal-name/email snapshots were verified, but Party C/D document mappings and the separate Tenant 2/Tenant 3 signer routing remain manual and unverified.",
       "blocks": [
         "insert_tenant_two_three_names",
         "publish"
@@ -1094,7 +1094,7 @@
     {
       "gate_id": "storage_terms",
       "status": "open",
-      "reason": "Storage applicability, unit identifier, rent, term, and executed Ancillary Storage Addendum status are not approved as one coherent arrangement.",
+      "reason": "CRM storage-rent snapshot fields were verified, but storage applicability, storage-unit identifier, term, Contracts mapping, and executed Ancillary Storage Addendum status remain unresolved as one coherent arrangement.",
       "blocks": [
         "populate_storage_terms",
         "include_storage_addendum",
@@ -1113,7 +1113,7 @@
     {
       "gate_id": "initial_amounts_due",
       "status": "open",
-      "reason": "The initial prorated period and amount, first full-month period, total due before possession, and next regular rent date are not approved as a reconciled transaction snapshot.",
+      "reason": "CRM proration dates, pet/storage proration amounts, holding credit, total due, and next due date were verified, but base/prorated base rent remain ambiguous, First Full Month Base Rent is missing, and the complete equation and Contracts mapping are unresolved.",
       "blocks": [
         "populate_initial_amounts_due",
         "publish",
@@ -1123,7 +1123,7 @@
     {
       "gate_id": "pet_terms",
       "status": "open",
-      "reason": "Ordinary-pet approval, executed addendum status, and any pet rent, fee, or refundable deposit are not approved for this tenancy.",
+      "reason": "CRM pet-rent and refundable pet-deposit snapshot fields were verified, but ordinary-pet approval, executed addendum status, any fee, and the Contracts mapping remain unresolved for the tenancy.",
       "blocks": [
         "populate_pet_terms",
         "include_ordinary_pet_addendum",
@@ -1152,7 +1152,7 @@
     {
       "gate_id": "required_contact_fields",
       "status": "open",
-      "reason": "The exact approved property-manager, operational, emergency-maintenance, and signer contact fields and live API metadata are not fully verified.",
+      "reason": "Targeted CRM readback verified Contacts Full_Name and Email plus the related Property/Unit source fields, but the approved manager, operational, emergency-maintenance, and signer contacts and their Contracts mappings are not fully verified.",
       "blocks": [
         "populate_required_contact_fields",
         "publish"
@@ -1161,7 +1161,7 @@
     {
       "gate_id": "municipality_jurisdiction_applicability",
       "status": "open",
-      "reason": "The Premises municipality and applicability of the source's Overland Park and OPMC provisions have not been verified for the transaction.",
+      "reason": "CRM premises city/state/ZIP snapshot fields were verified, but their transaction values and the applicability of the source's Overland Park and OPMC provisions remain unverified.",
       "blocks": [
         "include_local_law_references",
         "publish",

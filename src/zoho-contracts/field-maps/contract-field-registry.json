@@ -1,12 +1,12 @@
 {
   "$schema": "../schemas/contract-field-registry.schema.json",
   "registry_id": "GHRE-ZC-FIELDS",
-  "version": "1.0.0",
-  "as_of_date": "2026-07-15",
+  "version": "1.2.0",
+  "as_of_date": "2026-07-24",
   "record_counts": {
     "system": 46,
-    "custom": 19,
-    "total": 65
+    "custom": 34,
+    "total": 80
   },
   "allowed_custom_types": [
     "Text",
@@ -26,17 +26,69 @@
     "zoho-template-mapping": "https://help.zoho.com/portal/en/kb/contracts/admin-guide/contract-types/creation-and-management/articles/managing-contract-types",
     "zoho-crm-field-metadata": "https://www.zoho.com/crm/developer/docs/api/v8/field-meta.html",
     "zoho-crm-custom-fields": "https://www.zoho.com/crm/developer/docs/api/v8/create-custom-field.html",
-    "user-inventory-and-official-types": "User-supplied Zoho Contracts field inventory and 2026-07-15 tenant UI screenshot, interpreted using the official Zoho field definitions above."
+    "user-inventory-and-official-types": "User-supplied Zoho Contracts field inventory and 2026-07-15 tenant UI screenshot, interpreted using the official Zoho field definitions above.",
+    "user-requested-destination-types-2026-07-24": "User-supplied destination labels and required Currency or Date design types dated 2026-07-24. This is label and design evidence, not Contracts API metadata.",
+    "user-confirmed-live-crm-api-crosswalk-2026-07-24": "Approved production Zoho CRM metadata-connector readback dated 2026-07-24. This evidence verifies only the CRM API names explicitly marked verified_live_mcp; it does not verify any Zoho Contracts apiName."
   },
+  "label_evidence": [
+    {
+      "id": "user-confirmed-live-labels-2026-07-24",
+      "evidence_type": "user_confirmed_live_label",
+      "confirmed_on": "2026-07-24",
+      "scope": "label_only",
+      "api_name_status": "unverified",
+      "labels": [
+        "Base Rent Amount",
+        "Security Deposit Amount",
+        "Total Monthly Pet Rent Amount",
+        "Base Storage Unit Rent Amount",
+        "Total Storage Unit Rent Amount",
+        "Total Monthly Rent Amount",
+        "Next Total Monthly Rent Due Date",
+        "Prorated Rent Start Date",
+        "Prorated Rent End Date",
+        "Prorated Base Rent Amount",
+        "Pet Security Deposit Amount",
+        "Prorated Pet Rent Amount",
+        "Prorated Storage Unit Rent Amount",
+        "Holding Deposit Amount",
+        "Total Due Before Possession",
+        "Agreement Effective Date",
+        "Lease Agreement Effective Date",
+        "Term End Date",
+        "Property Street Line 1",
+        "Property Apartment Number",
+        "Property City",
+        "Property State",
+        "Property Zip Code",
+        "Party C Contact Name",
+        "Party D Contact Name",
+        "Party A",
+        "Party A Name",
+        "Party A Jurisdiction",
+        "Party A Address",
+        "Party A Contact Name",
+        "Party A Contact Phone Number",
+        "Party A Contact Email Address",
+        "Party B",
+        "Party B Name",
+        "Party B Jurisdiction",
+        "Party B Address",
+        "Party B Contact Name"
+      ]
+    }
+  ],
   "policies": {
     "integration_key": "Use the tenant-returned Zoho apiName, never a display label or guessed API name.",
-    "api_name_verification": "All Zoho Contracts and CRM API names remain null until fetched from the authenticated metadata endpoints.",
+    "api_name_verification": "Zoho Contracts apiName values remain null until authenticated Contracts metadata is captured. CRM API names may be populated only when explicitly marked verified_live_mcp from the governed 2026-07-24 production metadata readback.",
     "source_of_truth": "CRM owns approved pre-authoring party, property, unit, and lease inputs. Zoho Contracts owns contract lifecycle fields and the resolved agreement snapshot. Executed document values are immutable snapshots.",
     "sync_direction": "Prefer one-way CRM-to-Contracts authoring. Do not create bidirectional field updates without an explicit conflict policy.",
     "public_repository": "Store definitions and validation only. Never store tenant names, addresses, phone numbers, emails, contract values, Zoho record IDs, OAuth tokens, or merged documents.",
     "date_interchange": "Use ISO 8601 YYYY-MM-DD between applications even though Zoho Contracts displays dates as MMM dd, yyyy.",
     "currency": "Zoho Contracts custom Currency uses the organization currency. Cross-application records must also carry or enforce the applicable ISO currency code.",
-    "uploaded_template_limit": "Zoho states that Dropdown, Email, Phone, and Percent document fields cannot be mapped to system fields in uploaded templates."
+    "uploaded_template_limit": "Zoho states that Dropdown, Email, Phone, and Percent document fields cannot be mapped to system fields in uploaded templates.",
+    "native_party_field_ownership": "Party A fields are supplied by Zoho Contracts Organization Info and Party B fields by the selected counterparty and contact. Do not create CRM Lease mirror fields for native Party A or Party B system fields.",
+    "label_only_evidence": "User-confirmed live labels establish display-label presence only. They do not verify Contracts apiName values, data types, field IDs, template publication, or deployability."
   },
   "fields": [
     {
@@ -46,7 +98,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Agreement_Name", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Name", "api_name_status": "verified_live_mcp"},
       "source_of_truth": "Zoho Contracts contract record",
       "sensitivity": "internal_contract",
       "validation": "Required; use a stable human-readable agreement title, not as a cross-system join key."
@@ -58,7 +110,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Party_A_Jurisdiction", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "internal_contract",
       "validation": "Use a controlled legal-jurisdiction code and label; do not treat postal state as jurisdiction automatically."
@@ -70,7 +122,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Index", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "entity_reference",
-      "crm": {"recommended_type": "Lookup", "proposed_api_name": "Party_A_Account", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Lookup", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party assignment",
       "sensitivity": "restricted_pii",
       "validation": "Entity/short-name context; keep distinct from Party A Name and never use the display value as a join key."
@@ -82,7 +134,7 @@
       "status": "review_required",
       "zoho": {"ui_type": null, "expected_native_type": "Unknown", "api_name": null, "type_status": "tenant_api_required", "evidence_id": "zoho-metadata-api"},
       "portable_type": "time_zone",
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Party_A_Time_Zone_Name", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts tenant metadata",
       "sensitivity": "internal_contract",
       "validation": "Fetch tenant metadata before mapping; if this is a zone name, store an IANA identifier rather than an abbreviation."
@@ -94,7 +146,7 @@
       "status": "review_required",
       "zoho": {"ui_type": null, "expected_native_type": "Unknown", "api_name": null, "type_status": "tenant_api_required", "evidence_id": "zoho-metadata-api"},
       "portable_type": "time_zone",
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Party_B_Time_Zone_Name", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts tenant metadata",
       "sensitivity": "internal_contract",
       "validation": "Fetch tenant metadata before mapping; if this is a zone name, store an IANA identifier rather than an abbreviation."
@@ -106,7 +158,7 @@
       "status": "review_required",
       "zoho": {"ui_type": null, "expected_native_type": "Unknown", "api_name": null, "type_status": "tenant_api_required", "evidence_id": "zoho-metadata-api"},
       "portable_type": "unknown",
-      "crm": {"recommended_type": "Unresolved", "proposed_api_name": null, "api_name_status": "tenant_api_required"},
+      "crm": {"recommended_type": "Unresolved", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts tenant metadata",
       "sensitivity": "internal_contract",
       "validation": "Do not create a CRM field until metadata establishes whether this is an offset, ID, or display value; derive offsets because of daylight-saving changes."
@@ -118,7 +170,7 @@
       "status": "review_required",
       "zoho": {"ui_type": null, "expected_native_type": "Unknown", "api_name": null, "type_status": "tenant_api_required", "evidence_id": "zoho-metadata-api"},
       "portable_type": "unknown",
-      "crm": {"recommended_type": "Unresolved", "proposed_api_name": null, "api_name_status": "tenant_api_required"},
+      "crm": {"recommended_type": "Unresolved", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts tenant metadata",
       "sensitivity": "internal_contract",
       "validation": "Do not create a CRM field until metadata establishes whether this is an offset, ID, or display value; derive offsets because of daylight-saving changes."
@@ -127,13 +179,13 @@
       "id": "party_b_jurisdiction",
       "label": "Party B Jurisdiction",
       "classification": "system",
-      "status": "active",
+      "status": "review_required",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Party_B_Jurisdiction", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "internal_contract",
-      "validation": "Use a controlled legal-jurisdiction code and label; do not treat postal state as jurisdiction automatically."
+      "validation": "Leave unresolved until its intended legal meaning is explicitly approved. Do not map Property State, Premises State, or another postal state into this field."
     },
     {
       "id": "term_period",
@@ -167,7 +219,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Date", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "date",
-      "crm": {"recommended_type": "Date", "proposed_api_name": "Term_End_Date", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Date", "proposed_api_name": "Lease_End_Date", "api_name_status": "verified_live_mcp"},
       "source_of_truth": "Zoho Contracts contract record",
       "sensitivity": "internal_contract",
       "validation": "ISO YYYY-MM-DD in integrations; required for a fixed term and must not precede Agreement Date."
@@ -179,7 +231,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Index", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "entity_reference",
-      "crm": {"recommended_type": "Lookup", "proposed_api_name": "Party_B_Account", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Lookup", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party assignment",
       "sensitivity": "restricted_pii",
       "validation": "Entity/short-name context; keep distinct from Party B Name and never use the display value as a join key."
@@ -241,7 +293,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_A_Name_Snapshot", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Name snapshot; do not label as legal name unless the source record is verified as the legal name."
@@ -253,7 +305,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Text", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "multiline_text",
-      "crm": {"recommended_type": "Multi Line", "proposed_api_name": "Party_A_Full_Address_Snapshot", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Multi Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Derived from Party A address components",
       "sensitivity": "restricted_pii",
       "validation": "Derived read-only snapshot, maximum 2000 characters; structured components remain authoritative."
@@ -265,7 +317,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Text", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "multiline_text",
-      "crm": {"recommended_type": "Multi Line", "proposed_api_name": "Party_B_Full_Address_Snapshot", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Multi Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Derived from Party B address components",
       "sensitivity": "restricted_pii",
       "validation": "Derived read-only snapshot, maximum 2000 characters; structured components remain authoritative."
@@ -275,9 +327,10 @@
       "label": "Agreement Date",
       "classification": "system",
       "status": "active",
+      "aliases": ["Agreement Effective Date"],
       "zoho": {"ui_type": null, "expected_native_type": "Date", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "date",
-      "crm": {"recommended_type": "Date", "proposed_api_name": "Agreement_Effective_Date", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Date", "proposed_api_name": "Agreement_Date", "api_name_status": "verified_live_mcp"},
       "source_of_truth": "Zoho Contracts contract record",
       "sensitivity": "internal_contract",
       "validation": "This is the date the contract becomes active; do not treat it as signature date."
@@ -314,7 +367,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_B_Name_Snapshot", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Name snapshot; do not label as legal name unless the source record is verified as the legal name."
@@ -326,7 +379,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Phone", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "phone",
-      "crm": {"recommended_type": "Phone", "proposed_api_name": "Party_A_Phone", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Phone", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Organization-level phone, distinct from contact phone; normalize to E.164 where possible."
@@ -338,7 +391,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_A_Address_Line_2", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "US-address component; preserve letters and punctuation."
@@ -350,7 +403,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_A_Address_Line_1", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Street-address component; no tenant values belong in repository fixtures."
@@ -362,7 +415,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_A_City", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Trim whitespace; preserve official spelling."
@@ -374,7 +427,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Party_A_State", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Prefer a controlled state/province code while preserving the Zoho system value losslessly."
@@ -387,7 +440,7 @@
       "aliases": ["Party A ZIP Code"],
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_A_Postal_Code", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Text, never Number; preserve leading zeros and ZIP+4."
@@ -399,7 +452,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Party_A_Country", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Prefer ISO 3166-1 alpha-2 plus display label."
@@ -411,7 +464,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_A_Primary_Contact_Name", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party contact metadata",
       "sensitivity": "restricted_pii",
       "validation": "Individual contact snapshot; pair with a CRM Contact lookup where available."
@@ -423,7 +476,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Email", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "email",
-      "crm": {"recommended_type": "Email", "proposed_api_name": "Party_A_Primary_Contact_Email", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Email", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party contact metadata",
       "sensitivity": "restricted_pii",
       "validation": "Trim and lowercase for comparison; never place real addresses in repository fixtures."
@@ -435,7 +488,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Phone", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "phone",
-      "crm": {"recommended_type": "Phone", "proposed_api_name": "Party_A_Primary_Contact_Phone", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Phone", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party contact metadata",
       "sensitivity": "restricted_pii",
       "validation": "Individual contact phone, distinct from organization phone; normalize to E.164 where possible."
@@ -447,7 +500,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_A_Primary_Contact_Job_Title", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party contact metadata",
       "sensitivity": "restricted_pii",
       "validation": "Optional contact-role snapshot; do not use as authorization proof."
@@ -459,7 +512,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Phone", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "phone",
-      "crm": {"recommended_type": "Phone", "proposed_api_name": "Party_B_Phone", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Phone", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Organization-level phone, distinct from contact phone; normalize to E.164 where possible."
@@ -471,7 +524,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_B_Address_Line_2", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "US-address component; preserve letters and punctuation."
@@ -483,7 +536,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_B_Address_Line_1", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Street-address component; no tenant values belong in repository fixtures."
@@ -495,7 +548,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_B_City", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Trim whitespace; preserve official spelling."
@@ -507,7 +560,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Party_B_State", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Prefer a controlled state/province code while preserving the Zoho system value losslessly."
@@ -520,7 +573,7 @@
       "aliases": ["Party B ZIP Code"],
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_B_Postal_Code", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Text, never Number; preserve leading zeros and ZIP+4."
@@ -532,7 +585,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Party_B_Country", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party metadata",
       "sensitivity": "restricted_pii",
       "validation": "Prefer ISO 3166-1 alpha-2 plus display label."
@@ -544,7 +597,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_B_Primary_Contact_Name", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party contact metadata",
       "sensitivity": "restricted_pii",
       "validation": "Individual contact snapshot; pair with a CRM Contact lookup where available."
@@ -556,7 +609,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Email", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "email",
-      "crm": {"recommended_type": "Email", "proposed_api_name": "Party_B_Primary_Contact_Email", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Email", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party contact metadata",
       "sensitivity": "restricted_pii",
       "validation": "Trim and lowercase for comparison; never place real addresses in repository fixtures."
@@ -568,7 +621,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "Phone", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "phone",
-      "crm": {"recommended_type": "Phone", "proposed_api_name": "Party_B_Primary_Contact_Phone", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Phone", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party contact metadata",
       "sensitivity": "restricted_pii",
       "validation": "Individual contact phone, distinct from organization phone; normalize to E.164 where possible."
@@ -580,7 +633,7 @@
       "status": "active",
       "zoho": {"ui_type": null, "expected_native_type": "String", "api_name": null, "type_status": "official_system_semantics", "evidence_id": "zoho-system-fields"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_B_Primary_Contact_Job_Title", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create"},
       "source_of_truth": "Zoho Contracts party contact metadata",
       "sensitivity": "restricted_pii",
       "validation": "Optional contact-role snapshot; do not use as authorization proof."
@@ -605,10 +658,10 @@
       "status": "active",
       "zoho": {"ui_type": "Text", "expected_native_type": "String", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Lease_Number", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": null, "api_name_status": "do_not_create_until_defined"},
       "source_of_truth": "Zoho CRM approved Lease record",
       "sensitivity": "internal_identifier",
-      "validation": "Required, case-insensitive unique, centrally generated; preserve letters, hyphens, and leading zeros."
+      "validation": "Do not create until an approved auto-number prefix and format are defined. Once approved, generate centrally, enforce case-insensitive uniqueness, and preserve letters, hyphens, and leading zeros."
     },
     {
       "id": "property_address_line_1_snapshot",
@@ -617,7 +670,7 @@
       "status": "active",
       "zoho": {"ui_type": "Text", "expected_native_type": "String", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Property_Street_Line_1", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Premises_Street_Line_1", "api_name_status": "verified_live_mcp"},
       "source_of_truth": "Zoho CRM Property record",
       "sensitivity": "restricted_property",
       "validation": "Required for property-specific agreements; freeze as an execution snapshot."
@@ -629,7 +682,7 @@
       "status": "active",
       "zoho": {"ui_type": "Text", "expected_native_type": "String", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Property_City", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Premises_City", "api_name_status": "verified_live_mcp"},
       "source_of_truth": "Zoho CRM Property record",
       "sensitivity": "restricted_property",
       "validation": "Required with a property address; freeze as an execution snapshot."
@@ -642,7 +695,7 @@
       "zoho": {"ui_type": "Dropdown", "expected_native_type": "Index", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "text",
       "allowed_values": ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"],
-      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Property_State", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Pick List", "proposed_api_name": "Premises_State", "api_name_status": "verified_live_mcp"},
       "source_of_truth": "Zoho CRM Property record",
       "sensitivity": "restricted_property",
       "validation": "Required two-letter USPS state code; do not accept free-text variants."
@@ -655,7 +708,7 @@
       "aliases": ["Property ZIP Code"],
       "zoho": {"ui_type": "Text", "expected_native_type": "String", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Property_Zip_Code", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Premises_ZIP_Code", "api_name_status": "verified_live_mcp"},
       "source_of_truth": "Zoho CRM Property record",
       "sensitivity": "restricted_property",
       "validation": "Text, never Number; match five-digit ZIP or ZIP+4 and preserve leading zeros."
@@ -740,10 +793,10 @@
       "status": "active",
       "zoho": {"ui_type": "Text", "expected_native_type": "String", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_C_Contact_Name", "api_name_status": "proposed_unverified"},
-      "source_of_truth": "Zoho CRM Contract Party related record",
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Tenant_2_Legal_Name_Snapshot", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease tenant legal-name snapshot",
       "sensitivity": "restricted_pii",
-      "validation": "Require an explicit Party C role before use; prefer a related Contract Party record over permanent ordinal fields."
+      "validation": "Party C is the approved Tenant 2 legal-name snapshot for this lease workflow; do not substitute a mutable contact display name."
     },
     {
       "id": "party_d_primary_contact_name",
@@ -752,10 +805,10 @@
       "status": "active",
       "zoho": {"ui_type": "Text", "expected_native_type": "String", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Party_D_Contact_Name", "api_name_status": "proposed_unverified"},
-      "source_of_truth": "Zoho CRM Contract Party related record",
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Tenant_3_Legal_Name_Snapshot", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease tenant legal-name snapshot",
       "sensitivity": "restricted_pii",
-      "validation": "Require an explicit Party D role before use; prefer a related Contract Party record over permanent ordinal fields."
+      "validation": "Party D is the approved Tenant 3 legal-name snapshot for this lease workflow; do not substitute a mutable contact display name."
     },
     {
       "id": "party_c_primary_contact_phone",
@@ -813,10 +866,10 @@
       "canonical_id": "agreement_effective_date",
       "zoho": {"ui_type": "Date", "expected_native_type": "Date", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "date",
-      "crm": {"recommended_type": "Date", "proposed_api_name": null, "api_name_status": "do_not_create_until_defined"},
-      "source_of_truth": "Zoho Contracts Agreement Date unless a separate legal meaning is approved",
+      "crm": {"recommended_type": "Date", "proposed_api_name": "Lease_Start_Date", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease start-date snapshot",
       "sensitivity": "internal_contract",
-      "validation": "Do not create a duplicate CRM field unless counsel/business rules document how this differs from system Agreement Date."
+      "validation": "Map only from the verified CRM Lease_Start_Date field; retain review-required status until counsel or approved business rules define its relationship to system Agreement Date."
     },
     {
       "id": "property_unit_number_snapshot",
@@ -826,10 +879,190 @@
       "aliases": ["Property Unit Number"],
       "zoho": {"ui_type": "Text", "expected_native_type": "String", "api_name": null, "type_status": "design_decision", "evidence_id": "user-inventory-and-official-types"},
       "portable_type": "text",
-      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Property_Unit_Number", "api_name_status": "proposed_unverified"},
+      "crm": {"recommended_type": "Single Line", "proposed_api_name": "Premises_Apartment_Number", "api_name_status": "verified_live_mcp"},
       "source_of_truth": "Zoho CRM Unit record",
       "sensitivity": "restricted_property",
       "validation": "Text, not Number; preserve letters, separators, and leading zeros. Prefer the display label Property Unit Number."
+    },
+    {
+      "id": "base_rent_amount",
+      "label": "Base Rent Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": null, "api_name_status": "do_not_create_until_defined"},
+      "source_of_truth": "Zoho CRM approved Lease snapshot; Zoho Books owns invoicing and payment truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Nonnegative, two decimals, and frozen before contract request. This field must not directly create an invoice or establish a paid balance."
+    },
+    {
+      "id": "security_deposit_amount",
+      "label": "Security Deposit Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Security_Deposit", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease snapshot; Zoho Books owns deposit accounting truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Refundable general security-deposit amount; nonnegative and two decimals. Do not treat this contract value as proof of receipt or deposit liability."
+    },
+    {
+      "id": "total_monthly_pet_rent_amount",
+      "label": "Total Monthly Pet Rent Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Total_Monthly_Pet_Rent_Amount", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease pet-charge snapshot; Zoho Books owns invoicing truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Aggregate ordinary-pet monthly rent only; nonnegative and two decimals. Keep distinct from pet deposits, nonrefundable fees, and assistance animals."
+    },
+    {
+      "id": "base_storage_unit_rent_amount",
+      "label": "Base Storage Unit Rent Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Base_Storage_Unit_Rent_Amount", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease storage-rate snapshot; Zoho Books owns invoicing truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Per-unit monthly storage rate; nonnegative and two decimals. Keep distinct from the aggregate storage amount."
+    },
+    {
+      "id": "total_storage_unit_rent_amount",
+      "label": "Total Storage Unit Rent Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Total_Monthly_Storage_Rent_Amount", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease storage-charge snapshot; Zoho Books owns invoicing truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Aggregate monthly storage rent; nonnegative and two decimals. Reconcile assigned units and rates before contract request."
+    },
+    {
+      "id": "total_monthly_rent_amount",
+      "label": "Total Monthly Rent Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": null, "api_name_status": "do_not_create_until_defined"},
+      "source_of_truth": "Zoho CRM approved Lease recurring-charge snapshot; Zoho Books owns invoicing truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Total approved recurring monthly rent; nonnegative and two decimals. Reconcile the component equation before automation uses this value."
+    },
+    {
+      "id": "next_total_monthly_rent_due_date",
+      "label": "Next Total Monthly Rent Due Date",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Date", "expected_native_type": "Date", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "date",
+      "crm": {"recommended_type": "Date", "proposed_api_name": "Next_Total_Monthly_Rent_Due_Date", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease due-date snapshot; Zoho Books owns invoice due dates",
+      "sensitivity": "internal_contract",
+      "validation": "ISO YYYY-MM-DD; the first regular monthly-rent due date after the initial amounts. Do not treat it as proof that an invoice exists."
+    },
+    {
+      "id": "prorated_rent_start_date",
+      "label": "Prorated Rent Start Date",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Date", "expected_native_type": "Date", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "date",
+      "crm": {"recommended_type": "Date", "proposed_api_name": "Prorated_Rent_Start_Date", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease proration snapshot",
+      "sensitivity": "internal_contract",
+      "validation": "ISO YYYY-MM-DD; first date covered by prorated rent. When present, it must not follow Prorated Rent End Date."
+    },
+    {
+      "id": "prorated_rent_end_date",
+      "label": "Prorated Rent End Date",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Date", "expected_native_type": "Date", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "date",
+      "crm": {"recommended_type": "Date", "proposed_api_name": "Prorated_Rent_End_Date", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease proration snapshot",
+      "sensitivity": "internal_contract",
+      "validation": "ISO YYYY-MM-DD; last date covered by prorated rent. When present, it must not precede Prorated Rent Start Date."
+    },
+    {
+      "id": "prorated_base_rent_amount",
+      "label": "Prorated Base Rent Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": null, "api_name_status": "do_not_create_until_defined"},
+      "source_of_truth": "Zoho CRM approved Lease proration snapshot; Zoho Books owns invoicing truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Base rent for the approved prorated period; nonnegative and two decimals. Use only the governed proration and rounding rule."
+    },
+    {
+      "id": "pet_security_deposit_amount",
+      "label": "Pet Security Deposit Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Pet_Security_Deposit_Amount", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease pet-deposit snapshot; Zoho Books owns deposit accounting truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Refundable ordinary-pet security deposit, not a nonrefundable pet fee; nonnegative and two decimals."
+    },
+    {
+      "id": "prorated_pet_rent_amount",
+      "label": "Prorated Pet Rent Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Prorated_Pet_Rent_Amount", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease proration snapshot; Zoho Books owns invoicing truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Ordinary-pet rent for the approved prorated period; nonnegative and two decimals. Keep separate from deposits and fees."
+    },
+    {
+      "id": "prorated_storage_unit_rent_amount",
+      "label": "Prorated Storage Unit Rent Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Prorated_Storage_Unit_Rent_Amount", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease proration snapshot; Zoho Books owns invoicing truth",
+      "sensitivity": "confidential_financial",
+      "validation": "Storage rent for the approved prorated period; nonnegative and two decimals. Reconcile assigned units and the governed proration rule."
+    },
+    {
+      "id": "holding_deposit_amount",
+      "label": "Holding Deposit Amount",
+      "classification": "custom",
+      "status": "active",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Holding_Deposit_Credit_Applied", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Zoho CRM approved Lease credit snapshot after verification against Zoho Books",
+      "sensitivity": "confidential_financial",
+      "validation": "Holding-deposit credit applied to initial amounts; nonnegative and two decimals. This snapshot is not proof of payment."
+    },
+    {
+      "id": "total_due_before_possession",
+      "label": "Total Due Before Possession",
+      "classification": "custom",
+      "status": "review_required",
+      "zoho": {"ui_type": "Currency", "expected_native_type": "Currency", "api_name": null, "type_status": "design_decision", "evidence_id": "user-requested-destination-types-2026-07-24"},
+      "portable_type": "currency",
+      "crm": {"recommended_type": "Currency", "proposed_api_name": "Total_Due_Before_Possession", "api_name_status": "verified_live_mcp"},
+      "source_of_truth": "Approved Lease calculation reconciled against Zoho Books",
+      "sensitivity": "confidential_financial",
+      "validation": "Do not automate until the full equation, first-full-month amount, fee treatment, holding-deposit credit, proration rounding, and pet or storage charges are reconciled."
     }
   ]
 }

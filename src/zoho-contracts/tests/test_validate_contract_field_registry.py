@@ -31,6 +31,169 @@ class ContractFieldRegistryTests(unittest.TestCase):
         actual = validator.MARKDOWN_PATH.read_text(encoding="utf-8")
         self.assertEqual(expected, actual)
 
+    def test_user_confirmed_live_label_evidence_is_exact_and_label_only(self) -> None:
+        self.assertEqual(1, len(self.registry["label_evidence"]))
+        evidence = self.registry["label_evidence"][0]
+        self.assertEqual("user_confirmed_live_label", evidence["evidence_type"])
+        self.assertEqual("2026-07-24", evidence["confirmed_on"])
+        self.assertEqual("label_only", evidence["scope"])
+        self.assertEqual("unverified", evidence["api_name_status"])
+        self.assertEqual(37, len(evidence["labels"]))
+        self.assertEqual(validator.USER_CONFIRMED_LIVE_LABELS, evidence["labels"])
+        self.assertIn("Agreement Effective Date", evidence["labels"])
+        self.assertNotIn("Agreement Date", evidence["labels"])
+
+    def test_rejects_drift_in_user_confirmed_label_evidence(self) -> None:
+        registry = copy.deepcopy(self.registry)
+        registry["label_evidence"][0]["labels"][0] = "Agreement Name"
+        problems = validator.validate_registry(registry)
+        self.assertTrue(
+            any("must exactly match the governed 37-label inventory" in problem for problem in problems)
+        )
+
+    def test_requested_destinations_have_exact_types_and_governed_crm_decisions(self) -> None:
+        by_label = {field["label"]: field for field in self.registry["fields"]}
+        self.assertEqual(15, len(validator.REQUESTED_DESTINATION_TYPES))
+        for label, expected_type in validator.REQUESTED_DESTINATION_TYPES.items():
+            field = by_label[label]
+            self.assertEqual("custom", field["classification"])
+            self.assertEqual(expected_type, field["zoho"]["ui_type"])
+            self.assertIsNone(field["zoho"]["api_name"])
+            self.assertEqual("design_decision", field["zoho"]["type_status"])
+            if label in validator.VERIFIED_CRM_API_CROSSWALK:
+                self.assertEqual(
+                    validator.VERIFIED_CRM_API_CROSSWALK[label],
+                    field["crm"]["proposed_api_name"],
+                )
+                self.assertEqual(
+                    "verified_live_mcp", field["crm"]["api_name_status"]
+                )
+            else:
+                self.assertIn(label, validator.CRM_FIELDS_WITH_UNDEFINED_SEMANTICS)
+                self.assertIsNone(field["crm"]["proposed_api_name"])
+                self.assertEqual(
+                    "do_not_create_until_defined",
+                    field["crm"]["api_name_status"],
+                )
+
+    def test_verified_crm_crosswalk_is_exact(self) -> None:
+        by_label = {field["label"]: field for field in self.registry["fields"]}
+        self.assertEqual(23, len(validator.VERIFIED_CRM_API_CROSSWALK))
+        self.assertNotIn("Lease Number", validator.VERIFIED_CRM_API_CROSSWALK)
+        for label, expected_api_name in validator.VERIFIED_CRM_API_CROSSWALK.items():
+            crm = by_label[label]["crm"]
+            self.assertEqual(expected_api_name, crm["proposed_api_name"], label)
+            self.assertEqual("verified_live_mcp", crm["api_name_status"], label)
+
+        registry = copy.deepcopy(self.registry)
+        agreement_name = next(
+            field for field in registry["fields"] if field["label"] == "Agreement Name"
+        )
+        agreement_name["crm"]["proposed_api_name"] = "Agreement_Name"
+        problems = validator.validate_registry(registry)
+        self.assertTrue(
+            any(
+                "Agreement Name must use verified_live_mcp CRM API name Name" in problem
+                for problem in problems
+            )
+        )
+
+    def test_tenant_api_verified_is_reserved_for_contracts_metadata(self) -> None:
+        registry = copy.deepcopy(self.registry)
+        field = next(
+            item for item in registry["fields"] if item["label"] == "Agreement Name"
+        )
+        field["crm"]["api_name_status"] = "tenant_api_verified"
+
+        problems = validator.validate_registry(registry)
+
+        self.assertNotIn("tenant_api_verified", validator.ALLOWED_CRM_API_STATUSES)
+        self.assertIn("tenant_api_verified", validator.ALLOWED_TYPE_STATUSES)
+        self.assertTrue(
+            any(
+                ".crm.api_name_status: value is not in enum" in problem
+                for problem in problems
+            )
+        )
+
+    def test_ambiguous_rent_fields_remain_unmapped(self) -> None:
+        by_label = {field["label"]: field for field in self.registry["fields"]}
+        self.assertEqual(
+            {
+                "Base Rent Amount",
+                "Total Monthly Rent Amount",
+                "Prorated Base Rent Amount",
+            },
+            validator.CRM_FIELDS_WITH_UNDEFINED_SEMANTICS,
+        )
+        for label in validator.CRM_FIELDS_WITH_UNDEFINED_SEMANTICS:
+            crm = by_label[label]["crm"]
+            self.assertIsNone(crm["proposed_api_name"], label)
+            self.assertEqual(
+                "do_not_create_until_defined", crm["api_name_status"], label
+            )
+
+    def test_lease_number_stays_out_of_verified_crosswalk(self) -> None:
+        registry = copy.deepcopy(self.registry)
+        lease_number = next(
+            field for field in registry["fields"] if field["label"] == "Lease Number"
+        )
+        self.assertIsNone(lease_number["crm"]["proposed_api_name"])
+        self.assertEqual(
+            "do_not_create_until_defined",
+            lease_number["crm"]["api_name_status"],
+        )
+
+        lease_number["crm"]["proposed_api_name"] = "Lease_Number"
+        lease_number["crm"]["api_name_status"] = "verified_live_mcp"
+        problems = validator.validate_registry(registry)
+        self.assertIn(
+            "Lease Number must remain unmapped until an approved auto-number "
+            "prefix and format are defined",
+            problems,
+        )
+
+    def test_checked_in_contracts_api_names_remain_null_and_unverified(self) -> None:
+        for field in self.registry["fields"]:
+            self.assertIsNone(field["zoho"]["api_name"], field["label"])
+            self.assertNotEqual(
+                "tenant_api_verified", field["zoho"]["type_status"], field["label"]
+            )
+
+    def test_native_party_fields_prohibit_crm_mirror_proposals(self) -> None:
+        party_fields = [
+            field
+            for field in self.registry["fields"]
+            if field["classification"] == "system"
+            and (
+                field["label"] in {"Party A", "Party B"}
+                or field["label"].startswith(("Party A ", "Party B "))
+            )
+        ]
+        self.assertTrue(party_fields)
+        for field in party_fields:
+            self.assertIsNone(field["crm"]["proposed_api_name"], field["label"])
+            self.assertEqual(
+                "do_not_create", field["crm"]["api_name_status"], field["label"]
+            )
+
+        registry = copy.deepcopy(self.registry)
+        party_a = next(field for field in registry["fields"] if field["id"] == "party_a")
+        party_a["crm"]["proposed_api_name"] = "Party_A_Account"
+        party_a["crm"]["api_name_status"] = "proposed_unverified"
+        problems = validator.validate_registry(registry)
+        self.assertTrue(
+            any("must not have a CRM mirror proposal" in problem for problem in problems)
+        )
+
+    def test_party_b_jurisdiction_remains_unresolved(self) -> None:
+        field = next(
+            item for item in self.registry["fields"] if item["id"] == "party_b_jurisdiction"
+        )
+        self.assertEqual("review_required", field["status"])
+        self.assertEqual("do_not_create", field["crm"]["api_name_status"])
+        self.assertIn("Do not map Property State", field["validation"])
+
     def test_rejects_unknown_custom_type(self) -> None:
         registry = copy.deepcopy(self.registry)
         custom = next(
@@ -157,19 +320,21 @@ class ContractFieldRegistryTests(unittest.TestCase):
         problems = validator.validate_registry(registry)
         self.assertTrue(any("api_name" in problem for problem in problems))
 
-    def test_future_custom_tenant_verification_is_supported(self) -> None:
+    def test_future_contracts_api_verification_is_supported(self) -> None:
         registry = copy.deepcopy(self.registry)
-        field = next(item for item in registry["fields"] if item["id"] == "lease_number")
+        field = next(
+            item for item in registry["fields"] if item["id"] == "storage_unit_number"
+        )
         field["zoho"]["type_status"] = "tenant_api_verified"
         field["zoho"]["evidence_id"] = "zoho-metadata-api"
-        field["zoho"]["api_name"] = "leaseNumber"
-        field["crm"]["api_name_status"] = "tenant_api_verified"
-        field["crm"]["proposed_api_name"] = "Lease_Number"
+        field["zoho"]["api_name"] = "storageUnitNumber"
+        field["crm"]["api_name_status"] = "verified_live_mcp"
+        field["crm"]["proposed_api_name"] = "Storage_Unit_Number"
         self.assertEqual([], validator.validate_registry(registry))
 
         markdown = validator.render_markdown(registry)
-        self.assertIn("Single Line / `Lease_Number` (tenant-verified)", markdown)
-        self.assertNotIn("Single Line / `Lease_Number` (proposed)", markdown)
+        self.assertIn("Single Line / `Storage_Unit_Number` (verified_live_mcp)", markdown)
+        self.assertNotIn("Single Line / `Storage_Unit_Number` (proposed)", markdown)
 
     def test_future_tenant_only_system_verification_is_supported(self) -> None:
         registry = copy.deepcopy(self.registry)
@@ -200,11 +365,34 @@ class ContractFieldRegistryTests(unittest.TestCase):
         problems = validator.validate_registry(registry)
         self.assertIn("Storage Term Starts must alias Storage Term Begins", problems)
 
-    def test_submitted_inventory_counts_are_fixed(self) -> None:
+    def test_required_inventory_cannot_drop_a_field(self) -> None:
         registry = copy.deepcopy(self.registry)
         registry["fields"].pop()
+        system_count = sum(
+            field["classification"] == "system" for field in registry["fields"]
+        )
+        custom_count = sum(
+            field["classification"] == "custom" for field in registry["fields"]
+        )
+        registry["record_counts"] = {
+            "system": system_count,
+            "custom": custom_count,
+            "total": len(registry["fields"]),
+        }
         problems = validator.validate_registry(registry)
-        self.assertTrue(any("46 system + 19 custom = 65" in problem for problem in problems))
+        self.assertIn(
+            "custom field labels/order drifted from the submitted inventory",
+            problems,
+        )
+
+    def test_record_counts_are_derived_from_current_inventory(self) -> None:
+        registry = copy.deepcopy(self.registry)
+        registry["record_counts"]["custom"] -= 1
+        problems = validator.validate_registry(registry)
+        self.assertIn(
+            "record_counts.custom does not match field inventory",
+            problems,
+        )
 
 
 if __name__ == "__main__":
