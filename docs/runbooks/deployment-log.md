@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-25 — Zoho Books MCP Expansion Captured
+
+- System: Zoho Books / Codex / GitHub
+- Repo branch / commit: live configuration reported outside the repository; sanitized documentation on `agent/update-books-accountant-mcp`
+- Files changed: repository MCP inventory, control plan, rollout decision, changelog, and this evidence-only log entry
+- Business rule changed? no live accounting rule or record changed
+- Dry-run completed? documentation validation only
+- Smoke test completed? no; all three Books servers remain organization-, identity-, scope-, and write-acceptance pending
+- Deployed by: Gabriel configured the reported native servers; Codex reconciled the sanitized evidence
+- Result: captured `gh_zoho_books_accounting_audit` with 166 tools, `gh_zoho_books_bookkeeping_changes` with 31 tools, and `gh_zoho_books_controller` with 58 tools; confirmed `ZohoBooks_add_journal_attachment` is absent from both write selections
+- Rollback plan: revert the documentation commit; for live access concerns, disconnect the affected Codex server and revoke or narrow its Zoho authorization
+- Notes: no live MCP configuration, OAuth grant, Zoho Books organization, financial record, or source document was changed or tested by this repository update. The documented 166/17/53/27 target layout and coded write controls are proposed gates, not proof of deployment.
+
 ## 2026-07-25 - Production CRM Second-Pass Layout and Intake Reconciliation
 
 - System: Zoho CRM / GitHub

@@ -37,7 +37,7 @@ This is a dated account-specific portal snapshot. Recheck the live modal before 
 | Email Automation & Follow-up | Zoho CRM | 1 | Critical | Do not authorize initially; its sole tool sends external mail. |
 | CommandCenter CRM Actions | Zoho CRM and Zoho CommandCenter | 9 | Critical | Defer; it mutates journeys/stages and can attach automation functions. |
 | Accountant Management System | Zoho Books | 67 | Critical | Do not authorize; it exposes Chart of Accounts, journal, project, custom-field, and deletion operations. |
-| Books Financial Overview | Zoho Books | 12 | Medium-High | Instantiated as `gh_zoho_books_review`; the 12 captured tools remain reads, but the target Books organization is not verified in the supplied evidence. |
+| Books Financial Overview | Zoho Books | 12 | Medium-High | Previously instantiated as `gh_zoho_books_review`; the July 25 inventory supersedes it with three custom Books boundaries. |
 | Books Transactions & Creation | Zoho Books | 9 | Critical | Defer; it can create invoices and contacts. |
 | Payments Management | Zoho Payments | 15 | Critical | Do not authorize initially; it creates payment sessions, links, customers, and refunds. |
 | Mail Reading & Search | Zoho Mail | 13 | High | Defer; it exposes message and attachment contents and includes `flagMessages`, which changes state. |
@@ -350,7 +350,7 @@ list_bank_transactions
 list_chart_of_accounts
 ```
 
-All captured tools are named reads. This template has been instantiated as `gh_zoho_books_review` with the same 12-tool membership. Codex advertises the names with the `ZohoBooks_` prefix. The server exposes sensitive financial and contact data, and its target Books organization is not verified in the supplied evidence. See [`configured-servers.md`](configured-servers.md) for the current sanitized inventory.
+All captured tools are named reads. This template was previously instantiated as `gh_zoho_books_review` with the same 12-tool membership. That server is absent from the July 25 inventory and has been superseded by the custom Audit, Bookkeeping, and Controller selections. See [`configured-servers.md`](configured-servers.md) for the current sanitized inventory and [`books-accountant-controls.md`](books-accountant-controls.md) for the current operating decision.
 
 ### Books Transactions & Creation
 
@@ -504,7 +504,9 @@ The original decision was to create **GH CRM Configuration Audit** first as a cu
 |---|---|---|---|
 | `gh_zoho_crm_audit` | Custom Zoho-hosted server | Production organization acceptance passed | 18 CRM configuration metadata reads |
 | `gh_zoho_crm_changes` | Custom Zoho-hosted server | Production organization target confirmed; no mutation acceptance test recorded | 15 configuration writes, 7 record reads, 4 record writes, and 1 organization check |
-| `gh_zoho_books_review` | **Books Financial Overview** template | Configured; target Books organization not verified in supplied evidence | 12 financial and contact reads |
+| `gh_zoho_books_accounting_audit` | Custom Zoho-hosted server | Configured; target Books organization not verified in supplied evidence | 166 Books reads and reports |
+| `gh_zoho_books_bookkeeping_changes` | Custom Zoho-hosted server | Configured; target Books organization and writes not acceptance-tested | 31 routine and high-risk Books writes pending separation |
+| `gh_zoho_books_controller` | Custom Zoho-hosted server | Configured; target Books organization and writes not acceptance-tested | 58 high-risk accounting and configuration writes |
 
 The Audit server expanded from the original 14-tool proposal to 18 reads by adding field-ID, single-layout-rule, workflow field-update, and single-field-update readback coverage.
 

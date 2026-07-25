@@ -11,6 +11,10 @@ Record notable repository changes here. Production deployments belong in `docs/r
 - Kept the Properties tenant subforms and listing/utility metadata unchanged. The current Tenant Pets subform is the only verified Property-to-Pets relationship, and the protected Pets module was not modified.
 - Added a governed CRM operations-dashboard target specification. Deployment remains blocked because the available MCP servers expose no dashboard/report-component mutation tools and the Stage/Lease Status prerequisites are not live; actual income remains owned by Zoho Books rather than Deals.
 - Recorded the required due-before-possession calculation design without changing the live writable Currency snapshot. The existing field cannot be converted in place to Formula through the available MCP, no supported function-deployment tool is exposed, and CRM Formula-to-Contracts mapping could not be verified through an available Contracts MCP.
+- Replaced the superseded 12-tool Books review inventory with the July 25 sanitized capture of `gh_zoho_books_accounting_audit` (166 tools), `gh_zoho_books_bookkeeping_changes` (31 tools), and `gh_zoho_books_controller` (58 tools). The Books organization, OAuth identities, effective grants, and write behavior remain acceptance-pending.
+- Confirmed that `ZohoBooks_add_journal_attachment` is absent from both current write selections even though the authenticated Zoho template capture and current Journals API support the operation.
+- Added a supervised Books accountant control plan with a 166/17/53/27 target split, no-delete correction policy, fixed-organization and durable-idempotency requirements, high-risk tool moves, Configuration Admin isolation, and human-only journal approval/publication and period unlocking.
+- This documentation-only Books update does not change Codex configuration, OAuth permissions, any Zoho MCP server, Zoho Books, or any financial record.
 
 ## 2026-07-24
 
