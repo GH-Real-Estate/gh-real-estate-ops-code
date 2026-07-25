@@ -4,6 +4,12 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-24
 
+- Documented the actual Zillow-to-CRM application lifecycle: the Catalyst webhook upserts Leads only, `applicationRequest` is not documented proof of a completed application, controlled Lead promotion creates/reuses a Contact plus Rental Application, approval creates one Lease, and the Lease separately requests a Zoho Contract.
+- Added an official-source-based outbound Zillow listing-publication design. Zillow exposes an approval-gated Rentals Feed Integration rather than a self-service public listing-create API.
+- Assigned market readiness, asking rent, and availability to Units while Properties supply shared building/address data; retained manual Zillow Rental Manager publishing for the current fourplex and deferred a Rental Listings custom module.
+- Recorded the future approved-feed shape as one multifamily property with nested unit models, subject to Zillow onboarding confirmation, plus human approval, complete-snapshot, duplicate-source, secret, and rollback controls.
+- This documentation-only update does not create or modify CRM records or fields, deploy Catalyst code, configure a Zillow feed, or create/change/deactivate any live listing.
+
 - Added a sanitized current-state inventory for the three configured GH Real Estate Zoho MCP server entries: the 18-tool CRM configuration audit server, the 27-tool mixed CRM changes server, and the 12-tool Books review server.
 - Recorded the exact `ZohoCRM_` and `ZohoBooks_` names advertised to Codex, OAuth status, CRM production acceptance results, the pending Books organization gate, and the prohibition on committing MCP URLs or authentication material.
 - Updated the rollout decision from the original 14-tool audit proposal to the implemented 18-tool readback boundary and documented that the CRM Changes server now includes 11 production-record operations beyond its original 16 organization/configuration tools.

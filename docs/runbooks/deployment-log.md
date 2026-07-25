@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-24 — Zillow Lifecycle and Listing Publication Documentation
+
+- System: GitHub / Zoho CRM / Zoho Catalyst / Zillow
+- Repo branch / commit: `agent/document-zillow-listing-publication` / pending merge
+- Files changed: CRM overview, Zillow-to-CRM-to-Contracts lifecycle map, new outbound Zillow listing-publication architecture, changelog, and this log
+- Business rule changed? no live behavior; the governed design now distinguishes the operating inbound Lead webhook from a possible future outbound feed and places Contact, Application, Lease, and Contract creation at their correct lifecycle gates
+- Dry-run completed? documentation and source inspection only; current repository behavior and official Zillow/Zoho guidance were reconciled
+- Smoke test completed? repository and GitHub checks required; no live CRM, Catalyst, Zillow, or Contracts smoke test was authorized
+- Deployed by: ChatGPT / GitHub documentation update
+- Result: documentation only; no CRM record/field, Catalyst function, Zillow feed, credential, or live listing was created or changed
+- Rollback plan: revert the documentation merge; no live-system rollback is required
+- Notes: continue manual Zillow Rental Manager publishing for the fourplex. Do not implement a feed until Zillow confirms eligibility, schema, property type, and test onboarding in writing.
+
 ## 2026-07-24 — Zoho MCP Production Servers Configured
 
 - System: Zoho CRM / Zoho Books / Codex
