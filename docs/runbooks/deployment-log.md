@@ -15,6 +15,19 @@ Record every production-relevant deployment or Zoho change.
 - Rollback plan: after dependency review, remove created fields from active layouts and retire rather than delete them; recover the seven reused fields' exact pre-change placements from an authorized Zoho audit/export before any section rollback because this sanitized repository does not retain that before-state; deactivate only newly added Lease Status values, restore `Ready For Contract` to `#168AEF` and `Renewal Pending` to `#F5C72F`, preserve legacy `Draft Lease Data` at `#AF38FA`, and restore prior history setting where safe; revert repository documentation separately
 - Notes: Deals Stage/Amount, ambiguous rent/proration fields, Lease Number, First Full Month Base Rent, required/default/readiness rules, exact supplied-tooltip remediation, Lease Status ordering, Create Lease automation, and exact section-placement rollback remain blocked/unsupported. Lease Status target/legacy values interleave and new `Draft` is last; default remains null and the field remains optional. No `zohocontracts__Contracts`, extension, button, related list, field mapping, Party configuration, signer route, template, contract request, signature request, or communication changed. The Residential Lease Agreement remains Draft only, unpublished, execution-blocked, attorney-review-required, and unsent with all 29 gates open. See [`zoho-crm-lease-system-reconciliation.md`](zoho-crm-lease-system-reconciliation.md).
 
+## 2026-07-24 — Zillow Lifecycle and Listing Publication Documentation
+
+- System: GitHub / Zoho CRM / Zoho Catalyst / Zillow
+- Repo branch / commit: `agent/document-zillow-listing-publication` / pending merge
+- Files changed: CRM overview, Zillow-to-CRM-to-Contracts lifecycle map, new outbound Zillow listing-publication architecture, changelog, and this log
+- Business rule changed? no live behavior; the governed design now distinguishes the operating inbound Lead webhook from a possible future outbound feed and places Contact, Application, Lease, and Contract creation at their correct lifecycle gates
+- Dry-run completed? documentation and source inspection only; current repository behavior and official Zillow/Zoho guidance were reconciled
+- Smoke test completed? repository and GitHub checks required; no live CRM, Catalyst, Zillow, or Contracts smoke test was authorized
+- Deployed by: ChatGPT / GitHub documentation update
+- Result: documentation only; no CRM record/field, Catalyst function, Zillow feed, credential, or live listing was created or changed
+- Rollback plan: revert the documentation merge; no live-system rollback is required
+- Notes: continue manual Zillow Rental Manager publishing for the fourplex. Do not implement a feed until Zillow confirms eligibility, schema, property type, and test onboarding in writing.
+
 ## 2026-07-24 — Zoho MCP Production Servers Configured
 
 - System: Zoho CRM / Zoho Books / Codex
