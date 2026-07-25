@@ -17,6 +17,7 @@ field-maps/
   zillow-to-crm-to-contracts.md
 integrations/
   zillow-lead-intake/
+  zillow-listing-publish/
 standards/
   crm-module-field-authoring-standard.md
   crm-field-type-catalog.md
@@ -59,14 +60,32 @@ The per-module CSV catalog separates actual verified API names from workbook pro
 - `Zillow Intake Events` is an optional disabled-by-default runtime candidate; its live module/API existence must be verified before use.
 - Leases, Inspections, Notices, Equipment, and Lease Documents / Addenda require live metadata before a custom module API name is claimed.
 
-## Zillow intake rules
+## Zillow lifecycle rules
 
-- Zillow lead intake writes raw Zillow inquiries to CRM `Leads` only.
-- It must not create `Contacts`, rental application pipeline records, leases, Books records, tenant portal access, or WorkDrive folders.
-- Convert or promote a Lead only after qualification, application review, owner approval, or the approved business workflow for the tenant stage.
+- The operating Zillow/Catalyst intake writes raw Zillow callbacks to CRM Leads only.
+- It does not create Contacts, Rental Applications, Leases, Books records, portal access, or WorkDrive folders.
+- Zillow `applicationRequest` is an application-related Lead API value, not documented proof of a completed application and not the application/report package.
+- Promote a verified applicant from the Lead. The controlled operation should reuse/create one Contact and create one Rental Application in Deals without creating a new Account/Property from Lead Company.
+- Create a Lease only from one approved, complete Rental Application with explicit duplicate protection.
+- Request the legal agreement separately from the Lease through the Zoho Contracts extension.
+- Keep reusable person data in Contacts, screening/decision data in Rental Applications, approved agreement inputs in Leases, accounting in Books, and complete Zillow reports in Zillow under current public capabilities.
 - Zillow `phone` maps to `Mobile`; `Phone` is secondary or alternate.
 - Do not create `Desired_Rent`, `Desired_Deposit`, `Manual_Review_Required`, or `Manual_Review_Reason`.
 - Do not store raw private Zillow payload values under the current design.
+
+See the governed [Zillow-to-CRM-to-Contracts map](field-maps/zillow-to-crm-to-contracts.md).
+
+## Zillow listing publication
+
+- No outbound Zillow listing publisher exists in the repository or current Catalyst service.
+- Zillow's documented automation route is an approval-gated Rentals Feed Integration, not a self-service public create-listing API.
+- For the current fourplex, continue manual Zillow Rental Manager publishing and first ask Zillow to confirm feed eligibility.
+- Unit controls market readiness, asking rent, and availability. Its related Property supplies shared building and address facts.
+- If Zillow approves a feed, build it as a separate integration and confirm one multifamily property container with nested unit models during onboarding.
+- Do not automatically publish when a Unit becomes vacant or deactivate when someone applies.
+- Defer a Rental Listings custom module until an approved feed, multiple channels, or publication-history needs justify it.
+
+See [Zillow listing publication architecture](integrations/zillow-listing-publish/README.md).
 
 ## Live metadata verification
 
