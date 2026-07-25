@@ -1,6 +1,7 @@
 # Zoho MCP Capability Catalog
 
-**Verified:** July 24, 2026  
+**Verified:** July 25, 2026
+
 **Purpose:** Sanitized technical source of truth for the Zoho-hosted MCP servers and tools GH Real Estate exposes or may expose to Codex.
 
 ## Bottom Line
@@ -21,11 +22,13 @@ The authenticated Zoho MCP portal evidence supplied for this review catalogs 19 
 
 Those templates are not the same thing as Zoho CRM's separate product-specific set of four pre-built MCP servers.
 
-GH Real Estate currently has three configured Codex server entries with 57 per-server tool memberships:
+GH Real Estate currently has five configured Zoho server entries with 300 per-server tool memberships:
 
 - `gh_zoho_crm_audit` — 18 CRM configuration metadata reads.
 - `gh_zoho_crm_changes` — 27 mixed CRM organization, configuration-write, record-read, and record-write tools.
-- `gh_zoho_books_review` — 12 Books financial/contact reads.
+- `gh_zoho_books_accounting_audit` — 166 Books reads and reports.
+- `gh_zoho_books_bookkeeping_changes` — 31 routine and high-risk Books writes pending separation.
+- `gh_zoho_books_controller` — 58 high-risk accounting and structural configuration writes.
 
 The exact sanitized current state is recorded in [`configured-servers.md`](configured-servers.md).
 
@@ -34,6 +37,7 @@ The exact sanitized current state is recorded in [`configured-servers.md`](confi
 | File | Purpose |
 |---|---|
 | [`configured-servers.md`](configured-servers.md) | Current GH server identifiers, OAuth status, exact Codex-advertised tools, target-verification status, risks, and operating controls |
+| [`books-accountant-controls.md`](books-accountant-controls.md) | Books accountant architecture, missing-tool review, correction policy, configuration split, acceptance gates, and no-delete decision |
 | [`preconfigured-servers.md`](preconfigured-servers.md) | Verified portal template names, descriptions, exact tool memberships, risk review, and evidence gaps |
 | [`tool-inventory.md`](tool-inventory.md) | Searchable inventory of all 10,533 exact tool names grouped across 59 services |
 | [`recommended-first-server.md`](recommended-first-server.md) | Implemented rollout decision, current boundaries, exclusions, controls, and stop criteria |
@@ -42,14 +46,14 @@ The exact sanitized current state is recorded in [`configured-servers.md`](confi
 
 ### Configured GH Servers
 
-The redacted Codex MCP inventory supplied on July 24, 2026 confirms:
+The redacted Codex MCP inventories supplied on July 24 and July 25, 2026 confirm:
 
-- The three exact server identifiers listed above.
+- The five exact server identifiers listed above.
 - OAuth authentication displayed for each server.
-- All 57 per-server tool memberships using the exact names advertised to Codex.
+- All 300 per-server tool memberships using the exact names advertised to Codex.
 - The `ZohoCRM_` and `ZohoBooks_` prefixes used by Codex.
 
-Separate acceptance checks confirmed the GH Real Estate production organization for both CRM servers. The supplied evidence does not confirm the target Books organization, so `gh_zoho_books_review` remains acceptance-pending.
+Separate acceptance checks confirmed the GH Real Estate production organization for both CRM servers. The supplied evidence does not confirm the target Books organization for any of the three current Books servers, so all three remain acceptance-pending.
 
 The Audit server's module call succeeded but was transport-truncated, and its advertised field projection returned `PATTERN_NOT_MATCHED`. The reported module pairs are confirmed, but completeness is not certified. The Changes server acceptance test confirmed only its target; it did not test a mutation.
 
@@ -107,7 +111,7 @@ A custom server created in the Zoho MCP console is still hosted and authenticate
 
 ### Coded MCP Server
 
-A coded MCP server is custom software that wraps APIs with additional validation, business rules, idempotency, approval gates, and audit behavior. GH Real Estate does not currently need one.
+A coded MCP server is custom software that wraps APIs with additional validation, business rules, idempotency, approval gates, and audit behavior. The current native servers are adequate for supervised, individually approved calls after acceptance. Professional-grade automated Books posting requires a narrow coded write layer to bind the organization, enforce immutable plans and allowed payloads, prevent stale/duplicate writes, persist returned IDs in a durable ledger, and resolve ambiguous timeouts. A narrow evidence wrapper is also justified if required bill, expense, receipt, or journal documents remain unavailable through native MCP.
 
 ## Current Product Gaps
 
