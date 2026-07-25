@@ -8,12 +8,14 @@
 
 This inventory is based on:
 
-- Redacted Codex MCP server inventories supplied on July 24 and July 25, 2026.
+- Redacted Codex MCP server inventories supplied on July 24 and July 25, 2026, including the current ten-server Zoho snapshot.
 - A successful `ZohoCRM_getOrganization` acceptance check against the GH Real Estate production organization.
 - A successful read-only CRM module inventory through `gh_zoho_crm_audit`.
 - A successful organization-only target check through `gh_zoho_crm_changes`.
 
 The July 25 inventory supersedes the earlier 12-tool `gh_zoho_books_review` capture. It shows three custom Books servers with 255 selected tool memberships. The evidence confirms server identifiers, advertised tool names, and OAuth status, but it does not prove which Books organization any of the three servers targets, that every OAuth grant succeeded, or that a write works. Each Books server therefore remains acceptance-pending.
+
+The current July 25 snapshot also adds three Catalyst webhook-administration servers with 27 selected tool memberships and two WorkDrive servers with 25 selected tool memberships. Their identifiers, exact advertised tool names, counts, and OAuth display are captured. The evidence does not prove the target Catalyst organization/project/environment, the target WorkDrive team/Team Folder, effective OAuth grants, binary file handoff, or successful read/write execution. All five new servers remain acceptance-pending.
 
 The CRM Audit server's `ZohoCRM_getModules` call succeeded, but the response was transport-truncated and an advertised field projection returned `PATTERN_NOT_MATCHED`; the captured module pairs are confirmed, but completeness is not certified. The CRM Changes target check did not test a mutation.
 
@@ -28,10 +30,17 @@ No MCP URL, secure API key, token, organization ID, record payload, tenant infor
 | `gh_zoho_books_accounting_audit` | Zoho Books | OAuth | 166 | Financial, subledger, bank, report, automation, and configuration reads | Organization not verified in supplied evidence |
 | `gh_zoho_books_bookkeeping_changes` | Zoho Books | OAuth | 31 | Routine writes mixed with credits, refunds, journals, recurring schedules, sales receipts, and fixed assets | Organization not verified in supplied evidence |
 | `gh_zoho_books_controller` | Zoho Books | OAuth | 58 | High-risk accounting actions mixed with structural configuration writes | Organization not verified in supplied evidence |
+| `gh_zoho_catalyst_webhook_audit` | Catalyst by Zoho | OAuth | 15 | Project, function, deployment, route, environment-name, pipeline, log, cache, and segment reads | Organization/project/environment not verified in supplied evidence |
+| `gh_zoho_catalyst_webhook_breakglass` | Catalyst by Zoho | OAuth | 5 | API Gateway, environment-variable, and pipeline configuration writes | Organization/project/environment and writes not acceptance-tested |
+| `gh_zoho_catalyst_webhook_release` | Catalyst by Zoho | OAuth | 7 | Function update/invocation, pipeline execution, deployment, rollback, test, and build-cancel actions | Organization/project/environment and writes not acceptance-tested |
+| `gh_zoho_workdrive_audit` | Zoho WorkDrive | OAuth | 20 | Identity, team, Team Folder, file, version, change-feed, permission, preview, and download reads | User/team/Team Folder and binary handoff not verified in supplied evidence |
+| `gh_zoho_workdrive_changes` | Zoho WorkDrive | OAuth | 5 | Folder creation, upload/status, move, and rename writes | User/team/Team Folder and writes not acceptance-tested |
 
-The five Zoho servers expose 300 per-server tool memberships in total. Tool names below are the exact names advertised to Codex. Zoho's server builder may display the same tools without the `ZohoCRM_` or `ZohoBooks_` prefix.
+The ten Zoho servers expose 352 per-server tool memberships in total and 351 distinct advertised names; `ZohoCRM_getOrganization` is selected in both CRM servers. Tool names below are the exact names advertised to Codex. Zoho's server builder may display the same tools without the `ZohoCRM_`, `ZohoBooks_`, `CatalystbyZoho_`, or `ZohoWorkdrive_` prefix.
 
 The operating decision, missing-tool review, correction policy, and production acceptance gates for the Books servers are maintained in [`books-accountant-controls.md`](books-accountant-controls.md).
+
+The WorkDrive/CRM/Catalyst document-intake coverage, remaining OCR and event-trigger gaps, deliberate exclusions, and acceptance tests are maintained in [`document-intake-controls.md`](document-intake-controls.md).
 
 ## `gh_zoho_crm_audit`
 
@@ -121,6 +130,103 @@ ZohoCRM_updateRecords
 The record tools can retrieve or modify tenant, applicant, property, unit, lease, maintenance, and other business records permitted to the authorizing Zoho user. `ZohoCRM_massUpdateRecords` and `ZohoCRM_updateRecords` can affect multiple production records. This server therefore requires an exact proposed diff and explicit approval before every call.
 
 The current server excludes delete, upsert, merge, conversion, email-send, permission, role, profile, and user-management tools.
+
+## `gh_zoho_catalyst_webhook_audit`
+
+This is the read-only Catalyst project, API Gateway, function, deployment, pipeline, log, environment-name, cache, and segment inspection boundary.
+
+```text
+CatalystbyZoho_Get_API_route
+CatalystbyZoho_Get_Cache_Item_Value
+CatalystbyZoho_Get_Deployment
+CatalystbyZoho_Get_Function
+CatalystbyZoho_Get_Logs
+CatalystbyZoho_Get_Pipeline_By_Id
+CatalystbyZoho_Get_Project_By_Id
+CatalystbyZoho_List_All_API_route
+CatalystbyZoho_List_All_Deployments
+CatalystbyZoho_List_All_Env_Variables
+CatalystbyZoho_List_All_Functions
+CatalystbyZoho_List_All_Organizations
+CatalystbyZoho_List_All_Pipelines
+CatalystbyZoho_List_All_Projects
+CatalystbyZoho_List_All_Segments
+```
+
+Environment-variable reads can reveal names and deployment structure even when values are not returned. Keep raw responses, project identifiers, routes, logs, and configuration out of GitHub.
+
+## `gh_zoho_catalyst_webhook_breakglass`
+
+This is an emergency configuration boundary for API Gateway routes, environment variables, and pipelines. It must remain disconnected or otherwise unavailable during routine operation.
+
+```text
+CatalystbyZoho_Configure_API_Gateway_Route
+CatalystbyZoho_Create_Env_Variables
+CatalystbyZoho_Create_Pipeline
+CatalystbyZoho_Update_Environment_Variable
+CatalystbyZoho_Update_Pipeline
+```
+
+These tools can change authentication/routing, runtime configuration, and release orchestration. MCP environment-variable calls are nonsecret-only; enter secret values directly in Zoho's secret UI or approved vault outside Codex/MCP. Every call requires exact target readback, a reviewed replacement payload, a secret-safe rollback plan, explicit approval, and immediate Audit verification.
+
+## `gh_zoho_catalyst_webhook_release`
+
+This is the approval-gated Catalyst release and function-execution boundary.
+
+```text
+CatalystbyZoho_Cancel_Build
+CatalystbyZoho_Execute_Automation_Test
+CatalystbyZoho_Execute_Function_Via_POST
+CatalystbyZoho_Execute_Pipeline_Manually
+CatalystbyZoho_Redeploy_a_deployment
+CatalystbyZoho_Rollback_Build
+CatalystbyZoho_Update_Function
+```
+
+`CatalystbyZoho_Execute_Function_Via_POST` is generic function invocation, not a dedicated OCR, webhook, or document-validation tool. Invoke only a preverified allowlisted function with a bounded sanitized payload. Release and rollback tools require exact project/environment/deployment identity, current-state inspection, expected revision, post-action logs, and readback.
+
+## `gh_zoho_workdrive_audit`
+
+This is the read-only WorkDrive identity, routing, file, version, permission, preview, change-feed, and download boundary.
+
+```text
+ZohoWorkdrive_Breadcrumbs_Of_File
+ZohoWorkdrive_Download_Server_File
+ZohoWorkdrive_Download_Server_File_Version
+ZohoWorkdrive_Fetch_Files_Folders
+ZohoWorkdrive_File_Property
+ZohoWorkdrive_Get_All_Team_Folders
+ZohoWorkdrive_Get_All_Teams_Of_User
+ZohoWorkdrive_Get_Current_Team_User
+ZohoWorkdrive_Get_File_List
+ZohoWorkdrive_Get_File_Preview
+ZohoWorkdrive_Get_List_Of_Recent_Changes
+ZohoWorkdrive_Get_Shared_Links
+ZohoWorkdrive_Get_Shared_Users
+ZohoWorkdrive_Get_Start_Token
+ZohoWorkdrive_Get_Team_Folder_Setting
+ZohoWorkdrive_Get_Team_Folder_Shared_Users
+ZohoWorkdrive_Get_Team_Folders_Info
+ZohoWorkdrive_Get_User_Info
+ZohoWorkdrive_Get_Version
+ZohoWorkdrive_Search_Records
+```
+
+This selection covers the complete read side of the proposed application, inspection, condition-report, and lease filing workflow. Before retrieving any private file, verify the integration user, team, Team Folder, resource ID, version, business purpose, and effective sharing. A successful binary download tool call is not yet evidence that Codex receives a usable PDF artifact; that handoff requires a controlled acceptance test.
+
+## `gh_zoho_workdrive_changes`
+
+This is the narrow WorkDrive filing boundary for folder creation, file upload, upload-status verification, move, and rename.
+
+```text
+ZohoWorkdrive_Create_Folder
+ZohoWorkdrive_Upload_File
+ZohoWorkdrive_Upload_Status
+ZohoWorkdrive_moveFileOrFolder
+ZohoWorkdrive_renameFileOrFolder
+```
+
+The server intentionally excludes copy, new-version upload, generic file update, trash, permanent deletion, external-share creation/update, Team Folder administration, and membership/role changes. Restrict its OAuth principal to the approved GH Real Estate intake and leasing Team Folder. Require explicit parent/resource IDs, collision policy, source/resource operation key, expected destination, and Audit readback for every write.
 
 ## `gh_zoho_books_accounting_audit`
 
@@ -409,16 +515,16 @@ The current write selection nevertheless contains actions with deletion-like acc
 ## Required Operating Controls
 
 1. Apply the exact 166/17/53/27 target selections in [`books-accountant-controls.md`](books-accountant-controls.md) before production accounting.
-2. Use `gh_zoho_books_accounting_audit` for current-state inspection and post-change verification.
-3. Treat organization/current-user reads as detective checks only. Bind a narrow coded write layer to the expected GH organization and data center, and reject mismatched organization parameters.
+2. Use `gh_zoho_books_accounting_audit`, `gh_zoho_catalyst_webhook_audit`, `gh_zoho_crm_audit`, and `gh_zoho_workdrive_audit` for system/configuration current-state inspection and supported readback. CRM record-level post-write verification must use `gh_zoho_crm_changes` → `ZohoCRM_getRecord`; CRM Audit has metadata tools only.
+3. Treat organization/current-user/project/team reads as detective checks only. Bind each write path to the expected organization, data center, project/environment, and Team Folder; reject mismatched caller-supplied targets.
 4. Require an immutable short-lived plan, single-use approval, stale-state reread, idempotency key, durable write ledger, returned-ID persistence, ambiguous-timeout readback, and post-write reconciliation.
-5. Keep all native writes supervised until those coded controls exist. Keep Controller and Configuration Admin unavailable by default.
-6. Keep journal approval, journal publication, and transaction-lock mutation outside MCP.
-7. Never approve a broad query, bulk action, or write without an explicit entity, period, account, criteria, field set, expected count, and readback plan.
+5. Keep all native writes supervised until the documented controls exist. Keep Books Controller/Configuration Admin and Catalyst Breakglass unavailable by default.
+6. Keep journal approval, journal publication, transaction-lock mutation, public WorkDrive sharing, WorkDrive deletion, and unrestricted Catalyst function invocation outside routine MCP operation.
+7. Never approve a broad query, bulk action, or write without an explicit entity/resource, period where applicable, criteria, field set, expected count, and readback plan.
 8. Do not treat bank-feed exclusion as archival or as a substitute for correcting the general ledger.
-9. Verify the organization and OAuth identity again after any MCP URL, authentication, Zoho account, or server configuration change.
-10. Review Zoho's MCP execution log and durable write ledger after production writes.
-11. Keep MCP URLs, authentication material, organization IDs, raw financial responses, and source documents out of GitHub.
+9. Verify the organization, OAuth identity, project/environment, WorkDrive user/team/Team Folder, and effective grants after any MCP URL, authentication, account, role, or server-configuration change.
+10. Review Zoho's MCP execution logs and the workflow's durable write ledger after production writes.
+11. Keep MCP URLs, authentication material, organization/project/team/resource IDs, raw financial or tenant responses, private documents, and source evidence out of GitHub.
 
 ## Change-Control Boundary
 

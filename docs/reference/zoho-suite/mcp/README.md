@@ -22,13 +22,20 @@ The authenticated Zoho MCP portal evidence supplied for this review catalogs 19 
 
 Those templates are not the same thing as Zoho CRM's separate product-specific set of four pre-built MCP servers.
 
-GH Real Estate currently has five configured Zoho server entries with 300 per-server tool memberships:
+GH Real Estate currently has ten configured Zoho server entries with 352 per-server tool memberships:
 
 - `gh_zoho_crm_audit` — 18 CRM configuration metadata reads.
 - `gh_zoho_crm_changes` — 27 mixed CRM organization, configuration-write, record-read, and record-write tools.
 - `gh_zoho_books_accounting_audit` — 166 Books reads and reports.
 - `gh_zoho_books_bookkeeping_changes` — 31 routine and high-risk Books writes pending separation.
 - `gh_zoho_books_controller` — 58 high-risk accounting and structural configuration writes.
+- `gh_zoho_catalyst_webhook_audit` — 15 Catalyst project, function, route, deployment, log, pipeline, and configuration reads.
+- `gh_zoho_catalyst_webhook_breakglass` — 5 emergency Catalyst route, environment-variable, and pipeline configuration writes.
+- `gh_zoho_catalyst_webhook_release` — 7 approval-gated function, pipeline, deployment, rollback, test, and build actions.
+- `gh_zoho_workdrive_audit` — 20 WorkDrive identity, Team Folder, file, version, permission, preview, and download reads.
+- `gh_zoho_workdrive_changes` — 5 WorkDrive folder, upload, move, and rename writes.
+
+The 352 memberships contain 351 distinct advertised names because `ZohoCRM_getOrganization` is selected in both CRM servers.
 
 The exact sanitized current state is recorded in [`configured-servers.md`](configured-servers.md).
 
@@ -38,6 +45,7 @@ The exact sanitized current state is recorded in [`configured-servers.md`](confi
 |---|---|
 | [`configured-servers.md`](configured-servers.md) | Current GH server identifiers, OAuth status, exact Codex-advertised tools, target-verification status, risks, and operating controls |
 | [`books-accountant-controls.md`](books-accountant-controls.md) | Books accountant architecture, missing-tool review, correction policy, configuration split, acceptance gates, and no-delete decision |
+| [`document-intake-controls.md`](document-intake-controls.md) | WorkDrive/CRM/Catalyst document-intake coverage, missing OCR/event capabilities, conditional tools, safety boundaries, and acceptance tests |
 | [`preconfigured-servers.md`](preconfigured-servers.md) | Verified portal template names, descriptions, exact tool memberships, risk review, and evidence gaps |
 | [`tool-inventory.md`](tool-inventory.md) | Searchable inventory of all 10,533 exact tool names grouped across 59 services |
 | [`recommended-first-server.md`](recommended-first-server.md) | Implemented rollout decision, current boundaries, exclusions, controls, and stop criteria |
@@ -48,16 +56,18 @@ The exact sanitized current state is recorded in [`configured-servers.md`](confi
 
 The redacted Codex MCP inventories supplied on July 24 and July 25, 2026 confirm:
 
-- The five exact server identifiers listed above.
+- The ten exact server identifiers listed above.
 - OAuth authentication displayed for each server.
-- All 300 per-server tool memberships using the exact names advertised to Codex.
-- The `ZohoCRM_` and `ZohoBooks_` prefixes used by Codex.
+- All 352 per-server tool memberships using the exact names advertised to Codex.
+- The `ZohoCRM_`, `ZohoBooks_`, `CatalystbyZoho_`, and `ZohoWorkdrive_` prefixes used by Codex.
 
 Separate acceptance checks confirmed the GH Real Estate production organization for both CRM servers. The supplied evidence does not confirm the target Books organization for any of the three current Books servers, so all three remain acceptance-pending.
 
 The Audit server's module call succeeded but was transport-truncated, and its advertised field projection returned `PATTERN_NOT_MATCHED`. The reported module pairs are confirmed, but completeness is not certified. The Changes server acceptance test confirmed only its target; it did not test a mutation.
 
 The CRM Changes server is not configuration-only. It contains the original organization/configuration set plus seven production-record reads and four production-record writes. The repository records that expanded boundary explicitly.
+
+The supplied evidence also does not confirm the Catalyst organization, project, environment, function targets, or effective grants; the WorkDrive user, team, Team Folder, or effective grants; successful file-binary handoff; or any Catalyst/WorkDrive write. Those five servers remain acceptance-pending.
 
 ### Official Tool Catalog
 
@@ -80,7 +90,7 @@ Exact tool membership is captured for all 18 CRM, Books, Payments, and Mail temp
 - 1 Zoho Payments template.
 - 3 Zoho Mail templates.
 
-The WorkDrive template's name and description are captured, but its exact tool membership remains `Not Verified`.
+The WorkDrive template's name and description are captured, but its exact template membership remains `Not Verified`. The separately captured custom WorkDrive Audit and Changes selections do not prove the preconfigured template's composition.
 
 `CRM Data & Metadata Operations` displays 16 tool chips representing 15 unique names because `getModuleByApiName` appears twice. The repository preserves that observation without treating it as a second capability.
 
@@ -112,6 +122,8 @@ A custom server created in the Zoho MCP console is still hosted and authenticate
 ### Coded MCP Server
 
 A coded MCP server is custom software that wraps APIs with additional validation, business rules, idempotency, approval gates, and audit behavior. The current native servers are adequate for supervised, individually approved calls after acceptance. Professional-grade automated Books posting requires a narrow coded write layer to bind the organization, enforce immutable plans and allowed payloads, prevent stale/duplicate writes, persist returned IDs in a durable ledger, and resolve ambiguous timeouts. A narrow evidence wrapper is also justified if required bill, expense, receipt, or journal documents remain unavailable through native MCP.
+
+The current WorkDrive, CRM, and Catalyst selections cover supervised document discovery, filing, record matching, single-record updates, link storage, and controlled function invocation. They do not provide deterministic full-PDF/OCR extraction, hashing, malware scanning, or an automatic event scheduler. The catalog does contain conditional Catalyst cron/job-pool tools, but the current servers do not select them. Treat OCR and document validation as a narrow processor gap and scheduling as an explicit design/selection decision rather than adding broad WorkDrive or CRM authority; see [`document-intake-controls.md`](document-intake-controls.md).
 
 ## Current Product Gaps
 
