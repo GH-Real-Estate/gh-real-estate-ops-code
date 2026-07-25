@@ -21,6 +21,8 @@ field-maps/
     protected-module-policy.json
     ... sanitized checksum-controlled production baselines
   zillow-to-crm-to-contracts.md
+dashboards/
+  gh-real-estate-operations-dashboard.md
 integrations/
   zillow-lead-intake/
   zillow-listing-publish/
@@ -49,6 +51,8 @@ Before ChatGPT, Codex, or an implementer creates, revises, maps, or automates a 
 6. [`field-maps/protected-modules/README.md`](field-maps/protected-modules/README.md) and its policy before any broad reconciliation
 7. [`../../docs/runbooks/zoho-crm-lease-system-reconciliation.md`](../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) for the July 24, 2026 production Lease-system configuration boundary and readback
 8. [`../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md`](../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md) for the whole-CRM production inventory, verified 83-field/global-picklist/layout readback, protected boundaries, integration gates, and rollback
+9. [`../../docs/runbooks/zoho-crm-second-pass-reconciliation-2026-07-25.md`](../../docs/runbooks/zoho-crm-second-pass-reconciliation-2026-07-25.md) for the second-pass pipeline/lifecycle decisions, count-field readback, and reversible layout retirement
+10. [`dashboards/gh-real-estate-operations-dashboard.md`](dashboards/gh-real-estate-operations-dashboard.md) for the governed operations-dashboard specification and accounting-source boundary
 
 The per-module CSV catalog separates actual verified API names from workbook proposals, runtime defaults, legacy candidates, superseded aliases, and fields prohibited by the current design.
 
@@ -92,12 +96,45 @@ rejection, or truncated response instead of inferring a schema.
 - `Zillow Intake Events` is an optional disabled-by-default runtime candidate; its live module/API existence must be verified before use.
 - Inspections, Notices, and Lease Documents / Addenda require live metadata before a custom module API name is claimed.
 
+## July 25 second-pass summary
+
+- Rental Applications has one reviewed six-stage pipeline target, in this exact
+  order: Application Received; Screening In Progress; Decision Pending;
+  Approved - Lease Pending; Lease Created; Closed - Not Proceeding. The first
+  four are open, Lease Created is closed won, and Closed - Not Proceeding is
+  closed lost. No live pipeline or Stage write is claimed because the current
+  MCP surface has no pipeline CRUD and cannot safely repair the stale
+  display-to-actual mappings.
+- Leases does not need a separate pipeline. Use verified field API
+  `Lease_Status` for the lease lifecycle, with Blueprint transitions and a
+  Lease Status Kanban view as future targets after supported administration and
+  readback are available. No Blueprint or Kanban deployment is claimed.
+- Rental Applications now has verified Integer fields `Requested_Pet_Count`
+  and `Requested_Storage_Unit_Count` in Application Intake. Active layout rules
+  conditionally show and require the applicable count when pets or storage are
+  requested.
+- Contacts Standard layout retirement is reversible: `Name1`, `F_Name`,
+  `L_Name`, `Parent_Property`, `Account_Type`, `Current_Lease`, and
+  `Current_Unit` were removed from the active layout only. Properties
+  (`Accounts`) similarly retired `Parent_Account` from its Standard layout.
+  Every field remains live; no field, record, or value was deleted.
+- [`dashboards/gh-real-estate-operations-dashboard.md`](dashboards/gh-real-estate-operations-dashboard.md)
+  is a design specification, not evidence of a live dashboard. Zoho Books is
+  the source of truth for actual income and accounting results; CRM Deals and
+  Leases supply operational pipeline and lease snapshots only.
+- The approved MCP surface has no pipeline, CRM dashboard/component, Zoho
+  Contracts, or reusable custom-function CRUD. Those targets remain
+  documentation/manual-deployment boundaries and must not be represented as
+  completed live administration.
+
 ## Lease-system deployment boundary
 
 The production CRM configuration and the manual Zoho Contracts remainder are intentionally separate:
 
 - [`zoho-crm-production-reconciliation-2026-07-24.md`](../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md) records the broader MCP-only production module audit, verified 83-field/global-picklist/layout changes, protected-module boundary, cross-system gates, and rollback/readback controls.
 - [`zoho-crm-lease-system-reconciliation.md`](../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) records the sanitized production CRM fields, actual read-back API names, layout/choice results, blocked items, and rollback.
+- [`zoho-crm-second-pass-reconciliation-2026-07-25.md`](../../docs/runbooks/zoho-crm-second-pass-reconciliation-2026-07-25.md) records the second-pass target decisions and exact metadata-only verification boundary.
+- [`gh-real-estate-operations-dashboard.md`](dashboards/gh-real-estate-operations-dashboard.md) specifies the recommended dashboard without claiming live CRM component creation.
 - [`crm-leases-extension-manual-deployment.md`](../zoho-contracts/runbooks/crm-leases-extension-manual-deployment.md) covers the unsupported manual Contracts extension, button, related-list, counterparty, mapping, and signer-routing steps.
 - The approved Application-to-Lease automation remains unsupported by the current MCP surface. Do not substitute one-time record creation for a durable, idempotent automation.
 - The Residential Lease Agreement remains Draft only, unpublished, execution-blocked, attorney-review-required, and unsent with all 29 production gates open.

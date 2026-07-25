@@ -51,6 +51,11 @@ KNOWN_SOURCE_IDS = {
     "MATRIX_2026-07-08",
     "SETUP_SPEC",
     "LIVE_CRM_MCP_2026-07-24",
+    "LIVE_CRM_MCP_2026-07-25",
+}
+LIVE_MCP_SOURCE_IDS = {
+    "LIVE_CRM_MCP_2026-07-24",
+    "LIVE_CRM_MCP_2026-07-25",
 }
 REQUIRED_COLUMNS = {
     "module_display_label",
@@ -72,14 +77,15 @@ REQUIRED_COLUMNS = {
     "notes",
     "source_ids",
 }
-GOVERNED_LIVE_SNAPSHOT_COUNT = 170
+GOVERNED_LIVE_SNAPSHOT_COUNT = 178
 GOVERNED_LIVE_SNAPSHOT_SHA256 = (
-    "424611f83aaaa0fc7935024f583740f20dfb9abf1beb0ce2a55c254b87f80bf7"
+    "1b9d4876ab14d069aac5894b894f7beb1614582850caf90caf110cf39be5a60a"
 )
 
-# Immutable production readback captured on 2026-07-24. These entries are
-# intentionally explicit: plausible API-name edits must not silently rewrite
-# the repository's record of fields already created or reused in live CRM.
+# Immutable production readbacks captured on 2026-07-24 and 2026-07-25. These
+# entries are intentionally explicit: plausible API-name edits must not
+# silently rewrite the repository's record of fields already created, reused,
+# or reconciled in live CRM.
 DEALS_CREATED_LIVE_MANIFEST = (
     ("Co-Applicant 1", "Co_Applicant_1", "Rental Application Information"),
     ("Co-Applicant 2", "Co_Applicant_2", "Rental Application Information"),
@@ -264,8 +270,8 @@ CONTACTS_RECONCILED_LIVE_MANIFEST = (
         "Communication & Consent",
     ),
     ("Primary Language", "Primary_Language", "Communication & Consent"),
-    ("Current Lease", "Current_Lease", "Current Tenancy"),
-    ("Current Unit", "Current_Unit", "Current Tenancy"),
+    ("Current Lease", "Current_Lease", "Removed from Active Layout"),
+    ("Current Unit", "Current_Unit", "Removed from Active Layout"),
     (
         "Portal Invite Sent At",
         "Portal_Invite_Sent_At",
@@ -282,6 +288,13 @@ CONTACTS_RECONCILED_LIVE_MANIFEST = (
         "Portal & Integrations",
     ),
 )
+CONTACTS_SECOND_PASS_LIVE_MANIFEST = (
+    ("Name", "Name1", "Removed from Active Layout"),
+    ("F. Name", "F_Name", "Removed from Active Layout"),
+    ("L. Name", "L_Name", "Removed from Active Layout"),
+    ("Parent Property", "Parent_Property", "Removed from Active Layout"),
+    ("Property Type", "Account_Type", "Removed from Active Layout"),
+)
 PROPERTIES_RECONCILED_LIVE_MANIFEST = (
     (
         "Owner / Landlord Legal Name",
@@ -290,12 +303,12 @@ PROPERTIES_RECONCILED_LIVE_MANIFEST = (
     ),
     ("Property Code", "Property_Code", "Property Identity & Status"),
     ("Property Status", "Property_Status", "Property Identity & Status"),
-    ("County", "County", "Address & Notice"),
-    ("Notice Email", "Notice_Email", "Address & Notice"),
+    ("County", "County", "Property Address & Legal Notice"),
+    ("Notice Email", "Notice_Email", "Property Address & Legal Notice"),
     (
         "Emergency Maintenance Phone",
         "Emergency_Maintenance_Phone",
-        "Management & Maintenance",
+        "Owner & Emergency Contact",
     ),
     (
         "Default Lease Template Version",
@@ -307,6 +320,9 @@ PROPERTIES_RECONCILED_LIVE_MANIFEST = (
         "WorkDrive_Property_Folder_URL",
         "Leasing & Integrations",
     ),
+)
+PROPERTIES_SECOND_PASS_LIVE_MANIFEST = (
+    ("Parent Property", "Parent_Account", "Removed from Active Layout"),
 )
 UNITS_RECONCILED_LIVE_MANIFEST = (
     ("Current Lease", "Current_Lease", "Occupancy & Current Tenancy"),
@@ -372,6 +388,14 @@ DEALS_RECONCILED_LIVE_MANIFEST = (
         "Zoho Creator Application ID",
         "Zoho_Creator_Application_ID",
         "Integrations",
+    ),
+)
+DEALS_SECOND_PASS_LIVE_MANIFEST = (
+    ("Requested Pet Count", "Requested_Pet_Count", "Application Intake"),
+    (
+        "Requested Storage Unit Count",
+        "Requested_Storage_Unit_Count",
+        "Application Intake",
     ),
 )
 CASES_RECONCILED_LIVE_MANIFEST = (
@@ -512,20 +536,36 @@ JULY_24_REUSED_LIVE_COUNT = (
     len(UNITS_REUSED_LIVE_MANIFEST)
     + len(INSPECTIONS_REUSED_LIVE_MANIFEST)
 )
+JULY_25_RECONCILIATION_CREATED_COUNT = len(DEALS_SECOND_PASS_LIVE_MANIFEST)
+JULY_25_RECONCILIATION_DISCOVERED_COUNT = (
+    len(CONTACTS_SECOND_PASS_LIVE_MANIFEST)
+    + len(PROPERTIES_SECOND_PASS_LIVE_MANIFEST)
+)
 
 GOVERNED_LIVE_MANIFEST = (
     (
         "Rental Applications",
         "Deals",
-        DEALS_CREATED_LIVE_MANIFEST + DEALS_RECONCILED_LIVE_MANIFEST,
+        DEALS_CREATED_LIVE_MANIFEST
+        + DEALS_RECONCILED_LIVE_MANIFEST
+        + DEALS_SECOND_PASS_LIVE_MANIFEST,
     ),
     (
         "Leases",
         "Leases",
         LEASE_PLACED_LIVE_MANIFEST + LEASE_ADDITIONAL_LIVE_MANIFEST,
     ),
-    ("Contacts", "Contacts", CONTACTS_RECONCILED_LIVE_MANIFEST),
-    ("Properties", "Accounts", PROPERTIES_RECONCILED_LIVE_MANIFEST),
+    (
+        "Contacts",
+        "Contacts",
+        CONTACTS_RECONCILED_LIVE_MANIFEST + CONTACTS_SECOND_PASS_LIVE_MANIFEST,
+    ),
+    (
+        "Properties",
+        "Accounts",
+        PROPERTIES_RECONCILED_LIVE_MANIFEST
+        + PROPERTIES_SECOND_PASS_LIVE_MANIFEST,
+    ),
     (
         "Units",
         "Units",
@@ -584,7 +624,12 @@ GOVERNED_LIVE_FIELD_TYPE_GROUPS = {
         "Pick List": ("Decision",),
         "Multi-Line": ("Nonstandard Terms Notes",),
         "User": ("Application Reviewer",),
-        "Number": ("Household Size", "Requested Lease Term Months"),
+        "Number": (
+            "Household Size",
+            "Requested Lease Term Months",
+            "Requested Pet Count",
+            "Requested Storage Unit Count",
+        ),
         "Single Line": ("Zoho Creator Application ID",),
     },
     "Leases": {
@@ -636,7 +681,12 @@ GOVERNED_LIVE_FIELD_TYPE_GROUPS = {
         "Single Line / Module Name": ("Lease Name",),
     },
     "Contacts": {
-        "Single Line": ("Preferred Name",),
+        "Single Line": (
+            "Preferred Name",
+            "Parent Property",
+            "Property Type",
+        ),
+        "Formula - Text": ("Name", "F. Name", "L. Name"),
         "Checkbox": (
             "Email Operational Consent?",
             "SMS Operational Consent?",
@@ -657,6 +707,7 @@ GOVERNED_LIVE_FIELD_TYPE_GROUPS = {
         "Email": ("Notice Email",),
         "Phone": ("Emergency Maintenance Phone",),
         "URL": ("WorkDrive Property Folder URL",),
+        "Standard Lookup - Accounts": ("Parent Property",),
     },
     "Units": {
         "Lookup": ("Current Lease", "Current Tenant"),
@@ -1251,17 +1302,17 @@ def validate_governed_live_snapshot(
     rows_with_paths: list[tuple[Path, dict[str, str]]],
     errors: list[str],
 ) -> None:
-    """Fail on any drift in the complete sanitized 2026-07-24 live snapshot."""
+    """Fail on any drift in the complete sanitized governed live snapshot."""
 
     count, digest = governed_live_snapshot_digest(rows_with_paths)
     if count != GOVERNED_LIVE_SNAPSHOT_COUNT:
         errors.append(
-            "2026-07-24 governed live snapshot: expected "
+            "governed live snapshot: expected "
             f"{GOVERNED_LIVE_SNAPSHOT_COUNT} verified_live_mcp rows, found {count}"
         )
     if digest != GOVERNED_LIVE_SNAPSHOT_SHA256:
         errors.append(
-            "2026-07-24 governed live snapshot: canonical CSV facts drifted "
+            "governed live snapshot: canonical CSV facts drifted "
             f"(expected {GOVERNED_LIVE_SNAPSHOT_SHA256}, found {digest})"
         )
 
@@ -1270,7 +1321,7 @@ def validate_governed_live_manifest(
     rows_with_paths: list[tuple[Path, dict[str, str]]],
     errors: list[str],
 ) -> None:
-    """Protect the exact 2026-07-24 production field identities and placements."""
+    """Protect the exact governed production field identities and placements."""
 
     manifest_keys = {
         (module_label, field_label)
@@ -1280,7 +1331,7 @@ def validate_governed_live_manifest(
     if set(GOVERNED_LIVE_FIELD_TYPES) != manifest_keys:
         errors.append(
             "validator invariant: governed live field-type coverage does not "
-            "exactly match the 2026-07-24 manifest"
+            "exactly match the governed manifest"
         )
     lookup_keys = {
         key
@@ -1301,22 +1352,22 @@ def validate_governed_live_manifest(
     if set(GOVERNED_LIVE_CHOICES) != choice_keys:
         errors.append(
             "validator invariant: governed live choice coverage does not exactly "
-            "match the 2026-07-24 choice fields"
+            "match the governed choice fields"
         )
     if set(GOVERNED_LIVE_CHOICE_SCOPES) != choice_keys:
         errors.append(
             "validator invariant: governed live choice-scope coverage does not "
-            "exactly match the 2026-07-24 choice fields"
+            "exactly match the governed choice fields"
         )
     if not set(GOVERNED_LIVE_SENTINEL_READBACK).issubset(choice_keys):
         errors.append(
             "validator invariant: governed live sentinel evidence references "
-            "a field outside the 2026-07-24 choice manifest"
+            "a field outside the governed choice manifest"
         )
     if not set(GOVERNED_POLICY_NOTE_REQUIREMENTS).issubset(manifest_keys):
         errors.append(
             "validator invariant: governed policy-note evidence references "
-            "a field outside the 2026-07-24 live manifest"
+            "a field outside the governed live manifest"
         )
 
     rows_by_field: dict[
@@ -1334,7 +1385,7 @@ def validate_governed_live_manifest(
             key = (module_label.casefold(), field_label.casefold())
             matches = rows_by_field.get(key, [])
             manifest_path = (
-                f"2026-07-24 live manifest: {module_label}.{field_label}"
+                f"governed live manifest: {module_label}.{field_label}"
             )
             if not matches:
                 errors.append(f"{manifest_path}: required catalog row is missing")
@@ -1372,10 +1423,10 @@ def validate_governed_live_manifest(
                 for item in row["source_ids"].split(",")
                 if item.strip()
             }
-            if "LIVE_CRM_MCP_2026-07-24" not in source_ids:
+            if source_ids.isdisjoint(LIVE_MCP_SOURCE_IDS):
                 errors.append(
                     f"{csv_path.name}: {manifest_path}.source_ids: "
-                    "expected LIVE_CRM_MCP_2026-07-24"
+                    "expected a governed LIVE_CRM_MCP evidence source"
                 )
 
             lookup_target = GOVERNED_LIVE_LOOKUP_TARGETS.get(
@@ -1626,11 +1677,11 @@ def validate_rows(rows_with_paths: list[tuple[Path, dict[str, str]]]) -> list[st
             errors.append(f"{path}: verified field status requires api_name")
         if (
             api_status == "verified_live_mcp"
-            and "LIVE_CRM_MCP_2026-07-24" not in source_ids
+            and not LIVE_MCP_SOURCE_IDS.intersection(source_ids)
         ):
             errors.append(
                 f"{path}: verified_live_mcp requires "
-                "LIVE_CRM_MCP_2026-07-24 in source_ids"
+                "a governed LIVE_CRM_MCP source ID"
             )
         if api_status == "proposed_unverified" and not proposed_api_name:
             errors.append(f"{path}: proposed_unverified requires proposed_api_name")
