@@ -1,8 +1,10 @@
 # GH Real Estate Zoho CRM Module and Field Authoring Standard
 
 **Standard ID:** GH-ZOHO-CRM-001  
-**Version:** 1.0  
-**Effective date:** July 16, 2026  
+**Version:** 1.1
+
+**Effective date:** July 24, 2026
+
 **Scope:** ChatGPT, Codex, repository contributors, and implementation agents discussing, designing, creating, revising, mapping, or automating GH Real Estate Zoho CRM modules and fields  
 **Governed field registry:** [`../field-maps/crm-module-field-catalog.md`](../field-maps/crm-module-field-catalog.md) and [`../field-maps/crm-module-fields/`](../field-maps/crm-module-fields/)
 
@@ -28,6 +30,10 @@ Use this order:
 
 A record export proves that a field label appeared in exported records. It does not prove the API name or field type.
 
+Use `verified_live_mcp` only when the approved production metadata connector returned the module or field and post-write readback confirmed the governed result. Every field row with that status must cite `LIVE_CRM_MCP_2026-07-24`; a proposed API name or repository convention is not enough.
+
+For the July 24 created-field reconciliation, CSV `help_text` preserves the authoritative live readback. The creation tool normalized some supplied wording, so live-readback text must not be described as a verbatim copy of the original request. Any wording remediation requires a supported tooltip update followed by another readback.
+
 ## 3. Mandatory module format
 
 Whenever a module is being created, renamed, mapped, or automated, state:
@@ -47,7 +53,7 @@ Required prose format:
 ```text
 Properties — Standard module renamed from Accounts — API name `Accounts`
 Units — Custom module — API name `Units`
-Leases — Custom module — API name `TBD_FROM_ZOHO_METADATA`
+Leases — Custom module — API name `Leases` — `verified_live_mcp`
 ```
 
 Do not assume a custom module's display label is its API name.
@@ -77,6 +83,8 @@ Every field specification must include:
 | Picklist definition | Required for every picklist, multi-select, stage, radio, or other choice field |
 
 The help-text requirement applies when field creation or revision is in scope. Do not force help text into unrelated architecture answers.
+
+For a live-reconciled catalog row, `required` records the actual live metadata state. Put an unenforced conditional business requirement in help text or notes; do not mark the row required merely because the process should require it. The July 24 production-created Rental Application and Lease fields read back as optional because the approved tool could not configure and verify conditional requiredness.
 
 ## 5. Help text standard
 
@@ -173,6 +181,8 @@ For every picklist, multi-select picklist, standard Stage, radio-style choice, o
 8. A six-digit hex color for every value.
 9. The reason for the color when the meaning is not obvious.
 
+Do not invent a color when live metadata returns `colour_code: null`. A live-readback row may use `Label=UNCOLORED` with scope `module_local_live_uncolored` or `standard_module_live_uncolored`; this representation is allowed only with `verified_live_mcp`. Proposed choice fields still require a six-digit hex color for every value.
+
 ### 8.1 GH semantic palette
 
 | Meaning | Color | Hex |
@@ -218,7 +228,7 @@ Preserve this model unless a documented architecture decision changes it:
 | Contacts | Standard `Contacts` | People and relationship records |
 | Rental Applications | Deals renamed; API `Deals` | Application and approval pipeline |
 | Units | Custom; verified API `Units` | Unit-level records |
-| Leases | Custom; API TBD | Approved/executed lease record |
+| Leases | Custom; verified API `Leases` | Approved/executed lease record |
 | Maintenance Requests | Cases renamed; API `Cases` | Maintenance workflow |
 | Inspections | Custom; API TBD | Inspection/checklist records |
 | Notices | Custom; API TBD | Notice tracking |

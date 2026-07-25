@@ -2,7 +2,8 @@
 """Validate and render the canonical Zoho Contracts field registry.
 
 The registry contains public field definitions only. It intentionally excludes
-live values and leaves API names unverified until tenant metadata is fetched.
+live values, keeps Contracts API names unverified, and permits CRM API names
+only where the governed production metadata readback explicitly verifies them.
 """
 
 from __future__ import annotations
@@ -83,7 +84,7 @@ EXPECTED_SYSTEM_LABELS = [
     "Contract Amount",
 ]
 
-EXPECTED_CUSTOM_LABELS = [
+BASELINE_CUSTOM_LABELS = [
     "Lease Number",
     "Property Street Line 1",
     "Property City",
@@ -103,6 +104,101 @@ EXPECTED_CUSTOM_LABELS = [
     "Party D Contact Email Address",
     "Lease Agreement Effective Date",
     "Property Apartment Number",
+]
+
+REQUESTED_DESTINATION_TYPES = {
+    "Base Rent Amount": "Currency",
+    "Security Deposit Amount": "Currency",
+    "Total Monthly Pet Rent Amount": "Currency",
+    "Base Storage Unit Rent Amount": "Currency",
+    "Total Storage Unit Rent Amount": "Currency",
+    "Total Monthly Rent Amount": "Currency",
+    "Next Total Monthly Rent Due Date": "Date",
+    "Prorated Rent Start Date": "Date",
+    "Prorated Rent End Date": "Date",
+    "Prorated Base Rent Amount": "Currency",
+    "Pet Security Deposit Amount": "Currency",
+    "Prorated Pet Rent Amount": "Currency",
+    "Prorated Storage Unit Rent Amount": "Currency",
+    "Holding Deposit Amount": "Currency",
+    "Total Due Before Possession": "Currency",
+}
+
+VERIFIED_CRM_API_CROSSWALK = {
+    "Agreement Name": "Name",
+    "Agreement Date": "Agreement_Date",
+    "Lease Agreement Effective Date": "Lease_Start_Date",
+    "Term End Date": "Lease_End_Date",
+    "Property Street Line 1": "Premises_Street_Line_1",
+    "Property Apartment Number": "Premises_Apartment_Number",
+    "Property City": "Premises_City",
+    "Property State": "Premises_State",
+    "Property Zip Code": "Premises_ZIP_Code",
+    "Party C Contact Name": "Tenant_2_Legal_Name_Snapshot",
+    "Party D Contact Name": "Tenant_3_Legal_Name_Snapshot",
+    "Security Deposit Amount": "Security_Deposit",
+    "Total Monthly Pet Rent Amount": "Total_Monthly_Pet_Rent_Amount",
+    "Base Storage Unit Rent Amount": "Base_Storage_Unit_Rent_Amount",
+    "Total Storage Unit Rent Amount": "Total_Monthly_Storage_Rent_Amount",
+    "Next Total Monthly Rent Due Date": "Next_Total_Monthly_Rent_Due_Date",
+    "Prorated Rent Start Date": "Prorated_Rent_Start_Date",
+    "Prorated Rent End Date": "Prorated_Rent_End_Date",
+    "Pet Security Deposit Amount": "Pet_Security_Deposit_Amount",
+    "Prorated Pet Rent Amount": "Prorated_Pet_Rent_Amount",
+    "Prorated Storage Unit Rent Amount": "Prorated_Storage_Unit_Rent_Amount",
+    "Holding Deposit Amount": "Holding_Deposit_Credit_Applied",
+    "Total Due Before Possession": "Total_Due_Before_Possession",
+}
+
+CRM_FIELDS_WITH_UNDEFINED_SEMANTICS = {
+    "Base Rent Amount",
+    "Total Monthly Rent Amount",
+    "Prorated Base Rent Amount",
+}
+
+EXPECTED_CUSTOM_LABELS = BASELINE_CUSTOM_LABELS + list(
+    REQUESTED_DESTINATION_TYPES
+)
+
+LABEL_EVIDENCE_ID = "user-confirmed-live-labels-2026-07-24"
+USER_CONFIRMED_LIVE_LABELS = [
+    "Base Rent Amount",
+    "Security Deposit Amount",
+    "Total Monthly Pet Rent Amount",
+    "Base Storage Unit Rent Amount",
+    "Total Storage Unit Rent Amount",
+    "Total Monthly Rent Amount",
+    "Next Total Monthly Rent Due Date",
+    "Prorated Rent Start Date",
+    "Prorated Rent End Date",
+    "Prorated Base Rent Amount",
+    "Pet Security Deposit Amount",
+    "Prorated Pet Rent Amount",
+    "Prorated Storage Unit Rent Amount",
+    "Holding Deposit Amount",
+    "Total Due Before Possession",
+    "Agreement Effective Date",
+    "Lease Agreement Effective Date",
+    "Term End Date",
+    "Property Street Line 1",
+    "Property Apartment Number",
+    "Property City",
+    "Property State",
+    "Property Zip Code",
+    "Party C Contact Name",
+    "Party D Contact Name",
+    "Party A",
+    "Party A Name",
+    "Party A Jurisdiction",
+    "Party A Address",
+    "Party A Contact Name",
+    "Party A Contact Phone Number",
+    "Party A Contact Email Address",
+    "Party B",
+    "Party B Name",
+    "Party B Jurisdiction",
+    "Party B Address",
+    "Party B Contact Name",
 ]
 
 ALLOWED_NATIVE_TYPES = {
@@ -158,7 +254,7 @@ ALLOWED_CRM_API_STATUSES = {
     "design_required",
     "do_not_create",
     "do_not_create_until_defined",
-    "tenant_api_verified",
+    "verified_live_mcp",
 }
 ALLOWED_SENSITIVITIES = {
     "internal_contract",
@@ -175,6 +271,7 @@ TOP_LEVEL_KEYS = {
     "record_counts",
     "allowed_custom_types",
     "official_sources",
+    "label_evidence",
     "policies",
     "fields",
 }
@@ -509,6 +606,34 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
             if not isinstance(policy, str) or not policy.strip():
                 problems.append(f"policy {policy_id!r} must be a non-empty string")
 
+    label_evidence = registry.get("label_evidence")
+    if not isinstance(label_evidence, list):
+        problems.append("label_evidence must be an array")
+        label_evidence = []
+    elif len(label_evidence) != 1:
+        problems.append(
+            "label_evidence must contain exactly the governed 2026-07-24 snapshot"
+        )
+    if label_evidence:
+        evidence = label_evidence[0]
+        expected_metadata = {
+            "id": LABEL_EVIDENCE_ID,
+            "evidence_type": "user_confirmed_live_label",
+            "confirmed_on": "2026-07-24",
+            "scope": "label_only",
+            "api_name_status": "unverified",
+        }
+        for key, expected in expected_metadata.items():
+            if evidence.get(key) != expected:
+                problems.append(
+                    f"label_evidence[0].{key} must be {expected!r}"
+                )
+        if evidence.get("labels") != USER_CONFIRMED_LIVE_LABELS:
+            problems.append(
+                "label_evidence[0].labels must exactly match the governed "
+                f"{len(USER_CONFIRMED_LIVE_LABELS)}-label inventory"
+            )
+
     ids = [str(field.get("id", "")) for field in fields if isinstance(field, dict)]
     labels = [str(field.get("label", "")) for field in fields if isinstance(field, dict)]
     for duplicate in _duplicates(ids):
@@ -533,8 +658,6 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
             )
     if expected_counts.get("total") != len(fields):
         problems.append("record_counts.total does not match field inventory")
-    if len(fields) != 65 or actual_counts["system"] != 46 or actual_counts["custom"] != 19:
-        problems.append("submitted inventory must remain 46 system + 19 custom = 65")
 
     system_labels = [
         field["label"]
@@ -691,10 +814,10 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
                 r"[A-Za-z][A-Za-z0-9_]*", str(proposed_name)
             ):
                 problems.append(f"{context}: proposed CRM API name is malformed")
-            if api_status == "tenant_api_verified":
+            if api_status == "verified_live_mcp":
                 if not isinstance(proposed_name, str) or not proposed_name:
                     problems.append(
-                        f"{context}: tenant-verified CRM API name must be non-empty"
+                        f"{context}: verified_live_mcp CRM API name must be non-empty"
                     )
             elif proposed_name is not None and api_status not in {
                 "proposed_unverified",
@@ -702,6 +825,18 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
             }:
                 problems.append(
                     f"{context}: CRM API name must be null for status {api_status}"
+                )
+            if (
+                classification == "system"
+                and isinstance(label, str)
+                and re.fullmatch(r"Party [AB](?: .+)?", label)
+                and (
+                    proposed_name is not None
+                    or api_status != "do_not_create"
+                )
+            ):
+                problems.append(
+                    f"{context}: native {label} must not have a CRM mirror proposal"
                 )
 
         canonical_id = field.get("canonical_id")
@@ -753,9 +888,102 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
         if ui_type == "Email" and field.get("portable_type") != "email":
             problems.append(f"{context}: Zoho Email must use portable email")
 
+    if label_evidence:
+        represented_labels = set(labels)
+        represented_labels.update(
+            alias
+            for field in fields
+            if isinstance(field, dict)
+            for alias in field.get("aliases", [])
+            if isinstance(alias, str)
+        )
+        missing_evidence_labels = [
+            label
+            for label in USER_CONFIRMED_LIVE_LABELS
+            if label not in represented_labels
+        ]
+        if missing_evidence_labels:
+            problems.append(
+                "user-confirmed live labels are not represented by a canonical "
+                "field or alias: " + ", ".join(missing_evidence_labels)
+            )
+
     by_id = {
         field.get("id"): field for field in fields if isinstance(field, dict)
     }
+    by_label = {
+        field.get("label"): field for field in fields if isinstance(field, dict)
+    }
+    for label, expected_type in REQUESTED_DESTINATION_TYPES.items():
+        field = by_label.get(label, {})
+        expected_portable_type = (
+            "currency" if expected_type == "Currency" else "date"
+        )
+        expected_crm_type = expected_type
+        if field.get("classification") != "custom":
+            problems.append(f"{label} must be a custom Contracts destination")
+        if field.get("zoho", {}).get("ui_type") != expected_type:
+            problems.append(
+                f"{label} must use the requested Zoho {expected_type} type"
+            )
+        if field.get("zoho", {}).get("expected_native_type") != expected_type:
+            problems.append(
+                f"{label} must retain expected native type {expected_type}"
+            )
+        if field.get("portable_type") != expected_portable_type:
+            problems.append(
+                f"{label} must use portable type {expected_portable_type}"
+            )
+        if field.get("zoho", {}).get("api_name") is not None:
+            problems.append(
+                f"{label} Contracts api_name must remain null until metadata verification"
+            )
+        if field.get("zoho", {}).get("type_status") != "design_decision":
+            problems.append(
+                f"{label} type must remain a design decision until metadata verification"
+            )
+        crm = field.get("crm", {})
+        if crm.get("recommended_type") != expected_crm_type:
+            problems.append(
+                f"{label} must use CRM design type {expected_crm_type}"
+            )
+        if (
+            label not in VERIFIED_CRM_API_CROSSWALK
+            and label not in CRM_FIELDS_WITH_UNDEFINED_SEMANTICS
+        ):
+            problems.append(f"{label} lacks an explicit CRM crosswalk decision")
+
+    for label, expected_api_name in VERIFIED_CRM_API_CROSSWALK.items():
+        crm = by_label.get(label, {}).get("crm", {})
+        if (
+            crm.get("proposed_api_name") != expected_api_name
+            or crm.get("api_name_status") != "verified_live_mcp"
+        ):
+            problems.append(
+                f"{label} must use verified_live_mcp CRM API name {expected_api_name}"
+            )
+
+    for label in CRM_FIELDS_WITH_UNDEFINED_SEMANTICS:
+        crm = by_label.get(label, {}).get("crm", {})
+        if (
+            crm.get("proposed_api_name") is not None
+            or crm.get("api_name_status") != "do_not_create_until_defined"
+        ):
+            problems.append(
+                f"{label} must remain unmapped until its CRM semantics are defined"
+            )
+
+    lease_number_crm = by_label.get("Lease Number", {}).get("crm", {})
+    if (
+        lease_number_crm.get("proposed_api_name") is not None
+        or lease_number_crm.get("api_name_status")
+        != "do_not_create_until_defined"
+    ):
+        problems.append(
+            "Lease Number must remain unmapped until an approved auto-number "
+            "prefix and format are defined"
+        )
+
     tenant_only = {
         "party_a_time_zone_name",
         "party_b_time_zone_name",
@@ -787,6 +1015,9 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
     lease_effective = by_id.get("lease_agreement_effective_date_custom", {})
     if lease_effective.get("canonical_id") != "agreement_effective_date":
         problems.append("Lease Agreement Effective Date must review against Agreement Date")
+    party_b_jurisdiction = by_id.get("party_b_jurisdiction", {})
+    if party_b_jurisdiction.get("status") != "review_required":
+        problems.append("Party B Jurisdiction must remain unresolved")
 
     return problems
 
@@ -800,8 +1031,8 @@ def _crm_display(field: dict[str, Any]) -> str:
     name = crm.get("proposed_api_name")
     if name:
         qualifier = (
-            "tenant-verified"
-            if crm["api_name_status"] == "tenant_api_verified"
+            "verified_live_mcp"
+            if crm["api_name_status"] == "verified_live_mcp"
             else "proposed"
         )
         return f"{crm['recommended_type']} / `{name}` ({qualifier})"
@@ -815,24 +1046,45 @@ def render_markdown(registry: dict[str, Any]) -> str:
     system_fields = [field for field in fields if field["classification"] == "system"]
     custom_fields = [field for field in fields if field["classification"] == "custom"]
     sources = registry["official_sources"]
+    label_evidence = registry["label_evidence"][0]
 
     lines = [
         "# Zoho Contracts Field Registry",
         "",
         "> **Status:** Sanitized technical source of truth for field definitions and cross-application mapping. It contains no contract values or tenant records and does not deploy fields to Zoho.",
         "",
-        f"**Registry:** `{registry['registry_id']}` v{registry['version']}  ",
-        f"**As of:** {registry['as_of_date']}  ",
-        f"**Inventory:** {len(system_fields)} system fields + {len(custom_fields)} custom fields = {len(fields)} total",
+        f"- **Registry:** `{registry['registry_id']}` v{registry['version']}",
+        f"- **As of:** {registry['as_of_date']}",
+        f"- **Inventory:** {len(system_fields)} system fields + {len(custom_fields)} custom fields = {len(fields)} total",
         "",
         "## Operating Rules",
         "",
         "- `contract-field-registry.json` is canonical; this Markdown file is generated and checked for drift.",
         "- Built-in system fields are platform-managed and are not forced into the custom-field type menu.",
-        "- A proposed CRM API name is a design target only. Fetch the actual Contracts `apiName` and CRM API name from authenticated metadata before integration.",
+        "- User-confirmed live labels are label-only evidence and cannot populate a Contracts `apiName`; authenticated metadata is required.",
+        "- CRM API names marked `verified_live_mcp` are bounded to the governed 2026-07-24 production metadata readback. Other names remain unverified design targets.",
+        "- `Base Rent Amount`, `Total Monthly Rent Amount`, and `Prorated Base Rent Amount` stay unmapped until their CRM semantics are explicitly defined.",
+        "- Native Party A fields come from Organization Info and native Party B fields from counterparty/contact configuration; do not create CRM Lease mirrors.",
         "- CRM owns approved pre-authoring party, property, unit, and lease inputs. Zoho Contracts owns lifecycle fields and the resolved agreement snapshot.",
         "- Prefer one-way CRM-to-Contracts authoring. Executed document values are immutable snapshots.",
         "- Never commit live names, addresses, phone numbers, emails, amounts, record IDs, tokens, or merged contracts.",
+        "",
+        "## Label-Only Tenant Evidence",
+        "",
+        f"- **Evidence:** `{label_evidence['id']}`",
+        f"- **Type:** `{label_evidence['evidence_type']}`",
+        f"- **Confirmed:** {label_evidence['confirmed_on']}",
+        f"- **Scope:** `{label_evidence['scope']}`",
+        f"- **Contracts API names:** `{label_evidence['api_name_status']}`",
+        f"- **Confirmed labels:** {len(label_evidence['labels'])}",
+        "",
+        "This evidence confirms display labels only. It does not verify Contracts API names, field IDs, data types, template publication, or deployability.",
+        "",
+    ]
+    for label in label_evidence["labels"]:
+        lines.append(f"- {label}")
+    lines.extend(
+        [
         "",
         "## Zoho Custom Field Types",
         "",
@@ -846,7 +1098,8 @@ def render_markdown(registry: dict[str, Any]) -> str:
         "",
         "| Field | Registry ID | Expected Zoho type | Portable / CRM design | Status | Validation / distinction |",
         "|---|---|---|---|---|---|",
-    ]
+        ]
+    )
     for field in system_fields:
         lines.append(
             "| "
@@ -903,14 +1156,14 @@ def render_markdown(registry: dict[str, Any]) -> str:
     lines.extend(
         [
             "- **Storage Term Starts:** deprecated alias of `storage_term_start_date`; do not create or independently populate it.",
-            "- **Party C/D:** add an explicit role field or use a Contract Party related record before relying on ordinal party labels.",
+            "- **Party C/D:** this workflow maps them only to the verified Tenant 2 and Tenant 3 legal-name snapshots; do not reuse the labels for arbitrary party roles.",
             "",
             "## Tenant Metadata Verification",
             "",
             "1. Call `GET /api/v1/admin/contracttypes/{contract-type-api-name}/allfields` with `contracts.meta.READ`.",
             "2. Match by returned stable `apiName`, not display text.",
             "3. Record `metaType` (`1` system, `3` custom), `dataType`, and `displayType`.",
-            "4. Query CRM fields with `GET /crm/v8/settings/fields?module=...` and replace proposed names only after exact module/layout verification.",
+            "4. Query CRM fields with `GET /crm/v8/settings/fields?module=...`; confirm every `verified_live_mcp` crosswalk name still exists in the exact module/layout before deployment.",
             "5. Run the registry validator and sanitized merge tests before activating any sync.",
             "",
             "Zoho Contracts `dataType` codes: `1` Boolean, `2` Number, `3` String, `4` Date, `5` Index, `6` Text, `7` Currency, `8` Term, `9` Percent, `10` Phone, `11` Email.",

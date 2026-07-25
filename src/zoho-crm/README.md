@@ -21,6 +21,8 @@ integrations/
 standards/
   crm-module-field-authoring-standard.md
   crm-field-type-catalog.md
+tests/
+  test_validate_crm_field_catalog.py
 tools/
   export-crm-metadata.py
   validate-crm-field-catalog.py
@@ -34,6 +36,7 @@ Before ChatGPT, Codex, or an implementer creates, revises, maps, or automates a 
 2. [`standards/crm-module-field-authoring-standard.md`](standards/crm-module-field-authoring-standard.md)
 3. [`standards/crm-field-type-catalog.md`](standards/crm-field-type-catalog.md)
 4. [`field-maps/crm-module-field-catalog.md`](field-maps/crm-module-field-catalog.md) and the per-module CSV files under [`field-maps/crm-module-fields/`](field-maps/crm-module-fields/)
+5. [`../../docs/runbooks/zoho-crm-lease-system-reconciliation.md`](../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) for the July 24, 2026 production Lease-system configuration boundary and readback
 
 The per-module CSV catalog separates actual verified API names from workbook proposals, runtime defaults, legacy candidates, superseded aliases, and fields prohibited by the current design.
 
@@ -56,9 +59,20 @@ The per-module CSV catalog separates actual verified API names from workbook pro
 - Rental Applications = Deals renamed; API name `Deals`.
 - Maintenance Requests = Cases renamed; API name `Cases`.
 - Units = custom module; verified API name `Units`.
+- Leases = custom module; live API name `Leases`, verified through production metadata readback on July 24, 2026.
 - Leads, Contacts, Vendors, and Tasks retain their standard API names.
 - `Zillow Intake Events` is an optional disabled-by-default runtime candidate; its live module/API existence must be verified before use.
-- Leases, Inspections, Notices, Equipment, and Lease Documents / Addenda require live metadata before a custom module API name is claimed.
+- Inspections, Notices, Equipment, and Lease Documents / Addenda require live metadata before a custom module API name is claimed.
+
+## Lease-system deployment boundary
+
+The production CRM configuration and the manual Zoho Contracts remainder are intentionally separate:
+
+- [`zoho-crm-lease-system-reconciliation.md`](../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) records the sanitized production CRM fields, actual read-back API names, layout/choice results, blocked items, and rollback.
+- [`crm-leases-extension-manual-deployment.md`](../zoho-contracts/runbooks/crm-leases-extension-manual-deployment.md) covers the unsupported manual Contracts extension, button, related-list, counterparty, mapping, and signer-routing steps.
+- The approved Application-to-Lease automation remains unsupported by the current MCP surface. Do not substitute one-time record creation for a durable, idempotent automation.
+- The Residential Lease Agreement remains Draft only, unpublished, execution-blocked, attorney-review-required, and unsent with all 29 production gates open.
+- A repository update is not proof that a live Zoho Contracts configuration was performed.
 
 ## Zillow lifecycle rules
 
@@ -99,6 +113,7 @@ python src/zoho-crm/tools/export-crm-metadata.py \
   --module Contacts \
   --module Deals \
   --module Units \
+  --module Leases \
   --module Cases
 ```
 
@@ -115,7 +130,7 @@ A repository catalog is not proof of live Zoho deployment. Update the catalog on
 
 ## Zoho Contracts field crosswalk
 
-Use `../zoho-contracts/field-maps/contract-field-registry.json` as the governed, machine-readable source for Contracts-to-CRM field planning. Its `proposed_crm` entries document portable CRM field types and proposed API names; they are not proof that those API names exist in the live CRM tenant.
+Use `../zoho-contracts/field-maps/contract-field-registry.json` as the governed, machine-readable source for Contracts-to-CRM field planning. Its CRM entries distinguish bounded `verified_live_mcp` sources from proposed, blocked, and prohibited mappings. A verified CRM source does not verify the corresponding Zoho Contracts destination API.
 
 Before creating or syncing Contracts-to-CRM fields:
 

@@ -12,6 +12,7 @@
     "record_counts",
     "allowed_custom_types",
     "official_sources",
+    "label_evidence",
     "policies",
     "fields"
   ],
@@ -52,6 +53,11 @@
       "minProperties": 1,
       "additionalProperties": {"type": "string", "minLength": 1}
     },
+    "label_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/labelEvidence"}
+    },
     "policies": {
       "type": "object",
       "minProperties": 1,
@@ -64,6 +70,47 @@
     }
   },
   "$defs": {
+    "labelEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "evidence_type",
+        "confirmed_on",
+        "scope",
+        "api_name_status",
+        "labels"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "evidence_type": {
+          "const": "user_confirmed_live_label"
+        },
+        "confirmed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "scope": {
+          "const": "label_only"
+        },
+        "api_name_status": {
+          "const": "unverified"
+        },
+        "labels": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          }
+        }
+      }
+    },
     "field": {
       "type": "object",
       "additionalProperties": false,
@@ -205,7 +252,7 @@
                 "design_required",
                 "do_not_create",
                 "do_not_create_until_defined",
-                "tenant_api_verified"
+                "verified_live_mcp"
               ]
             }
           }
@@ -277,7 +324,7 @@
             "properties": {
               "crm": {
                 "required": ["api_name_status"],
-                "properties": {"api_name_status": {"const": "tenant_api_verified"}}
+                "properties": {"api_name_status": {"const": "verified_live_mcp"}}
               }
             }
           },

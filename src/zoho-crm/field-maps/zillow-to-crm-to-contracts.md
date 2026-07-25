@@ -160,9 +160,76 @@ The public extension workflow is an intentional request action. It does not docu
 
 Do not create `Desired_Rent`, `Desired_Deposit`, `Manual_Review_Required`, or `Manual_Review_Reason` for Zillow intake.
 
+## Governed promotion architecture
+
+Promotion is a sequence of durable records, not one record changing meaning:
+
+```text
+Zillow Inquiry
+-> Lead (`Leads`)
+-> Contact (`Contacts`) + Rental Application (`Deals`)
+-> approved Rental Application
+-> separate Lease (`Leases`)
+-> Request Contract from Lease
+-> Zoho Contracts
+-> Zoho Sign
+-> signed status/PDF related back to Lease
+-> Books and portal activation as later workflows
+```
+
+| Stage | Record owner | Control |
+|---|---|---|
+| Raw inquiry | `Leads` | Zillow/Catalyst may create/update only the Lead. |
+| Qualified person | `Contacts` | Confirm identity and contact channels before conversion. |
+| Application and screening | Rental Applications, API `Deals` | Standard `Stage` plus the verified decision/approval fields own review. Sensitive evidence stays in approved Zoho systems. |
+| Approved contract inputs | Leases, API `Leases` | Create a separate Lease and freeze the approved relationships, dates, premises, charges, additional tenants, and controls. |
+| Drafting and lifecycle | Zoho Contracts | Request from the Lease only after every readiness/legal gate is satisfied. |
+| Signature evidence | Zoho Sign | Recipients are configured separately from Party C/D document fields. |
+| Accounting | Zoho Books | Invoices, payments, balances, deposits, and accounting truth are never derived from raw Zillow inquiry values. |
+| Tenant access | Tenant app/portal | Activate later under a separate approved onboarding workflow. |
+
+The approved Application-to-Lease automation is not deployed. No reusable workflow task was verified, and the current approved CRM tool surface cannot enumerate or create the durable custom function/button. Do not use a one-time record create as a substitute.
+
+## Approved Application to Lease crosswalk
+
+Only an approved Rental Application should supply a new Lease. The actual API names below were verified through production metadata/readback on July 24, 2026.
+
+| Rental Application source | API | Lease destination | API | Status/control |
+|---|---|---|---|---|
+| Contact Name (primary applicant) | `Contact_Name` | Tenant (primary-tenant role) | `Tenant` | Reuse standard/live lookups; live Lease label is `Tenant`, not Primary Tenant. |
+| Account Name (Property) | `Account_Name` | Property | `Property` | Reuse standard Deals relationship; target lookup is `Accounts`. |
+| Unit | `Unit` | Unit | `Unit` | Verified lookup to `Units`. |
+| Source Lead | `Source_Lead` | None | -- | Preserve application provenance; do not map to Contracts. |
+| Co-Applicant 1 | `Co_Applicant_1` | Tenant 2 | `Tenant_2` | Copy only when applicable; populate verified name/email snapshots before contract request. |
+| Co-Applicant 2 | `Co_Applicant_2` | Tenant 3 | `Tenant_3` | Copy only when applicable; populate verified name/email snapshots before contract request. |
+| Approved Security Deposit | `Approved_Security_Deposit` | Security Deposit | `Security_Deposit` | Approved Lease snapshot only; Books remains accounting truth. |
+| Approved Lease Commencement Date | `Approved_Lease_Commencement_Date` | Lease Start Date | `Lease_Start_Date` | Distinct from Lease `Agreement_Date`. |
+| Approved Lease Term End Date | `Approved_Lease_Term_End_Date` | Lease End Date | `Lease_End_Date` | Required for fixed terms. |
+| Approved Possession Date | `Approved_Possession_Date` | Move-In Date | `Move_In_Date` | Possession snapshot; not automatically a Contracts destination. |
+| Addenda Required | `Addenda_Required` | Addenda Required | `Addenda_Required` | Workflow/packet control; not itself legal-text automation. |
+| Nonstandard Terms? | `Nonstandard_Terms` | Nonstandard Terms? | `Nonstandard_Terms` | Requires review; do not request/send while unresolved. |
+| Nonstandard Terms Notes | `Nonstandard_Terms_Notes` | Nonstandard Terms Notes | `Nonstandard_Terms_Notes` | Copy only with authorized approved wording. |
+| Attorney Review Required? | `Attorney_Review_Required` | Attorney Review Required? | `Attorney_Review_Required` | A true value blocks contract use/sending. |
+| Approved base rent | Standard `Amount` was not approved for this meaning | Base/Total Monthly Rent | Existing `Monthly_Rent` is ambiguous | Blocked; the active Big Deal Rule depends on Amount/Probability. Reconcile before mapping. |
+
+The Lease must copy premises values into the verified `Premises_*` snapshot fields before a contract request. Related Property/Unit values are operational sources, but the generated agreement must not depend on later mutable address/unit changes.
+
+## Lease to Contracts handoff
+
+- Zoho Contracts extension setup is manual and not yet performed.
+- Use the verified Lease module API `Leases` and the live primary-tenant lookup label/API `Tenant`/`Tenant`.
+- Map Contacts Full Name (`Full_Name`) to Contracts Contact Name and Contacts Email (`Email`) to Contracts Contact Email Address.
+- Party B Address is the counterparty address, not the premises. Never map Premises State to Party B Jurisdiction; that meaning remains unresolved.
+- Party C/D Contact Name document fields do not create Tenant 2/Tenant 3 signer recipients.
+- Preserve GH process labels R1 Primary Tenant, R2 Tenant 2, R3 Tenant 3, and R4 GH landlord. Configure the actual Zoho signing order contiguously for signers present and keep GH last; optional tenants are later Add Signers, not conditional type-level defaults.
+- Do not guess the custom Request Contract button URL tokens.
+- Do not request a contract, publish the Residential Lease Agreement, or send a signature request while any production gate is open.
+
+Follow the exact [manual Leases extension runbook](../../zoho-contracts/runbooks/crm-leases-extension-manual-deployment.md). Production CRM readback and rollback evidence are in the [Lease-system reconciliation](../../../docs/runbooks/zoho-crm-lease-system-reconciliation.md).
+
 ## Promotion mapping
 
-The actual field API names must be verified against live CRM metadata before implementation.
+Use the production-verified APIs in the crosswalk above. Any additional Lead-conversion or promotion field still requires exact live CRM metadata verification before implementation.
 
 | Data | Lead to Contact | Lead/application to Rental Application | Approved Application to Lease |
 |---|---|---|---|
@@ -192,7 +259,7 @@ Before implementing the promotion or Lease actions:
 
 - audit live Lead conversion mappings, workflows, buttons, functions, and duplicate rules;
 - verify whether the apparent Rental Application Contact-conversion button exists and what it executes;
-- verify the live Deals, Contacts, Properties, Units, and Leases field API names and types;
+- verify every additional Deals, Contacts, Properties, Units, and Leases field API/type not covered by the governed July 24 production snapshot;
 - confirm required Lease creation lookups and snapshot fields;
 - test idempotency with sanitized records;
 - configure the Zoho Contracts custom-module extension and field mappings;

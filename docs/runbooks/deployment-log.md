@@ -2,6 +2,19 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-24 — Production CRM Lease-System Core Reconciled
+
+- System: Zoho CRM / GitHub
+- Repo branch / change: live configuration performed through the approved CRM connectors; sanitized repository reconciliation prepared on `agent/production-crm-lease-system`
+- Files changed: production metadata/configuration for Rental Applications (`Deals`) and Leases (`Leases`); sanitized CRM/Contracts catalogs, crosswalks, RLA gate reasons, manual handoff, changelog, and this log
+- Business rule changed? yes; the bounded production CRM schema, Lease layout, and Lease Status configuration now support a separate approved Lease record, but no record workflow or Contracts behavior was activated
+- Dry-run completed? not applicable; writes were metadata/configuration-only and were gated by current-state inspection
+- Smoke test completed? yes for configuration metadata; each created field and the final sections/placements/choices were read back. No record-data, contract-request, or signature smoke test was authorized or performed.
+- Deployed by: Codex through the user-authorized `gh_zoho_crm_changes` connector, with readback through `gh_zoho_crm_audit`
+- Result: 15 Rental Application fields and 33 Lease fields created/read back; seven Lease fields reused; eight Lease sections created; 40 Lease fields placed; Lease Status history enabled and target choices/colors added without removing legacy values. No CRM record or PII was read or modified.
+- Rollback plan: after dependency review, remove created fields from active layouts and retire rather than delete them; recover the seven reused fields' exact pre-change placements from an authorized Zoho audit/export before any section rollback because this sanitized repository does not retain that before-state; deactivate only newly added Lease Status values, restore `Ready For Contract` to `#168AEF` and `Renewal Pending` to `#F5C72F`, preserve legacy `Draft Lease Data` at `#AF38FA`, and restore prior history setting where safe; revert repository documentation separately
+- Notes: Deals Stage/Amount, ambiguous rent/proration fields, Lease Number, First Full Month Base Rent, required/default/readiness rules, exact supplied-tooltip remediation, Lease Status ordering, Create Lease automation, and exact section-placement rollback remain blocked/unsupported. Lease Status target/legacy values interleave and new `Draft` is last; default remains null and the field remains optional. No `zohocontracts__Contracts`, extension, button, related list, field mapping, Party configuration, signer route, template, contract request, signature request, or communication changed. The Residential Lease Agreement remains Draft only, unpublished, execution-blocked, attorney-review-required, and unsent with all 29 gates open. See [`zoho-crm-lease-system-reconciliation.md`](zoho-crm-lease-system-reconciliation.md).
+
 ## 2026-07-24 — Zillow Lifecycle and Listing Publication Documentation
 
 - System: GitHub / Zoho CRM / Zoho Catalyst / Zillow
