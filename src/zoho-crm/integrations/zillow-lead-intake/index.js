@@ -9,11 +9,6 @@
  * `catalyst-config.json`.
  */
 
-// GH Real Estate verified the Zoho CRM Units module API name as `Units`.
-// Set the safe runtime default before loading src/index.js because that module
-// builds its CONFIG object at require-time.
-process.env.ZOHO_CRM_UNITS_MODULE = process.env.ZOHO_CRM_UNITS_MODULE || 'Units';
-
 // Current manual Zoho CRM upsert diagnostics pass without `skip_feature_execution`.
 // Keep cadence-skip payloads disabled for Zillow intake unless we later verify
 // Zoho accepts them for this org/API version.

@@ -2,9 +2,9 @@
 
 > **Status:** Sanitized technical source of truth for field definitions and cross-application mapping. It contains no contract values or tenant records and does not deploy fields to Zoho.
 
-- **Registry:** `GHRE-ZC-FIELDS` v1.2.0
+- **Registry:** `GHRE-ZC-FIELDS` v1.3.0
 - **As of:** 2026-07-24
-- **Inventory:** 46 system fields + 34 custom fields = 80 total
+- **Inventory:** 46 system fields + 35 custom fields = 81 total
 
 ## Operating Rules
 
@@ -165,6 +165,7 @@ These are the approved design types to use when configuring the custom fields. E
 | Prorated Pet Rent Amount | `prorated_pet_rent_amount` | Currency | Currency / `Prorated_Pet_Rent_Amount` (verified_live_mcp) | active | Ordinary-pet rent for the approved prorated period; nonnegative and two decimals. Keep separate from deposits and fees. |
 | Prorated Storage Unit Rent Amount | `prorated_storage_unit_rent_amount` | Currency | Currency / `Prorated_Storage_Unit_Rent_Amount` (verified_live_mcp) | active | Storage rent for the approved prorated period; nonnegative and two decimals. Reconcile assigned units and the governed proration rule. |
 | Holding Deposit Amount | `holding_deposit_amount` | Currency | Currency / `Holding_Deposit_Credit_Applied` (verified_live_mcp) | active | Holding-deposit credit applied to initial amounts; nonnegative and two decimals. This snapshot is not proof of payment. |
+| First Full Month Base Rent Amount | `first_full_month_base_rent_amount` | Currency | Currency / `First_Full_Month_Base_Rent_Amount` (verified_live_mcp) | review_required | First full month of Base Rent due before possession; nonnegative and two decimals. Do not map or automate until the complete initial-amount equation, Books reconciliation, readiness gate, and controlled Contracts canary pass. |
 | Total Due Before Possession | `total_due_before_possession` | Currency | Currency / `Total_Due_Before_Possession` (verified_live_mcp) | review_required | Do not automate until the full equation, first-full-month amount, fee treatment, holding-deposit credit, proration rounding, and pet or storage charges are reconciled. |
 
 ## Required Reconciliation Before Live Mapping
@@ -176,6 +177,7 @@ These are the approved design types to use when configuring the custom fields. E
 - **Party B Jurisdiction:** Leave unresolved until its intended legal meaning is explicitly approved. Do not map Property State, Premises State, or another postal state into this field.
 - **Renewal Notice Days:** Do not sync until apiName proves whether this is the legal renewal notice or the operational expiration-reminder lead.
 - **Lease Agreement Effective Date:** Map only from the verified CRM Lease_Start_Date field; retain review-required status until counsel or approved business rules define its relationship to system Agreement Date.
+- **First Full Month Base Rent Amount:** First full month of Base Rent due before possession; nonnegative and two decimals. Do not map or automate until the complete initial-amount equation, Books reconciliation, readiness gate, and controlled Contracts canary pass.
 - **Total Due Before Possession:** Do not automate until the full equation, first-full-month amount, fee treatment, holding-deposit credit, proration rounding, and pet or storage charges are reconciled.
 - **Storage Term Starts:** deprecated alias of `storage_term_start_date`; do not create or independently populate it.
 - **Party C/D:** this workflow maps them only to the verified Tenant 2 and Tenant 3 legal-name snapshots; do not reuse the labels for arbitrary party roles.

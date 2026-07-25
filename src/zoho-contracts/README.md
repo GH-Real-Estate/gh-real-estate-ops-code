@@ -67,7 +67,7 @@ The package is not a deployment artifact and is not legal approval. It must rema
 
 The registry records:
 
-- all 46 submitted Zoho system fields and 34 submitted custom fields;
+- all 46 submitted Zoho system fields and 35 submitted or governed proposed custom fields;
 - the selected Zoho Contracts custom-field type where applicable;
 - expected system-field semantics without pretending system fields use the custom menu;
 - portable CRM field types plus bounded tenant-verified, unverified, blocked, and prohibited CRM API mappings;

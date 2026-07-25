@@ -197,13 +197,13 @@ Manual Zoho CRM upsert diagnostics pass without the `skip_feature_execution` pay
 | `CRM_ALLOWED_HOST_SUFFIXES` | Yes | `zohoapis.com` | Outbound host allowlist for Zoho CRM. |
 | `OUTBOUND_TIMEOUT_MS` | Yes | `15000` | Zoho API request timeout. |
 | `ZOHO_CRM_LEADS_MODULE` | Yes | `Leads` | CRM Leads module API name. |
-| `ZOHO_CRM_UNITS_MODULE` | Yes | `Units` | CRM Units module API name. GH Real Estate verified `Units`. |
+| `ZOHO_CRM_UNITS_MODULE` | No | `Units` | Optional CRM Units module API override. The runtime fallback is the verified live API `Units`. |
 | `ENABLE_DYNAMIC_UNIT_ROUTING` | Yes | `true` | Searches CRM Units using the Zillow routing fields on each Unit record. |
 | `DYNAMIC_UNIT_ROUTING_REQUIRED` | No | `false` | If true, a CRM Unit search failure rejects the callback instead of accepting the lead as unmatched. |
 | `UNIT_PROPERTY_LOOKUP_FIELD` | No | `Property` | API name of the lookup from Units back to Properties/Accounts. |
 | `LEAD_DUPLICATE_CHECK_FIELDS` | Yes | `Zillow_Lead_Key` | Unique lead key. Create and mark this field unique. |
 | `PROPERTY_UNIT_MAP_JSON` | No | `{}` | Legacy/fallback static routing map. Leave `{}` when using Unit-based routing. |
-| `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. Leave `{}` if verified CRM API names match the README. |
+| `ZOHO_CRM_FIELD_MAP_JSON` | No | `{}` | Overrides default API field names. Leave `{}` for verified `Unit_I_D`, `Unit_Status`, and the Lead APIs in the README. |
 | `ENABLE_CRM_INTAKE_EVENT_LOG` | No | `false` | Writes optional audit events to a custom CRM module. |
 | `ENABLE_DRY_RUN_CRM_AUDIT_LOG` | No | `false` | Allows dry-run audit-event writes without creating Leads. |
 | `ZOHO_CRM_INTAKE_EVENTS_MODULE` | No | `Zillow_Intake_Events` | Optional audit module API name. |
@@ -267,3 +267,5 @@ Use this only if your Zoho CRM API names differ.
   }
 }
 ```
+
+The verified production defaults are `Units`, `Unit_I_D`, and `Unit_Status`. Do not add overrides for the retired `CustomModule4`, `Unit_ID`, or `Occupancy_Status` values.

@@ -21,8 +21,37 @@ const {
   normalizeFieldKey,
   isAllowedContentType,
   buildInquiryMessage,
-  buildRenterProfileSummary
+  buildRenterProfileSummary,
+  buildConfig,
+  DEFAULT_FIELD_MAP
 } = gateway._test;
+
+test('uses verified live Units defaults while retaining the module override', () => {
+  assert.equal(DEFAULT_FIELD_MAP.unit.unitId, 'Unit_I_D');
+  assert.equal(DEFAULT_FIELD_MAP.unit.unitStatus, 'Unit_Status');
+  assert.equal(DEFAULT_FIELD_MAP.lead.zillowPropertyAddressRaw, 'Zillow_Property_Address_Raw');
+  assert.equal(DEFAULT_FIELD_MAP.lead.zillowRawPayloadStored, 'Zillow_Raw_Payload_Stored');
+  assert.equal(Object.values(DEFAULT_FIELD_MAP.lead).includes('Zillow_Property_Address'), false);
+  assert.equal(Object.values(DEFAULT_FIELD_MAP.lead).includes('Zillow_Raw_Payload'), false);
+
+  const originalUnitsModule = process.env.ZOHO_CRM_UNITS_MODULE;
+  try {
+    delete process.env.ZOHO_CRM_UNITS_MODULE;
+    assert.equal(buildConfig().unitsModule, 'Units');
+
+    process.env.ZOHO_CRM_UNITS_MODULE = '   ';
+    assert.equal(buildConfig().unitsModule, 'Units');
+
+    process.env.ZOHO_CRM_UNITS_MODULE = 'Verified_Units_Override';
+    assert.equal(buildConfig().unitsModule, 'Verified_Units_Override');
+  } finally {
+    if (originalUnitsModule === undefined) {
+      delete process.env.ZOHO_CRM_UNITS_MODULE;
+    } else {
+      process.env.ZOHO_CRM_UNITS_MODULE = originalUnitsModule;
+    }
+  }
+});
 
 test('parses official URL-encoded Zillow payload format', () => {
   const body = Buffer.from([

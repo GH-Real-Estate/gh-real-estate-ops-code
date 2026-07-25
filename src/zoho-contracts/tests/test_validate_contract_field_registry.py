@@ -41,6 +41,7 @@ class ContractFieldRegistryTests(unittest.TestCase):
         self.assertEqual(37, len(evidence["labels"]))
         self.assertEqual(validator.USER_CONFIRMED_LIVE_LABELS, evidence["labels"])
         self.assertIn("Agreement Effective Date", evidence["labels"])
+        self.assertNotIn("First Full Month Base Rent Amount", evidence["labels"])
         self.assertNotIn("Agreement Date", evidence["labels"])
 
     def test_rejects_drift_in_user_confirmed_label_evidence(self) -> None:
@@ -53,7 +54,7 @@ class ContractFieldRegistryTests(unittest.TestCase):
 
     def test_requested_destinations_have_exact_types_and_governed_crm_decisions(self) -> None:
         by_label = {field["label"]: field for field in self.registry["fields"]}
-        self.assertEqual(15, len(validator.REQUESTED_DESTINATION_TYPES))
+        self.assertEqual(16, len(validator.REQUESTED_DESTINATION_TYPES))
         for label, expected_type in validator.REQUESTED_DESTINATION_TYPES.items():
             field = by_label[label]
             self.assertEqual("custom", field["classification"])
@@ -76,9 +77,42 @@ class ContractFieldRegistryTests(unittest.TestCase):
                     field["crm"]["api_name_status"],
                 )
 
+    def test_first_full_month_base_rent_destination_remains_review_required(self) -> None:
+        field = next(
+            item
+            for item in self.registry["fields"]
+            if item["id"] == "first_full_month_base_rent_amount"
+        )
+        self.assertEqual("First Full Month Base Rent Amount", field["label"])
+        self.assertEqual("review_required", field["status"])
+        self.assertEqual("Currency", field["zoho"]["ui_type"])
+        self.assertEqual("design_decision", field["zoho"]["type_status"])
+        self.assertIsNone(field["zoho"]["api_name"])
+        self.assertEqual(
+            "First_Full_Month_Base_Rent_Amount",
+            field["crm"]["proposed_api_name"],
+        )
+        self.assertEqual("verified_live_mcp", field["crm"]["api_name_status"])
+
+        registry = copy.deepcopy(self.registry)
+        changed = next(
+            item
+            for item in registry["fields"]
+            if item["id"] == "first_full_month_base_rent_amount"
+        )
+        changed["status"] = "active"
+        problems = validator.validate_registry(registry)
+        self.assertTrue(
+            any(
+                "First Full Month Base Rent Amount must remain review_required"
+                in problem
+                for problem in problems
+            )
+        )
+
     def test_verified_crm_crosswalk_is_exact(self) -> None:
         by_label = {field["label"]: field for field in self.registry["fields"]}
-        self.assertEqual(23, len(validator.VERIFIED_CRM_API_CROSSWALK))
+        self.assertEqual(24, len(validator.VERIFIED_CRM_API_CROSSWALK))
         self.assertNotIn("Lease Number", validator.VERIFIED_CRM_API_CROSSWALK)
         for label, expected_api_name in validator.VERIFIED_CRM_API_CROSSWALK.items():
             crm = by_label[label]["crm"]

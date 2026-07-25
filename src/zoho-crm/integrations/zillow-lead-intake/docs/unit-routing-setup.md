@@ -15,12 +15,16 @@ ZOHO_CRM_FIELD_MAP_JSON={}
 
 `ZOHO_CRM_UNITS_MODULE` must use the module API name from Zoho CRM Developer Hub. For GH Real Estate, the verified API name is `Units`.
 
+The runtime defaults to `Units` when the environment variable is absent and still honors an explicit `ZOHO_CRM_UNITS_MODULE` override. Keep `ZOHO_CRM_FIELD_MAP_JSON={}` when the verified Unit APIs below apply.
+
 ## Required Unit Fields
 
 | Field Label | API Name | Field Type | Purpose |
 |---|---|---|---|
 | Property | `Property` | Lookup | Links each Unit to its parent Property record. |
+| Unit I.D. | `Unit_I_D` | Auto-Number | Verified live unit identifier API. Do not use the stale `Unit_ID` default. |
 | Unit Number | `Unit_Number` | Number | Numeric unit only, for sorting/reporting. |
+| Unit Status | `Unit_Status` | Pick List | Verified live occupancy/status API. Do not use the stale `Occupancy_Status` default. |
 | Zillow Listing ID | `Zillow_Listing_ID` | Single Line | Strongest Zillow routing key once Zillow provides real listing IDs. |
 | Zillow Provider Model ID | `Zillow_Provider_Model_ID` | Single Line | Optional multifamily/floorplan key if Zillow provides a meaningful model ID. |
 | Zillow Listing Contact Prefix | `Zillow_Listing_Contact_Prefix` | Single Line | Optional prefix before `@` in listing contact email. |

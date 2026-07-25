@@ -13,6 +13,9 @@
 - [ ] Confirm `Zillow_Listing_Postal_Code` is Single Line, not Number.
 - [ ] Confirm unused standard fields are removed from the GH Real Estate Lead layout.
 - [ ] Do not create or use `Manual_Review_Required`, `Manual_Review_Reason`, `Desired_Rent`, or `Desired_Deposit` for Zillow intake.
+- [ ] Confirm the Units module API is `Units`, Unit ID is `Unit_I_D`, and Unit Status is `Unit_Status`.
+- [ ] Leave `ZOHO_CRM_UNITS_MODULE` unset or set it to `Units`; use an override only after a later live API verification.
+- [ ] Confirm no runtime field-map override uses retired `Unit_ID`, `Occupancy_Status`, `Zillow_Property_Address`, or `Zillow_Raw_Payload`.
 - [ ] Create CRM view: Zillow Leads - New Inquiry.
 - [ ] Create CRM view: Zillow Leads - Routing Unmatched.
 - [ ] Create CRM view: Zillow Leads - Recently Synced.

@@ -44,9 +44,9 @@ const DEFAULT_FIELD_MAP = {
   },
   unit: {
     name: 'Name',
-    unitId: 'Unit_ID',
+    unitId: 'Unit_I_D',
     unitNumber: 'Unit_Number',
-    unitStatus: 'Occupancy_Status',
+    unitStatus: 'Unit_Status',
     zillowListingId: 'Zillow_Listing_ID',
     zillowProviderModelId: 'Zillow_Provider_Model_ID',
     zillowRoutingUnitKey: 'Zillow_Routing_Unit_Key',
@@ -243,7 +243,7 @@ function buildConfig() {
     zohoClientSecret: env('ZOHO_CLIENT_SECRET', '').trim(),
     zohoRefreshToken: env('ZOHO_REFRESH_TOKEN', '').trim(),
     leadsModule: env('ZOHO_CRM_LEADS_MODULE', 'Leads').trim(),
-    unitsModule: env('ZOHO_CRM_UNITS_MODULE', 'CustomModule4').trim(),
+    unitsModule: env('ZOHO_CRM_UNITS_MODULE', 'Units').trim() || 'Units',
     unitPropertyLookupField: env('UNIT_PROPERTY_LOOKUP_FIELD', '').trim(),
     enableDynamicUnitRouting: envBool('ENABLE_DYNAMIC_UNIT_ROUTING', true),
     dynamicUnitRoutingRequired: envBool('DYNAMIC_UNIT_ROUTING_REQUIRED', false),
@@ -782,4 +782,4 @@ async function replaySeenAndMarkBestEffort(req, key, ttlSeconds) { try { const c
 function makeCacheKey(prefix, value) { return `${prefix}${sha256(String(value || '')).slice(0, CACHE_KEY_MAX_LEN - prefix.length)}`; }
 
 module.exports = handler;
-module.exports._test = { DEFAULT_FIELD_MAP, normalizeZillowLeadPayload, validateNormalizedLead, resolvePropertyUnit, resolvePropertyUnitFromMap, buildRoutingCandidateKeys, buildRoutingUnitKey, buildRoutingWarnings, buildCrmLeadPlan, buildLeadKey, buildInquiryMessage, buildRenterProfileSummary, parseInboundPayload, normalizePhone, normalizeDate, normalizeFieldKey, isAllowedContentType, publicLeadReference };
+module.exports._test = { DEFAULT_FIELD_MAP, buildConfig, normalizeZillowLeadPayload, validateNormalizedLead, resolvePropertyUnit, resolvePropertyUnitFromMap, buildRoutingCandidateKeys, buildRoutingUnitKey, buildRoutingWarnings, buildCrmLeadPlan, buildLeadKey, buildInquiryMessage, buildRenterProfileSummary, parseInboundPayload, normalizePhone, normalizeDate, normalizeFieldKey, isAllowedContentType, publicLeadReference };

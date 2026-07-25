@@ -491,6 +491,20 @@
       ]
     },
     {
+      "source_variable": "first_full_month_base_rent_amount",
+      "business_meaning": "First full month of Base Rent included in the approved initial amounts due before possession.",
+      "registry_field_id": "first_full_month_base_rent_amount",
+      "zoho_api_name": null,
+      "api_name_status": "tenant_verification_required",
+      "source_system": "Zoho CRM Lease module (Leases) field First_Full_Month_Base_Rent_Amount, verified_live_mcp; the complete initial-amount equation, Books reconciliation, readiness gate, and Contracts canary remain unresolved",
+      "snapshot_behavior": "freeze_at_generation",
+      "status": "deferred",
+      "gate_id": "initial_amounts_due",
+      "document_locations": [
+        "section_3_2.first_full_month_base_rent_amount"
+      ]
+    },
+    {
       "source_variable": "total_due_before_possession",
       "business_meaning": "Total of the separately approved initial charges due before possession, without double counting.",
       "registry_field_id": "total_due_before_possession",
@@ -865,6 +879,7 @@
     "prorated_rent_period_end",
     "prorated_rent_amount",
     "first_full_month_rent_period",
+    "first_full_month_base_rent_amount",
     "total_due_before_possession",
     "next_regular_rent_due_date",
     "ordinary_pet_approval_status",

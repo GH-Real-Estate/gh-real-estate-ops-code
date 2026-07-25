@@ -7,7 +7,10 @@ on:
       - 'src/zoho-crm/AGENTS.md'
       - 'src/zoho-crm/README.md'
       - 'src/zoho-crm/field-maps/crm-module-field-catalog.md'
+      - 'src/zoho-crm/field-maps/production-module-*.csv'
       - 'src/zoho-crm/field-maps/crm-module-fields/**'
+      - 'src/zoho-crm/field-maps/global-picklists/**'
+      - 'src/zoho-crm/field-maps/protected-modules/**'
       - 'src/zoho-crm/standards/**'
       - 'src/zoho-crm/tests/**'
       - 'src/zoho-crm/tools/**'
@@ -19,7 +22,10 @@ on:
       - 'src/zoho-crm/AGENTS.md'
       - 'src/zoho-crm/README.md'
       - 'src/zoho-crm/field-maps/crm-module-field-catalog.md'
+      - 'src/zoho-crm/field-maps/production-module-*.csv'
       - 'src/zoho-crm/field-maps/crm-module-fields/**'
+      - 'src/zoho-crm/field-maps/global-picklists/**'
+      - 'src/zoho-crm/field-maps/protected-modules/**'
       - 'src/zoho-crm/standards/**'
       - 'src/zoho-crm/tests/**'
       - 'src/zoho-crm/tools/**'
@@ -51,7 +57,9 @@ jobs:
       - name: Validate governed CRM module and field catalog
         run: |
           python src/zoho-crm/tools/validate-crm-field-catalog.py
+          python src/zoho-crm/tools/validate-protected-module-baselines.py
           python -m unittest discover -s src/zoho-crm/tests -p 'test_*.py'
           python -m py_compile \
             src/zoho-crm/tools/validate-crm-field-catalog.py \
+            src/zoho-crm/tools/validate-protected-module-baselines.py \
             src/zoho-crm/tools/export-crm-metadata.py

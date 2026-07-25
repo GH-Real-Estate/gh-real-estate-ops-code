@@ -124,6 +124,10 @@ The static Base URL above is the value in Zoho's official custom-module setup ar
 
 Open **Field Mapping > Module-wise Fields Mapping > Leases > Residential Lease Agreement**. Use only verified CRM APIs and visible Contracts destination labels. Contracts API names remain unverified until the contract type `/allfields` metadata is reconciled.
 
+The complete fail-closed calculation, snapshot, Books reconciliation, readiness
+gate, and Contracts/Sign canary design is in
+[Lease Initial Amounts and Contract Readiness](../field-maps/lease-initial-amounts-readiness.md).
+
 ### Mappings eligible for manual configuration
 
 | CRM Lease source | Verified CRM API | Intended Contracts destination label | Manual control |
@@ -148,7 +152,6 @@ Open **Field Mapping > Module-wise Fields Mapping > Leases > Residential Lease A
 | Prorated Pet Rent Amount | `Prorated_Pet_Rent_Amount` | Prorated Pet Rent Amount | Confirm proration rule and rounding. |
 | Prorated Storage Unit Rent Amount | `Prorated_Storage_Unit_Rent_Amount` | Prorated Storage Unit Rent Amount | Confirm storage applicability and proration. |
 | Holding Deposit Credit Applied | `Holding_Deposit_Credit_Applied` | Holding Deposit Amount | Confirm credit semantics and Books evidence. |
-| Total Due Before Possession | `Total_Due_Before_Possession` | Total Due Before Possession | Do not map/use until the complete equation is approved. |
 | Tenant 2 Legal Name Snapshot | `Tenant_2_Legal_Name_Snapshot` | Party C Contact Name | Document field only; does not create a signer. |
 | Tenant 3 Legal Name Snapshot | `Tenant_3_Legal_Name_Snapshot` | Party D Contact Name | Document field only; does not create a signer. |
 
@@ -159,7 +162,8 @@ Save only mappings whose visible live destination label and meaning match. Reope
 - Lease Number: no approved CRM auto-number field exists.
 - Base Rent Amount or Total Monthly Rent Amount: existing CRM `Monthly_Rent` semantics are ambiguous.
 - Prorated Base Rent Amount: existing CRM `Prorated_Rent` semantics are ambiguous.
-- First Full Month Base Rent Amount: the CRM field and reconciled equation are missing.
+- First Full Month Base Rent Amount: CRM Currency source `First_Full_Month_Base_Rent_Amount` is verified, but the reconciled equation, Books reconciliation, readiness gate, and controlled canary remain incomplete.
+- Total Due Before Possession: CRM Currency snapshot `Total_Due_Before_Possession` exists, but do not map or use it until the complete equation, Books reconciliation, readiness gate, and controlled canary are approved.
 - Party B Jurisdiction: legal meaning remains unresolved.
 - Tenant 2/3 email snapshots: signer-routing inputs, not document fields unless a later approved design says otherwise.
 - `Addenda_Required`, `Nonstandard_Terms`, `Nonstandard_Terms_Notes`, or `Attorney_Review_Required`: workflow controls, not automatic legal-text merge values.

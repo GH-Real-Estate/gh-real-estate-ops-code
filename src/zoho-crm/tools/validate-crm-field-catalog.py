@@ -40,6 +40,9 @@ REQUIRED_CURRENT_MODULES = {
     "Tasks",
     "Equipment",
     "Lease Documents / Addenda",
+    "Storage Units",
+    "Utilities",
+    "Condition Reports",
 }
 KNOWN_SOURCE_IDS = {
     "REPO_ZILLOW_FIELD_MAP",
@@ -69,9 +72,9 @@ REQUIRED_COLUMNS = {
     "notes",
     "source_ids",
 }
-GOVERNED_LIVE_SNAPSHOT_COUNT = 75
+GOVERNED_LIVE_SNAPSHOT_COUNT = 170
 GOVERNED_LIVE_SNAPSHOT_SHA256 = (
-    "72a2c456f71665d10a7d5dcdc0d50a76afebefecde2ea5b5c2c77bf7dca0f91a"
+    "424611f83aaaa0fc7935024f583740f20dfb9abf1beb0ce2a55c254b87f80bf7"
 )
 
 # Immutable production readback captured on 2026-07-24. These entries are
@@ -248,9 +251,316 @@ LEASE_REUSED_LIVE_MANIFEST = (
 LEASE_PLACED_LIVE_MANIFEST = (
     LEASE_CREATED_LIVE_MANIFEST + LEASE_REUSED_LIVE_MANIFEST
 )
+CONTACTS_RECONCILED_LIVE_MANIFEST = (
+    ("Preferred Name", "Preferred_Name", "Contact Identity & Role"),
+    (
+        "Email Operational Consent?",
+        "Email_Operational_Consent",
+        "Communication & Consent",
+    ),
+    (
+        "SMS Operational Consent?",
+        "SMS_Operational_Consent",
+        "Communication & Consent",
+    ),
+    ("Primary Language", "Primary_Language", "Communication & Consent"),
+    ("Current Lease", "Current_Lease", "Current Tenancy"),
+    ("Current Unit", "Current_Unit", "Current Tenancy"),
+    (
+        "Portal Invite Sent At",
+        "Portal_Invite_Sent_At",
+        "Portal & Integrations",
+    ),
+    (
+        "Portal Invite Status",
+        "Portal_Invite_Status",
+        "Portal & Integrations",
+    ),
+    (
+        "WorkDrive Person Folder URL",
+        "WorkDrive_Person_Folder_URL",
+        "Portal & Integrations",
+    ),
+)
+PROPERTIES_RECONCILED_LIVE_MANIFEST = (
+    (
+        "Owner / Landlord Legal Name",
+        "Owner_Landlord_Legal_Name",
+        "Property Identity & Status",
+    ),
+    ("Property Code", "Property_Code", "Property Identity & Status"),
+    ("Property Status", "Property_Status", "Property Identity & Status"),
+    ("County", "County", "Address & Notice"),
+    ("Notice Email", "Notice_Email", "Address & Notice"),
+    (
+        "Emergency Maintenance Phone",
+        "Emergency_Maintenance_Phone",
+        "Management & Maintenance",
+    ),
+    (
+        "Default Lease Template Version",
+        "Default_Lease_Template_Version",
+        "Leasing & Integrations",
+    ),
+    (
+        "WorkDrive Property Folder URL",
+        "WorkDrive_Property_Folder_URL",
+        "Leasing & Integrations",
+    ),
+)
+UNITS_RECONCILED_LIVE_MANIFEST = (
+    ("Current Lease", "Current_Lease", "Occupancy & Current Tenancy"),
+    (
+        "Current Lease End Date",
+        "Current_Lease_End_Date",
+        "Occupancy & Current Tenancy",
+    ),
+    (
+        "Move-In Checklist Status",
+        "Move_In_Checklist_Status",
+        "Occupancy & Current Tenancy",
+    ),
+    (
+        "Next Lease Start Date",
+        "Next_Lease_Start_Date",
+        "Occupancy & Current Tenancy",
+    ),
+    ("Available Date", "Available_Date", "Rent & Availability"),
+    ("Current Base Rent", "Current_Base_Rent", "Rent & Availability"),
+    ("Default Storage Area", "Default_Storage_Area", "Rent & Availability"),
+    ("Security Deposit Default", "Security_Deposit_Default", "Rent & Availability"),
+    ("Storage Available?", "Storage_Available", "Rent & Availability"),
+    ("Target Market Rent", "Target_Market_Rent", "Rent & Availability"),
+    ("Market Status", "Market_Status", "Rent & Availability"),
+    ("Furnished?", "Furnished", "Physical Details"),
+    ("Parking Spaces", "Parking_Spaces", "Physical Details"),
+    (
+        "Zillow Listing Active?",
+        "Zillow_Listing_Active",
+        "Zillow Listing & Routing",
+    ),
+    ("Zillow Listing URL", "Zillow_Listing_URL", "Zillow Listing & Routing"),
+)
+UNITS_REUSED_LIVE_MANIFEST = (
+    ("Unit I.D.", "Unit_I_D", "Unit Summary"),
+    ("Unit Status", "Unit_Status", "Unit Summary"),
+    (
+        "Current Tenant",
+        "Current_Tenant",
+        "Occupancy & Current Tenancy",
+    ),
+    ("Bathrooms", "Bathrooms", "Unit Details"),
+    ("Bedrooms", "Bedrooms", "Unit Details"),
+    ("Square Feet", "Square_Feet", "Unit Details"),
+    (
+        "Zoho WorkDrive Folder URL",
+        "Zoho_WorkDrive_Folder_URL",
+        "Files & Integrations",
+    ),
+)
+DEALS_RECONCILED_LIVE_MANIFEST = (
+    ("Application Reviewer", "Application_Reviewer", "Application Identity"),
+    ("Household Size", "Household_Size", "Application Intake"),
+    ("Pets Requested?", "Pets_Requested", "Application Intake"),
+    (
+        "Requested Lease Term Months",
+        "Requested_Lease_Term_Months",
+        "Application Intake",
+    ),
+    ("Storage Requested?", "Storage_Requested", "Application Intake"),
+    (
+        "Zoho Creator Application ID",
+        "Zoho_Creator_Application_ID",
+        "Integrations",
+    ),
+)
+CASES_RECONCILED_LIVE_MANIFEST = (
+    ("Lease", "Lease", "Relationships"),
+    ("Unit", "Unit", "Relationships"),
+    ("Assigned Vendor", "Assigned_Vendor", "Access & Scheduling"),
+    (
+        "Assigned Vendor Contact",
+        "Assigned_Vendor_Contact",
+        "Access & Scheduling",
+    ),
+    ("Access Permission", "Access_Permission", "Access & Scheduling"),
+    (
+        "Pets / Animals Need Secured?",
+        "Pets_Animals_Need_Secured",
+        "Access & Scheduling",
+    ),
+    ("Reported At", "Reported_At", "Access & Scheduling"),
+    ("Scheduled Date/Time", "Scheduled_Date_Time", "Access & Scheduling"),
+    ("Creator Ticket ID", "Creator_Ticket_ID", "Files & Evidence"),
+    (
+        "Photos / Files Folder URL",
+        "Photos_Files_Folder_URL",
+        "Files & Evidence",
+    ),
+    ("Photos Received?", "Photos_Received", "Files & Evidence"),
+    ("Emergency?", "Emergency", "Request Identity"),
+    ("Maintenance Category", "Maintenance_Category", "Request Identity"),
+)
+CASES_STANDARD_PICKLIST_LIVE_MANIFEST = (
+    ("Case Origin", "Case_Origin", "Request Identity"),
+    ("Priority", "Priority", "Request Identity"),
+    ("Status", "Status", "Request Identity"),
+)
+INSPECTIONS_RECONCILED_LIVE_MANIFEST = (
+    ("Inspection Type", "Inspection_Type", "Inspection Identity"),
+    ("Property", "Property", "Inspection Identity"),
+    ("Unit", "Unit", "Inspection Identity"),
+    ("Lease", "Lease", "Inspection Identity"),
+    ("Primary Tenant", "Primary_Tenant", "Inspection Identity"),
+    ("Status", "Status", "Inspection Identity"),
+    ("Inspection Date", "Inspection_Date", "Timing & Responsibility"),
+    ("Due Date", "Due_Date", "Timing & Responsibility"),
+    ("Completed Date", "Completed_Date", "Timing & Responsibility"),
+    ("Completed By", "Completed_By", "Timing & Responsibility"),
+    (
+        "Joint Inspection Completed?",
+        "Joint_Inspection_Completed",
+        "Timing & Responsibility",
+    ),
+    (
+        "Related Maintenance Request",
+        "Related_Maintenance_Request",
+        "Issues & Follow-Up",
+    ),
+    ("Repair Requested?", "Repair_Requested", "Issues & Follow-Up"),
+    (
+        "Checklist Form URL",
+        "Checklist_Form_URL",
+        "Documents & Signatures",
+    ),
+    (
+        "Signed Checklist PDF URL",
+        "Signed_Checklist_PDF_URL",
+        "Documents & Signatures",
+    ),
+    ("Photos Folder URL", "Photos_Folder_URL", "Documents & Signatures"),
+    ("Tenant Signed?", "Tenant_Signed", "Documents & Signatures"),
+    ("Landlord Signed?", "Landlord_Signed", "Documents & Signatures"),
+)
+INSPECTIONS_REUSED_LIVE_MANIFEST = (
+    ("Inspection Name", "Name", "Inspection Identity"),
+)
+LEASE_ADDITIONAL_LIVE_MANIFEST = (
+    (
+        "First Full Month Base Rent Amount",
+        "First_Full_Month_Base_Rent_Amount",
+        "Initial Amounts",
+    ),
+)
+VENDORS_RECONCILED_LIVE_MANIFEST = (
+    (
+        "Vendor Status",
+        "Vendor_Status",
+        "Vendor Identity & Classification",
+    ),
+)
+TASKS_RECONCILED_LIVE_MANIFEST = (
+    ("Task Category", "Task_Category", "Routing & Handoff"),
+    (
+        "Important for PM Handoff?",
+        "Important_for_PM_Handoff",
+        "Routing & Handoff",
+    ),
+)
+TASKS_STANDARD_PICKLIST_LIVE_MANIFEST = (
+    ("Priority", "Priority", "Task Information"),
+)
+STORAGE_UNITS_RECONCILED_LIVE_MANIFEST = (
+    ("Property", "Property_Record", "Relationships"),
+    ("Unit", "Unit", "Relationships"),
+    ("Lease Record", "Lease_Record", "Relationships"),
+)
+UTILITIES_RECONCILED_LIVE_MANIFEST = (
+    ("Property Record", "Property_Record", "Authoritative Relationships"),
+    ("Unit Record", "Unit_Record", "Authoritative Relationships"),
+)
+CONDITION_REPORTS_RECONCILED_LIVE_MANIFEST = (
+    ("Inspection", "Inspection", "Relationships"),
+    ("Property", "Property", "Relationships"),
+    ("Unit", "Unit", "Relationships"),
+    ("Lease", "Lease", "Relationships"),
+    ("Tenant", "Tenant", "Relationships"),
+)
+
+JULY_24_RECONCILIATION_CREATED_COUNT = sum(
+    len(manifest)
+    for manifest in (
+        CONTACTS_RECONCILED_LIVE_MANIFEST,
+        PROPERTIES_RECONCILED_LIVE_MANIFEST,
+        UNITS_RECONCILED_LIVE_MANIFEST,
+        DEALS_RECONCILED_LIVE_MANIFEST,
+        CASES_RECONCILED_LIVE_MANIFEST,
+        INSPECTIONS_RECONCILED_LIVE_MANIFEST,
+        LEASE_ADDITIONAL_LIVE_MANIFEST,
+        VENDORS_RECONCILED_LIVE_MANIFEST,
+        TASKS_RECONCILED_LIVE_MANIFEST,
+        STORAGE_UNITS_RECONCILED_LIVE_MANIFEST,
+        UTILITIES_RECONCILED_LIVE_MANIFEST,
+        CONDITION_REPORTS_RECONCILED_LIVE_MANIFEST,
+    )
+)
+JULY_24_STANDARD_PICKLIST_RECONCILED_COUNT = (
+    len(CASES_STANDARD_PICKLIST_LIVE_MANIFEST)
+    + len(TASKS_STANDARD_PICKLIST_LIVE_MANIFEST)
+)
+JULY_24_REUSED_LIVE_COUNT = (
+    len(UNITS_REUSED_LIVE_MANIFEST)
+    + len(INSPECTIONS_REUSED_LIVE_MANIFEST)
+)
+
 GOVERNED_LIVE_MANIFEST = (
-    ("Rental Applications", "Deals", DEALS_CREATED_LIVE_MANIFEST),
-    ("Leases", "Leases", LEASE_PLACED_LIVE_MANIFEST),
+    (
+        "Rental Applications",
+        "Deals",
+        DEALS_CREATED_LIVE_MANIFEST + DEALS_RECONCILED_LIVE_MANIFEST,
+    ),
+    (
+        "Leases",
+        "Leases",
+        LEASE_PLACED_LIVE_MANIFEST + LEASE_ADDITIONAL_LIVE_MANIFEST,
+    ),
+    ("Contacts", "Contacts", CONTACTS_RECONCILED_LIVE_MANIFEST),
+    ("Properties", "Accounts", PROPERTIES_RECONCILED_LIVE_MANIFEST),
+    (
+        "Units",
+        "Units",
+        UNITS_RECONCILED_LIVE_MANIFEST + UNITS_REUSED_LIVE_MANIFEST,
+    ),
+    (
+        "Maintenance Requests",
+        "Cases",
+        CASES_RECONCILED_LIVE_MANIFEST
+        + CASES_STANDARD_PICKLIST_LIVE_MANIFEST,
+    ),
+    (
+        "Inspections",
+        "Inspections",
+        INSPECTIONS_RECONCILED_LIVE_MANIFEST
+        + INSPECTIONS_REUSED_LIVE_MANIFEST,
+    ),
+    ("Vendors", "Vendors", VENDORS_RECONCILED_LIVE_MANIFEST),
+    (
+        "Tasks",
+        "Tasks",
+        TASKS_RECONCILED_LIVE_MANIFEST
+        + TASKS_STANDARD_PICKLIST_LIVE_MANIFEST,
+    ),
+    (
+        "Storage Units",
+        "Storage_Units",
+        STORAGE_UNITS_RECONCILED_LIVE_MANIFEST,
+    ),
+    ("Utilities", "Utilities", UTILITIES_RECONCILED_LIVE_MANIFEST),
+    (
+        "Condition Reports",
+        "Condition_Reports",
+        CONDITION_REPORTS_RECONCILED_LIVE_MANIFEST,
+    ),
 )
 
 GOVERNED_LIVE_FIELD_TYPE_GROUPS = {
@@ -265,9 +575,17 @@ GOVERNED_LIVE_FIELD_TYPE_GROUPS = {
             "Decision Date",
         ),
         "Currency": ("Approved Security Deposit",),
-        "Checkbox": ("Attorney Review Required?", "Nonstandard Terms?"),
+        "Checkbox": (
+            "Attorney Review Required?",
+            "Nonstandard Terms?",
+            "Pets Requested?",
+            "Storage Requested?",
+        ),
         "Pick List": ("Decision",),
         "Multi-Line": ("Nonstandard Terms Notes",),
+        "User": ("Application Reviewer",),
+        "Number": ("Household Size", "Requested Lease Term Months"),
+        "Single Line": ("Zoho Creator Application ID",),
     },
     "Leases": {
         "Date": (
@@ -292,6 +610,7 @@ GOVERNED_LIVE_FIELD_TYPE_GROUPS = {
             "Holding Deposit Credit Applied",
             "Pet Security Deposit Amount",
             "Security Deposit",
+            "First Full Month Base Rent Amount",
         ),
         "Email": ("Tenant 2 Email Snapshot", "Tenant 3 Email Snapshot"),
         "Single Line": (
@@ -316,6 +635,116 @@ GOVERNED_LIVE_FIELD_TYPE_GROUPS = {
         "Pick List": ("Lease Type", "Lease Status"),
         "Single Line / Module Name": ("Lease Name",),
     },
+    "Contacts": {
+        "Single Line": ("Preferred Name",),
+        "Checkbox": (
+            "Email Operational Consent?",
+            "SMS Operational Consent?",
+        ),
+        "Pick List": ("Primary Language", "Portal Invite Status"),
+        "Lookup": ("Current Lease", "Current Unit"),
+        "Date/Time": ("Portal Invite Sent At",),
+        "URL": ("WorkDrive Person Folder URL",),
+    },
+    "Properties": {
+        "Single Line": (
+            "Owner / Landlord Legal Name",
+            "Property Code",
+            "County",
+            "Default Lease Template Version",
+        ),
+        "Pick List": ("Property Status",),
+        "Email": ("Notice Email",),
+        "Phone": ("Emergency Maintenance Phone",),
+        "URL": ("WorkDrive Property Folder URL",),
+    },
+    "Units": {
+        "Lookup": ("Current Lease", "Current Tenant"),
+        "Date": (
+            "Current Lease End Date",
+            "Next Lease Start Date",
+            "Available Date",
+        ),
+        "Pick List": (
+            "Move-In Checklist Status",
+            "Market Status",
+            "Unit Status",
+        ),
+        "Currency": (
+            "Current Base Rent",
+            "Security Deposit Default",
+            "Target Market Rent",
+        ),
+        "Single Line": ("Default Storage Area",),
+        "Checkbox": (
+            "Furnished?",
+            "Storage Available?",
+            "Zillow Listing Active?",
+        ),
+        "Number": ("Parking Spaces", "Bedrooms", "Square Feet"),
+        "Decimal": ("Bathrooms",),
+        "URL": ("Zillow Listing URL", "Zoho WorkDrive Folder URL"),
+        "Auto-Number": ("Unit I.D.",),
+    },
+    "Maintenance Requests": {
+        "Lookup": (
+            "Lease",
+            "Unit",
+            "Assigned Vendor",
+            "Assigned Vendor Contact",
+        ),
+        "Pick List": ("Access Permission", "Maintenance Category"),
+        "Checkbox": (
+            "Pets / Animals Need Secured?",
+            "Photos Received?",
+            "Emergency?",
+        ),
+        "Date/Time": ("Reported At", "Scheduled Date/Time"),
+        "Single Line": ("Creator Ticket ID",),
+        "URL": ("Photos / Files Folder URL",),
+        "Pick List / Standard": ("Case Origin", "Priority", "Status"),
+    },
+    "Inspections": {
+        "Pick List": ("Inspection Type", "Status"),
+        "Lookup": (
+            "Property",
+            "Unit",
+            "Lease",
+            "Primary Tenant",
+            "Related Maintenance Request",
+        ),
+        "Date": ("Inspection Date", "Due Date", "Completed Date"),
+        "User": ("Completed By",),
+        "Checkbox": (
+            "Joint Inspection Completed?",
+            "Repair Requested?",
+            "Tenant Signed?",
+            "Landlord Signed?",
+        ),
+        "URL": (
+            "Checklist Form URL",
+            "Signed Checklist PDF URL",
+            "Photos Folder URL",
+        ),
+        "Single Line / Module Name": ("Inspection Name",),
+    },
+    "Vendors": {
+        "Pick List": ("Vendor Status",),
+    },
+    "Tasks": {
+        "Pick List": ("Task Category",),
+        "Checkbox": ("Important for PM Handoff?",),
+        "Pick List / Standard": ("Priority",),
+    },
+    "Storage Units": {
+        "Lookup": ("Property", "Unit", "Lease Record"),
+    },
+    "Utilities": {
+        "Lookup": ("Property Record", "Unit Record"),
+    },
+    "Condition Reports": {
+        "Lookup": ("Inspection", "Property", "Unit", "Lease", "Tenant"),
+    },
 }
 GOVERNED_LIVE_FIELD_TYPES = {
     (module_label, field_label): field_type
@@ -337,6 +766,29 @@ GOVERNED_LIVE_LOOKUP_TARGETS = {
     ("Leases", "Previous Lease"): "Leases",
     ("Leases", "Guarantor"): "Contacts",
     ("Leases", "Tenant"): "Contacts",
+    ("Contacts", "Current Lease"): "Leases",
+    ("Contacts", "Current Unit"): "Units",
+    ("Units", "Current Lease"): "Leases",
+    ("Units", "Current Tenant"): "Contacts",
+    ("Maintenance Requests", "Lease"): "Leases",
+    ("Maintenance Requests", "Unit"): "Units",
+    ("Maintenance Requests", "Assigned Vendor"): "Vendors",
+    ("Maintenance Requests", "Assigned Vendor Contact"): "Contacts",
+    ("Inspections", "Property"): "Accounts",
+    ("Inspections", "Unit"): "Units",
+    ("Inspections", "Lease"): "Leases",
+    ("Inspections", "Primary Tenant"): "Contacts",
+    ("Inspections", "Related Maintenance Request"): "Cases",
+    ("Storage Units", "Property"): "Accounts",
+    ("Storage Units", "Unit"): "Units",
+    ("Storage Units", "Lease Record"): "Leases",
+    ("Utilities", "Property Record"): "Accounts",
+    ("Utilities", "Unit Record"): "Units",
+    ("Condition Reports", "Inspection"): "Inspections",
+    ("Condition Reports", "Property"): "Accounts",
+    ("Condition Reports", "Unit"): "Units",
+    ("Condition Reports", "Lease"): "Leases",
+    ("Condition Reports", "Tenant"): "Contacts",
 }
 
 ADDENDA_REQUIRED_CHOICES = (
@@ -363,6 +815,308 @@ GOVERNED_LIVE_CHOICES = {
         "Expired=#92400E | Lease Active=#67C480 | Moved Out=#6B7280 | "
         "Renewal Pending=#D97706 | Archived=#6B7280 | Notice Given=#EB4D4D | "
         "Ended=#666666 | Cancelled=#666666 | Draft=#2563EB"
+    ),
+    ("Contacts", "Primary Language"): (
+        "English=UNCOLORED | Spanish=UNCOLORED | Ukrainian=UNCOLORED | "
+        "Russian=UNCOLORED | Other=UNCOLORED"
+    ),
+    ("Contacts", "Portal Invite Status"): (
+        "Not Invited=UNCOLORED | Invite Ready=UNCOLORED | "
+        "Invited=UNCOLORED | Accepted=UNCOLORED | Failed=UNCOLORED | "
+        "Disabled=UNCOLORED"
+    ),
+    ("Properties", "Property Status"): (
+        "Active=UNCOLORED | Inactive=UNCOLORED | Archived=UNCOLORED"
+    ),
+    ("Units", "Move-In Checklist Status"): (
+        "Not Started=UNCOLORED | Sent=UNCOLORED | In Progress=UNCOLORED | "
+        "Completed=UNCOLORED | Overdue=UNCOLORED | Not Applicable=UNCOLORED"
+    ),
+    ("Units", "Market Status"): (
+        "Not Listed=UNCOLORED | Listed=UNCOLORED | "
+        "Application Pending=UNCOLORED | Lease Pending=UNCOLORED | "
+        "Leased=UNCOLORED | Renovation Hold=UNCOLORED"
+    ),
+    ("Units", "Unit Status"): (
+        "Occupied=#67C480 | Vacant - Ready=#F5C72F | "
+        "Vacant - Needs Turnover=#EB4D4D | Under Renovation=#168AEF | "
+        "Reserved=#C4F0B3 | Inactive=#666666"
+    ),
+    ("Maintenance Requests", "Access Permission"): (
+        "Permission Granted=UNCOLORED | Appointment Required=UNCOLORED | "
+        "Tenant Must Be Present=UNCOLORED | "
+        "Emergency Access Only=UNCOLORED | Unknown=UNCOLORED"
+    ),
+    ("Maintenance Requests", "Maintenance Category"): (
+        "Plumbing=UNCOLORED | Electrical=UNCOLORED | HVAC=UNCOLORED | "
+        "Appliance=UNCOLORED | Pest=UNCOLORED | Lock/Key=UNCOLORED | "
+        "Water Leak=UNCOLORED | Noise/Rule Issue=UNCOLORED | "
+        "Common Area=UNCOLORED | Exterior/Grounds=UNCOLORED | "
+        "Laundry=UNCOLORED | Other=UNCOLORED"
+    ),
+    ("Inspections", "Inspection Type"): (
+        "Move-In=UNCOLORED | Move-Out=UNCOLORED | Annual=UNCOLORED | "
+        "Pre-Renewal=UNCOLORED | Post-Repair=UNCOLORED | "
+        "Owner Walkthrough=UNCOLORED | Other=UNCOLORED"
+    ),
+    ("Inspections", "Status"): (
+        "Not Started=UNCOLORED | Scheduled=UNCOLORED | "
+        "Sent to Tenant=UNCOLORED | In Progress=UNCOLORED | "
+        "Tenant Submitted=UNCOLORED | Landlord Review=UNCOLORED | "
+        "Follow-Up Required=UNCOLORED | Completed=UNCOLORED | "
+        "Overdue=UNCOLORED | Cancelled=UNCOLORED | Archived=UNCOLORED"
+    ),
+    ("Vendors", "Vendor Status"): (
+        "Active=UNCOLORED | Inactive=UNCOLORED | Archived=UNCOLORED"
+    ),
+    ("Tasks", "Task Category"): (
+        "Lease Renewal=UNCOLORED | Rent Follow-Up=UNCOLORED | "
+        "Maintenance Follow-Up=UNCOLORED | Inspection=UNCOLORED | "
+        "Vendor Follow-Up=UNCOLORED | PM Handoff=UNCOLORED | "
+        "Accounting=UNCOLORED | Legal/Notice=UNCOLORED | "
+        "Admin=UNCOLORED | Other=UNCOLORED"
+    ),
+    ("Maintenance Requests", "Case Origin"): (
+        "Email=UNCOLORED | Phone=UNCOLORED | Web=UNCOLORED | "
+        "Tenant Portal=UNCOLORED | Text=UNCOLORED | "
+        "Landlord Created=UNCOLORED | Inspection=UNCOLORED"
+    ),
+    ("Maintenance Requests", "Priority"): (
+        "High=UNCOLORED | Medium=UNCOLORED | Low=UNCOLORED | "
+        "Emergency=UNCOLORED | Normal=UNCOLORED"
+    ),
+    ("Maintenance Requests", "Status"): (
+        "New=UNCOLORED | Escalated=UNCOLORED | On Hold=UNCOLORED | "
+        "Closed=UNCOLORED | Triage=UNCOLORED | Scheduled=UNCOLORED | "
+        "Waiting on Tenant=UNCOLORED | Waiting on Vendor=UNCOLORED | "
+        "In Progress=UNCOLORED | Completed=UNCOLORED | Cancelled=UNCOLORED"
+    ),
+    ("Tasks", "Priority"): (
+        "High=UNCOLORED | Highest=UNCOLORED | Low=UNCOLORED | "
+        "Lowest=UNCOLORED | Normal=UNCOLORED | Emergency=UNCOLORED"
+    ),
+}
+
+LIVE_UNCOLORED_PICKLIST_SCOPES = {
+    "module_local_live_uncolored",
+    "standard_module_live_uncolored",
+    "global_live_uncolored",
+}
+GOVERNED_LIVE_CHOICE_SCOPES = {
+    ("Rental Applications", "Decision"): "local_module",
+    ("Rental Applications", "Addenda Required"): "local_module",
+    ("Leases", "Lease Type"): "local_module",
+    ("Leases", "Addenda Required"): "local_module",
+    ("Leases", "Lease Status"): "local_module",
+    ("Contacts", "Primary Language"): "module_local_live_uncolored",
+    ("Contacts", "Portal Invite Status"): "module_local_live_uncolored",
+    ("Properties", "Property Status"): "global_live_uncolored",
+    ("Units", "Move-In Checklist Status"): "module_local_live_uncolored",
+    ("Units", "Market Status"): "module_local_live_uncolored",
+    ("Units", "Unit Status"): "local_module",
+    (
+        "Maintenance Requests",
+        "Access Permission",
+    ): "module_local_live_uncolored",
+    (
+        "Maintenance Requests",
+        "Maintenance Category",
+    ): "module_local_live_uncolored",
+    ("Inspections", "Inspection Type"): "module_local_live_uncolored",
+    ("Inspections", "Status"): "module_local_live_uncolored",
+    ("Vendors", "Vendor Status"): "global_live_uncolored",
+    ("Tasks", "Task Category"): "module_local_live_uncolored",
+    ("Maintenance Requests", "Case Origin"): "standard_module_live_uncolored",
+    ("Maintenance Requests", "Priority"): "standard_module_live_uncolored",
+    ("Maintenance Requests", "Status"): "standard_module_live_uncolored",
+    ("Tasks", "Priority"): "standard_module_live_uncolored",
+}
+
+GOVERNED_LIVE_SENTINEL_READBACK = {
+    ("Maintenance Requests", "Case Origin"): (
+        "Exact live readback order including platform sentinel: "
+        "-None-, Email, Phone, Web, Tenant Portal, Text, Landlord Created, "
+        "Inspection."
+    ),
+    ("Maintenance Requests", "Priority"): (
+        "Exact live readback order including platform sentinel: "
+        "-None-, High, Medium, Low, Emergency, Normal."
+    ),
+    ("Units", "Unit Status"): (
+        "Exact live readback order including platform sentinel: "
+        "-None-, Occupied, Vacant - Ready, Vacant - Needs Turnover, "
+        "Under Renovation, Reserved, Inactive."
+    ),
+}
+
+# Fail-closed policy notes for live fields whose existence does not establish
+# synchronization, legal consent, signature evidence, or financial authority.
+GOVERNED_POLICY_NOTE_REQUIREMENTS = {
+    ("Contacts", "Email Operational Consent?"): (
+        "history tracking is off",
+        "no consent source/timestamp/revocation evidence",
+        "Never use as marketing-consent proof or sole messaging authorization",
+    ),
+    ("Contacts", "SMS Operational Consent?"): (
+        "history tracking is off",
+        "no consent source/timestamp/revocation evidence",
+        "Never use as marketing-consent proof or sole messaging authorization",
+    ),
+    ("Contacts", "Current Lease"): (
+        "Non-authoritative convenience field",
+        "no sync automation is verified",
+        "Leases owns tenancy and lease history",
+        "Zoho Books owns invoice/payment/balance truth",
+        "Do not treat this value as automatically current",
+    ),
+    ("Contacts", "Current Unit"): (
+        "Non-authoritative convenience field",
+        "no sync automation is verified",
+        "Leases owns tenancy and lease history",
+        "Zoho Books owns invoice/payment/balance truth",
+        "Do not treat this value as automatically current",
+    ),
+    ("Rental Applications", "Zoho Creator Application ID"): (
+        "optional Single Line field",
+        "verified uniqueness is not enabled",
+        "Prohibited as the sole upsert/idempotency key",
+        "collision/duplicate handling",
+        "post-write readback",
+    ),
+    ("Units", "Current Lease"): (
+        "Non-authoritative convenience field",
+        "no sync automation is verified",
+        "Leases owns tenancy and lease history",
+        "Zoho Books owns invoice/payment/balance truth",
+        "Do not treat this value as automatically current",
+    ),
+    ("Units", "Current Lease End Date"): (
+        "Non-authoritative convenience snapshot",
+        "no sync automation is verified",
+        "Leases owns tenancy and lease history",
+        "Zoho Books owns invoice/payment/balance truth",
+        "Do not treat this value as automatically current",
+    ),
+    ("Units", "Current Base Rent"): (
+        "Optional editable planning snapshot only",
+        "no sync automation is verified",
+        "Never use as payment/Books evidence or an enforceable tenant amount",
+        "never copy or charge it automatically",
+        "Leases owns tenancy and lease history",
+        "Zoho Books owns invoice/payment/balance truth",
+        "furnished/deposit-cap review where applicable",
+    ),
+    ("Units", "Security Deposit Default"): (
+        "Optional editable planning/default snapshot only",
+        "Never use as payment/Books evidence or an enforceable tenant amount",
+        "never copy or charge it automatically",
+        "furnished/deposit-cap review where applicable",
+    ),
+    ("Maintenance Requests", "Creator Ticket ID"): (
+        "optional Single Line field",
+        "verified uniqueness is not enabled",
+        "Prohibited as the sole upsert/idempotency key",
+        "collision/duplicate handling",
+        "post-write readback",
+    ),
+    ("Inspections", "Tenant Signed?"): (
+        "Manual operational checkbox only",
+        "no Zoho Sign evidence integration is verified",
+        "Never treat as signature or enforcement proof",
+    ),
+    ("Inspections", "Landlord Signed?"): (
+        "Manual operational checkbox only",
+        "no Zoho Sign evidence integration is verified",
+        "Never treat as signature or enforcement proof",
+    ),
+}
+
+# Exact global-picklist associations represented by verified live CSV rows.
+# Other associations remain governed by the separate global-picklist registry.
+GLOBAL_LIVE_PICKLIST_ASSOCIATIONS = {
+    ("Properties", "State"): "States",
+    ("Properties", "Property Status"): "GH_Lifecycle_Status",
+    ("Vendors", "Vendor Status"): "GH_Lifecycle_Status",
+}
+
+# These reviewed live-reuse and ownership decisions prevent future catalog
+# consumers from treating duplicate-prone historical proposals as build work.
+NO_DUPLICATE_DECISIONS = {
+    ("Contacts", "Preferred Contact Method"): (
+        "blocked_ambiguous",
+        "blocked_ambiguous",
+    ),
+    ("Contacts", "Secondary Phone"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Contacts", "Contact Role Type"): (
+        "blocked_ambiguous",
+        "blocked_ambiguous",
+    ),
+    ("Contacts", "Contact Status"): (
+        "blocked_ambiguous",
+        "blocked_ambiguous",
+    ),
+    ("Contacts", "Legal First Name"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Contacts", "Legal Last Name"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Contacts", "Legal Middle Name"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Contacts", "Zoho Books Customer ID"): (
+        "blocked_ambiguous",
+        "blocked_ambiguous",
+    ),
+    ("Contacts", "Zoho Contracts Counterparty ID"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Properties", "Notice Phone"): (
+        "blocked_ambiguous",
+        "blocked_ambiguous",
+    ),
+    ("Properties", "Property Manager Name"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Properties", "Property Manager User"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Properties", "Property Type"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Units", "Occupancy Status"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Units", "WorkDrive Unit Folder"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Inspections", "Inspection PDF Link"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Inspections", "Photo Folder Link"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Inspections", "Inspection Status"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
+    ),
+    ("Inspections", "Tenant Contact"): (
+        "superseded_by_verified_live_mcp_field",
+        "do_not_create",
     ),
 }
 
@@ -541,12 +1295,28 @@ def validate_governed_live_manifest(
     choice_keys = {
         key
         for key, field_type in GOVERNED_LIVE_FIELD_TYPES.items()
-        if field_type in {"Pick List", "Multi-Select Pick List"}
+        if field_type
+        in {"Pick List", "Pick List / Standard", "Multi-Select Pick List"}
     }
     if set(GOVERNED_LIVE_CHOICES) != choice_keys:
         errors.append(
             "validator invariant: governed live choice coverage does not exactly "
             "match the 2026-07-24 choice fields"
+        )
+    if set(GOVERNED_LIVE_CHOICE_SCOPES) != choice_keys:
+        errors.append(
+            "validator invariant: governed live choice-scope coverage does not "
+            "exactly match the 2026-07-24 choice fields"
+        )
+    if not set(GOVERNED_LIVE_SENTINEL_READBACK).issubset(choice_keys):
+        errors.append(
+            "validator invariant: governed live sentinel evidence references "
+            "a field outside the 2026-07-24 choice manifest"
+        )
+    if not set(GOVERNED_POLICY_NOTE_REQUIREMENTS).issubset(manifest_keys):
+        errors.append(
+            "validator invariant: governed policy-note evidence references "
+            "a field outside the 2026-07-24 live manifest"
         )
 
     rows_by_field: dict[
@@ -633,6 +1403,169 @@ def validate_governed_live_manifest(
                     "picklist_values_and_colors: exact live choices/order/colors "
                     "drifted"
                 )
+            expected_choice_scope = GOVERNED_LIVE_CHOICE_SCOPES.get(
+                (module_label, field_label)
+            )
+            if (
+                expected_choice_scope is not None
+                and row["picklist_scope"] != expected_choice_scope
+            ):
+                errors.append(
+                    f"{csv_path.name}: {manifest_path}.picklist_scope: expected "
+                    f"{expected_choice_scope!r}, found {row['picklist_scope']!r}"
+                )
+            expected_sentinel_readback = GOVERNED_LIVE_SENTINEL_READBACK.get(
+                (module_label, field_label)
+            )
+            if (
+                expected_sentinel_readback is not None
+                and expected_sentinel_readback not in row["notes"]
+            ):
+                errors.append(
+                    f"{csv_path.name}: {manifest_path}.notes: expected exact "
+                    "platform-sentinel readback order"
+                )
+            for required_note in GOVERNED_POLICY_NOTE_REQUIREMENTS.get(
+                (module_label, field_label),
+                (),
+            ):
+                if required_note not in row["notes"]:
+                    errors.append(
+                        f"{csv_path.name}: {manifest_path}.notes: expected "
+                        f"policy warning {required_note!r}"
+                    )
+
+
+def validate_no_duplicate_decisions(
+    rows_with_paths: list[tuple[Path, dict[str, str]]],
+    errors: list[str],
+) -> None:
+    """Keep reviewed duplicate-prone proposals out of future build manifests."""
+
+    rows_by_field: dict[
+        tuple[str, str], list[tuple[Path, dict[str, str]]]
+    ] = defaultdict(list)
+    for csv_path, row in rows_with_paths:
+        key = (
+            row["module_display_label"].casefold(),
+            row["field_label"].casefold(),
+        )
+        rows_by_field[key].append((csv_path, row))
+
+    for (module_label, field_label), (
+        expected_status,
+        expected_disposition,
+    ) in NO_DUPLICATE_DECISIONS.items():
+        key = (module_label.casefold(), field_label.casefold())
+        matches = rows_by_field.get(key, [])
+        decision_path = f"no-duplicate decision: {module_label}.{field_label}"
+        if not matches:
+            errors.append(f"{decision_path}: required catalog row is missing")
+            continue
+        if len(matches) != 1:
+            errors.append(
+                f"{decision_path}: expected exactly one catalog row, "
+                f"found {len(matches)}"
+            )
+            continue
+
+        csv_path, row = matches[0]
+        if row["api_name_status"] != expected_status:
+            errors.append(
+                f"{csv_path.name}: {decision_path}.api_name_status: expected "
+                f"{expected_status!r}, found {row['api_name_status']!r}"
+            )
+        if row["disposition"] != expected_disposition:
+            errors.append(
+                f"{csv_path.name}: {decision_path}.disposition: expected "
+                f"{expected_disposition!r}, found {row['disposition']!r}"
+            )
+        source_ids = {
+            item.strip()
+            for item in row["source_ids"].split(",")
+            if item.strip()
+        }
+        if "LIVE_CRM_MCP_2026-07-24" not in source_ids:
+            errors.append(
+                f"{csv_path.name}: {decision_path}.source_ids: expected "
+                "LIVE_CRM_MCP_2026-07-24"
+            )
+        if "do not create" not in row["notes"].casefold():
+            errors.append(
+                f"{csv_path.name}: {decision_path}.notes: expected explicit "
+                "do-not-create instruction"
+            )
+
+
+def validate_global_live_picklist_associations(
+    rows_with_paths: list[tuple[Path, dict[str, str]]],
+    errors: list[str],
+) -> None:
+    """Protect exact global-set ownership for live choice rows in the CSVs."""
+
+    rows_by_field: dict[
+        tuple[str, str], list[tuple[Path, dict[str, str]]]
+    ] = defaultdict(list)
+    observed_global_scope: set[tuple[str, str]] = set()
+    for csv_path, row in rows_with_paths:
+        key = (row["module_display_label"], row["field_label"])
+        rows_by_field[key].append((csv_path, row))
+        if (
+            row["api_name_status"] == "verified_live_mcp"
+            and row["picklist_scope"] == "global_live_uncolored"
+        ):
+            observed_global_scope.add(key)
+
+    expected_keys = set(GLOBAL_LIVE_PICKLIST_ASSOCIATIONS)
+    if observed_global_scope != expected_keys:
+        errors.append(
+            "global live picklist association invariant: CSV global-scope "
+            f"keys {sorted(observed_global_scope)!r} do not match governed "
+            f"keys {sorted(expected_keys)!r}"
+        )
+
+    for key, global_api_name in GLOBAL_LIVE_PICKLIST_ASSOCIATIONS.items():
+        module_label, field_label = key
+        matches = rows_by_field.get(key, [])
+        association_path = (
+            f"global live picklist association: {module_label}.{field_label}"
+        )
+        if not matches:
+            errors.append(f"{association_path}: required catalog row is missing")
+            continue
+        if len(matches) != 1:
+            errors.append(
+                f"{association_path}: expected exactly one catalog row, "
+                f"found {len(matches)}"
+            )
+            continue
+
+        csv_path, row = matches[0]
+        if row["api_name_status"] != "verified_live_mcp":
+            errors.append(
+                f"{csv_path.name}: {association_path}.api_name_status: "
+                "expected 'verified_live_mcp'"
+            )
+        if row["picklist_scope"] != "global_live_uncolored":
+            errors.append(
+                f"{csv_path.name}: {association_path}.picklist_scope: "
+                "expected 'global_live_uncolored'"
+            )
+        if global_api_name not in row["notes"]:
+            errors.append(
+                f"{csv_path.name}: {association_path}.notes: expected global "
+                f"picklist API name {global_api_name!r}"
+            )
+        source_ids = {
+            item.strip()
+            for item in row["source_ids"].split(",")
+            if item.strip()
+        }
+        if "LIVE_CRM_MCP_2026-07-24" not in source_ids:
+            errors.append(
+                f"{csv_path.name}: {association_path}.source_ids: expected "
+                "LIVE_CRM_MCP_2026-07-24"
+            )
 
 
 def validate_rows(rows_with_paths: list[tuple[Path, dict[str, str]]]) -> list[str]:
@@ -730,8 +1663,7 @@ def validate_rows(rows_with_paths: list[tuple[Path, dict[str, str]]]) -> list[st
             errors,
             allow_uncolored=(
                 api_status == "verified_live_mcp"
-                and row["picklist_scope"]
-                in {"module_local_live_uncolored", "standard_module_live_uncolored"}
+                and row["picklist_scope"] in LIVE_UNCOLORED_PICKLIST_SCOPES
             ),
         )
         is_choice_type = "pick" in field_type.casefold() or "multi-select" in field_type.casefold()
@@ -748,6 +1680,8 @@ def validate_rows(rows_with_paths: list[tuple[Path, dict[str, str]]]) -> list[st
         errors.append(f"catalog is missing current modules: {', '.join(missing_modules)}")
     validate_governed_live_snapshot(rows_with_paths, errors)
     validate_governed_live_manifest(rows_with_paths, errors)
+    validate_global_live_picklist_associations(rows_with_paths, errors)
+    validate_no_duplicate_decisions(rows_with_paths, errors)
     return errors
 
 

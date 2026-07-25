@@ -15,6 +15,9 @@ Coverage:
 - email/phone validation.
 - stable idempotency key generation.
 - property/unit map resolution.
+- verified `Units`, `Unit_I_D`, and `Unit_Status` runtime defaults.
+- explicit `ZOHO_CRM_UNITS_MODULE` override behavior.
+- exclusion of stale `Zillow_Property_Address` and prohibited `Zillow_Raw_Payload` mappings.
 - CRM Lead payload construction.
 - exclusion of removed fields: `Desired_Rent`, `Desired_Deposit`, `Manual_Review_Required`, `Manual_Review_Reason`.
 - URL-encoded content type default.

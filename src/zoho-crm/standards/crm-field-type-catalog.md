@@ -1,9 +1,11 @@
 # GH Real Estate Zoho CRM Working Field-Type Catalog
 
 **Standard:** GH-ZOHO-CRM-001  
-**Version:** 1.0  
-**Effective date:** July 16, 2026  
-**Status:** Working catalog pending a complete tenant-specific Zoho CRM metadata export
+**Version:** 1.1
+
+**Effective date:** July 24, 2026
+
+**Status:** Current production UI inventory recorded; API and cross-suite compatibility remain metadata-gated
 
 ## Purpose
 
@@ -39,17 +41,56 @@ Do not use these terms interchangeably.
 | Date | Expected `date`; verify live | Working mapping | Calendar date without time. |
 | Date/Time | `datetime` | Confirmed pattern | Timestamp when time and zone matter. |
 | Lookup | `lookup` | Confirmed pattern | Single-record relationship; specify target module and related-list behavior. |
-| User | TBD from live metadata | Needs verification | User lookup/owner assignment; distinguish record Owner from a custom user lookup. |
-| Auto-Number | TBD plus `auto_number` metadata | Needs verification | System-generated sequence; specify prefix, start number, and reset behavior. |
+| User | `userlookup` for the verified live pattern | UI and metadata pattern confirmed | User lookup/owner assignment; distinguish record Owner from a custom user lookup and verify the target module permits a custom User field. |
+| Auto-Number | `autonumber` plus `auto_number` metadata | Live pattern confirmed | System-generated sequence; specify prefix, start number, digit length, and reset behavior. |
 | Formula | Depends on return type | Needs formula design | Read-only calculated field; document expression, return type, decimals, and dependencies. |
 | Rollup Summary | TBD plus `rollup_summary` metadata | Edition/availability dependent | Aggregates related records; document relationship, function, criteria, and limits. |
-| Image Upload | TBD from live metadata | Official UI type | Image upload field; confirm edition limits, portal access, count, size, and retention. |
-| File Upload | TBD from live metadata | Official UI type | File upload field; confirm edition limits, allowed files, size, and retention. |
-| Address | Not assumed to be one custom API field | Design pattern | Prefer explicit street/city/state/postal/country fields unless live CRM exposes the intended address construct. |
+| Image Upload | `imageupload` for the verified live pattern | UI and metadata pattern confirmed | Image upload field; confirm edition limits, portal access, count, size, and retention. |
+| File Upload | `fileupload` for the verified live pattern | UI and metadata pattern confirmed | File upload field; confirm edition limits, allowed files, size, and retention. |
+| Address | TBD from a created-field readback | Current production UI type | Do not assume one custom API field or cross-suite support. Prefer explicit street/city/state/postal/country fields for Contracts, Books, or Sign unless a canary proves the Address construct is supported end to end. |
+| Radio Button | TBD from a created-field readback | Current production UI type | Single-choice presentation. Prefer Pick List when API, reporting, or cross-suite behavior is better understood; never infer that Radio Button and Pick List share metadata behavior. |
 | Subform | `subform` | Confirmed metadata type | Child line-item structure; requires a separate subform field catalog. |
 | Multi-Select Lookup | `multiselectlookup` | Confirmed metadata type | Many-to-many relationship; specify linking module and related lists. |
 | Owner Lookup | `ownerlookup` | Confirmed metadata type | System owner field, not interchangeable with every User field. |
 | Profile Image | `profileimage` | Confirmed metadata type | System/profile image behavior; not the same as a custom image upload field. |
+| Mirror | Layout component; not a stored source field | Current production component | Displays another field in a layout. Do not use as a Contracts, Books, Sign, workflow, formula, or API source until the underlying source-field behavior is verified. |
+
+## Current production UI inventory
+
+A user-supplied production layout-editor screenshot dated July 24, 2026 shows these available **New Fields** choices:
+
+```text
+Single Line
+Multi-Line
+Email
+Phone
+Pick List
+Multi-Select
+Date
+Date/Time
+Number
+Auto-Number
+Currency
+Decimal
+Percent
+Long Integer
+Checkbox
+URL
+Lookup
+Formula
+User
+File Upload
+Image Upload
+Rollup Summary
+Radio Button
+Address
+Multi-Select Lookup
+Subform
+```
+
+The same panel exposes `NEW SECTION` and the `Mirror` component. Those are layout constructs, not interchangeable stored field types.
+
+This inventory proves current UI availability only. A field is not approved for creation until its module supports the type through live metadata/configuration APIs and any intended Zoho Contracts, Books, or Sign destination has a compatible type. The current MCP inventory has no Contracts or Sign field-mapping endpoint, so cross-suite compatibility must remain `unverified` unless an existing official-source repository artifact or a later supported metadata canary proves it.
 
 ## Standard-field suffixes in the GH catalog
 
@@ -212,6 +253,7 @@ Compound entries such as `Date / Formula` and `Number / Formula` are unresolved 
 - Zoho documents Plain Text Small, Plain Text Large, and Rich Text multi-line formats.
 - Zoho documents picklist color coding across modules.
 - Zoho documents File Upload, Image Upload, and Rollup Summary fields, subject to edition and rollout limits.
+- The July 24, 2026 production UI screenshot confirms the field and layout-component inventory transcribed above; it does not establish API or cross-suite mapping compatibility.
 
 Official sources:
 

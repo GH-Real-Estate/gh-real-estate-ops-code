@@ -46,6 +46,10 @@ Party B Address means the counterparty address, not the premises. Party B Jurisd
 
 CRM Lease fields are approved transaction snapshots only. Zoho Books remains authoritative for invoices, payments, balances, deposit liabilities, and payment evidence.
 
+The complete fail-closed calculation, snapshot, Books reconciliation, readiness
+gate, and Contracts/Sign canary design is in
+[Lease Initial Amounts and Contract Readiness](lease-initial-amounts-readiness.md).
+
 | Merge concept | Verified CRM Lease API | Intended Contracts destination label | Current status |
 |---|---|---|---|
 | Base Rent Amount | Existing `Monthly_Rent` is ambiguous | Base Rent Amount | Blocked; reconcile existing semantics before reuse or creation. |
@@ -62,8 +66,8 @@ CRM Lease fields are approved transaction snapshots only. Zoho Books remains aut
 | Prorated Pet Rent Amount | `Prorated_Pet_Rent_Amount` | Prorated Pet Rent Amount | CRM verified; proration/rounding remains gated. |
 | Prorated Storage Unit Rent Amount | `Prorated_Storage_Unit_Rent_Amount` | Prorated Storage Unit Rent Amount | CRM verified; storage/proration gates remain open. |
 | Holding Deposit Credit Applied | `Holding_Deposit_Credit_Applied` | Holding Deposit Amount | CRM verified; credit semantics and Books evidence remain gated. |
-| Total Due Before Possession | `Total_Due_Before_Possession` | Total Due Before Possession | CRM verified but must not be used until the complete equation is approved. |
-| First Full Month Base Rent Amount | -- | First Full Month Base Rent Amount | Confirmed field/equation gap; blocked. |
+| Total Due Before Possession | `Total_Due_Before_Possession` | Total Due Before Possession | CRM Currency snapshot is verified but must not be used until the complete equation, Books reconciliation, readiness gate, and controlled canary pass. |
+| First Full Month Base Rent Amount | `First_Full_Month_Base_Rent_Amount` | First Full Month Base Rent Amount | CRM Currency source verified. The registry destination is review-required/design-only and the document-map trace is deferred; no live Contracts API or mapping is verified. The complete equation, Books reconciliation, readiness gate, metadata verification, and controlled canary must pass first. |
 
 ## Contract controls
 

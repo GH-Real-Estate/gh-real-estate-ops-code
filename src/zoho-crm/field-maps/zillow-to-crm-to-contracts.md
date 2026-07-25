@@ -160,6 +160,18 @@ The public extension workflow is an intentional request action. It does not docu
 
 Do not create `Desired_Rent`, `Desired_Deposit`, `Manual_Review_Required`, or `Manual_Review_Reason` for Zillow intake.
 
+### Verified Unit routing contract
+
+Dynamic routing queries the production `Units` module. The verified Unit
+identifier and status APIs are `Unit_I_D` (Auto-Number, visible label
+**Unit I.D.**) and `Unit_Status` (Pick List). Do not create or configure the
+retired `Unit_ID` or `Occupancy_Status` proposals. The runtime may override the
+module API through `ZOHO_CRM_UNITS_MODULE`, but the production fallback is
+`Units`; any override requires a new metadata readback.
+
+This routing read does not authorize Zillow/Catalyst to write Units. Its only
+CRM record-write boundary remains Leads.
+
 ## Governed promotion architecture
 
 Promotion is a sequence of durable records, not one record changing meaning:

@@ -10,10 +10,16 @@ Zoho CRM owns prospect, applicant, tenant relationship, property/unit, and leasi
 AGENTS.md
 field-maps/
   crm-module-field-catalog.md
+  production-module-inventory-2026-07-24.csv
+  production-module-metadata-audit-2026-07-24.csv
   crm-module-fields/
     leads.csv
     properties.csv
     ... one or more CSV segments per known module
+  protected-modules/
+    README.md
+    protected-module-policy.json
+    ... sanitized checksum-controlled production baselines
   zillow-to-crm-to-contracts.md
 integrations/
   zillow-lead-intake/
@@ -22,9 +28,12 @@ standards/
   crm-module-field-authoring-standard.md
   crm-field-type-catalog.md
 tests/
+  test_production_module_inventory.py
+  test_validate_protected_module_baselines.py
   test_validate_crm_field_catalog.py
 tools/
   export-crm-metadata.py
+  validate-protected-module-baselines.py
   validate-crm-field-catalog.py
 ```
 
@@ -36,9 +45,18 @@ Before ChatGPT, Codex, or an implementer creates, revises, maps, or automates a 
 2. [`standards/crm-module-field-authoring-standard.md`](standards/crm-module-field-authoring-standard.md)
 3. [`standards/crm-field-type-catalog.md`](standards/crm-field-type-catalog.md)
 4. [`field-maps/crm-module-field-catalog.md`](field-maps/crm-module-field-catalog.md) and the per-module CSV files under [`field-maps/crm-module-fields/`](field-maps/crm-module-fields/)
-5. [`../../docs/runbooks/zoho-crm-lease-system-reconciliation.md`](../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) for the July 24, 2026 production Lease-system configuration boundary and readback
+5. [`field-maps/production-module-inventory-2026-07-24.csv`](field-maps/production-module-inventory-2026-07-24.csv) and [`field-maps/production-module-metadata-audit-2026-07-24.csv`](field-maps/production-module-metadata-audit-2026-07-24.csv) for the exact sanitized 72-module inventory and 51-module metadata-attempt ledger
+6. [`field-maps/protected-modules/README.md`](field-maps/protected-modules/README.md) and its policy before any broad reconciliation
+7. [`../../docs/runbooks/zoho-crm-lease-system-reconciliation.md`](../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) for the July 24, 2026 production Lease-system configuration boundary and readback
+8. [`../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md`](../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md) for the whole-CRM production inventory, verified 83-field/global-picklist/layout readback, protected boundaries, integration gates, and rollback
 
 The per-module CSV catalog separates actual verified API names from workbook proposals, runtime defaults, legacy candidates, superseded aliases, and fields prohibited by the current design.
+
+The production module ledgers are metadata-only snapshots from the approved
+CRM audit MCP. They contain no record data, IDs, actors, profiles, or
+timestamps. `api_supported=true` does not guarantee that every metadata
+endpoint succeeds; the audit ledger preserves each field/layout success,
+rejection, or truncated response instead of inferring a schema.
 
 ## Core rules
 
@@ -51,7 +69,9 @@ The per-module CSV catalog separates actual verified API names from workbook pro
 - For every choice field, provide exact ordered values, scope, default, and a six-digit hex color for each value.
 - Never use a proposed API name in code until live metadata or a reviewed operating integration verifies it.
 - Confirm field type before creation; Zoho does not permit changing a custom field's type later.
-- Run `python src/zoho-crm/tools/validate-crm-field-catalog.py` after catalog changes.
+- Run both CRM validators after catalog or protected-baseline changes:
+  `python src/zoho-crm/tools/validate-crm-field-catalog.py` and
+  `python src/zoho-crm/tools/validate-protected-module-baselines.py`.
 
 ## Current module strategy
 
@@ -60,14 +80,23 @@ The per-module CSV catalog separates actual verified API names from workbook pro
 - Maintenance Requests = Cases renamed; API name `Cases`.
 - Units = custom module; verified API name `Units`.
 - Leases = custom module; live API name `Leases`, verified through production metadata readback on July 24, 2026.
-- Leads, Contacts, Vendors, and Tasks retain their standard API names.
+- Leads retains standard API name `Leads` and is protected from reconciliation
+  writes because the Zillow/Catalyst runtime depends on it.
+- Property Assets is the protected custom module whose verified API name is
+  `Equipment`. The historical `equipment.csv` target does not authorize
+  changes to that live module.
+- Pets is protected; its verified custom-module API name is `Pets`.
+- Vehicles is protected; its verified custom-module API name is
+  `Tenant_Vehicles`.
+- Contacts, Vendors, and Tasks retain their standard API names.
 - `Zillow Intake Events` is an optional disabled-by-default runtime candidate; its live module/API existence must be verified before use.
-- Inspections, Notices, Equipment, and Lease Documents / Addenda require live metadata before a custom module API name is claimed.
+- Inspections, Notices, and Lease Documents / Addenda require live metadata before a custom module API name is claimed.
 
 ## Lease-system deployment boundary
 
 The production CRM configuration and the manual Zoho Contracts remainder are intentionally separate:
 
+- [`zoho-crm-production-reconciliation-2026-07-24.md`](../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md) records the broader MCP-only production module audit, verified 83-field/global-picklist/layout changes, protected-module boundary, cross-system gates, and rollback/readback controls.
 - [`zoho-crm-lease-system-reconciliation.md`](../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) records the sanitized production CRM fields, actual read-back API names, layout/choice results, blocked items, and rollback.
 - [`crm-leases-extension-manual-deployment.md`](../zoho-contracts/runbooks/crm-leases-extension-manual-deployment.md) covers the unsupported manual Contracts extension, button, related-list, counterparty, mapping, and signer-routing steps.
 - The approved Application-to-Lease automation remains unsupported by the current MCP surface. Do not substitute one-time record creation for a durable, idempotent automation.

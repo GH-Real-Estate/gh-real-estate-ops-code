@@ -434,6 +434,68 @@ class ResidentialLeaseImplementationTests(unittest.TestCase):
         )
         self.assertTrue(any("must not map monthly rent" in error for error in errors))
 
+    def test_first_full_month_base_rent_mapping_is_exact_and_deferred(self) -> None:
+        paths = validator._paths(ROOT)
+        field_map = validator.load_json(paths["data"]["field_map"])
+        registry = validator.load_json(paths["field_registry"])
+
+        mapping = next(
+            item
+            for item in field_map["mappings"]
+            if item["source_variable"] == "first_full_month_base_rent_amount"
+        )
+        for key, expected in validator.REQUIRED_DEFERRED_DOCUMENT_MAPPINGS[
+            "first_full_month_base_rent_amount"
+        ].items():
+            self.assertEqual(expected, mapping[key], key)
+        self.assertIn(
+            "First_Full_Month_Base_Rent_Amount", mapping["source_system"]
+        )
+        self.assertIn(
+            "first_full_month_base_rent_amount",
+            field_map["unresolved_fields"],
+        )
+        self.assertEqual(
+            [],
+            validator.validate_field_map(
+                field_map,
+                registry,
+                open_gate_ids=validator.REQUIRED_OPEN_GATES,
+            ),
+        )
+
+        changed = copy.deepcopy(field_map)
+        changed_mapping = next(
+            item
+            for item in changed["mappings"]
+            if item["source_variable"] == "first_full_month_base_rent_amount"
+        )
+        changed_mapping["status"] = "mapped"
+        changed_mapping["gate_id"] = None
+        changed["unresolved_fields"].remove(
+            "first_full_month_base_rent_amount"
+        )
+        errors = validator.validate_field_map(
+            changed,
+            registry,
+            open_gate_ids=validator.REQUIRED_OPEN_GATES,
+        )
+        self.assertTrue(
+            any(
+                "'first_full_month_base_rent_amount'.status must be 'deferred'"
+                in error
+                for error in errors
+            )
+        )
+        self.assertTrue(
+            any(
+                "unresolved_fields must include "
+                "'first_full_month_base_rent_amount'"
+                in error
+                for error in errors
+            )
+        )
+
     def test_recipient_manifest_keeps_gh_final(self) -> None:
         manifest = self.valid_recipient_manifest(3)
         self.assertEqual(

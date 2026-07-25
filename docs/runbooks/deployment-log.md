@@ -2,7 +2,23 @@
 
 Record every production-relevant deployment or Zoho change.
 
-## 2026-07-24 — Production CRM Lease-System Core Reconciled
+## 2026-07-24 — Production CRM Full Metadata Reconciliation
+
+- System: Zoho CRM / Zoho Books review / GitHub
+- Repo branch / change: live configuration through the approved CRM MCP servers; sanitized repository reconciliation on `agent/full-crm-reconciliation`
+- Scope: all 72 returned CRM modules were enumerated (49 visible, 15 user-hidden, 8 system-hidden); field/layout metadata was attempted for all 51 modules flagged API-supported, with exact successes, rejections, and truncated layout responses recorded in the sanitized module ledgers; Leads, Property Assets (`Equipment`), Pets, and Vehicles (`Tenant_Vehicles`) were read-only and remained unchanged
+- Result: 83 optional custom fields were created and read back across 12 modules; `GH_Lifecycle_Status` was created with Active, Inactive, and Archived and associated with Properties and Vendors; maintenance and task choices were extended additively; affected layouts were organized into governed sections
+- Security: Vendors `Username` and `Password` were hidden for Administrator and Standard profiles and removed non-permanently from the active layout; no credential values or CRM records were read
+- Lease financial state: `First_Full_Month_Base_Rent_Amount` now exists as Currency(2), but no total-due formula, snapshot-copy automation, Books reconciliation gate, Contracts mapping, contract request, or signature request was created
+- Verification: all 83 fields, lookup targets, tooltips, optional state, profile permissions, final placements, global associations, additive choices, and credential containment were read back through the audit MCP; repository validators and tests are required before publication
+- Rollback: remove new fields from active layouts and retire them only after dependency review; reverse section moves from the recorded pre-state; detach global associations before retiring the set; never delete fields or clear record data without a separate value/dependency audit
+- Remaining blockers: Deals Stage/Pipeline actual-value corruption; Lease Number format; `Monthly_Rent` and `Prorated_Rent` semantics; complete initial-amount equation; Lease Status default/required controls; historical tooltip remediation; Books ownership; Contracts/Sign canary; RLA publication and attorney approval
+- Evidence: [`zoho-crm-production-reconciliation-2026-07-24.md`](zoho-crm-production-reconciliation-2026-07-24.md)
+
+## 2026-07-24 — Production CRM Lease-System Core Reconciled (Earlier Phase)
+
+This earlier phase is retained as historical evidence. The full metadata
+reconciliation entry above supersedes its field-gap and current-state summary.
 
 - System: Zoho CRM / GitHub
 - Repo branch / change: live configuration performed through the approved CRM connectors; sanitized repository reconciliation prepared on `agent/production-crm-lease-system`

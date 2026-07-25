@@ -242,7 +242,7 @@ The table above is a target-to-live presence/color comparison, not the live orde
 | Base Rent Amount | `blocked_ambiguous` | Existing `Monthly_Rent` may already represent base or total monthly rent. Determine semantics and dependencies before reuse or new-field approval. |
 | Total Monthly Rent Amount | `blocked_ambiguous` | Same `Monthly_Rent` ambiguity; do not create a duplicate. |
 | Prorated Base Rent Amount | `blocked_ambiguous` | Existing `Prorated_Rent` semantics are unverified. Reconcile before reuse or creation. |
-| First Full Month Base Rent Amount | `blocked_ambiguous` | The required transaction input remains a confirmed field gap. Reconcile the initial-amount equation before adding it. |
+| First Full Month Base Rent Amount | `verified_live_mcp` input; equation blocked | `First_Full_Month_Base_Rent_Amount` now exists and was read back as Currency(2). Do not duplicate it. The complete initial-amount equation, copy automation, Books reconciliation, readiness gate, Contracts mapping, and controlled Contracts/Sign canary remain unresolved. |
 | Rental Application `Stage` values | `unsupported_by_current_mcp` | The tool cannot safely reconcile pipeline and probability semantics; no Stage value was added or removed. |
 | Conditional required/default/readiness behavior | `unsupported_by_current_mcp` | The available configuration schema cannot express and verify the complete rule. Do not deploy a partial rule. |
 | Lease Status order/default/required controls | `unsupported_by_current_mcp` | Values/colors/history were applied, but the MCP cannot set target order, default `Draft`, or required behavior. Complete these controls manually through a supported admin path and read them back. |

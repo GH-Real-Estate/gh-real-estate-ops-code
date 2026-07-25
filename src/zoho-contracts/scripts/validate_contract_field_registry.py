@@ -121,6 +121,7 @@ REQUESTED_DESTINATION_TYPES = {
     "Prorated Pet Rent Amount": "Currency",
     "Prorated Storage Unit Rent Amount": "Currency",
     "Holding Deposit Amount": "Currency",
+    "First Full Month Base Rent Amount": "Currency",
     "Total Due Before Possession": "Currency",
 }
 
@@ -147,6 +148,7 @@ VERIFIED_CRM_API_CROSSWALK = {
     "Prorated Pet Rent Amount": "Prorated_Pet_Rent_Amount",
     "Prorated Storage Unit Rent Amount": "Prorated_Storage_Unit_Rent_Amount",
     "Holding Deposit Amount": "Holding_Deposit_Credit_Applied",
+    "First Full Month Base Rent Amount": "First_Full_Month_Base_Rent_Amount",
     "Total Due Before Possession": "Total_Due_Before_Possession",
 }
 
@@ -154,6 +156,11 @@ CRM_FIELDS_WITH_UNDEFINED_SEMANTICS = {
     "Base Rent Amount",
     "Total Monthly Rent Amount",
     "Prorated Base Rent Amount",
+}
+
+REVIEW_REQUIRED_DESTINATION_LABELS = {
+    "First Full Month Base Rent Amount",
+    "Total Due Before Possession",
 }
 
 EXPECTED_CUSTOM_LABELS = BASELINE_CUSTOM_LABELS + list(
@@ -941,6 +948,16 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
         if field.get("zoho", {}).get("type_status") != "design_decision":
             problems.append(
                 f"{label} type must remain a design decision until metadata verification"
+            )
+        expected_status = (
+            "review_required"
+            if label in REVIEW_REQUIRED_DESTINATION_LABELS
+            else "active"
+        )
+        if field.get("status") != expected_status:
+            problems.append(
+                f"{label} must remain {expected_status} until its governed "
+                "deployment conditions are satisfied"
             )
         crm = field.get("crm", {})
         if crm.get("recommended_type") != expected_crm_type:
