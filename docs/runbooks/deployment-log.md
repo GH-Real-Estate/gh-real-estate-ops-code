@@ -2,6 +2,20 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-25 - Production CRM Second-Pass Layout and Intake Reconciliation
+
+- System: Zoho CRM / GitHub
+- Repo branch / change: live configuration through the approved CRM MCP servers; sanitized repository reconciliation on `agent/crm-second-pass-reconciliation`
+- Scope: reversible active-layout cleanup for Contacts and Properties; two Rental Application intake count fields and two conditional layout rules; architecture and dashboard documentation
+- Protected boundary: Leads, Property Assets (`Equipment`), Pets, and Vehicles (`Tenant_Vehicles`) were not modified; no CRM records or PII were read; no Browser control was used
+- Result: seven redundant Contact fields and standard `Parent_Account` on Properties were removed from active layouts with `permanent: false`; no field or stored value was deleted. Properties sections were renamed to `Property Address & Legal Notice` and `Owner & Emergency Contact`.
+- Rental Applications: `Requested_Pet_Count` and `Requested_Storage_Unit_Count` were created as Integer fields, placed beside their request controls, and independently read back. Active layout rules show and require each count only when its corresponding request checkbox is true.
+- Verification: the affected Contacts, Properties, and Deals layouts, both created fields, and both layout rules were read back through `gh_zoho_crm_audit`; repository validation and tests are required before publication
+- Intentionally unchanged: Deals Stage/Pipeline, Lease Status, Properties tenant subforms, Zillow/listing fields, `Total_Due_Before_Possession`, Contacts/Properties field definitions, dashboards, Contracts, Sign, Books, and all CRM records
+- Rollback: add retired fields back to their former sections, restore the two prior section labels, deactivate the two conditional rules, remove the two count fields non-permanently from the Deals layout, and retire rather than delete them after dependency review
+- Remaining blockers: pipeline CRUD and probability/category control; Lease Status order/default/required control; deployable idempotent calculation function; Formula-to-Contracts mapping proof; dashboard/report-component CRUD; Contracts/Sign canary
+- Evidence: [`zoho-crm-second-pass-reconciliation-2026-07-25.md`](zoho-crm-second-pass-reconciliation-2026-07-25.md)
+
 ## 2026-07-24 — Production CRM Full Metadata Reconciliation
 
 - System: Zoho CRM / Zoho Books review / GitHub

@@ -39,6 +39,8 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
             validator.JULY_24_STANDARD_PICKLIST_RECONCILED_COUNT,
         )
         self.assertEqual(8, validator.JULY_24_REUSED_LIVE_COUNT)
+        self.assertEqual(2, validator.JULY_25_RECONCILIATION_CREATED_COUNT)
+        self.assertEqual(6, validator.JULY_25_RECONCILIATION_DISCOVERED_COUNT)
         self.assertEqual(
             {
                 "Contacts": 9,
@@ -85,12 +87,17 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
         )
         rows = self.load_repository_rows()
         count, digest = validator.governed_live_snapshot_digest(rows)
-        self.assertEqual(170, count)
+        self.assertEqual(178, count)
         self.assertEqual(validator.GOVERNED_LIVE_SNAPSHOT_COUNT, count)
         self.assertEqual(validator.GOVERNED_LIVE_SNAPSHOT_SHA256, digest)
 
     def test_live_manifest_rejects_plausible_api_name_mutations(self) -> None:
         cases = (
+            (
+                "Rental Applications",
+                "Requested Pet Count",
+                "Requested_Pet_Count_v2",
+            ),
             (
                 "Rental Applications",
                 "Approved Security Deposit",
@@ -127,6 +134,7 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
 
     def test_live_manifest_rejects_row_deletions(self) -> None:
         cases = (
+            ("Rental Applications", "Requested Storage Unit Count"),
             ("Rental Applications", "Decision"),
             ("Leases", "Agreement Date"),
             ("Leases", "Lease Name"),
@@ -148,7 +156,7 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
                 errors = validator.validate_rows(filtered_rows)
 
                 self.assertIn(
-                    f"2026-07-24 live manifest: {module_label}.{field_label}: "
+                    f"governed live manifest: {module_label}.{field_label}: "
                     "required catalog row is missing",
                     errors,
                 )
@@ -322,7 +330,8 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
 
         self.assertTrue(
             any(
-                "verified_live_mcp requires LIVE_CRM_MCP_2026-07-24" in error
+                "verified_live_mcp requires a governed LIVE_CRM_MCP source ID"
+                in error
                 for error in errors
             )
         )

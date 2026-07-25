@@ -2,6 +2,16 @@
 
 Record notable repository changes here. Production deployments belong in `docs/runbooks/deployment-log.md`.
 
+## 2026-07-25
+
+- Reconciled a second production CRM metadata pass through the approved MCP servers only. No Browser control, CRM record access, or protected-module configuration change was used.
+- Added and read back `Requested_Pet_Count` and `Requested_Storage_Unit_Count` as Integer fields in the Rental Applications intake section. Active layout rules now show and require each count only when its corresponding request checkbox is selected.
+- Removed seven redundant Contact convenience/formula fields and the standard Properties parent-account field from their active layouts without deleting fields or record data. Renamed two Properties sections to distinguish legal-notice and owner/emergency-contact facts from third-party property-management data.
+- Defined one lean six-stage Rental Applications pipeline target and an eleven-status Lease lifecycle target. No live Stage, Pipeline, or Lease Status values were partially changed because the available MCP surface cannot safely control pipeline membership, probability/category mappings, ordering, defaults, or unconditional required behavior.
+- Kept the Properties tenant subforms and listing/utility metadata unchanged. The current Tenant Pets subform is the only verified Property-to-Pets relationship, and the protected Pets module was not modified.
+- Added a governed CRM operations-dashboard target specification. Deployment remains blocked because the available MCP servers expose no dashboard/report-component mutation tools and the Stage/Lease Status prerequisites are not live; actual income remains owned by Zoho Books rather than Deals.
+- Recorded the required due-before-possession calculation design without changing the live writable Currency snapshot. The existing field cannot be converted in place to Formula through the available MCP, no supported function-deployment tool is exposed, and CRM Formula-to-Contracts mapping could not be verified through an available Contracts MCP.
+
 ## 2026-07-24
 
 - Reconciled the production CRM metadata surface returned by the approved MCP servers: created and read back 83 evidence-backed fields across 12 modules, added one three-value lifecycle global picklist with two associations, extended supported Cases and Tasks choices additively, and reorganized changed layouts into operational sections.

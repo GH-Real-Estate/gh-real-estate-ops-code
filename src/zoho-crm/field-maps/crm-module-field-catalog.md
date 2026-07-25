@@ -1,10 +1,12 @@
 # GH Real Estate Zoho CRM Module and Field Catalog
 
 - **Catalog ID:** GH-ZOHO-CRM-FIELDS-001
-- **Version:** 1.2.0
-- **Effective date:** July 24, 2026
+- **Version:** 1.3.0
+- **Effective date:** July 25, 2026
 - **Machine-readable field registry:** governed CSV files under [`crm-module-fields/`](crm-module-fields/)
 - **Production reconciliation ledger:** [`zoho-crm-production-reconciliation-2026-07-24.md`](../../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md)
+- **Second-pass decision ledger:** [`zoho-crm-second-pass-reconciliation-2026-07-25.md`](../../../docs/runbooks/zoho-crm-second-pass-reconciliation-2026-07-25.md)
+- **Operations dashboard specification:** [`gh-real-estate-operations-dashboard.md`](../dashboards/gh-real-estate-operations-dashboard.md)
 - **Protected-module baselines:** [`protected-modules/`](protected-modules/)
 - **Production global-picklist registry:** [`global-picklists/`](global-picklists/)
 
@@ -64,7 +66,7 @@ integration.
 | CSV module label | Zoho base/module API | Module API status | Catalog rows | Verified field APIs | Still unverified |
 |---|---|---|---:|---:|---:|
 | Condition Reports | `Condition_Reports` | `verified_live_mcp` | 5 | 5 | 0 |
-| Contacts | `Contacts` | `verified_standard_zoho` | 52 | 13 | 39 |
+| Contacts | `Contacts` | `verified_standard_zoho` | 57 | 18 | 39 |
 | Equipment (historical target CSV only) | Not authoritative for a live module | `historical_target_only_non_deployable` | 13 | 0 | 13 |
 | Inspections | `Inspections` | `verified_live_mcp` | 36 | 19 | 17 |
 | Leads | `Leads` | `verified_standard_zoho_and_repo_runtime` | 60 | 34 | 26 |
@@ -72,17 +74,17 @@ integration.
 | Leases | `Leases` | `verified_live_mcp` | 249 | 43 | 206 |
 | Maintenance Requests | `Cases` | `verified_standard_zoho` | 46 | 16 | 30 |
 | Notices | Custom candidate | `tbd_from_live_module_metadata` | 21 | 0 | 21 |
-| Properties | `Accounts` | `verified_standard_zoho` | 76 | 14 | 62 |
-| Rental Applications | `Deals` | `verified_standard_zoho` | 80 | 26 | 54 |
+| Properties | `Accounts` | `verified_standard_zoho` | 77 | 15 | 62 |
+| Rental Applications | `Deals` | `verified_standard_zoho` | 82 | 28 | 54 |
 | Storage Units | `Storage_Units` | `verified_live_mcp` | 3 | 3 | 0 |
 | Tasks | `Tasks` | `verified_standard_zoho` | 10 | 3 | 7 |
 | Units | `Units` | `verified_repo_live_integration` | 54 | 29 | 25 |
 | Utilities | `Utilities` | `verified_live_mcp` | 2 | 2 | 0 |
 | Vendors | `Vendors` | `verified_standard_zoho` | 24 | 1 | 23 |
 | Zillow Intake Events | `Zillow_Intake_Events` | `repo_runtime_default_needs_live_metadata` | 10 | 0 | 10 |
-| **Total** | — | — | **757** | **208** | **549** |
+| **Total** | — | — | **765** | **216** | **549** |
 
-The 208 verified APIs comprise 170 current live metadata readbacks, 34
+The 216 verified APIs comprise 178 current live metadata readbacks, 34
 Zillow/Lead runtime APIs, and four Unit APIs documented by the live
 integration. The remaining 549 rows are intentionally not represented as
 verified live configuration.
@@ -119,9 +121,11 @@ not independent attestation of current live state.
 The July 24 production ledger records 83 custom fields created and read back
 across 12 operating modules, additive reconciliation of four standard
 picklists, professional field/section placement, and verified reuse of
-compatible live fields. The complete live snapshot currently contains 170
-`verified_live_mcp` rows. Exact field facts remain in the module CSVs; the
-validator freezes every column of every live row.
+compatible live fields. The July 25 second pass adds two verified intake
+fields and six previously uncataloged live field identities while recording
+the current layout disposition of reused fields. The complete governed live
+snapshot now contains 178 `verified_live_mcp` rows. Exact field facts remain in
+the module CSVs; the validator freezes every column of every live row.
 
 ### Exact standard picklist readback
 
@@ -154,6 +158,84 @@ Active, Inactive, Archived. The full 50-state and 195-country lists and all
 confirmed associations are stored in
 [`production-global-picklist-registry.json`](global-picklists/production-global-picklist-registry.json).
 Unknown or unused values must never be interpreted as safe to delete.
+
+## July 25 second-pass decisions and verified changes
+
+The second-pass ledger separates verified metadata changes from target designs.
+No pipeline, dashboard, Contracts mapping, or custom-function deployment is
+implied by this catalog.
+
+### Rental Applications pipeline target
+
+Rental Applications uses the standard Deals module API `Deals`. The reviewed
+target is one compact Rental Applications pipeline, not parallel screening,
+leasing, or tenant pipelines:
+
+| Order | Target stage | State category |
+|---:|---|---|
+| 1 | Application Received | Open |
+| 2 | Screening In Progress | Open |
+| 3 | Decision Pending | Open |
+| 4 | Approved - Lease Pending | Open |
+| 5 | Lease Created | Closed won |
+| 6 | Closed - Not Proceeding | Closed lost |
+
+This is a target-only pipeline specification. No live Pipeline or Stage write
+occurred on July 25. The current MCP surface has no pipeline CRUD operation and
+cannot safely replace the existing stale Stage display-to-actual mappings or
+their probability and rule dependencies. `Decision` remains the detailed
+application outcome field; Stage should remain the concise operational funnel
+after a supported pipeline migration is available.
+
+Leases must not receive a second pipeline. The custom `Leases` module uses
+verified field API `Lease_Status` as its lifecycle source. Blueprint transition
+control and a Lease Status Kanban view are reviewed future targets only; neither
+is asserted live. This keeps applicant conversion separate from lease
+administration and prevents the same agreement from being counted as two
+revenue opportunities.
+
+### Verified request-count fields
+
+The following Integer fields and active conditional show-and-mandatory layout
+rules were read back from production metadata.
+
+| Module | Field label | Exact API name | Type | Verified rule behavior | Placement |
+|---|---|---|---|---|---|
+| Rental Applications (`Deals`) | Requested Pet Count | `Requested_Pet_Count` | Integer | Conditionally shown and mandatory when pets are requested | Application Intake |
+| Rental Applications (`Deals`) | Requested Storage Unit Count | `Requested_Storage_Unit_Count` | Integer | Conditionally shown and mandatory when storage is requested | Application Intake |
+
+The Boolean request fields remain the fast yes/no intake controls. Their count
+fields capture requested quantity only when applicable. Specific pet details
+may belong in the protected Pets module only after its relationship design is
+separately approved; storage assignment belongs in Storage Units after
+approval. Neither detail set should be duplicated in the application.
+
+### Reversible layout retirement
+
+Redundant or misleading fields were removed from active Standard layouts only.
+All fields remain live; no field, record, value, or data was deleted.
+
+| Module / layout | Exact field APIs removed from the layout | Live field disposition |
+|---|---|---|
+| Contacts / Standard | `Name1`; `F_Name`; `L_Name`; `Parent_Property`; `Account_Type`; `Current_Lease`; `Current_Unit` | Retained live; layout-only retirement |
+| Properties (`Accounts`) / Standard | `Parent_Account` | Retained live; layout-only retirement |
+
+This is the rollback boundary: restore `Name1`, `F_Name`, `L_Name`,
+`Parent_Property`, and `Account_Type` to Contacts `General & System Fields`;
+restore `Current_Lease` and `Current_Unit` to Contacts `Current Tenancy`; and
+restore Accounts `Parent_Account` to `General & System Fields` if a dependency
+requires them. Read every placement back. Do not describe this retirement as
+field deletion or infer that historical record values are empty.
+
+### Dashboard and accounting boundary
+
+The governed dashboard design is
+[`gh-real-estate-operations-dashboard.md`](../dashboards/gh-real-estate-operations-dashboard.md).
+It is a specification, not a live CRM dashboard. CRM may report application
+funnel and lease-operating snapshots, but Zoho Books is authoritative for
+actual rent income, invoices, payments, credits, deposits, balances, and
+recognized accounting results. Deals `Amount`, lease rent fields, or
+closed-stage totals must not be presented as actual gross income.
 
 ## Duplicate prevention and field ownership
 
@@ -196,11 +278,12 @@ convenience/snapshot fields. No idempotent sync workflow currently owns them.
 Operators must not treat them as automatically current.
 
 Leases owns tenancy and lease history. Zoho Books owns invoice, payment,
-credit, deposit, and balance truth. Units `Security_Deposit_Default` and
-`Current_Base_Rent` are optional editable planning/default snapshots only:
-they are not payment evidence or enforceable tenant amounts and must not be
-automatically copied or charged. Lease-specific amounts require approved terms,
-policy review, applicable furnished/deposit-cap review, and readback.
+credit, deposit, balance, and actual-income truth. Units
+`Security_Deposit_Default` and `Current_Base_Rent` are optional editable
+planning/default snapshots only: they are not payment evidence or enforceable
+tenant amounts and must not be automatically copied or charged. Lease-specific
+amounts require approved terms, policy review, applicable
+furnished/deposit-cap review, and readback.
 
 ## Lease and Contracts readiness
 
@@ -285,7 +368,7 @@ python -m unittest discover -s src/zoho-crm/tests -p "test_*.py" -v
 The field-catalog validator checks required columns, API-name syntax, live
 evidence source IDs, exact live manifests, lookup targets, choices/order/colors,
 sentinel readback, policy warnings, duplicate-prevention decisions, and a
-canonical digest of all 170 live rows. Protected-baseline checksums fail closed
+canonical digest of all 178 live rows. Protected-baseline checksums fail closed
 on unauthorized field/layout drift.
 
 Any live change still requires:
@@ -302,11 +385,12 @@ Any live change still requires:
 - The live audit used approved metadata/configuration MCP servers only. No
   Browser control, CRM records, PII, credentials, or Books transactions were
   accessed.
-- The 757-row CSV registry is broader than the verified live surface; it
+- The 765-row CSV registry is broader than the verified live surface; it
   intentionally retains unverified and blocked planning evidence.
 - Deals Stage remains unchanged because its display/actual values are
   stale/misaligned and pipeline/probability dependencies were not safely
-  writable through the available MCP.
+  writable through the available MCP. The July 25 six-stage specification is a
+  migration target, not evidence of a live pipeline.
 - Required/default controls and complete Lease readiness are not implemented by
   catalog documentation alone.
 - `Zillow_Intake_Events` remains an optional disabled-by-default runtime
@@ -314,6 +398,9 @@ Any live change still requires:
 - Zoho Contracts contract-type API names, field mappings, extension behavior,
   signer routing, and Zoho Sign evidence remain unverified on the available MCP
   surface.
+- The approved MCP surface has no pipeline, CRM dashboard/component, Zoho
+  Contracts, or reusable custom-function CRUD. Repository specifications do
+  not close those live-administration gaps.
 
 ## References
 
@@ -322,6 +409,8 @@ Any live change still requires:
 - [Protected module policy and baselines](protected-modules/README.md)
 - [Production global-picklist registry](global-picklists/README.md)
 - [Production reconciliation ledger](../../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md)
+- [Second-pass reconciliation ledger](../../../docs/runbooks/zoho-crm-second-pass-reconciliation-2026-07-25.md)
+- [GH Real Estate operations dashboard specification](../dashboards/gh-real-estate-operations-dashboard.md)
 - [Lease-system reconciliation](../../../docs/runbooks/zoho-crm-lease-system-reconciliation.md)
 - Official Zoho CRM Modules Metadata: https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html
 - Official Zoho CRM Fields Metadata: https://www.zoho.com/crm/developer/docs/api/v8/field-meta.html

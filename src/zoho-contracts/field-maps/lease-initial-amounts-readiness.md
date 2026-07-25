@@ -107,6 +107,23 @@ Total Due Before Possession =
 
 This is a proposed implementation equation, not an approved production rule. It remains blocked until the decisions below are approved and reflected in the live field model.
 
+### July 25, 2026 MCP verification
+
+The available production CRM MCP confirmed that
+`Total_Due_Before_Possession` is a writable Currency(2) field rather than a
+Formula field. The available field-update operation cannot convert its data
+type in place, and the configured MCP servers expose neither reusable custom
+function deployment nor Zoho Contracts field-mapping read/write operations.
+Therefore no partial calculator, replacement Formula, or Contracts mapping was
+created.
+
+The approved target remains an automatically calculated Currency snapshot:
+validate the component meanings, calculate with fixed-precision decimal
+arithmetic in an idempotent readiness workflow, reconcile the result to Books,
+freeze the snapshot, and map that Currency value to Contracts only after a
+controlled canary succeeds. A Formula field may be used later as a non-mapped
+audit control, but it must not replace the integration snapshot.
+
 | Component | Intended CRM source | Gate |
 |---|---|---|
 | Prorated Base Rent Amount | Resolve whether `Prorated_Rent` has this exact meaning; otherwise approve and create a distinct Currency field. | Required when the tenant owes base rent for a partial month; otherwise an explicit not-applicable decision is required. |
