@@ -22,11 +22,12 @@ This automation belongs here because Zoho Books owns the workflow trigger, invoi
 
 - Applies credits only when the invoice has an open balance.
 - Reads unused credits from the Zoho Books contact receivables endpoint.
-- Includes unused retainer payments.
+- Explicitly excludes unused retainer payments because a retainer may represent a refundable tenant deposit.
 - Applies credits only to invoices marked eligible by `cf_is_rent_invoice` unless `requireRentInvoiceFlag` is intentionally disabled in code.
 - Applies only credits whose `branch_id` matches the invoice `branch_id`.
 - Fails closed on blank branch IDs by default; set `allowEmptyBranchMatch=true` only after single-branch behavior is verified in Zoho Books.
-- Applies credit notes first, then customer payments, then retainer payments.
+- Applies credit notes first, then customer payments.
+- Skips any retainer unexpectedly returned by Zoho. A future true-rent-advance workflow requires a separate explicit allowlist.
 - Re-checks invoice balance immediately before applying credits to reduce duplicate-run and concurrent-workflow risk.
 - Does not create new invoices, fees, payments, or credit notes.
 
