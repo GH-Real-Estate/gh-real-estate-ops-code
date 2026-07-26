@@ -7,6 +7,7 @@
 - [ ] Code reviewed for Zoho API response-code handling.
 - [ ] Code reviewed for pre-apply balance recheck behavior.
 - [ ] Code reviewed for branch-matching behavior.
+- [ ] Code reviewed to exclude every retainer payment, including an unexpectedly returned retainer.
 - [ ] Code reviewed for no PII/secrets logging.
 - [ ] Zoho Books connection name documented as `zbooks` or the code updated to match the actual connection link name.
 - [ ] Confirm this automation should run for newly-created invoices only.
@@ -33,8 +34,9 @@
 - [ ] Create a controlled invoice that is not marked eligible; no credits applied.
 - [ ] Create a controlled invoice for a customer with no unused credits; no credits applied.
 - [ ] Create a controlled invoice for a customer with unused customer-payment credit; correct amount applied.
-- [ ] Create a controlled invoice for a customer with a credit note; correct amount applied before payment/retainer credits.
-- [ ] Create a controlled invoice for a customer with unused retainer payment; correct amount applied after credit notes and customer payments.
+- [ ] Create a controlled invoice for a customer with a credit note; correct amount applied before customer-payment credits.
+- [ ] Create a controlled invoice for a customer with only an unused retainer payment; no credit-application POST occurs and the retainer remains untouched.
+- [ ] Create a controlled invoice with mixed credit-note, customer-payment, and retainer balances; only the first two sources apply.
 - [ ] Confirm matching-branch credits apply.
 - [ ] Confirm non-matching-branch credits do not apply.
 - [ ] Confirm blank branch IDs stop the function when `allowEmptyBranchMatch=false`.
