@@ -4,6 +4,11 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-25
 
+- Reconciled the supplied Codex runtime snapshot as 11 visible server entries, 495 memberships, and 493 distinct names. Added a separate sanitized inventory of all 134 platform-managed `codex_apps` tools instead of mixing them into the Zoho-hosted server catalog.
+- Refreshed the ten-server Zoho inventory to 361 memberships and 359 distinct names: Books Audit now has 167 tools, Books Controller 65, and WorkDrive Audit 21. No advertised tool was removed.
+- Classified the seven newly selected Controller retainer operations. The intended supervised boundary retains create, update, void, restore-to-draft, and apply; keeps unused-retainer lookup in Audit; and removes retainer unapply/delete from MCP. The target Books split is now 167/17/58/27.
+- Recorded `ZohoWorkdrive_downloadWorkDriveFile` and the separate controlled single-file PDF handoff/text/render acceptance while preserving the target-identity, image-only OCR, arbitrary-file, complete-page, and unattended-processing gates.
+- This capability-inventory update changes no Codex app permission, MCP server, OAuth grant, Zoho record, WorkDrive document, GitHub repository setting, or production runtime.
 - Reconciled a second production CRM metadata pass through the approved MCP servers only. No Browser control, CRM record access, or protected-module configuration change was used.
 - Added and read back `Requested_Pet_Count` and `Requested_Storage_Unit_Count` as Integer fields in the Rental Applications intake section. Active layout rules now show and require each count only when its corresponding request checkbox is selected.
 - Removed seven redundant Contact convenience/formula fields and the standard Properties parent-account field from their active layouts without deleting fields or record data. Renamed two Properties sections to distinguish legal-notice and owner/emergency-contact facts from third-party property-management data.

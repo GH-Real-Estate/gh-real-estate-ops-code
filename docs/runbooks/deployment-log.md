@@ -2,6 +2,18 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-25 — Codex MCP Capability Refresh Captured
+
+- System: Codex Apps / Zoho Books / Zoho WorkDrive / GitHub
+- Repo branch / commit: sanitized documentation on `agent/refresh-zoho-mcp-capabilities`
+- Files changed: Codex runtime inventory, configured Zoho server inventory, MCP control/rollout/template references, document-intake controls, root index, changelog, and this evidence-only log entry
+- Business rule changed? no live accounting, tenant, lease, document, repository, or automation behavior changed
+- Dry-run completed? yes; exact server/tool set comparison, count reconciliation, duplicate-name review, and repository validation only
+- Smoke test completed? the earlier controlled single-file WorkDrive PDF handoff and text/render inspection is recorded; no live Books write, retainer operation, WorkDrive write, GitHub administrative action, Sites deployment, plugin change, or Zillow lookup was performed for this documentation update
+- Result: captured 11 visible runtime entries with 495 memberships and 493 distinct names; separated the 134-tool platform-managed `codex_apps` gateway from the ten Zoho servers; refreshed Zoho to 361 memberships/359 distinct names, including Books Audit 167, Books Controller 65, and WorkDrive Audit 21
+- Rollback plan: revert the documentation merge. No live-system rollback is required. For a separate live-access concern, disconnect or narrow the exact affected server/app authorization; do not delete or reverse financial records, files, or repository history as a documentation rollback.
+- Notes: Controller currently advertises seven retainer operations, including `ZohoBooks_delete_applied_retainer_payment`. The intended supervised boundary excludes that unapply/delete operation and the duplicate unused-retainer read. No live default retainer liability account, organization target, OAuth grant, security-deposit transaction, or financial record was inspected or changed by this repository update.
+
 ## 2026-07-25 — Catalyst And WorkDrive MCP Expansion Captured
 
 - System: Zoho Catalyst / Zoho WorkDrive / Zoho CRM / Codex / GitHub

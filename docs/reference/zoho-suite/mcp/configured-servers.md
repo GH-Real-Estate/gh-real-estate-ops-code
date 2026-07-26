@@ -13,9 +13,11 @@ This inventory is based on:
 - A successful read-only CRM module inventory through `gh_zoho_crm_audit`.
 - A successful organization-only target check through `gh_zoho_crm_changes`.
 
-The July 25 inventory supersedes the earlier 12-tool `gh_zoho_books_review` capture. It shows three custom Books servers with 255 selected tool memberships. The evidence confirms server identifiers, advertised tool names, and OAuth status, but it does not prove which Books organization any of the three servers targets, that every OAuth grant succeeded, or that a write works. Each Books server therefore remains acceptance-pending.
+The refreshed July 25 inventory supersedes the earlier 12-tool `gh_zoho_books_review` capture. It shows three custom Books servers with 263 selected tool memberships. The evidence confirms server identifiers, advertised tool names, and OAuth status, but it does not prove which Books organization any of the three servers targets, that every OAuth grant succeeded, or that a write works. Each Books server therefore remains acceptance-pending.
 
-The current July 25 snapshot also adds three Catalyst webhook-administration servers with 27 selected tool memberships and two WorkDrive servers with 25 selected tool memberships. Their identifiers, exact advertised tool names, counts, and OAuth display are captured. The evidence does not prove the target Catalyst organization/project/environment, the target WorkDrive team/Team Folder, effective OAuth grants, binary file handoff, or successful read/write execution. All five new servers remain acceptance-pending.
+The current July 25 snapshot also includes three Catalyst webhook-administration servers with 27 selected tool memberships and two WorkDrive servers with 26 selected tool memberships. Their identifiers, exact advertised tool names, counts, and OAuth display are captured. A separate controlled acceptance demonstrated single-file WorkDrive binary handoff and PDF text/render inspection. The evidence does not prove the target Catalyst organization/project/environment, the target WorkDrive user/team/Team Folder, effective OAuth grants for every tool, or successful write execution. All five servers remain acceptance-pending for their unresolved targets and actions.
+
+The same snapshot contains a platform-managed `codex_apps` gateway. Its non-Zoho tools are documented separately in the [Codex runtime capability snapshot](../../codex-platform/configured-mcp-tools.md) and are excluded from this Zoho-only inventory.
 
 The CRM Audit server's `ZohoCRM_getModules` call succeeded, but the response was transport-truncated and an advertised field projection returned `PATTERN_NOT_MATCHED`; the captured module pairs are confirmed, but completeness is not certified. The CRM Changes target check did not test a mutation.
 
@@ -27,16 +29,16 @@ No MCP URL, secure API key, token, organization ID, record payload, tenant infor
 |---|---|---:|---:|---|---|
 | `gh_zoho_crm_audit` | Zoho CRM | OAuth | 18 | Configuration metadata reads | GH Real Estate production verified |
 | `gh_zoho_crm_changes` | Zoho CRM | OAuth | 27 | Configuration writes plus production record reads and writes | GH Real Estate production verified |
-| `gh_zoho_books_accounting_audit` | Zoho Books | OAuth | 166 | Financial, subledger, bank, report, automation, and configuration reads | Organization not verified in supplied evidence |
+| `gh_zoho_books_accounting_audit` | Zoho Books | OAuth | 167 | Financial, subledger, bank, report, automation, retainer-payment, and configuration reads | Organization not verified in supplied evidence |
 | `gh_zoho_books_bookkeeping_changes` | Zoho Books | OAuth | 31 | Routine writes mixed with credits, refunds, journals, recurring schedules, sales receipts, and fixed assets | Organization not verified in supplied evidence |
-| `gh_zoho_books_controller` | Zoho Books | OAuth | 58 | High-risk accounting actions mixed with structural configuration writes | Organization not verified in supplied evidence |
+| `gh_zoho_books_controller` | Zoho Books | OAuth | 65 | High-risk accounting and retainer actions mixed with structural configuration writes | Organization not verified in supplied evidence |
 | `gh_zoho_catalyst_webhook_audit` | Catalyst by Zoho | OAuth | 15 | Project, function, deployment, route, environment-name, pipeline, log, cache, and segment reads | Organization/project/environment not verified in supplied evidence |
 | `gh_zoho_catalyst_webhook_breakglass` | Catalyst by Zoho | OAuth | 5 | API Gateway, environment-variable, and pipeline configuration writes | Organization/project/environment and writes not acceptance-tested |
 | `gh_zoho_catalyst_webhook_release` | Catalyst by Zoho | OAuth | 7 | Function update/invocation, pipeline execution, deployment, rollback, test, and build-cancel actions | Organization/project/environment and writes not acceptance-tested |
-| `gh_zoho_workdrive_audit` | Zoho WorkDrive | OAuth | 20 | Identity, team, Team Folder, file, version, change-feed, permission, preview, and download reads | User/team/Team Folder and binary handoff not verified in supplied evidence |
+| `gh_zoho_workdrive_audit` | Zoho WorkDrive | OAuth | 21 | Identity, team, Team Folder, file, version, change-feed, permission, preview, and download reads | Single-file binary handoff verified; user/team/Team Folder not verified |
 | `gh_zoho_workdrive_changes` | Zoho WorkDrive | OAuth | 5 | Folder creation, upload/status, move, and rename writes | User/team/Team Folder and writes not acceptance-tested |
 
-The ten Zoho servers expose 352 per-server tool memberships in total and 351 distinct advertised names; `ZohoCRM_getOrganization` is selected in both CRM servers. Tool names below are the exact names advertised to Codex. Zoho's server builder may display the same tools without the `ZohoCRM_`, `ZohoBooks_`, `CatalystbyZoho_`, or `ZohoWorkdrive_` prefix.
+The ten Zoho servers expose 361 per-server tool memberships in total and 359 distinct advertised names. `ZohoCRM_getOrganization` is selected in both CRM servers, and `ZohoBooks_get_unused_retainer_payments` is selected in both Books Audit and Controller. Tool names below are the exact names advertised to Codex. Zoho's server builder may display the same tools without the `ZohoCRM_`, `ZohoBooks_`, `CatalystbyZoho_`, or `ZohoWorkdrive_` prefix.
 
 The operating decision, missing-tool review, correction policy, and production acceptance gates for the Books servers are maintained in [`books-accountant-controls.md`](books-accountant-controls.md).
 
@@ -210,9 +212,10 @@ ZohoWorkdrive_Get_Team_Folders_Info
 ZohoWorkdrive_Get_User_Info
 ZohoWorkdrive_Get_Version
 ZohoWorkdrive_Search_Records
+ZohoWorkdrive_downloadWorkDriveFile
 ```
 
-This selection covers the complete read side of the proposed application, inspection, condition-report, and lease filing workflow. Before retrieving any private file, verify the integration user, team, Team Folder, resource ID, version, business purpose, and effective sharing. A successful binary download tool call is not yet evidence that Codex receives a usable PDF artifact; that handoff requires a controlled acceptance test.
+This selection covers the complete read side of the proposed application, inspection, condition-report, and lease filing workflow. Before retrieving any private file, verify the integration user, team, Team Folder, resource ID, version, business purpose, and effective sharing. A controlled single-file acceptance demonstrated that Codex can receive a usable PDF artifact and perform text/render inspection; it does not certify arbitrary file types, complete all-page OCR, target identity, or unattended processing.
 
 ## `gh_zoho_workdrive_changes`
 
@@ -230,7 +233,7 @@ The server intentionally excludes copy, new-version upload, generic file update,
 
 ## `gh_zoho_books_accounting_audit`
 
-This is the Books read-only analysis boundary. Its 166 selected tools cover core ledgers, subledgers, bank activity and reconciliations, fixed assets, financial reports, automation history, and configuration metadata.
+This is the Books read-only analysis boundary. Its 167 selected tools cover core ledgers, subledgers, bank activity and reconciliations, fixed assets, financial reports, retainer-payment availability, automation history, and configuration metadata.
 
 ```text
 ZohoBooks_get_account_transactions_report
@@ -321,6 +324,7 @@ ZohoBooks_get_transaction_journal_view
 ZohoBooks_get_transaction_lock
 ZohoBooks_get_trial_balance_report
 ZohoBooks_get_unrealized_gain_or_loss_report
+ZohoBooks_get_unused_retainer_payments
 ZohoBooks_get_vendor_balance_summary_report
 ZohoBooks_get_vendor_credit
 ZohoBooks_get_vendor_credit_refund
@@ -445,11 +449,12 @@ ZohoBooks_update_vendor_credit
 
 ## `gh_zoho_books_controller`
 
-This server contains 58 selected tools. It currently mixes high-risk accounting corrections and close actions with structural organization configuration. That composition is functional but too broad for routine availability.
+This server contains 65 selected tools. It currently mixes high-risk accounting corrections, retainer lifecycle actions, and close actions with structural organization configuration. That composition is functional but too broad for routine availability.
 
 ```text
 ZohoBooks_apply_credit_note_to_invoice
 ZohoBooks_apply_credits_to_bill
+ZohoBooks_apply_retainer_payments_to_invoices
 ZohoBooks_approve_journal
 ZohoBooks_cancel_write_off_invoice
 ZohoBooks_create_bank_account
@@ -468,16 +473,21 @@ ZohoBooks_create_exchange_rate
 ZohoBooks_create_item
 ZohoBooks_create_location
 ZohoBooks_create_opening_balance
+ZohoBooks_create_retainer_invoice
 ZohoBooks_create_tag
 ZohoBooks_create_tax
 ZohoBooks_create_vendor_payment
+ZohoBooks_delete_applied_retainer_payment
 ZohoBooks_exclude_bank_transaction
+ZohoBooks_get_unused_retainer_payments
 ZohoBooks_mark_bill_void
 ZohoBooks_mark_credit_note_void
 ZohoBooks_mark_fixed_asset_active
 ZohoBooks_mark_fixed_asset_draft
 ZohoBooks_mark_invoice_void
 ZohoBooks_mark_journal_published
+ZohoBooks_mark_retainer_invoice_draft
+ZohoBooks_mark_retainer_invoice_void
 ZohoBooks_mark_vendor_credit_void
 ZohoBooks_refund_excess_vendor_payment
 ZohoBooks_refund_vendor_credit
@@ -499,6 +509,7 @@ ZohoBooks_update_exchange_rate
 ZohoBooks_update_item
 ZohoBooks_update_location
 ZohoBooks_update_opening_balance
+ZohoBooks_update_retainer_invoice
 ZohoBooks_update_tag
 ZohoBooks_update_tag_options
 ZohoBooks_update_tax
@@ -508,13 +519,15 @@ ZohoBooks_write_off_fixed_asset
 ZohoBooks_write_off_invoice
 ```
 
-The server has no named delete tool. It also lacks `ZohoBooks_get_organization` and `ZohoBooks_get_current_user`; add those two read-only safety tools before using it. Move structural configuration into Configuration Admin, move the high-risk Bookkeeping tools into Controller, add recurring stop/resume tools, and remove journal approval, journal publication, and transaction-lock updates from MCP. The intended final Controller selection contains 53 tools.
+The server now contains the narrowly scoped `ZohoBooks_delete_applied_retainer_payment`. It removes a retainer application and therefore has deletion/unapply accounting effect even though it is not a generic record-delete tool. Keep it outside the intended Controller boundary and require an authorized human exception path for any detachment.
 
-The current write selection nevertheless contains actions with deletion-like accounting effect or material blast radius, including voiding, write-off, reversal, unmatching, uncategorizing, excluding, opening-balance changes, Chart of Accounts changes, and transaction-lock changes. Selection of those tools is not accounting approval.
+The server also lacks `ZohoBooks_get_organization` and `ZohoBooks_get_current_user`; add those two read-only safety tools before using it. Move structural configuration into Configuration Admin, move the high-risk Bookkeeping tools into Controller, add recurring stop/resume tools, retain the five supervised non-delete retainer lifecycle tools, and remove journal approval, journal publication, transaction-lock updates, the duplicate unused-retainer read, and retainer unapply from Controller. The intended final Controller selection contains 58 tools.
+
+The current write selection nevertheless contains actions with deletion-like accounting effect or material blast radius, including retainer creation/update/application/unapplication, retainer draft/void transitions, voiding, write-off, reversal, unmatching, uncategorizing, excluding, opening-balance changes, Chart of Accounts changes, and transaction-lock changes. Selection of those tools is not accounting approval.
 
 ## Required Operating Controls
 
-1. Apply the exact 166/17/53/27 target selections in [`books-accountant-controls.md`](books-accountant-controls.md) before production accounting.
+1. Apply the exact 167/17/58/27 target selections in [`books-accountant-controls.md`](books-accountant-controls.md) before production accounting.
 2. Use `gh_zoho_books_accounting_audit`, `gh_zoho_catalyst_webhook_audit`, `gh_zoho_crm_audit`, and `gh_zoho_workdrive_audit` for system/configuration current-state inspection and supported readback. CRM record-level post-write verification must use `gh_zoho_crm_changes` → `ZohoCRM_getRecord`; CRM Audit has metadata tools only.
 3. Treat organization/current-user/project/team reads as detective checks only. Bind each write path to the expected organization, data center, project/environment, and Team Folder; reject mismatched caller-supplied targets.
 4. Require an immutable short-lived plan, single-use approval, stale-state reread, idempotency key, durable write ledger, returned-ID persistence, ambiguous-timeout readback, and post-write reconciliation.

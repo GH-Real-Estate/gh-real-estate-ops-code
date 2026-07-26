@@ -18,8 +18,9 @@ The required changes are:
 4. Move the 17 high-risk posting and schedule tools listed below from Bookkeeping into Controller.
 5. Remove journal approval, journal publication, and transaction-lock mutation from MCP.
 6. Add the verified recurring bill and expense stop/resume lifecycle tools to Controller.
-7. Enforce the fixed GH organization, approved payload, immutable plan, stale-state check, idempotency key, returned-ID persistence, and post-write reconciliation in a narrow coded layer before automated posting.
-8. Complete organization, identity, scope, read, draft-write, and readback acceptance checks for every Books boundary.
+7. Retain the five non-delete retainer lifecycle tools listed below in Controller, remove the duplicate unused-retainer read from Controller, and remove retainer-payment unapplication from MCP.
+8. Enforce the fixed GH organization, approved payload, immutable plan, stale-state check, idempotency key, returned-ID persistence, and post-write reconciliation in a narrow coded layer before automated posting.
+9. Complete organization, identity, scope, read, draft-write, and readback acceptance checks for every Books boundary.
 
 Do not add generic delete tools. Proper accounting correction normally uses a safe update while a record is still editable, a controlled reclassification, a void plus replacement, a credit/refund, or a reversing/compensating journal. Deletion destroys useful audit evidence and is not needed for routine cleanup.
 
@@ -31,14 +32,14 @@ After the tool-selection changes above, the intended native layout is:
 
 | Server | Intended Tools | Boundary |
 |---|---:|---|
-| `gh_zoho_books_accounting_audit` | 166 | Read-only accounting, reports, and post-write verification |
+| `gh_zoho_books_accounting_audit` | 167 | Read-only accounting, reports, retainer-payment availability, and post-write verification |
 | `gh_zoho_books_bookkeeping_changes` | 17 | Routine bounded transaction and bank-classification writes |
-| `gh_zoho_books_controller` | 53 | Approval-gated correction, recurring schedule, refund, void, write-off, journal-preparation, and close actions |
+| `gh_zoho_books_controller` | 58 | Approval-gated correction, retainer lifecycle, recurring schedule, refund, void, write-off, journal-preparation, and close actions |
 | `gh_zoho_books_configuration_admin` | 27 | Normally disconnected structural configuration writes plus two identity reads |
 
 These counts are configuration acceptance checks, not proof of safe automation. Stop and re-audit the selection if the live server builder shows different counts.
 
-The current exact 166/31/58 selection remains recorded in [`configured-servers.md`](configured-servers.md). The sections below define how to transform the two current write selections.
+The current exact 167/31/65 selection remains recorded in [`configured-servers.md`](configured-servers.md). The sections below define how to transform the two current write selections.
 
 ## Evidence Boundary
 
@@ -86,6 +87,17 @@ Before claiming complete evidence handling:
 2. Add only verified read tools to Audit and verified add/upload tools to Bookkeeping.
 3. If required evidence remains unavailable through native MCP, use user-supplied documents for review or a narrow coded wrapper with file-type, size, fixed-organization, record, malware, duplicate-hash, and audit-log controls.
 4. Never add a generic raw-request tool merely to bypass the native allowlist.
+
+## Retainer Capability Finding
+
+The refreshed inventory adds eight Books memberships:
+
+- Audit now includes `ZohoBooks_get_unused_retainer_payments`.
+- Controller now includes `ZohoBooks_apply_retainer_payments_to_invoices`, `ZohoBooks_create_retainer_invoice`, `ZohoBooks_delete_applied_retainer_payment`, `ZohoBooks_get_unused_retainer_payments`, `ZohoBooks_mark_retainer_invoice_draft`, `ZohoBooks_mark_retainer_invoice_void`, and `ZohoBooks_update_retainer_invoice`.
+
+These names expose a supervised retainer lifecycle, but selection is not accounting authorization. The current native create/update schemas do not expose a liability-account parameter, and the captured MCP catalog does not expose a retainer default-account preference operation. Before using a retainer invoice for a tenant security deposit, a qualified reviewer must confirm the legal/accounting treatment and the live Zoho Books default retainer account must be verified as the approved tenant-deposit liability account. Do not use a journal workaround or post a live retainer merely to test the mapping.
+
+Keep the unused-retainer lookup in Audit and remove the duplicate from Controller. Keep create, update, void, restore-to-draft, and apply in the intended supervised Controller boundary only after organization, identity, account mapping, customer, amount, source transaction, application state, period, and duplicate checks pass. Remove `ZohoBooks_delete_applied_retainer_payment`; despite its narrow name, it is an unapply/delete operation with financial effect.
 
 ## Bookkeeping Final Selection
 
@@ -150,6 +162,16 @@ ZohoBooks_stop_recurring_bill
 ZohoBooks_stop_recurring_expense
 ```
 
+Retain these five non-delete retainer lifecycle tools in Controller:
+
+```text
+ZohoBooks_apply_retainer_payments_to_invoices
+ZohoBooks_create_retainer_invoice
+ZohoBooks_mark_retainer_invoice_draft
+ZohoBooks_mark_retainer_invoice_void
+ZohoBooks_update_retainer_invoice
+```
+
 Remove these three tools from MCP entirely:
 
 ```text
@@ -158,11 +180,19 @@ ZohoBooks_mark_journal_published
 ZohoBooks_update_transaction_lock
 ```
 
-The final Controller selection should contain these 53 tools:
+Also remove these two redundant or prohibited current Controller tools:
+
+```text
+ZohoBooks_delete_applied_retainer_payment
+ZohoBooks_get_unused_retainer_payments
+```
+
+The final Controller selection should contain these 58 tools:
 
 ```text
 ZohoBooks_apply_credit_note_to_invoice
 ZohoBooks_apply_credits_to_bill
+ZohoBooks_apply_retainer_payments_to_invoices
 ZohoBooks_cancel_write_off_invoice
 ZohoBooks_categorize_as_credit_note_refunds
 ZohoBooks_categorize_as_vendor_credit_refunds
@@ -178,6 +208,7 @@ ZohoBooks_create_fixed_asset
 ZohoBooks_create_journal
 ZohoBooks_create_recurring_bill
 ZohoBooks_create_recurring_expense
+ZohoBooks_create_retainer_invoice
 ZohoBooks_create_sales_receipt
 ZohoBooks_create_vendor_credit
 ZohoBooks_create_vendor_payment
@@ -189,6 +220,8 @@ ZohoBooks_mark_credit_note_void
 ZohoBooks_mark_fixed_asset_active
 ZohoBooks_mark_fixed_asset_draft
 ZohoBooks_mark_invoice_void
+ZohoBooks_mark_retainer_invoice_draft
+ZohoBooks_mark_retainer_invoice_void
 ZohoBooks_mark_vendor_credit_void
 ZohoBooks_refund_excess_vendor_payment
 ZohoBooks_refund_vendor_credit
@@ -209,6 +242,7 @@ ZohoBooks_update_fixed_asset
 ZohoBooks_update_journal
 ZohoBooks_update_recurring_bill
 ZohoBooks_update_recurring_expense
+ZohoBooks_update_retainer_invoice
 ZohoBooks_update_sales_receipt
 ZohoBooks_update_vendor_credit
 ZohoBooks_update_vendor_payment
@@ -223,6 +257,8 @@ Journal approval and publication remain human/qualified-reviewer actions in Zoho
 Transaction-lock updates can potentially reopen a closed period. Keep that tool outside MCP. Controller may read lock state through Audit and must fail closed.
 
 Recurring invoices and recurring journals are intentionally excluded from write authority. Add them only for a separately approved workflow with explicit ownership, lifecycle, duplicate, and stop controls.
+
+Retainer operations are not a substitute for confirming how tenant security deposits are legally and contractually held. Before the first live use, verify the default retainer liability account in Zoho Books, test in a non-production organization or uniquely marked unposted draft where available, and reconcile the customer subledger and liability balance after readback.
 
 ## Required Configuration Admin Boundary
 
@@ -288,7 +324,7 @@ If the native Zoho-hosted server cannot enforce the fixed organization and paylo
 | Personal charge in an entity-owned bank/card account | Classify under the approved owner draw/distribution, shareholder receivable, due-from, or other reviewed account. | Do not exclude it simply because it is personal. |
 | Editable draft/open expense, bill, invoice, credit, or journal is wrong | Update the exact record after checking links, reconciliations, period status, stale state, and duplicate risk. | Do not recreate it without first preventing duplicate posting. |
 | Posted invoice, bill, credit, or payment is materially wrong | Use the module-supported void, credit, refund, or replacement path with explicit approval and readback. | Do not delete the record or detach downstream history. |
-| Applied credit/payment must be detached | Prepare the exact exception for human action in Zoho unless a separately audited non-delete tool exists. | Do not add a generic DELETE/unapply tool. |
+| Applied credit, payment, or retainer must be detached | Prepare the exact exception for authorized human action in Zoho unless a separately audited non-delete tool exists. | Do not use `ZohoBooks_delete_applied_retainer_payment` or add another DELETE/unapply tool to the routine MCP boundary. |
 | Published journal is wrong | Reverse the original and create the corrected, balanced, evidence-backed entry. | Do not delete or overwrite the published journal. |
 | Record is in a reconciled or locked period | Stop and prepare an adjusting-entry proposal for controller/CPA review. | Do not unlock or rewrite the prior period through MCP. |
 | Opening balance or Chart of Accounts appears wrong | Produce an impact report and require qualified review through disconnected Configuration Admin. | Do not use an unsupported plug account or force a tie. |
@@ -297,7 +333,7 @@ If the native Zoho-hosted server cannot enforce the fixed organization and paylo
 
 ## Why Delete Tools Stay Excluded
 
-No `ZohoBooks_*delete*` tool is present in the current three-server selection, and none should be added.
+The current Controller selection contains `ZohoBooks_delete_applied_retainer_payment`. The operation removes an applied retainer payment; it does not delete the underlying retainer invoice or payment, but it is still a high-risk unapply/delete action and must be removed from the intended MCP boundary. No generic record-delete tool should be added.
 
 Deletion can be defensible only for a narrow administrative mistake such as an unposted duplicate draft with no applications, reconciliations, attachments, workflow dependencies, audit requirement, or closed-period effect. Even then:
 
@@ -307,7 +343,7 @@ Deletion can be defensible only for a narrow administrative mistake such as an u
 4. If deletion remains necessary, have an authorized human perform that one deletion in Zoho.
 5. Read back surrounding ledgers and subledgers afterward.
 
-The absence of delete tools does not make the current Controller low-risk. Void, write-off, reversal, refund, unmatch, uncategorize, exclude, opening-balance, account, tax, and journal actions can materially alter the books.
+Removing that delete/unapply tool does not make Controller low-risk. Retainer creation, update, application, and lifecycle transitions, along with void, write-off, reversal, refund, unmatch, uncategorize, exclude, opening-balance, account, tax, and journal actions, can materially alter the books.
 
 ## Production Acceptance Checklist
 
@@ -317,10 +353,10 @@ Do not begin cleanup writes until every required item passes:
 - [ ] Each boundary returns the one expected GH organization and intended OAuth identity.
 - [ ] A fixed server-side organization/data-center allowlist rejects mismatched writes.
 - [ ] Distinct preparer/controller roles are documented, and journal approval/publication remain outside MCP.
-- [ ] The intended 166/17/53/27 tool counts and exact names match the live builder and Codex.
+- [ ] The intended 167/17/58/27 tool counts and exact names match the live builder and Codex.
 - [ ] `ZohoBooks_add_journal_attachment` appears in Bookkeeping.
 - [ ] Configuration Admin is separated and normally disconnected.
-- [ ] Journal approval, journal publication, transaction-lock update, delete, bulk-delete, raw-request, email-send, payment-initiation, credential, user, role, and permission tools are absent.
+- [ ] Journal approval, journal publication, transaction-lock update, retainer unapply/delete, generic delete, bulk-delete, raw-request, email-send, payment-initiation, credential, user, role, and permission tools are absent.
 - [ ] The coded write layer enforces immutable plans, short expiry, stale-state aborts, idempotency, serialization, durable write logging, returned-ID persistence, and ambiguous-timeout readback.
 - [ ] Generic invoice writes reject LF, INT, RF, recurring-rent, and automatic-credit workflows owned elsewhere.
 - [ ] A closed historical month is reviewed read-only with complete pagination and report-to-ledger tie-outs.

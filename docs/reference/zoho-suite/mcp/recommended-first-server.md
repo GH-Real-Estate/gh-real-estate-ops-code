@@ -12,13 +12,13 @@ The sanitized source of truth for current server identifiers and exact Codex-adv
 |---:|---|---|---|
 | 1 | `gh_zoho_crm_audit` | Implemented; production acceptance passed | 18 CRM configuration metadata reads |
 | 2 | `gh_zoho_crm_changes` | Implemented; production target confirmed | 15 configuration writes, 7 record reads, 4 record writes, and 1 organization check |
-| 3 | `gh_zoho_books_accounting_audit` | Configured; organization acceptance not evidenced | 166 Books reads and reports |
+| 3 | `gh_zoho_books_accounting_audit` | Configured; organization acceptance not evidenced | 167 Books reads and reports |
 | 4 | `gh_zoho_books_bookkeeping_changes` | Configured; organization and write acceptance not evidenced | 31 mixed routine and high-risk Books writes |
-| 5 | `gh_zoho_books_controller` | Configured; organization and write acceptance not evidenced | 58 high-risk accounting and structural configuration writes |
+| 5 | `gh_zoho_books_controller` | Configured; organization and write acceptance not evidenced | 65 high-risk accounting, retainer, and structural configuration writes |
 | 6 | `gh_zoho_catalyst_webhook_audit` | Configured; target and effective-grant acceptance not evidenced | 15 Catalyst project, function, route, deployment, log, pipeline, and configuration reads |
 | 7 | `gh_zoho_catalyst_webhook_release` | Configured; target and action acceptance not evidenced | 7 approval-gated function, pipeline, deployment, rollback, test, and build actions |
 | 8 | `gh_zoho_catalyst_webhook_breakglass` | Configured; keep unavailable by default | 5 emergency route, environment-variable, and pipeline configuration writes |
-| 9 | `gh_zoho_workdrive_audit` | Configured; identity, Team Folder, and binary-handoff acceptance not evidenced | 20 WorkDrive identity, Team Folder, file, version, permission, preview, and download reads |
+| 9 | `gh_zoho_workdrive_audit` | Configured; single-file binary handoff verified, but identity and Team Folder acceptance not evidenced | 21 WorkDrive identity, Team Folder, file, version, permission, preview, and download reads |
 | 10 | `gh_zoho_workdrive_changes` | Configured; identity, Team Folder, and write acceptance not evidenced | 5 folder, upload/status, move, and rename writes |
 | 11 | `gh_zoho_books_configuration_admin` | Required before production accounting; not in current inventory | Normally disconnected structural configuration boundary |
 
@@ -26,7 +26,7 @@ These current servers are custom or adapted Zoho-hosted allowlists, not coded se
 
 The CRM Audit acceptance test confirmed GH Real Estate and `type: production`. Its module call succeeded but was transport-truncated, and an advertised field projection returned `PATTERN_NOT_MATCHED`; the reported module pairs are confirmed, but inventory completeness is not certified. The CRM Changes production target was confirmed without testing a mutation.
 
-The July 25 evidence confirms all ten current server names, OAuth display, and exact selected tool names. It does not establish the Books target organization; the Catalyst organization/project/environment; the WorkDrive user/team/Team Folder; the non-CRM OAuth identities or effective grants; binary file handoff; or any Books, Catalyst, or WorkDrive write. No sensitive read or write is authorized merely because a tool is selected.
+The July 25 evidence confirms all ten current server names, OAuth display, and exact selected tool names. A separate controlled acceptance demonstrated single-file WorkDrive binary handoff and PDF text/render inspection. The evidence does not establish the Books target organization; the Catalyst organization/project/environment; the WorkDrive user/team/Team Folder; the non-CRM OAuth identities or effective grants for every tool; or any Books, Catalyst, or WorkDrive write. No sensitive read or write is authorized merely because a tool is selected.
 
 ## Why Separate Servers And A Narrow Write Layer Win
 
@@ -60,7 +60,7 @@ The current catalog has no Catalyst create-function tool and no Zoho Payments we
 
 ## Current WorkDrive Decision
 
-The 20-tool Audit and 5-tool Changes selections are the complete initial native allowlist for the concrete rental-application, inspection, condition-report, and lease workflow. They support identity/team discovery, file search and metadata, preview/download/version/change reads, permission inspection, folder creation, upload/status, move, and rename.
+The 21-tool Audit and 5-tool Changes selections are the complete initial native allowlist for the concrete rental-application, inspection, condition-report, and lease workflow. They support identity/team discovery, file search and metadata, preview/download/direct file handoff/version/change reads, permission inspection, folder creation, upload/status, move, and rename.
 
 Do not add copy, overwrite/new-version, generic update, trash/delete, external sharing, Team Folder administration, membership, or role tools. `ZohoWorkdrive_Generate_File_Summary`, `ZohoWorkdrive_Get_File_Summary`, and `ZohoWorkdrive_File_Query` are optional only after a Zia/privacy review and are not substitutes for deterministic OCR. `ZohoWorkdrive_Download_Progress` belongs to the separate multi-download workflow and is not needed for one-document intake.
 
@@ -70,13 +70,13 @@ The WorkDrive servers can organize files after target and write acceptance. Unat
 
 The former `gh_zoho_books_review` server is absent from the July 25 inventory. Its narrow 12-read **Books Financial Overview** template has been superseded by Audit, Bookkeeping, and Controller.
 
-The broader objective justifies expanded accounting capability, but the current 166/31/58 selection is not the final safe boundary. Transform it to:
+The broader objective justifies expanded accounting capability, but the current 167/31/65 selection is not the final safe boundary. Transform it to:
 
 | Server | Target Tools |
 |---|---:|
-| Audit | 166 |
+| Audit | 167 |
 | Bookkeeping | 17 |
-| Controller | 53 |
+| Controller | 58 |
 | Configuration Admin | 27 |
 
 The transformation must:
@@ -86,9 +86,11 @@ The transformation must:
 - Move 25 structural tools from Controller to Configuration Admin.
 - Move 17 credit, refund, sales-receipt, recurring-schedule, fixed-asset, and journal-preparation tools from Bookkeeping to Controller.
 - Add recurring bill/expense stop and resume tools to Controller.
+- Retain five supervised non-delete retainer lifecycle tools in Controller; keep the unused-retainer read in Audit and remove its duplicate from Controller.
+- Remove `ZohoBooks_delete_applied_retainer_payment` from Controller because retainer unapplication is a delete-like accounting correction that belongs in an authorized human exception path.
 - Remove `ZohoBooks_approve_journal`, `ZohoBooks_mark_journal_published`, and `ZohoBooks_update_transaction_lock` from MCP.
 
-Do not add delete tools. Corrections should preserve the accounting audit trail through an approved update, controlled reclassification, void/replacement, credit/refund, or reversal/compensating entry. Bank-feed exclusion is not archival.
+Do not retain or add delete tools. Corrections should preserve the accounting audit trail through an approved update, controlled reclassification, void/replacement, credit/refund, or reversal/compensating entry. Bank-feed exclusion is not archival.
 
 ## Books Acceptance Order
 

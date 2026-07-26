@@ -22,22 +22,24 @@ The authenticated Zoho MCP portal evidence supplied for this review catalogs 19 
 
 Those templates are not the same thing as Zoho CRM's separate product-specific set of four pre-built MCP servers.
 
-GH Real Estate currently has ten configured Zoho server entries with 352 per-server tool memberships:
+GH Real Estate currently has ten configured Zoho server entries with 361 per-server tool memberships:
 
 - `gh_zoho_crm_audit` — 18 CRM configuration metadata reads.
 - `gh_zoho_crm_changes` — 27 mixed CRM organization, configuration-write, record-read, and record-write tools.
-- `gh_zoho_books_accounting_audit` — 166 Books reads and reports.
+- `gh_zoho_books_accounting_audit` — 167 Books reads and reports.
 - `gh_zoho_books_bookkeeping_changes` — 31 routine and high-risk Books writes pending separation.
-- `gh_zoho_books_controller` — 58 high-risk accounting and structural configuration writes.
+- `gh_zoho_books_controller` — 65 high-risk accounting, retainer, and structural configuration writes.
 - `gh_zoho_catalyst_webhook_audit` — 15 Catalyst project, function, route, deployment, log, pipeline, and configuration reads.
 - `gh_zoho_catalyst_webhook_breakglass` — 5 emergency Catalyst route, environment-variable, and pipeline configuration writes.
 - `gh_zoho_catalyst_webhook_release` — 7 approval-gated function, pipeline, deployment, rollback, test, and build actions.
-- `gh_zoho_workdrive_audit` — 20 WorkDrive identity, Team Folder, file, version, permission, preview, and download reads.
+- `gh_zoho_workdrive_audit` — 21 WorkDrive identity, Team Folder, file, version, permission, preview, and download reads.
 - `gh_zoho_workdrive_changes` — 5 WorkDrive folder, upload, move, and rename writes.
 
-The 352 memberships contain 351 distinct advertised names because `ZohoCRM_getOrganization` is selected in both CRM servers.
+The 361 memberships contain 359 distinct advertised names because `ZohoCRM_getOrganization` is selected in both CRM servers and `ZohoBooks_get_unused_retainer_payments` is selected in both Books Audit and Controller.
 
 The exact sanitized current state is recorded in [`configured-servers.md`](configured-servers.md).
+
+The same runtime snapshot also contains the platform-managed `codex_apps` gateway with 134 tools. It is tracked separately in the [Codex runtime capability snapshot](../../codex-platform/configured-mcp-tools.md) and is intentionally excluded from these Zoho-hosted server totals.
 
 ## Files
 
@@ -58,7 +60,7 @@ The redacted Codex MCP inventories supplied on July 24 and July 25, 2026 confirm
 
 - The ten exact server identifiers listed above.
 - OAuth authentication displayed for each server.
-- All 352 per-server tool memberships using the exact names advertised to Codex.
+- All 361 per-server tool memberships using the exact names advertised to Codex.
 - The `ZohoCRM_`, `ZohoBooks_`, `CatalystbyZoho_`, and `ZohoWorkdrive_` prefixes used by Codex.
 
 Separate acceptance checks confirmed the GH Real Estate production organization for both CRM servers. The supplied evidence does not confirm the target Books organization for any of the three current Books servers, so all three remain acceptance-pending.
@@ -67,7 +69,7 @@ The Audit server's module call succeeded but was transport-truncated, and its ad
 
 The CRM Changes server is not configuration-only. It contains the original organization/configuration set plus seven production-record reads and four production-record writes. The repository records that expanded boundary explicitly.
 
-The supplied evidence also does not confirm the Catalyst organization, project, environment, function targets, or effective grants; the WorkDrive user, team, Team Folder, or effective grants; successful file-binary handoff; or any Catalyst/WorkDrive write. Those five servers remain acceptance-pending.
+A separate controlled acceptance demonstrated single-file WorkDrive binary handoff and PDF text/render inspection without publishing the source document. The supplied evidence still does not confirm the Catalyst organization, project, environment, function targets, or effective grants; the WorkDrive user, team, Team Folder, or effective grants for every tool; or any Catalyst/WorkDrive write. Those five servers remain acceptance-pending for their unresolved targets and actions.
 
 ### Official Tool Catalog
 
