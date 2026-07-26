@@ -2,6 +2,18 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-25 — Retainer Auto-Application Source Fix Prepared
+
+- System: GitHub / Zoho Books
+- Repo branch / commit: `codex/zoho-books-remediation-20260725` / draft PR pending
+- Files changed: Apply Unused Credits source, tests, install checklist, settings map, smoke checklist, authority crosswalk, changelog, and this deployment log
+- Business rule changed? proposed source behavior excludes every retainer payment from automatic invoice credit application while preserving credit notes and customer-payment credits
+- Dry-run completed? repository validation and safety checks required before review
+- Smoke test completed? not in live Zoho; MCP readback confirmed the current installed function is still active and still includes retainers
+- Result: draft-only source correction prepared; no GitHub merge and no live Zoho automation or accounting record changed
+- Rollback plan: close the draft PR or revert its branch commit. After an authorized live installation, retain the prior sanitized source copy and disable the workflow if validation fails.
+- Notes: the available Books MCP write tools cannot edit or disable workflow custom functions. Manual Zoho installation and controlled smoke testing remain required; do not create security-deposit retainers while the current live function can consume retainers.
+
 ## 2026-07-25 — Codex MCP Capability Refresh Captured
 
 - System: Codex Apps / Zoho Books / Zoho WorkDrive / GitHub
