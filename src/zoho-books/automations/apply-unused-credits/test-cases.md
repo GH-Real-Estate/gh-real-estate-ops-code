@@ -12,9 +12,10 @@ Use sanitized or controlled Zoho Books records only. These cases are for the Inv
 | Customer-payment credit exact match | Invoice balance equals unused customer-payment balance on same branch | Full balance covered once |
 | Customer-payment credit partial | Invoice balance exceeds unused customer-payment balance on same branch | Available credit applied; remaining invoice balance stays open |
 | Customer-payment credit larger than invoice | Unused customer-payment balance exceeds invoice balance on same branch | Only invoice balance is applied |
-| Credit note | Customer has unused credit note on same branch | Credit note applied through `apply_creditnotes` before payment/retainer credits |
-| Retainer payment | Customer has unused retainer payment on same branch | Retainer credit applied through `invoice_payments` after credit notes and customer-payment credits |
-| Multiple credit sources | Customer has credit note plus customer/retainer credits | Credits apply in configured order until invoice balance is covered or available credits are exhausted |
+| Credit note | Customer has unused credit note on same branch | Credit note applied through `apply_creditnotes` before customer-payment credits |
+| Retainer payment only | Customer has only an unused retainer payment | No credit-application POST; the retainer remains untouched |
+| Multiple credit sources | Customer has credit note, customer-payment credit, and retainer credit | Only the credit note and customer-payment credit apply, in that order; the retainer remains untouched |
+| Unexpected retainer payload | Zoho returns a `retainer_payment` despite `include_unused_retainer_payments=false` | Retainer is explicitly skipped and never enters `invoice_payments` |
 | Branch mismatch | Credit exists on a different branch than the invoice | Credit is skipped |
 | Blank branch fail-closed | Invoice or credit has blank branch and `allowEmptyBranchMatch=false` | Function stops or skips credit to avoid unverified branch application |
 | Blank branch allowed | Invoice and credit both have blank branch and `allowEmptyBranchMatch=true` | Credit applies only after single-branch behavior is verified |
