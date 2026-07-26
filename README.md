@@ -59,6 +59,7 @@ This repo is for technical and governed authority assets:
 - Deployment logs.
 - Codex/ChatGPT instructions.
 - Dated, official-source-anchored Zoho Suite and Twilio AI reference documents under `docs/reference/zoho-suite/`.
+- Dated, sanitized Codex runtime capability snapshots under `docs/reference/codex-platform/`.
 - Repository-wide document drafting, typography, and output-QA standards.
 - Local repo hygiene tools.
 - Approved public legal-authority sources, release manifests, searchable extracts, and monitoring tools under `legal/`.
@@ -231,6 +232,8 @@ authority/
 
 docs/
   reference/
+    codex-platform/
+      configured-mcp-tools.md
     zoho-suite/
       README.md
       source-manifest.json
@@ -301,6 +304,7 @@ tools/
 | Lease Automation Rules | `docs/business-rules/lease-automation-rules.md` |
 | Deployment Log | `docs/runbooks/deployment-log.md` |
 | Codex/ChatGPT Instructions | `AGENTS.md` |
+| Codex Runtime Capability Snapshot | `docs/reference/codex-platform/configured-mcp-tools.md` |
 | Zoho Suite and Twilio AI Reference Library | `docs/reference/zoho-suite/README.md` |
 | Document Drafting and Typography Standard | `docs/standards/document-drafting-standard.md` |
 | Legal Authority Index | `legal/CURRENT_AUTHORITY_INDEX.md` |

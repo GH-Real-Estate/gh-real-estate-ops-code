@@ -479,7 +479,7 @@ listPersonalTasks
 **Description:** Browse, search, download, and manage files and folders in Zoho WorkDrive.  
 **Tools:** `Not Verified`
 
-Do not infer this template's exact membership from its title or from the separate custom servers. GH Real Estate now has custom 20-tool WorkDrive Audit and 5-tool WorkDrive Changes selections for a concrete document workflow; their exact boundaries are maintained in [`configured-servers.md`](configured-servers.md). The preconfigured template itself remains `Not Verified`.
+Do not infer this template's exact membership from its title or from the separate custom servers. GH Real Estate now has custom 21-tool WorkDrive Audit and 5-tool WorkDrive Changes selections for a concrete document workflow; their exact boundaries are maintained in [`configured-servers.md`](configured-servers.md). The preconfigured template itself remains `Not Verified`.
 
 ## Separate Zoho CRM Product-Specific Pre-Built Servers
 
@@ -504,13 +504,13 @@ The original decision was to create **GH CRM Configuration Audit** first as a cu
 |---|---|---|---|
 | `gh_zoho_crm_audit` | Custom Zoho-hosted server | Production organization acceptance passed | 18 CRM configuration metadata reads |
 | `gh_zoho_crm_changes` | Custom Zoho-hosted server | Production organization target confirmed; no mutation acceptance test recorded | 15 configuration writes, 7 record reads, 4 record writes, and 1 organization check |
-| `gh_zoho_books_accounting_audit` | Custom Zoho-hosted server | Configured; target Books organization not verified in supplied evidence | 166 Books reads and reports |
+| `gh_zoho_books_accounting_audit` | Custom Zoho-hosted server | Configured; target Books organization not verified in supplied evidence | 167 Books reads and reports |
 | `gh_zoho_books_bookkeeping_changes` | Custom Zoho-hosted server | Configured; target Books organization and writes not acceptance-tested | 31 routine and high-risk Books writes pending separation |
-| `gh_zoho_books_controller` | Custom Zoho-hosted server | Configured; target Books organization and writes not acceptance-tested | 58 high-risk accounting and configuration writes |
+| `gh_zoho_books_controller` | Custom Zoho-hosted server | Configured; target Books organization and writes not acceptance-tested | 65 high-risk accounting, retainer, and configuration writes |
 | `gh_zoho_catalyst_webhook_audit` | Custom Zoho-hosted server | Configured; target organization/project/environment not verified | 15 Catalyst inspection and readback tools |
 | `gh_zoho_catalyst_webhook_breakglass` | Custom Zoho-hosted server | Configured; target and writes not acceptance-tested; keep unavailable by default | 5 emergency configuration writes |
 | `gh_zoho_catalyst_webhook_release` | Custom Zoho-hosted server | Configured; target and actions not acceptance-tested | 7 approval-gated release and function actions |
-| `gh_zoho_workdrive_audit` | Custom Zoho-hosted server | Configured; user/team/Team Folder and binary handoff not verified | 20 identity, file, permission, preview, version, change, and download reads |
+| `gh_zoho_workdrive_audit` | Custom Zoho-hosted server | Configured; single-file binary handoff verified, but user/team/Team Folder not verified | 21 identity, file, permission, preview, version, change, and download reads |
 | `gh_zoho_workdrive_changes` | Custom Zoho-hosted server | Configured; user/team/Team Folder and writes not acceptance-tested | 5 folder, upload/status, move, and rename writes |
 
 The Audit server expanded from the original 14-tool proposal to 18 reads by adding field-ID, single-layout-rule, workflow field-update, and single-field-update readback coverage.

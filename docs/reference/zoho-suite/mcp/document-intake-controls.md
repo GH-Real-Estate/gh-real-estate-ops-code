@@ -39,7 +39,7 @@ The current selections are therefore sufficient for attended filing after accept
 | Catalyst inspection/readback | `gh_zoho_catalyst_webhook_audit` | 15 | Target organization/project/environment unverified |
 | Catalyst release/function invocation | `gh_zoho_catalyst_webhook_release` | 7 | Target and writes unverified |
 | Catalyst emergency configuration | `gh_zoho_catalyst_webhook_breakglass` | 5 | Target and writes unverified; keep unavailable by default |
-| WorkDrive discovery/download/readback | `gh_zoho_workdrive_audit` | 20 | User/team/Team Folder and binary handoff unverified |
+| WorkDrive discovery/download/readback | `gh_zoho_workdrive_audit` | 21 | User/team/Team Folder and current effective grant remain acceptance-pending |
 | WorkDrive filing | `gh_zoho_workdrive_changes` | 5 | User/team/Team Folder and writes unverified |
 
 The exact selected names are canonical in [`configured-servers.md`](configured-servers.md).
@@ -65,9 +65,12 @@ ZohoWorkdrive_Get_File_Preview
 ZohoWorkdrive_Get_Version
 ZohoWorkdrive_Download_Server_File
 ZohoWorkdrive_Download_Server_File_Version
+ZohoWorkdrive_downloadWorkDriveFile
 ZohoWorkdrive_Get_Start_Token
 ZohoWorkdrive_Get_List_Of_Recent_Changes
 ```
+
+`ZohoWorkdrive_downloadWorkDriveFile` is the direct file-handoff operation advertised to Codex. A separate controlled acceptance demonstrated single-file binary handoff and PDF text/render inspection without publishing the source document. That proves an attended file can reach the document-reading toolchain; it does not certify the target user/team/Team Folder, complete all-page OCR for arbitrary files, or unattended processing.
 
 The remaining selected Audit tools inspect Team Folder settings, shared users, and shared links. They are safety reads, not authorization to disclose links or identities.
 
@@ -142,7 +145,7 @@ The official MCP inventory contains no explicitly named tool that guarantees:
 - SHA-256 generation; or
 - malware/content scanning.
 
-An attended Codex task may use the local governed PDF runtime after WorkDrive download, subject to a successful binary-handoff test.
+An attended Codex task may use the local governed PDF runtime after WorkDrive download. One controlled text-PDF handoff and text/render inspection succeeded; image-only PDF behavior, arbitrary file types, target identity, complete-page guarantees, and unattended processing remain acceptance-pending.
 
 Unattended processing requires one narrow document processor, such as a reviewed Catalyst function, with an output contract containing:
 
