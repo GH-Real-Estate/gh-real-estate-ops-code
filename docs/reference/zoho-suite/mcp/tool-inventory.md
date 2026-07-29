@@ -15,6 +15,8 @@ The official manual remains authoritative for parameters, purpose descriptions, 
 
 ## Live Portal Overlay
 
+### Preconfigured-Template-Only Names
+
 The authenticated U.S. Zoho MCP portal template memberships supplied on July 24, 2026 contain four exact tool names that are not present in the dated public Tool Manual bundle used for the 10,533-row inventory:
 
 | Service | Live Portal Tool | Captured Preconfigured Server |
@@ -24,7 +26,96 @@ The authenticated U.S. Zoho MCP portal template memberships supplied on July 24,
 | Zoho Mail | `getMessageAttachmentContent` | Mail Reading & Search |
 | Zoho Mail | `uploadAttachments` | Mail Sending & Replies |
 
-These names are a live-portal overlay, not additions to the bundle-derived inventory. Preserve the exact capitalization and spelling. Before authorizing any of them, inspect the current live Tool Manual entry, OAuth scope, parameters, and behavior. The live authenticated portal controls when it conflicts with this dated public snapshot.
+These names are a live-portal overlay, not additions to the bundle-derived inventory. Preserve the exact capitalization and spelling. Before authorizing any of them, inspect the current live Tool Manual entry, OAuth scope, parameters, and behavior.
+
+### Dated Service-Action Snapshots
+
+Authenticated U.S. Zoho MCP portal evidence supplied on July 24, 2026 also contains submitted displayed-action snapshots for nine services. Each capture displayed `Authorize On Demand`; that is an observed portal label, not proof that a tool is installed, currently authorized, included in a particular server, available under Gabriel's plan or data center, or safe to invoke.
+
+| Service | Portal Action Rows | Tool Manual Snapshot Rows | Reconciliation |
+|---|---:|---:|---|
+| [Zoho CRM](#zoho-crm) | 1,087 | 1,089 | Portal capture does not display `postRules` or `putDeactivate` |
+| [Zoho WorkDrive](#zoho-workdrive) | 178 | 178 | Full name set reconciled |
+| [Zoho Mail](#zoho-mail) | 183 | 183 | Full name set reconciled |
+| [Zoho Books](#zoho-books) | 1,090 | 1,090 | Full name set reconciled |
+| [Zoho Billing](#zoho-billing) | 453 | 453 | Full name set reconciled |
+| [Catalyst by Zoho](#catalyst) | 137 | 176 | Portal capture does not display 39 QuickML actions listed below |
+| [Zoho Creator](#zoho-creator) | 37 | 37 | Full name set reconciled |
+| [Zoho Payments](#zoho-payments) | 16 | 16 | Full name set reconciled |
+| [Zoho Sign](#zoho-sign) | 28 | 28 | Full name set reconciled |
+| **Total** | **3,209** | **3,250** | **41-row difference retained as unresolved dated evidence** |
+
+For service exports that render canonical underscore-separated names as spaces, reconciliation matched the displayed line prefix to the exact case-sensitive Tool Manual name after converting underscores to spaces. No tool is deduplicated across services. Tool references must remain service-qualified because identical names can represent different APIs; examples include CRM/Mail `createGroup`, `deleteGroup`, and `deleteUser`; Creator/CRM `deleteRecords`, `getBlueprintTransitions`, and `updateRecords`; and Sign/Mail `createFolder`.
+
+Do not remove the 41 unmatched Tool Manual rows from this inventory. The two sources are dated snapshots with different collection paths, and the current official Tool Manual plus the current authenticated portal must be checked before designing or revising an MCP server.
+
+<details>
+<summary><strong>Catalyst QuickML rows absent from the supplied 137-action portal capture</strong></summary>
+
+- `Create_QuickML_Endpoint`
+- `Delete_QuickML_Dataset`
+- `Delete_QuickML_Endpoint`
+- `Delete_QuickML_Model`
+- `Delete_QuickML_Pipeline`
+- `Execute_QuickML_Pipeline`
+- `Generate_QuickML_Model_Metrics`
+- `Get_QuickML_Dataset`
+- `Get_QuickML_Dataset_Meta`
+- `Get_QuickML_Dataset_Versions`
+- `Get_QuickML_Datasets_Count`
+- `Get_QuickML_Endpoint`
+- `Get_QuickML_Endpoints_Count`
+- `Get_QuickML_Model`
+- `Get_QuickML_Model_Metrics_For_Version`
+- `Get_QuickML_Model_Metrics_Summary`
+- `Get_QuickML_Model_Versions`
+- `Get_QuickML_Model_Versions_Count`
+- `Get_QuickML_Models_Count`
+- `Get_QuickML_Pipeline`
+- `Get_QuickML_Pipeline_Config`
+- `Get_QuickML_Pipeline_Config_By_Version`
+- `Get_QuickML_Pipeline_Status`
+- `Get_QuickML_Pipelines_Count`
+- `Import_QuickML_Dataset_From_Zoho_Bigin`
+- `Import_QuickML_Dataset_From_Zoho_Crm`
+- `Import_QuickML_Dataset_From_Zoho_Recruit`
+- `List_QuickML_Datasets`
+- `List_QuickML_Endpoints`
+- `List_QuickML_Models`
+- `List_QuickML_Pipelines`
+- `List_QuickML_Projects`
+- `Predict_With_QuickML_Endpoint`
+- `Predict_With_QuickML_Endpoint_Bulk`
+- `Update_QuickML_Dataset`
+- `Update_QuickML_Endpoint`
+- `Update_QuickML_Model`
+- `Update_QuickML_Pipeline`
+- `Upload_QuickML_Dataset_File_as_Base64`
+
+</details>
+
+### Submitted Operational Semantics
+
+The portal descriptions were not copied wholesale. The following concise constraints preserve the action-design details most likely to affect safe implementation:
+
+- **Zoho Creator:** Use report/form metadata before invoking custom actions or stateless buttons. Record fetches and bulk record writes/deletes are capped at 200 per call and require the documented cursor or `more_records` continuation behavior. Poll gallery-app installation status after starting an installation. Retrieve Chat Agent metadata before invoking a Chat Agent. `deleteApplication` permanently deletes the application and its data, forms, reports, and workflows.
+- **Zoho Payments:** `cancelPaymentLink` is irreversible. Customer, payment-link, payment-session, and refund creates are financially or externally consequential writes and require explicit approval plus current parameter/scope verification. Read tools distinguish payments, payment sessions, refunds, payouts, payout transactions, and merchant accounts.
+- **Zoho Sign:** A submitted document can be corrected only before a recipient completes it. Deleting a document moves it to trash; an in-progress request requires `recall_inprogress=true` and a reason. Recalling stops recipients from viewing or signing. Sending an unchanged document requires an empty request object in the `data` parameter. Template sends cannot change the action/recipient count, require name and email for every action, and must populate every mandatory document field. Custom request-list date ranges use UTC millisecond boundaries.
+
+### Submitted Evidence Fingerprints
+
+The six supplied text exports were sanitized action catalogs and are not committed as duplicate provider text. Their hashes support later comparison when the original exports are available:
+
+| Service | Displayed Rows | SHA-256 |
+|---|---:|---|
+| Zoho CRM | 1,087 | `15a71918628925a76ba1789bd5a286e67acdea31f66be4630a6950f2dc776cf0` |
+| Zoho WorkDrive | 178 | `85b1bf6a288fa8cee8be76b83af4c25a0dd03da67130c43c54d41f06070a8a01` |
+| Zoho Mail | 183 | `fdb898793d02afa405f52717c6089a690dedc6bd33bf75622047384abea6acd5` |
+| Zoho Books | 1,090 | `f35d112f19142a41d58b73e8989fa7a7f7cb009cefb10260232cdae4acea2808` |
+| Zoho Billing | 453 | `8c42d100136fe0ba5a366ce5c4f05c11eff256e86a5d834aee34df8244704133` |
+| Catalyst by Zoho | 137 | `e15334e6639a3eac3e5ded7823a8f54eba63d7afa2a07d57067fe5191650c897` |
+
+The 37 Creator, 16 Payments, and 28 Sign rows were transcribed directly in the supplied conversation and therefore have no separate file fingerprint.
 
 ## Service Index
 
