@@ -16,8 +16,10 @@ Use before and after any live automation change.
 - [ ] New invoice not marked eligible by `cf_is_rent_invoice` does not apply anything.
 - [ ] New invoice with no unused credits does not apply anything.
 - [ ] New invoice with matching-branch customer-payment credit applies the correct amount.
-- [ ] New invoice with matching-branch credit note applies the correct amount before payment/retainer credits.
-- [ ] New invoice with matching-branch retainer payment applies the correct amount after credit notes/customer payments.
+- [ ] New invoice with matching-branch credit note applies the correct amount before customer-payment credits.
+- [ ] New invoice with only an unused retainer payment does not POST credits and leaves the retainer untouched.
+- [ ] New invoice with mixed credit-note, customer-payment, and retainer balances applies only the first two sources.
+- [ ] Retainer unexpectedly returned by Zoho is skipped and never enters `invoice_payments`.
 - [ ] Non-matching-branch credit is skipped.
 - [ ] Blank branch IDs fail closed unless `allowEmptyBranchMatch=true` was intentionally verified.
 - [ ] Running the function twice does not over-apply credits.

@@ -221,7 +221,7 @@
           "repository_path": "src/zoho-books/automations/apply-unused-credits/ApplyUnusedCredits.deluge",
           "artifact_type": "financial-automation",
           "required_action": "review-and-regression-test",
-          "reason": "The function applies credit notes, unapplied payments, and retainers to rent invoices and must remain idempotent and branch-safe."
+          "reason": "The function applies credit notes and unapplied customer payments to rent invoices, explicitly excludes retainers, and must remain idempotent and branch-safe."
         },
         {
           "repository_path": "src/zoho-books/field-maps/books-automation-settings.md",

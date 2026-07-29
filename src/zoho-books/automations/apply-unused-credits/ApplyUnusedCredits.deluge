@@ -18,7 +18,8 @@
 //   - Uses Zoho Books unused credits as the source of truth.
 //   - Applies only credits whose branch_id matches the invoice branch_id.
 //   - Fails closed on blank branch IDs by default; adjust allowEmptyBranchMatch only after verification.
-//   - Applies credit notes first, then customer payments, then retainer payments.
+//   - Applies credit notes first, then customer payments.
+//   - Never applies retainer payments automatically; retainers may represent refundable tenant deposits.
 //   - Re-checks the invoice balance immediately before applying credits to reduce duplicate-run risk.
 //
 // IMPORTANT:
@@ -41,7 +42,6 @@ allowEmptyBranchMatch = false;
 creditApplicationOrder = List();
 creditApplicationOrder.add("creditnote");
 creditApplicationOrder.add("customer_payment");
-creditApplicationOrder.add("retainer_payment");
 
 // -------------------- CONTEXT --------------------
 if(invoice == null || organization == null)
@@ -153,7 +153,7 @@ try
 {
 	unusedCreditsResponse = invokeurl
 	[
-		url :apiUrl + "/contacts/" + customerID + "/receivables/unusedcredits?include_unused_retainer_payments=true&organization_id=" + organizationID
+		url :apiUrl + "/contacts/" + customerID + "/receivables/unusedcredits?include_unused_retainer_payments=false&organization_id=" + organizationID
 		type :GET
 		connection:"zbooks"
 	];
@@ -196,7 +196,27 @@ creditNotesList = List();
 skippedBranchCredits = 0;
 skippedMalformedCredits = 0;
 skippedUnsupportedCredits = 0;
+skippedRetainerCredits = 0;
 selectedCreditAmount = 0.0;
+
+// Retainers are excluded even if Zoho unexpectedly returns them despite the request parameter.
+// A future rent-advance workflow must use a separate, explicit allowlist rather than all retainers.
+eligibleCredits = List();
+for each  credit in credits
+{
+	creditType = ifnull(credit.get("entity_name"),"").toString();
+	if(creditType == "retainer_payment")
+	{
+		skippedRetainerCredits = skippedRetainerCredits + 1;
+		continue;
+	}
+	if(creditType != "creditnote" && creditType != "customer_payment")
+	{
+		skippedUnsupportedCredits = skippedUnsupportedCredits + 1;
+		continue;
+	}
+	eligibleCredits.add(credit);
+}
 
 for each  creditTypeToApply in creditApplicationOrder
 {
@@ -204,7 +224,7 @@ for each  creditTypeToApply in creditApplicationOrder
 	{
 		break;
 	}
-	for each  credit in credits
+	for each  credit in eligibleCredits
 	{
 		if(invoiceTotal == 0)
 		{
@@ -278,14 +298,10 @@ for each  creditTypeToApply in creditApplicationOrder
 			creditMap.put("creditnote_id",creditEntityID);
 			creditNotesList.add(creditMap);
 		}
-		else if(creditType == "customer_payment" || creditType == "retainer_payment")
+		else if(creditType == "customer_payment")
 		{
 			creditMap.put("payment_id",creditEntityID);
 			excessCreditsList.add(creditMap);
-		}
-		else
-		{
-			skippedUnsupportedCredits = skippedUnsupportedCredits + 1;
 		}
 	}
 }
@@ -305,7 +321,7 @@ if(excessCreditsList.size() > 0)
 
 if(canApplyCredits == false)
 {
-	info "There are no eligible credits available. skipped_branch=" + skippedBranchCredits + " skipped_malformed=" + skippedMalformedCredits + " skipped_unsupported=" + skippedUnsupportedCredits;
+	info "There are no eligible credits available. skipped_branch=" + skippedBranchCredits + " skipped_malformed=" + skippedMalformedCredits + " skipped_unsupported=" + skippedUnsupportedCredits + " skipped_retainer=" + skippedRetainerCredits;
 	return;
 }
 

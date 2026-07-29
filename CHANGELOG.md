@@ -4,6 +4,7 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-25
 
+- Prepared a draft-only correction that excludes every retainer payment from Apply Unused Credits, defensively skips any retainer returned unexpectedly, and preserves credit-note and customer-payment behavior. No live Zoho automation or accounting record changed.
 - Reconciled the supplied Codex runtime snapshot as 11 visible server entries, 495 memberships, and 493 distinct names. Added a separate sanitized inventory of all 134 platform-managed `codex_apps` tools instead of mixing them into the Zoho-hosted server catalog.
 - Refreshed the ten-server Zoho inventory to 361 memberships and 359 distinct names: Books Audit now has 167 tools, Books Controller 65, and WorkDrive Audit 21. No advertised tool was removed.
 - Classified the seven newly selected Controller retainer operations. The intended supervised boundary retains create, update, void, restore-to-draft, and apply; keeps unused-retainer lookup in Audit; and removes retainer unapply/delete from MCP. The target Books split is now 167/17/58/27.

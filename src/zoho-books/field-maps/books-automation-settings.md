@@ -12,7 +12,7 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 | Apply-unused-credits trigger | Event Based / Created | Runs when a new invoice is created. Do not enable during bulk historical imports unless intentional. |
 | Apply-unused-credits eligibility field | `cf_is_rent_invoice` | Prevents accidental credit application to non-rent/miscellaneous invoices. |
 | Apply-unused-credits unused-credit source | `/contacts/{customer_id}/receivables/unusedcredits` | Reads unused customer credits from Zoho Books contact receivables. |
-| Apply-unused-credits retainer option | `include_unused_retainer_payments=true` | Includes unused retainer payments in the credit list. |
+| Apply-unused-credits retainer option | `include_unused_retainer_payments=false` | Retainers are excluded and defensively skipped because they may represent refundable tenant deposits. |
 | Apply-unused-credits branch rule | Invoice `branch_id` must match credit `branch_id` | Prevents cross-branch credit application. Blank branch values fail closed unless explicitly changed after verification. |
 | Late-fee item ID | `[PRIVATE CONFIGURATION REQUIRED]` | Observed in Late Fee Guard. Non-secret, but verify in Zoho Books. |
 | Interest item ID | `[PRIVATE CONFIGURATION REQUIRED]` | Used by monthly interest billing. Verify item exists and maps to delinquent-rent interest. |
@@ -57,6 +57,7 @@ Document non-secret IDs and API names needed by automation. Do not include tenan
 - [ ] If a saved bank account is associated with the recurring profile, verify whether auto-charge is intended before promising the tenant control over a partial payment amount.
 - [ ] Confirm Apply Unused Credits is configured as an Invoice Created workflow, not an Estimate workflow.
 - [ ] Confirm Apply Unused Credits should run for every new invoice or add a Zoho Books workflow filter.
+- [ ] Confirm the installed function excludes all retainer payments; any future true-rent-advance workflow requires a separate explicit allowlist.
 
 ## Field Naming Convention
 
@@ -66,6 +67,7 @@ Use Zoho API names, not display labels, whenever possible.
 
 | Date | Change | Verified By |
 |---|---|---|
+| 2026-07-25 | Excluded all retainer payments from Apply Unused Credits and added a fail-closed unexpected-retainer guard | Repository review; live Zoho deployment pending |
 | 2026-07-17 | Corrected LF/INT/RF partial-payment inheritance to use and preserve the top-level `allow_partial_payments` invoice field | Repository review; live Zoho verification pending |
 | 2026-07-06 | Updated Monthly Interest Billing to accrue from the original due date once eligible after 30 days | ChatGPT / GitHub update |
 | 2026-07-06 | Moved Monthly Interest Billing into its own Zoho Books automation folder and aligned settings with saved v1.5 code | ChatGPT / GitHub update |
