@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "source_id": "LIVE_CRM_MCP_2026-07-29",
+  "module": {
+    "api_name": "Deals",
+    "display_label": "Rental Applications"
+  },
+  "layout": {
+    "name": "Standard",
+    "platform_managed_sections": [
+      "Rental Application Image"
+    ],
+    "operational_sections_in_order": [
+      "Application Identity & Group",
+      "Property & Requested Terms",
+      "Applicant Income & Rental History",
+      "Screening Summary",
+      "Verification & Adverse Action",
+      "Household & Requests — Primary Only",
+      "Lease Promotion Snapshot — Primary Only",
+      "Documents & Integrations",
+      "System & Legacy"
+    ],
+    "field_labels": [
+      {
+        "api_name": "Deal_Name",
+        "label": "Rental Application Name"
+      },
+      {
+        "api_name": "Contact_Name",
+        "label": "Applicant"
+      },
+      {
+        "api_name": "Account_Name",
+        "label": "Property"
+      },
+      {
+        "api_name": "Closing_Date",
+        "label": "Requested Move-In Date"
+      }
+    ],
+    "new_active_rules": [
+      {
+        "name": "Require Vehicle Count When Vehicles Declared",
+        "condition": {
+          "field_api_name": "Vehicle_Declaration_Status",
+          "operator": "equals",
+          "value": "Vehicle(s) Declared"
+        },
+        "actions": [
+          {
+            "type": "show_fields",
+            "field_api_names": [
+              "Declared_Vehicle_Count"
+            ]
+          },
+          {
+            "type": "set_mandatory",
+            "field_api_names": [
+              "Declared_Vehicle_Count"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Require Parking Count When Parking Requested",
+        "condition": {
+          "field_api_name": "Parking_Request_Status",
+          "operator": "equals",
+          "value": "Requested"
+        },
+        "actions": [
+          {
+            "type": "show_fields",
+            "field_api_names": [
+              "Requested_Parking_Space_Count"
+            ]
+          },
+          {
+            "type": "set_mandatory",
+            "field_api_names": [
+              "Requested_Parking_Space_Count"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Show Primary Applicant Household and Lease Sections",
+        "condition": {
+          "field_api_name": "Applicant_Role",
+          "operator": "equals",
+          "value": "Primary Applicant"
+        },
+        "actions": [
+          {
+            "type": "show_sections",
+            "section_names": [
+              "Household & Requests — Primary Only",
+              "Lease Promotion Snapshot — Primary Only"
+            ]
+          }
+        ]
+      }
+    ],
+    "final_active_rule_count": 7,
+    "existing_rules_unchanged": true
+  },
+  "boundaries": {
+    "contains_live_ids": false,
+    "contains_record_data": false,
+    "contains_pii": false,
+    "record_backfill_performed": false
+  }
+}

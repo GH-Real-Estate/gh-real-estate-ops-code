@@ -30,6 +30,7 @@ REQUIRED_CURRENT_MODULES = {
     "Zillow Intake Events",
     "Properties",
     "Contacts",
+    "Application Groups",
     "Rental Applications",
     "Units",
     "Leases",
@@ -52,10 +53,12 @@ KNOWN_SOURCE_IDS = {
     "SETUP_SPEC",
     "LIVE_CRM_MCP_2026-07-24",
     "LIVE_CRM_MCP_2026-07-25",
+    "LIVE_CRM_MCP_2026-07-29",
 }
 LIVE_MCP_SOURCE_IDS = {
     "LIVE_CRM_MCP_2026-07-24",
     "LIVE_CRM_MCP_2026-07-25",
+    "LIVE_CRM_MCP_2026-07-29",
 }
 REQUIRED_COLUMNS = {
     "module_display_label",
@@ -77,62 +80,172 @@ REQUIRED_COLUMNS = {
     "notes",
     "source_ids",
 }
-GOVERNED_LIVE_SNAPSHOT_COUNT = 178
+GOVERNED_LIVE_SNAPSHOT_COUNT = 234
 GOVERNED_LIVE_SNAPSHOT_SHA256 = (
-    "1b9d4876ab14d069aac5894b894f7beb1614582850caf90caf110cf39be5a60a"
+    "f4e38770e217647e1fb48a7ba82bb59534be1c79ba33d79401d5b5a3e41a7e0c"
 )
+RENTAL_APPLICATIONS_LAYOUT_FILENAME = "rental-applications-layout.json"
+RENTAL_APPLICATIONS_OPERATIONAL_SECTIONS = (
+    "Application Identity & Group",
+    "Property & Requested Terms",
+    "Applicant Income & Rental History",
+    "Screening Summary",
+    "Verification & Adverse Action",
+    "Household & Requests — Primary Only",
+    "Lease Promotion Snapshot — Primary Only",
+    "Documents & Integrations",
+    "System & Legacy",
+)
+RENTAL_APPLICATIONS_FIELD_LABELS = (
+    {"api_name": "Deal_Name", "label": "Rental Application Name"},
+    {"api_name": "Contact_Name", "label": "Applicant"},
+    {"api_name": "Account_Name", "label": "Property"},
+    {"api_name": "Closing_Date", "label": "Requested Move-In Date"},
+)
+RENTAL_APPLICATIONS_NEW_ACTIVE_RULES = (
+    {
+        "name": "Require Vehicle Count When Vehicles Declared",
+        "condition": {
+            "field_api_name": "Vehicle_Declaration_Status",
+            "operator": "equals",
+            "value": "Vehicle(s) Declared",
+        },
+        "actions": [
+            {
+                "type": "show_fields",
+                "field_api_names": ["Declared_Vehicle_Count"],
+            },
+            {
+                "type": "set_mandatory",
+                "field_api_names": ["Declared_Vehicle_Count"],
+            },
+        ],
+    },
+    {
+        "name": "Require Parking Count When Parking Requested",
+        "condition": {
+            "field_api_name": "Parking_Request_Status",
+            "operator": "equals",
+            "value": "Requested",
+        },
+        "actions": [
+            {
+                "type": "show_fields",
+                "field_api_names": ["Requested_Parking_Space_Count"],
+            },
+            {
+                "type": "set_mandatory",
+                "field_api_names": ["Requested_Parking_Space_Count"],
+            },
+        ],
+    },
+    {
+        "name": "Show Primary Applicant Household and Lease Sections",
+        "condition": {
+            "field_api_name": "Applicant_Role",
+            "operator": "equals",
+            "value": "Primary Applicant",
+        },
+        "actions": [
+            {
+                "type": "show_sections",
+                "section_names": [
+                    "Household & Requests — Primary Only",
+                    "Lease Promotion Snapshot — Primary Only",
+                ],
+            }
+        ],
+    },
+)
+EXPECTED_RENTAL_APPLICATIONS_LAYOUT = {
+    "schema_version": 1,
+    "source_id": "LIVE_CRM_MCP_2026-07-29",
+    "module": {
+        "api_name": "Deals",
+        "display_label": "Rental Applications",
+    },
+    "layout": {
+        "name": "Standard",
+        "platform_managed_sections": ["Rental Application Image"],
+        "operational_sections_in_order": list(
+            RENTAL_APPLICATIONS_OPERATIONAL_SECTIONS
+        ),
+        "field_labels": list(RENTAL_APPLICATIONS_FIELD_LABELS),
+        "new_active_rules": list(RENTAL_APPLICATIONS_NEW_ACTIVE_RULES),
+        "final_active_rule_count": 7,
+        "existing_rules_unchanged": True,
+    },
+    "boundaries": {
+        "contains_live_ids": False,
+        "contains_record_data": False,
+        "contains_pii": False,
+        "record_backfill_performed": False,
+    },
+}
 
-# Immutable production readbacks captured on 2026-07-24 and 2026-07-25. These
-# entries are intentionally explicit: plausible API-name edits must not
-# silently rewrite the repository's record of fields already created, reused,
-# or reconciled in live CRM.
+# Immutable production readbacks captured on 2026-07-24, 2026-07-25, and
+# 2026-07-29. These entries are intentionally explicit: plausible API-name
+# edits must not silently rewrite the repository's record of fields already
+# created, reused, or reconciled in live CRM.
 DEALS_CREATED_LIVE_MANIFEST = (
-    ("Co-Applicant 1", "Co_Applicant_1", "Rental Application Information"),
-    ("Co-Applicant 2", "Co_Applicant_2", "Rental Application Information"),
-    ("Source Lead", "Source_Lead", "Rental Application Information"),
-    ("Unit", "Unit", "Rental Application Information"),
+    (
+        "Co-Applicant 1",
+        "Co_Applicant_1",
+        "Lease Promotion Snapshot — Primary Only",
+    ),
+    (
+        "Co-Applicant 2",
+        "Co_Applicant_2",
+        "Lease Promotion Snapshot — Primary Only",
+    ),
+    ("Source Lead", "Source_Lead", "Application Identity & Group"),
+    ("Unit", "Unit", "Property & Requested Terms"),
     (
         "Application Received At",
         "Application_Received_At",
-        "Rental Application Information",
+        "Application Identity & Group",
     ),
-    ("Addenda Required", "Addenda_Required", "Rental Application Information"),
+    (
+        "Addenda Required",
+        "Addenda_Required",
+        "Lease Promotion Snapshot — Primary Only",
+    ),
     (
         "Approved Lease Commencement Date",
         "Approved_Lease_Commencement_Date",
-        "Rental Application Information",
+        "Lease Promotion Snapshot — Primary Only",
     ),
     (
         "Approved Lease Term End Date",
         "Approved_Lease_Term_End_Date",
-        "Rental Application Information",
+        "Lease Promotion Snapshot — Primary Only",
     ),
     (
         "Approved Possession Date",
         "Approved_Possession_Date",
-        "Rental Application Information",
+        "Lease Promotion Snapshot — Primary Only",
     ),
     (
         "Approved Security Deposit",
         "Approved_Security_Deposit",
-        "Rental Application Information",
+        "Lease Promotion Snapshot — Primary Only",
     ),
     (
         "Attorney Review Required?",
         "Attorney_Review_Required",
-        "Rental Application Information",
+        "Lease Promotion Snapshot — Primary Only",
     ),
-    ("Decision", "Decision", "Rental Application Information"),
-    ("Decision Date", "Decision_Date", "Rental Application Information"),
+    ("Decision", "Decision", "Screening Summary"),
+    ("Decision Date", "Decision_Date", "Screening Summary"),
     (
         "Nonstandard Terms?",
         "Nonstandard_Terms",
-        "Rental Application Information",
+        "Lease Promotion Snapshot — Primary Only",
     ),
     (
         "Nonstandard Terms Notes",
         "Nonstandard_Terms_Notes",
-        "Rental Application Information",
+        "Lease Promotion Snapshot — Primary Only",
     ),
 )
 
@@ -375,27 +488,314 @@ UNITS_REUSED_LIVE_MANIFEST = (
     ),
 )
 DEALS_RECONCILED_LIVE_MANIFEST = (
-    ("Application Reviewer", "Application_Reviewer", "Application Identity"),
-    ("Household Size", "Household_Size", "Application Intake"),
-    ("Pets Requested?", "Pets_Requested", "Application Intake"),
+    ("Application Reviewer", "Application_Reviewer", "Screening Summary"),
+    (
+        "Household Size",
+        "Household_Size",
+        "Household & Requests — Primary Only",
+    ),
+    (
+        "Pets Requested?",
+        "Pets_Requested",
+        "Household & Requests — Primary Only",
+    ),
     (
         "Requested Lease Term Months",
         "Requested_Lease_Term_Months",
-        "Application Intake",
+        "Property & Requested Terms",
     ),
-    ("Storage Requested?", "Storage_Requested", "Application Intake"),
+    (
+        "Storage Requested?",
+        "Storage_Requested",
+        "Household & Requests — Primary Only",
+    ),
     (
         "Zoho Creator Application ID",
         "Zoho_Creator_Application_ID",
-        "Integrations",
+        "Documents & Integrations",
     ),
 )
 DEALS_SECOND_PASS_LIVE_MANIFEST = (
-    ("Requested Pet Count", "Requested_Pet_Count", "Application Intake"),
+    (
+        "Requested Pet Count",
+        "Requested_Pet_Count",
+        "Household & Requests — Primary Only",
+    ),
     (
         "Requested Storage Unit Count",
         "Requested_Storage_Unit_Count",
-        "Application Intake",
+        "Household & Requests — Primary Only",
+    ),
+)
+APPLICATION_GROUPS_LIVE_MANIFEST = (
+    (
+        "Household Application Status",
+        "Household_Application_Status",
+        "Application Group Information",
+    ),
+    (
+        "Application Group Key",
+        "Application_Group_Key",
+        "Application Group Information",
+    ),
+    (
+        "Expected Adult Application Count",
+        "Expected_Adult_Application_Count",
+        "Application Group Information",
+    ),
+    (
+        "WorkDrive Group Folder URL",
+        "WorkDrive_Group_Folder_URL",
+        "Application Group Information",
+    ),
+    (
+        "WorkDrive Group Folder Resource ID",
+        "WorkDrive_Group_Folder_Resource_ID",
+        "Application Group Information",
+    ),
+    (
+        "Primary Rental Application",
+        "Primary_Rental_Application",
+        "Application Group Information",
+    ),
+)
+DEALS_JULY_29_LIVE_MANIFEST = (
+    ("Applicant Role", "Applicant_Role", "Application Identity & Group"),
+    ("Application Group", "Application_Group", "Application Identity & Group"),
+    ("Packet Status", "Packet_Status", "Application Identity & Group"),
+    (
+        "Zillow Application ID",
+        "Zillow_Application_ID",
+        "Application Identity & Group",
+    ),
+    (
+        "Claimed Monthly Gross Income",
+        "Claimed_Monthly_Gross_Income",
+        "Applicant Income & Rental History",
+    ),
+    (
+        "Prior Landlord Data Source",
+        "Prior_Landlord_Data_Source",
+        "Applicant Income & Rental History",
+    ),
+    (
+        "Prior Landlord Email",
+        "Prior_Landlord_Email",
+        "Applicant Income & Rental History",
+    ),
+    (
+        "Prior Landlord Name",
+        "Prior_Landlord_Name",
+        "Applicant Income & Rental History",
+    ),
+    (
+        "Prior Landlord Phone",
+        "Prior_Landlord_Phone",
+        "Applicant Income & Rental History",
+    ),
+    (
+        "Verified Monthly Gross Income",
+        "Verified_Monthly_Gross_Income",
+        "Applicant Income & Rental History",
+    ),
+    ("Background Report Status", "Background_Report_Status", "Screening Summary"),
+    (
+        "Credit Report Reference ID",
+        "Credit_Report_Reference_ID",
+        "Screening Summary",
+    ),
+    ("Credit Report Status", "Credit_Report_Status", "Screening Summary"),
+    ("Credit Score", "Credit_Score", "Screening Summary"),
+    (
+        "Credit Score Created Date",
+        "Credit_Score_Created_Date",
+        "Screening Summary",
+    ),
+    ("Credit Score Provider", "Credit_Score_Provider", "Screening Summary"),
+    (
+        "Credit Score Range Maximum",
+        "Credit_Score_Range_Max",
+        "Screening Summary",
+    ),
+    (
+        "Credit Score Range Minimum",
+        "Credit_Score_Range_Min",
+        "Screening Summary",
+    ),
+    (
+        "Criminal Record Review Result",
+        "Criminal_Record_Review_Result",
+        "Screening Summary",
+    ),
+    (
+        "Housing Court Review Result",
+        "Housing_Court_Review_Result",
+        "Screening Summary",
+    ),
+    ("Screening Status", "Screening_Status", "Screening Summary"),
+    (
+        "Adverse Action Delivery Method",
+        "Adverse_Action_Delivery_Method",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Adverse Action Notice Sent At",
+        "Adverse_Action_Notice_Sent_At",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Adverse Action Notice Status",
+        "Adverse_Action_Notice_Status",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Adverse Action Reviewed By",
+        "Adverse_Action_Reviewed_By",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Consumer Report Used",
+        "Consumer_Report_Used",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Credit Score Reviewed At",
+        "Credit_Score_Reviewed_At",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Credit Score Reviewed By",
+        "Credit_Score_Reviewed_By",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Credit Score Used in Decision",
+        "Credit_Score_Used_In_Decision",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Employment Verification Status",
+        "Employment_Verification_Status",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Identity Verification Status",
+        "Identity_Verification_Status",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Income Verification Status",
+        "Income_Verification_Status",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Prior Landlord Verification Status",
+        "Prior_Landlord_Verification_Status",
+        "Verification & Adverse Action",
+    ),
+    (
+        "Adult Applicant Count",
+        "Adult_Applicant_Count",
+        "Household & Requests — Primary Only",
+    ),
+    (
+        "Approved Guarantor",
+        "Approved_Guarantor",
+        "Household & Requests — Primary Only",
+    ),
+    (
+        "Approved Occupant Names",
+        "Approved_Occupant_Names",
+        "Household & Requests — Primary Only",
+    ),
+    (
+        "Declared Vehicle Count",
+        "Declared_Vehicle_Count",
+        "Household & Requests — Primary Only",
+    ),
+    (
+        "Parking Request Status",
+        "Parking_Request_Status",
+        "Household & Requests — Primary Only",
+    ),
+    (
+        "Requested Parking Space Count",
+        "Requested_Parking_Space_Count",
+        "Household & Requests — Primary Only",
+    ),
+    (
+        "Vehicle Declaration Status",
+        "Vehicle_Declaration_Status",
+        "Household & Requests — Primary Only",
+    ),
+    (
+        "Approved Monthly Rent",
+        "Approved_Monthly_Rent",
+        "Lease Promotion Snapshot — Primary Only",
+    ),
+    (
+        "Income to Rent Multiple",
+        "Income_to_Rent_Multiple",
+        "Lease Promotion Snapshot — Primary Only",
+    ),
+    (
+        "Proposed Monthly Rent",
+        "Proposed_Monthly_Rent",
+        "Lease Promotion Snapshot — Primary Only",
+    ),
+    (
+        "Verified Monthly Household Income",
+        "Verified_Monthly_Household_Income",
+        "Lease Promotion Snapshot — Primary Only",
+    ),
+    (
+        "Adverse Action Notice WorkDrive Resource ID",
+        "Adverse_Action_Notice_WorkDrive_Resource_ID",
+        "Documents & Integrations",
+    ),
+    (
+        "Credit Report WorkDrive Resource ID",
+        "Credit_Report_WorkDrive_Resource_ID",
+        "Documents & Integrations",
+    ),
+    (
+        "Application Promotion Key",
+        "Application_Promotion_Key",
+        "System & Legacy",
+    ),
+)
+DEALS_JULY_29_DISCOVERED_LIVE_MANIFEST = (
+    (
+        "WorkDrive Application Folder URL",
+        "WorkDrive_Application_Folder_URL",
+        "Documents & Integrations",
+    ),
+    (
+        "WorkDrive Application Folder Resource ID",
+        "WorkDrive_Application_Folder_Resource_ID",
+        "Documents & Integrations",
+    ),
+)
+DEALS_JULY_29_RELABELED_LIVE_MANIFEST = (
+    (
+        "Rental Application Name",
+        "Deal_Name",
+        "Application Identity & Group",
+    ),
+    (
+        "Applicant",
+        "Contact_Name",
+        "Application Identity & Group",
+    ),
+    (
+        "Property",
+        "Account_Name",
+        "Property & Requested Terms",
+    ),
+    (
+        "Requested Move-In Date",
+        "Closing_Date",
+        "Property & Requested Terms",
     ),
 )
 CASES_RECONCILED_LIVE_MANIFEST = (
@@ -541,14 +941,51 @@ JULY_25_RECONCILIATION_DISCOVERED_COUNT = (
     len(CONTACTS_SECOND_PASS_LIVE_MANIFEST)
     + len(PROPERTIES_SECOND_PASS_LIVE_MANIFEST)
 )
+JULY_29_APPLICATION_GROUPS_LIVE_COUNT = len(APPLICATION_GROUPS_LIVE_MANIFEST)
+JULY_29_DEALS_LIVE_COUNT = len(DEALS_JULY_29_LIVE_MANIFEST)
+JULY_29_DEALS_DISCOVERED_LIVE_COUNT = len(
+    DEALS_JULY_29_DISCOVERED_LIVE_MANIFEST
+)
+JULY_29_DEALS_RELABELED_LIVE_COUNT = len(
+    DEALS_JULY_29_RELABELED_LIVE_MANIFEST
+)
+JULY_29_RECONCILIATION_CREATED_COUNT = (
+    JULY_29_APPLICATION_GROUPS_LIVE_COUNT + JULY_29_DEALS_LIVE_COUNT
+)
+JULY_29_RECONCILIATION_LIVE_COUNT = (
+    JULY_29_RECONCILIATION_CREATED_COUNT
+    + JULY_29_DEALS_DISCOVERED_LIVE_COUNT
+    + JULY_29_DEALS_RELABELED_LIVE_COUNT
+)
+JULY_29_LIVE_FIELD_KEYS = frozenset(
+    (module_label, field_label)
+    for module_label, manifest in (
+        ("Application Groups", APPLICATION_GROUPS_LIVE_MANIFEST),
+        (
+            "Rental Applications",
+            DEALS_JULY_29_LIVE_MANIFEST
+            + DEALS_JULY_29_DISCOVERED_LIVE_MANIFEST
+            + DEALS_JULY_29_RELABELED_LIVE_MANIFEST,
+        ),
+    )
+    for field_label, _, _ in manifest
+)
 
 GOVERNED_LIVE_MANIFEST = (
+    (
+        "Application Groups",
+        "ApplicationGroups",
+        APPLICATION_GROUPS_LIVE_MANIFEST,
+    ),
     (
         "Rental Applications",
         "Deals",
         DEALS_CREATED_LIVE_MANIFEST
         + DEALS_RECONCILED_LIVE_MANIFEST
-        + DEALS_SECOND_PASS_LIVE_MANIFEST,
+        + DEALS_SECOND_PASS_LIVE_MANIFEST
+        + DEALS_JULY_29_LIVE_MANIFEST
+        + DEALS_JULY_29_DISCOVERED_LIVE_MANIFEST
+        + DEALS_JULY_29_RELABELED_LIVE_MANIFEST,
     ),
     (
         "Leases",
@@ -604,33 +1041,113 @@ GOVERNED_LIVE_MANIFEST = (
 )
 
 GOVERNED_LIVE_FIELD_TYPE_GROUPS = {
+    "Application Groups": {
+        "Pick List": ("Household Application Status",),
+        "Single Line": (
+            "Application Group Key",
+            "WorkDrive Group Folder Resource ID",
+        ),
+        "Number": ("Expected Adult Application Count",),
+        "URL": ("WorkDrive Group Folder URL",),
+        "Lookup": ("Primary Rental Application",),
+    },
     "Rental Applications": {
-        "Lookup": ("Co-Applicant 1", "Co-Applicant 2", "Source Lead", "Unit"),
-        "Date/Time": ("Application Received At",),
+        "Lookup": (
+            "Co-Applicant 1",
+            "Co-Applicant 2",
+            "Source Lead",
+            "Unit",
+            "Application Group",
+            "Approved Guarantor",
+            "Applicant",
+            "Property",
+        ),
+        "Date/Time": (
+            "Application Received At",
+            "Adverse Action Notice Sent At",
+            "Credit Score Reviewed At",
+        ),
         "Multi-Select Pick List": ("Addenda Required",),
         "Date": (
             "Approved Lease Commencement Date",
             "Approved Lease Term End Date",
             "Approved Possession Date",
             "Decision Date",
+            "Credit Score Created Date",
+            "Requested Move-In Date",
         ),
-        "Currency": ("Approved Security Deposit",),
+        "Currency": (
+            "Approved Security Deposit",
+            "Claimed Monthly Gross Income",
+            "Verified Monthly Gross Income",
+            "Verified Monthly Household Income",
+            "Proposed Monthly Rent",
+            "Approved Monthly Rent",
+        ),
         "Checkbox": (
             "Attorney Review Required?",
             "Nonstandard Terms?",
             "Pets Requested?",
             "Storage Requested?",
+            "Consumer Report Used",
+            "Credit Score Used in Decision",
         ),
-        "Pick List": ("Decision",),
-        "Multi-Line": ("Nonstandard Terms Notes",),
-        "User": ("Application Reviewer",),
+        "Pick List": (
+            "Decision",
+            "Applicant Role",
+            "Packet Status",
+            "Screening Status",
+            "Identity Verification Status",
+            "Income Verification Status",
+            "Employment Verification Status",
+            "Prior Landlord Verification Status",
+            "Credit Report Status",
+            "Background Report Status",
+            "Prior Landlord Data Source",
+            "Housing Court Review Result",
+            "Criminal Record Review Result",
+            "Adverse Action Notice Status",
+            "Adverse Action Delivery Method",
+            "Vehicle Declaration Status",
+            "Parking Request Status",
+        ),
+        "Multi-Line": (
+            "Nonstandard Terms Notes",
+            "Approved Occupant Names",
+        ),
+        "User": (
+            "Application Reviewer",
+            "Credit Score Reviewed By",
+            "Adverse Action Reviewed By",
+        ),
         "Number": (
             "Household Size",
             "Requested Lease Term Months",
             "Requested Pet Count",
             "Requested Storage Unit Count",
+            "Credit Score",
+            "Credit Score Range Minimum",
+            "Credit Score Range Maximum",
+            "Adult Applicant Count",
+            "Declared Vehicle Count",
+            "Requested Parking Space Count",
         ),
-        "Single Line": ("Zoho Creator Application ID",),
+        "Single Line": (
+            "Zoho Creator Application ID",
+            "Zillow Application ID",
+            "Application Promotion Key",
+            "Prior Landlord Name",
+            "Credit Score Provider",
+            "Credit Report Reference ID",
+            "Credit Report WorkDrive Resource ID",
+            "Adverse Action Notice WorkDrive Resource ID",
+            "WorkDrive Application Folder Resource ID",
+        ),
+        "Single Line / Standard Deal Name": ("Rental Application Name",),
+        "Email": ("Prior Landlord Email",),
+        "Phone": ("Prior Landlord Phone",),
+        "URL": ("WorkDrive Application Folder URL",),
+        "Decimal": ("Income to Rent Multiple",),
     },
     "Leases": {
         "Date": (
@@ -805,10 +1322,15 @@ GOVERNED_LIVE_FIELD_TYPES = {
 }
 
 GOVERNED_LIVE_LOOKUP_TARGETS = {
+    ("Application Groups", "Primary Rental Application"): "Deals",
     ("Rental Applications", "Co-Applicant 1"): "Contacts",
     ("Rental Applications", "Co-Applicant 2"): "Contacts",
     ("Rental Applications", "Source Lead"): "Leads",
     ("Rental Applications", "Unit"): "Units",
+    ("Rental Applications", "Application Group"): "ApplicationGroups",
+    ("Rental Applications", "Approved Guarantor"): "Contacts",
+    ("Rental Applications", "Applicant"): "Contacts",
+    ("Rental Applications", "Property"): "Accounts",
     ("Leases", "Property"): "Accounts",
     ("Leases", "Rental Application"): "Deals",
     ("Leases", "Tenant 2"): "Contacts",
@@ -847,13 +1369,109 @@ ADDENDA_REQUIRED_CHOICES = (
     "Guaranty/Cosigner=#0891B2 | Roommate=#4F46E5 | HOA/Handbook=#65A30D | "
     "Other=#EA580C"
 )
+APPLICATION_GROUP_STATUS_CHOICES = (
+    "Gathering Applications=UNCOLORED | Ready for Screening=UNCOLORED | "
+    "Screening In Progress=UNCOLORED | Decision Pending=UNCOLORED | "
+    "Approved - Lease Pending=UNCOLORED | Lease Created=UNCOLORED | "
+    "Closed - Not Proceeding=UNCOLORED"
+)
+DEALS_VERIFICATION_STATUS_CHOICES = (
+    "Not Started=UNCOLORED | Evidence Received=UNCOLORED | "
+    "Under Review=UNCOLORED | Verified=UNCOLORED | "
+    "Needs Follow-Up=UNCOLORED | Unable to Verify=UNCOLORED | "
+    "Not Applicable=UNCOLORED"
+)
+DEALS_REPORT_STATUS_CHOICES = (
+    "Not Available=UNCOLORED | Received=UNCOLORED | "
+    "Under Review=UNCOLORED | Reviewed=UNCOLORED | "
+    "Needs Refresh=UNCOLORED | Not Used=UNCOLORED"
+)
+DEALS_RECORD_REVIEW_CHOICES = (
+    "Not Reviewed=UNCOLORED | No Records Reported=UNCOLORED | "
+    "Records Reported - Manual Review=UNCOLORED | "
+    "Inconclusive=UNCOLORED | Not Used=UNCOLORED"
+)
 GOVERNED_LIVE_CHOICES = {
+    (
+        "Application Groups",
+        "Household Application Status",
+    ): APPLICATION_GROUP_STATUS_CHOICES,
     ("Rental Applications", "Decision"): (
         "Pending=#D97706 | Approved=#16A34A | "
         "Approved with Conditions=#EA580C | Denied=#DC2626 | "
         "Withdrawn=#6B7280 | Duplicate=#6B7280 | No Response=#6B7280"
     ),
     ("Rental Applications", "Addenda Required"): ADDENDA_REQUIRED_CHOICES,
+    ("Rental Applications", "Applicant Role"): (
+        "Primary Applicant=UNCOLORED | Co-Applicant=UNCOLORED | "
+        "Guarantor=UNCOLORED | Adult Occupant=UNCOLORED"
+    ),
+    ("Rental Applications", "Packet Status"): (
+        "Awaiting Documents=UNCOLORED | Received=UNCOLORED | "
+        "Needs Review=UNCOLORED | Verified=UNCOLORED | "
+        "Incomplete=UNCOLORED | Withdrawn=UNCOLORED"
+    ),
+    ("Rental Applications", "Screening Status"): (
+        "Not Started=UNCOLORED | Pending Documents=UNCOLORED | "
+        "In Review=UNCOLORED | Manual Review Required=UNCOLORED | "
+        "Complete=UNCOLORED | Waived=UNCOLORED | "
+        "Not Applicable=UNCOLORED"
+    ),
+    (
+        "Rental Applications",
+        "Identity Verification Status",
+    ): DEALS_VERIFICATION_STATUS_CHOICES,
+    (
+        "Rental Applications",
+        "Income Verification Status",
+    ): DEALS_VERIFICATION_STATUS_CHOICES,
+    (
+        "Rental Applications",
+        "Employment Verification Status",
+    ): DEALS_VERIFICATION_STATUS_CHOICES,
+    (
+        "Rental Applications",
+        "Prior Landlord Verification Status",
+    ): DEALS_VERIFICATION_STATUS_CHOICES,
+    (
+        "Rental Applications",
+        "Credit Report Status",
+    ): DEALS_REPORT_STATUS_CHOICES,
+    (
+        "Rental Applications",
+        "Background Report Status",
+    ): DEALS_REPORT_STATUS_CHOICES,
+    ("Rental Applications", "Prior Landlord Data Source"): (
+        "Applicant Provided=UNCOLORED | Directly Verified=UNCOLORED | "
+        "Consumer Report=UNCOLORED | Unknown=UNCOLORED"
+    ),
+    (
+        "Rental Applications",
+        "Housing Court Review Result",
+    ): DEALS_RECORD_REVIEW_CHOICES,
+    (
+        "Rental Applications",
+        "Criminal Record Review Result",
+    ): DEALS_RECORD_REVIEW_CHOICES,
+    ("Rental Applications", "Adverse Action Notice Status"): (
+        "Not Required=UNCOLORED | Review Required=UNCOLORED | "
+        "Prepared=UNCOLORED | Sent=UNCOLORED | "
+        "Delivery Confirmed=UNCOLORED | "
+        "Counsel Review Required=UNCOLORED | Not Applicable=UNCOLORED"
+    ),
+    ("Rental Applications", "Adverse Action Delivery Method"): (
+        "Electronic=UNCOLORED | Mail=UNCOLORED | "
+        "In Person=UNCOLORED | Other=UNCOLORED | "
+        "Not Applicable=UNCOLORED"
+    ),
+    ("Rental Applications", "Vehicle Declaration Status"): (
+        "Not Collected=UNCOLORED | None Declared=UNCOLORED | "
+        "Vehicle(s) Declared=UNCOLORED"
+    ),
+    ("Rental Applications", "Parking Request Status"): (
+        "Not Collected=UNCOLORED | Not Requested=UNCOLORED | "
+        "Requested=UNCOLORED"
+    ),
     ("Leases", "Lease Type"): "Original=#2563EB | Renewal=#16A34A",
     ("Leases", "Addenda Required"): ADDENDA_REQUIRED_CHOICES,
     ("Leases", "Lease Status"): (
@@ -954,8 +1572,67 @@ LIVE_UNCOLORED_PICKLIST_SCOPES = {
     "global_live_uncolored",
 }
 GOVERNED_LIVE_CHOICE_SCOPES = {
+    (
+        "Application Groups",
+        "Household Application Status",
+    ): "module_local_live_uncolored",
     ("Rental Applications", "Decision"): "local_module",
     ("Rental Applications", "Addenda Required"): "local_module",
+    ("Rental Applications", "Applicant Role"): "module_local_live_uncolored",
+    ("Rental Applications", "Packet Status"): "module_local_live_uncolored",
+    ("Rental Applications", "Screening Status"): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Identity Verification Status",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Income Verification Status",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Employment Verification Status",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Prior Landlord Verification Status",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Credit Report Status",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Background Report Status",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Prior Landlord Data Source",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Housing Court Review Result",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Criminal Record Review Result",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Adverse Action Notice Status",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Adverse Action Delivery Method",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Vehicle Declaration Status",
+    ): "module_local_live_uncolored",
+    (
+        "Rental Applications",
+        "Parking Request Status",
+    ): "module_local_live_uncolored",
     ("Leases", "Lease Type"): "local_module",
     ("Leases", "Addenda Required"): "local_module",
     ("Leases", "Lease Status"): "local_module",
@@ -1271,6 +1948,65 @@ def load_catalog_dir(path: Path) -> list[tuple[Path, dict[str, str]]]:
     return loaded
 
 
+def load_rental_applications_layout(path: Path) -> dict[str, object]:
+    """Load the sanitized current Rental Applications layout manifest."""
+
+    try:
+        with path.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError(
+            f"unable to load Rental Applications layout manifest {path}: {exc}"
+        ) from exc
+    if not isinstance(payload, dict):
+        raise ValueError(
+            f"Rental Applications layout manifest must be a JSON object: {path}"
+        )
+    return payload
+
+
+def validate_rental_applications_layout(
+    payload: dict[str, object],
+    rows_with_paths: list[tuple[Path, dict[str, str]]],
+) -> list[str]:
+    """Protect the sanitized layout, relabel, and conditional-rule readback."""
+
+    errors: list[str] = []
+    if payload != EXPECTED_RENTAL_APPLICATIONS_LAYOUT:
+        errors.append(
+            "Rental Applications layout manifest: exact sections, labels, "
+            "rules, counts, source, or privacy boundaries drifted"
+        )
+
+    rows_by_api: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for _, row in rows_with_paths:
+        if (
+            row["module_display_label"] == "Rental Applications"
+            and row["api_name_status"] == "verified_live_mcp"
+            and row["api_name"]
+        ):
+            rows_by_api[row["api_name"]].append(row)
+
+    for label_fact in RENTAL_APPLICATIONS_FIELD_LABELS:
+        api_name = label_fact["api_name"]
+        expected_label = label_fact["label"]
+        matches = rows_by_api.get(api_name, [])
+        if len(matches) != 1:
+            errors.append(
+                "Rental Applications layout manifest: expected exactly one "
+                f"verified CSV row for {api_name}, found {len(matches)}"
+            )
+            continue
+        actual_label = matches[0]["field_label"]
+        if actual_label != expected_label:
+            errors.append(
+                "Rental Applications layout manifest: "
+                f"{api_name} label expected {expected_label!r}, "
+                f"found {actual_label!r}"
+            )
+    return errors
+
+
 def governed_live_snapshot_digest(
     rows_with_paths: list[tuple[Path, dict[str, str]]],
 ) -> tuple[int, str]:
@@ -1341,7 +2077,7 @@ def validate_governed_live_manifest(
     if set(GOVERNED_LIVE_LOOKUP_TARGETS) != lookup_keys:
         errors.append(
             "validator invariant: governed live lookup-target coverage does not "
-            "exactly match the 2026-07-24 lookup fields"
+            "exactly match the governed lookup fields"
         )
     choice_keys = {
         key
@@ -1368,6 +2104,11 @@ def validate_governed_live_manifest(
         errors.append(
             "validator invariant: governed policy-note evidence references "
             "a field outside the governed live manifest"
+        )
+    if len(JULY_29_LIVE_FIELD_KEYS) != JULY_29_RECONCILIATION_LIVE_COUNT:
+        errors.append(
+            "validator invariant: 2026-07-29 source-field coverage does not "
+            "exactly match the July 29 reconciliation manifests"
         )
 
     rows_by_field: dict[
@@ -1398,13 +2139,19 @@ def validate_governed_live_manifest(
                 continue
 
             csv_path, row = matches[0]
+            expected_field_type = GOVERNED_LIVE_FIELD_TYPES.get(
+                (module_label, field_label)
+            )
+            if expected_field_type is None:
+                errors.append(
+                    f"{manifest_path}: validator field-type metadata is missing"
+                )
+                continue
             expected_values = {
                 "module_display_label": module_label,
                 "module_api_name": module_api_name,
                 "field_label": field_label,
-                "field_type": GOVERNED_LIVE_FIELD_TYPES[
-                    (module_label, field_label)
-                ],
+                "field_type": expected_field_type,
                 "api_name": api_name,
                 "api_name_status": "verified_live_mcp",
                 "disposition": "governed_current",
@@ -1428,13 +2175,22 @@ def validate_governed_live_manifest(
                     f"{csv_path.name}: {manifest_path}.source_ids: "
                     "expected a governed LIVE_CRM_MCP evidence source"
                 )
+            if (
+                (module_label, field_label) in JULY_29_LIVE_FIELD_KEYS
+                and "LIVE_CRM_MCP_2026-07-29" not in source_ids
+            ):
+                errors.append(
+                    f"{csv_path.name}: {manifest_path}.source_ids: expected "
+                    "LIVE_CRM_MCP_2026-07-29"
+                )
 
             lookup_target = GOVERNED_LIVE_LOOKUP_TARGETS.get(
                 (module_label, field_label)
             )
             if lookup_target is not None:
                 lookup_pattern = (
-                    rf"\blookup (?:target |to ){re.escape(lookup_target)}\b"
+                    rf"\blookup (?:target (?:is )?|to )"
+                    rf"{re.escape(lookup_target)}\b"
                 )
                 if not re.search(lookup_pattern, row["notes"], re.IGNORECASE):
                     errors.append(
@@ -1740,11 +2496,17 @@ def main() -> int:
     args = parse_args()
     try:
         rows_with_paths = load_catalog_dir(args.catalog_dir)
+        layout_payload = load_rental_applications_layout(
+            args.catalog_dir.parent / RENTAL_APPLICATIONS_LAYOUT_FILENAME
+        )
     except ValueError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
 
     errors = validate_rows(rows_with_paths)
+    errors.extend(
+        validate_rental_applications_layout(layout_payload, rows_with_paths)
+    )
     if errors:
         print(
             f"CRM field catalog validation failed with {len(errors)} error(s):",

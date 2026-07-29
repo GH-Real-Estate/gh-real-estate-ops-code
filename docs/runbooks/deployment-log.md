@@ -2,6 +2,20 @@
 
 Record every production-relevant deployment or Zoho change.
 
+## 2026-07-29 — Application Groups And Per-Adult Rental Application Schema Reconciled
+
+- System: Zoho CRM / Zoho WorkDrive reference boundary / GitHub
+- Repo branch / change: live metadata/configuration through the approved CRM MCP servers; sanitized repository reconciliation on `agent/application-groups-rental-schema-20260729`
+- Scope: custom administrator-only `ApplicationGroups` module with six governed fields; 47 new Rental Applications (`Deals`) fields; four standard Deals relabels; nine operational Deals sections; three new conditional layout rules; restricted per-adult credit-score provenance fields
+- Data boundary: metadata/configuration only; no CRM records, PII, applications, scores, reports, documents, credentials, financial transactions, or backfill were read or changed
+- Result: Application Groups returned 6 expected/matched fields; Deals returned 103 fields total with 47 new expected/matched; the pre-existing exact `WorkDrive_Application_Folder_URL` and `WorkDrive_Application_Folder_Resource_ID` fields were verified and reused rather than counted as a 48th new field; all four standard labels matched; three new rules were active and seven Deals rules existed in total; no expected field was missing and no duplicate was created
+- Access: Application Groups and all six governed fields are Administrator read/write and Standard hidden; the credit-score provenance bundle is Administrator read/write and Standard hidden
+- Business behavior changed? schema and layout only; one Deal per adult and one designated primary application are now supported, but no population, grouping enforcement, credit threshold, screening decision, adverse-action notice, Lease promotion, or other record automation was deployed
+- Intentionally unchanged: Zillow/Catalyst remains Leads-only; Stage, Pipeline, Probability, `Amount`, and the active Big Deal rule retained their definitions, values, semantics, and dependencies while approved placement moved to `System & Legacy`; protected modules, CRM records, Leases, Contracts, Sign, Books, and WorkDrive documents remained unchanged
+- Verification: exact module, field, type, lookup, uniqueness, permission, section, and layout-rule metadata was read back through the approved audit boundary; repository validators and tests are required before publication
+- Rollback: deactivate the three new rules, remove new fields/sections non-permanently from the active layout, and hide/retire the module or fields only after current dependency and value-retention review; never delete records, fields, or the module as an immediate rollback
+- Evidence: [`zoho-crm-application-groups-schema-reconciliation-2026-07-29.md`](zoho-crm-application-groups-schema-reconciliation-2026-07-29.md)
+
 ## 2026-07-25 — Codex MCP Capability Refresh Captured
 
 - System: Codex Apps / Zoho Books / Zoho WorkDrive / GitHub
