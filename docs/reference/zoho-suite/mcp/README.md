@@ -12,6 +12,8 @@ Zoho MCP exposes a much broader tool surface than GH Real Estate should authoriz
 - 8 extended Zoho-family services and 836 tool rows.
 - 59 services and 10,533 total tool rows.
 
+Submitted authenticated portal evidence from July 24, 2026 contains nine dated service-action snapshots totaling 3,209 displayed rows. Seven name sets reconcile to the Tool Manual snapshot. The CRM snapshot omits two manual rows, and the Catalyst snapshot omits 39 QuickML rows; both sources remain separately labeled pending a current-source recheck.
+
 The authenticated Zoho MCP portal evidence supplied for this review catalogs 19 preconfigured templates:
 
 - 11 Zoho CRM templates.
@@ -49,7 +51,7 @@ The same runtime snapshot also contains the platform-managed `codex_apps` gatewa
 | [`books-accountant-controls.md`](books-accountant-controls.md) | Books accountant architecture, missing-tool review, correction policy, configuration split, acceptance gates, and no-delete decision |
 | [`document-intake-controls.md`](document-intake-controls.md) | WorkDrive/CRM/Catalyst document-intake coverage, missing OCR/event capabilities, conditional tools, safety boundaries, and acceptance tests |
 | [`preconfigured-servers.md`](preconfigured-servers.md) | Verified portal template names, descriptions, exact tool memberships, risk review, and evidence gaps |
-| [`tool-inventory.md`](tool-inventory.md) | Searchable inventory of all 10,533 exact tool names grouped across 59 services |
+| [`tool-inventory.md`](tool-inventory.md) | Searchable inventory of all 10,533 exact tool names, a dated nine-service portal reconciliation, evidence fingerprints, and selected operational constraints |
 | [`recommended-first-server.md`](recommended-first-server.md) | Implemented rollout decision, current boundaries, exclusions, controls, and stop criteria |
 
 ## What Is Verified
@@ -101,6 +103,24 @@ Across the 18 verified templates, the evidence contains 217 displayed tool chips
 Four exact names in the live templates are not present in the dated public Tool Manual bundle: `cloneWorkflowRule`, `add_journal_attachment`, `getMessageAttachmentContent`, and `uploadAttachments`. They are recorded in a separately labeled live-portal overlay in `tool-inventory.md`; they do not alter the bundle-derived 10,533-tool total.
 
 This repository does not infer missing tool membership from a template title or description.
+
+### Dated Service-Action Snapshots
+
+The submitted portal evidence also contains displayed-action snapshots for Zoho CRM, WorkDrive, Mail, Books, Billing, Catalyst, Creator, Payments, and Sign. The nine lists contain 3,209 rows:
+
+- CRM: 1,087.
+- WorkDrive: 178.
+- Mail: 183.
+- Books: 1,090.
+- Billing: 453.
+- Catalyst: 137.
+- Creator: 37.
+- Payments: 16.
+- Sign: 28.
+
+The submitted Creator, Payments, and Sign name sets already existed in the Tool Manual inventory. The submitted descriptions add dated operational evidence, including Creator's 200-record bulk limits and irreversible application deletion, irreversible Payments link cancellation, and Sign's status, recall, date-range, unchanged-send, and template-recipient constraints. Those descriptions are paraphrased in `tool-inventory.md`; they do not replace current official parameter schemas or authorize use.
+
+The CRM capture does not display `postRules` or `putDeactivate`, and the Catalyst capture does not display 39 QuickML actions found in the dated Tool Manual bundle. The repository retains both dated sources and does not silently add, remove, or enable tools based on that difference.
 
 ## Important Distinctions
 
@@ -165,6 +185,7 @@ Recheck this catalog before enabling a new service, after Zoho changes a templat
 - Review date.
 - Manual bundle hash.
 - Service and tool counts.
+- Submitted service-action snapshot counts, source fingerprints, and unresolved source differences when a service-wide list is supplied.
 - Current GH server identifiers, OAuth status, and exact Codex-advertised tool names.
 - Target-organization acceptance status for every configured server.
 - Portal template names and descriptions.
