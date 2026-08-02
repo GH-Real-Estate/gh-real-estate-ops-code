@@ -1,11 +1,13 @@
 # GH Real Estate Zoho CRM Module and Field Catalog
 
 - **Catalog ID:** GH-ZOHO-CRM-FIELDS-001
-- **Version:** 1.3.0
-- **Effective date:** July 25, 2026
+- **Version:** 1.4.0
+- **Effective date:** July 29, 2026
 - **Machine-readable field registry:** governed CSV files under [`crm-module-fields/`](crm-module-fields/)
 - **Production reconciliation ledger:** [`zoho-crm-production-reconciliation-2026-07-24.md`](../../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md)
 - **Second-pass decision ledger:** [`zoho-crm-second-pass-reconciliation-2026-07-25.md`](../../../docs/runbooks/zoho-crm-second-pass-reconciliation-2026-07-25.md)
+- **Application Groups schema reconciliation:** [`zoho-crm-application-groups-schema-reconciliation-2026-07-29.md`](../../../docs/runbooks/zoho-crm-application-groups-schema-reconciliation-2026-07-29.md)
+- **Rental Applications layout manifest:** [`rental-applications-layout.json`](rental-applications-layout.json)
 - **Operations dashboard specification:** [`gh-real-estate-operations-dashboard.md`](../dashboards/gh-real-estate-operations-dashboard.md)
 - **Protected-module baselines:** [`protected-modules/`](protected-modules/)
 - **Production global-picklist registry:** [`global-picklists/`](global-picklists/)
@@ -65,6 +67,7 @@ integration.
 
 | CSV module label | Zoho base/module API | Module API status | Catalog rows | Verified field APIs | Still unverified |
 |---|---|---|---:|---:|---:|
+| Application Groups | `ApplicationGroups` | `verified_live_mcp` | 6 | 6 | 0 |
 | Condition Reports | `Condition_Reports` | `verified_live_mcp` | 5 | 5 | 0 |
 | Contacts | `Contacts` | `verified_standard_zoho` | 57 | 18 | 39 |
 | Equipment (historical target CSV only) | Not authoritative for a live module | `historical_target_only_non_deployable` | 13 | 0 | 13 |
@@ -75,18 +78,18 @@ integration.
 | Maintenance Requests | `Cases` | `verified_standard_zoho` | 46 | 16 | 30 |
 | Notices | Custom candidate | `tbd_from_live_module_metadata` | 21 | 0 | 21 |
 | Properties | `Accounts` | `verified_standard_zoho` | 77 | 15 | 62 |
-| Rental Applications | `Deals` | `verified_standard_zoho` | 82 | 28 | 54 |
+| Rental Applications | `Deals` | `verified_standard_zoho` | 122 | 78 | 44 |
 | Storage Units | `Storage_Units` | `verified_live_mcp` | 3 | 3 | 0 |
 | Tasks | `Tasks` | `verified_standard_zoho` | 10 | 3 | 7 |
 | Units | `Units` | `verified_repo_live_integration` | 54 | 29 | 25 |
 | Utilities | `Utilities` | `verified_live_mcp` | 2 | 2 | 0 |
 | Vendors | `Vendors` | `verified_standard_zoho` | 24 | 1 | 23 |
 | Zillow Intake Events | `Zillow_Intake_Events` | `repo_runtime_default_needs_live_metadata` | 10 | 0 | 10 |
-| **Total** | — | — | **765** | **216** | **549** |
+| **Total** | — | — | **811** | **272** | **539** |
 
-The 216 verified APIs comprise 178 current live metadata readbacks, 34
+The 272 verified APIs comprise 234 current live metadata readbacks, 34
 Zillow/Lead runtime APIs, and four Unit APIs documented by the live
-integration. The remaining 549 rows are intentionally not represented as
+integration. The remaining 539 rows are intentionally not represented as
 verified live configuration.
 
 The historical [`equipment.csv`](crm-module-fields/equipment.csv) is not the
@@ -123,9 +126,14 @@ across 12 operating modules, additive reconciliation of four standard
 picklists, professional field/section placement, and verified reuse of
 compatible live fields. The July 25 second pass adds two verified intake
 fields and six previously uncataloged live field identities while recording
-the current layout disposition of reused fields. The complete governed live
-snapshot now contains 178 `verified_live_mcp` rows. Exact field facts remain in
-the module CSVs; the validator freezes every column of every live row.
+the current layout disposition of reused fields. The July 29 Application Groups
+reconciliation adds six custom-module fields and 47 new Deals fields, upgrades
+the governed WorkDrive application-folder URL from candidate to verified live
+state, verifies the pre-existing folder resource-ID field, records four
+standard Deals relabels, and records final live section placements. The
+complete governed live snapshot now contains 234 `verified_live_mcp` rows.
+Exact field facts remain in the module CSVs; the validator freezes every
+column of every live row.
 
 ### Exact standard picklist readback
 
@@ -158,6 +166,150 @@ Active, Inactive, Archived. The full 50-state and 195-country lists and all
 confirmed associations are stored in
 [`production-global-picklist-registry.json`](global-picklists/production-global-picklist-registry.json).
 Unknown or unused values must never be interpreted as safe to delete.
+
+## July 29 Application Groups and per-adult application reconciliation
+
+The July 29 production reconciliation added:
+
+- Application Groups — Custom module — API `ApplicationGroups`;
+- six governed Application Groups custom fields;
+- one Rental Application Deal per adult applicant;
+- `Application_Group`, a Deals lookup to `ApplicationGroups`;
+- `Applicant_Role`, with one designated `Primary Applicant`;
+- `Application_Promotion_Key`, a case-insensitive unique promotion control;
+- 47 new Deals fields, all matched by post-write metadata readback;
+- verification and reuse of the pre-existing exact
+  `WorkDrive_Application_Folder_URL` and
+  `WorkDrive_Application_Folder_Resource_ID` fields, neither counted as a 48th
+  created field;
+- verified standard-field labels `Rental Application Name`, `Applicant`,
+  `Property`, and `Requested Move-In Date`;
+- nine exact operational Deals sections plus the unavoidable platform-managed
+  `Rental Application Image` section;
+- three new active Deals layout rules; and
+- Administrator-only access to Application Groups and the restricted
+  credit-score provenance bundle.
+
+No Application Group, Rental Application, Contact, Lease, or other CRM record
+was created, changed, or backfilled. No application, score, report, screening
+value, or document content was read or populated.
+
+### Application Groups ownership
+
+Application Groups owns only the non-PII household/application control layer:
+
+- opaque unique group key;
+- expected count of separate adult applications;
+- household application status;
+- governed internal WorkDrive folder URL and immutable resource ID; and
+- the designated `Primary_Rental_Application` lookup to Deals.
+
+The platform primary display Name is an Auto-Number with prefix `AG-`, starting
+at 1. Application Groups must not become a person record, screening-report
+store, Lease, Contracts request, tenant portal, or accounting record.
+
+The Standard profile is hidden from the module and all six governed fields.
+The Administrator profile has read/write access. Exact metadata is in
+[`application-groups.csv`](crm-module-fields/application-groups.csv).
+
+### One Rental Application per adult
+
+Each adult applicant owns one Rental Application Deal linked to:
+
+- one Contact through standard `Contact_Name`;
+- one Application Group through `Application_Group`; and
+- one explicit `Applicant_Role`.
+
+Exactly one Deal in a group is designated `Primary Applicant`, and the group
+lookup `Primary_Rental_Application` points to that Deal. Household/request and
+future Lease-promotion snapshots appear only in the two primary-only sections.
+Schema and layout rules do not yet enforce group completeness or exactly one
+primary across records; those remain workflow gates.
+
+The complete 47-field manifest remains in
+[`rental-applications.csv`](crm-module-fields/rental-applications.csv). Do not
+duplicate it in prose or infer that a field may be populated merely because
+its metadata exists.
+
+### Restricted credit-score provenance
+
+The per-adult score/provenance bundle is:
+
+`Credit_Score`, `Credit_Score_Created_Date`, `Credit_Score_Range_Min`,
+`Credit_Score_Range_Max`, `Credit_Score_Provider`,
+`Credit_Report_Reference_ID`, `Credit_Report_WorkDrive_Resource_ID`,
+`Credit_Score_Used_In_Decision`, `Credit_Score_Reviewed_By`, and
+`Credit_Score_Reviewed_At`.
+
+Every bundle field is Administrator read/write and hidden from the Standard
+profile. The reconciliation did not populate any value or create a score
+threshold, formula, pass/fail result, decision automation, adverse-action
+workflow, or backfill. Population and use remain blocked until written
+screening, permissible-purpose, access, retention, dispute, fair-housing, and
+adverse-action controls are separately approved.
+
+Raw reports, OCR, key factors, reason-code narratives, tradelines, creditor or
+account data, balances, debt totals, Social Security numbers, license/state-ID
+data, banking data, criminal or eviction narratives, public/token-bearing
+report URLs, and AI-generated risk scores or recommendations stay out of CRM.
+Restricted WorkDrive remains the source-document/evidence boundary.
+
+### Exact layout sections and new rules
+
+The nine exact operational Deals sections, in order, are:
+
+1. `Application Identity & Group`
+2. `Property & Requested Terms`
+3. `Applicant Income & Rental History`
+4. `Screening Summary`
+5. `Verification & Adverse Action`
+6. `Household & Requests — Primary Only`
+7. `Lease Promotion Snapshot — Primary Only`
+8. `Documents & Integrations`
+9. `System & Legacy`
+
+`Rental Application Image` remains an unavoidable platform-managed section and
+is not one of the nine operational sections. It must not hold applications,
+identity documents, or screening evidence.
+
+The four verified standard-field labels are:
+
+| API | Live label |
+|---|---|
+| `Deal_Name` | `Rental Application Name` |
+| `Contact_Name` | `Applicant` |
+| `Account_Name` | `Property` |
+| `Closing_Date` | `Requested Move-In Date` |
+
+The three new active rules are:
+
+| Rule | Trigger | Action |
+|---|---|---|
+| `Require Vehicle Count When Vehicles Declared` | `Vehicle_Declaration_Status` equals `Vehicle(s) Declared` | Show and set mandatory `Declared_Vehicle_Count` |
+| `Require Parking Count When Parking Requested` | `Parking_Request_Status` equals `Requested` | Show and set mandatory `Requested_Parking_Space_Count` |
+| `Show Primary Applicant Household and Lease Sections` | `Applicant_Role` equals `Primary Applicant` | Show `Household & Requests — Primary Only` and `Lease Promotion Snapshot — Primary Only` |
+
+Final readback returned seven Deals layout rules total. The existing pet-count
+and storage-count rules remained unchanged.
+
+The exact sanitized section order, labels, and rule signatures are governed in
+[`rental-applications-layout.json`](rental-applications-layout.json).
+
+### Unchanged production boundaries
+
+The operating Zillow/Catalyst runtime remains Leads-only. Deals Stage,
+Pipeline, Probability, `Amount`, and the active Big Deal rule retained their
+definitions, values, semantics, and dependencies; their approved layout
+placement moved into `System & Legacy`. Leads, Property Assets (`Equipment`),
+Pets, and Vehicles
+(`Tenant_Vehicles`) remained protected and unchanged. Leases, Zoho Contracts,
+Zoho Sign, Zoho Books, WorkDrive documents, and all CRM records were unchanged.
+No Application-to-Lease automation is deployed.
+
+See the complete
+[`July 29 reconciliation runbook`](../../../docs/runbooks/zoho-crm-application-groups-schema-reconciliation-2026-07-29.md)
+for readback totals, privacy/operational authority references, deployment
+boundaries, verification, and rollback.
 
 ## July 25 second-pass decisions and verified changes
 
@@ -201,8 +353,8 @@ rules were read back from production metadata.
 
 | Module | Field label | Exact API name | Type | Verified rule behavior | Placement |
 |---|---|---|---|---|---|
-| Rental Applications (`Deals`) | Requested Pet Count | `Requested_Pet_Count` | Integer | Conditionally shown and mandatory when pets are requested | Application Intake |
-| Rental Applications (`Deals`) | Requested Storage Unit Count | `Requested_Storage_Unit_Count` | Integer | Conditionally shown and mandatory when storage is requested | Application Intake |
+| Rental Applications (`Deals`) | Requested Pet Count | `Requested_Pet_Count` | Integer | Conditionally shown and mandatory when pets are requested | Household & Requests — Primary Only |
+| Rental Applications (`Deals`) | Requested Storage Unit Count | `Requested_Storage_Unit_Count` | Integer | Conditionally shown and mandatory when storage is requested | Household & Requests — Primary Only |
 
 The Boolean request fields remain the fast yes/no intake controls. Their count
 fields capture requested quantity only when applicable. Specific pet details
@@ -368,8 +520,10 @@ python -m unittest discover -s src/zoho-crm/tests -p "test_*.py" -v
 The field-catalog validator checks required columns, API-name syntax, live
 evidence source IDs, exact live manifests, lookup targets, choices/order/colors,
 sentinel readback, policy warnings, duplicate-prevention decisions, and a
-canonical digest of all 178 live rows. Protected-baseline checksums fail closed
-on unauthorized field/layout drift.
+canonical digest of all 234 live rows. It also freezes the sanitized Rental
+Applications section order, four standard-field labels, three new layout-rule
+signatures, final rule count, and privacy boundaries. Protected-baseline
+checksums fail closed on unauthorized field/layout drift.
 
 Any live change still requires:
 
@@ -385,12 +539,13 @@ Any live change still requires:
 - The live audit used approved metadata/configuration MCP servers only. No
   Browser control, CRM records, PII, credentials, or Books transactions were
   accessed.
-- The 765-row CSV registry is broader than the verified live surface; it
+- The 811-row CSV registry is broader than the verified live surface; it
   intentionally retains unverified and blocked planning evidence.
-- Deals Stage remains unchanged because its display/actual values are
-  stale/misaligned and pipeline/probability dependencies were not safely
-  writable through the available MCP. The July 25 six-stage specification is a
-  migration target, not evidence of a live pipeline.
+- Deals Stage definitions and values remain unchanged because their
+  display/actual values are stale/misaligned and pipeline/probability
+  dependencies were not safely writable through the available MCP. Only
+  placement in `System & Legacy` changed. The July 25 six-stage specification
+  is a migration target, not evidence of a live pipeline.
 - Required/default controls and complete Lease readiness are not implemented by
   catalog documentation alone.
 - `Zillow_Intake_Events` remains an optional disabled-by-default runtime
@@ -410,6 +565,7 @@ Any live change still requires:
 - [Production global-picklist registry](global-picklists/README.md)
 - [Production reconciliation ledger](../../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md)
 - [Second-pass reconciliation ledger](../../../docs/runbooks/zoho-crm-second-pass-reconciliation-2026-07-25.md)
+- [Application Groups schema reconciliation](../../../docs/runbooks/zoho-crm-application-groups-schema-reconciliation-2026-07-29.md)
 - [GH Real Estate operations dashboard specification](../dashboards/gh-real-estate-operations-dashboard.md)
 - [Lease-system reconciliation](../../../docs/runbooks/zoho-crm-lease-system-reconciliation.md)
 - Official Zoho CRM Modules Metadata: https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html

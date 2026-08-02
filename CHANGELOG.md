@@ -27,6 +27,11 @@ Record notable repository changes here. Production deployments belong in `docs/r
 
 ## 2026-07-24
 
+- Reconciled nine authenticated Zoho MCP service-action snapshots totaling 3,209 displayed rows against the dated 10,533-row public Tool Manual inventory.
+- Recorded exact source fingerprints and preserved unresolved differences: two CRM manual rows and 39 Catalyst QuickML manual rows were absent from the supplied portal snapshots.
+- Added service-qualified naming guidance plus concise Creator, Payments, and Sign safety and invocation constraints without duplicating large provider descriptions.
+- This documentation-only update does not install or authorize an MCP tool, change a Zoho-hosted server, alter OAuth scopes, or deploy runtime behavior.
+
 - Reconciled the production CRM metadata surface returned by the approved MCP servers: created and read back 83 evidence-backed fields across 12 modules, added one three-value lifecycle global picklist with two associations, extended supported Cases and Tasks choices additively, and reorganized changed layouts into operational sections.
 - Added sanitized, checksum-tested inventories for all 72 returned modules and the field/layout metadata outcome of every one of the 51 modules flagged API-supported, including explicit rejection and truncation states.
 - Added checksum-controlled, sanitized metadata baselines and CI guards for the no-write Leads, Property Assets (`Equipment`), Pets, and Vehicles (`Tenant_Vehicles`) modules; no protected-module configuration or CRM record data was changed.

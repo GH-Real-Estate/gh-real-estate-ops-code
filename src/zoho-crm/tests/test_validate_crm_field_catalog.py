@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import importlib.util
 import unittest
 from pathlib import Path
@@ -24,11 +25,56 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
             for path, row in validator.load_catalog_dir(catalog_dir)
         ]
 
+    @staticmethod
+    def load_repository_layout() -> dict[str, object]:
+        return validator.load_rental_applications_layout(
+            CRM_ROOT
+            / "field-maps"
+            / validator.RENTAL_APPLICATIONS_LAYOUT_FILENAME
+        )
+
     def test_repository_catalog_is_valid(self) -> None:
         rows = self.load_repository_rows()
         self.assertEqual([], validator.validate_rows(rows))
+        self.assertEqual(
+            [],
+            validator.validate_rental_applications_layout(
+                self.load_repository_layout(),
+                rows,
+            ),
+        )
+
+    def test_rental_applications_layout_manifest_is_exact(self) -> None:
+        rows = self.load_repository_rows()
+        payload = self.load_repository_layout()
+        self.assertEqual(
+            list(validator.RENTAL_APPLICATIONS_OPERATIONAL_SECTIONS),
+            payload["layout"]["operational_sections_in_order"],
+        )
+        self.assertEqual(
+            list(validator.RENTAL_APPLICATIONS_FIELD_LABELS),
+            payload["layout"]["field_labels"],
+        )
+        self.assertEqual(
+            list(validator.RENTAL_APPLICATIONS_NEW_ACTIVE_RULES),
+            payload["layout"]["new_active_rules"],
+        )
+
+        drifted = copy.deepcopy(payload)
+        drifted["layout"]["field_labels"][1]["label"] = "Contact Name"
+        errors = validator.validate_rental_applications_layout(drifted, rows)
+        self.assertTrue(
+            any("exact sections, labels, rules" in error for error in errors),
+            errors,
+        )
 
     def test_live_manifest_has_expected_production_scope(self) -> None:
+        self.assertEqual(18, len(validator.REQUIRED_CURRENT_MODULES))
+        self.assertIn("Application Groups", validator.REQUIRED_CURRENT_MODULES)
+        self.assertIn(
+            "LIVE_CRM_MCP_2026-07-29",
+            validator.LIVE_MCP_SOURCE_IDS,
+        )
         self.assertEqual(15, len(validator.DEALS_CREATED_LIVE_MANIFEST))
         self.assertEqual(33, len(validator.LEASE_CREATED_LIVE_MANIFEST))
         self.assertEqual(7, len(validator.LEASE_REUSED_LIVE_MANIFEST))
@@ -41,6 +87,13 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
         self.assertEqual(8, validator.JULY_24_REUSED_LIVE_COUNT)
         self.assertEqual(2, validator.JULY_25_RECONCILIATION_CREATED_COUNT)
         self.assertEqual(6, validator.JULY_25_RECONCILIATION_DISCOVERED_COUNT)
+        self.assertEqual(6, validator.JULY_29_APPLICATION_GROUPS_LIVE_COUNT)
+        self.assertEqual(47, validator.JULY_29_DEALS_LIVE_COUNT)
+        self.assertEqual(2, validator.JULY_29_DEALS_DISCOVERED_LIVE_COUNT)
+        self.assertEqual(4, validator.JULY_29_DEALS_RELABELED_LIVE_COUNT)
+        self.assertEqual(53, validator.JULY_29_RECONCILIATION_CREATED_COUNT)
+        self.assertEqual(59, validator.JULY_29_RECONCILIATION_LIVE_COUNT)
+        self.assertEqual(59, len(validator.JULY_29_LIVE_FIELD_KEYS))
         self.assertEqual(
             {
                 "Contacts": 9,
@@ -87,7 +140,7 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
         )
         rows = self.load_repository_rows()
         count, digest = validator.governed_live_snapshot_digest(rows)
-        self.assertEqual(178, count)
+        self.assertEqual(234, count)
         self.assertEqual(validator.GOVERNED_LIVE_SNAPSHOT_COUNT, count)
         self.assertEqual(validator.GOVERNED_LIVE_SNAPSHOT_SHA256, digest)
 
@@ -102,6 +155,22 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
                 "Rental Applications",
                 "Approved Security Deposit",
                 "Approved_Security_Deposit_v2",
+            ),
+            (
+                "Rental Applications",
+                "Application Group",
+                "Application_Group_v2",
+            ),
+            ("Rental Applications", "Credit Score", "Credit_Score_v2"),
+            (
+                "Rental Applications",
+                "Vehicle Declaration Status",
+                "Vehicle_Declaration_Status_v2",
+            ),
+            (
+                "Application Groups",
+                "Primary Rental Application",
+                "Primary_Rental_Application_v2",
             ),
             ("Leases", "Lease Type", "Lease_Type_v2"),
             ("Leases", "Lease Status", "Lease_Status_v2"),
@@ -136,6 +205,10 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
         cases = (
             ("Rental Applications", "Requested Storage Unit Count"),
             ("Rental Applications", "Decision"),
+            ("Rental Applications", "Application Group"),
+            ("Rental Applications", "Credit Score"),
+            ("Rental Applications", "Declared Vehicle Count"),
+            ("Application Groups", "Primary Rental Application"),
             ("Leases", "Agreement Date"),
             ("Leases", "Lease Name"),
             ("Tasks", "Priority"),
@@ -176,6 +249,48 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
                 "picklist_values_and_colors",
                 "Pending=#D97706 | Approved=#16A34A",
                 "exact live choices/order/colors drifted",
+            ),
+            (
+                "Application Groups",
+                "Primary Rental Application",
+                "notes",
+                "Verified live lookup.",
+                "lookup target 'Deals'",
+            ),
+            (
+                "Rental Applications",
+                "Application Group",
+                "notes",
+                "Verified live lookup.",
+                "lookup target 'ApplicationGroups'",
+            ),
+            (
+                "Rental Applications",
+                "Credit Score",
+                "field_type",
+                "Decimal",
+                ".field_type",
+            ),
+            (
+                "Rental Applications",
+                "Declared Vehicle Count",
+                "section",
+                "Screening Summary",
+                ".section",
+            ),
+            (
+                "Rental Applications",
+                "Vehicle Declaration Status",
+                "picklist_values_and_colors",
+                "Not Collected=UNCOLORED | None Declared=UNCOLORED",
+                "exact live choices/order/colors drifted",
+            ),
+            (
+                "Rental Applications",
+                "Parking Request Status",
+                "picklist_scope",
+                "local_module",
+                ".picklist_scope",
             ),
             (
                 "Leases",
@@ -271,6 +386,18 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
                 "picklist_values_and_colors",
                 "New Application=UNCOLORED",
             ),
+            (
+                "Rental Applications",
+                "Credit_Score",
+                "help_text",
+                "Changed credit-score tooltip.",
+            ),
+            (
+                "Application Groups",
+                "Application_Group_Key",
+                "required",
+                "true",
+            ),
             ("Leases", "Monthly_Rent", "api_name", "Monthly_Rent_v2"),
             (
                 "Leases",
@@ -305,6 +432,128 @@ class CrmFieldCatalogValidatorTests(unittest.TestCase):
                     ),
                     errors,
                 )
+
+    def test_july_29_application_group_credit_and_vehicle_facts(self) -> None:
+        rows = self.load_repository_rows()
+        by_key = {
+            (row["module_display_label"], row["field_label"]): row
+            for _, row in rows
+        }
+
+        application_group = by_key[
+            ("Rental Applications", "Application Group")
+        ]
+        self.assertEqual("Lookup", application_group["field_type"])
+        self.assertEqual("Application_Group", application_group["api_name"])
+        self.assertEqual(
+            "Application Identity & Group",
+            application_group["section"],
+        )
+        self.assertIn(
+            "lookup target is ApplicationGroups",
+            application_group["notes"],
+        )
+
+        primary_application = by_key[
+            ("Application Groups", "Primary Rental Application")
+        ]
+        self.assertEqual("Lookup", primary_application["field_type"])
+        self.assertEqual(
+            "Primary_Rental_Application",
+            primary_application["api_name"],
+        )
+        self.assertIn("lookup target is Deals", primary_application["notes"])
+
+        credit_score = by_key[("Rental Applications", "Credit Score")]
+        self.assertEqual("Number", credit_score["field_type"])
+        self.assertEqual("Credit_Score", credit_score["api_name"])
+        self.assertEqual("Screening Summary", credit_score["section"])
+
+        expected_relabels = {
+            "Rental Application Name": (
+                "Deal_Name",
+                "Application Identity & Group",
+            ),
+            "Applicant": ("Contact_Name", "Application Identity & Group"),
+            "Property": ("Account_Name", "Property & Requested Terms"),
+            "Requested Move-In Date": (
+                "Closing_Date",
+                "Property & Requested Terms",
+            ),
+        }
+        for field_label, (api_name, section) in expected_relabels.items():
+            with self.subTest(field=field_label):
+                row = by_key[("Rental Applications", field_label)]
+                self.assertEqual(api_name, row["api_name"])
+                self.assertEqual(section, row["section"])
+                self.assertEqual("verified_live_mcp", row["api_name_status"])
+
+        expected_vehicle_facts = {
+            "Vehicle Declaration Status": (
+                "Pick List",
+                "Vehicle_Declaration_Status",
+                "Not Collected=UNCOLORED | None Declared=UNCOLORED | "
+                "Vehicle(s) Declared=UNCOLORED",
+            ),
+            "Declared Vehicle Count": (
+                "Number",
+                "Declared_Vehicle_Count",
+                "",
+            ),
+            "Parking Request Status": (
+                "Pick List",
+                "Parking_Request_Status",
+                "Not Collected=UNCOLORED | Not Requested=UNCOLORED | "
+                "Requested=UNCOLORED",
+            ),
+            "Requested Parking Space Count": (
+                "Number",
+                "Requested_Parking_Space_Count",
+                "",
+            ),
+        }
+        for field_label, (
+            field_type,
+            api_name,
+            choices,
+        ) in expected_vehicle_facts.items():
+            with self.subTest(field=field_label):
+                row = by_key[("Rental Applications", field_label)]
+                self.assertEqual(field_type, row["field_type"])
+                self.assertEqual(api_name, row["api_name"])
+                self.assertEqual(
+                    "Household & Requests — Primary Only",
+                    row["section"],
+                )
+                self.assertEqual(choices, row["picklist_values_and_colors"])
+                if choices:
+                    self.assertEqual(
+                        "module_local_live_uncolored",
+                        row["picklist_scope"],
+                    )
+
+    def test_july_29_rows_require_exact_live_source(self) -> None:
+        rows = self.load_repository_rows()
+        matching_rows = [
+            row
+            for _, row in rows
+            if row["module_display_label"] == "Rental Applications"
+            and row["field_label"] == "Credit Score"
+        ]
+        self.assertEqual(1, len(matching_rows))
+        matching_rows[0]["source_ids"] = "LIVE_CRM_MCP_2026-07-25"
+
+        errors = validator.validate_rows(rows)
+
+        self.assertTrue(
+            any(
+                "governed live manifest: Rental Applications.Credit Score."
+                "source_ids: expected LIVE_CRM_MCP_2026-07-29"
+                in error
+                for error in errors
+            ),
+            errors,
+        )
 
     def test_live_status_requires_live_evidence_source(self) -> None:
         row = {column: "" for column in validator.REQUIRED_COLUMNS}

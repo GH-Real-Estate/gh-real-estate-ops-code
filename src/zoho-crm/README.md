@@ -110,9 +110,9 @@ rejection, or truncated response instead of inferring a schema.
   Lease Status Kanban view as future targets after supported administration and
   readback are available. No Blueprint or Kanban deployment is claimed.
 - Rental Applications now has verified Integer fields `Requested_Pet_Count`
-  and `Requested_Storage_Unit_Count` in Application Intake. Active layout rules
-  conditionally show and require the applicable count when pets or storage are
-  requested.
+  and `Requested_Storage_Unit_Count` in
+  `Household & Requests — Primary Only`. Active layout rules conditionally show
+  and require the applicable count when pets or storage are requested.
 - Contacts Standard layout retirement is reversible: `Name1`, `F_Name`,
   `L_Name`, `Parent_Property`, `Account_Type`, `Current_Lease`, and
   `Current_Unit` were removed from the active layout only. Properties
@@ -127,6 +127,23 @@ rejection, or truncated response instead of inferring a schema.
   documentation/manual-deployment boundaries and must not be represented as
   completed live administration.
 
+## July 29 multi-applicant summary
+
+- The administrator-only custom `ApplicationGroups` module holds the non-PII
+  household control layer and designates one primary Rental Application.
+- Each adult applicant has a separate Rental Application Deal linked through
+  `Application_Group` and classified by `Applicant_Role`.
+- Forty-seven new Deals fields and six Application Groups fields were created
+  and read back; no record or score was populated or backfilled.
+- Standard Deals labels are `Rental Application Name`, `Applicant`, `Property`,
+  and `Requested Move-In Date`.
+- The exact sanitized sections, labels, and new layout rules are governed in
+  [`field-maps/rental-applications-layout.json`](field-maps/rental-applications-layout.json).
+- Raw reports and sensitive report content remain in restricted WorkDrive; the
+  CRM holds only approved structured facts and immutable evidence references.
+- Group-completeness enforcement, exactly-one-primary enforcement, score
+  population, and Application-to-Lease automation remain undeployed.
+
 ## Lease-system deployment boundary
 
 The production CRM configuration and the manual Zoho Contracts remainder are intentionally separate:
@@ -134,6 +151,7 @@ The production CRM configuration and the manual Zoho Contracts remainder are int
 - [`zoho-crm-production-reconciliation-2026-07-24.md`](../../docs/runbooks/zoho-crm-production-reconciliation-2026-07-24.md) records the broader MCP-only production module audit, verified 83-field/global-picklist/layout changes, protected-module boundary, cross-system gates, and rollback/readback controls.
 - [`zoho-crm-lease-system-reconciliation.md`](../../docs/runbooks/zoho-crm-lease-system-reconciliation.md) records the sanitized production CRM fields, actual read-back API names, layout/choice results, blocked items, and rollback.
 - [`zoho-crm-second-pass-reconciliation-2026-07-25.md`](../../docs/runbooks/zoho-crm-second-pass-reconciliation-2026-07-25.md) records the second-pass target decisions and exact metadata-only verification boundary.
+- [`zoho-crm-application-groups-schema-reconciliation-2026-07-29.md`](../../docs/runbooks/zoho-crm-application-groups-schema-reconciliation-2026-07-29.md) records the Application Groups, per-adult Deals, restricted-score, layout, and no-backfill boundary.
 - [`gh-real-estate-operations-dashboard.md`](dashboards/gh-real-estate-operations-dashboard.md) specifies the recommended dashboard without claiming live CRM component creation.
 - [`crm-leases-extension-manual-deployment.md`](../zoho-contracts/runbooks/crm-leases-extension-manual-deployment.md) covers the unsupported manual Contracts extension, button, related-list, counterparty, mapping, and signer-routing steps.
 - The approved Application-to-Lease automation remains unsupported by the current MCP surface. Do not substitute one-time record creation for a durable, idempotent automation.
@@ -145,10 +163,17 @@ The production CRM configuration and the manual Zoho Contracts remainder are int
 - The operating Zillow/Catalyst intake writes raw Zillow callbacks to CRM Leads only.
 - It does not create Contacts, Rental Applications, Leases, Books records, portal access, or WorkDrive folders.
 - Zillow `applicationRequest` is an application-related Lead API value, not documented proof of a completed application and not the application/report package.
-- Promote a verified applicant from the Lead. The controlled operation should reuse/create one Contact and create one Rental Application in Deals without creating a new Account/Property from Lead Company.
-- Create a Lease only from one approved, complete Rental Application with explicit duplicate protection.
+- Promote a verified applicant from the Lead only through a future controlled
+  operation that reuses/creates one Contact and one Rental Application Deal per
+  adult, links them to one Application Group, and never creates a new
+  Account/Property from Lead Company.
+- Create a Lease only from the Application Group's designated primary approved
+  Rental Application after adult-count, role, and duplicate checks pass.
 - Request the legal agreement separately from the Lease through the Zoho Contracts extension.
-- Keep reusable person data in Contacts, screening/decision data in Rental Applications, approved agreement inputs in Leases, accounting in Books, and complete Zillow reports in Zillow under current public capabilities.
+- Keep reusable person data in Contacts, application-scoped
+  screening/decision facts in Rental Applications, approved agreement inputs in
+  Leases, accounting in Books, and governed report documents in restricted
+  WorkDrive.
 - Zillow `phone` maps to `Mobile`; `Phone` is secondary or alternate.
 - Do not create `Desired_Rent`, `Desired_Deposit`, `Manual_Review_Required`, or `Manual_Review_Reason`.
 - Do not store raw private Zillow payload values under the current design.
