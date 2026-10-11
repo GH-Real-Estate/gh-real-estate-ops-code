@@ -1,8 +1,8 @@
 # Accounting authority discovery candidate
 
 - Status: **degraded**
-- Generated: 2026-10-04T15:49:11+00:00
-- Candidate SHA-256: `eb2ffd47074bfcce8e40dd04b9594cb4424428b1b097f676724bbfc7e4a625a9`
+- Generated: 2026-10-11T16:39:29+00:00
+- Candidate SHA-256: `58a962f387a3846a9cb1a2e213f82ba12c3179ea8d804ff98ce3ce9d95d7ccc9`
 - Sources: 4 healthy / 9 configured
 - Discovered items: 218
 - New: 218
@@ -28,12 +28,6 @@
 - `kansas-revenue-policy-library` — **error** — source returned 0 item(s); minimum_items is 5
 
 ## Candidate changes
-
-### NEW: Internal Revenue Bulletin 2026-17
-
-- Item: `accounting-irs-internal-revenue-bulletins-00c303e7258615b1`
-- Source: `irs-internal-revenue-bulletins`
-- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-17.pdf
 
 ### NEW: Internal Revenue Bulletin 2026-38
 
@@ -64,12 +58,6 @@
 - Item: `accounting-irs-internal-revenue-bulletins-2f637ea7b079d108`
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-30.pdf
-
-### NEW: Internal Revenue Bulletin 2026-18
-
-- Item: `accounting-irs-internal-revenue-bulletins-363532bfc686b865`
-- Source: `irs-internal-revenue-bulletins`
-- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-18.pdf
 
 ### NEW: Internal Revenue Bulletin 2026-37
 
@@ -131,6 +119,12 @@
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-41.pdf
 
+### NEW: Internal Revenue Bulletin 2026-10
+
+- Item: `accounting-irs-internal-revenue-bulletins-a2d6b34a0603d774`
+- Source: `irs-internal-revenue-bulletins`
+- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-10.pdf
+
 ### NEW: Internal Revenue Bulletin 2026-28
 
 - Item: `accounting-irs-internal-revenue-bulletins-b7aae013cedf0ffc`
@@ -148,6 +142,12 @@
 - Item: `accounting-irs-internal-revenue-bulletins-bfe316a175535df8`
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-31.pdf
+
+### NEW: Internal Revenue Bulletin 2026-23
+
+- Item: `accounting-irs-internal-revenue-bulletins-e302fa2d96817398`
+- Source: `irs-internal-revenue-bulletins`
+- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-23.pdf
 
 > 198 additional changes are available in the JSON candidate.
 
