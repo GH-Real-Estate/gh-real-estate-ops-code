@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "domain": "accounting",
-  "generated_at": "2026-10-11T16:39:29+00:00",
-  "run_id": "38156364157-1",
+  "generated_at": "2026-10-18T14:38:10+00:00",
+  "run_id": "39136875237-1",
   "status": "degraded",
   "notice": "Automated discovery evidence only. Official sources and qualified review control; this candidate is not approved law, GAAP, or compliance advice.",
   "approved_baseline": {
@@ -13,8 +13,8 @@
   "counts": {
     "sources": 9,
     "healthy_sources": 4,
-    "items": 218,
-    "new": 218,
+    "items": 220,
+    "new": 220,
     "modified": 0,
     "missing_items": 0,
     "source_errors": 5,
@@ -27,7 +27,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/standards/accounting-standard-updates",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -39,7 +39,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/standards/accounting-standard-updated-effective-date",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -51,7 +51,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/projects/current-projects",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -63,7 +63,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/projects/fasb-taxonomies",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -75,12 +75,12 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "rolling-window",
       "status": "healthy",
       "final_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
       "content_type": "text/html",
-      "payload_sha256": "d95c52b0db96cb28ef15540e04de24e3776aa2790d2c852ff0b156ad22f79e06",
+      "payload_sha256": "d2bc695211f149c37a43a14ef3326844ea6172a7fce1c93d45c046c707a075bf",
       "attempts": 1,
       "item_count": 25,
       "observed_item_ids": [
@@ -93,7 +93,6 @@
         "accounting-irs-internal-revenue-bulletins-422387cdd0620eee",
         "accounting-irs-internal-revenue-bulletins-502812683fc2dbb8",
         "accounting-irs-internal-revenue-bulletins-5d4fa128f391ff52",
-        "accounting-irs-internal-revenue-bulletins-66c0f95ed3417136",
         "accounting-irs-internal-revenue-bulletins-6b867919929a89cf",
         "accounting-irs-internal-revenue-bulletins-735bbbb2fcf6db02",
         "accounting-irs-internal-revenue-bulletins-7f60b9a08c8cdc34",
@@ -103,6 +102,7 @@
         "accounting-irs-internal-revenue-bulletins-b7aae013cedf0ffc",
         "accounting-irs-internal-revenue-bulletins-b8190497597730de",
         "accounting-irs-internal-revenue-bulletins-bfe316a175535df8",
+        "accounting-irs-internal-revenue-bulletins-da1e14e25c333978",
         "accounting-irs-internal-revenue-bulletins-e302fa2d96817398",
         "accounting-irs-internal-revenue-bulletins-e9648c4116574d13",
         "accounting-irs-internal-revenue-bulletins-f0dc84a56aea70ff",
@@ -116,33 +116,36 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://home.treasury.gov/news/press-releases",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "rolling-window",
       "status": "healthy",
       "final_url": "https://home.treasury.gov/news/press-releases",
       "content_type": "text/html",
-      "payload_sha256": "56f5d99d3ec38dadb23087b5a2c847bcf39095f5ecc2b25c8638937c66750c61",
+      "payload_sha256": "cc6ab7937fd4eb111079c1b63e12e0706422c0ef61dd54bdde75b7529481ef1b",
       "attempts": 1,
-      "item_count": 0,
-      "observed_item_ids": []
+      "item_count": 1,
+      "observed_item_ids": [
+        "accounting-treasury-accounting-and-tax-releases-4ef1b14c902bc21b"
+      ]
     },
     {
       "source_id": "kansas-revenue-current-tax-notices",
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "complete-index",
       "status": "healthy",
       "final_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
       "content_type": "text/html",
-      "payload_sha256": "e62b3113f15adfeed941d058f213c187a9e38f77f88a8f42bdf52a818b8405de",
+      "payload_sha256": "8c0a2c17cf667db9014d23544ac8245c32b37c4c7847a7f74e368ea86ac73c7d",
       "attempts": 1,
-      "item_count": 10,
+      "item_count": 11,
       "observed_item_ids": [
         "accounting-kansas-revenue-current-tax-notices-22f318063db060f6",
         "accounting-kansas-revenue-current-tax-notices-3bc44d51023e7193",
         "accounting-kansas-revenue-current-tax-notices-5770f736eca4f605",
+        "accounting-kansas-revenue-current-tax-notices-5c956139476c5abe",
         "accounting-kansas-revenue-current-tax-notices-69ffabcf0d64994d",
         "accounting-kansas-revenue-current-tax-notices-b0a09b2d2f63f3cc",
         "accounting-kansas-revenue-current-tax-notices-baf232ac615b986b",
@@ -157,7 +160,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "complete-index",
       "status": "healthy",
       "final_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
@@ -356,7 +359,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prpil.html",
-      "retrieved_at": "2026-10-11T16:39:29+00:00",
+      "retrieved_at": "2026-10-18T14:38:10+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "source returned 0 item(s); minimum_items is 5",
@@ -592,31 +595,6 @@
     },
     {
       "change_type": "new",
-      "item_id": "accounting-irs-internal-revenue-bulletins-66c0f95ed3417136",
-      "source_id": "irs-internal-revenue-bulletins",
-      "before": null,
-      "after": {
-        "item_id": "accounting-irs-internal-revenue-bulletins-66c0f95ed3417136",
-        "source_id": "irs-internal-revenue-bulletins",
-        "external_id": "IRS-IRB-2026-19",
-        "title": "Internal Revenue Bulletin 2026-19",
-        "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-19.pdf",
-        "publisher": "Internal Revenue Service",
-        "jurisdiction": "United States",
-        "authority_type": "federal-tax-administrative-guidance",
-        "storage_policy": "metadata-only",
-        "published_at": "2026-05-01",
-        "effective_at": null,
-        "status": "discovered",
-        "metadata": {
-          "document_type": "internal-revenue-bulletin",
-          "bulletin_number": "2026-19"
-        },
-        "fingerprint": "3d119d36e5e0d62dd15996ea4c47cf7cb976c80e52f7a8780302c43b3cf04d0e"
-      }
-    },
-    {
-      "change_type": "new",
       "item_id": "accounting-irs-internal-revenue-bulletins-6b867919929a89cf",
       "source_id": "irs-internal-revenue-bulletins",
       "before": null,
@@ -842,6 +820,31 @@
     },
     {
       "change_type": "new",
+      "item_id": "accounting-irs-internal-revenue-bulletins-da1e14e25c333978",
+      "source_id": "irs-internal-revenue-bulletins",
+      "before": null,
+      "after": {
+        "item_id": "accounting-irs-internal-revenue-bulletins-da1e14e25c333978",
+        "source_id": "irs-internal-revenue-bulletins",
+        "external_id": "IRS-IRB-2026-43",
+        "title": "Internal Revenue Bulletin 2026-43",
+        "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-43.pdf",
+        "publisher": "Internal Revenue Service",
+        "jurisdiction": "United States",
+        "authority_type": "federal-tax-administrative-guidance",
+        "storage_policy": "metadata-only",
+        "published_at": "2026-10-16",
+        "effective_at": null,
+        "status": "discovered",
+        "metadata": {
+          "document_type": "internal-revenue-bulletin",
+          "bulletin_number": "2026-43"
+        },
+        "fingerprint": "66cdf522c184c2a40df277033ba33399d678c82c07181000bd52cae88660af41"
+      }
+    },
+    {
+      "change_type": "new",
       "item_id": "accounting-irs-internal-revenue-bulletins-e302fa2d96817398",
       "source_id": "irs-internal-revenue-bulletins",
       "before": null,
@@ -1051,7 +1054,7 @@
         "item_id": "accounting-kansas-revenue-current-tax-notices-5770f736eca4f605",
         "source_id": "kansas-revenue-current-tax-notices",
         "external_id": "KDOR-NOTICE-26-08",
-        "title": "Notice 26-08 Income Tax Subtraction Modification for Contributions to a Portable Benefit Plan for Indepentent Contractors",
+        "title": "Notice 26-08 Income Tax Subtraction Modification for Contributions to a Portable Benefit Plan for Independent Contractors",
         "official_url": "https://www.ksrevenue.gov/taxnotices/notice26-08.pdf",
         "publisher": "Kansas Department of Revenue",
         "jurisdiction": "Kansas",
@@ -1065,7 +1068,33 @@
           "document_number": "26-08",
           "publisher_status": "published"
         },
-        "fingerprint": "7b30bb7025240766b1b950673eb33e0b415ceea02806eac2f04a51ede48d2711"
+        "fingerprint": "68bb674b00d34386501a032b32fb5940ddd4a691940f7073f6ba6f9fe5eb6cc3"
+      }
+    },
+    {
+      "change_type": "new",
+      "item_id": "accounting-kansas-revenue-current-tax-notices-5c956139476c5abe",
+      "source_id": "kansas-revenue-current-tax-notices",
+      "before": null,
+      "after": {
+        "item_id": "accounting-kansas-revenue-current-tax-notices-5c956139476c5abe",
+        "source_id": "kansas-revenue-current-tax-notices",
+        "external_id": "KDOR-NOTICE-26-11",
+        "title": "Notice 26-11 Decreases of Income and Privilege Tax Rates - Contingent on Revenue",
+        "official_url": "https://www.ksrevenue.gov/taxnotices/notice26-11.pdf",
+        "publisher": "Kansas Department of Revenue",
+        "jurisdiction": "Kansas",
+        "authority_type": "state-tax-administrative-guidance",
+        "storage_policy": "metadata-only",
+        "published_at": null,
+        "effective_at": null,
+        "status": "discovered",
+        "metadata": {
+          "document_type": "tax-notice",
+          "document_number": "26-11",
+          "publisher_status": "published"
+        },
+        "fingerprint": "c2cd3b1b49899eb104fa4f8d83b2ad0b46bfe599e8fd06f52ddfd89df3cf22ec"
       }
     },
     {
@@ -6007,6 +6036,30 @@
         },
         "fingerprint": "57b359662429a91c1cf3d4e591e82a6fca1b247e0f4318c9efde9d9ee9512ea3"
       }
+    },
+    {
+      "change_type": "new",
+      "item_id": "accounting-treasury-accounting-and-tax-releases-4ef1b14c902bc21b",
+      "source_id": "treasury-accounting-and-tax-releases",
+      "before": null,
+      "after": {
+        "item_id": "accounting-treasury-accounting-and-tax-releases-4ef1b14c902bc21b",
+        "source_id": "treasury-accounting-and-tax-releases",
+        "external_id": "TREASURY-RELEASE-6bd06c070046ea557419",
+        "title": "Treasury and IRS Move to Protect Health Care Benefits for Eligible Americans",
+        "official_url": "https://home.treasury.gov/news/press-releases/sb0658/",
+        "publisher": "United States Department of the Treasury",
+        "jurisdiction": "United States",
+        "authority_type": "federal-tax-and-financial-announcement",
+        "storage_policy": "metadata-only",
+        "published_at": null,
+        "effective_at": null,
+        "status": "discovered",
+        "metadata": {
+          "document_type": "treasury-press-release"
+        },
+        "fingerprint": "faccd44e08566fcc5e34b190cac439c57ffcd477087c87e6ad7697f2eab9f194"
+      }
     }
   ],
   "potential_impacts": [
@@ -6565,25 +6618,6 @@
       "fingerprint": "5630ba47ab8c74b6495a6234fc513c60bf9547882847f45fcec3e799b3056a2f"
     },
     {
-      "item_id": "accounting-irs-internal-revenue-bulletins-66c0f95ed3417136",
-      "source_id": "irs-internal-revenue-bulletins",
-      "external_id": "IRS-IRB-2026-19",
-      "title": "Internal Revenue Bulletin 2026-19",
-      "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-19.pdf",
-      "publisher": "Internal Revenue Service",
-      "jurisdiction": "United States",
-      "authority_type": "federal-tax-administrative-guidance",
-      "storage_policy": "metadata-only",
-      "published_at": "2026-05-01",
-      "effective_at": null,
-      "status": "discovered",
-      "metadata": {
-        "document_type": "internal-revenue-bulletin",
-        "bulletin_number": "2026-19"
-      },
-      "fingerprint": "3d119d36e5e0d62dd15996ea4c47cf7cb976c80e52f7a8780302c43b3cf04d0e"
-    },
-    {
       "item_id": "accounting-irs-internal-revenue-bulletins-6b867919929a89cf",
       "source_id": "irs-internal-revenue-bulletins",
       "external_id": "IRS-IRB-2026-39",
@@ -6755,6 +6789,25 @@
       "fingerprint": "600a5dac49db74261d2a48c005bc3270c583751ae55ecedfcbfe86976504b7d3"
     },
     {
+      "item_id": "accounting-irs-internal-revenue-bulletins-da1e14e25c333978",
+      "source_id": "irs-internal-revenue-bulletins",
+      "external_id": "IRS-IRB-2026-43",
+      "title": "Internal Revenue Bulletin 2026-43",
+      "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-43.pdf",
+      "publisher": "Internal Revenue Service",
+      "jurisdiction": "United States",
+      "authority_type": "federal-tax-administrative-guidance",
+      "storage_policy": "metadata-only",
+      "published_at": "2026-10-16",
+      "effective_at": null,
+      "status": "discovered",
+      "metadata": {
+        "document_type": "internal-revenue-bulletin",
+        "bulletin_number": "2026-43"
+      },
+      "fingerprint": "66cdf522c184c2a40df277033ba33399d678c82c07181000bd52cae88660af41"
+    },
+    {
       "item_id": "accounting-irs-internal-revenue-bulletins-e302fa2d96817398",
       "source_id": "irs-internal-revenue-bulletins",
       "external_id": "IRS-IRB-2026-23",
@@ -6912,7 +6965,7 @@
       "item_id": "accounting-kansas-revenue-current-tax-notices-5770f736eca4f605",
       "source_id": "kansas-revenue-current-tax-notices",
       "external_id": "KDOR-NOTICE-26-08",
-      "title": "Notice 26-08 Income Tax Subtraction Modification for Contributions to a Portable Benefit Plan for Indepentent Contractors",
+      "title": "Notice 26-08 Income Tax Subtraction Modification for Contributions to a Portable Benefit Plan for Independent Contractors",
       "official_url": "https://www.ksrevenue.gov/taxnotices/notice26-08.pdf",
       "publisher": "Kansas Department of Revenue",
       "jurisdiction": "Kansas",
@@ -6926,7 +6979,27 @@
         "document_number": "26-08",
         "publisher_status": "published"
       },
-      "fingerprint": "7b30bb7025240766b1b950673eb33e0b415ceea02806eac2f04a51ede48d2711"
+      "fingerprint": "68bb674b00d34386501a032b32fb5940ddd4a691940f7073f6ba6f9fe5eb6cc3"
+    },
+    {
+      "item_id": "accounting-kansas-revenue-current-tax-notices-5c956139476c5abe",
+      "source_id": "kansas-revenue-current-tax-notices",
+      "external_id": "KDOR-NOTICE-26-11",
+      "title": "Notice 26-11 Decreases of Income and Privilege Tax Rates - Contingent on Revenue",
+      "official_url": "https://www.ksrevenue.gov/taxnotices/notice26-11.pdf",
+      "publisher": "Kansas Department of Revenue",
+      "jurisdiction": "Kansas",
+      "authority_type": "state-tax-administrative-guidance",
+      "storage_policy": "metadata-only",
+      "published_at": null,
+      "effective_at": null,
+      "status": "discovered",
+      "metadata": {
+        "document_type": "tax-notice",
+        "document_number": "26-11",
+        "publisher_status": "published"
+      },
+      "fingerprint": "c2cd3b1b49899eb104fa4f8d83b2ad0b46bfe599e8fd06f52ddfd89df3cf22ec"
     },
     {
       "item_id": "accounting-kansas-revenue-current-tax-notices-69ffabcf0d64994d",
@@ -10727,7 +10800,25 @@
         "publisher_status": "published"
       },
       "fingerprint": "57b359662429a91c1cf3d4e591e82a6fca1b247e0f4318c9efde9d9ee9512ea3"
+    },
+    {
+      "item_id": "accounting-treasury-accounting-and-tax-releases-4ef1b14c902bc21b",
+      "source_id": "treasury-accounting-and-tax-releases",
+      "external_id": "TREASURY-RELEASE-6bd06c070046ea557419",
+      "title": "Treasury and IRS Move to Protect Health Care Benefits for Eligible Americans",
+      "official_url": "https://home.treasury.gov/news/press-releases/sb0658/",
+      "publisher": "United States Department of the Treasury",
+      "jurisdiction": "United States",
+      "authority_type": "federal-tax-and-financial-announcement",
+      "storage_policy": "metadata-only",
+      "published_at": null,
+      "effective_at": null,
+      "status": "discovered",
+      "metadata": {
+        "document_type": "treasury-press-release"
+      },
+      "fingerprint": "faccd44e08566fcc5e34b190cac439c57ffcd477087c87e6ad7697f2eab9f194"
     }
   ],
-  "candidate_sha256": "58a962f387a3846a9cb1a2e213f82ba12c3179ea8d804ff98ce3ce9d95d7ccc9"
+  "candidate_sha256": "bb05429e02fc082f6af09ca9c3aaf387544412f5a97954d4e596ee3f9ba6ff0a"
 }
