@@ -1,8 +1,8 @@
 # Accounting authority discovery candidate
 
 - Status: **degraded**
-- Generated: 2026-10-18T14:38:10+00:00
-- Candidate SHA-256: `bb05429e02fc082f6af09ca9c3aaf387544412f5a97954d4e596ee3f9ba6ff0a`
+- Generated: 2026-10-25T14:57:43+00:00
+- Candidate SHA-256: `7160f9b73050138fdc69241950203a30b61c936b9d6620fbb7c4836e96796690`
 - Sources: 4 healthy / 9 configured
 - Discovered items: 220
 - New: 220
@@ -59,6 +59,12 @@
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-30.pdf
 
+### NEW: Internal Revenue Bulletin 2026-44
+
+- Item: `accounting-irs-internal-revenue-bulletins-32d0e209dd1f0333`
+- Source: `irs-internal-revenue-bulletins`
+- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-44.pdf
+
 ### NEW: Internal Revenue Bulletin 2026-37
 
 - Item: `accounting-irs-internal-revenue-bulletins-3bdba1511d9a4e2c`
@@ -76,12 +82,6 @@
 - Item: `accounting-irs-internal-revenue-bulletins-502812683fc2dbb8`
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-32.pdf
-
-### NEW: Internal Revenue Bulletin 2026-20
-
-- Item: `accounting-irs-internal-revenue-bulletins-5d4fa128f391ff52`
-- Source: `irs-internal-revenue-bulletins`
-- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-20.pdf
 
 ### NEW: Internal Revenue Bulletin 2026-39
 

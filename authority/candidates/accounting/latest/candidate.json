@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "domain": "accounting",
-  "generated_at": "2026-10-18T14:38:10+00:00",
-  "run_id": "39136875237-1",
+  "generated_at": "2026-10-25T14:57:43+00:00",
+  "run_id": "40204661120-1",
   "status": "degraded",
   "notice": "Automated discovery evidence only. Official sources and qualified review control; this candidate is not approved law, GAAP, or compliance advice.",
   "approved_baseline": {
@@ -27,7 +27,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/standards/accounting-standard-updates",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -39,7 +39,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/standards/accounting-standard-updated-effective-date",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -51,7 +51,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/projects/current-projects",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -63,7 +63,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/projects/fasb-taxonomies",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -75,12 +75,12 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "rolling-window",
       "status": "healthy",
       "final_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
       "content_type": "text/html",
-      "payload_sha256": "d2bc695211f149c37a43a14ef3326844ea6172a7fce1c93d45c046c707a075bf",
+      "payload_sha256": "e75a0d71ce4a3801f0d78bf2d5212bcf4abf6a7e323085d0917f447da8b7d1b8",
       "attempts": 1,
       "item_count": 25,
       "observed_item_ids": [
@@ -89,10 +89,10 @@
         "accounting-irs-internal-revenue-bulletins-26fddd10087e79a6",
         "accounting-irs-internal-revenue-bulletins-2b3b91938bf313ac",
         "accounting-irs-internal-revenue-bulletins-2f637ea7b079d108",
+        "accounting-irs-internal-revenue-bulletins-32d0e209dd1f0333",
         "accounting-irs-internal-revenue-bulletins-3bdba1511d9a4e2c",
         "accounting-irs-internal-revenue-bulletins-422387cdd0620eee",
         "accounting-irs-internal-revenue-bulletins-502812683fc2dbb8",
-        "accounting-irs-internal-revenue-bulletins-5d4fa128f391ff52",
         "accounting-irs-internal-revenue-bulletins-6b867919929a89cf",
         "accounting-irs-internal-revenue-bulletins-735bbbb2fcf6db02",
         "accounting-irs-internal-revenue-bulletins-7f60b9a08c8cdc34",
@@ -116,12 +116,12 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://home.treasury.gov/news/press-releases",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "rolling-window",
       "status": "healthy",
       "final_url": "https://home.treasury.gov/news/press-releases",
       "content_type": "text/html",
-      "payload_sha256": "cc6ab7937fd4eb111079c1b63e12e0706422c0ef61dd54bdde75b7529481ef1b",
+      "payload_sha256": "890608f0cbd56a1d7ad0e7deb90cf5b988e91009deeb47c7c0dfffd6b2773c2e",
       "attempts": 1,
       "item_count": 1,
       "observed_item_ids": [
@@ -133,7 +133,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "complete-index",
       "status": "healthy",
       "final_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
@@ -160,7 +160,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "complete-index",
       "status": "healthy",
       "final_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
@@ -359,7 +359,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prpil.html",
-      "retrieved_at": "2026-10-18T14:38:10+00:00",
+      "retrieved_at": "2026-10-25T14:57:43+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "source returned 0 item(s); minimum_items is 5",
@@ -495,6 +495,31 @@
     },
     {
       "change_type": "new",
+      "item_id": "accounting-irs-internal-revenue-bulletins-32d0e209dd1f0333",
+      "source_id": "irs-internal-revenue-bulletins",
+      "before": null,
+      "after": {
+        "item_id": "accounting-irs-internal-revenue-bulletins-32d0e209dd1f0333",
+        "source_id": "irs-internal-revenue-bulletins",
+        "external_id": "IRS-IRB-2026-44",
+        "title": "Internal Revenue Bulletin 2026-44",
+        "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-44.pdf",
+        "publisher": "Internal Revenue Service",
+        "jurisdiction": "United States",
+        "authority_type": "federal-tax-administrative-guidance",
+        "storage_policy": "metadata-only",
+        "published_at": "2026-10-23",
+        "effective_at": null,
+        "status": "discovered",
+        "metadata": {
+          "document_type": "internal-revenue-bulletin",
+          "bulletin_number": "2026-44"
+        },
+        "fingerprint": "78524eb5d01994f5dd3747eca15baddbf8d3750dc58a270c3c72caa80c97ddc6"
+      }
+    },
+    {
+      "change_type": "new",
       "item_id": "accounting-irs-internal-revenue-bulletins-3bdba1511d9a4e2c",
       "source_id": "irs-internal-revenue-bulletins",
       "before": null,
@@ -566,31 +591,6 @@
           "bulletin_number": "2026-32"
         },
         "fingerprint": "1c70a734b431cdecc678741de5bdf67410f25dbf7c5ab5cecc8c9960e814d044"
-      }
-    },
-    {
-      "change_type": "new",
-      "item_id": "accounting-irs-internal-revenue-bulletins-5d4fa128f391ff52",
-      "source_id": "irs-internal-revenue-bulletins",
-      "before": null,
-      "after": {
-        "item_id": "accounting-irs-internal-revenue-bulletins-5d4fa128f391ff52",
-        "source_id": "irs-internal-revenue-bulletins",
-        "external_id": "IRS-IRB-2026-20",
-        "title": "Internal Revenue Bulletin 2026-20",
-        "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-20.pdf",
-        "publisher": "Internal Revenue Service",
-        "jurisdiction": "United States",
-        "authority_type": "federal-tax-administrative-guidance",
-        "storage_policy": "metadata-only",
-        "published_at": "2026-05-08",
-        "effective_at": null,
-        "status": "discovered",
-        "metadata": {
-          "document_type": "internal-revenue-bulletin",
-          "bulletin_number": "2026-20"
-        },
-        "fingerprint": "5630ba47ab8c74b6495a6234fc513c60bf9547882847f45fcec3e799b3056a2f"
       }
     },
     {
@@ -6542,6 +6542,25 @@
       "fingerprint": "c4072d0253a9b0795bb8068aad15c3834c13a0ebdafd5df77a3ed61e249ceb81"
     },
     {
+      "item_id": "accounting-irs-internal-revenue-bulletins-32d0e209dd1f0333",
+      "source_id": "irs-internal-revenue-bulletins",
+      "external_id": "IRS-IRB-2026-44",
+      "title": "Internal Revenue Bulletin 2026-44",
+      "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-44.pdf",
+      "publisher": "Internal Revenue Service",
+      "jurisdiction": "United States",
+      "authority_type": "federal-tax-administrative-guidance",
+      "storage_policy": "metadata-only",
+      "published_at": "2026-10-23",
+      "effective_at": null,
+      "status": "discovered",
+      "metadata": {
+        "document_type": "internal-revenue-bulletin",
+        "bulletin_number": "2026-44"
+      },
+      "fingerprint": "78524eb5d01994f5dd3747eca15baddbf8d3750dc58a270c3c72caa80c97ddc6"
+    },
+    {
       "item_id": "accounting-irs-internal-revenue-bulletins-3bdba1511d9a4e2c",
       "source_id": "irs-internal-revenue-bulletins",
       "external_id": "IRS-IRB-2026-37",
@@ -6597,25 +6616,6 @@
         "bulletin_number": "2026-32"
       },
       "fingerprint": "1c70a734b431cdecc678741de5bdf67410f25dbf7c5ab5cecc8c9960e814d044"
-    },
-    {
-      "item_id": "accounting-irs-internal-revenue-bulletins-5d4fa128f391ff52",
-      "source_id": "irs-internal-revenue-bulletins",
-      "external_id": "IRS-IRB-2026-20",
-      "title": "Internal Revenue Bulletin 2026-20",
-      "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-20.pdf",
-      "publisher": "Internal Revenue Service",
-      "jurisdiction": "United States",
-      "authority_type": "federal-tax-administrative-guidance",
-      "storage_policy": "metadata-only",
-      "published_at": "2026-05-08",
-      "effective_at": null,
-      "status": "discovered",
-      "metadata": {
-        "document_type": "internal-revenue-bulletin",
-        "bulletin_number": "2026-20"
-      },
-      "fingerprint": "5630ba47ab8c74b6495a6234fc513c60bf9547882847f45fcec3e799b3056a2f"
     },
     {
       "item_id": "accounting-irs-internal-revenue-bulletins-6b867919929a89cf",
@@ -10820,5 +10820,5 @@
       "fingerprint": "faccd44e08566fcc5e34b190cac439c57ffcd477087c87e6ad7697f2eab9f194"
     }
   ],
-  "candidate_sha256": "bb05429e02fc082f6af09ca9c3aaf387544412f5a97954d4e596ee3f9ba6ff0a"
+  "candidate_sha256": "7160f9b73050138fdc69241950203a30b61c936b9d6620fbb7c4836e96796690"
 }
