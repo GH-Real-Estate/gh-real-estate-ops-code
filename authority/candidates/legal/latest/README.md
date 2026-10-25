@@ -2,6 +2,6 @@
 
 The discovery runner failed before it produced a complete report.
 
-- Workflow run: https://github.com/GH-Real-Estate/gh-real-estate-ops-code/actions/runs/39136875237
+- Workflow run: https://github.com/GH-Real-Estate/gh-real-estate-ops-code/actions/runs/40204661120
 
 > Treat discovery coverage as degraded until this run is reviewed.
