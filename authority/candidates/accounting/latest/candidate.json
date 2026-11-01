@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "domain": "accounting",
-  "generated_at": "2026-10-25T14:57:43+00:00",
-  "run_id": "40204661120-1",
+  "generated_at": "2026-11-01T17:08:57+00:00",
+  "run_id": "41329952655-1",
   "status": "degraded",
   "notice": "Automated discovery evidence only. Official sources and qualified review control; this candidate is not approved law, GAAP, or compliance advice.",
   "approved_baseline": {
@@ -13,8 +13,8 @@
   "counts": {
     "sources": 9,
     "healthy_sources": 4,
-    "items": 220,
-    "new": 220,
+    "items": 219,
+    "new": 219,
     "modified": 0,
     "missing_items": 0,
     "source_errors": 5,
@@ -27,7 +27,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/standards/accounting-standard-updates",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -39,7 +39,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/standards/accounting-standard-updated-effective-date",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -51,7 +51,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/projects/current-projects",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -63,7 +63,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/projects/fasb-taxonomies",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -75,12 +75,12 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "rolling-window",
       "status": "healthy",
       "final_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
       "content_type": "text/html",
-      "payload_sha256": "e75a0d71ce4a3801f0d78bf2d5212bcf4abf6a7e323085d0917f447da8b7d1b8",
+      "payload_sha256": "9a714f86e60a12b927a58176f85870e3e3436f753df78d3365b3e9c867500931",
       "attempts": 1,
       "item_count": 25,
       "observed_item_ids": [
@@ -96,9 +96,9 @@
         "accounting-irs-internal-revenue-bulletins-6b867919929a89cf",
         "accounting-irs-internal-revenue-bulletins-735bbbb2fcf6db02",
         "accounting-irs-internal-revenue-bulletins-7f60b9a08c8cdc34",
-        "accounting-irs-internal-revenue-bulletins-8b5792957a2dd421",
         "accounting-irs-internal-revenue-bulletins-9aa61bc0ab552fc6",
         "accounting-irs-internal-revenue-bulletins-a2d6b34a0603d774",
+        "accounting-irs-internal-revenue-bulletins-a3133575ec44274b",
         "accounting-irs-internal-revenue-bulletins-b7aae013cedf0ffc",
         "accounting-irs-internal-revenue-bulletins-b8190497597730de",
         "accounting-irs-internal-revenue-bulletins-bfe316a175535df8",
@@ -116,24 +116,22 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://home.treasury.gov/news/press-releases",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "rolling-window",
       "status": "healthy",
       "final_url": "https://home.treasury.gov/news/press-releases",
       "content_type": "text/html",
-      "payload_sha256": "890608f0cbd56a1d7ad0e7deb90cf5b988e91009deeb47c7c0dfffd6b2773c2e",
+      "payload_sha256": "b1cb552bb9ba536c1f96e99da34a1be00009670a163c6608815cad1241108a3b",
       "attempts": 1,
-      "item_count": 1,
-      "observed_item_ids": [
-        "accounting-treasury-accounting-and-tax-releases-4ef1b14c902bc21b"
-      ]
+      "item_count": 0,
+      "observed_item_ids": []
     },
     {
       "source_id": "kansas-revenue-current-tax-notices",
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "complete-index",
       "status": "healthy",
       "final_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
@@ -160,7 +158,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "complete-index",
       "status": "healthy",
       "final_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
@@ -359,7 +357,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prpil.html",
-      "retrieved_at": "2026-10-25T14:57:43+00:00",
+      "retrieved_at": "2026-11-01T17:08:57+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "source returned 0 item(s); minimum_items is 5",
@@ -670,31 +668,6 @@
     },
     {
       "change_type": "new",
-      "item_id": "accounting-irs-internal-revenue-bulletins-8b5792957a2dd421",
-      "source_id": "irs-internal-revenue-bulletins",
-      "before": null,
-      "after": {
-        "item_id": "accounting-irs-internal-revenue-bulletins-8b5792957a2dd421",
-        "source_id": "irs-internal-revenue-bulletins",
-        "external_id": "IRS-IRB-2026-21",
-        "title": "Internal Revenue Bulletin 2026-21",
-        "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-21.pdf",
-        "publisher": "Internal Revenue Service",
-        "jurisdiction": "United States",
-        "authority_type": "federal-tax-administrative-guidance",
-        "storage_policy": "metadata-only",
-        "published_at": "2026-05-15",
-        "effective_at": null,
-        "status": "discovered",
-        "metadata": {
-          "document_type": "internal-revenue-bulletin",
-          "bulletin_number": "2026-21"
-        },
-        "fingerprint": "6953892c8184f13dc20d6fc57b1b26fc213e34156dc24cf42650088f6bc2f78e"
-      }
-    },
-    {
-      "change_type": "new",
       "item_id": "accounting-irs-internal-revenue-bulletins-9aa61bc0ab552fc6",
       "source_id": "irs-internal-revenue-bulletins",
       "before": null,
@@ -741,6 +714,31 @@
           "bulletin_number": "2026-10"
         },
         "fingerprint": "97a59700c4157d165e312f70f02a6e19341251053faafd719a8d6eb5b574d903"
+      }
+    },
+    {
+      "change_type": "new",
+      "item_id": "accounting-irs-internal-revenue-bulletins-a3133575ec44274b",
+      "source_id": "irs-internal-revenue-bulletins",
+      "before": null,
+      "after": {
+        "item_id": "accounting-irs-internal-revenue-bulletins-a3133575ec44274b",
+        "source_id": "irs-internal-revenue-bulletins",
+        "external_id": "IRS-IRB-2026-45",
+        "title": "Internal Revenue Bulletin 2026-45",
+        "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-45.pdf",
+        "publisher": "Internal Revenue Service",
+        "jurisdiction": "United States",
+        "authority_type": "federal-tax-administrative-guidance",
+        "storage_policy": "metadata-only",
+        "published_at": "2026-10-30",
+        "effective_at": null,
+        "status": "discovered",
+        "metadata": {
+          "document_type": "internal-revenue-bulletin",
+          "bulletin_number": "2026-45"
+        },
+        "fingerprint": "01e1346f72fb8063a4c5e5d8cc227a243d9466c33ebca4169105c14a1a49ed0f"
       }
     },
     {
@@ -6036,30 +6034,6 @@
         },
         "fingerprint": "57b359662429a91c1cf3d4e591e82a6fca1b247e0f4318c9efde9d9ee9512ea3"
       }
-    },
-    {
-      "change_type": "new",
-      "item_id": "accounting-treasury-accounting-and-tax-releases-4ef1b14c902bc21b",
-      "source_id": "treasury-accounting-and-tax-releases",
-      "before": null,
-      "after": {
-        "item_id": "accounting-treasury-accounting-and-tax-releases-4ef1b14c902bc21b",
-        "source_id": "treasury-accounting-and-tax-releases",
-        "external_id": "TREASURY-RELEASE-6bd06c070046ea557419",
-        "title": "Treasury and IRS Move to Protect Health Care Benefits for Eligible Americans",
-        "official_url": "https://home.treasury.gov/news/press-releases/sb0658/",
-        "publisher": "United States Department of the Treasury",
-        "jurisdiction": "United States",
-        "authority_type": "federal-tax-and-financial-announcement",
-        "storage_policy": "metadata-only",
-        "published_at": null,
-        "effective_at": null,
-        "status": "discovered",
-        "metadata": {
-          "document_type": "treasury-press-release"
-        },
-        "fingerprint": "faccd44e08566fcc5e34b190cac439c57ffcd477087c87e6ad7697f2eab9f194"
-      }
     }
   ],
   "potential_impacts": [
@@ -6675,25 +6649,6 @@
       "fingerprint": "369b1a0e0c04dad4e6ea1e39780fe41990c236932cf46ce0d0a2806bfe80ba3c"
     },
     {
-      "item_id": "accounting-irs-internal-revenue-bulletins-8b5792957a2dd421",
-      "source_id": "irs-internal-revenue-bulletins",
-      "external_id": "IRS-IRB-2026-21",
-      "title": "Internal Revenue Bulletin 2026-21",
-      "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-21.pdf",
-      "publisher": "Internal Revenue Service",
-      "jurisdiction": "United States",
-      "authority_type": "federal-tax-administrative-guidance",
-      "storage_policy": "metadata-only",
-      "published_at": "2026-05-15",
-      "effective_at": null,
-      "status": "discovered",
-      "metadata": {
-        "document_type": "internal-revenue-bulletin",
-        "bulletin_number": "2026-21"
-      },
-      "fingerprint": "6953892c8184f13dc20d6fc57b1b26fc213e34156dc24cf42650088f6bc2f78e"
-    },
-    {
       "item_id": "accounting-irs-internal-revenue-bulletins-9aa61bc0ab552fc6",
       "source_id": "irs-internal-revenue-bulletins",
       "external_id": "IRS-IRB-2026-41",
@@ -6730,6 +6685,25 @@
         "bulletin_number": "2026-10"
       },
       "fingerprint": "97a59700c4157d165e312f70f02a6e19341251053faafd719a8d6eb5b574d903"
+    },
+    {
+      "item_id": "accounting-irs-internal-revenue-bulletins-a3133575ec44274b",
+      "source_id": "irs-internal-revenue-bulletins",
+      "external_id": "IRS-IRB-2026-45",
+      "title": "Internal Revenue Bulletin 2026-45",
+      "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-45.pdf",
+      "publisher": "Internal Revenue Service",
+      "jurisdiction": "United States",
+      "authority_type": "federal-tax-administrative-guidance",
+      "storage_policy": "metadata-only",
+      "published_at": "2026-10-30",
+      "effective_at": null,
+      "status": "discovered",
+      "metadata": {
+        "document_type": "internal-revenue-bulletin",
+        "bulletin_number": "2026-45"
+      },
+      "fingerprint": "01e1346f72fb8063a4c5e5d8cc227a243d9466c33ebca4169105c14a1a49ed0f"
     },
     {
       "item_id": "accounting-irs-internal-revenue-bulletins-b7aae013cedf0ffc",
@@ -10800,25 +10774,7 @@
         "publisher_status": "published"
       },
       "fingerprint": "57b359662429a91c1cf3d4e591e82a6fca1b247e0f4318c9efde9d9ee9512ea3"
-    },
-    {
-      "item_id": "accounting-treasury-accounting-and-tax-releases-4ef1b14c902bc21b",
-      "source_id": "treasury-accounting-and-tax-releases",
-      "external_id": "TREASURY-RELEASE-6bd06c070046ea557419",
-      "title": "Treasury and IRS Move to Protect Health Care Benefits for Eligible Americans",
-      "official_url": "https://home.treasury.gov/news/press-releases/sb0658/",
-      "publisher": "United States Department of the Treasury",
-      "jurisdiction": "United States",
-      "authority_type": "federal-tax-and-financial-announcement",
-      "storage_policy": "metadata-only",
-      "published_at": null,
-      "effective_at": null,
-      "status": "discovered",
-      "metadata": {
-        "document_type": "treasury-press-release"
-      },
-      "fingerprint": "faccd44e08566fcc5e34b190cac439c57ffcd477087c87e6ad7697f2eab9f194"
     }
   ],
-  "candidate_sha256": "7160f9b73050138fdc69241950203a30b61c936b9d6620fbb7c4836e96796690"
+  "candidate_sha256": "797c39ebb5df14d73fa4cbd30374a0e113868f906eac7561953f1e2bdcdb0f87"
 }

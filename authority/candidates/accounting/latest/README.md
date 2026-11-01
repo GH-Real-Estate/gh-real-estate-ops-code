@@ -1,11 +1,11 @@
 # Accounting authority discovery candidate
 
 - Status: **degraded**
-- Generated: 2026-10-25T14:57:43+00:00
-- Candidate SHA-256: `7160f9b73050138fdc69241950203a30b61c936b9d6620fbb7c4836e96796690`
+- Generated: 2026-11-01T17:08:57+00:00
+- Candidate SHA-256: `797c39ebb5df14d73fa4cbd30374a0e113868f906eac7561953f1e2bdcdb0f87`
 - Sources: 4 healthy / 9 configured
-- Discovered items: 220
-- New: 220
+- Discovered items: 219
+- New: 219
 - Modified: 0
 - Missing from successful source responses: 0
 - Source errors: 5
@@ -22,7 +22,7 @@
 - `fasb-current-projects` — **error** — fetch failed after 1 attempt(s): HTTP 403: Forbidden
 - `fasb-taxonomy-resources` — **error** — fetch failed after 1 attempt(s): HTTP 403: Forbidden
 - `irs-internal-revenue-bulletins` — **healthy** — 25 item(s)
-- `treasury-accounting-and-tax-releases` — **healthy** — 1 item(s)
+- `treasury-accounting-and-tax-releases` — **healthy** — 0 item(s)
 - `kansas-revenue-current-tax-notices` — **healthy** — 11 item(s)
 - `kansas-revenue-prior-tax-notices` — **healthy** — 183 item(s)
 - `kansas-revenue-policy-library` — **error** — source returned 0 item(s); minimum_items is 5
@@ -101,12 +101,6 @@
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-34.pdf
 
-### NEW: Internal Revenue Bulletin 2026-21
-
-- Item: `accounting-irs-internal-revenue-bulletins-8b5792957a2dd421`
-- Source: `irs-internal-revenue-bulletins`
-- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-21.pdf
-
 ### NEW: Internal Revenue Bulletin 2026-41
 
 - Item: `accounting-irs-internal-revenue-bulletins-9aa61bc0ab552fc6`
@@ -118,6 +112,12 @@
 - Item: `accounting-irs-internal-revenue-bulletins-a2d6b34a0603d774`
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-10.pdf
+
+### NEW: Internal Revenue Bulletin 2026-45
+
+- Item: `accounting-irs-internal-revenue-bulletins-a3133575ec44274b`
+- Source: `irs-internal-revenue-bulletins`
+- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-45.pdf
 
 ### NEW: Internal Revenue Bulletin 2026-28
 
@@ -629,7 +629,7 @@
 - Source: `kansas-revenue-prior-tax-notices`
 - Official URL: https://www.ksrevenue.gov/taxnotices/notice15-01.pdf
 
-> 120 additional changes are available in the JSON candidate.
+> 119 additional changes are available in the JSON candidate.
 
 ## Potential repository impacts
 
