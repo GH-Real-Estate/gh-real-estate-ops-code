@@ -1,0 +1,38 @@
+{
+  "approved_baseline": {
+    "missing": true,
+    "path": "authority/snapshots/legal.json",
+    "sha256": null
+  },
+  "candidate_sha256": "b910910405c200aadf4b735b24bbe528bd46e9ff303d6586b4b7997109995c6d",
+  "changes": [],
+  "counts": {
+    "configuration_required": 0,
+    "healthy_sources": 0,
+    "items": 0,
+    "missing_items": 0,
+    "modified": 0,
+    "new": 0,
+    "potential_impacts": 0,
+    "source_errors": 1,
+    "sources": 0
+  },
+  "domain": "legal",
+  "generated_at": "2026-11-01T17:09:00.713548+00:00",
+  "items": [],
+  "notice": "The discovery runner failed before producing a complete candidate. Official sources and qualified review control.",
+  "potential_impacts": [],
+  "run_id": "41329952655-1",
+  "schema_version": "1.0",
+  "source_results": [
+    {
+      "critical": true,
+      "error": "Discovery failed before a candidate was produced.",
+      "item_count": 0,
+      "observed_item_ids": [],
+      "source_id": "workflow-execution",
+      "status": "error"
+    }
+  ],
+  "status": "degraded"
+}

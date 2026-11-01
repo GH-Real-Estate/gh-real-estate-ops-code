@@ -4,7 +4,7 @@
     "path": "authority/snapshots/legal.json",
     "sha256": null
   },
-  "candidate_sha256": "1c151c904ff4e3621adb943237867af6ae15f8c548f08e99ee15298da1d42e50",
+  "candidate_sha256": "b910910405c200aadf4b735b24bbe528bd46e9ff303d6586b4b7997109995c6d",
   "changes": [],
   "counts": {
     "configuration_required": 0,
@@ -18,11 +18,11 @@
     "sources": 0
   },
   "domain": "legal",
-  "generated_at": "2026-10-25T14:57:48.326422+00:00",
+  "generated_at": "2026-11-01T17:09:00.713548+00:00",
   "items": [],
   "notice": "The discovery runner failed before producing a complete candidate. Official sources and qualified review control.",
   "potential_impacts": [],
-  "run_id": "40204661120-1",
+  "run_id": "41329952655-1",
   "schema_version": "1.0",
   "source_results": [
     {
