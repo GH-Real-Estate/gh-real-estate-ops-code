@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "domain": "accounting",
-  "generated_at": "2026-11-01T17:08:57+00:00",
-  "run_id": "41329952655-1",
+  "generated_at": "2026-11-08T17:05:42+00:00",
+  "run_id": "42503195214-1",
   "status": "degraded",
   "notice": "Automated discovery evidence only. Official sources and qualified review control; this candidate is not approved law, GAAP, or compliance advice.",
   "approved_baseline": {
@@ -13,8 +13,8 @@
   "counts": {
     "sources": 9,
     "healthy_sources": 4,
-    "items": 219,
-    "new": 219,
+    "items": 220,
+    "new": 220,
     "modified": 0,
     "missing_items": 0,
     "source_errors": 5,
@@ -27,7 +27,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/standards/accounting-standard-updates",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -39,7 +39,7 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/standards/accounting-standard-updated-effective-date",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -51,7 +51,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/projects/current-projects",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -63,7 +63,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.fasb.org/projects/fasb-taxonomies",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "fetch failed after 1 attempt(s): HTTP 403: Forbidden",
@@ -75,15 +75,16 @@
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "rolling-window",
       "status": "healthy",
       "final_url": "https://www.irs.gov/internal-revenue-bulletins?find=&items_per_page=25&order=posted_date&sort=desc",
       "content_type": "text/html",
-      "payload_sha256": "9a714f86e60a12b927a58176f85870e3e3436f753df78d3365b3e9c867500931",
+      "payload_sha256": "5860ee145abd3090917e854d9e4a22098d8f7d7a8985614ca92e1b0f6b18e56d",
       "attempts": 1,
       "item_count": 25,
       "observed_item_ids": [
+        "accounting-irs-internal-revenue-bulletins-116c9a3ae720dc20",
         "accounting-irs-internal-revenue-bulletins-138a8f2173ee622a",
         "accounting-irs-internal-revenue-bulletins-205e4b8a8e9c0024",
         "accounting-irs-internal-revenue-bulletins-26fddd10087e79a6",
@@ -103,7 +104,6 @@
         "accounting-irs-internal-revenue-bulletins-b8190497597730de",
         "accounting-irs-internal-revenue-bulletins-bfe316a175535df8",
         "accounting-irs-internal-revenue-bulletins-da1e14e25c333978",
-        "accounting-irs-internal-revenue-bulletins-e302fa2d96817398",
         "accounting-irs-internal-revenue-bulletins-e9648c4116574d13",
         "accounting-irs-internal-revenue-bulletins-f0dc84a56aea70ff",
         "accounting-irs-internal-revenue-bulletins-f9bebe4fb36b6c01",
@@ -116,22 +116,24 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://home.treasury.gov/news/press-releases",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "rolling-window",
       "status": "healthy",
       "final_url": "https://home.treasury.gov/news/press-releases",
       "content_type": "text/html",
-      "payload_sha256": "b1cb552bb9ba536c1f96e99da34a1be00009670a163c6608815cad1241108a3b",
+      "payload_sha256": "cef49b21c7bb33dc52234b8ed48e4e8cf00f4cd48c00aa9fd0c6ac7a0925c1a3",
       "attempts": 1,
-      "item_count": 0,
-      "observed_item_ids": []
+      "item_count": 1,
+      "observed_item_ids": [
+        "accounting-treasury-accounting-and-tax-releases-8258e4d8c79fe7a7"
+      ]
     },
     {
       "source_id": "kansas-revenue-current-tax-notices",
       "critical": true,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "complete-index",
       "status": "healthy",
       "final_url": "https://www.ksrevenue.gov/prnewtaxnotices.html",
@@ -158,7 +160,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "complete-index",
       "status": "healthy",
       "final_url": "https://www.ksrevenue.gov/prpriortaxnotices.html",
@@ -357,7 +359,7 @@
       "critical": false,
       "storage_policy": "metadata-only",
       "discovery_url": "https://www.ksrevenue.gov/prpil.html",
-      "retrieved_at": "2026-11-01T17:08:57+00:00",
+      "retrieved_at": "2026-11-08T17:05:42+00:00",
       "missing_detection": "complete-index",
       "status": "error",
       "error": "source returned 0 item(s); minimum_items is 5",
@@ -366,6 +368,31 @@
     }
   ],
   "changes": [
+    {
+      "change_type": "new",
+      "item_id": "accounting-irs-internal-revenue-bulletins-116c9a3ae720dc20",
+      "source_id": "irs-internal-revenue-bulletins",
+      "before": null,
+      "after": {
+        "item_id": "accounting-irs-internal-revenue-bulletins-116c9a3ae720dc20",
+        "source_id": "irs-internal-revenue-bulletins",
+        "external_id": "IRS-IRB-2026-46",
+        "title": "Internal Revenue Bulletin 2026-46",
+        "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-46.pdf",
+        "publisher": "Internal Revenue Service",
+        "jurisdiction": "United States",
+        "authority_type": "federal-tax-administrative-guidance",
+        "storage_policy": "metadata-only",
+        "published_at": "2026-11-06",
+        "effective_at": null,
+        "status": "discovered",
+        "metadata": {
+          "document_type": "internal-revenue-bulletin",
+          "bulletin_number": "2026-46"
+        },
+        "fingerprint": "758d2ccfcbaf3aa169728f8b6ae44c4df1b3357763919cb3c30cd576c1d85c13"
+      }
+    },
     {
       "change_type": "new",
       "item_id": "accounting-irs-internal-revenue-bulletins-138a8f2173ee622a",
@@ -839,31 +866,6 @@
           "bulletin_number": "2026-43"
         },
         "fingerprint": "66cdf522c184c2a40df277033ba33399d678c82c07181000bd52cae88660af41"
-      }
-    },
-    {
-      "change_type": "new",
-      "item_id": "accounting-irs-internal-revenue-bulletins-e302fa2d96817398",
-      "source_id": "irs-internal-revenue-bulletins",
-      "before": null,
-      "after": {
-        "item_id": "accounting-irs-internal-revenue-bulletins-e302fa2d96817398",
-        "source_id": "irs-internal-revenue-bulletins",
-        "external_id": "IRS-IRB-2026-23",
-        "title": "Internal Revenue Bulletin 2026-23",
-        "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-23.pdf",
-        "publisher": "Internal Revenue Service",
-        "jurisdiction": "United States",
-        "authority_type": "federal-tax-administrative-guidance",
-        "storage_policy": "metadata-only",
-        "published_at": "2026-05-29",
-        "effective_at": null,
-        "status": "discovered",
-        "metadata": {
-          "document_type": "internal-revenue-bulletin",
-          "bulletin_number": "2026-23"
-        },
-        "fingerprint": "681e711562aa644e251cc765b573764f0cb122f88538e7f30c2475d0768d38fa"
       }
     },
     {
@@ -6034,6 +6036,30 @@
         },
         "fingerprint": "57b359662429a91c1cf3d4e591e82a6fca1b247e0f4318c9efde9d9ee9512ea3"
       }
+    },
+    {
+      "change_type": "new",
+      "item_id": "accounting-treasury-accounting-and-tax-releases-8258e4d8c79fe7a7",
+      "source_id": "treasury-accounting-and-tax-releases",
+      "before": null,
+      "after": {
+        "item_id": "accounting-treasury-accounting-and-tax-releases-8258e4d8c79fe7a7",
+        "source_id": "treasury-accounting-and-tax-releases",
+        "external_id": "TREASURY-RELEASE-f381aeb1c69872236377",
+        "title": "Treasury, IRS Announce Opportunity Zones Designations for Over 6,500 Communities Across America",
+        "official_url": "https://home.treasury.gov/news/press-releases/sb0682/",
+        "publisher": "United States Department of the Treasury",
+        "jurisdiction": "United States",
+        "authority_type": "federal-tax-and-financial-announcement",
+        "storage_policy": "metadata-only",
+        "published_at": null,
+        "effective_at": null,
+        "status": "discovered",
+        "metadata": {
+          "document_type": "treasury-press-release"
+        },
+        "fingerprint": "1cb7ff67ed429b6a4b916777ec558b8fdd536b69a978c932868b519497530696"
+      }
     }
   ],
   "potential_impacts": [
@@ -6421,6 +6447,25 @@
   ],
   "items": [
     {
+      "item_id": "accounting-irs-internal-revenue-bulletins-116c9a3ae720dc20",
+      "source_id": "irs-internal-revenue-bulletins",
+      "external_id": "IRS-IRB-2026-46",
+      "title": "Internal Revenue Bulletin 2026-46",
+      "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-46.pdf",
+      "publisher": "Internal Revenue Service",
+      "jurisdiction": "United States",
+      "authority_type": "federal-tax-administrative-guidance",
+      "storage_policy": "metadata-only",
+      "published_at": "2026-11-06",
+      "effective_at": null,
+      "status": "discovered",
+      "metadata": {
+        "document_type": "internal-revenue-bulletin",
+        "bulletin_number": "2026-46"
+      },
+      "fingerprint": "758d2ccfcbaf3aa169728f8b6ae44c4df1b3357763919cb3c30cd576c1d85c13"
+    },
+    {
       "item_id": "accounting-irs-internal-revenue-bulletins-138a8f2173ee622a",
       "source_id": "irs-internal-revenue-bulletins",
       "external_id": "IRS-IRB-2026-38",
@@ -6780,25 +6825,6 @@
         "bulletin_number": "2026-43"
       },
       "fingerprint": "66cdf522c184c2a40df277033ba33399d678c82c07181000bd52cae88660af41"
-    },
-    {
-      "item_id": "accounting-irs-internal-revenue-bulletins-e302fa2d96817398",
-      "source_id": "irs-internal-revenue-bulletins",
-      "external_id": "IRS-IRB-2026-23",
-      "title": "Internal Revenue Bulletin 2026-23",
-      "official_url": "https://www.irs.gov/pub/irs-irbs/irb26-23.pdf",
-      "publisher": "Internal Revenue Service",
-      "jurisdiction": "United States",
-      "authority_type": "federal-tax-administrative-guidance",
-      "storage_policy": "metadata-only",
-      "published_at": "2026-05-29",
-      "effective_at": null,
-      "status": "discovered",
-      "metadata": {
-        "document_type": "internal-revenue-bulletin",
-        "bulletin_number": "2026-23"
-      },
-      "fingerprint": "681e711562aa644e251cc765b573764f0cb122f88538e7f30c2475d0768d38fa"
     },
     {
       "item_id": "accounting-irs-internal-revenue-bulletins-e9648c4116574d13",
@@ -10774,7 +10800,25 @@
         "publisher_status": "published"
       },
       "fingerprint": "57b359662429a91c1cf3d4e591e82a6fca1b247e0f4318c9efde9d9ee9512ea3"
+    },
+    {
+      "item_id": "accounting-treasury-accounting-and-tax-releases-8258e4d8c79fe7a7",
+      "source_id": "treasury-accounting-and-tax-releases",
+      "external_id": "TREASURY-RELEASE-f381aeb1c69872236377",
+      "title": "Treasury, IRS Announce Opportunity Zones Designations for Over 6,500 Communities Across America",
+      "official_url": "https://home.treasury.gov/news/press-releases/sb0682/",
+      "publisher": "United States Department of the Treasury",
+      "jurisdiction": "United States",
+      "authority_type": "federal-tax-and-financial-announcement",
+      "storage_policy": "metadata-only",
+      "published_at": null,
+      "effective_at": null,
+      "status": "discovered",
+      "metadata": {
+        "document_type": "treasury-press-release"
+      },
+      "fingerprint": "1cb7ff67ed429b6a4b916777ec558b8fdd536b69a978c932868b519497530696"
     }
   ],
-  "candidate_sha256": "797c39ebb5df14d73fa4cbd30374a0e113868f906eac7561953f1e2bdcdb0f87"
+  "candidate_sha256": "c40c8d901207a6483a0d1221e78c926dca6a3e3d087af4c4331824a9f38cba60"
 }

@@ -1,11 +1,11 @@
 # Accounting authority discovery candidate
 
 - Status: **degraded**
-- Generated: 2026-11-01T17:08:57+00:00
-- Candidate SHA-256: `797c39ebb5df14d73fa4cbd30374a0e113868f906eac7561953f1e2bdcdb0f87`
+- Generated: 2026-11-08T17:05:42+00:00
+- Candidate SHA-256: `c40c8d901207a6483a0d1221e78c926dca6a3e3d087af4c4331824a9f38cba60`
 - Sources: 4 healthy / 9 configured
-- Discovered items: 219
-- New: 219
+- Discovered items: 220
+- New: 220
 - Modified: 0
 - Missing from successful source responses: 0
 - Source errors: 5
@@ -22,12 +22,18 @@
 - `fasb-current-projects` — **error** — fetch failed after 1 attempt(s): HTTP 403: Forbidden
 - `fasb-taxonomy-resources` — **error** — fetch failed after 1 attempt(s): HTTP 403: Forbidden
 - `irs-internal-revenue-bulletins` — **healthy** — 25 item(s)
-- `treasury-accounting-and-tax-releases` — **healthy** — 0 item(s)
+- `treasury-accounting-and-tax-releases` — **healthy** — 1 item(s)
 - `kansas-revenue-current-tax-notices` — **healthy** — 11 item(s)
 - `kansas-revenue-prior-tax-notices` — **healthy** — 183 item(s)
 - `kansas-revenue-policy-library` — **error** — source returned 0 item(s); minimum_items is 5
 
 ## Candidate changes
+
+### NEW: Internal Revenue Bulletin 2026-46
+
+- Item: `accounting-irs-internal-revenue-bulletins-116c9a3ae720dc20`
+- Source: `irs-internal-revenue-bulletins`
+- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-46.pdf
 
 ### NEW: Internal Revenue Bulletin 2026-38
 
@@ -143,13 +149,7 @@
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-43.pdf
 
-### NEW: Internal Revenue Bulletin 2026-23
-
-- Item: `accounting-irs-internal-revenue-bulletins-e302fa2d96817398`
-- Source: `irs-internal-revenue-bulletins`
-- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-23.pdf
-
-> 199 additional changes are available in the JSON candidate.
+> 200 additional changes are available in the JSON candidate.
 
 ## Potential repository impacts
 
