@@ -1,8 +1,8 @@
 # Accounting authority discovery candidate
 
 - Status: **degraded**
-- Generated: 2026-11-08T17:05:42+00:00
-- Candidate SHA-256: `c40c8d901207a6483a0d1221e78c926dca6a3e3d087af4c4331824a9f38cba60`
+- Generated: 2026-11-15T17:47:14+00:00
+- Candidate SHA-256: `9d867459bc0fe7ebae0a9b366c9e7a4afedc7137812c4147e265182ffaa20f67`
 - Sources: 4 healthy / 9 configured
 - Discovered items: 220
 - New: 220
