@@ -1,8 +1,8 @@
 # Accounting authority discovery candidate
 
 - Status: **degraded**
-- Generated: 2026-11-15T17:47:14+00:00
-- Candidate SHA-256: `9d867459bc0fe7ebae0a9b366c9e7a4afedc7137812c4147e265182ffaa20f67`
+- Generated: 2026-11-22T18:33:01+00:00
+- Candidate SHA-256: `7a75af71a84ecbfe5b3cd2537deac6efda7ed5495a8c23c23181bb3a5ec3cdae`
 - Sources: 4 healthy / 9 configured
 - Discovered items: 220
 - New: 220
@@ -46,12 +46,6 @@
 - Item: `accounting-irs-internal-revenue-bulletins-205e4b8a8e9c0024`
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-33.pdf
-
-### NEW: Internal Revenue Bulletin 2026-22
-
-- Item: `accounting-irs-internal-revenue-bulletins-26fddd10087e79a6`
-- Source: `irs-internal-revenue-bulletins`
-- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-22.pdf
 
 ### NEW: Internal Revenue Bulletin 2026-27
 
@@ -125,6 +119,18 @@
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-45.pdf
 
+### NEW: Internal Revenue Bulletin 2026-48
+
+- Item: `accounting-irs-internal-revenue-bulletins-aca06cc82d58e998`
+- Source: `irs-internal-revenue-bulletins`
+- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-48.pdf
+
+### NEW: Internal Revenue Bulletin 2026-47
+
+- Item: `accounting-irs-internal-revenue-bulletins-b4a90d71e125b420`
+- Source: `irs-internal-revenue-bulletins`
+- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-47.pdf
+
 ### NEW: Internal Revenue Bulletin 2026-28
 
 - Item: `accounting-irs-internal-revenue-bulletins-b7aae013cedf0ffc`
@@ -172,12 +178,6 @@
 - Item: `accounting-irs-internal-revenue-bulletins-fc708854a0b80179`
 - Source: `irs-internal-revenue-bulletins`
 - Official URL: https://www.irs.gov/pub/irs-irbs/irb26-25.pdf
-
-### NEW: Internal Revenue Bulletin 2026-24
-
-- Item: `accounting-irs-internal-revenue-bulletins-fd370b033d493f09`
-- Source: `irs-internal-revenue-bulletins`
-- Official URL: https://www.irs.gov/pub/irs-irbs/irb26-24.pdf
 
 ### NEW: Notice 26-01 Sales Tax Exemption for Certain Disabled Veterans
 
